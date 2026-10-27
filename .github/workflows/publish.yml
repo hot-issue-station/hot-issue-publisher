@@ -1,0 +1,39 @@
+name: 예약 게시
+
+on:
+  schedule:
+    # GitHub 예약 시각은 UTC 기준. 한국 시간 = UTC + 9시간
+    - cron: "0 22 * * *"   # 한국 07:00 (아침 AM)
+    - cron: "0 6 * * *"    # 한국 15:00 (오후 PM)
+    - cron: "30 14 * * *"  # 한국 23:30 (저녁 NT)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publish
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: 예약 시각이 된 묶음 게시
+        env:
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          DRY_RUN: ${{ vars.DRY_RUN || 'true' }}
+        run: python scripts/publish.py
+      - name: 게시 기록 저장
+        if: always()
+        run: |
+          git config user.name "issuebrief-bot"
+          git config user.email "issuebrief-bot@users.noreply.github.com"
+          git add -A posts
+          git diff --cached --quiet || git commit -m "게시 기록"
+          git push
