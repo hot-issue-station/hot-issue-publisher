@@ -7,7 +7,7 @@ round JSON 형식(모든 문구는 승인 2를 거친 최종 문구):
 {
   "date": "2026-10-28", "slot": "PM",            # AM 07:00 · PM 15:00 · NT 23:30
   "category": "국내",                             # 1장 분야 태그
-  "hook": "…", "sub": "…",                        # 1장
+  "hook": "…", "sub": "…",                        # 1장 (훅에 \n을 넣으면 그 자리에서 줄바꿈)
   "summary": "…",                                 # 2장
   "facts": [{"title": "…", "desc": "…", "source": "경향신문 · 2026.10.27"}, ×3],   # 3~5장
   "interp": "…", "interpSub": "…",                # 6장
@@ -63,6 +63,13 @@ def dots(i):
                    for k in range(3))
 
 
+def hook_html(h):
+    """줄바꿈(\n)을 넣은 훅은 그대로, 아니면 첫 쉼표 뒤에서 한 번 줄을 바꾼다."""
+    if "\n" in h:
+        return "<br>".join(E(x) for x in h.split("\n"))
+    return E(h).replace(", ", ",<br>", 1) if len(h) > 9 else E(h)
+
+
 def cards(r):
     m, d = r["date"][5:7], r["date"][8:10]
     label = f"{m}.{d} · {SLOTS[r['slot']][0]}"
@@ -70,9 +77,9 @@ def cards(r):
     # 1 훅
     out.append(frame(f"""<div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:48px">
 <div style="align-self:flex-start;padding:14px 32px;border:3px solid {CYAN};border-radius:999px;color:{CYAN};font-size:36px;font-weight:700">{E(r['category'])}</div>
-<div style="font-size:108px;font-weight:900;line-height:1.25">{E(r['hook']).replace(', ', ',<br>', 1) if len(r['hook']) > 9 else E(r['hook'])}</div>
+<div style="font-size:108px;font-weight:900;line-height:1.25">{hook_html(r['hook'])}</div>
 <div style="display:flex;gap:12px"><div style="width:160px;height:16px;border-radius:8px;background:{CYAN}"></div><div style="width:48px;height:16px;border-radius:8px;background:{PINK}"></div></div>
-<div style="font-size:52px;font-weight:500;line-height:1.5;color:#C9D4EA;max-width:820px">{E(r['sub'])}</div></div>""",
+<div style="font-size:52px;font-weight:500;line-height:1.5;color:#C9D4EA;max-width:760px">{E(r['sub'])}</div></div>""",
                      label, 1, "밀어서 다음 장 →", deco=rings([VIOLET, PINK, CYAN], [900, 680, 460])))
     # 2 요약
     out.append(frame(f"""<div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:40px">
@@ -140,7 +147,7 @@ def main():
     (out / "caption.txt").write_text(r["caption"], encoding="utf-8")
     import datetime as dt
     meta = {"version": 1, "date": r["date"], "slot": r["slot"],
-            "publishAt": f"{r['date']}T{SLOTS[r['slot']][1]}:00+09:00", "topic": r.get("topic", r["hook"]),
+            "publishAt": f"{r['date']}T{SLOTS[r['slot']][1]}:00+09:00", "topic": r.get("topic", r["hook"].replace("\n", " ")),
             "images": [f"{i:02d}.jpg" for i in range(1, 8)], "caption": r["caption"],
             "sources": r["sources"]}
     if a.approve3:
