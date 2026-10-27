@@ -1,0 +1,28 @@
+name: 카드 묶음 풀기
+
+on:
+  push:
+    paths:
+      - "inbox/**.zip"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  unpack:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: inbox의 zip 풀기
+        run: python scripts/unpack.py
+      - name: 결과 저장
+        run: |
+          git config user.name "issuebrief-bot"
+          git config user.email "issuebrief-bot@users.noreply.github.com"
+          git add -A posts inbox
+          git diff --cached --quiet || git commit -m "카드 묶음 풀기"
+          git push
