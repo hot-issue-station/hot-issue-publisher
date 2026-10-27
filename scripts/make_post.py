@@ -181,17 +181,38 @@ def render(pages, outdir, h=1350, prefix=""):
     return overflow
 
 
+def reel_only(r, out):
+    global LAYOUT
+    LAYOUT = REEL
+    over_r = render(cards(r), out, h=1920, prefix="reel_")
+    LAYOUT = FEED
+    sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+    import make_reel
+    music = r.get("music", "pulse")
+    rp, sec = make_reel.build(out, music)
+    pj = out / "post.json"
+    if pj.exists():
+        meta = json.loads(pj.read_text(encoding="utf-8"))
+        meta["reel"] = True; meta["music"] = music
+        pj.write_text(json.dumps(meta, ensure_ascii=False, indent=2), encoding="utf-8")
+    print(f"릴스만 추가: {rp} ({sec:.1f}초, 음악 {music})" + (f" · 주의: 릴스 화면 {over_r}장 글 넘침" if over_r else ""))
+    return 2 if over_r else 0
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("round_json")
     ap.add_argument("--approve3", help="대표의 발행 직전 승인(승인 3)을 기록할 때 승인자 표기")
     ap.add_argument("--out", help="출력 폴더 (기본 posts/YYYYMMDD_SLOT)")
-    ap.add_argument("--reel", action="store_true", help="카드로 릴스 영상(reel.mp4)도 만든다 (음악: round JSON의 music, 기본 warm)")
+    ap.add_argument("--reel", action="store_true", help="카드로 릴스 영상(reel.mp4)도 만든다 (음악: round JSON의 music, 기본 pulse)")
+    ap.add_argument("--reel-only", action="store_true", help="이미 있는 묶음(--out)에 릴스 화면과 reel.mp4만 더한다(피드 카드·캡션은 그대로). 스튜디오 예약 발송용")
     a = ap.parse_args()
     r = json.loads(pathlib.Path(a.round_json).read_text(encoding="utf-8"))
     ymd = r["date"].replace("-", "")
     out = pathlib.Path(a.out) if a.out else ROOT / "posts" / f"{ymd}_{r['slot']}"
     out.mkdir(parents=True, exist_ok=True)
+    if a.reel_only:
+        return reel_only(r, out)
     over = render(cards(r), out)
     (out / "caption.txt").write_text(r["caption"], encoding="utf-8")
     import datetime as dt
