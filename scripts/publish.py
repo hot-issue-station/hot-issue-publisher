@@ -2,6 +2,7 @@
 
 posts/<묶음 이름>/ 안의 post.json, JPG, caption 파일을 읽는다.
 - DRY_RUN이 "false"가 아니면 시험 모드: 실제로 게시하지 않고 할 일만 기록한다.
+  단, post.json에 "approval3": {"approved": true}(대표의 발행 직전 승인)가 있는 묶음은 실제로 게시한다.
 - 게시에 성공하면 같은 폴더에 published.json을 남겨 두 번 올리지 않는다.
 추가 패키지 없이 파이썬 표준 라이브러리만 쓴다.
 """
@@ -27,6 +28,7 @@ VERSION = os.environ.get("GRAPH_VERSION", "v26.0")
 API = ("https://graph.instagram.com/" if TOKEN.startswith("IG") else "https://graph.facebook.com/") + VERSION
 REPO = os.environ.get("GITHUB_REPOSITORY", "")       # owner/repo, Actions가 채워 줌
 BRANCH = os.environ.get("GITHUB_REF_NAME", "main")
+PREFLIGHT = os.environ.get("PREFLIGHT", "").strip().lower() == "true"  # 미리 점검: 사진을 Instagram이 가져가는지만 확인, 게시 안 함
 LATE_LIMIT_HOURS = float(os.environ.get("LATE_LIMIT_HOURS", "6"))  # 이보다 늦은 묶음은 자동 게시하지 않음
 
 
@@ -136,6 +138,15 @@ def main():
             log(f"{folder.name}: 건너뜀 — {e}")
             failed += 1
             continue
+        if PREFLIGHT:
+            try:
+                res = api("POST", f"{IG_ID}/media", image_url=public_url(folder.name, images[0]), is_carousel_item="true")
+                wait_ready(res["id"])
+                log(f"{folder.name}: [미리 점검] Instagram이 사진을 정상으로 가져갔습니다 (게시는 하지 않음, 예약 {when:%m-%d %H:%M})")
+            except Exception as e:
+                log(f"{folder.name}: [미리 점검] 실패 — {e}")
+                failed += 1
+            continue
         if when > now:
             log(f"{folder.name}: 예약 {when:%m-%d %H:%M} 대기")
             continue
@@ -143,7 +154,8 @@ def main():
         if late_h > LATE_LIMIT_HOURS:
             log(f"{folder.name}: 예약 시각에서 {late_h:.1f}시간 지나 자동 게시하지 않음 (post.json의 publishAt을 고치면 다시 올라감)")
             continue
-        if DRY_RUN:
+        approved = (meta.get("approval3") or {}).get("approved") is True
+        if DRY_RUN and not approved:
             log(f"{folder.name}: [시험] 이미지 {len(images)}장, 캡션 {len(caption)}자를 게시할 차례입니다")
             for n in images:
                 log(f"  {public_url(folder.name, n)}")
