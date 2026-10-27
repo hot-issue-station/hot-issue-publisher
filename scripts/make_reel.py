@@ -48,7 +48,7 @@ def build(folder, music="pulse", fps=30):
         # 들어올 때 1.06배에서 시작해 1.0으로 자리 잡는 확대 효과(박자감)
         f.append(f"{base},zoompan=z='max(1.0,1.06-0.06*on/{max(1, int(fps * 0.6))})':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)'"
                  f":d={frames}:s=1080x1920:fps={fps},setsar=1,format=yuv420p[v{k}]")
-    args += ["-i", str(track)]
+    args += ["-stream_loop", "-1", "-i", str(track)]   # 곡이 영상보다 짧으면 이어서 반복
     prev = "v0"
     for k in range(1, 7):
         out = f"x{k}" if k < 6 else "vx"
@@ -61,11 +61,11 @@ def build(folder, music="pulse", fps=30):
     f.append(f"[vt][fill]overlay=x='90-900+900*t/{total:.3f}':y=205:shortest=1[vbar]")
     f.append(f"[vbar]drawbox=x=0:y=205:w=90:h=8:color={NAVY}:t=fill,drawbox=x=990:y=205:w=90:h=8:color={NAVY}:t=fill[vout]")
     f.append(f"[7:a]atrim=0:{total:.3f},asetpts=PTS-STARTPTS,afade=t=in:d=0.2,afade=t=out:st={total - 1.2:.3f}:d=1.2,"
-             f"loudnorm=I=-14:TP=-1.5:LRA=9[aout]")
+             f"loudnorm=I=-14:TP=-2:LRA=9,alimiter=limit=0.79[aout]")
     out = folder / "reel.mp4"
     args += ["-filter_complex", ";".join(f), "-map", "[vout]", "-map", "[aout]",
              "-c:v", "libx264", "-preset", "veryfast", "-crf", "20", "-pix_fmt", "yuv420p", "-r", str(fps),
-             "-c:a", "aac", "-b:a", "128k", "-ar", "44100", "-movflags", "+faststart", "-t", f"{total:.3f}", str(out)]
+             "-c:a", "aac", "-b:a", "128k", "-ar", "44100", "-movflags", "+faststart", "-use_editlist", "0", "-t", f"{total:.3f}", str(out)]
     subprocess.run(args, check=True)
     return out, total
 

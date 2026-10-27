@@ -58,7 +58,8 @@ def wait_ready(container_id):
         if status == "FINISHED":
             return
         if status in ("ERROR", "EXPIRED"):
-            raise RuntimeError(f"컨테이너 {container_id} 상태 {status}")
+            detail = api("GET", container_id, fields="status").get("status", "")
+            raise RuntimeError(f"컨테이너 {container_id} 상태 {status} {detail}")
         time.sleep(30)
     raise RuntimeError(f"컨테이너 {container_id} 준비 시간 초과")
 
@@ -86,14 +87,21 @@ def upload_reel(folder, caption):
     """릴스: 영상 파일을 Instagram에 직접 올린다(공개 주소 필요 없음). 컨테이너 ID를 돌려준다."""
     video = folder / "reel.mp4"
     data = video.read_bytes()
-    res = api("POST", f"{IG_ID}/media", media_type="REELS", upload_type="resumable", caption=caption, share_to_feed="false")
+    extra = {}
+    if (folder / "reel_01.jpg").exists():
+        extra["cover_url"] = public_url(folder.name, "reel_01.jpg")   # 표지: 릴스 첫 화면
+    if len(caption) > 2200:
+        caption = caption[:2190] + "…"
+    res = api("POST", f"{IG_ID}/media", media_type="REELS", upload_type="resumable", caption=caption, share_to_feed="false", **extra)
     cid = res["id"]
     uri = res.get("uri") or f"https://rupload.facebook.com/ig-api-upload/{VERSION}/{cid}"
     req = urllib.request.Request(uri, data=data, method="POST", headers={
         "Authorization": f"OAuth {TOKEN}", "offset": "0", "file_size": str(len(data))})
     try:
         with urllib.request.urlopen(req, timeout=300) as r:
-            json.loads(r.read().decode() or "{}")
+            body = json.loads(r.read().decode() or "{}")
+        if body and body.get("success") is False:
+            raise RuntimeError(f"릴스 영상 올리기 응답 이상: {body}")
     except urllib.error.HTTPError as e:
         raise RuntimeError(f"릴스 영상 올리기 오류 {e.code}: {e.read().decode(errors='replace')[:300]}") from None
     log(f"  릴스 영상 업로드 {len(data) // 1024}KB → 컨테이너 {cid}")
