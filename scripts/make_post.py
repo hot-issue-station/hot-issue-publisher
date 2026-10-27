@@ -16,6 +16,7 @@ round JSON 형식(모든 문구는 승인 2를 거친 최종 문구):
   "sources": [{"outlet": "…", "title": "…", "date": "2026.10.27", "url": "https://…"}],  # 7장
   "cta": "… 저장해 두세요",                        # 7장 유도 문구
   "caption": "…",                                 # 해시태그 포함 캡션 전체
+  "music": "pulse",                                # 릴스 배경음: pulse(기본) warm bright calm 또는 music/ 폴더의 다른 곡 이름
   "topic": "…"
 }
 카드 모양은 카드 템플릿 캔버스(케인 AM 시험 카드)와 같다. 글꼴: Noto Sans CJK KR.
@@ -37,12 +38,19 @@ LOGO = ('<svg width="68" height="68" viewBox="0 0 68 68" style="display:block">'
 E = html.escape
 
 
+# 화면 틀: 피드 카드(1080×1350)와 릴스(1080×1920). 릴스는 Instagram 화면 위 글자·버튼에 가리지 않게
+# 위 240px, 아래 440px, 오른쪽 160px(좋아요·댓글 버튼 자리)을 비운다.
+LAYOUT = {"h": 1350, "pad": "96px"}
+FEED = {"h": 1350, "pad": "96px"}
+REEL = {"h": 1920, "pad": "240px 160px 440px 90px"}
+
+
 def frame(inner, date_label, page, footer_right="", light=False, deco=""):
     bg, fg, muted = (CYAN, NAVY, "#123049") if light else (NAVY, "#F4F7FF", "#A9B6CF")
     return f"""<!doctype html><html><head><meta charset="utf-8"><style>
 body{{margin:0;word-break:keep-all;font-family:'Noto Sans CJK KR','Noto Sans KR',sans-serif}}</style></head><body>
-<div style="position:relative;width:1080px;height:1350px;overflow:hidden;background:{bg};color:{fg}">{deco}
-<div style="position:relative;width:100%;height:100%;box-sizing:border-box;padding:96px;display:flex;flex-direction:column">
+<div style="position:relative;width:1080px;height:{LAYOUT['h']}px;overflow:hidden;background:{bg};color:{fg}">{deco}
+<div style="position:relative;width:100%;height:100%;box-sizing:border-box;padding:{LAYOUT['pad']};display:flex;flex-direction:column">
 <div style="display:flex;justify-content:space-between;align-items:center">
 <div style="display:flex;align-items:center;gap:20px">{LOGO}<div style="font-size:36px;font-weight:700;color:{fg}">hot.issue.station</div></div>
 <div style="font-size:32px;color:{muted}">{date_label}</div></div>
@@ -156,11 +164,11 @@ def cards(r):
     return out
 
 
-def render(pages, outdir):
+def render(pages, outdir, h=1350, prefix=""):
     from playwright.sync_api import sync_playwright
     with sync_playwright() as p:
         b = p.chromium.launch()
-        pg = b.new_page(viewport={"width": 1080, "height": 1350})
+        pg = b.new_page(viewport={"width": 1080, "height": h})
         overflow = []
         for i, h in enumerate(pages, 1):
             pg.set_content(h)
@@ -168,7 +176,7 @@ def render(pages, outdir):
             # 글이 칸을 넘치면(세로 넘침) 알려 준다
             if pg.evaluate("Array.from(document.querySelectorAll('div')).some(d => d.style.flex.startsWith('1') && d.scrollHeight > d.clientHeight + 2)"):
                 overflow.append(i)
-            pg.screenshot(path=str(outdir / f"{i:02d}.jpg"), type="jpeg", quality=92)
+            pg.screenshot(path=str(outdir / f"{prefix}{i:02d}.jpg"), type="jpeg", quality=92)
         b.close()
     return overflow
 
@@ -178,6 +186,7 @@ def main():
     ap.add_argument("round_json")
     ap.add_argument("--approve3", help="대표의 발행 직전 승인(승인 3)을 기록할 때 승인자 표기")
     ap.add_argument("--out", help="출력 폴더 (기본 posts/YYYYMMDD_SLOT)")
+    ap.add_argument("--reel", action="store_true", help="카드로 릴스 영상(reel.mp4)도 만든다 (음악: round JSON의 music, 기본 warm)")
     a = ap.parse_args()
     r = json.loads(pathlib.Path(a.round_json).read_text(encoding="utf-8"))
     ymd = r["date"].replace("-", "")
@@ -194,6 +203,20 @@ def main():
         meta["approval3"] = {"approved": True, "at": dt.datetime.now(dt.timezone(dt.timedelta(hours=9))).isoformat(timespec="seconds"),
                              "by": a.approve3}
     (out / "post.json").write_text(json.dumps(meta, ensure_ascii=False, indent=2), encoding="utf-8")
+    if a.reel:
+        # 릴스용 세로 화면(1080×1920)을 따로 그린다
+        global LAYOUT
+        LAYOUT = REEL
+        over_r = render(cards(r), out, h=1920, prefix="reel_")
+        LAYOUT = FEED
+        if over_r:
+            print(f"주의: 릴스 화면 {over_r}장에서 글이 넘칩니다.")
+        sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+        import make_reel
+        rp, sec = make_reel.build(out, r.get("music", "pulse"))
+        meta["reel"] = True; meta["music"] = r.get("music", "pulse")
+        (out / "post.json").write_text(json.dumps(meta, ensure_ascii=False, indent=2), encoding="utf-8")
+        print(f"릴스: {rp} ({sec:.1f}초)")
     print(f"완료: {out} (예약 {meta['publishAt']}, 승인 3 {'있음' if a.approve3 else '없음'})")
     if over:
         print(f"주의: {over}장에서 글이 카드 밖으로 넘칩니다. 문구를 줄이세요.")

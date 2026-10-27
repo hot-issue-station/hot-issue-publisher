@@ -82,6 +82,25 @@ def load(folder):
     return meta, images, caption, when
 
 
+def upload_reel(folder, caption):
+    """릴스: 영상 파일을 Instagram에 직접 올린다(공개 주소 필요 없음). 컨테이너 ID를 돌려준다."""
+    video = folder / "reel.mp4"
+    data = video.read_bytes()
+    res = api("POST", f"{IG_ID}/media", media_type="REELS", upload_type="resumable", caption=caption, share_to_feed="false")
+    cid = res["id"]
+    uri = res.get("uri") or f"https://rupload.facebook.com/ig-api-upload/{VERSION}/{cid}"
+    req = urllib.request.Request(uri, data=data, method="POST", headers={
+        "Authorization": f"OAuth {TOKEN}", "offset": "0", "file_size": str(len(data))})
+    try:
+        with urllib.request.urlopen(req, timeout=300) as r:
+            json.loads(r.read().decode() or "{}")
+    except urllib.error.HTTPError as e:
+        raise RuntimeError(f"릴스 영상 올리기 오류 {e.code}: {e.read().decode(errors='replace')[:300]}") from None
+    log(f"  릴스 영상 업로드 {len(data) // 1024}KB → 컨테이너 {cid}")
+    wait_ready(cid)
+    return cid
+
+
 def publish(folder, images, caption):
     children = []
     for name in images:
@@ -130,7 +149,24 @@ def main():
         log("토큰이 아직 없어 토큰 확인은 건너뜁니다.")
     failed = 0
     for folder in sorted(p for p in POSTS.iterdir() if p.is_dir()) if POSTS.exists() else []:
-        if (folder / "published.json").exists() or not (folder / "post.json").exists():
+        if not (folder / "post.json").exists():
+            continue
+        if (folder / "published.json").exists():
+            # 카드는 이미 게시됐고 릴스만 남은 경우(릴스가 실패했거나 나중에 추가됨) → 릴스만 다시 시도
+            pub = json.loads((folder / "published.json").read_text(encoding="utf-8"))
+            meta = json.loads((folder / "post.json").read_text(encoding="utf-8"))
+            ok3 = (meta.get("approval3") or {}).get("approved") is True or not DRY_RUN
+            late = (now - dt.datetime.fromisoformat(meta["publishAt"])).total_seconds() / 3600
+            if late <= LATE_LIMIT_HOURS and (folder / "reel.mp4").exists() and not pub.get("reelId") and ok3 and not PREFLIGHT and meta.get("reel", True):
+                try:
+                    cap = (folder / "reel_caption.txt").read_text(encoding="utf-8") if (folder / "reel_caption.txt").exists() else meta.get("caption", "")
+                    rid = api("POST", f"{IG_ID}/media_publish", creation_id=upload_reel(folder, cap))["id"]
+                    pub.update({"reelId": rid, "reelPublishedAt": dt.datetime.now(KST).isoformat()})
+                    (folder / "published.json").write_text(json.dumps(pub, ensure_ascii=False, indent=2), encoding="utf-8")
+                    log(f"{folder.name}: 릴스 게시 완료 (미디어 {rid})")
+                except Exception as e:
+                    log(f"{folder.name}: 릴스 게시 실패 — {e}")
+                    failed += 1
             continue
         try:
             meta, images, caption, when = load(folder)
@@ -142,8 +178,12 @@ def main():
             try:
                 res = api("POST", f"{IG_ID}/media", image_url=public_url(folder.name, images[0]), is_carousel_item="true")
                 wait_ready(res["id"])
+                if (folder / "reel.mp4").exists() and not (folder / "published.json").exists():
+                    upload_reel(folder, "미리 점검")
+                    log(f"{folder.name}: [미리 점검] 릴스 영상도 정상으로 올라갔습니다 (게시는 하지 않음)")
                 log(f"{folder.name}: [미리 점검] Instagram이 사진을 정상으로 가져갔습니다 (게시는 하지 않음, 예약 {when:%m-%d %H:%M})")
-                (folder / "check.json").write_text(json.dumps({"preflight": "ok", "checkedAt": now.isoformat(), "account": IG_ID}, ensure_ascii=False, indent=2), encoding="utf-8")
+                (folder / "check.json").write_text(json.dumps({"preflight": "ok", "checkedAt": now.isoformat(), "account": IG_ID,
+                                                               "reel": (folder / "reel.mp4").exists()}, ensure_ascii=False, indent=2), encoding="utf-8")
             except Exception as e:
                 log(f"{folder.name}: [미리 점검] 실패 — {e}")
                 failed += 1
@@ -163,11 +203,23 @@ def main():
             continue
         try:
             media_id = publish(folder, images, caption)
-            (folder / "published.json").write_text(json.dumps({"mediaId": media_id, "publishedAt": now.isoformat()}, ensure_ascii=False, indent=2), encoding="utf-8")
+            record = {"mediaId": media_id, "publishedAt": now.isoformat()}
+            (folder / "published.json").write_text(json.dumps(record, ensure_ascii=False, indent=2), encoding="utf-8")
             log(f"{folder.name}: 게시 완료 (미디어 {media_id})")
         except Exception as e:
             log(f"{folder.name}: 게시 실패 — {e}")
             failed += 1
+            continue
+        if (folder / "reel.mp4").exists() and meta.get("reel", True):
+            try:
+                reel_cap = (folder / "reel_caption.txt").read_text(encoding="utf-8") if (folder / "reel_caption.txt").exists() else caption
+                rid = api("POST", f"{IG_ID}/media_publish", creation_id=upload_reel(folder, reel_cap))["id"]
+                record.update({"reelId": rid, "reelPublishedAt": dt.datetime.now(KST).isoformat()})
+                (folder / "published.json").write_text(json.dumps(record, ensure_ascii=False, indent=2), encoding="utf-8")
+                log(f"{folder.name}: 릴스 게시 완료 (미디어 {rid})")
+            except Exception as e:
+                log(f"{folder.name}: 릴스 게시 실패 — {e} (카드 게시물은 올라갔습니다)")
+                failed += 1
     return 1 if failed else 0
 
 
