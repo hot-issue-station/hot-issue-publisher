@@ -9,7 +9,7 @@ round JSON 형식(모든 문구는 승인 2를 거친 최종 문구):
   "category": "국내",                             # 1장 분야 태그
   "hook": "…", "sub": "…",                        # 1장 (훅에 \n을 넣으면 그 자리에서 줄바꿈)
   "big": {"number": "25", "lines": ["년 만의", "*잉글랜드*", "발롱도르"],   # 1장 C안(기본): 가장 강한 숫자 강조
-          "caption": "해리 케인, 생애 첫 수상", "icon": "trophy"},   # icon: trophy ball wave star heart globe chart music
+          "caption": "해리 케인, 생애 첫 수상", "icon": "trophy"},   # icon: trophy ball wave shark star heart globe chart music
   "summary": "…",                                 # 2장
   "facts": [{"title": "…", "desc": "…", "source": "경향신문 · 2026.10.27"}, ×3],   # 3~5장
   "interp": "…", "interpSub": "…",                # 6장
@@ -77,6 +77,7 @@ ICONS = {
     "trophy": '<svg viewBox="0 0 400 460" width="120" height="138"><path d="M90 40H310V110C310 200 260 250 200 260 140 250 90 200 90 110Z" fill="#FFC857"/><path d="M90 70H40C40 150 80 180 120 185M310 70H360C360 150 320 180 280 185" fill="none" stroke="#FFC857" stroke-width="18" stroke-linecap="round"/><rect x="180" y="255" width="40" height="70" fill="#E0A030"/><rect x="120" y="320" width="160" height="40" rx="8" fill="#FFC857"/><rect x="95" y="360" width="210" height="60" rx="10" fill="#151F33" stroke="#35E0FF" stroke-width="6"/><path d="M200 105l12 26 28 3-21 19 6 28-25-14-25 14 6-28-21-19 28-3z" fill="#FFF6D6"/></svg>',
     "ball": '<svg viewBox="0 0 120 120" width="120" height="120"><circle cx="60" cy="60" r="54" fill="#F4F7FF"/><path d="M60 30l26 19-10 30H44L34 49z" fill="#0B1220"/><path d="M60 30V8M86 49l20-9M76 79l14 22M44 79L30 101M34 49L14 40" stroke="#0B1220" stroke-width="5"/></svg>',
     "wave": '<svg viewBox="0 0 140 120" width="140" height="120"><path d="M10 70c20-20 40-20 60 0s40 20 60 0" fill="none" stroke="#35E0FF" stroke-width="10" stroke-linecap="round"/><path d="M10 95c20-20 40-20 60 0s40 20 60 0" fill="none" stroke="#6C7BFF" stroke-width="10" stroke-linecap="round"/><path d="M50 52L78 14 92 52z" fill="#A9B6CF"/></svg>',
+    "shark": '<svg viewBox="0 0 320 180" width="300" height="169"><path d="M0 150c30-14 60-14 90 0s60 14 90 0 60-14 90 0 40 10 50 6" fill="none" stroke="#6C7BFF" stroke-width="8" stroke-linecap="round"/><path d="M30 120c40-46 120-62 190-40 30 10 52 24 70 40-30 8-66 14-104 12-60-2-110-6-156-12z" fill="#7F93B8"/><path d="M40 118c60 8 130 12 200 6 18-2 34-5 48-8-26 14-70 24-120 24-50 0-92-10-128-22z" fill="#DCE6F5"/><path d="M128 74l28-58 22 64z" fill="#7F93B8"/><path d="M30 120l-26-34 10 40-14 26 30-26z" fill="#7F93B8"/><circle cx="248" cy="106" r="5" fill="#0B1220"/><path d="M262 120c-8 4-18 5-28 4" stroke="#0B1220" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M200 104l4 14M190 104l4 14M180 104l4 14" stroke="#5A6E92" stroke-width="3" stroke-linecap="round"/><path d="M0 168c30-14 60-14 90 0s60 14 90 0 60-14 90 0 40 10 50 6" fill="none" stroke="#35E0FF" stroke-width="8" stroke-linecap="round"/></svg>',
     "star": '<svg viewBox="0 0 120 120" width="120" height="120"><path d="M60 8l15 33 36 4-27 24 8 36-32-19-32 19 8-36L9 45l36-4z" fill="#FFC857"/></svg>',
     "heart": '<svg viewBox="0 0 120 110" width="120" height="110"><path d="M60 104S8 72 8 36C8 18 22 6 38 6c10 0 18 6 22 14 4-8 12-14 22-14 16 0 30 12 30 30 0 36-52 68-52 68z" fill="#FF4FA3"/></svg>',
     "globe": '<svg viewBox="0 0 120 120" width="120" height="120"><circle cx="60" cy="60" r="52" fill="none" stroke="#35E0FF" stroke-width="7"/><ellipse cx="60" cy="60" rx="24" ry="52" fill="none" stroke="#35E0FF" stroke-width="6"/><path d="M10 60h100M18 32h84M18 88h84" stroke="#35E0FF" stroke-width="6"/></svg>',
@@ -104,7 +105,12 @@ def cover_big(r, label):
 <div style="display:flex;align-items:center;gap:30px"><div style="font-size:{size}px;font-weight:900;line-height:.9;color:{CYAN};letter-spacing:-4px">{n}</div>
 <div style="font-size:64px;font-weight:900;line-height:1.2">{lines}</div></div>
 <div style="font-size:84px;font-weight:900;line-height:1.2">{hook_html(r['hook'])}</div>
-<div style="display:flex;align-items:center;gap:24px">{icon}<div style="font-size:42px;color:#C9D4EA;line-height:1.45">{cap}</div></div></div>""",
+<div style="display:flex;align-items:center;gap:24px">{icon}<div style="font-size:42px;color:#C9D4EA;line-height:1.45">{cap}</div></div></div>""" if b.get("icon") != "shark" else f"""<div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:30px">
+<div style="align-self:flex-start;padding:12px 28px;border:3px solid {CYAN};border-radius:999px;color:{CYAN};font-size:34px;font-weight:700">{E(r['category'])}</div>
+<div style="display:flex;align-items:center;gap:30px"><div style="font-size:{size}px;font-weight:900;line-height:.9;color:{CYAN};letter-spacing:-4px">{n}</div>
+<div style="font-size:64px;font-weight:900;line-height:1.2">{lines}</div></div>
+<div style="font-size:84px;font-weight:900;line-height:1.2">{hook_html(r['hook'])}</div>
+<div style="display:flex;align-items:flex-end;gap:24px">{icon.replace('width="300" height="169"','width="400" height="225"')}<div style="font-size:40px;color:#C9D4EA;line-height:1.45">{cap}</div></div></div>""",
                  label, 1, "밀어서 다음 장 →")
 
 
