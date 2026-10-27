@@ -143,6 +143,7 @@ def main():
                 res = api("POST", f"{IG_ID}/media", image_url=public_url(folder.name, images[0]), is_carousel_item="true")
                 wait_ready(res["id"])
                 log(f"{folder.name}: [미리 점검] Instagram이 사진을 정상으로 가져갔습니다 (게시는 하지 않음, 예약 {when:%m-%d %H:%M})")
+                (folder / "check.json").write_text(json.dumps({"preflight": "ok", "checkedAt": now.isoformat(), "account": IG_ID}, ensure_ascii=False, indent=2), encoding="utf-8")
             except Exception as e:
                 log(f"{folder.name}: [미리 점검] 실패 — {e}")
                 failed += 1
