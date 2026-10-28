@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "date": "2026-10-28",
+  "slot": "PM",
+  "publishAt": "2026-10-28T12:00:00+09:00",
+  "topic": "SK하이닉스, 분기 영업이익 83조",
+  "images": [
+    "01.jpg",
+    "02.jpg",
+    "03.jpg",
+    "04.jpg",
+    "05.jpg",
+    "06.jpg",
+    "07.jpg"
+  ],
+  "caption": "SK하이닉스, 분기 영업이익 83조 원\nSK하이닉스가 3분기 매출 104조 원, 영업이익 83조 원으로 역대 최대 실적을 냈어요. 분기 매출이 100조 원을 넘은 건 처음이에요. 올해 약 100조 원을 주주에게 돌려주겠다는 계획도 함께 밝혔어요. 한국 반도체가 써 내려가는 새 기록에 응원을 보내요.\n\n#SK하이닉스 #반도체 #HBM #HBM4 #실적발표 #주주환원 #이슈브리프 #오늘의이슈",
+  "sources": [
+    {
+      "outlet": "한국금융신문",
+      "title": "SK하이닉스, 3분기 영업이익 83조원",
+      "date": "2026.10.28",
+      "url": "https://www.fntimes.com/html/view.php?ud=2026102810363011777de3572ddd_18"
+    },
+    {
+      "outlet": "IT비즈뉴스",
+      "title": "SK하이닉스 3분기 영업익 83조원 상회",
+      "date": "2026.10.28",
+      "url": "https://www.itbiznews.com/news/articleView.html?idxno=229397"
+    }
+  ],
+  "reel": true,
+  "music": "bright"
+}
