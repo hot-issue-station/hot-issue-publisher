@@ -114,6 +114,40 @@ def cover_big(r, label):
                  label, 1, "밀어서 다음 장 →")
 
 
+def photo_uri(path):
+    import base64, mimetypes
+    pth = pathlib.Path(path)
+    if not pth.is_absolute():
+        pth = ROOT / pth
+    mt = mimetypes.guess_type(str(pth))[0] or "image/jpeg"
+    return f"data:{mt};base64," + base64.b64encode(pth.read_bytes()).decode()
+
+
+def cover_photo(r, label):
+    """1장 사진형: 위쪽에 사진(권리 있는 사진 또는 AI 생성 이미지), 아래로 남색에 녹아들고 큰 숫자 + 훅.
+    round JSON: "photo": 파일 경로, "photoLabel": 사진 위 작은 표기(예: "AI 생성 이미지"), "photoPos": 배경 위치(예: "50% 40%"),
+    "hookCover": 1장 전용 훅(\n 줄바꿈). 숫자 장식은 "big"을 그대로 쓴다."""
+    b = r.get("big") or {}
+    reel = LAYOUT["h"] > 1500
+    ph = 1000 if reel else 620
+    uri = photo_uri(r["photo"])
+    pos = r.get("photoPos", "50% 45%")
+    tag = E(r.get("photoLabel", ""))
+    deco = (f'<div style="position:absolute;left:0;top:0;width:1080px;height:{ph}px;background:url({uri}) {pos}/cover no-repeat"></div>'
+            f'<div style="position:absolute;left:0;top:0;width:1080px;height:{ph}px;background:linear-gradient(180deg,rgba(11,18,32,.92) 0%,rgba(11,18,32,.7) 14%,rgba(11,18,32,0) 32%,rgba(11,18,32,0) 55%,{NAVY} 100%)"></div>'
+            + (f'<div style="position:absolute;right:{180 if reel else 40}px;top:{ph - (300 if reel else 250)}px;padding:8px 18px;border-radius:999px;background:rgba(11,18,32,.7);color:#C9D4EA;font-size:24px">{tag}</div>' if tag else ""))
+    n = E(b.get("number", ""))
+    size = 190 if len(b.get("number", "")) <= 2 else 160
+    lines = "<br>".join(accent_html(x) for x in b.get("lines", []))
+    numrow = (f'<div style="display:flex;align-items:center;gap:26px"><div style="font-size:{size}px;font-weight:900;line-height:.9;color:{CYAN};letter-spacing:-4px">{n}</div>'
+              f'<div style="font-size:52px;font-weight:900;line-height:1.2">{lines}</div></div>') if n else ""
+    hook = hook_html(r.get("hookCover", r["hook"]))
+    return frame(f"""<div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;gap:22px;padding-bottom:24px">
+<div style="align-self:flex-start;padding:10px 26px;border:3px solid {CYAN};border-radius:999px;color:{CYAN};font-size:32px;font-weight:700;background:rgba(11,18,32,.6)">{E(r['category'])}</div>
+{numrow}
+<div style="font-size:72px;font-weight:900;line-height:1.2">{hook}</div></div>""", label, 1, "밀어서 다음 장 →", deco=deco)
+
+
 def hook_html(h):
     """줄바꿈(\n)을 넣은 훅은 그대로, 아니면 첫 쉼표 뒤에서 한 번 줄을 바꾼다."""
     if "\n" in h:
@@ -126,7 +160,9 @@ def cards(r):
     label = f"{m}.{d} · {SLOTS[r['slot']][0]}"
     out = []
     # 1 훅 — "big"이 있으면 C안(숫자 강조), 없으면 기본형
-    if r.get("big"):
+    if r.get("photo"):
+        out.append(cover_photo(r, label))
+    elif r.get("big"):
         out.append(cover_big(r, label))
     else:
       out.append(frame(f"""<div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:48px">
