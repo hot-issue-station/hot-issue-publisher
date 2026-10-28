@@ -21,11 +21,17 @@ jobs:
           IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
           IG_USER_ID: ${{ secrets.IG_USER_ID }}
         run: python scripts/read_comments.py
+      - name: 응원 랭킹 계산
+        if: always()
+        env:
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+        run: python scripts/rank_comments.py
       - name: 기록 저장
         if: always()
         run: |
           git config user.name "issuebrief-bot"
           git config user.email "issuebrief-bot@users.noreply.github.com"
-          git add -A data/comments
+          git add -A data/comments data/ranking
           git diff --cached --quiet || git commit -m "댓글 기록"
           for i in 1 2 3; do git pull --rebase -q origin main && git push && break; sleep 5; done
