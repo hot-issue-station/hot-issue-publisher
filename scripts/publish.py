@@ -151,6 +151,9 @@ def main():
         except Exception as e:
             log(f"토큰 확인 실패 — {e}")
             log("IG_ACCESS_TOKEN 비밀값이 맞는지, 기한(60일)이 지나지 않았는지 확인해 주세요.")
+            POSTS.mkdir(exist_ok=True)
+            (POSTS / "_last_error.json").write_text(json.dumps({"stage": "token", "error": str(e).replace(TOKEN, "***")[:600] if TOKEN else str(e)[:600], "at": now.isoformat()},
+                                                               ensure_ascii=False, indent=2), encoding="utf-8")
             return 1
     elif not DRY_RUN:
         log("실제 게시 모드인데 IG_ACCESS_TOKEN 비밀값이 비어 있습니다. 설정을 확인해 주세요.")
@@ -222,6 +225,9 @@ def main():
             log(f"{folder.name}: 게시 완료 (미디어 {media_id})")
         except Exception as e:
             log(f"{folder.name}: 게시 실패 — {e}")
+            # 실행 로그를 못 보는 환경에서도 원인을 알 수 있게 묶음 폴더에 남긴다(토큰 값은 오류문에 들어가지 않음)
+            (folder / "error.json").write_text(json.dumps({"stage": "publish", "error": str(e).replace(TOKEN, "***")[:600] if TOKEN else str(e)[:600], "at": now.isoformat()},
+                                                          ensure_ascii=False, indent=2), encoding="utf-8")
             failed += 1
             continue
         if REELS and (folder / "reel.mp4").exists() and meta.get("reel", True):
