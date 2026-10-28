@@ -24,3 +24,9 @@ Claude는 카드와 음악 없는 릴스 영상을 "릴스 재료함"에 올리�
 6. 마지막 답변(대표 휴대폰 알림)은 한국어 두 줄만:
    "<회차 이름> 릴스 재료 준비: <topic>"
    "재료함에서 영상 저장 → 인스타 앱에서 음악 골라 올리기: https://claude.ai/artifact/Xxp8hf3gz6aWW5uemGphWS"
+
+## 헤드라인 릴스(HL)일 때 바뀌는 점
+- 1단계 영상은 만들지 않는다(make_headline.py가 이미 headline.mp4를 만듦).
+- 2단계 업로드: file_paths = [<folder>/headline.mp4, <folder>/cover.jpg]. reel = headline.mp4 id, cards = [cover.jpg id], readCards 없음.
+- 3단계 소개글은 새로 쓰지 않고 caption = <folder>/caption.txt 그대로(긴 기사형 캡션, 연락처 줄이 없으면 넣는다).
+- slotName "헤드라인 · 야근 퇴근길 21:50". 알림 첫 줄 "헤드라인 릴스(21:50) 재료 준비: <topic>".
