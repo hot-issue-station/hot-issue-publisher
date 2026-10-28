@@ -5,7 +5,7 @@
 
 round JSON 형식(모든 문구는 승인 2를 거친 최종 문구):
 {
-  "date": "2026-10-28", "slot": "PM",            # AM 출근 07:30 · PM 점심 12:00 · NT 퇴근 18:30
+  "date": "2026-10-28", "slot": "PM",            # AM 출근 07:30 · PM 점심 12:00 · NT 퇴근 18:30 · RS 리센느 데일리 20:00
   "category": "국내",                             # 1장 분야 태그
   "hook": "…", "sub": "…",                        # 1장 (훅에 \n을 넣으면 그 자리에서 줄바꿈)
   "big": {"number": "25", "lines": ["년 만의", "*잉글랜드*", "발롱도르"],   # 1장 C안(기본): 가장 강한 숫자 강조
@@ -28,7 +28,7 @@ import pathlib
 import sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-SLOTS = {"AM": ("출근길", "07:30"), "PM": ("점심", "12:00"), "NT": ("퇴근길", "18:30")}
+SLOTS = {"AM": ("출근길", "07:30"), "PM": ("점심", "12:00"), "NT": ("퇴근길", "18:30"), "RS": ("리센느 데일리", "20:00")}
 NAVY, CYAN, PINK, VIOLET = "#0B1220", "#35E0FF", "#FF4FA3", "#6C7BFF"
 # 회차별 템플릿(색 묶음): 출근길은 해 뜨는 아침(크림+주황), 점심은 산뜻한 민트(민트+초록), 퇴근길은 밤(남색+청록, 기본)
 THEMES = {
@@ -38,6 +38,9 @@ THEMES = {
                BOX="#FFFFFF", CYAN="#FF7A3D", PINK="#1FB5A9", VIOLET="#FFC24B", ONACC="#FFFFFF", ONACC2="#FFF1E4"),
     "PM": dict(BG="#EAF7F2", BGRGB="234,247,242", INK="#0F2A2A", MUTED="#5E7C77", SOFT="#24443F", BODY="#1E3A36", LINE="#CDE6DE",
                BOX="#FFFFFF", CYAN="#00A88F", PINK="#FF5C8A", VIOLET="#FFC24B", ONACC="#FFFFFF", ONACC2="#E8FFF8"),
+    # 리센느 데일리(20:00, 2026-10-29~12-31 고정 코너): 보랏빛 밤. 로고·멤버 사진 없이 색으로만 코너를 구분한다.
+    "RS": dict(BG="#140F24", BGRGB="20,15,36", INK="#F6F2FF", MUTED="#B3A8CF", SOFT="#D6CCF0", BODY="#E2DAF7", LINE="#33285A",
+               BOX="#1E1736", CYAN="#B98CFF", PINK="#FF7FB6", VIOLET="#7FD4FF", ONACC="#140F24", ONACC2="#2A2050"),
 }
 BG = BGRGB = INK = MUTED = SOFT = BODY = LINE = BOX = ONACC = ONACC2 = None
 

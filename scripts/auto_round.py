@@ -57,7 +57,7 @@ def check(date, slot):
 
 
 def slot_time(slot):
-    return {"AM": "07:30", "PM": "12:00", "NT": "18:30"}[slot]
+    return {"AM": "07:30", "PM": "12:00", "NT": "18:30", "RS": "20:00"}[slot]
 
 
 def validate(r):
@@ -89,8 +89,8 @@ def validate(r):
         errs.append("느낌표 사용 (스타일 가이드: 감탄 대신 사실)")
     if r.get("sensitive"):
         errs.append("민감 이슈는 자동 게시하지 않음")
-    if r.get("slot") not in ("AM", "PM", "NT"):
-        errs.append("slot은 AM/PM/NT 중 하나")
+    if r.get("slot") not in ("AM", "PM", "NT", "RS"):
+        errs.append("slot은 AM/PM/NT/RS 중 하나")
     return errs
 
 
