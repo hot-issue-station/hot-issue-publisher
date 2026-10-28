@@ -227,6 +227,8 @@ def main():
                     log(f"{folder.name}: 릴스 게시 실패 — {e}")
                     failed += 1
             continue
+        if "publishAt" not in json.loads((folder / "post.json").read_text(encoding="utf-8")):
+            continue  # 헤드라인 릴스 등 게시 시각이 없는 재료 전용 묶음
         try:
             meta, images, caption, when = load(folder)
         except Exception as e:  # 묶음이 잘못되면 그 묶음만 건너뛴다
