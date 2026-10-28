@@ -10,9 +10,14 @@ Claude는 카드와 음악 없는 릴스 영상을 "릴스 재료함"에 올리�
 2. 업로드: Artifact 도구 action "publish", url = 재료함 주소, asset: true,
    file_paths = ["/tmp/<문서ID>.mp4", <folder>/01.jpg … 07.jpg 절대 경로] (8개 한 번에).
    결과에서 영상의 id = reel, 카드 7장의 id = cards(순서대로).
-3. 캡션: <folder>/caption.txt 를 읽고, config/contact.txt 의 연락처 줄('#'로 시작하지 않는 줄)이 없으면 해시태그 바로 위에 빈 줄과 함께 넣는다.
+3. 릴스 소개글(대표가 릴스에 붙여 넣는 글, 대표 요청 10/28): <folder>/caption.txt 를 바탕으로 새로 씁니다.
+   - 1줄: 훅(카드 1장 훅과 같은 뜻, 20자 안팎)
+   - 2~3줄: 핵심 사실 1~2문장(숫자 포함, 카드에 있는 사실만)
+   - 1줄: 부드러운 권유(예: "자세한 정리는 프로필 카드뉴스에서 볼 수 있어요")
+   - 빈 줄, 이미지 출처 줄(사진을 쓴 회차만), config/contact.txt 의 연락처 줄('#'로 시작하지 않는 줄)
+   - 빈 줄, 해시태그 6~8개(주제 3~4개 + 분야 1~2개 + #이슈브리프 #오늘의이슈). 300자 안팎.
 4. 기록: ArtifactData action "set", url = 재료함 주소, collection "materials", doc_id = 문서ID,
-   data = {date, slot, slotName(출근길/점심/퇴근길/리센느 응원 특집 #n/자랑스러운 한국인 #n), topic, reel, cards, caption, posted:false, createdAt:<ISO>}.
+   data = {date, slot, slotName(출근길/점심/퇴근길/리센느 응원 특집 #n/자랑스러운 한국인 #n), topic, reel, cards, caption(=3단계 릴스 소개글), posted:false, createdAt:<ISO>}.
 5. 스튜디오 기록(브리핑용): ArtifactData update(if_version) url = 스튜디오(https://claude.ai/artifact/H9d1SRr3uSYZEX6pYDNswV), autoq/문서ID
    {status:"ready", topic, folder, message:"릴스 재료 준비 완료 (자동 게시 안 함)", readyAt:<ISO>}. previews·vetoUntil은 넣지 않는다.
 6. 마지막 답변(대표 휴대폰 알림)은 한국어 두 줄만:
