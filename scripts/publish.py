@@ -71,6 +71,10 @@ def public_url(folder, name):
     return f"https://raw.githubusercontent.com/{REPO}/{BRANCH}/{path}"
 
 
+_ap = pathlib.Path(__file__).resolve().parent.parent / "config" / "auto_publish.txt"
+AUTO_PUBLISH = _ap.exists() and _ap.read_text(encoding="utf-8").strip().lower().startswith("on")
+
+
 def with_contact(caption):
     """config/contact.txt 의 연락처 한 줄을 캡션 해시태그 바로 위에 넣는다(이미 있으면 그대로)."""
     f = pathlib.Path(__file__).resolve().parent.parent / "config" / "contact.txt"
@@ -249,6 +253,10 @@ def main():
         late_h = (now - when).total_seconds() / 3600
         if late_h > LATE_LIMIT_HOURS:
             log(f"{folder.name}: 예약 시각에서 {late_h:.1f}시간 지나 자동 게시하지 않음 (post.json의 publishAt을 고치면 다시 올라감)")
+            continue
+        if meta.get("auto") and not AUTO_PUBLISH:
+            # 대표 결정(10/28 21:04): Claude 자동 제작 묶음은 게시하지 않고 릴스 재료로만 쓴다(조회 0인 캐러셀 대신 대표가 릴스를 직접 올림).
+            log(f"{folder.name}: 자동 제작 묶음은 재료 전용이라 게시하지 않음 (config/auto_publish.txt 를 on으로 바꾸면 다시 게시)")
             continue
         approved = (meta.get("approval3") or {}).get("approved") is True
         if (meta.get("approval3") or {}).get("approved") is False:
