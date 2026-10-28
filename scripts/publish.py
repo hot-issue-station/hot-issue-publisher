@@ -71,6 +71,25 @@ def public_url(folder, name):
     return f"https://raw.githubusercontent.com/{REPO}/{BRANCH}/{path}"
 
 
+def with_contact(caption):
+    """config/contact.txt 의 연락처 한 줄을 캡션 해시태그 바로 위에 넣는다(이미 있으면 그대로)."""
+    f = pathlib.Path(__file__).resolve().parent.parent / "config" / "contact.txt"
+    if not f.exists():
+        return caption
+    line = next((l.strip() for l in f.read_text(encoding="utf-8").splitlines() if l.strip() and not l.strip().startswith("#")), "")
+    if not line or line in caption:
+        return caption
+    lines = caption.rstrip().split("\n")
+    i = len(lines)
+    while i > 0 and lines[i - 1].strip().startswith("#"):
+        i -= 1
+    head, tags = lines[:i], lines[i:]
+    while head and not head[-1].strip():
+        head.pop()
+    out = "\n".join(head + ["", line] + ([""] + tags if tags else []))
+    return out if len(out) <= 2200 else caption
+
+
 def load(folder):
     meta = json.loads((folder / "post.json").read_text(encoding="utf-8"))
     images = [n for n in meta.get("images", []) if (folder / n).exists()]
@@ -78,7 +97,7 @@ def load(folder):
         images = sorted(p.name for p in folder.glob("*.jpg"))
     if not 2 <= len(images) <= 10:
         raise RuntimeError(f"캐러셀은 이미지 2~10장이 필요합니다 (지금 {len(images)}장)")
-    caption = meta.get("caption", "")
+    caption = with_contact(meta.get("caption", ""))
     if len(caption) > 2200:
         raise RuntimeError(f"캡션이 2,200자를 넘습니다 ({len(caption)}자)")
     when = dt.datetime.fromisoformat(meta["publishAt"])
