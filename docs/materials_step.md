@@ -6,9 +6,9 @@ Claude는 카드와 음악 없는 릴스 영상을 "릴스 재료함"에 올리�
 재료함 주소(url): https://claude.ai/artifact/Xxp8hf3gz6aWW5uemGphWS
 (스튜디오와 다른 페이지다. 아래 업로드·기록은 모두 이 주소로.)
 
-1. 영상: `python3 scripts/make_reel_silent.py <folder> /tmp/<문서ID>.mp4` (약 1분, ffmpeg).
+1. 영상: `python3 scripts/make_reel_silent.py <folder> /home/claude/reels/<문서ID>.mp4 (mkdir -p /home/claude/reels; 업로드는 작업 폴더 안 파일만 가능)` (약 1분, ffmpeg).
 2. 업로드: Artifact 도구 action "publish", url = 재료함 주소, asset: true,
-   file_paths = ["/tmp/<문서ID>.mp4", <folder>/01.jpg … 07.jpg, <folder>/r01.jpg … 절대 경로] (한 번에, 25개 이내).
+   file_paths = ["/home/claude/reels/<문서ID>.mp4", <folder>/01.jpg … 07.jpg, <folder>/r01.jpg … 절대 경로] (한 번에, 25개 이내).
    결과에서 영상의 id = reel, 01~07 의 id = cards, r01~ 의 id = readCards (각각 순서대로).
    (round JSON에 스타일 가이드 9장의 "read"를 꼭 넣어 읽는 카드도 함께 만든다)
 3. 릴스 소개글(대표가 릴스에 붙여 넣는 글, 대표 요청 10/28): <folder>/caption.txt 를 바탕으로 새로 씁니다.
