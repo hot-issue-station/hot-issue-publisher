@@ -30,6 +30,26 @@ import sys
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 SLOTS = {"AM": ("출근길", "07:30"), "PM": ("점심", "12:00"), "NT": ("퇴근길", "18:30")}
 NAVY, CYAN, PINK, VIOLET = "#0B1220", "#35E0FF", "#FF4FA3", "#6C7BFF"
+# 회차별 템플릿(색 묶음): 출근길은 해 뜨는 아침(크림+주황), 점심은 산뜻한 민트(민트+초록), 퇴근길은 밤(남색+청록, 기본)
+THEMES = {
+    "NT": dict(BG="#0B1220", BGRGB="11,18,32", INK="#F4F7FF", MUTED="#A9B6CF", SOFT="#C9D4EA", BODY="#D7E0F2", LINE="#2A3A59",
+               BOX="#151F33", CYAN="#35E0FF", PINK="#FF4FA3", VIOLET="#6C7BFF", ONACC="#0B1220", ONACC2="#123049"),
+    "AM": dict(BG="#FFF8EE", BGRGB="255,248,238", INK="#15233D", MUTED="#7A7F8C", SOFT="#3C4458", BODY="#2A3245", LINE="#EADFCB",
+               BOX="#FFFFFF", CYAN="#FF7A3D", PINK="#1FB5A9", VIOLET="#FFC24B", ONACC="#FFFFFF", ONACC2="#FFF1E4"),
+    "PM": dict(BG="#EAF7F2", BGRGB="234,247,242", INK="#0F2A2A", MUTED="#5E7C77", SOFT="#24443F", BODY="#1E3A36", LINE="#CDE6DE",
+               BOX="#FFFFFF", CYAN="#00A88F", PINK="#FF5C8A", VIOLET="#FFC24B", ONACC="#FFFFFF", ONACC2="#E8FFF8"),
+}
+BG = BGRGB = INK = MUTED = SOFT = BODY = LINE = BOX = ONACC = ONACC2 = None
+
+
+def apply_theme(slot):
+    """회차(AM/PM/NT)에 맞는 색 묶음을 적용한다. round JSON에 "theme"이 있으면 그것을 쓴다."""
+    g = globals()
+    for k, v in THEMES.get(slot, THEMES["NT"]).items():
+        g[k] = v
+
+
+apply_theme("NT")
 LOGO = ('<svg width="68" height="68" viewBox="0 0 68 68" style="display:block">'
         '<path d="M25.51 43.51 A12 12 0 0 1 42.49 43.51" fill="none" stroke="#35E0FF" stroke-width="5" stroke-linecap="round"/>'
         '<path d="M18.44 36.44 A22 22 0 0 1 49.56 36.44" fill="none" stroke="#6C7BFF" stroke-width="5" stroke-linecap="round"/>'
@@ -46,7 +66,7 @@ REEL = {"h": 1920, "pad": "240px 160px 440px 90px"}
 
 
 def frame(inner, date_label, page, footer_right="", light=False, deco=""):
-    bg, fg, muted = (CYAN, NAVY, "#123049") if light else (NAVY, "#F4F7FF", "#A9B6CF")
+    bg, fg, muted = (CYAN, ONACC, ONACC2) if light else (BG, INK, MUTED)
     return f"""<!doctype html><html><head><meta charset="utf-8"><style>
 body{{margin:0;word-break:keep-all;font-family:'Noto Sans CJK KR','Noto Sans KR',sans-serif}}</style></head><body>
 <div style="position:relative;width:1080px;height:{LAYOUT['h']}px;overflow:hidden;background:{bg};color:{fg}">{deco}
@@ -69,7 +89,7 @@ def rings(colors, sizes, offset_ratio=0.5):
 
 
 def dots(i):
-    return "".join(f'<div style="width:24px;height:24px;border-radius:50%;background:{CYAN if k == i else "#2A3A59"}"></div>'
+    return "".join(f'<div style="width:24px;height:24px;border-radius:50%;background:{CYAN if k == i else LINE}"></div>'
                    for k in range(3))
 
 # 1장 C안(숫자 강조)에 쓰는 작은 그림. 실존 인물 사진 대신 Claude가 그린 그림만 쓴다.
@@ -105,12 +125,12 @@ def cover_big(r, label):
 <div style="display:flex;align-items:center;gap:30px"><div style="font-size:{size}px;font-weight:900;line-height:.9;color:{CYAN};letter-spacing:-4px">{n}</div>
 <div style="font-size:64px;font-weight:900;line-height:1.2">{lines}</div></div>
 <div style="font-size:84px;font-weight:900;line-height:1.2">{hook_html(r['hook'])}</div>
-<div style="display:flex;align-items:center;gap:24px">{icon}<div style="font-size:42px;color:#C9D4EA;line-height:1.45">{cap}</div></div></div>""" if b.get("icon") != "shark" else f"""<div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:30px">
+<div style="display:flex;align-items:center;gap:24px">{icon}<div style="font-size:42px;color:{SOFT};line-height:1.45">{cap}</div></div></div>""" if b.get("icon") != "shark" else f"""<div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:30px">
 <div style="align-self:flex-start;padding:12px 28px;border:3px solid {CYAN};border-radius:999px;color:{CYAN};font-size:34px;font-weight:700">{E(r['category'])}</div>
 <div style="display:flex;align-items:center;gap:30px"><div style="font-size:{size}px;font-weight:900;line-height:.9;color:{CYAN};letter-spacing:-4px">{n}</div>
 <div style="font-size:64px;font-weight:900;line-height:1.2">{lines}</div></div>
 <div style="font-size:84px;font-weight:900;line-height:1.2">{hook_html(r['hook'])}</div>
-<div style="display:flex;align-items:flex-end;gap:24px">{icon.replace('width="300" height="169"','width="400" height="225"')}<div style="font-size:40px;color:#C9D4EA;line-height:1.45">{cap}</div></div></div>""",
+<div style="display:flex;align-items:flex-end;gap:24px">{icon.replace('width="300" height="169"','width="400" height="225"')}<div style="font-size:40px;color:{SOFT};line-height:1.45">{cap}</div></div></div>""",
                  label, 1, "밀어서 다음 장 →")
 
 
@@ -134,8 +154,8 @@ def cover_photo(r, label):
     pos = r.get("photoPos", "50% 45%")
     tag = E(r.get("photoLabel", ""))
     deco = (f'<div style="position:absolute;left:0;top:0;width:1080px;height:{ph}px;background:url({uri}) {pos}/cover no-repeat"></div>'
-            f'<div style="position:absolute;left:0;top:0;width:1080px;height:{ph}px;background:linear-gradient(180deg,rgba(11,18,32,.92) 0%,rgba(11,18,32,.7) 14%,rgba(11,18,32,0) 32%,rgba(11,18,32,0) 55%,{NAVY} 100%)"></div>'
-            + (f'<div style="position:absolute;right:{180 if reel else 40}px;top:{ph - (300 if reel else 250)}px;padding:8px 18px;border-radius:999px;background:rgba(11,18,32,.7);color:#C9D4EA;font-size:24px">{tag}</div>' if tag else ""))
+            f'<div style="position:absolute;left:0;top:0;width:1080px;height:{ph}px;background:linear-gradient(180deg,rgba({BGRGB},.92) 0%,rgba({BGRGB},.7) 14%,rgba({BGRGB},0) 32%,rgba({BGRGB},0) 55%,{BG} 100%)"></div>'
+            + (f'<div style="position:absolute;right:{180 if reel else 40}px;top:{ph - (300 if reel else 250)}px;padding:8px 18px;border-radius:999px;background:rgba({BGRGB},.7);color:{SOFT};font-size:24px">{tag}</div>' if tag else ""))
     n = E(b.get("number", ""))
     size = 190 if len(b.get("number", "")) <= 2 else 160
     lines = "<br>".join(accent_html(x) for x in b.get("lines", []))
@@ -143,7 +163,7 @@ def cover_photo(r, label):
               f'<div style="font-size:52px;font-weight:900;line-height:1.2">{lines}</div></div>') if n else ""
     hook = hook_html(r.get("hookCover", r["hook"]))
     return frame(f"""<div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;gap:22px;padding-bottom:24px">
-<div style="align-self:flex-start;padding:10px 26px;border:3px solid {CYAN};border-radius:999px;color:{CYAN};font-size:32px;font-weight:700;background:rgba(11,18,32,.6)">{E(r['category'])}</div>
+<div style="align-self:flex-start;padding:10px 26px;border:3px solid {CYAN};border-radius:999px;color:{CYAN};font-size:32px;font-weight:700;background:rgba({BGRGB},.6)">{E(r['category'])}</div>
 {numrow}
 <div style="font-size:72px;font-weight:900;line-height:1.2">{hook}</div></div>""", label, 1, "밀어서 다음 장 →", deco=deco)
 
@@ -156,6 +176,7 @@ def hook_html(h):
 
 
 def cards(r):
+    apply_theme(r.get("theme", r["slot"]))
     m, d = r["date"][5:7], r["date"][8:10]
     label = f"{m}.{d} · {SLOTS[r['slot']][0]}"
     out = []
@@ -169,40 +190,40 @@ def cards(r):
 <div style="align-self:flex-start;padding:14px 32px;border:3px solid {CYAN};border-radius:999px;color:{CYAN};font-size:36px;font-weight:700">{E(r['category'])}</div>
 <div style="font-size:108px;font-weight:900;line-height:1.25">{hook_html(r['hook'])}</div>
 <div style="display:flex;gap:12px"><div style="width:160px;height:16px;border-radius:8px;background:{CYAN}"></div><div style="width:48px;height:16px;border-radius:8px;background:{PINK}"></div></div>
-<div style="font-size:52px;font-weight:500;line-height:1.5;color:#C9D4EA;max-width:760px">{E(r['sub'])}</div></div>""",
+<div style="font-size:52px;font-weight:500;line-height:1.5;color:{SOFT};max-width:760px">{E(r['sub'])}</div></div>""",
                      label, 1, "밀어서 다음 장 →", deco=rings([VIOLET, PINK, CYAN], [900, 680, 460])))
     # 2 요약
     out.append(frame(f"""<div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:40px">
 <div style="display:flex;align-items:center;gap:20px"><div style="width:64px;height:8px;border-radius:4px;background:{PINK}"></div><div style="font-size:44px;font-weight:700;color:{CYAN}">한 줄 요약</div></div>
-<div style="padding:80px 72px;border:3px solid #2A3A59;border-radius:40px;background:#151F33"><div style="font-size:72px;font-weight:700;line-height:1.45">{E(r['summary'])}</div></div>
-<div style="font-size:44px;line-height:1.5;color:#C9D4EA">이어서 핵심 사실 3가지를 알려드려요 →</div></div>""", label, 2))
+<div style="padding:80px 72px;border:3px solid {LINE};border-radius:40px;background:{BOX}"><div style="font-size:72px;font-weight:700;line-height:1.45">{E(r['summary'])}</div></div>
+<div style="font-size:44px;line-height:1.5;color:{SOFT}">이어서 핵심 사실 3가지를 알려드려요 →</div></div>""", label, 2))
     # 3~5 사실
     for i, f in enumerate(r["facts"][:3]):
         out.append(frame(f"""<div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:32px">
-<div style="display:flex;align-items:baseline;gap:24px"><div style="font-size:140px;font-weight:900;line-height:1;color:{CYAN}">{i + 1:02d}</div><div style="font-size:40px;font-weight:700;color:#A9B6CF">핵심 사실</div></div>
+<div style="display:flex;align-items:baseline;gap:24px"><div style="font-size:140px;font-weight:900;line-height:1;color:{CYAN}">{i + 1:02d}</div><div style="font-size:40px;font-weight:700;color:{MUTED}">핵심 사실</div></div>
 <div style="font-size:68px;font-weight:900;line-height:1.35">{E(f['title'])}</div>
-<div style="width:100%;height:2px;background:#2A3A59"></div>
-<div style="font-size:48px;line-height:1.65;color:#D7E0F2">{E(f['desc'])}</div>
-<div style="font-size:36px;color:#A9B6CF">출처 {E(f['source'])}</div></div>""",
+<div style="width:100%;height:2px;background:{LINE}"></div>
+<div style="font-size:48px;line-height:1.65;color:{BODY}">{E(f['desc'])}</div>
+<div style="font-size:36px;color:{MUTED}">출처 {E(f['source'])}</div></div>""",
                          label, 3 + i, f'<div style="display:flex;gap:16px">{dots(i)}</div>'))
     # 6 해석
     out.append(frame(f"""<div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:36px">
 <div style="font-size:48px;font-weight:900">그래서, 나에게는?</div>
 <div style="font-size:84px;font-weight:900;line-height:1.35">{E(r['interp'])}</div>
-<div style="font-size:46px;font-weight:500;line-height:1.55;color:#123049">{E(r['interpSub'])}</div></div>""",
-                     label, 6, light=True, deco=rings([NAVY] * 3, [640, 440, 240])))
+<div style="font-size:46px;font-weight:500;line-height:1.55;color:{ONACC2}">{E(r['interpSub'])}</div></div>""",
+                     label, 6, light=True, deco=rings([ONACC] * 3, [640, 440, 240])))
     # 7 출처
     nums = "①②③④"
-    src = "".join(f'<div style="padding:22px 0;border-bottom:2px solid #2A3A59;font-size:36px;line-height:1.4;color:#D7E0F2">'
+    src = "".join(f'<div style="padding:22px 0;border-bottom:2px solid {LINE};font-size:36px;line-height:1.4;color:{BODY}">'
                   f'{nums[k]} {E(s["outlet"])} · {E(s["title"])} · {E(s["date"])}</div>' for k, s in enumerate(r["sources"][:4]))
     out.append(frame(f"""<div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:36px">
 <div style="display:flex;align-items:center;gap:20px"><div style="width:64px;height:8px;border-radius:4px;background:{PINK}"></div><div style="font-size:44px;font-weight:700;color:{CYAN}">출처</div></div>
 <div style="display:flex;flex-direction:column">{src}</div>
-<div style="padding:56px 64px;border:3px solid {CYAN};border-radius:40px;background:#151F33;display:flex;flex-direction:column;gap:32px">
+<div style="padding:56px 64px;border:3px solid {CYAN};border-radius:40px;background:{BOX};display:flex;flex-direction:column;gap:32px">
 <div style="font-size:60px;font-weight:900;line-height:1.35">{E(r['cta'])}</div>
-<div style="display:flex;gap:24px"><div style="padding:20px 56px;border-radius:999px;background:{CYAN};color:{NAVY};font-size:48px;font-weight:900">저장</div>
-<div style="padding:20px 56px;border-radius:999px;background:{PINK};color:{NAVY};font-size:48px;font-weight:900">팔로우</div></div></div>
-<div style="font-size:32px;line-height:1.5;color:#A9B6CF">광고·협찬 없음</div></div>""", label, 7, "매일 따뜻한 이슈는 @hot.issue.station"))
+<div style="display:flex;gap:24px"><div style="padding:20px 56px;border-radius:999px;background:{CYAN};color:{ONACC};font-size:48px;font-weight:900">저장</div>
+<div style="padding:20px 56px;border-radius:999px;background:{PINK};color:{ONACC};font-size:48px;font-weight:900">팔로우</div></div></div>
+<div style="font-size:32px;line-height:1.5;color:{MUTED}">광고·협찬 없음</div></div>""", label, 7, "매일 따뜻한 이슈는 @hot.issue.station"))
     return out
 
 
