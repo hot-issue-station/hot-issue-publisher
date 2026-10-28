@@ -1,5 +1,5 @@
 {
   "stage": "publish",
   "error": "Instagram API 오류 403: {\"error\":{\"message\":\"Application request limit reached\",\"type\":\"OAuthException\",\"is_transient\":false,\"code\":4,\"error_subcode\":2207051,\"error_user_title\":\"\\ud589\\ub3d9\\uc774 \\ucc28\\ub2e8\\ub418\\uc5c8\\uc2b5\\ub2c8\\ub2e4\",\"error_user_msg\":\"Instagram\\uc740 \\ucee4\\ubba4\\ub2c8\\ud2f0\\ub97c \\ubcf4\\ud638\\ud558\\uae30 \\uc704\\ud574 \\ud2b9\\uc815 \\ud65c\\ub3d9\\uc744 \\uc81c\\ud55c\\ud569\\ub2c8\\ub2e4. \\uc774 \\uc870\\uc",
-  "at": "2026-10-28T18:56:22.475987+09:00"
+  "at": "2026-10-28T19:11:32.255332+09:00"
 }
