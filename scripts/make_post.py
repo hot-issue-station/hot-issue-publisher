@@ -92,6 +92,11 @@ def dots(i):
     return "".join(f'<div style="width:24px;height:24px;border-radius:50%;background:{CYAN if k == i else LINE}"></div>'
                    for k in range(3))
 
+# 야구공(직접 그린 그림). 맞대결 표지와 1장 그림에 쓴다.
+BASEBALL_SVG = ('<svg viewBox="0 0 120 120" width="120" height="120"><circle cx="60" cy="60" r="54" fill="#FFFFFF" stroke="#D5DEEA" stroke-width="3"/>'
+                '<path d="M28 18c16 24 16 60 0 84M92 18c-16 24-16 60 0 84" fill="none" stroke="#E0453A" stroke-width="4"/>'
+                '<path d="M26 30l8-3M30 44l8-2M31 58h8M30 72l8 2M26 86l8 3M94 30l-8-3M90 44l-8-2M89 58h-8M90 72l-8 2M94 86l-8 3" stroke="#E0453A" stroke-width="3" stroke-linecap="round"/></svg>')
+
 # 1장 C안(숫자 강조)에 쓰는 작은 그림. 실존 인물 사진 대신 Claude가 그린 그림만 쓴다.
 ICONS = {
     "trophy": '<svg viewBox="0 0 400 460" width="120" height="138"><path d="M90 40H310V110C310 200 260 250 200 260 140 250 90 200 90 110Z" fill="#FFC857"/><path d="M90 70H40C40 150 80 180 120 185M310 70H360C360 150 320 180 280 185" fill="none" stroke="#FFC857" stroke-width="18" stroke-linecap="round"/><rect x="180" y="255" width="40" height="70" fill="#E0A030"/><rect x="120" y="320" width="160" height="40" rx="8" fill="#FFC857"/><rect x="95" y="360" width="210" height="60" rx="10" fill="#151F33" stroke="#35E0FF" stroke-width="6"/><path d="M200 105l12 26 28 3-21 19 6 28-25-14-25 14 6-28-21-19 28-3z" fill="#FFF6D6"/></svg>',
@@ -103,6 +108,7 @@ ICONS = {
     "globe": '<svg viewBox="0 0 120 120" width="120" height="120"><circle cx="60" cy="60" r="52" fill="none" stroke="#35E0FF" stroke-width="7"/><ellipse cx="60" cy="60" rx="24" ry="52" fill="none" stroke="#35E0FF" stroke-width="6"/><path d="M10 60h100M18 32h84M18 88h84" stroke="#35E0FF" stroke-width="6"/></svg>',
     "chart": '<svg viewBox="0 0 120 120" width="120" height="120"><rect x="12" y="70" width="22" height="40" rx="4" fill="#6C7BFF"/><rect x="49" y="45" width="22" height="65" rx="4" fill="#FF4FA3"/><rect x="86" y="15" width="22" height="95" rx="4" fill="#35E0FF"/></svg>',
     "music": '<svg viewBox="0 0 120 120" width="120" height="120"><path d="M45 20l60-12v70" fill="none" stroke="#FF4FA3" stroke-width="8"/><path d="M45 20v72" stroke="#FF4FA3" stroke-width="8"/><ellipse cx="33" cy="94" rx="16" ry="12" fill="#FF4FA3"/><ellipse cx="93" cy="80" rx="16" ry="12" fill="#FF4FA3"/></svg>',
+    "baseball": BASEBALL_SVG,
 }
 
 
@@ -132,6 +138,38 @@ def cover_big(r, label):
 <div style="font-size:84px;font-weight:900;line-height:1.2">{hook_html(r['hook'])}</div>
 <div style="display:flex;align-items:flex-end;gap:24px">{icon.replace('width="300" height="169"','width="400" height="225"')}<div style="font-size:40px;color:{SOFT};line-height:1.45">{cap}</div></div></div>""",
                  label, 1, "밀어서 다음 장 →")
+
+
+def cover_vs(r, label):
+    """1장 맞대결 표지: 두 팀(또는 두 선수·두 나라)을 팀 색으로 나눠 이름을 크게. 로고·실제 사진은 쓰지 않는다.
+    round JSON "vs": {"left": "삼성", "right": "KIA", "leftColor": "#1E5BC6", "rightColor": "#D7263D",
+                      "center": "VS" 또는 "3 : 2" 같은 점수, "caption": 띠 아래 한 줄(선택)}"""
+    v = r["vs"]
+    reel = LAYOUT["h"] > 1500
+    top, bh = (330, 760) if reel else (170, 600)
+    lc, rc = v.get("leftColor", "#1E5BC6"), v.get("rightColor", "#D7263D")
+    def name_size(t):
+        n = len(t)
+        return 150 if n <= 2 else 124 if n <= 3 else 100 if n <= 4 else 80
+    L, R = v.get("left", ""), v.get("right", "")
+    center = E(v.get("center", "VS") or "VS")
+    csz = 92 if len(v.get("center", "VS") or "VS") <= 2 else 64 if len(v.get("center", "")) <= 5 else 48
+    mid = top + bh // 2
+    ball = BASEBALL_SVG.replace('width="120" height="120"', 'width="92" height="92"') if v.get("icon", "baseball") == "baseball" else ""
+    deco = (f'<div style="position:absolute;left:0;top:{top}px;width:1080px;height:{bh}px;background:{lc};clip-path:polygon(0 0,590px 0,490px 100%,0 100%)"></div>'
+            f'<div style="position:absolute;left:0;top:{top}px;width:1080px;height:{bh}px;background:{rc};clip-path:polygon(590px 0,1080px 0,1080px 100%,490px 100%)"></div>'
+            f'<div style="position:absolute;left:0;top:{top}px;width:1080px;height:{bh}px;background:linear-gradient(180deg,rgba(0,0,0,0) 60%,rgba(0,0,0,.18) 100%)"></div>'
+            f'<div style="position:absolute;left:40px;width:480px;top:{mid - 120}px;text-align:center;color:#FFFFFF;font-size:{name_size(L)}px;font-weight:900;line-height:1;letter-spacing:-2px;text-shadow:0 6px 24px rgba(0,0,0,.25)">{E(L)}</div>'
+            f'<div style="position:absolute;right:40px;width:480px;top:{mid - 120}px;text-align:center;color:#FFFFFF;font-size:{name_size(R)}px;font-weight:900;line-height:1;letter-spacing:-2px;text-shadow:0 6px 24px rgba(0,0,0,.25)">{E(R)}</div>'
+            f'<div style="position:absolute;left:{540 - 110}px;top:{mid + 30}px;width:220px;height:220px;border-radius:50%;background:#FFFFFF;box-shadow:0 10px 40px rgba(0,0,0,.25);display:flex;align-items:center;justify-content:center;color:#0B1220;font-size:{csz}px;font-weight:900;letter-spacing:-2px">{center}</div>'
+            f'<div style="position:absolute;left:{540 - 46}px;top:{mid - 210}px">{ball}</div>')
+    cap = E(v.get("caption", ""))
+    sub = E(r.get("sub", ""))
+    return frame(f"""<div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;gap:22px;padding-bottom:20px">
+<div style="align-self:flex-start;padding:10px 26px;border:3px solid {CYAN};border-radius:999px;color:{CYAN};font-size:32px;font-weight:700">{E(r['category'])}</div>
+{f'<div style="font-size:40px;font-weight:700;color:{SOFT}">{cap}</div>' if cap else ''}
+<div style="font-size:80px;font-weight:900;line-height:1.2">{hook_html(r.get("hookCover", r["hook"]))}</div>
+{f'<div style="font-size:42px;line-height:1.45;color:{SOFT}">{sub}</div>' if sub and not cap else ''}</div>""", label, 1, "밀어서 다음 장 →", deco=deco)
 
 
 def photo_uri(path):
@@ -183,6 +221,8 @@ def cards(r):
     # 1 훅 — "big"이 있으면 C안(숫자 강조), 없으면 기본형
     if r.get("photo"):
         out.append(cover_photo(r, label))
+    elif r.get("vs"):
+        out.append(cover_vs(r, label))
     elif r.get("big"):
         out.append(cover_big(r, label))
     else:
