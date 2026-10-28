@@ -20,7 +20,8 @@ BPM = {"pulse": 118, "bright": 104, "warm": 84, "calm": 70}
 TRANSITIONS = ["slideleft", "circleopen", "smoothleft", "wipeup", "slideleft", "radial"]
 
 
-def build(folder, music="pulse", fps=30):
+def build(folder, music="pulse", fps=30, bg=None):
+    pad = bg or NAVY   # 피드 카드를 세로로 놓을 때 위아래 색(회차 템플릿 바탕색)
     folder = pathlib.Path(folder)
     reel = [folder / f"reel_{i:02d}.jpg" for i in range(1, 8)]
     feed = [folder / f"{i:02d}.jpg" for i in range(1, 8)]
@@ -44,7 +45,7 @@ def build(folder, music="pulse", fps=30):
         seg = (starts[k + 1] - starts[k] + xf) if k < 6 else (total - starts[k])
         frames = int(round(seg * fps))
         args += ["-i", str(p)]
-        base = f"[{k}:v]scale=2160:-1" if native else f"[{k}:v]scale=1080:1350,pad=1080:1920:0:285:color={NAVY},scale=2160:-1"
+        base = f"[{k}:v]scale=2160:-1" if native else f"[{k}:v]scale=1080:1350,pad=1080:1920:0:285:color={pad},scale=2160:-1"
         # 들어올 때 1.06배에서 시작해 1.0으로 자리 잡는 확대 효과(박자감)
         f.append(f"{base},zoompan=z='max(1.0,1.06-0.06*on/{max(1, int(fps * 0.6))})':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)'"
                  f":d={frames}:s=1080x1920:fps={fps},setsar=1,format=yuv420p[v{k}]")
@@ -59,7 +60,7 @@ def build(folder, music="pulse", fps=30):
     f.append(f"color=c=0x35E0FF:s=900x8:r={fps}:d={total:.3f}[fill]")
     f.append(f"[vx][track]overlay=x=90:y=205:shortest=1[vt]")
     f.append(f"[vt][fill]overlay=x='90-900+900*t/{total:.3f}':y=205:shortest=1[vbar]")
-    f.append(f"[vbar]drawbox=x=0:y=205:w=90:h=8:color={NAVY}:t=fill,drawbox=x=990:y=205:w=90:h=8:color={NAVY}:t=fill[vout]")
+    f.append(f"[vbar]drawbox=x=0:y=205:w=90:h=8:color={pad}:t=fill,drawbox=x=990:y=205:w=90:h=8:color={pad}:t=fill[vout]")
     f.append(f"[7:a]atrim=0:{total:.3f},asetpts=PTS-STARTPTS,afade=t=in:d=0.2,afade=t=out:st={total - 1.2:.3f}:d=1.2,"
              f"loudnorm=I=-14:TP=-2:LRA=9,alimiter=limit=0.79[aout]")
     out = folder / "reel.mp4"
@@ -74,8 +75,9 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("folder")
     ap.add_argument("--music", default="pulse")
+    ap.add_argument("--bg", default=None, help="위아래 바탕색 예: 0xEAF7F2")
     a = ap.parse_args()
-    out, total = build(a.folder, a.music)
+    out, total = build(a.folder, a.music, bg=a.bg)
     print(f"완료: {out} ({total:.1f}초, 음악 {a.music}, {out.stat().st_size // 1024}KB)")
     return 0
 
