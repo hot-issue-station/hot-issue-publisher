@@ -68,7 +68,7 @@ FEED = {"h": 1350, "pad": "96px"}
 REEL = {"h": 1920, "pad": "240px 160px 440px 90px"}
 
 
-def frame(inner, date_label, page, footer_right="", light=False, deco=""):
+def frame(inner, date_label, page, footer_right="", light=False, deco="", total=7):
     bg, fg, muted = (CYAN, ONACC, ONACC2) if light else (BG, INK, MUTED)
     return f"""<!doctype html><html><head><meta charset="utf-8"><style>
 body{{margin:0;word-break:keep-all;font-family:'Noto Sans CJK KR','Noto Sans KR',sans-serif}}</style></head><body>
@@ -79,7 +79,7 @@ body{{margin:0;word-break:keep-all;font-family:'Noto Sans CJK KR','Noto Sans KR'
 <div style="font-size:32px;color:{muted}">{date_label}</div></div>
 {inner}
 <div style="display:flex;justify-content:space-between;align-items:center;font-size:32px;color:{muted}">
-<div>{page} / 7</div><div>{footer_right}</div></div></div></div></body></html>"""
+<div>{page} / {total}</div><div>{footer_right}</div></div></div></div></body></html>"""
 
 
 def rings(colors, sizes, offset_ratio=0.5):
@@ -270,6 +270,41 @@ def cards(r):
     return out
 
 
+def cards_read(r):
+    """읽는 카드뉴스(대표 결정 10/28): 1장 강한 표지 + 3줄 요약 + 기사형 본문 3~5장 + 출처·저장.
+    round JSON의 "read": {"lead": [3줄], "sections": [{"kicker","title","body"(260자 이내)}, …3~5개]}."""
+    rd = r["read"]
+    secs = rd["sections"][:5]
+    total = 3 + len(secs)
+    apply_theme(r.get("theme", r["slot"]))
+    m, d = r["date"][5:7], r["date"][8:10]
+    label = f"{m}.{d} · {SLOTS[r['slot']][0]}"
+    cover = cards(r)[0].replace("<div>1 / 7</div>", f"<div>1 / {total}</div>")
+    out = [cover]
+    lead = "".join(f'<div style="display:flex;gap:28px;align-items:flex-start"><div style="flex:none;width:20px;height:20px;margin-top:26px;border-radius:50%;background:{CYAN if k == 0 else PINK if k == 1 else VIOLET}"></div>'
+                   f'<div style="font-size:54px;font-weight:700;line-height:1.5">{E(x)}</div></div>' for k, x in enumerate(rd["lead"][:3]))
+    out.append(frame(f"""<div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:56px">
+<div style="font-size:40px;font-weight:700;color:{CYAN}">3줄 요약</div>{lead}
+<div style="font-size:38px;color:{MUTED}">넘기면서 천천히 읽어 보세요 →</div></div>""", label, 2, total=total))
+    for i, sec in enumerate(secs):
+        out.append(frame(f"""<div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:36px">
+<div style="font-size:38px;font-weight:700;color:{PINK}">{E(sec.get("kicker", ""))}</div>
+<div style="font-size:64px;font-weight:900;line-height:1.35">{E(sec["title"])}</div>
+<div style="width:120px;height:8px;border-radius:4px;background:{CYAN}"></div>
+<div style="font-size:44px;line-height:1.8;color:{BODY}">{E(sec["body"])}</div></div>""", label, 3 + i, total=total))
+    nums = "①②③④"
+    src = "".join(f'<div style="padding:20px 0;border-bottom:2px solid {LINE};font-size:34px;line-height:1.4;color:{BODY}">'
+                  f'{nums[k]} {E(s_["outlet"])} · {E(s_["title"])} · {E(s_["date"])}</div>' for k, s_ in enumerate(r["sources"][:4]))
+    out.append(frame(f"""<div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:36px">
+<div style="font-size:40px;font-weight:700;color:{CYAN}">출처</div>
+<div style="display:flex;flex-direction:column">{src}</div>
+<div style="padding:52px 60px;border:3px solid {CYAN};border-radius:40px;background:{BOX};display:flex;flex-direction:column;gap:20px">
+<div style="font-size:56px;font-weight:900;line-height:1.35">저장해 두고 다시 읽어 보세요</div>
+<div style="font-size:38px;line-height:1.5;color:{SOFT}">매일 이슈를 짧은 릴스와 읽는 카드로 정리해요</div></div></div>""",
+                     label, total, "@hot.issue.station", total=total))
+    return out
+
+
 def render(pages, outdir, h=1350, prefix=""):
     from playwright.sync_api import sync_playwright
     with sync_playwright() as p:
@@ -329,6 +364,12 @@ def main():
     if a.approve3:
         meta["approval3"] = {"approved": True, "at": dt.datetime.now(dt.timezone(dt.timedelta(hours=9))).isoformat(timespec="seconds"),
                              "by": a.approve3}
+    if r.get("read"):
+        over_rd = render(cards_read(r), out, prefix="r")
+        meta["readImages"] = sorted(p.name for p in out.glob("r[0-9][0-9].jpg"))
+        if over_rd:
+            print(f"주의: 읽는 카드 {over_rd}장에서 글이 넘칩니다. 본문을 줄이세요.")
+            over = (over or []) + [f"r{x}" for x in over_rd]
     (out / "post.json").write_text(json.dumps(meta, ensure_ascii=False, indent=2), encoding="utf-8")
     if a.reel:
         # 릴스용 세로 화면(1080×1920)을 따로 그린다
