@@ -111,6 +111,29 @@ def upload_reel(folder, caption):
     return cid
 
 
+def already_posted(caption, hours=12):
+    """최근 게시물 중 캡션 앞부분이 같은 것이 있으면 그 미디어 ID를 돌려준다(중복 게시 방지).
+    Instagram이 오류를 돌려줘도 실제로는 게시된 경우가 있어(10/28 18:30 회차) 게시 전·오류 직후에 확인한다."""
+    key = " ".join(caption.split())[:80]
+    if not key:
+        return None
+    try:
+        items = api("GET", f"{IG_ID}/media", fields="id,caption,timestamp", limit="10").get("data", [])
+    except Exception as e:
+        log(f"  중복 확인 실패(게시는 계속) — {e}")
+        return None
+    now = dt.datetime.now(dt.timezone.utc)
+    for it in items:
+        cap = " ".join((it.get("caption") or "").split())[:80]
+        try:
+            ts = dt.datetime.strptime(it.get("timestamp", ""), "%Y-%m-%dT%H:%M:%S%z")
+        except ValueError:
+            continue
+        if cap == key and (now - ts).total_seconds() <= hours * 3600:
+            return it.get("id")
+    return None
+
+
 def publish(folder, images, caption):
     children = []
     for name in images:
@@ -218,12 +241,25 @@ def main():
             for n in images:
                 log(f"  {public_url(folder.name, n)}")
             continue
+        dup = already_posted(caption)
+        if dup:
+            (folder / "published.json").write_text(json.dumps({"mediaId": dup, "publishedAt": now.isoformat(), "note": "이미 같은 캡션으로 게시돼 있어 다시 올리지 않음"},
+                                                              ensure_ascii=False, indent=2), encoding="utf-8")
+            log(f"{folder.name}: 이미 게시돼 있음 (미디어 {dup}) — 건너뜀")
+            continue
         try:
             media_id = publish(folder, images, caption)
             record = {"mediaId": media_id, "publishedAt": now.isoformat()}
             (folder / "published.json").write_text(json.dumps(record, ensure_ascii=False, indent=2), encoding="utf-8")
             log(f"{folder.name}: 게시 완료 (미디어 {media_id})")
         except Exception as e:
+            time.sleep(20)
+            dup = already_posted(caption)
+            if dup:  # 오류가 났지만 실제로는 올라간 경우
+                (folder / "published.json").write_text(json.dumps({"mediaId": dup, "publishedAt": now.isoformat(), "note": f"오류가 났지만 게시 확인됨: {str(e)[:200]}"},
+                                                                  ensure_ascii=False, indent=2), encoding="utf-8")
+                log(f"{folder.name}: 오류가 났지만 게시는 됐어요 (미디어 {dup})")
+                continue
             log(f"{folder.name}: 게시 실패 — {e}")
             # 실행 로그를 못 보는 환경에서도 원인을 알 수 있게 묶음 폴더에 남긴다(토큰 값은 오류문에 들어가지 않음)
             (folder / "error.json").write_text(json.dumps({"stage": "publish", "error": str(e).replace(TOKEN, "***")[:600] if TOKEN else str(e)[:600], "at": now.isoformat()},
