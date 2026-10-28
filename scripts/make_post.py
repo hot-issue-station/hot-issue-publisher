@@ -5,7 +5,7 @@
 
 round JSON 형식(모든 문구는 승인 2를 거친 최종 문구):
 {
-  "date": "2026-10-28", "slot": "PM",            # AM 07:00 · PM 15:00 · NT 23:30
+  "date": "2026-10-28", "slot": "PM",            # AM 출근 07:30 · PM 점심 12:00 · NT 퇴근 18:30
   "category": "국내",                             # 1장 분야 태그
   "hook": "…", "sub": "…",                        # 1장 (훅에 \n을 넣으면 그 자리에서 줄바꿈)
   "big": {"number": "25", "lines": ["년 만의", "*잉글랜드*", "발롱도르"],   # 1장 C안(기본): 가장 강한 숫자 강조
@@ -28,7 +28,7 @@ import pathlib
 import sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-SLOTS = {"AM": ("아침", "07:00"), "PM": ("오후", "15:00"), "NT": ("밤", "23:30")}
+SLOTS = {"AM": ("출근길", "07:30"), "PM": ("점심", "12:00"), "NT": ("퇴근길", "18:30")}
 NAVY, CYAN, PINK, VIOLET = "#0B1220", "#35E0FF", "#FF4FA3", "#6C7BFF"
 LOGO = ('<svg width="68" height="68" viewBox="0 0 68 68" style="display:block">'
         '<path d="M25.51 43.51 A12 12 0 0 1 42.49 43.51" fill="none" stroke="#35E0FF" stroke-width="5" stroke-linecap="round"/>'
