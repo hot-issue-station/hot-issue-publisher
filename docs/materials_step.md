@@ -18,9 +18,10 @@ Claude는 카드와 음악 없는 릴스 영상을 "릴스 재료함"에 올리�
    - 1줄: 댓글 유도 질문 + "좋아요를 가장 많이 받은 댓글을 내일 소개해요" (스타일 가이드 11장)
    - AM(출근) 회차만: data/comments/ 의 오늘 파일로 오늘의 댓글을 뽑아(11장) 소개글 맨 위에 "어제의 베스트 댓글: '…'" 한 줄과 빈 줄을 넣는다. 뽑을 게 없으면 넣지 않는다.
    - 빈 줄, 이미지 출처 줄(사진을 쓴 회차만), config/contact.txt 의 연락처 줄('#'로 시작하지 않는 줄)
+   - (재료함 표시용, 캡션에 넣지 않음) audio: data/audio/ 의 가장 최근 파일 규칙대로 이 소재에 맞는 추천 음원 1~2곡 "곡 - 아티스트"
    - 빈 줄, 해시태그 6~8개(주제 3~4개 + 분야 1~2개 + #이슈브리프 #오늘의이슈). 300자 안팎.
 4. 기록: ArtifactData action "set", url = 재료함 주소, collection "materials", doc_id = 문서ID,
-   data = {date, slot, slotName(출근길/점심/퇴근길/리센느 응원 특집 #n/자랑스러운 한국인 #n), topic, reel, cards, readCards, caption(=3단계 릴스 소개글), readCaption(=caption.txt 캡션에 연락처 줄을 넣은 것, 캐러셀용), posted:false, createdAt:<ISO>}.
+   data = {date, slot, slotName(출근길/점심/퇴근길/리센느 응원 특집 #n/자랑스러운 한국인 #n), topic, audio, reel, cards, readCards, caption(=3단계 릴스 소개글), readCaption(=caption.txt 캡션에 연락처 줄을 넣은 것, 캐러셀용), posted:false, createdAt:<ISO>}.
 5. 스튜디오 기록(브리핑용): ArtifactData update(if_version) url = 스튜디오(https://claude.ai/artifact/H9d1SRr3uSYZEX6pYDNswV), autoq/문서ID
    {status:"ready", topic, folder, message:"릴스 재료 준비 완료 (자동 게시 안 함)", readyAt:<ISO>}. previews·vetoUntil은 넣지 않는다.
 6. 마지막 답변(대표 휴대폰 알림)은 한국어 두 줄만:
