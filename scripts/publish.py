@@ -206,6 +206,10 @@ def main():
             log(f"{folder.name}: 예약 시각에서 {late_h:.1f}시간 지나 자동 게시하지 않음 (post.json의 publishAt을 고치면 다시 올라감)")
             continue
         approved = (meta.get("approval3") or {}).get("approved") is True
+        if (meta.get("approval3") or {}).get("approved") is False:
+            # 대표가 거부권([올리지 않기])을 쓴 묶음: 시험·실제 모드 모두 게시하지 않는다
+            log(f"{folder.name}: 대표가 올리지 않기로 해 건너뜀")
+            continue
         if DRY_RUN and not approved:
             log(f"{folder.name}: [시험] 이미지 {len(images)}장, 캡션 {len(caption)}자를 게시할 차례입니다")
             for n in images:
