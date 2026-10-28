@@ -30,6 +30,8 @@ REPO = os.environ.get("GITHUB_REPOSITORY", "")       # owner/repo, Actions가 �
 BRANCH = os.environ.get("GITHUB_REF_NAME", "main")
 PREFLIGHT = os.environ.get("PREFLIGHT", "").strip().lower() == "true"  # 미리 점검: 사진을 Instagram이 가져가는지만 확인, 게시 안 함
 LATE_LIMIT_HOURS = float(os.environ.get("LATE_LIMIT_HOURS", "6"))  # 이보다 늦은 묶음은 자동 게시하지 않음
+# 릴스 자동 게시: 대표 결정(10/28)으로 꺼 둠. 다시 켜려면 워크플로 환경변수 REELS=on
+REELS = os.environ.get("REELS", "off").strip().lower() == "on"
 
 
 def log(msg):
@@ -165,7 +167,7 @@ def main():
             meta = json.loads((folder / "post.json").read_text(encoding="utf-8"))
             ok3 = (meta.get("approval3") or {}).get("approved") is True or not DRY_RUN
             late = (now - dt.datetime.fromisoformat(meta["publishAt"])).total_seconds() / 3600
-            if late <= LATE_LIMIT_HOURS and (folder / "reel.mp4").exists() and not pub.get("reelId") and ok3 and not PREFLIGHT and meta.get("reel", True):
+            if late <= LATE_LIMIT_HOURS and (folder / "reel.mp4").exists() and not pub.get("reelId") and ok3 and not PREFLIGHT and REELS and meta.get("reel", True):
                 try:
                     cap = (folder / "reel_caption.txt").read_text(encoding="utf-8") if (folder / "reel_caption.txt").exists() else meta.get("caption", "")
                     rid = api("POST", f"{IG_ID}/media_publish", creation_id=upload_reel(folder, cap))["id"]
@@ -186,12 +188,12 @@ def main():
             try:
                 res = api("POST", f"{IG_ID}/media", image_url=public_url(folder.name, images[0]), is_carousel_item="true")
                 wait_ready(res["id"])
-                if (folder / "reel.mp4").exists() and not (folder / "published.json").exists():
+                if REELS and (folder / "reel.mp4").exists() and not (folder / "published.json").exists():
                     upload_reel(folder, "미리 점검")
                     log(f"{folder.name}: [미리 점검] 릴스 영상도 정상으로 올라갔습니다 (게시는 하지 않음)")
                 log(f"{folder.name}: [미리 점검] Instagram이 사진을 정상으로 가져갔습니다 (게시는 하지 않음, 예약 {when:%m-%d %H:%M})")
                 (folder / "check.json").write_text(json.dumps({"preflight": "ok", "checkedAt": now.isoformat(), "account": IG_ID,
-                                                               "reel": (folder / "reel.mp4").exists()}, ensure_ascii=False, indent=2), encoding="utf-8")
+                                                               "reel": REELS and (folder / "reel.mp4").exists()}, ensure_ascii=False, indent=2), encoding="utf-8")
             except Exception as e:
                 log(f"{folder.name}: [미리 점검] 실패 — {e}")
                 failed += 1
@@ -218,7 +220,7 @@ def main():
             log(f"{folder.name}: 게시 실패 — {e}")
             failed += 1
             continue
-        if (folder / "reel.mp4").exists() and meta.get("reel", True):
+        if REELS and (folder / "reel.mp4").exists() and meta.get("reel", True):
             try:
                 reel_cap = (folder / "reel_caption.txt").read_text(encoding="utf-8") if (folder / "reel_caption.txt").exists() else caption
                 rid = api("POST", f"{IG_ID}/media_publish", creation_id=upload_reel(folder, reel_cap))["id"]
