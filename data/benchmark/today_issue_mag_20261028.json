@@ -1,6 +1,0 @@
-{
- "account": "today_issue_mag",
- "readAt": "2026-10-28T23:10+09:00",
- "ok": false,
- "error": "Instagram API 오류 400: {\"error\":{\"message\":\"Unsupported get request. Please read the Graph API documentation at https:\\/\\/developers.facebook.com\\/docs\\/graph-api\",\"type\":\"GraphMethodException\",\"code\":100,\"error_subcode\":33,\"fbtrace_id\":\"A1MEc22--Z1jUEY3_2isWan\"}}"
-}
