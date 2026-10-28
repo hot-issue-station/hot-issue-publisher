@@ -1,0 +1,31 @@
+name: 댓글 읽기
+on:
+  schedule:
+    - cron: "50 20 * * *"   # 한국 05:50 (출근 회차 제작 06:35 전)
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: publish
+  cancel-in-progress: false
+jobs:
+  read:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: 최근 게시물 댓글 읽기
+        env:
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+        run: python scripts/read_comments.py
+      - name: 기록 저장
+        if: always()
+        run: |
+          git config user.name "issuebrief-bot"
+          git config user.email "issuebrief-bot@users.noreply.github.com"
+          git add -A data/comments
+          git diff --cached --quiet || git commit -m "댓글 기록"
+          for i in 1 2 3; do git pull --rebase -q origin main && git push && break; sleep 5; done
