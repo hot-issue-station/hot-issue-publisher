@@ -1,0 +1,22 @@
+name: 리센느 유튜브 모니터링
+on:
+  schedule:
+    - cron: "0 23 * * *"   # 08:00 KST
+    - cron: "0 5 * * *"    # 14:00 KST
+    - cron: "40 9 * * *"   # 18:40 KST (19:05 응원 특집 제작 직전)
+    - cron: "40 12 * * *"  # 21:40 KST (헤드라인 직전 확인)
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.11" }
+      - run: python scripts/watch_youtube.py
+      - run: |
+          git config user.name "issuebrief-bot"; git config user.email "bot@users.noreply.github.com"
+          git add data/youtube
+          git diff --cached --quiet || (git commit -m "리센느 유튜브 모니터링 $(date -u +%F)" && git pull --rebase && git push)

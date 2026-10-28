@@ -44,6 +44,12 @@ def page(r):
                f'<div style="margin-left:auto">{mp.ICONS.get(r.get("icon", ""), "")}</div></div>')
     elif r.get("icon"):
         num = f'<div style="transform:scale(1.8);transform-origin:left top;height:220px">{mp.ICONS.get(r["icon"], "")}</div>'
+    if r.get("photo"):
+        # 대표가 준 공식 영상 화면: 앱 글자·버튼을 잘라 낸 사진을 위쪽 판에 넣고 아래를 배경색으로 녹인다
+        num = (f'<div style="position:relative;margin:0 -160px 0 -90px;height:{r.get("photoH", 700)}px;overflow:hidden">'
+               f'<img src="{r["photo"]}" style="width:100%;height:100%;object-fit:cover;object-position:50% {r.get("photoY", 30)}%">'
+               f'<div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,18,32,.55) 0%,transparent 18%,transparent 62%,{BG} 100%)"></div>'
+               f'<div style="position:absolute;right:170px;bottom:26px;font-size:24px;color:#DDE4F2;background:rgba(11,18,32,.6);padding:6px 14px;border-radius:8px">{mp.E(r.get("credit", ""))}</div></div>')
     lines = r["lines"][:3]
     sizes = [96, 78, 66]
     body = "".join(f'<div style="font-size:{sizes[i]}px;font-weight:900;line-height:1.28;color:{INK if i != 2 else YELLOW if "*" not in l else INK}">{hl(l)}</div>'
@@ -53,10 +59,10 @@ def page(r):
 body{{margin:0;word-break:keep-all;font-family:'Noto Sans CJK KR','Noto Sans KR',sans-serif}}</style></head><body>
 <div style="position:relative;width:{W}px;height:{H}px;overflow:hidden;background:{BG};color:{INK}">
 <div style="position:absolute;inset:0;background:radial-gradient(900px 700px at 85% 20%, rgba(53,224,255,.16), transparent 60%),radial-gradient(800px 600px at 10% 90%, rgba(255,79,163,.14), transparent 60%)"></div>
-<div style="position:relative;box-sizing:border-box;height:100%;padding:240px 160px 440px 90px;display:flex;flex-direction:column;gap:44px">
+<div style="position:relative;box-sizing:border-box;height:100%;padding:{170 if r.get("photo") else 240}px 160px 440px 90px;display:flex;flex-direction:column;gap:{26 if r.get("photo") else 44}px">
 <div style="display:flex;align-items:center;gap:18px">{mp.LOGO}<div style="font-size:34px;font-weight:700">hot.issue.station</div><div style="margin-left:auto;font-size:30px;color:{MUTED}">{m}.{d}</div></div>
 <div style="align-self:flex-start;padding:10px 26px;background:{PINK};color:#fff;font-size:38px;font-weight:900;letter-spacing:.04em">{mp.E(r.get("kicker", "오늘의 헤드라인"))}</div>
-<div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:40px">{num}<div style="display:flex;flex-direction:column;gap:22px">{body}</div></div>
+<div style="flex:1;display:flex;flex-direction:column;justify-content:{"flex-start" if r.get("photo") else "center"};gap:{18 if r.get("photo") else 40}px">{num}<div style="display:flex;flex-direction:column;gap:22px">{body}</div></div>
 <div style="font-size:34px;color:{MUTED}">자세한 이야기는 캡션에서 →</div>
 </div></div></body></html>"""
 
@@ -67,6 +73,15 @@ def main():
     ap.add_argument("--out", required=True)
     a = ap.parse_args()
     r = json.loads(pathlib.Path(a.round_json).read_text(encoding="utf-8"))
+    if r.get("photoFile"):
+        # 자르기 [왼,위,오른,아래](원본 픽셀) → 살짝 밝게·선명하게 보정 → 페이지에 넣기
+        import base64, io
+        from PIL import Image, ImageEnhance
+        im = Image.open(r["photoFile"]).convert("RGB")
+        if r.get("crop"): im = im.crop(tuple(r["crop"]))
+        im = ImageEnhance.Contrast(ImageEnhance.Color(ImageEnhance.Brightness(im).enhance(1.05)).enhance(1.12)).enhance(1.06)
+        buf = io.BytesIO(); im.save(buf, "JPEG", quality=92)
+        r["photo"] = "data:image/jpeg;base64," + base64.b64encode(buf.getvalue()).decode()
     out = pathlib.Path(a.out); out.mkdir(parents=True, exist_ok=True)
     from playwright.sync_api import sync_playwright
     with sync_playwright() as p:
