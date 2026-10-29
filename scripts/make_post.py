@@ -211,7 +211,7 @@ def cover_photo(r, label):
     tag = E(r.get("photoLabel", ""))
     deco = (f'<div style="position:absolute;left:0;top:0;width:1080px;height:{ph}px;background:url({uri}) {pos}/cover no-repeat"></div>'
             f'<div style="position:absolute;left:0;top:0;width:1080px;height:{ph}px;background:linear-gradient(180deg,rgba({BGRGB},.92) 0%,rgba({BGRGB},.7) 14%,rgba({BGRGB},0) 32%,rgba({BGRGB},0) 55%,{BG} 100%)"></div>'
-            + (f'<div style="position:absolute;right:{180 if reel else 40}px;top:{ph - (300 if reel else 250)}px;padding:8px 18px;border-radius:999px;background:rgba({BGRGB},.7);color:{SOFT};font-size:24px">{tag}</div>' if tag else "")
+            + (f'<div style="position:absolute;{"left" if r.get("photoLabelLeft") else "right"}:{(180 if reel else 40) if not r.get("photoLabelLeft") else 40}px;top:{ph - (r.get("photoLabelUp", 300 if reel else 250))}px;padding:8px 18px;border-radius:999px;background:rgba({BGRGB},.7);color:{SOFT};font-size:24px">{tag}</div>' if tag else "")
             + inset_html(r, ph, reel))
     n = E(b.get("number", ""))
     size = 190 if len(b.get("number", "")) <= 2 else 160
