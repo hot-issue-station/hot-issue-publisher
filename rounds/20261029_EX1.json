@@ -3,7 +3,7 @@
  "slot": "RS",
  "category": "리센느 응원 번외편 · 갤럭시 캠페인",
  "topic": "삼성 그립감이 좋다, 리센느 갤럭시 Z 폴드8 캠페인 모델에",
- "photo": "assets/rescene/01_pulse.jpg",
+ "photo": "assets/rescene/10_pulse.jpg",
  "photoLabel": "이미지 · 더뮤즈엔터테인먼트",
  "hook": "삼성 그립감이 좋다,\n리센느 × 폴드8",
  "hookCover": "삼성 그립감이 좋다,\n리센느 × 폴드8",
@@ -79,5 +79,9 @@
    }
   ]
  },
- "theme": "RS"
+ "theme": "RS",
+ "photoPos": "50% 40%",
+ "photoInset": "assets/rescene/02_pulse.jpg",
+ "photoInsetPos": "50% 60%",
+ "photoInsetLabel": "RESCENE 다섯 멤버"
 }

@@ -184,19 +184,35 @@ def photo_uri(path):
     return f"data:{mt};base64," + base64.b64encode(pth.read_bytes()).decode()
 
 
+def inset_html(r, ph, reel):
+    """1장 사진형 표지 안의 작은 사진(예: 가운데는 한 멤버, 오른쪽 아래 작은 칸에 단체 사진).
+    round JSON: "photoInset": 파일 경로, "photoInsetPos": 배경 위치, "photoInsetLabel": 작은 칸 아래 글(예: "RESCENE 다섯 멤버")."""
+    if not r.get("photoInset"):
+        return ""
+    w, h = (300, 200) if reel else (330, 220)
+    right = 180 if reel else 40
+    top = ph + 10   # 사진 칸 바로 아래 오른쪽(얼굴을 가리지 않게)
+    lab = E(r.get("photoInsetLabel", ""))
+    return (f'<div style="position:absolute;right:{right}px;top:{top}px;width:{w}px;height:{h}px;border-radius:22px;overflow:hidden;'
+            f'border:4px solid {CYAN};box-shadow:0 12px 40px rgba(0,0,0,.45);background:url({photo_uri(r["photoInset"])}) {r.get("photoInsetPos", "50% 50%")}/cover no-repeat">'
+            + (f'<div style="position:absolute;left:0;right:0;bottom:0;padding:8px 14px;background:linear-gradient(0deg,rgba({BGRGB},.85),rgba({BGRGB},0));color:{INK};font-size:22px;font-weight:700">{lab}</div>' if lab else "")
+            + '</div>')
+
+
 def cover_photo(r, label):
     """1장 사진형: 위쪽에 사진(권리 있는 사진 또는 AI 생성 이미지), 아래로 남색에 녹아들고 큰 숫자 + 훅.
     round JSON: "photo": 파일 경로, "photoLabel": 사진 위 작은 표기(예: "AI 생성 이미지"), "photoPos": 배경 위치(예: "50% 40%"),
     "hookCover": 1장 전용 훅(\n 줄바꿈). 숫자 장식은 "big"을 그대로 쓴다."""
     b = r.get("big") or {}
     reel = LAYOUT["h"] > 1500
-    ph = 1000 if reel else 620
+    ph = 1000 if reel else (640 if r.get("photoInset") else 620)
     uri = photo_uri(r["photo"])
     pos = r.get("photoPos", "50% 45%")
     tag = E(r.get("photoLabel", ""))
     deco = (f'<div style="position:absolute;left:0;top:0;width:1080px;height:{ph}px;background:url({uri}) {pos}/cover no-repeat"></div>'
             f'<div style="position:absolute;left:0;top:0;width:1080px;height:{ph}px;background:linear-gradient(180deg,rgba({BGRGB},.92) 0%,rgba({BGRGB},.7) 14%,rgba({BGRGB},0) 32%,rgba({BGRGB},0) 55%,{BG} 100%)"></div>'
-            + (f'<div style="position:absolute;right:{180 if reel else 40}px;top:{ph - (300 if reel else 250)}px;padding:8px 18px;border-radius:999px;background:rgba({BGRGB},.7);color:{SOFT};font-size:24px">{tag}</div>' if tag else ""))
+            + (f'<div style="position:absolute;right:{180 if reel else 40}px;top:{ph - (300 if reel else 250)}px;padding:8px 18px;border-radius:999px;background:rgba({BGRGB},.7);color:{SOFT};font-size:24px">{tag}</div>' if tag else "")
+            + inset_html(r, ph, reel))
     n = E(b.get("number", ""))
     size = 190 if len(b.get("number", "")) <= 2 else 160
     lines = "<br>".join(accent_html(x) for x in b.get("lines", []))
