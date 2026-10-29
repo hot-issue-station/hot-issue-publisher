@@ -199,5 +199,134 @@
     "gain": null
    }
   ]
+ },
+ {
+  "at": "2026-10-29T22:39+09:00",
+  "key": "14f",
+  "ok": true,
+  "new": [
+   "zHzHgad2t6c"
+  ],
+  "top": [
+   {
+    "id": "7pF-2NUb9Ws",
+    "title": "BTS RM이 10년 동안 모은 미술 작품… 죽어가던 美 미술관 살렸다 / 14F",
+    "views": 10038,
+    "gain": 9569
+   },
+   {
+    "id": "UQ1mmTmrf1k",
+    "title": "경복궁 앞 흡연이 웬말이냐… 얼굴 찌푸린 ‘조선 왕’ 등장 / 14F",
+    "views": 43560,
+    "gain": 2726
+   },
+   {
+    "id": "RxdtTJ7GdDM",
+    "title": "[EN] 전세계에서 퇴출됐다가 역주행 중이라는 우지 근황🥄ㅣ돈슐랭 / 14F",
+    "views": 277290,
+    "gain": 2237
+   }
+  ]
+ },
+ {
+  "at": "2026-10-29T22:39+09:00",
+  "key": "subusunews",
+  "ok": true,
+  "new": [],
+  "top": [
+   {
+    "id": "HnhvHRqyqao",
+    "title": "나는 연애를 알려 줄 테니까 너는 공부를 알려줘",
+    "views": 4365,
+    "gain": 2995
+   },
+   {
+    "id": "vEqtdBio5f8",
+    "title": "유규선이 성공한 방법",
+    "views": 13444,
+    "gain": 2641
+   },
+   {
+    "id": "joS-5fpq2rk",
+    "title": "꿈을 가지고 있는 사람의 기분은 어떤걸까",
+    "views": 14216,
+    "gain": 1503
+   }
+  ]
+ },
+ {
+  "at": "2026-10-29T22:39+09:00",
+  "key": "vstudio",
+  "ok": true,
+  "new": [],
+  "top": []
+ },
+ {
+  "at": "2026-10-29T22:39+09:00",
+  "key": "syukaworld",
+  "ok": true,
+  "new": [],
+  "top": [
+   {
+    "id": "uTmDuvJDcMM",
+    "title": "인기와 주가가 비례하는 여의도 아저씨",
+    "views": 58774,
+    "gain": 51494
+   },
+   {
+    "id": "qLXHZm_9mX0",
+    "title": "두에빌 네가 사라며",
+    "views": 104486,
+    "gain": 37141
+   },
+   {
+    "id": "LdJyl_wt_ao",
+    "title": "두에빌, 지금이 기회일까(엉드루, 티커좌)",
+    "views": 69252,
+    "gain": 31218
+   }
+  ]
+ },
+ {
+  "at": "2026-10-29T22:39+09:00",
+  "key": "ytn",
+  "ok": true,
+  "new": [
+   "lp_ILt1qKhk",
+   "7Td0gXHu10U",
+   "M0mfLp-Ln6s",
+   "FSUfRZd4imM",
+   "fd2M3YifRz4",
+   "MHGyiRt0ccI",
+   "MkAXcSmVqZ8",
+   "Igqx5knr6nE",
+   "x7eZSgNjNCc",
+   "K18CFK70s2A",
+   "1miLwoNwn3M",
+   "p1Iaov3JQy8",
+   "YKBQ0gEVg4I",
+   "za-EpaC43MI",
+   "0SnH_OnbWY0"
+  ],
+  "top": [
+   {
+    "id": "7Td0gXHu10U",
+    "title": "북한 원산 일대서 '특이 동향' 포착…합참 \"군 대비태세 강화\" [이슈픽] / YTN",
+    "views": 34776,
+    "gain": null
+   },
+   {
+    "id": "lp_ILt1qKhk",
+    "title": "\"믿었던 트럼프의 배신\"…발등 찍힌 공화당 지지자들의 선택, 중간선거 '초비상' [이슈픽] / YTN",
+    "views": 2560,
+    "gain": null
+   },
+   {
+    "id": "MkAXcSmVqZ8",
+    "title": "유시민 \"윤석열과 똑같다\" 저격...친명계 \"막 가자는 것\" / YTN",
+    "views": 1422,
+    "gain": null
+   }
+  ]
  }
 ]
