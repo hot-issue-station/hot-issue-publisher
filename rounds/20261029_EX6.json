@@ -1,0 +1,28 @@
+{
+ "date": "2026-10-29",
+ "slot": "RS",
+ "theme": "RS",
+ "category": "리센느 'With' 릴레이 ③④",
+ "topic": "리센느 'With' 챌린지, 최예나·니쥬 니나와 함께",
+ "photo": "assets/extra/20261029_EX6_cover.jpg",
+ "photoLabel": "이미지 · RESCENE 공식 유튜브",
+ "photoPos": "50% 30%",
+ "photoLabelUp": 110,
+ "hook": "오늘 밤 'With' 릴레이,\n선배님이 두 분이에요",
+ "sub": "메이 × 최예나, 미나미 × 니쥬 니나",
+ "big": {"number": "13", "lines": ["만 회", "*2시간*", "만에"], "caption": "메이 × 최예나 'With' 챌린지", "icon": "music"},
+ "summary": "10월 29일 밤, 리센느 공식 유튜브에 'With' 챌린지 쇼츠 두 편이 올라왔어요. 메이는 최예나와, 미나미는 니쥬 니나와 함께 췄어요.",
+ "facts": [
+  {"title": "메이 × 최예나", "desc": "'나를 부르는 echo ꒰With꒱ #YENA 선배님'. 올린 지 2시간 만에 조회 13만 회, 좋아요 1만 2천 개를 넘었어요(22:45 기준).", "source": "RESCENE 공식 유튜브", "photo": "assets/extra/20261029_EX6_yena.jpg", "photoPos": "50% 25%", "photoLabel": "RESCENE 공식 유튜브"},
+  {"title": "미나미 × 니쥬 니나", "desc": "'나를 부르는 echo ꒰With꒱ #니나 선배님'. 1시간 만에 조회 6만 6천 회를 넘었어요(22:46 기준).", "source": "RESCENE 공식 유튜브", "photo": "assets/extra/20261029_EX6_nina.jpg", "photoPos": "50% 25%", "photoLabel": "RESCENE 공식 유튜브"},
+  {"title": "11월 3일 오후 6시, 'PULSE'", "desc": "'With'는 리센느 네 번째 미니 앨범 'PULSE'의 타이틀곡이에요. 앨범은 11월 3일 오후 6시에 나와요.", "source": "헤럴드경제 · 스포츠경향"}
+ ],
+ "interp": "함께 추면 더 즐거운 노래",
+ "interpSub": "키스오브라이프, 의주에 이어 오늘은 두 선배님과 함께했어요. 다음 'With'는 누구일까요?",
+ "sources": [
+  {"outlet": "RESCENE 공식 유튜브", "title": "With 챌린지 #YENA 선배님", "date": "2026.10.29", "url": "https://youtube.com/shorts/blswe0wDt8o"},
+  {"outlet": "RESCENE 공식 유튜브", "title": "With 챌린지 #니나 선배님", "date": "2026.10.29", "url": "https://youtube.com/shorts/_KseVSTX0KU"}
+ ],
+ "cta": "다음 'With' 상대, 댓글로 맞혀 보세요",
+ "caption": "오늘 밤 'With' 릴레이, 선배님이 두 분이에요 💜\n메이는 최예나와, 미나미는 니쥬 니나와 'With' 챌린지를 췄어요.\n\n리센느 공식 유튜브에 10월 29일 밤 두 편이 올라왔어요. 메이 × 최예나 편은 2시간 만에 조회 13만 회를 넘었어요. 'With'는 11월 3일 오후 6시 나오는 미니 4집 'PULSE'의 타이틀곡이에요.\n\n다음 'With' 챌린지는 누구와 함께하면 좋겠어요? 좋아요를 가장 많이 받은 댓글을 내일 소개해요.\n\n🏆 댓글 단 날마다 +1점! 응원 랭킹 상위 분께 리센느 빵 포카(미개봉, 멤버 무작위)를 드려요. Instagram과 관련 없는 이벤트예요.\n\n출처: RESCENE 공식 유튜브 쇼츠(2026.10.29)\n이미지 출처: RESCENE 공식 유튜브(더뮤즈엔터테인먼트)\n\n#리센느 #RESCENE #With_challenge #위드챌린지 #메이 #미나미 #최예나 #니쥬 #PULSE #이슈브리프"
+}
