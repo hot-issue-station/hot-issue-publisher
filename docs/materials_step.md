@@ -38,7 +38,7 @@ Claude는 카드와 음악 없는 릴스 영상을 "릴스 재료함"에 올리�
    data = {date, slot, slotName(출근길/점심/퇴근길/리센느 응원 특집 #n/자랑스러운 한국인 #n), topic, audio, reel, cards, readCards, caption(=3단계 릴스 소개글), readCaption(=caption.txt 캡션에 연락처 줄을 넣은 것, 캐러셀용), hooks(3-0단계, 문장 3개 배열), promo(3-1단계), posted:false, createdAt:<ISO>}.
 5. 스튜디오 기록(브리핑용): ArtifactData update(if_version) url = 스튜디오(https://claude.ai/artifact/H9d1SRr3uSYZEX6pYDNswV), autoq/문서ID
    {status:"ready", topic, folder, message:"릴스 재료 준비 완료 (자동 게시 안 함)", readyAt:<ISO>}. previews·vetoUntil은 넣지 않는다.
-6. 마지막 답변(대표 휴대폰 알림)은 한국어 두 줄만:
+6. 마지막 답변(대표 휴대폰 알림)은 한국어 두 줄만 (대표 결정 10/29: 알림이 오지 않는 일이 있어, 마지막 답변을 쓰기 직전에 ToolSearch로 PushNotification 을 불러와 같은 두 줄을 한 줄로 이어 message 로 보낸다(status "proactive", 200자 이내). 쉬는 날·실패도 같은 방식으로 반드시 보낸다):
    "<회차 이름> 릴스 재료 준비: <topic>"
    "재료함에서 영상 저장 → 인스타 앱에서 음악 골라 올리기: https://claude.ai/artifact/Xxp8hf3gz6aWW5uemGphWS"
 
