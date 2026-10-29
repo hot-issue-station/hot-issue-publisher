@@ -1,5 +1,5 @@
 {
   "stage": "token",
-  "error": "Instagram API 오류 400: {\"error\":{\"message\":\"API access blocked.\",\"type\":\"OAuthException\",\"code\":200,\"fbtrace_id\":\"AL9nIOO73WY0EFC1_kHentT\"}}",
-  "at": "2026-10-29T09:46:14.825950+09:00"
+  "error": "Instagram API 오류 400: {\"error\":{\"message\":\"API access blocked.\",\"type\":\"OAuthException\",\"code\":200,\"fbtrace_id\":\"AIa5NAC_CjgiNF4bAU2itfD\"}}",
+  "at": "2026-10-29T12:35:58.524888+09:00"
 }
