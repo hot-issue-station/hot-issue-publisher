@@ -15,7 +15,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: { python-version: "3.11" }
-      - run: python scripts/watch_youtube.py
+      - run: python scripts/watch_youtube.py || true
       - name: 벤치마킹 채널
         run: python scripts/watch_bench_youtube.py || true
       - run: |

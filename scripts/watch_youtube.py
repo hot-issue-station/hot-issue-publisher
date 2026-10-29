@@ -34,8 +34,13 @@ def main():
     for key, url in CHANNELS.items():
         path = OUT / f"{key}.json"
         old = json.loads(path.read_text(encoding="utf-8")) if path.exists() else {}
-        cid = channel_id(url, old)
-        root = ET.fromstring(get(f"https://www.youtube.com/feeds/videos.xml?channel_id={cid}"))
+        try:
+            cid = channel_id(url, old)
+            root = ET.fromstring(get(f"https://www.youtube.com/feeds/videos.xml?channel_id={cid}"))
+        except BaseException as e:  # 실패 이유를 파일로 남긴다(Actions 로그를 못 열 때 확인용)
+            (OUT / "_error.json").write_text(json.dumps({"at": datetime.datetime.now(KST).isoformat(timespec="minutes"), "channel": key,
+                                                          "error": f"{type(e).__name__}: {str(e)[:300]}"}, ensure_ascii=False), encoding="utf-8")
+            print(key, "실패", e); continue
         vids = []
         for e in root.findall("a:entry", NS):
             vid = e.findtext("yt:videoId", "", NS)

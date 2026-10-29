@@ -46,9 +46,9 @@ def main():
         old = json.loads(path.read_text(encoding="utf-8")) if path.exists() else {}
         try:
             cid, vids = read_channel(ch["url"], old)
-        except Exception as e:  # 한 채널이 실패해도 나머지는 계속
+        except BaseException as e:  # 한 채널이 실패해도 나머지는 계속
             print(f"{key}: 실패 {str(e)[:200]}")
-            log.append({"at": now.isoformat(timespec="minutes"), "key": key, "ok": False, "error": str(e)[:200]})
+            log.append({"at": now.isoformat(timespec="minutes"), "key": key, "ok": False, "error": f"{type(e).__name__}: {str(e)[:200]}"})
             continue
         data = {"key": key, "name": ch.get("name", key), "channel": ch["url"], "channelId": cid,
                 "checkedAt": now.isoformat(timespec="minutes"), "videos": vids}
