@@ -5,7 +5,7 @@ event.json 형식:
 {
   "date": "2026-10-29",
   "photos": {"cover": "경로", "a": "경로", "b": "경로"},   # 대표가 직접 찍은 빵·포카 사진만
-  "prize": "리센느 빵 안에 있는 2차 포카",                  # 표기 규칙(대표 10/29): 그냥 '포카'라고 쓰지 않는다
+  "prize": "리센느 빵 포카",                  # 표기 규칙(대표 10/29): 그냥 '포카'라고 쓰지 않는다
   "have": 2, "goal": "7장 안팎",                            # 지금 모은 수, 컴백 날까지 모을 목표
   "start": "10월 29일(목)", "end": "11월 9일(월) 밤 11:59", "finalize": "11월 3일(화) 컴백 날", "announce": "11월 10일(화)",
   "question": "…"                                          # 7장 댓글 질문
@@ -64,7 +64,7 @@ def cards(ev):
             f'<div style="position:absolute;right:40px;top:{ph - 120}px;padding:8px 18px;border-radius:999px;background:rgba({T.BGRGB},.7);color:{T.SOFT};font-size:24px">직접 찍은 사진</div>')
     out.append(mp.frame(f"""<div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;gap:22px;padding-bottom:24px">
 {pill}
-<div style="font-size:76px;font-weight:900;line-height:1.2">댓글로 응원하고<br><span style="color:{T.CYAN}">2차 포카</span> 받아 가세요</div>
+<div style="font-size:76px;font-weight:900;line-height:1.2">댓글로 응원하고<br><span style="color:{T.CYAN}">리센느 빵 포카</span><br>받아 가세요</div>
 <div style="font-size:38px;line-height:1.45;color:{T.SOFT}">{E(P)}를 응원 랭킹 상위 분께 나눠 드려요</div></div>""",
                         label, 1, "밀어서 다음 장 →", deco=deco))
     # 2 무엇을 드리나요
