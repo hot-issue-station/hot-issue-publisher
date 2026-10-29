@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "date": "2026-10-29",
+  "slot": "PM",
+  "publishAt": "2026-10-29T12:00:00+09:00",
+  "topic": "KBO 플레이오프 3차전, 1승 1패 승부는 광주로",
+  "images": [
+    "01.jpg",
+    "02.jpg",
+    "03.jpg",
+    "04.jpg",
+    "05.jpg",
+    "06.jpg",
+    "07.jpg"
+  ],
+  "caption": "PO 3차전, 1승 1패에서 광주로\n삼성과 KIA의 플레이오프가 대구에서 1승 1패로 끝나고, 29일 오후 6시 30분 광주에서 3차전이 열려요. KIA는 시라카와, 삼성은 최원태가 선발로 나서요. 시라카와는 올 시즌 삼성전 3경기에서 평균자책점 3.68, 최원태는 KIA전 3경기에서 평균자책점 8.10이에요. 두 팀 모두 끝까지 좋은 경기를 펼치길 응원해요.\n\n#플레이오프 #KBO #삼성라이온즈 #KIA타이거즈 #시라카와 #최원태 #야구 #이슈브리프 #오늘의이슈",
+  "sources": [
+    {
+      "outlet": "스포츠경향",
+      "title": "PO 3차전 격돌 시라카와 VS 최원태",
+      "date": "2026.10.29",
+      "url": "https://sports.khan.co.kr/article/202610290700016/"
+    },
+    {
+      "outlet": "시대",
+      "title": "시라카와 vs 최원태, PO 3차전 맞대결",
+      "date": "2026.10.29",
+      "url": "https://www.sidae.com/article/2026102909181247427"
+    },
+    {
+      "outlet": "톱스타뉴스",
+      "title": "PO 3차전 선발 맞대결, 삼성 최원태 vs KIA 시라카와",
+      "date": "2026.10.27",
+      "url": "https://www.topstarnews.net/news/articleView.html?idxno=16259858"
+    }
+  ],
+  "approval3": {
+    "approved": true,
+    "at": "2026-10-29T11:43:26+09:00",
+    "by": "자동 모드 (대표 결정 10/28 · 30분 거부권)"
+  },
+  "readImages": [
+    "r01.jpg",
+    "r02.jpg",
+    "r03.jpg",
+    "r04.jpg",
+    "r05.jpg",
+    "r06.jpg",
+    "r07.jpg"
+  ],
+  "reel": false,
+  "auto": {
+    "id": "20261029_PM_auto",
+    "createdAt": "2026-10-29T11:43:28+09:00",
+    "vetoUntil": "2026-10-29T11:57:00+09:00"
+  }
+}
