@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "date": "2026-10-30",
+  "slot": "AM",
+  "publishAt": "2026-10-30T07:30:00+09:00",
+  "topic": "애플, 첫 터치스크린 맥북 프로 공개",
+  "images": [
+    "01.jpg",
+    "02.jpg",
+    "03.jpg",
+    "04.jpg",
+    "05.jpg",
+    "06.jpg",
+    "07.jpg"
+  ],
+  "caption": "맥북 프로, 처음으로 터치스크린이 생겼어요\n애플이 28일 터치스크린 맥북 프로를 공개했고, 14인치는 2,899달러, 16인치는 3,399달러부터예요. 출시일은 11월 6일이에요. 새로운 도구와 함께 오늘 하루도 가볍게 시작해 봐요.\n\n#맥북프로 #애플 #터치스크린 #신제품 #IT소식 #해외이슈 #이슈브리프 #오늘의이슈",
+  "sources": [
+    {
+      "outlet": "TechCrunch",
+      "title": "애플, 터치스크린 맥북 프로 출시",
+      "date": "2026.10.28",
+      "url": "https://techcrunch.com/2026/10/28/apple-launches-its-new-touchscreen-macbook-pro/"
+    },
+    {
+      "outlet": "Digital Trends",
+      "title": "맥북 프로 터치스크린 도입, M5 프로·맥스 탑재",
+      "date": "2026.10.28",
+      "url": "https://www.digitaltrends.com/computing/the-macbook-pro-finally-gets-a-touchscreen-with-m5-pro-and-max-chipsets-but-the-upgrade-doesnt-come-cheap/"
+    }
+  ],
+  "approval3": {
+    "approved": true,
+    "at": "2026-10-30T06:42:53+09:00",
+    "by": "자동 모드 (대표 결정 10/28 · 30분 거부권)"
+  },
+  "readImages": [
+    "r01.jpg",
+    "r02.jpg",
+    "r03.jpg",
+    "r04.jpg",
+    "r05.jpg",
+    "r06.jpg",
+    "r07.jpg"
+  ],
+  "reel": false,
+  "auto": {
+    "id": "20261030_AM_auto",
+    "createdAt": "2026-10-30T06:42:55+09:00",
+    "vetoUntil": "2026-10-30T07:27:00+09:00"
+  }
+}
