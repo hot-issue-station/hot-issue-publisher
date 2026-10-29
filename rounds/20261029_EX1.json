@@ -13,17 +13,26 @@
   {
    "title": "그립감 칭찬, 팬들이 먼저 알아봤어요",
    "desc": "라디오에서 갤럭시 그립감을 좋게 말했고, 평소 쓰는 모습이 알려지며 팬들의 협업 요청이 이어졌어요.",
-   "source": "전자신문 · 2026.10.28"
+   "source": "전자신문 · 2026.10.28",
+   "photo": "assets/extra/20261029_EX1_m3.jpg",
+   "photoLabel": "이미지 · 삼성전자",
+   "photoPos": "50% 22%"
   },
   {
    "title": "티저 영상, 하루 만에 200만 회",
    "desc": "10월 23일 삼성전자 공식 SNS에 올린 리센느 실루엣 티저는 하루 만에 조회 200만 회를 넘었어요.",
-   "source": "전자신문 · 2026.10.28"
+   "source": "전자신문 · 2026.10.28",
+   "photo": "assets/extra/20261029_EX1_m4.jpg",
+   "photoLabel": "이미지 · 삼성전자",
+   "photoPos": "50% 22%"
   },
   {
    "title": "포토카드 세트 이벤트도 열려요",
    "desc": "삼성전자 공식 인스타 이벤트로 갤럭시 X 리센느 포토카드 세트를 20명에게 줘요. 기간은 11월 11일까지예요.",
-   "source": "삼성전자 코리아 인스타그램 · 2026.10.28"
+   "source": "삼성전자 코리아 인스타그램 · 2026.10.28",
+   "photo": "assets/extra/20261029_EX1_m6.jpg",
+   "photoLabel": "이미지 · 삼성전자",
+   "photoPos": "50% 22%"
   }
  ],
  "interp": "좋아하는 마음이 무대 밖까지 닿았어요",
@@ -83,5 +92,13 @@
  "photoPos": "50% 18%",
  "photoInset": "assets/rescene/02_pulse.jpg",
  "photoInsetPos": "50% 60%",
- "photoInsetLabel": "RESCENE 다섯 멤버"
+ "photoInsetLabel": "RESCENE 다섯 멤버",
+ "summaryPhotos": [
+  "assets/extra/20261029_EX1_m2.jpg",
+  "assets/extra/20261029_EX1_m3.jpg",
+  "assets/extra/20261029_EX1_m4.jpg",
+  "assets/extra/20261029_EX1_m5.jpg",
+  "assets/extra/20261029_EX1_m6.jpg"
+ ],
+ "summaryPhotosLabel": "'우리가 함께한 이유' 캠페인 사진 · 삼성전자"
 }
