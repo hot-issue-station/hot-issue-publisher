@@ -29,6 +29,13 @@ Claude는 카드와 음악 없는 릴스 영상을 "릴스 재료함"에 올리�
    "<회차 이름> 릴스 재료 준비: <topic>"
    "재료함에서 영상 저장 → 인스타 앱에서 음악 골라 올리기: https://claude.ai/artifact/Xxp8hf3gz6aWW5uemGphWS"
 
+## 응원 랭킹 현황판(스토리)일 때 (대표 결정 10/29, 분석팀)
+- AM(출근) 회차 재료를 다 올린 뒤 이어서 한다. data/ranking/latest.json 의 top 이 1명 이상일 때만(비었으면 건너뜀).
+- `python3 scripts/make_ranking_board.py --out /home/claude/reels/<YYYYMMDD>_RANK` → board.jpg(1080×1920)·board.mp4(6초). "주의: … 넘쳤어요"가 나오면 board.jpg를 Read로 보고 알림에 적는다.
+- 업로드: file_paths = [<그 폴더>/board.mp4, <그 폴더>/board.jpg]. reel = board.mp4 id, cards = [board.jpg id], readCards 없음.
+- 기록: materials/<YYYYMMDD>_RANK, slot "RANK", slotName "응원 랭킹 현황판 · 스토리", topic "응원 랭킹 <M/D> 기준 TOP<n>", caption "", readCaption "", audio "".
+- 대표가 스토리로 올리고 프로필 하이라이트 '응원 랭킹'에 추가한다(스토리는 24시간 뒤 사라지므로 하이라이트가 현황판 역할). 알림 둘째 줄 끝에 " · 랭킹 현황판도 준비했어요(스토리)"를 붙인다.
+
 ## 헤드라인 릴스(HL)일 때 바뀌는 점
 - 1단계 영상은 만들지 않는다(make_headline.py가 이미 headline.mp4를 만듦).
 - 2단계 업로드: file_paths = [<folder>/headline.mp4, <folder>/cover.jpg]. reel = headline.mp4 id, cards = [cover.jpg id], readCards 없음.
