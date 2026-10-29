@@ -21,8 +21,19 @@ Claude는 카드와 음악 없는 릴스 영상을 "릴스 재료함"에 올리�
    - 빈 줄, 이미지 출처 줄(사진을 쓴 회차만), config/contact.txt 의 연락처 줄('#'로 시작하지 않는 줄)
    - (재료함 표시용, 캡션에 넣지 않음) audio: data/audio/ 의 가장 최근 파일 규칙대로 이 소재에 맞는 추천 음원 1~2곡 "곡 - 아티스트"
    - 빈 줄, 해시태그 6~8개(주제 3~4개 + 분야 1~2개 + #이슈브리프 #오늘의이슈). 300자 안팎.
+3-1. 홍보 재료(대표 결정 10/29, 분석팀): 같은 소재로 채널별 홍보 문구를 만들어 4단계 기록의 "promo"에 넣는다. 대표가 재료함에서 채널별 [복사]를 눌러 붙여 넣는다. 자동 팔로우·좋아요·댓글·DM은 하지 않는다(인스타 규칙 위반). 모든 문장은 카드에 있는 사실만, 과장·최상급 금지, 링크는 넣지 않는다(프로필 링크로 안내).
+   promo = {
+     "bestTime": "<추천 올리는 시각 한 줄, 예: 오늘 21:30~22:00 (퇴근 뒤 휴대폰 보는 시간)>",
+     "story": {"text": "<스토리 위에 얹을 2줄, 각 18자 안팎>", "sticker": "<질문 스티커 문구 20자 안팎>"},
+     "threads": "<Threads 글 300~450자: 첫 줄 훅, 사실 2~3줄, 마지막 줄 질문. 해시태그는 끝에 1~3개>",
+     "shorts": {"title": "<유튜브 쇼츠 제목 40자 안팎 + ' #Shorts'>", "description": "<설명 2~4줄 + 출처 + 연락처 줄>", "tags": "<쉼표로 구분한 태그 8개 안팎>"},
+     "x": "<X 글: 한글 기준 130자 이내(영문 280자 한도, 한글은 2자로 셈), 해시태그 2~3개>",
+     "community": "<팬 커뮤니티용 글(리센느 등 팬덤 소재일 때만, 아니면 빈 문자열): 정보 위주 존댓말, 우리 계정 홍보 문구는 마지막 한 줄 '정리 카드는 @hot.issue.station에 올려 두었어요' 정도로만>"
+   }
+   - 쇼츠·Threads·X는 우리 계정(@hot.issue.station)을 알리는 게 목적: 각 글 끝에 "매일 이슈를 짧게 정리해요 · 인스타 @hot.issue.station" 한 줄.
+   - 남의 사진을 쓴 회차는 각 채널 글에도 이미지 출처 줄을 넣는다.
 4. 기록: ArtifactData action "set", url = 재료함 주소, collection "materials", doc_id = 문서ID,
-   data = {date, slot, slotName(출근길/점심/퇴근길/리센느 응원 특집 #n/자랑스러운 한국인 #n), topic, audio, reel, cards, readCards, caption(=3단계 릴스 소개글), readCaption(=caption.txt 캡션에 연락처 줄을 넣은 것, 캐러셀용), posted:false, createdAt:<ISO>}.
+   data = {date, slot, slotName(출근길/점심/퇴근길/리센느 응원 특집 #n/자랑스러운 한국인 #n), topic, audio, reel, cards, readCards, caption(=3단계 릴스 소개글), readCaption(=caption.txt 캡션에 연락처 줄을 넣은 것, 캐러셀용), promo(3-1단계), posted:false, createdAt:<ISO>}.
 5. 스튜디오 기록(브리핑용): ArtifactData update(if_version) url = 스튜디오(https://claude.ai/artifact/H9d1SRr3uSYZEX6pYDNswV), autoq/문서ID
    {status:"ready", topic, folder, message:"릴스 재료 준비 완료 (자동 게시 안 함)", readyAt:<ISO>}. previews·vetoUntil은 넣지 않는다.
 6. 마지막 답변(대표 휴대폰 알림)은 한국어 두 줄만:
