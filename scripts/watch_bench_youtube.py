@@ -2,7 +2,7 @@
 
 config/benchmark.json 의 youtube 채널들을 RSS로 읽는다(비용 0원, 키 없음). 하루 4번(리센느 모니터링과 같은 시각).
 내용은 베끼지 않는다. 제목 형식·주제·올린 시각·반응(조회수·좋아요)만 참고한다.
-결과: data/benchmark/yt_<키>.json (최근 영상 15개 + 지난 확인 대비 조회수 증가 viewsGain)
+결과: data/benchmark/yt_<키>.json (최근 영상 15개 + 지난 확인 대비 조회수 증가 viewsGain + 채널 평소 대비 배수 multiple, 2배 이상은 viral)
       data/benchmark/yt_log_<날짜>.json (그날 확인 기록, 보고서용)
 리센느 소재용 data/youtube/new_*.json 에는 섞지 않는다.
 """
@@ -50,8 +50,19 @@ def main():
             print(f"{key}: 실패 {str(e)[:200]}")
             log.append({"at": now.isoformat(timespec="minutes"), "key": key, "ok": False, "error": f"{type(e).__name__}: {str(e)[:200]}"})
             continue
+        # 터진 정도(대표 결정 10/29): 이 채널 최근 영상 조회수의 가운데값 대비 몇 배인지. 쇼츠와 일반 영상은 따로 잰다.
+        import statistics
+        for kind in (True, False):
+            vs = [v["views"] for v in vids if v["shorts"] == kind and v["views"]]
+            med = statistics.median(vs) if len(vs) >= 3 else None
+            for v in vids:
+                if v["shorts"] == kind:
+                    v["median"] = med
+                    v["multiple"] = round(v["views"] / med, 1) if (med and v["views"]) else None
         data = {"key": key, "name": ch.get("name", key), "channel": ch["url"], "channelId": cid,
-                "checkedAt": now.isoformat(timespec="minutes"), "videos": vids}
+                "checkedAt": now.isoformat(timespec="minutes"), "videos": vids,
+                "viral": sorted([{"title": v["title"], "url": v["url"], "views": v["views"], "multiple": v["multiple"], "shorts": v["shorts"]}
+                                 for v in vids if (v.get("multiple") or 0) >= 2], key=lambda x: -x["multiple"])}
         path.write_text(json.dumps(data, ensure_ascii=False, indent=1), encoding="utf-8")
         log.append({"at": now.isoformat(timespec="minutes"), "key": key, "ok": True,
                     "new": [v["id"] for v in vids if v["isNew"]],
