@@ -18,6 +18,14 @@ def get(url):
     return urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=30).read().decode("utf-8", "replace")
 
 
+def feed(cid):
+    """채널 RSS. channel_id 주소가 404면 업로드 목록(playlist_id=UU…) 주소로 다시 시도."""
+    try:
+        return get(f"https://www.youtube.com/feeds/videos.xml?channel_id={cid}")
+    except Exception:
+        return get(f"https://www.youtube.com/feeds/videos.xml?playlist_id=UU{cid[2:]}")
+
+
 def channel_id(handle_url, cache):
     if cache.get("channelId"):
         return cache["channelId"]
@@ -36,7 +44,7 @@ def main():
         old = json.loads(path.read_text(encoding="utf-8")) if path.exists() else {}
         try:
             cid = channel_id(url, old)
-            root = ET.fromstring(get(f"https://www.youtube.com/feeds/videos.xml?channel_id={cid}"))
+            root = ET.fromstring(feed(cid))
         except BaseException as e:  # 실패 이유를 파일로 남긴다(Actions 로그를 못 열 때 확인용)
             (OUT / "_error.json").write_text(json.dumps({"at": datetime.datetime.now(KST).isoformat(timespec="minutes"), "channel": key,
                                                           "error": f"{type(e).__name__}: {str(e)[:300]}"}, ensure_ascii=False), encoding="utf-8")

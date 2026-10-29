@@ -9,7 +9,7 @@ config/benchmark.json 의 youtube 채널들을 RSS로 읽는다(비용 0원, 키
 import datetime, json, pathlib, sys
 import xml.etree.ElementTree as ET
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
-from watch_youtube import get, channel_id, NS, KST
+from watch_youtube import get, channel_id, feed, NS, KST
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 OUT = ROOT / "data" / "benchmark"
@@ -17,7 +17,7 @@ OUT = ROOT / "data" / "benchmark"
 
 def read_channel(url, old):
     cid = channel_id(url, old)
-    root = ET.fromstring(get(f"https://www.youtube.com/feeds/videos.xml?channel_id={cid}"))
+    root = ET.fromstring(feed(cid))
     prev = {v["id"]: v.get("views") for v in old.get("videos", [])}
     vids = []
     for e in root.findall("a:entry", NS):
