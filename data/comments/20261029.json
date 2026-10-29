@@ -1,6 +1,6 @@
 {
-  "readAt": "2026-10-29T06:23:01+09:00",
+  "readAt": "2026-10-29T13:48:27+09:00",
   "ok": false,
   "media": [],
-  "error": "Instagram API 오류 400: {\"error\":{\"message\":\"API access blocked.\",\"type\":\"OAuthException\",\"code\":200,\"fbtrace_id\":\"AmBWpF5-cO739RLA8KkT6Ju\"}}"
+  "error": "Instagram API 오류 400: {\"error\":{\"message\":\"API access blocked.\",\"type\":\"OAuthException\",\"code\":200,\"fbtrace_id\":\"AfITsdQsLLwmE5U3QBMG8To\"}}"
 }
