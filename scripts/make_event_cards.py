@@ -92,8 +92,7 @@ def cards(ev):
 <div style="display:flex;gap:28px">
 {box(f'<div style="font-size:104px;font-weight:900;line-height:1;color:{T.CYAN}">+1</div><div style="font-size:42px;font-weight:900">댓글 단 날마다</div><div style="font-size:32px;line-height:1.45;color:{T.SOFT}">하루에 여러 개를 달아도 1점이에요</div>', T.CYAN)}
 {box(f'<div style="font-size:104px;font-weight:900;line-height:1;color:#FFC857">+3</div><div style="font-size:42px;font-weight:900">그날 베스트 댓글</div><div style="font-size:32px;line-height:1.45;color:{T.SOFT}">좋아요를 가장 많이 받은 댓글</div>', "#FFC857")}</div>
-{box(f'<div style="font-size:34px;color:{T.SOFT}">예를 들면</div><div style="font-size:40px;font-weight:700;line-height:1.5">5일 동안 매일 댓글 <b style="color:{T.CYAN}">5점</b> + 그중 하루 베스트 <b style="color:#FFC857">3점</b> = <b style="font-size:48px">8점</b></div>')}
-<div style="font-size:34px;line-height:1.5;color:{T.SOFT}">점수가 같으면 먼저 참여한 분이 앞서요.</div></div>""",
+{box(f'<div style="font-size:34px;color:{T.SOFT}">예를 들면</div><div style="font-size:40px;font-weight:700;line-height:1.5">5일 동안 매일 댓글 <b style="color:{T.CYAN}">5점</b> + 그중 하루 베스트 <b style="color:#FFC857">3점</b> = <b style="font-size:48px">8점</b></div><div style="font-size:32px;color:{T.SOFT}">점수가 같으면 먼저 참여한 분이 앞서요</div>')}</div>""",
                         label, 4))
     # 5 순위 확인
     out.append(mp.frame(f"""<div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:40px">
