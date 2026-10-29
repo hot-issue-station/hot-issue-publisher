@@ -88,5 +88,116 @@
   "key": "ytn",
   "ok": false,
   "error": "HTTPError: HTTP Error 404: Not Found"
+ },
+ {
+  "at": "2026-10-29T19:25+09:00",
+  "key": "14f",
+  "ok": true,
+  "new": [],
+  "top": [
+   {
+    "id": "QGo6uaVVS5U",
+    "title": "불붙은 거리, 불어나는 빚…프랑스의 분노 유럽 전역으로 번지나? / 14F",
+    "views": 403288,
+    "gain": null
+   },
+   {
+    "id": "RxdtTJ7GdDM",
+    "title": "[EN] 전세계에서 퇴출됐다가 역주행 중이라는 우지 근황🥄ㅣ돈슐랭 / 14F",
+    "views": 275053,
+    "gain": null
+   },
+   {
+    "id": "cGUTGXz7bNU",
+    "title": "안전성, 쾌적성에 효율성까지… 미담 폭격 맞고 있는 ‘서울 지하철’ / 14F",
+    "views": 86314,
+    "gain": null
+   }
+  ]
+ },
+ {
+  "at": "2026-10-29T19:25+09:00",
+  "key": "subusunews",
+  "ok": true,
+  "new": [],
+  "top": [
+   {
+    "id": "hx13V-s_zwY",
+    "title": "이런 친구한테 짝사랑 말해주면 안 됨",
+    "views": 13869,
+    "gain": null
+   },
+   {
+    "id": "joS-5fpq2rk",
+    "title": "꿈을 가지고 있는 사람의 기분은 어떤걸까",
+    "views": 12713,
+    "gain": null
+   },
+   {
+    "id": "fxwIx1M0Efk",
+    "title": "그니까 “반성문은 거짓이 없어야 된다”가 거짓말인거죠",
+    "views": 11154,
+    "gain": null
+   }
+  ]
+ },
+ {
+  "at": "2026-10-29T19:25+09:00",
+  "key": "vstudio",
+  "ok": true,
+  "new": [],
+  "top": []
+ },
+ {
+  "at": "2026-10-29T19:25+09:00",
+  "key": "syukaworld",
+  "ok": true,
+  "new": [],
+  "top": [
+   {
+    "id": "5JwWurcszJw",
+    "title": "하락장? 지금이 바로 주식공부할 때",
+    "views": 204300,
+    "gain": null
+   },
+   {
+    "id": "YLAj3qkZaC8",
+    "title": "하이닉스 퇴사한 애널리스트의 하이닉스 전망",
+    "views": 160566,
+    "gain": null
+   },
+   {
+    "id": "_L7d05Gmrd4",
+    "title": "10월28일ㅣ슈황(슈카의 시황)의 틱희틱비 치어리딩 방송",
+    "views": 135374,
+    "gain": null
+   }
+  ]
+ },
+ {
+  "at": "2026-10-29T19:25+09:00",
+  "key": "ytn",
+  "ok": true,
+  "new": [],
+  "top": [
+   {
+    "id": "LUKWuDgJhyI",
+    "title": "148일 만에 투표지 반출됐지만…\"야반도주\" vs \"특검 판단\" 여야 공방 [에디터픽] / YTN",
+    "views": 7524,
+    "gain": null
+   },
+   {
+    "id": "Gb-4j8K3HsQ",
+    "title": "거리의 분노 걷잡을 수 없자…프랑스 정부가 꺼낸 '금단의 카드' [에디터픽] / YTN",
+    "views": 6438,
+    "gain": null
+   },
+   {
+    "id": "R9VDv478N2g",
+    "title": "AI가 열어버린 '판도라의 상자'…엔지니어들 대혼란 [지금이뉴스] / YTN",
+    "views": 3180,
+    "gain": null
+   }
+  ]
  }
 ]
