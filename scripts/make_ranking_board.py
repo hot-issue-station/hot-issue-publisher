@@ -3,7 +3,7 @@
 
 사용법:  python3 scripts/make_ranking_board.py [--src data/ranking/latest.json] --out <폴더>
 결과:    <폴더>/board.jpg (스토리 이미지), <폴더>/board.mp4 (6초 정지 영상, 재료함 영상 칸용), <폴더>/board.json(쓴 데이터)
-점수 규칙은 rank_comments.py 와 같다: 댓글 단 날마다 1점, 그날 베스트 댓글 +3점. 이름은 가린 이름(re***n) 그대로만 쓴다.
+점수 규칙은 rank_comments.py 와 같다: 댓글 단 날마다 1점, 그날 베스트 댓글 +3점, 팔로우 보너스 +3점(11/3 공지부터 현황판에 표시, 마감 뒤 대표 확인). 이름은 가린 이름(re***n) 그대로만 쓴다.
 스토리 화면 위 250px·아래 340px 은 Instagram 글자·버튼 자리라 비워 둔다.
 """
 import argparse
@@ -57,6 +57,10 @@ def page(data):
                 f'<div style="font-size:42px;color:{SOFT};line-height:1.5">오늘 첫 댓글을 남기면<br>1위로 시작해요</div></div>')
     else:
         body = f'<div style="display:flex;flex-direction:column;gap:{8 if len(rows) > 6 else 16}px">{"".join(rows)}</div>'
+    # 팔로우 보너스(대표 결정 10/29): 11/3 컴백 날 공지부터 현황판에 보여 준다
+    show_follow = dt.datetime.now(dt.timezone(dt.timedelta(hours=9))).strftime("%Y-%m-%d") >= "2026-11-03"
+    FOLLOW_BOX = (f'<div style="flex:1;padding:18px 24px;border-radius:20px;background:{BOX};border:2px solid {LINE};font-size:32px;line-height:1.4">'
+                  f'<b style="color:{PINK}">+3점</b> 팔로우 보너스</div>') if show_follow else ""
     return f"""<!doctype html><html><head><meta charset="utf-8"><style>
 body{{margin:0;word-break:keep-all;font-family:'Noto Sans CJK KR','Noto Sans KR',sans-serif}}</style></head><body>
 <div style="position:relative;width:1080px;height:1920px;overflow:hidden;background:{BG};color:{INK}">
@@ -70,7 +74,7 @@ body{{margin:0;word-break:keep-all;font-family:'Noto Sans CJK KR','Noto Sans KR'
 <div style="font-size:68px;font-weight:900;line-height:1.2;margin-top:4px">댓글 한 줄이 점수가 돼요</div></div>
 <div style="display:flex;gap:16px">
 <div style="flex:1;padding:18px 24px;border-radius:20px;background:{BOX};border:2px solid {LINE};font-size:32px;line-height:1.4"><b style="color:{ACC}">+1점</b> 댓글 단 날마다</div>
-<div style="flex:1;padding:18px 24px;border-radius:20px;background:{BOX};border:2px solid {LINE};font-size:32px;line-height:1.4"><b style="color:{GOLD}">+3점</b> 그날 베스트 댓글</div></div>
+<div style="flex:1;padding:18px 24px;border-radius:20px;background:{BOX};border:2px solid {LINE};font-size:32px;line-height:1.4"><b style="color:{GOLD}">+3점</b> 그날 베스트 댓글</div>{FOLLOW_BOX}</div>
 {body}
 <div style="flex:1"></div>
 <div style="padding:24px 32px;border-radius:26px;background:linear-gradient(90deg,{ACC}38,{PINK}30);border:2px solid {ACC}">
