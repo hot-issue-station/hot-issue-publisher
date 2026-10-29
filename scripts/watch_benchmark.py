@@ -8,7 +8,7 @@ import datetime as dt, json, pathlib, sys
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 import publish as pb
 
-ACCOUNTS = ["today_issue_mag"]
+ACCOUNTS = json.loads((pathlib.Path(__file__).resolve().parent.parent / "config" / "benchmark.json").read_text(encoding="utf-8")).get("instagram", [])
 OUT = pathlib.Path(__file__).resolve().parent.parent / "data" / "benchmark"
 
 

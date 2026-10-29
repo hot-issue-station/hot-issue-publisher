@@ -1,4 +1,4 @@
-name: 리센느 유튜브 모니터링
+name: 유튜브 모니터링 (리센느 + 벤치마킹)
 on:
   schedule:
     - cron: "0 23 * * *"   # 08:00 KST
@@ -16,7 +16,9 @@ jobs:
       - uses: actions/setup-python@v5
         with: { python-version: "3.11" }
       - run: python scripts/watch_youtube.py
+      - name: 벤치마킹 채널
+        run: python scripts/watch_bench_youtube.py || true
       - run: |
           git config user.name "issuebrief-bot"; git config user.email "bot@users.noreply.github.com"
-          git add data/youtube
-          git diff --cached --quiet || (git commit -m "리센느 유튜브 모니터링 $(date -u +%F)" && git pull --rebase && git push)
+          git add data/youtube data/benchmark
+          git diff --cached --quiet || (git commit -m "유튜브 모니터링 $(date -u +%F)" && git pull --rebase && git push)

@@ -1,0 +1,11 @@
+{
+ "_설명": "벤치마킹 계정 목록 (대표 결정 10/29, 분석팀). 대표가 괜찮은 계정을 알려주면 여기에 한 줄 추가한다. youtube: 이름 → 채널 주소(@핸들), instagram: 비즈니스·크리에이터 계정 아이디(연결 방식이 바뀌어야 읽힘).",
+ "youtube": {
+  "14f": {"name": "14F 일사에프 (MBC)", "url": "https://www.youtube.com/@14FMBC"},
+  "subusunews": {"name": "스브스뉴스 (SBS)", "url": "https://www.youtube.com/@subusunews"},
+  "vstudio": {"name": "V Studio (구 비디오머그, SBS)", "url": "https://www.youtube.com/@VIDEOMUG"},
+  "syukaworld": {"name": "슈카월드", "url": "https://www.youtube.com/@syukaworld"},
+  "ytn": {"name": "YTN", "url": "https://www.youtube.com/@ytnnews24"}
+ },
+ "instagram": ["today_issue_mag"]
+}
