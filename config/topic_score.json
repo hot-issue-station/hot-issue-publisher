@@ -1,0 +1,21 @@
+{
+  "updated": "2026-10-30",
+  "note": "화제도 점수 가중치(분석팀이 매주 일요일 실제 조회수와 비교해 조정). 각 항목 0~3점 x 가중치.",
+  "weights": {
+    "coverage": 2,
+    "rankings": 2,
+    "fandom": 3,
+    "ourHistory": 2,
+    "freshness": 2,
+    "shareable": 2
+  },
+  "ourHistoryScale": {
+    "리센느": 3,
+    "스포츠·해외 한국인": 2,
+    "정치·사회": 2,
+    "연예·문화": 1,
+    "경제·IT": 1,
+    "기타": 0
+  },
+  "history": []
+}
