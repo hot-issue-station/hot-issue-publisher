@@ -58,5 +58,143 @@
   "key": "ytn",
   "ok": false,
   "error": "HTTPError: HTTP Error 404: Not Found"
+ },
+ {
+  "at": "2026-10-30T19:25+09:00",
+  "key": "14f",
+  "ok": true,
+  "new": [
+   "niGCI-aEH-A",
+   "8O13erGECdU",
+   "Icvrlx6HV-Q"
+  ],
+  "top": [
+   {
+    "id": "7pF-2NUb9Ws",
+    "title": "BTS RM이 10년 동안 모은 미술 작품… 죽어가던 美 미술관 살렸다 / 14F",
+    "views": 40088,
+    "gain": 30050
+   },
+   {
+    "id": "RxdtTJ7GdDM",
+    "title": "[EN] 전세계에서 퇴출됐다가 역주행 중이라는 우지 근황🥄ㅣ돈슐랭 / 14F",
+    "views": 285871,
+    "gain": 8581
+   },
+   {
+    "id": "8eVDM6mDEs8",
+    "title": "\"여기 자리 있어요”... ‘K-자리 맡기’에 에버랜드가 고민 끝에 내린 결단 / 14F",
+    "views": 90915,
+    "gain": 7429
+   }
+  ]
+ },
+ {
+  "at": "2026-10-30T19:25+09:00",
+  "key": "subusunews",
+  "ok": true,
+  "new": [
+   "LwLm7MrPPHA",
+   "wcSU_Bz1-Nk"
+  ],
+  "top": [
+   {
+    "id": "vEqtdBio5f8",
+    "title": "유규선이 성공한 방법",
+    "views": 38010,
+    "gain": 24566
+   },
+   {
+    "id": "HnhvHRqyqao",
+    "title": "나는 연애를 알려 줄 테니까 너는 공부를 알려줘",
+    "views": 13862,
+    "gain": 9497
+   },
+   {
+    "id": "joS-5fpq2rk",
+    "title": "꿈을 가지고 있는 사람의 기분은 어떤걸까",
+    "views": 20062,
+    "gain": 5846
+   }
+  ]
+ },
+ {
+  "at": "2026-10-30T19:25+09:00",
+  "key": "vstudio",
+  "ok": true,
+  "new": [],
+  "top": []
+ },
+ {
+  "at": "2026-10-30T19:25+09:00",
+  "key": "syukaworld",
+  "ok": true,
+  "new": [
+   "WuU0lc1SwLg",
+   "G9n3vLRCvSI",
+   "p9PqJ61lg3w"
+  ],
+  "top": [
+   {
+    "id": "uTmDuvJDcMM",
+    "title": "인기와 주가가 비례하는 여의도 아저씨",
+    "views": 175354,
+    "gain": 116580
+   },
+   {
+    "id": "As_g3UyIa2Y",
+    "title": "야망남 김장열 센터장",
+    "views": 103763,
+    "gain": 65703
+   },
+   {
+    "id": "qLXHZm_9mX0",
+    "title": "두에빌 네가 사라며",
+    "views": 162032,
+    "gain": 57546
+   }
+  ]
+ },
+ {
+  "at": "2026-10-30T19:25+09:00",
+  "key": "ytn",
+  "ok": true,
+  "new": [
+   "e_oHtKfKWPA",
+   "q22Lizc3mD0",
+   "8W0BRoLfh4k",
+   "RFKDq_sIVg8",
+   "2mFQs7e92OY",
+   "LCS-Wx_Bpis",
+   "OHi5FFFpn3A",
+   "cX-dIAPYX9s",
+   "ihd9QY9SrrE",
+   "5jpzl6E3XWY",
+   "NPnq6rosJBo",
+   "LqQNLohagpI",
+   "7FqrzWoc1Kc",
+   "EZDPVOc0hkE",
+   "XKtdPPfPYbk"
+  ],
+  "top": [
+   {
+    "id": "8W0BRoLfh4k",
+    "title": "하루 만에 계절이 바뀌었다…일본, 갑작스러운 상황 '당혹' [에디터픽] / YTN",
+    "views": 28765,
+    "gain": null
+   },
+   {
+    "id": "q22Lizc3mD0",
+    "title": "반발 터져 나오는 미군 내부…민감한 시점에 '의미심장' [에디터픽] / YTN",
+    "views": 24566,
+    "gain": null
+   },
+   {
+    "id": "e_oHtKfKWPA",
+    "title": "미 중간선거 D-4…트럼프, 벌써 선거 불복 '밑밥'? [YTN 실시간뉴스]",
+    "views": 2319,
+    "gain": null
+   }
+  ]
  }
 ]
