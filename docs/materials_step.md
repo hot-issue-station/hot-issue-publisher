@@ -10,7 +10,7 @@ Claude는 카드와 음악 없는 릴스 영상을 "릴스 재료함"에 올리�
 2. 업로드: Artifact 도구 action "publish", url = 재료함 주소, asset: true,
    file_paths = ["/home/claude/reels/<문서ID>.mp4", <folder>/01.jpg … 07.jpg, <folder>/r01.jpg … 절대 경로] (한 번에, 25개 이내).
    결과에서 영상의 id = reel, 01~07 의 id = cards, r01~ 의 id = readCards (각각 순서대로).
-   (round JSON에 스타일 가이드 9장의 "read"를 꼭 넣어 읽는 카드도 함께 만든다)
+   (대표 결정 10/30: 캐러셀은 올리지 않으므로 정규·자동 회차는 "read"를 넣지 않는다. 읽는 카드가 없으면 readCards=[], readCaption="" 로 기록한다. 특집·정리형 회차만 9장의 "read"를 넣는다)
 3. 릴스 소개글(대표가 릴스에 붙여 넣는 글, 대표 요청 10/28): <folder>/caption.txt 를 바탕으로 새로 씁니다.
    - 1줄: 훅(카드 1장 훅과 같은 뜻, 20자 안팎)
    - 2~3줄: 핵심 사실 1~2문장(숫자 포함, 카드에 있는 사실만)
