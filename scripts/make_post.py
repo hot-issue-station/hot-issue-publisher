@@ -225,6 +225,12 @@ def cover_photo(r, label):
 <div style="font-size:72px;font-weight:900;line-height:1.2">{hook}</div></div>""", label, 1, "밀어서 다음 장 →", deco=deco)
 
 
+def cta_html(t):
+    """7장 유도 문구: \n은 줄바꿈, *글자*는 분홍 강조색(대표 요청 10/30)."""
+    import re as _re
+    return _re.sub(r"\*(.+?)\*", lambda m: f'<span style="color:{PINK}">{m.group(1)}</span>', E(t)).replace("\n", "<br>")
+
+
 def hook_html(h):
     """줄바꿈(\n)을 넣은 훅은 그대로, 아니면 첫 쉼표 뒤에서 한 번 줄을 바꾼다."""
     if "\n" in h:
@@ -300,7 +306,7 @@ def cards(r):
 <div style="display:flex;align-items:center;gap:20px"><div style="width:64px;height:8px;border-radius:4px;background:{PINK}"></div><div style="font-size:44px;font-weight:700;color:{CYAN}">출처</div></div>
 <div style="display:flex;flex-direction:column">{src}</div>
 <div style="padding:56px 64px;border:3px solid {CYAN};border-radius:40px;background:{BOX};display:flex;flex-direction:column;gap:32px">
-<div style="font-size:60px;font-weight:900;line-height:1.35">{E(r['cta'])}</div>
+<div style="font-size:{48 if chr(10) in r['cta'] else 60}px;font-weight:900;line-height:1.3">{cta_html(r['cta'])}</div>
 <div style="display:flex;gap:24px"><div style="padding:20px 56px;border-radius:999px;background:{CYAN};color:{ONACC};font-size:48px;font-weight:900">저장</div>
 <div style="padding:20px 56px;border-radius:999px;background:{PINK};color:{ONACC};font-size:48px;font-weight:900">팔로우</div></div></div>
 <div style="font-size:32px;line-height:1.5;color:{MUTED}">광고·협찬 없음</div></div>""", label, 7, "매일 따뜻한 이슈는 @hot.issue.station"))
