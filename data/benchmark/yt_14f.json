@@ -3,20 +3,33 @@
  "name": "14F 일사에프 (MBC)",
  "channel": "https://www.youtube.com/@14FMBC",
  "channelId": "UCLKuglhGlMmDteQKoniENIQ",
- "checkedAt": "2026-10-30T22:37+09:00",
+ "checkedAt": "2026-10-31T08:25+09:00",
  "videos": [
+  {
+   "id": "M_z0WM3-GO8",
+   "title": "최면술사가 말하는 업계 비밀(?) #shorts",
+   "published": "2026-10-30T23:00:09+00:00",
+   "url": "https://www.youtube.com/shorts/M_z0WM3-GO8",
+   "shorts": true,
+   "views": 386,
+   "likes": 7,
+   "viewsGain": null,
+   "isNew": true,
+   "median": 8223,
+   "multiple": 0.0
+  },
   {
    "id": "niGCI-aEH-A",
    "title": "사전 판매 매진이었는데… 액정 갈라진다는 ‘아이폰 듀오’ 근황 / 14F",
    "published": "2026-10-30T09:29:22+00:00",
    "url": "https://www.youtube.com/watch?v=niGCI-aEH-A",
    "shorts": false,
-   "views": 63190,
-   "likes": 339,
-   "viewsGain": 58306,
+   "views": 156340,
+   "likes": 450,
+   "viewsGain": 93150,
    "isNew": false,
-   "median": 69873.0,
-   "multiple": 0.9
+   "median": 82102.5,
+   "multiple": 1.9
   },
   {
    "id": "8O13erGECdU",
@@ -24,11 +37,11 @@
    "published": "2026-10-30T07:30:30+00:00",
    "url": "https://www.youtube.com/watch?v=8O13erGECdU",
    "shorts": false,
-   "views": 10699,
-   "likes": 50,
-   "viewsGain": 4702,
+   "views": 15182,
+   "likes": 67,
+   "viewsGain": 4483,
    "isNew": false,
-   "median": 69873.0,
+   "median": 82102.5,
    "multiple": 0.2
   },
   {
@@ -37,12 +50,12 @@
    "published": "2026-10-29T23:00:22+00:00",
    "url": "https://www.youtube.com/shorts/Icvrlx6HV-Q",
    "shorts": true,
-   "views": 3341,
-   "likes": 51,
-   "viewsGain": 274,
+   "views": 4340,
+   "likes": 57,
+   "viewsGain": 999,
    "isNew": false,
-   "median": 14593,
-   "multiple": 0.2
+   "median": 8223,
+   "multiple": 0.5
   },
   {
    "id": "zHzHgad2t6c",
@@ -50,12 +63,12 @@
    "published": "2026-10-29T11:00:11+00:00",
    "url": "https://www.youtube.com/shorts/zHzHgad2t6c",
    "shorts": true,
-   "views": 7713,
-   "likes": 86,
-   "viewsGain": 352,
+   "views": 8223,
+   "likes": 92,
+   "viewsGain": 510,
    "isNew": false,
-   "median": 14593,
-   "multiple": 0.5
+   "median": 8223,
+   "multiple": 1.0
   },
   {
    "id": "7pF-2NUb9Ws",
@@ -63,11 +76,11 @@
    "published": "2026-10-29T10:00:41+00:00",
    "url": "https://www.youtube.com/watch?v=7pF-2NUb9Ws",
    "shorts": false,
-   "views": 42571,
-   "likes": 397,
-   "viewsGain": 2483,
+   "views": 46176,
+   "likes": 418,
+   "viewsGain": 3605,
    "isNew": false,
-   "median": 69873.0,
+   "median": 82102.5,
    "multiple": 0.6
   },
   {
@@ -76,12 +89,12 @@
    "published": "2026-10-28T09:41:10+00:00",
    "url": "https://www.youtube.com/watch?v=UQ1mmTmrf1k",
    "shorts": false,
-   "views": 47332,
-   "likes": 246,
-   "viewsGain": 405,
+   "views": 48031,
+   "likes": 252,
+   "viewsGain": 699,
    "isNew": false,
-   "median": 69873.0,
-   "multiple": 0.7
+   "median": 82102.5,
+   "multiple": 0.6
   },
   {
    "id": "8eVDM6mDEs8",
@@ -89,12 +102,12 @@
    "published": "2026-10-27T10:22:11+00:00",
    "url": "https://www.youtube.com/watch?v=8eVDM6mDEs8",
    "shorts": false,
-   "views": 91348,
-   "likes": 451,
-   "viewsGain": 433,
+   "views": 92412,
+   "likes": 453,
+   "viewsGain": 1064,
    "isNew": false,
-   "median": 69873.0,
-   "multiple": 1.3
+   "median": 82102.5,
+   "multiple": 1.1
   },
   {
    "id": "SnbTi-w5FMI",
@@ -102,11 +115,11 @@
    "published": "2026-10-27T08:30:31+00:00",
    "url": "https://www.youtube.com/watch?v=SnbTi-w5FMI",
    "shorts": false,
-   "views": 28967,
-   "likes": 113,
-   "viewsGain": 312,
+   "views": 29530,
+   "likes": 116,
+   "viewsGain": 563,
    "isNew": false,
-   "median": 69873.0,
+   "median": 82102.5,
    "multiple": 0.4
   },
   {
@@ -115,12 +128,12 @@
    "published": "2026-10-26T10:00:22+00:00",
    "url": "https://www.youtube.com/watch?v=TSOGRM0uOa8",
    "shorts": false,
-   "views": 76556,
+   "views": 76807,
    "likes": 340,
-   "viewsGain": 261,
+   "viewsGain": 251,
    "isNew": false,
-   "median": 69873.0,
-   "multiple": 1.1
+   "median": 82102.5,
+   "multiple": 0.9
   },
   {
    "id": "RxdtTJ7GdDM",
@@ -128,12 +141,12 @@
    "published": "2026-10-26T09:00:03+00:00",
    "url": "https://www.youtube.com/watch?v=RxdtTJ7GdDM",
    "shorts": false,
-   "views": 286971,
-   "likes": 1594,
-   "viewsGain": 1100,
+   "views": 288938,
+   "likes": 1597,
+   "viewsGain": 1967,
    "isNew": false,
-   "median": 69873.0,
-   "multiple": 4.1
+   "median": 82102.5,
+   "multiple": 3.5
   },
   {
    "id": "PLPCwDtdmG8",
@@ -141,12 +154,12 @@
    "published": "2026-10-23T23:00:32+00:00",
    "url": "https://www.youtube.com/shorts/PLPCwDtdmG8",
    "shorts": true,
-   "views": 20062,
+   "views": 20074,
    "likes": 194,
-   "viewsGain": 19,
+   "viewsGain": 12,
    "isNew": false,
-   "median": 14593,
-   "multiple": 1.4
+   "median": 8223,
+   "multiple": 2.4
   },
   {
    "id": "cGUTGXz7bNU",
@@ -154,12 +167,12 @@
    "published": "2026-10-23T09:56:31+00:00",
    "url": "https://www.youtube.com/watch?v=cGUTGXz7bNU",
    "shorts": false,
-   "views": 87214,
+   "views": 87398,
    "likes": 452,
-   "viewsGain": 22,
+   "viewsGain": 184,
    "isNew": false,
-   "median": 69873.0,
-   "multiple": 1.2
+   "median": 82102.5,
+   "multiple": 1.1
   },
   {
    "id": "QGo6uaVVS5U",
@@ -167,12 +180,12 @@
    "published": "2026-10-23T08:45:29+00:00",
    "url": "https://www.youtube.com/watch?v=QGo6uaVVS5U",
    "shorts": false,
-   "views": 406789,
-   "likes": 2591,
-   "viewsGain": 227,
+   "views": 407473,
+   "likes": 2600,
+   "viewsGain": 684,
    "isNew": false,
-   "median": 69873.0,
-   "multiple": 5.8
+   "median": 82102.5,
+   "multiple": 5.0
   },
   {
    "id": "W-siQWRZ2RM",
@@ -180,48 +193,42 @@
    "published": "2026-10-23T03:00:15+00:00",
    "url": "https://www.youtube.com/shorts/W-siQWRZ2RM",
    "shorts": true,
-   "views": 64291,
+   "views": 64393,
    "likes": 418,
-   "viewsGain": 28,
+   "viewsGain": 102,
    "isNew": false,
-   "median": 14593,
-   "multiple": 4.4
-  },
-  {
-   "id": "Z0urIy4GzKA",
-   "title": "수메르 = 소머리? #shorts",
-   "published": "2026-10-22T23:00:25+00:00",
-   "url": "https://www.youtube.com/shorts/Z0urIy4GzKA",
-   "shorts": true,
-   "views": 14593,
-   "likes": 142,
-   "viewsGain": 11,
-   "isNew": false,
-   "median": 14593,
-   "multiple": 1.0
+   "median": 8223,
+   "multiple": 7.8
   }
  ],
  "viral": [
   {
-   "title": "불붙은 거리, 불어나는 빚…프랑스의 분노 유럽 전역으로 번지나? / 14F",
-   "url": "https://www.youtube.com/watch?v=QGo6uaVVS5U",
-   "views": 406789,
-   "multiple": 5.8,
-   "shorts": false
-  },
-  {
    "title": "디카페인이 맛 없었던 이유 #shorts",
    "url": "https://www.youtube.com/shorts/W-siQWRZ2RM",
-   "views": 64291,
-   "multiple": 4.4,
+   "views": 64393,
+   "multiple": 7.8,
    "shorts": true
+  },
+  {
+   "title": "불붙은 거리, 불어나는 빚…프랑스의 분노 유럽 전역으로 번지나? / 14F",
+   "url": "https://www.youtube.com/watch?v=QGo6uaVVS5U",
+   "views": 407473,
+   "multiple": 5.0,
+   "shorts": false
   },
   {
    "title": "[EN] 전세계에서 퇴출됐다가 역주행 중이라는 우지 근황🥄ㅣ돈슐랭 / 14F",
    "url": "https://www.youtube.com/watch?v=RxdtTJ7GdDM",
-   "views": 286971,
-   "multiple": 4.1,
+   "views": 288938,
+   "multiple": 3.5,
    "shorts": false
+  },
+  {
+   "title": "4대 문명에 황하가 포함된 이유 #shorts",
+   "url": "https://www.youtube.com/shorts/PLPCwDtdmG8",
+   "views": 20074,
+   "multiple": 2.4,
+   "shorts": true
   }
  ]
 }
