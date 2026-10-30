@@ -196,5 +196,132 @@
     "gain": null
    }
   ]
+ },
+ {
+  "at": "2026-10-30T22:37+09:00",
+  "key": "14f",
+  "ok": true,
+  "new": [],
+  "top": [
+   {
+    "id": "niGCI-aEH-A",
+    "title": "사전 판매 매진이었는데… 액정 갈라진다는 ‘아이폰 듀오’ 근황 / 14F",
+    "views": 63190,
+    "gain": 58306
+   },
+   {
+    "id": "8O13erGECdU",
+    "title": "내 강아지 전생까지 봐준다고? 별 걸 다 보는 운세의 세계 | 선발대 / 14F",
+    "views": 10699,
+    "gain": 4702
+   },
+   {
+    "id": "7pF-2NUb9Ws",
+    "title": "BTS RM이 10년 동안 모은 미술 작품… 죽어가던 美 미술관 살렸다 / 14F",
+    "views": 42571,
+    "gain": 2483
+   }
+  ]
+ },
+ {
+  "at": "2026-10-30T22:37+09:00",
+  "key": "subusunews",
+  "ok": true,
+  "new": [],
+  "top": [
+   {
+    "id": "vEqtdBio5f8",
+    "title": "유규선이 성공한 방법",
+    "views": 42427,
+    "gain": 4417
+   },
+   {
+    "id": "HnhvHRqyqao",
+    "title": "나는 연애를 알려 줄 테니까 너는 공부를 알려줘",
+    "views": 14925,
+    "gain": 1063
+   },
+   {
+    "id": "Iwlid0Rvc8M",
+    "title": "형 무슨 소리야 내가 형 절대 안 버려",
+    "views": 12244,
+    "gain": 946
+   }
+  ]
+ },
+ {
+  "at": "2026-10-30T22:37+09:00",
+  "key": "vstudio",
+  "ok": true,
+  "new": [],
+  "top": []
+ },
+ {
+  "at": "2026-10-30T22:37+09:00",
+  "key": "syukaworld",
+  "ok": true,
+  "new": [],
+  "top": [
+   {
+    "id": "WuU0lc1SwLg",
+    "title": "난 정말 주식을 못한다 손!!!",
+    "views": 66043,
+    "gain": 57871
+   },
+   {
+    "id": "p9PqJ61lg3w",
+    "title": "규카츠가 방송 열심히 하는 이유",
+    "views": 150947,
+    "gain": 40172
+   },
+   {
+    "id": "uTmDuvJDcMM",
+    "title": "인기와 주가가 비례하는 여의도 아저씨",
+    "views": 187181,
+    "gain": 11827
+   }
+  ]
+ },
+ {
+  "at": "2026-10-30T22:37+09:00",
+  "key": "ytn",
+  "ok": true,
+  "new": [
+   "Z_4LE741ckI",
+   "C-IewoA8vDU",
+   "QWnj4HaWvQo",
+   "k0_jbE1ILZI",
+   "f9Z6NU2filA",
+   "5r1XHmIQf04",
+   "sARn25zGagk",
+   "i_PRwX0pXvc",
+   "EquCsHlKve8",
+   "4x8Ms3IifU8",
+   "7u5muYWq-fk",
+   "GxDp4cAoqJ0",
+   "uelTvXmrIF8",
+   "4nMX_xnQic0",
+   "4OyVHvWgEus"
+  ],
+  "top": [
+   {
+    "id": "QWnj4HaWvQo",
+    "title": "믿었던 트럼프가 발등 찍었다…중간선거 나흘 앞두고 터진 '폭탄 발언' [에디터픽] / YTN",
+    "views": 567138,
+    "gain": null
+   },
+   {
+    "id": "C-IewoA8vDU",
+    "title": "트럼프 믿었다가 '날벼락'…중간선거 앞두고 '폭탄 발언' [이슈픽] / YTN",
+    "views": 6948,
+    "gain": null
+   },
+   {
+    "id": "Z_4LE741ckI",
+    "title": "중국 수뇌부 33명 무더기 숙청…타이완 침공 계획에 '변수' [이슈픽] / YTN",
+    "views": 3389,
+    "gain": null
+   }
+  ]
  }
 ]
