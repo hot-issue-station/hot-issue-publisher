@@ -68,5 +68,47 @@
       }
     ],
     "picked": null
+  },
+  {
+    "slot": "EX1846",
+    "candidates": [
+      {
+        "title": "제이홉 MONA LISA 1억 뷰",
+        "scores": {
+          "coverage": 1,
+          "rankings": 0,
+          "fandom": 3,
+          "ourHistory": 1,
+          "freshness": 3,
+          "shareable": 2
+        },
+        "total": 23
+      },
+      {
+        "title": "이지현 KLPGA 첫 우승 도전",
+        "scores": {
+          "coverage": 1,
+          "rankings": 0,
+          "fandom": 2,
+          "ourHistory": 2,
+          "freshness": 3,
+          "shareable": 2
+        },
+        "total": 22
+      },
+      {
+        "title": "밀워키 첫 월드시리즈 우승",
+        "scores": {
+          "coverage": 3,
+          "rankings": 0,
+          "fandom": 1,
+          "ourHistory": 2,
+          "freshness": 1,
+          "shareable": 2
+        },
+        "total": 19
+      }
+    ],
+    "picked": null
   }
 ]

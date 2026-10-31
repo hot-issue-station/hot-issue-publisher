@@ -1,0 +1,53 @@
+{
+  "slot": "EX",
+  "refreshedAt": "2026-10-31T18:50:00+09:00",
+  "candidates": [
+    {
+      "title": "제이홉 'MONA LISA' 뮤비 1억 뷰 돌파",
+      "summary": "10월 31일 오전 5시 50분쯤 유튜브 1억 회, 솔로 영상 통산 4번째 1억 뷰",
+      "facts": [
+        "제이홉 디지털 싱글 'MONA LISA' 뮤직비디오가 10월 31일 오전 5시 50분쯤 유튜브 조회 수 1억 회를 넘었다",
+        "곡은 지난해 3월 발표",
+        "제이홉의 1억 뷰 영상 중 네 번째 (Daydream, Chicken Noodle Soup, Killin' It Girl 솔로 버전 안무 영상)",
+        "발매 당시 빌보드 핫 100 65위, 스포티파이 위클리 톱 송 글로벌 27위, 영국 오피셜 싱글 톱 100 56위"
+      ],
+      "sources": [
+        {"outlet": "스포티비뉴스", "title": "BTS 제이홉, '모나 리자' 뮤비 1억뷰 돌파...통산 4번째 '글로벌 저력'", "date": "2026-10-31", "url": "https://www.spotvnews.co.kr/news/articleView.html?idxno=1016675"},
+        {"outlet": "톱스타뉴스", "title": "방탄소년단 제이홉 'MONA LISA' 뮤직비디오 유튜브 1억 뷰 돌파", "date": "2026-10-31", "url": "https://www.topstarnews.net/news/articleView.html?idxno=16264451"}
+      ],
+      "score": 23
+    },
+    {
+      "title": "데뷔 8년 차 이지현, KLPGA 첫 우승 도전",
+      "summary": "S-OIL 챔피언십 3R 12언더 단독 선두, 이예원 1타 차 추격 (11/1 최종 라운드)",
+      "facts": [
+        "KLPGA 투어 제20회 S-OIL 챔피언십 3라운드, 10월 31일 제주 엘리시안 제주CC(파72)",
+        "이지현이 3라운드 4언더 68타(버디 6, 보기 2), 1~3라운드 모두 68타, 합계 12언더 204타 단독 선두",
+        "2019년 데뷔, 아직 투어 우승이 없다. 올 시즌 26개 대회 톱10 7번",
+        "이예원이 11언더 1타 차 2위(통산 11승 도전), 이재윤 10언더 3위",
+        "총상금 10억 원, 우승 상금 1억 8천만 원, 최종 라운드 11월 1일"
+      ],
+      "sources": [
+        {"outlet": "글로벌이코노믹", "title": "이예원 11승이냐, 이지현3 첫승이냐...KLPGA투어 S-OIL 1타 차 '우승 다툼'", "date": "2026-10-31", "url": "https://www.g-enews.com/article/General-News/2026/10/202610311636556163daecd3dad5_1"},
+        {"outlet": "톱스타뉴스", "title": "이지현, KLPGA 에쓰오일 챔피언십 3R 3일 연속 68타…1타차 단독 선두", "date": "2026-10-31", "url": "https://www.topstarnews.net/news/articleView.html?idxno=16264673"}
+      ],
+      "score": 22
+    },
+    {
+      "title": "밀워키, 창단 57년 만에 첫 월드시리즈 우승",
+      "summary": "탬파베이를 4승 1패로 꺾고 첫 우승, 44년 만의 WS 무대에서 정상",
+      "facts": [
+        "10월 28일(현지) 월드시리즈 5차전 밀워키 4-1 탬파베이, 시리즈 4승 1패",
+        "창단 첫 월드시리즈 우승, 밀워키 연고 57번째 시즌, 직전 WS 진출은 1982년(44년 전)",
+        "정규시즌 103승(구단 최다·MLB 최다), 포스트시즌 11승 2패",
+        "신인 쿠퍼 프랫이 WS 신인 6타석 연속 안타 기록, 잭슨 추리오 5경기 시리즈 최다 11안타",
+        "8월 말 기준 연봉 총액 순위 밀워키 19위, 탬파베이 25위"
+      ],
+      "sources": [
+        {"outlet": "CBS News", "title": "Milwaukee Brewers beat Tampa Bay Rays in 5 games to win first World Series in franchise history", "date": "2026-10-29", "url": "https://www.cbsnews.com/news/world-series-milwaukee-brewers-defeat-tampa-bay-rays/"},
+        {"outlet": "MLB.com", "title": "Brewers beat Rays in Game 5 to win first World Series in franchise history", "date": "2026-10-29", "url": "https://www.mlb.com/news/brewers-beat-rays-game-5-win-2026-world-series"}
+      ],
+      "score": 19
+    }
+  ]
+}
