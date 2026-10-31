@@ -1,0 +1,33 @@
+{
+ "date": "2026-11-01",
+ "slot": "AM",
+ "theme": "NT",
+ "category": "레전드 특집 #1 · 손흥민의 위상",
+ "topic": "발롱도르 케인의 '나의 GOAT', 숫자로 보는 프리미어리그의 손흥민",
+ "hook": "발롱도르 케인의\n'나의 GOAT', 손흥민",
+ "hookCover": "발롱도르 케인의\n'나의 GOAT', 손흥민",
+ "sub": "숫자로 보는 프리미어리그의 손흥민",
+ "photo": "assets/thumbs/sonkane_spurs_top.jpg",
+ "photoPos": "40% 30%",
+ "photoLabel": "영상 화면 · Tottenham Hotspur 공식 유튜브",
+ "big": {"number": "47", "lines": ["골 합작,", "*PL 역대 1위*", "듀오"], "caption": "", "icon": "star"},
+ "summary": "10월 27일 발롱도르를 받은 케인에게 손흥민은 'Congratulations my GOAT'라고 축하했어요. 둘은 프리미어리그에서 가장 많은 골을 함께 만든 짝이에요.",
+ "summaryPhotos": ["assets/thumbs/kane_ballon.jpg", "assets/thumbs/sonkane_spurs_top.jpg", "assets/thumbs/son_goldenboot_top.jpg", "assets/thumbs/son_uel.jpg"],
+ "summaryPhotosLabel": "FC Bayern München · Tottenham Hotspur · CBS Sports Golazo 공식 유튜브 영상 화면",
+ "facts": [
+  {"title": "PL 역대 최다 합작 47골", "desc": "한 명이 돕고 다른 한 명이 넣은 골이 47골. 2022년 2월 드로그바·램파드의 36골을 넘었어요.", "source": "위키트리 · 톱스타뉴스 · 2026.10.27", "photo": "assets/thumbs/sonkane_spurs_top.jpg", "photoPos": "40% 30%", "photoLabel": "영상 화면 · Tottenham Hotspur 공식 유튜브"},
+  {"title": "아시아 최초 PL 득점왕", "desc": "2021-22시즌 23골로 살라와 함께 득점 1위. 아시아 선수로는 처음이었어요.", "source": "서울신문 · 2022.05.23", "photo": "assets/thumbs/son_goldenboot_top.jpg", "photoPos": "65% 30%", "photoLabel": "영상 화면 · Tottenham Hotspur 공식 유튜브"},
+  {"title": "PL 127골, 푸스카스상까지", "desc": "PL 333경기 127골 71도움, 아시아 선수 최다 출전. 번리전 70m 단독 돌파 골로 FIFA 푸스카스상도 받았어요.", "source": "EPL 공식 발표 보도 · 2025.08.02", "photo": "assets/thumbs/son_puskas.jpg", "photoPos": "80% 40%", "photoLabel": "영상 화면 · FIFA 공식 유튜브"},
+  {"title": "17년 만의 트로피, 캡틴 손흥민", "desc": "2025년 5월 유로파리그 결승에서 맨유를 1-0으로 꺾고 주장으로 우승컵을 들었어요.", "source": "EPL 공식 발표 보도 · 2025.08.02", "photo": "assets/thumbs/son_uel.jpg", "photoPos": "80% 30%", "photoLabel": "영상 화면 · CBS Sports Golazo 공식 유튜브"}
+ ],
+ "interp": "높이 자란 꽃을 자르는 마음, '키 큰 양귀비 증후군'",
+ "interpSub": "성공한 사람을 깎아내리는 심리예요. 연구는 이것이 개인과 사회를 함께 다치게 한다고 말해요. 케인처럼 '나의 GOAT'라고 말해 줄 때, 그 기록은 우리 모두의 자랑이 돼요.",
+ "sources": [
+  {"outlet": "위키트리", "title": "케인 발롱도르, 손흥민과 47골 합작", "date": "2026.10.27", "url": "https://www.wikitree.co.kr/articles/1169520"},
+  {"outlet": "서울신문", "title": "손흥민, 아시아인 최초 EPL 득점왕", "date": "2022.05.23", "url": "https://m.seoul.co.kr/news/2022/05/23/20220523500026"},
+  {"outlet": "다음 스포츠", "title": "EPL 공식 발표 '토트넘의 전설'", "date": "2025.08.02", "url": "https://v.daum.net/v/20250802191635595"},
+  {"outlet": "오클랜드대학교", "title": "키 큰 양귀비 증후군 연구", "date": "2022.07.20", "url": "https://www.auckland.ac.nz/en/news/2022/07/20/research-tall-poppy-syndrome-negatively-affects-nz-entrepreneurs.html"}
+ ],
+ "cta": "손흥민의 시간,\n*같이 응원해요*",
+ "caption": "(확정 뒤 기사형 소개글)"
+}

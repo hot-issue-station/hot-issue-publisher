@@ -1,0 +1,43 @@
+{
+  "version": 1,
+  "date": "2026-11-01",
+  "slot": "AM",
+  "publishAt": "2026-11-01T08:00:00+09:00",
+  "topic": "발롱도르 케인의 '나의 GOAT', 숫자로 보는 프리미어리그의 손흥민",
+  "images": [
+    "01.jpg",
+    "02.jpg",
+    "03.jpg",
+    "04.jpg",
+    "05.jpg",
+    "06.jpg",
+    "07.jpg"
+  ],
+  "caption": "(확정 뒤 기사형 소개글)",
+  "sources": [
+    {
+      "outlet": "위키트리",
+      "title": "케인 발롱도르, 손흥민과 47골 합작",
+      "date": "2026.10.27",
+      "url": "https://www.wikitree.co.kr/articles/1169520"
+    },
+    {
+      "outlet": "서울신문",
+      "title": "손흥민, 아시아인 최초 EPL 득점왕",
+      "date": "2022.05.23",
+      "url": "https://m.seoul.co.kr/news/2022/05/23/20220523500026"
+    },
+    {
+      "outlet": "다음 스포츠",
+      "title": "EPL 공식 발표 '토트넘의 전설'",
+      "date": "2025.08.02",
+      "url": "https://v.daum.net/v/20250802191635595"
+    },
+    {
+      "outlet": "오클랜드대학교",
+      "title": "키 큰 양귀비 증후군 연구",
+      "date": "2022.07.20",
+      "url": "https://www.auckland.ac.nz/en/news/2022/07/20/research-tall-poppy-syndrome-negatively-affects-nz-entrepreneurs.html"
+    }
+  ]
+}
