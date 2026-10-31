@@ -3,24 +3,35 @@
   "slot": "RS",
   "theme": "RS",
   "category": "리센느 응원 특집 · 안원잘부 본방 사수",
-  "topic": "오늘 저녁 7시 안원잘부 새 영상, 본방 사수 예고",
-  "hook": "오늘 저녁 7시,\n안원잘부 본방 사수!",
-  "hookCover": "오늘 저녁 7시,\n안원잘부 본방 사수!",
-  "sub": "원이 채널 '안녕하세요원이입니다잘부탁드립니다' 새 영상",
+  "topic": "안원잘부 이번 주 본방 사수 예고 (구독자 239만, 본편은 보통 저녁 7시)",
+  "hook": "이번 주 안원잘부,\n본방 사수 준비됐나요?",
+  "hookCover": "이번 주 안원잘부,\n본방 사수 준비됐나요?",
+  "sub": "구독자 239만, 원이 채널 '안녕하세요원이입니다잘부탁드립니다'",
   "photo": "assets/rescene/yt/1kHqK1oqHzc.jpg",
   "photoPos": "50% 35%",
   "photoLabel": "'4인조 걸그룹 리센느' 편 · 영상 화면 안원잘부 유튜브",
-  "photoInset": "assets/rescene/yt/JYUilbw34Z0.jpg",
-  "photoInsetPos": "50% 35%",
-  "photoInsetLabel": "추석 특집 '제나의 트로트 메들리'",
-  "big": {"number": "2,000만", "lines": ["추석 특집", "*제나의 트로트 메들리*", "조회수"], "caption": "", "icon": "heart"},
-  "summary": "안원잘부는 리센느 원이와 솔파스튜디오(윤성원 PD)가 함께 만드는 유튜브 채널이에요. 본편은 주로 저녁 7시에 올라와요.",
-  "summaryPhotos": ["assets/rescene/yt/EsKmhBMmqIM.jpg", "assets/rescene/yt/8tmaJYDMp5w.jpg", "assets/rescene/yt/GJuMbGXXedY.jpg", "assets/rescene/yt/3Vb2TGjxDes.jpg", "assets/rescene/yt/8e0FfuwOI9M.jpg"],
+  "big": {
+    "number": "239만",
+    "lines": [
+      "안원잘부",
+      "*구독자*"
+    ],
+    "caption": "",
+    "icon": "heart"
+  },
+  "summary": "안원잘부는 리센느 원이와 솔파스튜디오(윤성원 PD)가 함께 만드는 유튜브 채널이에요. 본편은 보통 저녁 7시에 올라오고, 채널 게시물로 업로드 시각을 미리 알려 줘요.",
+  "summaryPhotos": [
+    "assets/rescene/yt/EsKmhBMmqIM.jpg",
+    "assets/rescene/yt/8tmaJYDMp5w.jpg",
+    "assets/rescene/yt/GJuMbGXXedY.jpg",
+    "assets/rescene/yt/3Vb2TGjxDes.jpg",
+    "assets/rescene/yt/8e0FfuwOI9M.jpg"
+  ],
   "summaryPhotosLabel": "'원이 근황' · '오사카에서 생긴 일' · '살과의 전쟁' 외 (영상 화면 · 안원잘부 유튜브)",
   "facts": [
     {
-      "title": "본편은 주로 저녁 7시",
-      "desc": "최근 본편 9편 가운데 7편이 저녁 7시에 올라왔어요. 지난주 일요일 7시에 올라온 '4인조 걸그룹 리센느'는 엿새 만에 719만 회를 넘었어요.",
+      "title": "본편은 보통 저녁 7시",
+      "desc": "최근 본편 9편 가운데 7편이 저녁 7시에 올라왔어요. 지난주에는 '10/25(일) 오후 7시' 공지 뒤 '4인조 걸그룹 리센느'가 올라와 엿새 만에 719만 회를 넘었어요.",
       "source": "안원잘부 유튜브 (10/31 17:54 기준)"
     },
     {
@@ -34,13 +45,28 @@
       "source": "안원잘부 유튜브 (10/31 17:54 기준)"
     }
   ],
-  "interp": "오늘은 어떤 이야기가 나올까요?",
-  "interpSub": "본방 보고 가장 웃겼던 장면을 댓글로 남겨 주세요.",
+  "interp": "이번 주엔 어떤 이야기가 나올까요?",
+  "interpSub": "업로드 공지가 뜨면 알려 드릴게요. 기대되는 멤버를 댓글로 남겨 주세요.",
   "sources": [
-    {"outlet": "안원잘부 유튜브", "title": "본편·쇼츠 조회수", "date": "2026.10.31 17:54 기준", "url": "https://www.youtube.com/@helloiamwoninicetomeetyou"},
-    {"outlet": "일간스포츠", "title": "리센느 1등 만든 '안원잘부'", "date": "2026.07.19", "url": "https://v.daum.net/v/20260719113528965"},
-    {"outlet": "엑스포츠뉴스", "title": "'안원잘부' 쉬었다 와도 잘나가네", "date": "2026.09.01", "url": "https://www.xportsnews.com/article/2190557"}
+    {
+      "outlet": "안원잘부 유튜브",
+      "title": "구독자·본편·쇼츠 조회수, 업로드 공지",
+      "date": "2026.10.31 17:54 기준",
+      "url": "https://www.youtube.com/@helloiamwoninicetomeetyou"
+    },
+    {
+      "outlet": "일간스포츠",
+      "title": "리센느 1등 만든 '안원잘부'",
+      "date": "2026.07.19",
+      "url": "https://v.daum.net/v/20260719113528965"
+    },
+    {
+      "outlet": "엑스포츠뉴스",
+      "title": "'안원잘부' 쉬었다 와도 잘나가네",
+      "date": "2026.09.01",
+      "url": "https://www.xportsnews.com/article/2190557"
+    }
   ],
-  "cta": "저녁 *7시*,\n같이 봐요",
+  "cta": "본편 뜨면\n*같이 봐요*",
   "caption": "(확정 뒤 기사형 소개글로 씁니다)"
 }

@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "date": "2026-10-31",
+  "slot": "RS",
+  "publishAt": "2026-10-31T20:00:00+09:00",
+  "topic": "안원잘부 이번 주 본방 사수 예고 (구독자 239만, 본편은 보통 저녁 7시)",
+  "images": [
+    "01.jpg",
+    "02.jpg",
+    "03.jpg",
+    "04.jpg",
+    "05.jpg",
+    "06.jpg",
+    "07.jpg"
+  ],
+  "caption": "(확정 뒤 기사형 소개글로 씁니다)",
+  "sources": [
+    {
+      "outlet": "안원잘부 유튜브",
+      "title": "구독자·본편·쇼츠 조회수, 업로드 공지",
+      "date": "2026.10.31 17:54 기준",
+      "url": "https://www.youtube.com/@helloiamwoninicetomeetyou"
+    },
+    {
+      "outlet": "일간스포츠",
+      "title": "리센느 1등 만든 '안원잘부'",
+      "date": "2026.07.19",
+      "url": "https://v.daum.net/v/20260719113528965"
+    },
+    {
+      "outlet": "엑스포츠뉴스",
+      "title": "'안원잘부' 쉬었다 와도 잘나가네",
+      "date": "2026.09.01",
+      "url": "https://www.xportsnews.com/article/2190557"
+    }
+  ]
+}
