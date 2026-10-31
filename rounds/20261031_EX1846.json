@@ -1,0 +1,23 @@
+{
+ "date": "2026-10-31", "slot": "NT",
+ "category": "오늘의 숫자 · 음악",
+ "topic": "제이홉 'MONA LISA' 뮤비 1억 뷰 돌파",
+ "hook": "제이홉 'MONA LISA'\n1억 뷰",
+ "sub": "솔로 뮤직비디오로는 통산 네 번째 억대 조회예요",
+ "summary": "제이홉의 'MONA LISA' 뮤직비디오가 31일 오전 5시 50분쯤 유튜브 조회 수 1억 회를 넘었어요.",
+ "facts": [
+  {"title": "솔로 뮤비 통산 네 번째 1억 뷰", "desc": "'Daydream', 'Chicken Noodle Soup', 'Killin' It Girl' 솔로 안무 영상에 이어 네 번째예요.", "source": "톱스타뉴스 · 뉴스1 · 2026.10.31"},
+  {"title": "지난해 3월 발표한 디지털 싱글", "desc": "매력적인 상대를 명화 '모나리자'에 비유한 힙합 알앤비 곡이에요.", "source": "톱스타뉴스 · 2026.10.31"},
+  {"title": "발매 당시 빌보드 핫 100 65위", "desc": "스포티파이 위클리 톱 송 글로벌 27위, 영국 오피셜 싱글 톱 100 56위에 올랐어요.", "source": "톱스타뉴스 · 스포티비뉴스 · 2026.10.31"}
+ ],
+ "interp": "1년 7개월, 꾸준히 쌓인 1억 번의 재생",
+ "interpSub": "한 번 한 번 다시 찾아 준 마음이 모여 큰 숫자가 되었어요.",
+ "sources": [
+  {"outlet": "톱스타뉴스", "title": "방탄소년단 제이홉 'MONA LISA' 뮤직비디오 유튜브 1억 뷰 돌파", "date": "2026.10.31", "url": "https://www.topstarnews.net/news/articleView.html?idxno=16264451"},
+  {"outlet": "뉴스1", "title": "BTS 제이홉, '모나리자' MV 1억 뷰 돌파…통산 4번째", "date": "2026.10.31", "url": "https://www.news1.kr/entertain/music/6338526"},
+  {"outlet": "스포티비뉴스", "title": "BTS 제이홉, '모나 리자' 뮤비 1억뷰 돌파...통산 4번째 '글로벌 저력'", "date": "2026.10.31", "url": "https://www.spotvnews.co.kr/news/articleView.html?idxno=1016675"}
+ ],
+ "cta": "제이홉 소식 놓치지 않게 저장해 두세요",
+ "caption": "제이홉 'MONA LISA' 뮤비 1억 뷰\n제이홉의 'MONA LISA' 뮤직비디오가 31일 오전 5시 50분쯤 유튜브 조회 수 1억 회를 넘었어요. 솔로 뮤직비디오로는 통산 네 번째 억대 조회예요.\n\n#제이홉 #MONALISA #방탄소년단 #이슈브리프 #오늘의이슈",
+ "big": {"number": "1억", "lines": ["뷰,", "솔로 뮤비", "*네 번째*"], "caption": "제이홉 'MONA LISA'", "icon": "music"}
+}
