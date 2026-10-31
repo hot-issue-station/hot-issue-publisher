@@ -68,7 +68,11 @@ FEED = {"h": 1350, "pad": "96px"}
 REEL = {"h": 1920, "pad": "240px 160px 440px 90px"}
 
 
-def frame(inner, date_label, page, footer_right="", light=False, deco="", total=7):
+CUR_TOTAL = 7
+
+
+def frame(inner, date_label, page, footer_right="", light=False, deco="", total=None):
+    total = total or CUR_TOTAL
     bg, fg, muted = (CYAN, ONACC, ONACC2) if light else (BG, INK, MUTED)
     return f"""<!doctype html><html><head><meta charset="utf-8"><style>
 body{{margin:0;word-break:keep-all;font-family:'Noto Sans CJK KR','Noto Sans KR',sans-serif}}</style></head><body>
@@ -91,9 +95,9 @@ def rings(colors, sizes, offset_ratio=0.5):
     return out
 
 
-def dots(i):
+def dots(i, n=3):
     return "".join(f'<div style="width:24px;height:24px;border-radius:50%;background:{CYAN if k == i else LINE}"></div>'
-                   for k in range(3))
+                   for k in range(n))
 
 # 야구공(직접 그린 그림). 맞대결 표지와 1장 그림에 쓴다.
 BASEBALL_SVG = ('<svg viewBox="0 0 120 120" width="120" height="120"><circle cx="60" cy="60" r="54" fill="#FFFFFF" stroke="#D5DEEA" stroke-width="3"/>'
@@ -243,6 +247,10 @@ def cards(r):
     m, d = r["date"][5:7], r["date"][8:10]
     label = f"{m}.{d} · {SLOTS[r['slot']][0]}"
     out = []
+    global CUR_TOTAL
+    NF = max(1, min(len(r["facts"]), 4))   # 사실 카드 1~4장 → 전체 5~8장 (10/31: 30초 릴스 가독성에 맞춰 장수 유연)
+    TOT = NF + 4
+    CUR_TOTAL = TOT
     # 1 훅 — "big"이 있으면 C안(숫자 강조), 없으면 기본형
     if r.get("photo"):
         out.append(cover_photo(r, label))
@@ -256,7 +264,7 @@ def cards(r):
 <div style="font-size:108px;font-weight:900;line-height:1.25">{hook_html(r['hook'])}</div>
 <div style="display:flex;gap:12px"><div style="width:160px;height:16px;border-radius:8px;background:{CYAN}"></div><div style="width:48px;height:16px;border-radius:8px;background:{PINK}"></div></div>
 <div style="font-size:52px;font-weight:500;line-height:1.5;color:{SOFT};max-width:760px">{E(r['sub'])}</div></div>""",
-                     label, 1, "밀어서 다음 장 →", deco=rings([VIOLET, PINK, CYAN], [900, 680, 460])))
+                     label, 1, "밀어서 다음 장 →", deco=rings([VIOLET, PINK, CYAN], [900, 680, 460]), total=TOT))
     # 2 요약 — "summaryPhotos"(사진 경로 목록, 최대 5장)가 있으면 요약 위에 사진 줄을 놓는다
     sp = r.get("summaryPhotos") or []
     if sp:
@@ -267,14 +275,14 @@ def cards(r):
         out.append(frame(f"""<div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:30px">
 <div style="display:flex;align-items:center;gap:20px"><div style="width:64px;height:8px;border-radius:4px;background:{PINK}"></div><div style="font-size:44px;font-weight:700;color:{CYAN}">한 줄 요약</div></div>
 <div style="display:flex;flex-direction:column;gap:10px"><div style="display:flex;gap:16px">{row}</div>{tag}</div>
-<div style="padding:52px 60px;border:3px solid {LINE};border-radius:40px;background:{BOX}"><div style="font-size:58px;font-weight:700;line-height:1.45">{E(r['summary'])}</div></div></div>""", label, 2))
+<div style="padding:52px 60px;border:3px solid {LINE};border-radius:40px;background:{BOX}"><div style="font-size:58px;font-weight:700;line-height:1.45">{E(r['summary'])}</div></div></div>""", label, 2, total=TOT))
     else:
         out.append(frame(f"""<div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:40px">
 <div style="display:flex;align-items:center;gap:20px"><div style="width:64px;height:8px;border-radius:4px;background:{PINK}"></div><div style="font-size:44px;font-weight:700;color:{CYAN}">한 줄 요약</div></div>
 <div style="padding:80px 72px;border:3px solid {LINE};border-radius:40px;background:{BOX}"><div style="font-size:72px;font-weight:700;line-height:1.45">{E(r['summary'])}</div></div>
-<div style="font-size:44px;line-height:1.5;color:{SOFT}">이어서 핵심 사실 3가지를 알려드려요 →</div></div>""", label, 2))
+<div style="font-size:44px;line-height:1.5;color:{SOFT}">이어서 핵심 사실 {NF}가지를 알려드려요 →</div></div>""", label, 2, total=TOT))
     # 3~5 사실 — 사실마다 "photo"(경로), "photoPos", "photoLabel"이 있으면 위쪽에 사진 칸을 놓는다
-    for i, f in enumerate(r["facts"][:3]):
+    for i, f in enumerate(r["facts"][:NF]):
         if f.get("photo"):
             ftag = (f'<div style="position:absolute;right:16px;bottom:16px;padding:6px 14px;border-radius:999px;background:rgba({BGRGB},.75);color:{SOFT};font-size:24px">{E(f["photoLabel"])}</div>' if f.get("photoLabel") else "")
             out.append(frame(f"""<div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:24px">
@@ -283,7 +291,7 @@ def cards(r):
 <div style="font-size:58px;font-weight:900;line-height:1.3">{E(f['title'])}</div>
 <div style="font-size:42px;line-height:1.55;color:{BODY}">{E(f['desc'])}</div>
 <div style="font-size:32px;color:{MUTED}">출처 {E(f['source'])}</div></div>""",
-                             label, 3 + i, f'<div style="display:flex;gap:16px">{dots(i)}</div>'))
+                             label, 3 + i, f'<div style="display:flex;gap:16px">{dots(i, NF)}</div>', total=TOT))
             continue
         out.append(frame(f"""<div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:32px">
 <div style="display:flex;align-items:baseline;gap:24px"><div style="font-size:140px;font-weight:900;line-height:1;color:{CYAN}">{i + 1:02d}</div><div style="font-size:40px;font-weight:700;color:{MUTED}">핵심 사실</div></div>
@@ -291,13 +299,13 @@ def cards(r):
 <div style="width:100%;height:2px;background:{LINE}"></div>
 <div style="font-size:48px;line-height:1.65;color:{BODY}">{E(f['desc'])}</div>
 <div style="font-size:36px;color:{MUTED}">출처 {E(f['source'])}</div></div>""",
-                         label, 3 + i, f'<div style="display:flex;gap:16px">{dots(i)}</div>'))
+                         label, 3 + i, f'<div style="display:flex;gap:16px">{dots(i, NF)}</div>', total=TOT))
     # 6 해석
     out.append(frame(f"""<div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:36px">
 <div style="font-size:48px;font-weight:900">그래서, 나에게는?</div>
 <div style="font-size:84px;font-weight:900;line-height:1.35">{E(r['interp'])}</div>
 <div style="font-size:46px;font-weight:500;line-height:1.55;color:{ONACC2}">{E(r['interpSub'])}</div></div>""",
-                     label, 6, light=True, deco=rings([ONACC] * 3, [640, 440, 240])))
+                     label, NF + 3, light=True, deco=rings([ONACC] * 3, [640, 440, 240]), total=TOT))
     # 7 출처
     nums = "①②③④"
     src = "".join(f'<div style="padding:22px 0;border-bottom:2px solid {LINE};font-size:36px;line-height:1.4;color:{BODY}">'
@@ -309,7 +317,7 @@ def cards(r):
 <div style="font-size:{48 if chr(10) in r['cta'] else 60}px;font-weight:900;line-height:1.3">{cta_html(r['cta'])}</div>
 <div style="display:flex;gap:24px"><div style="padding:20px 56px;border-radius:999px;background:{CYAN};color:{ONACC};font-size:48px;font-weight:900">저장</div>
 <div style="padding:20px 56px;border-radius:999px;background:{PINK};color:{ONACC};font-size:48px;font-weight:900">팔로우</div></div></div>
-<div style="font-size:32px;line-height:1.5;color:{MUTED}">광고·협찬 없음</div></div>""", label, 7, "매일 따뜻한 이슈는 @hot.issue.station"))
+<div style="font-size:32px;line-height:1.5;color:{MUTED}">광고·협찬 없음</div></div>""", label, TOT, "매일 따뜻한 이슈는 @hot.issue.station", total=TOT))
     return out
 
 

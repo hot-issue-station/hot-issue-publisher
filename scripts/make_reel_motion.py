@@ -104,8 +104,10 @@ def main():
     with sync_playwright() as p:
         b = p.chromium.launch()
         pg = b.new_page(viewport={"width": W, "height": H})
-        for i, html in enumerate(pages[:7]):
-            dur = DUR[i]
+        N = len(pages)
+        DURS = DUR if N == 7 else [round(30.0 / N + XF * (N - 1) / N, 2)] * N   # 장수가 바뀌어도 약 30초
+        for i, html in enumerate(pages):
+            dur = DURS[i]
             html = html.replace("</style>", ANIM_CSS + "</style>", 1)
             pg.set_content(html); pg.wait_for_timeout(300)
             info = pg.evaluate(PREP_JS, [dur, i, mode in ("both", "photo"), mode in ("both", "text"), P["photo"], P["text"]])
