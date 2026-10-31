@@ -1,54 +1,72 @@
 [
- {
-  "slot": "NT",
-  "candidates": [
-   {
-    "title": "서울 삼성 KBL 첫 개막 9연승",
-    "scores": {
-     "coverage": 2,
-     "rankings": 2,
-     "fandom": 2,
-     "ourHistory": 2,
-     "freshness": 3,
-     "shareable": 3
-    },
-    "total": 30
-   },
-   {
-    "title": "한국시리즈 앞두고 KIA·KT 소식(기사 미확인)",
-    "scores": {
-     "coverage": 1,
-     "rankings": 2,
-     "fandom": 3,
-     "ourHistory": 2,
-     "freshness": 3,
-     "shareable": 1
-    },
-    "total": 27
-   },
-   {
-    "title": "최불암 별세 후속(어제 PM 다룸, 제외)",
-    "scores": {
-     "coverage": 3,
-     "rankings": 3,
-     "fandom": 3,
-     "ourHistory": 1,
-     "freshness": 2,
-     "shareable": 1
-    },
-    "total": 0
-   },
-   {
-    "title": "리센느 컴백 앞 사칭 피해(민감·특집 별도, 제외)",
-    "scores": {},
-    "total": 0
-   },
-   {
-    "title": "이효리 은퇴설 해명(사생활, 제외)",
-    "scores": {},
-    "total": 0
-   }
-  ],
-  "picked": "서울 삼성 KBL 첫 개막 9연승"
- }
+  {
+    "slot": "NT",
+    "candidates": [
+      {
+        "title": "서울 삼성 KBL 첫 개막 9연승",
+        "scores": {
+          "coverage": 2,
+          "rankings": 2,
+          "fandom": 2,
+          "ourHistory": 2,
+          "freshness": 3,
+          "shareable": 3
+        },
+        "total": 30
+      },
+      {
+        "title": "한국시리즈 앞두고 KIA·KT 소식(기사 미확인)",
+        "scores": {
+          "coverage": 1,
+          "rankings": 2,
+          "fandom": 3,
+          "ourHistory": 2,
+          "freshness": 3,
+          "shareable": 1
+        },
+        "total": 27
+      },
+      {
+        "title": "최불암 별세 후속(어제 PM 다룸, 제외)",
+        "scores": {
+          "coverage": 3,
+          "rankings": 3,
+          "fandom": 3,
+          "ourHistory": 1,
+          "freshness": 2,
+          "shareable": 1
+        },
+        "total": 0
+      },
+      {
+        "title": "리센느 컴백 앞 사칭 피해(민감·특집 별도, 제외)",
+        "scores": {},
+        "total": 0
+      },
+      {
+        "title": "이효리 은퇴설 해명(사생활, 제외)",
+        "scores": {},
+        "total": 0
+      }
+    ],
+    "picked": "서울 삼성 KBL 첫 개막 9연승"
+  },
+  {
+    "slot": "EX1843",
+    "candidates": [
+      {
+        "title": "삼성-KIA PO 5차전",
+        "total": 15
+      },
+      {
+        "title": "대한항공 V리그 개막전 3-0",
+        "total": 13
+      },
+      {
+        "title": "하지원·이서진 비서진 최고 시청률",
+        "total": 12
+      }
+    ],
+    "picked": null
+  }
 ]
