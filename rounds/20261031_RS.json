@@ -1,0 +1,46 @@
+{
+  "date": "2026-10-31",
+  "slot": "RS",
+  "theme": "RS",
+  "category": "리센느 응원 특집 · 'With' 챌린지 릴레이",
+  "topic": "리센느 'With' 챌린지 릴레이 9편, 누적 461만 회 (컴백 D-3)",
+  "hook": "9팀과 함께 춘 'With',\n누적 461만 회",
+  "hookCover": "9팀과 함께 춘 'With',\n누적 461만 회",
+  "sub": "컴백 D-3, 리센느 'With' 챌린지 릴레이 총정리",
+  "photo": "assets/rescene/yt/k7y2yvkFJ1k.jpg",
+  "photoPos": "50% 30%",
+  "photoLabel": "올데이 프로젝트 애니 편 · 영상 화면 RESCENE 공식 유튜브",
+  "photoInset": "assets/rescene/yt/UfaJ4mbAiWc.jpg",
+  "photoInsetPos": "50% 30%",
+  "photoInsetLabel": "보이넥스트도어 운학 편",
+  "big": {"number": "9", "lines": ["팀과 함께한", "*With*", "챌린지"], "caption": "", "icon": "music"},
+  "summary": "10월 27일부터 나흘 동안 리센느 공식 채널에 'With' 챌린지 9편이 올라왔어요. 조회수를 더하면 461만 회예요.",
+  "summaryPhotos": ["assets/rescene/yt/HN7La9KN2MY.jpg", "assets/rescene/yt/QEeCIDjleC8.jpg", "assets/rescene/yt/blswe0wDt8o.jpg", "assets/rescene/yt/Es3qasE2w7w.jpg", "assets/rescene/yt/A5vmiFpG1yg.jpg"],
+  "summaryPhotosLabel": "크러쉬 · 키스오브라이프 · 최예나 · 투어스 지훈 · 키키 수이 편 (영상 화면 · RESCENE 공식 유튜브)",
+  "facts": [
+    {
+      "title": "나흘 동안 9팀, 9편의 릴레이",
+      "desc": "크러쉬·올데이 프로젝트 애니·보이넥스트도어 운학(10/27), 키스오브라이프 나띠·하늘·앤팀 의주(10/28), 최예나·니쥬 니나(10/29), 투어스 지훈·키키 수이(10/30).",
+      "source": "RESCENE 공식 유튜브 · 일간스포츠"
+    },
+    {
+      "title": "가장 많이 본 편은 84만 회",
+      "desc": "올데이 프로젝트 애니와 함께한 편이 84만 회로 가장 많고, 보이넥스트도어 운학 편 77만 회, 최예나 편 55만 회가 뒤를 이어요.",
+      "source": "RESCENE 공식 유튜브 (10/31 17:36 기준)"
+    },
+    {
+      "title": "새로 함께한 투어스 지훈·키키 수이",
+      "desc": "10월 30일 밤에는 투어스 지훈, 키키 수이와 함께한 두 편이 더해졌어요. 각각 33만 회, 41만 회를 넘었어요.",
+      "source": "RESCENE 공식 유튜브 (10/31 17:36 기준)"
+    }
+  ],
+  "interp": "다음 'With' 릴레이, 누구와 보고 싶나요?",
+  "interpSub": "11월 3일 오후 6시 컴백까지 사흘, 보고 싶은 조합을 댓글로 남겨 주세요.",
+  "sources": [
+    {"outlet": "RESCENE 공식 유튜브", "title": "'With' 챌린지 쇼츠 9편", "date": "2026.10.27~10.30", "url": "https://www.youtube.com/@RESCENE_official/shorts"},
+    {"outlet": "일간스포츠", "title": "'With' 챌린지 영상 공개", "date": "2026.10.28", "url": "https://isplus.com/article/view/isp202610280010"},
+    {"outlet": "헤럴드뮤즈", "title": "컴백 D-3, 'With' MV 티저", "date": "2026.10.31", "url": "https://www.heraldmuse.com/article/10921228"}
+  ],
+  "cta": "컴백까지 *D-3*,\n같이 기다려요",
+  "caption": "(확정 뒤 기사형 소개글로 씁니다)"
+}
