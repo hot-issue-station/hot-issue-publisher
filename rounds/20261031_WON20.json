@@ -1,0 +1,88 @@
+{
+ "date": "2026-10-31",
+ "slot": "RS",
+ "category": "리센느 응원 특집 · 안원잘부",
+ "topic": "안원잘부 최초 2,000만 회: '[추석 특집] 제나의 트로트 메들리'",
+ "hook": "추석 특집\n제나의 트로트 메들리",
+ "hookCover": "추석 특집\n제나의 트로트 메들리",
+ "sub": "'제나의 트로트 메들리', 공개 43일 만에",
+ "photo": "assets/rescene/won20/jenna.jpg",
+ "photoPos": "50% 30%",
+ "photoLabel": "영상 화면 · 안원잘부 유튜브",
+ "big": {
+  "number": "2,000",
+  "lines": [
+   "만 회,",
+   "*안원잘부*",
+   "*최초*의 기록"
+  ],
+  "caption": "",
+  "icon": "heart"
+ },
+ "summary": "리센느 원이의 유튜브 채널 '안원잘부'에서 처음으로 2,000만 회를 넘은 영상이 나왔어요. 막내 제나가 부른 추석 특집 트로트 메들리예요.",
+ "summaryPhotos": [
+  "assets/rescene/won20/jenna_p.jpg",
+  "assets/rescene/won20/woni_p.jpg",
+  "assets/rescene/won20/diet_p.jpg",
+  "assets/rescene/won20/osaka_p.jpg"
+ ],
+ "summaryPhotosLabel": "영상 화면 · 안원잘부 유튜브",
+ "facts": [
+  {
+   "title": "9월 18일, 추석 특집 메들리",
+   "desc": "막내 제나가 노래하고 원이·리브·미나미·메이가 코러스. '용두산 엘레지'부터 '빵빵', '어머나', '초혼'까지 11분 넘게 이어졌어요.",
+   "source": "엑스포츠뉴스 2026.09.21 · 뉴스1 2026.09.23",
+   "photo": "assets/rescene/won20/medley.jpg",
+   "photoPos": "50% 40%",
+   "photoLabel": "영상 화면 · 안원잘부 유튜브"
+  },
+  {
+   "title": "사흘 만에 650만, 엿새 만에 870만",
+   "desc": "걸그룹 막내의 예상 밖 트로트 실력에 영상은 SNS와 커뮤니티로 빠르게 퍼졌어요.",
+   "source": "엑스포츠뉴스 2026.09.21 · 뉴스1 2026.09.23",
+   "photo": "assets/rescene/won20/jenna.jpg",
+   "photoPos": "50% 40%",
+   "photoLabel": "영상 화면 · 안원잘부 유튜브"
+  },
+  {
+   "title": "원곡자 장윤정의 댓글",
+   "desc": "'어머나' 원곡자 장윤정이 직접 댓글로 제나를 칭찬했고, '빵빵'은 멜론 성인가요 차트 34위에 올랐어요.",
+   "source": "엑스포츠뉴스 2026.09.21",
+   "photo": "assets/rescene/won20/chorus.jpg",
+   "photoPos": "50% 40%",
+   "photoLabel": "영상 화면 · 안원잘부 유튜브"
+  },
+  {
+   "title": "10월 31일, 2,000만 돌파",
+   "desc": "공개 43일 만에 2,000만 회. 채널 인기 영상 1위로, 2위 '갸루와 거제에 왔습니다(거제 1편)' 1,610만 회를 크게 앞서요.",
+   "source": "안원잘부 유튜브 (10/31 22:26 기준 2,004만 회)",
+   "photo": "assets/rescene/won20/woni.jpg",
+   "photoPos": "50% 40%",
+   "photoLabel": "'원이 근황' · 영상 화면 안원잘부 유튜브"
+  }
+ ],
+ "interp": "2,000만 번의 추석 선물",
+ "interpSub": "좋아요 27만 개. \"풍성한 추석 보내시라고\" 준비한 무대가 계절이 바뀐 지금도 계속 불리고 있어요. 다음 기록은 3,000만일까요?",
+ "sources": [
+  {
+   "outlet": "안원잘부 유튜브",
+   "title": "[추석 특집] 제나의 트로트 메들리 조회수",
+   "date": "2026.10.31 22:26 기준",
+   "url": "https://www.youtube.com/watch?v=JYUilbw34Z0"
+  },
+  {
+   "outlet": "엑스포츠뉴스",
+   "title": "리센느, 트로트까지 650만 '대박'",
+   "date": "2026.09.21",
+   "url": "https://www.xportsnews.com/article/2198024"
+  },
+  {
+   "outlet": "뉴스1",
+   "title": "리센느 막내 제나 '트롯 본능'…870만",
+   "date": "2026.09.23",
+   "url": "https://www.news1.kr/videos/24949"
+  }
+ ],
+ "cta": "다음 기록도\n*함께 지켜봐요*",
+ "caption": "(확정 뒤 기사형 소개글)"
+}

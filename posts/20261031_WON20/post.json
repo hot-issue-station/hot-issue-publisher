@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "date": "2026-10-31",
+  "slot": "RS",
+  "publishAt": "2026-10-31T18:30:00+09:00",
+  "topic": "안원잘부 최초 2,000만 회: '[추석 특집] 제나의 트로트 메들리'",
+  "images": [
+    "01.jpg",
+    "02.jpg",
+    "03.jpg",
+    "04.jpg",
+    "05.jpg",
+    "06.jpg",
+    "07.jpg"
+  ],
+  "caption": "(확정 뒤 기사형 소개글)",
+  "sources": [
+    {
+      "outlet": "안원잘부 유튜브",
+      "title": "[추석 특집] 제나의 트로트 메들리 조회수",
+      "date": "2026.10.31 22:26 기준",
+      "url": "https://www.youtube.com/watch?v=JYUilbw34Z0"
+    },
+    {
+      "outlet": "엑스포츠뉴스",
+      "title": "리센느, 트로트까지 650만 '대박'",
+      "date": "2026.09.21",
+      "url": "https://www.xportsnews.com/article/2198024"
+    },
+    {
+      "outlet": "뉴스1",
+      "title": "리센느 막내 제나 '트롯 본능'…870만",
+      "date": "2026.09.23",
+      "url": "https://www.news1.kr/videos/24949"
+    }
+  ]
+}
