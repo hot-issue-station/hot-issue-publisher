@@ -3,7 +3,7 @@
  "name": "14F 일사에프 (MBC)",
  "channel": "https://www.youtube.com/@14FMBC",
  "channelId": "UCLKuglhGlMmDteQKoniENIQ",
- "checkedAt": "2026-10-31T20:57+09:00",
+ "checkedAt": "2026-10-31T22:26+09:00",
  "videos": [
   {
    "id": "yoyqnf-PE30",
@@ -11,12 +11,12 @@
    "published": "2026-10-31T04:00:23+00:00",
    "url": "https://www.youtube.com/shorts/yoyqnf-PE30",
    "shorts": true,
-   "views": 1954,
-   "likes": 13,
-   "viewsGain": 250,
+   "views": 2134,
+   "likes": 14,
+   "viewsGain": 180,
    "isNew": false,
-   "median": 4473.5,
-   "multiple": 0.4
+   "median": 4703.0,
+   "multiple": 0.5
   },
   {
    "id": "ZUqM6arduYw",
@@ -24,11 +24,11 @@
    "published": "2026-10-31T04:00:20+00:00",
    "url": "https://www.youtube.com/watch?v=ZUqM6arduYw",
    "shorts": false,
-   "views": 19326,
-   "likes": 84,
-   "viewsGain": 3190,
+   "views": 21237,
+   "likes": 96,
+   "viewsGain": 1911,
    "isNew": false,
-   "median": 49098,
+   "median": 49456,
    "multiple": 0.4
   },
   {
@@ -37,11 +37,11 @@
    "published": "2026-10-31T03:00:07+00:00",
    "url": "https://www.youtube.com/shorts/FV2VNAPmk-o",
    "shorts": true,
-   "views": 3854,
+   "views": 4222,
    "likes": 37,
-   "viewsGain": 528,
+   "viewsGain": 368,
    "isNew": false,
-   "median": 4473.5,
+   "median": 4703.0,
    "multiple": 0.9
   },
   {
@@ -50,11 +50,11 @@
    "published": "2026-10-30T23:00:09+00:00",
    "url": "https://www.youtube.com/shorts/M_z0WM3-GO8",
    "shorts": true,
-   "views": 2677,
+   "views": 2762,
    "likes": 37,
-   "viewsGain": 134,
+   "viewsGain": 85,
    "isNew": false,
-   "median": 4473.5,
+   "median": 4703.0,
    "multiple": 0.6
   },
   {
@@ -63,11 +63,11 @@
    "published": "2026-10-30T09:29:22+00:00",
    "url": "https://www.youtube.com/watch?v=niGCI-aEH-A",
    "shorts": false,
-   "views": 180278,
-   "likes": 536,
-   "viewsGain": 3632,
+   "views": 182756,
+   "likes": 543,
+   "viewsGain": 2478,
    "isNew": false,
-   "median": 49098,
+   "median": 49456,
    "multiple": 3.7
   },
   {
@@ -76,11 +76,11 @@
    "published": "2026-10-30T07:30:30+00:00",
    "url": "https://www.youtube.com/watch?v=8O13erGECdU",
    "shorts": false,
-   "views": 17989,
-   "likes": 76,
-   "viewsGain": 305,
+   "views": 18188,
+   "likes": 75,
+   "viewsGain": 199,
    "isNew": false,
-   "median": 49098,
+   "median": 49456,
    "multiple": 0.4
   },
   {
@@ -89,11 +89,11 @@
    "published": "2026-10-29T23:00:22+00:00",
    "url": "https://www.youtube.com/shorts/Icvrlx6HV-Q",
    "shorts": true,
-   "views": 5093,
+   "views": 5184,
    "likes": 64,
-   "viewsGain": 4,
+   "viewsGain": 91,
    "isNew": false,
-   "median": 4473.5,
+   "median": 4703.0,
    "multiple": 1.1
   },
   {
@@ -102,11 +102,11 @@
    "published": "2026-10-29T11:00:11+00:00",
    "url": "https://www.youtube.com/shorts/zHzHgad2t6c",
    "shorts": true,
-   "views": 9080,
+   "views": 9217,
    "likes": 97,
-   "viewsGain": -45,
+   "viewsGain": 137,
    "isNew": false,
-   "median": 4473.5,
+   "median": 4703.0,
    "multiple": 2.0
   },
   {
@@ -115,11 +115,11 @@
    "published": "2026-10-29T10:00:41+00:00",
    "url": "https://www.youtube.com/watch?v=7pF-2NUb9Ws",
    "shorts": false,
-   "views": 49098,
-   "likes": 436,
-   "viewsGain": 385,
+   "views": 49456,
+   "likes": 439,
+   "viewsGain": 358,
    "isNew": false,
-   "median": 49098,
+   "median": 49456,
    "multiple": 1.0
   },
   {
@@ -128,11 +128,11 @@
    "published": "2026-10-28T09:41:10+00:00",
    "url": "https://www.youtube.com/watch?v=UQ1mmTmrf1k",
    "shorts": false,
-   "views": 48807,
-   "likes": 255,
-   "viewsGain": 230,
+   "views": 48988,
+   "likes": 256,
+   "viewsGain": 181,
    "isNew": false,
-   "median": 49098,
+   "median": 49456,
    "multiple": 1.0
   },
   {
@@ -141,11 +141,11 @@
    "published": "2026-10-27T10:22:11+00:00",
    "url": "https://www.youtube.com/watch?v=8eVDM6mDEs8",
    "shorts": false,
-   "views": 94170,
-   "likes": 461,
-   "viewsGain": 236,
+   "views": 94442,
+   "likes": 462,
+   "viewsGain": 272,
    "isNew": false,
-   "median": 49098,
+   "median": 49456,
    "multiple": 1.9
   },
   {
@@ -154,11 +154,11 @@
    "published": "2026-10-27T08:30:31+00:00",
    "url": "https://www.youtube.com/watch?v=SnbTi-w5FMI",
    "shorts": false,
-   "views": 30330,
+   "views": 30355,
    "likes": 118,
-   "viewsGain": 116,
+   "viewsGain": 25,
    "isNew": false,
-   "median": 49098,
+   "median": 49456,
    "multiple": 0.6
   },
   {
@@ -167,11 +167,11 @@
    "published": "2026-10-26T10:00:22+00:00",
    "url": "https://www.youtube.com/watch?v=TSOGRM0uOa8",
    "shorts": false,
-   "views": 77238,
+   "views": 77323,
    "likes": 342,
-   "viewsGain": 22,
+   "viewsGain": 85,
    "isNew": false,
-   "median": 49098,
+   "median": 49456,
    "multiple": 1.6
   },
   {
@@ -180,12 +180,12 @@
    "published": "2026-10-26T09:00:03+00:00",
    "url": "https://www.youtube.com/watch?v=RxdtTJ7GdDM",
    "shorts": false,
-   "views": 293852,
+   "views": 294035,
    "likes": 1619,
-   "viewsGain": 894,
+   "viewsGain": 183,
    "isNew": false,
-   "median": 49098,
-   "multiple": 6.0
+   "median": 49456,
+   "multiple": 5.9
   },
   {
    "id": "PLPCwDtdmG8",
@@ -193,40 +193,40 @@
    "published": "2026-10-23T23:00:32+00:00",
    "url": "https://www.youtube.com/shorts/PLPCwDtdmG8",
    "shorts": true,
-   "views": 20108,
+   "views": 20115,
    "likes": 195,
-   "viewsGain": 0,
+   "viewsGain": 7,
    "isNew": false,
-   "median": 4473.5,
-   "multiple": 4.5
+   "median": 4703.0,
+   "multiple": 4.3
   }
  ],
  "viral": [
   {
    "title": "[EN] 전세계에서 퇴출됐다가 역주행 중이라는 우지 근황🥄ㅣ돈슐랭 / 14F",
    "url": "https://www.youtube.com/watch?v=RxdtTJ7GdDM",
-   "views": 293852,
-   "multiple": 6.0,
+   "views": 294035,
+   "multiple": 5.9,
    "shorts": false
   },
   {
    "title": "4대 문명에 황하가 포함된 이유 #shorts",
    "url": "https://www.youtube.com/shorts/PLPCwDtdmG8",
-   "views": 20108,
-   "multiple": 4.5,
+   "views": 20115,
+   "multiple": 4.3,
    "shorts": true
   },
   {
    "title": "사전 판매 매진이었는데… 액정 갈라진다는 ‘아이폰 듀오’ 근황 / 14F",
    "url": "https://www.youtube.com/watch?v=niGCI-aEH-A",
-   "views": 180278,
+   "views": 182756,
    "multiple": 3.7,
    "shorts": false
   },
   {
    "title": "맥도날드 감튀는 왜 맛이 바뀌었을까 #shorts",
    "url": "https://www.youtube.com/shorts/zHzHgad2t6c",
-   "views": 9080,
+   "views": 9217,
    "multiple": 2.0,
    "shorts": true
   }

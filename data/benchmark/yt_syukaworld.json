@@ -3,7 +3,7 @@
  "name": "슈카월드",
  "channel": "https://www.youtube.com/@syukaworld",
  "channelId": "UCJo6G1u0e_-wS-JQn3T-zEw",
- "checkedAt": "2026-10-31T20:57+09:00",
+ "checkedAt": "2026-10-31T22:26+09:00",
  "videos": [
   {
    "id": "TF93Z8sJZok",
@@ -11,12 +11,12 @@
    "published": "2026-10-31T09:00:32+00:00",
    "url": "https://www.youtube.com/watch?v=TF93Z8sJZok",
    "shorts": false,
-   "views": 35379,
-   "likes": 495,
-   "viewsGain": 27493,
+   "views": 55945,
+   "likes": 586,
+   "viewsGain": 20566,
    "isNew": false,
-   "median": 129282.0,
-   "multiple": 0.3
+   "median": 129353.5,
+   "multiple": 0.4
   },
   {
    "id": "WuU0lc1SwLg",
@@ -24,11 +24,11 @@
    "published": "2026-10-30T09:07:05+00:00",
    "url": "https://www.youtube.com/watch?v=WuU0lc1SwLg",
    "shorts": false,
-   "views": 154376,
-   "likes": 1116,
-   "viewsGain": 4375,
+   "views": 157051,
+   "likes": 1129,
+   "viewsGain": 2675,
    "isNew": false,
-   "median": 129282.0,
+   "median": 129353.5,
    "multiple": 1.2
   },
   {
@@ -37,11 +37,11 @@
    "published": "2026-10-30T06:40:56+00:00",
    "url": "https://www.youtube.com/watch?v=G9n3vLRCvSI",
    "shorts": false,
-   "views": 114944,
+   "views": 115389,
    "likes": 670,
-   "viewsGain": 661,
+   "viewsGain": 445,
    "isNew": false,
-   "median": 129282.0,
+   "median": 129353.5,
    "multiple": 0.9
   },
   {
@@ -50,11 +50,11 @@
    "published": "2026-10-30T02:46:47+00:00",
    "url": "https://www.youtube.com/shorts/p9PqJ61lg3w",
    "shorts": true,
-   "views": 267634,
-   "likes": 2389,
-   "viewsGain": 5248,
+   "views": 270736,
+   "likes": 2430,
+   "viewsGain": 3102,
    "isNew": false,
-   "median": 116875,
+   "median": 117530,
    "multiple": 2.3
   },
   {
@@ -63,11 +63,11 @@
    "published": "2026-10-29T09:10:37+00:00",
    "url": "https://www.youtube.com/shorts/As_g3UyIa2Y",
    "shorts": true,
-   "views": 123481,
-   "likes": 1141,
-   "viewsGain": 1089,
+   "views": 124410,
+   "likes": 1151,
+   "viewsGain": 929,
    "isNew": false,
-   "median": 116875,
+   "median": 117530,
    "multiple": 1.1
   },
   {
@@ -76,11 +76,11 @@
    "published": "2026-10-29T09:00:12+00:00",
    "url": "https://www.youtube.com/watch?v=uTmDuvJDcMM",
    "shorts": false,
-   "views": 224497,
-   "likes": 1327,
-   "viewsGain": 2902,
+   "views": 226155,
+   "likes": 1333,
+   "viewsGain": 1658,
    "isNew": false,
-   "median": 129282.0,
+   "median": 129353.5,
    "multiple": 1.7
   },
   {
@@ -89,11 +89,11 @@
    "published": "2026-10-29T06:38:46+00:00",
    "url": "https://www.youtube.com/watch?v=qFIRm5CCq74",
    "shorts": false,
-   "views": 120989,
-   "likes": 879,
-   "viewsGain": 263,
+   "views": 121077,
+   "likes": 881,
+   "viewsGain": 88,
    "isNew": false,
-   "median": 129282.0,
+   "median": 129353.5,
    "multiple": 0.9
   },
   {
@@ -102,11 +102,11 @@
    "published": "2026-10-29T06:23:46+00:00",
    "url": "https://www.youtube.com/shorts/LdJyl_wt_ao",
    "shorts": true,
-   "views": 116875,
-   "likes": 801,
-   "viewsGain": 1488,
+   "views": 117530,
+   "likes": 807,
+   "viewsGain": 655,
    "isNew": false,
-   "median": 116875,
+   "median": 117530,
    "multiple": 1.0
   },
   {
@@ -115,11 +115,11 @@
    "published": "2026-10-29T03:10:22+00:00",
    "url": "https://www.youtube.com/shorts/qLXHZm_9mX0",
    "shorts": true,
-   "views": 184584,
-   "likes": 1771,
-   "viewsGain": 1286,
+   "views": 185445,
+   "likes": 1775,
+   "viewsGain": 861,
    "isNew": false,
-   "median": 116875,
+   "median": 117530,
    "multiple": 1.6
   },
   {
@@ -128,12 +128,12 @@
    "published": "2026-10-29T02:35:34+00:00",
    "url": "https://www.youtube.com/shorts/XLkRqq6Cj9k",
    "shorts": true,
-   "views": 111184,
-   "likes": 1297,
-   "viewsGain": 407,
+   "views": 111470,
+   "likes": 1303,
+   "viewsGain": 286,
    "isNew": false,
-   "median": 116875,
-   "multiple": 1.0
+   "median": 117530,
+   "multiple": 0.9
   },
   {
    "id": "_L7d05Gmrd4",
@@ -141,11 +141,11 @@
    "published": "2026-10-28T06:37:07+00:00",
    "url": "https://www.youtube.com/watch?v=_L7d05Gmrd4",
    "shorts": false,
-   "views": 137575,
-   "likes": 1027,
-   "viewsGain": 81,
+   "views": 137630,
+   "likes": 1028,
+   "viewsGain": 55,
    "isNew": false,
-   "median": 129282.0,
+   "median": 129353.5,
    "multiple": 1.1
   },
   {
@@ -154,11 +154,11 @@
    "published": "2026-10-28T03:11:09+00:00",
    "url": "https://www.youtube.com/shorts/1Hg8iSXgWqI",
    "shorts": true,
-   "views": 51942,
-   "likes": 445,
-   "viewsGain": 176,
+   "views": 52064,
+   "likes": 446,
+   "viewsGain": 122,
    "isNew": false,
-   "median": 116875,
+   "median": 117530,
    "multiple": 0.4
   },
   {
@@ -167,11 +167,11 @@
    "published": "2026-10-28T02:30:03+00:00",
    "url": "https://www.youtube.com/shorts/RWrQyZ-jC-o",
    "shorts": true,
-   "views": 43940,
-   "likes": 213,
-   "viewsGain": 227,
+   "views": 44151,
+   "likes": 215,
+   "viewsGain": 211,
    "isNew": false,
-   "median": 116875,
+   "median": 117530,
    "multiple": 0.4
   },
   {
@@ -180,11 +180,11 @@
    "published": "2026-10-27T09:00:12+00:00",
    "url": "https://www.youtube.com/watch?v=YLAj3qkZaC8",
    "shorts": false,
-   "views": 178469,
-   "likes": 779,
-   "viewsGain": 825,
+   "views": 179042,
+   "likes": 782,
+   "viewsGain": 573,
    "isNew": false,
-   "median": 129282.0,
+   "median": 129353.5,
    "multiple": 1.4
   },
   {
@@ -193,11 +193,11 @@
    "published": "2026-10-27T06:38:26+00:00",
    "url": "https://www.youtube.com/watch?v=ZOB6Gdz6QLE",
    "shorts": false,
-   "views": 111048,
+   "views": 111071,
    "likes": 794,
    "viewsGain": 23,
    "isNew": false,
-   "median": 129282.0,
+   "median": 129353.5,
    "multiple": 0.9
   }
  ],
@@ -205,7 +205,7 @@
   {
    "title": "규카츠가 방송 열심히 하는 이유",
    "url": "https://www.youtube.com/shorts/p9PqJ61lg3w",
-   "views": 267634,
+   "views": 270736,
    "multiple": 2.3,
    "shorts": true
   }
