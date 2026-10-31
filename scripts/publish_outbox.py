@@ -6,7 +6,7 @@ outbox/<ID>/ 폴더에 reel.mp4 와 post.json 을 넣어 올리면 GitHub Action
 결과는 outbox/<ID>/done.json 에 남긴다(이미 올린 곳은 다시 올리지 않음).
 
 post.json 예시
-{"id": "20261031_RS",
+{"id": "20261031_RS", "publishAt": "2026-10-31T18:30:00+09:00",
  "threads": {"text": "…450자 이내, 태그 1개…", "replies": ["답글 1 (태그 1개)", "답글 2 (태그 1개)"]},
  "youtube": {"title": "… #Shorts", "description": "…", "tags": "리센느,RESCENE"}}
 
@@ -61,9 +61,9 @@ def post_replies(tok, parent_id, texts):
 
 
 def post_threads(folder, text, replies_text=None):
-    # 대표 결정(10/31 23:48): Threads는 대표가 앱에서 음악 스티커를 붙여 직접 올린다(사람이 올리는 느낌). 자동 게시는 THREADS_AUTO=on 일 때만.
-    if os.environ.get("THREADS_AUTO", "") != "on":
-        return {"skipped": "Threads는 대표가 직접 올림 (THREADS_AUTO 꺼짐)"}
+    # 대표 결정(11/1 00:04): Threads는 음악 없이 자동 게시. 끄려면 저장소 변수 THREADS_AUTO=off.
+    if os.environ.get("THREADS_AUTO", "on") == "off":
+        return {"skipped": "Threads 자동 게시 꺼짐 (THREADS_AUTO=off)"}
     tok = os.environ.get("THREADS_TOKEN", "").strip()
     if not tok:
         return {"skipped": "THREADS_TOKEN 비밀값 없음"}
@@ -135,6 +135,20 @@ def main():
             continue
         post = json.loads(pj.read_text(encoding="utf-8"))
         done = json.loads(dj.read_text(encoding="utf-8")) if dj.exists() else {}
+        # 게시 시각(대표 결정 11/1): post.json 의 publishAt(ISO, +09:00) 이 되면 올린다. 없으면 올리지 않는다.
+        # 6시간 넘게 지난 것은 철 지난 소식이 될 수 있어 올리지 않고 expired 로 남긴다.
+        pa = post.get("publishAt")
+        if not pa:
+            continue
+        due = datetime.datetime.fromisoformat(pa)
+        nowt = datetime.datetime.now(KST)
+        if nowt < due:
+            continue
+        if (nowt - due).total_seconds() > 6 * 3600 and not done:
+            dj.write_text(json.dumps({"expired": f"게시 시각 {pa} 에서 6시간 넘게 지나 올리지 않음", "at": now()}, ensure_ascii=False, indent=1), encoding="utf-8")
+            print(folder.name, "기한 지남"); continue
+        if done.get("expired"):
+            continue
         changed = False
         if post.get("threads") and not done.get("threads", {}).get("ok"):
             done["threads"] = post_threads(folder, post["threads"]["text"], post["threads"].get("replies")); changed = True

@@ -4,6 +4,8 @@ on:
     branches: [main]
     paths: ["outbox/**/post.json"]
   workflow_dispatch:
+  schedule:
+    - cron: "*/10 * * * *"   # 10분마다 게시 시각이 된 항목을 올림 (대표 결정 11/1)
 permissions:
   contents: write
 concurrency:
@@ -19,7 +21,7 @@ jobs:
       - name: 게시
         env:
           THREADS_TOKEN: ${{ secrets.THREADS_TOKEN }}
-          THREADS_AUTO: ${{ vars.THREADS_AUTO || 'off' }}
+          THREADS_AUTO: ${{ vars.THREADS_AUTO || 'on' }}
           YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
           YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
           YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
