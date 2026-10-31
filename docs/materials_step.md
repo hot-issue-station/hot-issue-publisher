@@ -17,7 +17,7 @@ Claude는 카드와 음악 없는 릴스 영상을 "릴스 재료함"에 올리�
 재료함 주소(url): https://claude.ai/artifact/Xxp8hf3gz6aWW5uemGphWS
 (스튜디오와 다른 페이지다. 아래 업로드·기록은 모두 이 주소로.)
 
-1. 영상: `python3 scripts/make_reel_silent.py <folder> /home/claude/reels/<문서ID>.mp4 (mkdir -p /home/claude/reels; 업로드는 작업 폴더 안 파일만 가능)` (약 1분, ffmpeg).
+1. 영상(대표 확정 10/31 20:21): **움직이는 30초 릴스** `python3 scripts/make_reel_motion.py rounds/<문서ID>.json /home/claude/reels/<문서ID>.mp4` (사진 확대·이동 + 글 한 줄씩, 패턴 A~D 자동 순환, 표지는 0초부터 글 전부 보임). 실패할 때만 예전 방식 `python3 scripts/make_reel_silent.py <folder> /home/claude/reels/<문서ID>.mp4 (mkdir -p /home/claude/reels; 업로드는 작업 폴더 안 파일만 가능)` (약 1분, ffmpeg).
 2. 업로드: Artifact 도구 action "publish", url = 재료함 주소, asset: true,
    file_paths = ["/home/claude/reels/<문서ID>.mp4", <folder>/01.jpg … 07.jpg, <folder>/r01.jpg … 절대 경로] (한 번에, 25개 이내).
    결과에서 영상의 id = reel, 01~07 의 id = cards, r01~ 의 id = readCards (각각 순서대로).
