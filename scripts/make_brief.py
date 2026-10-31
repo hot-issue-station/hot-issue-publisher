@@ -5,7 +5,7 @@
 
 python scripts/make_brief.py rounds/<ID>.json --out posts/<ID>
 round JSON:
-{ "date":"2026-10-31", "category":"정치 · 사법", "headline":"…", "deck":"한 줄 설명",
+{ "date":"2026-10-31", "category":"정치 · 사법", "headline":"…(*강조할 말*)", "deck":"한 줄 설명",
   "photo":"assets/thumbs/x.jpg", "photoCrop":[x0,y0,x1,y1](선택, 원본 픽셀), "photoLabel":"영상 화면 · ○○ 공식 유튜브",
   "points":["쟁점 1","쟁점 2","쟁점 3"],
   "sides":[{"name":"더불어민주당","say":"…"},{"name":"국민의힘","say":"…"}],   # 같은 분량
@@ -15,6 +15,12 @@ import argparse, base64, html, io, json, pathlib, sys
 
 E = html.escape
 PAPER, INK, SUB, LINE, ACC, NAVY = "#F6F2EA", "#1B1A17", "#5C5850", "#D9D2C3", "#B23A2E", "#1F3A5F"
+
+
+def hl(t):
+    """제목의 *단어*는 강조색(진한 빨강)으로 (대표 요청 10/31)."""
+    import re
+    return re.sub(r"\*(.+?)\*", lambda m: f'<span style="color:{ACC}">{m.group(1)}</span>', E(t))
 
 
 def photo_uri(path, crop):
@@ -52,7 +58,7 @@ ul{{margin:0;padding-left:30px;font-size:27px;line-height:1.5}} li{{margin:2px 0
 <div class="top"><div class="brand">hot.issue.station · 이슈 브리핑</div><div class="date">{m}.{d}</div></div>
 <div class="ph"><div class="lb">{E(r["photoLabel"])}</div></div>
 <div class="cat">{E(r["category"])}</div>
-<h1>{E(r["headline"])}</h1>
+<h1>{hl(r["headline"])}</h1>
 {f'<div class="deck">{E(r["deck"])}</div>' if r.get("deck") else ""}
 <ul>{pts}</ul>
 <div class="sides">{sides}</div>
