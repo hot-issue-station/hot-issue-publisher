@@ -105,7 +105,8 @@ def main():
         b = p.chromium.launch()
         pg = b.new_page(viewport={"width": W, "height": H})
         N = len(pages)
-        DURS = DUR if N == 7 else [round(30.0 / N + XF * (N - 1) / N, 2)] * N   # 장수가 바뀌어도 약 30초
+        SEC = float(r.get("reelSeconds", 30))   # 특집은 round JSON 에 "reelSeconds": 60
+        DURS = DUR if (N == 7 and SEC == 30) else [round(SEC / N + XF * (N - 1) / N, 2)] * N
         for i, html in enumerate(pages):
             dur = DURS[i]
             html = html.replace("</style>", ANIM_CSS + "</style>", 1)

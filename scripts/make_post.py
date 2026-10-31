@@ -248,7 +248,7 @@ def cards(r):
     label = f"{m}.{d} · {SLOTS[r['slot']][0]}"
     out = []
     global CUR_TOTAL
-    NF = max(1, min(len(r["facts"]), 4))   # 사실 카드 1~4장 → 전체 5~8장 (10/31: 30초 릴스 가독성에 맞춰 장수 유연)
+    NF = max(1, min(len(r["facts"]), 8))   # 사실 카드 1~8장 → 전체 5~12장 (10/31: 30초=8장 안팎, 특집 1분=12장 안팎)
     TOT = NF + 4
     CUR_TOTAL = TOT
     # 1 훅 — "big"이 있으면 C안(숫자 강조), 없으면 기본형
@@ -307,9 +307,9 @@ def cards(r):
 <div style="font-size:46px;font-weight:500;line-height:1.55;color:{ONACC2}">{E(r['interpSub'])}</div></div>""",
                      label, NF + 3, light=True, deco=rings([ONACC] * 3, [640, 440, 240]), total=TOT))
     # 7 출처
-    nums = "①②③④"
+    nums = "①②③④⑤⑥"
     src = "".join(f'<div style="padding:22px 0;border-bottom:2px solid {LINE};font-size:36px;line-height:1.4;color:{BODY}">'
-                  f'{nums[k]} {E(s["outlet"])} · {E(s["title"])} · {E(s["date"])}</div>' for k, s in enumerate(r["sources"][:4]))
+                  f'{nums[k]} {E(s["outlet"])} · {E(s["title"])} · {E(s["date"])}</div>' for k, s in enumerate(r["sources"][:6 if NF > 4 else 4]))
     out.append(frame(f"""<div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:36px">
 <div style="display:flex;align-items:center;gap:20px"><div style="width:64px;height:8px;border-radius:4px;background:{PINK}"></div><div style="font-size:44px;font-weight:700;color:{CYAN}">출처</div></div>
 <div style="display:flex;flex-direction:column">{src}</div>
@@ -343,7 +343,7 @@ def cards_read(r):
 <div style="font-size:64px;font-weight:900;line-height:1.35">{E(sec["title"])}</div>
 <div style="width:120px;height:8px;border-radius:4px;background:{CYAN}"></div>
 <div style="font-size:44px;line-height:1.8;color:{BODY}">{E(sec["body"])}</div></div>""", label, 3 + i, total=total))
-    nums = "①②③④"
+    nums = "①②③④⑤⑥"
     src = "".join(f'<div style="padding:20px 0;border-bottom:2px solid {LINE};font-size:34px;line-height:1.4;color:{BODY}">'
                   f'{nums[k]} {E(s_["outlet"])} · {E(s_["title"])} · {E(s_["date"])}</div>' for k, s_ in enumerate(r["sources"][:4]))
     out.append(frame(f"""<div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:36px">

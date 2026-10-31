@@ -10,24 +10,131 @@
  "photo": "assets/thumbs/sonkane_spurs_top.jpg",
  "photoPos": "40% 30%",
  "photoLabel": "영상 화면 · Tottenham Hotspur 공식 유튜브",
- "big": {"number": "47", "lines": ["골 합작,", "*PL 역대 1위*", "듀오"], "caption": "", "icon": "star"},
- "summary": "10월 27일 발롱도르를 받은 케인에게 손흥민은 'Congratulations my GOAT'라고 축하했어요. 둘은 프리미어리그에서 가장 많은 골을 함께 만든 짝이에요.",
- "summaryPhotos": ["assets/thumbs/kane_ballon.jpg", "assets/thumbs/sonkane_spurs_top.jpg", "assets/thumbs/son_goldenboot_top.jpg", "assets/thumbs/son_uel.jpg"],
+ "big": {
+  "number": "47",
+  "lines": [
+   "골 합작,",
+   "*PL 역대 1위*",
+   "듀오"
+  ],
+  "caption": "",
+  "icon": "star"
+ },
+ "summary": "발롱도르를 받은 케인에게 손흥민은 'Congratulations my GOAT'라고 축하했어요. 47골을 함께 만든 짝, 그리고 레전드의 계보를 잇는 손흥민 이야기예요.",
+ "summaryPhotos": [
+  "assets/thumbs/kane_ballon.jpg",
+  "assets/thumbs/sonkane_spurs_top.jpg",
+  "assets/thumbs/son_goldenboot_top.jpg",
+  "assets/thumbs/son_uel.jpg"
+ ],
  "summaryPhotosLabel": "FC Bayern München · Tottenham Hotspur · CBS Sports Golazo 공식 유튜브 영상 화면",
  "facts": [
-  {"title": "PL 역대 최다 합작 47골", "desc": "한 명이 돕고 다른 한 명이 넣은 골이 47골. 2022년 2월 드로그바·램파드의 36골을 넘었어요.", "source": "위키트리 · 톱스타뉴스 · 2026.10.27", "photo": "assets/thumbs/sonkane_spurs_top.jpg", "photoPos": "40% 30%", "photoLabel": "영상 화면 · Tottenham Hotspur 공식 유튜브"},
-  {"title": "아시아 최초 PL 득점왕", "desc": "2021-22시즌 23골로 살라와 함께 득점 1위. 아시아 선수로는 처음이었어요.", "source": "서울신문 · 2022.05.23", "photo": "assets/thumbs/son_goldenboot_top.jpg", "photoPos": "65% 30%", "photoLabel": "영상 화면 · Tottenham Hotspur 공식 유튜브"},
-  {"title": "PL 127골, 푸스카스상까지", "desc": "PL 333경기 127골 71도움, 아시아 선수 최다 출전. 번리전 70m 단독 돌파 골로 FIFA 푸스카스상도 받았어요.", "source": "EPL 공식 발표 보도 · 2025.08.02", "photo": "assets/thumbs/son_puskas.jpg", "photoPos": "80% 40%", "photoLabel": "영상 화면 · FIFA 공식 유튜브"},
-  {"title": "17년 만의 트로피, 캡틴 손흥민", "desc": "2025년 5월 유로파리그 결승에서 맨유를 1-0으로 꺾고 주장으로 우승컵을 들었어요.", "source": "EPL 공식 발표 보도 · 2025.08.02", "photo": "assets/thumbs/son_uel.jpg", "photoPos": "80% 30%", "photoLabel": "영상 화면 · CBS Sports Golazo 공식 유튜브"}
+  {
+   "title": "2015년 여름, 의심 속의 시작",
+   "desc": "2015년 8월 레버쿠젠에서 2,200만 파운드에 토트넘으로. 많은 의심 속에 시작한 길이 케인과의 8년이 됐어요.",
+   "source": "스포츠경향 · 위키트리",
+   "photo": "assets/thumbs/son_2015_c.jpg",
+   "photoPos": "50% 25%",
+   "photoLabel": "영상 화면 · Tottenham Hotspur 공식 유튜브 (2015)"
+  },
+  {
+   "title": "PL 역대 최다 합작 47골",
+   "desc": "한 명이 돕고 다른 한 명이 넣은 골이 47골. 2022년 2월 드로그바·램파드의 36골을 넘었어요.",
+   "source": "위키트리 · 톱스타뉴스 · 2026.10.27",
+   "photo": "assets/thumbs/sonkane_spurs_top.jpg",
+   "photoPos": "40% 30%",
+   "photoLabel": "영상 화면 · Tottenham Hotspur 공식 유튜브"
+  },
+  {
+   "title": "아시아 최초 PL 득점왕",
+   "desc": "2021-22시즌 23골로 살라와 함께 득점 1위. 아시아 선수로는 처음이었어요.",
+   "source": "서울신문 · 2022.05.23",
+   "photo": "assets/thumbs/son_goldenboot_top.jpg",
+   "photoPos": "65% 30%",
+   "photoLabel": "영상 화면 · Tottenham Hotspur 공식 유튜브"
+  },
+  {
+   "title": "PL 127골, 8시즌 연속 두 자릿수",
+   "desc": "토트넘 454경기 173골. PL 127골에 8시즌 연속 두 자릿수 골, 번리전 70m 단독 돌파 골로 푸스카스상도 받았어요.",
+   "source": "스포츠경향 · EPL 공식 발표 보도 · 2025.08.02",
+   "photo": "assets/thumbs/son_puskas.jpg",
+   "photoPos": "80% 40%",
+   "photoLabel": "영상 화면 · FIFA 공식 유튜브"
+  },
+  {
+   "title": "17년 만의 트로피, 캡틴 손흥민",
+   "desc": "2025년 5월 유로파리그 결승에서 맨유를 1-0으로 꺾고 주장으로 우승컵을 들었어요.",
+   "source": "EPL 공식 발표 보도 · 2025.08.02",
+   "photo": "assets/thumbs/son_uel.jpg",
+   "photoPos": "80% 30%",
+   "photoLabel": "영상 화면 · CBS Sports Golazo 공식 유튜브"
+  },
+  {
+   "title": "길을 연 레전드, 차범근",
+   "desc": "분데스리가 308경기 98골. 한때 분데스리가 외국인 최다 골 기록이었어요. 한국 선수가 유럽에서 통한다는 걸 처음 보여 준 길이에요.",
+   "source": "골닷컴",
+   "photo": "assets/thumbs/cha_hof_c.jpg",
+   "photoPos": "50% 30%",
+   "photoLabel": "영상 화면 · KFATV 공식 유튜브"
+  },
+  {
+   "title": "문을 연 레전드, 박지성",
+   "desc": "맨유에서 프리미어리그 우승 4회, 아시아 선수 최다 우승. 아시아 선수 최초로 리그 우승 메달을 받았어요.",
+   "source": "서울신문 · 2011.05.23",
+   "photo": "assets/thumbs/park_mufc_c.jpg",
+   "photoPos": "50% 30%",
+   "photoLabel": "영상 화면 · Manchester United 공식 유튜브"
+  },
+  {
+   "title": "그리고 계보를 잇다, A매치 59골",
+   "desc": "10월 6일 우즈베키스탄전 프리킥 골로 59골. 차범근의 58골을 넘어 한국 남자 A매치 최다 득점 단독 1위가 됐어요.",
+   "source": "경향신문 2026.10.06 · 한국경제 2026.09.28",
+   "photo": "assets/thumbs/son_uru58_c.jpg",
+   "photoPos": "60% 40%",
+   "photoLabel": "9.28 우루과이전 · 영상 화면 KFATV 공식 유튜브"
+  }
  ],
  "interp": "높이 자란 꽃을 자르는 마음, '키 큰 양귀비 증후군'",
  "interpSub": "성공한 사람을 깎아내리는 심리예요. 연구는 이것이 개인과 사회를 함께 다치게 한다고 말해요. 케인처럼 '나의 GOAT'라고 말해 줄 때, 그 기록은 우리 모두의 자랑이 돼요.",
  "sources": [
-  {"outlet": "위키트리", "title": "케인 발롱도르, 손흥민과 47골 합작", "date": "2026.10.27", "url": "https://www.wikitree.co.kr/articles/1169520"},
-  {"outlet": "서울신문", "title": "손흥민, 아시아인 최초 EPL 득점왕", "date": "2022.05.23", "url": "https://m.seoul.co.kr/news/2022/05/23/20220523500026"},
-  {"outlet": "다음 스포츠", "title": "EPL 공식 발표 '토트넘의 전설'", "date": "2025.08.02", "url": "https://v.daum.net/v/20250802191635595"},
-  {"outlet": "오클랜드대학교", "title": "키 큰 양귀비 증후군 연구", "date": "2022.07.20", "url": "https://www.auckland.ac.nz/en/news/2022/07/20/research-tall-poppy-syndrome-negatively-affects-nz-entrepreneurs.html"}
+  {
+   "outlet": "위키트리",
+   "title": "케인 발롱도르, 손흥민과 47골 합작",
+   "date": "2026.10.27",
+   "url": "https://www.wikitree.co.kr/articles/1169520"
+  },
+  {
+   "outlet": "스포츠경향",
+   "title": "손흥민의 토트넘 10년",
+   "date": "2025.08.02",
+   "url": "https://sports.khan.co.kr/article/202508021615003"
+  },
+  {
+   "outlet": "서울신문",
+   "title": "아시아인 최초 EPL 득점왕 · 박지성 우승 4회",
+   "date": "2022.05.23 · 2011.05.23",
+   "url": "https://m.seoul.co.kr/news/2022/05/23/20220523500026"
+  },
+  {
+   "outlet": "골닷컴",
+   "title": "차범근 분데스리가 98골",
+   "date": "2018",
+   "url": "https://www.goal.com/kr/"
+  },
+  {
+   "outlet": "경향신문",
+   "title": "차범근 넘어 A매치 단독 1위",
+   "date": "2026.10.06",
+   "url": "https://www.khan.co.kr/article/202610062230001"
+  },
+  {
+   "outlet": "오클랜드대학교",
+   "title": "키 큰 양귀비 증후군 연구",
+   "date": "2022.07.20",
+   "url": "https://www.auckland.ac.nz/en/news/2022/07/20/research-tall-poppy-syndrome-negatively-affects-nz-entrepreneurs.html"
+  }
  ],
  "cta": "손흥민의 시간,\n*같이 응원해요*",
- "caption": "(확정 뒤 기사형 소개글)"
+ "caption": "(확정 뒤 기사형 소개글)",
+ "reelSeconds": 60
 }
