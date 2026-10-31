@@ -1,0 +1,33 @@
+name: 보내기함 자동 게시 (Threads · 유튜브 비공개)
+on:
+  push:
+    branches: [main]
+    paths: ["outbox/**/post.json"]
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: outbox
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - name: 게시
+        env:
+          THREADS_TOKEN: ${{ secrets.THREADS_TOKEN }}
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+          YT_UPLOAD: ${{ vars.YT_UPLOAD || 'off' }}
+        run: python scripts/publish_outbox.py
+      - name: 결과 저장
+        if: always()
+        run: |
+          git config user.name "issuebrief-bot"; git config user.email "bot@users.noreply.github.com"
+          git add outbox
+          git diff --cached --quiet || git commit -m "보내기함 게시 결과"
+          for i in 1 2 3 4 5; do git pull --rebase -q origin main && git push && break; sleep 5; done

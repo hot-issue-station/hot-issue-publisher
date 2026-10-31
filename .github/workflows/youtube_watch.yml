@@ -1,4 +1,4 @@
-name: 유튜브 모니터링 (리센느 + 벤치마킹)
+name: 유튜브 모니터링 (리센느 + 벤치마킹) + Threads 통계
 on:
   schedule:
     - cron: "0 23 * * *"   # 08:00 KST
@@ -18,6 +18,10 @@ jobs:
       - run: pip install -q pillow && python scripts/watch_youtube.py || true
       - name: 벤치마킹 채널
         run: python scripts/watch_bench_youtube.py || true
+      - name: Threads 통계
+        env:
+          THREADS_TOKEN: ${{ secrets.THREADS_TOKEN }}
+        run: python scripts/threads_stats.py || true
       - run: |
           git config user.name "issuebrief-bot"; git config user.email "bot@users.noreply.github.com"
           git add data/youtube data/benchmark data/stats assets/rescene/yt
