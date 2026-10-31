@@ -234,7 +234,7 @@ def cover_photo(r, label):
     return frame(f"""<div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;gap:22px;padding-bottom:24px">
 <div style="align-self:flex-start;padding:10px 26px;border:3px solid {CYAN};border-radius:999px;color:{CYAN};font-size:32px;font-weight:700;background:rgba({BGRGB},.6)">{E(r['category'])}</div>
 {numrow}
-<div style="font-size:72px;font-weight:900;line-height:1.2">{hook}</div></div>""", label, 1, "밀어서 다음 장 →", deco=deco)
+<div style="font-size:72px;font-weight:900;line-height:1.2">{hook}</div>{f'<div style="font-size:28px;color:{MUTED}">{E(r["coverNote"])}</div>' if r.get("coverNote") else ""}</div>""", label, 1, "밀어서 다음 장 →", deco=deco)
 
 
 def cta_html(t):
