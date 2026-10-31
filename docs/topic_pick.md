@@ -2,12 +2,13 @@
 
 자동 작업은 소재를 마음대로 정해 바로 만들지 않는다. **후보 3개를 재료함에 올리고 대표가 고른 소재만 만든다.**
 (계기: 10/31 퇴근길 자동 재료가 KBL 농구 소재였는데 대표가 원하지 않음)
+**대표 결정 10/31 18:47: 모든 콘텐츠 제작 과정이 이 방식이다 — 정해진 시간에 후보를 대표에게 확인받고, 고른 것만 만든다.** 특집(손흥민 등)도 예외 없음. 새 자동 제작 작업을 만들 때도 이 문서의 A(후보)·B(만들기) 구조를 따른다.
 
 - 재료함(url): https://claude.ai/artifact/Xxp8hf3gz6aWW5uemGphWS — 맨 위 「🗳 소재 고르기」 칸
 - DB: `picks/<YYYYMMDD>_<SLOT>` = {date, slot, slotName, makeAt, status, candidates, picked, custom, createdAt, pickedAt, madeAt}
   - status: "waiting"(대표 선택 대기) → "picked"(골랐음) → "made"(만듦) / "skipped"(대표가 쉬기)
   - picked = 고른 후보 번호(0부터). custom = 대표가 직접 쓴 주제(있으면 이걸 우선, picked=-1)
-- SLOT: AM(출근) · PM(점심) · NT(퇴근) · RS(리센느 응원 특집) · HL(헤드라인) · EX(대표가 [지금 시간 기준으로 소재 후보 받기]를 눌러 만든 추가 회차)
+- SLOT: AM(출근) · PM(점심) · NT(퇴근) · RS(리센느 응원 특집) · HL(헤드라인) · SON(자랑스러운 한국인 · 손흥민 특집, 11/11~14·18) · EX(대표가 [지금 시간 기준으로 소재 후보 받기]를 눌러 만든 추가 회차)
 - status "refresh" = 대표가 [지금 기준으로 다시 찾기] 또는 [지금 시간 기준으로 소재 후보 받기]를 누름 → 누른 시각 기준으로 후보를 새로 찾아 바꾼다(대표 결정 10/31 18:41: 시간 되면 추천하고, 안 고르면 멈춰 있다가 대표가 접속한 시각 기준으로 다시 만든다).
 
 ## A. 후보 올리기 (제안 작업이 하는 일)
@@ -33,6 +34,7 @@
    - SLOT 별 만들기:
      - AM·PM·NT·EX: 문서ID=<YYYYMMDD>_<SLOT>_auto (EX는 picks 문서ID 그대로 <YYYYMMDD>_EXhhmm, 스튜디오 autoq 기록은 생략). style/style_guide.md(6·11·14·17·18·19장)와 docs/materials_step.md 를 읽고, 카피(rounds/<문서ID>.json, make_post.py 형식, music·read 없음, sources 는 실제로 연 기사) → 팩트체크(숫자·날짜·고유명사·인용 대조, 정치·사회는 양쪽 분량) → `python3 scripts/auto_round.py build rounds/<파일>.json --id 문서ID` (최대 3번), 01.jpg·06.jpg 확인 → 커밋 "자동 제작: DATE SLOT <topic>" → docs/materials_step.md 1~6단계(소개글 900~1,800자, readCards=[], readCaption="").
      - RS: 문서ID=<YYYYMMDD>_RS_auto. 리센느 응원 특집 규칙(스타일 가이드 8·14장, assets/rescene/README.md). 편수 = posts/ 의 *_RS* 폴더 수 + 1. 사진은 assets/rescene/yt/ 공식 유튜브 미리보기(소재와 맞는 영상, 출처 "영상 화면 · RESCENE 공식 유튜브") 우선, 없으면 assets/rescene/ 공식 사진(출처 더뮤즈엔터테인먼트). category "리센느 응원 특집 #<편수> · <소재>", 해시태그 #리센느 #RESCENE + 소재 1개 + #이슈브리프 #오늘의이슈. build·커밋·materials_step 은 위와 같음(slotName "리센느 응원 특집 #<편수>").
+     - SON: 문서ID=<YYYYMMDD>_NT_auto. 손흥민 특집 규칙(공식 기록·경기 결과만, 논란·갈등·호칭 의혹·은퇴 소동 등 한 줄도 다루지 않음, 실존 인물 사진 없이 큰 숫자+그림 아이콘, rounds/son_special_facts.json·대한축구협회 공식 기록 우선, category "자랑스러운 한국인 #<편> · 손흥민", 해시태그 #손흥민 #국가대표 #A매치 #이슈브리프 #오늘의이슈). build·커밋·materials_step 은 AM·PM·NT와 같음(slotName "자랑스러운 한국인 #<편>").
      - HL: 문서ID=<YYYYMMDD>_HL_auto. 스타일 가이드 10장, scripts/make_headline.py 맨 위 형식으로 rounds/<문서ID>.json → `python3 scripts/make_headline.py rounds/<문서ID>.json --out posts/<YYYYMMDD>_HL` → cover.jpg 확인 → 커밋(headline.mp4 제외) → materials_step HL 규칙.
    - scripts/__pycache__ 는 커밋하지 않는다.
    - picks update {status:"made", madeAt:<ISO>, materialId:<문서ID>}.
