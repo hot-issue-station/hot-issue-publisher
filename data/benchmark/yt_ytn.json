@@ -3,20 +3,85 @@
  "name": "YTN",
  "channel": "https://www.youtube.com/@ytnnews24",
  "channelId": "UChlgI3UHCOnwUGzWzbJ3H5w",
- "checkedAt": "2026-10-31T19:16+09:00",
+ "checkedAt": "2026-10-31T20:57+09:00",
  "videos": [
   {
-   "id": "6e-dOOTWSbA",
-   "title": "'속수무책'으로 뚫린 세계 1위 거래소…'북한 해킹'에 칼 뽑은 FBI [이슈픽] / YTN",
-   "published": "2026-10-31T04:26:53+00:00",
-   "url": "https://www.youtube.com/watch?v=6e-dOOTWSbA",
+   "id": "5pmnwXCxyes",
+   "title": "서울 아파트 매물 8만 육박...매수 위축에 거래 '뚝' / YTN",
+   "published": "2026-10-31T11:22:42+00:00",
+   "url": "https://www.youtube.com/watch?v=5pmnwXCxyes",
    "shorts": false,
-   "views": 6004,
-   "likes": 38,
-   "viewsGain": 20,
-   "isNew": false,
-   "median": 971.5,
-   "multiple": 6.2
+   "views": 1350,
+   "likes": 16,
+   "viewsGain": null,
+   "isNew": true,
+   "median": 1350,
+   "multiple": 1.0
+  },
+  {
+   "id": "q8V8FzsyZHY",
+   "title": "사과에도 반발 지속...'필수의료 수사 지침' 균형 잡을까? / YTN",
+   "published": "2026-10-31T11:22:15+00:00",
+   "url": "https://www.youtube.com/watch?v=q8V8FzsyZHY",
+   "shorts": false,
+   "views": 187,
+   "likes": 5,
+   "viewsGain": null,
+   "isNew": true,
+   "median": 1350,
+   "multiple": 0.1
+  },
+  {
+   "id": "gx2b_0ue-5Q",
+   "title": "주말 핼러윈에 이태원 인파 '북적'...안전 관리 '총력' / YTN",
+   "published": "2026-10-31T11:12:54+00:00",
+   "url": "https://www.youtube.com/watch?v=gx2b_0ue-5Q",
+   "shorts": false,
+   "views": 1322,
+   "likes": 12,
+   "viewsGain": null,
+   "isNew": true,
+   "median": 1350,
+   "multiple": 1.0
+  },
+  {
+   "id": "tgAmSsnBxP4",
+   "title": "최불암 빈소 이틀째 조문 행렬...\"아버지이자 선생님\" / YTN",
+   "published": "2026-10-31T11:12:19+00:00",
+   "url": "https://www.youtube.com/watch?v=tgAmSsnBxP4",
+   "shorts": false,
+   "views": 619,
+   "likes": 7,
+   "viewsGain": null,
+   "isNew": true,
+   "median": 1350,
+   "multiple": 0.5
+  },
+  {
+   "id": "3pYFHbjfai8",
+   "title": "젠슨 황 술자리 동석女, 중국 스파이 의혹...반도체 기밀 노렸나 [Y녹취록] / YTN",
+   "published": "2026-10-31T11:00:36+00:00",
+   "url": "https://www.youtube.com/watch?v=3pYFHbjfai8",
+   "shorts": false,
+   "views": 584,
+   "likes": 8,
+   "viewsGain": null,
+   "isNew": true,
+   "median": 1350,
+   "multiple": 0.4
+  },
+  {
+   "id": "zWq7JbQSt3o",
+   "title": "중동 미군 전력 재배치…이란 보복 예고 '일촉즉발' [에디터픽] / YTN",
+   "published": "2026-10-31T10:39:57+00:00",
+   "url": "https://www.youtube.com/watch?v=zWq7JbQSt3o",
+   "shorts": false,
+   "views": 42571,
+   "likes": 115,
+   "viewsGain": null,
+   "isNew": true,
+   "median": 1350,
+   "multiple": 31.5
   },
   {
    "id": "1hxqbV9oqLw",
@@ -24,12 +89,12 @@
    "published": "2026-10-31T10:00:34+00:00",
    "url": "https://www.youtube.com/watch?v=1hxqbV9oqLw",
    "shorts": false,
-   "views": 240,
-   "likes": 1,
-   "viewsGain": 31,
+   "views": 995,
+   "likes": 11,
+   "viewsGain": 755,
    "isNew": false,
-   "median": 971.5,
-   "multiple": 0.2
+   "median": 1350,
+   "multiple": 0.7
   },
   {
    "id": "fnT5Sx2jz50",
@@ -37,12 +102,12 @@
    "published": "2026-10-31T10:00:30+00:00",
    "url": "https://www.youtube.com/watch?v=fnT5Sx2jz50",
    "shorts": false,
-   "views": 40,
-   "likes": 3,
-   "viewsGain": 8,
+   "views": 664,
+   "likes": 22,
+   "viewsGain": 624,
    "isNew": false,
-   "median": 971.5,
-   "multiple": 0.0
+   "median": 1350,
+   "multiple": 0.5
   },
   {
    "id": "yLShfo5gNRE",
@@ -50,12 +115,12 @@
    "published": "2026-10-31T09:54:47+00:00",
    "url": "https://www.youtube.com/watch?v=yLShfo5gNRE",
    "shorts": false,
-   "views": 14064,
-   "likes": 149,
-   "viewsGain": 2572,
+   "views": 95958,
+   "likes": 1038,
+   "viewsGain": 81894,
    "isNew": false,
-   "median": 971.5,
-   "multiple": 14.5
+   "median": 1350,
+   "multiple": 71.1
   },
   {
    "id": "uehz6HqQ4gc",
@@ -63,12 +128,12 @@
    "published": "2026-10-31T09:52:55+00:00",
    "url": "https://www.youtube.com/watch?v=uehz6HqQ4gc",
    "shorts": false,
-   "views": 125,
-   "likes": 0,
-   "viewsGain": 9,
+   "views": 1198,
+   "likes": 2,
+   "viewsGain": 1073,
    "isNew": false,
-   "median": 971.5,
-   "multiple": 0.1
+   "median": 1350,
+   "multiple": 0.9
   },
   {
    "id": "KWHWnCVnfzs",
@@ -76,12 +141,12 @@
    "published": "2026-10-31T09:40:26+00:00",
    "url": "https://www.youtube.com/watch?v=KWHWnCVnfzs",
    "shorts": false,
-   "views": 495,
-   "likes": 5,
-   "viewsGain": 18,
+   "views": 4354,
+   "likes": 12,
+   "viewsGain": 3859,
    "isNew": false,
-   "median": 971.5,
-   "multiple": 0.5
+   "median": 1350,
+   "multiple": 3.2
   },
   {
    "id": "IIZR6Jd-m2c",
@@ -89,12 +154,12 @@
    "published": "2026-10-31T09:26:38+00:00",
    "url": "https://www.youtube.com/watch?v=IIZR6Jd-m2c",
    "shorts": false,
-   "views": 3593,
-   "likes": 24,
-   "viewsGain": 48,
+   "views": 20354,
+   "likes": 34,
+   "viewsGain": 16761,
    "isNew": false,
-   "median": 971.5,
-   "multiple": 3.7
+   "median": 1350,
+   "multiple": 15.1
   },
   {
    "id": "BwFhxVa3OMA",
@@ -102,12 +167,12 @@
    "published": "2026-10-31T09:23:59+00:00",
    "url": "https://www.youtube.com/watch?v=BwFhxVa3OMA",
    "shorts": false,
-   "views": 5016,
-   "likes": 79,
-   "viewsGain": 128,
+   "views": 15861,
+   "likes": 158,
+   "viewsGain": 10845,
    "isNew": false,
-   "median": 971.5,
-   "multiple": 5.2
+   "median": 1350,
+   "multiple": 11.7
   },
   {
    "id": "n9c-Ww5Tj4g",
@@ -115,12 +180,12 @@
    "published": "2026-10-31T09:17:09+00:00",
    "url": "https://www.youtube.com/watch?v=n9c-Ww5Tj4g",
    "shorts": false,
-   "views": 217,
-   "likes": 2,
-   "viewsGain": 1,
+   "views": 3128,
+   "likes": 3,
+   "viewsGain": 2911,
    "isNew": false,
-   "median": 971.5,
-   "multiple": 0.2
+   "median": 1350,
+   "multiple": 2.3
   },
   {
    "id": "hDDM4PDIEFQ",
@@ -128,120 +193,62 @@
    "published": "2026-10-31T09:07:10+00:00",
    "url": "https://www.youtube.com/watch?v=hDDM4PDIEFQ",
    "shorts": false,
-   "views": 933,
-   "likes": 22,
-   "viewsGain": 10,
+   "views": 6607,
+   "likes": 28,
+   "viewsGain": 5674,
    "isNew": false,
-   "median": 971.5,
-   "multiple": 1.0
-  },
-  {
-   "id": "Be_moGj27HM",
-   "title": "배우를 좌절하게 만드는 말 / YTN",
-   "published": "2026-10-31T09:03:09+00:00",
-   "url": "https://www.youtube.com/shorts/Be_moGj27HM",
-   "shorts": true,
-   "views": 1105,
-   "likes": 14,
-   "viewsGain": 16,
-   "isNew": false,
-   "median": null,
-   "multiple": null
-  },
-  {
-   "id": "xHAtbkR1F-4",
-   "title": "진성준, 미국 비자 발급...\"국가적 참사\" vs \"반국익적 행태\" / YTN",
-   "published": "2026-10-31T09:02:24+00:00",
-   "url": "https://www.youtube.com/watch?v=xHAtbkR1F-4",
-   "shorts": false,
-   "views": 1010,
-   "likes": 18,
-   "viewsGain": 11,
-   "isNew": false,
-   "median": 971.5,
-   "multiple": 1.0
-  },
-  {
-   "id": "ShxknK8jChA",
-   "title": "이태원 참사 후 첫 주말 핼러윈...안전 관리 '총력' / YTN",
-   "published": "2026-10-31T08:57:15+00:00",
-   "url": "https://www.youtube.com/watch?v=ShxknK8jChA",
-   "shorts": false,
-   "views": 683,
-   "likes": 11,
-   "viewsGain": 8,
-   "isNew": false,
-   "median": 971.5,
-   "multiple": 0.7
-  },
-  {
-   "id": "eVAApbre1bU",
-   "title": "전 세계 탈취액 60%가 북한...훔친 코인이 핵·미사일로 [자막뉴스] / YTN",
-   "published": "2026-10-31T08:43:46+00:00",
-   "url": "https://www.youtube.com/watch?v=eVAApbre1bU",
-   "shorts": false,
-   "views": 3493,
-   "likes": 41,
-   "viewsGain": 26,
-   "isNew": false,
-   "median": 971.5,
-   "multiple": 3.6
-  },
-  {
-   "id": "iaBmPy1yQFY",
-   "title": "대통령 지지율 다시 30%대...하락한 이유는?[Y녹취록] / YTN",
-   "published": "2026-10-31T08:37:34+00:00",
-   "url": "https://www.youtube.com/watch?v=iaBmPy1yQFY",
-   "shorts": false,
-   "views": 2706,
-   "likes": 41,
-   "viewsGain": 8,
-   "isNew": false,
-   "median": 971.5,
-   "multiple": 2.8
+   "median": 1350,
+   "multiple": 4.9
   }
  ],
  "viral": [
   {
    "title": "충격적인 중간선거 여론조사 결과에...침울한 백악관 분위기 [자막뉴스] / YTN",
    "url": "https://www.youtube.com/watch?v=yLShfo5gNRE",
-   "views": 14064,
-   "multiple": 14.5,
+   "views": 95958,
+   "multiple": 71.1,
    "shorts": false
   },
   {
-   "title": "'속수무책'으로 뚫린 세계 1위 거래소…'북한 해킹'에 칼 뽑은 FBI [이슈픽] / YTN",
-   "url": "https://www.youtube.com/watch?v=6e-dOOTWSbA",
-   "views": 6004,
-   "multiple": 6.2,
-   "shorts": false
-  },
-  {
-   "title": "세번 참은 트럼프 결국...'유세 방해' 시위자에 '막말 폭격' [이 장면]",
-   "url": "https://www.youtube.com/watch?v=BwFhxVa3OMA",
-   "views": 5016,
-   "multiple": 5.2,
+   "title": "중동 미군 전력 재배치…이란 보복 예고 '일촉즉발' [에디터픽] / YTN",
+   "url": "https://www.youtube.com/watch?v=zWq7JbQSt3o",
+   "views": 42571,
+   "multiple": 31.5,
    "shorts": false
   },
   {
    "title": "5m 스카이타워 그릴도 등장...홍성 글로벌 바비큐 축제 현장 [자막뉴스] / YTN",
    "url": "https://www.youtube.com/watch?v=IIZR6Jd-m2c",
-   "views": 3593,
-   "multiple": 3.7,
+   "views": 20354,
+   "multiple": 15.1,
    "shorts": false
   },
   {
-   "title": "전 세계 탈취액 60%가 북한...훔친 코인이 핵·미사일로 [자막뉴스] / YTN",
-   "url": "https://www.youtube.com/watch?v=eVAApbre1bU",
-   "views": 3493,
-   "multiple": 3.6,
+   "title": "세번 참은 트럼프 결국...'유세 방해' 시위자에 '막말 폭격' [이 장면]",
+   "url": "https://www.youtube.com/watch?v=BwFhxVa3OMA",
+   "views": 15861,
+   "multiple": 11.7,
    "shorts": false
   },
   {
-   "title": "대통령 지지율 다시 30%대...하락한 이유는?[Y녹취록] / YTN",
-   "url": "https://www.youtube.com/watch?v=iaBmPy1yQFY",
-   "views": 2706,
-   "multiple": 2.8,
+   "title": "'내란가담' 군인들 또 무죄...종합특검 사건 어쩌나 / YTN",
+   "url": "https://www.youtube.com/watch?v=hDDM4PDIEFQ",
+   "views": 6607,
+   "multiple": 4.9,
+   "shorts": false
+  },
+  {
+   "title": "바이낸스, 20분 만에 8조 해킹 피해...배후는 북한? / YTN",
+   "url": "https://www.youtube.com/watch?v=KWHWnCVnfzs",
+   "views": 4354,
+   "multiple": 3.2,
+   "shorts": false
+  },
+  {
+   "title": "\"전 세계 가상화폐 탈취 60% 북한 소행 추정\"...'사이버 외화벌이' 산업화 / YTN",
+   "url": "https://www.youtube.com/watch?v=n9c-Ww5Tj4g",
+   "views": 3128,
+   "multiple": 2.3,
    "shorts": false
   }
  ]

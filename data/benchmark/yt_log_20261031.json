@@ -640,5 +640,149 @@
     "gain": 48
    }
   ]
+ },
+ {
+  "at": "2026-10-31T20:57+09:00",
+  "key": "14f",
+  "ok": true,
+  "new": [],
+  "top": [
+   {
+    "id": "niGCI-aEH-A",
+    "title": "사전 판매 매진이었는데… 액정 갈라진다는 ‘아이폰 듀오’ 근황 / 14F",
+    "views": 180278,
+    "gain": 3632
+   },
+   {
+    "id": "ZUqM6arduYw",
+    "title": "산재 사망자는 줄었지만 제조업은 늘었다… 끼임 사고 예방수칙 총정리 / 14F",
+    "views": 19326,
+    "gain": 3190
+   },
+   {
+    "id": "RxdtTJ7GdDM",
+    "title": "[EN] 전세계에서 퇴출됐다가 역주행 중이라는 우지 근황🥄ㅣ돈슐랭 / 14F",
+    "views": 293852,
+    "gain": 894
+   }
+  ]
+ },
+ {
+  "at": "2026-10-31T20:57+09:00",
+  "key": "subusunews",
+  "ok": true,
+  "new": [],
+  "top": [
+   {
+    "id": "vEqtdBio5f8",
+    "title": "유규선이 성공한 방법",
+    "views": 51006,
+    "gain": 280
+   },
+   {
+    "id": "joS-5fpq2rk",
+    "title": "꿈을 가지고 있는 사람의 기분은 어떤걸까",
+    "views": 25265,
+    "gain": 232
+   },
+   {
+    "id": "Iwlid0Rvc8M",
+    "title": "형 무슨 소리야 내가 형 절대 안 버려",
+    "views": 16668,
+    "gain": 208
+   }
+  ]
+ },
+ {
+  "at": "2026-10-31T20:57+09:00",
+  "key": "vstudio",
+  "ok": true,
+  "new": [],
+  "top": []
+ },
+ {
+  "at": "2026-10-31T20:57+09:00",
+  "key": "syukaworld",
+  "ok": true,
+  "new": [],
+  "top": [
+   {
+    "id": "TF93Z8sJZok",
+    "title": "베어장에 등판한 좋좋소 사장 슈카",
+    "views": 35379,
+    "gain": 27493
+   },
+   {
+    "id": "p9PqJ61lg3w",
+    "title": "규카츠가 방송 열심히 하는 이유",
+    "views": 267634,
+    "gain": 5248
+   },
+   {
+    "id": "WuU0lc1SwLg",
+    "title": "난 정말 주식을 못한다 손!!!",
+    "views": 154376,
+    "gain": 4375
+   }
+  ]
+ },
+ {
+  "at": "2026-10-31T20:57+09:00",
+  "key": "ytn",
+  "ok": true,
+  "new": [
+   "5pmnwXCxyes",
+   "q8V8FzsyZHY",
+   "gx2b_0ue-5Q",
+   "tgAmSsnBxP4",
+   "3pYFHbjfai8",
+   "zWq7JbQSt3o"
+  ],
+  "top": [
+   {
+    "id": "yLShfo5gNRE",
+    "title": "충격적인 중간선거 여론조사 결과에...침울한 백악관 분위기 [자막뉴스] / YTN",
+    "views": 95958,
+    "gain": 81894
+   },
+   {
+    "id": "IIZR6Jd-m2c",
+    "title": "5m 스카이타워 그릴도 등장...홍성 글로벌 바비큐 축제 현장 [자막뉴스] / YTN",
+    "views": 20354,
+    "gain": 16761
+   },
+   {
+    "id": "BwFhxVa3OMA",
+    "title": "세번 참은 트럼프 결국...'유세 방해' 시위자에 '막말 폭격' [이 장면]",
+    "views": 15861,
+    "gain": 10845
+   }
+  ]
+ },
+ {
+  "at": "2026-10-31T20:57+09:00",
+  "key": "storyk",
+  "ok": true,
+  "new": [],
+  "top": [
+   {
+    "id": "oojzHDPGGFw",
+    "title": "손흥민 케인 한 시대의 낭만 - 토트넘의 가장 아름답던 시절을 관통하는 손케 듀오",
+    "views": 319668,
+    "gain": null
+   },
+   {
+    "id": "T8LOjY7uM8A",
+    "title": "손흥민 존중은 베테랑을 향한 마땅한 기본 - 황희찬의 하이파이브 무시와 엄지성 대표팀 발탁",
+    "views": 236442,
+    "gain": null
+   },
+   {
+    "id": "QJ7HJbWtzEs",
+    "title": "손흥민 케인 끝나지 않은 레전드 서사 - 토트넘 꼴찌 추락과 뮌헨의 계약서에 넣은 조항",
+    "views": 197337,
+    "gain": null
+   }
+  ]
  }
 ]
