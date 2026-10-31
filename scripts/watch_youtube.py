@@ -36,7 +36,7 @@ def get_bytes(url):
     return urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=30).read()
 
 
-def save_thumb(vid, folder):
+def save_thumb(vid, folder, shorts=False):
     """공식 영상 미리보기 이미지 저장. 쇼츠는 가로 그림 안에 세로 화면이 들어 있어 양옆 검은 띠를 잘라 낸다."""
     folder.mkdir(parents=True, exist_ok=True)
     out = folder / f"{vid}.jpg"
@@ -60,6 +60,10 @@ def save_thumb(vid, folder):
         box = mask.getbbox()
         if box and (box[2] - box[0]) > im.width * 0.2:
             im = im.crop(box)
+        if shorts and im.width > im.height:   # 쇼츠: 흐린 배경 가운데의 세로(9:16) 화면만 남김
+            w = round(im.height * 9 / 16)
+            x = (im.width - w) // 2
+            im = im.crop((x, 0, x + w, im.height))
         im.save(out, "JPEG", quality=90)
     except Exception:
         out.write_bytes(data)
@@ -116,7 +120,7 @@ def main():
             print(f"{key}: 우리 채널 통계 {len(vids)}개 저장")
             continue
         if key in THUMBS:
-            got = sum(save_thumb(v["id"], THUMBS[key]) for v in vids)
+            got = sum(save_thumb(v["id"], THUMBS[key], v["shorts"]) for v in vids)
             print(f"{key}: 미리보기 이미지 새로 {got}장")
         seen = {v["id"] for v in old.get("videos", [])}
         new = [v for v in vids if v["id"] not in seen] if seen else []
