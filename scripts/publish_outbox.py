@@ -61,6 +61,9 @@ def post_replies(tok, parent_id, texts):
 
 
 def post_threads(folder, text, replies_text=None):
+    # 대표 결정(10/31 23:48): Threads는 대표가 앱에서 음악 스티커를 붙여 직접 올린다(사람이 올리는 느낌). 자동 게시는 THREADS_AUTO=on 일 때만.
+    if os.environ.get("THREADS_AUTO", "") != "on":
+        return {"skipped": "Threads는 대표가 직접 올림 (THREADS_AUTO 꺼짐)"}
     tok = os.environ.get("THREADS_TOKEN", "").strip()
     if not tok:
         return {"skipped": "THREADS_TOKEN 비밀값 없음"}
