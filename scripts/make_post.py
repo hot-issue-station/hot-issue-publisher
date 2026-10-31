@@ -103,7 +103,8 @@ def rings(colors, sizes, offset_ratio=0.5):
 
 
 def dots(i, n=3):
-    return "".join(f'<div style="width:24px;height:24px;border-radius:50%;background:{CYAN if k == i else LINE}"></div>'
+    sz = 24 if n <= 10 else 12   # 주말 리센느 2분(사실 18장 안팎)은 작은 점
+    return "".join(f'<div style="width:{sz}px;height:{sz}px;border-radius:50%;background:{CYAN if k == i else LINE}"></div>'
                    for k in range(n))
 
 # 야구공(직접 그린 그림). 맞대결 표지와 1장 그림에 쓴다.
@@ -255,7 +256,7 @@ def cards(r):
     label = f"{m}.{d} · {SLOTS[r['slot']][0]}"
     out = []
     global CUR_TOTAL
-    NF = max(1, min(len(r["facts"]), 8))   # 사실 카드 1~8장 → 전체 5~12장 (10/31: 30초=8장 안팎, 특집 1분=12장 안팎)
+    NF = max(1, min(len(r["facts"]), int(r.get("maxFacts", 8)), 20))   # maxFacts: 주말 리센느 2분 몰아보기는 18 안팎(10/31 대표 결정). 사실 카드 1~8장 → 전체 5~12장 (10/31: 30초=8장 안팎, 특집 1분=12장 안팎)
     TOT = NF + 4
     CUR_TOTAL = TOT
     # 1 훅 — "big"이 있으면 C안(숫자 강조), 없으면 기본형
