@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "date": "2026-11-01",
+  "slot": "NT",
+  "publishAt": "2026-11-01T21:00:00+09:00",
+  "topic": "아이유에게 쓰는 가을편지: 데뷔 '미아'부터 '이 별로부터'까지 18년",
+  "images": [
+    "01.jpg",
+    "02.jpg",
+    "03.jpg",
+    "04.jpg",
+    "05.jpg",
+    "06.jpg",
+    "07.jpg"
+  ],
+  "caption": "(확정 뒤 기사형 소개글)",
+  "sources": [
+    {
+      "outlet": "위키백과",
+      "title": "아이유 활동 연표",
+      "date": "2026.10 확인",
+      "url": "https://ko.wikipedia.org/wiki/%EC%95%84%EC%9D%B4%EC%9C%A0"
+    },
+    {
+      "outlet": "톱스타뉴스",
+      "title": "데뷔 18주년 소감",
+      "date": "2026.09.21",
+      "url": "https://www.topstarnews.net/news/articleView.html?idxno=16204668"
+    },
+    {
+      "outlet": "텐아시아",
+      "title": "'이 별로부터' 발매",
+      "date": "2026.09.12",
+      "url": "https://www.tenasia.co.kr/article/2026091196644"
+    },
+    {
+      "outlet": "데일리안",
+      "title": "잠실 주경기장 여성 솔로 최초",
+      "date": "2022.09",
+      "url": "https://www.dailian.co.kr/news/view/1153568/"
+    },
+    {
+      "outlet": "머니투데이",
+      "title": "상암에서 10만 관객과 재회",
+      "date": "2024.09.23",
+      "url": "https://www.mt.co.kr/entertainment/2024/09/23/2024092311077240118"
+    },
+    {
+      "outlet": "스포츠경향",
+      "title": "'폭싹 속았수다' 1인 2역",
+      "date": "2025.03.17",
+      "url": "https://sports.khan.co.kr/article/202503170236003"
+    }
+  ]
+}

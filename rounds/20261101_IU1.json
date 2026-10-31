@@ -1,0 +1,140 @@
+{
+ "date": "2026-11-01",
+ "slot": "NT",
+ "theme": "AM",
+ "reelSeconds": 60,
+ "category": "가을편지 특집 · 아이유",
+ "topic": "아이유에게 쓰는 가을편지: 데뷔 '미아'부터 '이 별로부터'까지 18년",
+ "hook": "아이유에게 쓰는\n가을편지",
+ "hookCover": "아이유에게 쓰는\n가을편지",
+ "sub": "'미아'에서 '이 별로부터'까지, 18년의 계절",
+ "photo": "assets/thumbs/iu_lilac_c.jpg",
+ "photoPos": "45% 25%",
+ "photoLabel": "'LILAC' MV · 영상 화면 1theK 공식 유튜브",
+ "big": {
+  "number": "18",
+  "lines": [
+   "년,",
+   "*미아*에서",
+   "*이 별로부터*까지"
+  ],
+  "caption": "",
+  "icon": "heart"
+ },
+ "summary": "지은 씨, 열다섯 살의 첫 무대부터 열여덟 번째 가을까지. 당신이 걸어온 계절을 한 장씩 꺼내 편지로 써 봐요.",
+ "summaryPhotos": [
+  "assets/thumbs/iu_mia_c.jpg",
+  "assets/thumbs/iu_goodday_c.jpg",
+  "assets/thumbs/iu_lilac_c.jpg",
+  "assets/thumbs/iu_poksak_c.jpg"
+ ],
+ "summaryPhotosLabel": "'미아' · '좋은 날' · 'LILAC' MV, '폭싹 속았수다' 예고편 (영상 화면 · 1theK · 넷플릭스 코리아 공식 유튜브)",
+ "facts": [
+  {
+   "title": "2008년 가을, 열다섯 살의 '미아'",
+   "desc": "2008년 9월 18일, 데뷔곡 '미아'로 처음 무대에 섰죠. 그해 가을이 모든 이야기의 시작이었어요.",
+   "source": "위키백과 · 톱스타뉴스 2026.09.21",
+   "photo": "assets/thumbs/iu_mia_c.jpg",
+   "photoPos": "50% 40%",
+   "photoLabel": "'미아' MV · 영상 화면 1theK 공식 유튜브"
+  },
+  {
+   "title": "2010년 겨울, '좋은 날'",
+   "desc": "음악 방송 3주 연속 1위, 멜론 일간 차트 29일 연속 1위. 그해 겨울은 온통 당신의 노래였어요.",
+   "source": "위키백과",
+   "photo": "assets/thumbs/iu_goodday_c.jpg",
+   "photoPos": "50% 30%",
+   "photoLabel": "'좋은 날' MV · 영상 화면 1theK 공식 유튜브"
+  },
+  {
+   "title": "스물셋, 스스로 쓰기 시작한 노래",
+   "desc": "2015년 'CHAT-SHIRE'는 처음으로 직접 프로듀싱한 앨범이에요. '스물셋'과 함께 당신의 이야기를 직접 쓰기 시작했죠.",
+   "source": "위키백과",
+   "photo": "assets/thumbs/iu_23_c.jpg",
+   "photoPos": "50% 40%",
+   "photoLabel": "'스물셋' MV · 영상 화면 1theK 공식 유튜브"
+  },
+  {
+   "title": "2017년 봄, 'Palette'",
+   "desc": "스물다섯의 자화상 같은 정규 앨범. 그해 멜론뮤직어워드에서 올해의 앨범상 등 3관왕에 올랐어요.",
+   "source": "위키백과",
+   "photo": "assets/thumbs/iu_name_c.jpg",
+   "photoPos": "50% 30%",
+   "photoLabel": "'Palette' 수록곡 '이름에게' 스페셜 클립 · 영상 화면 1theK 공식 유튜브"
+  },
+  {
+   "title": "배우 이지은",
+   "desc": "'나의 아저씨'의 이지안, '호텔 델루나'의 장만월. 노래 밖에서도 우리는 당신에게 위로받았어요.",
+   "source": "위키백과",
+   "photo": "assets/thumbs/iu_delluna_c.jpg",
+   "photoPos": "50% 30%",
+   "photoLabel": "'호텔 델루나' 티저 · 영상 화면 tvN DRAMA 공식 유튜브"
+  },
+  {
+   "title": "2021년 봄, 'LILAC'",
+   "desc": "스물아홉에 낸 정규 5집. 20대에게 건네는 환한 작별 인사 같은 앨범이었죠.",
+   "source": "위키백과",
+   "photo": "assets/thumbs/iu_lilac_c.jpg",
+   "photoPos": "50% 30%",
+   "photoLabel": "'LILAC' MV · 영상 화면 1theK 공식 유튜브"
+  },
+  {
+   "title": "가을마다 커진 무대",
+   "desc": "2022년 9월 한국 여성 가수 최초 잠실 주경기장(약 9만 명), 2024년 9월 여성 가수 최초 서울월드컵경기장(약 10만 명).",
+   "source": "데일리안 · 머니투데이 2024.09.23",
+   "photo": "assets/thumbs/iu_golden_c.jpg",
+   "photoPos": "50% 30%",
+   "photoLabel": "2022 콘서트 'The Golden Hour' · 영상 화면 이지금 [IU Official]"
+  },
+  {
+   "title": "2025년 봄, 애순과 금명",
+   "desc": "'폭싹 속았수다'에서 엄마와 딸을 함께 연기한 1인 2역. 우리는 또 한 번 당신 덕분에 울었어요.",
+   "source": "스포츠경향 2025.03.17",
+   "photo": "assets/thumbs/iu_poksak_c.jpg",
+   "photoPos": "40% 30%",
+   "photoLabel": "'폭싹 속았수다' 예고편 · 영상 화면 넷플릭스 코리아 공식 유튜브"
+  }
+ ],
+ "interp": "지은 씨, 열여덟 번째 가을에",
+ "interpSub": "'유애나가 있어서 18년이 외롭지 않았다'는 당신의 말처럼, 우리도 당신의 노래 덕분에 덜 외로웠어요. 9월 '이 별로부터'로 찾아와 줘서 고마워요.",
+ "sources": [
+  {
+   "outlet": "위키백과",
+   "title": "아이유 활동 연표",
+   "date": "2026.10 확인",
+   "url": "https://ko.wikipedia.org/wiki/%EC%95%84%EC%9D%B4%EC%9C%A0"
+  },
+  {
+   "outlet": "톱스타뉴스",
+   "title": "데뷔 18주년 소감",
+   "date": "2026.09.21",
+   "url": "https://www.topstarnews.net/news/articleView.html?idxno=16204668"
+  },
+  {
+   "outlet": "텐아시아",
+   "title": "'이 별로부터' 발매",
+   "date": "2026.09.12",
+   "url": "https://www.tenasia.co.kr/article/2026091196644"
+  },
+  {
+   "outlet": "데일리안",
+   "title": "잠실 주경기장 여성 솔로 최초",
+   "date": "2022.09",
+   "url": "https://www.dailian.co.kr/news/view/1153568/"
+  },
+  {
+   "outlet": "머니투데이",
+   "title": "상암에서 10만 관객과 재회",
+   "date": "2024.09.23",
+   "url": "https://www.mt.co.kr/entertainment/2024/09/23/2024092311077240118"
+  },
+  {
+   "outlet": "스포츠경향",
+   "title": "'폭싹 속았수다' 1인 2역",
+   "date": "2025.03.17",
+   "url": "https://sports.khan.co.kr/article/202503170236003"
+  }
+ ],
+ "cta": "당신의 다음 계절도,\n*함께 걸을게요*",
+ "caption": "(확정 뒤 기사형 소개글)"
+}
