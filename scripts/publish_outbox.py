@@ -7,7 +7,7 @@ outbox/<ID>/ 폴더에 reel.mp4 와 post.json 을 넣어 올리면 GitHub Action
 
 post.json 예시
 {"id": "20261031_RS",
- "threads": {"text": "…450자 이내, 태그 1개…"},
+ "threads": {"text": "…450자 이내, 태그 1개…", "replies": ["답글 1 (태그 1개)", "답글 2 (태그 1개)"]},
  "youtube": {"title": "… #Shorts", "description": "…", "tags": "리센느,RESCENE"}}
 
 비밀값(토큰)은 대표가 GitHub 설정에 직접 넣는다. 이 스크립트는 토큰을 화면이나 파일에 남기지 않는다.
@@ -46,7 +46,21 @@ def video_urls(folder):
 
 
 # ---------- Threads ----------
-def post_threads(folder, text):
+def post_replies(tok, parent_id, texts):
+    """대표 결정 10/31: Threads는 글 하나에 주제 태그 1개만 인정 → 내 글에 답글을 달아 답글마다 태그 1개씩 더 붙인다."""
+    out = []
+    for t in (texts or [])[:2]:
+        time.sleep(5)
+        st, res, _ = http("POST", f"{TH}/me/threads", {"media_type": "TEXT", "text": t[:500], "reply_to_id": parent_id, "access_token": tok})
+        if st != 200 or "id" not in res:
+            out.append({"error": str(res)[:200]}); continue
+        time.sleep(3)
+        st, pub, _ = http("POST", f"{TH}/me/threads_publish", {"creation_id": res["id"], "access_token": tok})
+        out.append({"ok": True, "id": pub.get("id")} if st == 200 and isinstance(pub, dict) and "id" in pub else {"error": str(pub)[:200]})
+    return out
+
+
+def post_threads(folder, text, replies_text=None):
     tok = os.environ.get("THREADS_TOKEN", "").strip()
     if not tok:
         return {"skipped": "THREADS_TOKEN 비밀값 없음"}
@@ -68,7 +82,8 @@ def post_threads(folder, text):
         st, pub, _ = http("POST", f"{TH}/me/threads_publish", {"creation_id": cid, "access_token": tok})
         if st == 200 and "id" in pub:
             st, info, _ = http("GET", f"{TH}/{pub['id']}?fields=permalink&access_token={tok}")
-            return {"ok": True, "id": pub["id"], "permalink": (info or {}).get("permalink", "") if isinstance(info, dict) else "", "at": now()}
+            replies = post_replies(tok, pub["id"], replies_text)
+            return {"ok": True, "id": pub["id"], "permalink": (info or {}).get("permalink", "") if isinstance(info, dict) else "", "replies": replies, "at": now()}
         last = pub
     return {"error": str(last)[:400]}
 
@@ -119,7 +134,7 @@ def main():
         done = json.loads(dj.read_text(encoding="utf-8")) if dj.exists() else {}
         changed = False
         if post.get("threads") and not done.get("threads", {}).get("ok"):
-            done["threads"] = post_threads(folder, post["threads"]["text"]); changed = True
+            done["threads"] = post_threads(folder, post["threads"]["text"], post["threads"].get("replies")); changed = True
         if post.get("youtube") and not done.get("youtube", {}).get("ok"):
             try:
                 done["youtube"] = post_youtube(folder, post["youtube"])
