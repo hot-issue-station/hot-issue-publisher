@@ -49,15 +49,19 @@ def check(date, slot):
         if (p / "published.json").exists() or approved:
             # 회차 시각 예약(정시 게시)만 회차를 차지한 것으로 본다. '지금 바로' 올린 수시 게시물은 회차를 막지 않는다.
             pub = meta.get("publishAt", "")
-            if pub.endswith(f"T{slot_time(slot)}:00+09:00"):
+            if pub.endswith(f"T{slot_time(slot, date)}:00+09:00"):
                 print(f"busy {p.relative_to(ROOT)}")
                 return 3
     print("free")
     return 0
 
 
-def slot_time(slot):
-    return {"AM": "08:00", "PM": "12:00", "NT": "21:00", "RS": "18:30"}[slot]  # 10/31 대표 편성
+def slot_time(slot, date=None):
+    if date:
+        import datetime as _d
+        if _d.date.fromisoformat(date[:4] + "-" + date[4:6] + "-" + date[6:8] if "-" not in date else date).weekday() >= 5:
+            return {"AM": "09:30", "PM": "12:30", "AF": "15:00", "RS": "18:30", "NT": "21:00"}[slot]  # 주말 편성 10/31
+    return {"AM": "08:00", "PM": "12:00", "NT": "21:00", "RS": "18:30", "AF": "15:00"}[slot]  # 10/31 대표 편성
 
 
 def validate(r):

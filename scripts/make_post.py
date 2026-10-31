@@ -28,7 +28,14 @@ import pathlib
 import sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-SLOTS = {"AM": ("아침", "08:00"), "PM": ("점심", "12:00"), "NT": ("저녁", "21:00"), "RS": ("리센느 응원 특집", "18:30")}  # 10/31 대표 편성: 아침 해외·손흥민 / 점심 정치·사회경제 / 퇴근 리센느 / 저녁 연예·스포츠
+SLOTS = {"AM": ("아침", "08:00"), "PM": ("점심", "12:00"), "NT": ("저녁", "21:00"), "RS": ("리센느 응원 특집", "18:30"), "AF": ("오후", "15:00")}
+WEEKEND_TIME = {"AM": "09:30", "PM": "12:30", "AF": "15:00", "RS": "18:30", "NT": "21:00"}  # 주말(토·일) 편성 10/31 22:15
+
+
+def slot_time(slot, date):
+    import datetime as _d
+    wk = _d.date.fromisoformat(date).weekday() >= 5
+    return (WEEKEND_TIME if wk else {k: v[1] for k, v in SLOTS.items()})[slot]  # 10/31 대표 편성: 아침 해외·손흥민 / 점심 정치·사회경제 / 퇴근 리센느 / 저녁 연예·스포츠
 NAVY, CYAN, PINK, VIOLET = "#0B1220", "#35E0FF", "#FF4FA3", "#6C7BFF"
 # 회차별 템플릿(색 묶음): 출근길은 해 뜨는 아침(크림+주황), 점심은 산뜻한 민트(민트+초록), 퇴근길은 밤(남색+청록, 기본)
 THEMES = {
@@ -409,7 +416,7 @@ def main():
     (out / "caption.txt").write_text(r["caption"], encoding="utf-8")
     import datetime as dt
     meta = {"version": 1, "date": r["date"], "slot": r["slot"],
-            "publishAt": f"{r['date']}T{SLOTS[r['slot']][1]}:00+09:00", "topic": r.get("topic", r["hook"].replace("\n", " ")),
+            "publishAt": f"{r['date']}T{r.get('publishTime') or slot_time(r['slot'], r['date'])}:00+09:00", "topic": r.get("topic", r["hook"].replace("\n", " ")),
             "images": [f"{i:02d}.jpg" for i in range(1, 8)], "caption": r["caption"],
             "sources": r["sources"]}
     if a.approve3:
