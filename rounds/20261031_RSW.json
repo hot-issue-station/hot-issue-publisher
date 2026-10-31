@@ -1,0 +1,220 @@
+{
+ "date": "2026-10-31",
+ "slot": "RS",
+ "reelSeconds": 120,
+ "maxFacts": 18,
+ "category": "이번 주 리센느 몰아보기",
+ "topic": "이번 주 리센느 몰아보기 (10/26~10/30): 'With' 챌린지 9편 472만 회, 폴드8 모델, MV 티저",
+ "hook": "이번 주 리센느\n몰아보기",
+ "hookCover": "이번 주 리센느\n몰아보기",
+ "sub": "10월 26일(월)~30일(금), 컴백 직전 닷새",
+ "photo": "assets/rescene/02_pulse.jpg",
+ "photoPos": "50% 40%",
+ "photoLabel": "미니 4집 'PULSE' 공식 이미지 · 더뮤즈엔터테인먼트",
+ "big": {
+  "number": "472",
+  "lines": [
+   "만 회,",
+   "*With* 챌린지 9편",
+   "*컴백 D-3*의 한 주"
+  ],
+  "caption": "",
+  "icon": "heart"
+ },
+ "summary": "하이라이트 메들리로 문을 열고, 아홉 팀과 'With' 챌린지를 찍고, 갤럭시 모델이 되고, 뮤직비디오 티저까지. 컴백을 앞둔 리센느의 닷새를 하루씩 꺼내 봐요.",
+ "summaryPhotos": [
+  "assets/rescene/wk/annie_p.jpg",
+  "assets/rescene/wk/kiof_p.jpg",
+  "assets/rescene/wk/yena_p.jpg",
+  "assets/rescene/wk/sui_p.jpg"
+ ],
+ "summaryPhotosLabel": "'With' 챌린지 쇼츠 · 영상 화면 RESCENE 공식 유튜브",
+ "facts": [
+  {
+   "title": "월 10/26 · 하이라이트 메들리",
+   "desc": "밤 11시, 미니 4집 'PULSE' 5곡을 미리 들려줬어요. 위드·파이니스트 띵·드래곤·백화요란·미미.",
+   "source": "일간스포츠 2026.10.27",
+   "photo": "assets/rescene/wk/medley.jpg",
+   "photoPos": "50% 50%",
+   "photoLabel": "'PULSE' Highlight Medley · 영상 화면 RESCENE 공식 유튜브"
+  },
+  {
+   "title": "월 10/26 · 심장 박동, PULSE",
+   "desc": "앨범 이름 'PULSE'는 심장의 박동. 누군가에게 건넨 노래가 다시 나를 일으키는 순간을 담았대요.",
+   "source": "헤럴드뮤즈 2026.10.31",
+   "photo": "assets/rescene/wk/pulse11.jpg",
+   "photoPos": "50% 40%",
+   "photoLabel": "'PULSE' 공식 이미지 · 더뮤즈엔터테인먼트"
+  },
+  {
+   "title": "화 10/27 · 'With' 챌린지 시작",
+   "desc": "저녁 7시 올데이 프로젝트 애니, 8시 크러쉬, 9시 반 보이넥스트도어 운학. 하루에 세 편이 올라왔어요.",
+   "source": "RESCENE 공식 유튜브",
+   "photo": "assets/rescene/wk/crush.jpg",
+   "photoPos": "50% 50%",
+   "photoLabel": "크러쉬 편 · 영상 화면 RESCENE 공식 유튜브"
+  },
+  {
+   "title": "화 10/27 · 이번 주 1등, 애니 편",
+   "desc": "올데이 프로젝트 애니와 함께한 편이 85만 회로 아홉 편 중 가장 많이 봤어요.",
+   "source": "RESCENE 공식 유튜브 (10/31 20:57 기준)",
+   "photo": "assets/rescene/wk/annie.jpg",
+   "photoPos": "50% 50%",
+   "photoLabel": "애니 편 · 영상 화면 RESCENE 공식 유튜브"
+  },
+  {
+   "title": "화 10/27 · 운학 편 78만 회",
+   "desc": "보이넥스트도어 운학과 함께한 편은 78만 회로 2위예요.",
+   "source": "RESCENE 공식 유튜브 (10/31 20:57 기준)",
+   "photo": "assets/rescene/wk/woonhak.jpg",
+   "photoPos": "50% 50%",
+   "photoLabel": "운학 편 · 영상 화면 RESCENE 공식 유튜브"
+  },
+  {
+   "title": "수 10/28 · 키스오브라이프 나띠·하늘",
+   "desc": "저녁 8시, 키스오브라이프 나띠·하늘과 함께한 편이 올라와 51만 회를 넘었어요.",
+   "source": "RESCENE 공식 유튜브 (10/31 20:57 기준)",
+   "photo": "assets/rescene/wk/kiof.jpg",
+   "photoPos": "50% 50%",
+   "photoLabel": "나띠·하늘 편 · 영상 화면 RESCENE 공식 유튜브"
+  },
+  {
+   "title": "수 10/28 · 앤팀 의주 선배님과",
+   "desc": "밤 10시에는 앤팀 의주와 함께한 편. 36만 회를 넘었어요.",
+   "source": "RESCENE 공식 유튜브 (10/31 20:57 기준)",
+   "photo": "assets/rescene/wk/euiju.jpg",
+   "photoPos": "50% 50%",
+   "photoLabel": "의주 편 · 영상 화면 RESCENE 공식 유튜브"
+  },
+  {
+   "title": "수 10/28 · 갤럭시 Z 폴드8 모델",
+   "desc": "삼성전자가 폴드8 캠페인 모델로 리센느를 뽑았어요. 평소 갤럭시를 쓰는 모습에 팬들이 먼저 협업을 바랐대요.",
+   "source": "전자신문 2026.10.28",
+   "photo": "assets/rescene/wk/samsung1.jpg",
+   "photoPos": "50% 40%",
+   "photoLabel": "이미지 · 삼성전자 · 더뮤즈엔터테인먼트"
+  },
+  {
+   "title": "수 10/28 · 티저 하루 만에 200만",
+   "desc": "10월 23일 삼성전자 공식 SNS에 올린 실루엣 티저는 하루 만에 200만 회를 넘었어요.",
+   "source": "전자신문 2026.10.28",
+   "photo": "assets/rescene/wk/samsung2.jpg",
+   "photoPos": "50% 40%",
+   "photoLabel": "이미지 · 삼성전자 · 더뮤즈엔터테인먼트"
+  },
+  {
+   "title": "목 10/29 · 최예나 선배님과",
+   "desc": "저녁 8시 최예나와 함께한 편이 올라와 55만 회를 넘었어요.",
+   "source": "RESCENE 공식 유튜브 (10/31 20:57 기준)",
+   "photo": "assets/rescene/wk/yena.jpg",
+   "photoPos": "50% 50%",
+   "photoLabel": "최예나 편 · 영상 화면 RESCENE 공식 유튜브"
+  },
+  {
+   "title": "목 10/29 · 니쥬 니나 선배님과",
+   "desc": "밤 9시에는 니쥬 니나와 함께한 편. 40만 회를 넘었어요.",
+   "source": "RESCENE 공식 유튜브 (10/31 20:57 기준)",
+   "photo": "assets/rescene/wk/nina.jpg",
+   "photoPos": "50% 50%",
+   "photoLabel": "니나 편 · 영상 화면 RESCENE 공식 유튜브"
+  },
+  {
+   "title": "금 10/30 · 우리은행 '우리는 해'",
+   "desc": "우리은행이 리센느가 부른 CM송 광고 '우리는 해'를 공개했어요.",
+   "source": "EBN 2026.10.30",
+   "photo": "assets/rescene/wk/woori.jpg",
+   "photoPos": "50% 40%",
+   "photoLabel": "우리은행 광고 화면"
+  },
+  {
+   "title": "금 10/30 · 'With' 뮤직비디오 티저",
+   "desc": "오후 6시, 타이틀곡 'With' 뮤직비디오 티저 공개. 컨페티가 흩날리는 무대와 함께 달리는 장면이 담겼어요.",
+   "source": "헤럴드뮤즈 2026.10.31",
+   "photo": "assets/rescene/wk/bowling.jpg",
+   "photoPos": "50% 40%",
+   "photoLabel": "'With' 티저 이미지 · 더뮤즈엔터테인먼트"
+  },
+  {
+   "title": "금 10/30 · 티저 조회 107만",
+   "desc": "뮤직비디오 티저는 31일 밤 9시 기준 107만 회를 넘었어요.",
+   "source": "RESCENE 공식 유튜브 (10/31 20:57 기준)",
+   "photo": "assets/rescene/wk/pulse13.jpg",
+   "photoPos": "50% 45%",
+   "photoLabel": "'PULSE' 공식 이미지 · 더뮤즈엔터테인먼트"
+  },
+  {
+   "title": "금 10/30 · 투어스 지훈 선배님과",
+   "desc": "저녁 8시 투어스 지훈과 함께한 편. 37만 회를 넘었어요.",
+   "source": "RESCENE 공식 유튜브 (10/31 20:57 기준)",
+   "photo": "assets/rescene/wk/jihoon.jpg",
+   "photoPos": "50% 50%",
+   "photoLabel": "지훈 편 · 영상 화면 RESCENE 공식 유튜브"
+  },
+  {
+   "title": "금 10/30 · 키키 수이와",
+   "desc": "밤 9시 키키 수이와 함께한 편이 아홉 번째. 44만 회를 넘었어요.",
+   "source": "RESCENE 공식 유튜브 (10/31 20:57 기준)",
+   "photo": "assets/rescene/wk/sui.jpg",
+   "photoPos": "50% 50%",
+   "photoLabel": "수이 편 · 영상 화면 RESCENE 공식 유튜브"
+  },
+  {
+   "title": "금 10/30 · 리브, 리무진서비스 240회",
+   "desc": "리무진서비스가 240회 게스트로 리브를 알렸어요. '그댄 달라요'·'시간을 달려서' 두 곡이 먼저 공개됐어요.",
+   "source": "리무진서비스 공식 계정 2026.10.30",
+   "photo": "assets/rescene/wk/liv.jpg",
+   "photoPos": "50% 40%",
+   "photoLabel": "이미지 · 리무진서비스 공식 계정"
+  },
+  {
+   "title": "이번 주 베스트 순간",
+   "desc": "나흘 동안 아홉 팀과 찍은 'With' 챌린지, 모두 합쳐 472만 회. 함께여서 더 빛난 한 주였어요.",
+   "source": "RESCENE 공식 유튜브 (10/31 20:57 기준, 9편 합계)",
+   "photo": "assets/rescene/wk/pulse08.jpg",
+   "photoPos": "50% 40%",
+   "photoLabel": "'PULSE' 공식 이미지 · 더뮤즈엔터테인먼트"
+  }
+ ],
+ "interp": "다음 주, 드디어 PULSE",
+ "interpSub": "11월 3일(화) 오후 6시 미니 4집 'PULSE' 발매, 4일(수) 오후 6시 리무진서비스 240회 리브 편 공개. 같이 기다려요.",
+ "sources": [
+  {
+   "outlet": "일간스포츠",
+   "title": "PULSE 하이라이트 메들리·11/3 발매",
+   "date": "2026.10.27",
+   "url": "https://isplus.com/article/view/isp202610270031"
+  },
+  {
+   "outlet": "전자신문",
+   "title": "갤럭시 Z 폴드8 캠페인 모델",
+   "date": "2026.10.28",
+   "url": "https://www.etnews.com/20261028000076"
+  },
+  {
+   "outlet": "EBN",
+   "title": "우리은행 '우리는 해' CM송",
+   "date": "2026.10.30",
+   "url": "https://www.ebn.co.kr/news/articleView.html?idxno=1729817"
+  },
+  {
+   "outlet": "헤럴드뮤즈",
+   "title": "'With' MV 티저 공개",
+   "date": "2026.10.31",
+   "url": "https://www.heraldmuse.com/article/10921228"
+  },
+  {
+   "outlet": "RESCENE 공식 유튜브",
+   "title": "'With' 챌린지·티저 조회수",
+   "date": "2026.10.31 20:57 기준",
+   "url": "https://www.youtube.com/@RESCENE_official/shorts"
+  },
+  {
+   "outlet": "리무진서비스 공식 계정",
+   "title": "EP.240 리브",
+   "date": "2026.10.30",
+   "url": "https://www.instagram.com/reel/DfGrjOdAWRF/"
+  }
+ ],
+ "cta": "다음 주에도\n*리센느와 함께*",
+ "caption": "(확정 뒤 기사형 소개글)"
+}
