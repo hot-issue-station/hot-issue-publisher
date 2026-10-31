@@ -1,0 +1,8 @@
+{
+ "threads": {
+  "skipped": "THREADS_TOKEN 비밀값 없음"
+ },
+ "youtube": {
+  "skipped": "유튜브 심사 통과 전 (YT_UPLOAD 꺼짐)"
+ }
+}
