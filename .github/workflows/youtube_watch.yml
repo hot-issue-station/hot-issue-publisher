@@ -15,10 +15,10 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: { python-version: "3.11" }
-      - run: python scripts/watch_youtube.py || true
+      - run: pip install -q pillow && python scripts/watch_youtube.py || true
       - name: 벤치마킹 채널
         run: python scripts/watch_bench_youtube.py || true
       - run: |
           git config user.name "issuebrief-bot"; git config user.email "bot@users.noreply.github.com"
-          git add data/youtube data/benchmark
+          git add data/youtube data/benchmark data/stats assets/rescene/yt
           git diff --cached --quiet || (git commit -m "유튜브 모니터링 $(date -u +%F)" && git pull --rebase && git push)

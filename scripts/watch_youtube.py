@@ -3,11 +3,17 @@
 GitHub Actions에서 하루 3번 돌며 공식 채널의 새 영상(쇼츠 포함)을 RSS로 읽어 저장한다. 비용 0원, 키 필요 없음.
 결과: data/youtube/<채널>.json(최근 영상 15개: 제목·설명·게시 시각·조회수·좋아요·주소)
       data/youtube/new_<날짜>.json(지난번 이후 새로 올라온 영상) → 리센느 응원 특집·헤드라인 소재로 쓴다.
+(10/31 대표 결정) 리센느 공식 영상의 미리보기 이미지를 assets/rescene/yt/<영상ID>.jpg 로 내려받는다(검은 띠는 잘라 냄).
+      카드 표지에 쓸 때 출처 "영상 화면: RESCENE 공식 유튜브". 대표가 캡처를 보내지 않아도 된다.
+(10/31 대표 결정) 우리 채널(@hot.issue.station) 영상별 조회수·좋아요를 data/stats/youtube/<날짜>.json 에 쌓는다(통계 캡처 대신).
 """
 import json, pathlib, re, sys, urllib.request, datetime
 import xml.etree.ElementTree as ET
 
-CHANNELS = {"rescene": "https://www.youtube.com/@RESCENE_official"}
+CHANNELS = {"rescene": "https://www.youtube.com/@RESCENE_official",
+            "issuebrief": "https://www.youtube.com/@hot.issue.station"}   # 우리 채널: 통계만 쌓고 new_ 파일·사진은 만들지 않음
+THUMBS = {"rescene": pathlib.Path("assets/rescene/yt")}
+STATS = pathlib.Path("data/stats/youtube")
 UA = {"User-Agent": "Mozilla/5.0", "Accept-Language": "ko-KR,ko;q=0.9"}
 NS = {"a": "http://www.w3.org/2005/Atom", "yt": "http://www.youtube.com/xml/schemas/2015", "m": "http://search.yahoo.com/mrss/"}
 OUT = pathlib.Path("data/youtube")
@@ -24,6 +30,40 @@ def feed(cid):
         return get(f"https://www.youtube.com/feeds/videos.xml?channel_id={cid}")
     except Exception:
         return get(f"https://www.youtube.com/feeds/videos.xml?playlist_id=UU{cid[2:]}")
+
+
+def get_bytes(url):
+    return urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=30).read()
+
+
+def save_thumb(vid, folder):
+    """공식 영상 미리보기 이미지 저장. 쇼츠는 가로 그림 안에 세로 화면이 들어 있어 양옆 검은 띠를 잘라 낸다."""
+    folder.mkdir(parents=True, exist_ok=True)
+    out = folder / f"{vid}.jpg"
+    if out.exists():
+        return False
+    data = None
+    for name in ("maxresdefault", "sddefault", "hqdefault"):
+        try:
+            data = get_bytes(f"https://i.ytimg.com/vi/{vid}/{name}.jpg")
+            if len(data) > 5000:
+                break
+        except Exception:
+            data = None
+    if not data:
+        return False
+    try:
+        from PIL import Image, ImageOps
+        import io
+        im = Image.open(io.BytesIO(data)).convert("RGB")
+        mask = ImageOps.grayscale(im).point(lambda v: 255 if v > 24 else 0)
+        box = mask.getbbox()
+        if box and (box[2] - box[0]) > im.width * 0.2:
+            im = im.crop(box)
+        im.save(out, "JPEG", quality=90)
+    except Exception:
+        out.write_bytes(data)
+    return True
 
 
 def channel_id(handle_url, cache):
@@ -64,6 +104,20 @@ def main():
                 "views": int(stats.get("views", 0)) if stats is not None else None,
                 "likes": int(rate.get("count", 0)) if rate is not None else None,
             })
+        now = datetime.datetime.now(KST)
+        if key == "issuebrief":
+            STATS.mkdir(parents=True, exist_ok=True)
+            sp = STATS / f"{today}.json"
+            snaps = json.loads(sp.read_text(encoding="utf-8")) if sp.exists() else []
+            snaps.append({"at": now.isoformat(timespec="minutes"),
+                          "videos": [{k: v[k] for k in ("id", "title", "published", "views", "likes")} for v in vids]})
+            sp.write_text(json.dumps(snaps, ensure_ascii=False, indent=1), encoding="utf-8")
+            (OUT / f"{key}.json").write_text(json.dumps({"channel": url, "channelId": cid, "checkedAt": now.isoformat(timespec="minutes"), "videos": vids}, ensure_ascii=False, indent=1), encoding="utf-8")
+            print(f"{key}: 우리 채널 통계 {len(vids)}개 저장")
+            continue
+        if key in THUMBS:
+            got = sum(save_thumb(v["id"], THUMBS[key]) for v in vids)
+            print(f"{key}: 미리보기 이미지 새로 {got}장")
         seen = {v["id"] for v in old.get("videos", [])}
         new = [v for v in vids if v["id"] not in seen] if seen else []
         data = {"channel": url, "channelId": cid, "checkedAt": datetime.datetime.now(KST).isoformat(timespec="minutes"), "videos": vids}
