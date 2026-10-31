@@ -1,0 +1,58 @@
+[
+ {
+  "at": "2026-11-01T08:25+09:00",
+  "key": "14f",
+  "ok": false,
+  "error": "HTTPError: HTTP Error 404: Not Found"
+ },
+ {
+  "at": "2026-11-01T08:25+09:00",
+  "key": "subusunews",
+  "ok": false,
+  "error": "HTTPError: HTTP Error 404: Not Found"
+ },
+ {
+  "at": "2026-11-01T08:25+09:00",
+  "key": "vstudio",
+  "ok": false,
+  "error": "HTTPError: HTTP Error 404: Not Found"
+ },
+ {
+  "at": "2026-11-01T08:25+09:00",
+  "key": "syukaworld",
+  "ok": true,
+  "new": [],
+  "top": [
+   {
+    "id": "TF93Z8sJZok",
+    "title": "베어장에 등판한 좋좋소 사장 슈카",
+    "views": 95976,
+    "gain": 40031
+   },
+   {
+    "id": "p9PqJ61lg3w",
+    "title": "규카츠가 방송 열심히 하는 이유",
+    "views": 284314,
+    "gain": 13578
+   },
+   {
+    "id": "WuU0lc1SwLg",
+    "title": "난 정말 주식을 못한다 손!!!",
+    "views": 164304,
+    "gain": 7253
+   }
+  ]
+ },
+ {
+  "at": "2026-11-01T08:25+09:00",
+  "key": "ytn",
+  "ok": false,
+  "error": "HTTPError: HTTP Error 500: Internal Server Error"
+ },
+ {
+  "at": "2026-11-01T08:25+09:00",
+  "key": "storyk",
+  "ok": false,
+  "error": "HTTPError: HTTP Error 404: Not Found"
+ }
+]
