@@ -3,7 +3,7 @@
  "name": "스브스뉴스 (SBS)",
  "channel": "https://www.youtube.com/@subusunews",
  "channelId": "UCxPClUl0bh7BgJajD5k483g",
- "checkedAt": "2026-10-31T19:13+09:00",
+ "checkedAt": "2026-10-31T19:16+09:00",
  "videos": [
   {
    "id": "LwLm7MrPPHA",
@@ -11,9 +11,9 @@
    "published": "2026-10-29T22:00:21+00:00",
    "url": "https://www.youtube.com/shorts/LwLm7MrPPHA",
    "shorts": true,
-   "views": 7849,
+   "views": 7861,
    "likes": 39,
-   "viewsGain": 159,
+   "viewsGain": 12,
    "isNew": false,
    "median": 10085,
    "multiple": 0.8
@@ -24,9 +24,9 @@
    "published": "2026-10-29T22:00:10+00:00",
    "url": "https://www.youtube.com/shorts/wcSU_Bz1-Nk",
    "shorts": true,
-   "views": 5740,
-   "likes": 62,
-   "viewsGain": 36,
+   "views": 5773,
+   "likes": 63,
+   "viewsGain": 33,
    "isNew": false,
    "median": 10085,
    "multiple": 0.6
@@ -39,7 +39,7 @@
    "shorts": true,
    "views": 18604,
    "likes": 88,
-   "viewsGain": 154,
+   "viewsGain": 0,
    "isNew": false,
    "median": 10085,
    "multiple": 1.8
@@ -64,8 +64,8 @@
    "url": "https://www.youtube.com/shorts/NsvC_rlWlzo",
    "shorts": true,
    "views": 6547,
-   "likes": 141,
-   "viewsGain": 68,
+   "likes": 142,
+   "viewsGain": 0,
    "isNew": false,
    "median": 10085,
    "multiple": 0.6
@@ -78,7 +78,7 @@
    "shorts": true,
    "views": 50726,
    "likes": 947,
-   "viewsGain": 330,
+   "viewsGain": 0,
    "isNew": false,
    "median": 10085,
    "multiple": 5.0
@@ -89,9 +89,9 @@
    "published": "2026-10-28T22:00:20+00:00",
    "url": "https://www.youtube.com/shorts/sXc2HKoXGXc",
    "shorts": true,
-   "views": 9910,
+   "views": 10003,
    "likes": 38,
-   "viewsGain": 0,
+   "viewsGain": 93,
    "isNew": false,
    "median": 10085,
    "multiple": 1.0
@@ -104,7 +104,7 @@
    "shorts": true,
    "views": 16460,
    "likes": 72,
-   "viewsGain": 231,
+   "viewsGain": 0,
    "isNew": false,
    "median": 10085,
    "multiple": 1.6
@@ -117,7 +117,7 @@
    "shorts": true,
    "views": 25033,
    "likes": 304,
-   "viewsGain": 267,
+   "viewsGain": 0,
    "isNew": false,
    "median": 10085,
    "multiple": 2.5
@@ -128,9 +128,9 @@
    "published": "2026-10-28T10:18:57+00:00",
    "url": "https://www.youtube.com/shorts/gatGzL_gjDs",
    "shorts": true,
-   "views": 16425,
+   "views": 16435,
    "likes": 95,
-   "viewsGain": 123,
+   "viewsGain": 10,
    "isNew": false,
    "median": 10085,
    "multiple": 1.6
@@ -143,7 +143,7 @@
    "shorts": true,
    "views": 10085,
    "likes": 57,
-   "viewsGain": 112,
+   "viewsGain": 0,
    "isNew": false,
    "median": 10085,
    "multiple": 1.0
@@ -156,7 +156,7 @@
    "shorts": true,
    "views": 4889,
    "likes": 286,
-   "viewsGain": 61,
+   "viewsGain": 0,
    "isNew": false,
    "median": 10085,
    "multiple": 0.5
@@ -169,7 +169,7 @@
    "shorts": true,
    "views": 6822,
    "likes": 92,
-   "viewsGain": 88,
+   "viewsGain": 0,
    "isNew": false,
    "median": 10085,
    "multiple": 0.7
@@ -182,7 +182,7 @@
    "shorts": true,
    "views": 14457,
    "likes": 140,
-   "viewsGain": 72,
+   "viewsGain": 0,
    "isNew": false,
    "median": 10085,
    "multiple": 1.4
@@ -195,7 +195,7 @@
    "shorts": true,
    "views": 17949,
    "likes": 90,
-   "viewsGain": 73,
+   "viewsGain": 0,
    "isNew": false,
    "median": 10085,
    "multiple": 1.8

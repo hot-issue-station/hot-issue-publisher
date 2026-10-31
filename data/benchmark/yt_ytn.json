@@ -3,7 +3,7 @@
  "name": "YTN",
  "channel": "https://www.youtube.com/@ytnnews24",
  "channelId": "UChlgI3UHCOnwUGzWzbJ3H5w",
- "checkedAt": "2026-10-31T19:13+09:00",
+ "checkedAt": "2026-10-31T19:16+09:00",
  "videos": [
   {
    "id": "6e-dOOTWSbA",
@@ -11,11 +11,11 @@
    "published": "2026-10-31T04:26:53+00:00",
    "url": "https://www.youtube.com/watch?v=6e-dOOTWSbA",
    "shorts": false,
-   "views": 5984,
+   "views": 6004,
    "likes": 38,
-   "viewsGain": 4847,
+   "viewsGain": 20,
    "isNew": false,
-   "median": 961.0,
+   "median": 971.5,
    "multiple": 6.2
   },
   {
@@ -24,11 +24,11 @@
    "published": "2026-10-31T10:00:34+00:00",
    "url": "https://www.youtube.com/watch?v=1hxqbV9oqLw",
    "shorts": false,
-   "views": 209,
+   "views": 240,
    "likes": 1,
-   "viewsGain": null,
-   "isNew": true,
-   "median": 961.0,
+   "viewsGain": 31,
+   "isNew": false,
+   "median": 971.5,
    "multiple": 0.2
   },
   {
@@ -37,11 +37,11 @@
    "published": "2026-10-31T10:00:30+00:00",
    "url": "https://www.youtube.com/watch?v=fnT5Sx2jz50",
    "shorts": false,
-   "views": 32,
+   "views": 40,
    "likes": 3,
-   "viewsGain": null,
-   "isNew": true,
-   "median": 961.0,
+   "viewsGain": 8,
+   "isNew": false,
+   "median": 971.5,
    "multiple": 0.0
   },
   {
@@ -50,12 +50,12 @@
    "published": "2026-10-31T09:54:47+00:00",
    "url": "https://www.youtube.com/watch?v=yLShfo5gNRE",
    "shorts": false,
-   "views": 11492,
-   "likes": 117,
-   "viewsGain": null,
-   "isNew": true,
-   "median": 961.0,
-   "multiple": 12.0
+   "views": 14064,
+   "likes": 149,
+   "viewsGain": 2572,
+   "isNew": false,
+   "median": 971.5,
+   "multiple": 14.5
   },
   {
    "id": "uehz6HqQ4gc",
@@ -63,11 +63,11 @@
    "published": "2026-10-31T09:52:55+00:00",
    "url": "https://www.youtube.com/watch?v=uehz6HqQ4gc",
    "shorts": false,
-   "views": 116,
+   "views": 125,
    "likes": 0,
-   "viewsGain": null,
-   "isNew": true,
-   "median": 961.0,
+   "viewsGain": 9,
+   "isNew": false,
+   "median": 971.5,
    "multiple": 0.1
   },
   {
@@ -76,11 +76,11 @@
    "published": "2026-10-31T09:40:26+00:00",
    "url": "https://www.youtube.com/watch?v=KWHWnCVnfzs",
    "shorts": false,
-   "views": 477,
+   "views": 495,
    "likes": 5,
-   "viewsGain": null,
-   "isNew": true,
-   "median": 961.0,
+   "viewsGain": 18,
+   "isNew": false,
+   "median": 971.5,
    "multiple": 0.5
   },
   {
@@ -89,11 +89,11 @@
    "published": "2026-10-31T09:26:38+00:00",
    "url": "https://www.youtube.com/watch?v=IIZR6Jd-m2c",
    "shorts": false,
-   "views": 3545,
-   "likes": 23,
-   "viewsGain": null,
-   "isNew": true,
-   "median": 961.0,
+   "views": 3593,
+   "likes": 24,
+   "viewsGain": 48,
+   "isNew": false,
+   "median": 971.5,
    "multiple": 3.7
   },
   {
@@ -102,12 +102,12 @@
    "published": "2026-10-31T09:23:59+00:00",
    "url": "https://www.youtube.com/watch?v=BwFhxVa3OMA",
    "shorts": false,
-   "views": 4888,
-   "likes": 76,
-   "viewsGain": null,
-   "isNew": true,
-   "median": 961.0,
-   "multiple": 5.1
+   "views": 5016,
+   "likes": 79,
+   "viewsGain": 128,
+   "isNew": false,
+   "median": 971.5,
+   "multiple": 5.2
   },
   {
    "id": "n9c-Ww5Tj4g",
@@ -115,11 +115,11 @@
    "published": "2026-10-31T09:17:09+00:00",
    "url": "https://www.youtube.com/watch?v=n9c-Ww5Tj4g",
    "shorts": false,
-   "views": 216,
+   "views": 217,
    "likes": 2,
-   "viewsGain": null,
-   "isNew": true,
-   "median": 961.0,
+   "viewsGain": 1,
+   "isNew": false,
+   "median": 971.5,
    "multiple": 0.2
   },
   {
@@ -128,11 +128,11 @@
    "published": "2026-10-31T09:07:10+00:00",
    "url": "https://www.youtube.com/watch?v=hDDM4PDIEFQ",
    "shorts": false,
-   "views": 923,
+   "views": 933,
    "likes": 22,
-   "viewsGain": null,
-   "isNew": true,
-   "median": 961.0,
+   "viewsGain": 10,
+   "isNew": false,
+   "median": 971.5,
    "multiple": 1.0
   },
   {
@@ -141,10 +141,10 @@
    "published": "2026-10-31T09:03:09+00:00",
    "url": "https://www.youtube.com/shorts/Be_moGj27HM",
    "shorts": true,
-   "views": 1089,
+   "views": 1105,
    "likes": 14,
-   "viewsGain": null,
-   "isNew": true,
+   "viewsGain": 16,
+   "isNew": false,
    "median": null,
    "multiple": null
   },
@@ -154,11 +154,11 @@
    "published": "2026-10-31T09:02:24+00:00",
    "url": "https://www.youtube.com/watch?v=xHAtbkR1F-4",
    "shorts": false,
-   "views": 999,
+   "views": 1010,
    "likes": 18,
-   "viewsGain": null,
-   "isNew": true,
-   "median": 961.0,
+   "viewsGain": 11,
+   "isNew": false,
+   "median": 971.5,
    "multiple": 1.0
   },
   {
@@ -167,11 +167,11 @@
    "published": "2026-10-31T08:57:15+00:00",
    "url": "https://www.youtube.com/watch?v=ShxknK8jChA",
    "shorts": false,
-   "views": 675,
+   "views": 683,
    "likes": 11,
-   "viewsGain": null,
-   "isNew": true,
-   "median": 961.0,
+   "viewsGain": 8,
+   "isNew": false,
+   "median": 971.5,
    "multiple": 0.7
   },
   {
@@ -180,11 +180,11 @@
    "published": "2026-10-31T08:43:46+00:00",
    "url": "https://www.youtube.com/watch?v=eVAApbre1bU",
    "shorts": false,
-   "views": 3467,
-   "likes": 40,
-   "viewsGain": 3155,
+   "views": 3493,
+   "likes": 41,
+   "viewsGain": 26,
    "isNew": false,
-   "median": 961.0,
+   "median": 971.5,
    "multiple": 3.6
   },
   {
@@ -193,11 +193,11 @@
    "published": "2026-10-31T08:37:34+00:00",
    "url": "https://www.youtube.com/watch?v=iaBmPy1yQFY",
    "shorts": false,
-   "views": 2698,
-   "likes": 40,
-   "viewsGain": 1562,
+   "views": 2706,
+   "likes": 41,
+   "viewsGain": 8,
    "isNew": false,
-   "median": 961.0,
+   "median": 971.5,
    "multiple": 2.8
   }
  ],
@@ -205,42 +205,42 @@
   {
    "title": "충격적인 중간선거 여론조사 결과에...침울한 백악관 분위기 [자막뉴스] / YTN",
    "url": "https://www.youtube.com/watch?v=yLShfo5gNRE",
-   "views": 11492,
-   "multiple": 12.0,
+   "views": 14064,
+   "multiple": 14.5,
    "shorts": false
   },
   {
    "title": "'속수무책'으로 뚫린 세계 1위 거래소…'북한 해킹'에 칼 뽑은 FBI [이슈픽] / YTN",
    "url": "https://www.youtube.com/watch?v=6e-dOOTWSbA",
-   "views": 5984,
+   "views": 6004,
    "multiple": 6.2,
    "shorts": false
   },
   {
    "title": "세번 참은 트럼프 결국...'유세 방해' 시위자에 '막말 폭격' [이 장면]",
    "url": "https://www.youtube.com/watch?v=BwFhxVa3OMA",
-   "views": 4888,
-   "multiple": 5.1,
+   "views": 5016,
+   "multiple": 5.2,
    "shorts": false
   },
   {
    "title": "5m 스카이타워 그릴도 등장...홍성 글로벌 바비큐 축제 현장 [자막뉴스] / YTN",
    "url": "https://www.youtube.com/watch?v=IIZR6Jd-m2c",
-   "views": 3545,
+   "views": 3593,
    "multiple": 3.7,
    "shorts": false
   },
   {
    "title": "전 세계 탈취액 60%가 북한...훔친 코인이 핵·미사일로 [자막뉴스] / YTN",
    "url": "https://www.youtube.com/watch?v=eVAApbre1bU",
-   "views": 3467,
+   "views": 3493,
    "multiple": 3.6,
    "shorts": false
   },
   {
    "title": "대통령 지지율 다시 30%대...하락한 이유는?[Y녹취록] / YTN",
    "url": "https://www.youtube.com/watch?v=iaBmPy1yQFY",
-   "views": 2698,
+   "views": 2706,
    "multiple": 2.8,
    "shorts": false
   }

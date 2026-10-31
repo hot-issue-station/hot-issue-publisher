@@ -3,7 +3,7 @@
  "name": "슈카월드",
  "channel": "https://www.youtube.com/@syukaworld",
  "channelId": "UCJo6G1u0e_-wS-JQn3T-zEw",
- "checkedAt": "2026-10-31T19:13+09:00",
+ "checkedAt": "2026-10-31T19:16+09:00",
  "videos": [
   {
    "id": "TF93Z8sJZok",
@@ -11,10 +11,10 @@
    "published": "2026-10-31T09:00:32+00:00",
    "url": "https://www.youtube.com/watch?v=TF93Z8sJZok",
    "shorts": false,
-   "views": 7793,
-   "likes": 311,
-   "viewsGain": null,
-   "isNew": true,
+   "views": 7886,
+   "likes": 319,
+   "viewsGain": 93,
+   "isNew": false,
    "median": 129110.0,
    "multiple": 0.1
   },
@@ -25,8 +25,8 @@
    "url": "https://www.youtube.com/watch?v=WuU0lc1SwLg",
    "shorts": false,
    "views": 150001,
-   "likes": 1111,
-   "viewsGain": 4008,
+   "likes": 1112,
+   "viewsGain": 0,
    "isNew": false,
    "median": 129110.0,
    "multiple": 1.2
@@ -37,9 +37,9 @@
    "published": "2026-10-30T06:40:56+00:00",
    "url": "https://www.youtube.com/watch?v=G9n3vLRCvSI",
    "shorts": false,
-   "views": 114249,
+   "views": 114283,
    "likes": 675,
-   "viewsGain": 631,
+   "viewsGain": 34,
    "isNew": false,
    "median": 129110.0,
    "multiple": 0.9
@@ -50,9 +50,9 @@
    "published": "2026-10-30T02:46:47+00:00",
    "url": "https://www.youtube.com/shorts/p9PqJ61lg3w",
    "shorts": true,
-   "views": 262170,
+   "views": 262386,
    "likes": 2381,
-   "viewsGain": 4712,
+   "viewsGain": 216,
    "isNew": false,
    "median": 115387,
    "multiple": 2.3
@@ -63,9 +63,9 @@
    "published": "2026-10-29T09:10:37+00:00",
    "url": "https://www.youtube.com/shorts/As_g3UyIa2Y",
    "shorts": true,
-   "views": 122349,
+   "views": 122392,
    "likes": 1137,
-   "viewsGain": 880,
+   "viewsGain": 43,
    "isNew": false,
    "median": 115387,
    "multiple": 1.1
@@ -78,7 +78,7 @@
    "shorts": false,
    "views": 221595,
    "likes": 1319,
-   "viewsGain": 2460,
+   "viewsGain": 0,
    "isNew": false,
    "median": 129110.0,
    "multiple": 1.7
@@ -104,7 +104,7 @@
    "shorts": true,
    "views": 115387,
    "likes": 793,
-   "viewsGain": 907,
+   "viewsGain": 0,
    "isNew": false,
    "median": 115387,
    "multiple": 1.0
@@ -117,7 +117,7 @@
    "shorts": true,
    "views": 183298,
    "likes": 1767,
-   "viewsGain": 1400,
+   "viewsGain": 0,
    "isNew": false,
    "median": 115387,
    "multiple": 1.6
@@ -128,9 +128,9 @@
    "published": "2026-10-29T02:35:34+00:00",
    "url": "https://www.youtube.com/shorts/XLkRqq6Cj9k",
    "shorts": true,
-   "views": 110754,
+   "views": 110777,
    "likes": 1295,
-   "viewsGain": 327,
+   "viewsGain": 23,
    "isNew": false,
    "median": 115387,
    "multiple": 1.0
@@ -154,9 +154,9 @@
    "published": "2026-10-28T03:11:09+00:00",
    "url": "https://www.youtube.com/shorts/1Hg8iSXgWqI",
    "shorts": true,
-   "views": 51761,
+   "views": 51766,
    "likes": 445,
-   "viewsGain": 144,
+   "viewsGain": 5,
    "isNew": false,
    "median": 115387,
    "multiple": 0.4
@@ -169,7 +169,7 @@
    "shorts": true,
    "views": 43713,
    "likes": 213,
-   "viewsGain": 204,
+   "viewsGain": 0,
    "isNew": false,
    "median": 115387,
    "multiple": 0.4
@@ -182,7 +182,7 @@
    "shorts": false,
    "views": 177644,
    "likes": 775,
-   "viewsGain": 749,
+   "viewsGain": 0,
    "isNew": false,
    "median": 129110.0,
    "multiple": 1.4
@@ -195,7 +195,7 @@
    "shorts": false,
    "views": 111025,
    "likes": 793,
-   "viewsGain": 27,
+   "viewsGain": 0,
    "isNew": false,
    "median": 129110.0,
    "multiple": 0.9
@@ -205,7 +205,7 @@
   {
    "title": "규카츠가 방송 열심히 하는 이유",
    "url": "https://www.youtube.com/shorts/p9PqJ61lg3w",
-   "views": 262170,
+   "views": 262386,
    "multiple": 2.3,
    "shorts": true
   }
