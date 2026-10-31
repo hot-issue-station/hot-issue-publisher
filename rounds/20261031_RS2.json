@@ -1,0 +1,46 @@
+{
+  "date": "2026-10-31",
+  "slot": "RS",
+  "theme": "RS",
+  "category": "리센느 응원 특집 · 안원잘부 본방 사수",
+  "topic": "오늘 저녁 7시 안원잘부 새 영상, 본방 사수 예고",
+  "hook": "오늘 저녁 7시,\n안원잘부 본방 사수!",
+  "hookCover": "오늘 저녁 7시,\n안원잘부 본방 사수!",
+  "sub": "원이 채널 '안녕하세요원이입니다잘부탁드립니다' 새 영상",
+  "photo": "assets/rescene/yt/1kHqK1oqHzc.jpg",
+  "photoPos": "50% 35%",
+  "photoLabel": "'4인조 걸그룹 리센느' 편 · 영상 화면 안원잘부 유튜브",
+  "photoInset": "assets/rescene/yt/JYUilbw34Z0.jpg",
+  "photoInsetPos": "50% 35%",
+  "photoInsetLabel": "추석 특집 '제나의 트로트 메들리'",
+  "big": {"number": "2,000만", "lines": ["추석 특집", "*제나의 트로트 메들리*", "조회수"], "caption": "", "icon": "heart"},
+  "summary": "안원잘부는 리센느 원이와 솔파스튜디오(윤성원 PD)가 함께 만드는 유튜브 채널이에요. 본편은 주로 저녁 7시에 올라와요.",
+  "summaryPhotos": ["assets/rescene/yt/EsKmhBMmqIM.jpg", "assets/rescene/yt/8tmaJYDMp5w.jpg", "assets/rescene/yt/GJuMbGXXedY.jpg", "assets/rescene/yt/3Vb2TGjxDes.jpg", "assets/rescene/yt/8e0FfuwOI9M.jpg"],
+  "summaryPhotosLabel": "'원이 근황' · '오사카에서 생긴 일' · '살과의 전쟁' 외 (영상 화면 · 안원잘부 유튜브)",
+  "facts": [
+    {
+      "title": "본편은 주로 저녁 7시",
+      "desc": "최근 본편 9편 가운데 7편이 저녁 7시에 올라왔어요. 지난주 일요일 7시에 올라온 '4인조 걸그룹 리센느'는 엿새 만에 719만 회를 넘었어요.",
+      "source": "안원잘부 유튜브 (10/31 17:54 기준)"
+    },
+    {
+      "title": "1,000만 회가 넘는 본편 5편",
+      "desc": "'제나의 트로트 메들리' 2,000만 회, '원이 근황' 1,390만 회, '살과의 전쟁' 1,337만 회, '오사카에서 생긴 일' 1,272만 회, '지금 기분이 어때요?' 1,030만 회예요.",
+      "source": "안원잘부 유튜브 (10/31 17:54 기준)"
+    },
+    {
+      "title": "본방이 끝나면 쇼츠가 이어져요",
+      "desc": "본편 뒤에는 B컷·명장면 쇼츠가 따라 올라와요. '원이 근황' 1시간 뒤 올라온 B컷 '시그니엘 망고 빙수'는 528만 회를 기록했어요.",
+      "source": "안원잘부 유튜브 (10/31 17:54 기준)"
+    }
+  ],
+  "interp": "오늘은 어떤 이야기가 나올까요?",
+  "interpSub": "본방 보고 가장 웃겼던 장면을 댓글로 남겨 주세요.",
+  "sources": [
+    {"outlet": "안원잘부 유튜브", "title": "본편·쇼츠 조회수", "date": "2026.10.31 17:54 기준", "url": "https://www.youtube.com/@helloiamwoninicetomeetyou"},
+    {"outlet": "일간스포츠", "title": "리센느 1등 만든 '안원잘부'", "date": "2026.07.19", "url": "https://v.daum.net/v/20260719113528965"},
+    {"outlet": "엑스포츠뉴스", "title": "'안원잘부' 쉬었다 와도 잘나가네", "date": "2026.09.01", "url": "https://www.xportsnews.com/article/2190557"}
+  ],
+  "cta": "저녁 *7시*,\n같이 봐요",
+  "caption": "(확정 뒤 기사형 소개글로 씁니다)"
+}
