@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "date": "2026-10-31",
+  "slot": "RS",
+  "publishAt": "2026-10-31T20:00:00+09:00",
+  "topic": "리센느 'With' 챌린지 릴레이 9편, 누적 461만 회 (컴백 D-3)",
+  "images": [
+    "01.jpg",
+    "02.jpg",
+    "03.jpg",
+    "04.jpg",
+    "05.jpg",
+    "06.jpg",
+    "07.jpg"
+  ],
+  "caption": "(확정 뒤 기사형 소개글로 씁니다)",
+  "sources": [
+    {
+      "outlet": "RESCENE 공식 유튜브",
+      "title": "'With' 챌린지 쇼츠 9편",
+      "date": "2026.10.27~10.30",
+      "url": "https://www.youtube.com/@RESCENE_official/shorts"
+    },
+    {
+      "outlet": "일간스포츠",
+      "title": "'With' 챌린지 영상 공개",
+      "date": "2026.10.28",
+      "url": "https://isplus.com/article/view/isp202610280010"
+    },
+    {
+      "outlet": "헤럴드뮤즈",
+      "title": "컴백 D-3, 'With' MV 티저",
+      "date": "2026.10.31",
+      "url": "https://www.heraldmuse.com/article/10921228"
+    }
+  ]
+}
