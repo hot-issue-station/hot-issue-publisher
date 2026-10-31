@@ -11,8 +11,10 @@ import json, pathlib, re, sys, urllib.request, datetime
 import xml.etree.ElementTree as ET
 
 CHANNELS = {"rescene": "https://www.youtube.com/@RESCENE_official",
+            "wonyi": "https://www.youtube.com/@helloiamwoninicetomeetyou",   # 안원잘부(원이 채널), 10/31 대표 지시
+
             "issuebrief": "https://www.youtube.com/@hot.issue.station"}   # 우리 채널: 통계만 쌓고 new_ 파일·사진은 만들지 않음
-THUMBS = {"rescene": pathlib.Path("assets/rescene/yt")}
+THUMBS = {"rescene": pathlib.Path("assets/rescene/yt"), "wonyi": pathlib.Path("assets/rescene/yt")}
 STATS = pathlib.Path("data/stats/youtube")
 UA = {"User-Agent": "Mozilla/5.0", "Accept-Language": "ko-KR,ko;q=0.9"}
 NS = {"a": "http://www.w3.org/2005/Atom", "yt": "http://www.youtube.com/xml/schemas/2015", "m": "http://search.yahoo.com/mrss/"}
