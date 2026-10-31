@@ -1,0 +1,24 @@
+name: 카드 사진 준비 (공식 유튜브 썸네일)
+on:
+  workflow_dispatch:
+    inputs:
+      queries:
+        description: "줄마다 이름|검색어 또는 이름|유튜브 주소"
+        required: true
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install -q pillow && python scripts/fetch_thumbs.py
+        env:
+          QUERIES: ${{ inputs.queries }}
+      - run: |
+          git config user.name "issuebrief-bot"; git config user.email "bot@users.noreply.github.com"
+          git add assets/thumbs data/thumbs
+          git diff --cached --quiet || git commit -m "카드 사진 준비"
+          for i in 1 2 3 4 5; do git pull --rebase -q origin main && git push && break; sleep 5; done
