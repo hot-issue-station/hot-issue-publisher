@@ -8,6 +8,7 @@
 - DB: `picks/<YYYYMMDD>_<SLOT>` = {date, slot, slotName, makeAt, status, candidates, picked, custom, createdAt, pickedAt, madeAt}
   - status: "waiting"(소재 선택 대기) → "picked"(골랐음) → "making" → **"cards_ready"(카드 7장 확인 대기)** → "confirmed"(대표 확정) → "made"(릴스·재료함 완료) / "redo"(대표가 카드 다시 요청, redoNote 에 메모) / "skipped"(쉬기)
   - **확인은 두 번(대표 결정, 10/30부터의 규칙 · 10/31 19:30 재확인): ① 소재 고르기 ② 카드 7장 확정. 확정 전에는 릴스 영상을 만들거나 재료함 materials 에 올리지 않는다.**
+  - **출처 주소 확인 필수(대표 결정 10/31 19:37 "항상 확인하고 작업, 한 번 신뢰가 깨지면 사람들은 떠난다")**: sources 의 모든 url 은 카드에 넣기 직전에 WebFetch 로 다시 열어 제목·날짜·숫자가 카드 내용과 맞는지 확인한다. 안 맞거나 다른 기사(예: 10/31 제이홉 카드에 날씨 기사 주소가 들어간 사고)면 빼고, 확인된 출처가 2곳 미만이면 만들지 않는다. facts[].source 도 실제로 확인한 매체만 적는다.
   - **사진 필수(대표 결정 10/31 19:29): 카드는 무조건 사진을 넣는다.** 표지(photo)와 가능하면 요약·사실 카드(summaryPhotos, facts[].photo)까지. 사진은 공식 출처만: 가수·소속사·구단·리그·방송사·기관의 공식 유튜브 영상 썸네일(.github/workflows/fetch_thumbs.yml 로 받음), 리센느는 assets/rescene/. 뉴스 통신사·언론사 사진, 개인이 찍은 사진은 쓰지 않는다. photoLabel 에 "영상 화면 · <채널> 공식 유튜브" 출처 표기, 소개글에도 "이미지 출처:" 줄. 공식 사진을 못 찾으면 그 후보는 만들지 말고 대표에게 알린다.
   - picked = 고른 후보 번호(0부터). custom = 대표가 직접 쓴 주제(있으면 이걸 우선, picked=-1)
 - SLOT: AM(출근) · PM(점심) · NT(퇴근) · RS(리센느 응원 특집) · HL(헤드라인) · SON(자랑스러운 한국인 · 손흥민 특집, 11/11~14·18) · EX(대표가 [지금 시간 기준으로 소재 후보 받기]를 눌러 만든 추가 회차)
