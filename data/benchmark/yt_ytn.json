@@ -3,7 +3,7 @@
  "name": "YTN",
  "channel": "https://www.youtube.com/@ytnnews24",
  "channelId": "UChlgI3UHCOnwUGzWzbJ3H5w",
- "checkedAt": "2026-10-31T17:36+09:00",
+ "checkedAt": "2026-10-31T17:54+09:00",
  "videos": [
   {
    "id": "6e-dOOTWSbA",
@@ -11,12 +11,51 @@
    "published": "2026-10-31T04:26:53+00:00",
    "url": "https://www.youtube.com/watch?v=6e-dOOTWSbA",
    "shorts": false,
-   "views": 605,
-   "likes": 23,
+   "views": 1137,
+   "likes": 31,
+   "viewsGain": 532,
+   "isNew": false,
+   "median": 870.0,
+   "multiple": 1.3
+  },
+  {
+   "id": "eVAApbre1bU",
+   "title": "전 세계 탈취액 60%가 북한...훔친 코인이 핵·미사일로 [자막뉴스] / YTN",
+   "published": "2026-10-31T08:43:46+00:00",
+   "url": "https://www.youtube.com/watch?v=eVAApbre1bU",
+   "shorts": false,
+   "views": 312,
+   "likes": 4,
    "viewsGain": null,
    "isNew": true,
-   "median": 926,
-   "multiple": 0.7
+   "median": 870.0,
+   "multiple": 0.4
+  },
+  {
+   "id": "iaBmPy1yQFY",
+   "title": "대통령 지지율 다시 30%대...하락한 이유는?[Y녹취록] / YTN",
+   "published": "2026-10-31T08:37:34+00:00",
+   "url": "https://www.youtube.com/watch?v=iaBmPy1yQFY",
+   "shorts": false,
+   "views": 1136,
+   "likes": 15,
+   "viewsGain": null,
+   "isNew": true,
+   "median": 870.0,
+   "multiple": 1.3
+  },
+  {
+   "id": "G9iyjvy54gI",
+   "title": "국화로 만든 신화 속 풍경...가을 향기 흠뻑 / YTN",
+   "published": "2026-10-31T08:22:52+00:00",
+   "url": "https://www.youtube.com/watch?v=G9iyjvy54gI",
+   "shorts": false,
+   "views": 395,
+   "likes": 4,
+   "viewsGain": null,
+   "isNew": true,
+   "median": 870.0,
+   "multiple": 0.5
   },
   {
    "id": "5ppF5xRmlfM",
@@ -24,12 +63,12 @@
    "published": "2026-10-31T08:22:24+00:00",
    "url": "https://www.youtube.com/watch?v=5ppF5xRmlfM",
    "shorts": false,
-   "views": 0,
-   "likes": 0,
-   "viewsGain": null,
-   "isNew": true,
-   "median": 926,
-   "multiple": null
+   "views": 115,
+   "likes": 3,
+   "viewsGain": 115,
+   "isNew": false,
+   "median": 870.0,
+   "multiple": 0.1
   },
   {
    "id": "wLywXzp1FkE",
@@ -37,12 +76,12 @@
    "published": "2026-10-31T08:17:16+00:00",
    "url": "https://www.youtube.com/watch?v=wLywXzp1FkE",
    "shorts": false,
-   "views": 61,
-   "likes": 1,
-   "viewsGain": null,
-   "isNew": true,
-   "median": 926,
-   "multiple": 0.1
+   "views": 1058,
+   "likes": 9,
+   "viewsGain": 997,
+   "isNew": false,
+   "median": 870.0,
+   "multiple": 1.2
   },
   {
    "id": "nwNlaFjZX4c",
@@ -50,12 +89,12 @@
    "published": "2026-10-31T08:12:42+00:00",
    "url": "https://www.youtube.com/watch?v=nwNlaFjZX4c",
    "shorts": false,
-   "views": 1358,
-   "likes": 17,
-   "viewsGain": null,
-   "isNew": true,
-   "median": 926,
-   "multiple": 1.5
+   "views": 8575,
+   "likes": 74,
+   "viewsGain": 7217,
+   "isNew": false,
+   "median": 870.0,
+   "multiple": 9.9
   },
   {
    "id": "qf8XRmh3e0c",
@@ -63,12 +102,12 @@
    "published": "2026-10-31T08:08:04+00:00",
    "url": "https://www.youtube.com/watch?v=qf8XRmh3e0c",
    "shorts": false,
-   "views": 365,
-   "likes": 4,
-   "viewsGain": null,
-   "isNew": true,
-   "median": 926,
-   "multiple": 0.4
+   "views": 682,
+   "likes": 7,
+   "viewsGain": 317,
+   "isNew": false,
+   "median": 870.0,
+   "multiple": 0.8
   },
   {
    "id": "4IavddTYiMY",
@@ -76,12 +115,12 @@
    "published": "2026-10-31T07:57:51+00:00",
    "url": "https://www.youtube.com/watch?v=4IavddTYiMY",
    "shorts": false,
-   "views": 232,
-   "likes": 12,
-   "viewsGain": null,
-   "isNew": true,
-   "median": 926,
-   "multiple": 0.3
+   "views": 531,
+   "likes": 24,
+   "viewsGain": 299,
+   "isNew": false,
+   "median": 870.0,
+   "multiple": 0.6
   },
   {
    "id": "NU4uUywrAlM",
@@ -89,12 +128,12 @@
    "published": "2026-10-31T07:57:22+00:00",
    "url": "https://www.youtube.com/watch?v=NU4uUywrAlM",
    "shorts": false,
-   "views": 1305,
-   "likes": 26,
-   "viewsGain": null,
-   "isNew": true,
-   "median": 926,
-   "multiple": 1.4
+   "views": 2034,
+   "likes": 42,
+   "viewsGain": 729,
+   "isNew": false,
+   "median": 870.0,
+   "multiple": 2.3
   },
   {
    "id": "lCX9xPVQ76U",
@@ -102,12 +141,12 @@
    "published": "2026-10-31T07:54:02+00:00",
    "url": "https://www.youtube.com/watch?v=lCX9xPVQ76U",
    "shorts": false,
-   "views": 467,
-   "likes": 14,
-   "viewsGain": null,
-   "isNew": true,
-   "median": 926,
-   "multiple": 0.5
+   "views": 622,
+   "likes": 17,
+   "viewsGain": 155,
+   "isNew": false,
+   "median": 870.0,
+   "multiple": 0.7
   },
   {
    "id": "YW93kQ_dbVA",
@@ -115,12 +154,12 @@
    "published": "2026-10-31T07:53:54+00:00",
    "url": "https://www.youtube.com/watch?v=YW93kQ_dbVA",
    "shorts": false,
-   "views": 115,
+   "views": 200,
    "likes": 2,
-   "viewsGain": null,
-   "isNew": true,
-   "median": 926,
-   "multiple": 0.1
+   "viewsGain": 85,
+   "isNew": false,
+   "median": 870.0,
+   "multiple": 0.2
   },
   {
    "id": "rhGDhxZ7CPs",
@@ -128,12 +167,12 @@
    "published": "2026-10-31T07:53:32+00:00",
    "url": "https://www.youtube.com/watch?v=rhGDhxZ7CPs",
    "shorts": false,
-   "views": 926,
-   "likes": 15,
-   "viewsGain": null,
-   "isNew": true,
-   "median": 926,
-   "multiple": 1.0
+   "views": 1808,
+   "likes": 40,
+   "viewsGain": 882,
+   "isNew": false,
+   "median": 870.0,
+   "multiple": 2.1
   },
   {
    "id": "XT6ulOepLI0",
@@ -141,12 +180,12 @@
    "published": "2026-10-31T07:42:59+00:00",
    "url": "https://www.youtube.com/watch?v=XT6ulOepLI0",
    "shorts": false,
-   "views": 31248,
-   "likes": 275,
-   "viewsGain": null,
-   "isNew": true,
-   "median": 926,
-   "multiple": 33.7
+   "views": 63864,
+   "likes": 523,
+   "viewsGain": 32616,
+   "isNew": false,
+   "median": 870.0,
+   "multiple": 73.4
   },
   {
    "id": "P8wZ_9kIaTM",
@@ -155,65 +194,40 @@
    "url": "https://www.youtube.com/watch?v=P8wZ_9kIaTM",
    "shorts": false,
    "views": 0,
-   "likes": 4,
-   "viewsGain": null,
-   "isNew": true,
-   "median": 926,
+   "likes": 5,
+   "viewsGain": 0,
+   "isNew": false,
+   "median": 870.0,
    "multiple": null
-  },
-  {
-   "id": "nVpujjNa_Bg",
-   "title": "\"마지막이란 생각 안 들어요\"...수십 년 부부로 연기한 김혜자 '눈물' [자막뉴스]  / YTN",
-   "published": "2026-10-31T07:22:40+00:00",
-   "url": "https://www.youtube.com/watch?v=nVpujjNa_Bg",
-   "shorts": false,
-   "views": 1733,
-   "likes": 14,
-   "viewsGain": null,
-   "isNew": true,
-   "median": 926,
-   "multiple": 1.9
-  },
-  {
-   "id": "0ppentzkomY",
-   "title": "단 20분 만에 8.4조 털어...'트레이더트레이터' 흔적 남기기도 [앵커리포트] / YTN",
-   "published": "2026-10-31T07:12:03+00:00",
-   "url": "https://www.youtube.com/watch?v=0ppentzkomY",
-   "shorts": false,
-   "views": 2074,
-   "likes": 19,
-   "viewsGain": null,
-   "isNew": true,
-   "median": 926,
-   "multiple": 2.2
-  },
-  {
-   "id": "SrVQT3xjhCE",
-   "title": "국힘 \"진성준, 겨우 입국\"...민주 \"정쟁, 반국익적\" / YTN",
-   "published": "2026-10-31T07:08:03+00:00",
-   "url": "https://www.youtube.com/watch?v=SrVQT3xjhCE",
-   "shorts": false,
-   "views": 1321,
-   "likes": 27,
-   "viewsGain": null,
-   "isNew": true,
-   "median": 926,
-   "multiple": 1.4
   }
  ],
  "viral": [
   {
    "title": "집 사는 사람 'ZERO'...뚝 끊긴 거래, 매수자는 어디로 [자막뉴스] / YTN",
    "url": "https://www.youtube.com/watch?v=XT6ulOepLI0",
-   "views": 31248,
-   "multiple": 33.7,
+   "views": 63864,
+   "multiple": 73.4,
    "shorts": false
   },
   {
-   "title": "단 20분 만에 8.4조 털어...'트레이더트레이터' 흔적 남기기도 [앵커리포트] / YTN",
-   "url": "https://www.youtube.com/watch?v=0ppentzkomY",
-   "views": 2074,
-   "multiple": 2.2,
+   "title": "'트레이더트레이터' 흔적 남았다...20분 만에 8.4조 탈탈 [자막뉴스] / YTN",
+   "url": "https://www.youtube.com/watch?v=nwNlaFjZX4c",
+   "views": 8575,
+   "multiple": 9.9,
+   "shorts": false
+  },
+  {
+   "title": "이 대통령, '다문화가정 논쟁' 계속...\"내로남불 반감 생각해봐야\" / YTN",
+   "url": "https://www.youtube.com/watch?v=NU4uUywrAlM",
+   "views": 2034,
+   "multiple": 2.3,
+   "shorts": false
+  },
+  {
+   "title": "[날씨] 내일 전국 추위 부르는 비...롤러코스터 같은 가을 날씨 / YTN",
+   "url": "https://www.youtube.com/watch?v=rhGDhxZ7CPs",
+   "views": 1808,
+   "multiple": 2.1,
    "shorts": false
   }
  ]
