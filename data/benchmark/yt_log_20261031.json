@@ -403,5 +403,131 @@
     "gain": 997
    }
   ]
+ },
+ {
+  "at": "2026-10-31T19:13+09:00",
+  "key": "14f",
+  "ok": true,
+  "new": [],
+  "top": [
+   {
+    "id": "ZUqM6arduYw",
+    "title": "산재 사망자는 줄었지만 제조업은 늘었다… 끼임 사고 예방수칙 총정리 / 14F",
+    "views": 15963,
+    "gain": 3747
+   },
+   {
+    "id": "niGCI-aEH-A",
+    "title": "사전 판매 매진이었는데… 액정 갈라진다는 ‘아이폰 듀오’ 근황 / 14F",
+    "views": 176506,
+    "gain": 1961
+   },
+   {
+    "id": "RxdtTJ7GdDM",
+    "title": "[EN] 전세계에서 퇴출됐다가 역주행 중이라는 우지 근황🥄ㅣ돈슐랭 / 14F",
+    "views": 292958,
+    "gain": 593
+   }
+  ]
+ },
+ {
+  "at": "2026-10-31T19:13+09:00",
+  "key": "subusunews",
+  "ok": true,
+  "new": [],
+  "top": [
+   {
+    "id": "vEqtdBio5f8",
+    "title": "유규선이 성공한 방법",
+    "views": 50726,
+    "gain": 330
+   },
+   {
+    "id": "joS-5fpq2rk",
+    "title": "꿈을 가지고 있는 사람의 기분은 어떤걸까",
+    "views": 25033,
+    "gain": 267
+   },
+   {
+    "id": "Iwlid0Rvc8M",
+    "title": "형 무슨 소리야 내가 형 절대 안 버려",
+    "views": 16460,
+    "gain": 231
+   }
+  ]
+ },
+ {
+  "at": "2026-10-31T19:13+09:00",
+  "key": "vstudio",
+  "ok": true,
+  "new": [],
+  "top": []
+ },
+ {
+  "at": "2026-10-31T19:13+09:00",
+  "key": "syukaworld",
+  "ok": true,
+  "new": [
+   "TF93Z8sJZok"
+  ],
+  "top": [
+   {
+    "id": "p9PqJ61lg3w",
+    "title": "규카츠가 방송 열심히 하는 이유",
+    "views": 262170,
+    "gain": 4712
+   },
+   {
+    "id": "WuU0lc1SwLg",
+    "title": "난 정말 주식을 못한다 손!!!",
+    "views": 150001,
+    "gain": 4008
+   },
+   {
+    "id": "uTmDuvJDcMM",
+    "title": "인기와 주가가 비례하는 여의도 아저씨",
+    "views": 221595,
+    "gain": 2460
+   }
+  ]
+ },
+ {
+  "at": "2026-10-31T19:13+09:00",
+  "key": "ytn",
+  "ok": true,
+  "new": [
+   "1hxqbV9oqLw",
+   "fnT5Sx2jz50",
+   "yLShfo5gNRE",
+   "uehz6HqQ4gc",
+   "KWHWnCVnfzs",
+   "IIZR6Jd-m2c",
+   "BwFhxVa3OMA",
+   "n9c-Ww5Tj4g",
+   "hDDM4PDIEFQ",
+   "Be_moGj27HM",
+   "xHAtbkR1F-4",
+   "ShxknK8jChA"
+  ],
+  "top": [
+   {
+    "id": "6e-dOOTWSbA",
+    "title": "'속수무책'으로 뚫린 세계 1위 거래소…'북한 해킹'에 칼 뽑은 FBI [이슈픽] / YTN",
+    "views": 5984,
+    "gain": 4847
+   },
+   {
+    "id": "eVAApbre1bU",
+    "title": "전 세계 탈취액 60%가 북한...훔친 코인이 핵·미사일로 [자막뉴스] / YTN",
+    "views": 3467,
+    "gain": 3155
+   },
+   {
+    "id": "iaBmPy1yQFY",
+    "title": "대통령 지지율 다시 30%대...하락한 이유는?[Y녹취록] / YTN",
+    "views": 2698,
+    "gain": 1562
+   }
+  ]
  }
 ]

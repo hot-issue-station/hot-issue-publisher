@@ -3,20 +3,33 @@
  "name": "슈카월드",
  "channel": "https://www.youtube.com/@syukaworld",
  "channelId": "UCJo6G1u0e_-wS-JQn3T-zEw",
- "checkedAt": "2026-10-31T17:54+09:00",
+ "checkedAt": "2026-10-31T19:13+09:00",
  "videos": [
+  {
+   "id": "TF93Z8sJZok",
+   "title": "베어장에 등판한 좋좋소 사장 슈카",
+   "published": "2026-10-31T09:00:32+00:00",
+   "url": "https://www.youtube.com/watch?v=TF93Z8sJZok",
+   "shorts": false,
+   "views": 7793,
+   "likes": 311,
+   "viewsGain": null,
+   "isNew": true,
+   "median": 129110.0,
+   "multiple": 0.1
+  },
   {
    "id": "WuU0lc1SwLg",
    "title": "난 정말 주식을 못한다 손!!!",
    "published": "2026-10-30T09:07:05+00:00",
    "url": "https://www.youtube.com/watch?v=WuU0lc1SwLg",
    "shorts": false,
-   "views": 145993,
-   "likes": 1093,
-   "viewsGain": 948,
+   "views": 150001,
+   "likes": 1111,
+   "viewsGain": 4008,
    "isNew": false,
-   "median": 129241.5,
-   "multiple": 1.1
+   "median": 129110.0,
+   "multiple": 1.2
   },
   {
    "id": "G9n3vLRCvSI",
@@ -24,11 +37,11 @@
    "published": "2026-10-30T06:40:56+00:00",
    "url": "https://www.youtube.com/watch?v=G9n3vLRCvSI",
    "shorts": false,
-   "views": 113618,
+   "views": 114249,
    "likes": 675,
-   "viewsGain": 150,
+   "viewsGain": 631,
    "isNew": false,
-   "median": 129241.5,
+   "median": 129110.0,
    "multiple": 0.9
   },
   {
@@ -37,12 +50,12 @@
    "published": "2026-10-30T02:46:47+00:00",
    "url": "https://www.youtube.com/shorts/p9PqJ61lg3w",
    "shorts": true,
-   "views": 257458,
-   "likes": 2360,
-   "viewsGain": 1745,
+   "views": 262170,
+   "likes": 2381,
+   "viewsGain": 4712,
    "isNew": false,
-   "median": 114480,
-   "multiple": 2.2
+   "median": 115387,
+   "multiple": 2.3
   },
   {
    "id": "As_g3UyIa2Y",
@@ -50,11 +63,11 @@
    "published": "2026-10-29T09:10:37+00:00",
    "url": "https://www.youtube.com/shorts/As_g3UyIa2Y",
    "shorts": true,
-   "views": 121469,
-   "likes": 1133,
-   "viewsGain": 315,
+   "views": 122349,
+   "likes": 1137,
+   "viewsGain": 880,
    "isNew": false,
-   "median": 114480,
+   "median": 115387,
    "multiple": 1.1
   },
   {
@@ -63,11 +76,11 @@
    "published": "2026-10-29T09:00:12+00:00",
    "url": "https://www.youtube.com/watch?v=uTmDuvJDcMM",
    "shorts": false,
-   "views": 219135,
-   "likes": 1310,
-   "viewsGain": 480,
+   "views": 221595,
+   "likes": 1319,
+   "viewsGain": 2460,
    "isNew": false,
-   "median": 129241.5,
+   "median": 129110.0,
    "multiple": 1.7
   },
   {
@@ -78,9 +91,9 @@
    "shorts": false,
    "views": 120726,
    "likes": 880,
-   "viewsGain": 7,
+   "viewsGain": 0,
    "isNew": false,
-   "median": 129241.5,
+   "median": 129110.0,
    "multiple": 0.9
   },
   {
@@ -89,11 +102,11 @@
    "published": "2026-10-29T06:23:46+00:00",
    "url": "https://www.youtube.com/shorts/LdJyl_wt_ao",
    "shorts": true,
-   "views": 114480,
-   "likes": 788,
-   "viewsGain": 230,
+   "views": 115387,
+   "likes": 793,
+   "viewsGain": 907,
    "isNew": false,
-   "median": 114480,
+   "median": 115387,
    "multiple": 1.0
   },
   {
@@ -102,11 +115,11 @@
    "published": "2026-10-29T03:10:22+00:00",
    "url": "https://www.youtube.com/shorts/qLXHZm_9mX0",
    "shorts": true,
-   "views": 181898,
-   "likes": 1762,
-   "viewsGain": 311,
+   "views": 183298,
+   "likes": 1767,
+   "viewsGain": 1400,
    "isNew": false,
-   "median": 114480,
+   "median": 115387,
    "multiple": 1.6
   },
   {
@@ -115,11 +128,11 @@
    "published": "2026-10-29T02:35:34+00:00",
    "url": "https://www.youtube.com/shorts/XLkRqq6Cj9k",
    "shorts": true,
-   "views": 110427,
-   "likes": 1293,
-   "viewsGain": 95,
+   "views": 110754,
+   "likes": 1295,
+   "viewsGain": 327,
    "isNew": false,
-   "median": 114480,
+   "median": 115387,
    "multiple": 1.0
   },
   {
@@ -132,7 +145,7 @@
    "likes": 1027,
    "viewsGain": 0,
    "isNew": false,
-   "median": 129241.5,
+   "median": 129110.0,
    "multiple": 1.1
   },
   {
@@ -141,12 +154,12 @@
    "published": "2026-10-28T03:11:09+00:00",
    "url": "https://www.youtube.com/shorts/1Hg8iSXgWqI",
    "shorts": true,
-   "views": 51617,
-   "likes": 444,
-   "viewsGain": 85,
+   "views": 51761,
+   "likes": 445,
+   "viewsGain": 144,
    "isNew": false,
-   "median": 114480,
-   "multiple": 0.5
+   "median": 115387,
+   "multiple": 0.4
   },
   {
    "id": "RWrQyZ-jC-o",
@@ -154,11 +167,11 @@
    "published": "2026-10-28T02:30:03+00:00",
    "url": "https://www.youtube.com/shorts/RWrQyZ-jC-o",
    "shorts": true,
-   "views": 43509,
-   "likes": 212,
-   "viewsGain": 231,
+   "views": 43713,
+   "likes": 213,
+   "viewsGain": 204,
    "isNew": false,
-   "median": 114480,
+   "median": 115387,
    "multiple": 0.4
   },
   {
@@ -167,11 +180,11 @@
    "published": "2026-10-27T09:00:12+00:00",
    "url": "https://www.youtube.com/watch?v=YLAj3qkZaC8",
    "shorts": false,
-   "views": 176895,
+   "views": 177644,
    "likes": 775,
-   "viewsGain": 155,
+   "viewsGain": 749,
    "isNew": false,
-   "median": 129241.5,
+   "median": 129110.0,
    "multiple": 1.4
   },
   {
@@ -180,24 +193,11 @@
    "published": "2026-10-27T06:38:26+00:00",
    "url": "https://www.youtube.com/watch?v=ZOB6Gdz6QLE",
    "shorts": false,
-   "views": 110998,
+   "views": 111025,
    "likes": 793,
-   "viewsGain": 0,
+   "viewsGain": 27,
    "isNew": false,
-   "median": 129241.5,
-   "multiple": 0.9
-  },
-  {
-   "id": "TcWSh8CLlc8",
-   "title": "황동현 '실적발표 슈퍼위크를 대비하는 투자심리'ㅣ니니 '룰라 4선 성공, 브라질 증시 급락각'ㅣ손인준 '삼전닉스 실적발표 전, 뭘 준비할까'",
-   "published": "2026-10-26T12:15:38+00:00",
-   "url": "https://www.youtube.com/watch?v=TcWSh8CLlc8",
-   "shorts": false,
-   "views": 120989,
-   "likes": 661,
-   "viewsGain": 0,
-   "isNew": false,
-   "median": 129241.5,
+   "median": 129110.0,
    "multiple": 0.9
   }
  ],
@@ -205,8 +205,8 @@
   {
    "title": "규카츠가 방송 열심히 하는 이유",
    "url": "https://www.youtube.com/shorts/p9PqJ61lg3w",
-   "views": 257458,
-   "multiple": 2.2,
+   "views": 262170,
+   "multiple": 2.3,
    "shorts": true
   }
  ]
