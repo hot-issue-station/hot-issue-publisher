@@ -57,7 +57,7 @@ def check(date, slot):
 
 
 def slot_time(slot):
-    return {"AM": "07:30", "PM": "12:00", "NT": "18:30", "RS": "20:00"}[slot]
+    return {"AM": "08:00", "PM": "12:00", "NT": "21:00", "RS": "18:30"}[slot]  # 10/31 대표 편성
 
 
 def validate(r):
