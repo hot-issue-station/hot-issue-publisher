@@ -310,7 +310,7 @@ def cards(r):
                          label, 3 + i, f'<div style="display:flex;gap:16px">{dots(i, NF)}</div>', total=TOT))
     # 6 해석
     out.append(frame(f"""<div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:36px">
-<div style="font-size:48px;font-weight:900">그래서, 나에게는?</div>
+<div style="font-size:48px;font-weight:900">{E(r.get("interpLabel", "그래서, 나에게는?"))}</div>
 <div style="font-size:84px;font-weight:900;line-height:1.35">{E(r['interp'])}</div>
 <div style="font-size:46px;font-weight:500;line-height:1.55;color:{ONACC2}">{E(r['interpSub'])}</div></div>""",
                      label, NF + 3, light=True, deco=rings([ONACC] * 3, [640, 440, 240]), total=TOT))
