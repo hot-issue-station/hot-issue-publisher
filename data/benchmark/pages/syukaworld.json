@@ -1,7 +1,7 @@
 {
  "name": "슈카월드",
  "channel": "https://www.youtube.com/@syukaworld",
- "checkedAt": "2026-11-01T19:16+09:00",
+ "checkedAt": "2026-11-01T19:41+09:00",
  "subscribers": "374만",
  "videos": [
   {
@@ -20,7 +20,7 @@
    "viewsText": "조회수 34만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "qpu_kIMdo0k",
@@ -56,7 +56,7 @@
    "viewsText": "조회수 41만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "_Th8Z0aTNmk",

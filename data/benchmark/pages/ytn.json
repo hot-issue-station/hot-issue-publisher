@@ -1,25 +1,26 @@
 {
  "name": "YTN",
  "channel": "https://www.youtube.com/@ytnnews24",
- "checkedAt": "2026-11-01T19:16+09:00",
+ "checkedAt": "2026-11-01T19:41+09:00",
  "subscribers": "542만",
  "videos": [
   {
    "id": "_1dvsiIJTNY",
    "title": "\"누군가 할 때까지 나라도 한다 연기 비평\" / YTN",
-   "views": 883,
-   "viewsText": "조회수 883회",
+   "views": 977,
+   "viewsText": "조회수 977회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 94
   },
   {
    "id": "Tq2tZG89gSo",
    "title": "\"범인 찾기 중계 그만하자\"...현직 야구 캐스터 쓴소리에 야구팬 공감",
-   "views": 84000,
-   "viewsText": "조회수 8.4만회",
+   "views": 86000,
+   "viewsText": "조회수 8.6만회",
    "published": "",
    "kind": "short",
-   "gain": 9000
+   "gain": 2000
   },
   {
    "id": "Be_moGj27HM",
@@ -28,7 +29,7 @@
    "viewsText": "조회수 6.3천회",
    "published": "",
    "kind": "short",
-   "gain": 500
+   "gain": 0
   },
   {
    "id": "UR6Njhoqt1U",
@@ -37,7 +38,7 @@
    "viewsText": "조회수 6.4천회",
    "published": "",
    "kind": "short",
-   "gain": 200
+   "gain": 0
   },
   {
    "id": "3XqCsWz4BM8",
@@ -46,7 +47,7 @@
    "viewsText": "조회수 18만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "qq_scIfvcMM",
@@ -55,7 +56,7 @@
    "viewsText": "조회수 72만회",
    "published": "",
    "kind": "short",
-   "gain": 70000
+   "gain": 0
   },
   {
    "id": "t12jf2ir-os",
@@ -73,7 +74,7 @@
    "viewsText": "조회수 2.3만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "2vPxDgJkYlU",
@@ -91,7 +92,7 @@
    "viewsText": "조회수 2.5만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "ffwLejBkToE",
@@ -118,7 +119,7 @@
    "viewsText": "조회수 5.4만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "ITp8NQ1M8Zk",
@@ -127,7 +128,7 @@
    "viewsText": "조회수 3.9천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "zcza7Mo90sY",
@@ -136,7 +137,7 @@
    "viewsText": "조회수 5.3만회",
    "published": "",
    "kind": "short",
-   "gain": 2000
+   "gain": 0
   },
   {
    "id": "KAbommcCO-E",
@@ -145,7 +146,7 @@
    "viewsText": "조회수 3.7만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "RRjfcFpsNhg",
@@ -154,7 +155,7 @@
    "viewsText": "조회수 14만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "UqqS9DilamQ",
@@ -172,7 +173,7 @@
    "viewsText": "조회수 7.7만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "607SzrmrEJo",
@@ -235,7 +236,7 @@
    "viewsText": "조회수 41만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "pGHU7Yg8idQ",
@@ -262,7 +263,7 @@
    "viewsText": "조회수 3.3만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "oROGSVQunFI",
@@ -303,11 +304,11 @@
   {
    "id": "l3W81GqXHYo",
    "title": "된다며! 된다며! #shorts / YTN",
-   "views": 72000,
-   "viewsText": "조회수 7.2만회",
+   "views": 73000,
+   "viewsText": "조회수 7.3만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 1000
   },
   {
    "id": "OeiXoIpq67A",
@@ -316,7 +317,7 @@
    "viewsText": "조회수 6.4천회",
    "published": "",
    "kind": "short",
-   "gain": 200
+   "gain": 0
   },
   {
    "id": "sZwTsWTwrTI",
@@ -330,11 +331,11 @@
   {
    "id": "GNeJdyThCZc",
    "title": "소름 돋는 MC의 행동 #shorts / YTN",
-   "views": 1530000,
-   "viewsText": "조회수 153만회",
+   "views": 1540000,
+   "viewsText": "조회수 154만회",
    "published": "",
    "kind": "short",
-   "gain": 60000
+   "gain": 10000
   },
   {
    "id": "VMtSL_rFmmY",
@@ -352,7 +353,7 @@
    "viewsText": "조회수 5.9만회",
    "published": "",
    "kind": "short",
-   "gain": 8000
+   "gain": 0
   },
   {
    "id": "xD7OcWaEKQ8",

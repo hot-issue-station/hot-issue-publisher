@@ -1,17 +1,17 @@
 {
  "name": "14F 일사에프 (MBC)",
  "channel": "https://www.youtube.com/@14FMBC",
- "checkedAt": "2026-11-01T19:16+09:00",
+ "checkedAt": "2026-11-01T19:41+09:00",
  "subscribers": "239만",
  "videos": [
   {
    "id": "peSpC5kd2t0",
    "title": "홍채로도 운세를 볼 수 있다? #shorts",
-   "views": 2500,
-   "viewsText": "조회수 2.5천회",
+   "views": 2600,
+   "viewsText": "조회수 2.6천회",
    "published": "",
    "kind": "short",
-   "gain": 1500
+   "gain": 100
   },
   {
    "id": "yoyqnf-PE30",
@@ -20,16 +20,16 @@
    "viewsText": "조회수 4천회",
    "published": "",
    "kind": "short",
-   "gain": 300
+   "gain": 0
   },
   {
    "id": "FV2VNAPmk-o",
    "title": "미국에서 역주행 중 우지 근황 #shorts",
-   "views": 7300,
-   "viewsText": "조회수 7.3천회",
+   "views": 7400,
+   "viewsText": "조회수 7.4천회",
    "published": "",
    "kind": "short",
-   "gain": 700
+   "gain": 100
   },
   {
    "id": "M_z0WM3-GO8",
@@ -38,7 +38,7 @@
    "viewsText": "조회수 4.1천회",
    "published": "",
    "kind": "short",
-   "gain": 200
+   "gain": 0
   },
   {
    "id": "Icvrlx6HV-Q",
@@ -47,7 +47,7 @@
    "viewsText": "조회수 5.9천회",
    "published": "",
    "kind": "short",
-   "gain": 200
+   "gain": 0
   },
   {
    "id": "zHzHgad2t6c",

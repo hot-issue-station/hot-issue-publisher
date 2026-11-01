@@ -1,7 +1,7 @@
 {
  "name": "스브스뉴스 (SBS)",
  "channel": "https://www.youtube.com/@subusunews",
- "checkedAt": "2026-11-01T19:16+09:00",
+ "checkedAt": "2026-11-01T19:41+09:00",
  "subscribers": "144만",
  "videos": [
   {
@@ -11,7 +11,7 @@
    "viewsText": "조회수 4.2천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "ernsQIVrBi4",
@@ -38,7 +38,7 @@
    "viewsText": "조회수 1.4만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "-fLcCSNSD34",
@@ -47,7 +47,7 @@
    "viewsText": "조회수 23만회",
    "published": "",
    "kind": "short",
-   "gain": 20000
+   "gain": 0
   },
   {
    "id": "4oWBAsVpDDw",
@@ -187,11 +187,11 @@
   {
    "id": "X6yA0ltKNU4",
    "title": "겉으론 멀쩡해 보여도 의심해 봐야 하는 '이것' #2030 #shorts #스브스뉴스",
-   "views": 82000,
-   "viewsText": "조회수 8.2만회",
+   "views": 83000,
+   "viewsText": "조회수 8.3만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 1000
   },
   {
    "id": "3GdNYTTsoEU",

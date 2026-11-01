@@ -3,7 +3,7 @@
  "name": "YTN",
  "channel": "https://www.youtube.com/@ytnnews24",
  "channelId": "UChlgI3UHCOnwUGzWzbJ3H5w",
- "checkedAt": "2026-11-01T19:16+09:00",
+ "checkedAt": "2026-11-01T19:41+09:00",
  "videos": [
   {
    "id": "Wbg2f6KPJ5U",
@@ -11,12 +11,38 @@
    "published": "2026-11-01T05:25:33+00:00",
    "url": "https://www.youtube.com/watch?v=Wbg2f6KPJ5U",
    "shorts": false,
-   "views": 20622,
-   "likes": 244,
+   "views": 28823,
+   "likes": 270,
+   "viewsGain": 8201,
+   "isNew": false,
+   "median": 1425,
+   "multiple": 20.2
+  },
+  {
+   "id": "WEQB6CCVJLw",
+   "title": "\"전국민 식량 사흘치 준비\"...일, '긴급 요청'에 시끌 / YTN",
+   "published": "2026-11-01T10:22:18+00:00",
+   "url": "https://www.youtube.com/watch?v=WEQB6CCVJLw",
+   "shorts": false,
+   "views": 20961,
+   "likes": 193,
    "viewsGain": null,
    "isNew": true,
-   "median": 669,
-   "multiple": 30.8
+   "median": 1425,
+   "multiple": 14.7
+  },
+  {
+   "id": "G5vrjinDKZY",
+   "title": "\"돈 많은 기업들이 줄 것\"...무책임한 트럼프의 돈다발 난사 [자막뉴스] / YTN",
+   "published": "2026-11-01T10:20:02+00:00",
+   "url": "https://www.youtube.com/watch?v=G5vrjinDKZY",
+   "shorts": false,
+   "views": 7703,
+   "likes": 74,
+   "viewsGain": null,
+   "isNew": true,
+   "median": 1425,
+   "multiple": 5.4
   },
   {
    "id": "cTqGF4VxIfA",
@@ -24,12 +50,12 @@
    "published": "2026-11-01T10:12:13+00:00",
    "url": "https://www.youtube.com/watch?v=cTqGF4VxIfA",
    "shorts": false,
-   "views": 24,
-   "likes": 1,
-   "viewsGain": null,
-   "isNew": true,
-   "median": 669,
-   "multiple": 0.0
+   "views": 212,
+   "likes": 7,
+   "viewsGain": 188,
+   "isNew": false,
+   "median": 1425,
+   "multiple": 0.1
   },
   {
    "id": "0xBT93VfxG0",
@@ -37,12 +63,12 @@
    "published": "2026-11-01T10:07:15+00:00",
    "url": "https://www.youtube.com/watch?v=0xBT93VfxG0",
    "shorts": false,
-   "views": 306,
-   "likes": 7,
-   "viewsGain": null,
-   "isNew": true,
-   "median": 669,
-   "multiple": 0.5
+   "views": 1403,
+   "likes": 20,
+   "viewsGain": 1097,
+   "isNew": false,
+   "median": 1425,
+   "multiple": 1.0
   },
   {
    "id": "LbE8izPWvGw",
@@ -50,11 +76,11 @@
    "published": "2026-11-01T09:57:29+00:00",
    "url": "https://www.youtube.com/watch?v=LbE8izPWvGw",
    "shorts": false,
-   "views": 279,
-   "likes": 3,
-   "viewsGain": null,
-   "isNew": true,
-   "median": 669,
+   "views": 612,
+   "likes": 7,
+   "viewsGain": 333,
+   "isNew": false,
+   "median": 1425,
    "multiple": 0.4
   },
   {
@@ -63,12 +89,12 @@
    "published": "2026-11-01T09:52:22+00:00",
    "url": "https://www.youtube.com/watch?v=9I_MFzJTWK0",
    "shorts": false,
-   "views": 7363,
-   "likes": 59,
-   "viewsGain": null,
-   "isNew": true,
-   "median": 669,
-   "multiple": 11.0
+   "views": 8960,
+   "likes": 73,
+   "viewsGain": 1597,
+   "isNew": false,
+   "median": 1425,
+   "multiple": 6.3
   },
   {
    "id": "jmAFGwJms-4",
@@ -76,12 +102,12 @@
    "published": "2026-11-01T09:51:45+00:00",
    "url": "https://www.youtube.com/watch?v=jmAFGwJms-4",
    "shorts": false,
-   "views": 251,
-   "likes": 5,
-   "viewsGain": null,
-   "isNew": true,
-   "median": 669,
-   "multiple": 0.4
+   "views": 330,
+   "likes": 8,
+   "viewsGain": 79,
+   "isNew": false,
+   "median": 1425,
+   "multiple": 0.2
   },
   {
    "id": "y4BEAf6VrlM",
@@ -89,12 +115,12 @@
    "published": "2026-11-01T09:38:34+00:00",
    "url": "https://www.youtube.com/watch?v=y4BEAf6VrlM",
    "shorts": false,
-   "views": 669,
-   "likes": 7,
-   "viewsGain": null,
-   "isNew": true,
-   "median": 669,
-   "multiple": 1.0
+   "views": 763,
+   "likes": 8,
+   "viewsGain": 94,
+   "isNew": false,
+   "median": 1425,
+   "multiple": 0.5
   },
   {
    "id": "jJKYxcUlGkU",
@@ -102,12 +128,12 @@
    "published": "2026-11-01T09:30:29+00:00",
    "url": "https://www.youtube.com/watch?v=jJKYxcUlGkU",
    "shorts": false,
-   "views": 1432,
-   "likes": 18,
-   "viewsGain": null,
-   "isNew": true,
-   "median": 669,
-   "multiple": 2.1
+   "views": 1520,
+   "likes": 19,
+   "viewsGain": 88,
+   "isNew": false,
+   "median": 1425,
+   "multiple": 1.1
   },
   {
    "id": "ji6gUsV4jPs",
@@ -115,12 +141,12 @@
    "published": "2026-11-01T09:23:06+00:00",
    "url": "https://www.youtube.com/watch?v=ji6gUsV4jPs",
    "shorts": false,
-   "views": 586,
+   "views": 646,
    "likes": 10,
-   "viewsGain": null,
-   "isNew": true,
-   "median": 669,
-   "multiple": 0.9
+   "viewsGain": 60,
+   "isNew": false,
+   "median": 1425,
+   "multiple": 0.5
   },
   {
    "id": "pjPBbCMF24s",
@@ -128,12 +154,12 @@
    "published": "2026-11-01T09:20:07+00:00",
    "url": "https://www.youtube.com/watch?v=pjPBbCMF24s",
    "shorts": false,
-   "views": 2822,
-   "likes": 22,
-   "viewsGain": null,
-   "isNew": true,
-   "median": 669,
-   "multiple": 4.2
+   "views": 2826,
+   "likes": 23,
+   "viewsGain": 4,
+   "isNew": false,
+   "median": 1425,
+   "multiple": 2.0
   },
   {
    "id": "H3KK0ytbMSQ",
@@ -141,12 +167,12 @@
    "published": "2026-11-01T09:18:08+00:00",
    "url": "https://www.youtube.com/watch?v=H3KK0ytbMSQ",
    "shorts": false,
-   "views": 1344,
-   "likes": 25,
-   "viewsGain": null,
-   "isNew": true,
-   "median": 669,
-   "multiple": 2.0
+   "views": 1425,
+   "likes": 30,
+   "viewsGain": 81,
+   "isNew": false,
+   "median": 1425,
+   "multiple": 1.0
   },
   {
    "id": "MQEwDwP3o4A",
@@ -154,12 +180,12 @@
    "published": "2026-11-01T09:17:48+00:00",
    "url": "https://www.youtube.com/watch?v=MQEwDwP3o4A",
    "shorts": false,
-   "views": 5596,
-   "likes": 56,
-   "viewsGain": null,
-   "isNew": true,
-   "median": 669,
-   "multiple": 8.4
+   "views": 5721,
+   "likes": 61,
+   "viewsGain": 125,
+   "isNew": false,
+   "median": 1425,
+   "multiple": 4.0
   },
   {
    "id": "M6Lz2YsEkZ8",
@@ -167,87 +193,54 @@
    "published": "2026-11-01T09:13:07+00:00",
    "url": "https://www.youtube.com/watch?v=M6Lz2YsEkZ8",
    "shorts": false,
-   "views": 296,
+   "views": 302,
    "likes": 10,
-   "viewsGain": null,
-   "isNew": true,
-   "median": 669,
-   "multiple": 0.4
-  },
-  {
-   "id": "_sEZhVQ9DhQ",
-   "title": "고 최불암 빈소 마지막 날 조문 행렬...내일 발인식 뒤 장례미사 / YTN",
-   "published": "2026-11-01T09:13:01+00:00",
-   "url": "https://www.youtube.com/watch?v=_sEZhVQ9DhQ",
-   "shorts": false,
-   "views": 2122,
-   "likes": 32,
-   "viewsGain": null,
-   "isNew": true,
-   "median": 669,
-   "multiple": 3.2
-  },
-  {
-   "id": "DalONCYrcFM",
-   "title": "11월 첫날 가을비에 쌀쌀...서울 낮 기온 올가을 최저 / YTN",
-   "published": "2026-11-01T09:12:21+00:00",
-   "url": "https://www.youtube.com/watch?v=DalONCYrcFM",
-   "shorts": false,
-   "views": 390,
-   "likes": 14,
-   "viewsGain": null,
-   "isNew": true,
-   "median": 669,
-   "multiple": 0.6
+   "viewsGain": 6,
+   "isNew": false,
+   "median": 1425,
+   "multiple": 0.2
   }
  ],
  "viral": [
   {
    "title": "\"전면 항전 준비하라\"...모즈타바 명령에 중동 '일촉즉발' [이슈픽] / YTN",
    "url": "https://www.youtube.com/watch?v=Wbg2f6KPJ5U",
-   "views": 20622,
-   "multiple": 30.8,
+   "views": 28823,
+   "multiple": 20.2,
+   "shorts": false
+  },
+  {
+   "title": "\"전국민 식량 사흘치 준비\"...일, '긴급 요청'에 시끌 / YTN",
+   "url": "https://www.youtube.com/watch?v=WEQB6CCVJLw",
+   "views": 20961,
+   "multiple": 14.7,
    "shorts": false
   },
   {
    "title": "갑자기 '비상용품 준비' 요청 논란에…'전쟁설' 해명한 일본 방재상 [지금이뉴스] / YTN",
    "url": "https://www.youtube.com/watch?v=9I_MFzJTWK0",
-   "views": 7363,
-   "multiple": 11.0,
+   "views": 8960,
+   "multiple": 6.3,
+   "shorts": false
+  },
+  {
+   "title": "\"돈 많은 기업들이 줄 것\"...무책임한 트럼프의 돈다발 난사 [자막뉴스] / YTN",
+   "url": "https://www.youtube.com/watch?v=G5vrjinDKZY",
+   "views": 7703,
+   "multiple": 5.4,
    "shorts": false
   },
   {
    "title": "중국산 전기차의 공습...흔들리는 안방 시장 / YTN",
    "url": "https://www.youtube.com/watch?v=MQEwDwP3o4A",
-   "views": 5596,
-   "multiple": 8.4,
+   "views": 5721,
+   "multiple": 4.0,
    "shorts": false
   },
   {
    "title": "'비시민 색출' 유권자 기록 요구한 트럼프 정부...극심한 혼란 예고 [자막뉴스] / YTN",
    "url": "https://www.youtube.com/watch?v=pjPBbCMF24s",
-   "views": 2822,
-   "multiple": 4.2,
-   "shorts": false
-  },
-  {
-   "title": "고 최불암 빈소 마지막 날 조문 행렬...내일 발인식 뒤 장례미사 / YTN",
-   "url": "https://www.youtube.com/watch?v=_sEZhVQ9DhQ",
-   "views": 2122,
-   "multiple": 3.2,
-   "shorts": false
-  },
-  {
-   "title": "연가 쓰려는 직원에게 \"애는 남편에게 보라 해\"...법원이 내린 판단 [자막뉴스] / YTN",
-   "url": "https://www.youtube.com/watch?v=jJKYxcUlGkU",
-   "views": 1432,
-   "multiple": 2.1,
-   "shorts": false
-  },
-  {
-   "title": "모습 감춘 흑상어 '부캉이'...\"외해로 갔을 가능성\" / YTN",
-   "url": "https://www.youtube.com/watch?v=H3KK0ytbMSQ",
-   "views": 1344,
+   "views": 2826,
    "multiple": 2.0,
    "shorts": false
   }
