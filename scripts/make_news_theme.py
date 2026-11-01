@@ -110,7 +110,81 @@ def roll(start, length, buf, amp=0.18):
         k += 1
 
 
+def strings(notes, dur, amp=0.1, attack=0.02):
+    """여러 겹 톱니파(살짝 어긋난 음) = 현악 합주."""
+    t = np.arange(int(dur * SR)) / SR
+    s = np.zeros_like(t)
+    for n in notes:
+        for d in (-0.08, -0.03, 0.03, 0.08):
+            f = hz(n) * 2 ** (d / 12)
+            for k in range(1, 7):
+                s += np.sin(2 * np.pi * f * k * t + k) / k ** 1.6
+    return amp * s * env(len(t), attack, min(0.12, dur * 0.4)) / (len(notes) * 4)
+
+
+def cymbal(dur=1.5, amp=0.12, swell=True):
+    n = int(dur * SR)
+    s = np.diff(np.concatenate([[0], rng.uniform(-1, 1, n)]))
+    e = np.linspace(0, 1, n) ** 2 if swell else np.exp(-np.arange(n) / SR * 2.5)
+    return amp * s * e
+
+
 def news(sec):
+    """보도국 오프닝 '분위기'(웅장한 금관 팡파르 + 현악 16분 반복 + 팀파니)를 따른 자작곡.
+    특정 방송 테마의 멜로디·화성 진행은 쓰지 않는다 — 선율은 우리 시그니처 4음(D-A-F-E)으로만 만든다."""
+    buf = np.zeros(int(sec * SR) + SR)
+    beat = 60 / 112
+    # 0~1.6 심벌 스웰 + 팀파니 롤
+    add(buf, cymbal(1.6, 0.16, True), 0.0)
+    roll(0.4, 1.2, buf, 0.22)
+    # 1.6 쾅: 금관 + 현악 + 팀파니 + 심벌
+    hit = 1.6
+    add(buf, brass([38, 50, 57, 62, 65, 69], 1.3, 0.26, 0.015), hit)
+    add(buf, strings([62, 69, 74], 1.0, 0.12), hit)
+    add(buf, timp(38, 0.7, 2.0), hit)
+    add(buf, cymbal(2.0, 0.14, False), hit)
+    add(buf, kick(0.6), hit)
+    # 팡파르: 시그니처 4음을 금관으로 크게 (D A F E → 길게 D)
+    fan = hit + 1.0
+    lens = [0.5, 0.5, 0.5, 0.5, 1.4]
+    notes = MOTIF + [74]
+    harm = [[62, 66, 69], [65, 69, 72], [62, 65, 70], [64, 67, 72], [62, 66, 69]]  # D Fm? → 장엄하게 움직이는 화음
+    tt = fan
+    for n, L, h in zip(notes, lens, harm):
+        add(buf, brass([n, n - 12], L * beat * 2 + 0.1, 0.22, 0.03), tt)
+        add(buf, brass(h, L * beat * 2 + 0.1, 0.12, 0.05), tt)
+        add(buf, timp(38 if n != 81 else 45, 0.35, 0.8), tt)
+        tt += L * beat * 2
+    # 본문: 현악 16분 반복 + 낮은 금관 + 팀파니, 진행 Dm - Bb - Gm - A (4마디 반복)
+    prog = [(50, [62, 65, 69]), (46, [58, 62, 65]), (43, [55, 58, 62]), (45, [57, 61, 64])]
+    t0, bar = tt, 4 * beat
+    k = 0
+    while t0 < sec - 3.2:
+        root, chord = prog[k % 4]
+        add(buf, brass([root - 12, root], bar, 0.10, 0.2), t0)  # 낮은 금관 지속음
+        add(buf, strings([c + 12 for c in chord], bar + 0.2, 0.05, 0.3), t0)  # 높은 현 패드
+        arp = [chord[0] + 12, chord[1] + 12, chord[2] + 12, chord[1] + 12]
+        for s in range(16):  # 16분 현악 반복(긴장감)
+            add(buf, strings([arp[s % 4]], beat / 4 * 0.9, 0.09 if s % 4 == 0 else 0.06, 0.005), t0 + s * beat / 4)
+        for b in range(4):
+            add(buf, timp(root - 12 if root - 12 >= 33 else root, 0.28 if b == 0 else 0.14, 0.6), t0 + b * beat)
+            add(buf, tick(0.035, 0.02), t0 + b * beat + beat / 2)
+        if k % 4 == 3:  # 4마디 끝마다 팡파르 짧게
+            for i, n in enumerate(MOTIF):
+                add(buf, brass([n], beat * 0.5, 0.11, 0.02), t0 + 2 * beat + i * beat / 2)
+        t0 += bar
+        k += 1
+    # 마무리: 팡파르 + 큰 화음
+    end = sec - 3.0
+    for i, n in enumerate(MOTIF):
+        add(buf, brass([n, n - 12], beat * 0.5, 0.18, 0.02), end + i * beat / 2)
+    add(buf, brass([38, 50, 57, 62, 66, 69], 2.0, 0.22, 0.02), end + 2 * beat)
+    add(buf, timp(38, 0.6, 2.0), end + 2 * beat)
+    add(buf, cymbal(2.0, 0.12, False), end + 2 * beat)
+    return buf
+
+
+def news_v1(sec):
     buf = np.zeros(int(sec * SR) + SR)
     # 0.0~1.2 시계 똑딱 4번(뉴스 시작 느낌)
     for i in range(4):
