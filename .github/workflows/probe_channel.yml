@@ -1,0 +1,26 @@
+name: 채널 살펴보기 (링크 분석)
+on:
+  workflow_dispatch:
+    inputs:
+      name: { description: "저장 이름", required: true }
+      video_url: { description: "영상 주소", required: false, default: "" }
+      channel_url: { description: "채널 주소(@핸들)", required: false, default: "" }
+permissions:
+  contents: write
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: python scripts/probe_channel.py
+        env:
+          NAME: ${{ inputs.name }}
+          VIDEO_URL: ${{ inputs.video_url }}
+          CHANNEL_URL: ${{ inputs.channel_url }}
+      - run: |
+          git config user.name "issuebrief-bot"; git config user.email "bot@users.noreply.github.com"
+          git add data/probe
+          git diff --cached --quiet || git commit -m "채널 살펴보기 ${{ inputs.name }}"
+          for i in 1 2 3; do git pull --rebase -q origin main && git push && break; sleep 5; done
