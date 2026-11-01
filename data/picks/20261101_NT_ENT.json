@@ -1,0 +1,103 @@
+{
+  "date": "2026-11-01",
+  "slot": "NT",
+  "kind": "ENT",
+  "excluded": [
+    "KBL 농구(대표 제외 분야)",
+    "황희찬 '스태프 밀치기' 사과 관련(논란, 제외)"
+  ],
+  "note": "구글 뉴스 한국판 WebFetch는 권한 응답 시간 초과로 열지 못함 — 분야별 WebSearch로 대신함",
+  "candidates": [
+    {
+      "title": "A2O LITE, 주말 음방 2연속 1위·8관왕",
+      "summary": "데뷔곡 'NEON'으로 10/31 음악중심(6,557점)·11/1 인기가요(6,576점) 1위, 13일 만에 8관왕",
+      "why": "연예 · 화제도 33점",
+      "scores": {
+        "coverage": 3,
+        "rankings": 2,
+        "fandom": 3,
+        "ourHistory": 1,
+        "freshness": 3,
+        "shareable": 3
+      },
+      "facts": [
+        "11/1 SBS 인기가요 1위 6,576점(2위 NMIXX '긴 소원' 4,047점, 3위 IVE 'Looks Can Kill' 3,735점) — 인기가요 2주 연속 1위(10/25 이어)",
+        "10/31 MBC 쇼! 음악중심 출연 없이 1위 6,557점(NMIXX 4,673점, IVE 3,978점) — 음악중심 첫 1위",
+        "10/20 더쇼 첫 1위 → 쇼챔피언·엠카운트다운·인기가요·쇼케이팝·쇼챔피언·음악중심·인기가요, 10/20~11/1 13일 동안 8관왕(6개 프로그램)",
+        "'NEON'은 10/13 발매 디지털 싱글 데뷔곡, 9인조",
+        "소감: 2주 연속 1위에 감사 인사(일간스포츠)"
+      ],
+      "note": "참고: 멤버 평균 15세(미성년 다수) — 무대·기록만 다루고 개인 신상은 쓰지 않음. 10/26 스포츠경향 영문판에 수익 구조 의문 기사 있음(논란 소재는 다루지 않음)",
+      "photo": "SBS 인기가요 공식 클립 'NEON - A2O LITE' https://programs.sbs.co.kr/enter/gayo/clip/54768/OC482619755 / 유튜브 검색어 'A2O LITE NEON MV 공식'",
+      "sources": [
+        {
+          "outlet": "톱스타뉴스",
+          "title": "A2O LITE, '인기가요' 2주 연속 1위…'NEON' 음악방송 8관왕 달성",
+          "date": "2026-11-01",
+          "url": "https://www.topstarnews.net/news/articleView.html?idxno=16265047"
+        },
+        {
+          "outlet": "일간스포츠",
+          "title": "A2O 라이트, 아이브도 꺾었다… '인기가요' 2주 연속 1위에 \"이수만 선생님!\"",
+          "date": "2026-11-01",
+          "url": "https://isplus.com/article/view/isp202611010136"
+        },
+        {
+          "outlet": "스포츠투데이",
+          "title": "A2O 라이트, 출연 없이 '쇼! 음악중심' 1위 [TV캡처]",
+          "date": "2026-10-31",
+          "url": "https://www.stoo.com/article.php?aid=109639875666"
+        },
+        {
+          "outlet": "톱스타뉴스",
+          "title": "A2O LITE, 방송 출연 없이 '쇼! 음악중심' 1위…'NEON' 음악방송 7관왕 달성",
+          "date": "2026-11-01",
+          "url": "https://www.topstarnews.net/news/articleView.html?idxno=16265004"
+        }
+      ],
+      "score": 33
+    },
+    {
+      "title": "NMIXX '긴 소원', 주말 음방 1위 후보",
+      "summary": "10/19 미니 6집 컴백, 멜론 TOP100 5위·음악중심 4,673점·인기가요 4,047점 2위",
+      "why": "연예 · 화제도 23점",
+      "scores": {
+        "coverage": 2,
+        "rankings": 1,
+        "fandom": 3,
+        "ourHistory": 1,
+        "freshness": 2,
+        "shareable": 1
+      },
+      "facts": [
+        "10/19 미니 6집 'Strange Muse' 발매, 타이틀곡 '긴 소원 (Birthday Wish)', 6곡 수록, 약 5개월 만의 컴백",
+        "발매 당일 멜론 TOP100 34위 진입(그룹 최고 진입), 10/20 0시 5위",
+        "10/31 음악중심 2위 4,673점, 11/1 인기가요 2위 4,047점(두 방송 모두 A2O LITE·IVE와 1위 후보)"
+      ],
+      "note": "1위가 아니라 '2위' 소재라 30초 릴스로는 약할 수 있음",
+      "photo": "JYP 공식 유튜브 'NMIXX 긴 소원 (Birthday Wish) M/V'",
+      "sources": [
+        {
+          "outlet": "텐아시아",
+          "title": "엔믹스, 딱 맞는 가을옷 입더니…컴백하자마자 멜론 '톱100' 5위",
+          "date": "2026-10-20",
+          "url": "https://www.tenasia.co.kr/article/2026102028934"
+        },
+        {
+          "outlet": "일간스포츠",
+          "title": "엔믹스 \"'스트레인지 뮤즈', 다름으로 세상에 전하는 이야기\" [일문일답]",
+          "date": "2026-10-19",
+          "url": "https://isplus.com/article/view/isp202610190036"
+        },
+        {
+          "outlet": "스포츠투데이",
+          "title": "A2O 라이트, 출연 없이 '쇼! 음악중심' 1위 [TV캡처]",
+          "date": "2026-10-31",
+          "url": "https://www.stoo.com/article.php?aid=109639875666"
+        }
+      ],
+      "score": 23
+    }
+  ],
+  "createdAt": "2026-11-01T20:15:34+09:00"
+}

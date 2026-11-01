@@ -38,5 +38,81 @@
     ],
     "picked": null,
     "createdAt": "2026-11-01T11:18:49+09:00"
+  },
+  {
+    "slot": "NT",
+    "kind": "ENT",
+    "candidates": [
+      {
+        "title": "A2O LITE, 주말 음방 2연속 1위·8관왕",
+        "scores": {
+          "coverage": 3,
+          "rankings": 2,
+          "fandom": 3,
+          "ourHistory": 1,
+          "freshness": 3,
+          "shareable": 3
+        },
+        "total": 33
+      },
+      {
+        "title": "NMIXX '긴 소원', 주말 음방 1위 후보",
+        "scores": {
+          "coverage": 2,
+          "rankings": 1,
+          "fandom": 3,
+          "ourHistory": 1,
+          "freshness": 2,
+          "shareable": 1
+        },
+        "total": 23
+      }
+    ],
+    "picked": null,
+    "createdAt": "2026-11-01T20:15:34+09:00"
+  },
+  {
+    "slot": "NT",
+    "kind": "SPO",
+    "candidates": [
+      {
+        "title": "삼성, KIA 꺾고 2년 만에 한국시리즈행",
+        "scores": {
+          "coverage": 3,
+          "rankings": 3,
+          "fandom": 3,
+          "ourHistory": 2,
+          "freshness": 3,
+          "shareable": 2
+        },
+        "total": 35
+      },
+      {
+        "title": "이강인 선발, 아틀레티코 7연승 선두",
+        "scores": {
+          "coverage": 3,
+          "rankings": 1,
+          "fandom": 3,
+          "ourHistory": 2,
+          "freshness": 2,
+          "shareable": 1
+        },
+        "total": 27
+      },
+      {
+        "title": "K리그1 파이널A 개막, 전북·대전 0-0",
+        "scores": {
+          "coverage": 3,
+          "rankings": 0,
+          "fandom": 2,
+          "ourHistory": 2,
+          "freshness": 2,
+          "shareable": 1
+        },
+        "total": 22
+      }
+    ],
+    "picked": null,
+    "createdAt": "2026-11-01T20:15:34+09:00"
   }
 ]
