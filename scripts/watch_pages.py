@@ -9,7 +9,7 @@ import json, pathlib, re, urllib.request, datetime
 
 KST = datetime.timezone(datetime.timedelta(hours=9))
 UA = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36",
-      "Accept-Language": "en-US,en;q=0.9", "Cookie": "CONSENT=YES+1"}
+      "Accept-Language": "ko-KR,ko;q=0.9", "Cookie": "CONSENT=YES+1"}
 OURS = {"issuebrief": ("이슈브리프 (우리 채널)", "https://www.youtube.com/@hot.issue.station")}
 WATCH = {"rescene": ("RESCENE 공식", "https://www.youtube.com/@RESCENE_official"),
          "wonyi": ("안원잘부", "https://www.youtube.com/@helloiamwoninicetomeetyou")}
@@ -49,16 +49,16 @@ def txt(x):
 
 
 def num(s):
-    """'1.5K views' / '12,345 views' / '979 views' → 정수"""
-    m = re.search(r"([\d.,]+)\s*([KMB]?)", s.replace(" ", " "))
+    """'조회수 1.5천회' / '1.2만회' / '1,234회' / '1.5K views' → 정수"""
+    m = re.search(r"([\d.,]+)\s*(천|만|억|K|M|B)?", s.replace(" ", " ").replace("조회수", ""))
     if not m:
         return None
     v = float(m.group(1).replace(",", ""))
-    return int(v * {"": 1, "K": 1e3, "M": 1e6, "B": 1e9}[m.group(2)])
+    return int(round(v * {None: 1, "천": 1e3, "만": 1e4, "억": 1e8, "K": 1e3, "M": 1e6, "B": 1e9}[m.group(2)]))
 
 
-def parse(data, kind):
-    out, seen = [], set()
+def parse(data, kind, seen):
+    out = []
     for d in walk(data):
         if "shortsLockupViewModel" in d:
             s = d["shortsLockupViewModel"]
@@ -85,16 +85,16 @@ def parse(data, kind):
 
 
 def channel(url):
-    vids, subs = [], None
+    vids, subs, seen = [], None, set()
     for tab, kind in (("shorts", "short"), ("videos", "video")):
         try:
-            html = get(f"{url}/{tab}?hl=en&gl=KR")
+            html = get(f"{url}/{tab}?hl=ko&gl=KR")
         except Exception as e:  # noqa
             continue
         data = initial_data(html)
-        vids += parse(data, kind)
+        vids += parse(data, kind, seen)
         if subs is None:
-            m = re.search(r'"([\d.,]+[KMB]?) subscribers"', html)
+            m = re.search(r'구독자 ([\d.,]+[천만억]?)명', html) or re.search(r'"([\d.,]+[KMB]?) subscribers"', html)
             subs = m.group(1) if m else None
     return subs, vids
 
