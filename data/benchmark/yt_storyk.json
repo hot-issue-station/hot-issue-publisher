@@ -3,7 +3,7 @@
  "name": "스토리K (손흥민 레전드 비교 특집 벤치마킹, 10/31)",
  "channel": "https://www.youtube.com/@story_k",
  "channelId": "UCqzNZeBt0546jG-vDlAQlZg",
- "checkedAt": "2026-11-01T19:41+09:00",
+ "checkedAt": "2026-11-01T22:27+09:00",
  "videos": [
   {
    "id": "hW2vyayJmLc",
@@ -11,12 +11,12 @@
    "published": "2026-11-01T10:10:44+00:00",
    "url": "https://www.youtube.com/watch?v=hW2vyayJmLc",
    "shorts": false,
-   "views": 1254,
-   "likes": 211,
-   "viewsGain": 1118,
+   "views": 18520,
+   "likes": 1044,
+   "viewsGain": 17266,
    "isNew": false,
-   "median": 72084,
-   "multiple": 0.0
+   "median": 72226,
+   "multiple": 0.3
   },
   {
    "id": "kUd8n4RkZwI",
@@ -24,11 +24,11 @@
    "published": "2026-10-30T10:55:36+00:00",
    "url": "https://www.youtube.com/watch?v=kUd8n4RkZwI",
    "shorts": false,
-   "views": 64831,
-   "likes": 1623,
-   "viewsGain": 42,
+   "views": 65249,
+   "likes": 1628,
+   "viewsGain": 418,
    "isNew": false,
-   "median": 72084,
+   "median": 72226,
    "multiple": 0.9
   },
   {
@@ -37,12 +37,12 @@
    "published": "2026-10-29T10:21:36+00:00",
    "url": "https://www.youtube.com/watch?v=T8LOjY7uM8A",
    "shorts": false,
-   "views": 254469,
-   "likes": 3337,
-   "viewsGain": 224,
+   "views": 256857,
+   "likes": 3349,
+   "viewsGain": 2388,
    "isNew": false,
-   "median": 72084,
-   "multiple": 3.5
+   "median": 72226,
+   "multiple": 3.6
   },
   {
    "id": "VCrDlYW4s98",
@@ -50,11 +50,11 @@
    "published": "2026-10-28T09:38:38+00:00",
    "url": "https://www.youtube.com/watch?v=VCrDlYW4s98",
    "shorts": false,
-   "views": 41701,
+   "views": 41715,
    "likes": 884,
-   "viewsGain": 3,
+   "viewsGain": 14,
    "isNew": false,
-   "median": 72084,
+   "median": 72226,
    "multiple": 0.6
   },
   {
@@ -63,11 +63,11 @@
    "published": "2026-10-27T08:54:51+00:00",
    "url": "https://www.youtube.com/watch?v=SYpmi4jnRJA",
    "shorts": false,
-   "views": 72084,
-   "likes": 1094,
-   "viewsGain": -3,
+   "views": 72226,
+   "likes": 1093,
+   "viewsGain": 142,
    "isNew": false,
-   "median": 72084,
+   "median": 72226,
    "multiple": 1.0
   },
   {
@@ -76,11 +76,11 @@
    "published": "2026-10-26T10:33:18+00:00",
    "url": "https://www.youtube.com/watch?v=2KjngjLjWIM",
    "shorts": false,
-   "views": 37380,
-   "likes": 1114,
-   "viewsGain": 8,
+   "views": 37386,
+   "likes": 1115,
+   "viewsGain": 6,
    "isNew": false,
-   "median": 72084,
+   "median": 72226,
    "multiple": 0.5
   },
   {
@@ -89,11 +89,11 @@
    "published": "2026-10-25T10:30:05+00:00",
    "url": "https://www.youtube.com/watch?v=0r6jiNTzI8U",
    "shorts": false,
-   "views": 79592,
-   "likes": 1180,
-   "viewsGain": 0,
+   "views": 79633,
+   "likes": 1181,
+   "viewsGain": 41,
    "isNew": false,
-   "median": 72084,
+   "median": 72226,
    "multiple": 1.1
   },
   {
@@ -102,11 +102,11 @@
    "published": "2026-10-24T10:54:42+00:00",
    "url": "https://www.youtube.com/watch?v=e0HpxlENq_o",
    "shorts": false,
-   "views": 62982,
+   "views": 62987,
    "likes": 1701,
-   "viewsGain": 0,
+   "viewsGain": 5,
    "isNew": false,
-   "median": 72084,
+   "median": 72226,
    "multiple": 0.9
   },
   {
@@ -115,11 +115,11 @@
    "published": "2026-10-23T09:55:11+00:00",
    "url": "https://www.youtube.com/watch?v=RN2I4tb0slE",
    "shorts": false,
-   "views": 71642,
+   "views": 71662,
    "likes": 1751,
-   "viewsGain": 2,
+   "viewsGain": 20,
    "isNew": false,
-   "median": 72084,
+   "median": 72226,
    "multiple": 1.0
   },
   {
@@ -128,11 +128,11 @@
    "published": "2026-10-22T10:52:08+00:00",
    "url": "https://www.youtube.com/watch?v=L2J9kPaoXlI",
    "shorts": false,
-   "views": 133081,
-   "likes": 2330,
-   "viewsGain": 0,
+   "views": 133187,
+   "likes": 2335,
+   "viewsGain": 106,
    "isNew": false,
-   "median": 72084,
+   "median": 72226,
    "multiple": 1.8
   },
   {
@@ -143,9 +143,9 @@
    "shorts": false,
    "views": 175267,
    "likes": 2094,
-   "viewsGain": 1,
+   "viewsGain": 0,
    "isNew": false,
-   "median": 72084,
+   "median": 72226,
    "multiple": 2.4
   },
   {
@@ -154,11 +154,11 @@
    "published": "2026-10-20T10:36:44+00:00",
    "url": "https://www.youtube.com/watch?v=p9Iz0YNQT4M",
    "shorts": false,
-   "views": 65452,
+   "views": 65463,
    "likes": 1504,
-   "viewsGain": 2,
+   "viewsGain": 11,
    "isNew": false,
-   "median": 72084,
+   "median": 72226,
    "multiple": 0.9
   },
   {
@@ -167,11 +167,11 @@
    "published": "2026-10-19T11:06:07+00:00",
    "url": "https://www.youtube.com/watch?v=QJ7HJbWtzEs",
    "shorts": false,
-   "views": 197485,
+   "views": 197507,
    "likes": 1558,
-   "viewsGain": 0,
+   "viewsGain": 22,
    "isNew": false,
-   "median": 72084,
+   "median": 72226,
    "multiple": 2.7
   },
   {
@@ -180,11 +180,11 @@
    "published": "2026-10-18T10:50:10+00:00",
    "url": "https://www.youtube.com/watch?v=65q91cUSHGs",
    "shorts": false,
-   "views": 84446,
+   "views": 84458,
    "likes": 1100,
-   "viewsGain": -2,
+   "viewsGain": 12,
    "isNew": false,
-   "median": 72084,
+   "median": 72226,
    "multiple": 1.2
   },
   {
@@ -193,11 +193,11 @@
    "published": "2026-10-17T10:41:31+00:00",
    "url": "https://www.youtube.com/watch?v=oojzHDPGGFw",
    "shorts": false,
-   "views": 320155,
+   "views": 320224,
    "likes": 2709,
-   "viewsGain": -23,
+   "viewsGain": 69,
    "isNew": false,
-   "median": 72084,
+   "median": 72226,
    "multiple": 4.4
   }
  ],
@@ -205,21 +205,21 @@
   {
    "title": "손흥민 케인 한 시대의 낭만 - 토트넘의 가장 아름답던 시절을 관통하는 손케 듀오",
    "url": "https://www.youtube.com/watch?v=oojzHDPGGFw",
-   "views": 320155,
+   "views": 320224,
    "multiple": 4.4,
    "shorts": false
   },
   {
    "title": "손흥민 존중은 베테랑을 향한 마땅한 기본 - 황희찬의 하이파이브 무시와 엄지성 대표팀 발탁",
    "url": "https://www.youtube.com/watch?v=T8LOjY7uM8A",
-   "views": 254469,
-   "multiple": 3.5,
+   "views": 256857,
+   "multiple": 3.6,
    "shorts": false
   },
   {
    "title": "손흥민 케인 끝나지 않은 레전드 서사 - 토트넘 꼴찌 추락과 뮌헨의 계약서에 넣은 조항",
    "url": "https://www.youtube.com/watch?v=QJ7HJbWtzEs",
-   "views": 197485,
+   "views": 197507,
    "multiple": 2.7,
    "shorts": false
   },
