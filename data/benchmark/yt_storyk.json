@@ -3,7 +3,7 @@
  "name": "스토리K (손흥민 레전드 비교 특집 벤치마킹, 10/31)",
  "channel": "https://www.youtube.com/@story_k",
  "channelId": "UCqzNZeBt0546jG-vDlAQlZg",
- "checkedAt": "2026-11-01T22:27+09:00",
+ "checkedAt": "2026-11-02T08:26+09:00",
  "videos": [
   {
    "id": "hW2vyayJmLc",
@@ -11,12 +11,12 @@
    "published": "2026-11-01T10:10:44+00:00",
    "url": "https://www.youtube.com/watch?v=hW2vyayJmLc",
    "shorts": false,
-   "views": 18520,
-   "likes": 1044,
-   "viewsGain": 17266,
+   "views": 72531,
+   "likes": 1571,
+   "viewsGain": 54011,
    "isNew": false,
-   "median": 72226,
-   "multiple": 0.3
+   "median": 72531,
+   "multiple": 1.0
   },
   {
    "id": "kUd8n4RkZwI",
@@ -24,11 +24,11 @@
    "published": "2026-10-30T10:55:36+00:00",
    "url": "https://www.youtube.com/watch?v=kUd8n4RkZwI",
    "shorts": false,
-   "views": 65249,
-   "likes": 1628,
-   "viewsGain": 418,
+   "views": 65895,
+   "likes": 1638,
+   "viewsGain": 646,
    "isNew": false,
-   "median": 72226,
+   "median": 72531,
    "multiple": 0.9
   },
   {
@@ -37,11 +37,11 @@
    "published": "2026-10-29T10:21:36+00:00",
    "url": "https://www.youtube.com/watch?v=T8LOjY7uM8A",
    "shorts": false,
-   "views": 256857,
-   "likes": 3349,
-   "viewsGain": 2388,
+   "views": 259938,
+   "likes": 3380,
+   "viewsGain": 3081,
    "isNew": false,
-   "median": 72226,
+   "median": 72531,
    "multiple": 3.6
   },
   {
@@ -50,11 +50,11 @@
    "published": "2026-10-28T09:38:38+00:00",
    "url": "https://www.youtube.com/watch?v=VCrDlYW4s98",
    "shorts": false,
-   "views": 41715,
-   "likes": 884,
-   "viewsGain": 14,
+   "views": 41794,
+   "likes": 885,
+   "viewsGain": 79,
    "isNew": false,
-   "median": 72226,
+   "median": 72531,
    "multiple": 0.6
   },
   {
@@ -63,11 +63,11 @@
    "published": "2026-10-27T08:54:51+00:00",
    "url": "https://www.youtube.com/watch?v=SYpmi4jnRJA",
    "shorts": false,
-   "views": 72226,
+   "views": 72416,
    "likes": 1093,
-   "viewsGain": 142,
+   "viewsGain": 190,
    "isNew": false,
-   "median": 72226,
+   "median": 72531,
    "multiple": 1.0
   },
   {
@@ -76,11 +76,11 @@
    "published": "2026-10-26T10:33:18+00:00",
    "url": "https://www.youtube.com/watch?v=2KjngjLjWIM",
    "shorts": false,
-   "views": 37386,
+   "views": 37426,
    "likes": 1115,
-   "viewsGain": 6,
+   "viewsGain": 40,
    "isNew": false,
-   "median": 72226,
+   "median": 72531,
    "multiple": 0.5
   },
   {
@@ -89,11 +89,11 @@
    "published": "2026-10-25T10:30:05+00:00",
    "url": "https://www.youtube.com/watch?v=0r6jiNTzI8U",
    "shorts": false,
-   "views": 79633,
-   "likes": 1181,
-   "viewsGain": 41,
+   "views": 79699,
+   "likes": 1182,
+   "viewsGain": 66,
    "isNew": false,
-   "median": 72226,
+   "median": 72531,
    "multiple": 1.1
   },
   {
@@ -102,11 +102,11 @@
    "published": "2026-10-24T10:54:42+00:00",
    "url": "https://www.youtube.com/watch?v=e0HpxlENq_o",
    "shorts": false,
-   "views": 62987,
+   "views": 63018,
    "likes": 1701,
-   "viewsGain": 5,
+   "viewsGain": 31,
    "isNew": false,
-   "median": 72226,
+   "median": 72531,
    "multiple": 0.9
   },
   {
@@ -115,11 +115,11 @@
    "published": "2026-10-23T09:55:11+00:00",
    "url": "https://www.youtube.com/watch?v=RN2I4tb0slE",
    "shorts": false,
-   "views": 71662,
+   "views": 71701,
    "likes": 1751,
-   "viewsGain": 20,
+   "viewsGain": 39,
    "isNew": false,
-   "median": 72226,
+   "median": 72531,
    "multiple": 1.0
   },
   {
@@ -128,11 +128,11 @@
    "published": "2026-10-22T10:52:08+00:00",
    "url": "https://www.youtube.com/watch?v=L2J9kPaoXlI",
    "shorts": false,
-   "views": 133187,
-   "likes": 2335,
-   "viewsGain": 106,
+   "views": 133377,
+   "likes": 2336,
+   "viewsGain": 190,
    "isNew": false,
-   "median": 72226,
+   "median": 72531,
    "multiple": 1.8
   },
   {
@@ -141,11 +141,11 @@
    "published": "2026-10-21T10:36:13+00:00",
    "url": "https://www.youtube.com/watch?v=oZSmAgUgpIw",
    "shorts": false,
-   "views": 175267,
+   "views": 175306,
    "likes": 2094,
-   "viewsGain": 0,
+   "viewsGain": 39,
    "isNew": false,
-   "median": 72226,
+   "median": 72531,
    "multiple": 2.4
   },
   {
@@ -154,11 +154,11 @@
    "published": "2026-10-20T10:36:44+00:00",
    "url": "https://www.youtube.com/watch?v=p9Iz0YNQT4M",
    "shorts": false,
-   "views": 65463,
+   "views": 65501,
    "likes": 1504,
-   "viewsGain": 11,
+   "viewsGain": 38,
    "isNew": false,
-   "median": 72226,
+   "median": 72531,
    "multiple": 0.9
   },
   {
@@ -167,11 +167,11 @@
    "published": "2026-10-19T11:06:07+00:00",
    "url": "https://www.youtube.com/watch?v=QJ7HJbWtzEs",
    "shorts": false,
-   "views": 197507,
-   "likes": 1558,
-   "viewsGain": 22,
+   "views": 197534,
+   "likes": 1559,
+   "viewsGain": 27,
    "isNew": false,
-   "median": 72226,
+   "median": 72531,
    "multiple": 2.7
   },
   {
@@ -180,11 +180,11 @@
    "published": "2026-10-18T10:50:10+00:00",
    "url": "https://www.youtube.com/watch?v=65q91cUSHGs",
    "shorts": false,
-   "views": 84458,
+   "views": 84481,
    "likes": 1100,
-   "viewsGain": 12,
+   "viewsGain": 23,
    "isNew": false,
-   "median": 72226,
+   "median": 72531,
    "multiple": 1.2
   },
   {
@@ -193,11 +193,11 @@
    "published": "2026-10-17T10:41:31+00:00",
    "url": "https://www.youtube.com/watch?v=oojzHDPGGFw",
    "shorts": false,
-   "views": 320224,
-   "likes": 2709,
-   "viewsGain": 69,
+   "views": 320327,
+   "likes": 2708,
+   "viewsGain": 103,
    "isNew": false,
-   "median": 72226,
+   "median": 72531,
    "multiple": 4.4
   }
  ],
@@ -205,28 +205,28 @@
   {
    "title": "손흥민 케인 한 시대의 낭만 - 토트넘의 가장 아름답던 시절을 관통하는 손케 듀오",
    "url": "https://www.youtube.com/watch?v=oojzHDPGGFw",
-   "views": 320224,
+   "views": 320327,
    "multiple": 4.4,
    "shorts": false
   },
   {
    "title": "손흥민 존중은 베테랑을 향한 마땅한 기본 - 황희찬의 하이파이브 무시와 엄지성 대표팀 발탁",
    "url": "https://www.youtube.com/watch?v=T8LOjY7uM8A",
-   "views": 256857,
+   "views": 259938,
    "multiple": 3.6,
    "shorts": false
   },
   {
    "title": "손흥민 케인 끝나지 않은 레전드 서사 - 토트넘 꼴찌 추락과 뮌헨의 계약서에 넣은 조항",
    "url": "https://www.youtube.com/watch?v=QJ7HJbWtzEs",
-   "views": 197507,
+   "views": 197534,
    "multiple": 2.7,
    "shorts": false
   },
   {
    "title": "한국축구 운명 바꿀 모레노 명단 - 독일도 주목한 손흥민 옌스 조합과 드디어 복귀 임박",
    "url": "https://www.youtube.com/watch?v=oZSmAgUgpIw",
-   "views": 175267,
+   "views": 175306,
    "multiple": 2.4,
    "shorts": false
   }
