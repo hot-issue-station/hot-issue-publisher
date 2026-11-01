@@ -17,7 +17,15 @@ title = (re.search(r'<meta property="og:title" content="([^"]*)"', html) or [Non
 desc = (re.search(r'<meta property="og:description" content="([^"]*)"', html) or [None, ""])[1]
 vc = re.search(r'동영상 ([\d.,]+[천만]?)개', html)
 subs, vids = w.channel(url)
-out = {"channel": title, "url": url, "description": desc, "subscribers": subs,
+kw = (re.search(r'<meta name="keywords" content="([^"]*)"', html) or [None, ""])[1]
+links = re.findall(r'"channelExternalLinkViewModel":\{"title":\{"content":"([^"]*)"\},"link":\{"content":"([^"]*)"', html)
+banner = '"banner":' in html or "pageHeaderBannerViewModel" in html
+try:
+    pl = w.get(url + "/playlists?hl=ko&gl=KR"); playlists = len(set(re.findall(r'"playlistId":"(PL[\w-]+)"', pl)))
+except Exception:
+    playlists = None
+handle = (re.search(r'"canonicalBaseUrl":"/(@[^"]+)"', html) or [None, ""])[1]
+out = {"keywords": kw, "links": links, "banner": banner, "playlists": playlists, "handle": handle, "channel": title, "url": url, "description": desc, "subscribers": subs,
        "videoCount": vc.group(1) if vc else None, "videos": vids}
 p = pathlib.Path(f"data/probe/{name}.json"); p.parent.mkdir(parents=True, exist_ok=True)
 p.write_text(json.dumps(out, ensure_ascii=False, indent=1), encoding="utf-8")
