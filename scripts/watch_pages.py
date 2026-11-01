@@ -73,6 +73,14 @@ def parse(data, kind, seen):
             s = d["videoRenderer"]
             vid, title, views = s.get("videoId"), txt(s.get("title")), txt(s.get("viewCountText"))
             views += " | " + txt(s.get("publishedTimeText"))
+        elif "lockupViewModel" in d and d["lockupViewModel"].get("contentType", "").endswith("VIDEO"):
+            s = d["lockupViewModel"]; vid = s.get("contentId")
+            md = s.get("metadata", {}).get("lockupMetadataViewModel", {})
+            title = md.get("title", {}).get("content", "")
+            parts = [t.get("text", {}).get("content", "") for r in md.get("metadata", {}).get("contentMetadataViewModel", {}).get("metadataRows", []) for t in r.get("metadataParts", [])]
+            vtxt = next((x for x in parts if "조회수" in x or "views" in x), "")
+            ptxt = next((x for x in parts if "전" in x or "ago" in x), "")
+            views = vtxt + " | " + ptxt
         else:
             continue
         if not vid or vid in seen:
