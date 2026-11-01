@@ -1,0 +1,51 @@
+{
+ "date": "2026-11-01",
+ "slot": "NT",
+ "category": "주말 결과 · 음악방송",
+ "topic": "엔믹스 '긴 소원', 주말 음방 두 번 1위 후보",
+ "hook": "엔믹스, 주말 음방\n두 번 1위 후보",
+ "sub": "음악중심 4,673점·인기가요 4,047점으로 2위였어요",
+ "photo": "assets/thumbs/nmixx_wish_perf.jpg",
+ "photoPos": "66% 30%",
+ "photoLabel": "영상 화면 · SBS KPOP 공식 유튜브",
+ "summary": "엔믹스가 미니 6집 타이틀곡 '긴 소원'으로 이번 주말 음악방송 두 곳에서 1위 후보에 올랐어요.",
+ "facts": [
+  {
+   "title": "음악중심 4,673점, 2위",
+   "desc": "10월 31일 MBC 쇼! 음악중심에서 A2O LITE(6,557점), IVE(3,978점)와 함께 1위 후보에 올라 2위를 했어요.",
+   "source": "톱스타뉴스 · 2026.11.01",
+   "photo": "assets/thumbs/nmixx_wish_mc.jpg",
+   "photoPos": "50% 25%",
+   "photoLabel": "영상 화면 · MBCkpop 공식 유튜브"
+  },
+  {
+   "title": "인기가요 4,047점, 2위",
+   "desc": "11월 1일 SBS 인기가요에서도 A2O LITE(6,576점), IVE(3,735점)와 1위 후보에 올라 2위를 했어요.",
+   "source": "톱스타뉴스 · 일간스포츠 · 2026.11.01",
+   "photo": "assets/thumbs/nmixx_wish_perf.jpg",
+   "photoPos": "50% 30%",
+   "photoLabel": "영상 화면 · SBS KPOP 공식 유튜브"
+  },
+  {
+   "title": "멜론 TOP100 최고 5위",
+   "desc": "10월 19일 발매 당일 34위로 그룹 최고 진입 기록을 쓰고, 20일 0시에는 5위까지 올랐어요.",
+   "source": "텐아시아 · 2026.10.20",
+   "photo": "assets/thumbs/nmixx_wish.jpg",
+   "photoPos": "50% 80%",
+   "photoLabel": "영상 화면 · JYP Entertainment 공식 유튜브"
+  }
+ ],
+ "interp": "1위 후보 두 번, 한 걸음씩 쌓는 시간",
+ "interpSub": "규진의 첫 작곡 참여처럼, 엔믹스는 곡마다 한 뼘씩 자라는 중이에요.",
+ "sources": [
+  {"outlet": "톱스타뉴스", "title": "A2O LITE, 방송 출연 없이 '쇼! 음악중심' 1위…'NEON' 음악방송 7관왕 달성", "date": "2026.11.01", "url": "https://www.topstarnews.net/news/articleView.html?idxno=16265004"},
+  {"outlet": "톱스타뉴스", "title": "A2O LITE, '인기가요' 2주 연속 1위…'NEON' 음악방송 8관왕 달성", "date": "2026.11.01", "url": "https://www.topstarnews.net/news/articleView.html?idxno=16265047"},
+  {"outlet": "일간스포츠", "title": "A2O 라이트, 아이브도 꺾었다… '인기가요' 2주 연속 1위에 \"이수만 선생님!\"", "date": "2026.11.01", "url": "https://isplus.com/article/view/isp202611010136"},
+  {"outlet": "텐아시아", "title": "엔믹스, 딱 맞는 가을옷 입더니…컴백하자마자 멜론 '톱100' 5위", "date": "2026.10.20", "url": "https://www.tenasia.co.kr/article/2026102028934"},
+  {"outlet": "일간스포츠", "title": "엔믹스 \"'스트레인지 뮤즈', 다름으로 세상에 전하는 이야기\" [일문일답]", "date": "2026.10.19", "url": "https://isplus.com/article/view/isp202610190036"},
+  {"outlet": "더팩트", "title": "엔믹스 \"'긴 소원' 통해 소중한 순간의 감정 닿길\"(일문일답)", "date": "2026.10.19", "url": "https://news.tf.co.kr/read/ogmeta/2378089.htm"}
+ ],
+ "cta": "엔믹스 소식 놓치지 않게 저장해 두세요",
+ "caption": "엔믹스 '긴 소원', 주말 음방 두 번 1위 후보\n10월 31일 음악중심 4,673점, 11월 1일 인기가요 4,047점으로 두 번 모두 2위를 했어요. 미니 6집 'Strange Muse' 타이틀곡이에요.\n\n이미지 출처: SBS KPOP · MBCkpop · JYP Entertainment 공식 유튜브 영상 화면\n\n#엔믹스 #NMIXX #긴소원 #이슈브리프 #오늘의이슈",
+ "big": {"number": "2", "lines": ["번,", "주말 음방", "*1위 후보*"], "caption": "10/31 음악중심 · 11/1 인기가요", "icon": "music"}
+}
