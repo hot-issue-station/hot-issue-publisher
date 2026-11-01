@@ -207,7 +207,7 @@ def main():
     a = ap.parse_args()
     if a.mux:
         dur = float(subprocess.check_output(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", a.mux]).strip())
-        tmp = OUT / f"_{a.theme}_{dur:.1f}.m4a"
+        tmp = pathlib.Path(tempfile.gettempdir()) / f"_{a.theme}_{dur:.1f}.m4a"
         save(finish((news if a.theme == "news" else calm)(dur), dur), tmp)
         subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", a.mux, "-i", str(tmp), "-map", "0:v", "-map", "1:a", "-c:v", "copy",
                         "-c:a", "aac", "-shortest", a.out], check=True)
