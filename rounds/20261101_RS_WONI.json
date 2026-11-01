@@ -1,0 +1,71 @@
+{
+ "date": "2026-11-01",
+ "slot": "RS",
+ "category": "리센느 응원 특집 · 안원잘부",
+ "topic": "안원잘부 '원이를 찾아서 (특별편)'",
+ "hook": "원이를 찾아서\n(특별편)",
+ "hookCover": "원이를 찾아서\n(특별편)",
+ "sub": "다이어리 공장에서 도자기 공방까지",
+ "photo": "assets/rescene/woni1101/seven.jpg",
+ "photoPos": "50% 35%",
+ "photoLabel": "영상 화면 · 안원잘부 유튜브",
+ "big": {
+  "number": "84",
+  "lines": [
+   "만 회,",
+   "*공개 당일*",
+   "*특별편*"
+  ],
+  "caption": "11월 1일 밤 9시 39분 확인 · 좋아요 4.8만",
+  "icon": "heart"
+ },
+ "summary": "리센느 원이의 채널 '안원잘부'에 새 영상 「원이를 찾아서 (특별편)」이 올라왔어요. 원이를 찾아 다이어리 공장과 도자기 공방을 찾아가요.",
+ "facts": [
+  {
+   "title": "다이어리 공장의 '정 씨'",
+   "desc": "첫 코스는 다이어리 공장. 원이를 쏙 빼닮은 작업자 '정 씨'가 \"한 7년 됐나?\" 하며 능청스럽게 맞아 줘요.",
+   "source": "안원잘부 유튜브 · 2026.11.01",
+   "photo": "assets/rescene/woni1101/forklift.jpg",
+   "photoPos": "50% 40%",
+   "photoLabel": "영상 화면 · 안원잘부 유튜브"
+  },
+  {
+   "title": "\"정 씨, 이건 또 뭡니까?\"",
+   "desc": "인쇄기와 공장 곳곳을 둘러보며 주고받는 티키타카가 첫 번째 웃음 포인트예요.",
+   "source": "안원잘부 유튜브 · 2026.11.01",
+   "photo": "assets/rescene/woni1101/machine.jpg",
+   "photoPos": "100% 30%",
+   "photoLabel": "영상 화면 · 안원잘부 유튜브"
+  },
+  {
+   "title": "도자기 공방의 '정 작가'",
+   "desc": "다음 코스는 도자기 공방. 이번엔 '정 작가'와 함께 물레를 돌려 '그립감 좋은 컵'에 도전해요.",
+   "source": "안원잘부 유튜브 · 2026.11.01",
+   "photo": "assets/rescene/woni1101/jakga.jpg",
+   "photoPos": "50% 40%",
+   "photoLabel": "영상 화면 · 안원잘부 유튜브"
+  },
+  {
+   "title": "안원잘부 '그립감 좋은 컵'",
+   "desc": "영상 끝에는 손가락 자국을 살린 초록 컵이 공개됐어요. 자세한 내용은 helloiamwoni.com에서 볼 수 있어요.",
+   "source": "안원잘부 유튜브 · 2026.11.01",
+   "photo": "assets/rescene/woni1101/cup.jpg",
+   "photoPos": "50% 50%",
+   "photoLabel": "영상 화면 · 안원잘부 유튜브"
+  }
+ ],
+ "interp": "어디에나 있는 원이?",
+ "interpSub": "가는 곳마다 '정 씨', '정 작가'를 만나는 능청스러운 설정에 공개 당일에만 84만 회(밤 9시 39분 기준). 이틀 뒤 11월 3일 오후 6시에는 미니 4집 'PULSE'가 나와요.",
+ "sources": [
+  {
+   "outlet": "안원잘부 유튜브",
+   "title": "원이를 찾아서 (특별편)",
+   "date": "2026.11.01 · 21:39 조회수 84만 회 확인",
+   "url": "https://www.youtube.com/watch?v=Ky4R8o5cTKQ"
+  }
+ ],
+ "cta": "다음 원이도\n*같이 찾아봐요*",
+ "caption": "(확정 뒤 기사형 소개글)",
+ "coverNote": "조회수 기록 · 11월 1일 밤 9시 39분 84만 회 확인",
+ "photoLabelUp": 80
+}
