@@ -16,6 +16,8 @@ jobs:
       - uses: actions/setup-python@v5
         with: { python-version: "3.11" }
       - run: pip install -q pillow && python scripts/watch_youtube.py || true
+      - name: 채널 페이지 조회수 (우리 채널·리센느·벤치마킹)
+        run: python scripts/watch_pages.py || true
       - name: 벤치마킹 채널
         run: python scripts/watch_bench_youtube.py || true
       - name: Threads 통계
