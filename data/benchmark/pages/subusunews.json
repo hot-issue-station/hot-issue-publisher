@@ -1,17 +1,17 @@
 {
  "name": "스브스뉴스 (SBS)",
  "channel": "https://www.youtube.com/@subusunews",
- "checkedAt": "2026-11-01T14:40+09:00",
+ "checkedAt": "2026-11-01T19:16+09:00",
  "subscribers": "144만",
  "videos": [
   {
    "id": "X9iSvXsLJuY",
    "title": "\"나 촉법이라 괜찮아\" 이제 안 통한다? #촉법소년 #shorts #스브스뉴스",
-   "views": 4100,
-   "viewsText": "조회수 4.1천회",
+   "views": 4200,
+   "viewsText": "조회수 4.2천회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 100
   },
   {
    "id": "ernsQIVrBi4",
@@ -20,7 +20,7 @@
    "viewsText": "조회수 6.2천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "cIV-athgSaM",
@@ -34,20 +34,20 @@
   {
    "id": "A6pfGRrFOzE",
    "title": "아이폰 듀오 화면 결함 인정한 애플, 무상 교체 발표했지만 재고 부족 #아이폰듀오 #shorts #스브스뉴스",
-   "views": 13000,
-   "viewsText": "조회수 1.3만회",
+   "views": 14000,
+   "viewsText": "조회수 1.4만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 1000
   },
   {
    "id": "-fLcCSNSD34",
    "title": "1인 1음료 진짜 필수인지 카페 사장님들한테 직접 물어봤습니다. #카페 #shorts #스브스뉴스",
-   "views": 210000,
-   "viewsText": "조회수 21만회",
+   "views": 230000,
+   "viewsText": "조회수 23만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 20000
   },
   {
    "id": "4oWBAsVpDDw",

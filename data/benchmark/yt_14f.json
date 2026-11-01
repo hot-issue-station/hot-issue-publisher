@@ -3,20 +3,46 @@
  "name": "14F 일사에프 (MBC)",
  "channel": "https://www.youtube.com/@14FMBC",
  "channelId": "UCLKuglhGlMmDteQKoniENIQ",
- "checkedAt": "2026-10-31T22:26+09:00",
+ "checkedAt": "2026-11-01T19:16+09:00",
  "videos": [
+  {
+   "id": "peSpC5kd2t0",
+   "title": "홍채로도 운세를 볼 수 있다? #shorts",
+   "published": "2026-11-01T04:00:36+00:00",
+   "url": "https://www.youtube.com/shorts/peSpC5kd2t0",
+   "shorts": true,
+   "views": 2533,
+   "likes": 16,
+   "viewsGain": null,
+   "isNew": true,
+   "median": 5018.5,
+   "multiple": 0.5
+  },
+  {
+   "id": "sf-JTKYvrxw",
+   "title": "사상 최대 규모의 앤트로픽 상장ㅣ넷플릭스 주가 하락 이유 등 4가지 🥬경제 이슈🥬",
+   "published": "2026-11-01T04:00:02+00:00",
+   "url": "https://www.youtube.com/watch?v=sf-JTKYvrxw",
+   "shorts": false,
+   "views": 27315,
+   "likes": 169,
+   "viewsGain": null,
+   "isNew": true,
+   "median": 49820,
+   "multiple": 0.5
+  },
   {
    "id": "yoyqnf-PE30",
    "title": "우리 집 강아지의 전생을 알 수 있다? #shorts",
    "published": "2026-10-31T04:00:23+00:00",
    "url": "https://www.youtube.com/shorts/yoyqnf-PE30",
    "shorts": true,
-   "views": 2134,
-   "likes": 14,
-   "viewsGain": 180,
+   "views": 4005,
+   "likes": 18,
+   "viewsGain": 1871,
    "isNew": false,
-   "median": 4703.0,
-   "multiple": 0.5
+   "median": 5018.5,
+   "multiple": 0.8
   },
   {
    "id": "ZUqM6arduYw",
@@ -24,12 +50,12 @@
    "published": "2026-10-31T04:00:20+00:00",
    "url": "https://www.youtube.com/watch?v=ZUqM6arduYw",
    "shorts": false,
-   "views": 21237,
-   "likes": 96,
-   "viewsGain": 1911,
+   "views": 32793,
+   "likes": 124,
+   "viewsGain": 11556,
    "isNew": false,
-   "median": 49456,
-   "multiple": 0.4
+   "median": 49820,
+   "multiple": 0.7
   },
   {
    "id": "FV2VNAPmk-o",
@@ -37,12 +63,12 @@
    "published": "2026-10-31T03:00:07+00:00",
    "url": "https://www.youtube.com/shorts/FV2VNAPmk-o",
    "shorts": true,
-   "views": 4222,
-   "likes": 37,
-   "viewsGain": 368,
+   "views": 7365,
+   "likes": 48,
+   "viewsGain": 3143,
    "isNew": false,
-   "median": 4703.0,
-   "multiple": 0.9
+   "median": 5018.5,
+   "multiple": 1.5
   },
   {
    "id": "M_z0WM3-GO8",
@@ -50,12 +76,12 @@
    "published": "2026-10-30T23:00:09+00:00",
    "url": "https://www.youtube.com/shorts/M_z0WM3-GO8",
    "shorts": true,
-   "views": 2762,
-   "likes": 37,
-   "viewsGain": 85,
+   "views": 4130,
+   "likes": 44,
+   "viewsGain": 1368,
    "isNew": false,
-   "median": 4703.0,
-   "multiple": 0.6
+   "median": 5018.5,
+   "multiple": 0.8
   },
   {
    "id": "niGCI-aEH-A",
@@ -63,12 +89,12 @@
    "published": "2026-10-30T09:29:22+00:00",
    "url": "https://www.youtube.com/watch?v=niGCI-aEH-A",
    "shorts": false,
-   "views": 182756,
-   "likes": 543,
-   "viewsGain": 2478,
+   "views": 192493,
+   "likes": 563,
+   "viewsGain": 9737,
    "isNew": false,
-   "median": 49456,
-   "multiple": 3.7
+   "median": 49820,
+   "multiple": 3.9
   },
   {
    "id": "8O13erGECdU",
@@ -76,11 +102,11 @@
    "published": "2026-10-30T07:30:30+00:00",
    "url": "https://www.youtube.com/watch?v=8O13erGECdU",
    "shorts": false,
-   "views": 18188,
-   "likes": 75,
-   "viewsGain": 199,
+   "views": 20004,
+   "likes": 82,
+   "viewsGain": 1816,
    "isNew": false,
-   "median": 49456,
+   "median": 49820,
    "multiple": 0.4
   },
   {
@@ -89,12 +115,12 @@
    "published": "2026-10-29T23:00:22+00:00",
    "url": "https://www.youtube.com/shorts/Icvrlx6HV-Q",
    "shorts": true,
-   "views": 5184,
-   "likes": 64,
-   "viewsGain": 91,
+   "views": 5907,
+   "likes": 73,
+   "viewsGain": 723,
    "isNew": false,
-   "median": 4703.0,
-   "multiple": 1.1
+   "median": 5018.5,
+   "multiple": 1.2
   },
   {
    "id": "zHzHgad2t6c",
@@ -102,12 +128,12 @@
    "published": "2026-10-29T11:00:11+00:00",
    "url": "https://www.youtube.com/shorts/zHzHgad2t6c",
    "shorts": true,
-   "views": 9217,
-   "likes": 97,
-   "viewsGain": 137,
+   "views": 10495,
+   "likes": 109,
+   "viewsGain": 1278,
    "isNew": false,
-   "median": 4703.0,
-   "multiple": 2.0
+   "median": 5018.5,
+   "multiple": 2.1
   },
   {
    "id": "7pF-2NUb9Ws",
@@ -115,11 +141,11 @@
    "published": "2026-10-29T10:00:41+00:00",
    "url": "https://www.youtube.com/watch?v=7pF-2NUb9Ws",
    "shorts": false,
-   "views": 49456,
-   "likes": 439,
-   "viewsGain": 358,
+   "views": 52254,
+   "likes": 453,
+   "viewsGain": 2798,
    "isNew": false,
-   "median": 49456,
+   "median": 49820,
    "multiple": 1.0
   },
   {
@@ -128,11 +154,11 @@
    "published": "2026-10-28T09:41:10+00:00",
    "url": "https://www.youtube.com/watch?v=UQ1mmTmrf1k",
    "shorts": false,
-   "views": 48988,
-   "likes": 256,
-   "viewsGain": 181,
+   "views": 49820,
+   "likes": 258,
+   "viewsGain": 832,
    "isNew": false,
-   "median": 49456,
+   "median": 49820,
    "multiple": 1.0
   },
   {
@@ -141,11 +167,11 @@
    "published": "2026-10-27T10:22:11+00:00",
    "url": "https://www.youtube.com/watch?v=8eVDM6mDEs8",
    "shorts": false,
-   "views": 94442,
-   "likes": 462,
-   "viewsGain": 272,
+   "views": 96415,
+   "likes": 465,
+   "viewsGain": 1973,
    "isNew": false,
-   "median": 49456,
+   "median": 49820,
    "multiple": 1.9
   },
   {
@@ -154,11 +180,11 @@
    "published": "2026-10-27T08:30:31+00:00",
    "url": "https://www.youtube.com/watch?v=SnbTi-w5FMI",
    "shorts": false,
-   "views": 30355,
-   "likes": 118,
-   "viewsGain": 25,
+   "views": 31678,
+   "likes": 127,
+   "viewsGain": 1323,
    "isNew": false,
-   "median": 49456,
+   "median": 49820,
    "multiple": 0.6
   },
   {
@@ -167,67 +193,27 @@
    "published": "2026-10-26T10:00:22+00:00",
    "url": "https://www.youtube.com/watch?v=TSOGRM0uOa8",
    "shorts": false,
-   "views": 77323,
-   "likes": 342,
-   "viewsGain": 85,
+   "views": 77732,
+   "likes": 344,
+   "viewsGain": 409,
    "isNew": false,
-   "median": 49456,
+   "median": 49820,
    "multiple": 1.6
-  },
-  {
-   "id": "RxdtTJ7GdDM",
-   "title": "[EN] 전세계에서 퇴출됐다가 역주행 중이라는 우지 근황🥄ㅣ돈슐랭 / 14F",
-   "published": "2026-10-26T09:00:03+00:00",
-   "url": "https://www.youtube.com/watch?v=RxdtTJ7GdDM",
-   "shorts": false,
-   "views": 294035,
-   "likes": 1619,
-   "viewsGain": 183,
-   "isNew": false,
-   "median": 49456,
-   "multiple": 5.9
-  },
-  {
-   "id": "PLPCwDtdmG8",
-   "title": "4대 문명에 황하가 포함된 이유 #shorts",
-   "published": "2026-10-23T23:00:32+00:00",
-   "url": "https://www.youtube.com/shorts/PLPCwDtdmG8",
-   "shorts": true,
-   "views": 20115,
-   "likes": 195,
-   "viewsGain": 7,
-   "isNew": false,
-   "median": 4703.0,
-   "multiple": 4.3
   }
  ],
  "viral": [
   {
-   "title": "[EN] 전세계에서 퇴출됐다가 역주행 중이라는 우지 근황🥄ㅣ돈슐랭 / 14F",
-   "url": "https://www.youtube.com/watch?v=RxdtTJ7GdDM",
-   "views": 294035,
-   "multiple": 5.9,
-   "shorts": false
-  },
-  {
-   "title": "4대 문명에 황하가 포함된 이유 #shorts",
-   "url": "https://www.youtube.com/shorts/PLPCwDtdmG8",
-   "views": 20115,
-   "multiple": 4.3,
-   "shorts": true
-  },
-  {
    "title": "사전 판매 매진이었는데… 액정 갈라진다는 ‘아이폰 듀오’ 근황 / 14F",
    "url": "https://www.youtube.com/watch?v=niGCI-aEH-A",
-   "views": 182756,
-   "multiple": 3.7,
+   "views": 192493,
+   "multiple": 3.9,
    "shorts": false
   },
   {
    "title": "맥도날드 감튀는 왜 맛이 바뀌었을까 #shorts",
    "url": "https://www.youtube.com/shorts/zHzHgad2t6c",
-   "views": 9217,
-   "multiple": 2.0,
+   "views": 10495,
+   "multiple": 2.1,
    "shorts": true
   }
  ]

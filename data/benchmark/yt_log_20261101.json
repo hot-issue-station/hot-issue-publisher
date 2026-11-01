@@ -198,5 +198,167 @@
   "key": "storyk",
   "ok": false,
   "error": "HTTPError: HTTP Error 404: Not Found"
+ },
+ {
+  "at": "2026-11-01T19:16+09:00",
+  "key": "14f",
+  "ok": true,
+  "new": [
+   "peSpC5kd2t0",
+   "sf-JTKYvrxw"
+  ],
+  "top": [
+   {
+    "id": "ZUqM6arduYw",
+    "title": "산재 사망자는 줄었지만 제조업은 늘었다… 끼임 사고 예방수칙 총정리 / 14F",
+    "views": 32793,
+    "gain": 11556
+   },
+   {
+    "id": "niGCI-aEH-A",
+    "title": "사전 판매 매진이었는데… 액정 갈라진다는 ‘아이폰 듀오’ 근황 / 14F",
+    "views": 192493,
+    "gain": 9737
+   },
+   {
+    "id": "FV2VNAPmk-o",
+    "title": "미국에서 역주행 중 우지 근황 #shorts",
+    "views": 7365,
+    "gain": 3143
+   }
+  ]
+ },
+ {
+  "at": "2026-11-01T19:16+09:00",
+  "key": "subusunews",
+  "ok": true,
+  "new": [],
+  "top": [
+   {
+    "id": "vEqtdBio5f8",
+    "title": "유규선이 성공한 방법",
+    "views": 53525,
+    "gain": 2289
+   },
+   {
+    "id": "joS-5fpq2rk",
+    "title": "꿈을 가지고 있는 사람의 기분은 어떤걸까",
+    "views": 27306,
+    "gain": 1924
+   },
+   {
+    "id": "Iwlid0Rvc8M",
+    "title": "형 무슨 소리야 내가 형 절대 안 버려",
+    "views": 18678,
+    "gain": 1917
+   }
+  ]
+ },
+ {
+  "at": "2026-11-01T19:16+09:00",
+  "key": "vstudio",
+  "ok": true,
+  "new": [],
+  "top": []
+ },
+ {
+  "at": "2026-11-01T19:16+09:00",
+  "key": "syukaworld",
+  "ok": true,
+  "new": [
+   "YSdD807ghyQ",
+   "Qb-49x86cJA",
+   "V7T9aPUrdD0"
+  ],
+  "top": [
+   {
+    "id": "TF93Z8sJZok",
+    "title": "베어장에 등판한 좋좋소 사장 슈카",
+    "views": 114463,
+    "gain": 18487
+   },
+   {
+    "id": "p9PqJ61lg3w",
+    "title": "규카츠가 방송 열심히 하는 이유",
+    "views": 298814,
+    "gain": 14500
+   },
+   {
+    "id": "uTmDuvJDcMM",
+    "title": "인기와 주가가 비례하는 여의도 아저씨",
+    "views": 243333,
+    "gain": 11357
+   }
+  ]
+ },
+ {
+  "at": "2026-11-01T19:16+09:00",
+  "key": "ytn",
+  "ok": true,
+  "new": [
+   "Wbg2f6KPJ5U",
+   "cTqGF4VxIfA",
+   "0xBT93VfxG0",
+   "LbE8izPWvGw",
+   "9I_MFzJTWK0",
+   "jmAFGwJms-4",
+   "y4BEAf6VrlM",
+   "jJKYxcUlGkU",
+   "ji6gUsV4jPs",
+   "pjPBbCMF24s",
+   "H3KK0ytbMSQ",
+   "MQEwDwP3o4A",
+   "M6Lz2YsEkZ8",
+   "_sEZhVQ9DhQ",
+   "DalONCYrcFM"
+  ],
+  "top": [
+   {
+    "id": "Wbg2f6KPJ5U",
+    "title": "\"전면 항전 준비하라\"...모즈타바 명령에 중동 '일촉즉발' [이슈픽] / YTN",
+    "views": 20622,
+    "gain": null
+   },
+   {
+    "id": "9I_MFzJTWK0",
+    "title": "갑자기 '비상용품 준비' 요청 논란에…'전쟁설' 해명한 일본 방재상 [지금이뉴스] / YTN",
+    "views": 7363,
+    "gain": null
+   },
+   {
+    "id": "MQEwDwP3o4A",
+    "title": "중국산 전기차의 공습...흔들리는 안방 시장 / YTN",
+    "views": 5596,
+    "gain": null
+   }
+  ]
+ },
+ {
+  "at": "2026-11-01T19:16+09:00",
+  "key": "storyk",
+  "ok": true,
+  "new": [
+   "hW2vyayJmLc"
+  ],
+  "top": [
+   {
+    "id": "T8LOjY7uM8A",
+    "title": "손흥민 존중은 베테랑을 향한 마땅한 기본 - 황희찬의 하이파이브 무시와 엄지성 대표팀 발탁",
+    "views": 254245,
+    "gain": 15438
+   },
+   {
+    "id": "kUd8n4RkZwI",
+    "title": "손흥민 왜 다독임 대상 아닌가? - 축협의 선택과 대표팀에 애국심 볼모 잡힌 캡틴의 열망",
+    "views": 64789,
+    "gain": 4998
+   },
+   {
+    "id": "SYpmi4jnRJA",
+    "title": "손흥민 예언과 케인 발롱도르 숨은 낭만 - 토트넘 동료를 넘어서 전우애라는 찬란함",
+    "views": 72087,
+    "gain": 646
+   }
+  ]
  }
 ]

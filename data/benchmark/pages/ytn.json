@@ -1,53 +1,61 @@
 {
  "name": "YTN",
  "channel": "https://www.youtube.com/@ytnnews24",
- "checkedAt": "2026-11-01T14:40+09:00",
+ "checkedAt": "2026-11-01T19:16+09:00",
  "subscribers": "542만",
  "videos": [
   {
+   "id": "_1dvsiIJTNY",
+   "title": "\"누군가 할 때까지 나라도 한다 연기 비평\" / YTN",
+   "views": 883,
+   "viewsText": "조회수 883회",
+   "published": "",
+   "kind": "short"
+  },
+  {
    "id": "Tq2tZG89gSo",
    "title": "\"범인 찾기 중계 그만하자\"...현직 야구 캐스터 쓴소리에 야구팬 공감",
-   "views": 75000,
-   "viewsText": "조회수 7.5만회",
+   "views": 84000,
+   "viewsText": "조회수 8.4만회",
    "published": "",
    "kind": "short",
-   "gain": 2000
+   "gain": 9000
   },
   {
    "id": "Be_moGj27HM",
    "title": "배우를 좌절하게 만드는 말 / YTN",
-   "views": 5800,
-   "viewsText": "조회수 5.8천회",
+   "views": 6300,
+   "viewsText": "조회수 6.3천회",
+   "published": "",
+   "kind": "short",
+   "gain": 500
+  },
+  {
+   "id": "UR6Njhoqt1U",
+   "title": "\"제가 그렇게 울 줄 몰랐거든요\" / YTN",
+   "views": 6400,
+   "viewsText": "조회수 6.4천회",
    "published": "",
    "kind": "short",
    "gain": 200
   },
   {
-   "id": "UR6Njhoqt1U",
-   "title": "\"제가 그렇게 울 줄 몰랐거든요\" / YTN",
-   "views": 6200,
-   "viewsText": "조회수 6.2천회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
    "id": "3XqCsWz4BM8",
    "title": "잘가 부캉아 #shorts / YTN",
-   "views": 170000,
-   "viewsText": "조회수 17만회",
+   "views": 180000,
+   "viewsText": "조회수 18만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "qq_scIfvcMM",
    "title": "\"나대지 말고 내 말 들어!\" #shorts / YTN",
-   "views": 650000,
-   "viewsText": "조회수 65만회",
+   "views": 720000,
+   "viewsText": "조회수 72만회",
    "published": "",
    "kind": "short",
-   "gain": 20000
+   "gain": 70000
   },
   {
    "id": "t12jf2ir-os",
@@ -56,16 +64,16 @@
    "viewsText": "조회수 5만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "jV9G_-jbu0Q",
    "title": "경찰관의 엄청난 순간 판단 #shorts / YTN",
-   "views": 22000,
-   "viewsText": "조회수 2.2만회",
+   "views": 23000,
+   "viewsText": "조회수 2.3만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 1000
   },
   {
    "id": "2vPxDgJkYlU",
@@ -79,11 +87,11 @@
   {
    "id": "Tjl6Tgfh3bI",
    "title": "지원 유세 멈춰주세요 #shorts / YTN",
-   "views": 24000,
-   "viewsText": "조회수 2.4만회",
+   "views": 25000,
+   "viewsText": "조회수 2.5만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 1000
   },
   {
    "id": "ffwLejBkToE",
@@ -106,17 +114,17 @@
   {
    "id": "ACi-e0r_WRI",
    "title": "결국 문 닫은 스타벅스 #shorts / YTN",
-   "views": 53000,
-   "viewsText": "조회수 5.3만회",
+   "views": 54000,
+   "viewsText": "조회수 5.4만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 1000
   },
   {
    "id": "ITp8NQ1M8Zk",
    "title": "'체포하겠어' #shorts / YTN",
-   "views": 3800,
-   "viewsText": "조회수 3.8천회",
+   "views": 3900,
+   "viewsText": "조회수 3.9천회",
    "published": "",
    "kind": "short",
    "gain": 100
@@ -124,17 +132,17 @@
   {
    "id": "zcza7Mo90sY",
    "title": "뒤통수가 얼얼... #shorts / YTN",
-   "views": 51000,
-   "viewsText": "조회수 5.1만회",
+   "views": 53000,
+   "viewsText": "조회수 5.3만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 2000
   },
   {
    "id": "KAbommcCO-E",
    "title": "최악의 에너지 위기 올까? #shorts / YTN",
-   "views": 36000,
-   "viewsText": "조회수 3.6만회",
+   "views": 37000,
+   "viewsText": "조회수 3.7만회",
    "published": "",
    "kind": "short",
    "gain": 1000
@@ -142,11 +150,11 @@
   {
    "id": "RRjfcFpsNhg",
    "title": "맨발과 같이 먹는 기내식 #shorts / YTN",
-   "views": 130000,
-   "viewsText": "조회수 13만회",
+   "views": 140000,
+   "viewsText": "조회수 14만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "UqqS9DilamQ",
@@ -160,11 +168,11 @@
   {
    "id": "nmk6-J2xbgI",
    "title": "미군 지휘부 흔드는 헤그세스 #shorts / YTN",
-   "views": 76000,
-   "viewsText": "조회수 7.6만회",
+   "views": 77000,
+   "viewsText": "조회수 7.7만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 1000
   },
   {
    "id": "607SzrmrEJo",
@@ -218,16 +226,16 @@
    "viewsText": "조회수 42만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "nktkU7o_iUc",
    "title": "유머로 소비될 장면이 아닙니다 #shorts / YTN",
-   "views": 400000,
-   "viewsText": "조회수 40만회",
+   "views": 410000,
+   "viewsText": "조회수 41만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "pGHU7Yg8idQ",
@@ -250,11 +258,11 @@
   {
    "id": "r0kWQ6aWbXI",
    "title": "다이아를 품은 남성 #shorts / YTN",
-   "views": 32000,
-   "viewsText": "조회수 3.2만회",
+   "views": 33000,
+   "viewsText": "조회수 3.3만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 1000
   },
   {
    "id": "oROGSVQunFI",
@@ -295,20 +303,20 @@
   {
    "id": "l3W81GqXHYo",
    "title": "된다며! 된다며! #shorts / YTN",
-   "views": 62000,
-   "viewsText": "조회수 6.2만회",
+   "views": 72000,
+   "viewsText": "조회수 7.2만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "OeiXoIpq67A",
    "title": "무슨 일이 있었는지 아는 걸까 #shorts / YTN",
-   "views": 6200,
-   "viewsText": "조회수 6.2천회",
+   "views": 6400,
+   "viewsText": "조회수 6.4천회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 200
   },
   {
    "id": "sZwTsWTwrTI",
@@ -322,11 +330,11 @@
   {
    "id": "GNeJdyThCZc",
    "title": "소름 돋는 MC의 행동 #shorts / YTN",
-   "views": 1470000,
-   "viewsText": "조회수 147만회",
+   "views": 1530000,
+   "viewsText": "조회수 153만회",
    "published": "",
    "kind": "short",
-   "gain": 20000
+   "gain": 60000
   },
   {
    "id": "VMtSL_rFmmY",
@@ -340,26 +348,17 @@
   {
    "id": "OVisnB0Md0I",
    "title": "'11초 유세'가 남긴 의문 #shorts / YTN",
-   "views": 51000,
-   "viewsText": "조회수 5.1만회",
+   "views": 59000,
+   "viewsText": "조회수 5.9만회",
    "published": "",
    "kind": "short",
-   "gain": 2000
+   "gain": 8000
   },
   {
    "id": "xD7OcWaEKQ8",
    "title": "탈퇴까지 불러온 의혹 #shorts / YTN",
    "views": 15000,
    "viewsText": "조회수 1.5만회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "2Ew5ZDfzPsY",
-   "title": "알파벳 줍줍 타이밍일까? #shorts / YTN",
-   "views": 16000,
-   "viewsText": "조회수 1.6만회",
    "published": "",
    "kind": "short",
    "gain": 0
