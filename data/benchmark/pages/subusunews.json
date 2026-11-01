@@ -1,7 +1,7 @@
 {
  "name": "스브스뉴스 (SBS)",
  "channel": "https://www.youtube.com/@subusunews",
- "checkedAt": "2026-11-01T13:39+09:00",
+ "checkedAt": "2026-11-01T14:40+09:00",
  "subscribers": "144만",
  "videos": [
   {
@@ -16,11 +16,11 @@
   {
    "id": "ernsQIVrBi4",
    "title": "노로바이러스 소문 팩트체크 #굴 #shorts #스브스뉴스",
-   "views": 6100,
-   "viewsText": "조회수 6.1천회",
+   "views": 6200,
+   "viewsText": "조회수 6.2천회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 100
   },
   {
    "id": "cIV-athgSaM",
@@ -47,7 +47,7 @@
    "viewsText": "조회수 21만회",
    "published": "",
    "kind": "short",
-   "gain": -3000
+   "gain": 0
   },
   {
    "id": "4oWBAsVpDDw",

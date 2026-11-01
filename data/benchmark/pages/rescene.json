@@ -1,35 +1,35 @@
 {
  "name": "RESCENE 공식",
  "channel": "https://www.youtube.com/@RESCENE_official",
- "checkedAt": "2026-11-01T13:39+09:00",
+ "checkedAt": "2026-11-01T14:40+09:00",
  "subscribers": "133만",
  "videos": [
   {
    "id": "EYrU4Zphz8s",
    "title": ". ݁⋆ ꫂ᭪ ݁˖ . ݁ ˖ ݁♬⋆.˚𝄞⋆ ⋆",
-   "views": 290000,
-   "viewsText": "조회수 29만회",
+   "views": 300000,
+   "viewsText": "조회수 30만회",
    "published": "",
    "kind": "short",
-   "gain": -6000
+   "gain": 10000
   },
   {
    "id": "VeZXkwf9esM",
    "title": "날 부르는 메아리 🔊",
-   "views": 330000,
-   "viewsText": "조회수 33만회",
+   "views": 340000,
+   "viewsText": "조회수 34만회",
    "published": "",
    "kind": "short",
-   "gain": -3000
+   "gain": 10000
   },
   {
    "id": "ygE3V5CbllU",
    "title": "너라는 꿈 ✨",
-   "views": 240000,
-   "viewsText": "조회수 24만회",
+   "views": 250000,
+   "viewsText": "조회수 25만회",
    "published": "",
    "kind": "short",
-   "gain": -7000
+   "gain": 10000
   },
   {
    "id": "A5vmiFpG1yg",
@@ -38,7 +38,7 @@
    "viewsText": "조회수 49만회",
    "published": "",
    "kind": "short",
-   "gain": -4000
+   "gain": 0
   },
   {
    "id": "Es3qasE2w7w",
@@ -47,7 +47,7 @@
    "viewsText": "조회수 42만회",
    "published": "",
    "kind": "short",
-   "gain": -6000
+   "gain": 0
   },
   {
    "id": "_KseVSTX0KU",
@@ -56,7 +56,7 @@
    "viewsText": "조회수 41만회",
    "published": "",
    "kind": "short",
-   "gain": -5000
+   "gain": 0
   },
   {
    "id": "blswe0wDt8o",
@@ -65,7 +65,7 @@
    "viewsText": "조회수 57만회",
    "published": "",
    "kind": "short",
-   "gain": -4000
+   "gain": 0
   },
   {
    "id": "pekjAyOrBk4",
@@ -74,7 +74,7 @@
    "viewsText": "조회수 37만회",
    "published": "",
    "kind": "short",
-   "gain": -5000
+   "gain": 0
   },
   {
    "id": "QEeCIDjleC8",
@@ -83,7 +83,7 @@
    "viewsText": "조회수 52만회",
    "published": "",
    "kind": "short",
-   "gain": -4000
+   "gain": 0
   },
   {
    "id": "UfaJ4mbAiWc",
@@ -92,7 +92,7 @@
    "viewsText": "조회수 79만회",
    "published": "",
    "kind": "short",
-   "gain": -8000
+   "gain": 0
   },
   {
    "id": "HN7La9KN2MY",
@@ -101,7 +101,7 @@
    "viewsText": "조회수 46만회",
    "published": "",
    "kind": "short",
-   "gain": -3000
+   "gain": 0
   },
   {
    "id": "k7y2yvkFJ1k",
@@ -110,7 +110,7 @@
    "viewsText": "조회수 88만회",
    "published": "",
    "kind": "short",
-   "gain": -1000
+   "gain": 0
   },
   {
    "id": "zHwTN5Yu-mI",
@@ -119,7 +119,7 @@
    "viewsText": "조회수 85만회",
    "published": "",
    "kind": "short",
-   "gain": -1000
+   "gain": 0
   },
   {
    "id": "BRL7ag8oEO0",
@@ -128,7 +128,7 @@
    "viewsText": "조회수 26만회",
    "published": "",
    "kind": "short",
-   "gain": -4000
+   "gain": 0
   },
   {
    "id": "mrfisPt2wOk",
@@ -137,7 +137,7 @@
    "viewsText": "조회수 22만회",
    "published": "",
    "kind": "short",
-   "gain": -2000
+   "gain": 0
   },
   {
    "id": "CWEsngk-rF0",
@@ -146,7 +146,7 @@
    "viewsText": "조회수 24만회",
    "published": "",
    "kind": "short",
-   "gain": -9000
+   "gain": 0
   },
   {
    "id": "MNxIMnWhBRQ",
@@ -155,7 +155,7 @@
    "viewsText": "조회수 17만회",
    "published": "",
    "kind": "short",
-   "gain": -5000
+   "gain": 0
   },
   {
    "id": "CbsHNx-mbe0",
@@ -164,7 +164,7 @@
    "viewsText": "조회수 25만회",
    "published": "",
    "kind": "short",
-   "gain": -9000
+   "gain": 0
   },
   {
    "id": "wzgKCSJlgKw",
@@ -173,7 +173,7 @@
    "viewsText": "조회수 47만회",
    "published": "",
    "kind": "short",
-   "gain": -2000
+   "gain": 0
   },
   {
    "id": "HE9S7yp_hV0",
@@ -182,7 +182,7 @@
    "viewsText": "조회수 188만회",
    "published": "",
    "kind": "short",
-   "gain": 80000
+   "gain": 0
   },
   {
    "id": "61uE6IQ0ua4",
@@ -191,7 +191,7 @@
    "viewsText": "조회수 54만회",
    "published": "",
    "kind": "short",
-   "gain": -6000
+   "gain": 0
   },
   {
    "id": "Fm_iD_mh2ek",
@@ -200,7 +200,7 @@
    "viewsText": "조회수 53만회",
    "published": "",
    "kind": "short",
-   "gain": -6000
+   "gain": 0
   },
   {
    "id": "Cyx4FBPJqQQ",
@@ -209,7 +209,7 @@
    "viewsText": "조회수 55만회",
    "published": "",
    "kind": "short",
-   "gain": -1000
+   "gain": 0
   },
   {
    "id": "OgTCRoeYjzA",
@@ -218,7 +218,7 @@
    "viewsText": "조회수 69만회",
    "published": "",
    "kind": "short",
-   "gain": -9000
+   "gain": 0
   },
   {
    "id": "nka_cr8WxzM",
@@ -227,7 +227,7 @@
    "viewsText": "조회수 75만회",
    "published": "",
    "kind": "short",
-   "gain": -3000
+   "gain": 0
   },
   {
    "id": "H0rmUNUSA5I",
@@ -236,16 +236,16 @@
    "viewsText": "조회수 44만회",
    "published": "",
    "kind": "short",
-   "gain": -6000
+   "gain": 0
   },
   {
    "id": "txF8jHtsiSs",
    "title": "My Birthday 🎂🩶",
-   "views": 1120000,
-   "viewsText": "조회수 112만회",
+   "views": 1130000,
+   "viewsText": "조회수 113만회",
    "published": "",
    "kind": "short",
-   "gain": 20000
+   "gain": 10000
   },
   {
    "id": "YJr1crCM1Fk",
@@ -263,7 +263,7 @@
    "viewsText": "조회수 71만회",
    "published": "",
    "kind": "short",
-   "gain": -4000
+   "gain": 0
   },
   {
    "id": "qLG9tFkOhdo",
@@ -272,7 +272,7 @@
    "viewsText": "조회수 101만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "Kq3_URiv0gs",
@@ -281,7 +281,7 @@
    "viewsText": "조회수 93만회",
    "published": "",
    "kind": "short",
-   "gain": -1000
+   "gain": 0
   },
   {
    "id": "jmR6pAUw5Ps",
@@ -290,7 +290,7 @@
    "viewsText": "조회수 65만회",
    "published": "",
    "kind": "short",
-   "gain": -1000
+   "gain": 0
   },
   {
    "id": "I6eRjcPt-sk",
@@ -299,7 +299,7 @@
    "viewsText": "조회수 88만회",
    "published": "",
    "kind": "short",
-   "gain": -4000
+   "gain": 0
   },
   {
    "id": "z09sLVqJiO8",
@@ -308,7 +308,7 @@
    "viewsText": "조회수 64만회",
    "published": "",
    "kind": "short",
-   "gain": -8000
+   "gain": 0
   },
   {
    "id": "K7I57uV3vGg",
@@ -317,7 +317,7 @@
    "viewsText": "조회수 45만회",
    "published": "",
    "kind": "short",
-   "gain": -8000
+   "gain": 0
   },
   {
    "id": "3jXQnoOoEn4",
@@ -326,7 +326,7 @@
    "viewsText": "조회수 60만회",
    "published": "",
    "kind": "short",
-   "gain": -1000
+   "gain": 0
   },
   {
    "id": "Zu1iZpSHDaU",
@@ -335,7 +335,7 @@
    "viewsText": "조회수 44만회",
    "published": "",
    "kind": "short",
-   "gain": -7000
+   "gain": 0
   },
   {
    "id": "cUgqnGwCVS4",
@@ -344,7 +344,7 @@
    "viewsText": "조회수 54만회",
    "published": "",
    "kind": "short",
-   "gain": -9000
+   "gain": 0
   },
   {
    "id": "KCMpdU1gM68",
@@ -362,7 +362,7 @@
    "viewsText": "조회수 62만회",
    "published": "",
    "kind": "short",
-   "gain": -6000
+   "gain": 0
   }
  ]
 }

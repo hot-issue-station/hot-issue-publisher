@@ -1,26 +1,26 @@
 {
  "name": "YTN",
  "channel": "https://www.youtube.com/@ytnnews24",
- "checkedAt": "2026-11-01T13:39+09:00",
+ "checkedAt": "2026-11-01T14:40+09:00",
  "subscribers": "542만",
  "videos": [
   {
    "id": "Tq2tZG89gSo",
    "title": "\"범인 찾기 중계 그만하자\"...현직 야구 캐스터 쓴소리에 야구팬 공감",
-   "views": 73000,
-   "viewsText": "조회수 7.3만회",
+   "views": 75000,
+   "viewsText": "조회수 7.5만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 2000
   },
   {
    "id": "Be_moGj27HM",
    "title": "배우를 좌절하게 만드는 말 / YTN",
-   "views": 5600,
-   "viewsText": "조회수 5.6천회",
+   "views": 5800,
+   "viewsText": "조회수 5.8천회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 200
   },
   {
    "id": "UR6Njhoqt1U",
@@ -38,25 +38,25 @@
    "viewsText": "조회수 17만회",
    "published": "",
    "kind": "short",
-   "gain": -8000
+   "gain": 0
   },
   {
    "id": "qq_scIfvcMM",
    "title": "\"나대지 말고 내 말 들어!\" #shorts / YTN",
-   "views": 630000,
-   "viewsText": "조회수 63만회",
+   "views": 650000,
+   "viewsText": "조회수 65만회",
    "published": "",
    "kind": "short",
-   "gain": -7000
+   "gain": 20000
   },
   {
    "id": "t12jf2ir-os",
    "title": "겨우 연차 내고 왔는데... #shorts / YTN",
-   "views": 49000,
-   "viewsText": "조회수 4.9만회",
+   "views": 50000,
+   "viewsText": "조회수 5만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 1000
   },
   {
    "id": "jV9G_-jbu0Q",
@@ -115,11 +115,11 @@
   {
    "id": "ITp8NQ1M8Zk",
    "title": "'체포하겠어' #shorts / YTN",
-   "views": 3700,
-   "viewsText": "조회수 3.7천회",
+   "views": 3800,
+   "viewsText": "조회수 3.8천회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 100
   },
   {
    "id": "zcza7Mo90sY",
@@ -133,11 +133,11 @@
   {
    "id": "KAbommcCO-E",
    "title": "최악의 에너지 위기 올까? #shorts / YTN",
-   "views": 35000,
-   "viewsText": "조회수 3.5만회",
+   "views": 36000,
+   "viewsText": "조회수 3.6만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 1000
   },
   {
    "id": "RRjfcFpsNhg",
@@ -146,7 +146,7 @@
    "viewsText": "조회수 13만회",
    "published": "",
    "kind": "short",
-   "gain": -9000
+   "gain": 0
   },
   {
    "id": "UqqS9DilamQ",
@@ -182,7 +182,7 @@
    "viewsText": "조회수 22만회",
    "published": "",
    "kind": "short",
-   "gain": -6000
+   "gain": 0
   },
   {
    "id": "s4dV1oqhHQA",
@@ -191,7 +191,7 @@
    "viewsText": "조회수 18만회",
    "published": "",
    "kind": "short",
-   "gain": -3000
+   "gain": 0
   },
   {
    "id": "XBGN6XAyxuE",
@@ -200,7 +200,7 @@
    "viewsText": "조회수 13만회",
    "published": "",
    "kind": "short",
-   "gain": -6000
+   "gain": 0
   },
   {
    "id": "K81rq_3KIRk",
@@ -214,11 +214,11 @@
   {
    "id": "6oKTG0perCw",
    "title": "저 주시면 안 되나요 #shorts / YTN",
-   "views": 410000,
-   "viewsText": "조회수 41만회",
+   "views": 420000,
+   "viewsText": "조회수 42만회",
    "published": "",
    "kind": "short",
-   "gain": -9000
+   "gain": 10000
   },
   {
    "id": "nktkU7o_iUc",
@@ -227,7 +227,7 @@
    "viewsText": "조회수 40만회",
    "published": "",
    "kind": "short",
-   "gain": -1000
+   "gain": 0
   },
   {
    "id": "pGHU7Yg8idQ",
@@ -272,7 +272,7 @@
    "viewsText": "조회수 13만회",
    "published": "",
    "kind": "short",
-   "gain": -2000
+   "gain": 0
   },
   {
    "id": "r-7PYTfdka0",
@@ -290,7 +290,7 @@
    "viewsText": "조회수 16만회",
    "published": "",
    "kind": "short",
-   "gain": -5000
+   "gain": 0
   },
   {
    "id": "l3W81GqXHYo",
@@ -322,11 +322,11 @@
   {
    "id": "GNeJdyThCZc",
    "title": "소름 돋는 MC의 행동 #shorts / YTN",
-   "views": 1450000,
-   "viewsText": "조회수 145만회",
+   "views": 1470000,
+   "viewsText": "조회수 147만회",
    "published": "",
    "kind": "short",
-   "gain": 50000
+   "gain": 20000
   },
   {
    "id": "VMtSL_rFmmY",
@@ -340,11 +340,11 @@
   {
    "id": "OVisnB0Md0I",
    "title": "'11초 유세'가 남긴 의문 #shorts / YTN",
-   "views": 49000,
-   "viewsText": "조회수 4.9만회",
+   "views": 51000,
+   "viewsText": "조회수 5.1만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 2000
   },
   {
    "id": "xD7OcWaEKQ8",
