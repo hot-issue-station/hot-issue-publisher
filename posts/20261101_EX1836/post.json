@@ -1,0 +1,49 @@
+{
+  "version": 1,
+  "date": "2026-11-01",
+  "slot": "NT",
+  "publishAt": "2026-11-01T21:00:00+09:00",
+  "topic": "삼성, KIA 꺾고 2년 만에 한국시리즈",
+  "images": [
+    "01.jpg",
+    "02.jpg",
+    "03.jpg",
+    "04.jpg",
+    "05.jpg",
+    "06.jpg",
+    "07.jpg"
+  ],
+  "caption": "삼성, KIA 꺾고 2년 만에 한국시리즈\n삼성이 1일 플레이오프 5차전에서 KIA를 6-1로 이기고 3승 2패로 한국시리즈에 올랐어요. 후라도가 7이닝 비자책 투구로 PO MVP에 뽑혔어요. 3일 수원에서 정규시즌 1위 KT와 1차전을 치러요.\n\n이미지 출처: KBO 공식 유튜브 영상 화면\n\n#삼성라이온즈 #한국시리즈 #KBO #이슈브리프 #오늘의이슈",
+  "sources": [
+    {
+      "outlet": "파이낸셜뉴스",
+      "title": "[속보]삼성, KIA 6-1 완파하고 2년 만에 KS 진출… 3일 KT와 격돌",
+      "date": "2026.11.01",
+      "url": "https://www.fnnews.com/news/202611011639202299"
+    },
+    {
+      "outlet": "한국일보",
+      "title": "김지찬이 치고 후라도가 막았다… 삼성, '끝장 승부'서 KIA 꺾고 2년 만에 KS 진출",
+      "date": "2026.11.01",
+      "url": "https://www.hankookilbo.com/news/article/A2026110117060002194"
+    },
+    {
+      "outlet": "스포츠경향",
+      "title": "[PO5]PO에만 2승 거두며 MVP 차지한 삼성 후라도",
+      "date": "2026.11.01",
+      "url": "https://sports.khan.co.kr/article/202611011744003/"
+    },
+    {
+      "outlet": "국제뉴스",
+      "title": "[속보] 삼성, KIA 꺾고 한국시리즈 진출… KT 경기 일정은",
+      "date": "2026.11.01",
+      "url": "https://www.gukjenews.com/news/articleView.html?idxno=3738832"
+    }
+  ],
+  "reel": false,
+  "auto": {
+    "id": "20261101_EX1836",
+    "createdAt": "2026-11-01T18:50:27+09:00",
+    "vetoUntil": "2026-11-01T20:57:00+09:00"
+  }
+}
