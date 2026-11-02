@@ -34,7 +34,7 @@ jobs:
         run: |
           set -e
           echo "$SPK" | grep -Eq '^[a-z0-9_]{1,30}$'
-          openssl enc -d -aes-256-cbc -pbkdf2 -in "voice_ref/$SPK.mp3.enc" -out /tmp/ref.mp3 -pass env:VOICE_KEY
+          openssl enc -d -aes-256-cbc -pbkdf2 -in "voice_ref/$SPK.mp3.enc" -out /tmp/ref.mp3 -pass "pass:$VOICE_KEY"
           ffmpeg -v error -y -i /tmp/ref.mp3 -ac 1 -ar 22050 /tmp/ref.wav
       - name: 바꾸기
         env:
