@@ -106,11 +106,12 @@ sfont = ImageFont.truetype(FONT, 250); cfont = ImageFont.truetype(FONT, 66)
 YEL, GRN = (255, 214, 10), (70, 255, 140)
 TAPE = None
 if a.tape:
-    tp = Image.new("RGBA", (1500, 130), (0, 0, 0, 0)); td = ImageDraw.Draw(tp)
-    td.rectangle([0, 0, 1500, 130], fill=(250, 204, 21, 245))
+    TW_, TA_ = (1240, 3) if a.cards else (1500, 5)   # 여러 장 모드: 짧고 덜 기울게 → 화면 아래에서 안 잘림(대표 지적 11/2 23:42)
+    tp = Image.new("RGBA", (TW_, 130), (0, 0, 0, 0)); td = ImageDraw.Draw(tp)
+    td.rectangle([0, 0, TW_, 130], fill=(250, 204, 21, 245))
     tf = ImageFont.truetype(FONT, 76); tw_ = td.textlength(a.tape, font=tf)
-    td.text(((1500 - tw_) / 2, 12), a.tape, font=tf, fill=(20, 20, 20))
-    TAPE = tp.rotate(5, expand=True, resample=Image.BICUBIC)
+    td.text(((TW_ - tw_) / 2, 12), a.tape, font=tf, fill=(20, 20, 20))
+    TAPE = tp.rotate(TA_, expand=True, resample=Image.BICUBIC)
 WM = None
 if a.wm:
     WM = Image.open(ROOT / "assets/brand/logo_profile.png").convert("RGBA").resize((120, 120))
@@ -138,7 +139,7 @@ def hype(im, d, t):
         for s_ in starts[1:]:          # 넘어가는 순간 짧은 번쩍
             if s_ - 0.05 <= t < s_ + 0.15:
                 al_ = int(110 * (1 - (t - s_ + 0.05) / 0.2)); d.rectangle([0, 285, W, 1635], fill=(255, 255, 255, max(0, al_)))
-    if TAPE is not None and not (MULTI and t >= a.first): im.alpha_composite(TAPE, ((W - TAPE.width) // 2, 1760 if MULTI else 1640))
+    if TAPE is not None and not (MULTI and t >= a.first): im.alpha_composite(TAPE, ((W - TAPE.width) // 2, 1712 if MULTI else 1640))
     if WM is not None: im.alpha_composite(WM, (W - 150, 1500))
 fr = tmp / "fr"; fr.mkdir()
 for f in range(N):
