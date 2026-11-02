@@ -48,7 +48,9 @@ if MULTI:
     for ci, cp in enumerate(cards):
         d_ = (starts[ci + 1] - starts[ci] + X) if ci + 1 < len(cards) else (a.dur - starts[ci])
         n_ = int(round(d_ * FPS)); S = f"(min(on/{n_},1)*min(on/{n_},1)*(3-2*min(on/{n_},1)))"
-        if ci == 0: z_, x_, y_ = f"1.35-0.35*{S}", "(iw-iw/zoom)*0.1", f"(ih-ih/zoom)*(0.08+0.84*{S})"
+        if ci == 0:   # 첫 장: 사진 쪽 확대 → 55% 시점까지 전체로 빠지고 그대로 멈춤(아래 큰 제목이 잘리지 않게, 대표 지적 11/2 23:14)
+            m_ = int(n_ * 0.55); S0 = f"(min(on/{m_},1)*min(on/{m_},1)*(3-2*min(on/{m_},1)))"
+            z_, x_, y_ = f"1.35-0.35*{S0}", "(iw-iw/zoom)*0.1", f"(ih-ih/zoom)*(0.08+0.84*{S0})"
         else: z_, x_, y_ = f"1+0.06*on/{n_}", "(iw-iw/zoom)/2", "(ih-ih/zoom)/2"
         sp = tmp / f"s{ci}.mp4"; segs.append((sp, d_))
         subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", cp, "-filter_complex",
