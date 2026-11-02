@@ -3,20 +3,46 @@
  "name": "14F 일사에프 (MBC)",
  "channel": "https://www.youtube.com/@14FMBC",
  "channelId": "UCLKuglhGlMmDteQKoniENIQ",
- "checkedAt": "2026-11-02T08:26+09:00",
+ "checkedAt": "2026-11-02T19:32+09:00",
  "videos": [
+  {
+   "id": "87w5P7QW2vM",
+   "title": "밤 중에도 안전하다고… 외국인들이 깜짝 놀란다는 ‘K-편의점’/ 14F",
+   "published": "2026-11-02T10:00:06+00:00",
+   "url": "https://www.youtube.com/watch?v=87w5P7QW2vM",
+   "shorts": false,
+   "views": 2013,
+   "likes": 81,
+   "viewsGain": null,
+   "isNew": true,
+   "median": 50865,
+   "multiple": 0.0
+  },
+  {
+   "id": "eOXSE6dyRsY",
+   "title": "샤인머스캣 개발한 일본이 땅을 치고 후회하는 이유🥄ㅣ돈슐랭 / 14F",
+   "published": "2026-11-02T09:30:30+00:00",
+   "url": "https://www.youtube.com/watch?v=eOXSE6dyRsY",
+   "shorts": false,
+   "views": 6845,
+   "likes": 217,
+   "viewsGain": null,
+   "isNew": true,
+   "median": 50865,
+   "multiple": 0.1
+  },
   {
    "id": "peSpC5kd2t0",
    "title": "홍채로도 운세를 볼 수 있다? #shorts",
    "published": "2026-11-01T04:00:36+00:00",
    "url": "https://www.youtube.com/shorts/peSpC5kd2t0",
    "shorts": true,
-   "views": 5696,
-   "likes": 23,
-   "viewsGain": 1820,
+   "views": 6670,
+   "likes": 25,
+   "viewsGain": 974,
    "isNew": false,
-   "median": 6042.0,
-   "multiple": 0.9
+   "median": 6633.5,
+   "multiple": 1.0
   },
   {
    "id": "sf-JTKYvrxw",
@@ -24,12 +50,12 @@
    "published": "2026-11-01T04:00:02+00:00",
    "url": "https://www.youtube.com/watch?v=sf-JTKYvrxw",
    "shorts": false,
-   "views": 74607,
-   "likes": 365,
-   "viewsGain": 24954,
+   "views": 159649,
+   "likes": 524,
+   "viewsGain": 85042,
    "isNew": false,
-   "median": 54392,
-   "multiple": 1.4
+   "median": 50865,
+   "multiple": 3.1
   },
   {
    "id": "yoyqnf-PE30",
@@ -37,12 +63,12 @@
    "published": "2026-10-31T04:00:23+00:00",
    "url": "https://www.youtube.com/shorts/yoyqnf-PE30",
    "shorts": true,
-   "views": 4546,
+   "views": 4788,
    "likes": 19,
-   "viewsGain": 301,
+   "viewsGain": 242,
    "isNew": false,
-   "median": 6042.0,
-   "multiple": 0.8
+   "median": 6633.5,
+   "multiple": 0.7
   },
   {
    "id": "ZUqM6arduYw",
@@ -50,12 +76,12 @@
    "published": "2026-10-31T04:00:20+00:00",
    "url": "https://www.youtube.com/watch?v=ZUqM6arduYw",
    "shorts": false,
-   "views": 36779,
-   "likes": 136,
-   "viewsGain": 2109,
+   "views": 40404,
+   "likes": 153,
+   "viewsGain": 3625,
    "isNew": false,
-   "median": 54392,
-   "multiple": 0.7
+   "median": 50865,
+   "multiple": 0.8
   },
   {
    "id": "FV2VNAPmk-o",
@@ -63,12 +89,12 @@
    "published": "2026-10-31T03:00:07+00:00",
    "url": "https://www.youtube.com/shorts/FV2VNAPmk-o",
    "shorts": true,
-   "views": 9082,
-   "likes": 59,
-   "viewsGain": 1101,
+   "views": 10394,
+   "likes": 72,
+   "viewsGain": 1312,
    "isNew": false,
-   "median": 6042.0,
-   "multiple": 1.5
+   "median": 6633.5,
+   "multiple": 1.6
   },
   {
    "id": "M_z0WM3-GO8",
@@ -76,11 +102,11 @@
    "published": "2026-10-30T23:00:09+00:00",
    "url": "https://www.youtube.com/shorts/M_z0WM3-GO8",
    "shorts": true,
-   "views": 4794,
-   "likes": 55,
-   "viewsGain": 470,
+   "views": 5086,
+   "likes": 61,
+   "viewsGain": 292,
    "isNew": false,
-   "median": 6042.0,
+   "median": 6633.5,
    "multiple": 0.8
   },
   {
@@ -89,24 +115,24 @@
    "published": "2026-10-30T09:29:22+00:00",
    "url": "https://www.youtube.com/watch?v=niGCI-aEH-A",
    "shorts": false,
-   "views": 195563,
-   "likes": 574,
-   "viewsGain": 1553,
+   "views": 197488,
+   "likes": 581,
+   "viewsGain": 1925,
    "isNew": false,
-   "median": 54392,
-   "multiple": 3.6
+   "median": 50865,
+   "multiple": 3.9
   },
   {
    "id": "8O13erGECdU",
-   "title": "내 강아지 전생까지 봐준다고? 별 걸 다 보는 운세의 세계 | 선발대 / 14F",
+   "title": "예약 없이는 못 본다고?! 200명 운세 전문가 모인 운세박람회 | 선발대 / 14F",
    "published": "2026-10-30T07:30:30+00:00",
    "url": "https://www.youtube.com/watch?v=8O13erGECdU",
    "shorts": false,
-   "views": 20934,
-   "likes": 86,
-   "viewsGain": 548,
+   "views": 21405,
+   "likes": 88,
+   "viewsGain": 471,
    "isNew": false,
-   "median": 54392,
+   "median": 50865,
    "multiple": 0.4
   },
   {
@@ -115,12 +141,12 @@
    "published": "2026-10-29T23:00:22+00:00",
    "url": "https://www.youtube.com/shorts/Icvrlx6HV-Q",
    "shorts": true,
-   "views": 6388,
-   "likes": 77,
-   "viewsGain": 352,
+   "views": 6597,
+   "likes": 80,
+   "viewsGain": 209,
    "isNew": false,
-   "median": 6042.0,
-   "multiple": 1.1
+   "median": 6633.5,
+   "multiple": 1.0
   },
   {
    "id": "zHzHgad2t6c",
@@ -128,12 +154,12 @@
    "published": "2026-10-29T11:00:11+00:00",
    "url": "https://www.youtube.com/shorts/zHzHgad2t6c",
    "shorts": true,
-   "views": 11543,
-   "likes": 111,
-   "viewsGain": 704,
+   "views": 12026,
+   "likes": 117,
+   "viewsGain": 483,
    "isNew": false,
-   "median": 6042.0,
-   "multiple": 1.9
+   "median": 6633.5,
+   "multiple": 1.8
   },
   {
    "id": "7pF-2NUb9Ws",
@@ -141,12 +167,12 @@
    "published": "2026-10-29T10:00:41+00:00",
    "url": "https://www.youtube.com/watch?v=7pF-2NUb9Ws",
    "shorts": false,
-   "views": 54392,
-   "likes": 464,
-   "viewsGain": 1060,
+   "views": 55138,
+   "likes": 469,
+   "viewsGain": 746,
    "isNew": false,
-   "median": 54392,
-   "multiple": 1.0
+   "median": 50865,
+   "multiple": 1.1
   },
   {
    "id": "UQ1mmTmrf1k",
@@ -154,12 +180,12 @@
    "published": "2026-10-28T09:41:10+00:00",
    "url": "https://www.youtube.com/watch?v=UQ1mmTmrf1k",
    "shorts": false,
-   "views": 50364,
-   "likes": 259,
-   "viewsGain": 291,
+   "views": 50865,
+   "likes": 260,
+   "viewsGain": 501,
    "isNew": false,
-   "median": 54392,
-   "multiple": 0.9
+   "median": 50865,
+   "multiple": 1.0
   },
   {
    "id": "8eVDM6mDEs8",
@@ -167,46 +193,27 @@
    "published": "2026-10-27T10:22:11+00:00",
    "url": "https://www.youtube.com/watch?v=8eVDM6mDEs8",
    "shorts": false,
-   "views": 96701,
-   "likes": 466,
-   "viewsGain": 171,
+   "views": 96876,
+   "likes": 468,
+   "viewsGain": 175,
    "isNew": false,
-   "median": 54392,
-   "multiple": 1.8
-  },
-  {
-   "id": "SnbTi-w5FMI",
-   "title": "최면과 가스라이팅은 뭐가 다를까? (박준화X우충완) ㅣ10분 토론 / 14F",
-   "published": "2026-10-27T08:30:31+00:00",
-   "url": "https://www.youtube.com/watch?v=SnbTi-w5FMI",
-   "shorts": false,
-   "views": 32720,
-   "likes": 132,
-   "viewsGain": 713,
-   "isNew": false,
-   "median": 54392,
-   "multiple": 0.6
-  },
-  {
-   "id": "TSOGRM0uOa8",
-   "title": "‘잠수교’ 26일부터 차량 통행 금지… 휴식 공간으로 재탄생 / 14F",
-   "published": "2026-10-26T10:00:22+00:00",
-   "url": "https://www.youtube.com/watch?v=TSOGRM0uOa8",
-   "shorts": false,
-   "views": 78003,
-   "likes": 344,
-   "viewsGain": 170,
-   "isNew": false,
-   "median": 54392,
-   "multiple": 1.4
+   "median": 50865,
+   "multiple": 1.9
   }
  ],
  "viral": [
   {
    "title": "사전 판매 매진이었는데… 액정 갈라진다는 ‘아이폰 듀오’ 근황 / 14F",
    "url": "https://www.youtube.com/watch?v=niGCI-aEH-A",
-   "views": 195563,
-   "multiple": 3.6,
+   "views": 197488,
+   "multiple": 3.9,
+   "shorts": false
+  },
+  {
+   "title": "사상 최대 규모의 앤트로픽 상장ㅣ넷플릭스 주가 하락 이유 등 4가지 🥬경제 이슈🥬",
+   "url": "https://www.youtube.com/watch?v=sf-JTKYvrxw",
+   "views": 159649,
+   "multiple": 3.1,
    "shorts": false
   }
  ]

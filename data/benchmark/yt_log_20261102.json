@@ -187,5 +187,167 @@
   "key": "storyk",
   "ok": false,
   "error": "HTTPError: HTTP Error 404: Not Found"
+ },
+ {
+  "at": "2026-11-02T19:32+09:00",
+  "key": "14f",
+  "ok": true,
+  "new": [
+   "87w5P7QW2vM",
+   "eOXSE6dyRsY"
+  ],
+  "top": [
+   {
+    "id": "sf-JTKYvrxw",
+    "title": "사상 최대 규모의 앤트로픽 상장ㅣ넷플릭스 주가 하락 이유 등 4가지 🥬경제 이슈🥬",
+    "views": 159649,
+    "gain": 85042
+   },
+   {
+    "id": "ZUqM6arduYw",
+    "title": "산재 사망자는 줄었지만 제조업은 늘었다… 끼임 사고 예방수칙 총정리 / 14F",
+    "views": 40404,
+    "gain": 3625
+   },
+   {
+    "id": "niGCI-aEH-A",
+    "title": "사전 판매 매진이었는데… 액정 갈라진다는 ‘아이폰 듀오’ 근황 / 14F",
+    "views": 197488,
+    "gain": 1925
+   }
+  ]
+ },
+ {
+  "at": "2026-11-02T19:32+09:00",
+  "key": "subusunews",
+  "ok": true,
+  "new": [],
+  "top": [
+   {
+    "id": "HnhvHRqyqao",
+    "title": "나는 연애를 알려 줄 테니까 너는 공부를 알려줘",
+    "views": 22803,
+    "gain": 1142
+   },
+   {
+    "id": "LwLm7MrPPHA",
+    "title": "블랙페이퍼가 뽑은 올해의 커플상",
+    "views": 11586,
+    "gain": 598
+   },
+   {
+    "id": "vEqtdBio5f8",
+    "title": "유규선이 성공한 방법",
+    "views": 55505,
+    "gain": 546
+   }
+  ]
+ },
+ {
+  "at": "2026-11-02T19:32+09:00",
+  "key": "vstudio",
+  "ok": true,
+  "new": [],
+  "top": []
+ },
+ {
+  "at": "2026-11-02T19:32+09:00",
+  "key": "syukaworld",
+  "ok": true,
+  "new": [
+   "btP-S4xd8m8",
+   "adtTTCDTFF8",
+   "lO1KCuPlcuo"
+  ],
+  "top": [
+   {
+    "id": "YSdD807ghyQ",
+    "title": "두에빌 청문회",
+    "views": 274700,
+    "gain": 80051
+   },
+   {
+    "id": "Qb-49x86cJA",
+    "title": "여자운동루틴 추천 ㄱ",
+    "views": 111924,
+    "gain": 11610
+   },
+   {
+    "id": "TF93Z8sJZok",
+    "title": "베어장에 등판한 좋좋소 사장 슈카",
+    "views": 135472,
+    "gain": 9636
+   }
+  ]
+ },
+ {
+  "at": "2026-11-02T19:32+09:00",
+  "key": "ytn",
+  "ok": true,
+  "new": [
+   "yAiyyYQbjkQ",
+   "753vRUqtRPM",
+   "FdU_jirDUhM",
+   "pgKVB-R5Qyo",
+   "9-yMAhfI04E",
+   "yJSa-WeSwcA",
+   "PjRqyKnqVqU",
+   "k3SSIux35RY",
+   "WTES4SnZ1sw",
+   "gooCl502_Y4",
+   "XL3aqtWmjo4",
+   "JyOT9NDFzBA",
+   "fT1iUI39h8A",
+   "H0EX5uv8nBs",
+   "3IkrR_Fgrqw"
+  ],
+  "top": [
+   {
+    "id": "3IkrR_Fgrqw",
+    "title": "군부 이어 당·내각까지 '칼바람'...북한 수뇌부에 감도는 '이상기류' [에디터픽] / YTN",
+    "views": 51840,
+    "gain": null
+   },
+   {
+    "id": "PjRqyKnqVqU",
+    "title": "우크라 \"트럼프 대놓고 무시\"…하늘 뒤덮은 검은 연기 '비상' [에디터픽] / YTN",
+    "views": 14540,
+    "gain": null
+   },
+   {
+    "id": "yAiyyYQbjkQ",
+    "title": "이 대통령, 내년 예산 시정연설…\"모두의 성장 대전환\" [YTN실시간뉴스]",
+    "views": 4000,
+    "gain": null
+   }
+  ]
+ },
+ {
+  "at": "2026-11-02T19:32+09:00",
+  "key": "storyk",
+  "ok": true,
+  "new": [
+   "nrw8lqAulz8"
+  ],
+  "top": [
+   {
+    "id": "hW2vyayJmLc",
+    "title": "손흥민 호위무사들과 캡틴 패싱 황희찬 극과극 - 엄지성 미친 도움 대표팀 서사는 폭발 직전",
+    "views": 93122,
+    "gain": 20591
+   },
+   {
+    "id": "T8LOjY7uM8A",
+    "title": "손흥민 존중은 베테랑을 향한 마땅한 기본 - 황희찬의 하이파이브 무시와 엄지성 대표팀 발탁",
+    "views": 263543,
+    "gain": 3605
+   },
+   {
+    "id": "kUd8n4RkZwI",
+    "title": "손흥민 왜 다독임 대상 아닌가? - 축협의 선택과 대표팀에 애국심 볼모 잡힌 캡틴의 열망",
+    "views": 66625,
+    "gain": 730
+   }
+  ]
  }
 ]

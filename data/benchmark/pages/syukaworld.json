@@ -1,7 +1,7 @@
 {
  "name": "슈카월드",
  "channel": "https://www.youtube.com/@syukaworld",
- "checkedAt": "2026-11-02T14:55+09:00",
+ "checkedAt": "2026-11-02T19:32+09:00",
  "subscribers": "374만",
  "videos": [
   {
@@ -11,7 +11,7 @@
    "viewsText": "조회수 11만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "JYKRXrbA5x4",
@@ -43,11 +43,11 @@
   {
    "id": "UfwnDQNYiLI",
    "title": "코스피 고점 대비 -40%, 한여름 밤의 꿈",
-   "views": 450000,
-   "viewsText": "조회수 45만회",
+   "views": 460000,
+   "viewsText": "조회수 46만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "Lf89bw8zlXM",

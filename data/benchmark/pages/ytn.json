@@ -1,137 +1,224 @@
 {
  "name": "YTN",
  "channel": "https://www.youtube.com/@ytnnews24",
- "checkedAt": "2026-11-02T14:55+09:00",
+ "checkedAt": "2026-11-02T19:32+09:00",
  "subscribers": "542만",
  "videos": [
   {
-   "id": "l5VUkK3XsgA",
-   "title": "미사일처럼 '곤두박질' #shorts / YTN",
-   "views": 21,
-   "viewsText": "조회수 21회",
+   "id": "ucSZRSEDQeQ",
+   "title": "내 한국시리즈 티켓 내놔... #shorts / YTN",
+   "views": 6000,
+   "viewsText": "조회수 6천회",
    "published": "",
    "kind": "short"
+  },
+  {
+   "id": "f4UZnorftFw",
+   "title": "신차 투입 앞두고 '중단' #shorts / YTN",
+   "views": 65000,
+   "viewsText": "조회수 6.5만회",
+   "published": "",
+   "kind": "short"
+  },
+  {
+   "id": "cMGwE9GnfV8",
+   "title": "당황핑... #shorts / YTN",
+   "views": 13000,
+   "viewsText": "조회수 1.3만회",
+   "published": "",
+   "kind": "short"
+  },
+  {
+   "id": "wfLOY8_sxZM",
+   "title": "혼자 남아서 악수 #shorts / YTN",
+   "views": 15000,
+   "viewsText": "조회수 1.5만회",
+   "published": "",
+   "kind": "short"
+  },
+  {
+   "id": "OdawmqaJQns",
+   "title": "알고 보니 대장균 범벅 #shorts / YTN",
+   "views": 8100,
+   "viewsText": "조회수 8.1천회",
+   "published": "",
+   "kind": "short"
+  },
+  {
+   "id": "wwB0_-v_Zpw",
+   "title": "차예련 논란 커지자... #shorts / YTN",
+   "views": 27000,
+   "viewsText": "조회수 2.7만회",
+   "published": "",
+   "kind": "short"
+  },
+  {
+   "id": "cT8dsG3-krc",
+   "title": "손가락만 아픈 108배 #shorts / YTN",
+   "views": 2000,
+   "viewsText": "조회수 2천회",
+   "published": "",
+   "kind": "short"
+  },
+  {
+   "id": "5lLDepXvEj4",
+   "title": "삼성도 깜짝 놀란 선물 #shorts / YTN",
+   "views": 8100,
+   "viewsText": "조회수 8.1천회",
+   "published": "",
+   "kind": "short"
+  },
+  {
+   "id": "mvGW-aDYP54",
+   "title": "\"곧 만나요, 그리운 사람.\" #shorts / YTN",
+   "views": 23000,
+   "viewsText": "조회수 2.3만회",
+   "published": "",
+   "kind": "short"
+  },
+  {
+   "id": "l5VUkK3XsgA",
+   "title": "미사일처럼 '곤두박질' #shorts / YTN",
+   "views": 88000,
+   "viewsText": "조회수 8.8만회",
+   "published": "",
+   "kind": "short",
+   "gain": 87979
   },
   {
    "id": "KPPvRFcu8HM",
    "title": "마라톤 테러 #shorts / YTN",
-   "views": 1200,
-   "viewsText": "조회수 1.2천회",
+   "views": 8600,
+   "viewsText": "조회수 8.6천회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 7400
   },
   {
    "id": "CUge7mjRaXs",
    "title": "\"머리에 피 흘린 채 발견\" #shorts / YTN",
-   "views": 11000,
-   "viewsText": "조회수 1.1만회",
+   "views": 66000,
+   "viewsText": "조회수 6.6만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 55000
   },
   {
    "id": "cLxApLqM4BM",
    "title": "박항서 결국 극대노 #shorts / YTN",
-   "views": 965,
-   "viewsText": "조회수 965회",
+   "views": 3800,
+   "viewsText": "조회수 3.8천회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 2835
   },
   {
    "id": "QS9cXqtYpao",
    "title": "백호 눈 보고 소원 빌기 (Feat. 동물원 나들이) Wish Upon a White Tiger (Zoo Day)",
-   "views": 984,
-   "viewsText": "조회수 984회",
+   "views": 2000,
+   "viewsText": "조회수 2천회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 1016
   },
   {
    "id": "Uq5md0sW8yo",
    "title": "기자 나이 40 (Parrot Calls Reporter “Kiddo”)",
-   "views": 5100,
-   "viewsText": "조회수 5.1천회",
+   "views": 8200,
+   "viewsText": "조회수 8.2천회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 3100
   },
   {
    "id": "Ra4QU3dRsJU",
    "title": "이재용·최태원 '니온' 챌린지? #shorts / YTN",
-   "views": 4400,
-   "viewsText": "조회수 4.4천회",
+   "views": 9800,
+   "viewsText": "조회수 9.8천회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 5400
   },
   {
    "id": "lJw3XYLIttM",
    "title": "긁어주니까 발라당💕 (Scratch, Scratch… FLOP!)",
-   "views": 4000,
-   "viewsText": "조회수 4천회",
+   "views": 5800,
+   "viewsText": "조회수 5.8천회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 1800
   },
   {
    "id": "UyP5D7TmPQU",
    "title": "'완전히' 초등학생 대통령 #shorts / YTN",
-   "views": 3700,
-   "viewsText": "조회수 3.7천회",
+   "views": 10000,
+   "viewsText": "조회수 1만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 6300
   },
   {
    "id": "dnBntqlEJT4",
    "title": "이렇게 귀엽기 있긔없긔? (Is It Even Legal to Be This Cute?! 🥹💕)",
-   "views": 2700,
-   "viewsText": "조회수 2.7천회",
-   "published": "",
-   "kind": "short"
-  },
-  {
-   "id": "XS0N0Y-Hc2k",
-   "title": "불타는 프랑스 경찰  #shorts / YTN",
-   "views": 6500,
-   "viewsText": "조회수 6.5천회",
-   "published": "",
-   "kind": "short"
-  },
-  {
-   "id": "HxPfqhZRr3Q",
-   "title": "저희 애 아빠가 화가 많이 났어요 #shorts / YTN",
-   "views": 28000,
-   "viewsText": "조회수 2.8만회",
-   "published": "",
-   "kind": "short"
-  },
-  {
-   "id": "YF8h9SL54HI",
-   "title": "자리에서 일어나려다... #shorts / YTN",
-   "views": 9000,
-   "viewsText": "조회수 9천회",
-   "published": "",
-   "kind": "short"
-  },
-  {
-   "id": "UcpHcqieutQ",
-   "title": "북한에서 무슨 일이? #shorts / YTN",
-   "views": 18000,
-   "viewsText": "조회수 1.8만회",
-   "published": "",
-   "kind": "short"
-  },
-  {
-   "id": "JtZrVB_jMQM",
-   "title": "전국민에 '긴급 요청' #shorts / YTN",
-   "views": 28000,
-   "viewsText": "조회수 2.8만회",
-   "published": "",
-   "kind": "short"
-  },
-  {
-   "id": "_1dvsiIJTNY",
-   "title": "\"누군가 할 때까지 나라도 한다 연기 비평\" / YTN",
    "views": 4200,
    "viewsText": "조회수 4.2천회",
    "published": "",
    "kind": "short",
-   "gain": 600
+   "gain": 1500
+  },
+  {
+   "id": "XS0N0Y-Hc2k",
+   "title": "불타는 프랑스 경찰  #shorts / YTN",
+   "views": 13000,
+   "viewsText": "조회수 1.3만회",
+   "published": "",
+   "kind": "short",
+   "gain": 6500
+  },
+  {
+   "id": "HxPfqhZRr3Q",
+   "title": "저희 애 아빠가 화가 많이 났어요 #shorts / YTN",
+   "views": 69000,
+   "viewsText": "조회수 6.9만회",
+   "published": "",
+   "kind": "short",
+   "gain": 41000
+  },
+  {
+   "id": "YF8h9SL54HI",
+   "title": "자리에서 일어나려다... #shorts / YTN",
+   "views": 18000,
+   "viewsText": "조회수 1.8만회",
+   "published": "",
+   "kind": "short",
+   "gain": 9000
+  },
+  {
+   "id": "UcpHcqieutQ",
+   "title": "북한에서 무슨 일이? #shorts / YTN",
+   "views": 34000,
+   "viewsText": "조회수 3.4만회",
+   "published": "",
+   "kind": "short",
+   "gain": 16000
+  },
+  {
+   "id": "JtZrVB_jMQM",
+   "title": "전국민에 '긴급 요청' #shorts / YTN",
+   "views": 59000,
+   "viewsText": "조회수 5.9만회",
+   "published": "",
+   "kind": "short",
+   "gain": 31000
+  },
+  {
+   "id": "_1dvsiIJTNY",
+   "title": "\"누군가 할 때까지 나라도 한다 연기 비평\" / YTN",
+   "views": 4300,
+   "viewsText": "조회수 4.3천회",
+   "published": "",
+   "kind": "short",
+   "gain": 100
   },
   {
    "id": "Tq2tZG89gSo",
@@ -145,17 +232,17 @@
   {
    "id": "Be_moGj27HM",
    "title": "배우를 좌절하게 만드는 말 / YTN",
-   "views": 7300,
-   "viewsText": "조회수 7.3천회",
+   "views": 7400,
+   "viewsText": "조회수 7.4천회",
    "published": "",
    "kind": "short",
-   "gain": 200
+   "gain": 100
   },
   {
    "id": "UR6Njhoqt1U",
    "title": "\"제가 그렇게 울 줄 몰랐거든요\" / YTN",
-   "views": 6900,
-   "viewsText": "조회수 6.9천회",
+   "views": 7000,
+   "viewsText": "조회수 7천회",
    "published": "",
    "kind": "short",
    "gain": 100
@@ -172,11 +259,11 @@
   {
    "id": "qq_scIfvcMM",
    "title": "\"나대지 말고 내 말 들어!\" #shorts / YTN",
-   "views": 1070000,
-   "viewsText": "조회수 107만회",
+   "views": 1140000,
+   "viewsText": "조회수 114만회",
    "published": "",
    "kind": "short",
-   "gain": 80000
+   "gain": 70000
   },
   {
    "id": "t12jf2ir-os",
@@ -208,8 +295,8 @@
   {
    "id": "Tjl6Tgfh3bI",
    "title": "지원 유세 멈춰주세요 #shorts / YTN",
-   "views": 28000,
-   "viewsText": "조회수 2.8만회",
+   "views": 29000,
+   "viewsText": "조회수 2.9만회",
    "published": "",
    "kind": "short",
    "gain": 1000
@@ -248,106 +335,25 @@
    "viewsText": "조회수 4.3천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "zcza7Mo90sY",
    "title": "뒤통수가 얼얼... #shorts / YTN",
-   "views": 59000,
-   "viewsText": "조회수 5.9만회",
+   "views": 60000,
+   "viewsText": "조회수 6만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 1000
   },
   {
    "id": "KAbommcCO-E",
    "title": "최악의 에너지 위기 올까? #shorts / YTN",
-   "views": 41000,
-   "viewsText": "조회수 4.1만회",
+   "views": 42000,
+   "viewsText": "조회수 4.2만회",
    "published": "",
    "kind": "short",
    "gain": 1000
-  },
-  {
-   "id": "RRjfcFpsNhg",
-   "title": "맨발과 같이 먹는 기내식 #shorts / YTN",
-   "views": 140000,
-   "viewsText": "조회수 14만회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "UqqS9DilamQ",
-   "title": "옷이 얇았더라면...'소름' #shorts / YTN",
-   "views": 160000,
-   "viewsText": "조회수 16만회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "nmk6-J2xbgI",
-   "title": "미군 지휘부 흔드는 헤그세스 #shorts / YTN",
-   "views": 80000,
-   "viewsText": "조회수 8만회",
-   "published": "",
-   "kind": "short",
-   "gain": 1000
-  },
-  {
-   "id": "607SzrmrEJo",
-   "title": "\"미국 이익이 우선\" #shorts / YTN",
-   "views": 17000,
-   "viewsText": "조회수 1.7만회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "TGEREu4lFiI",
-   "title": "트럼프, 알고도 침묵? #shorts / YTN",
-   "views": 220000,
-   "viewsText": "조회수 22만회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "s4dV1oqhHQA",
-   "title": "삼성전자의 화끈한 조롱 #shorts / YTN",
-   "views": 190000,
-   "viewsText": "조회수 19만회",
-   "published": "",
-   "kind": "short",
-   "gain": 10000
-  },
-  {
-   "id": "XBGN6XAyxuE",
-   "title": "사장님이 붙인 '손 편지' #shorts / YTN",
-   "views": 130000,
-   "viewsText": "조회수 13만회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "K81rq_3KIRk",
-   "title": "\"담배 세금 올려서 소방관 주자\" #shorts / YTN",
-   "views": 15000,
-   "viewsText": "조회수 1.5만회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "6oKTG0perCw",
-   "title": "저 주시면 안 되나요 #shorts / YTN",
-   "views": 440000,
-   "viewsText": "조회수 44만회",
-   "published": "",
-   "kind": "short",
-   "gain": 10000
   }
  ]
 }

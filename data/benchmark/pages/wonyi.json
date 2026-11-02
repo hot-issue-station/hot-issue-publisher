@@ -1,7 +1,7 @@
 {
  "name": "안원잘부",
  "channel": "https://www.youtube.com/@helloiamwoninicetomeetyou",
- "checkedAt": "2026-11-02T14:55+09:00",
+ "checkedAt": "2026-11-02T19:32+09:00",
  "subscribers": "240만",
  "videos": [
   {
@@ -11,7 +11,7 @@
    "viewsText": "조회수 248만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "zxNoW_LtVLE",
@@ -25,29 +25,29 @@
   {
    "id": "mFM2hP5LEhM",
    "title": "스팸 원이 에디션(?)",
-   "views": 3150000,
-   "viewsText": "조회수 315만회",
+   "views": 3160000,
+   "viewsText": "조회수 316만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "xCvbDeMKm3E",
    "title": "두 번째 급습",
-   "views": 6040000,
-   "viewsText": "조회수 604만회",
+   "views": 6050000,
+   "viewsText": "조회수 605만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "GsYq_ouLAMQ",
    "title": "[B컷] 시그니엘 망고 빙수",
-   "views": 5300000,
-   "viewsText": "조회수 530만회",
+   "views": 5310000,
+   "viewsText": "조회수 531만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "BUeZskDCMpU",
@@ -151,11 +151,11 @@
   {
    "id": "tDs3mcabrFM",
    "title": "좋지 않아?",
-   "views": 1370000,
-   "viewsText": "조회수 137만회",
+   "views": 1380000,
+   "viewsText": "조회수 138만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "5qmyo1nR3no",

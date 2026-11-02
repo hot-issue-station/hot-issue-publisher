@@ -3,7 +3,7 @@
  "name": "스브스뉴스 (SBS)",
  "channel": "https://www.youtube.com/@subusunews",
  "channelId": "UCxPClUl0bh7BgJajD5k483g",
- "checkedAt": "2026-11-02T08:26+09:00",
+ "checkedAt": "2026-11-02T19:32+09:00",
  "videos": [
   {
    "id": "LwLm7MrPPHA",
@@ -11,11 +11,11 @@
    "published": "2026-10-29T22:00:21+00:00",
    "url": "https://www.youtube.com/shorts/LwLm7MrPPHA",
    "shorts": true,
-   "views": 10988,
-   "likes": 51,
-   "viewsGain": 765,
+   "views": 11586,
+   "likes": 54,
+   "viewsGain": 598,
    "isNew": false,
-   "median": 11294,
+   "median": 11586,
    "multiple": 1.0
   },
   {
@@ -24,12 +24,12 @@
    "published": "2026-10-29T22:00:10+00:00",
    "url": "https://www.youtube.com/shorts/wcSU_Bz1-Nk",
    "shorts": true,
-   "views": 7207,
-   "likes": 81,
-   "viewsGain": 511,
+   "views": 7566,
+   "likes": 84,
+   "viewsGain": 359,
    "isNew": false,
-   "median": 11294,
-   "multiple": 0.6
+   "median": 11586,
+   "multiple": 0.7
   },
   {
    "id": "HnhvHRqyqao",
@@ -37,12 +37,12 @@
    "published": "2026-10-29T09:10:44+00:00",
    "url": "https://www.youtube.com/shorts/HnhvHRqyqao",
    "shorts": true,
-   "views": 21661,
-   "likes": 109,
-   "viewsGain": 1082,
+   "views": 22803,
+   "likes": 118,
+   "viewsGain": 1142,
    "isNew": false,
-   "median": 11294,
-   "multiple": 1.9
+   "median": 11586,
+   "multiple": 2.0
   },
   {
    "id": "NbXaRPFlJLY",
@@ -50,11 +50,11 @@
    "published": "2026-10-29T09:08:04+00:00",
    "url": "https://www.youtube.com/shorts/NbXaRPFlJLY",
    "shorts": true,
-   "views": 2771,
+   "views": 2800,
    "likes": 18,
-   "viewsGain": 59,
+   "viewsGain": 29,
    "isNew": false,
-   "median": 11294,
+   "median": 11586,
    "multiple": 0.2
   },
   {
@@ -63,11 +63,11 @@
    "published": "2026-10-29T09:00:33+00:00",
    "url": "https://www.youtube.com/shorts/NsvC_rlWlzo",
    "shorts": true,
-   "views": 8003,
-   "likes": 195,
-   "viewsGain": 356,
+   "views": 8373,
+   "likes": 204,
+   "viewsGain": 370,
    "isNew": false,
-   "median": 11294,
+   "median": 11586,
    "multiple": 0.7
   },
   {
@@ -76,12 +76,12 @@
    "published": "2026-10-28T22:00:35+00:00",
    "url": "https://www.youtube.com/shorts/vEqtdBio5f8",
    "shorts": true,
-   "views": 54959,
-   "likes": 972,
-   "viewsGain": 922,
+   "views": 55505,
+   "likes": 984,
+   "viewsGain": 546,
    "isNew": false,
-   "median": 11294,
-   "multiple": 4.9
+   "median": 11586,
+   "multiple": 4.8
   },
   {
    "id": "sXc2HKoXGXc",
@@ -89,11 +89,11 @@
    "published": "2026-10-28T22:00:20+00:00",
    "url": "https://www.youtube.com/shorts/sXc2HKoXGXc",
    "shorts": true,
-   "views": 10445,
-   "likes": 39,
-   "viewsGain": 106,
+   "views": 10510,
+   "likes": 40,
+   "viewsGain": 65,
    "isNew": false,
-   "median": 11294,
+   "median": 11586,
    "multiple": 0.9
   },
   {
@@ -102,11 +102,11 @@
    "published": "2026-10-28T10:29:45+00:00",
    "url": "https://www.youtube.com/shorts/Iwlid0Rvc8M",
    "shorts": true,
-   "views": 19092,
-   "likes": 77,
-   "viewsGain": 226,
+   "views": 19293,
+   "likes": 80,
+   "viewsGain": 201,
    "isNew": false,
-   "median": 11294,
+   "median": 11586,
    "multiple": 1.7
   },
   {
@@ -115,12 +115,12 @@
    "published": "2026-10-28T10:20:55+00:00",
    "url": "https://www.youtube.com/shorts/joS-5fpq2rk",
    "shorts": true,
-   "views": 27979,
+   "views": 28197,
    "likes": 331,
-   "viewsGain": 304,
+   "viewsGain": 218,
    "isNew": false,
-   "median": 11294,
-   "multiple": 2.5
+   "median": 11586,
+   "multiple": 2.4
   },
   {
    "id": "gatGzL_gjDs",
@@ -128,11 +128,11 @@
    "published": "2026-10-28T10:18:57+00:00",
    "url": "https://www.youtube.com/shorts/gatGzL_gjDs",
    "shorts": true,
-   "views": 18216,
+   "views": 18304,
    "likes": 110,
-   "viewsGain": 253,
+   "viewsGain": 88,
    "isNew": false,
-   "median": 11294,
+   "median": 11586,
    "multiple": 1.6
   },
   {
@@ -141,11 +141,11 @@
    "published": "2026-10-28T10:16:41+00:00",
    "url": "https://www.youtube.com/shorts/73b1bARMMVI",
    "shorts": true,
-   "views": 11294,
+   "views": 11348,
    "likes": 63,
-   "viewsGain": 125,
+   "viewsGain": 54,
    "isNew": false,
-   "median": 11294,
+   "median": 11586,
    "multiple": 1.0
   },
   {
@@ -154,11 +154,11 @@
    "published": "2026-10-28T10:13:53+00:00",
    "url": "https://www.youtube.com/shorts/hy5IFKw9N7g",
    "shorts": true,
-   "views": 5716,
-   "likes": 348,
-   "viewsGain": 53,
+   "views": 5743,
+   "likes": 349,
+   "viewsGain": 27,
    "isNew": false,
-   "median": 11294,
+   "median": 11586,
    "multiple": 0.5
   },
   {
@@ -167,11 +167,11 @@
    "published": "2026-10-27T22:00:36+00:00",
    "url": "https://www.youtube.com/shorts/f9kHvret7pQ",
    "shorts": true,
-   "views": 7132,
+   "views": 7146,
    "likes": 95,
-   "viewsGain": 43,
+   "viewsGain": 14,
    "isNew": false,
-   "median": 11294,
+   "median": 11586,
    "multiple": 0.6
   },
   {
@@ -180,11 +180,11 @@
    "published": "2026-10-27T22:00:13+00:00",
    "url": "https://www.youtube.com/shorts/P4hH10DOxbY",
    "shorts": true,
-   "views": 14931,
+   "views": 14953,
    "likes": 141,
-   "viewsGain": 208,
+   "viewsGain": 22,
    "isNew": false,
-   "median": 11294,
+   "median": 11586,
    "multiple": 1.3
   },
   {
@@ -193,11 +193,11 @@
    "published": "2026-10-27T14:20:10+00:00",
    "url": "https://www.youtube.com/shorts/hx13V-s_zwY",
    "shorts": true,
-   "views": 18412,
+   "views": 18434,
    "likes": 90,
-   "viewsGain": 155,
+   "viewsGain": 22,
    "isNew": false,
-   "median": 11294,
+   "median": 11586,
    "multiple": 1.6
   }
  ],
@@ -205,15 +205,22 @@
   {
    "title": "유규선이 성공한 방법",
    "url": "https://www.youtube.com/shorts/vEqtdBio5f8",
-   "views": 54959,
-   "multiple": 4.9,
+   "views": 55505,
+   "multiple": 4.8,
    "shorts": true
   },
   {
    "title": "꿈을 가지고 있는 사람의 기분은 어떤걸까",
    "url": "https://www.youtube.com/shorts/joS-5fpq2rk",
-   "views": 27979,
-   "multiple": 2.5,
+   "views": 28197,
+   "multiple": 2.4,
+   "shorts": true
+  },
+  {
+   "title": "나는 연애를 알려 줄 테니까 너는 공부를 알려줘",
+   "url": "https://www.youtube.com/shorts/HnhvHRqyqao",
+   "views": 22803,
+   "multiple": 2.0,
    "shorts": true
   }
  ]

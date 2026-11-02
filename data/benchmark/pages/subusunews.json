@@ -1,25 +1,26 @@
 {
  "name": "스브스뉴스 (SBS)",
  "channel": "https://www.youtube.com/@subusunews",
- "checkedAt": "2026-11-02T14:55+09:00",
+ "checkedAt": "2026-11-02T19:32+09:00",
  "subscribers": "144만",
  "videos": [
   {
    "id": "z_5kUs-Izr0",
    "title": "이제 '이거'까지 된다는 시리 근황 #애플 #shorts #스브스뉴스",
-   "views": 1100,
-   "viewsText": "조회수 1.1천회",
+   "views": 2000,
+   "viewsText": "조회수 2천회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 900
   },
   {
    "id": "fMk1x_SAtmI",
    "title": "업데이트된 시리 진짜 쓸 만한 거임? #시리 #shorts #스브스뉴스",
-   "views": 3700,
-   "viewsText": "조회수 3.7천회",
+   "views": 4000,
+   "viewsText": "조회수 4천회",
    "published": "",
    "kind": "short",
-   "gain": 700
+   "gain": 300
   },
   {
    "id": "X9iSvXsLJuY",
@@ -28,7 +29,7 @@
    "viewsText": "조회수 4.4천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "ernsQIVrBi4",
@@ -37,7 +38,7 @@
    "viewsText": "조회수 6.5천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "cIV-athgSaM",
@@ -46,13 +47,13 @@
    "viewsText": "조회수 1.1만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "A6pfGRrFOzE",
    "title": "아이폰 듀오 화면 결함 인정한 애플, 무상 교체 발표했지만 재고 부족 #아이폰듀오 #shorts #스브스뉴스",
-   "views": 16000,
-   "viewsText": "조회수 1.6만회",
+   "views": 17000,
+   "viewsText": "조회수 1.7만회",
    "published": "",
    "kind": "short",
    "gain": 1000
@@ -60,8 +61,8 @@
   {
    "id": "-fLcCSNSD34",
    "title": "1인 1음료 진짜 필수인지 카페 사장님들한테 직접 물어봤습니다. #카페 #shorts #스브스뉴스",
-   "views": 270000,
-   "viewsText": "조회수 27만회",
+   "views": 280000,
+   "viewsText": "조회수 28만회",
    "published": "",
    "kind": "short",
    "gain": 10000
