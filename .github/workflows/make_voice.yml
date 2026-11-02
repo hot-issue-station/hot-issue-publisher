@@ -1,0 +1,36 @@
+name: 내레이션 만들기 (공개 음성 엔진 MeloTTS, 0원)
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        description: "voice/<이름>.txt 의 이름"
+        required: true
+      speed:
+        description: "말 빠르기(1.0 보통)"
+        required: false
+        default: "1.1"
+permissions:
+  contents: write
+jobs:
+  voice:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.10" }
+      - name: 설치
+        run: |
+          sudo apt-get -qq update && sudo apt-get -qq install -y ffmpeg >/dev/null
+          pip install -q torch torchaudio --index-url https://download.pytorch.org/whl/cpu
+          pip install -q git+https://github.com/myshell-ai/MeloTTS.git
+          python -m unidic download || true
+      - name: 만들기
+        env:
+          VOICE_NAME: ${{ inputs.name }}
+          VOICE_SPEED: ${{ inputs.speed }}
+        run: python scripts/make_voice.py
+      - run: |
+          git config user.name "issuebrief-bot"; git config user.email "bot@users.noreply.github.com"
+          git add assets/voice
+          git diff --cached --quiet || git commit -m "내레이션: ${{ inputs.name }}"
+          for i in 1 2 3 4 5; do git pull --rebase -q origin main && git push && break; sleep 5; done
