@@ -40,8 +40,10 @@ tmp = pathlib.Path(tempfile.mkdtemp())
 
 # 1) 카메라 이동 영상
 MULTI = bool(a.cards)
+starts = []
 if MULTI:
-    X = 0.3                                          # 카드 사이 밀어 넘기기 전환
+    X = 0.35                                         # 카드 사이 전환(장마다 다르게, 대표 요청 11/2 23:17 '단조로움 줄이기')
+    TRANS = ["slideleft", "smoothup", "circleopen", "slideleft", "zoomin", "wipeleft"]
     cards = [a.card] + a.cards
     starts = [0] + [a.first + k * a.per for k in range(len(a.cards))]
     segs = []
@@ -51,7 +53,7 @@ if MULTI:
         if ci == 0:   # 첫 장: 사진 쪽 확대 → 55% 시점까지 전체로 빠지고 그대로 멈춤(아래 큰 제목이 잘리지 않게, 대표 지적 11/2 23:14)
             m_ = int(n_ * 0.55); S0 = f"(min(on/{m_},1)*min(on/{m_},1)*(3-2*min(on/{m_},1)))"
             z_, x_, y_ = f"1.35-0.35*{S0}", "(iw-iw/zoom)*0.1", f"(ih-ih/zoom)*(0.08+0.84*{S0})"
-        else: z_, x_, y_ = f"1+0.06*on/{n_}", "(iw-iw/zoom)/2", "(ih-ih/zoom)/2"
+        else: z_, x_, y_ = f"if(lt(on,12),1.07-0.07*on/12,1+0.03*(on-12)/{n_})", "(iw-iw/zoom)/2", "(ih-ih/zoom)/2"   # 넘어올 때 '쿵' 하고 들어오기
         sp = tmp / f"s{ci}.mp4"; segs.append((sp, d_))
         subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", cp, "-filter_complex",
             f"[0]split[a][b];[a]scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,boxblur=30:2,eq=brightness=-0.25,loop={n_}:1:0,setpts=N/{FPS}/TB[bg];"
@@ -59,7 +61,7 @@ if MULTI:
             "-frames:v", str(n_), "-r", str(FPS), "-c:v", "libx264", "-preset", "veryfast", "-crf", "20", str(sp)], check=True)
     ins = sum([["-i", str(sp)] for sp, _ in segs], []); fc = []; prev = "0"
     for ci in range(1, len(segs)):
-        o = f"x{ci}"; fc.append(f"[{prev}][{ci}]xfade=transition=slideleft:duration={X}:offset={starts[ci] - X:.3f}[{o}]"); prev = o
+        o = f"x{ci}"; fc.append(f"[{prev}][{ci}]xfade=transition={TRANS[(ci - 1) % len(TRANS)]}:duration={X}:offset={starts[ci] - X:.3f}[{o}]"); prev = o
     subprocess.run(["ffmpeg", "-y", "-loglevel", "error", *ins, "-filter_complex", ";".join(fc), "-map", f"[{prev}]",
         "-t", str(a.dur), "-r", str(FPS), "-c:v", "libx264", "-preset", "veryfast", "-crf", "20", str(tmp / "base.mp4")], check=True)
 else:
@@ -125,6 +127,17 @@ def hype(im, d, t):
             f_ = ImageFont.truetype(FONT, int(250 * pop))
             d.text((14, 520), lt, font=f_, fill=YEL, stroke_width=10, stroke_fill="black")
             rw = d.textlength(rt, font=f_); d.text((W - 14 - rw, 520), rt, font=f_, fill=YEL, stroke_width=10, stroke_fill="black")
+    if MULTI and t < END0:
+        nC = len(starts); gap = 10; bw = (W - 80 - gap * (nC - 1)) / nC
+        cur = max(i for i, s_ in enumerate(starts) if t >= s_)
+        for i in range(nC):            # 위쪽 진행 막대(몇 번째 카드인지)
+            x0 = 40 + i * (bw + gap); d.rounded_rectangle([x0, 258, x0 + bw, 268], 5, fill=(255, 255, 255, 70))
+            en_ = starts[i + 1] if i + 1 < nC else END0
+            fr_ = 1 if i < cur else (min(1, (t - starts[i]) / max(0.1, en_ - starts[i])) if i == cur else 0)
+            if fr_ > 0: d.rounded_rectangle([x0, 258, x0 + bw * fr_, 268], 5, fill=GRN)
+        for s_ in starts[1:]:          # 넘어가는 순간 짧은 번쩍
+            if s_ - 0.05 <= t < s_ + 0.15:
+                al_ = int(110 * (1 - (t - s_ + 0.05) / 0.2)); d.rectangle([0, 285, W, 1635], fill=(255, 255, 255, max(0, al_)))
     if TAPE is not None and not (MULTI and t >= a.first): im.alpha_composite(TAPE, ((W - TAPE.width) // 2, 1760 if MULTI else 1640))
     if WM is not None: im.alpha_composite(WM, (W - 150, 1500))
 fr = tmp / "fr"; fr.mkdir()
@@ -180,6 +193,11 @@ for h in hits:
     click = np.convolve(click, [1, -0.85], "same")                          # 고음 위주 '딸깍'
     click += 0.6 * np.sin(2 * np.pi * rng.uniform(1700, 2300) * tt) * np.exp(-tt * 220)
     i = int(h * SR); aud[i:i + n] += click * rng.uniform(0.55, 0.8)
+for s_ in starts[1:]:                # 카드 넘길 때 '휙' 소리(합성)
+    n = int(0.32 * SR); tt = np.arange(n) / SR
+    nz = rng.uniform(-1, 1, n); env = np.sin(np.pi * tt / tt[-1]) ** 2
+    sw = np.cumsum(nz); sw -= np.convolve(sw, np.ones(40) / 40, "same")   # 저음 빼기
+    i = int(max(0, s_ - 0.2) * SR); aud[i:i + n] += sw / max(1e-9, np.abs(sw).max()) * env * 0.45
 aud = aud[: int(a.dur * SR)]; aud /= max(1e-9, np.abs(aud).max()) / 0.7
 with wave.open(str(tmp / "type.wav"), "wb") as w:
     w.setnchannels(1); w.setsampwidth(2); w.setframerate(SR); w.writeframes((aud * 32767).astype("<i2").tobytes())
