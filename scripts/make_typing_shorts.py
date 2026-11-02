@@ -19,14 +19,19 @@ ap = argparse.ArgumentParser()
 ap.add_argument("card"); ap.add_argument("out")
 ap.add_argument("--kw", action="append", required=True, help="시작초|문구")
 ap.add_argument("--series", default="briefing"); ap.add_argument("--dur", type=float, default=12)
+ap.add_argument("--end", action="append", default=[], help="시작초|마무리 문구(화면 가운데, 어둡게 깔고 입력). 문구 안 / 는 줄바꿈")
+ap.add_argument("--slow", type=float, default=1.0, help="카메라 이동을 이만큼 느리게")
 a = ap.parse_args()
 kws = [(float(s.split("|", 1)[0]), s.split("|", 1)[1]) for s in a.kw]
+ends = [(float(s.split("|", 1)[0]), s.split("|", 1)[1]) for s in a.end]
+END0 = min([e[0] for e in ends], default=1e9)
 N = int(a.dur * FPS)
 tmp = pathlib.Path(tempfile.mkdtemp())
 
 # 1) 카메라 이동 영상
-T = "min(on/150,1)"
-Z = "if(lt(on,180),1.45,if(lt(on,250),1+0.45*(1-((on-180)/70)*((on-180)/70)*(3-2*(on-180)/70)),1))"
+k = a.slow; P1, P2, P3 = int(150*k), int(180*k), int(70*k)
+T = f"min(on/{P1},1)"
+Z = f"if(lt(on,{P2}),1.45,if(lt(on,{P2+P3}),1+0.45*(1-((on-{P2})/{P3})*((on-{P2})/{P3})*(3-2*(on-{P2})/{P3})),1))"
 Y = f"(ih-ih/zoom)*(0.08+0.84*({T})*({T})*(3-2*({T})))"
 subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", a.card, "-filter_complex",
     f"[0]split[a][b];[a]scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,boxblur=30:2,eq=brightness=-0.25,loop={N}:1:0,setpts=N/{FPS}/TB[bg];"
@@ -40,18 +45,31 @@ def state(t):
     cur = None
     for i, (st, txt) in enumerate(kws):
         if t >= st: cur = i
-    if cur is None: return "", False
+    if cur is None or t >= END0: return "", False
     st, txt = kws[cur]
     n = min(len(txt), int((t - st) / CPS) + 1)
     return txt[:n], n < len(txt)
-for i, (st, txt) in enumerate(kws):
-    for k, ch in enumerate(txt):
-        if ch != " ": hits.append(st + k * CPS)
+for st, txt in kws + ends:
+    for j, ch in enumerate(txt):
+        if ch not in " /": hits.append(st + j * CPS)
+efont = ImageFont.truetype(FONT, 64)
 fr = tmp / "fr"; fr.mkdir()
 for f in range(N):
     t = f / FPS
     txt, typing = state(t)
-    im = Image.new("RGBA", (W, BAND), (0, 0, 0, 0)); d = ImageDraw.Draw(im)
+    im = Image.new("RGBA", (W, 1920), (0, 0, 0, 0)); d = ImageDraw.Draw(im)
+    if t >= END0:
+        al = min(1, (t - END0) / 0.5); d.rectangle([0, 0, W, 1920], fill=(8, 12, 22, int(215 * al)))
+        y = 700
+        live = max(i for i, e in enumerate(ends) if t >= e[0]) if t >= ends[0][0] else -1
+        for ei, (est, etxt) in enumerate(ends):
+            if t < est: continue
+            n = min(len(etxt), int((t - est) / CPS) + 1); done = n == len(etxt)
+            for li, line in enumerate(etxt[:n].split("/")):
+                tw = d.textlength(line, font=efont); d.text(((W - tw) / 2, y), line, font=efont, fill="white" if ei == 0 else (255, 200, 69))
+                last = (W + tw) / 2; ly = y; y += 92
+            if ei == live and (not done or int(t * 2) % 2 == 0): d.rectangle([last + 10, ly + 10, last + 19, ly + 78], fill=(255, 200, 69))
+            y += 60
     if txt:
         tw = d.textlength(txt, font=font); x = max(40, (W - tw) / 2); y = 100
         d.rounded_rectangle([x - 28, y - 18, x + tw + 52, y + 98], 18, fill=(11, 18, 32, 215))
