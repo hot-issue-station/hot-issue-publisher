@@ -9,7 +9,8 @@ python scripts/make_reel_motion.py rounds/<파일>.json /home/claude/reels/<이�
   D 와이프: 사진 대각선 이동, 글이 왼쪽부터 쓱 그려지듯 드러남, 전환 위로 닦기·블러 교대
 - 카드 내용은 make_post.cards() 그대로(세로 전체 화면 레이아웃). 카드 HTML에 CSS 애니메이션을 넣고,
   Playwright로 프레임마다 애니메이션 시각을 정확히 맞춰 찍은 뒤 ffmpeg로 잇는다(끊김 없음).
-- 위 두 줄 제목 띠(시험, 대표 지시 11/2 — 크랩·엠빅·JTBC·Mnet 벤치마킹): round JSON 에 "titleBar": ["흰 줄", "노란 줄"] 이 있으면
+- 위 두 줄 제목 띠(대표 확정 11/2 10:27 — 크랩·엠빅·JTBC·Mnet 벤치마킹, 기본값): round JSON 의 "titleBar": ["흰 줄", "노란 줄"]
+  (없으면 hook 두 줄, "titleBar": [] 이면 띠 없음)을
   0초부터 끝까지 화면 맨 위에 어두운 띠 + 두 줄 제목을 고정한다. 카드는 BAND_SHIFT 만큼 아래로 내려 머리줄이 가려지지 않게 한다
   (카드 맨 아래 여백을 그만큼 잘라 냄). 제목은 카드에 있는 사실만, 질문형·인용형 권장.
 """
@@ -146,8 +147,11 @@ def main():
                             "-crf", "20", "-pix_fmt", "yuv420p", str(clip)], check=True, capture_output=True)
             clips.append((clip, dur)); print(f"{i+1}장 {dur}s 사진 {info['photos']} 글 {info['items']}")
         band = None
-        if r.get("titleBar"):
-            band = work / "band.png"; band_png(list(r["titleBar"]), band, pg)
+        tb = r.get("titleBar")
+        if tb is None:
+            tb = [x for x in str(r.get("hook", "")).split("\n") if x.strip()][:2]
+        if tb:
+            band = work / "band.png"; band_png(list(tb), band, pg)
         b.close()
     # 장 사이 부드러운 전환(xfade) + 무음 오디오
     inputs, fl, last, off = [], [], "0:v", 0.0
