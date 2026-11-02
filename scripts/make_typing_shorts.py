@@ -24,6 +24,7 @@ ap.add_argument("--pointer", default="", help="시작초|문구 — 마무리 �
 ap.add_argument("--title", default="", help="위쪽 두 줄 제목 '흰 줄|초록 줄' (hypeDRIP형 틀, 대표 결정 11/2 13:58)")
 ap.add_argument("--side", action="append", default=[], help="시작초|끝초|왼글자|오른글자 — 양옆 큰 노란 글자")
 ap.add_argument("--tape", default="", help="아래쪽 비스듬한 노란 테이프 문구")
+ap.add_argument("--kwy", type=int, default=1400, help="노란 자막 세로 위치(카드 글자와 겹치면 1530 정도로 내림)")
 ap.add_argument("--wm", action="store_true", help="오른쪽 아래 채널 로고 고정")
 ap.add_argument("--slow", type=float, default=1.0, help="카메라 이동을 이만큼 느리게")
 a = ap.parse_args()
@@ -131,7 +132,8 @@ for f in range(N):
                 arrow(d, 720 + off, 1480 + off, 960 + off, 1720 + off, col)
                 if on: d.ellipse([930, 1690, 1050, 1810], outline=col, width=10)
     if txt and HYPE:      # hypeDRIP형: 카드 아래쪽에 노란 글씨 + 검은 테두리 자막
-        tw = d.textlength(txt, font=cfont); x = (W - tw) / 2; y = 1400
+        tw = d.textlength(txt, font=cfont); x = (W - tw) / 2; y = a.kwy
+        d.rounded_rectangle([x - 26, y - 10, x + tw + 44, y + 92], 16, fill=(0, 0, 0, 200))
         d.text((x, y), txt, font=cfont, fill=YEL, stroke_width=7, stroke_fill="black")
         if typing or int(t * 2) % 2 == 0: d.rectangle([x + tw + 10, y + 10, x + tw + 20, y + 80], fill="white")
     elif txt:
