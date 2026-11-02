@@ -3,7 +3,7 @@
  "name": "14F 일사에프 (MBC)",
  "channel": "https://www.youtube.com/@14FMBC",
  "channelId": "UCLKuglhGlMmDteQKoniENIQ",
- "checkedAt": "2026-11-02T19:32+09:00",
+ "checkedAt": "2026-11-02T22:47+09:00",
  "videos": [
   {
    "id": "87w5P7QW2vM",
@@ -11,12 +11,12 @@
    "published": "2026-11-02T10:00:06+00:00",
    "url": "https://www.youtube.com/watch?v=87w5P7QW2vM",
    "shorts": false,
-   "views": 2013,
-   "likes": 81,
-   "viewsGain": null,
-   "isNew": true,
-   "median": 50865,
-   "multiple": 0.0
+   "views": 40229,
+   "likes": 512,
+   "viewsGain": 38216,
+   "isNew": false,
+   "median": 55359,
+   "multiple": 0.7
   },
   {
    "id": "eOXSE6dyRsY",
@@ -24,12 +24,12 @@
    "published": "2026-11-02T09:30:30+00:00",
    "url": "https://www.youtube.com/watch?v=eOXSE6dyRsY",
    "shorts": false,
-   "views": 6845,
-   "likes": 217,
-   "viewsGain": null,
-   "isNew": true,
-   "median": 50865,
-   "multiple": 0.1
+   "views": 85265,
+   "likes": 721,
+   "viewsGain": 78420,
+   "isNew": false,
+   "median": 55359,
+   "multiple": 1.5
   },
   {
    "id": "peSpC5kd2t0",
@@ -37,11 +37,11 @@
    "published": "2026-11-01T04:00:36+00:00",
    "url": "https://www.youtube.com/shorts/peSpC5kd2t0",
    "shorts": true,
-   "views": 6670,
+   "views": 6933,
    "likes": 25,
-   "viewsGain": 974,
+   "viewsGain": 263,
    "isNew": false,
-   "median": 6633.5,
+   "median": 6804.0,
    "multiple": 1.0
   },
   {
@@ -50,11 +50,11 @@
    "published": "2026-11-01T04:00:02+00:00",
    "url": "https://www.youtube.com/watch?v=sf-JTKYvrxw",
    "shorts": false,
-   "views": 159649,
-   "likes": 524,
-   "viewsGain": 85042,
+   "views": 169213,
+   "likes": 545,
+   "viewsGain": 9564,
    "isNew": false,
-   "median": 50865,
+   "median": 55359,
    "multiple": 3.1
   },
   {
@@ -63,11 +63,11 @@
    "published": "2026-10-31T04:00:23+00:00",
    "url": "https://www.youtube.com/shorts/yoyqnf-PE30",
    "shorts": true,
-   "views": 4788,
-   "likes": 19,
-   "viewsGain": 242,
+   "views": 4917,
+   "likes": 20,
+   "viewsGain": 129,
    "isNew": false,
-   "median": 6633.5,
+   "median": 6804.0,
    "multiple": 0.7
   },
   {
@@ -76,11 +76,11 @@
    "published": "2026-10-31T04:00:20+00:00",
    "url": "https://www.youtube.com/watch?v=ZUqM6arduYw",
    "shorts": false,
-   "views": 40404,
-   "likes": 153,
-   "viewsGain": 3625,
+   "views": 41587,
+   "likes": 158,
+   "viewsGain": 1183,
    "isNew": false,
-   "median": 50865,
+   "median": 55359,
    "multiple": 0.8
   },
   {
@@ -89,11 +89,11 @@
    "published": "2026-10-31T03:00:07+00:00",
    "url": "https://www.youtube.com/shorts/FV2VNAPmk-o",
    "shorts": true,
-   "views": 10394,
+   "views": 10799,
    "likes": 72,
-   "viewsGain": 1312,
+   "viewsGain": 405,
    "isNew": false,
-   "median": 6633.5,
+   "median": 6804.0,
    "multiple": 1.6
   },
   {
@@ -102,11 +102,11 @@
    "published": "2026-10-30T23:00:09+00:00",
    "url": "https://www.youtube.com/shorts/M_z0WM3-GO8",
    "shorts": true,
-   "views": 5086,
+   "views": 5174,
    "likes": 61,
-   "viewsGain": 292,
+   "viewsGain": 88,
    "isNew": false,
-   "median": 6633.5,
+   "median": 6804.0,
    "multiple": 0.8
   },
   {
@@ -115,12 +115,12 @@
    "published": "2026-10-30T09:29:22+00:00",
    "url": "https://www.youtube.com/watch?v=niGCI-aEH-A",
    "shorts": false,
-   "views": 197488,
-   "likes": 581,
-   "viewsGain": 1925,
+   "views": 198356,
+   "likes": 586,
+   "viewsGain": 868,
    "isNew": false,
-   "median": 50865,
-   "multiple": 3.9
+   "median": 55359,
+   "multiple": 3.6
   },
   {
    "id": "8O13erGECdU",
@@ -128,11 +128,11 @@
    "published": "2026-10-30T07:30:30+00:00",
    "url": "https://www.youtube.com/watch?v=8O13erGECdU",
    "shorts": false,
-   "views": 21405,
-   "likes": 88,
-   "viewsGain": 471,
+   "views": 21561,
+   "likes": 90,
+   "viewsGain": 156,
    "isNew": false,
-   "median": 50865,
+   "median": 55359,
    "multiple": 0.4
   },
   {
@@ -141,11 +141,11 @@
    "published": "2026-10-29T23:00:22+00:00",
    "url": "https://www.youtube.com/shorts/Icvrlx6HV-Q",
    "shorts": true,
-   "views": 6597,
-   "likes": 80,
-   "viewsGain": 209,
+   "views": 6675,
+   "likes": 83,
+   "viewsGain": 78,
    "isNew": false,
-   "median": 6633.5,
+   "median": 6804.0,
    "multiple": 1.0
   },
   {
@@ -154,11 +154,11 @@
    "published": "2026-10-29T11:00:11+00:00",
    "url": "https://www.youtube.com/shorts/zHzHgad2t6c",
    "shorts": true,
-   "views": 12026,
-   "likes": 117,
-   "viewsGain": 483,
+   "views": 12128,
+   "likes": 119,
+   "viewsGain": 102,
    "isNew": false,
-   "median": 6633.5,
+   "median": 6804.0,
    "multiple": 1.8
   },
   {
@@ -167,12 +167,12 @@
    "published": "2026-10-29T10:00:41+00:00",
    "url": "https://www.youtube.com/watch?v=7pF-2NUb9Ws",
    "shorts": false,
-   "views": 55138,
-   "likes": 469,
-   "viewsGain": 746,
+   "views": 55359,
+   "likes": 471,
+   "viewsGain": 221,
    "isNew": false,
-   "median": 50865,
-   "multiple": 1.1
+   "median": 55359,
+   "multiple": 1.0
   },
   {
    "id": "UQ1mmTmrf1k",
@@ -180,12 +180,12 @@
    "published": "2026-10-28T09:41:10+00:00",
    "url": "https://www.youtube.com/watch?v=UQ1mmTmrf1k",
    "shorts": false,
-   "views": 50865,
+   "views": 50944,
    "likes": 260,
-   "viewsGain": 501,
+   "viewsGain": 79,
    "isNew": false,
-   "median": 50865,
-   "multiple": 1.0
+   "median": 55359,
+   "multiple": 0.9
   },
   {
    "id": "8eVDM6mDEs8",
@@ -193,26 +193,26 @@
    "published": "2026-10-27T10:22:11+00:00",
    "url": "https://www.youtube.com/watch?v=8eVDM6mDEs8",
    "shorts": false,
-   "views": 96876,
+   "views": 96948,
    "likes": 468,
-   "viewsGain": 175,
+   "viewsGain": 72,
    "isNew": false,
-   "median": 50865,
-   "multiple": 1.9
+   "median": 55359,
+   "multiple": 1.8
   }
  ],
  "viral": [
   {
    "title": "사전 판매 매진이었는데… 액정 갈라진다는 ‘아이폰 듀오’ 근황 / 14F",
    "url": "https://www.youtube.com/watch?v=niGCI-aEH-A",
-   "views": 197488,
-   "multiple": 3.9,
+   "views": 198356,
+   "multiple": 3.6,
    "shorts": false
   },
   {
    "title": "사상 최대 규모의 앤트로픽 상장ㅣ넷플릭스 주가 하락 이유 등 4가지 🥬경제 이슈🥬",
    "url": "https://www.youtube.com/watch?v=sf-JTKYvrxw",
-   "views": 159649,
+   "views": 169213,
    "multiple": 3.1,
    "shorts": false
   }

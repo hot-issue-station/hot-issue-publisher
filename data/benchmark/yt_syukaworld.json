@@ -3,20 +3,20 @@
  "name": "슈카월드",
  "channel": "https://www.youtube.com/@syukaworld",
  "channelId": "UCJo6G1u0e_-wS-JQn3T-zEw",
- "checkedAt": "2026-11-02T19:32+09:00",
+ "checkedAt": "2026-11-02T22:47+09:00",
  "videos": [
   {
    "id": "btP-S4xd8m8",
    "title": "황동현 '역대급 매출에도 주가가 떨어지는 빅테크'ㅣ니니 '미국 중간선거는 지금'ㅣ김장열 'AI 섹터의 다양한 시나리오'",
-   "published": "2026-11-02T09:17:18+00:00",
+   "published": "2026-11-02T12:20:40+00:00",
    "url": "https://www.youtube.com/watch?v=btP-S4xd8m8",
    "shorts": false,
-   "views": 9438,
-   "likes": 294,
-   "viewsGain": null,
-   "isNew": true,
-   "median": 135472,
-   "multiple": 0.1
+   "views": 77008,
+   "likes": 759,
+   "viewsGain": 67570,
+   "isNew": false,
+   "median": 137441,
+   "multiple": 0.6
   },
   {
    "id": "adtTTCDTFF8",
@@ -24,12 +24,12 @@
    "published": "2026-11-02T02:41:14+00:00",
    "url": "https://www.youtube.com/shorts/adtTTCDTFF8",
    "shorts": true,
-   "views": 42149,
-   "likes": 368,
-   "viewsGain": null,
-   "isNew": true,
-   "median": 121251.0,
-   "multiple": 0.3
+   "views": 64015,
+   "likes": 449,
+   "viewsGain": 21866,
+   "isNew": false,
+   "median": 122685.5,
+   "multiple": 0.5
   },
   {
    "id": "lO1KCuPlcuo",
@@ -37,12 +37,12 @@
    "published": "2026-11-02T02:38:09+00:00",
    "url": "https://www.youtube.com/shorts/lO1KCuPlcuo",
    "shorts": true,
-   "views": 43678,
-   "likes": 651,
-   "viewsGain": null,
-   "isNew": true,
-   "median": 121251.0,
-   "multiple": 0.4
+   "views": 64111,
+   "likes": 844,
+   "viewsGain": 20433,
+   "isNew": false,
+   "median": 122685.5,
+   "multiple": 0.5
   },
   {
    "id": "YSdD807ghyQ",
@@ -50,12 +50,12 @@
    "published": "2026-11-01T09:00:15+00:00",
    "url": "https://www.youtube.com/watch?v=YSdD807ghyQ",
    "shorts": false,
-   "views": 274700,
-   "likes": 2194,
-   "viewsGain": 80051,
+   "views": 299693,
+   "likes": 2248,
+   "viewsGain": 24993,
    "isNew": false,
-   "median": 135472,
-   "multiple": 2.0
+   "median": 137441,
+   "multiple": 2.2
   },
   {
    "id": "Qb-49x86cJA",
@@ -63,11 +63,11 @@
    "published": "2026-11-01T01:39:34+00:00",
    "url": "https://www.youtube.com/shorts/Qb-49x86cJA",
    "shorts": true,
-   "views": 111924,
-   "likes": 788,
-   "viewsGain": 11610,
+   "views": 114198,
+   "likes": 798,
+   "viewsGain": 2274,
    "isNew": false,
-   "median": 121251.0,
+   "median": 122685.5,
    "multiple": 0.9
   },
   {
@@ -76,11 +76,11 @@
    "published": "2026-11-01T00:41:46+00:00",
    "url": "https://www.youtube.com/shorts/V7T9aPUrdD0",
    "shorts": true,
-   "views": 97003,
-   "likes": 694,
-   "viewsGain": 6056,
+   "views": 98333,
+   "likes": 702,
+   "viewsGain": 1330,
    "isNew": false,
-   "median": 121251.0,
+   "median": 122685.5,
    "multiple": 0.8
   },
   {
@@ -89,11 +89,11 @@
    "published": "2026-10-31T09:00:32+00:00",
    "url": "https://www.youtube.com/watch?v=TF93Z8sJZok",
    "shorts": false,
-   "views": 135472,
-   "likes": 979,
-   "viewsGain": 9636,
+   "views": 137441,
+   "likes": 989,
+   "viewsGain": 1969,
    "isNew": false,
-   "median": 135472,
+   "median": 137441,
    "multiple": 1.0
   },
   {
@@ -102,12 +102,12 @@
    "published": "2026-10-30T09:07:05+00:00",
    "url": "https://www.youtube.com/watch?v=WuU0lc1SwLg",
    "shorts": false,
-   "views": 183898,
-   "likes": 1291,
-   "viewsGain": 6311,
+   "views": 185358,
+   "likes": 1302,
+   "viewsGain": 1460,
    "isNew": false,
-   "median": 135472,
-   "multiple": 1.4
+   "median": 137441,
+   "multiple": 1.3
   },
   {
    "id": "G9n3vLRCvSI",
@@ -115,11 +115,11 @@
    "published": "2026-10-30T06:40:56+00:00",
    "url": "https://www.youtube.com/watch?v=G9n3vLRCvSI",
    "shorts": false,
-   "views": 123195,
+   "views": 123501,
    "likes": 699,
-   "viewsGain": 949,
+   "viewsGain": 306,
    "isNew": false,
-   "median": 135472,
+   "median": 137441,
    "multiple": 0.9
   },
   {
@@ -128,11 +128,11 @@
    "published": "2026-10-30T02:46:47+00:00",
    "url": "https://www.youtube.com/shorts/p9PqJ61lg3w",
    "shorts": true,
-   "views": 318118,
-   "likes": 2744,
-   "viewsGain": 9585,
+   "views": 320800,
+   "likes": 2754,
+   "viewsGain": 2682,
    "isNew": false,
-   "median": 121251.0,
+   "median": 122685.5,
    "multiple": 2.6
   },
   {
@@ -141,11 +141,11 @@
    "published": "2026-10-29T09:10:37+00:00",
    "url": "https://www.youtube.com/shorts/As_g3UyIa2Y",
    "shorts": true,
-   "views": 141267,
-   "likes": 1241,
-   "viewsGain": 2394,
+   "views": 142063,
+   "likes": 1244,
+   "viewsGain": 796,
    "isNew": false,
-   "median": 121251.0,
+   "median": 122685.5,
    "multiple": 1.2
   },
   {
@@ -154,11 +154,11 @@
    "published": "2026-10-29T09:00:12+00:00",
    "url": "https://www.youtube.com/watch?v=uTmDuvJDcMM",
    "shorts": false,
-   "views": 262338,
-   "likes": 1433,
-   "viewsGain": 8134,
+   "views": 264608,
+   "likes": 1438,
+   "viewsGain": 2270,
    "isNew": false,
-   "median": 135472,
+   "median": 137441,
    "multiple": 1.9
   },
   {
@@ -167,11 +167,11 @@
    "published": "2026-10-29T06:38:46+00:00",
    "url": "https://www.youtube.com/watch?v=qFIRm5CCq74",
    "shorts": false,
-   "views": 123156,
-   "likes": 884,
-   "viewsGain": 1090,
+   "views": 123384,
+   "likes": 883,
+   "viewsGain": 228,
    "isNew": false,
-   "median": 135472,
+   "median": 137441,
    "multiple": 0.9
   },
   {
@@ -180,11 +180,11 @@
    "published": "2026-10-29T06:23:46+00:00",
    "url": "https://www.youtube.com/shorts/LdJyl_wt_ao",
    "shorts": true,
-   "views": 130578,
-   "likes": 876,
-   "viewsGain": 2096,
+   "views": 131173,
+   "likes": 883,
+   "viewsGain": 595,
    "isNew": false,
-   "median": 121251.0,
+   "median": 122685.5,
    "multiple": 1.1
   },
   {
@@ -193,11 +193,11 @@
    "published": "2026-10-29T03:10:22+00:00",
    "url": "https://www.youtube.com/shorts/qLXHZm_9mX0",
    "shorts": true,
-   "views": 204527,
-   "likes": 1868,
-   "viewsGain": 2039,
+   "views": 205109,
+   "likes": 1873,
+   "viewsGain": 582,
    "isNew": false,
-   "median": 121251.0,
+   "median": 122685.5,
    "multiple": 1.7
   }
  ],
@@ -205,15 +205,15 @@
   {
    "title": "규카츠가 방송 열심히 하는 이유",
    "url": "https://www.youtube.com/shorts/p9PqJ61lg3w",
-   "views": 318118,
+   "views": 320800,
    "multiple": 2.6,
    "shorts": true
   },
   {
    "title": "두에빌 청문회",
    "url": "https://www.youtube.com/watch?v=YSdD807ghyQ",
-   "views": 274700,
-   "multiple": 2.0,
+   "views": 299693,
+   "multiple": 2.2,
    "shorts": false
   }
  ]
