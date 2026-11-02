@@ -1,23 +1,31 @@
 {
  "name": "스브스뉴스 (SBS)",
  "channel": "https://www.youtube.com/@subusunews",
- "checkedAt": "2026-11-02T08:26+09:00",
+ "checkedAt": "2026-11-02T14:55+09:00",
  "subscribers": "144만",
  "videos": [
   {
+   "id": "z_5kUs-Izr0",
+   "title": "이제 '이거'까지 된다는 시리 근황 #애플 #shorts #스브스뉴스",
+   "views": 1100,
+   "viewsText": "조회수 1.1천회",
+   "published": "",
+   "kind": "short"
+  },
+  {
    "id": "fMk1x_SAtmI",
    "title": "업데이트된 시리 진짜 쓸 만한 거임? #시리 #shorts #스브스뉴스",
-   "views": 3000,
-   "viewsText": "조회수 3천회",
+   "views": 3700,
+   "viewsText": "조회수 3.7천회",
    "published": "",
    "kind": "short",
-   "gain": 2157
+   "gain": 700
   },
   {
    "id": "X9iSvXsLJuY",
    "title": "\"나 촉법이라 괜찮아\" 이제 안 통한다? #촉법소년 #shorts #스브스뉴스",
-   "views": 4300,
-   "viewsText": "조회수 4.3천회",
+   "views": 4400,
+   "viewsText": "조회수 4.4천회",
    "published": "",
    "kind": "short",
    "gain": 100
@@ -25,8 +33,8 @@
   {
    "id": "ernsQIVrBi4",
    "title": "노로바이러스 소문 팩트체크 #굴 #shorts #스브스뉴스",
-   "views": 6400,
-   "viewsText": "조회수 6.4천회",
+   "views": 6500,
+   "viewsText": "조회수 6.5천회",
    "published": "",
    "kind": "short",
    "gain": 100
@@ -34,17 +42,17 @@
   {
    "id": "cIV-athgSaM",
    "title": "마약 운반하고 아프리카로 도피한 한국 남성, 22년 만에 백발노인으로 강제 송환 #마약 #shorts #스브스뉴스",
-   "views": 10000,
-   "viewsText": "조회수 1만회",
+   "views": 11000,
+   "viewsText": "조회수 1.1만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 1000
   },
   {
    "id": "A6pfGRrFOzE",
    "title": "아이폰 듀오 화면 결함 인정한 애플, 무상 교체 발표했지만 재고 부족 #아이폰듀오 #shorts #스브스뉴스",
-   "views": 15000,
-   "viewsText": "조회수 1.5만회",
+   "views": 16000,
+   "viewsText": "조회수 1.6만회",
    "published": "",
    "kind": "short",
    "gain": 1000
@@ -52,8 +60,8 @@
   {
    "id": "-fLcCSNSD34",
    "title": "1인 1음료 진짜 필수인지 카페 사장님들한테 직접 물어봤습니다. #카페 #shorts #스브스뉴스",
-   "views": 260000,
-   "viewsText": "조회수 26만회",
+   "views": 270000,
+   "viewsText": "조회수 27만회",
    "published": "",
    "kind": "short",
    "gain": 10000
@@ -83,7 +91,7 @@
    "viewsText": "조회수 1.8만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "fg0BZ5a1Vhs",
@@ -351,15 +359,6 @@
    "title": "스타벅스, 논란 5개월 만에 투썸 제치고 1위 #스타벅스 #shorts #스브스뉴스",
    "views": 9100,
    "viewsText": "조회수 9.1천회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "063SMxxj49k",
-   "title": "원신 유저들이 한강에 모여 진짜 삽질(?)을 하게 된 사연 #원신 #shorts #스브스뉴스",
-   "views": 45000,
-   "viewsText": "조회수 4.5만회",
    "published": "",
    "kind": "short",
    "gain": 0

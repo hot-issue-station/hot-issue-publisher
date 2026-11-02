@@ -1,17 +1,17 @@
 {
  "name": "안원잘부",
  "channel": "https://www.youtube.com/@helloiamwoninicetomeetyou",
- "checkedAt": "2026-11-02T08:26+09:00",
+ "checkedAt": "2026-11-02T14:55+09:00",
  "subscribers": "240만",
  "videos": [
   {
    "id": "DKDmFgXzxs8",
    "title": "안원잘부 명장면 이모티콘2 출시!",
-   "views": 2470000,
-   "viewsText": "조회수 247만회",
+   "views": 2480000,
+   "viewsText": "조회수 248만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "zxNoW_LtVLE",
@@ -20,7 +20,7 @@
    "viewsText": "조회수 269만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "mFM2hP5LEhM",
@@ -47,7 +47,7 @@
    "viewsText": "조회수 530만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "BUeZskDCMpU",
@@ -56,7 +56,7 @@
    "viewsText": "조회수 288만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "7Q_myxhlcwE",
@@ -92,7 +92,7 @@
    "viewsText": "조회수 1329만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "gNJrbCSN2TM",
