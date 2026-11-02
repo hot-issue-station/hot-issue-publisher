@@ -7,6 +7,91 @@ LOGO="/home/claude/hot-issue-publisher/assets/brand/logo_wordmark.png"
 F="/usr/share/fonts/opentype/noto/NotoSansCJK-Black.ttc"; FB="/usr/share/fonts/opentype/noto/NotoSansCJK-Bold.ttc"
 W,H,FPS=1080,1920,30; CROP="crop=1332:749:286:211"; MY=520; MH=607
 GRN=(70,255,140); YEL=(255,214,10)
+HAND=Image.open("hand.png").convert("RGBA"); HAND=HAND.resize((int(HAND.width*1.6),int(HAND.height*1.6)),Image.LANCZOS)
+import numpy as _np
+_a=_np.array(HAND)[...,3]; _ys,_xs=_np.nonzero(_a>40); TIPX=int(_xs[_ys==_ys.min()].mean()); TIPY=int(_ys.min())
+HEART=Image.open("heart.png").convert("RGBA")
+PAT=["tap","double","swipe","hold","cursor"]   # 시그니처 손 동작 5가지, 카드마다 돌려 쓰기
+def ripple(d,t,t0,cx,cy):
+    if t<t0: return
+    q=min(1,(t-t0)/0.45); rr=int(40+160*q); d.ellipse([cx-rr,cy-rr,cx+rr,cy+rr],outline=(255,255,255,int(220*(1-q))),width=8)
+    if q<0.5: d.ellipse([cx-30,cy-30,cx+30,cy+30],fill=(255,255,255,int(200*(1-2*q))))
+def paste_hand(im,cx,cy,dx,dy,rot,sc,al):
+    h=HAND.resize((max(1,int(HAND.width*sc)),max(1,int(HAND.height*sc))),Image.LANCZOS)
+    if rot: h=h.rotate(rot,expand=True,resample=Image.BICUBIC)
+    if al<1: h.putalpha(h.getchannel("A").point(lambda v:int(v*max(0,al))))
+    tx=int(TIPX*sc)+(h.width-int(HAND.width*sc))//2; ty=int(TIPY*sc)+(h.height-int(HAND.height*sc))//2
+    im.alpha_composite(h,(cx+dx-tx, cy+dy-ty))
+def draw_tap(p,im,t,tap,cx,cy):
+    d=ImageDraw.Draw(im)
+    if p=="tap":
+        ripple(d,t,tap,cx,cy); draw_hand(im,t,tap,cx,cy)
+    elif p=="double":
+        t1=tap-0.28
+        for tt in (t1,tap):
+            if tt<=t<tt+0.35: ripple(d,t,tt,cx,cy)
+        if t>=tap:   # 하트 팝
+            q=min(1,(t-tap)/0.5); sc=0.6+0.9*ease(q); hh=HEART.resize((int(HEART.width*sc),int(HEART.height*sc)))
+            hh.putalpha(hh.getchannel("A").point(lambda v:int(v*(1-max(0,q-0.6)/0.4))))
+            im.alpha_composite(hh,(cx-hh.width//2,cy-hh.height//2-int(60*q)))
+        if t<t1-0.5: return
+        if t<t1: q=ease((t-(t1-0.5))/0.45); paste_hand(im,cx,cy,int(200*(1-q)),int(240*(1-q)),-15*(1-q),1,min(1,(t-(t1-0.5))/0.2))
+        elif t<tap+0.25:
+            press=any(tt<=t<tt+0.1 for tt in (t1,tap)); paste_hand(im,cx,cy,0,8 if press else 0,0,0.9 if press else 1,1)
+        else: q=ease((t-tap-0.25)/0.3); paste_hand(im,cx,cy,int(120*q),int(160*q),-10*q,1,1-q)
+    elif p=="swipe":
+        y0,y1=cy+220,cy-40
+        if t<tap-0.75: return
+        if t<tap-0.35: q=ease((t-(tap-0.75))/0.35); paste_hand(im,cx,y0,int(160*(1-q)),int(60*(1-q)),-12*(1-q),1,q)
+        elif t<tap:
+            q=ease((t-(tap-0.35))/0.35); y=int(y0+(y1-y0)*q)
+            for k in range(4):   # 위로 쓸어 올리는 잔상
+                yy=y+30+k*34; d.line([cx-60+k*8,yy,cx+60-k*8,yy],fill=(255,255,255,int(150*(1-k/4)*q)),width=6)
+            paste_hand(im,cx,y,0,0,0,1,1)
+        else:
+            q=ease((t-tap)/0.4); d.polygon([(cx,y1-80-40*q),(cx-46,y1-20-40*q),(cx+46,y1-20-40*q)],fill=(255,255,255,int(220*(1-q))))
+            paste_hand(im,cx,y1,0,int(-40*q),0,1,1-q)
+    elif p=="hold":
+        t0=tap-0.7
+        if t<t0-0.35: return
+        if t<t0: q=ease((t-(t0-0.35))/0.35); paste_hand(im,cx,cy,int(200*(1-q)),int(240*(1-q)),-15*(1-q),1,q); return
+        if t<tap:   # 꾹 누르는 동안 테두리가 차오름
+            q=(t-t0)/(tap-t0); r=92; d.arc([cx-r,cy-r,cx+r,cy+r],-90,-90+360*q,fill=(70,255,140,255),width=12)
+            paste_hand(im,cx,cy,0,10,0,0.9,1)
+        else:
+            ripple(d,t,tap,cx,cy); q=ease((t-tap)/0.35); paste_hand(im,cx,cy,int(120*q),int(160*q),-10*q,1,1-q)
+    elif p=="cursor":
+        if t<tap-0.6: return
+        q=ease((t-(tap-0.6))/0.55) if t<tap else 1
+        x=int(cx+300*(1-q)); y=int(cy+200*(1-q))
+        pr=0.85 if tap<=t<tap+0.12 else 1
+        pts=[(0,0),(0,62),(16,48),(28,76),(40,70),(28,44),(48,44)]
+        pts=[(x+int(px*1.4*pr),y+int(py*1.4*pr)) for px,py in pts]
+        al=255 if t<tap+0.35 else int(255*max(0,1-(t-tap-0.35)/0.25))
+        d.polygon(pts,fill=(255,255,255,al),outline=(0,0,0,al)); d.line(pts+[pts[0]],fill=(0,0,0,al),width=3)
+        if t>=tap:   # 클릭 불꽃
+            qq=min(1,(t-tap)/0.3)
+            import math as _m
+            for k in range(8):
+                ang=k*_m.pi/4; r0=30+40*qq; r1=r0+28
+                d.line([cx+r0*_m.cos(ang),cy+r0*_m.sin(ang),cx+r1*_m.cos(ang),cy+r1*_m.sin(ang)],fill=(255,214,10,int(255*(1-qq))),width=6)
+def ease(q): q=max(0,min(1,q)); return q*q*(3-2*q)
+def draw_hand(im,t,tap,cx,cy):
+    # 시그니처 손가락 탭 (대표 결정 11/3 02:28)
+    if t<tap-0.6: return
+    if t<tap:                      # 오른쪽 아래에서 다가오기
+        q=ease((t-(tap-0.6))/0.55); dx=int(230*(1-q)); dy=int(280*(1-q)); rot=-18*(1-q); sc=1.0; al=min(1,(t-(tap-0.6))/0.2)
+    elif t<tap+0.12:               # 누르기
+        q=(t-tap)/0.12; dx=0; dy=int(8*q); rot=0; sc=1-0.12*q; al=1
+    elif t<tap+0.3:                # 떼기
+        q=(t-tap-0.12)/0.18; dx=0; dy=int(8*(1-q)); rot=0; sc=0.88+0.12*q; al=1
+    else:                          # 빠지기
+        q=ease((t-tap-0.3)/0.3); dx=int(120*q); dy=int(160*q); rot=-10*q; sc=1; al=1-q
+    h=HAND.resize((max(1,int(HAND.width*sc)),max(1,int(HAND.height*sc))),Image.LANCZOS)
+    if rot: h=h.rotate(rot,expand=True,resample=Image.BICUBIC)
+    if al<1: h.putalpha(h.getchannel("A").point(lambda v:int(v*al)))
+    tx=int(TIPX*sc)+(h.width-int(HAND.width*sc))//2; ty=int(TIPY*sc)+(h.height-int(HAND.height*sc))//2
+    im.alpha_composite(h,(cx+dx-tx, cy+dy-ty))
 def run(a): subprocess.run(a,check=True)
 def font(p,s): return ImageFont.truetype(p,s)
 def fit(d,txt,p,sz,maxw):
@@ -55,7 +140,7 @@ def card_clip(i,l1,l2,st,dur=2.8,out=None,tapon=True):
         t=k/FPS; im=base.copy(); d=ImageDraw.Draw(im)
         # media still (dim) with gentle zoom
         z=1+0.03*t/dur; s=st.resize((int(1080*z),int(MH*z))); s=s.crop(((s.width-1080)//2,(s.height-MH)//2,(s.width-1080)//2+1080,(s.height-MH)//2+MH))
-        dim=0.55 if (not tapon or t<dur-0.45) else 0.55+0.45*min(1,(t-(dur-0.45))/0.3)
+        dim=0.55 if (not tapon or t<dur-0.45) else 0.55+0.45*min(1,(t-(dur-0.45))/0.35)
         im.paste(ImageEnhance.Brightness(s).enhance(dim),(0,MY))
         band(im,i+1,N); d=ImageDraw.Draw(im)
         # card text (types in)
@@ -64,18 +149,14 @@ def card_clip(i,l1,l2,st,dur=2.8,out=None,tapon=True):
         w=d.textlength(l1,font=f1); d.text(((W-w)/2,1190+20*(1-a)),l1,font=f1,fill=(255,255,255,int(255*a)))
         a2=min(1,max(0,(t-0.25)/0.35)); w=d.textlength(l2,font=f2); d.text(((W-w)/2,1270+20*(1-a2)),l2,font=f2,fill=(*YEL,int(255*a2)),stroke_width=3,stroke_fill="black")
         # play button + tap
-        cx,cy=W//2,MY+MH//2; tap=dur-0.75
+        cx,cy=W//2,MY+MH//2; tap=dur-0.55
         if tapon and t<dur-0.3:
             pr=60; pa=int(230*min(1,t/0.4)); d.ellipse([cx-pr,cy-pr,cx+pr,cy+pr],fill=(0,0,0,int(pa*0.55)),outline=(255,255,255,pa),width=5)
             d.polygon([(cx-20,cy-32),(cx-20,cy+32),(cx+34,cy)],fill=(255,255,255,pa))
-        if tapon and tap-0.35<=t<tap:   # finger approaching
-            q=(t-(tap-0.35))/0.35; fx=int(cx+170-140*q); fy=int(cy+190-160*q); d.ellipse([fx-34,fy-34,fx+34,fy+34],fill=(255,255,255,170),outline=(0,0,0,120),width=3)
-        if tapon and t>=tap:            # ripple
-            q=min(1,(t-tap)/0.45); rr=int(40+160*q); d.ellipse([cx-rr,cy-rr,cx+rr,cy+rr],outline=(255,255,255,int(220*(1-q))),width=8)
-            if q<0.5: d.ellipse([cx-30,cy-30,cx+30,cy+30],fill=(255,255,255,int(200*(1-2*q))))
+        if tapon: draw_tap(PAT[(i+5)%5],im,t,tap,cx,cy)
         im.convert("RGB").save(tmp/f"{k:04d}.png")
     run(["ffmpeg","-v","error","-y","-framerate",str(FPS),"-i",str(tmp/"%04d.png"),"-f","lavfi","-t",str(dur),"-i","anullsrc=r=48000:cl=stereo","-shortest","-c:v","libx264","-preset","veryfast","-crf","19","-pix_fmt","yuv420p","-c:a","aac",out])
-    return dur, dur-0.75
+    return dur, dur-0.55
 def video_clip(i,src,stt,du,cap,srcname,out):
     ov=Image.new("RGBA",(W,H),(0,0,0,0)); band(ov,i+1,N); d=ImageDraw.Draw(ov)
     cf=fit(d,cap,F,62,960); cw=d.textlength(cap,font=cf)
@@ -88,7 +169,7 @@ def video_clip(i,src,stt,du,cap,srcname,out):
 parts=[]; timeline=[]; taps=[]; T=0
 # hook card
 hook=still(R3,4.4)
-d0,_=card_clip(-1,"오늘의 덕심저장소","존박 × 리센느 이야기",hook,2.6,"c_hook.mp4",tapon=False); parts.append("c_hook.mp4"); timeline.append(("card",T,T+d0)); T+=d0
+d0,_=card_clip(-1,"오늘 18시 리센느 「PULSE」 컴백!","1위를 기원하며, 존박 × 리센느",hook,2.6,"c_hook.mp4",tapon=False); parts.append("c_hook.mp4"); timeline.append(("card",T,T+d0)); T+=d0
 for i,((src,stt,du,cap,sn),(l1,l2)) in enumerate(zip(V,CARDS)):
     st=still(src,stt+0.05)
     cd,tp=card_clip(i,l1,l2,st,2.8,f"c{i}.mp4"); parts.append(f"c{i}.mp4"); taps.append(T+tp); timeline.append(("card",T,T+cd)); T+=cd
@@ -96,7 +177,7 @@ for i,((src,stt,du,cap,sn),(l1,l2)) in enumerate(zip(V,CARDS)):
 # end card
 e=frame_base(hook); band(e,N-1,N); d=ImageDraw.Draw(e)
 e.paste(ImageEnhance.Brightness(hook).enhance(0.35),(0,MY)); band(e,N-1,N); d=ImageDraw.Draw(e)
-for y,t,c,f in [(MY+150,"10월 28일엔 맥도날드 광고에",(255,255,255),font(FB,54)),(MY+240,"'존박 세트'까지 등장",YEL,font(F,72)),(1200,"노래로, 랩으로…",(255,255,255),font(FB,56)),(1280,"존박의 다음 무대는?",GRN,font(F,72))]:
+for y,t,c,f in [(MY+150,"10월 28일엔 맥도날드 광고에",(255,255,255),font(FB,54)),(MY+240,"'존박 세트'까지 등장",YEL,font(F,72)),(1190,"오늘 18시 리센느 「PULSE」",(255,255,255),font(FB,56)),(1270,"이번에도 1위 가자 💜".replace(" 💜",""),GRN,font(F,72))]:
     w=d.textlength(t,font=f); d.text(((W-w)/2,y),t,font=f,fill=c,stroke_width=2,stroke_fill="black")
 sf=font(FB,28); s="출처: 엑스포츠뉴스(10/30) · OSEN(11/2)"; w=d.textlength(s,font=sf); d.text(((W-w)/2,1400),s,font=sf,fill=(170,180,200))
 e.convert("RGB").save("end.png")
