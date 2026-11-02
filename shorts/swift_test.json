@@ -1,9 +1,24 @@
 {
- "titleBar": ["2년 쓰려던 우주망원경", "22년을 버텼다고?"],
+ "titleBar": [
+  "2년 쓰려던 우주망원경",
+  "22년을 버텼다고?"
+ ],
  "clips": [
-  {"file": "assets/video/swift_anim.mp4", "start": 0, "end": 22.7},
-  {"file": "assets/video/swift_craft.mp4", "start": 0, "end": 20},
-  {"file": "assets/video/swift_360.mp4", "start": 0, "end": 20}
+  {
+   "file": "assets/video/swift_anim.mp4",
+   "start": 0,
+   "end": 22.7
+  },
+  {
+   "file": "assets/video/swift_craft.mp4",
+   "start": 0,
+   "end": 20
+  },
+  {
+   "file": "assets/video/swift_360.mp4",
+   "start": 0,
+   "end": 20
+  }
  ],
  "voice": "assets/voice/swift_test",
  "music": "world",
@@ -12,5 +27,16 @@
   "https://www.livescience.com/space/space-exploration/nasas-swift-observatory-ends-22-year-mission-to-study-the-most-powerful-explosions-since-the-big-bang",
   "https://www.natureworldnews.com/articles/73650/20261026/nasa-ends-swifts-mission-171-miles-gamma-ray-burst-hunter-heads-re-entry.htm",
   "https://popsci.com/science/nasa-abandons-swift-observatory-rescue/"
+ ],
+ "en": [
+  "Built to last 2 years, this space telescope lasted 22.",
+  "It's NASA's Swift observatory.",
+  "Launched in Nov. 2004, it caught 2,000+ gamma-ray bursts, the universe's most powerful blasts.",
+  "Its data led to about 7,000 scientific papers.",
+  "But as solar activity rose, its orbit kept dropping,",
+  "and this summer, a rescue mission to raise its orbit failed.",
+  "On October 20, it made its final observation.",
+  "It's expected to reenter the atmosphere and break apart within weeks.",
+  "Ten times its design life. Well done, Swift."
  ]
 }

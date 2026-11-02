@@ -8,7 +8,8 @@ shorts/<이름>.json:
   "voice": "assets/voice/<이름>",        # make_voice.py 결과(NN.wav + lines.json, 자막 = lines[].text)
   "music": "world",                      # config/music_map.json 시리즈, 내레이션 밑에 작게 깔림
   "credit": "영상: NASA 고다드우주비행센터 · 자료: …",
-  "crop": "center" }
+  "crop": "center",
+  "en": ["English line 1", ...] }         # (선택) 해외편 영어 자막 — 내레이션 줄과 같은 개수, 한국어 자막 아래 작게
 쓸 수 있는 영상은 docs/make_quick.md 0장의 영상 사용 규칙(공개 영상만)을 따른다.
 화면: 위 제목 띠(make_reel_motion 과 같은 모양) / 가운데 영상(정사각형으로 잘라 1080×1080) / 아래 자막 / 맨 아래 출처.
 """
@@ -22,11 +23,13 @@ LEAD, GAP, TAIL = 0.6, 0.35, 1.6     # 처음 여유, 줄 사이, 끝 여유(초
 VID_Y = BAND_H + 40                  # 영상 칸 위치
 SUB_Y = VID_Y + 1080 + 30            # 자막 칸 위치
 SUB_HTML = """<html><head><meta charset="utf-8"><style>
-body{margin:0;width:1080px;height:300px;background:transparent;display:flex;align-items:flex-start;justify-content:center;
+body{margin:0;width:1080px;height:340px;background:transparent;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;
 font-family:'Noto Sans CJK KR','Noto Sans KR',sans-serif;word-break:keep-all}
 .s{font-weight:800;font-size:52px;line-height:1.32;color:#fff;text-align:center;padding:0 60px;
 text-shadow:0 0 12px rgba(0,0,0,.9),0 3px 0 #000}
-</style></head><body><div class="s">%s</div></body></html>"""
+.e{margin-top:14px;font-weight:600;font-size:32px;line-height:1.28;color:#c9d3e3;text-align:center;padding:0 70px;
+font-family:'Noto Sans','Noto Sans CJK KR',sans-serif;text-shadow:0 0 10px rgba(0,0,0,.9)}
+</style></head><body><div class="s">%s</div>%s</body></html>"""
 CREDIT_HTML = """<html><head><meta charset="utf-8"><style>
 body{margin:0;width:1080px;height:60px;background:transparent;display:flex;align-items:center;justify-content:center;
 font-family:'Noto Sans CJK KR','Noto Sans KR',sans-serif}
@@ -54,9 +57,11 @@ def main():
     with sync_playwright() as p:
         b = p.chromium.launch(); pg = b.new_page(viewport={"width": W, "height": H})
         band_png(list(spec["titleBar"]), work / "band.png", pg)
+        en = spec.get("en") or []
         for k, (_, _, txt, _) in enumerate(cues):
-            pg.set_viewport_size({"width": W, "height": 300})
-            pg.set_content(SUB_HTML % re.sub(r"(\d[\d,.]*[천만억조]?) (?=\S)", "\\1&nbsp;", html.escape(txt))); pg.wait_for_timeout(120)
+            pg.set_viewport_size({"width": W, "height": 340})
+            ed = f'<div class="e">{html.escape(en[k])}</div>' if k < len(en) and en[k] else ""
+            pg.set_content(SUB_HTML % (re.sub(r"(\d[\d,.]*[천만억조]?) (?=\S)", "\\1&nbsp;", html.escape(txt)), ed)); pg.wait_for_timeout(120)
             pg.screenshot(path=str(work / f"sub{k:02d}.png"), omit_background=True)
         pg.set_viewport_size({"width": W, "height": 60})
         pg.set_content(CREDIT_HTML % html.escape(spec.get("credit", ""))); pg.wait_for_timeout(120)
