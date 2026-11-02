@@ -9,6 +9,9 @@ python scripts/make_reel_motion.py rounds/<파일>.json /home/claude/reels/<이�
   D 와이프: 사진 대각선 이동, 글이 왼쪽부터 쓱 그려지듯 드러남, 전환 위로 닦기·블러 교대
 - 카드 내용은 make_post.cards() 그대로(세로 전체 화면 레이아웃). 카드 HTML에 CSS 애니메이션을 넣고,
   Playwright로 프레임마다 애니메이션 시각을 정확히 맞춰 찍은 뒤 ffmpeg로 잇는다(끊김 없음).
+- 위 두 줄 제목 띠(시험, 대표 지시 11/2 — 크랩·엠빅·JTBC·Mnet 벤치마킹): round JSON 에 "titleBar": ["흰 줄", "노란 줄"] 이 있으면
+  0초부터 끝까지 화면 맨 위에 어두운 띠 + 두 줄 제목을 고정한다. 카드는 BAND_SHIFT 만큼 아래로 내려 머리줄이 가려지지 않게 한다
+  (카드 맨 아래 여백을 그만큼 잘라 냄). 제목은 카드에 있는 사실만, 질문형·인용형 권장.
 """
 import json, pathlib, subprocess, sys, tempfile
 
@@ -85,6 +88,26 @@ PREP_JS = r"""
 """
 
 
+BAND_H, BAND_SHIFT = 330, 170
+BAND_HTML = """<html><head><meta charset="utf-8"><style>
+body{margin:0;width:1080px;height:%dpx;background:#0d1320;display:flex;flex-direction:column;justify-content:center;align-items:center;
+font-family:'Noto Sans CJK KR','Noto Sans KR',sans-serif;word-break:keep-all}
+.l{font-weight:900;font-size:%dpx;line-height:1.18;letter-spacing:-1px;text-align:center;padding:0 40px}
+.a{color:#fff}.b{color:#ffd23f}
+.tag{position:absolute;top:22px;right:34px;font-size:24px;color:#8b95a7;font-weight:700}
+</style></head><body><div class="tag">hot.issue.station</div><div class="l a">%s</div><div class="l b">%s</div></body></html>"""
+
+
+def band_png(lines, path, pg):
+    import html as htm
+    a, b = (lines + ["", ""])[:2]
+    size = 72 if max(len(a), len(b)) <= 13 else (62 if max(len(a), len(b)) <= 16 else 54)
+    pg.set_viewport_size({"width": W, "height": BAND_H})
+    pg.set_content(BAND_HTML % (BAND_H, size, htm.escape(a), htm.escape(b))); pg.wait_for_timeout(200)
+    pg.screenshot(path=str(path))
+    pg.set_viewport_size({"width": W, "height": H})
+
+
 def main():
     rj, out = pathlib.Path(sys.argv[1]), pathlib.Path(sys.argv[2])
     mode = sys.argv[3] if len(sys.argv) > 3 else "both"
@@ -122,6 +145,9 @@ def main():
             subprocess.run(["ffmpeg", "-y", "-framerate", str(FPS), "-i", str(fdir / "%04d.jpg"), "-c:v", "libx264", "-preset", "veryfast",
                             "-crf", "20", "-pix_fmt", "yuv420p", str(clip)], check=True, capture_output=True)
             clips.append((clip, dur)); print(f"{i+1}장 {dur}s 사진 {info['photos']} 글 {info['items']}")
+        band = None
+        if r.get("titleBar"):
+            band = work / "band.png"; band_png(list(r["titleBar"]), band, pg)
         b.close()
     # 장 사이 부드러운 전환(xfade) + 무음 오디오
     inputs, fl, last, off = [], [], "0:v", 0.0
@@ -134,8 +160,15 @@ def main():
         fl.append(f"[{last}][{k}:v]xfade=transition={tr}:duration={XF}:offset={off:.2f}[{lab}]")
         last = lab
     total = sum(d for _, d in clips) - XF * (len(clips) - 1)
+    ain = len(clips)
+    if band is not None:   # 카드를 아래로 내리고 맨 위에 제목 띠 고정
+        inputs += ["-loop", "1", "-i", str(band)]
+        fl.append(f"[{last}]crop={W}:{H - BAND_SHIFT}:0:0,pad={W}:{H}:0:{BAND_SHIFT}:color=0x0d1320[sh];[sh][{len(clips)}:v]overlay=0:0:shortest=1[vb]")
+        last, ain = "vb", len(clips) + 1
+    if not fl:
+        fl.append(f"[{last}]null[v0]"); last = "v0"
     cmd = ["ffmpeg", "-y", *inputs, "-f", "lavfi", "-t", f"{total:.2f}", "-i", "anullsrc=r=44100:cl=stereo",
-           "-filter_complex", ";".join(fl), "-map", f"[{last}]", "-map", f"{len(clips)}:a", "-c:v", "libx264", "-preset", "veryfast",
+           "-filter_complex", ";".join(fl), "-map", f"[{last}]", "-map", f"{ain}:a", "-c:v", "libx264", "-preset", "veryfast",
            "-crf", "20", "-pix_fmt", "yuv420p", "-c:a", "aac", "-shortest", "-movflags", "+faststart", str(out)]
     subprocess.run(cmd, check=True, capture_output=True)
     print(f"done {total:.1f}s -> {out}")
