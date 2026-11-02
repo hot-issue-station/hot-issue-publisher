@@ -1,0 +1,16 @@
+{
+ "titleBar": ["2년 쓰려던 우주망원경", "22년을 버텼다고?"],
+ "clips": [
+  {"file": "assets/video/swift_anim.mp4", "start": 0, "end": 22.7},
+  {"file": "assets/video/swift_craft.mp4", "start": 0, "end": 20},
+  {"file": "assets/video/swift_360.mp4", "start": 0, "end": 20}
+ ],
+ "voice": "assets/voice/swift_test",
+ "music": "world",
+ "credit": "영상: NASA 고다드우주비행센터 · 자료: Live Science, Nature World News (10/26)",
+ "_sources": [
+  "https://www.livescience.com/space/space-exploration/nasas-swift-observatory-ends-22-year-mission-to-study-the-most-powerful-explosions-since-the-big-bang",
+  "https://www.natureworldnews.com/articles/73650/20261026/nasa-ends-swifts-mission-171-miles-gamma-ray-burst-hunter-heads-re-entry.htm",
+  "https://popsci.com/science/nasa-abandons-swift-observatory-rescue/"
+ ]
+}
