@@ -1,0 +1,66 @@
+[
+ {
+  "slot": "PM",
+  "kind": "POL",
+  "candidates": [
+   {
+    "title": "[민감] 이 대통령 시정연설, 2027년 예산 820.9조",
+    "scores": {
+     "coverage": 2,
+     "rankings": 0,
+     "fandom": 1,
+     "ourHistory": 2,
+     "freshness": 3,
+     "shareable": 2
+    },
+    "total": 21
+   },
+   {
+    "title": "[민감] 820조 예산, 앞으로 한 달 일정 한눈에",
+    "scores": {
+     "coverage": 1,
+     "rankings": 0,
+     "fandom": 1,
+     "ourHistory": 2,
+     "freshness": 3,
+     "shareable": 3
+    },
+    "total": 21
+   }
+  ],
+  "picked": null,
+  "createdAt": "2026-11-02T11:20:00+09:00"
+ },
+ {
+  "slot": "PM",
+  "kind": "ECO",
+  "candidates": [
+   {
+    "title": "내일 발표, 10월 물가는 2.8%로 주춤할까",
+    "scores": {
+     "coverage": 2,
+     "rankings": 0,
+     "fandom": 1,
+     "ourHistory": 1,
+     "freshness": 3,
+     "shareable": 2
+    },
+    "total": 19
+   },
+   {
+    "title": "코스피 5,637로 출발 1.62%↓, 환율 1,333원대",
+    "scores": {
+     "coverage": 1,
+     "rankings": 1,
+     "fandom": 1,
+     "ourHistory": 1,
+     "freshness": 3,
+     "shareable": 1
+    },
+    "total": 17
+   }
+  ],
+  "picked": null,
+  "createdAt": "2026-11-02T11:20:00+09:00"
+ }
+]
