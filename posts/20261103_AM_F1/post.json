@@ -1,0 +1,43 @@
+{
+  "version": 1,
+  "date": "2026-11-03",
+  "slot": "AM",
+  "publishAt": "2026-11-03T08:00:00+09:00",
+  "topic": "F1 키미 안토넬리, 20살 역대 최연소 월드 챔피언",
+  "images": [
+    "01.jpg",
+    "02.jpg",
+    "03.jpg",
+    "04.jpg",
+    "05.jpg",
+    "06.jpg",
+    "07.jpg"
+  ],
+  "caption": "20살 월드 챔피언, F1 키미 안토넬리\n메르세데스의 키미 안토넬리가 11월 1일 멕시코시티 그랑프리에서 3위로 들어오며 F1 역대 최연소 월드 챔피언이 됐어요. 레이스 우승은 막스 페르스타펜이었어요.\n\n지금까지 최연소 챔피언이던 세바스찬 베텔의 기록을 3년 앞당겼고, 이탈리아 출신으로는 1953년 알베르토 아스카리 이후 73년 만의 챔피언이에요.\n\n여러분은 스무 살에 어떤 꿈을 꿨나요?\n\n출처: FIA·오토스포츠(2026.11.01), TSN·타임스라이브(2026.10.28)\n이미지 출처: 영상 화면 · FORMULA 1 공식 유튜브\n\n광고·제휴 문의 reaymi.music@gmail.com\n\n#F1 #안토넬리 #KimiAntonelli #포뮬러원 #메르세데스 #멕시코GP #해외이슈 #이슈브리프 #오늘의이슈",
+  "sources": [
+    {
+      "outlet": "FIA",
+      "title": "Antonelli crowned F1's youngest world champion, Verstappen wins in Mexico City",
+      "date": "2026.11.01",
+      "url": "https://www.fia.com/news/f1-antonelli-crowned-f1s-youngest-world-champion-verstappen-wins-mexico-city"
+    },
+    {
+      "outlet": "오토스포츠",
+      "title": "Antonelli becomes youngest world champion as Verstappen holds off Hamilton",
+      "date": "2026.11.01",
+      "url": "https://www.autosport.com/f1/news/f1-mexico-gp-kimi-antonelli-clinches-world-title-as-max-verstappen-holds-off-lewis-hamilton-for-vic/10870724/"
+    },
+    {
+      "outlet": "TSN",
+      "title": "Antonelli is set to end Italy's 73-year wait for an F1 champion",
+      "date": "2026.10.28",
+      "url": "https://www.tsn.ca/motorsports/formula-1/article/antonelli-is-set-to-end-italys-73-year-wait-for-an-f1-champion-why-did-it-take-so-long/"
+    },
+    {
+      "outlet": "타임스라이브",
+      "title": "Antonelli poised to end Italy's 73-year F1 title wait",
+      "date": "2026.10.28",
+      "url": "https://www.timeslive.co.za/motoring/2026-10-28-antonelli-poised-to-end-italys-73-year-f1-title-wait/"
+    }
+  ]
+}

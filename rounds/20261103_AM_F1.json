@@ -1,0 +1,74 @@
+{
+ "date": "2026-11-03",
+ "slot": "AM",
+ "publishTime": "08:00",
+ "category": "해외 이슈 · 스포츠",
+ "topic": "F1 키미 안토넬리, 20살 역대 최연소 월드 챔피언",
+ "hook": "20살 월드 챔피언,\nF1 키미 안토넬리",
+ "sub": "이탈리아에 73년 만의 챔피언",
+ "photo": "assets/thumbs/f1_antonelli.jpg",
+ "photoPos": "55% 30%",
+ "photoLabel": "영상 화면 · FORMULA 1 공식 유튜브",
+ "big": {
+  "number": "20",
+  "lines": [
+   "살,",
+   "*역대 최연소*",
+   "F1 챔피언"
+  ],
+  "caption": "11/1 멕시코시티 GP · 메르세데스",
+  "icon": "globe"
+ },
+ "summary": "메르세데스의 키미 안토넬리가 멕시코시티 GP에서 3위를 하며 F1 역대 최연소 월드 챔피언이 됐어요.",
+ "facts": [
+  {
+   "title": "멕시코시티 3위로 챔피언 확정",
+   "desc": "9위 안에만 들면 되는 상황에서 3위로 들어와 첫 드라이버 챔피언을 확정했어요. 레이스 우승은 막스 페르스타펜, 2위는 루이스 해밀턴이에요.",
+   "source": "FIA · 오토스포츠 · 2026.11.01",
+   "photo": "assets/thumbs/f1_mexico.jpg",
+   "photoPos": "50% 45%",
+   "photoLabel": "영상 화면 · FORMULA 1 공식 유튜브"
+  },
+  {
+   "title": "베텔 기록보다 3년 빨랐어요",
+   "desc": "지금까지 최연소 챔피언은 세바스찬 베텔이었어요. 스무 살 안토넬리가 그 기록을 3년 앞당겼어요.",
+   "source": "오토스포츠 · FIA · 2026.11.01"
+  },
+  {
+   "title": "이탈리아, 73년 만의 챔피언",
+   "desc": "이탈리아 출신 F1 챔피언은 1953년 알베르토 아스카리 이후 처음이에요. 볼로냐에서 온 소년이 73년의 기다림을 끝냈어요.",
+   "source": "TSN · 타임스라이브 · 2026.10.28"
+  }
+ ],
+ "interp": "스무 살의 꿈이 이뤄졌어요",
+ "interpSub": "여러분은 스무 살에 어떤 꿈을 꿨나요? 댓글로 들려주세요.",
+ "interpLabel": "함께 축하해요",
+ "sources": [
+  {
+   "outlet": "FIA",
+   "title": "Antonelli crowned F1's youngest world champion, Verstappen wins in Mexico City",
+   "date": "2026.11.01",
+   "url": "https://www.fia.com/news/f1-antonelli-crowned-f1s-youngest-world-champion-verstappen-wins-mexico-city"
+  },
+  {
+   "outlet": "오토스포츠",
+   "title": "Antonelli becomes youngest world champion as Verstappen holds off Hamilton",
+   "date": "2026.11.01",
+   "url": "https://www.autosport.com/f1/news/f1-mexico-gp-kimi-antonelli-clinches-world-title-as-max-verstappen-holds-off-lewis-hamilton-for-vic/10870724/"
+  },
+  {
+   "outlet": "TSN",
+   "title": "Antonelli is set to end Italy's 73-year wait for an F1 champion",
+   "date": "2026.10.28",
+   "url": "https://www.tsn.ca/motorsports/formula-1/article/antonelli-is-set-to-end-italys-73-year-wait-for-an-f1-champion-why-did-it-take-so-long/"
+  },
+  {
+   "outlet": "타임스라이브",
+   "title": "Antonelli poised to end Italy's 73-year F1 title wait",
+   "date": "2026.10.28",
+   "url": "https://www.timeslive.co.za/motoring/2026-10-28-antonelli-poised-to-end-italys-73-year-f1-title-wait/"
+  }
+ ],
+ "cta": "멋진 순간,\n*저장*해 두세요",
+ "caption": "20살 월드 챔피언, F1 키미 안토넬리\n메르세데스의 키미 안토넬리가 11월 1일 멕시코시티 그랑프리에서 3위로 들어오며 F1 역대 최연소 월드 챔피언이 됐어요. 레이스 우승은 막스 페르스타펜이었어요.\n\n지금까지 최연소 챔피언이던 세바스찬 베텔의 기록을 3년 앞당겼고, 이탈리아 출신으로는 1953년 알베르토 아스카리 이후 73년 만의 챔피언이에요.\n\n여러분은 스무 살에 어떤 꿈을 꿨나요?\n\n출처: FIA·오토스포츠(2026.11.01), TSN·타임스라이브(2026.10.28)\n이미지 출처: 영상 화면 · FORMULA 1 공식 유튜브\n\n광고·제휴 문의 reaymi.music@gmail.com\n\n#F1 #안토넬리 #KimiAntonelli #포뮬러원 #메르세데스 #멕시코GP #해외이슈 #이슈브리프 #오늘의이슈"
+}
