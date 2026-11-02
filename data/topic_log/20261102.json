@@ -62,5 +62,50 @@
   ],
   "picked": null,
   "createdAt": "2026-11-02T11:20:00+09:00"
+ },
+ {
+  "slot": "PM",
+  "kind": "ECO",
+  "refresh": true,
+  "candidates": [
+   {
+    "title": "10월 수출 1,153억 달러, 역대 2위",
+    "scores": {
+     "coverage": 2,
+     "rankings": 1,
+     "fandom": 1,
+     "ourHistory": 1,
+     "freshness": 2,
+     "shareable": 3
+    },
+    "total": 21
+   },
+   {
+    "title": "일본 면세, 74년 만에 '공항 환급'으로",
+    "scores": {
+     "coverage": 2,
+     "rankings": 1,
+     "fandom": 1,
+     "ourHistory": 1,
+     "freshness": 2,
+     "shareable": 3
+    },
+    "total": 21
+   },
+   {
+    "title": "내일 발표, 10월 물가는 2.8%로 주춤할까",
+    "scores": {
+     "coverage": 2,
+     "rankings": 0,
+     "fandom": 1,
+     "ourHistory": 1,
+     "freshness": 3,
+     "shareable": 2
+    },
+    "total": 19
+   }
+  ],
+  "picked": null,
+  "createdAt": "2026-11-02T11:40:00+09:00"
  }
 ]
