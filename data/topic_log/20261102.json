@@ -1,132 +1,184 @@
 [
- {
-  "slot": "PM",
-  "kind": "POL",
-  "candidates": [
-   {
-    "title": "[민감] 이 대통령 시정연설, 2027년 예산 820.9조",
-    "scores": {
-     "coverage": 2,
-     "rankings": 0,
-     "fandom": 1,
-     "ourHistory": 2,
-     "freshness": 3,
-     "shareable": 2
-    },
-    "total": 21
-   },
-   {
-    "title": "[민감] 820조 예산, 앞으로 한 달 일정 한눈에",
-    "scores": {
-     "coverage": 1,
-     "rankings": 0,
-     "fandom": 1,
-     "ourHistory": 2,
-     "freshness": 3,
-     "shareable": 3
-    },
-    "total": 21
-   }
-  ],
-  "picked": null,
-  "createdAt": "2026-11-02T11:20:00+09:00"
- },
- {
-  "slot": "PM",
-  "kind": "ECO",
-  "candidates": [
-   {
-    "title": "내일 발표, 10월 물가는 2.8%로 주춤할까",
-    "scores": {
-     "coverage": 2,
-     "rankings": 0,
-     "fandom": 1,
-     "ourHistory": 1,
-     "freshness": 3,
-     "shareable": 2
-    },
-    "total": 19
-   },
-   {
-    "title": "코스피 5,637로 출발 1.62%↓, 환율 1,333원대",
-    "scores": {
-     "coverage": 1,
-     "rankings": 1,
-     "fandom": 1,
-     "ourHistory": 1,
-     "freshness": 3,
-     "shareable": 1
-    },
-    "total": 17
-   }
-  ],
-  "picked": null,
-  "createdAt": "2026-11-02T11:20:00+09:00"
- },
- {
-  "slot": "PM",
-  "kind": "ECO",
-  "refresh": true,
-  "candidates": [
-   {
-    "title": "10월 수출 1,153억 달러, 역대 2위",
-    "scores": {
-     "coverage": 2,
-     "rankings": 1,
-     "fandom": 1,
-     "ourHistory": 1,
-     "freshness": 2,
-     "shareable": 3
-    },
-    "total": 21
-   },
-   {
-    "title": "일본 면세, 74년 만에 '공항 환급'으로",
-    "scores": {
-     "coverage": 2,
-     "rankings": 1,
-     "fandom": 1,
-     "ourHistory": 1,
-     "freshness": 2,
-     "shareable": 3
-    },
-    "total": 21
-   },
-   {
-    "title": "내일 발표, 10월 물가는 2.8%로 주춤할까",
-    "scores": {
-     "coverage": 2,
-     "rankings": 0,
-     "fandom": 1,
-     "ourHistory": 1,
-     "freshness": 3,
-     "shareable": 2
-    },
-    "total": 19
-   }
-  ],
-  "picked": null,
-  "createdAt": "2026-11-02T11:40:00+09:00"
- },
- {
-  "slot": "RS",
-  "candidates": [
-   {
-    "title": "내일 오후 6시 PULSE, 3주의 카운트다운",
-    "scores": "기록·D-1, shareable 3 fandom 3 freshness 3",
-    "total": null
-   },
-   {
-    "title": "PULSE, 알고 들으면 더 들리는 3가지",
-    "scores": "기록·데이터, shareable 3 fandom 3 freshness 2",
-    "total": null
-   },
-   {
-    "title": "MLB 광고 비하인드, 하루 만에 28만 회",
-    "scores": "새 소식(공식 영상), fandom 3 freshness 3, 영상 세부 내용은 미확인",
-    "total": null
-   }
-  ],
-  "picked": null
- }
+  {
+    "slot": "PM",
+    "kind": "POL",
+    "candidates": [
+      {
+        "title": "[민감] 이 대통령 시정연설, 2027년 예산 820.9조",
+        "scores": {
+          "coverage": 2,
+          "rankings": 0,
+          "fandom": 1,
+          "ourHistory": 2,
+          "freshness": 3,
+          "shareable": 2
+        },
+        "total": 21
+      },
+      {
+        "title": "[민감] 820조 예산, 앞으로 한 달 일정 한눈에",
+        "scores": {
+          "coverage": 1,
+          "rankings": 0,
+          "fandom": 1,
+          "ourHistory": 2,
+          "freshness": 3,
+          "shareable": 3
+        },
+        "total": 21
+      }
+    ],
+    "picked": null,
+    "createdAt": "2026-11-02T11:20:00+09:00"
+  },
+  {
+    "slot": "PM",
+    "kind": "ECO",
+    "candidates": [
+      {
+        "title": "내일 발표, 10월 물가는 2.8%로 주춤할까",
+        "scores": {
+          "coverage": 2,
+          "rankings": 0,
+          "fandom": 1,
+          "ourHistory": 1,
+          "freshness": 3,
+          "shareable": 2
+        },
+        "total": 19
+      },
+      {
+        "title": "코스피 5,637로 출발 1.62%↓, 환율 1,333원대",
+        "scores": {
+          "coverage": 1,
+          "rankings": 1,
+          "fandom": 1,
+          "ourHistory": 1,
+          "freshness": 3,
+          "shareable": 1
+        },
+        "total": 17
+      }
+    ],
+    "picked": null,
+    "createdAt": "2026-11-02T11:20:00+09:00"
+  },
+  {
+    "slot": "PM",
+    "kind": "ECO",
+    "refresh": true,
+    "candidates": [
+      {
+        "title": "10월 수출 1,153억 달러, 역대 2위",
+        "scores": {
+          "coverage": 2,
+          "rankings": 1,
+          "fandom": 1,
+          "ourHistory": 1,
+          "freshness": 2,
+          "shareable": 3
+        },
+        "total": 21
+      },
+      {
+        "title": "일본 면세, 74년 만에 '공항 환급'으로",
+        "scores": {
+          "coverage": 2,
+          "rankings": 1,
+          "fandom": 1,
+          "ourHistory": 1,
+          "freshness": 2,
+          "shareable": 3
+        },
+        "total": 21
+      },
+      {
+        "title": "내일 발표, 10월 물가는 2.8%로 주춤할까",
+        "scores": {
+          "coverage": 2,
+          "rankings": 0,
+          "fandom": 1,
+          "ourHistory": 1,
+          "freshness": 3,
+          "shareable": 2
+        },
+        "total": 19
+      }
+    ],
+    "picked": null,
+    "createdAt": "2026-11-02T11:40:00+09:00"
+  },
+  {
+    "slot": "RS",
+    "candidates": [
+      {
+        "title": "내일 오후 6시 PULSE, 3주의 카운트다운",
+        "scores": "기록·D-1, shareable 3 fandom 3 freshness 3",
+        "total": null
+      },
+      {
+        "title": "PULSE, 알고 들으면 더 들리는 3가지",
+        "scores": "기록·데이터, shareable 3 fandom 3 freshness 2",
+        "total": null
+      },
+      {
+        "title": "MLB 광고 비하인드, 하루 만에 28만 회",
+        "scores": "새 소식(공식 영상), fandom 3 freshness 3, 영상 세부 내용은 미확인",
+        "total": null
+      }
+    ],
+    "picked": null
+  },
+  {
+    "slot": "NT",
+    "kind": "ENT",
+    "candidates": [
+      {
+        "title": "아일릿 첫 주 44만 장, 자체 최고 기록",
+        "scores": {
+          "coverage": 2,
+          "rankings": 2,
+          "fandom": 3,
+          "ourHistory": 2,
+          "freshness": 3,
+          "shareable": 2
+        },
+        "total": 31
+      },
+      {
+        "title": "트레저 오늘 신곡 'SHOCK' 공개",
+        "scores": {
+          "coverage": 2,
+          "rankings": 0,
+          "fandom": 3,
+          "ourHistory": 2,
+          "freshness": 3,
+          "shareable": 1
+        },
+        "total": 27
+      }
+    ],
+    "picked": null,
+    "createdAt": "2026-11-02T20:20:00+09:00"
+  },
+  {
+    "slot": "NT",
+    "kind": "SPO",
+    "candidates": [
+      {
+        "title": "한국시리즈 1차전, 내일 수원에서 시작",
+        "scores": {
+          "coverage": 2,
+          "rankings": 1,
+          "fandom": 3,
+          "ourHistory": 2,
+          "freshness": 3,
+          "shareable": 2
+        },
+        "total": 31
+      }
+    ],
+    "picked": null,
+    "createdAt": "2026-11-02T20:20:00+09:00"
+  }
 ]

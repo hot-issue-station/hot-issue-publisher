@@ -1,0 +1,79 @@
+{
+  "slot": "NT",
+  "candidates": [
+    {
+      "title": "아일릿 첫 주 44만 장, 자체 최고 기록",
+      "summary": "브레이크 이븐 첫 주 444,072장, 전작보다 32,418장 많아요",
+      "facts": [
+        "미니 5집 'BREAK EVEN' 첫 주(10/26~11/1) 444,072장(한터차트)",
+        "직전 미니앨범보다 32,418장 많아 자체 최고 첫 주 기록",
+        "발매 첫날 국내 382,991장, 한터 일간 1위",
+        "'체포하겠어' 멜론 TOP100 3위, 애플뮤직 글로벌 일간 16위(10/30)",
+        "틱톡 영상 6일 만에 26만 개 돌파"
+      ],
+      "sources": [
+        {
+          "outlet": "텐아시아",
+          "title": "아일릿, 컴백마다 '커리어 하이'",
+          "date": "2026-11-02",
+          "url": "https://www.tenasia.co.kr/article/2026110295704"
+        },
+        {
+          "outlet": "iMBC 연예",
+          "title": "아일릿 '체포하겠어', 한국·일본 사로잡았다",
+          "date": "2026-10-29",
+          "url": "https://enews.imbc.com/News/ViewAmp/522831"
+        }
+      ],
+      "photoQuery": "ILLIT 공식 유튜브 BREAK EVEN 뮤직비디오 화면",
+      "score": {
+        "scores": {
+          "coverage": 2,
+          "rankings": 2,
+          "fandom": 3,
+          "ourHistory": 2,
+          "freshness": 3,
+          "shareable": 2
+        },
+        "total": 31
+      }
+    },
+    {
+      "title": "트레저 오늘 신곡 'SHOCK' 공개",
+      "summary": "6월 NEW WAV 이후 5개월, 디지털 싱글로 돌아왔어요",
+      "facts": [
+        "트레저 디지털 싱글 'SHOCK' 11월 2일(KST) 발매",
+        "양현석 대표는 '강력한 힙합 사운드'의 곡이라고 소개",
+        "10/31 뮤직비디오 티저, 11/1 D-1 포스터, 11/2 D-Day 포스터 공개",
+        "같은 날 투어스 싱글, 싸이커스 미니 8집도 컴백",
+        "11월 컴백: 리센느 3일·NCT 드림 9일 등(뉴스핌 정리)"
+      ],
+      "sources": [
+        {
+          "outlet": "뉴스핌",
+          "title": "SM·하이브·YG, 보이그룹 맞붙는다…11월, 컴백 전쟁 열린다",
+          "date": "2026-11-02",
+          "url": "https://www.newspim.com/news/view/20261030000875"
+        },
+        {
+          "outlet": "Soompi",
+          "title": "TREASURE Drops D-Day Poster For New Single SHOCK",
+          "date": "2026-11-02",
+          "url": "https://www.soompi.com/article/1877872wpp/treasure-announces-november-comeback-date-and-details-for-shock"
+        }
+      ],
+      "photoQuery": "TREASURE 공식 유튜브 SHOCK 뮤직비디오 티저 화면",
+      "score": {
+        "scores": {
+          "coverage": 2,
+          "rankings": 0,
+          "fandom": 3,
+          "ourHistory": 2,
+          "freshness": 3,
+          "shareable": 1
+        },
+        "total": 27
+      }
+    }
+  ]
+}
