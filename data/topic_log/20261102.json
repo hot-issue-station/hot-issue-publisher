@@ -107,5 +107,26 @@
   ],
   "picked": null,
   "createdAt": "2026-11-02T11:40:00+09:00"
+ },
+ {
+  "slot": "RS",
+  "candidates": [
+   {
+    "title": "내일 오후 6시 PULSE, 3주의 카운트다운",
+    "scores": "기록·D-1, shareable 3 fandom 3 freshness 3",
+    "total": null
+   },
+   {
+    "title": "PULSE, 알고 들으면 더 들리는 3가지",
+    "scores": "기록·데이터, shareable 3 fandom 3 freshness 2",
+    "total": null
+   },
+   {
+    "title": "MLB 광고 비하인드, 하루 만에 28만 회",
+    "scores": "새 소식(공식 영상), fandom 3 freshness 3, 영상 세부 내용은 미확인",
+    "total": null
+   }
+  ],
+  "picked": null
  }
 ]

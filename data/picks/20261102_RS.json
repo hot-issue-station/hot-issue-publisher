@@ -1,0 +1,100 @@
+{
+ "slot": "RS",
+ "candidates": [
+  {
+   "title": "내일 오후 6시 PULSE, 3주의 카운트다운",
+   "summary": "10/12 스케줄러 공개부터 11/3 발매까지, 일정 9개를 하루씩 되짚어요",
+   "facts": [
+    "10/12 오후 10시 프로모션 스케줄러 영상 공개",
+    "10/13 예약 판매, 10/19·20 콘셉트 포토 A·B, 10/22 콘셉트 트레일러, 10/23 앨범 디테일·트랙리스트",
+    "10/26 하이라이트 메들리, 10/27 타이틀 프리뷰, 10/30 'With' 뮤직비디오 티저",
+    "11/3 오후 6시 미니 4집 PULSE 발매(5곡: 위드·파이니스트 띵·백화요란·미미·드래곤)"
+   ],
+   "sources": [
+    {
+     "outlet": "YTN star",
+     "title": "리센느 컴백 프로모션 스케줄러",
+     "date": "2026-10-13",
+     "url": "https://www.ytn.co.kr/_ln/0117_202610131039493415"
+    },
+    {
+     "outlet": "일간스포츠",
+     "title": "리센느 하이라이트 메들리",
+     "date": "2026-10-27",
+     "url": "https://isplus.com/article/view/isp202610270031"
+    },
+    {
+     "outlet": "일간스포츠",
+     "title": "리센느 PULSE 프로모션 사이트",
+     "date": "2026-10-28",
+     "url": "https://isplus.com/article/view/isp202610280010"
+    }
+   ],
+   "photoQuery": "RESCENE PULSE 프로모션 스케줄러 공식 유튜브",
+   "score": "기록·D-1, shareable 3 fandom 3 freshness 3"
+  },
+  {
+   "title": "PULSE, 알고 들으면 더 들리는 3가지",
+   "summary": "심장 박동 BPM 리듬게임·머스크 향·'You are the pulse' 문구",
+   "facts": [
+    "PULSE는 심장의 박동을 뜻하는 앨범명",
+    "10/27 공개 프로모션 사이트는 음악의 BPM 변화를 심장박동에 빗댄 리듬게임, 곡을 5곡 중 고르고 클리어하면 숨은 사진 공개",
+    "앨범 향기는 머스크, 무대와 객석이 나누는 체온에 빗댐",
+    "10/20 콘셉트 포토 흰 원피스 문구 'You are the pulse that keeps my heart running'"
+   ],
+   "sources": [
+    {
+     "outlet": "일간스포츠",
+     "title": "리센느 하이라이트 메들리",
+     "date": "2026-10-27",
+     "url": "https://isplus.com/article/view/isp202610270031"
+    },
+    {
+     "outlet": "일간스포츠",
+     "title": "리센느 PULSE 프로모션 사이트",
+     "date": "2026-10-28",
+     "url": "https://isplus.com/article/view/isp202610280010"
+    },
+    {
+     "outlet": "위키트리",
+     "title": "흰 원피스에 의미심장한 문구…컴백 앞둔 리센느, 새 사진 공개",
+     "date": "2026-10-21",
+     "url": "https://www.wikitree.co.kr/articles/1167865"
+    }
+   ],
+   "photoQuery": "RESCENE PULSE 콘셉트 포토 공식 (더뮤즈엔터테인먼트)",
+   "score": "기록·데이터, shareable 3 fandom 3 freshness 2"
+  },
+  {
+   "title": "MLB 광고 비하인드, 하루 만에 28만 회",
+   "summary": "11/1 공개 BASE NOTES 28.3만 회, 캠페인 두 편 정리",
+   "facts": [
+    "11/1 오후 공식 유튜브 'BASE NOTES MLB 광고 Behind' 공개, 11/2 08:26 확인 조회수 283,091·좋아요 12,804",
+    "9/3 26FW 캠페인 'SLEEK, THE RESCENE WAY' 화보 공개(리브·미나미·메이·제나 4인)",
+    "10/7 비니 캠페인 'MY ICONIC BEANIE, THE RESCENE WAY', 멤버별 포토카드와 홀로그램 카드 증정"
+   ],
+   "sources": [
+    {
+     "outlet": "RESCENE 공식 유튜브",
+     "title": "[BASE NOTES] RESCENE MLB 광고 Behind",
+     "date": "2026-11-01",
+     "url": "https://www.youtube.com/watch?v=SsoyXhImVGc"
+    },
+    {
+     "outlet": "위키트리",
+     "title": "MLB, 리센느와 함께한 겨울 비니 캠페인 선봬",
+     "date": "2026-10-12",
+     "url": "https://www.wikitree.co.kr/articles/1165467"
+    },
+    {
+     "outlet": "서플",
+     "title": "원이 빠진 리센느, MLB 새 브랜드 모델 발탁…2026 FW 가을 캠페인 공개",
+     "date": "2026-09-04",
+     "url": "https://supple.kr/news/cmtm7qcg0005th4hgvyjdm9aw"
+    }
+   ],
+   "photoQuery": "RESCENE MLB BASE NOTES 공식 유튜브 화면",
+   "score": "새 소식(공식 영상), fandom 3 freshness 3, 영상 세부 내용은 미확인"
+  }
+ ]
+}
