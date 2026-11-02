@@ -1,0 +1,46 @@
+name: 공개 영상 받기 (NASA·KTV 등 자유 이용 영상만)
+# 대표 결정 2026-11-02: 영상 콘텐츠는 누구나 쓸 수 있는 공개 영상(미국 정부 기관 NASA 등, KTV 공공저작물)만 쓴다.
+# 그 밖의 방송·뉴스·개인 영상은 받지 않는다. 허용 주소는 아래 ALLOW 에만 추가한다.
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        description: "저장할 이름(영문·숫자·밑줄)"
+        required: true
+      url:
+        description: "영상 파일 주소(mp4)"
+        required: true
+      seconds:
+        description: "앞에서부터 남길 길이(초, 최대 90)"
+        required: false
+        default: "60"
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: 받기 · 줄이기
+        env:
+          NAME: ${{ inputs.name }}
+          URL: ${{ inputs.url }}
+          SEC: ${{ inputs.seconds }}
+        run: |
+          set -e
+          ALLOW='^https://(svs\.gsfc\.nasa\.gov|images-assets\.nasa\.gov|www\.nasa\.gov|science\.nasa\.gov)/'
+          echo "$URL" | grep -Eq "$ALLOW" || { echo "허용되지 않은 주소: $URL"; exit 1; }
+          echo "$NAME" | grep -Eq '^[A-Za-z0-9_]{1,40}$' || { echo "이름 형식 오류"; exit 1; }
+          case "$SEC" in ''|*[!0-9]*) SEC=60;; esac; [ "$SEC" -gt 90 ] && SEC=90
+          sudo apt-get -qq update && sudo apt-get -qq install -y ffmpeg >/dev/null
+          mkdir -p assets/video data/video
+          curl -sSL --max-filesize 600000000 -o /tmp/src.mp4 "$URL"
+          # 가로 1920 이하·30fps·소리 없이·앞 SEC 초만 남겨 저장소를 가볍게
+          ffmpeg -y -loglevel error -i /tmp/src.mp4 -t "$SEC" -an -vf "scale='min(1920,iw)':-2,fps=30" -c:v libx264 -preset veryfast -crf 23 -pix_fmt yuv420p "assets/video/$NAME.mp4"
+          printf '{"name":"%s","url":"%s","seconds":%s,"fetchedAt":"%s"}\n' "$NAME" "$URL" "$SEC" "$(date -u +%FT%TZ)" > "data/video/$NAME.json"
+          ls -la "assets/video/$NAME.mp4"
+      - run: |
+          git config user.name "issuebrief-bot"; git config user.email "bot@users.noreply.github.com"
+          git add assets/video data/video
+          git diff --cached --quiet || git commit -m "공개 영상 받기: ${{ inputs.name }}"
+          for i in 1 2 3 4 5; do git pull --rebase -q origin main && git push && break; sleep 5; done
