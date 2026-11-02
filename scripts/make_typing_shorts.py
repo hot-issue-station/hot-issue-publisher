@@ -20,10 +20,12 @@ ap.add_argument("card"); ap.add_argument("out")
 ap.add_argument("--kw", action="append", required=True, help="시작초|문구")
 ap.add_argument("--series", default="briefing"); ap.add_argument("--dur", type=float, default=12)
 ap.add_argument("--end", action="append", default=[], help="시작초|마무리 문구(화면 가운데, 어둡게 깔고 입력). 문구 안 / 는 줄바꿈")
+ap.add_argument("--pointer", default="", help="시작초|문구 — 마무리 화면에 로고 + 오른쪽 아래를 가리키는 깜빡이는 화살표")
 ap.add_argument("--slow", type=float, default=1.0, help="카메라 이동을 이만큼 느리게")
 a = ap.parse_args()
 kws = [(float(s.split("|", 1)[0]), s.split("|", 1)[1]) for s in a.kw]
 ends = [(float(s.split("|", 1)[0]), s.split("|", 1)[1]) for s in a.end]
+PT = (float(a.pointer.split("|", 1)[0]), a.pointer.split("|", 1)[1]) if a.pointer else None
 END0 = min([e[0] for e in ends], default=1e9)
 N = int(a.dur * FPS)
 tmp = pathlib.Path(tempfile.mkdtemp())
@@ -49,10 +51,20 @@ def state(t):
     st, txt = kws[cur]
     n = min(len(txt), int((t - st) / CPS) + 1)
     return txt[:n], n < len(txt)
-for st, txt in kws + ends:
+for st, txt in kws + ends + ([PT] if PT else []):
     for j, ch in enumerate(txt):
         if ch not in " /": hits.append(st + j * CPS)
 efont = ImageFont.truetype(FONT, 64)
+pfont = ImageFont.truetype(FONT, 54)
+LOGO = Image.open(ROOT / "assets/brand/logo_wordmark.png").convert("RGBA").crop((180, 120, 1020, 510)).resize((630, 292))
+lmask = Image.new("L", LOGO.size, 0); ImageDraw.Draw(lmask).rounded_rectangle([0, 0, *LOGO.size], 36, fill=255); LOGO.putalpha(lmask)
+def arrow(d, x0, y0, x1, y1, col, w=26):
+    import math
+    ang = math.atan2(y1 - y0, x1 - x0); hl = 70
+    bx, by = x1 - hl * math.cos(ang), y1 - hl * math.sin(ang)
+    d.line([x0, y0, bx, by], fill=col, width=w)
+    px, py = math.cos(ang + math.pi / 2), math.sin(ang + math.pi / 2)
+    d.polygon([(x1, y1), (bx + px * 46, by + py * 46), (bx - px * 46, by - py * 46)], fill=col)
 fr = tmp / "fr"; fr.mkdir()
 for f in range(N):
     t = f / FPS
@@ -60,6 +72,9 @@ for f in range(N):
     im = Image.new("RGBA", (W, 1920), (0, 0, 0, 0)); d = ImageDraw.Draw(im)
     if t >= END0:
         al = min(1, (t - END0) / 0.5); d.rectangle([0, 0, W, 1920], fill=(8, 12, 22, int(215 * al)))
+        la = min(1, (t - END0) / 0.6)
+        lg = LOGO.copy(); lg.putalpha(lg.getchannel("A").point(lambda v: int(v * la)))
+        im.alpha_composite(lg, ((W - LOGO.width) // 2, 330))
         y = 700
         live = max(i for i, e in enumerate(ends) if t >= e[0]) if t >= ends[0][0] else -1
         for ei, (est, etxt) in enumerate(ends):
@@ -68,8 +83,18 @@ for f in range(N):
             for li, line in enumerate(etxt[:n].split("/")):
                 tw = d.textlength(line, font=efont); d.text(((W - tw) / 2, y), line, font=efont, fill="white" if ei == 0 else (255, 200, 69))
                 last = (W + tw) / 2; ly = y; y += 92
-            if ei == live and (not done or int(t * 2) % 2 == 0): d.rectangle([last + 10, ly + 10, last + 19, ly + 78], fill=(255, 200, 69))
+            if ei == live and not (PT and t >= PT[0]) and (not done or int(t * 2) % 2 == 0): d.rectangle([last + 10, ly + 10, last + 19, ly + 78], fill=(255, 200, 69))
             y += 60
+        if PT and t >= PT[0]:
+            on = int((t - PT[0]) * 3) % 2 == 0          # 초당 1.5번 깜빡
+            col = (255, 200, 69) if on else (255, 120, 80)
+            n = min(len(PT[1]), int((t - PT[0]) / CPS) + 1)
+            for li, line in enumerate(PT[1][:n].split("/")):
+                tw = d.textlength(line, font=pfont); d.text((W - 60 - tw, 1290 + li * 76), line, font=pfont, fill=col)
+            if n == len(PT[1]):
+                off = 0 if on else 24
+                arrow(d, 720 + off, 1480 + off, 960 + off, 1720 + off, col)
+                if on: d.ellipse([930, 1690, 1050, 1810], outline=col, width=10)
     if txt:
         tw = d.textlength(txt, font=font); x = max(40, (W - tw) / 2); y = 100
         d.rounded_rectangle([x - 28, y - 18, x + tw + 52, y + 98], 18, fill=(11, 18, 32, 215))
