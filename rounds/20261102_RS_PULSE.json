@@ -1,0 +1,67 @@
+{
+ "date": "2026-11-02",
+ "slot": "RS",
+ "theme": "RS",
+ "publishTime": "19:00",
+ "category": "리센느 응원 특집 · 컴백 D-1",
+ "topic": "리센느 4집 「PULSE」 내일 오후 6시 컴백 (D-1)",
+ "hook": "내일 오후 6시,\n리센느 「PULSE」",
+ "hookCover": "내일 오후 6시,\n리센느 「PULSE」",
+ "sub": "컴백 D-1, 타이틀곡 'With' 포함 5곡",
+ "photo": "assets/rescene/01_pulse.jpg",
+ "photoPos": "50% 35%",
+ "photoLabel": "이미지 · 더뮤즈엔터테인먼트",
+ "big": {
+  "number": "1",
+  "lines": [
+   "일 남은",
+   "*PULSE*",
+   "컴백"
+  ],
+  "caption": "11월 3일(화) 오후 6시",
+  "icon": "music"
+ },
+ "summary": "리센느가 11월 3일 오후 6시 네 번째 미니앨범 「PULSE」를 발매해요. 타이틀곡 'With'를 포함해 5곡이 담겨요.",
+ "facts": [
+  {
+   "title": "내일 오후 6시, 4집 「PULSE」",
+   "desc": "11월 3일 오후 6시 주요 음원 사이트에 네 번째 미니앨범 「PULSE」가 공개돼요. 10월 19일부터 콘셉트 사진을 차례로 공개해 왔어요.",
+   "source": "일간스포츠 2026.10.28 · 미주중앙일보 2026.10.19",
+   "photo": "assets/rescene/05_pulse.jpg",
+   "photoPos": "50% 35%",
+   "photoLabel": "이미지 · 더뮤즈엔터테인먼트"
+  },
+  {
+   "title": "타이틀곡 'With' 포함 5곡",
+   "desc": "With, Finest Thing, 백화요란(Inside Out), Mimi, Dragon까지 5곡이에요. 내 곁에 있어 준 노래가 다시 일어서게 해 준다는 이야기를 담았어요.",
+   "source": "일간스포츠 2026.10.28"
+  },
+  {
+   "title": "향으로 듣는 앨범, 메인 향은 머스크",
+   "desc": "리센느는 음악과 향을 함께 엮어 왔고, 이번 앨범의 메인 향은 머스크예요. 공식 프로모션 사이트에선 다섯 멤버가 박자에 맞춰 달리는 리듬게임도 즐길 수 있어요.",
+   "source": "일간스포츠 2026.10.28",
+   "photo": "assets/rescene/11_pulse.jpg",
+   "photoPos": "50% 35%",
+   "photoLabel": "이미지 · 더뮤즈엔터테인먼트"
+  }
+ ],
+ "interp": "내일 오후 6시, 같이 들어요",
+ "interpSub": "5곡 중 어떤 곡이 가장 기대되는지 댓글로 남겨 주세요.",
+ "interpLabel": "함께 기다려요",
+ "sources": [
+  {
+   "outlet": "일간스포츠",
+   "title": "리센느, 4집 PULSE 컴백…리듬게임 프로모션·'With' 챌린지",
+   "date": "2026.10.28",
+   "url": "https://isplus.com/article/view/isp202610280010"
+  },
+  {
+   "outlet": "미주중앙일보",
+   "title": "리센느, '11월 3일 컴백' 콘셉트 사진 공개",
+   "date": "2026.10.19",
+   "url": "https://www.koreadaily.com/article/20261019163036686"
+  }
+ ],
+ "cta": "컴백까지 *D-1*,\n같이 기다려요",
+ "caption": "내일 오후 6시, 리센느 「PULSE」\n리센느가 11월 3일(화) 오후 6시 네 번째 미니앨범 「PULSE」로 돌아와요. 타이틀곡 'With'를 비롯해 Finest Thing, 백화요란(Inside Out), Mimi, Dragon까지 5곡이 담겨요. 음악과 향을 함께 엮어 온 리센느, 이번 앨범의 메인 향은 머스크예요. 공식 프로모션 사이트에선 다섯 멤버가 박자에 맞춰 달리는 리듬게임도 열려 있어요.\n\n5곡 중 어떤 곡이 가장 기대되나요? 내일 오후 6시, 같이 들어요.\n\n출처: 일간스포츠(2026.10.28), 미주중앙일보(2026.10.19)\n이미지 출처: 더뮤즈엔터테인먼트\n\n광고·제휴 문의 reaymi.music@gmail.com\n\n#리센느 #RESCENE #PULSE #With #리센느컴백 #이슈브리프 #오늘의이슈"
+}
