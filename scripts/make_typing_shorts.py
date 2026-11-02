@@ -27,6 +27,9 @@ ap.add_argument("--tape", default="", help="아래쪽 비스듬한 노란 테이
 ap.add_argument("--kwy", type=int, default=1400, help="노란 자막 세로 위치(카드 글자와 겹치면 1530 정도로 내림)")
 ap.add_argument("--wm", action="store_true", help="오른쪽 아래 채널 로고 고정")
 ap.add_argument("--slow", type=float, default=1.0, help="카메라 이동을 이만큼 느리게")
+ap.add_argument("--cards", nargs="*", default=[], help="2장 이후 카드들(대표 요청 11/2 22:55: 릴스에 카드 전부). 주면 여러 장 모드")
+ap.add_argument("--first", type=float, default=4.5, help="여러 장 모드: 첫 카드 보여 주는 초")
+ap.add_argument("--per", type=float, default=3.8, help="여러 장 모드: 나머지 카드 한 장당 초")
 a = ap.parse_args()
 kws = [(float(s.split("|", 1)[0]), s.split("|", 1)[1]) for s in a.kw]
 ends = [(float(s.split("|", 1)[0]), s.split("|", 1)[1]) for s in a.end]
@@ -36,14 +39,36 @@ N = int(a.dur * FPS)
 tmp = pathlib.Path(tempfile.mkdtemp())
 
 # 1) 카메라 이동 영상
-k = a.slow; P1, P2, P3 = int(150*k), int(180*k), int(70*k)
-T = f"min(on/{P1},1)"
-Z = f"if(lt(on,{P2}),1.45,if(lt(on,{P2+P3}),1+0.45*(1-((on-{P2})/{P3})*((on-{P2})/{P3})*(3-2*(on-{P2})/{P3})),1))"
-Y = f"(ih-ih/zoom)*(0.08+0.84*({T})*({T})*(3-2*({T})))"
-subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", a.card, "-filter_complex",
-    f"[0]split[a][b];[a]scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,boxblur=30:2,eq=brightness=-0.25,loop={N}:1:0,setpts=N/{FPS}/TB[bg];"
-    f"[b]scale=2160:-2,zoompan=z='{Z}':x='(iw-iw/zoom)*0.1':y='{Y}':d={N}:s=1080x1350:fps={FPS}[fg];[bg][fg]overlay=0:285:shortest=1,format=yuv420p",
-    "-t", str(a.dur), "-r", str(FPS), "-c:v", "libx264", "-preset", "veryfast", "-crf", "20", str(tmp / "base.mp4")], check=True)
+MULTI = bool(a.cards)
+if MULTI:
+    X = 0.3                                          # 카드 사이 밀어 넘기기 전환
+    cards = [a.card] + a.cards
+    starts = [0] + [a.first + k * a.per for k in range(len(a.cards))]
+    segs = []
+    for ci, cp in enumerate(cards):
+        d_ = (starts[ci + 1] - starts[ci] + X) if ci + 1 < len(cards) else (a.dur - starts[ci])
+        n_ = int(round(d_ * FPS)); S = f"(min(on/{n_},1)*min(on/{n_},1)*(3-2*min(on/{n_},1)))"
+        if ci == 0: z_, x_, y_ = f"1.35-0.35*{S}", "(iw-iw/zoom)*0.1", f"(ih-ih/zoom)*(0.08+0.84*{S})"
+        else: z_, x_, y_ = f"1+0.06*on/{n_}", "(iw-iw/zoom)/2", "(ih-ih/zoom)/2"
+        sp = tmp / f"s{ci}.mp4"; segs.append((sp, d_))
+        subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", cp, "-filter_complex",
+            f"[0]split[a][b];[a]scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,boxblur=30:2,eq=brightness=-0.25,loop={n_}:1:0,setpts=N/{FPS}/TB[bg];"
+            f"[b]scale=2160:-2,zoompan=z='{z_}':x='{x_}':y='{y_}':d={n_}:s=1080x1350:fps={FPS}[fg];[bg][fg]overlay=0:285:shortest=1,format=yuv420p",
+            "-frames:v", str(n_), "-r", str(FPS), "-c:v", "libx264", "-preset", "veryfast", "-crf", "20", str(sp)], check=True)
+    ins = sum([["-i", str(sp)] for sp, _ in segs], []); fc = []; prev = "0"
+    for ci in range(1, len(segs)):
+        o = f"x{ci}"; fc.append(f"[{prev}][{ci}]xfade=transition=slideleft:duration={X}:offset={starts[ci] - X:.3f}[{o}]"); prev = o
+    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", *ins, "-filter_complex", ";".join(fc), "-map", f"[{prev}]",
+        "-t", str(a.dur), "-r", str(FPS), "-c:v", "libx264", "-preset", "veryfast", "-crf", "20", str(tmp / "base.mp4")], check=True)
+else:
+    k = a.slow; P1, P2, P3 = int(150*k), int(180*k), int(70*k)
+    T = f"min(on/{P1},1)"
+    Z = f"if(lt(on,{P2}),1.45,if(lt(on,{P2+P3}),1+0.45*(1-((on-{P2})/{P3})*((on-{P2})/{P3})*(3-2*(on-{P2})/{P3})),1))"
+    Y = f"(ih-ih/zoom)*(0.08+0.84*({T})*({T})*(3-2*({T})))"
+    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", a.card, "-filter_complex",
+        f"[0]split[a][b];[a]scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,boxblur=30:2,eq=brightness=-0.25,loop={N}:1:0,setpts=N/{FPS}/TB[bg];"
+        f"[b]scale=2160:-2,zoompan=z='{Z}':x='(iw-iw/zoom)*0.1':y='{Y}':d={N}:s=1080x1350:fps={FPS}[fg];[bg][fg]overlay=0:285:shortest=1,format=yuv420p",
+        "-t", str(a.dur), "-r", str(FPS), "-c:v", "libx264", "-preset", "veryfast", "-crf", "20", str(tmp / "base.mp4")], check=True)
 
 # 2) 키워드 글자 프레임 + 타자 시각
 font = ImageFont.truetype(FONT, 72)
@@ -98,7 +123,7 @@ def hype(im, d, t):
             f_ = ImageFont.truetype(FONT, int(250 * pop))
             d.text((14, 520), lt, font=f_, fill=YEL, stroke_width=10, stroke_fill="black")
             rw = d.textlength(rt, font=f_); d.text((W - 14 - rw, 520), rt, font=f_, fill=YEL, stroke_width=10, stroke_fill="black")
-    if TAPE is not None: im.alpha_composite(TAPE, ((W - TAPE.width) // 2, 1640))
+    if TAPE is not None and not (MULTI and t >= a.first): im.alpha_composite(TAPE, ((W - TAPE.width) // 2, 1760 if MULTI else 1640))
     if WM is not None: im.alpha_composite(WM, (W - 150, 1500))
 fr = tmp / "fr"; fr.mkdir()
 for f in range(N):
