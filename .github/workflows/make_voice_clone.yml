@@ -1,0 +1,69 @@
+name: 내레이션 음색 바꾸기 (OpenVoice, 0원)
+# 대표 결정 2026-11-02: 매번 녹음 대신, 대표(·가족) 녹음 한 번으로 내레이션 음색을 바꾼다.
+# 녹음 원본은 공개 저장소라 암호화해 voice_ref/<이름>.mp3.enc 로만 두고, 열쇠는 저장소 비밀값 VOICE_KEY.
+# 변환 중 만든 목소리 특징 파일(se.pth)은 저장하지 않고 버린다. 결과(내레이션 wav)만 커밋한다.
+on:
+  workflow_dispatch:
+    inputs:
+      src:
+        description: "바꿀 내레이션 폴더 이름 (assets/voice/<src>)"
+        required: true
+      speaker:
+        description: "음색 이름 (voice_ref/<speaker>.mp3.enc)"
+        required: true
+permissions:
+  contents: write
+jobs:
+  clone:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.10" }
+      - name: 설치
+        run: |
+          sudo apt-get -qq update && sudo apt-get -qq install -y ffmpeg >/dev/null
+          pip install -q torch torchaudio --index-url https://download.pytorch.org/whl/cpu
+          pip install -q git+https://github.com/myshell-ai/OpenVoice.git
+          curl -sSL -o /tmp/ckpt.zip https://myshell-public-repo-host.s3.amazonaws.com/openvoice/checkpoints_v2_0417.zip
+          unzip -q /tmp/ckpt.zip -d /tmp/ov
+      - name: 녹음 풀기
+        env:
+          VOICE_KEY: ${{ secrets.VOICE_KEY }}
+          SPK: ${{ inputs.speaker }}
+        run: |
+          set -e
+          echo "$SPK" | grep -Eq '^[a-z0-9_]{1,30}$'
+          openssl enc -d -aes-256-cbc -pbkdf2 -in "voice_ref/$SPK.mp3.enc" -out /tmp/ref.mp3 -pass env:VOICE_KEY
+          ffmpeg -v error -y -i /tmp/ref.mp3 -ac 1 -ar 22050 /tmp/ref.wav
+      - name: 바꾸기
+        env:
+          SRC: ${{ inputs.src }}
+          SPK: ${{ inputs.speaker }}
+        run: |
+          python - <<'EOF'
+          import json, os, pathlib, shutil, wave, torch
+          from openvoice import se_extractor
+          from openvoice.api import ToneColorConverter
+          src, spk = os.environ["SRC"], os.environ["SPK"]
+          ck = pathlib.Path("/tmp/ov/checkpoints_v2/converter")
+          conv = ToneColorConverter(str(ck / "config.json"), device="cpu"); conv.load_ckpt(str(ck / "checkpoint.pth"))
+          tgt, _ = se_extractor.get_se("/tmp/ref.wav", conv, target_dir="/tmp/se", vad=True)
+          base = torch.load("/tmp/ov/checkpoints_v2/base_speakers/ses/kr.pth", map_location="cpu")
+          sdir = pathlib.Path("assets/voice") / src; odir = pathlib.Path("assets/voice") / f"{src}_{spk}"
+          odir.mkdir(parents=True, exist_ok=True)
+          meta = json.loads((sdir / "lines.json").read_text(encoding="utf-8"))
+          for m in meta:
+              a, b = sdir / f"{m['i']:02d}.wav", odir / f"{m['i']:02d}.wav"
+              conv.convert(audio_src_path=str(a), src_se=base, tgt_se=tgt, output_path=str(b), message="@MyShell")
+              with wave.open(str(b)) as w: m["sec"] = round(w.getnframes() / w.getframerate(), 2)
+              print(m["i"], m["sec"])
+          (odir / "lines.json").write_text(json.dumps(meta, ensure_ascii=False, indent=1), encoding="utf-8")
+          shutil.rmtree("/tmp/se", ignore_errors=True)
+          EOF
+          rm -f /tmp/ref.mp3 /tmp/ref.wav
+      - run: |
+          git config user.name "issuebrief-bot"; git config user.email "bot@users.noreply.github.com"
+          git add assets/voice
+          git diff --cached --quiet || git commit -m "내레이션 음색: ${{ inputs.src }} → ${{ inputs.speaker }}"
+          for i in 1 2 3 4 5; do git pull --rebase -q origin main && git push && break; sleep 5; done
