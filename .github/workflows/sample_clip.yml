@@ -1,0 +1,16 @@
+name: 내부 샘플용 영상 받기 (공개 업로드 금지)
+on:
+  workflow_dispatch:
+    inputs:
+      url: { description: "유튜브 주소", required: true }
+      name: { description: "저장 이름", required: true }
+permissions:
+  contents: read
+jobs:
+  get:
+    runs-on: ubuntu-latest
+    steps:
+      - run: pip install -q yt-dlp
+      - run: yt-dlp -f "bv*[height<=1080][ext=mp4]+ba[ext=m4a]/b[ext=mp4]" --merge-output-format mp4 -o "${{ inputs.name }}.mp4" "${{ inputs.url }}"
+      - uses: actions/upload-artifact@v4
+        with: { name: "${{ inputs.name }}", path: "${{ inputs.name }}.mp4", retention-days: 3 }
