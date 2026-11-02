@@ -21,6 +21,10 @@ ap.add_argument("--kw", action="append", required=True, help="시작초|문구")
 ap.add_argument("--series", default="briefing"); ap.add_argument("--dur", type=float, default=12)
 ap.add_argument("--end", action="append", default=[], help="시작초|마무리 문구(화면 가운데, 어둡게 깔고 입력). 문구 안 / 는 줄바꿈")
 ap.add_argument("--pointer", default="", help="시작초|문구 — 마무리 화면에 로고 + 오른쪽 아래를 가리키는 깜빡이는 화살표")
+ap.add_argument("--title", default="", help="위쪽 두 줄 제목 '흰 줄|초록 줄' (hypeDRIP형 틀, 대표 결정 11/2 13:58)")
+ap.add_argument("--side", action="append", default=[], help="시작초|끝초|왼글자|오른글자 — 양옆 큰 노란 글자")
+ap.add_argument("--tape", default="", help="아래쪽 비스듬한 노란 테이프 문구")
+ap.add_argument("--wm", action="store_true", help="오른쪽 아래 채널 로고 고정")
 ap.add_argument("--slow", type=float, default=1.0, help="카메라 이동을 이만큼 느리게")
 a = ap.parse_args()
 kws = [(float(s.split("|", 1)[0]), s.split("|", 1)[1]) for s in a.kw]
@@ -65,11 +69,42 @@ def arrow(d, x0, y0, x1, y1, col, w=26):
     d.line([x0, y0, bx, by], fill=col, width=w)
     px, py = math.cos(ang + math.pi / 2), math.sin(ang + math.pi / 2)
     d.polygon([(x1, y1), (bx + px * 46, by + py * 46), (bx - px * 46, by - py * 46)], fill=col)
+HYPE = bool(a.title)
+sides = [(float(x.split("|")[0]), float(x.split("|")[1]), x.split("|")[2], x.split("|")[3]) for x in a.side]
+tfont1, tfont2 = ImageFont.truetype(FONT, 66), ImageFont.truetype(FONT, 66)
+sfont = ImageFont.truetype(FONT, 250); cfont = ImageFont.truetype(FONT, 66)
+YEL, GRN = (255, 214, 10), (70, 255, 140)
+TAPE = None
+if a.tape:
+    tp = Image.new("RGBA", (1500, 130), (0, 0, 0, 0)); td = ImageDraw.Draw(tp)
+    td.rectangle([0, 0, 1500, 130], fill=(250, 204, 21, 245))
+    tf = ImageFont.truetype(FONT, 76); tw_ = td.textlength(a.tape, font=tf)
+    td.text(((1500 - tw_) / 2, 12), a.tape, font=tf, fill=(20, 20, 20))
+    TAPE = tp.rotate(5, expand=True, resample=Image.BICUBIC)
+WM = None
+if a.wm:
+    WM = Image.open(ROOT / "assets/brand/logo_profile.png").convert("RGBA").resize((120, 120))
+    m = Image.new("L", WM.size, 0); ImageDraw.Draw(m).ellipse([0, 0, 119, 119], fill=235); WM.putalpha(m)
+def hype(im, d, t):
+    if a.title:
+        d.rectangle([0, 0, W, 285], fill=(0, 0, 0, 255))
+        l1, l2 = a.title.split("|")
+        for txt_, y_, col, fo in ((l1, 52, "white", tfont1), (l2, 148, GRN, tfont2)):
+            w_ = d.textlength(txt_, font=fo); d.text(((W - w_) / 2, y_), txt_, font=fo, fill=col, stroke_width=3, stroke_fill="black")
+    for st, en, lt, rt in sides:
+        if st <= t < en:
+            pop = 1 + 0.35 * max(0, 1 - (t - st) / 0.15)
+            f_ = ImageFont.truetype(FONT, int(250 * pop))
+            d.text((14, 520), lt, font=f_, fill=YEL, stroke_width=10, stroke_fill="black")
+            rw = d.textlength(rt, font=f_); d.text((W - 14 - rw, 520), rt, font=f_, fill=YEL, stroke_width=10, stroke_fill="black")
+    if TAPE is not None: im.alpha_composite(TAPE, ((W - TAPE.width) // 2, 1640))
+    if WM is not None: im.alpha_composite(WM, (W - 150, 1500))
 fr = tmp / "fr"; fr.mkdir()
 for f in range(N):
     t = f / FPS
     txt, typing = state(t)
     im = Image.new("RGBA", (W, 1920), (0, 0, 0, 0)); d = ImageDraw.Draw(im)
+    if t < END0: hype(im, d, t)
     if t >= END0:
         al = min(1, (t - END0) / 0.5); d.rectangle([0, 0, W, 1920], fill=(8, 12, 22, int(215 * al)))
         la = min(1, (t - END0) / 0.6)
@@ -95,7 +130,11 @@ for f in range(N):
                 off = 0 if on else 24
                 arrow(d, 720 + off, 1480 + off, 960 + off, 1720 + off, col)
                 if on: d.ellipse([930, 1690, 1050, 1810], outline=col, width=10)
-    if txt:
+    if txt and HYPE:      # hypeDRIP형: 카드 아래쪽에 노란 글씨 + 검은 테두리 자막
+        tw = d.textlength(txt, font=cfont); x = (W - tw) / 2; y = 1400
+        d.text((x, y), txt, font=cfont, fill=YEL, stroke_width=7, stroke_fill="black")
+        if typing or int(t * 2) % 2 == 0: d.rectangle([x + tw + 10, y + 10, x + tw + 20, y + 80], fill="white")
+    elif txt:
         tw = d.textlength(txt, font=font); x = max(40, (W - tw) / 2); y = 100
         d.rounded_rectangle([x - 28, y - 18, x + tw + 52, y + 98], 18, fill=(11, 18, 32, 215))
         d.text((x, y), txt, font=font, fill="white")
