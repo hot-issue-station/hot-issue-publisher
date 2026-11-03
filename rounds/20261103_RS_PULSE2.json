@@ -1,0 +1,105 @@
+{
+ "date": "2026-11-03",
+ "slot": "RS",
+ "theme": "RS",
+ "category": "리센느 응원 특집 · 컴백 2탄",
+ "cta": "응원 댓글 남기고\n*리센느 포카* 받아 가요",
+ "maxFacts": 6,
+ "publishTime": "21:00",
+ "topic": "리센느 'With' 발매 2시간 만에 멜론 TOP100 1위",
+ "titleBar": [
+  "리센느 'With' 멜론 1위",
+  "발매 2시간 만에"
+ ],
+ "hook": "발매 2시간,\n리센느 'With' 1위",
+ "hookCover": "발매 2시간,\n리센느 'With' 1위",
+ "sub": "역주행의 주인공이, 이번엔 처음부터 1위예요",
+ "photo": "assets/rescene/06_pulse.jpg",
+ "photoPos": "50% 35%",
+ "photoLabel": "이미지 · 더뮤즈엔터테인먼트",
+ "big": {
+  "number": "1",
+  "lines": [
+   "위",
+   "*멜론*",
+   "TOP100"
+  ],
+  "caption": "11월 3일(화) 오후 8시 차트",
+  "icon": "music"
+ },
+ "summary": "오후 6시에 나온 'With'가 8시 멜론 TOP100 1위에 올랐어요. 리센느 곡 10곡이 차트에 함께 있어요.",
+ "facts": [
+  {
+   "title": "20시 멜론 TOP100 1위",
+   "desc": "19시 첫 차트에 2위로 들어와, 한 시간 만에 정상에 올랐어요.",
+   "source": "멜론 TOP100 (11.03 19:00·20:00 차트)",
+   "photo": "assets/rescene/05_pulse.jpg",
+   "photoPos": "50% 35%",
+   "photoLabel": "이미지 · 더뮤즈엔터테인먼트"
+  },
+  {
+   "title": "TOP 20 안에 리센느 9곡",
+   "desc": "With 1 · Finest Thing 4 · LOVE ATTACK 5 · 백화요란 6 · Deja Vu 9 · MEME 10 · Dragon 11 · Pretty Girl 12 · Runaway 18위",
+   "source": "멜론 TOP100 (11.03 20:00 차트)",
+   "photo": "assets/rescene/08_pulse.jpg",
+   "photoPos": "50% 35%",
+   "photoLabel": "이미지 · 더뮤즈엔터테인먼트"
+  },
+  {
+   "title": "신곡 5곡이 모두 TOP 11",
+   "desc": "타이틀곡뿐 아니라 수록곡 4곡도 모두 11위 안에 들었어요. 앨범 전체를 듣고 있다는 뜻이에요.",
+   "source": "멜론 TOP100 (11.03 20:00 차트)",
+   "photo": "assets/rescene/10_pulse.jpg",
+   "photoPos": "50% 35%",
+   "photoLabel": "이미지 · 더뮤즈엔터테인먼트"
+  },
+  {
+   "title": "이전 곡도 함께, TOP100에 10곡",
+   "desc": "LOVE ATTACK·Deja Vu·Pretty Girl·Runaway·Pinball까지 함께 올라 차트에 리센느 곡이 10곡이에요.",
+   "source": "멜론 TOP100 (11.03 20:00 차트)",
+   "photo": "assets/rescene/12_pulse.jpg",
+   "photoPos": "50% 35%",
+   "photoLabel": "이미지 · 더뮤즈엔터테인먼트"
+  },
+  {
+   "title": "공식 MV, 2시간 26만 회",
+   "desc": "18시에 공개된 'With' 뮤직비디오가 2시간 만에 26만 회를 넘었어요.",
+   "source": "리센느 공식 유튜브 (11.03 20:07 기준)",
+   "photo": "assets/rescene/02_pulse.jpg",
+   "photoPos": "50% 35%",
+   "photoLabel": "이미지 · 더뮤즈엔터테인먼트"
+  },
+  {
+   "title": "앞으로: 팝업 스토어 11/6~11/10",
+   "desc": "앨범 팝업 스토어가 11월 6일부터 10일까지 열려요. 'With' 챌린지도 멤버들이 차례로 올리고 있어요.",
+   "source": "리센느 공식 X 2026.11.02",
+   "photo": "assets/rescene/14_pulse.jpg",
+   "photoPos": "50% 35%",
+   "photoLabel": "이미지 · 더뮤즈엔터테인먼트"
+  }
+ ],
+ "interp": "역주행의 주인공이, 이번엔 처음부터 1위",
+ "interpSub": "함께 들어 준 리마인 덕분이에요. 축하 댓글로 마음을 남겨 주세요.",
+ "interpLabel": "축하해요",
+ "sources": [
+  {
+   "outlet": "멜론 TOP100",
+   "title": "멜론차트 TOP100 (2026.11.03 19:00·20:00)",
+   "date": "2026.11.03",
+   "url": "https://www.melon.com/chart/index.htm"
+  },
+  {
+   "outlet": "리센느 공식 유튜브",
+   "title": "RESCENE (리센느) 'With' Official MV",
+   "date": "2026.11.03",
+   "url": "https://www.youtube.com/watch?v=pey3E47eSc8"
+  },
+  {
+   "outlet": "멜론 공식 앨범 소개",
+   "title": "RESCENE The 4th Mini Album [PULSE] (더뮤즈엔터테인먼트)",
+   "date": "2026.11.03",
+   "url": "https://www.melon.com/album/detail.htm?albumId=15082293"
+  }
+ ],
+ "caption": "x #이슈브리프 #오늘의이슈"
+}
