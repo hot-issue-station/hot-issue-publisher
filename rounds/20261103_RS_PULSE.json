@@ -25,26 +25,69 @@
   "caption": "11월 3일(화) 오후 6시 발매",
   "icon": "music"
  },
- "summary": "리센느가 오늘 오후 6시 4집 「PULSE」를 냈어요. 타이틀곡 'With' 포함 5곡이에요.",
+ "summary": "리센느가 오늘 오후 6시 4집 「PULSE」를 냈어요. 5곡을 한 곡씩 소개할게요.",
  "facts": [
   {
-   "title": "타이틀곡 'With', 오래 꿈꾼 만남",
-   "desc": "오랫동안 꿈꿔 온 누군가를 향해 달려가 함께 앞으로 나아가자는 노래예요. 서정적인 도입에서 힘 있는 후렴으로, 심장이 빨라지듯 감정이 커져요.",
-   "source": "MK스포츠 · 싱글리스트 2026.11.03",
+   "title": "앨범 PULSE, 5곡",
+   "desc": "FINEST THING · WITH(타이틀) · 백화요란(INSIDE OUT) · MEME · DRAGON 순서로 담겼어요.",
+   "source": "리센느 공식 X 트랙리스트 2026.10.23",
+   "photo": "assets/rescene/01_pulse.jpg",
+   "photoPos": "50% 35%",
+   "photoLabel": "이미지 · 더뮤즈엔터테인먼트"
+  },
+  {
+   "title": "1번 'FINEST THING'",
+   "desc": "[18:00 공식 앨범 소개(소속사)로 채움]",
+   "source": "[출처]",
+   "photo": "assets/rescene/07_pulse.jpg",
+   "photoPos": "50% 35%",
+   "photoLabel": "이미지 · 더뮤즈엔터테인먼트"
+  },
+  {
+   "title": "2번 'WITH' (타이틀곡)",
+   "desc": "[18:00 공식 앨범 소개(소속사)로 채움]",
+   "source": "[출처]",
    "photo": "assets/rescene/05_pulse.jpg",
    "photoPos": "50% 35%",
    "photoLabel": "이미지 · 더뮤즈엔터테인먼트"
   },
   {
-   "title": "5곡, 메인 향은 머스크",
-   "desc": "With·Finest Thing·백화요란·MEME·Dragon 5곡이에요. PULSE는 '심장의 고동', 메인 향은 머스크예요.",
-   "source": "MK스포츠 · 싱글리스트 2026.11.03"
+   "title": "3번 '백화요란(INSIDE OUT)'",
+   "desc": "[18:00 공식 앨범 소개(소속사)로 채움]",
+   "source": "[출처]",
+   "photo": "assets/rescene/09_pulse.jpg",
+   "photoPos": "50% 35%",
+   "photoLabel": "이미지 · 더뮤즈엔터테인먼트"
+  },
+  {
+   "title": "4번 'MEME'",
+   "desc": "[18:00 공식 앨범 소개(소속사)로 채움]",
+   "source": "[출처]",
+   "photo": "assets/rescene/11_pulse.jpg",
+   "photoPos": "50% 35%",
+   "photoLabel": "이미지 · 더뮤즈엔터테인먼트"
+  },
+  {
+   "title": "5번 'DRAGON'",
+   "desc": "[18:00 공식 앨범 소개(소속사)로 채움]",
+   "source": "[출처]",
+   "photo": "assets/rescene/13_pulse.jpg",
+   "photoPos": "50% 35%",
+   "photoLabel": "이미지 · 더뮤즈엔터테인먼트"
   },
   {
    "title": "[18:30 반응 칸] 발매 30분, 반응은?",
-   "desc": "[18:30에 확인된 숫자만 채움: 공식 MV 조회수 · 음원 차트 진입 · 댓글 분위기]",
-   "source": "[18:30 확인 출처]",
-   "photo": "assets/rescene/11_pulse.jpg",
+   "desc": "[18:30 확인된 숫자만: 공식 MV 조회수 · 음원 차트 · 18:30 멜론 뮤직웨이브]",
+   "source": "[출처]",
+   "photo": "assets/rescene/03_pulse.jpg",
+   "photoPos": "50% 35%",
+   "photoLabel": "이미지 · 더뮤즈엔터테인먼트"
+  },
+  {
+   "title": "앞으로: 팝업 스토어 11/6~11/10",
+   "desc": "앨범 팝업 스토어가 11월 6일부터 10일까지 열려요. 'With' 챌린지도 멤버들이 차례로 올리고 있어요.",
+   "source": "리센느 공식 X 2026.11.02",
+   "photo": "assets/rescene/14_pulse.jpg",
    "photoPos": "50% 35%",
    "photoLabel": "이미지 · 더뮤즈엔터테인먼트"
   }
@@ -64,8 +107,21 @@
    "title": "리센느, 오늘(3일) 미니 4집 'PULSE' 발매…타이틀곡 'With'로 컴백",
    "date": "2026.11.03",
    "url": "https://www.slist.kr/news/articleView.html?idxno=778489"
+  },
+  {
+   "outlet": "뉴스컬처",
+   "title": "리센느, 5색 '두근거림' 품은 수호자…미니 4집 트랙리스트 공개",
+   "date": "2026.10.24",
+   "url": "https://www.nc.press/news/articleView.html?idxno=629394"
+  },
+  {
+   "outlet": "스페셜타임스",
+   "title": "리센느, 머스크 향 콘셉트로 돌아온다…미니 4집 'PULSE' 하라메 공개",
+   "date": "2026.10.27",
+   "url": "https://www.specialtimes.co.kr/news/articleView.html?idxno=478966"
   }
  ],
  "cta": "응원 댓글 남기고\n*리센느 포카* 받아 가요",
- "caption": "리센느 「PULSE」, 오늘 오후 6시 컴백\n리센느가 네 번째 미니앨범 「PULSE」로 돌아왔어요. 타이틀곡 'With'를 비롯해 Finest Thing, 백화요란(Inside Out), MEME, Dragon까지 5곡이 담겼어요.\n\n[18:30 반응 줄]\n\n5곡 중 가장 마음에 든 곡은 무엇인가요?\n\n출처: MK스포츠·싱글리스트(2026.11.03)\n이미지 출처: 더뮤즈엔터테인먼트\n\n광고·제휴 문의 reaymi.music@gmail.com\n\n#리센느 #RESCENE #PULSE #With #이슈브리프 #오늘의이슈"
+ "caption": "리센느 「PULSE」, 오늘 오후 6시 컴백\n리센느가 네 번째 미니앨범 「PULSE」로 돌아왔어요. 타이틀곡 'With'를 비롯해 Finest Thing, 백화요란(Inside Out), MEME, Dragon까지 5곡이 담겼어요.\n\n[18:30 반응 줄]\n\n5곡 중 가장 마음에 든 곡은 무엇인가요?\n\n출처: MK스포츠·싱글리스트(2026.11.03)\n이미지 출처: 더뮤즈엔터테인먼트\n\n광고·제휴 문의 reaymi.music@gmail.com\n\n#리센느 #RESCENE #PULSE #With #이슈브리프 #오늘의이슈",
+ "maxFacts": 8
 }
