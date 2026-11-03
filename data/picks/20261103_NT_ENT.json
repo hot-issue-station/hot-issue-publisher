@@ -1,0 +1,79 @@
+{
+ "slot": "NT",
+ "candidates": [
+  {
+   "title": "있지 채령, 11월 9일 솔로 데뷔",
+   "summary": "데뷔 7년 만에 첫 솔로, 미니 'Lovesick' 4곡 공개",
+   "facts": [
+    "ITZY 채령 첫 솔로 미니앨범 'Lovesick' 11월 9일 오후 6시 발매",
+    "타이틀곡 'Lovesick' 포함 4곡(Moonlit Club·Scent·Favorite Reason), 'Favorite Reason' 작사 참여",
+    "2019년 ITZY 데뷔, 예지·유나에 이어 세 번째 솔로 주자",
+    "11/2 호러 콘셉트 뮤비 티저 공개",
+    "JYP 10/19 일정·트랙리스트 발표"
+   ],
+   "sources": [
+    {
+     "outlet": "스포츠경향",
+     "title": "Chaeryeong of ITZY to go solo on Nov. 9",
+     "date": "2026-10-19",
+     "url": "https://sports.khan.co.kr/en/article/202610190804007"
+    },
+    {
+     "outlet": "Soompi",
+     "title": "ITZY's Chaeryeong Announces Solo Debut Schedule With Trailer And Track List For 'Lovesick'",
+     "date": "2026-10-18",
+     "url": "https://www.soompi.com/article/1879353wpp/watch-itzy-s-chaeryeong-announces-solo-debut-schedule-with-trailer-and-track-list-for-lovesick"
+    }
+   ],
+   "photoQuery": "JYP엔터테인먼트 공식 유튜브 ITZY 채령 Lovesick 티저(얼굴 클로즈업 제외)",
+   "score": {
+    "scores": {
+     "coverage": 2,
+     "rankings": 1,
+     "fandom": 3,
+     "ourHistory": 2,
+     "freshness": 2,
+     "shareable": 2
+    },
+    "total": 27
+   }
+  },
+  {
+   "title": "에이티즈, 13일 'GOLDEN HOUR : Part.6' 컴백",
+   "summary": "빌보드 200 1위 3번 후 5개월 만의 새 미니, 타이틀곡 'UP'",
+   "facts": [
+    "미니 15집 'GOLDEN HOUR : Part.6' 11월 13일 오후 2시 발매",
+    "5곡, 선공개곡 'DRIP'·타이틀곡 'UP'",
+    "직전 Part.5(6월)로 빌보드 200 1위, 통산 3번째 1위",
+    "직전 타이틀곡 'BAD'는 숏폼 안무 챌린지로 확산",
+    "2018년 10월 데뷔, 8인조"
+   ],
+   "sources": [
+    {
+     "outlet": "코리아중앙데일리",
+     "title": "Boy band Ateez to return with 'Golden Hour: Part.6' next month",
+     "date": "2026-10-08",
+     "url": "https://www.koreajoongangdaily.com/entertainment/boy-band-ateez-to-return-with-golden-hour-part6-next-month/12910603"
+    },
+    {
+     "outlet": "Soompi",
+     "title": "ATEEZ Reveals Track List For 'GOLDEN HOUR : Part.6'",
+     "date": "2026-10-25",
+     "url": "https://www.soompi.com/article/1881329wpp/ateez-reveals-track-list-for-golden-hour-part-6"
+    }
+   ],
+   "photoQuery": "KQ엔터테인먼트 공식 유튜브 ATEEZ GOLDEN HOUR Part.6 티저(얼굴 클로즈업 제외)",
+   "score": {
+    "scores": {
+     "coverage": 2,
+     "rankings": 1,
+     "fandom": 3,
+     "ourHistory": 2,
+     "freshness": 1,
+     "shareable": 2
+    },
+    "total": 25
+   }
+  }
+ ]
+}

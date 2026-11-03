@@ -51,5 +51,45 @@
    }
   ],
   "picked": null
+ },
+ {
+  "slot": "NT",
+  "kind": "ENT",
+  "candidates": [
+   {
+    "title": "있지 채령, 11월 9일 솔로 데뷔",
+    "scores": {
+     "coverage": 2,
+     "rankings": 1,
+     "fandom": 3,
+     "ourHistory": 2,
+     "freshness": 2,
+     "shareable": 2
+    },
+    "total": 27
+   },
+   {
+    "title": "에이티즈, 13일 'GOLDEN HOUR : Part.6' 컴백",
+    "scores": {
+     "coverage": 2,
+     "rankings": 1,
+     "fandom": 3,
+     "ourHistory": 2,
+     "freshness": 1,
+     "shareable": 2
+    },
+    "total": 25
+   }
+  ],
+  "picked": null,
+  "createdAt": "2026-11-03T20:20:00+09:00"
+ },
+ {
+  "slot": "NT",
+  "kind": "SPO",
+  "candidates": [],
+  "picked": null,
+  "note": "KS 1차전 진행 중(21시 전 종료 불가), 아침 예고편 이미 게시 → 쉼",
+  "createdAt": "2026-11-03T20:20:00+09:00"
  }
 ]
