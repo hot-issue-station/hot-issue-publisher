@@ -150,5 +150,77 @@
     "gain": 2459
    }
   ]
+ },
+ {
+  "at": "2026-11-03T14:48+09:00",
+  "key": "14f",
+  "ok": false,
+  "error": "HTTPError: HTTP Error 404: Not Found"
+ },
+ {
+  "at": "2026-11-03T14:48+09:00",
+  "key": "subusunews",
+  "ok": false,
+  "error": "HTTPError: HTTP Error 404: Not Found"
+ },
+ {
+  "at": "2026-11-03T14:48+09:00",
+  "key": "vstudio",
+  "ok": false,
+  "error": "HTTPError: HTTP Error 404: Not Found"
+ },
+ {
+  "at": "2026-11-03T14:48+09:00",
+  "key": "syukaworld",
+  "ok": false,
+  "error": "HTTPError: HTTP Error 404: Not Found"
+ },
+ {
+  "at": "2026-11-03T14:48+09:00",
+  "key": "ytn",
+  "ok": true,
+  "new": [
+   "v-leOYlWmlw",
+   "c_gS4t_xDbo",
+   "pFiNGw2Kti4",
+   "pNyuzPfyalQ",
+   "3Mwu61iV3vc",
+   "wFvyXbNID6E",
+   "k6u1vEwyvvQ",
+   "23HnMi0j8lE",
+   "ZK0syouMNVY",
+   "bOURH39Zybg",
+   "KLUDmfUjfPU",
+   "Xxkwd3l9BWs",
+   "q6Yhh3XOW94",
+   "w7Ph3NDlP3M",
+   "_UOrFHDeLMg"
+  ],
+  "top": [
+   {
+    "id": "KLUDmfUjfPU",
+    "title": "트럼프 사저 인근서 '쾅'…\"탑승자 전원 사망\" 현장 '대혼돈' [에디터픽] / YTN",
+    "views": 40418,
+    "gain": null
+   },
+   {
+    "id": "pFiNGw2Kti4",
+    "title": "\"트럼프, 예전 같지 않다\"...공화당 패배마저 '이례적' 인정 [에디터픽] / YTN",
+    "views": 12161,
+    "gain": null
+   },
+   {
+    "id": "w7Ph3NDlP3M",
+    "title": "\"시리? 주방 타이머 수준\" 혹평…한계 드러난 애플의 굴욕 [지금이뉴스] / YTN",
+    "views": 977,
+    "gain": null
+   }
+  ]
+ },
+ {
+  "at": "2026-11-03T14:48+09:00",
+  "key": "storyk",
+  "ok": false,
+  "error": "HTTPError: HTTP Error 404: Not Found"
  }
 ]
