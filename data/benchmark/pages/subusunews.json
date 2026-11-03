@@ -1,26 +1,42 @@
 {
  "name": "스브스뉴스 (SBS)",
  "channel": "https://www.youtube.com/@subusunews",
- "checkedAt": "2026-11-03T19:30+09:00",
+ "checkedAt": "2026-11-03T22:45+09:00",
  "subscribers": "144만",
  "videos": [
   {
+   "id": "7gMpoQvh8JA",
+   "title": "갈수록 심해지는 소년범죄 #촉법소년 #shorts #스브스뉴스",
+   "views": 532,
+   "viewsText": "조회수 532회",
+   "published": "",
+   "kind": "short"
+  },
+  {
+   "id": "_S4dpnDTrkY",
+   "title": "칼부림 났을 때 제일 먼저 해야 한다는 3가지 #칼부림 #shorts #스브스뉴스",
+   "views": 2600,
+   "viewsText": "조회수 2.6천회",
+   "published": "",
+   "kind": "short"
+  },
+  {
    "id": "u81X5J3miTE",
    "title": "퇴직금 체불 막을 정부의 한 수 #퇴직금 #shorts #스브스뉴스",
-   "views": 9200,
-   "viewsText": "조회수 9.2천회",
+   "views": 10000,
+   "viewsText": "조회수 1만회",
    "published": "",
    "kind": "short",
-   "gain": 1200
+   "gain": 800
   },
   {
    "id": "vADM4Rvg1TM",
    "title": "비행 훈련 중 충돌, 알리지 않은 이유는? #공군 #shorts #스브스뉴스",
-   "views": 9100,
-   "viewsText": "조회수 9.1천회",
+   "views": 9500,
+   "viewsText": "조회수 9.5천회",
    "published": "",
    "kind": "short",
-   "gain": 600
+   "gain": 400
   },
   {
    "id": "z_5kUs-Izr0",
@@ -70,20 +86,20 @@
   {
    "id": "A6pfGRrFOzE",
    "title": "아이폰 듀오 화면 결함 인정한 애플, 무상 교체 발표했지만 재고 부족 #아이폰듀오 #shorts #스브스뉴스",
-   "views": 23000,
-   "viewsText": "조회수 2.3만회",
+   "views": 24000,
+   "viewsText": "조회수 2.4만회",
    "published": "",
    "kind": "short",
-   "gain": 2000
+   "gain": 1000
   },
   {
    "id": "-fLcCSNSD34",
    "title": "1인 1음료 진짜 필수인지 카페 사장님들한테 직접 물어봤습니다. #카페 #shorts #스브스뉴스",
-   "views": 300000,
-   "viewsText": "조회수 30만회",
+   "views": 310000,
+   "viewsText": "조회수 31만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "4oWBAsVpDDw",
@@ -342,24 +358,6 @@
    "title": "냉장고 온도가 갑자기 50도까지? 프랑스 슈퍼마켓 700곳 해킹 피해 #shorts #스브스뉴스",
    "views": 27000,
    "viewsText": "조회수 2.7만회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "83iJLTt7hjs",
-   "title": "너구리 다시마에서 시작한 음식 TMI #너구리 #shorts #스브스뉴스",
-   "views": 13000,
-   "viewsText": "조회수 1.3만회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "YkBtAmSPvv0",
-   "title": "김밥천국이 하나의 프랜차이즈가 아니었다는 거 알고 있었음? #김밥 #shorts #스브스뉴스",
-   "views": 39000,
-   "viewsText": "조회수 3.9만회",
    "published": "",
    "kind": "short",
    "gain": 0

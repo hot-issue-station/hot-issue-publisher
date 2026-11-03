@@ -1,186 +1,197 @@
 {
  "name": "YTN",
  "channel": "https://www.youtube.com/@ytnnews24",
- "checkedAt": "2026-11-03T19:30+09:00",
+ "checkedAt": "2026-11-03T22:45+09:00",
  "subscribers": "542만",
  "videos": [
   {
    "id": "jKrLc252I_A",
    "title": "필리핀 여행 갔다 봉변... #shorts / YTN",
-   "views": 92,
-   "viewsText": "조회수 92회",
+   "views": 17000,
+   "viewsText": "조회수 1.7만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 16908
   },
   {
    "id": "Xanp8OiMZ6A",
    "title": "중국인 떠나고 한국인이 채웠다 #shorts / YTN",
-   "views": 5300,
-   "viewsText": "조회수 5.3천회",
+   "views": 42000,
+   "viewsText": "조회수 4.2만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 36700
   },
   {
    "id": "nxS-VjHBJBg",
    "title": "시진핑의 시간은 빨리 간다 #shorts / YTN",
-   "views": 4400,
-   "viewsText": "조회수 4.4천회",
+   "views": 13000,
+   "viewsText": "조회수 1.3만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 8600
   },
   {
    "id": "tTZMem-9UGc",
    "title": "트럼프 패배 시 벌어지는 일 #shorts / YTN",
-   "views": 12000,
-   "viewsText": "조회수 1.2만회",
+   "views": 32000,
+   "viewsText": "조회수 3.2만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 20000
   },
   {
    "id": "iNRLaqBJCeE",
    "title": "트럼프 후회하지 않으려고? #shorts / YTN",
-   "views": 7000,
-   "viewsText": "조회수 7천회",
+   "views": 15000,
+   "viewsText": "조회수 1.5만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 8000
   },
   {
    "id": "lKbctGPPYEA",
    "title": "버스기사의 놀라운 대처 #shorts / YTN",
-   "views": 40000,
-   "viewsText": "조회수 4만회",
+   "views": 80000,
+   "viewsText": "조회수 8만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 40000
   },
   {
    "id": "J6ss8HLBtaM",
    "title": "트럼프마저 회피 중 #shorts / YTN",
-   "views": 19000,
-   "viewsText": "조회수 1.9만회",
+   "views": 39000,
+   "viewsText": "조회수 3.9만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 20000
   },
   {
    "id": "kDQSDc9qSrY",
    "title": "트럼프, 3선 욕심까지 #shorts / YTN",
-   "views": 27000,
-   "viewsText": "조회수 2.7만회",
+   "views": 37000,
+   "viewsText": "조회수 3.7만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 10000
   },
   {
    "id": "5H-K-gTjmBo",
    "title": "두 사람이 방문한 곳은? #shorts / YTN",
-   "views": 35000,
-   "viewsText": "조회수 3.5만회",
+   "views": 60000,
+   "viewsText": "조회수 6만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 25000
   },
   {
    "id": "nvas9PxjKvU",
    "title": "시민단체에 고발당한 용혜인 #shorts / YTN",
-   "views": 13000,
-   "viewsText": "조회수 1.3만회",
+   "views": 22000,
+   "viewsText": "조회수 2.2만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 9000
   },
   {
    "id": "kaEB5L-rU70",
    "title": "주방 꿀템 추천 #shorts / YTN",
-   "views": 13000,
-   "viewsText": "조회수 1.3만회",
+   "views": 30000,
+   "viewsText": "조회수 3만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 17000
   },
   {
    "id": "ZK0syouMNVY",
    "title": "존박도 당황한 '맥도날드 랩 영상' #shorts / YTN",
-   "views": 36000,
-   "viewsText": "조회수 3.6만회",
+   "views": 64000,
+   "viewsText": "조회수 6.4만회",
    "published": "",
    "kind": "short",
-   "gain": 33700
+   "gain": 28000
   },
   {
    "id": "CIGzjJU7j_8",
    "title": "누가 진실일까 #shorts / YTN",
-   "views": 6200,
-   "viewsText": "조회수 6.2천회",
+   "views": 8600,
+   "viewsText": "조회수 8.6천회",
    "published": "",
    "kind": "short",
-   "gain": 4400
+   "gain": 2400
   },
   {
    "id": "jIbA1AJjHZY",
    "title": "마라톤 도중 무슨 일이? #shorts / YTN",
-   "views": 20000,
-   "viewsText": "조회수 2만회",
+   "views": 31000,
+   "viewsText": "조회수 3.1만회",
    "published": "",
    "kind": "short",
-   "gain": 12500
+   "gain": 11000
   },
   {
    "id": "5dt6p437KYI",
    "title": "나도 어디서 꿀리진 않어 #shorts / YTN",
-   "views": 16000,
-   "viewsText": "조회수 1.6만회",
+   "views": 24000,
+   "viewsText": "조회수 2.4만회",
    "published": "",
    "kind": "short",
-   "gain": 7700
+   "gain": 8000
   },
   {
    "id": "zbeezxfjzxg",
    "title": "\"너무 한심한 보안사고\" #shorts / YTN",
-   "views": 2200,
-   "viewsText": "조회수 2.2천회",
+   "views": 2300,
+   "viewsText": "조회수 2.3천회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 100
   },
   {
    "id": "1pXS9gGVdRY",
    "title": "범인은 북한? #shorts / YTN",
-   "views": 1900,
-   "viewsText": "조회수 1.9천회",
+   "views": 2200,
+   "viewsText": "조회수 2.2천회",
    "published": "",
    "kind": "short",
-   "gain": 922
+   "gain": 300
   },
   {
    "id": "smxFKBmlk70",
    "title": "협상 앞두고 폭격 #shorts / YTN",
-   "views": 11000,
-   "viewsText": "조회수 1.1만회",
+   "views": 13000,
+   "viewsText": "조회수 1.3만회",
    "published": "",
    "kind": "short",
-   "gain": 4200
+   "gain": 2000
   },
   {
    "id": "fcVBE3zr4Kg",
    "title": "잠자는 차속의 남자 #shorts / YTN",
-   "views": 11000,
-   "viewsText": "조회수 1.1만회",
+   "views": 13000,
+   "viewsText": "조회수 1.3만회",
    "published": "",
    "kind": "short",
-   "gain": 3800
+   "gain": 2000
   },
   {
    "id": "AyYfoBjitao",
    "title": "한국에서 안 털린 사람은 누구? #shorts / YTN",
-   "views": 5700,
-   "viewsText": "조회수 5.7천회",
+   "views": 6000,
+   "viewsText": "조회수 6천회",
    "published": "",
    "kind": "short",
-   "gain": 1600
+   "gain": 300
   },
   {
    "id": "dmYBaKkyMkI",
    "title": "\"괜찮아요\"가 일본 유행어? #shorts / YTN",
-   "views": 160000,
-   "viewsText": "조회수 16만회",
+   "views": 200000,
+   "viewsText": "조회수 20만회",
    "published": "",
    "kind": "short",
-   "gain": 79000
+   "gain": 40000
   },
   {
    "id": "8HwGn-zByZY",
@@ -189,13 +200,13 @@
    "viewsText": "조회수 2.3천회",
    "published": "",
    "kind": "short",
-   "gain": 500
+   "gain": 0
   },
   {
    "id": "SOiLBz1Tp8U",
    "title": "황도에 손맛 추가 #shorts / YTN",
-   "views": 42000,
-   "viewsText": "조회수 4.2만회",
+   "views": 69000,
+   "viewsText": "조회수 6.9만회",
    "published": "",
    "kind": "short",
    "gain": 27000
@@ -203,92 +214,92 @@
   {
    "id": "jE9RK2o-aWg",
    "title": "삵 폐사체서 AI 바이러스가 #shorts / YTN",
+   "views": 21000,
+   "viewsText": "조회수 2.1만회",
+   "published": "",
+   "kind": "short",
+   "gain": 5000
+  },
+  {
+   "id": "UzQITXz4Ww4",
+   "title": "장황했던 마지막 연설 #shorts / YTN",
+   "views": 25000,
+   "viewsText": "조회수 2.5만회",
+   "published": "",
+   "kind": "short",
+   "gain": 3000
+  },
+  {
+   "id": "mMx4w3xx_QQ",
+   "title": "끊이지 않는 \"감사합니다\" #shorts / YTN",
+   "views": 280000,
+   "viewsText": "조회수 28만회",
+   "published": "",
+   "kind": "short",
+   "gain": 110000
+  },
+  {
+   "id": "WZrZTBbIGIE",
+   "title": "손은 명품이 아니신 모양 #shorts / YTN",
+   "views": 70000,
+   "viewsText": "조회수 7만회",
+   "published": "",
+   "kind": "short",
+   "gain": 17000
+  },
+  {
+   "id": "hY5TTJqwd3I",
+   "title": "일단 즐기는 트럼프 #shorts / YTN",
    "views": 16000,
    "viewsText": "조회수 1.6만회",
+   "published": "",
+   "kind": "short",
+   "gain": 2000
+  },
+  {
+   "id": "keHN3nrZAdE",
+   "title": "고양이가 머리채 잡은 썰 #shorts / YTN",
+   "views": 31000,
+   "viewsText": "조회수 3.1만회",
+   "published": "",
+   "kind": "short",
+   "gain": 6000
+  },
+  {
+   "id": "6CwB0wR2mes",
+   "title": "세금이 감옥으로... #shorts / YTN",
+   "views": 34000,
+   "viewsText": "조회수 3.4만회",
    "published": "",
    "kind": "short",
    "gain": 8000
   },
   {
-   "id": "UzQITXz4Ww4",
-   "title": "장황했던 마지막 연설 #shorts / YTN",
-   "views": 22000,
-   "viewsText": "조회수 2.2만회",
-   "published": "",
-   "kind": "short",
-   "gain": 9000
-  },
-  {
-   "id": "mMx4w3xx_QQ",
-   "title": "끊이지 않는 \"감사합니다\" #shorts / YTN",
-   "views": 170000,
-   "viewsText": "조회수 17만회",
-   "published": "",
-   "kind": "short",
-   "gain": 119000
-  },
-  {
-   "id": "WZrZTBbIGIE",
-   "title": "손은 명품이 아니신 모양 #shorts / YTN",
-   "views": 53000,
-   "viewsText": "조회수 5.3만회",
-   "published": "",
-   "kind": "short",
-   "gain": 27000
-  },
-  {
-   "id": "hY5TTJqwd3I",
-   "title": "일단 즐기는 트럼프 #shorts / YTN",
-   "views": 14000,
-   "viewsText": "조회수 1.4만회",
-   "published": "",
-   "kind": "short",
-   "gain": 5400
-  },
-  {
-   "id": "keHN3nrZAdE",
-   "title": "고양이가 머리채 잡은 썰 #shorts / YTN",
-   "views": 25000,
-   "viewsText": "조회수 2.5만회",
-   "published": "",
-   "kind": "short",
-   "gain": 10000
-  },
-  {
-   "id": "6CwB0wR2mes",
-   "title": "세금이 감옥으로... #shorts / YTN",
-   "views": 26000,
-   "viewsText": "조회수 2.6만회",
-   "published": "",
-   "kind": "short",
-   "gain": 15000
-  },
-  {
    "id": "0l93Gie7x6k",
    "title": "갑자기 임시 휴업? #shorts / YTN",
-   "views": 52000,
-   "viewsText": "조회수 5.2만회",
+   "views": 65000,
+   "viewsText": "조회수 6.5만회",
    "published": "",
    "kind": "short",
-   "gain": 21000
+   "gain": 13000
   },
   {
    "id": "ucSZRSEDQeQ",
    "title": "내 한국시리즈 티켓 내놔... #shorts / YTN",
-   "views": 47000,
-   "viewsText": "조회수 4.7만회",
+   "views": 48000,
+   "viewsText": "조회수 4.8만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 1000
   },
   {
    "id": "f4UZnorftFw",
    "title": "신차 투입 앞두고 '중단' #shorts / YTN",
-   "views": 830000,
-   "viewsText": "조회수 83만회",
+   "views": 850000,
+   "viewsText": "조회수 85만회",
    "published": "",
    "kind": "short",
-   "gain": 50000
+   "gain": 20000
   },
   {
    "id": "cMGwE9GnfV8",
@@ -297,13 +308,13 @@
    "viewsText": "조회수 7.2만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "wfLOY8_sxZM",
    "title": "혼자 남아서 악수 #shorts / YTN",
-   "views": 85000,
-   "viewsText": "조회수 8.5만회",
+   "views": 86000,
+   "viewsText": "조회수 8.6만회",
    "published": "",
    "kind": "short",
    "gain": 1000
@@ -311,11 +322,11 @@
   {
    "id": "OdawmqaJQns",
    "title": "알고 보니 대장균 범벅 #shorts / YTN",
-   "views": 65000,
-   "viewsText": "조회수 6.5만회",
+   "views": 74000,
+   "viewsText": "조회수 7.4만회",
    "published": "",
    "kind": "short",
-   "gain": 14000
+   "gain": 9000
   },
   {
    "id": "wwB0_-v_Zpw",
@@ -324,13 +335,13 @@
    "viewsText": "조회수 33만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "cT8dsG3-krc",
    "title": "손가락만 아픈 108배 #shorts / YTN",
-   "views": 3400,
-   "viewsText": "조회수 3.4천회",
+   "views": 3500,
+   "viewsText": "조회수 3.5천회",
    "published": "",
    "kind": "short",
    "gain": 100
@@ -338,11 +349,11 @@
   {
    "id": "5lLDepXvEj4",
    "title": "삼성도 깜짝 놀란 선물 #shorts / YTN",
-   "views": 41000,
-   "viewsText": "조회수 4.1만회",
+   "views": 43000,
+   "viewsText": "조회수 4.3만회",
    "published": "",
    "kind": "short",
-   "gain": 6000
+   "gain": 2000
   },
   {
    "id": "mvGW-aDYP54",
@@ -351,7 +362,7 @@
    "viewsText": "조회수 13만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   }
  ]
 }
