@@ -83,7 +83,9 @@ def comment_card(c, seed):
     cw = 860
     fnt = F(RG, 36)
     tmp = ImageDraw.Draw(Image.new("RGBA", (10, 10)))
-    lines = wrap(tmp, c["text"], fnt, cw - 150)[:4]
+    import re as _re
+    txt = _re.sub("[\U0001F000-\U0001FAFF\uFE0F\u200D]", "", c["text"]).strip()
+    lines = wrap(tmp, txt, fnt, cw - 150)[:4]
     ch = 120 + 50 * len(lines) + 56
     card = Image.new("RGBA", (cw, ch), (0, 0, 0, 0))
     d = ImageDraw.Draw(card)
