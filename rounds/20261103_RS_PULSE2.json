@@ -4,7 +4,7 @@
  "theme": "RS",
  "category": "리센느 응원 특집 · 컴백 2탄",
  "cta": "응원 댓글 남기고\n*리센느 포카* 받아 가요",
- "maxFacts": 6,
+ "maxFacts": 7,
  "publishTime": "21:00",
  "topic": "리센느 'With' 발매 2시간 만에 멜론 TOP100 1위",
  "titleBar": [
@@ -34,6 +34,14 @@
    "desc": "19시 첫 차트에 2위로 들어와, 한 시간 만에 정상에 올랐어요.",
    "source": "멜론 TOP100 (11.03 19:00·20:00 차트)",
    "photo": "assets/rescene/05_pulse.jpg",
+   "photoPos": "50% 35%",
+   "photoLabel": "이미지 · 더뮤즈엔터테인먼트"
+  },
+  {
+   "title": "HOT100은 1·2·3위 싹쓸이",
+   "desc": "발매 100일 안 곡만 모은 HOT100에서는 With·Finest Thing·백화요란이 1~3위, MEME 5위·Dragon 6위예요.",
+   "source": "멜론 HOT100 (11.03 20:00 차트)",
+   "photo": "assets/rescene/09_pulse.jpg",
    "photoPos": "50% 35%",
    "photoLabel": "이미지 · 더뮤즈엔터테인먼트"
   },
@@ -84,7 +92,7 @@
  "sources": [
   {
    "outlet": "멜론 TOP100",
-   "title": "멜론차트 TOP100 (2026.11.03 19:00·20:00)",
+   "title": "멜론차트 TOP100·HOT100 (2026.11.03 19:00·20:00)",
    "date": "2026.11.03",
    "url": "https://www.melon.com/chart/index.htm"
   },
