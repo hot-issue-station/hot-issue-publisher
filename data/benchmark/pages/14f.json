@@ -1,14 +1,14 @@
 {
  "name": "14F 일사에프 (MBC)",
  "channel": "https://www.youtube.com/@14FMBC",
- "checkedAt": "2026-11-03T14:48+09:00",
+ "checkedAt": "2026-11-03T19:30+09:00",
  "subscribers": "239만",
  "videos": [
   {
    "id": "peSpC5kd2t0",
    "title": "홍채로도 운세를 볼 수 있다? #shorts",
-   "views": 7600,
-   "viewsText": "조회수 7.6천회",
+   "views": 7800,
+   "viewsText": "조회수 7.8천회",
    "published": "",
    "kind": "short",
    "gain": 200
@@ -20,7 +20,7 @@
    "viewsText": "조회수 5.2천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "FV2VNAPmk-o",
@@ -34,11 +34,11 @@
   {
    "id": "M_z0WM3-GO8",
    "title": "최면술사가 말하는 업계 비밀(?) #shorts",
-   "views": 5800,
-   "viewsText": "조회수 5.8천회",
+   "views": 5900,
+   "viewsText": "조회수 5.9천회",
    "published": "",
    "kind": "short",
-   "gain": 200
+   "gain": 100
   },
   {
    "id": "Icvrlx6HV-Q",
@@ -47,7 +47,7 @@
    "viewsText": "조회수 6.9천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "zHzHgad2t6c",
@@ -200,7 +200,7 @@
    "viewsText": "조회수 1만회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "012FnwWdjxA",

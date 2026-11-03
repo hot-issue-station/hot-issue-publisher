@@ -222,5 +222,171 @@
   "key": "storyk",
   "ok": false,
   "error": "HTTPError: HTTP Error 404: Not Found"
+ },
+ {
+  "at": "2026-11-03T19:30+09:00",
+  "key": "14f",
+  "ok": true,
+  "new": [
+   "uQ0WY7C5Ddo",
+   "VipxqupADqE",
+   "BjSNy_1blgE"
+  ],
+  "top": [
+   {
+    "id": "eOXSE6dyRsY",
+    "title": "샤인머스캣 개발한 일본이 땅을 치고 후회하는 이유🥄ㅣ돈슐랭 / 14F",
+    "views": 259069,
+    "gain": 60390
+   },
+   {
+    "id": "sf-JTKYvrxw",
+    "title": "사상 최대 규모의 앤트로픽 상장ㅣ넷플릭스 주가 하락 이유 등 4가지 🥬경제 이슈🥬",
+    "views": 238274,
+    "gain": 49782
+   },
+   {
+    "id": "87w5P7QW2vM",
+    "title": "밤 중에도 안전하다고… 외국인들이 깜짝 놀란다는 ‘K-편의점’/ 14F",
+    "views": 164124,
+    "gain": 42330
+   }
+  ]
+ },
+ {
+  "at": "2026-11-03T19:30+09:00",
+  "key": "subusunews",
+  "ok": true,
+  "new": [
+   "53YmGEQcPg8"
+  ],
+  "top": [
+   {
+    "id": "HnhvHRqyqao",
+    "title": "나는 연애를 알려 줄 테니까 너는 공부를 알려줘",
+    "views": 24092,
+    "gain": 532
+   },
+   {
+    "id": "vEqtdBio5f8",
+    "title": "유규선이 성공한 방법",
+    "views": 56482,
+    "gain": 496
+   },
+   {
+    "id": "LwLm7MrPPHA",
+    "title": "블랙페이퍼가 뽑은 올해의 커플상",
+    "views": 12350,
+    "gain": 175
+   }
+  ]
+ },
+ {
+  "at": "2026-11-03T19:30+09:00",
+  "key": "vstudio",
+  "ok": true,
+  "new": [],
+  "top": []
+ },
+ {
+  "at": "2026-11-03T19:30+09:00",
+  "key": "syukaworld",
+  "ok": true,
+  "new": [
+   "Xyk-we1Ehs8",
+   "KJDqpAOSco0",
+   "hSerS0aG3Vc",
+   "YJB4I75hcmc"
+  ],
+  "top": [
+   {
+    "id": "YSdD807ghyQ",
+    "title": "두에빌 청문회",
+    "views": 357550,
+    "gain": 33299
+   },
+   {
+    "id": "lO1KCuPlcuo",
+    "title": "돈나무 누나가 알려주는 면접팁",
+    "views": 114780,
+    "gain": 19037
+   },
+   {
+    "id": "btP-S4xd8m8",
+    "title": "황동현 '역대급 매출에도 주가가 떨어지는 빅테크'ㅣ니니 '미국 중간선거는 지금'ㅣ김장열 'AI 섹터의 다양한 시나리오'",
+    "views": 135486,
+    "gain": 15371
+   }
+  ]
+ },
+ {
+  "at": "2026-11-03T19:30+09:00",
+  "key": "ytn",
+  "ok": true,
+  "new": [
+   "QPFNC42SfqQ",
+   "G6SkaSZJDLY",
+   "dxV-h_fJ3jQ",
+   "a1PYDiQZA9o",
+   "XYzasiMcp68",
+   "uRoMU1uJOIQ",
+   "10V1KUGoPXk",
+   "5LpAW2UjMqo",
+   "Xanp8OiMZ6A",
+   "lUUWgwiz0xE",
+   "RcOxdEbxdyA",
+   "qPTYP_nlIfI",
+   "3dpoPMgrWG4",
+   "iArgSa6fmRQ",
+   "erKb4yUDBGE"
+  ],
+  "top": [
+   {
+    "id": "G6SkaSZJDLY",
+    "title": "김칫국 한 사발 마신 트럼프…기상천외한 공약에 민주당 '버럭' [에디터픽] / YTN",
+    "views": 36555,
+    "gain": null
+   },
+   {
+    "id": "Xanp8OiMZ6A",
+    "title": "중국인 떠나고 한국인이 채웠다 #shorts / YTN",
+    "views": 3547,
+    "gain": null
+   },
+   {
+    "id": "QPFNC42SfqQ",
+    "title": "외교부, 1호기 탑승자 유출에 \"해킹은 아닌 듯\"…청와대 긴급회의 [YTN실시간뉴스]",
+    "views": 2207,
+    "gain": null
+   }
+  ]
+ },
+ {
+  "at": "2026-11-03T19:30+09:00",
+  "key": "storyk",
+  "ok": true,
+  "new": [
+   "6WdpcGFmFgQ"
+  ],
+  "top": [
+   {
+    "id": "nrw8lqAulz8",
+    "title": "손흥민 모든 것 배우겠단 김민수 - 맹활약한 20살 괴물 대신 대표팀 레프트에 황희찬",
+    "views": 42305,
+    "gain": 8067
+   },
+   {
+    "id": "hW2vyayJmLc",
+    "title": "손흥민 호위무사들과 캡틴 패싱 황희찬 극과극 - 엄지성 미친 도움 대표팀 서사는 폭발 직전",
+    "views": 109281,
+    "gain": 6297
+   },
+   {
+    "id": "T8LOjY7uM8A",
+    "title": "손흥민 존중은 베테랑을 향한 마땅한 기본 - 황희찬의 하이파이브 무시와 엄지성 대표팀 발탁",
+    "views": 269466,
+    "gain": 2314
+   }
+  ]
  }
 ]

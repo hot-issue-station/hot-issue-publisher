@@ -1,14 +1,22 @@
 {
  "name": "RESCENE 공식",
  "channel": "https://www.youtube.com/@RESCENE_official",
- "checkedAt": "2026-11-03T14:48+09:00",
+ "checkedAt": "2026-11-03T19:30+09:00",
  "subscribers": "133만",
  "videos": [
   {
+   "id": "kRY9NYgnXLM",
+   "title": "With 🤍",
+   "views": 41000,
+   "viewsText": "조회수 4.1만회",
+   "published": "",
+   "kind": "short"
+  },
+  {
    "id": "KcTEkBTAP3I",
    "title": "D-1 🪽",
-   "views": 420000,
-   "viewsText": "조회수 42만회",
+   "views": 450000,
+   "viewsText": "조회수 45만회",
    "published": "",
    "kind": "short",
    "gain": 30000
@@ -16,8 +24,8 @@
   {
    "id": "sgZms-ImEx0",
    "title": "but you 🫵",
-   "views": 360000,
-   "viewsText": "조회수 36만회",
+   "views": 390000,
+   "viewsText": "조회수 39만회",
    "published": "",
    "kind": "short",
    "gain": 30000
@@ -25,8 +33,8 @@
   {
    "id": "EYrU4Zphz8s",
    "title": ". ݁⋆ ꫂ᭪ ݁˖ . ݁ ˖ ݁♬⋆.˚𝄞⋆ ⋆",
-   "views": 500000,
-   "viewsText": "조회수 50만회",
+   "views": 510000,
+   "viewsText": "조회수 51만회",
    "published": "",
    "kind": "short",
    "gain": 10000
@@ -34,17 +42,17 @@
   {
    "id": "VeZXkwf9esM",
    "title": "날 부르는 메아리 🔊",
-   "views": 600000,
-   "viewsText": "조회수 60만회",
+   "views": 610000,
+   "viewsText": "조회수 61만회",
    "published": "",
    "kind": "short",
-   "gain": 20000
+   "gain": 10000
   },
   {
    "id": "ygE3V5CbllU",
    "title": "너라는 꿈 ✨",
-   "views": 460000,
-   "viewsText": "조회수 46만회",
+   "views": 470000,
+   "viewsText": "조회수 47만회",
    "published": "",
    "kind": "short",
    "gain": 10000
@@ -56,20 +64,11 @@
    "viewsText": "조회수 55만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "Es3qasE2w7w",
    "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #지훈 선배님",
-   "views": 480000,
-   "viewsText": "조회수 48만회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "_KseVSTX0KU",
-   "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #니나 선배님",
    "views": 490000,
    "viewsText": "조회수 49만회",
    "published": "",
@@ -77,10 +76,19 @@
    "gain": 10000
   },
   {
+   "id": "_KseVSTX0KU",
+   "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #니나 선배님",
+   "views": 510000,
+   "viewsText": "조회수 51만회",
+   "published": "",
+   "kind": "short",
+   "gain": 20000
+  },
+  {
    "id": "blswe0wDt8o",
    "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #YENA 선배님",
-   "views": 690000,
-   "viewsText": "조회수 69만회",
+   "views": 700000,
+   "viewsText": "조회수 70만회",
    "published": "",
    "kind": "short",
    "gain": 10000
@@ -92,13 +100,13 @@
    "viewsText": "조회수 43만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "QEeCIDjleC8",
    "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #나띠 #하늘 선배님",
-   "views": 620000,
-   "viewsText": "조회수 62만회",
+   "views": 630000,
+   "viewsText": "조회수 63만회",
    "published": "",
    "kind": "short",
    "gain": 10000
@@ -106,8 +114,8 @@
   {
    "id": "UfaJ4mbAiWc",
    "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #운학 선배님",
-   "views": 910000,
-   "viewsText": "조회수 91만회",
+   "views": 920000,
+   "viewsText": "조회수 92만회",
    "published": "",
    "kind": "short",
    "gain": 10000
@@ -119,13 +127,13 @@
    "viewsText": "조회수 51만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "k7y2yvkFJ1k",
    "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #애니 님",
-   "views": 1030000,
-   "viewsText": "조회수 103만회",
+   "views": 1040000,
+   "viewsText": "조회수 104만회",
    "published": "",
    "kind": "short",
    "gain": 10000
@@ -133,11 +141,11 @@
   {
    "id": "zHwTN5Yu-mI",
    "title": "Runnin’ on, runnin’ on, runnin’ on you",
-   "views": 920000,
-   "viewsText": "조회수 92만회",
+   "views": 930000,
+   "viewsText": "조회수 93만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "BRL7ag8oEO0",
@@ -196,11 +204,11 @@
   {
    "id": "HE9S7yp_hV0",
    "title": "덜컹덜컹 달려간다 🚌",
-   "views": 1890000,
-   "viewsText": "조회수 189만회",
+   "views": 1900000,
+   "viewsText": "조회수 190만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "61uE6IQ0ua4",
@@ -232,11 +240,11 @@
   {
    "id": "OgTCRoeYjzA",
    "title": "널 만난 후, 더 빨라지는 내 심장박동",
-   "views": 700000,
-   "viewsText": "조회수 70만회",
+   "views": 710000,
+   "viewsText": "조회수 71만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "nka_cr8WxzM",
@@ -268,20 +276,20 @@
   {
    "id": "YJr1crCM1Fk",
    "title": "You",
-   "views": 1350000,
-   "viewsText": "조회수 135만회",
+   "views": 1360000,
+   "viewsText": "조회수 136만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "NvcektCUDIk",
    "title": "📞⏰",
-   "views": 710000,
-   "viewsText": "조회수 71만회",
+   "views": 720000,
+   "viewsText": "조회수 72만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "qLG9tFkOhdo",
@@ -351,15 +359,6 @@
    "title": "🫶🫶",
    "views": 440000,
    "viewsText": "조회수 44만회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "cUgqnGwCVS4",
-   "title": "Shake it 💓",
-   "views": 550000,
-   "viewsText": "조회수 55만회",
    "published": "",
    "kind": "short",
    "gain": 0

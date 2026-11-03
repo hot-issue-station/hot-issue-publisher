@@ -1,26 +1,26 @@
 {
  "name": "스브스뉴스 (SBS)",
  "channel": "https://www.youtube.com/@subusunews",
- "checkedAt": "2026-11-03T14:48+09:00",
+ "checkedAt": "2026-11-03T19:30+09:00",
  "subscribers": "144만",
  "videos": [
   {
    "id": "u81X5J3miTE",
    "title": "퇴직금 체불 막을 정부의 한 수 #퇴직금 #shorts #스브스뉴스",
-   "views": 8000,
-   "viewsText": "조회수 8천회",
+   "views": 9200,
+   "viewsText": "조회수 9.2천회",
    "published": "",
    "kind": "short",
-   "gain": 2000
+   "gain": 1200
   },
   {
    "id": "vADM4Rvg1TM",
    "title": "비행 훈련 중 충돌, 알리지 않은 이유는? #공군 #shorts #스브스뉴스",
-   "views": 8500,
-   "viewsText": "조회수 8.5천회",
+   "views": 9100,
+   "viewsText": "조회수 9.1천회",
    "published": "",
    "kind": "short",
-   "gain": 1700
+   "gain": 600
   },
   {
    "id": "z_5kUs-Izr0",
@@ -38,7 +38,7 @@
    "viewsText": "조회수 4.8천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "X9iSvXsLJuY",
@@ -70,11 +70,11 @@
   {
    "id": "A6pfGRrFOzE",
    "title": "아이폰 듀오 화면 결함 인정한 애플, 무상 교체 발표했지만 재고 부족 #아이폰듀오 #shorts #스브스뉴스",
-   "views": 21000,
-   "viewsText": "조회수 2.1만회",
+   "views": 23000,
+   "viewsText": "조회수 2.3만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 2000
   },
   {
    "id": "-fLcCSNSD34",
@@ -83,7 +83,7 @@
    "viewsText": "조회수 30만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "4oWBAsVpDDw",

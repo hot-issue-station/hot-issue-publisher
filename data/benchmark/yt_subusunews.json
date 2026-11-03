@@ -3,19 +3,32 @@
  "name": "스브스뉴스 (SBS)",
  "channel": "https://www.youtube.com/@subusunews",
  "channelId": "UCxPClUl0bh7BgJajD5k483g",
- "checkedAt": "2026-11-03T08:28+09:00",
+ "checkedAt": "2026-11-03T19:30+09:00",
  "videos": [
+  {
+   "id": "53YmGEQcPg8",
+   "title": "형이랑 놀았던 시간은 참 재밌었는데, 형은 어땠어?ㅣ우리 사이엔 편지가 있다2 EP.10 엔시티드림 재민&지성",
+   "published": "2026-11-03T09:00:26+00:00",
+   "url": "https://www.youtube.com/watch?v=53YmGEQcPg8",
+   "shorts": false,
+   "views": 5039,
+   "likes": 1980,
+   "viewsGain": null,
+   "isNew": true,
+   "median": null,
+   "multiple": null
+  },
   {
    "id": "LwLm7MrPPHA",
    "title": "블랙페이퍼가 뽑은 올해의 커플상",
    "published": "2026-10-29T22:00:21+00:00",
    "url": "https://www.youtube.com/shorts/LwLm7MrPPHA",
    "shorts": true,
-   "views": 12175,
+   "views": 12350,
    "likes": 57,
-   "viewsGain": 420,
+   "viewsGain": 175,
    "isNew": false,
-   "median": 12175,
+   "median": 11899.5,
    "multiple": 1.0
   },
   {
@@ -24,11 +37,11 @@
    "published": "2026-10-29T22:00:10+00:00",
    "url": "https://www.youtube.com/shorts/wcSU_Bz1-Nk",
    "shorts": true,
-   "views": 7959,
-   "likes": 91,
-   "viewsGain": 382,
+   "views": 8060,
+   "likes": 92,
+   "viewsGain": 101,
    "isNew": false,
-   "median": 12175,
+   "median": 11899.5,
    "multiple": 0.7
   },
   {
@@ -37,12 +50,12 @@
    "published": "2026-10-29T09:10:44+00:00",
    "url": "https://www.youtube.com/shorts/HnhvHRqyqao",
    "shorts": true,
-   "views": 23560,
-   "likes": 122,
-   "viewsGain": 545,
+   "views": 24092,
+   "likes": 123,
+   "viewsGain": 532,
    "isNew": false,
-   "median": 12175,
-   "multiple": 1.9
+   "median": 11899.5,
+   "multiple": 2.0
   },
   {
    "id": "NbXaRPFlJLY",
@@ -50,11 +63,11 @@
    "published": "2026-10-29T09:08:04+00:00",
    "url": "https://www.youtube.com/shorts/NbXaRPFlJLY",
    "shorts": true,
-   "views": 2860,
-   "likes": 19,
-   "viewsGain": 47,
+   "views": 2882,
+   "likes": 20,
+   "viewsGain": 22,
    "isNew": false,
-   "median": 12175,
+   "median": 11899.5,
    "multiple": 0.2
   },
   {
@@ -63,11 +76,11 @@
    "published": "2026-10-29T09:00:33+00:00",
    "url": "https://www.youtube.com/shorts/NsvC_rlWlzo",
    "shorts": true,
-   "views": 8496,
-   "likes": 207,
-   "viewsGain": 95,
+   "views": 8555,
+   "likes": 209,
+   "viewsGain": 59,
    "isNew": false,
-   "median": 12175,
+   "median": 11899.5,
    "multiple": 0.7
   },
   {
@@ -76,12 +89,12 @@
    "published": "2026-10-28T22:00:35+00:00",
    "url": "https://www.youtube.com/shorts/vEqtdBio5f8",
    "shorts": true,
-   "views": 55986,
-   "likes": 990,
-   "viewsGain": 310,
+   "views": 56482,
+   "likes": 1000,
+   "viewsGain": 496,
    "isNew": false,
-   "median": 12175,
-   "multiple": 4.6
+   "median": 11899.5,
+   "multiple": 4.7
   },
   {
    "id": "sXc2HKoXGXc",
@@ -89,11 +102,11 @@
    "published": "2026-10-28T22:00:20+00:00",
    "url": "https://www.youtube.com/shorts/sXc2HKoXGXc",
    "shorts": true,
-   "views": 10606,
+   "views": 10646,
    "likes": 41,
-   "viewsGain": 74,
+   "viewsGain": 40,
    "isNew": false,
-   "median": 12175,
+   "median": 11899.5,
    "multiple": 0.9
   },
   {
@@ -102,11 +115,11 @@
    "published": "2026-10-28T10:29:45+00:00",
    "url": "https://www.youtube.com/shorts/Iwlid0Rvc8M",
    "shorts": true,
-   "views": 19460,
+   "views": 19543,
    "likes": 79,
-   "viewsGain": 109,
+   "viewsGain": 83,
    "isNew": false,
-   "median": 12175,
+   "median": 11899.5,
    "multiple": 1.6
   },
   {
@@ -115,12 +128,12 @@
    "published": "2026-10-28T10:20:55+00:00",
    "url": "https://www.youtube.com/shorts/joS-5fpq2rk",
    "shorts": true,
-   "views": 28591,
-   "likes": 333,
-   "viewsGain": 224,
+   "views": 28674,
+   "likes": 335,
+   "viewsGain": 83,
    "isNew": false,
-   "median": 12175,
-   "multiple": 2.3
+   "median": 11899.5,
+   "multiple": 2.4
   },
   {
    "id": "gatGzL_gjDs",
@@ -128,12 +141,12 @@
    "published": "2026-10-28T10:18:57+00:00",
    "url": "https://www.youtube.com/shorts/gatGzL_gjDs",
    "shorts": true,
-   "views": 18462,
+   "views": 18529,
    "likes": 110,
-   "viewsGain": 93,
+   "viewsGain": 67,
    "isNew": false,
-   "median": 12175,
-   "multiple": 1.5
+   "median": 11899.5,
+   "multiple": 1.6
   },
   {
    "id": "73b1bARMMVI",
@@ -141,12 +154,12 @@
    "published": "2026-10-28T10:16:41+00:00",
    "url": "https://www.youtube.com/shorts/73b1bARMMVI",
    "shorts": true,
-   "views": 11405,
-   "likes": 65,
-   "viewsGain": 38,
+   "views": 11449,
+   "likes": 66,
+   "viewsGain": 44,
    "isNew": false,
-   "median": 12175,
-   "multiple": 0.9
+   "median": 11899.5,
+   "multiple": 1.0
   },
   {
    "id": "hy5IFKw9N7g",
@@ -154,11 +167,11 @@
    "published": "2026-10-28T10:13:53+00:00",
    "url": "https://www.youtube.com/shorts/hy5IFKw9N7g",
    "shorts": true,
-   "views": 5774,
+   "views": 5801,
    "likes": 349,
-   "viewsGain": 25,
+   "viewsGain": 27,
    "isNew": false,
-   "median": 12175,
+   "median": 11899.5,
    "multiple": 0.5
   },
   {
@@ -167,11 +180,11 @@
    "published": "2026-10-27T22:00:36+00:00",
    "url": "https://www.youtube.com/shorts/f9kHvret7pQ",
    "shorts": true,
-   "views": 7177,
+   "views": 7186,
    "likes": 95,
-   "viewsGain": 23,
+   "viewsGain": 9,
    "isNew": false,
-   "median": 12175,
+   "median": 11899.5,
    "multiple": 0.6
   },
   {
@@ -180,40 +193,34 @@
    "published": "2026-10-27T22:00:13+00:00",
    "url": "https://www.youtube.com/shorts/P4hH10DOxbY",
    "shorts": true,
-   "views": 15001,
+   "views": 15009,
    "likes": 141,
-   "viewsGain": 30,
+   "viewsGain": 8,
    "isNew": false,
-   "median": 12175,
-   "multiple": 1.2
-  },
-  {
-   "id": "hx13V-s_zwY",
-   "title": "이런 친구한테 짝사랑 말해주면 안 됨",
-   "published": "2026-10-27T14:20:10+00:00",
-   "url": "https://www.youtube.com/shorts/hx13V-s_zwY",
-   "shorts": true,
-   "views": 18493,
-   "likes": 90,
-   "viewsGain": 49,
-   "isNew": false,
-   "median": 12175,
-   "multiple": 1.5
+   "median": 11899.5,
+   "multiple": 1.3
   }
  ],
  "viral": [
   {
    "title": "유규선이 성공한 방법",
    "url": "https://www.youtube.com/shorts/vEqtdBio5f8",
-   "views": 55986,
-   "multiple": 4.6,
+   "views": 56482,
+   "multiple": 4.7,
    "shorts": true
   },
   {
    "title": "꿈을 가지고 있는 사람의 기분은 어떤걸까",
    "url": "https://www.youtube.com/shorts/joS-5fpq2rk",
-   "views": 28591,
-   "multiple": 2.3,
+   "views": 28674,
+   "multiple": 2.4,
+   "shorts": true
+  },
+  {
+   "title": "나는 연애를 알려 줄 테니까 너는 공부를 알려줘",
+   "url": "https://www.youtube.com/shorts/HnhvHRqyqao",
+   "views": 24092,
+   "multiple": 2.0,
    "shorts": true
   }
  ]
