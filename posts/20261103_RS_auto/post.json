@@ -1,0 +1,42 @@
+{
+  "version": 1,
+  "date": "2026-11-03",
+  "slot": "RS",
+  "publishAt": "2026-11-03T19:00:00+09:00",
+  "topic": "리센느 4집 「PULSE」 오늘 컴백, 타이틀곡 'With'",
+  "images": [
+    "01.jpg",
+    "02.jpg",
+    "03.jpg",
+    "04.jpg",
+    "05.jpg",
+    "06.jpg",
+    "07.jpg"
+  ],
+  "caption": "리센느 「PULSE」, 오늘 오후 6시 컴백\n리센느가 네 번째 미니앨범 「PULSE」로 돌아왔어요. 타이틀곡 'With'를 비롯해 Finest Thing, 백화요란(Inside Out), MEME, Dragon까지 5곡이 담겼어요.\n\n[18:30 반응 줄]\n\n5곡 중 가장 마음에 든 곡은 무엇인가요?\n\n출처: MK스포츠·싱글리스트(2026.11.03)\n이미지 출처: 더뮤즈엔터테인먼트\n\n광고·제휴 문의 reaymi.music@gmail.com\n\n#리센느 #RESCENE #PULSE #With #이슈브리프 #오늘의이슈",
+  "sources": [
+    {
+      "outlet": "MK스포츠",
+      "title": "'역주행 신화' 리센느, 오늘(3일) 컴백…'With'로 상승세 이어갈까",
+      "date": "2026.11.03",
+      "url": "https://www.mksports.co.kr/news/entertain/12194393"
+    },
+    {
+      "outlet": "싱글리스트",
+      "title": "리센느, 오늘(3일) 미니 4집 'PULSE' 발매…타이틀곡 'With'로 컴백",
+      "date": "2026.11.03",
+      "url": "https://www.slist.kr/news/articleView.html?idxno=778489"
+    }
+  ],
+  "approval3": {
+    "approved": true,
+    "at": "2026-11-03T13:07:49+09:00",
+    "by": "자동 모드 (대표 결정 10/28 · 30분 거부권)"
+  },
+  "reel": false,
+  "auto": {
+    "id": "20261103_RS_PULSE",
+    "createdAt": "2026-11-03T13:07:49+09:00",
+    "vetoUntil": "2026-11-03T18:57:00+09:00"
+  }
+}

@@ -1,0 +1,71 @@
+{
+ "date": "2026-11-03",
+ "slot": "RS",
+ "theme": "RS",
+ "publishTime": "19:00",
+ "category": "리센느 응원 특집 · 컴백 당일",
+ "topic": "리센느 4집 「PULSE」 오늘 컴백, 타이틀곡 'With'",
+ "titleBar": [
+  "리센느 「PULSE」 오늘 컴백",
+  "'With' 첫 반응은?"
+ ],
+ "hook": "오늘 오후 6시,\n리센느 「PULSE」",
+ "hookCover": "오늘 오후 6시,\n리센느 「PULSE」",
+ "sub": "역주행의 주인공, 네 번째 미니앨범으로 돌아왔어요",
+ "photo": "assets/rescene/02_pulse.jpg",
+ "photoPos": "50% 35%",
+ "photoLabel": "이미지 · 더뮤즈엔터테인먼트",
+ "big": {
+  "number": "4",
+  "lines": [
+   "번째",
+   "*미니앨범*",
+   "PULSE"
+  ],
+  "caption": "11월 3일(화) 오후 6시 발매",
+  "icon": "music"
+ },
+ "summary": "리센느가 오늘 오후 6시 4집 「PULSE」를 냈어요. 타이틀곡 'With' 포함 5곡이에요.",
+ "facts": [
+  {
+   "title": "타이틀곡 'With', 오래 꿈꾼 만남",
+   "desc": "오랫동안 꿈꿔 온 누군가를 향해 달려가 함께 앞으로 나아가자는 노래예요. 서정적인 도입에서 힘 있는 후렴으로, 심장이 빨라지듯 감정이 커져요.",
+   "source": "MK스포츠 · 싱글리스트 2026.11.03",
+   "photo": "assets/rescene/05_pulse.jpg",
+   "photoPos": "50% 35%",
+   "photoLabel": "이미지 · 더뮤즈엔터테인먼트"
+  },
+  {
+   "title": "5곡, 메인 향은 머스크",
+   "desc": "With·Finest Thing·백화요란·MEME·Dragon 5곡이에요. PULSE는 '심장의 고동', 메인 향은 머스크예요.",
+   "source": "MK스포츠 · 싱글리스트 2026.11.03"
+  },
+  {
+   "title": "[18:30 반응 칸] 발매 30분, 반응은?",
+   "desc": "[18:30에 확인된 숫자만 채움: 공식 MV 조회수 · 음원 차트 진입 · 댓글 분위기]",
+   "source": "[18:30 확인 출처]",
+   "photo": "assets/rescene/11_pulse.jpg",
+   "photoPos": "50% 35%",
+   "photoLabel": "이미지 · 더뮤즈엔터테인먼트"
+  }
+ ],
+ "interp": "기다린 만큼, 오늘은 같이 들어요",
+ "interpSub": "5곡 중 가장 마음에 든 곡을 댓글로 남겨 주세요.",
+ "interpLabel": "함께 들어요",
+ "sources": [
+  {
+   "outlet": "MK스포츠",
+   "title": "'역주행 신화' 리센느, 오늘(3일) 컴백…'With'로 상승세 이어갈까",
+   "date": "2026.11.03",
+   "url": "https://www.mksports.co.kr/news/entertain/12194393"
+  },
+  {
+   "outlet": "싱글리스트",
+   "title": "리센느, 오늘(3일) 미니 4집 'PULSE' 발매…타이틀곡 'With'로 컴백",
+   "date": "2026.11.03",
+   "url": "https://www.slist.kr/news/articleView.html?idxno=778489"
+  }
+ ],
+ "cta": "응원 댓글 남기고\n*리센느 포카* 받아 가요",
+ "caption": "리센느 「PULSE」, 오늘 오후 6시 컴백\n리센느가 네 번째 미니앨범 「PULSE」로 돌아왔어요. 타이틀곡 'With'를 비롯해 Finest Thing, 백화요란(Inside Out), MEME, Dragon까지 5곡이 담겼어요.\n\n[18:30 반응 줄]\n\n5곡 중 가장 마음에 든 곡은 무엇인가요?\n\n출처: MK스포츠·싱글리스트(2026.11.03)\n이미지 출처: 더뮤즈엔터테인먼트\n\n광고·제휴 문의 reaymi.music@gmail.com\n\n#리센느 #RESCENE #PULSE #With #이슈브리프 #오늘의이슈"
+}
