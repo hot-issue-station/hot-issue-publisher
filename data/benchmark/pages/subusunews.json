@@ -1,60 +1,62 @@
 {
  "name": "스브스뉴스 (SBS)",
  "channel": "https://www.youtube.com/@subusunews",
- "checkedAt": "2026-11-03T22:45+09:00",
+ "checkedAt": "2026-11-04T08:30+09:00",
  "subscribers": "144만",
  "videos": [
   {
    "id": "7gMpoQvh8JA",
    "title": "갈수록 심해지는 소년범죄 #촉법소년 #shorts #스브스뉴스",
-   "views": 532,
-   "viewsText": "조회수 532회",
+   "views": 1600,
+   "viewsText": "조회수 1.6천회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 1068
   },
   {
    "id": "_S4dpnDTrkY",
    "title": "칼부림 났을 때 제일 먼저 해야 한다는 3가지 #칼부림 #shorts #스브스뉴스",
-   "views": 2600,
-   "viewsText": "조회수 2.6천회",
+   "views": 9900,
+   "viewsText": "조회수 9.9천회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 7300
   },
   {
    "id": "u81X5J3miTE",
    "title": "퇴직금 체불 막을 정부의 한 수 #퇴직금 #shorts #스브스뉴스",
-   "views": 10000,
-   "viewsText": "조회수 1만회",
-   "published": "",
-   "kind": "short",
-   "gain": 800
-  },
-  {
-   "id": "vADM4Rvg1TM",
-   "title": "비행 훈련 중 충돌, 알리지 않은 이유는? #공군 #shorts #스브스뉴스",
-   "views": 9500,
-   "viewsText": "조회수 9.5천회",
-   "published": "",
-   "kind": "short",
-   "gain": 400
-  },
-  {
-   "id": "z_5kUs-Izr0",
-   "title": "이제 '이거'까지 된다는 시리 근황 #애플 #shorts #스브스뉴스",
    "views": 11000,
    "viewsText": "조회수 1.1만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 1000
+  },
+  {
+   "id": "vADM4Rvg1TM",
+   "title": "비행 훈련 중 충돌, 알리지 않은 이유는? #공군 #shorts #스브스뉴스",
+   "views": 10000,
+   "viewsText": "조회수 1만회",
+   "published": "",
+   "kind": "short",
+   "gain": 500
+  },
+  {
+   "id": "z_5kUs-Izr0",
+   "title": "이제 '이거'까지 된다는 시리 근황 #애플 #shorts #스브스뉴스",
+   "views": 12000,
+   "viewsText": "조회수 1.2만회",
+   "published": "",
+   "kind": "short",
+   "gain": 1000
   },
   {
    "id": "fMk1x_SAtmI",
    "title": "업데이트된 시리 진짜 쓸 만한 거임? #시리 #shorts #스브스뉴스",
-   "views": 4800,
-   "viewsText": "조회수 4.8천회",
+   "views": 4900,
+   "viewsText": "조회수 4.9천회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 100
   },
   {
    "id": "X9iSvXsLJuY",
@@ -68,11 +70,11 @@
   {
    "id": "ernsQIVrBi4",
    "title": "노로바이러스 소문 팩트체크 #굴 #shorts #스브스뉴스",
-   "views": 6700,
-   "viewsText": "조회수 6.7천회",
+   "views": 6800,
+   "viewsText": "조회수 6.8천회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 100
   },
   {
    "id": "cIV-athgSaM",
@@ -86,8 +88,8 @@
   {
    "id": "A6pfGRrFOzE",
    "title": "아이폰 듀오 화면 결함 인정한 애플, 무상 교체 발표했지만 재고 부족 #아이폰듀오 #shorts #스브스뉴스",
-   "views": 24000,
-   "viewsText": "조회수 2.4만회",
+   "views": 25000,
+   "viewsText": "조회수 2.5만회",
    "published": "",
    "kind": "short",
    "gain": 1000
@@ -99,7 +101,7 @@
    "viewsText": "조회수 31만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "4oWBAsVpDDw",

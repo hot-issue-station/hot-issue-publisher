@@ -1,7 +1,7 @@
 {
  "name": "안원잘부",
  "channel": "https://www.youtube.com/@helloiamwoninicetomeetyou",
- "checkedAt": "2026-11-03T22:45+09:00",
+ "checkedAt": "2026-11-04T08:30+09:00",
  "subscribers": "240만",
  "videos": [
   {
@@ -11,7 +11,7 @@
    "viewsText": "조회수 250만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "zxNoW_LtVLE",
@@ -20,7 +20,7 @@
    "viewsText": "조회수 270만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "mFM2hP5LEhM",
@@ -79,20 +79,20 @@
   {
    "id": "8aZYgM9GeL0",
    "title": "드라켄의 진실",
-   "views": 3280000,
-   "viewsText": "조회수 328만회",
+   "views": 3290000,
+   "viewsText": "조회수 329만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "o-B0F16GwL0",
    "title": "[B컷] 의자 안 돌아가요",
-   "views": 13310000,
-   "viewsText": "조회수 1331만회",
+   "views": 13320000,
+   "viewsText": "조회수 1332만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "gNJrbCSN2TM",
@@ -160,11 +160,11 @@
   {
    "id": "5qmyo1nR3no",
    "title": "서예하는 미나미",
-   "views": 2420000,
-   "viewsText": "조회수 242만회",
+   "views": 2430000,
+   "viewsText": "조회수 243만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "GUHzPMtxAqY",
@@ -205,11 +205,11 @@
   {
    "id": "YDCgJIvro-4",
    "title": "혹시 한국인이세요?",
-   "views": 4870000,
-   "viewsText": "조회수 487만회",
+   "views": 4880000,
+   "viewsText": "조회수 488만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "LVr2R5_TFME",
@@ -250,11 +250,11 @@
   {
    "id": "ORksT1QDf3k",
    "title": "화난 갸루",
-   "views": 7500000,
-   "viewsText": "조회수 750만회",
+   "views": 7510000,
+   "viewsText": "조회수 751만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "6cPEEeEAKiM",
