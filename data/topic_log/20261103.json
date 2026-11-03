@@ -1,0 +1,55 @@
+[
+ {
+  "slot": "PM",
+  "kind": "POL",
+  "candidates": [
+   {
+    "title": "[민감] 한-튀르키예 정상회담, 에르도안 8년 만의 국빈 방한",
+    "scores": {
+     "coverage": 3,
+     "rankings": 1,
+     "fandom": 1,
+     "ourHistory": 2,
+     "freshness": 3,
+     "shareable": 1
+    },
+    "total": 23,
+    "kind": "POL"
+   }
+  ],
+  "picked": null
+ },
+ {
+  "slot": "PM",
+  "kind": "ECO",
+  "candidates": [
+   {
+    "title": "10월 소비자물가 2.8%, 두 달 연속 둔화",
+    "scores": {
+     "coverage": 3,
+     "rankings": 1,
+     "fandom": 1,
+     "ourHistory": 1,
+     "freshness": 3,
+     "shareable": 2
+    },
+    "total": 23,
+    "kind": "ECO"
+   },
+   {
+    "title": "코스피 장중 2%대 하락, 반도체주 약세",
+    "scores": {
+     "coverage": 2,
+     "rankings": 1,
+     "fandom": 1,
+     "ourHistory": 1,
+     "freshness": 3,
+     "shareable": 1
+    },
+    "total": 19,
+    "kind": "ECO"
+   }
+  ],
+  "picked": null
+ }
+]
