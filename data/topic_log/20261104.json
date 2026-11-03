@@ -1,0 +1,22 @@
+[
+ {
+  "slot": "AM",
+  "kind": "WORLD",
+  "candidates": [
+   {
+    "title": "김민재, 부상 딛고 클라시커 풀타임",
+    "scores": {
+     "coverage": 2,
+     "rankings": 0,
+     "fandom": 3,
+     "ourHistory": 2,
+     "freshness": 1,
+     "shareable": 1
+    },
+    "total": 21
+   }
+  ],
+  "picked": null,
+  "createdAt": "2026-11-03T23:35:00+09:00"
+ }
+]

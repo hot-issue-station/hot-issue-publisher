@@ -1,0 +1,34 @@
+{
+  "slot": "AM",
+  "candidates": [
+    {
+      "title": "김민재, 부상 딛고 클라시커 풀타임",
+      "summary": "바이에른 2-2 도르트문트, 3경기 만에 90분 복귀",
+      "facts": [
+        "2026-11-01 분데스리가 8라운드 바이에른 2-2 도르트문트(알리안츠 아레나)",
+        "김민재는 사타구니·무릎 문제로 최근 2경기를 쉬고 3경기 만에 풀타임 90분 출전",
+        "바이에른 5승 3무 승점 18, 8경기 무패로 선두권 유지",
+        "바이에른 골: 라이머(38분)·우파메카노(66분), 도르트문트 골: 기라시(후반)·실바(89분)",
+        "케인 페널티킥이 크로스바를 맞는 등 골대를 4번 맞힘",
+        "같은 날 황희찬은 샬케에서 83분 뛰었으나 0-2 패(공격 포인트 없음)"
+      ],
+      "sources": [
+        {
+          "outlet": "The Korea Herald",
+          "title": "Kim Min-jae plays full match as Bayern draws Dortmund 2-2",
+          "date": "2026-11-01",
+          "url": "https://koreaherald.com/article/10921779"
+        },
+        {
+          "outlet": "SBS News(영문)",
+          "title": "Kim Min-jae Plays Full Time, Kane Misses Penalty as Bayern Draws 2-2 with Dortmund in Der Klassiker",
+          "date": "2026-11-01",
+          "url": "https://news.sbs.co.kr/english/article.do?news_id=N1008824912"
+        }
+      ],
+      "photoQuery": "FC Bayern Munich 공식 유튜브 Der Klassiker 하이라이트",
+      "score": 21,
+      "note": "확인한 해외 소재가 이것 하나뿐입니다. 3일 전 소식이라 신선도가 낮고, 동점골 허용 장면이 있어 감동 톤은 약합니다."
+    }
+  ]
+}
