@@ -291,6 +291,14 @@ def cards(r):
 <div style="font-size:44px;line-height:1.5;color:{SOFT}">이어서 핵심 사실 {NF}가지를 알려드려요 →</div></div>""", label, 2, total=TOT))
     # 3~5 사실 — 사실마다 "photo"(경로), "photoPos", "photoLabel"이 있으면 위쪽에 사진 칸을 놓는다
     for i, f in enumerate(r["facts"][:NF]):
+        if f.get("shot"):   # 댓글 캡처 카드(11/3 대표 결정): 캡처 한 장을 크게, 닉네임은 미리 가려 둔 이미지
+            out.append(frame(f"""<div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:22px">
+<div style="display:flex;align-items:baseline;gap:20px"><div style="font-size:72px;font-weight:900;line-height:1;color:{CYAN}">{i + 1:02d}</div><div style="font-size:52px;font-weight:900;line-height:1.3">{E(f['title'])}</div></div>
+<div style="font-size:38px;line-height:1.5;color:{BODY}">{E(f['desc'])}</div>
+<div style="height:{f.get('shotH', 700)}px;border-radius:28px;border:2px solid {LINE};background:url({photo_uri(f['shot'])}) 50% 0/contain no-repeat {f.get('shotBg', '#111')}"></div>
+<div style="font-size:30px;color:{MUTED}">출처 {E(f['source'])}</div></div>""",
+                             label, 3 + i, f'<div style="display:flex;gap:16px">{dots(i, NF)}</div>', total=TOT))
+            continue
         if f.get("photo"):
             ftag = (f'<div style="position:absolute;right:16px;bottom:16px;padding:6px 14px;border-radius:999px;background:rgba({BGRGB},.75);color:{SOFT};font-size:24px">{E(f["photoLabel"])}</div>' if f.get("photoLabel") else "")
             out.append(frame(f"""<div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:24px">
