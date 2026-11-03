@@ -30,6 +30,7 @@ ap.add_argument("--slow", type=float, default=1.0, help="카메라 이동을 이
 ap.add_argument("--cards", nargs="*", default=[], help="2장 이후 카드들(대표 요청 11/2 22:55: 릴스에 카드 전부). 주면 여러 장 모드")
 ap.add_argument("--first", type=float, default=4.5, help="여러 장 모드: 첫 카드 보여 주는 초")
 ap.add_argument("--per", type=float, default=3.8, help="여러 장 모드: 나머지 카드 한 장당 초")
+ap.add_argument("--dynamic", action="store_true", help="전환 10가지 순환 + 더 강한 '쿵' 줌 (대표 요청 11/3 18:39)")
 a = ap.parse_args()
 kws = [(float(s.split("|", 1)[0]), s.split("|", 1)[1]) for s in a.kw]
 ends = [(float(s.split("|", 1)[0]), s.split("|", 1)[1]) for s in a.end]
@@ -43,7 +44,7 @@ MULTI = bool(a.cards)
 starts = []
 if MULTI:
     X = 0.35                                         # 카드 사이 전환(장마다 다르게, 대표 요청 11/2 23:17 '단조로움 줄이기')
-    TRANS = ["slideleft", "smoothup", "circleopen", "slideleft", "zoomin", "wipeleft"]
+    TRANS = ["zoomin", "slideleft", "circleopen", "smoothup", "radial", "slideright", "hlslice", "wipeleft", "pixelize", "slideup"] if a.dynamic else ["slideleft", "smoothup", "circleopen", "slideleft", "zoomin", "wipeleft"]
     cards = [a.card] + a.cards
     starts = [0] + [a.first + k * a.per for k in range(len(a.cards))]
     segs = []
@@ -53,7 +54,7 @@ if MULTI:
         if ci == 0:   # 첫 장: 사진 쪽 확대 → 55% 시점까지 전체로 빠지고 그대로 멈춤(아래 큰 제목이 잘리지 않게, 대표 지적 11/2 23:14)
             m_ = int(n_ * 0.55); S0 = f"(min(on/{m_},1)*min(on/{m_},1)*(3-2*min(on/{m_},1)))"
             z_, x_, y_ = f"1.35-0.35*{S0}", "(iw-iw/zoom)*0.1", f"(ih-ih/zoom)*(0.08+0.84*{S0})"
-        else: z_, x_, y_ = f"if(lt(on,12),1.07-0.07*on/12,1+0.03*(on-12)/{n_})", "(iw-iw/zoom)/2", "(ih-ih/zoom)/2"   # 넘어올 때 '쿵' 하고 들어오기
+        else: z_, x_, y_ = (f"if(lt(on,9),1.16-0.16*on/9,1+0.05*(on-9)/{n_})" if a.dynamic else f"if(lt(on,12),1.07-0.07*on/12,1+0.03*(on-12)/{n_})"), "(iw-iw/zoom)/2", "(ih-ih/zoom)/2"   # 넘어올 때 '쿵' 하고 들어오기
         sp = tmp / f"s{ci}.mp4"; segs.append((sp, d_))
         subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", cp, "-filter_complex",
             f"[0]split[a][b];[a]scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,boxblur=30:2,eq=brightness=-0.25,loop={n_}:1:0,setpts=N/{FPS}/TB[bg];"
