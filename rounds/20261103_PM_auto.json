@@ -32,15 +32,21 @@
   "sources": [
     {
       "outlet": "파이낸셜뉴스",
-      "title": "李대통령, 튀르키예 대통령과 정상회담…만찬에 정의선 등 참석",
+      "title": "李대통령, 오늘 튀르키예 대통령과 정상회담…원전·방산 협력 기대",
       "date": "2026.11.03",
-      "url": "https://www.fnnews.com/news/202611031009381610"
+      "url": "https://www.fnnews.com/news/202611030504343510"
     },
     {
       "outlet": "아주경제",
       "title": "李대통령, 韓·튀르키예 정상회담…원전·방산 협력 후속조치 점검",
       "date": "2026.11.03",
       "url": "https://www.ajunews.com/view/20261103094640332"
+    },
+    {
+      "outlet": "헤럴드경제",
+      "title": "李대통령, 에르도안 튀르키예 대통령 국빈 환대…정상회담·만찬 진행",
+      "date": "2026.11.03",
+      "url": "https://biz.heraldcorp.com/article/10923677"
     }
   ],
   "photoCrop": [
