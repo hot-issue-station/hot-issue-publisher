@@ -120,8 +120,8 @@ def typing(text, t0, t, cps=11):
 def build_overlay_frames(ep, variant, cfg):
     e = cfg["episodes"][ep - 1]
     n = ep
-    title_kr = f"리센느 컴백 1위 축하 영상 {n}탄"
-    title_jp = f"RESCENE カムバック1位おめでとう映像 第{n}弾"
+    title_kr = cfg.get("title_kr", "리센느 컴백 1위 축하 영상 {n}탄").format(n=n)
+    title_jp = cfg.get("title_jp", "RESCENE カムバック1位おめでとう映像 第{n}弾").format(n=n)
     cards = [comment_card(c, 100 * ep + i) for i, c in enumerate(e["comments"])]
     ftk = F(B, 54); ftj = F(BD, 32); fsub = F(B, 60); fsubj = F(BD, 34)
     fline = F(B, 44); fjp = F(RG, 30); fend = F(B, 56); fendj = F(BD, 32); fcta = F(B, 40)
@@ -220,8 +220,10 @@ def build_overlay_frames(ep, variant, cfg):
             shadow_text(lay, (W // 2, 720), fin["kr2"], fend, PINK, anchor="mm")
             shadow_text(lay, (W // 2, 800), fin["jp"], fendj, LAV, anchor="mm", sw=2)
             cta = cfg["cta"][variant]
-            nxt = (f"▶ 다음 편 {n + 1}탄 「{cfg['episodes'][n]['sub_kr']}」" if n < 6 else "▶ 1~6탄 전체 이어 보기")
-            nxtj = (f"次は第{n + 1}弾「{cfg['episodes'][n]['sub_jp']}」" if n < 6 else "第1〜6弾まとめて見てね")
+            last = len(cfg["episodes"])
+            nk = cfg.get("next_kr", "▶ 다음 편 {m}탄 「{sub}」"); nj = cfg.get("next_jp", "次は第{m}弾「{sub}」")
+            nxt = (nk.format(m=n + 1, sub=cfg['episodes'][n]['sub_kr']) if n < last else cfg.get("last_kr", "▶ 1~6탄 전체 이어 보기"))
+            nxtj = (nj.format(m=n + 1, sub=cfg['episodes'][n]['sub_jp']) if n < last else cfg.get("last_jp", "第1〜6弾まとめて見てね"))
             shadow_text(lay, (W // 2, 930), nxt, fcta, (255, 255, 255), anchor="mm")
             shadow_text(lay, (W // 2, 990), nxtj, fendj, (235, 220, 255), anchor="mm", sw=2)
             shadow_text(lay, (W // 2, 1090), cta, F(BD, 36), (255, 235, 150), anchor="mm", sw=2)
