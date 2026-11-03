@@ -72,8 +72,9 @@ def validate(r):
         elif clen(r.get(k)) > lim:
             errs.append(f"{k} {clen(r.get(k))}자 > {lim}자")
     facts = r.get("facts") or []
-    if len(facts) != 3:
-        errs.append(f"사실 {len(facts)}개 (3개여야 함)")
+    mx = int(r.get("maxFacts") or 3)  # 특집은 maxFacts 까지 허용 (11/3 리센느 PULSE 12장)
+    if not (3 <= len(facts) <= mx):
+        errs.append(f"사실 {len(facts)}개 (3~{mx}개여야 함)")
     for i, f in enumerate(facts, 1):
         for k, lim in FACT_LIMITS.items():
             if clen(f.get(k)) == 0 or clen(f.get(k)) > lim:

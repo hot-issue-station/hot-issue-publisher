@@ -20,20 +20,22 @@ BPM = {"pulse": 118, "bright": 104, "warm": 84, "calm": 70}
 TRANSITIONS = ["slideleft", "circleopen", "smoothleft", "wipeup", "slideleft", "radial"]
 
 
-def build(folder, music="pulse", fps=30, bg=None):
+def build(folder, music="pulse", fps=30, bg=None, n=None):
     pad = bg or NAVY   # 피드 카드를 세로로 놓을 때 위아래 색(회차 템플릿 바탕색)
     folder = pathlib.Path(folder)
-    reel = [folder / f"reel_{i:02d}.jpg" for i in range(1, 8)]
-    feed = [folder / f"{i:02d}.jpg" for i in range(1, 8)]
+    if n is None:  # 카드 수 자동 (특집 12장 등, 11/3)
+        n = max(7, len(list(folder.glob("reel_[0-9][0-9].jpg"))))
+    reel = [folder / f"reel_{i:02d}.jpg" for i in range(1, n + 1)]
+    feed = [folder / f"{i:02d}.jpg" for i in range(1, n + 1)]
     imgs, native = (reel, True) if all(p.exists() for p in reel) else (feed, False)
     if not all(p.exists() for p in imgs):
-        raise SystemExit(f"{folder}: 카드 이미지 7장이 모두 있어야 합니다")
+        raise SystemExit(f"{folder}: 카드 이미지 {n}장이 모두 있어야 합니다")
     track = ROOT / "music" / f"{music}.m4a"
     if not track.exists():
         music, track = "pulse", ROOT / "music" / "pulse.m4a"
     beat = 60 / BPM.get(music, 118)
     # 박자에 맞춘 장 길이: 표지 8박, 나머지 6박 (118BPM이면 약 4.1초 / 3.1초)
-    beats = [8, 6, 6, 6, 6, 6, 7]
+    beats = [8] + [6] * (n - 2) + [7]
     starts = [0.0]
     for b in beats[:-1]:
         starts.append(starts[-1] + b * beat)
@@ -42,7 +44,7 @@ def build(folder, music="pulse", fps=30, bg=None):
     args = ["ffmpeg", "-y", "-loglevel", "error"]
     f = []
     for k, p in enumerate(imgs):
-        seg = (starts[k + 1] - starts[k] + xf) if k < 6 else (total - starts[k])
+        seg = (starts[k + 1] - starts[k] + xf) if k < n - 1 else (total - starts[k])
         frames = int(round(seg * fps))
         args += ["-i", str(p)]
         base = f"[{k}:v]scale=2160:-1" if native else f"[{k}:v]scale=1080:1350,pad=1080:1920:0:285:color={pad},scale=2160:-1"
@@ -51,9 +53,9 @@ def build(folder, music="pulse", fps=30, bg=None):
                  f":d={frames}:s=1080x1920:fps={fps},setsar=1,format=yuv420p[v{k}]")
     args += ["-stream_loop", "-1", "-i", str(track)]   # 곡이 영상보다 짧으면 이어서 반복
     prev = "v0"
-    for k in range(1, 7):
-        out = f"x{k}" if k < 6 else "vx"
-        f.append(f"[{prev}][v{k}]xfade=transition={TRANSITIONS[k - 1]}:duration={xf}:offset={starts[k]:.3f}[{out}]")
+    for k in range(1, n):
+        out = f"x{k}" if k < n - 1 else "vx"
+        f.append(f"[{prev}][v{k}]xfade=transition={TRANSITIONS[(k - 1) % len(TRANSITIONS)]}:duration={xf}:offset={starts[k]:.3f}[{out}]")
         prev = out
     # 진행 막대: 화면 아래 안전 구역 바로 위(y=205), 시간에 따라 왼쪽에서 오른쪽으로 찬다
     f.append(f"color=c=0x2A3A59:s=900x8:r={fps}:d={total:.3f}[track]")
@@ -61,7 +63,7 @@ def build(folder, music="pulse", fps=30, bg=None):
     f.append(f"[vx][track]overlay=x=90:y=205:shortest=1[vt]")
     f.append(f"[vt][fill]overlay=x='90-900+900*t/{total:.3f}':y=205:shortest=1[vbar]")
     f.append(f"[vbar]drawbox=x=0:y=205:w=90:h=8:color={pad}:t=fill,drawbox=x=990:y=205:w=90:h=8:color={pad}:t=fill[vout]")
-    f.append(f"[7:a]atrim=0:{total:.3f},asetpts=PTS-STARTPTS,afade=t=in:d=0.2,afade=t=out:st={total - 1.2:.3f}:d=1.2,"
+    f.append(f"[{n}:a]atrim=0:{total:.3f},asetpts=PTS-STARTPTS,afade=t=in:d=0.2,afade=t=out:st={total - 1.2:.3f}:d=1.2,"
              f"loudnorm=I=-14:TP=-2:LRA=9,alimiter=limit=0.79[aout]")
     out = folder / "reel.mp4"
     args += ["-filter_complex", ";".join(f), "-map", "[vout]", "-map", "[aout]",

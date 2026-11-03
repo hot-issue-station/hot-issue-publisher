@@ -418,7 +418,7 @@ def main():
     import datetime as dt
     meta = {"version": 1, "date": r["date"], "slot": r["slot"],
             "publishAt": f"{r['date']}T{r.get('publishTime') or slot_time(r['slot'], r['date'])}:00+09:00", "topic": r.get("topic", r["hook"].replace("\n", " ")),
-            "images": [f"{i:02d}.jpg" for i in range(1, 8)], "caption": r["caption"],
+            "images": sorted(p.name for p in out.glob("[0-9][0-9].jpg")), "caption": r["caption"],
             "sources": r["sources"]}
     if a.approve3:
         meta["approval3"] = {"approved": True, "at": dt.datetime.now(dt.timezone(dt.timedelta(hours=9))).isoformat(timespec="seconds"),

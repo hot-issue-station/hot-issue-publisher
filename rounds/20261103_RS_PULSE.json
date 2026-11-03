@@ -37,40 +37,40 @@
   },
   {
    "title": "1번 'FINEST THING'",
-   "desc": "[18:00 공식 앨범 소개(소속사)로 채움]",
-   "source": "[출처]",
+   "desc": "잠깐의 화려함보다 시간을 들여 쌓아 온 나만의 가치를 노래해요. 「PULSE」의 첫 장을 여는 곡이에요.",
+   "source": "멜론 공식 앨범 소개(더뮤즈엔터테인먼트) 2026.11.03",
    "photo": "assets/rescene/07_pulse.jpg",
    "photoPos": "50% 35%",
    "photoLabel": "이미지 · 더뮤즈엔터테인먼트"
   },
   {
    "title": "2번 'WITH' (타이틀곡)",
-   "desc": "[18:00 공식 앨범 소개(소속사)로 채움]",
-   "source": "[출처]",
+   "desc": "나를 부르는 목소리를 따라 달려가, 오래 꿈꾸던 너와 마주하는 순간. 서정적인 도입부가 힘찬 후렴으로 터져요.",
+   "source": "멜론 공식 앨범 소개(더뮤즈엔터테인먼트) 2026.11.03",
    "photo": "assets/rescene/05_pulse.jpg",
    "photoPos": "50% 35%",
    "photoLabel": "이미지 · 더뮤즈엔터테인먼트"
   },
   {
    "title": "3번 '백화요란(INSIDE OUT)'",
-   "desc": "[18:00 공식 앨범 소개(소속사)로 채움]",
-   "source": "[출처]",
+   "desc": "기다린 계절, 내 안의 감정이 한꺼번에 피어나는 순간. 묵직한 베이스 위에 부드러운 R&B 화음이 더해졌어요.",
+   "source": "멜론 공식 앨범 소개(더뮤즈엔터테인먼트) 2026.11.03",
    "photo": "assets/rescene/09_pulse.jpg",
    "photoPos": "50% 35%",
    "photoLabel": "이미지 · 더뮤즈엔터테인먼트"
   },
   {
    "title": "4번 'MEME'",
-   "desc": "[18:00 공식 앨범 소개(소속사)로 채움]",
-   "source": "[출처]",
+   "desc": "그루비한 비트와 빈티지 피아노. 웃음이 통하는 너를 만나 실수투성이 모습까지 아끼겠다는 사랑스러운 다짐이에요.",
+   "source": "멜론 공식 앨범 소개(더뮤즈엔터테인먼트) 2026.11.03",
    "photo": "assets/rescene/11_pulse.jpg",
    "photoPos": "50% 35%",
    "photoLabel": "이미지 · 더뮤즈엔터테인먼트"
   },
   {
    "title": "5번 'DRAGON'",
-   "desc": "[18:00 공식 앨범 소개(소속사)로 채움]",
-   "source": "[출처]",
+   "desc": "거친 비바람 앞에서 서로의 편이 되겠다는 약속. 지킨다는 건 더 높이 날 수 있게 용기를 건네는 일이래요.",
+   "source": "멜론 공식 앨범 소개(더뮤즈엔터테인먼트) 2026.11.03",
    "photo": "assets/rescene/13_pulse.jpg",
    "photoPos": "50% 35%",
    "photoLabel": "이미지 · 더뮤즈엔터테인먼트"
@@ -97,6 +97,12 @@
  "interpLabel": "함께 들어요",
  "sources": [
   {
+   "outlet": "멜론 공식 앨범 소개",
+   "title": "RESCENE The 4th Mini Album [PULSE] (더뮤즈엔터테인먼트)",
+   "date": "2026.11.03",
+   "url": "https://www.melon.com/album/detail.htm?albumId=15082293"
+  },
+  {
    "outlet": "MK스포츠",
    "title": "'역주행 신화' 리센느, 오늘(3일) 컴백…'With'로 상승세 이어갈까",
    "date": "2026.11.03",
@@ -107,12 +113,6 @@
    "title": "리센느, 오늘(3일) 미니 4집 'PULSE' 발매…타이틀곡 'With'로 컴백",
    "date": "2026.11.03",
    "url": "https://www.slist.kr/news/articleView.html?idxno=778489"
-  },
-  {
-   "outlet": "뉴스컬처",
-   "title": "리센느, 5색 '두근거림' 품은 수호자…미니 4집 트랙리스트 공개",
-   "date": "2026.10.24",
-   "url": "https://www.nc.press/news/articleView.html?idxno=629394"
   },
   {
    "outlet": "스페셜타임스",
