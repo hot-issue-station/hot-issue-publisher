@@ -11,9 +11,9 @@ O = C["out_dir"]; os.makedirs(O, exist_ok=True)
 PW, PH = 1080, 520
 TY, BY = 330, 900          # 위·아래 패널 y
 CY = 1460                  # 댓글 칸 y
-I0 = 0.6                   # 첫 탭
+I0 = 2.6                   # 손이 천천히 들어와 위를 탭(여유)
 A = C["top"]["dur"]        # 위 재생 길이
-SW = 1.2                   # 전환(멈춤 + "이제 ○○ 노래를 들어볼까?" + 아래 탭)
+SW = 1.4                   # 전환(멈춤 + "이제 ○○ 노래를 들어볼까?" + 아래 탭)
 B = C["bot"]["dur"]
 TOT = I0 + A + SW + B
 def font(p, s): return ImageFont.truetype(p, s)
@@ -79,17 +79,59 @@ fc = (f"[0:v]crop={tw}:{th}:{tx}:{ty},scale={PW}:{PH},setsar=1,fps=30,setpts=PTS
       f"[bg][top]overlay=0:{TY}[v0];[v0][bot]overlay=0:{BY}[v1];[v1][2:v]overlay=0:0[v2];"
       f"[v2][3:v]overlay=0:{BY}:enable='lt(t,{I0 + A})'[v3];[v3][3:v]overlay=0:{TY}:enable='gte(t,{I0 + A})'[v4];"
       f"[v4][3:v]overlay=0:{TY}:enable='lt(t,{I0})'[v5]")
-last = "v5"; idx = 4
-tapT = (W // 2 - 130, TY + PH // 2 - 130); tapB = (W // 2 - 130, BY + PH // 2 - 130)
-for k in range(3):
-    a = 0.05 + k * 0.17; b = a + 0.17
-    fc += f";[{last}][{idx + k}:v]overlay={tapT[0]}:{tapT[1]}:enable='between(t,{a:.2f},{b:.2f})'[t{k}]"; last = f"t{k}"
-    a2 = I0 + A + 0.55 + k * 0.17; b2 = a2 + 0.17
-    fc += f";[{last}][{idx + k}:v]overlay={tapB[0]}:{tapB[1]}:enable='between(t,{a2:.2f},{b2:.2f})'[u{k}]"; last = f"u{k}"
+last = "v5"
 fc += f";[{last}][7:v]overlay=0:{BY - 145}:enable='between(t,{I0 + A - 0.1},{I0 + A + SW + 0.6})'[sw]"; last = "sw"
+# 시그니처 손(omegacut/hand.png): 위 탭 → 미나미 시작 / 위 탭 → 멈춤 / 아래로 내려와 탭 → 리브 시작
+import numpy as np, math
+HAND = Image.open("/home/claude/hot-issue-publisher/scripts/omegacut/hand.png").convert("RGBA")
+HAND = HAND.resize((int(HAND.width * 1.6), int(HAND.height * 1.6)), Image.LANCZOS)
+_a = np.array(HAND)[..., 3]; _ys, _xs = np.nonzero(_a > 40); TIPX = int(_xs[_ys == _ys.min()].mean()); TIPY = int(_ys.min())
+def ease(q): q = min(1, max(0, q)); return q * q * (3 - 2 * q)
+def paste_hand(im, cx, cy, dx, dy, rot, sc, al):
+    h = HAND.resize((max(1, int(HAND.width * sc)), max(1, int(HAND.height * sc))), Image.LANCZOS)
+    if rot: h = h.rotate(rot, expand=True, resample=Image.BICUBIC)
+    if al < 1: h.putalpha(h.getchannel("A").point(lambda v: int(v * max(0, al))))
+    tx = int(TIPX * sc) + (h.width - int(HAND.width * sc)) // 2; ty = int(TIPY * sc) + (h.height - int(HAND.height * sc)) // 2
+    im.alpha_composite(h, (int(cx + dx - tx), int(cy + dy - ty)))
+def ripple(d, t, t0, cx, cy):
+    if t < t0 or t > t0 + 0.45: return
+    q = (t - t0) / 0.45; rr = int(40 + 160 * q); d.ellipse([cx - rr, cy - rr, cx + rr, cy + rr], outline=(255, 255, 255, int(220 * (1 - q))), width=8)
+    if q < 0.5: d.ellipse([cx - 30, cy - 30, cx + 30, cy + 30], fill=(255, 255, 255, int(200 * (1 - 2 * q))))
+TX, TYc = W // 2, TY + PH // 2; BX, BYc = W // 2, BY + PH // 2
+tA = I0 - 0.4; tB = I0 + A; tC = I0 + A + SW - 0.3
+def hand_frame(t):
+    im = Image.new("RGBA", (W, H), (0, 0, 0, 0)); d = ImageDraw.Draw(im)
+    for tt, (cx, cy) in ((tA, (TX, TYc)), (tB, (TX, TYc)), (tC, (BX, BYc))): ripple(d, t, tt, cx, cy)
+    press = any(tt <= t < tt + 0.12 for tt in (tA, tB, tC)); dy, sc = (8, 0.9) if press else (0, 1)
+    if t < tA - 1.7: pass
+    elif t < tA - 0.5:   # 천천히 들어와서
+        q = ease((t - (tA - 1.7)) / 1.2); paste_hand(im, TX, TYc, int(260 * (1 - q)), int(320 * (1 - q)), -15 * (1 - q), 1, min(1, (t - (tA - 1.7)) / 0.4))
+    elif t < tA:          # 잠깐 멈칫(살짝 들었다가)
+        q = (t - (tA - 0.5)) / 0.5; paste_hand(im, TX, TYc, 0, int(-14 * math.sin(math.pi * q)), 0, 1, 1)
+    elif t < tA + 0.45: paste_hand(im, TX, TYc, 0, dy, 0, sc, 1)
+    elif t < tA + 0.95: q = ease((t - tA - 0.45) / 0.5); paste_hand(im, TX, TYc, int(120 * q), int(160 * q), -10 * q, 1, 1 - q)
+    elif t < tB - 0.5: pass
+    elif t < tB: q = ease((t - (tB - 0.5)) / 0.45); paste_hand(im, TX, TYc, int(200 * (1 - q)), int(240 * (1 - q)), -15 * (1 - q), 1, min(1, (t - (tB - 0.5)) / 0.2))
+    elif t < tB + 0.2: paste_hand(im, TX, TYc, 0, dy, 0, sc, 1)
+    elif t < tC - 0.05: q = ease((t - tB - 0.2) / (tC - 0.05 - tB - 0.2)); paste_hand(im, TX, TYc + (BYc - TYc) * q, 0, 0, 0, 1, 1)
+    elif t < tC + 0.25: paste_hand(im, BX, BYc, 0, dy, 0, sc, 1)
+    elif t < tC + 0.55: q = ease((t - tC - 0.25) / 0.3); paste_hand(im, BX, BYc, int(120 * q), int(160 * q), -10 * q, 1, 1 - q)
+    return im
+HD = O + "/hand"; os.makedirs(HD, exist_ok=True)
+segs = [(max(0, tA - 1.8), tA + 1.0), (tB - 0.6, tC + 0.6)]; hidx = []
+for j, (s0, s1) in enumerate(segs):
+    for f in os.listdir(HD):
+        if f.startswith(f"h{j}_"): os.remove(f"{HD}/{f}")
+    n = int(round((s1 - s0) * 30))
+    for k in range(n): hand_frame(s0 + k / 30).save(f"{HD}/h{j}_{k:04d}.png")
+    hidx.append(len(inputs) // 2)  # placeholder
 for i in range(len(cms)):
     k = i // 2; a, b = k * seg, (k + 1) * seg; yy = CY + (i % 2) * 215
     fc += f";[{last}][{8 + i}:v]overlay=0:{yy}:enable='between(t,{a:.2f},{b:.2f})'[c{i}]"; last = f"c{i}"
+base_n = 8 + len(cms)
+for j, (s0, s1) in enumerate(segs):
+    inputs += ["-framerate", "30", "-i", f"{HD}/h{j}_%04d.png"]
+    fc += f";[{base_n + j}:v]format=rgba,setpts=PTS-STARTPTS+{s0}/TB[hh{j}];[{last}][hh{j}]overlay=0:0:eof_action=pass[hv{j}]"; last = f"hv{j}"
 fc += f";[{last}]trim=0:{TOT},format=yuv420p[vout]"
 fc += (f";[0:a]atrim=0:{A},asetpts=PTS-STARTPTS,afade=t=in:d=0.3,afade=t=out:st={A - 0.8}:d=0.8,adelay={int(I0 * 1000)}|{int(I0 * 1000)}[aa];"
        f"[1:a]atrim=0:{B},asetpts=PTS-STARTPTS,afade=t=in:d=0.3,afade=t=out:st={B - 1.2}:d=1.2,adelay={int((I0 + A + SW) * 1000)}|{int((I0 + A + SW) * 1000)}[ab];"
