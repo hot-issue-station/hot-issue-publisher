@@ -1,12 +1,58 @@
 {
  "_note": "대표가 수노 유료 구독 중(2026-11-01~02) 만든 자작 연주곡. 상업 이용 가능. 시리즈마다 기본 곡. scripts/add_music.py 가 영상 길이에 맞춰 앞부분을 잘라 끝을 부드럽게 줄여 입힌다. 3~7번은 3분, 0~2번은 2분 길이(긴 특집·몰아보기까지 쓰려고 대표가 길게 만듦).",
- "news":    {"file": "music/suno/0_news_theme.mp3", "title": "Breaking News (A)", "use": "기본 뉴스 테마(오프닝)"},
- "calm":    {"file": "music/suno/1_calm_evening_briefing.mp3", "title": "Evening Briefing", "use": "사건·사고·추모"},
- "briefing":{"file": "music/suno/2_briefing.mp3", "title": "Breaking News (B)", "use": "오늘의 브리핑(정치·경제·사회)"},
- "world":   {"file": "music/suno/3_world_global_dawn.mp3", "title": "Global Dawn", "use": "해외 이슈(아침)"},
- "legend":  {"file": "music/suno/4_legend_final_stretch.mp3", "title": "The Final Stretch", "use": "레전드 특집(스포츠 기록)"},
- "emotion": {"file": "music/suno/5_emotion_remembering_you.mp3", "title": "Remembering You", "use": "감성 특집"},
- "recap":   {"file": "music/suno/6_recap_good_times.mp3", "title": "Recap the Good Times", "use": "이번 주 몰아보기"},
- "rescene": {"file": "music/suno/7_rescene_sparkling_dance.mp3", "title": "Sparkling Dance", "use": "리센느 응원 특집(음악 고를 수 없는 Threads·X용)"},
- "rescene_fan_song": {"file": "music/suno/rescene_fan_song_geoje_vocal.mp3", "title": "제1화 거제편(감동적인 서사)", "use": "노래 있는 팬 자작 응원곡 — 배경음으로 쓰지 않음. 특집에서 쓸 땐 '수노로 만든 팬 자작 응원곡(공식 곡 아님)' 표기 필수"}
+ "news": {
+  "file": "music/suno/0_news_theme.mp3",
+  "title": "Breaking News (A)",
+  "use": "기본 뉴스 테마(오프닝)"
+ },
+ "calm": {
+  "file": "music/suno/1_calm_evening_briefing.mp3",
+  "title": "Evening Briefing",
+  "use": "사건·사고·추모"
+ },
+ "briefing": {
+  "file": "music/suno/2_briefing.mp3",
+  "title": "Breaking News (B)",
+  "use": "오늘의 브리핑(정치·경제·사회)"
+ },
+ "world": {
+  "file": "music/suno/3_world_global_dawn.mp3",
+  "title": "Global Dawn",
+  "use": "해외 이슈(아침)"
+ },
+ "legend": {
+  "file": "music/suno/4_legend_final_stretch.mp3",
+  "title": "The Final Stretch",
+  "use": "레전드 특집(스포츠 기록)"
+ },
+ "emotion": {
+  "file": "music/suno/5_emotion_remembering_you.mp3",
+  "title": "Remembering You",
+  "use": "감성 특집"
+ },
+ "recap": {
+  "file": "music/suno/6_recap_good_times.mp3",
+  "title": "Recap the Good Times",
+  "use": "이번 주 몰아보기"
+ },
+ "rescene": {
+  "file": "music/suno/7_rescene_sparkling_dance.mp3",
+  "title": "Sparkling Dance",
+  "use": "리센느 응원 특집(음악 고를 수 없는 Threads·X용)"
+ },
+ "rescene_fan_song": {
+  "file": "music/suno/rescene_fan_song_geoje_vocal.mp3",
+  "title": "제1화 거제편(감동적인 서사)",
+  "use": "노래 있는 팬 자작 응원곡 — 배경음으로 쓰지 않음. 특집에서 쓸 땐 '수노로 만든 팬 자작 응원곡(공식 곡 아님)' 표기 필수"
+ },
+ "longform_A": {
+  "file": "music/adobe/longform_A.mp3",
+  "title": "Longform A (Adobe, Track 1)",
+  "use": "덕심저장소 롱폼 배경음 A — 잔잔한 이야기 구간(B와 이어 붙임). 대표 11/4 생성, 어도비"
+ },
+ "longform_climax": {
+  "file": "music/adobe/longform_climax.mp3",
+  "title": "Longform climax (Adobe, Track 3)",
+  "use": "롱폼 감정 고조 구간(1:45~2:30 고조, 엔딩 직전) 후보"
+ }
 }
