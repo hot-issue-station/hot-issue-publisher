@@ -69,7 +69,7 @@ def small_png(i, text):
 STREAM = C.get("stream")
 if STREAM:
     cps = [small_png(i, t) for i, t in enumerate(STREAM)]
-    seg = DUR / ((len(cps) + 1) // 2)
+    seg = DUR / len(cps)  # 한 개씩 차례로 (11/4 22:05)
 else:
     cps = [comment_png(i, *c) for i, c in enumerate(C["comments"])]
     seg = DUR / len(cps)
@@ -108,11 +108,9 @@ fc = (f"[0:v]crop={cw}:{ch}:{CX0}:{CY0},split[a][b];"
       f"[b]scale={VW}:{VH}[fg];[bg][fg]overlay=0:{VY}[v0];[v0][1:v]overlay=0:0[v1]")
 last = "v1"; idx = 2; CY = VY + VH + 60
 for i in range(len(cps)):
-    if STREAM:
-        k = i // 2; a, b = k * seg, (k + 1) * seg; yy = CY - 30 + (i % 2) * 215
-    else:
-        a, b = i * seg, (i + 1) * seg; yy = CY
-    fc += f";[{last}][{idx}:v]overlay=0:{yy}:enable='between(t,{a:.2f},{b:.2f})'[c{i}]"; last = f"c{i}"; idx += 1
+    a, b = i * seg, (i + 1) * seg; yy = CY + 40 if STREAM else CY
+    fc += (f";[{idx}:v]format=rgba,fade=t=in:st={a:.2f}:d=0.35:alpha=1,fade=t=out:st={b - 0.35:.2f}:d=0.35:alpha=1[cm{i}]"
+           f";[{last}][cm{i}]overlay=0:'{yy}+30*max(0,1-(t-{a:.2f})/0.35)':enable='between(t,{a:.2f},{b:.2f})'[c{i}]"); last = f"c{i}"; idx += 1
 for j, (p, a, b) in enumerate(wps):
     fc += f";[{last}][{idx}:v]overlay=60:{VY + 80}:enable='between(t,{a},{b})'[w{j}]"; last = f"w{j}"; idx += 1
 for j, (p, a, b) in enumerate(kps):

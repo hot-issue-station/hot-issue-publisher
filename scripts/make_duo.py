@@ -125,9 +125,12 @@ for j, (s0, s1) in enumerate(segs):
     n = int(round((s1 - s0) * 30))
     for k in range(n): hand_frame(s0 + k / 30).save(f"{HD}/h{j}_{k:04d}.png")
     hidx.append(len(inputs) // 2)  # placeholder
+# 댓글은 한 개씩: 나타났다(아래에서 살짝 올라오며) 사라지고 다음 댓글이 이어서 (대표 지침 11/4 22:05)
+seg1 = TOT / len(cms); yy = CY + 110
 for i in range(len(cms)):
-    k = i // 2; a, b = k * seg, (k + 1) * seg; yy = CY + (i % 2) * 215
-    fc += f";[{last}][{8 + i}:v]overlay=0:{yy}:enable='between(t,{a:.2f},{b:.2f})'[c{i}]"; last = f"c{i}"
+    a, b = i * seg1, (i + 1) * seg1
+    fc += (f";[{8 + i}:v]format=rgba,fade=t=in:st={a:.2f}:d=0.35:alpha=1,fade=t=out:st={b - 0.35:.2f}:d=0.35:alpha=1[cm{i}]"
+           f";[{last}][cm{i}]overlay=0:'{yy}+30*max(0,1-(t-{a:.2f})/0.35)':enable='between(t,{a:.2f},{b:.2f})'[c{i}]"); last = f"c{i}"
 base_n = 8 + len(cms)
 for j, (s0, s1) in enumerate(segs):
     inputs += ["-framerate", "30", "-i", f"{HD}/h{j}_%04d.png"]
