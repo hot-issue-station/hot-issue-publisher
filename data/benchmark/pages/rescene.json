@@ -1,14 +1,14 @@
 {
  "name": "RESCENE 공식",
  "channel": "https://www.youtube.com/@RESCENE_official",
- "checkedAt": "2026-11-04T22:46+09:00",
+ "checkedAt": "2026-11-05T08:35+09:00",
  "subscribers": "135만",
  "videos": [
   {
    "id": "_ldpW3AQWWA",
    "title": "RESCENE 'With' Official MV #2",
-   "views": 240000,
-   "viewsText": "조회수 24만회",
+   "views": 270000,
+   "viewsText": "조회수 27만회",
    "published": "",
    "kind": "short",
    "gain": 30000
@@ -16,8 +16,8 @@
   {
    "id": "4wB0AyS4KSc",
    "title": "RESCENE 'With' Official MV #1",
-   "views": 140000,
-   "viewsText": "조회수 14만회",
+   "views": 150000,
+   "viewsText": "조회수 15만회",
    "published": "",
    "kind": "short",
    "gain": 10000
@@ -25,8 +25,8 @@
   {
    "id": "kRY9NYgnXLM",
    "title": "With 🤍",
-   "views": 340000,
-   "viewsText": "조회수 34만회",
+   "views": 360000,
+   "viewsText": "조회수 36만회",
    "published": "",
    "kind": "short",
    "gain": 20000
@@ -34,8 +34,8 @@
   {
    "id": "KcTEkBTAP3I",
    "title": "D-1 🪽",
-   "views": 500000,
-   "viewsText": "조회수 50만회",
+   "views": 510000,
+   "viewsText": "조회수 51만회",
    "published": "",
    "kind": "short",
    "gain": 10000
@@ -43,8 +43,8 @@
   {
    "id": "sgZms-ImEx0",
    "title": "but you 🫵",
-   "views": 480000,
-   "viewsText": "조회수 48만회",
+   "views": 490000,
+   "viewsText": "조회수 49만회",
    "published": "",
    "kind": "short",
    "gain": 10000
@@ -52,119 +52,119 @@
   {
    "id": "EYrU4Zphz8s",
    "title": ". ݁⋆ ꫂ᭪ ݁˖ . ݁ ˖ ݁♬⋆.˚𝄞⋆ ⋆",
-   "views": 570000,
-   "viewsText": "조회수 57만회",
-   "published": "",
-   "kind": "short",
-   "gain": 10000
-  },
-  {
-   "id": "VeZXkwf9esM",
-   "title": "날 부르는 메아리 🔊",
-   "views": 690000,
-   "viewsText": "조회수 69만회",
-   "published": "",
-   "kind": "short",
-   "gain": 10000
-  },
-  {
-   "id": "ygE3V5CbllU",
-   "title": "너라는 꿈 ✨",
-   "views": 560000,
-   "viewsText": "조회수 56만회",
-   "published": "",
-   "kind": "short",
-   "gain": 10000
-  },
-  {
-   "id": "A5vmiFpG1yg",
-   "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #수이 님",
    "views": 600000,
    "viewsText": "조회수 60만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 30000
+  },
+  {
+   "id": "VeZXkwf9esM",
+   "title": "날 부르는 메아리 🔊",
+   "views": 720000,
+   "viewsText": "조회수 72만회",
+   "published": "",
+   "kind": "short",
+   "gain": 30000
+  },
+  {
+   "id": "ygE3V5CbllU",
+   "title": "너라는 꿈 ✨",
+   "views": 600000,
+   "viewsText": "조회수 60만회",
+   "published": "",
+   "kind": "short",
+   "gain": 40000
+  },
+  {
+   "id": "A5vmiFpG1yg",
+   "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #수이 님",
+   "views": 630000,
+   "viewsText": "조회수 63만회",
+   "published": "",
+   "kind": "short",
+   "gain": 30000
   },
   {
    "id": "Es3qasE2w7w",
    "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #지훈 선배님",
+   "views": 720000,
+   "viewsText": "조회수 72만회",
+   "published": "",
+   "kind": "short",
+   "gain": 90000
+  },
+  {
+   "id": "_KseVSTX0KU",
+   "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #니나 선배님",
    "views": 630000,
    "viewsText": "조회수 63만회",
+   "published": "",
+   "kind": "short",
+   "gain": 50000
+  },
+  {
+   "id": "blswe0wDt8o",
+   "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #YENA 선배님",
+   "views": 840000,
+   "viewsText": "조회수 84만회",
+   "published": "",
+   "kind": "short",
+   "gain": 50000
+  },
+  {
+   "id": "pekjAyOrBk4",
+   "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #의주 선배님",
+   "views": 470000,
+   "viewsText": "조회수 47만회",
+   "published": "",
+   "kind": "short",
+   "gain": 10000
+  },
+  {
+   "id": "QEeCIDjleC8",
+   "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #나띠 #하늘 선배님",
+   "views": 750000,
+   "viewsText": "조회수 75만회",
    "published": "",
    "kind": "short",
    "gain": 20000
   },
   {
-   "id": "_KseVSTX0KU",
-   "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #니나 선배님",
-   "views": 580000,
-   "viewsText": "조회수 58만회",
-   "published": "",
-   "kind": "short",
-   "gain": 10000
-  },
-  {
-   "id": "blswe0wDt8o",
-   "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #YENA 선배님",
-   "views": 790000,
-   "viewsText": "조회수 79만회",
-   "published": "",
-   "kind": "short",
-   "gain": 10000
-  },
-  {
-   "id": "pekjAyOrBk4",
-   "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #의주 선배님",
-   "views": 460000,
-   "viewsText": "조회수 46만회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "QEeCIDjleC8",
-   "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #나띠 #하늘 선배님",
-   "views": 730000,
-   "viewsText": "조회수 73만회",
-   "published": "",
-   "kind": "short",
-   "gain": 10000
-  },
-  {
    "id": "UfaJ4mbAiWc",
    "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #운학 선배님",
-   "views": 980000,
-   "viewsText": "조회수 98만회",
+   "views": 1010000,
+   "viewsText": "조회수 101만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 30000
   },
   {
    "id": "HN7La9KN2MY",
    "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #크러쉬 선배님",
-   "views": 530000,
-   "viewsText": "조회수 53만회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "k7y2yvkFJ1k",
-   "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #애니 님",
-   "views": 1090000,
-   "viewsText": "조회수 109만회",
+   "views": 540000,
+   "viewsText": "조회수 54만회",
    "published": "",
    "kind": "short",
    "gain": 10000
   },
   {
-   "id": "zHwTN5Yu-mI",
-   "title": "Runnin’ on, runnin’ on, runnin’ on you",
-   "views": 950000,
-   "viewsText": "조회수 95만회",
+   "id": "k7y2yvkFJ1k",
+   "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #애니 님",
+   "views": 1110000,
+   "viewsText": "조회수 111만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 20000
+  },
+  {
+   "id": "zHwTN5Yu-mI",
+   "title": "Runnin’ on, runnin’ on, runnin’ on you",
+   "views": 960000,
+   "viewsText": "조회수 96만회",
+   "published": "",
+   "kind": "short",
+   "gain": 10000
   },
   {
    "id": "BRL7ag8oEO0",
@@ -191,16 +191,16 @@
    "viewsText": "조회수 28만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "MNxIMnWhBRQ",
    "title": "RESCENE [PULSE] Highlight Medley - Dragon",
-   "views": 180000,
-   "viewsText": "조회수 18만회",
+   "views": 190000,
+   "viewsText": "조회수 19만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "CbsHNx-mbe0",
@@ -254,7 +254,7 @@
    "viewsText": "조회수 56만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "OgTCRoeYjzA",
@@ -268,11 +268,11 @@
   {
    "id": "nka_cr8WxzM",
    "title": "하나, 둘, 셋 눈 떠봐",
-   "views": 760000,
-   "viewsText": "조회수 76만회",
+   "views": 770000,
+   "viewsText": "조회수 77만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "H0rmUNUSA5I",
@@ -286,11 +286,11 @@
   {
    "id": "txF8jHtsiSs",
    "title": "My Birthday 🎂🩶",
-   "views": 1140000,
-   "viewsText": "조회수 114만회",
+   "views": 1150000,
+   "viewsText": "조회수 115만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "YJr1crCM1Fk",
@@ -299,7 +299,7 @@
    "viewsText": "조회수 139만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "NvcektCUDIk",
@@ -313,11 +313,11 @@
   {
    "id": "qLG9tFkOhdo",
    "title": "🖤🤍",
-   "views": 1060000,
-   "viewsText": "조회수 106만회",
+   "views": 1070000,
+   "viewsText": "조회수 107만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "Kq3_URiv0gs",
@@ -335,7 +335,7 @@
    "viewsText": "조회수 66만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "I6eRjcPt-sk",

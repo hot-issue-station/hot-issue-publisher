@@ -1,0 +1,38 @@
+[
+ {
+  "at": "2026-11-05T08:35+09:00",
+  "key": "14f",
+  "ok": false,
+  "error": "HTTPError: HTTP Error 404: Not Found"
+ },
+ {
+  "at": "2026-11-05T08:35+09:00",
+  "key": "subusunews",
+  "ok": false,
+  "error": "HTTPError: HTTP Error 500: Internal Server Error"
+ },
+ {
+  "at": "2026-11-05T08:35+09:00",
+  "key": "vstudio",
+  "ok": false,
+  "error": "HTTPError: HTTP Error 404: Not Found"
+ },
+ {
+  "at": "2026-11-05T08:35+09:00",
+  "key": "syukaworld",
+  "ok": false,
+  "error": "HTTPError: HTTP Error 404: Not Found"
+ },
+ {
+  "at": "2026-11-05T08:35+09:00",
+  "key": "ytn",
+  "ok": false,
+  "error": "HTTPError: HTTP Error 404: Not Found"
+ },
+ {
+  "at": "2026-11-05T08:35+09:00",
+  "key": "storyk",
+  "ok": false,
+  "error": "HTTPError: HTTP Error 404: Not Found"
+ }
+]

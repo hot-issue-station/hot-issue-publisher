@@ -1,61 +1,62 @@
 {
  "name": "안원잘부",
  "channel": "https://www.youtube.com/@helloiamwoninicetomeetyou",
- "checkedAt": "2026-11-04T22:46+09:00",
+ "checkedAt": "2026-11-05T08:35+09:00",
  "subscribers": "241만",
  "videos": [
   {
    "id": "kfK-LENbEUo",
    "title": "정작가의 컴백을 축하합니다",
-   "views": 160000,
-   "viewsText": "조회수 16만회",
+   "views": 890000,
+   "viewsText": "조회수 89만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 730000
   },
   {
    "id": "DKDmFgXzxs8",
    "title": "안원잘부 명장면 이모티콘2 출시!",
-   "views": 2510000,
-   "viewsText": "조회수 251만회",
+   "views": 2540000,
+   "viewsText": "조회수 254만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 30000
   },
   {
    "id": "zxNoW_LtVLE",
    "title": "치명적인 실수",
-   "views": 2700000,
-   "viewsText": "조회수 270만회",
+   "views": 2710000,
+   "viewsText": "조회수 271만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "mFM2hP5LEhM",
    "title": "스팸 원이 에디션(?)",
-   "views": 3160000,
-   "viewsText": "조회수 316만회",
+   "views": 3170000,
+   "viewsText": "조회수 317만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "xCvbDeMKm3E",
    "title": "두 번째 급습",
-   "views": 6070000,
-   "viewsText": "조회수 607만회",
+   "views": 6080000,
+   "viewsText": "조회수 608만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "GsYq_ouLAMQ",
    "title": "[B컷] 시그니엘 망고 빙수",
-   "views": 5330000,
-   "viewsText": "조회수 533만회",
+   "views": 5350000,
+   "viewsText": "조회수 535만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 20000
   },
   {
    "id": "BUeZskDCMpU",
@@ -64,7 +65,7 @@
    "viewsText": "조회수 289만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "7Q_myxhlcwE",
@@ -78,11 +79,11 @@
   {
    "id": "COnZ3rYrAXc",
    "title": "리마인이 된 리센느",
-   "views": 1620000,
-   "viewsText": "조회수 162만회",
+   "views": 1630000,
+   "viewsText": "조회수 163만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "8aZYgM9GeL0",
@@ -96,8 +97,8 @@
   {
    "id": "o-B0F16GwL0",
    "title": "[B컷] 의자 안 돌아가요",
-   "views": 13340000,
-   "viewsText": "조회수 1334만회",
+   "views": 13350000,
+   "viewsText": "조회수 1335만회",
    "published": "",
    "kind": "short",
    "gain": 10000
@@ -127,16 +128,16 @@
    "viewsText": "조회수 163만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "qzhjmlxNl8s",
    "title": "거제 불주먹 양키",
-   "views": 1610000,
-   "viewsText": "조회수 161만회",
+   "views": 1620000,
+   "viewsText": "조회수 162만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "jilQNKreZBM",
@@ -231,11 +232,11 @@
   {
    "id": "cDDORzB-2Q0",
    "title": "일본에서 먹히는 발음",
-   "views": 4590000,
-   "viewsText": "조회수 459만회",
+   "views": 4600000,
+   "viewsText": "조회수 460만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "5zg26mxu4_w",
@@ -249,11 +250,11 @@
   {
    "id": "P5GHz5HW9Uk",
    "title": "우리도 리센느야",
-   "views": 6380000,
-   "viewsText": "조회수 638만회",
+   "views": 6390000,
+   "viewsText": "조회수 639만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "ORksT1QDf3k",
@@ -298,7 +299,7 @@
    "viewsText": "조회수 248만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "nHY4EK0kVH0",

@@ -1,39 +1,41 @@
 {
  "name": "스브스뉴스 (SBS)",
  "channel": "https://www.youtube.com/@subusunews",
- "checkedAt": "2026-11-04T22:46+09:00",
+ "checkedAt": "2026-11-05T08:35+09:00",
  "subscribers": "144만",
  "videos": [
   {
    "id": "Hi8hop0wrf0",
    "title": "북한이 해킹 주범으로 지목되자 신속하게 대응한 이유 #북한 #shorts #스브스뉴스",
-   "views": 917,
-   "viewsText": "조회수 917회",
+   "views": 3500,
+   "viewsText": "조회수 3.5천회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 2583
   },
   {
    "id": "ZpNFj6J6dpk",
    "title": "교통대란부터 재고 처리 빵 의혹까지? 논란의 2026 서울 마라톤 #마라톤 #shorts #스브스뉴스",
-   "views": 1700,
-   "viewsText": "조회수 1.7천회",
+   "views": 6200,
+   "viewsText": "조회수 6.2천회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 4500
   },
   {
    "id": "7gMpoQvh8JA",
    "title": "갈수록 심해지는 소년범죄 #촉법소년 #shorts #스브스뉴스",
-   "views": 3600,
-   "viewsText": "조회수 3.6천회",
+   "views": 4200,
+   "viewsText": "조회수 4.2천회",
    "published": "",
    "kind": "short",
-   "gain": 500
+   "gain": 600
   },
   {
    "id": "_S4dpnDTrkY",
    "title": "칼부림 났을 때 제일 먼저 해야 한다는 3가지 #칼부림 #shorts #스브스뉴스",
-   "views": 16000,
-   "viewsText": "조회수 1.6만회",
+   "views": 17000,
+   "viewsText": "조회수 1.7만회",
    "published": "",
    "kind": "short",
    "gain": 1000
@@ -50,11 +52,11 @@
   {
    "id": "vADM4Rvg1TM",
    "title": "비행 훈련 중 충돌, 알리지 않은 이유는? #공군 #shorts #스브스뉴스",
-   "views": 10000,
-   "viewsText": "조회수 1만회",
+   "views": 11000,
+   "viewsText": "조회수 1.1만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 1000
   },
   {
    "id": "z_5kUs-Izr0",
@@ -86,11 +88,11 @@
   {
    "id": "ernsQIVrBi4",
    "title": "노로바이러스 소문 팩트체크 #굴 #shorts #스브스뉴스",
-   "views": 6800,
-   "viewsText": "조회수 6.8천회",
+   "views": 6900,
+   "viewsText": "조회수 6.9천회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 100
   },
   {
    "id": "cIV-athgSaM",
@@ -104,8 +106,8 @@
   {
    "id": "A6pfGRrFOzE",
    "title": "아이폰 듀오 화면 결함 인정한 애플, 무상 교체 발표했지만 재고 부족 #아이폰듀오 #shorts #스브스뉴스",
-   "views": 27000,
-   "viewsText": "조회수 2.7만회",
+   "views": 28000,
+   "viewsText": "조회수 2.8만회",
    "published": "",
    "kind": "short",
    "gain": 1000
@@ -113,11 +115,11 @@
   {
    "id": "-fLcCSNSD34",
    "title": "1인 1음료 진짜 필수인지 카페 사장님들한테 직접 물어봤습니다. #카페 #shorts #스브스뉴스",
-   "views": 320000,
-   "viewsText": "조회수 32만회",
+   "views": 330000,
+   "viewsText": "조회수 33만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "4oWBAsVpDDw",
