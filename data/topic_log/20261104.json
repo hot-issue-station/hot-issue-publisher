@@ -18,5 +18,57 @@
   ],
   "picked": null,
   "createdAt": "2026-11-03T23:35:00+09:00"
+ },
+ {
+  "slot": "PM",
+  "kind": "POL",
+  "candidates": [
+   {
+    "title": "[민감] 821조 예산 질의 시작, 여야 입장 나란히",
+    "scores": {
+     "coverage": 2,
+     "rankings": 1,
+     "fandom": 2,
+     "ourHistory": 2,
+     "freshness": 3,
+     "shareable": 2
+    },
+    "total": 26
+   },
+   {
+    "title": "[민감] 미래대응기금, 여야 입장 차 한눈에",
+    "scores": {
+     "coverage": 1,
+     "rankings": 0,
+     "fandom": 1,
+     "ourHistory": 2,
+     "freshness": 3,
+     "shareable": 3
+    },
+    "total": 21
+   }
+  ],
+  "picked": null,
+  "createdAt": "2026-11-04T11:25:00+09:00"
+ },
+ {
+  "slot": "PM",
+  "kind": "ECO",
+  "candidates": [
+   {
+    "title": "코스피 5,786 출발해 하락 전환, 외국인 매도",
+    "scores": {
+     "coverage": 2,
+     "rankings": 2,
+     "fandom": 1,
+     "ourHistory": 1,
+     "freshness": 3,
+     "shareable": 2
+    },
+    "total": 23
+   }
+  ],
+  "picked": null,
+  "createdAt": "2026-11-04T11:25:00+09:00"
  }
 ]
