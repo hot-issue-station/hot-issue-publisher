@@ -24,9 +24,15 @@ d = ImageDraw.Draw(base)
 d.rectangle([0, 0, W, VY - 20], fill=(14, 10, 26, 235))
 d.text((W / 2, 70), C["src_line"], font=font(FB, 32), fill=(190, 185, 210), anchor="mm")
 d.text((W / 2, 150), C["white_line"], font=font(F, 62), fill=(255, 255, 255), anchor="mm")
-d.text((W / 2, 262), C["big_line"], font=font(F, 104), fill=tuple(C["color"]), anchor="mm", stroke_width=3, stroke_fill=(0, 0, 0))
-d.text((W / 2, 362), C["sub_line"], font=font(FB, 36), fill=(225, 220, 240), anchor="mm")
-d.text((W / 2, 425), C["jp_line"], font=font(FM, 30), fill=(200, 196, 220), anchor="mm")
+if C.get("big_line2"):  # 긴 곡 제목은 두 줄
+    for yy, t in ((232, C["big_line"]), (318, C["big_line2"])):
+        d.text((W / 2, yy), t, font=font(F, 78), fill=tuple(C["color"]), anchor="mm", stroke_width=3, stroke_fill=(0, 0, 0))
+    d.text((W / 2, 392), C["sub_line"], font=font(FB, 34), fill=(225, 220, 240), anchor="mm")
+    d.text((W / 2, 440), C["jp_line"], font=font(FM, 28), fill=(200, 196, 220), anchor="mm")
+else:
+    d.text((W / 2, 262), C["big_line"], font=font(F, 104), fill=tuple(C["color"]), anchor="mm", stroke_width=3, stroke_fill=(0, 0, 0))
+    d.text((W / 2, 362), C["sub_line"], font=font(FB, 36), fill=(225, 220, 240), anchor="mm")
+    d.text((W / 2, 425), C["jp_line"], font=font(FM, 30), fill=(200, 196, 220), anchor="mm")
 d.rectangle([0, VY + VH + 20, W, H], fill=(14, 10, 26, 200))
 sf = font(FB, 26); s = "출처: " + C["credit"]
 sw = d.textlength(s, font=sf)
@@ -66,8 +72,22 @@ def small_png(i, text):
     y = 82
     for ln in lines: g.text((75, y - 4), ln, font=f, fill=(30, 28, 40)); y += 56
     p = f"{O}/s{i}.png"; im.save(p); return p
+def cap_png(i, path, who):
+    # 실제 댓글 캡처(닉네임·프로필 가림) 그대로 (대표 지침 11/4 22:20)
+    src = Image.open(path).convert("RGB"); cw = W - 80
+    src = src.resize((cw, round(src.height * cw / src.width)), Image.LANCZOS)
+    im = Image.new("RGBA", (W, src.height + 64), (0, 0, 0, 0)); g = ImageDraw.Draw(im)
+    g.rounded_rectangle([36, 4, 36 + g.textlength(who, font=font(FB, 26)) + 36, 46], 20, fill=(255, 255, 255, 230))
+    g.text((54, 9), who, font=font(FB, 26), fill=(30, 20, 50))
+    mask = Image.new("L", src.size, 0); ImageDraw.Draw(mask).rounded_rectangle([0, 0, src.width - 1, src.height - 1], 22, fill=255)
+    im.paste(src, (40, 58), mask)
+    g.rounded_rectangle([40, 58, 40 + src.width - 1, 58 + src.height - 1], 22, outline=(255, 255, 255, 90), width=2)
+    p = f"{O}/cap{i}.png"; im.save(p); return p
 STREAM = C.get("stream")
-if STREAM:
+if C.get("caps"):
+    cps = [cap_png(i, p, w) for i, (p, w) in enumerate(C["caps"])]
+    seg = DUR / len(cps)
+elif STREAM:
     cps = [small_png(i, t) for i, t in enumerate(STREAM)]
     seg = DUR / len(cps)  # 한 개씩 차례로 (11/4 22:05)
 else:
@@ -94,7 +114,7 @@ g.text((W / 2, 700), "전곡은 원본에서", font=font(F, 84), fill=(255, 255,
 g.text((W / 2, 820), C["end_src"], font=font(FB, 46), fill=tuple(C["color"]), anchor="mm")
 g.text((W / 2, 900), "리브의 무대 전체를 들어 보세요", font=font(FB, 40), fill=(220, 215, 235), anchor="mm")
 g.text((W / 2, 1150), "구독 · 좋아요 · 알림 설정", font=font(F, 60), fill=(255, 255, 255), anchor="mm")
-g.text((W / 2, 1240), "매일 이슈를 짧고 따뜻하게, 이슈브리프", font=font(FB, 38), fill=(200, 195, 220), anchor="mm")
+g.text((W / 2, 1240), C.get("end_brand", "매일 이슈를 짧고 따뜻하게, 이슈브리프"), font=font(FB, 38), fill=(200, 195, 220), anchor="mm")
 g.text((W / 2, 1320), "フル視聴は原曲動画で", font=font(FM, 32), fill=(180, 175, 200), anchor="mm")
 end.save(O + "/end.png")
 
