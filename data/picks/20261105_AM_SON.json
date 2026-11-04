@@ -1,0 +1,66 @@
+{
+ "slot": "AM",
+ "candidates": [
+  {
+   "title": "손흥민, 도움 1개면 LAFC 신기록",
+   "summary": "15도움으로 벨라(2019)와 타이, 최종전 11/8",
+   "facts": [
+    "손흥민 MLS 2026 정규리그 7골 15도움(기준일 2026-11-02), 도움 공동 5위",
+    "LAFC 한 시즌 최다 도움은 카를로스 벨라 2019년 15도움 — 손흥민이 타이, 1개 더하면 단독 신기록",
+    "11/1 미네소타전 1-3 패, 풀타임 출전. 경기 직후 올라왔던 도움 기록이 굴절로 취소됨",
+    "LAFC는 승점 47점 서부 6위로 플레이오프 진출 확정, 최종전은 11/8 시애틀전",
+    "2026년 전 대회 22도움(클라로스포츠 보도)"
+   ],
+   "sources": [
+    {
+     "outlet": "마이데일리",
+     "title": "손흥민 대기록 또 미뤄졌다...미네소타전 세컨더리 어시스트 돌연 취소",
+     "date": "2026-11-02",
+     "url": "https://www.mydaily.co.kr/page/view/2026110216043204164"
+    },
+    {
+     "outlet": "클라로스포츠",
+     "title": "Son Heung-min a una asistencia de romper el récord de Carlos Vela en LAFC",
+     "date": "2026-11",
+     "url": "https://www.clarosports.com/us/son-heung-min-a-una-asistencia-de-romper-el-record-de-carlos-vela-en-lafc/"
+    },
+    {
+     "outlet": "코리아타임스",
+     "title": "Son Heung-min moves back into MLS assists lead in LAFC victory",
+     "date": "2026-10-15",
+     "url": "https://www.koreatimes.co.kr/sports/20261015/son-heung-min-moves-back-into-mls-assists-lead-in-lafc-victory"
+    }
+   ],
+   "photoQuery": "LAFC 공식 유튜브 Son Heung-min assist",
+   "score": 27,
+   "note": "지표=한 시즌 도움. 11/8 최종전 결과에 따라 문구가 바뀔 수 있어 기준일을 표기해야 합니다."
+  },
+  {
+   "title": "손흥민 151경기, 대표팀 최다 출전",
+   "summary": "137경기에서 136경기 기록을 넘고 151경기까지",
+   "facts": [
+    "2025-10-10 브라질전에서 137경기로 한국 남자 대표팀 최다 출전 달성",
+    "당시 차범근·홍명보가 136경기 공동 보유",
+    "2026-10-06 우즈베키스탄전 기준 통산 151경기",
+    "2010년 시리아전 18세 A매치 데뷔"
+   ],
+   "sources": [
+    {
+     "outlet": "중앙데일리",
+     "title": "Son Heung-min breaks Korea's all-time caps record as Taegeuk Warriors face Brazil in Seoul",
+     "date": "2025-10-10",
+     "url": "https://www.koreajoongangdaily.com/sports/son-heung-min-breaks-koreas-all-time-caps-record-as-taegeuk-warriors-face-brazil-in-seoul/12350909"
+    },
+    {
+     "outlet": "코리아타임스",
+     "title": "Son Heung-min becomes all-time Korean men's goals leader",
+     "date": "2026-10-06",
+     "url": "https://www.koreatimes.co.kr/sports/20261006/son-heung-min-becomes-all-time-korean-mens-goals-leader"
+    }
+   ],
+   "photoQuery": "대한축구협회 공식 유튜브 손흥민 A매치 기록",
+   "score": 21,
+   "note": "지표=출전 경기 수. 11/1 SON(A매치 골)과 지표는 다르나 같은 대표팀 기록이라 대표가 판단해 주세요. 소식은 한 달 전이라 신선도 낮음."
+  }
+ ]
+}

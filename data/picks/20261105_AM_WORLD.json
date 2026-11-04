@@ -1,0 +1,40 @@
+{
+ "slot": "AM",
+ "candidates": [
+  {
+   "title": "김민재·이강인, 챔스 코리안 더비",
+   "summary": "바이에른 2-0 아틀레티코, 후반 두 선수 동시 출전",
+   "facts": [
+    "2026-11-04(한국시간) UEFA 챔피언스리그 리그 페이즈 4라운드, 마드리드 리야드 에어 메트로폴리타노",
+    "바이에른 뮌헨 2-0 아틀레티코 마드리드(전반 0-0, 후반 9분·29분 득점; 첫 골 득점자 표기는 매체마다 달라 쓰지 않음)",
+    "이강인은 후반 14분 교체 투입, 패스 성공률 93%(15회 중 14회)",
+    "김민재는 후반 34분 알폰소 데이비스와 교체 투입, 약 10분 뛰며 무실점 마무리에 기여",
+    "경기 후 바이에른 8위(2승 2무·승점 8, 무패), 아틀레티코 승점 4",
+    "FotMob 평점 김민재 6.2, 이강인 5.9"
+   ],
+   "sources": [
+    {
+     "outlet": "중앙데일리",
+     "title": "Bayern beat Atlético as Kim Min-jae, Lee Kang-in meet in Madrid",
+     "date": "2026-11-04",
+     "url": "https://www.koreajoongangdaily.com/sports/bayern-beat-atletico-as-kim-minjae-lee-kangin-meet-in-madrid/12954820"
+    },
+    {
+     "outlet": "스타뉴스 코리아",
+     "title": "Kim Min-jae Smiles, Lee Kang-in Cries",
+     "date": "2026-11-04",
+     "url": "https://www.starnewskorea.com/en/sports/2026/11/04/2026110405143980435"
+    },
+    {
+     "outlet": "뉴스핌",
+     "title": "[UCL] '코리안 더비' 후반 성사",
+     "date": "2026-11-04",
+     "url": "https://www.newspim.com/news/view/20261104000039"
+    }
+   ],
+   "photoQuery": "UEFA Champions League 공식 유튜브 Atletico Bayern 하이라이트",
+   "score": 25,
+   "note": "해외 소재 확인된 것이 이것 하나입니다. 두 선수 모두 교체 출전이라 감동 톤은 약하고, 동시 출전 시간은 매체마다 달라 분 단위는 쓰지 않습니다."
+  }
+ ]
+}
