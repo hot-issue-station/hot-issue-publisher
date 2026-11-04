@@ -112,13 +112,22 @@ WIDEINFO={MC13B:("13년 전, 아무도 몰랐던 그 무대",[("One of the under
           FC:("약 4000일 만에, 네 사람이 다시",[("멤버들끼리 돈독하게 지내는 게 최고인 거다 … 베스티 4인방 앞으로도 포에버!!!!!!","1.8천"),("우리가 알던 원래의 케이팝.","651")])}
 # 멤버별 지금 활동 스틸(공식 영상 화면): (이미지, 자막, 일본어, 출처)
 NOW={
- "혜연":[(TH+"bst_hyeyeon2.jpg","[혜연] 트로트 가수로 — 「현역가왕」 무대 (2023)","［ヘヨン］トロット歌手として『現役歌王』（2023）","MBN MUSIC · 강혜연 - 인생｜현역가왕 3회"),
+ "혜연":[(TH+"bst_hy_hwabam.jpg","[혜연] 「화요일은 밤이 좋아」 「정주고 내가 우네」 (2022)","［ヘヨン］『火曜日は夜が好き』（2022）","미스&미스터트롯 (TV CHOSUN) · 강혜연 - 정주고 내가 우네"),
+         (TH+"bst_hyeyeon2.jpg","[혜연] 「현역가왕」 「인생」 (2023)","［ヘヨン］『現役歌王』「人生」（2023）","MBN MUSIC · 강혜연 - 인생｜현역가왕 3회"),
+         (TH+"bst_hy_cheong.jpg","[혜연] 「현역가왕」 「청춘을 돌려다오」 (2024)","［ヘヨン］『現役歌王』「青春を返して」（2024）","MBN MUSIC · 강혜연 - 청춘을 돌려다오｜현역가왕 12회"),
          (TH+"bst_hyeyeon.jpg","[혜연] 그리고 지금 — 「현역가왕3」 「꽃바람」","［ヘヨン］そして今『現役歌王3』「花の風」","MBN MUSIC · 강혜연 – 꽃바람｜현역가왕3 10회")],
  "유지":[(TH+"bst_yuji2.jpg","[유지] 뮤지컬 「노트르담 드 파리」 무대 (2018)","［ユジ］ミュージカル『ノートルダム・ド・パリ』（2018）","KBS Kpop · 열린음악회 20180610"),
+         (TH+"bst_yj_bulhu1.jpg","[유지] 「불후의 명곡」 「혼자한 사랑」 (2019)","［ユジ］『不朽の名曲』「一人でした恋」（2019）","KBS Kpop · 불후의 명곡 20190706"),
+         (TH+"bst_yj_bulhu2.jpg","[유지] 「불후의 명곡」 「뮤지컬」 (2019)","［ユジ］『不朽の名曲』「ミュージカル」（2019）","KBS Kpop · 불후의 명곡 20191214"),
          (TH+"bst_yuji.jpg","[유지] 그리고 지금 — 「겨울왕국」 넘버 라이브","［ユジ］そして今『アナと雪の女王』ナンバー","MBC RADIO 므흐즈 · [ALLIVE] 정유지X박진주")],
- "해령":[(TH+"bst_haeryung.jpg","[해령] 배우 나해령 — KBS 「내 마음의 꽃비」","［ヘリョン］俳優ナ・ヘリョン『私の心の花雨』","KBS Drama · 내 마음의 꽃비 20160616")],
- "다혜":[(TH+"bst_dahye.jpg","[다혜] 그리고 지금 — 직접 운영하는 유튜브 채널","［ダヘ］そして今、自身のYouTubeチャンネル","다혜가다했다DAHYE · 26년'도'생일 브이로그")],
+ "해령":[(TH+"bst_hr_highschool.jpg","[해령] 배우의 길 — KBS 「하이스쿨: 러브온」 (2014)","［ヘリョン］俳優の道 KBS『ハイスクール：ラブオン』（2014）","KBS Drama · 하이스쿨 20140822"),
+         (TH+"bst_hr_kkotbi2.jpg","[해령] KBS 「내 마음의 꽃비」 (2016)","［ヘリョン］KBS『私の心の花雨』（2016）","KBS Drama · 내 마음의 꽃비 20160602"),
+         (TH+"bst_haeryung.jpg","[해령] 배우 나해령으로 — 「내 마음의 꽃비」 中","［ヘリョン］俳優ナ・ヘリョンとして","KBS Drama · 내 마음의 꽃비 20160616")],
+ "다혜":[(TH+"bst_dh_cover.jpg","[다혜] 유튜브 커버 「어디에도」 (2017)","［ダヘ］YouTubeカバー「どこにも」（2017）","다혜가다했다DAHYE · 어디에도 (베스티다혜 cover)"),
+         (TH+"bst_dh_superlove.jpg","[다혜] 댄스 커버 「Super Love」 (2018)","［ダヘ］ダンスカバー「Super Love」（2018）","다혜가다했다DAHYE · Super Love (다혜 Dance cover)"),
+         (TH+"bst_dahye.jpg","[다혜] 그리고 지금 — 직접 운영하는 유튜브 채널","［ダヘ］そして今、自身のYouTubeチャンネル","다혜가다했다DAHYE · 26년'도'생일 브이로그")],
 }
+
 SRC_ST="MBCkpop · Show! MusicCore 261031"
 # (chapter, [cards], video) ; card=(l1,l2,jp,dur) ; video=(src,start,dur,caption,jpcap,source)
 SC=[
@@ -231,7 +240,7 @@ def vclip(idx,chapter,step,n,src,stt,du,cap,jpcap,srcname,out):
     run(["ffmpeg","-v","error","-y","-ss",str(stt),"-t",str(du),"-i",src,"-i",p,"-filter_complex",
       fc+f";[v0][1]overlay=0:0,fps={FPS},format=yuv420p[v];[0:a]afade=t=in:st=0:d=0.3,afade=t=out:st={du-0.5}:d=0.5,aresample=48000,aformat=channel_layouts=stereo[a2]",
       "-map","[v]","-map","[a2]","-c:v","libx264","-preset","veryfast","-crf","19","-c:a","aac","-b:a","192k",out])
-def photo_clip(idx,chapter,step,n,img,cap,jpcap,srcname,out,dur=4.8):
+def photo_clip(idx,chapter,step,n,img,cap,jpcap,srcname,out,dur=3.8):
     if os.environ.get("REUSE") and os.path.exists(out): return dur
     ph=Image.open(img).convert("RGB"); base=bgfrom(ph,30,0.38); tmp=pathlib.Path(O+f"pf{idx}"); tmp.mkdir(exist_ok=True)
     for k in range(int(dur*FPS)):
@@ -335,6 +344,6 @@ for tp in taps:
     i0=int(tp*SR); m=int(0.06*SR); q=np.arange(m)/SR; c=(np.random.default_rng(1).uniform(-1,1,m)*np.exp(-q*90)+0.8*np.sin(2*np.pi*1500*q)*np.exp(-q*120))*0.35
     if i0+m<len(x): x[i0:i0+m]+=c[:,None]
 with wave.open(O+"bgm.wav","wb") as w: w.setnchannels(2); w.setsampwidth(2); w.setframerate(SR); w.writeframes((np.clip(x,-1,1)*32767).astype("<i2").tobytes())
-run(["ffmpeg","-v","error","-y","-i",O+"body.mp4","-i",O+"bgm.wav","-filter_complex","[0:a][1:a]amix=inputs=2:duration=first:normalize=0,loudnorm=I=-14:TP=-1.5[a]","-map","0:v","-map","[a]","-c:v","copy","-c:a","aac","-b:a","192k",B+"20261104_bestie_ep3_longform_v2.mp4"])
+run(["ffmpeg","-v","error","-y","-i",O+"body.mp4","-i",O+"bgm.wav","-filter_complex","[0:a][1:a]amix=inputs=2:duration=first:normalize=0,loudnorm=I=-14:TP=-1.5[a]","-map","0:v","-map","[a]","-c:v","copy","-c:a","aac","-b:a","192k",B+"20261104_bestie_ep3_longform_v3.mp4"])
 json.dump({"T":T,"chapters":[(round(a,1),c) for a,c in chapters]},open(O+"chapters.json","w"),ensure_ascii=False)
 print("T",round(T,1)); print(chapters)
