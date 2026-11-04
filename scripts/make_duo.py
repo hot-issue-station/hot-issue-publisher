@@ -62,7 +62,19 @@ def small(i, text, who):
     y = 78
     for ln in lines: g.text((72, y - 4), ln, font=f, fill=(30, 28, 40)); y += 54
     p = f"{O}/s{i}.png"; im.save(p); return p
-cms = [small(i, t, w) for i, (t, w) in enumerate(C["comments"])]
+def cap_png(i, path, who):
+    # 실제 댓글 캡처(닉네임·프로필 가림)를 그대로 쓴다 — 신뢰감 (대표 지침 11/4 22:20)
+    src = Image.open(path).convert("RGB"); cw = W - 80
+    src = src.resize((cw, round(src.height * cw / src.width)), Image.LANCZOS)
+    im = Image.new("RGBA", (W, src.height + 64), (0, 0, 0, 0)); g = ImageDraw.Draw(im)
+    g.rounded_rectangle([36, 4, 36 + g.textlength(who, font=font(FB, 26)) + 36, 46], 20, fill=(255, 255, 255, 230))
+    g.text((54, 9), who, font=font(FB, 26), fill=(30, 20, 50))
+    mask = Image.new("L", src.size, 0); ImageDraw.Draw(mask).rounded_rectangle([0, 0, src.width - 1, src.height - 1], 22, fill=255)
+    im.paste(src, (40, 58), mask)
+    g.rounded_rectangle([40, 58, 40 + src.width - 1, 58 + src.height - 1], 22, outline=(255, 255, 255, 90), width=2)
+    p = f"{O}/cap{i}.png"; im.save(p); return p
+if C.get("caps"): cms = [cap_png(i, pth, w) for i, (pth, w) in enumerate(C["caps"])]
+else: cms = [small(i, t, w) for i, (t, w) in enumerate(C["comments"])]
 slots = (len(cms) + 1) // 2; seg = TOT / slots
 
 # 합성
@@ -126,7 +138,7 @@ for j, (s0, s1) in enumerate(segs):
     for k in range(n): hand_frame(s0 + k / 30).save(f"{HD}/h{j}_{k:04d}.png")
     hidx.append(len(inputs) // 2)  # placeholder
 # 댓글은 한 개씩: 나타났다(아래에서 살짝 올라오며) 사라지고 다음 댓글이 이어서 (대표 지침 11/4 22:05)
-seg1 = TOT / len(cms); yy = CY + 110
+seg1 = TOT / len(cms); yy = CY + 20
 for i in range(len(cms)):
     a, b = i * seg1, (i + 1) * seg1
     fc += (f";[{8 + i}:v]format=rgba,fade=t=in:st={a:.2f}:d=0.35:alpha=1,fade=t=out:st={b - 0.35:.2f}:d=0.35:alpha=1[cm{i}]"
