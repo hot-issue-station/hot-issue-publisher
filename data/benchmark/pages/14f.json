@@ -1,17 +1,25 @@
 {
  "name": "14F 일사에프 (MBC)",
  "channel": "https://www.youtube.com/@14FMBC",
- "checkedAt": "2026-11-04T08:30+09:00",
+ "checkedAt": "2026-11-04T14:52+09:00",
  "subscribers": "239만",
  "videos": [
   {
+   "id": "G63QFaqloJQ",
+   "title": "샤인머스캣으로 얼마나 벌었을까? #shorts",
+   "views": 984,
+   "viewsText": "조회수 984회",
+   "published": "",
+   "kind": "short"
+  },
+  {
    "id": "peSpC5kd2t0",
    "title": "홍채로도 운세를 볼 수 있다? #shorts",
-   "views": 8300,
-   "viewsText": "조회수 8.3천회",
+   "views": 8400,
+   "viewsText": "조회수 8.4천회",
    "published": "",
    "kind": "short",
-   "gain": 300
+   "gain": 100
   },
   {
    "id": "yoyqnf-PE30",
@@ -20,7 +28,7 @@
    "viewsText": "조회수 5.3천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "FV2VNAPmk-o",
@@ -34,11 +42,11 @@
   {
    "id": "M_z0WM3-GO8",
    "title": "최면술사가 말하는 업계 비밀(?) #shorts",
-   "views": 6300,
-   "viewsText": "조회수 6.3천회",
+   "views": 6400,
+   "viewsText": "조회수 6.4천회",
    "published": "",
    "kind": "short",
-   "gain": 300
+   "gain": 100
   },
   {
    "id": "Icvrlx6HV-Q",
@@ -47,7 +55,7 @@
    "viewsText": "조회수 7천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "zHzHgad2t6c",
@@ -351,15 +359,6 @@
    "title": "한국인은 잘 모르지만 유럽인 집에 꼭 있다 #shorts",
    "views": 8700,
    "viewsText": "조회수 8.7천회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "G9evnHZu5s4",
-   "title": "아이스크림 티어 #shorts",
-   "views": 25000,
-   "viewsText": "조회수 2.5만회",
    "published": "",
    "kind": "short",
    "gain": 0

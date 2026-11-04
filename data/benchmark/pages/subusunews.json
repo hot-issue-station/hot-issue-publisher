@@ -1,32 +1,32 @@
 {
  "name": "스브스뉴스 (SBS)",
  "channel": "https://www.youtube.com/@subusunews",
- "checkedAt": "2026-11-04T08:30+09:00",
+ "checkedAt": "2026-11-04T14:52+09:00",
  "subscribers": "144만",
  "videos": [
   {
    "id": "7gMpoQvh8JA",
    "title": "갈수록 심해지는 소년범죄 #촉법소년 #shorts #스브스뉴스",
-   "views": 1600,
-   "viewsText": "조회수 1.6천회",
+   "views": 2200,
+   "viewsText": "조회수 2.2천회",
    "published": "",
    "kind": "short",
-   "gain": 1068
+   "gain": 600
   },
   {
    "id": "_S4dpnDTrkY",
    "title": "칼부림 났을 때 제일 먼저 해야 한다는 3가지 #칼부림 #shorts #스브스뉴스",
-   "views": 9900,
-   "viewsText": "조회수 9.9천회",
+   "views": 13000,
+   "viewsText": "조회수 1.3만회",
    "published": "",
    "kind": "short",
-   "gain": 7300
+   "gain": 3100
   },
   {
    "id": "u81X5J3miTE",
    "title": "퇴직금 체불 막을 정부의 한 수 #퇴직금 #shorts #스브스뉴스",
-   "views": 11000,
-   "viewsText": "조회수 1.1만회",
+   "views": 12000,
+   "viewsText": "조회수 1.2만회",
    "published": "",
    "kind": "short",
    "gain": 1000
@@ -38,7 +38,7 @@
    "viewsText": "조회수 1만회",
    "published": "",
    "kind": "short",
-   "gain": 500
+   "gain": 0
   },
   {
    "id": "z_5kUs-Izr0",
@@ -47,7 +47,7 @@
    "viewsText": "조회수 1.2만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "fMk1x_SAtmI",
@@ -56,7 +56,7 @@
    "viewsText": "조회수 4.9천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "X9iSvXsLJuY",
@@ -74,7 +74,7 @@
    "viewsText": "조회수 6.8천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "cIV-athgSaM",
@@ -88,8 +88,8 @@
   {
    "id": "A6pfGRrFOzE",
    "title": "아이폰 듀오 화면 결함 인정한 애플, 무상 교체 발표했지만 재고 부족 #아이폰듀오 #shorts #스브스뉴스",
-   "views": 25000,
-   "viewsText": "조회수 2.5만회",
+   "views": 26000,
+   "viewsText": "조회수 2.6만회",
    "published": "",
    "kind": "short",
    "gain": 1000
@@ -241,11 +241,11 @@
   {
    "id": "X6yA0ltKNU4",
    "title": "겉으론 멀쩡해 보여도 의심해 봐야 하는 '이것' #2030 #shorts #스브스뉴스",
-   "views": 84000,
-   "viewsText": "조회수 8.4만회",
+   "views": 85000,
+   "viewsText": "조회수 8.5만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 1000
   },
   {
    "id": "3GdNYTTsoEU",

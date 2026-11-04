@@ -1,8 +1,8 @@
 {
  "name": "안원잘부",
  "channel": "https://www.youtube.com/@helloiamwoninicetomeetyou",
- "checkedAt": "2026-11-04T08:30+09:00",
- "subscribers": "240만",
+ "checkedAt": "2026-11-04T14:52+09:00",
+ "subscribers": "241만",
  "videos": [
   {
    "id": "DKDmFgXzxs8",
@@ -43,11 +43,11 @@
   {
    "id": "GsYq_ouLAMQ",
    "title": "[B컷] 시그니엘 망고 빙수",
-   "views": 5320000,
-   "viewsText": "조회수 532만회",
+   "views": 5330000,
+   "viewsText": "조회수 533만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "BUeZskDCMpU",
@@ -83,7 +83,7 @@
    "viewsText": "조회수 329만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "o-B0F16GwL0",
@@ -92,16 +92,16 @@
    "viewsText": "조회수 1332만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "gNJrbCSN2TM",
    "title": "백제자객과 프리티걸",
-   "views": 4650000,
-   "viewsText": "조회수 465만회",
+   "views": 4660000,
+   "viewsText": "조회수 466만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "F5CbMShscuk",
@@ -164,7 +164,7 @@
    "viewsText": "조회수 243만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "GUHzPMtxAqY",
@@ -196,11 +196,11 @@
   {
    "id": "Gnf3QzdopbM",
    "title": "첫TVCF입니다잘부탁드립니다",
-   "views": 2280000,
-   "viewsText": "조회수 228만회",
+   "views": 2290000,
+   "viewsText": "조회수 229만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "YDCgJIvro-4",
@@ -209,7 +209,7 @@
    "viewsText": "조회수 488만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "LVr2R5_TFME",
@@ -254,7 +254,7 @@
    "viewsText": "조회수 751만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "6cPEEeEAKiM",
