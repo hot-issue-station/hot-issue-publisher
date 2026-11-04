@@ -257,7 +257,7 @@ def cards(r):
     out = []
     global CUR_TOTAL
     NF = max(1, min(len(r["facts"]), int(r.get("maxFacts", 8)), 20))   # maxFacts: 주말 리센느 2분 몰아보기는 18 안팎(10/31 대표 결정). 사실 카드 1~8장 → 전체 5~12장 (10/31: 30초=8장 안팎, 특집 1분=12장 안팎)
-    TOT = NF + 4
+    TOT = NF + 4 + (1 if r.get("mvp") else 0)
     CUR_TOTAL = TOT
     # 1 훅 — "big"이 있으면 C안(숫자 강조), 없으면 기본형
     if r.get("photo"):
@@ -322,9 +322,21 @@ def cards(r):
 <div style="font-size:84px;font-weight:900;line-height:1.35">{E(r['interp'])}</div>
 <div style="font-size:46px;font-weight:500;line-height:1.55;color:{ONACC2}">{E(r['interpSub'])}</div></div>""",
                      label, NF + 3, light=True, deco=rings([ONACC] * 3, [640, 440, 240]), total=TOT))
+    # (선택) 마지막 장 앞 MVP 카드 — round JSON "mvp": {"badge","name","team","line","desc","photo","photoPos","photoLabel","source"}
+    if r.get("mvp"):
+        m = r["mvp"]
+        mtag = (f'<div style="position:absolute;right:16px;bottom:16px;padding:6px 14px;border-radius:999px;background:rgba({BGRGB},.75);color:{SOFT};font-size:24px">{E(m["photoLabel"])}</div>' if m.get("photoLabel") else "")
+        out.append(frame(f"""<div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:20px">
+<div style="display:flex;align-items:center;gap:18px"><div style="padding:10px 28px;border-radius:999px;background:{PINK};color:#fff;font-size:38px;font-weight:900">🏆 {E(m.get('badge', 'MVP'))}</div></div>
+<div style="position:relative;height:440px;border-radius:32px;overflow:hidden;border:4px solid {CYAN};background:url({photo_uri(m['photo'])}) {m.get('photoPos', '50% 30%')}/cover no-repeat">{mtag}</div>
+<div style="display:flex;align-items:baseline;gap:22px"><div style="font-size:92px;font-weight:900;line-height:1.1">{E(m['name'])}</div><div style="font-size:40px;font-weight:700;color:{MUTED}">{E(m.get('team', ''))}</div></div>
+<div style="font-size:56px;font-weight:900;color:{CYAN}">{E(m['line'])}</div>
+<div style="font-size:40px;line-height:1.55;color:{BODY}">{E(m['desc'])}</div>
+<div style="font-size:30px;color:{MUTED}">출처 {E(m['source'])}</div></div>""", label, NF + 4, total=TOT))
     # 7 출처
     nums = "①②③④⑤⑥"
-    src = "".join(f'<div style="padding:22px 0;border-bottom:2px solid {LINE};font-size:36px;line-height:1.4;color:{BODY}">'
+    _many = len(r["sources"]) > 3
+    src = "".join(f'<div style="padding:{14 if _many else 22}px 0;border-bottom:2px solid {LINE};font-size:{31 if _many else 36}px;line-height:1.35;color:{BODY}">'
                   f'{nums[k]} {E(s["outlet"])} · {E(s["title"])} · {E(s["date"])}</div>' for k, s in enumerate(r["sources"][:6 if NF > 4 else 4]))
     out.append(frame(f"""<div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:36px">
 <div style="display:flex;align-items:center;gap:20px"><div style="width:64px;height:8px;border-radius:4px;background:{PINK}"></div><div style="font-size:44px;font-weight:700;color:{CYAN}">출처</div></div>
