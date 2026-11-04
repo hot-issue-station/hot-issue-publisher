@@ -181,6 +181,7 @@ def jpl(d,t,y,sz,a=255,maxw=1600):
     if not t: return
     f=fit(d,t,FB,sz,maxw); w=d.textlength(t,font=f); d.text(((W-w)/2,y),t,font=f,fill=(*JPC,a),stroke_width=2,stroke_fill="black")
 def card(idx,chapter,step,n,l1,l2,jp,st,dur,tap,out,big=False):
+    if os.environ.get("REUSE") and os.path.exists(out): return
     frames=int(dur*FPS); base=bgfrom(st); tmp=pathlib.Path(O+f"cf{idx}"); tmp.mkdir(exist_ok=True)
     for k in range(frames):
         t=k/FPS; im=base.copy(); z=1+0.04*t/dur
@@ -210,7 +211,7 @@ def vclip(idx,chapter,step,n,src,stt,du,cap,jpcap,srcname,out):
     cf=fit(d,cap,F,50,1400); cw=d.textlength(cap,font=cf)
     d.rounded_rectangle([(W-cw)/2-30,880,(W+cw)/2+30,962],16,fill=(10,10,10,215)); d.text(((W-cw)/2,886),cap,font=cf,fill=YEL,stroke_width=3,stroke_fill="black")
     jpl(d,jpcap,972,30)
-    sf=font(FB,24); s="출처: "+srcname; sw=d.textlength(s,font=sf); d.rounded_rectangle([W-sw-64,108,W-36,148],10,fill=(0,0,0,150)); d.text((W-sw-50,113),s,font=sf,fill=(200,205,220))
+    sf=font(FB,24); s="출처: "+srcname; sw=d.textlength(s,font=sf); sy=1012 if src in WIDE else 108; d.rounded_rectangle([W-sw-64,sy,W-36,sy+40],10,fill=(0,0,0,150)); d.text((W-sw-50,sy+5),s,font=sf,fill=(200,205,220))
     if src in WIDEINFO:
         hook,cms=WIDEINFO[src]
         hf=fit(d,hook,F,60,1100); hw=d.textlength(hook,font=hf); d.text(((W-hw)/2,62),hook,font=hf,fill=(255,255,255),stroke_width=4,stroke_fill="black")
@@ -231,6 +232,7 @@ def vclip(idx,chapter,step,n,src,stt,du,cap,jpcap,srcname,out):
       fc+f";[v0][1]overlay=0:0,fps={FPS},format=yuv420p[v];[0:a]afade=t=in:st=0:d=0.3,afade=t=out:st={du-0.5}:d=0.5,aresample=48000,aformat=channel_layouts=stereo[a2]",
       "-map","[v]","-map","[a2]","-c:v","libx264","-preset","veryfast","-crf","19","-c:a","aac","-b:a","192k",out])
 def photo_clip(idx,chapter,step,n,img,cap,jpcap,srcname,out,dur=4.8):
+    if os.environ.get("REUSE") and os.path.exists(out): return dur
     ph=Image.open(img).convert("RGB"); base=bgfrom(ph,30,0.38); tmp=pathlib.Path(O+f"pf{idx}"); tmp.mkdir(exist_ok=True)
     for k in range(int(dur*FPS)):
         t=k/FPS; im=base.copy(); z=1.0+0.06*t/dur
