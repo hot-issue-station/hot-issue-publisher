@@ -1,23 +1,23 @@
 {
  "name": "14F 일사에프 (MBC)",
  "channel": "https://www.youtube.com/@14FMBC",
- "checkedAt": "2026-11-04T19:43+09:00",
+ "checkedAt": "2026-11-04T22:46+09:00",
  "subscribers": "239만",
  "videos": [
   {
    "id": "G63QFaqloJQ",
    "title": "샤인머스캣으로 얼마나 벌었을까? #shorts",
-   "views": 2200,
-   "viewsText": "조회수 2.2천회",
+   "views": 2700,
+   "viewsText": "조회수 2.7천회",
    "published": "",
    "kind": "short",
-   "gain": 1216
+   "gain": 500
   },
   {
    "id": "peSpC5kd2t0",
    "title": "홍채로도 운세를 볼 수 있다? #shorts",
-   "views": 8500,
-   "viewsText": "조회수 8.5천회",
+   "views": 8600,
+   "viewsText": "조회수 8.6천회",
    "published": "",
    "kind": "short",
    "gain": 100
@@ -29,7 +29,7 @@
    "viewsText": "조회수 5.4천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "FV2VNAPmk-o",
@@ -47,7 +47,7 @@
    "viewsText": "조회수 6.5천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "Icvrlx6HV-Q",
@@ -349,11 +349,11 @@
   {
    "id": "GjU0gHU0dKk",
    "title": "2026 이스라엘 총선 네타냐후 총리 라이벌은? #shorts",
-   "views": 9800,
-   "viewsText": "조회수 9.8천회",
+   "views": 9900,
+   "viewsText": "조회수 9.9천회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 100
   },
   {
    "id": "y9SlN8gaNpk",

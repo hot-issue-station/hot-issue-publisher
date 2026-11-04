@@ -3,7 +3,7 @@
  "name": "스브스뉴스 (SBS)",
  "channel": "https://www.youtube.com/@subusunews",
  "channelId": "UCxPClUl0bh7BgJajD5k483g",
- "checkedAt": "2026-11-04T19:44+09:00",
+ "checkedAt": "2026-11-04T22:46+09:00",
  "videos": [
   {
    "id": "vivfKyBubgA",
@@ -11,12 +11,12 @@
    "published": "2026-11-04T09:59:03+00:00",
    "url": "https://www.youtube.com/shorts/vivfKyBubgA",
    "shorts": true,
-   "views": 521,
-   "likes": 15,
-   "viewsGain": null,
-   "isNew": true,
-   "median": 3172.0,
-   "multiple": 0.2
+   "views": 1671,
+   "likes": 48,
+   "viewsGain": 1150,
+   "isNew": false,
+   "median": 3393.0,
+   "multiple": 0.5
   },
   {
    "id": "RkMOt2YYMUg",
@@ -24,12 +24,12 @@
    "published": "2026-11-04T09:57:39+00:00",
    "url": "https://www.youtube.com/shorts/RkMOt2YYMUg",
    "shorts": true,
-   "views": 443,
-   "likes": 18,
-   "viewsGain": null,
-   "isNew": true,
-   "median": 3172.0,
-   "multiple": 0.1
+   "views": 1687,
+   "likes": 82,
+   "viewsGain": 1244,
+   "isNew": false,
+   "median": 3393.0,
+   "multiple": 0.5
   },
   {
    "id": "pMG6qz-xCGk",
@@ -37,12 +37,12 @@
    "published": "2026-11-04T09:56:38+00:00",
    "url": "https://www.youtube.com/shorts/pMG6qz-xCGk",
    "shorts": true,
-   "views": 234,
-   "likes": 5,
-   "viewsGain": null,
-   "isNew": true,
-   "median": 3172.0,
-   "multiple": 0.1
+   "views": 623,
+   "likes": 19,
+   "viewsGain": 389,
+   "isNew": false,
+   "median": 3393.0,
+   "multiple": 0.2
   },
   {
    "id": "926Y0xcpnKE",
@@ -50,11 +50,11 @@
    "published": "2026-11-03T22:00:19+00:00",
    "url": "https://www.youtube.com/shorts/926Y0xcpnKE",
    "shorts": true,
-   "views": 2548,
-   "likes": 96,
-   "viewsGain": null,
-   "isNew": true,
-   "median": 3172.0,
+   "views": 2877,
+   "likes": 114,
+   "viewsGain": 329,
+   "isNew": false,
+   "median": 3393.0,
    "multiple": 0.8
   },
   {
@@ -63,11 +63,11 @@
    "published": "2026-11-03T22:00:15+00:00",
    "url": "https://www.youtube.com/shorts/X5dI0Lr5VoE",
    "shorts": true,
-   "views": 2140,
-   "likes": 70,
-   "viewsGain": null,
-   "isNew": true,
-   "median": 3172.0,
+   "views": 2317,
+   "likes": 83,
+   "viewsGain": 177,
+   "isNew": false,
+   "median": 3393.0,
    "multiple": 0.7
   },
   {
@@ -76,11 +76,11 @@
    "published": "2026-11-03T12:47:10+00:00",
    "url": "https://www.youtube.com/shorts/p-5cPKWiiLQ",
    "shorts": true,
-   "views": 4915,
-   "likes": 348,
-   "viewsGain": 4049,
+   "views": 5196,
+   "likes": 380,
+   "viewsGain": 281,
    "isNew": false,
-   "median": 3172.0,
+   "median": 3393.0,
    "multiple": 1.5
   },
   {
@@ -89,11 +89,11 @@
    "published": "2026-11-03T12:44:43+00:00",
    "url": "https://www.youtube.com/shorts/kVSepD8oZTw",
    "shorts": true,
-   "views": 3111,
-   "likes": 264,
-   "viewsGain": 2579,
+   "views": 3335,
+   "likes": 288,
+   "viewsGain": 224,
    "isNew": false,
-   "median": 3172.0,
+   "median": 3393.0,
    "multiple": 1.0
   },
   {
@@ -102,11 +102,11 @@
    "published": "2026-11-03T12:26:16+00:00",
    "url": "https://www.youtube.com/shorts/pnfgLnYPymc",
    "shorts": true,
-   "views": 3233,
-   "likes": 187,
-   "viewsGain": 2262,
+   "views": 3451,
+   "likes": 193,
+   "viewsGain": 218,
    "isNew": false,
-   "median": 3172.0,
+   "median": 3393.0,
    "multiple": 1.0
   },
   {
@@ -115,12 +115,12 @@
    "published": "2026-11-03T12:24:53+00:00",
    "url": "https://www.youtube.com/shorts/M8BncRdr6JM",
    "shorts": true,
-   "views": 7566,
-   "likes": 293,
-   "viewsGain": 5426,
+   "views": 7858,
+   "likes": 346,
+   "viewsGain": 292,
    "isNew": false,
-   "median": 3172.0,
-   "multiple": 2.4
+   "median": 3393.0,
+   "multiple": 2.3
   },
   {
    "id": "53YmGEQcPg8",
@@ -128,9 +128,9 @@
    "published": "2026-11-03T09:00:26+00:00",
    "url": "https://www.youtube.com/watch?v=53YmGEQcPg8",
    "shorts": false,
-   "views": 110821,
-   "likes": 6316,
-   "viewsGain": 69316,
+   "views": 116657,
+   "likes": 6507,
+   "viewsGain": 5836,
    "isNew": false,
    "median": null,
    "multiple": null
@@ -141,12 +141,12 @@
    "published": "2026-10-29T22:00:21+00:00",
    "url": "https://www.youtube.com/shorts/LwLm7MrPPHA",
    "shorts": true,
-   "views": 12628,
+   "views": 12650,
    "likes": 59,
-   "viewsGain": 223,
+   "viewsGain": 22,
    "isNew": false,
-   "median": 3172.0,
-   "multiple": 4.0
+   "median": 3393.0,
+   "multiple": 3.7
   },
   {
    "id": "wcSU_Bz1-Nk",
@@ -154,12 +154,12 @@
    "published": "2026-10-29T22:00:10+00:00",
    "url": "https://www.youtube.com/shorts/wcSU_Bz1-Nk",
    "shorts": true,
-   "views": 8200,
+   "views": 8209,
    "likes": 95,
-   "viewsGain": 98,
+   "viewsGain": 9,
    "isNew": false,
-   "median": 3172.0,
-   "multiple": 2.6
+   "median": 3393.0,
+   "multiple": 2.4
   },
   {
    "id": "HnhvHRqyqao",
@@ -167,12 +167,12 @@
    "published": "2026-10-29T09:10:44+00:00",
    "url": "https://www.youtube.com/shorts/HnhvHRqyqao",
    "shorts": true,
-   "views": 25010,
+   "views": 25077,
    "likes": 125,
-   "viewsGain": 820,
+   "viewsGain": 67,
    "isNew": false,
-   "median": 3172.0,
-   "multiple": 7.9
+   "median": 3393.0,
+   "multiple": 7.4
   },
   {
    "id": "NbXaRPFlJLY",
@@ -180,11 +180,11 @@
    "published": "2026-10-29T09:08:04+00:00",
    "url": "https://www.youtube.com/shorts/NbXaRPFlJLY",
    "shorts": true,
-   "views": 2946,
+   "views": 2951,
    "likes": 20,
-   "viewsGain": 57,
+   "viewsGain": 5,
    "isNew": false,
-   "median": 3172.0,
+   "median": 3393.0,
    "multiple": 0.9
   },
   {
@@ -193,48 +193,48 @@
    "published": "2026-10-29T09:00:33+00:00",
    "url": "https://www.youtube.com/shorts/NsvC_rlWlzo",
    "shorts": true,
-   "views": 8674,
+   "views": 8683,
    "likes": 210,
-   "viewsGain": 90,
+   "viewsGain": 9,
    "isNew": false,
-   "median": 3172.0,
-   "multiple": 2.7
+   "median": 3393.0,
+   "multiple": 2.6
   }
  ],
  "viral": [
   {
    "title": "나는 연애를 알려 줄 테니까 너는 공부를 알려줘",
    "url": "https://www.youtube.com/shorts/HnhvHRqyqao",
-   "views": 25010,
-   "multiple": 7.9,
+   "views": 25077,
+   "multiple": 7.4,
    "shorts": true
   },
   {
    "title": "블랙페이퍼가 뽑은 올해의 커플상",
    "url": "https://www.youtube.com/shorts/LwLm7MrPPHA",
-   "views": 12628,
-   "multiple": 4.0,
+   "views": 12650,
+   "multiple": 3.7,
    "shorts": true
   },
   {
    "title": "네가 아니면 성립이 안 되는 나의 이야기",
    "url": "https://www.youtube.com/shorts/NsvC_rlWlzo",
-   "views": 8674,
-   "multiple": 2.7,
+   "views": 8683,
+   "multiple": 2.6,
    "shorts": true
   },
   {
    "title": "술 먹자, 눈 온다",
    "url": "https://www.youtube.com/shorts/wcSU_Bz1-Nk",
-   "views": 8200,
-   "multiple": 2.6,
+   "views": 8209,
+   "multiple": 2.4,
    "shorts": true
   },
   {
    "title": "세상 모든 좋은 일에는 떨리는 연약한 안테나가 숨어 있다",
    "url": "https://www.youtube.com/shorts/M8BncRdr6JM",
-   "views": 7566,
-   "multiple": 2.4,
+   "views": 7858,
+   "multiple": 2.3,
    "shorts": true
   }
  ]

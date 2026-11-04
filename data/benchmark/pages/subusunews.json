@@ -1,26 +1,42 @@
 {
  "name": "스브스뉴스 (SBS)",
  "channel": "https://www.youtube.com/@subusunews",
- "checkedAt": "2026-11-04T19:43+09:00",
+ "checkedAt": "2026-11-04T22:46+09:00",
  "subscribers": "144만",
  "videos": [
   {
+   "id": "Hi8hop0wrf0",
+   "title": "북한이 해킹 주범으로 지목되자 신속하게 대응한 이유 #북한 #shorts #스브스뉴스",
+   "views": 917,
+   "viewsText": "조회수 917회",
+   "published": "",
+   "kind": "short"
+  },
+  {
+   "id": "ZpNFj6J6dpk",
+   "title": "교통대란부터 재고 처리 빵 의혹까지? 논란의 2026 서울 마라톤 #마라톤 #shorts #스브스뉴스",
+   "views": 1700,
+   "viewsText": "조회수 1.7천회",
+   "published": "",
+   "kind": "short"
+  },
+  {
    "id": "7gMpoQvh8JA",
    "title": "갈수록 심해지는 소년범죄 #촉법소년 #shorts #스브스뉴스",
-   "views": 3100,
-   "viewsText": "조회수 3.1천회",
+   "views": 3600,
+   "viewsText": "조회수 3.6천회",
    "published": "",
    "kind": "short",
-   "gain": 900
+   "gain": 500
   },
   {
    "id": "_S4dpnDTrkY",
    "title": "칼부림 났을 때 제일 먼저 해야 한다는 3가지 #칼부림 #shorts #스브스뉴스",
-   "views": 15000,
-   "viewsText": "조회수 1.5만회",
+   "views": 16000,
+   "viewsText": "조회수 1.6만회",
    "published": "",
    "kind": "short",
-   "gain": 2000
+   "gain": 1000
   },
   {
    "id": "u81X5J3miTE",
@@ -56,7 +72,7 @@
    "viewsText": "조회수 5천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "X9iSvXsLJuY",
@@ -88,11 +104,11 @@
   {
    "id": "A6pfGRrFOzE",
    "title": "아이폰 듀오 화면 결함 인정한 애플, 무상 교체 발표했지만 재고 부족 #아이폰듀오 #shorts #스브스뉴스",
-   "views": 26000,
-   "viewsText": "조회수 2.6만회",
+   "views": 27000,
+   "viewsText": "조회수 2.7만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 1000
   },
   {
    "id": "-fLcCSNSD34",
@@ -101,7 +117,7 @@
    "viewsText": "조회수 32만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "4oWBAsVpDDw",
@@ -342,24 +358,6 @@
    "title": "가전제품도 해커의 표적이 된다…스마트홈 시대의 새로운 위험 #스마트홈 #shorts #스브스뉴스",
    "views": 4700,
    "viewsText": "조회수 4.7천회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "ZwaxaiNFW-o",
-   "title": "전자발찌 차고 인천 쇼핑몰서 흉기 난동… 한 달 전에도 흉기 소지로 경찰 조사 #shorts #스브스뉴스",
-   "views": 12000,
-   "viewsText": "조회수 1.2만회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "zLsNoYBEnwM",
-   "title": "냉장고 온도가 갑자기 50도까지? 프랑스 슈퍼마켓 700곳 해킹 피해 #shorts #스브스뉴스",
-   "views": 27000,
-   "viewsText": "조회수 2.7만회",
    "published": "",
    "kind": "short",
    "gain": 0

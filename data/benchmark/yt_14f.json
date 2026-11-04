@@ -3,7 +3,7 @@
  "name": "14F 일사에프 (MBC)",
  "channel": "https://www.youtube.com/@14FMBC",
  "channelId": "UCLKuglhGlMmDteQKoniENIQ",
- "checkedAt": "2026-11-04T19:44+09:00",
+ "checkedAt": "2026-11-04T22:46+09:00",
  "videos": [
   {
    "id": "Sn0of6GdNRA",
@@ -11,12 +11,12 @@
    "published": "2026-11-04T09:31:41+00:00",
    "url": "https://www.youtube.com/watch?v=Sn0of6GdNRA",
    "shorts": false,
-   "views": 1759,
-   "likes": 57,
-   "viewsGain": null,
-   "isNew": true,
-   "median": 107405.5,
-   "multiple": 0.0
+   "views": 14405,
+   "likes": 109,
+   "viewsGain": 12646,
+   "isNew": false,
+   "median": 113149.0,
+   "multiple": 0.1
   },
   {
    "id": "7TgeU5xqUJI",
@@ -24,12 +24,12 @@
    "published": "2026-11-04T08:30:33+00:00",
    "url": "https://www.youtube.com/watch?v=7TgeU5xqUJI",
    "shorts": false,
-   "views": 10991,
-   "likes": 224,
-   "viewsGain": null,
-   "isNew": true,
-   "median": 107405.5,
-   "multiple": 0.1
+   "views": 46931,
+   "likes": 372,
+   "viewsGain": 35940,
+   "isNew": false,
+   "median": 113149.0,
+   "multiple": 0.4
   },
   {
    "id": "sV1o0bSCFpE",
@@ -37,11 +37,11 @@
    "published": "2026-11-04T08:00:38+00:00",
    "url": "https://www.youtube.com/watch?v=sV1o0bSCFpE",
    "shorts": false,
-   "views": 142,
-   "likes": 8,
-   "viewsGain": null,
-   "isNew": true,
-   "median": 107405.5,
+   "views": 330,
+   "likes": 9,
+   "viewsGain": 188,
+   "isNew": false,
+   "median": 113149.0,
    "multiple": 0.0
   },
   {
@@ -50,11 +50,11 @@
    "published": "2026-11-04T03:00:23+00:00",
    "url": "https://www.youtube.com/shorts/G63QFaqloJQ",
    "shorts": true,
-   "views": 2297,
-   "likes": 16,
-   "viewsGain": null,
-   "isNew": true,
-   "median": 6511,
+   "views": 2773,
+   "likes": 20,
+   "viewsGain": 476,
+   "isNew": false,
+   "median": 6525,
    "multiple": 0.4
   },
   {
@@ -63,11 +63,11 @@
    "published": "2026-11-03T09:30:30+00:00",
    "url": "https://www.youtube.com/watch?v=uQ0WY7C5Ddo",
    "shorts": false,
-   "views": 139842,
-   "likes": 773,
-   "viewsGain": 107903,
+   "views": 145374,
+   "likes": 814,
+   "viewsGain": 5532,
    "isNew": false,
-   "median": 107405.5,
+   "median": 113149.0,
    "multiple": 1.3
   },
   {
@@ -76,11 +76,11 @@
    "published": "2026-11-03T09:01:13+00:00",
    "url": "https://www.youtube.com/watch?v=VipxqupADqE",
    "shorts": false,
-   "views": 146316,
-   "likes": 670,
-   "viewsGain": 98448,
+   "views": 162504,
+   "likes": 713,
+   "viewsGain": 16188,
    "isNew": false,
-   "median": 107405.5,
+   "median": 113149.0,
    "multiple": 1.4
   },
   {
@@ -89,11 +89,11 @@
    "published": "2026-11-03T08:30:33+00:00",
    "url": "https://www.youtube.com/watch?v=BjSNy_1blgE",
    "shorts": false,
-   "views": 74969,
-   "likes": 376,
-   "viewsGain": 48093,
+   "views": 80924,
+   "likes": 390,
+   "viewsGain": 5955,
    "isNew": false,
-   "median": 107405.5,
+   "median": 113149.0,
    "multiple": 0.7
   },
   {
@@ -102,12 +102,12 @@
    "published": "2026-11-02T10:00:06+00:00",
    "url": "https://www.youtube.com/watch?v=87w5P7QW2vM",
    "shorts": false,
-   "views": 232092,
-   "likes": 1170,
-   "viewsGain": 46138,
+   "views": 241354,
+   "likes": 1190,
+   "viewsGain": 9262,
    "isNew": false,
-   "median": 107405.5,
-   "multiple": 2.2
+   "median": 113149.0,
+   "multiple": 2.1
   },
   {
    "id": "eOXSE6dyRsY",
@@ -115,11 +115,11 @@
    "published": "2026-11-02T09:30:30+00:00",
    "url": "https://www.youtube.com/watch?v=eOXSE6dyRsY",
    "shorts": false,
-   "views": 327416,
-   "likes": 1502,
-   "viewsGain": 46760,
+   "views": 334244,
+   "likes": 1515,
+   "viewsGain": 6828,
    "isNew": false,
-   "median": 107405.5,
+   "median": 113149.0,
    "multiple": 3.0
   },
   {
@@ -128,11 +128,11 @@
    "published": "2026-11-01T04:00:36+00:00",
    "url": "https://www.youtube.com/shorts/peSpC5kd2t0",
    "shorts": true,
-   "views": 8526,
+   "views": 8616,
    "likes": 27,
-   "viewsGain": 521,
+   "viewsGain": 90,
    "isNew": false,
-   "median": 6511,
+   "median": 6525,
    "multiple": 1.3
   },
   {
@@ -141,12 +141,12 @@
    "published": "2026-11-01T04:00:02+00:00",
    "url": "https://www.youtube.com/watch?v=sf-JTKYvrxw",
    "shorts": false,
-   "views": 270609,
-   "likes": 768,
-   "viewsGain": 29663,
+   "views": 271782,
+   "likes": 771,
+   "viewsGain": 1173,
    "isNew": false,
-   "median": 107405.5,
-   "multiple": 2.5
+   "median": 113149.0,
+   "multiple": 2.4
   },
   {
    "id": "yoyqnf-PE30",
@@ -154,11 +154,11 @@
    "published": "2026-10-31T04:00:23+00:00",
    "url": "https://www.youtube.com/shorts/yoyqnf-PE30",
    "shorts": true,
-   "views": 5413,
+   "views": 5428,
    "likes": 20,
-   "viewsGain": 123,
+   "viewsGain": 15,
    "isNew": false,
-   "median": 6511,
+   "median": 6525,
    "multiple": 0.8
   },
   {
@@ -167,11 +167,11 @@
    "published": "2026-10-31T04:00:20+00:00",
    "url": "https://www.youtube.com/watch?v=ZUqM6arduYw",
    "shorts": false,
-   "views": 46599,
+   "views": 46641,
    "likes": 174,
-   "viewsGain": 1258,
+   "viewsGain": 42,
    "isNew": false,
-   "median": 107405.5,
+   "median": 113149.0,
    "multiple": 0.4
   },
   {
@@ -180,11 +180,11 @@
    "published": "2026-10-31T03:00:07+00:00",
    "url": "https://www.youtube.com/shorts/FV2VNAPmk-o",
    "shorts": true,
-   "views": 11791,
+   "views": 11826,
    "likes": 76,
-   "viewsGain": 159,
+   "viewsGain": 35,
    "isNew": false,
-   "median": 6511,
+   "median": 6525,
    "multiple": 1.8
   },
   {
@@ -193,11 +193,11 @@
    "published": "2026-10-30T23:00:09+00:00",
    "url": "https://www.youtube.com/shorts/M_z0WM3-GO8",
    "shorts": true,
-   "views": 6511,
+   "views": 6525,
    "likes": 72,
-   "viewsGain": 498,
+   "viewsGain": 14,
    "isNew": false,
-   "median": 6511,
+   "median": 6525,
    "multiple": 1.0
   }
  ],
@@ -205,22 +205,22 @@
   {
    "title": "샤인머스캣 개발한 일본이 땅을 치고 후회하는 이유🥄ㅣ돈슐랭 / 14F",
    "url": "https://www.youtube.com/watch?v=eOXSE6dyRsY",
-   "views": 327416,
+   "views": 334244,
    "multiple": 3.0,
    "shorts": false
   },
   {
    "title": "사상 최대 규모의 앤트로픽 상장ㅣ넷플릭스 주가 하락 이유 등 4가지 🥬경제 이슈🥬",
    "url": "https://www.youtube.com/watch?v=sf-JTKYvrxw",
-   "views": 270609,
-   "multiple": 2.5,
+   "views": 271782,
+   "multiple": 2.4,
    "shorts": false
   },
   {
    "title": "밤 중에도 안전하다고… 외국인들이 깜짝 놀란다는 ‘K-편의점’/ 14F",
    "url": "https://www.youtube.com/watch?v=87w5P7QW2vM",
-   "views": 232092,
-   "multiple": 2.2,
+   "views": 241354,
+   "multiple": 2.1,
    "shorts": false
   }
  ]

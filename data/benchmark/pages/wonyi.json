@@ -1,9 +1,17 @@
 {
  "name": "안원잘부",
  "channel": "https://www.youtube.com/@helloiamwoninicetomeetyou",
- "checkedAt": "2026-11-04T19:43+09:00",
+ "checkedAt": "2026-11-04T22:46+09:00",
  "subscribers": "241만",
  "videos": [
+  {
+   "id": "kfK-LENbEUo",
+   "title": "정작가의 컴백을 축하합니다",
+   "views": 160000,
+   "viewsText": "조회수 16만회",
+   "published": "",
+   "kind": "short"
+  },
   {
    "id": "DKDmFgXzxs8",
    "title": "안원잘부 명장면 이모티콘2 출시!",
@@ -11,7 +19,7 @@
    "viewsText": "조회수 251만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "zxNoW_LtVLE",
@@ -38,7 +46,7 @@
    "viewsText": "조회수 607만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "GsYq_ouLAMQ",
@@ -52,11 +60,11 @@
   {
    "id": "BUeZskDCMpU",
    "title": "[B컷] 와인 처음 따는 원이",
-   "views": 2880000,
-   "viewsText": "조회수 288만회",
+   "views": 2890000,
+   "viewsText": "조회수 289만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "7Q_myxhlcwE",
@@ -88,8 +96,8 @@
   {
    "id": "o-B0F16GwL0",
    "title": "[B컷] 의자 안 돌아가요",
-   "views": 13330000,
-   "viewsText": "조회수 1333만회",
+   "views": 13340000,
+   "viewsText": "조회수 1334만회",
    "published": "",
    "kind": "short",
    "gain": 10000
@@ -115,11 +123,11 @@
   {
    "id": "VUufd3Hd_2Q",
    "title": "오빻",
-   "views": 1620000,
-   "viewsText": "조회수 162만회",
+   "views": 1630000,
+   "viewsText": "조회수 163만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "qzhjmlxNl8s",
@@ -146,7 +154,7 @@
    "viewsText": "조회수 576만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "tDs3mcabrFM",
@@ -286,11 +294,11 @@
   {
    "id": "510hBsWhh0A",
    "title": "미나미의 볼터치교실 (Feat. 미숫갸루)",
-   "views": 2470000,
-   "viewsText": "조회수 247만회",
+   "views": 2480000,
+   "viewsText": "조회수 248만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "nHY4EK0kVH0",
@@ -351,15 +359,6 @@
    "title": "선크림 발랐는지 모릅니데이",
    "views": 3940000,
    "viewsText": "조회수 394만회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "m-MBLSS70x0",
-   "title": "오늘은생일입니다잘부탁드립니다",
-   "views": 3050000,
-   "viewsText": "조회수 305만회",
    "published": "",
    "kind": "short",
    "gain": 0
