@@ -1,26 +1,26 @@
 {
  "name": "스브스뉴스 (SBS)",
  "channel": "https://www.youtube.com/@subusunews",
- "checkedAt": "2026-11-04T14:52+09:00",
+ "checkedAt": "2026-11-04T19:43+09:00",
  "subscribers": "144만",
  "videos": [
   {
    "id": "7gMpoQvh8JA",
    "title": "갈수록 심해지는 소년범죄 #촉법소년 #shorts #스브스뉴스",
-   "views": 2200,
-   "viewsText": "조회수 2.2천회",
+   "views": 3100,
+   "viewsText": "조회수 3.1천회",
    "published": "",
    "kind": "short",
-   "gain": 600
+   "gain": 900
   },
   {
    "id": "_S4dpnDTrkY",
    "title": "칼부림 났을 때 제일 먼저 해야 한다는 3가지 #칼부림 #shorts #스브스뉴스",
-   "views": 13000,
-   "viewsText": "조회수 1.3만회",
+   "views": 15000,
+   "viewsText": "조회수 1.5만회",
    "published": "",
    "kind": "short",
-   "gain": 3100
+   "gain": 2000
   },
   {
    "id": "u81X5J3miTE",
@@ -29,7 +29,7 @@
    "viewsText": "조회수 1.2만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "vADM4Rvg1TM",
@@ -52,11 +52,11 @@
   {
    "id": "fMk1x_SAtmI",
    "title": "업데이트된 시리 진짜 쓸 만한 거임? #시리 #shorts #스브스뉴스",
-   "views": 4900,
-   "viewsText": "조회수 4.9천회",
+   "views": 5000,
+   "viewsText": "조회수 5천회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 100
   },
   {
    "id": "X9iSvXsLJuY",
@@ -92,16 +92,16 @@
    "viewsText": "조회수 2.6만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "-fLcCSNSD34",
    "title": "1인 1음료 진짜 필수인지 카페 사장님들한테 직접 물어봤습니다. #카페 #shorts #스브스뉴스",
-   "views": 310000,
-   "viewsText": "조회수 31만회",
+   "views": 320000,
+   "viewsText": "조회수 32만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "4oWBAsVpDDw",
@@ -245,7 +245,7 @@
    "viewsText": "조회수 8.5만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "3GdNYTTsoEU",

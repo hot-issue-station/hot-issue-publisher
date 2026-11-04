@@ -3,20 +3,85 @@
  "name": "스브스뉴스 (SBS)",
  "channel": "https://www.youtube.com/@subusunews",
  "channelId": "UCxPClUl0bh7BgJajD5k483g",
- "checkedAt": "2026-11-03T22:45+09:00",
+ "checkedAt": "2026-11-04T19:44+09:00",
  "videos": [
+  {
+   "id": "vivfKyBubgA",
+   "title": "아이돌이 가지게 되는 딜레마",
+   "published": "2026-11-04T09:59:03+00:00",
+   "url": "https://www.youtube.com/shorts/vivfKyBubgA",
+   "shorts": true,
+   "views": 521,
+   "likes": 15,
+   "viewsGain": null,
+   "isNew": true,
+   "median": 3172.0,
+   "multiple": 0.2
+  },
+  {
+   "id": "RkMOt2YYMUg",
+   "title": "팝핀시키는 연습생 형아들",
+   "published": "2026-11-04T09:57:39+00:00",
+   "url": "https://www.youtube.com/shorts/RkMOt2YYMUg",
+   "shorts": true,
+   "views": 443,
+   "likes": 18,
+   "viewsGain": null,
+   "isNew": true,
+   "median": 3172.0,
+   "multiple": 0.1
+  },
+  {
+   "id": "pMG6qz-xCGk",
+   "title": "무슨 남돌이 이렇게 야무져요",
+   "published": "2026-11-04T09:56:38+00:00",
+   "url": "https://www.youtube.com/shorts/pMG6qz-xCGk",
+   "shorts": true,
+   "views": 234,
+   "likes": 5,
+   "viewsGain": null,
+   "isNew": true,
+   "median": 3172.0,
+   "multiple": 0.1
+  },
+  {
+   "id": "926Y0xcpnKE",
+   "title": "그 몇 초가 평생 기억에 남을 것 같긴 해요",
+   "published": "2026-11-03T22:00:19+00:00",
+   "url": "https://www.youtube.com/shorts/926Y0xcpnKE",
+   "shorts": true,
+   "views": 2548,
+   "likes": 96,
+   "viewsGain": null,
+   "isNew": true,
+   "median": 3172.0,
+   "multiple": 0.8
+  },
+  {
+   "id": "X5dI0Lr5VoE",
+   "title": "재민에게 잠실 드림쇼의 의미",
+   "published": "2026-11-03T22:00:15+00:00",
+   "url": "https://www.youtube.com/shorts/X5dI0Lr5VoE",
+   "shorts": true,
+   "views": 2140,
+   "likes": 70,
+   "viewsGain": null,
+   "isNew": true,
+   "median": 3172.0,
+   "multiple": 0.7
+  },
   {
    "id": "p-5cPKWiiLQ",
    "title": "나의 마지막 무대까지 잘 부탁할게",
    "published": "2026-11-03T12:47:10+00:00",
    "url": "https://www.youtube.com/shorts/p-5cPKWiiLQ",
    "shorts": true,
-   "views": 866,
-   "likes": 85,
-   "viewsGain": null,
-   "isNew": true,
-   "median": 9620.0,
-   "multiple": 0.1
+   "views": 4915,
+   "likes": 348,
+   "viewsGain": 4049,
+   "isNew": false,
+   "median": 3172.0,
+   "multiple": 1.5
   },
   {
    "id": "kVSepD8oZTw",
@@ -24,12 +89,12 @@
    "published": "2026-11-03T12:44:43+00:00",
    "url": "https://www.youtube.com/shorts/kVSepD8oZTw",
    "shorts": true,
-   "views": 532,
-   "likes": 41,
-   "viewsGain": null,
-   "isNew": true,
-   "median": 9620.0,
-   "multiple": 0.1
+   "views": 3111,
+   "likes": 264,
+   "viewsGain": 2579,
+   "isNew": false,
+   "median": 3172.0,
+   "multiple": 1.0
   },
   {
    "id": "pnfgLnYPymc",
@@ -37,12 +102,12 @@
    "published": "2026-11-03T12:26:16+00:00",
    "url": "https://www.youtube.com/shorts/pnfgLnYPymc",
    "shorts": true,
-   "views": 971,
-   "likes": 64,
-   "viewsGain": null,
-   "isNew": true,
-   "median": 9620.0,
-   "multiple": 0.1
+   "views": 3233,
+   "likes": 187,
+   "viewsGain": 2262,
+   "isNew": false,
+   "median": 3172.0,
+   "multiple": 1.0
   },
   {
    "id": "M8BncRdr6JM",
@@ -50,12 +115,12 @@
    "published": "2026-11-03T12:24:53+00:00",
    "url": "https://www.youtube.com/shorts/M8BncRdr6JM",
    "shorts": true,
-   "views": 2140,
-   "likes": 67,
-   "viewsGain": null,
-   "isNew": true,
-   "median": 9620.0,
-   "multiple": 0.2
+   "views": 7566,
+   "likes": 293,
+   "viewsGain": 5426,
+   "isNew": false,
+   "median": 3172.0,
+   "multiple": 2.4
   },
   {
    "id": "53YmGEQcPg8",
@@ -63,9 +128,9 @@
    "published": "2026-11-03T09:00:26+00:00",
    "url": "https://www.youtube.com/watch?v=53YmGEQcPg8",
    "shorts": false,
-   "views": 41505,
-   "likes": 4320,
-   "viewsGain": 36466,
+   "views": 110821,
+   "likes": 6316,
+   "viewsGain": 69316,
    "isNew": false,
    "median": null,
    "multiple": null
@@ -76,12 +141,12 @@
    "published": "2026-10-29T22:00:21+00:00",
    "url": "https://www.youtube.com/shorts/LwLm7MrPPHA",
    "shorts": true,
-   "views": 12405,
-   "likes": 57,
-   "viewsGain": 55,
+   "views": 12628,
+   "likes": 59,
+   "viewsGain": 223,
    "isNew": false,
-   "median": 9620.0,
-   "multiple": 1.3
+   "median": 3172.0,
+   "multiple": 4.0
   },
   {
    "id": "wcSU_Bz1-Nk",
@@ -89,12 +154,12 @@
    "published": "2026-10-29T22:00:10+00:00",
    "url": "https://www.youtube.com/shorts/wcSU_Bz1-Nk",
    "shorts": true,
-   "views": 8102,
-   "likes": 93,
-   "viewsGain": 42,
+   "views": 8200,
+   "likes": 95,
+   "viewsGain": 98,
    "isNew": false,
-   "median": 9620.0,
-   "multiple": 0.8
+   "median": 3172.0,
+   "multiple": 2.6
   },
   {
    "id": "HnhvHRqyqao",
@@ -102,12 +167,12 @@
    "published": "2026-10-29T09:10:44+00:00",
    "url": "https://www.youtube.com/shorts/HnhvHRqyqao",
    "shorts": true,
-   "views": 24190,
-   "likes": 122,
-   "viewsGain": 98,
+   "views": 25010,
+   "likes": 125,
+   "viewsGain": 820,
    "isNew": false,
-   "median": 9620.0,
-   "multiple": 2.5
+   "median": 3172.0,
+   "multiple": 7.9
   },
   {
    "id": "NbXaRPFlJLY",
@@ -115,12 +180,12 @@
    "published": "2026-10-29T09:08:04+00:00",
    "url": "https://www.youtube.com/shorts/NbXaRPFlJLY",
    "shorts": true,
-   "views": 2889,
-   "likes": 19,
-   "viewsGain": 7,
+   "views": 2946,
+   "likes": 20,
+   "viewsGain": 57,
    "isNew": false,
-   "median": 9620.0,
-   "multiple": 0.3
+   "median": 3172.0,
+   "multiple": 0.9
   },
   {
    "id": "NsvC_rlWlzo",
@@ -128,106 +193,48 @@
    "published": "2026-10-29T09:00:33+00:00",
    "url": "https://www.youtube.com/shorts/NsvC_rlWlzo",
    "shorts": true,
-   "views": 8584,
-   "likes": 209,
-   "viewsGain": 29,
+   "views": 8674,
+   "likes": 210,
+   "viewsGain": 90,
    "isNew": false,
-   "median": 9620.0,
-   "multiple": 0.9
-  },
-  {
-   "id": "vEqtdBio5f8",
-   "title": "유규선이 성공한 방법",
-   "published": "2026-10-28T22:00:35+00:00",
-   "url": "https://www.youtube.com/shorts/vEqtdBio5f8",
-   "shorts": true,
-   "views": 56626,
-   "likes": 1008,
-   "viewsGain": 144,
-   "isNew": false,
-   "median": 9620.0,
-   "multiple": 5.9
-  },
-  {
-   "id": "sXc2HKoXGXc",
-   "title": "야 오늘 진짜 재밌게 놀았다",
-   "published": "2026-10-28T22:00:20+00:00",
-   "url": "https://www.youtube.com/shorts/sXc2HKoXGXc",
-   "shorts": true,
-   "views": 10656,
-   "likes": 41,
-   "viewsGain": 10,
-   "isNew": false,
-   "median": 9620.0,
-   "multiple": 1.1
-  },
-  {
-   "id": "Iwlid0Rvc8M",
-   "title": "형 무슨 소리야 내가 형 절대 안 버려",
-   "published": "2026-10-28T10:29:45+00:00",
-   "url": "https://www.youtube.com/shorts/Iwlid0Rvc8M",
-   "shorts": true,
-   "views": 19559,
-   "likes": 79,
-   "viewsGain": 16,
-   "isNew": false,
-   "median": 9620.0,
-   "multiple": 2.0
-  },
-  {
-   "id": "joS-5fpq2rk",
-   "title": "꿈을 가지고 있는 사람의 기분은 어떤걸까",
-   "published": "2026-10-28T10:20:55+00:00",
-   "url": "https://www.youtube.com/shorts/joS-5fpq2rk",
-   "shorts": true,
-   "views": 28703,
-   "likes": 335,
-   "viewsGain": 29,
-   "isNew": false,
-   "median": 9620.0,
-   "multiple": 3.0
-  },
-  {
-   "id": "gatGzL_gjDs",
-   "title": "유규선의 홀로서기",
-   "published": "2026-10-28T10:18:57+00:00",
-   "url": "https://www.youtube.com/shorts/gatGzL_gjDs",
-   "shorts": true,
-   "views": 18535,
-   "likes": 110,
-   "viewsGain": 6,
-   "isNew": false,
-   "median": 9620.0,
-   "multiple": 1.9
+   "median": 3172.0,
+   "multiple": 2.7
   }
  ],
  "viral": [
   {
-   "title": "유규선이 성공한 방법",
-   "url": "https://www.youtube.com/shorts/vEqtdBio5f8",
-   "views": 56626,
-   "multiple": 5.9,
-   "shorts": true
-  },
-  {
-   "title": "꿈을 가지고 있는 사람의 기분은 어떤걸까",
-   "url": "https://www.youtube.com/shorts/joS-5fpq2rk",
-   "views": 28703,
-   "multiple": 3.0,
-   "shorts": true
-  },
-  {
    "title": "나는 연애를 알려 줄 테니까 너는 공부를 알려줘",
    "url": "https://www.youtube.com/shorts/HnhvHRqyqao",
-   "views": 24190,
-   "multiple": 2.5,
+   "views": 25010,
+   "multiple": 7.9,
    "shorts": true
   },
   {
-   "title": "형 무슨 소리야 내가 형 절대 안 버려",
-   "url": "https://www.youtube.com/shorts/Iwlid0Rvc8M",
-   "views": 19559,
-   "multiple": 2.0,
+   "title": "블랙페이퍼가 뽑은 올해의 커플상",
+   "url": "https://www.youtube.com/shorts/LwLm7MrPPHA",
+   "views": 12628,
+   "multiple": 4.0,
+   "shorts": true
+  },
+  {
+   "title": "네가 아니면 성립이 안 되는 나의 이야기",
+   "url": "https://www.youtube.com/shorts/NsvC_rlWlzo",
+   "views": 8674,
+   "multiple": 2.7,
+   "shorts": true
+  },
+  {
+   "title": "술 먹자, 눈 온다",
+   "url": "https://www.youtube.com/shorts/wcSU_Bz1-Nk",
+   "views": 8200,
+   "multiple": 2.6,
+   "shorts": true
+  },
+  {
+   "title": "세상 모든 좋은 일에는 떨리는 연약한 안테나가 숨어 있다",
+   "url": "https://www.youtube.com/shorts/M8BncRdr6JM",
+   "views": 7566,
+   "multiple": 2.4,
    "shorts": true
   }
  ]

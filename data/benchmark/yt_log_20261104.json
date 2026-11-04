@@ -70,5 +70,171 @@
   "key": "storyk",
   "ok": false,
   "error": "HTTPError: HTTP Error 404: Not Found"
+ },
+ {
+  "at": "2026-11-04T19:44+09:00",
+  "key": "14f",
+  "ok": true,
+  "new": [
+   "Sn0of6GdNRA",
+   "7TgeU5xqUJI",
+   "sV1o0bSCFpE",
+   "G63QFaqloJQ"
+  ],
+  "top": [
+   {
+    "id": "uQ0WY7C5Ddo",
+    "title": "“헌재를 장악하라” 폴란드 대통령과 헌법재판소 재판관의 몸싸움 / 14F",
+    "views": 139842,
+    "gain": 107903
+   },
+   {
+    "id": "VipxqupADqE",
+    "title": "공항 가기 전 봐야 하는 영상… 74년 만에 확 바뀐 ‘일본 면세 혜택’ / 14F",
+    "views": 146316,
+    "gain": 98448
+   },
+   {
+    "id": "BjSNy_1blgE",
+    "title": "“도쿄 갈 바에는 부산으로” 일본 기업들 몰린다는 요즘 부산항 근황 (김율성X우수한) ㅣ10분 토론 / 14F",
+    "views": 74969,
+    "gain": 48093
+   }
+  ]
+ },
+ {
+  "at": "2026-11-04T19:44+09:00",
+  "key": "subusunews",
+  "ok": true,
+  "new": [
+   "vivfKyBubgA",
+   "RkMOt2YYMUg",
+   "pMG6qz-xCGk",
+   "926Y0xcpnKE",
+   "X5dI0Lr5VoE"
+  ],
+  "top": [
+   {
+    "id": "53YmGEQcPg8",
+    "title": "형이랑 놀았던 시간은 참 재밌었는데, 형은 어땠어?ㅣ우리 사이엔 편지가 있다2 EP.10 엔시티드림 재민&지성",
+    "views": 110821,
+    "gain": 69316
+   },
+   {
+    "id": "M8BncRdr6JM",
+    "title": "세상 모든 좋은 일에는 떨리는 연약한 안테나가 숨어 있다",
+    "views": 7566,
+    "gain": 5426
+   },
+   {
+    "id": "p-5cPKWiiLQ",
+    "title": "나의 마지막 무대까지 잘 부탁할게",
+    "views": 4915,
+    "gain": 4049
+   }
+  ]
+ },
+ {
+  "at": "2026-11-04T19:44+09:00",
+  "key": "vstudio",
+  "ok": true,
+  "new": [],
+  "top": []
+ },
+ {
+  "at": "2026-11-04T19:44+09:00",
+  "key": "syukaworld",
+  "ok": true,
+  "new": [],
+  "top": [
+   {
+    "id": "Xyk-we1Ehs8",
+    "title": "반도체 수요가 있어요? 그럼 됐네",
+    "views": 210174,
+    "gain": 138368
+   },
+   {
+    "id": "KJDqpAOSco0",
+    "title": "니니가 물타기 못하는 이유",
+    "views": 241310,
+    "gain": 137377
+   },
+   {
+    "id": "YJB4I75hcmc",
+    "title": "인생에 역경이 올 때 뭐 살까요?",
+    "views": 147231,
+    "gain": 66282
+   }
+  ]
+ },
+ {
+  "at": "2026-11-04T19:44+09:00",
+  "key": "ytn",
+  "ok": true,
+  "new": [
+   "9KCZjZE0xeA",
+   "q9hSQL8gggM",
+   "OP5zKfOmOOY",
+   "-an4sWapvaI",
+   "ghGeGU2KZR4",
+   "wdI01pu-kCo",
+   "_LnqNorNZNw",
+   "pjJYgSlCgB8",
+   "YraHsufP9jU",
+   "Myj-yN6JrXw",
+   "fcHnmJZNW8o",
+   "oo6Uc-T2tNM",
+   "1q5NZB_HtRc",
+   "6y3rGyAHlsI",
+   "fOeGCo-gKx8"
+  ],
+  "top": [
+   {
+    "id": "9KCZjZE0xeA",
+    "title": "[LIVE] 트럼프 '조기 레임덕' 위기…'블루 웨이브' 넘어 '블루 쓰나미' / YTN",
+    "views": 28943,
+    "gain": null
+   },
+   {
+    "id": "-an4sWapvaI",
+    "title": "미국 민주당 압승, 한국 반도체 영향은? / YTN",
+    "views": 8814,
+    "gain": null
+   },
+   {
+    "id": "Myj-yN6JrXw",
+    "title": "'친트럼프'에게까지 막말…패색 짙어지자 감정 격해진 트럼프 [지금이뉴스] / YTN",
+    "views": 3829,
+    "gain": null
+   }
+  ]
+ },
+ {
+  "at": "2026-11-04T19:44+09:00",
+  "key": "storyk",
+  "ok": true,
+  "new": [
+   "eMHW9EPF5_g"
+  ],
+  "top": [
+   {
+    "id": "6WdpcGFmFgQ",
+    "title": "손흥민 세계적 명장과 함께 뛸 마지막 기회? - 아시안컵 연기로 한국 대표팀 정식감독 새판",
+    "views": 87926,
+    "gain": 67707
+   },
+   {
+    "id": "hW2vyayJmLc",
+    "title": "손흥민 호위무사들과 캡틴 패싱 황희찬 극과극 - 엄지성 미친 도움 대표팀 서사는 폭발 직전",
+    "views": 114009,
+    "gain": 3895
+   },
+   {
+    "id": "nrw8lqAulz8",
+    "title": "손흥민 모든 것 배우겠단 김민수 - 맹활약한 20살 괴물 대신 대표팀 레프트에 황희찬",
+    "views": 46981,
+    "gain": 2830
+   }
+  ]
  }
 ]

@@ -1,22 +1,23 @@
 {
  "name": "14F 일사에프 (MBC)",
  "channel": "https://www.youtube.com/@14FMBC",
- "checkedAt": "2026-11-04T14:52+09:00",
+ "checkedAt": "2026-11-04T19:43+09:00",
  "subscribers": "239만",
  "videos": [
   {
    "id": "G63QFaqloJQ",
    "title": "샤인머스캣으로 얼마나 벌었을까? #shorts",
-   "views": 984,
-   "viewsText": "조회수 984회",
+   "views": 2200,
+   "viewsText": "조회수 2.2천회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 1216
   },
   {
    "id": "peSpC5kd2t0",
    "title": "홍채로도 운세를 볼 수 있다? #shorts",
-   "views": 8400,
-   "viewsText": "조회수 8.4천회",
+   "views": 8500,
+   "viewsText": "조회수 8.5천회",
    "published": "",
    "kind": "short",
    "gain": 100
@@ -24,11 +25,11 @@
   {
    "id": "yoyqnf-PE30",
    "title": "우리 집 강아지의 전생을 알 수 있다? #shorts",
-   "views": 5300,
-   "viewsText": "조회수 5.3천회",
+   "views": 5400,
+   "viewsText": "조회수 5.4천회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 100
   },
   {
    "id": "FV2VNAPmk-o",
@@ -42,8 +43,8 @@
   {
    "id": "M_z0WM3-GO8",
    "title": "최면술사가 말하는 업계 비밀(?) #shorts",
-   "views": 6400,
-   "viewsText": "조회수 6.4천회",
+   "views": 6500,
+   "viewsText": "조회수 6.5천회",
    "published": "",
    "kind": "short",
    "gain": 100
