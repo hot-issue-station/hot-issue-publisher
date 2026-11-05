@@ -1,8 +1,8 @@
 {
   "version": 1,
-  "date": "2026-11-06",
-  "slot": "AM",
-  "publishAt": "2026-11-06T07:30:00+09:00",
+  "date": "2026-11-05",
+  "slot": "AF",
+  "publishAt": "2026-11-05T15:00:00+09:00",
   "topic": "장우진, 한국 선수 최초 WTT 챔피언스 우승 (몽펠리에, 1-3에서 4-3 역전)",
   "images": [
     "01.jpg",
@@ -33,5 +33,7 @@
       "date": "2026.11.02",
       "url": "https://www.seoul.co.kr/news/sport/table-tennis/2026/11/02/20261102500192"
     }
-  ]
+  ],
+  "reel": true,
+  "music": "legend"
 }
