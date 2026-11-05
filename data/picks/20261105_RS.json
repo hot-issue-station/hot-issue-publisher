@@ -1,0 +1,95 @@
+{
+ "slot": "RS",
+ "candidates": [
+  {
+   "title": "첫날 13만 장, 전작 초동을 하루 만에",
+   "summary": "첫날 131,893장, 전작 초동 104,406장을 하루 만에 넘었어요",
+   "facts": [
+    "미니 4집 PULSE 발매 첫날 판매량 131,893장(마이데일리 11/5), 약 13만 장(뉴스1 11/4)",
+    "전작 초동 판매량 104,406장을 하루 만에 넘어 그룹 자체 최고 기록(마이데일리)",
+    "최종 초동 판매량은 집계 중이라고 보도됨",
+    "발매 약 2시간 만에 멜론 TOP100 1위(이미 11/3 게시, 이번엔 기록·판매 중심)"
+   ],
+   "sources": [
+    {
+     "outlet": "뉴스1",
+     "title": "'대세' 리센느, 발매일 멜론 톱100 1위…음반도 첫날 13만장 '신기록'",
+     "date": "2026-11-04",
+     "url": "https://www.news1.kr/entertain/music/6342209"
+    },
+    {
+     "outlet": "마이데일리",
+     "title": "리센느, 멜론 TOP20에 무려 10곡…'국민 걸그룹' 과분하다더니",
+     "date": "2026-11-05",
+     "url": "https://www.mydaily.co.kr/page/view/2026110500054010186"
+    }
+   ],
+   "photoQuery": "RESCENE PULSE 공식 유튜브 타이틀곡 With MV 화면(더뮤즈엔터테인먼트·공식 채널)",
+   "score": 33
+  },
+  {
+   "title": "멜론 TOP20에 리센느 곡이 10개",
+   "summary": "신곡 5곡과 역주행 5곡, 11/4 밤 11시 10곡 모두 TOP20",
+   "facts": [
+    "신보 5곡(With·Finest Thing·백화요란·MEME·Dragon)이 모두 멜론 TOP100 10위권(마이데일리·텐아시아)",
+    "HOT100 1~5위를 리센느 곡이 차지(마이데일리·텐아시아)",
+    "기존 곡 LOVE ATTACK·Deja Vu·Pretty Girl·Runaway·Pinball 포함 총 10곡이 TOP100, 11/4 오후 11시 기준 10곡 모두 TOP20(마이데일리)",
+    "With는 벅스·지니 실시간 차트에서도 1위(텐아시아·톱스타뉴스)"
+   ],
+   "sources": [
+    {
+     "outlet": "마이데일리",
+     "title": "리센느, 멜론 TOP20에 무려 10곡…'국민 걸그룹' 과분하다더니",
+     "date": "2026-11-05",
+     "url": "https://www.mydaily.co.kr/page/view/2026110500054010186"
+    },
+    {
+     "outlet": "텐아시아",
+     "title": "리센느, 컴백하자마자 A2O LITE 올라섰다…멜론차트 정상",
+     "date": "2026-11-04",
+     "url": "https://www.tenasia.co.kr/article/2026110443964"
+    },
+    {
+     "outlet": "톱스타뉴스",
+     "title": "리센느, 미니 4집 'PULSE'로 멜론·주요 음원 차트 1위 석권",
+     "date": "2026-11-04",
+     "url": "https://www.topstarnews.net/news/articleView.html?idxno=16267657"
+    }
+   ],
+   "photoQuery": "RESCENE 공식 유튜브 'With' Official MV 화면(더뮤즈엔터테인먼트·공식 채널)",
+   "score": 35
+  },
+  {
+   "title": "쇼케이스에서 처음 들려준 두 곡",
+   "summary": "With·백화요란 첫 무대, 쇼케이스 라이브 137만 회(11/4 기준)",
+   "facts": [
+    "11월 3일 서울 블루스퀘어에서 PULSE 발매 기념 쇼케이스(재경일보·톱스타뉴스)",
+    "쇼케이스에서 타이틀곡 With와 수록곡 백화요란(Inside Out)을 처음 공개(톱스타뉴스)",
+    "앨범명 PULSE는 심장의 박동을 뜻함(재경일보)",
+    "공식 유튜브 쇼케이스 라이브 1,377,114회(11/4 22:46 확인, 공식 채널 1곳으로 계산)"
+   ],
+   "sources": [
+    {
+     "outlet": "재경일보",
+     "title": "리센느, 꿈과 응원의 연결 담은 'PULSE'로 컴백…타이틀곡은 'With'",
+     "date": "2026-11-03",
+     "url": "https://news.jkn.co.kr/post/1067291"
+    },
+    {
+     "outlet": "톱스타뉴스",
+     "title": "[HD포토] 리센느, '공주 대우가 확실한 무대' (PULSE 쇼케이스)",
+     "date": "2026-11-03",
+     "url": "https://www.topstarnews.net/news/articleView.html?idxno=16267141"
+    },
+    {
+     "outlet": "RESCENE 공식 유튜브",
+     "title": "RESCENE 4th Mini Album [PULSE] SHOWCASE LIVE",
+     "date": "2026-11-03",
+     "url": "https://www.youtube.com/watch?v=1BC-953eVP4"
+    }
+   ],
+   "photoQuery": "RESCENE PULSE 쇼케이스 라이브 공식 유튜브 화면(더뮤즈엔터테인먼트·공식 채널)",
+   "score": 25
+  }
+ ]
+}
