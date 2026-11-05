@@ -70,5 +70,174 @@
   "key": "storyk",
   "ok": false,
   "error": "HTTPError: HTTP Error 404: Not Found"
+ },
+ {
+  "at": "2026-11-05T19:37+09:00",
+  "key": "14f",
+  "ok": true,
+  "new": [
+   "CbWF9sd7QDk",
+   "uq0xvYN3L9I"
+  ],
+  "top": [
+   {
+    "id": "7TgeU5xqUJI",
+    "title": "집이 남아 돌던 스페인, 이제 집이 없어서 문제라고? 스페인 주택난의 모든 것 / 14F",
+    "views": 136668,
+    "gain": 89737
+   },
+   {
+    "id": "VipxqupADqE",
+    "title": "공항 가기 전 봐야 하는 영상… 74년 만에 확 바뀐 ‘일본 면세 혜택’ / 14F",
+    "views": 197158,
+    "gain": 34654
+   },
+   {
+    "id": "87w5P7QW2vM",
+    "title": "밤 중에도 안전하다고… 외국인들이 깜짝 놀란다는 ‘K-편의점’/ 14F",
+    "views": 267019,
+    "gain": 25665
+   }
+  ]
+ },
+ {
+  "at": "2026-11-05T19:37+09:00",
+  "key": "subusunews",
+  "ok": true,
+  "new": [
+   "ZS5sPQuxWks",
+   "Ptp13j-jG8o",
+   "Zq1d5ckccFQ",
+   "peMHRTigrOo",
+   "89sECRzHy-U"
+  ],
+  "top": [
+   {
+    "id": "53YmGEQcPg8",
+    "title": "형이랑 놀았던 시간은 참 재밌었는데, 형은 어땠어?ㅣ우리 사이엔 편지가 있다2 EP.10 엔시티드림 재민&지성",
+    "views": 136079,
+    "gain": 19422
+   },
+   {
+    "id": "RkMOt2YYMUg",
+    "title": "팝핀시키는 연습생 형아들",
+    "views": 7541,
+    "gain": 5854
+   },
+   {
+    "id": "vivfKyBubgA",
+    "title": "아이돌이 가지게 되는 딜레마",
+    "views": 5861,
+    "gain": 4190
+   }
+  ]
+ },
+ {
+  "at": "2026-11-05T19:37+09:00",
+  "key": "vstudio",
+  "ok": true,
+  "new": [],
+  "top": []
+ },
+ {
+  "at": "2026-11-05T19:37+09:00",
+  "key": "syukaworld",
+  "ok": true,
+  "new": [
+   "LYXceDpsPYA",
+   "_8ANk19Ku6A",
+   "xsGGzlRlXy8",
+   "MllkP70RRXg"
+  ],
+  "top": [
+   {
+    "id": "Xyk-we1Ehs8",
+    "title": "반도체 수요가 있어요? 그럼 됐네",
+    "views": 252689,
+    "gain": 30916
+   },
+   {
+    "id": "YJB4I75hcmc",
+    "title": "인생에 역경이 올 때 뭐 살까요?",
+    "views": 178853,
+    "gain": 23915
+   },
+   {
+    "id": "KJDqpAOSco0",
+    "title": "니니가 물타기 못하는 이유",
+    "views": 269083,
+    "gain": 20522
+   }
+  ]
+ },
+ {
+  "at": "2026-11-05T19:37+09:00",
+  "key": "ytn",
+  "ok": true,
+  "new": [
+   "Ux5n-n6evpA",
+   "F1ASZTOMjuo",
+   "8H0473zb4po",
+   "3Z5YiXP57Q0",
+   "_vwlcDpTe98",
+   "xusVTrboKbg",
+   "hnhXfx5pB0o",
+   "Z6Cy5TWZWik",
+   "0l7nI-ixDlQ",
+   "LR4DXt1pUGs",
+   "blp1gA7ZUSg",
+   "bVYnyGZ4pvg",
+   "KKBZCsrVO_A",
+   "lms8JTu9NeI",
+   "jyvq6RIIkPE"
+  ],
+  "top": [
+   {
+    "id": "0l7nI-ixDlQ",
+    "title": "설상가상 20만 명 탈영까지…우크라 내부 '아수라장' [에디터픽] / YTN",
+    "views": 51076,
+    "gain": null
+   },
+   {
+    "id": "F1ASZTOMjuo",
+    "title": "특이점 포착된 러시아 유조선…선거 앞두고 맺은 경유 딜, 결국 '역풍' [에디터픽] / YTN",
+    "views": 8079,
+    "gain": null
+   },
+   {
+    "id": "LR4DXt1pUGs",
+    "title": "트럼프 흔들리자 '회심의 한 수'…중국 '묘한 움직임' [에디터픽] / YTN",
+    "views": 7740,
+    "gain": null
+   }
+  ]
+ },
+ {
+  "at": "2026-11-05T19:37+09:00",
+  "key": "storyk",
+  "ok": true,
+  "new": [
+   "XnpYo8kDzQo"
+  ],
+  "top": [
+   {
+    "id": "eMHW9EPF5_g",
+    "title": "손흥민 또 PL 공식 계정이 샤라웃 - 이적 후에도 계속되는 유럽 축구계의 압도적인 존중",
+    "views": 41380,
+    "gain": 29697
+   },
+   {
+    "id": "6WdpcGFmFgQ",
+    "title": "손흥민 세계적 명장과 함께 뛸 마지막 기회? - 아시안컵 연기로 한국 대표팀 정식감독 새판",
+    "views": 98411,
+    "gain": 6935
+   },
+   {
+    "id": "hW2vyayJmLc",
+    "title": "손흥민 호위무사들과 캡틴 패싱 황희찬 극과극 - 엄지성 미친 도움 대표팀 서사는 폭발 직전",
+    "views": 115858,
+    "gain": 1576
+   }
+  ]
  }
 ]

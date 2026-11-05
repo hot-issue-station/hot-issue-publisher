@@ -3,20 +3,85 @@
  "name": "스브스뉴스 (SBS)",
  "channel": "https://www.youtube.com/@subusunews",
  "channelId": "UCxPClUl0bh7BgJajD5k483g",
- "checkedAt": "2026-11-04T22:46+09:00",
+ "checkedAt": "2026-11-05T19:37+09:00",
  "videos": [
+  {
+   "id": "ZS5sPQuxWks",
+   "title": "우사편 게스트 중 최고 악필이에요",
+   "published": "2026-11-05T09:00:33+00:00",
+   "url": "https://www.youtube.com/shorts/ZS5sPQuxWks",
+   "shorts": true,
+   "views": 1331,
+   "likes": 51,
+   "viewsGain": null,
+   "isNew": true,
+   "median": 3797.0,
+   "multiple": 0.4
+  },
+  {
+   "id": "Ptp13j-jG8o",
+   "title": "가깝기에 평소에 말하지 않았던 이야기",
+   "published": "2026-11-05T09:00:12+00:00",
+   "url": "https://www.youtube.com/shorts/Ptp13j-jG8o",
+   "shorts": true,
+   "views": 885,
+   "likes": 51,
+   "viewsGain": null,
+   "isNew": true,
+   "median": 3797.0,
+   "multiple": 0.2
+  },
+  {
+   "id": "Zq1d5ckccFQ",
+   "title": "극단적이었던 재민 입맛",
+   "published": "2026-11-05T09:00:05+00:00",
+   "url": "https://www.youtube.com/shorts/Zq1d5ckccFQ",
+   "shorts": true,
+   "views": 1075,
+   "likes": 32,
+   "viewsGain": null,
+   "isNew": true,
+   "median": 3797.0,
+   "multiple": 0.3
+  },
+  {
+   "id": "peMHRTigrOo",
+   "title": "김치찜 먹는 지성이만 봐도 배가 불렀던 재민",
+   "published": "2026-11-04T22:00:29+00:00",
+   "url": "https://www.youtube.com/shorts/peMHRTigrOo",
+   "shorts": true,
+   "views": 3632,
+   "likes": 120,
+   "viewsGain": null,
+   "isNew": true,
+   "median": 3797.0,
+   "multiple": 1.0
+  },
+  {
+   "id": "89sECRzHy-U",
+   "title": "편지로 감동을 주고 싶어요",
+   "published": "2026-11-04T22:00:08+00:00",
+   "url": "https://www.youtube.com/shorts/89sECRzHy-U",
+   "shorts": true,
+   "views": 2521,
+   "likes": 95,
+   "viewsGain": null,
+   "isNew": true,
+   "median": 3797.0,
+   "multiple": 0.7
+  },
   {
    "id": "vivfKyBubgA",
    "title": "아이돌이 가지게 되는 딜레마",
    "published": "2026-11-04T09:59:03+00:00",
    "url": "https://www.youtube.com/shorts/vivfKyBubgA",
    "shorts": true,
-   "views": 1671,
-   "likes": 48,
-   "viewsGain": 1150,
+   "views": 5861,
+   "likes": 152,
+   "viewsGain": 4190,
    "isNew": false,
-   "median": 3393.0,
-   "multiple": 0.5
+   "median": 3797.0,
+   "multiple": 1.5
   },
   {
    "id": "RkMOt2YYMUg",
@@ -24,12 +89,12 @@
    "published": "2026-11-04T09:57:39+00:00",
    "url": "https://www.youtube.com/shorts/RkMOt2YYMUg",
    "shorts": true,
-   "views": 1687,
-   "likes": 82,
-   "viewsGain": 1244,
+   "views": 7541,
+   "likes": 311,
+   "viewsGain": 5854,
    "isNew": false,
-   "median": 3393.0,
-   "multiple": 0.5
+   "median": 3797.0,
+   "multiple": 2.0
   },
   {
    "id": "pMG6qz-xCGk",
@@ -37,12 +102,12 @@
    "published": "2026-11-04T09:56:38+00:00",
    "url": "https://www.youtube.com/shorts/pMG6qz-xCGk",
    "shorts": true,
-   "views": 623,
-   "likes": 19,
-   "viewsGain": 389,
+   "views": 1760,
+   "likes": 33,
+   "viewsGain": 1137,
    "isNew": false,
-   "median": 3393.0,
-   "multiple": 0.2
+   "median": 3797.0,
+   "multiple": 0.5
   },
   {
    "id": "926Y0xcpnKE",
@@ -50,12 +115,12 @@
    "published": "2026-11-03T22:00:19+00:00",
    "url": "https://www.youtube.com/shorts/926Y0xcpnKE",
    "shorts": true,
-   "views": 2877,
-   "likes": 114,
-   "viewsGain": 329,
+   "views": 4077,
+   "likes": 178,
+   "viewsGain": 1200,
    "isNew": false,
-   "median": 3393.0,
-   "multiple": 0.8
+   "median": 3797.0,
+   "multiple": 1.1
   },
   {
    "id": "X5dI0Lr5VoE",
@@ -63,12 +128,12 @@
    "published": "2026-11-03T22:00:15+00:00",
    "url": "https://www.youtube.com/shorts/X5dI0Lr5VoE",
    "shorts": true,
-   "views": 2317,
-   "likes": 83,
-   "viewsGain": 177,
+   "views": 3324,
+   "likes": 142,
+   "viewsGain": 1007,
    "isNew": false,
-   "median": 3393.0,
-   "multiple": 0.7
+   "median": 3797.0,
+   "multiple": 0.9
   },
   {
    "id": "p-5cPKWiiLQ",
@@ -76,12 +141,12 @@
    "published": "2026-11-03T12:47:10+00:00",
    "url": "https://www.youtube.com/shorts/p-5cPKWiiLQ",
    "shorts": true,
-   "views": 5196,
-   "likes": 380,
-   "viewsGain": 281,
+   "views": 6160,
+   "likes": 496,
+   "viewsGain": 964,
    "isNew": false,
-   "median": 3393.0,
-   "multiple": 1.5
+   "median": 3797.0,
+   "multiple": 1.6
   },
   {
    "id": "kVSepD8oZTw",
@@ -89,11 +154,11 @@
    "published": "2026-11-03T12:44:43+00:00",
    "url": "https://www.youtube.com/shorts/kVSepD8oZTw",
    "shorts": true,
-   "views": 3335,
-   "likes": 288,
-   "viewsGain": 224,
+   "views": 3962,
+   "likes": 374,
+   "viewsGain": 627,
    "isNew": false,
-   "median": 3393.0,
+   "median": 3797.0,
    "multiple": 1.0
   },
   {
@@ -102,12 +167,12 @@
    "published": "2026-11-03T12:26:16+00:00",
    "url": "https://www.youtube.com/shorts/pnfgLnYPymc",
    "shorts": true,
-   "views": 3451,
-   "likes": 193,
-   "viewsGain": 218,
+   "views": 4191,
+   "likes": 263,
+   "viewsGain": 740,
    "isNew": false,
-   "median": 3393.0,
-   "multiple": 1.0
+   "median": 3797.0,
+   "multiple": 1.1
   },
   {
    "id": "M8BncRdr6JM",
@@ -115,12 +180,12 @@
    "published": "2026-11-03T12:24:53+00:00",
    "url": "https://www.youtube.com/shorts/M8BncRdr6JM",
    "shorts": true,
-   "views": 7858,
-   "likes": 346,
-   "viewsGain": 292,
+   "views": 9368,
+   "likes": 431,
+   "viewsGain": 1510,
    "isNew": false,
-   "median": 3393.0,
-   "multiple": 2.3
+   "median": 3797.0,
+   "multiple": 2.5
   },
   {
    "id": "53YmGEQcPg8",
@@ -128,113 +193,27 @@
    "published": "2026-11-03T09:00:26+00:00",
    "url": "https://www.youtube.com/watch?v=53YmGEQcPg8",
    "shorts": false,
-   "views": 116657,
-   "likes": 6507,
-   "viewsGain": 5836,
+   "views": 136079,
+   "likes": 6991,
+   "viewsGain": 19422,
    "isNew": false,
    "median": null,
    "multiple": null
-  },
-  {
-   "id": "LwLm7MrPPHA",
-   "title": "블랙페이퍼가 뽑은 올해의 커플상",
-   "published": "2026-10-29T22:00:21+00:00",
-   "url": "https://www.youtube.com/shorts/LwLm7MrPPHA",
-   "shorts": true,
-   "views": 12650,
-   "likes": 59,
-   "viewsGain": 22,
-   "isNew": false,
-   "median": 3393.0,
-   "multiple": 3.7
-  },
-  {
-   "id": "wcSU_Bz1-Nk",
-   "title": "술 먹자, 눈 온다",
-   "published": "2026-10-29T22:00:10+00:00",
-   "url": "https://www.youtube.com/shorts/wcSU_Bz1-Nk",
-   "shorts": true,
-   "views": 8209,
-   "likes": 95,
-   "viewsGain": 9,
-   "isNew": false,
-   "median": 3393.0,
-   "multiple": 2.4
-  },
-  {
-   "id": "HnhvHRqyqao",
-   "title": "나는 연애를 알려 줄 테니까 너는 공부를 알려줘",
-   "published": "2026-10-29T09:10:44+00:00",
-   "url": "https://www.youtube.com/shorts/HnhvHRqyqao",
-   "shorts": true,
-   "views": 25077,
-   "likes": 125,
-   "viewsGain": 67,
-   "isNew": false,
-   "median": 3393.0,
-   "multiple": 7.4
-  },
-  {
-   "id": "NbXaRPFlJLY",
-   "title": "말해보카로 연말 되기 전에 영어 공부 해봅시다",
-   "published": "2026-10-29T09:08:04+00:00",
-   "url": "https://www.youtube.com/shorts/NbXaRPFlJLY",
-   "shorts": true,
-   "views": 2951,
-   "likes": 20,
-   "viewsGain": 5,
-   "isNew": false,
-   "median": 3393.0,
-   "multiple": 0.9
-  },
-  {
-   "id": "NsvC_rlWlzo",
-   "title": "네가 아니면 성립이 안 되는 나의 이야기",
-   "published": "2026-10-29T09:00:33+00:00",
-   "url": "https://www.youtube.com/shorts/NsvC_rlWlzo",
-   "shorts": true,
-   "views": 8683,
-   "likes": 210,
-   "viewsGain": 9,
-   "isNew": false,
-   "median": 3393.0,
-   "multiple": 2.6
   }
  ],
  "viral": [
   {
-   "title": "나는 연애를 알려 줄 테니까 너는 공부를 알려줘",
-   "url": "https://www.youtube.com/shorts/HnhvHRqyqao",
-   "views": 25077,
-   "multiple": 7.4,
-   "shorts": true
-  },
-  {
-   "title": "블랙페이퍼가 뽑은 올해의 커플상",
-   "url": "https://www.youtube.com/shorts/LwLm7MrPPHA",
-   "views": 12650,
-   "multiple": 3.7,
-   "shorts": true
-  },
-  {
-   "title": "네가 아니면 성립이 안 되는 나의 이야기",
-   "url": "https://www.youtube.com/shorts/NsvC_rlWlzo",
-   "views": 8683,
-   "multiple": 2.6,
-   "shorts": true
-  },
-  {
-   "title": "술 먹자, 눈 온다",
-   "url": "https://www.youtube.com/shorts/wcSU_Bz1-Nk",
-   "views": 8209,
-   "multiple": 2.4,
-   "shorts": true
-  },
-  {
    "title": "세상 모든 좋은 일에는 떨리는 연약한 안테나가 숨어 있다",
    "url": "https://www.youtube.com/shorts/M8BncRdr6JM",
-   "views": 7858,
-   "multiple": 2.3,
+   "views": 9368,
+   "multiple": 2.5,
+   "shorts": true
+  },
+  {
+   "title": "팝핀시키는 연습생 형아들",
+   "url": "https://www.youtube.com/shorts/RkMOt2YYMUg",
+   "views": 7541,
+   "multiple": 2.0,
    "shorts": true
   }
  ]
