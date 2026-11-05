@@ -48,9 +48,8 @@
     }
   ],
   "approval3": {
-    "approved": true,
-    "at": "2026-11-05T10:11:51+09:00",
-    "by": "대표 (채팅 승인 11/05 10:11, 지금 바로)"
+    "approved": false,
+    "note": "대표 요청 10:11 — 릴스 확인 뒤 다시 승인"
   },
   "reel": true,
   "music": "bright"
