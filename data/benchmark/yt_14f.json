@@ -3,20 +3,33 @@
  "name": "14F 일사에프 (MBC)",
  "channel": "https://www.youtube.com/@14FMBC",
  "channelId": "UCLKuglhGlMmDteQKoniENIQ",
- "checkedAt": "2026-11-05T22:52+09:00",
+ "checkedAt": "2026-11-06T08:36+09:00",
  "videos": [
+  {
+   "id": "UjJznEbPKrw",
+   "title": "북극항로에 베팅한 한국의 큰 그림? #shorts",
+   "published": "2026-11-05T23:00:28+00:00",
+   "url": "https://www.youtube.com/shorts/UjJznEbPKrw",
+   "shorts": true,
+   "views": 645,
+   "likes": 10,
+   "viewsGain": null,
+   "isNew": true,
+   "median": 6083,
+   "multiple": 0.1
+  },
   {
    "id": "CbWF9sd7QDk",
    "title": "다이소 저금통이 왜 품절이죠?... 치이카와 팬들 사이에서 난리난 다이소템 / 14F",
    "published": "2026-11-05T09:54:42+00:00",
    "url": "https://www.youtube.com/watch?v=CbWF9sd7QDk",
    "shorts": false,
-   "views": 12258,
-   "likes": 136,
-   "viewsGain": 11163,
+   "views": 27531,
+   "likes": 170,
+   "viewsGain": 15273,
    "isNew": false,
-   "median": 149926,
-   "multiple": 0.1
+   "median": 165544.0,
+   "multiple": 0.2
   },
   {
    "id": "uq0xvYN3L9I",
@@ -24,12 +37,12 @@
    "published": "2026-11-04T23:00:37+00:00",
    "url": "https://www.youtube.com/shorts/uq0xvYN3L9I",
    "shorts": true,
-   "views": 20563,
-   "likes": 251,
-   "viewsGain": 6758,
+   "views": 30049,
+   "likes": 321,
+   "viewsGain": 9486,
    "isNew": false,
-   "median": 7227.5,
-   "multiple": 2.8
+   "median": 6083,
+   "multiple": 4.9
   },
   {
    "id": "Sn0of6GdNRA",
@@ -37,11 +50,11 @@
    "published": "2026-11-04T09:31:41+00:00",
    "url": "https://www.youtube.com/watch?v=Sn0of6GdNRA",
    "shorts": false,
-   "views": 40745,
-   "likes": 195,
-   "viewsGain": 2387,
+   "views": 43635,
+   "likes": 206,
+   "viewsGain": 2890,
    "isNew": false,
-   "median": 149926,
+   "median": 165544.0,
    "multiple": 0.3
   },
   {
@@ -50,11 +63,11 @@
    "published": "2026-11-04T08:30:33+00:00",
    "url": "https://www.youtube.com/watch?v=7TgeU5xqUJI",
    "shorts": false,
-   "views": 149926,
-   "likes": 704,
-   "viewsGain": 13258,
+   "views": 161088,
+   "likes": 767,
+   "viewsGain": 11162,
    "isNew": false,
-   "median": 149926,
+   "median": 165544.0,
    "multiple": 1.0
   },
   {
@@ -63,11 +76,11 @@
    "published": "2026-11-04T08:00:38+00:00",
    "url": "https://www.youtube.com/watch?v=sV1o0bSCFpE",
    "shorts": false,
-   "views": 738,
+   "views": 808,
    "likes": 11,
-   "viewsGain": 31,
+   "viewsGain": 70,
    "isNew": false,
-   "median": 149926,
+   "median": 165544.0,
    "multiple": 0.0
   },
   {
@@ -76,12 +89,12 @@
    "published": "2026-11-04T03:00:23+00:00",
    "url": "https://www.youtube.com/shorts/G63QFaqloJQ",
    "shorts": true,
-   "views": 5292,
-   "likes": 29,
-   "viewsGain": 318,
+   "views": 6083,
+   "likes": 35,
+   "viewsGain": 791,
    "isNew": false,
-   "median": 7227.5,
-   "multiple": 0.7
+   "median": 6083,
+   "multiple": 1.0
   },
   {
    "id": "uQ0WY7C5Ddo",
@@ -89,12 +102,12 @@
    "published": "2026-11-03T09:30:30+00:00",
    "url": "https://www.youtube.com/watch?v=uQ0WY7C5Ddo",
    "shorts": false,
-   "views": 165349,
-   "likes": 949,
-   "viewsGain": 1733,
+   "views": 170000,
+   "likes": 973,
+   "viewsGain": 4651,
    "isNew": false,
-   "median": 149926,
-   "multiple": 1.1
+   "median": 165544.0,
+   "multiple": 1.0
   },
   {
    "id": "VipxqupADqE",
@@ -102,12 +115,12 @@
    "published": "2026-11-03T09:01:13+00:00",
    "url": "https://www.youtube.com/watch?v=VipxqupADqE",
    "shorts": false,
-   "views": 201275,
-   "likes": 878,
-   "viewsGain": 4117,
+   "views": 206305,
+   "likes": 900,
+   "viewsGain": 5030,
    "isNew": false,
-   "median": 149926,
-   "multiple": 1.3
+   "median": 165544.0,
+   "multiple": 1.2
   },
   {
    "id": "BjSNy_1blgE",
@@ -115,11 +128,11 @@
    "published": "2026-11-03T08:30:33+00:00",
    "url": "https://www.youtube.com/watch?v=BjSNy_1blgE",
    "shorts": false,
-   "views": 105104,
-   "likes": 484,
-   "viewsGain": 3099,
+   "views": 111563,
+   "likes": 526,
+   "viewsGain": 6459,
    "isNew": false,
-   "median": 149926,
+   "median": 165544.0,
    "multiple": 0.7
   },
   {
@@ -128,12 +141,12 @@
    "published": "2026-11-02T10:00:06+00:00",
    "url": "https://www.youtube.com/watch?v=87w5P7QW2vM",
    "shorts": false,
-   "views": 277673,
-   "likes": 1303,
-   "viewsGain": 10654,
+   "views": 286683,
+   "likes": 1329,
+   "viewsGain": 9010,
    "isNew": false,
-   "median": 149926,
-   "multiple": 1.9
+   "median": 165544.0,
+   "multiple": 1.7
   },
   {
    "id": "eOXSE6dyRsY",
@@ -141,12 +154,12 @@
    "published": "2026-11-02T09:30:30+00:00",
    "url": "https://www.youtube.com/watch?v=eOXSE6dyRsY",
    "shorts": false,
-   "views": 359353,
-   "likes": 1638,
-   "viewsGain": 5098,
+   "views": 363201,
+   "likes": 1654,
+   "viewsGain": 3848,
    "isNew": false,
-   "median": 149926,
-   "multiple": 2.4
+   "median": 165544.0,
+   "multiple": 2.2
   },
   {
    "id": "peSpC5kd2t0",
@@ -154,12 +167,12 @@
    "published": "2026-11-01T04:00:36+00:00",
    "url": "https://www.youtube.com/shorts/peSpC5kd2t0",
    "shorts": true,
-   "views": 8918,
+   "views": 9035,
    "likes": 27,
-   "viewsGain": 51,
+   "viewsGain": 117,
    "isNew": false,
-   "median": 7227.5,
-   "multiple": 1.2
+   "median": 6083,
+   "multiple": 1.5
   },
   {
    "id": "sf-JTKYvrxw",
@@ -167,12 +180,12 @@
    "published": "2026-11-01T04:00:02+00:00",
    "url": "https://www.youtube.com/watch?v=sf-JTKYvrxw",
    "shorts": false,
-   "views": 290607,
-   "likes": 812,
-   "viewsGain": 1175,
+   "views": 293157,
+   "likes": 824,
+   "viewsGain": 2550,
    "isNew": false,
-   "median": 149926,
-   "multiple": 1.9
+   "median": 165544.0,
+   "multiple": 1.8
   },
   {
    "id": "yoyqnf-PE30",
@@ -180,40 +193,27 @@
    "published": "2026-10-31T04:00:23+00:00",
    "url": "https://www.youtube.com/shorts/yoyqnf-PE30",
    "shorts": true,
-   "views": 5537,
+   "views": 5574,
    "likes": 20,
-   "viewsGain": 6,
+   "viewsGain": 37,
    "isNew": false,
-   "median": 7227.5,
-   "multiple": 0.8
-  },
-  {
-   "id": "ZUqM6arduYw",
-   "title": "산재 사망자는 줄었지만 제조업은 늘었다… 끼임 사고 예방수칙 총정리 / 14F",
-   "published": "2026-10-31T04:00:20+00:00",
-   "url": "https://www.youtube.com/watch?v=ZUqM6arduYw",
-   "shorts": false,
-   "views": 47862,
-   "likes": 177,
-   "viewsGain": 254,
-   "isNew": false,
-   "median": 149926,
-   "multiple": 0.3
+   "median": 6083,
+   "multiple": 0.9
   }
  ],
  "viral": [
   {
    "title": "일본 화물이 부산항에 몰리는 이유 #shorts",
    "url": "https://www.youtube.com/shorts/uq0xvYN3L9I",
-   "views": 20563,
-   "multiple": 2.8,
+   "views": 30049,
+   "multiple": 4.9,
    "shorts": true
   },
   {
    "title": "샤인머스캣 개발한 일본이 땅을 치고 후회하는 이유🥄ㅣ돈슐랭 / 14F",
    "url": "https://www.youtube.com/watch?v=eOXSE6dyRsY",
-   "views": 359353,
-   "multiple": 2.4,
+   "views": 363201,
+   "multiple": 2.2,
    "shorts": false
   }
  ]

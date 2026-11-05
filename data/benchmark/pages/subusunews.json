@@ -1,39 +1,41 @@
 {
  "name": "스브스뉴스 (SBS)",
  "channel": "https://www.youtube.com/@subusunews",
- "checkedAt": "2026-11-05T22:52+09:00",
+ "checkedAt": "2026-11-06T08:36+09:00",
  "subscribers": "144만",
  "videos": [
   {
    "id": "bvbHkNEO3t8",
    "title": "이제 소풍 안 간다는 요즘 초등학교 근황 #초등학교 #shorts #스브스뉴스",
-   "views": 2000,
-   "viewsText": "조회수 2천회",
+   "views": 11000,
+   "viewsText": "조회수 1.1만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 9000
   },
   {
    "id": "6LRM6cDTkWU",
    "title": "여름에도 수능 치던 94학번들 #수능 #shorts #스브스뉴스",
-   "views": 2700,
-   "viewsText": "조회수 2.7천회",
+   "views": 7900,
+   "viewsText": "조회수 7.9천회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 5200
   },
   {
    "id": "bRGPA0qxe-w",
    "title": "햇반이 해외에서 인기인 의외의 이유 #shorts / 스브스뉴스",
-   "views": 3600,
-   "viewsText": "조회수 3.6천회",
+   "views": 9200,
+   "viewsText": "조회수 9.2천회",
    "published": "",
    "kind": "short",
-   "gain": 2300
+   "gain": 5600
   },
   {
    "id": "Hi8hop0wrf0",
    "title": "북한이 해킹 주범으로 지목되자 신속하게 대응한 이유 #북한 #shorts #스브스뉴스",
-   "views": 5500,
-   "viewsText": "조회수 5.5천회",
+   "views": 5800,
+   "viewsText": "조회수 5.8천회",
    "published": "",
    "kind": "short",
    "gain": 300
@@ -41,20 +43,20 @@
   {
    "id": "ZpNFj6J6dpk",
    "title": "교통대란부터 재고 처리 빵 의혹까지? 논란의 2026 서울 마라톤 #마라톤 #shorts #스브스뉴스",
-   "views": 10000,
-   "viewsText": "조회수 1만회",
+   "views": 11000,
+   "viewsText": "조회수 1.1만회",
    "published": "",
    "kind": "short",
-   "gain": 200
+   "gain": 1000
   },
   {
    "id": "7gMpoQvh8JA",
    "title": "갈수록 심해지는 소년범죄 #촉법소년 #shorts #스브스뉴스",
-   "views": 4500,
-   "viewsText": "조회수 4.5천회",
+   "views": 4700,
+   "viewsText": "조회수 4.7천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 200
   },
   {
    "id": "_S4dpnDTrkY",
@@ -140,11 +142,11 @@
   {
    "id": "-fLcCSNSD34",
    "title": "1인 1음료 진짜 필수인지 카페 사장님들한테 직접 물어봤습니다. #카페 #shorts #스브스뉴스",
-   "views": 330000,
-   "viewsText": "조회수 33만회",
+   "views": 340000,
+   "viewsText": "조회수 34만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "4oWBAsVpDDw",
@@ -288,7 +290,7 @@
    "viewsText": "조회수 8.6만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "3GdNYTTsoEU",

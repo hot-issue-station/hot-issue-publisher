@@ -1,32 +1,40 @@
 {
  "name": "14F 일사에프 (MBC)",
  "channel": "https://www.youtube.com/@14FMBC",
- "checkedAt": "2026-11-05T22:52+09:00",
+ "checkedAt": "2026-11-06T08:36+09:00",
  "subscribers": "239만",
  "videos": [
   {
+   "id": "UjJznEbPKrw",
+   "title": "북극항로에 베팅한 한국의 큰 그림? #shorts",
+   "views": 645,
+   "viewsText": "조회수 645회",
+   "published": "",
+   "kind": "short"
+  },
+  {
    "id": "uq0xvYN3L9I",
    "title": "일본 화물이 부산항에 몰리는 이유 #shorts",
-   "views": 20000,
-   "viewsText": "조회수 2만회",
+   "views": 30000,
+   "viewsText": "조회수 3만회",
    "published": "",
    "kind": "short",
-   "gain": 7000
+   "gain": 10000
   },
   {
    "id": "G63QFaqloJQ",
    "title": "샤인머스캣으로 얼마나 벌었을까? #shorts",
-   "views": 5200,
-   "viewsText": "조회수 5.2천회",
+   "views": 6000,
+   "viewsText": "조회수 6천회",
    "published": "",
    "kind": "short",
-   "gain": 300
+   "gain": 800
   },
   {
    "id": "peSpC5kd2t0",
    "title": "홍채로도 운세를 볼 수 있다? #shorts",
-   "views": 8900,
-   "viewsText": "조회수 8.9천회",
+   "views": 9000,
+   "viewsText": "조회수 9천회",
    "published": "",
    "kind": "short",
    "gain": 100
@@ -43,11 +51,11 @@
   {
    "id": "FV2VNAPmk-o",
    "title": "미국에서 역주행 중 우지 근황 #shorts",
-   "views": 11000,
-   "viewsText": "조회수 1.1만회",
+   "views": 12000,
+   "viewsText": "조회수 1.2만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 1000
   },
   {
    "id": "M_z0WM3-GO8",
@@ -351,15 +359,6 @@
    "title": "이스라엘의 진짜 문제는 내부에 있다? #shorts",
    "views": 9200,
    "viewsText": "조회수 9.2천회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "GjU0gHU0dKk",
-   "title": "2026 이스라엘 총선 네타냐후 총리 라이벌은? #shorts",
-   "views": 9900,
-   "viewsText": "조회수 9.9천회",
    "published": "",
    "kind": "short",
    "gain": 0

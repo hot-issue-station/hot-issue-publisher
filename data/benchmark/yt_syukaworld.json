@@ -3,7 +3,7 @@
  "name": "슈카월드",
  "channel": "https://www.youtube.com/@syukaworld",
  "channelId": "UCJo6G1u0e_-wS-JQn3T-zEw",
- "checkedAt": "2026-11-05T22:52+09:00",
+ "checkedAt": "2026-11-06T08:36+09:00",
  "videos": [
   {
    "id": "LYXceDpsPYA",
@@ -11,12 +11,12 @@
    "published": "2026-11-05T09:15:17+00:00",
    "url": "https://www.youtube.com/shorts/LYXceDpsPYA",
    "shorts": true,
-   "views": 50963,
-   "likes": 536,
-   "viewsGain": 34142,
+   "views": 118203,
+   "likes": 767,
+   "viewsGain": 67240,
    "isNew": false,
-   "median": 136029,
-   "multiple": 0.4
+   "median": 137007,
+   "multiple": 0.9
   },
   {
    "id": "_8ANk19Ku6A",
@@ -24,12 +24,12 @@
    "published": "2026-11-05T08:56:40+00:00",
    "url": "https://www.youtube.com/shorts/_8ANk19Ku6A",
    "shorts": true,
-   "views": 60521,
-   "likes": 484,
-   "viewsGain": 41438,
+   "views": 110582,
+   "likes": 592,
+   "viewsGain": 50061,
    "isNew": false,
-   "median": 136029,
-   "multiple": 0.4
+   "median": 137007,
+   "multiple": 0.8
   },
   {
    "id": "xsGGzlRlXy8",
@@ -37,12 +37,12 @@
    "published": "2026-11-05T08:28:38+00:00",
    "url": "https://www.youtube.com/shorts/xsGGzlRlXy8",
    "shorts": true,
-   "views": 21783,
-   "likes": 211,
-   "viewsGain": 10280,
+   "views": 38184,
+   "likes": 294,
+   "viewsGain": 16401,
    "isNew": false,
-   "median": 136029,
-   "multiple": 0.2
+   "median": 137007,
+   "multiple": 0.3
   },
   {
    "id": "MllkP70RRXg",
@@ -50,11 +50,11 @@
    "published": "2026-11-05T06:40:26+00:00",
    "url": "https://www.youtube.com/watch?v=MllkP70RRXg",
    "shorts": false,
-   "views": 164406,
-   "likes": 1232,
-   "viewsGain": 26772,
+   "views": 181543,
+   "likes": 1282,
+   "viewsGain": 17137,
    "isNew": false,
-   "median": 156266.0,
+   "median": 165038.5,
    "multiple": 1.1
   },
   {
@@ -63,11 +63,11 @@
    "published": "2026-11-03T09:00:07+00:00",
    "url": "https://www.youtube.com/watch?v=Xyk-we1Ehs8",
    "shorts": false,
-   "views": 256410,
-   "likes": 1342,
-   "viewsGain": 3721,
+   "views": 262027,
+   "likes": 1358,
+   "viewsGain": 5617,
    "isNew": false,
-   "median": 156266.0,
+   "median": 165038.5,
    "multiple": 1.6
   },
   {
@@ -76,11 +76,11 @@
    "published": "2026-11-03T08:00:16+00:00",
    "url": "https://www.youtube.com/shorts/KJDqpAOSco0",
    "shorts": true,
-   "views": 273582,
-   "likes": 1705,
-   "viewsGain": 4499,
+   "views": 280822,
+   "likes": 1736,
+   "viewsGain": 7240,
    "isNew": false,
-   "median": 136029,
+   "median": 137007,
    "multiple": 2.0
   },
   {
@@ -89,11 +89,11 @@
    "published": "2026-11-03T06:39:41+00:00",
    "url": "https://www.youtube.com/watch?v=hSerS0aG3Vc",
    "shorts": false,
-   "views": 114308,
-   "likes": 860,
-   "viewsGain": 364,
+   "views": 114739,
+   "likes": 859,
+   "viewsGain": 431,
    "isNew": false,
-   "median": 156266.0,
+   "median": 165038.5,
    "multiple": 0.7
   },
   {
@@ -102,12 +102,12 @@
    "published": "2026-11-03T03:28:00+00:00",
    "url": "https://www.youtube.com/shorts/YJB4I75hcmc",
    "shorts": true,
-   "views": 183497,
-   "likes": 1626,
-   "viewsGain": 4644,
+   "views": 192011,
+   "likes": 1666,
+   "viewsGain": 8514,
    "isNew": false,
-   "median": 136029,
-   "multiple": 1.3
+   "median": 137007,
+   "multiple": 1.4
   },
   {
    "id": "btP-S4xd8m8",
@@ -115,11 +115,11 @@
    "published": "2026-11-02T12:20:40+00:00",
    "url": "https://www.youtube.com/watch?v=btP-S4xd8m8",
    "shorts": false,
-   "views": 145268,
+   "views": 145688,
    "likes": 925,
-   "viewsGain": 295,
+   "viewsGain": 420,
    "isNew": false,
-   "median": 156266.0,
+   "median": 165038.5,
    "multiple": 0.9
   },
   {
@@ -128,12 +128,12 @@
    "published": "2026-11-02T02:41:14+00:00",
    "url": "https://www.youtube.com/shorts/adtTTCDTFF8",
    "shorts": true,
-   "views": 142328,
-   "likes": 813,
-   "viewsGain": 3408,
+   "views": 148406,
+   "likes": 833,
+   "viewsGain": 6078,
    "isNew": false,
-   "median": 136029,
-   "multiple": 1.0
+   "median": 137007,
+   "multiple": 1.1
   },
   {
    "id": "lO1KCuPlcuo",
@@ -141,11 +141,11 @@
    "published": "2026-11-02T02:38:09+00:00",
    "url": "https://www.youtube.com/shorts/lO1KCuPlcuo",
    "shorts": true,
-   "views": 148216,
-   "likes": 1628,
-   "viewsGain": 1420,
+   "views": 151987,
+   "likes": 1664,
+   "viewsGain": 3771,
    "isNew": false,
-   "median": 136029,
+   "median": 137007,
    "multiple": 1.1
   },
   {
@@ -154,12 +154,12 @@
    "published": "2026-11-01T09:00:15+00:00",
    "url": "https://www.youtube.com/watch?v=YSdD807ghyQ",
    "shorts": false,
-   "views": 398769,
-   "likes": 2516,
-   "viewsGain": 1802,
+   "views": 401158,
+   "likes": 2522,
+   "viewsGain": 2389,
    "isNew": false,
-   "median": 156266.0,
-   "multiple": 2.6
+   "median": 165038.5,
+   "multiple": 2.4
   },
   {
    "id": "Qb-49x86cJA",
@@ -167,11 +167,11 @@
    "published": "2026-11-01T01:39:34+00:00",
    "url": "https://www.youtube.com/shorts/Qb-49x86cJA",
    "shorts": true,
-   "views": 136029,
-   "likes": 928,
-   "viewsGain": 563,
+   "views": 137007,
+   "likes": 930,
+   "viewsGain": 978,
    "isNew": false,
-   "median": 136029,
+   "median": 137007,
    "multiple": 1.0
   },
   {
@@ -180,11 +180,11 @@
    "published": "2026-11-01T00:41:46+00:00",
    "url": "https://www.youtube.com/shorts/V7T9aPUrdD0",
    "shorts": true,
-   "views": 112951,
-   "likes": 801,
-   "viewsGain": 1032,
+   "views": 116023,
+   "likes": 813,
+   "viewsGain": 3072,
    "isNew": false,
-   "median": 136029,
+   "median": 137007,
    "multiple": 0.8
   },
   {
@@ -193,11 +193,11 @@
    "published": "2026-10-31T09:00:32+00:00",
    "url": "https://www.youtube.com/watch?v=TF93Z8sJZok",
    "shorts": false,
-   "views": 148126,
-   "likes": 1043,
-   "viewsGain": 317,
+   "views": 148534,
+   "likes": 1044,
+   "viewsGain": 408,
    "isNew": false,
-   "median": 156266.0,
+   "median": 165038.5,
    "multiple": 0.9
   }
  ],
@@ -205,14 +205,14 @@
   {
    "title": "두에빌 청문회",
    "url": "https://www.youtube.com/watch?v=YSdD807ghyQ",
-   "views": 398769,
-   "multiple": 2.6,
+   "views": 401158,
+   "multiple": 2.4,
    "shorts": false
   },
   {
    "title": "니니가 물타기 못하는 이유",
    "url": "https://www.youtube.com/shorts/KJDqpAOSco0",
-   "views": 273582,
+   "views": 280822,
    "multiple": 2.0,
    "shorts": true
   }
