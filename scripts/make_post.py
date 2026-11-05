@@ -281,14 +281,14 @@ def cards(r):
         row = "".join(f'<div style="width:{tw}px;height:{int(tw * 1.45)}px;border-radius:24px;background:url({photo_uri(x)}) 50% 20%/cover no-repeat;border:2px solid {LINE}"></div>' for x in sp[:5])
         tag = f'<div style="font-size:28px;color:{MUTED}">{E(r.get("summaryPhotosLabel", ""))}</div>' if r.get("summaryPhotosLabel") else ""
         out.append(frame(f"""<div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:30px">
-<div style="display:flex;align-items:center;gap:20px"><div style="width:64px;height:8px;border-radius:4px;background:{PINK}"></div><div style="font-size:44px;font-weight:700;color:{CYAN}">한 줄 요약</div></div>
+<div style="display:flex;align-items:center;gap:20px"><div style="width:64px;height:8px;border-radius:4px;background:{PINK}"></div><div style="font-size:44px;font-weight:700;color:{CYAN}">{E(r.get("summaryHead", "한 줄 요약"))}</div></div>
 <div style="display:flex;flex-direction:column;gap:10px"><div style="display:flex;gap:16px">{row}</div>{tag}</div>
 <div style="padding:52px 60px;border:3px solid {LINE};border-radius:40px;background:{BOX}"><div style="font-size:58px;font-weight:700;line-height:1.45">{E(r['summary'])}</div></div></div>""", label, 2, total=TOT))
     else:
         out.append(frame(f"""<div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:40px">
-<div style="display:flex;align-items:center;gap:20px"><div style="width:64px;height:8px;border-radius:4px;background:{PINK}"></div><div style="font-size:44px;font-weight:700;color:{CYAN}">한 줄 요약</div></div>
+<div style="display:flex;align-items:center;gap:20px"><div style="width:64px;height:8px;border-radius:4px;background:{PINK}"></div><div style="font-size:44px;font-weight:700;color:{CYAN}">{E(r.get("summaryHead", "한 줄 요약"))}</div></div>
 <div style="padding:80px 72px;border:3px solid {LINE};border-radius:40px;background:{BOX}"><div style="font-size:72px;font-weight:700;line-height:1.45">{E(r['summary'])}</div></div>
-<div style="font-size:44px;line-height:1.5;color:{SOFT}">이어서 핵심 사실 {NF}가지를 알려드려요 →</div></div>""", label, 2, total=TOT))
+<div style="font-size:44px;line-height:1.5;color:{SOFT}">{E(r.get("summaryNext", f"이어서 핵심 사실 {NF}가지를 알려드려요"))} →</div></div>""", label, 2, total=TOT))
     # 3~5 사실 — 사실마다 "photo"(경로), "photoPos", "photoLabel"이 있으면 위쪽에 사진 칸을 놓는다
     for i, f in enumerate(r["facts"][:NF]):
         if f.get("shot"):   # 댓글 캡처 카드(11/3 대표 결정): 캡처 한 장을 크게, 닉네임은 미리 가려 둔 이미지
@@ -303,14 +303,14 @@ def cards(r):
             ftag = (f'<div style="position:absolute;right:16px;bottom:16px;padding:6px 14px;border-radius:999px;background:rgba({BGRGB},.75);color:{SOFT};font-size:24px">{E(f["photoLabel"])}</div>' if f.get("photoLabel") else "")
             out.append(frame(f"""<div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:24px">
 <div style="position:relative;height:430px;border-radius:32px;overflow:hidden;background:url({photo_uri(f['photo'])}) {f.get('photoPos', '50% 25%')}/cover no-repeat">{ftag}</div>
-<div style="display:flex;align-items:baseline;gap:20px"><div style="font-size:96px;font-weight:900;line-height:1;color:{CYAN}">{i + 1:02d}</div><div style="font-size:36px;font-weight:700;color:{MUTED}">핵심 사실</div></div>
+<div style="display:flex;align-items:baseline;gap:20px"><div style="font-size:96px;font-weight:900;line-height:1;color:{CYAN}">{i + 1:02d}</div><div style="font-size:36px;font-weight:700;color:{MUTED}">{E((r.get("factHeads") or [])[i] if i < len(r.get("factHeads") or []) else "핵심 사실")}</div></div>
 <div style="font-size:58px;font-weight:900;line-height:1.3">{E(f['title'])}</div>
 <div style="font-size:42px;line-height:1.55;color:{BODY}">{E(f['desc'])}</div>
 <div style="font-size:32px;color:{MUTED}">출처 {E(f['source'])}</div></div>""",
                              label, 3 + i, f'<div style="display:flex;gap:16px">{dots(i, NF)}</div>', total=TOT))
             continue
         out.append(frame(f"""<div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:32px">
-<div style="display:flex;align-items:baseline;gap:24px"><div style="font-size:140px;font-weight:900;line-height:1;color:{CYAN}">{i + 1:02d}</div><div style="font-size:40px;font-weight:700;color:{MUTED}">핵심 사실</div></div>
+<div style="display:flex;align-items:baseline;gap:24px"><div style="font-size:140px;font-weight:900;line-height:1;color:{CYAN}">{i + 1:02d}</div><div style="font-size:40px;font-weight:700;color:{MUTED}">{E((r.get("factHeads") or [])[i] if i < len(r.get("factHeads") or []) else "핵심 사실")}</div></div>
 <div style="font-size:68px;font-weight:900;line-height:1.35">{E(f['title'])}</div>
 <div style="width:100%;height:2px;background:{LINE}"></div>
 <div style="font-size:48px;line-height:1.65;color:{BODY}">{E(f['desc'])}</div>
