@@ -346,6 +346,22 @@ def cards(r):
 <div style="display:flex;gap:24px"><div style="padding:20px 56px;border-radius:999px;background:{CYAN};color:{ONACC};font-size:48px;font-weight:900">저장</div>
 <div style="padding:20px 56px;border-radius:999px;background:{PINK};color:{ONACC};font-size:48px;font-weight:900">팔로우</div></div></div>
 <div style="font-size:32px;line-height:1.5;color:{MUTED}">광고·협찬 없음</div></div>""", label, TOT, "매일 따뜻한 이슈는 @hot.issue.station", total=TOT))
+    # (선택) 장마다 배경 사진 — round JSON "pageBg": {"2": "경로", "3": "경로", ...} (대표 요청 11/5 11:00)
+    # 사진을 화면 전체에 옅게 깔고, 위에 어두운(6장은 밝은) 막을 덮어 글이 잘 읽히게 한다. 1장(표지 사진)은 그대로.
+    pb = r.get("pageBg") or {}
+    if pb:
+        op = float(r.get("pageBgOpacity", 0.38))
+        for k, path in pb.items():
+            i = int(k) - 1
+            if 0 < i < len(out) and path:
+                light = (i == NF + 2)
+                tint = f"rgba(53,224,255,.72)" if light else f"rgba({BGRGB},.62)"
+                layer = (f'<div style="position:absolute;inset:0;background:url({photo_uri(path)}) {r.get("pageBgPos", "50% 30%")}/cover no-repeat;opacity:{op}"></div>'
+                         f'<div style="position:absolute;inset:0;background:{tint}"></div>')
+                marker = 'overflow:hidden;background:'
+                a = out[i].find(marker)
+                b = out[i].find('">', a) + 2
+                out[i] = out[i][:b] + layer + out[i][b:]
     return out
 
 
