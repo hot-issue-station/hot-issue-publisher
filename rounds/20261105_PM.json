@@ -66,6 +66,7 @@
   "6": "assets/rescene/02_pulse.jpg",
   "7": "assets/rescene/03_pulse.jpg"
  },
- "pageBgTint": 0.82,
- "pageBgOpacity": 0.5
+ "pageBgTint": 0.78,
+ "pageBgOpacity": 0.6,
+ "theme": "RS"
 }
