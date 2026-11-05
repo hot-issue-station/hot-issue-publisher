@@ -1,17 +1,17 @@
 {
  "name": "안원잘부",
  "channel": "https://www.youtube.com/@helloiamwoninicetomeetyou",
- "checkedAt": "2026-11-05T08:35+09:00",
+ "checkedAt": "2026-11-05T14:55+09:00",
  "subscribers": "241만",
  "videos": [
   {
    "id": "kfK-LENbEUo",
    "title": "정작가의 컴백을 축하합니다",
-   "views": 890000,
-   "viewsText": "조회수 89만회",
+   "views": 1070000,
+   "viewsText": "조회수 107만회",
    "published": "",
    "kind": "short",
-   "gain": 730000
+   "gain": 180000
   },
   {
    "id": "DKDmFgXzxs8",
@@ -20,13 +20,13 @@
    "viewsText": "조회수 254만회",
    "published": "",
    "kind": "short",
-   "gain": 30000
+   "gain": 0
   },
   {
    "id": "zxNoW_LtVLE",
    "title": "치명적인 실수",
-   "views": 2710000,
-   "viewsText": "조회수 271만회",
+   "views": 2720000,
+   "viewsText": "조회수 272만회",
    "published": "",
    "kind": "short",
    "gain": 10000
@@ -38,7 +38,7 @@
    "viewsText": "조회수 317만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "xCvbDeMKm3E",
@@ -47,7 +47,7 @@
    "viewsText": "조회수 608만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "GsYq_ouLAMQ",
@@ -56,7 +56,7 @@
    "viewsText": "조회수 535만회",
    "published": "",
    "kind": "short",
-   "gain": 20000
+   "gain": 0
   },
   {
    "id": "BUeZskDCMpU",
@@ -83,7 +83,7 @@
    "viewsText": "조회수 163만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "8aZYgM9GeL0",
@@ -97,8 +97,8 @@
   {
    "id": "o-B0F16GwL0",
    "title": "[B컷] 의자 안 돌아가요",
-   "views": 13350000,
-   "viewsText": "조회수 1335만회",
+   "views": 13360000,
+   "viewsText": "조회수 1336만회",
    "published": "",
    "kind": "short",
    "gain": 10000
@@ -137,7 +137,7 @@
    "viewsText": "조회수 162만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "jilQNKreZBM",
@@ -187,11 +187,11 @@
   {
    "id": "y2TOOxHF35E",
    "title": "장롱에 누군가 있다",
-   "views": 1190000,
-   "viewsText": "조회수 119만회",
+   "views": 1200000,
+   "viewsText": "조회수 120만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "beKjAiS8n44",
@@ -236,7 +236,7 @@
    "viewsText": "조회수 460만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "5zg26mxu4_w",
@@ -254,7 +254,7 @@
    "viewsText": "조회수 639만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "ORksT1QDf3k",

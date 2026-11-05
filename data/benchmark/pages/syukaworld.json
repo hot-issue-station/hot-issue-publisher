@@ -1,9 +1,17 @@
 {
  "name": "슈카월드",
  "channel": "https://www.youtube.com/@syukaworld",
- "checkedAt": "2026-11-05T08:35+09:00",
+ "checkedAt": "2026-11-05T14:55+09:00",
  "subscribers": "374만",
  "videos": [
+  {
+   "id": "QvMjNxpMmPo",
+   "title": "수능 주식 문제 1타 강사",
+   "views": 10000,
+   "viewsText": "조회수 1만회",
+   "published": "",
+   "kind": "short"
+  },
   {
    "id": "prQUpQh_gko",
    "title": "형들 우리 어깨 걸고 함께 가는거 아니었어요?",
@@ -272,7 +280,7 @@
    "viewsText": "조회수 20만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "TaBCFSlTp_M",
@@ -351,15 +359,6 @@
    "title": "주식 차트의 악랄함",
    "views": 1660000,
    "viewsText": "조회수 166만회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "Cgh1MJ1mpO8",
-   "title": "월급 떼어먹히지 않는 방법",
-   "views": 200000,
-   "viewsText": "조회수 20만회",
    "published": "",
    "kind": "short",
    "gain": 0
