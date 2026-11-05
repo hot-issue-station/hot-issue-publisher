@@ -1,23 +1,23 @@
 {
  "name": "안원잘부",
  "channel": "https://www.youtube.com/@helloiamwoninicetomeetyou",
- "checkedAt": "2026-11-05T19:37+09:00",
+ "checkedAt": "2026-11-05T22:52+09:00",
  "subscribers": "241만",
  "videos": [
   {
    "id": "kfK-LENbEUo",
    "title": "정작가의 컴백을 축하합니다",
-   "views": 1160000,
-   "viewsText": "조회수 116만회",
+   "views": 1240000,
+   "viewsText": "조회수 124만회",
    "published": "",
    "kind": "short",
-   "gain": 90000
+   "gain": 80000
   },
   {
    "id": "DKDmFgXzxs8",
    "title": "안원잘부 명장면 이모티콘2 출시!",
-   "views": 2550000,
-   "viewsText": "조회수 255만회",
+   "views": 2560000,
+   "viewsText": "조회수 256만회",
    "published": "",
    "kind": "short",
    "gain": 10000
@@ -47,7 +47,7 @@
    "viewsText": "조회수 609만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "GsYq_ouLAMQ",
@@ -56,7 +56,7 @@
    "viewsText": "조회수 536만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "BUeZskDCMpU",
@@ -97,11 +97,11 @@
   {
    "id": "o-B0F16GwL0",
    "title": "[B컷] 의자 안 돌아가요",
-   "views": 13360000,
-   "viewsText": "조회수 1336만회",
+   "views": 13370000,
+   "viewsText": "조회수 1337만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "gNJrbCSN2TM",
@@ -268,11 +268,11 @@
   {
    "id": "6cPEEeEAKiM",
    "title": "갸루 귀신",
-   "views": 1070000,
-   "viewsText": "조회수 107만회",
+   "views": 1080000,
+   "viewsText": "조회수 108만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "OmjUI2EQiPw",
@@ -308,7 +308,7 @@
    "viewsText": "조회수 691만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "hrFWuCyHXpY",

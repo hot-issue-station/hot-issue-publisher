@@ -239,5 +239,158 @@
     "gain": 1576
    }
   ]
+ },
+ {
+  "at": "2026-11-05T22:52+09:00",
+  "key": "14f",
+  "ok": true,
+  "new": [],
+  "top": [
+   {
+    "id": "7TgeU5xqUJI",
+    "title": "집이 남아 돌던 스페인, 이제 집이 없어서 문제라고? 스페인 주택난의 모든 것 / 14F",
+    "views": 149926,
+    "gain": 13258
+   },
+   {
+    "id": "CbWF9sd7QDk",
+    "title": "다이소 저금통이 왜 품절이죠?... 치이카와 팬들 사이에서 난리난 다이소템 / 14F",
+    "views": 12258,
+    "gain": 11163
+   },
+   {
+    "id": "87w5P7QW2vM",
+    "title": "밤 중에도 안전하다고… 외국인들이 깜짝 놀란다는 ‘K-편의점’/ 14F",
+    "views": 277673,
+    "gain": 10654
+   }
+  ]
+ },
+ {
+  "at": "2026-11-05T22:52+09:00",
+  "key": "subusunews",
+  "ok": true,
+  "new": [],
+  "top": [
+   {
+    "id": "53YmGEQcPg8",
+    "title": "형이랑 놀았던 시간은 참 재밌었는데, 형은 어땠어?ㅣ우리 사이엔 편지가 있다2 EP.10 엔시티드림 재민&지성",
+    "views": 138931,
+    "gain": 2852
+   },
+   {
+    "id": "ZS5sPQuxWks",
+    "title": "우사편 게스트 중 최고 악필이에요",
+    "views": 4145,
+    "gain": 2814
+   },
+   {
+    "id": "Zq1d5ckccFQ",
+    "title": "극단적이었던 재민 입맛",
+    "views": 3081,
+    "gain": 2006
+   }
+  ]
+ },
+ {
+  "at": "2026-11-05T22:52+09:00",
+  "key": "vstudio",
+  "ok": true,
+  "new": [],
+  "top": []
+ },
+ {
+  "at": "2026-11-05T22:52+09:00",
+  "key": "syukaworld",
+  "ok": true,
+  "new": [],
+  "top": [
+   {
+    "id": "_8ANk19Ku6A",
+    "title": "왜 반도체한테만 엄격한건데",
+    "views": 60521,
+    "gain": 41438
+   },
+   {
+    "id": "LYXceDpsPYA",
+    "title": "쪼잔하게 돈 버는 법",
+    "views": 50963,
+    "gain": 34142
+   },
+   {
+    "id": "MllkP70RRXg",
+    "title": "[슈카의 시황방송] 11월5일ㅣ트럼프 대신 심판받는 국장 ㅠㅠㅣ코스피 & 코스닥 매도 사이드카",
+    "views": 164406,
+    "gain": 26772
+   }
+  ]
+ },
+ {
+  "at": "2026-11-05T22:52+09:00",
+  "key": "ytn",
+  "ok": true,
+  "new": [
+   "99qKCdEdrIU",
+   "hWoRw0pMw3g",
+   "SSWVTqIBYZ8",
+   "aYgNbLIMQTY",
+   "bDcd9kHu9fA",
+   "e0-axJKIICs",
+   "tl722lZB9ps",
+   "1beIYlFDhFs",
+   "9ANXODzhu10",
+   "Pe5SrePzhaY",
+   "Wm_j01CfcfU",
+   "54nf-tSG1hY",
+   "z8Kq-s_Q1sA",
+   "wys43EqWeos",
+   "ROMYEQ5NIeU"
+  ],
+  "top": [
+   {
+    "id": "SSWVTqIBYZ8",
+    "title": "\"미국이 트럼프 거부했다\"...중간선거 참패에 '역대급 후폭풍' 예고 [이슈픽] / YTN",
+    "views": 21664,
+    "gain": null
+   },
+   {
+    "id": "hWoRw0pMw3g",
+    "title": "의회 뺏긴 트럼프, 외교로 판 뒤집나...'일본 패싱' 공포에 열도 발칵 [이슈픽] / YTN",
+    "views": 4908,
+    "gain": null
+   },
+   {
+    "id": "54nf-tSG1hY",
+    "title": "공화당 대패 후폭풍...트럼프-밴스 '헤어질 결심'? / YTN",
+    "views": 4303,
+    "gain": null
+   }
+  ]
+ },
+ {
+  "at": "2026-11-05T22:52+09:00",
+  "key": "storyk",
+  "ok": true,
+  "new": [],
+  "top": [
+   {
+    "id": "XnpYo8kDzQo",
+    "title": "손흥민 상업성 끝판왕 미국 경제지의 극찬 - 역대급 수익 이끈 아이콘을 대하는 클럽과 축협",
+    "views": 7308,
+    "gain": 6594
+   },
+   {
+    "id": "eMHW9EPF5_g",
+    "title": "손흥민 또 PL 공식 계정이 샤라웃 - 이적 후에도 계속되는 유럽 축구계의 압도적인 존중",
+    "views": 44654,
+    "gain": 3274
+   },
+   {
+    "id": "6WdpcGFmFgQ",
+    "title": "손흥민 세계적 명장과 함께 뛸 마지막 기회? - 아시안컵 연기로 한국 대표팀 정식감독 새판",
+    "views": 99117,
+    "gain": 706
+   }
+  ]
  }
 ]

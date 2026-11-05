@@ -1,40 +1,57 @@
 {
  "name": "스브스뉴스 (SBS)",
  "channel": "https://www.youtube.com/@subusunews",
- "checkedAt": "2026-11-05T19:37+09:00",
+ "checkedAt": "2026-11-05T22:52+09:00",
  "subscribers": "144만",
  "videos": [
   {
-   "id": "bRGPA0qxe-w",
-   "title": "햇반이 해외에서 인기인 의외의 이유 #shorts / 스브스뉴스",
-   "views": 1300,
-   "viewsText": "조회수 1.3천회",
+   "id": "bvbHkNEO3t8",
+   "title": "이제 소풍 안 간다는 요즘 초등학교 근황 #초등학교 #shorts #스브스뉴스",
+   "views": 2000,
+   "viewsText": "조회수 2천회",
    "published": "",
    "kind": "short"
   },
   {
-   "id": "Hi8hop0wrf0",
-   "title": "북한이 해킹 주범으로 지목되자 신속하게 대응한 이유 #북한 #shorts #스브스뉴스",
-   "views": 5200,
-   "viewsText": "조회수 5.2천회",
+   "id": "6LRM6cDTkWU",
+   "title": "여름에도 수능 치던 94학번들 #수능 #shorts #스브스뉴스",
+   "views": 2700,
+   "viewsText": "조회수 2.7천회",
+   "published": "",
+   "kind": "short"
+  },
+  {
+   "id": "bRGPA0qxe-w",
+   "title": "햇반이 해외에서 인기인 의외의 이유 #shorts / 스브스뉴스",
+   "views": 3600,
+   "viewsText": "조회수 3.6천회",
    "published": "",
    "kind": "short",
-   "gain": 600
+   "gain": 2300
+  },
+  {
+   "id": "Hi8hop0wrf0",
+   "title": "북한이 해킹 주범으로 지목되자 신속하게 대응한 이유 #북한 #shorts #스브스뉴스",
+   "views": 5500,
+   "viewsText": "조회수 5.5천회",
+   "published": "",
+   "kind": "short",
+   "gain": 300
   },
   {
    "id": "ZpNFj6J6dpk",
    "title": "교통대란부터 재고 처리 빵 의혹까지? 논란의 2026 서울 마라톤 #마라톤 #shorts #스브스뉴스",
-   "views": 9800,
-   "viewsText": "조회수 9.8천회",
+   "views": 10000,
+   "viewsText": "조회수 1만회",
    "published": "",
    "kind": "short",
-   "gain": 1400
+   "gain": 200
   },
   {
    "id": "7gMpoQvh8JA",
    "title": "갈수록 심해지는 소년범죄 #촉법소년 #shorts #스브스뉴스",
-   "views": 4400,
-   "viewsText": "조회수 4.4천회",
+   "views": 4500,
+   "viewsText": "조회수 4.5천회",
    "published": "",
    "kind": "short",
    "gain": 100
@@ -64,7 +81,7 @@
    "viewsText": "조회수 1.2만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "z_5kUs-Izr0",
@@ -267,11 +284,11 @@
   {
    "id": "X6yA0ltKNU4",
    "title": "겉으론 멀쩡해 보여도 의심해 봐야 하는 '이것' #2030 #shorts #스브스뉴스",
-   "views": 85000,
-   "viewsText": "조회수 8.5만회",
+   "views": 86000,
+   "viewsText": "조회수 8.6만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 1000
   },
   {
    "id": "3GdNYTTsoEU",
@@ -341,24 +358,6 @@
    "title": "“좌회전 차로라 안 켰는데요?” 운전자들 줄줄이 4만 원 날린 이유 #과태료 #shorts #스브스뉴스",
    "views": 32000,
    "viewsText": "조회수 3.2만회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "dc8vtbQ9ywE",
-   "title": "젊은 건망증, 약으로 고치려다 환각까지? #기억력 #shorts #스브스뉴스",
-   "views": 15000,
-   "viewsText": "조회수 1.5만회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "xBxnpzp-Orw",
-   "title": "건물주들의 새로운 최애가 다이소라고? 대체 뭐가 좋길래 #다이소 #shorts #스브스뉴스",
-   "views": 15000,
-   "viewsText": "조회수 1.5만회",
    "published": "",
    "kind": "short",
    "gain": 0
