@@ -355,7 +355,9 @@ def cards(r):
             i = int(k) - 1
             if 0 < i < len(out) and path:
                 light = (i == NF + 2)
-                tint = f"rgba(53,224,255,.72)" if light else f"rgba({BGRGB},.62)"
+                ta = float(r.get("pageBgTint", 0.62))
+                cr = ",".join(str(int(CYAN.lstrip("#")[j:j + 2], 16)) for j in (0, 2, 4))
+                tint = f"rgba({cr},{min(ta + .1, .95)})" if light else f"rgba({BGRGB},{ta})"
                 layer = (f'<div style="position:absolute;inset:0;background:url({photo_uri(path)}) {r.get("pageBgPos", "50% 30%")}/cover no-repeat;opacity:{op}"></div>'
                          f'<div style="position:absolute;inset:0;background:{tint}"></div>')
                 marker = 'overflow:hidden;background:'
