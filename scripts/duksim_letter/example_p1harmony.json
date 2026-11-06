@@ -1,0 +1,89 @@
+{
+ "dir": "/tmp/claude-0/-home-claude/eb774544-8081-59eb-9d1c-8cc1d162e9ef/scratchpad/p1h",
+ "prefix": "P1H",
+ "no": 1,
+ "to": "피원하모니",
+ "fandom": "피스",
+ "accent": "#7FD3FF",
+ "img": "FNC엔터테인먼트",
+ "src": "스포츠경향·텐아시아·톱스타뉴스·일간스포츠",
+ "cards": [
+  {
+   "cover": true,
+   "sub": "여섯 히어로의 마지막 임무를 앞두고,<br>우리가 꼭 하고 싶었던 말",
+   "info": "미니 10집 「BLOW UP」 · 오늘 오후 2시"
+  },
+  {
+   "tag": "2020.10.28",
+   "fact": "기호·테오·지웅·인탁·소울·종섭,<br><span class='y'>여섯 이름이 처음 불린 날</span>",
+   "letter": "그날의 너희를 아직도 기억해.<br>긴장한 눈빛 뒤로 반짝이던 그 마음까지."
+  },
+  {
+   "tag": "첫 노래",
+   "fact": "「Siren」, 불협화음 가득한 세상에<br><span class='y'>\"아니\"라고 말할 용기</span>",
+   "letter": "처음부터 너희 노래는<br>누군가의 편이 되어 주는 노래였어."
+  },
+  {
+   "tag": "데뷔 날의 약속",
+   "fact": "\"무대 위 히어로라는 이름을<br><span class='y'>얻고 싶어요\"</span> — 소울",
+   "letter": "그 작은 약속,<br>너희는 6년 동안 한 번도 잊지 않았더라."
+  },
+  {
+   "tag": "돌아서 온 길",
+   "fact": "종섭, 「K팝스타6」·「YG보석함」을 지나<br><span class='y'>4년 만의 데뷔</span>",
+   "letter": "멀리 돌아온 길이라서<br>지금 이 무대가 더 빛나 보여."
+  },
+  {
+   "tag": "처음 오른 빌보드 200",
+   "fact": "「HARMONY : ALL IN」<br><span class='y'>빌보드 200 51위</span>",
+   "letter": "낯선 나라 차트에 처음 이름이 올라간 날,<br>우리도 같이 설렜어."
+  },
+  {
+   "tag": "첫 톱10",
+   "fact": "영어 앨범 「EX」<br><span class='y'>빌보드 200 9위</span>",
+   "letter": "바다 건너 더 많은 사람이<br>너희 노래를 따라 부르기 시작했지."
+  },
+  {
+   "tag": "올봄, 가장 높은 곳",
+   "fact": "미니 9집 「UNIQUE」 빌보드 200 4위,<br><span class='y'>여섯 번 연속 차트인</span>",
+   "letter": "한 계단씩, 정말 한 계단씩<br>여기까지 올라왔구나."
+  },
+  {
+   "tag": "히어로의 마지막 임무",
+   "fact": "「BLOW UP」, 데뷔 때부터 이어 온<br><span class='y'>히어로 이야기의 마무리</span>",
+   "letter": "이야기가 끝난다니 조금 아쉽지만,<br>끝까지 지켜볼 수 있어서 고마워."
+  },
+  {
+   "tag": "함께 자라 온 시간",
+   "fact": "한계를 넘어 함께 성장해 온 여정을<br><span class='y'>담은 노래</span>",
+   "letter": "너희가 자라는 동안,<br>너희를 보는 우리도 같이 자랐어."
+  },
+  {
+   "tag": "너희의 다짐",
+   "fact": "기호 \"젊은 패기와 신선함을 계속 보여드리는 게 목표\"<br><span class='y'>인탁 \"누군가에게 꿈이 되어주는<br>사람이 되고 싶다\"</span>",
+   "letter": "인탁아, 이미 그래.<br>너희는 누군가의 꿈이고 힘이야.",
+   "sm": true
+  },
+  {
+   "tag": "오늘 저녁 「뮤직뱅크」",
+   "fact": "히어로의 이야기는 끝나도,<br><span class='y'>우리의 응원은 이제부터</span>",
+   "letter": "첫 무대, 마음껏 날아오르길.<br>💬 피원하모니에게 한마디 남겨 줘!",
+   "from": "— 피스가 💜"
+  }
+ ],
+ "bandsrc": "[출처] 스포츠경향·텐아시아·톱스타뉴스·일간스포츠 · 이미지 FNC엔터테인먼트",
+ "subs": [
+  "A letter to P1Harmony — before the heroes' final mission",
+  "Oct 28, 2020 — the day six names were first called",
+  "\"Siren\": the courage to say \"no\" — your songs always stood by someone",
+  "Soul on debut day: \"We want to be called stage heroes\"",
+  "Jongseop: K-pop Star 6, YG Treasure Box, then debut 4 years later",
+  "\"HARMONY : ALL IN\" — first Billboard 200 entry at No. 51",
+  "English album \"EX\" — first Top 10 at No. 9",
+  "\"UNIQUE\" — career-high No. 4, six straight entries",
+  "\"BLOW UP\" wraps up the hero story you've told since debut",
+  "A song about growing together, beyond every limit",
+  "\"Keep showing youthful energy\" — Keho / \"I want to be someone's dream\" — Intak",
+  "The hero story ends, but our cheering starts now 💜 — from P1ece"
+ ]
+}
