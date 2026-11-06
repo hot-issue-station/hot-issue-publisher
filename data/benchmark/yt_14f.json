@@ -3,20 +3,59 @@
  "name": "14F 일사에프 (MBC)",
  "channel": "https://www.youtube.com/@14FMBC",
  "channelId": "UCLKuglhGlMmDteQKoniENIQ",
- "checkedAt": "2026-11-06T08:36+09:00",
+ "checkedAt": "2026-11-06T19:38+09:00",
  "videos": [
+  {
+   "id": "BYhL-fwDxcg",
+   "title": "태권도 종주국은 한국 아니였어?... ‘북한 전통무술’로 유네스코 등재 유력 / 14F",
+   "published": "2026-11-06T09:11:16+00:00",
+   "url": "https://www.youtube.com/watch?v=BYhL-fwDxcg",
+   "shorts": false,
+   "views": 559,
+   "likes": 32,
+   "viewsGain": null,
+   "isNew": true,
+   "median": 118649,
+   "multiple": 0.0
+  },
+  {
+   "id": "kycuo7xf6zk",
+   "title": "“여행 어디로 가지…” 이왕 간다면 인구소멸 지역 돕는 '이 곳' 주목! / 14F",
+   "published": "2026-11-06T08:30:29+00:00",
+   "url": "https://www.youtube.com/watch?v=kycuo7xf6zk",
+   "shorts": false,
+   "views": 2838,
+   "likes": 114,
+   "viewsGain": null,
+   "isNew": true,
+   "median": 118649,
+   "multiple": 0.0
+  },
+  {
+   "id": "raKKyS-VS5k",
+   "title": "샤인머스캣 가격 폭락 막기 힘든 이유 #shorts",
+   "published": "2026-11-06T03:00:05+00:00",
+   "url": "https://www.youtube.com/shorts/raKKyS-VS5k",
+   "shorts": true,
+   "views": 2857,
+   "likes": 19,
+   "viewsGain": null,
+   "isNew": true,
+   "median": 5829.0,
+   "multiple": 0.5
+  },
   {
    "id": "UjJznEbPKrw",
    "title": "북극항로에 베팅한 한국의 큰 그림? #shorts",
    "published": "2026-11-05T23:00:28+00:00",
    "url": "https://www.youtube.com/shorts/UjJznEbPKrw",
    "shorts": true,
-   "views": 645,
-   "likes": 10,
-   "viewsGain": null,
-   "isNew": true,
-   "median": 6083,
-   "multiple": 0.1
+   "views": 4814,
+   "likes": 59,
+   "viewsGain": 4169,
+   "isNew": false,
+   "median": 5829.0,
+   "multiple": 0.8
   },
   {
    "id": "CbWF9sd7QDk",
@@ -24,12 +63,12 @@
    "published": "2026-11-05T09:54:42+00:00",
    "url": "https://www.youtube.com/watch?v=CbWF9sd7QDk",
    "shorts": false,
-   "views": 27531,
-   "likes": 170,
-   "viewsGain": 15273,
+   "views": 33415,
+   "likes": 205,
+   "viewsGain": 5884,
    "isNew": false,
-   "median": 165544.0,
-   "multiple": 0.2
+   "median": 118649,
+   "multiple": 0.3
   },
   {
    "id": "uq0xvYN3L9I",
@@ -37,12 +76,12 @@
    "published": "2026-11-04T23:00:37+00:00",
    "url": "https://www.youtube.com/shorts/uq0xvYN3L9I",
    "shorts": true,
-   "views": 30049,
-   "likes": 321,
-   "viewsGain": 9486,
+   "views": 37581,
+   "likes": 371,
+   "viewsGain": 7532,
    "isNew": false,
-   "median": 6083,
-   "multiple": 4.9
+   "median": 5829.0,
+   "multiple": 6.4
   },
   {
    "id": "Sn0of6GdNRA",
@@ -50,12 +89,12 @@
    "published": "2026-11-04T09:31:41+00:00",
    "url": "https://www.youtube.com/watch?v=Sn0of6GdNRA",
    "shorts": false,
-   "views": 43635,
-   "likes": 206,
-   "viewsGain": 2890,
+   "views": 46425,
+   "likes": 220,
+   "viewsGain": 2790,
    "isNew": false,
-   "median": 165544.0,
-   "multiple": 0.3
+   "median": 118649,
+   "multiple": 0.4
   },
   {
    "id": "7TgeU5xqUJI",
@@ -63,12 +102,12 @@
    "published": "2026-11-04T08:30:33+00:00",
    "url": "https://www.youtube.com/watch?v=7TgeU5xqUJI",
    "shorts": false,
-   "views": 161088,
-   "likes": 767,
-   "viewsGain": 11162,
+   "views": 177423,
+   "likes": 873,
+   "viewsGain": 16335,
    "isNew": false,
-   "median": 165544.0,
-   "multiple": 1.0
+   "median": 118649,
+   "multiple": 1.5
   },
   {
    "id": "sV1o0bSCFpE",
@@ -76,11 +115,11 @@
    "published": "2026-11-04T08:00:38+00:00",
    "url": "https://www.youtube.com/watch?v=sV1o0bSCFpE",
    "shorts": false,
-   "views": 808,
-   "likes": 11,
-   "viewsGain": 70,
+   "views": 856,
+   "likes": 13,
+   "viewsGain": 48,
    "isNew": false,
-   "median": 165544.0,
+   "median": 118649,
    "multiple": 0.0
   },
   {
@@ -89,12 +128,12 @@
    "published": "2026-11-04T03:00:23+00:00",
    "url": "https://www.youtube.com/shorts/G63QFaqloJQ",
    "shorts": true,
-   "views": 6083,
-   "likes": 35,
-   "viewsGain": 791,
+   "views": 6844,
+   "likes": 44,
+   "viewsGain": 761,
    "isNew": false,
-   "median": 6083,
-   "multiple": 1.0
+   "median": 5829.0,
+   "multiple": 1.2
   },
   {
    "id": "uQ0WY7C5Ddo",
@@ -102,12 +141,12 @@
    "published": "2026-11-03T09:30:30+00:00",
    "url": "https://www.youtube.com/watch?v=uQ0WY7C5Ddo",
    "shorts": false,
-   "views": 170000,
-   "likes": 973,
-   "viewsGain": 4651,
+   "views": 172323,
+   "likes": 994,
+   "viewsGain": 2323,
    "isNew": false,
-   "median": 165544.0,
-   "multiple": 1.0
+   "median": 118649,
+   "multiple": 1.5
   },
   {
    "id": "VipxqupADqE",
@@ -115,12 +154,12 @@
    "published": "2026-11-03T09:01:13+00:00",
    "url": "https://www.youtube.com/watch?v=VipxqupADqE",
    "shorts": false,
-   "views": 206305,
-   "likes": 900,
-   "viewsGain": 5030,
+   "views": 214144,
+   "likes": 940,
+   "viewsGain": 7839,
    "isNew": false,
-   "median": 165544.0,
-   "multiple": 1.2
+   "median": 118649,
+   "multiple": 1.8
   },
   {
    "id": "BjSNy_1blgE",
@@ -128,12 +167,12 @@
    "published": "2026-11-03T08:30:33+00:00",
    "url": "https://www.youtube.com/watch?v=BjSNy_1blgE",
    "shorts": false,
-   "views": 111563,
-   "likes": 526,
-   "viewsGain": 6459,
+   "views": 118649,
+   "likes": 575,
+   "viewsGain": 7086,
    "isNew": false,
-   "median": 165544.0,
-   "multiple": 0.7
+   "median": 118649,
+   "multiple": 1.0
   },
   {
    "id": "87w5P7QW2vM",
@@ -141,12 +180,12 @@
    "published": "2026-11-02T10:00:06+00:00",
    "url": "https://www.youtube.com/watch?v=87w5P7QW2vM",
    "shorts": false,
-   "views": 286683,
-   "likes": 1329,
-   "viewsGain": 9010,
+   "views": 297140,
+   "likes": 1372,
+   "viewsGain": 10457,
    "isNew": false,
-   "median": 165544.0,
-   "multiple": 1.7
+   "median": 118649,
+   "multiple": 2.5
   },
   {
    "id": "eOXSE6dyRsY",
@@ -154,66 +193,34 @@
    "published": "2026-11-02T09:30:30+00:00",
    "url": "https://www.youtube.com/watch?v=eOXSE6dyRsY",
    "shorts": false,
-   "views": 363201,
-   "likes": 1654,
-   "viewsGain": 3848,
+   "views": 373003,
+   "likes": 1695,
+   "viewsGain": 9802,
    "isNew": false,
-   "median": 165544.0,
-   "multiple": 2.2
-  },
-  {
-   "id": "peSpC5kd2t0",
-   "title": "홍채로도 운세를 볼 수 있다? #shorts",
-   "published": "2026-11-01T04:00:36+00:00",
-   "url": "https://www.youtube.com/shorts/peSpC5kd2t0",
-   "shorts": true,
-   "views": 9035,
-   "likes": 27,
-   "viewsGain": 117,
-   "isNew": false,
-   "median": 6083,
-   "multiple": 1.5
-  },
-  {
-   "id": "sf-JTKYvrxw",
-   "title": "사상 최대 규모의 앤트로픽 상장ㅣ넷플릭스 주가 하락 이유 등 4가지 🥬경제 이슈🥬",
-   "published": "2026-11-01T04:00:02+00:00",
-   "url": "https://www.youtube.com/watch?v=sf-JTKYvrxw",
-   "shorts": false,
-   "views": 293157,
-   "likes": 824,
-   "viewsGain": 2550,
-   "isNew": false,
-   "median": 165544.0,
-   "multiple": 1.8
-  },
-  {
-   "id": "yoyqnf-PE30",
-   "title": "우리 집 강아지의 전생을 알 수 있다? #shorts",
-   "published": "2026-10-31T04:00:23+00:00",
-   "url": "https://www.youtube.com/shorts/yoyqnf-PE30",
-   "shorts": true,
-   "views": 5574,
-   "likes": 20,
-   "viewsGain": 37,
-   "isNew": false,
-   "median": 6083,
-   "multiple": 0.9
+   "median": 118649,
+   "multiple": 3.1
   }
  ],
  "viral": [
   {
    "title": "일본 화물이 부산항에 몰리는 이유 #shorts",
    "url": "https://www.youtube.com/shorts/uq0xvYN3L9I",
-   "views": 30049,
-   "multiple": 4.9,
+   "views": 37581,
+   "multiple": 6.4,
    "shorts": true
   },
   {
    "title": "샤인머스캣 개발한 일본이 땅을 치고 후회하는 이유🥄ㅣ돈슐랭 / 14F",
    "url": "https://www.youtube.com/watch?v=eOXSE6dyRsY",
-   "views": 363201,
-   "multiple": 2.2,
+   "views": 373003,
+   "multiple": 3.1,
+   "shorts": false
+  },
+  {
+   "title": "밤 중에도 안전하다고… 외국인들이 깜짝 놀란다는 ‘K-편의점’/ 14F",
+   "url": "https://www.youtube.com/watch?v=87w5P7QW2vM",
+   "views": 297140,
+   "multiple": 2.5,
    "shorts": false
   }
  ]

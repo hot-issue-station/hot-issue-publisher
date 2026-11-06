@@ -1,23 +1,47 @@
 {
  "name": "RESCENE 공식",
  "channel": "https://www.youtube.com/@RESCENE_official",
- "checkedAt": "2026-11-06T14:53+09:00",
+ "checkedAt": "2026-11-06T19:38+09:00",
  "subscribers": "136만",
  "videos": [
   {
+   "id": "A5PB2NXHkzY",
+   "title": "볼링장 미나미 🎳💙",
+   "views": 49000,
+   "viewsText": "조회수 4.9만회",
+   "published": "",
+   "kind": "short"
+  },
+  {
+   "id": "WDGxa5Vez5U",
+   "title": "리마인 🫵💖",
+   "views": 59000,
+   "viewsText": "조회수 5.9만회",
+   "published": "",
+   "kind": "short"
+  },
+  {
+   "id": "ydZG-_FdrxI",
+   "title": "With 까엉 🤎",
+   "views": 58000,
+   "viewsText": "조회수 5.8만회",
+   "published": "",
+   "kind": "short"
+  },
+  {
    "id": "GG1QgSloUkU",
    "title": "손댄스 막내즈 ver. 🤍🖤",
-   "views": 270000,
-   "viewsText": "조회수 27만회",
+   "views": 280000,
+   "viewsText": "조회수 28만회",
    "published": "",
    "kind": "short",
-   "gain": 30000
+   "gain": 10000
   },
   {
    "id": "xpaOFvA4K1g",
    "title": "손댄스 언니즈 ver. 🖤",
-   "views": 300000,
-   "viewsText": "조회수 30만회",
+   "views": 320000,
+   "viewsText": "조회수 32만회",
    "published": "",
    "kind": "short",
    "gain": 20000
@@ -25,11 +49,11 @@
   {
    "id": "_ldpW3AQWWA",
    "title": "RESCENE 'With' Official MV #2",
-   "views": 310000,
-   "viewsText": "조회수 31만회",
+   "views": 320000,
+   "viewsText": "조회수 32만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "4wB0AyS4KSc",
@@ -47,7 +71,7 @@
    "viewsText": "조회수 42만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "KcTEkBTAP3I",
@@ -56,7 +80,7 @@
    "viewsText": "조회수 54만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "sgZms-ImEx0",
@@ -65,16 +89,16 @@
    "viewsText": "조회수 56만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "EYrU4Zphz8s",
    "title": ". ݁⋆ ꫂ᭪ ݁˖ . ݁ ˖ ݁♬⋆.˚𝄞⋆ ⋆",
-   "views": 650000,
-   "viewsText": "조회수 65만회",
+   "views": 660000,
+   "viewsText": "조회수 66만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "VeZXkwf9esM",
@@ -83,7 +107,7 @@
    "viewsText": "조회수 78만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "ygE3V5CbllU",
@@ -92,13 +116,13 @@
    "viewsText": "조회수 72만회",
    "published": "",
    "kind": "short",
-   "gain": 20000
+   "gain": 0
   },
   {
    "id": "A5vmiFpG1yg",
    "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #수이 님",
-   "views": 710000,
-   "viewsText": "조회수 71만회",
+   "views": 720000,
+   "viewsText": "조회수 72만회",
    "published": "",
    "kind": "short",
    "gain": 10000
@@ -106,8 +130,8 @@
   {
    "id": "Es3qasE2w7w",
    "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #지훈 선배님",
-   "views": 840000,
-   "viewsText": "조회수 84만회",
+   "views": 850000,
+   "viewsText": "조회수 85만회",
    "published": "",
    "kind": "short",
    "gain": 10000
@@ -119,7 +143,7 @@
    "viewsText": "조회수 70만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "blswe0wDt8o",
@@ -142,8 +166,8 @@
   {
    "id": "QEeCIDjleC8",
    "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #나띠 #하늘 선배님",
-   "views": 810000,
-   "viewsText": "조회수 81만회",
+   "views": 820000,
+   "viewsText": "조회수 82만회",
    "published": "",
    "kind": "short",
    "gain": 10000
@@ -151,11 +175,11 @@
   {
    "id": "UfaJ4mbAiWc",
    "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #운학 선배님",
-   "views": 1050000,
-   "viewsText": "조회수 105만회",
+   "views": 1060000,
+   "viewsText": "조회수 106만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "HN7La9KN2MY",
@@ -169,20 +193,20 @@
   {
    "id": "k7y2yvkFJ1k",
    "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #애니 님",
-   "views": 1150000,
-   "viewsText": "조회수 115만회",
+   "views": 1160000,
+   "viewsText": "조회수 116만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "zHwTN5Yu-mI",
    "title": "Runnin’ on, runnin’ on, runnin’ on you",
-   "views": 970000,
-   "viewsText": "조회수 97만회",
+   "views": 980000,
+   "viewsText": "조회수 98만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "BRL7ag8oEO0",
@@ -263,7 +287,7 @@
    "viewsText": "조회수 55만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "Cyx4FBPJqQQ",
@@ -333,33 +357,6 @@
    "title": "🖤🤍",
    "views": 1090000,
    "viewsText": "조회수 109만회",
-   "published": "",
-   "kind": "short",
-   "gain": 10000
-  },
-  {
-   "id": "Kq3_URiv0gs",
-   "title": "[티저] 리브와 메이를 찾아 👀 | 몰래 온 손님 Teaser | RESCENE (리센느)",
-   "views": 930000,
-   "viewsText": "조회수 93만회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "jmR6pAUw5Ps",
-   "title": "장기자랑 비하인드🪩 | 리센느닷없이 | RESCENE (리센느)",
-   "views": 660000,
-   "viewsText": "조회수 66만회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "I6eRjcPt-sk",
-   "title": "언니즈의 사랑 듬뿍 받는 막내즈🐥🐥 | 리센느닷없이 | RESCENE (리센느)",
-   "views": 910000,
-   "viewsText": "조회수 91만회",
    "published": "",
    "kind": "short",
    "gain": 0

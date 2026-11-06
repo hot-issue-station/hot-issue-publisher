@@ -189,5 +189,169 @@
   "key": "storyk",
   "ok": false,
   "error": "HTTPError: HTTP Error 404: Not Found"
+ },
+ {
+  "at": "2026-11-06T19:38+09:00",
+  "key": "14f",
+  "ok": true,
+  "new": [
+   "BYhL-fwDxcg",
+   "kycuo7xf6zk",
+   "raKKyS-VS5k"
+  ],
+  "top": [
+   {
+    "id": "7TgeU5xqUJI",
+    "title": "집이 남아 돌던 스페인, 이제 집이 없어서 문제라고? 스페인 주택난의 모든 것 / 14F",
+    "views": 177423,
+    "gain": 16335
+   },
+   {
+    "id": "87w5P7QW2vM",
+    "title": "밤 중에도 안전하다고… 외국인들이 깜짝 놀란다는 ‘K-편의점’/ 14F",
+    "views": 297140,
+    "gain": 10457
+   },
+   {
+    "id": "eOXSE6dyRsY",
+    "title": "샤인머스캣 개발한 일본이 땅을 치고 후회하는 이유🥄ㅣ돈슐랭 / 14F",
+    "views": 373003,
+    "gain": 9802
+   }
+  ]
+ },
+ {
+  "at": "2026-11-06T19:38+09:00",
+  "key": "subusunews",
+  "ok": true,
+  "new": [],
+  "top": [
+   {
+    "id": "Zq1d5ckccFQ",
+    "title": "극단적이었던 재민 입맛",
+    "views": 23842,
+    "gain": 8234
+   },
+   {
+    "id": "53YmGEQcPg8",
+    "title": "형이랑 놀았던 시간은 참 재밌었는데, 형은 어땠어?ㅣ우리 사이엔 편지가 있다2 EP.10 엔시티드림 재민&지성",
+    "views": 149854,
+    "gain": 4650
+   },
+   {
+    "id": "peMHRTigrOo",
+    "title": "김치찜 먹는 지성이만 봐도 배가 불렀던 재민",
+    "views": 12027,
+    "gain": 4136
+   }
+  ]
+ },
+ {
+  "at": "2026-11-06T19:38+09:00",
+  "key": "vstudio",
+  "ok": true,
+  "new": [],
+  "top": []
+ },
+ {
+  "at": "2026-11-06T19:38+09:00",
+  "key": "syukaworld",
+  "ok": true,
+  "new": [
+   "ri2GLNjEM_s",
+   "sYr_AxQcpik",
+   "tK3p2DelS-c",
+   "SmbFOtTIot0"
+  ],
+  "top": [
+   {
+    "id": "LYXceDpsPYA",
+    "title": "쪼잔하게 돈 버는 법",
+    "views": 141689,
+    "gain": 23486
+   },
+   {
+    "id": "_8ANk19Ku6A",
+    "title": "왜 반도체한테만 엄격한건데",
+    "views": 121519,
+    "gain": 10937
+   },
+   {
+    "id": "MllkP70RRXg",
+    "title": "[슈카의 시황방송] 11월5일ㅣ트럼프 대신 심판받는 국장 ㅠㅠㅣ코스피 & 코스닥 매도 사이드카",
+    "views": 191536,
+    "gain": 9993
+   }
+  ]
+ },
+ {
+  "at": "2026-11-06T19:38+09:00",
+  "key": "ytn",
+  "ok": true,
+  "new": [
+   "h-lzWGqFdfE",
+   "Ic_g4uvq2ko",
+   "j2ZgKMeY6ao",
+   "WGlC-Qrp5yQ",
+   "QLvSEdDoiKw",
+   "ewbRhEfs8Js",
+   "5mVou9m4enY",
+   "ECW1PgirC-c",
+   "xDJlN-LsCCU",
+   "MEs4GlGv98U",
+   "cyeoSGJwC6s",
+   "EYuF9-KbD34",
+   "SV9EWDKAI6M",
+   "v7AY2CaqU-s",
+   "pUVHVz7hB4g"
+  ],
+  "top": [
+   {
+    "id": "Ic_g4uvq2ko",
+    "title": "중간선거 '대참사' 직후 돌변…트럼프 최측근 밴스의 결단 [에디터픽] / YTN",
+    "views": 15524,
+    "gain": null
+   },
+   {
+    "id": "ewbRhEfs8Js",
+    "title": "올겨울 날씨 심상찮다…역대급 엘니뇨, 한반도 '비상' [에디터픽] / YTN",
+    "views": 14475,
+    "gain": null
+   },
+   {
+    "id": "xDJlN-LsCCU",
+    "title": "\"날도 추운데 주식은 너무 춥고 슬퍼\"...개미들 '비명' / YTN",
+    "views": 1715,
+    "gain": null
+   }
+  ]
+ },
+ {
+  "at": "2026-11-06T19:38+09:00",
+  "key": "storyk",
+  "ok": true,
+  "new": [
+   "aGdX-njap_8"
+  ],
+  "top": [
+   {
+    "id": "XnpYo8kDzQo",
+    "title": "손흥민 상업성 끝판왕 미국 경제지의 극찬 - 역대급 수익 이끈 아이콘을 대하는 클럽과 축협",
+    "views": 23888,
+    "gain": 3638
+   },
+   {
+    "id": "eMHW9EPF5_g",
+    "title": "손흥민 또 PL 공식 계정이 샤라웃 - 이적 후에도 계속되는 유럽 축구계의 압도적인 존중",
+    "views": 50042,
+    "gain": 2311
+   },
+   {
+    "id": "6WdpcGFmFgQ",
+    "title": "손흥민 세계적 명장과 함께 뛸 마지막 기회? - 아시안컵 연기로 한국 대표팀 정식감독 새판",
+    "views": 100931,
+    "gain": 838
+   }
+  ]
  }
 ]

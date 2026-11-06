@@ -1,26 +1,34 @@
 {
  "name": "스브스뉴스 (SBS)",
  "channel": "https://www.youtube.com/@subusunews",
- "checkedAt": "2026-11-06T14:53+09:00",
+ "checkedAt": "2026-11-06T19:38+09:00",
  "subscribers": "144만",
  "videos": [
   {
+   "id": "qZaeu4PJUps",
+   "title": "롯데홈쇼핑이 직접 교육하는 커머스 인재 학교? #shorts #스브스뉴스",
+   "views": 438,
+   "viewsText": "조회수 438회",
+   "published": "",
+   "kind": "short"
+  },
+  {
    "id": "bvbHkNEO3t8",
    "title": "이제 소풍 안 간다는 요즘 초등학교 근황 #초등학교 #shorts #스브스뉴스",
-   "views": 15000,
-   "viewsText": "조회수 1.5만회",
+   "views": 16000,
+   "viewsText": "조회수 1.6만회",
    "published": "",
    "kind": "short",
-   "gain": 4000
+   "gain": 1000
   },
   {
    "id": "6LRM6cDTkWU",
    "title": "여름에도 수능 치던 94학번들 #수능 #shorts #스브스뉴스",
-   "views": 9100,
-   "viewsText": "조회수 9.1천회",
+   "views": 9700,
+   "viewsText": "조회수 9.7천회",
    "published": "",
    "kind": "short",
-   "gain": 1200
+   "gain": 600
   },
   {
    "id": "bRGPA0qxe-w",
@@ -29,7 +37,7 @@
    "viewsText": "조회수 1.1만회",
    "published": "",
    "kind": "short",
-   "gain": 1800
+   "gain": 0
   },
   {
    "id": "Hi8hop0wrf0",
@@ -38,7 +46,7 @@
    "viewsText": "조회수 6천회",
    "published": "",
    "kind": "short",
-   "gain": 200
+   "gain": 0
   },
   {
    "id": "ZpNFj6J6dpk",
@@ -52,11 +60,11 @@
   {
    "id": "7gMpoQvh8JA",
    "title": "갈수록 심해지는 소년범죄 #촉법소년 #shorts #스브스뉴스",
-   "views": 4700,
-   "viewsText": "조회수 4.7천회",
+   "views": 4800,
+   "viewsText": "조회수 4.8천회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 100
   },
   {
    "id": "_S4dpnDTrkY",
@@ -101,7 +109,7 @@
    "viewsText": "조회수 5.1천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "X9iSvXsLJuY",
@@ -142,11 +150,11 @@
   {
    "id": "-fLcCSNSD34",
    "title": "1인 1음료 진짜 필수인지 카페 사장님들한테 직접 물어봤습니다. #카페 #shorts #스브스뉴스",
-   "views": 340000,
-   "viewsText": "조회수 34만회",
+   "views": 350000,
+   "viewsText": "조회수 35만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "4oWBAsVpDDw",
@@ -351,15 +359,6 @@
    "title": "\"손절 타이밍 다 놓쳤다…\" 파랗게 질린 개미들 '패닉' #주식 #shorts #스브스뉴스",
    "views": 19000,
    "viewsText": "조회수 1.9만회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "E1kNZVAMwcQ",
-   "title": "“좌회전 차로라 안 켰는데요?” 운전자들 줄줄이 4만 원 날린 이유 #과태료 #shorts #스브스뉴스",
-   "views": 32000,
-   "viewsText": "조회수 3.2만회",
    "published": "",
    "kind": "short",
    "gain": 0

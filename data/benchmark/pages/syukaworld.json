@@ -1,14 +1,22 @@
 {
  "name": "슈카월드",
  "channel": "https://www.youtube.com/@syukaworld",
- "checkedAt": "2026-11-06T14:53+09:00",
+ "checkedAt": "2026-11-06T19:38+09:00",
  "subscribers": "374만",
  "videos": [
   {
+   "id": "D32h_sPWp0g",
+   "title": "모르면 못받음",
+   "views": 3500,
+   "viewsText": "조회수 3.5천회",
+   "published": "",
+   "kind": "short"
+  },
+  {
    "id": "QvMjNxpMmPo",
    "title": "수능 주식 문제 1타 강사",
-   "views": 130000,
-   "viewsText": "조회수 13만회",
+   "views": 140000,
+   "viewsText": "조회수 14만회",
    "published": "",
    "kind": "short",
    "gain": 10000
@@ -16,11 +24,11 @@
   {
    "id": "prQUpQh_gko",
    "title": "형들 우리 어깨 걸고 함께 가는거 아니었어요?",
-   "views": 110000,
-   "viewsText": "조회수 11만회",
+   "views": 120000,
+   "viewsText": "조회수 12만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "JYKRXrbA5x4",
@@ -351,15 +359,6 @@
    "title": "AI가 발전하면 내 일은 줄어들까?",
    "views": 490000,
    "viewsText": "조회수 49만회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "Zs0Fpq51LF8",
-   "title": "주식 차트의 악랄함",
-   "views": 1660000,
-   "viewsText": "조회수 166만회",
    "published": "",
    "kind": "short",
    "gain": 0

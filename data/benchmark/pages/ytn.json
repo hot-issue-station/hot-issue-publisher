@@ -1,86 +1,185 @@
 {
  "name": "YTN",
  "channel": "https://www.youtube.com/@ytnnews24",
- "checkedAt": "2026-11-06T14:53+09:00",
+ "checkedAt": "2026-11-06T19:38+09:00",
  "subscribers": "543만",
  "videos": [
   {
-   "id": "R2Veh8qvb3c",
-   "title": "하늘에서 돌덩이가 내려와요 #shorts / YTN",
-   "views": 229,
-   "viewsText": "조회수 229회",
+   "id": "8S60R0-xwJA",
+   "title": "'그냥 세상 모든 게 다 싫었어요' / YTN",
+   "views": 730,
+   "viewsText": "조회수 730회",
    "published": "",
    "kind": "short"
+  },
+  {
+   "id": "qxzXsZYhfI4",
+   "title": "'154억' 사라졌다 #shorts / YTN",
+   "views": 8300,
+   "viewsText": "조회수 8.3천회",
+   "published": "",
+   "kind": "short"
+  },
+  {
+   "id": "yybk0MwCpOk",
+   "title": "시위는 요즘 세계 1등 #shorts / YTN",
+   "views": 3300,
+   "viewsText": "조회수 3.3천회",
+   "published": "",
+   "kind": "short"
+  },
+  {
+   "id": "FE7__k6Uucs",
+   "title": "전 국민 거지 됨 #shorts / YTN",
+   "views": 8000,
+   "viewsText": "조회수 8천회",
+   "published": "",
+   "kind": "short"
+  },
+  {
+   "id": "j0CYjFE-zgo",
+   "title": "\"제발 찾아주세요\" #shorts / YTN",
+   "views": 9500,
+   "viewsText": "조회수 9.5천회",
+   "published": "",
+   "kind": "short"
+  },
+  {
+   "id": "VqvtsixMGJQ",
+   "title": "선수 사랑은 역시 박항서 #shorts / YTN",
+   "views": 1800,
+   "viewsText": "조회수 1.8천회",
+   "published": "",
+   "kind": "short"
+  },
+  {
+   "id": "Mnkf8iuno10",
+   "title": "제주 고씨 : (흐뭇) #shorts / YTN",
+   "views": 5000,
+   "viewsText": "조회수 5천회",
+   "published": "",
+   "kind": "short"
+  },
+  {
+   "id": "3KgXJTylc6o",
+   "title": "'드라이브 스루'로 김장 담그기 #shorts / YTN",
+   "views": 11000,
+   "viewsText": "조회수 1.1만회",
+   "published": "",
+   "kind": "short"
+  },
+  {
+   "id": "7gTmrRzAiYs",
+   "title": "개봉 코앞에 두고... #shorts / YTN",
+   "views": 8900,
+   "viewsText": "조회수 8.9천회",
+   "published": "",
+   "kind": "short"
+  },
+  {
+   "id": "VXyDTtwVDwc",
+   "title": "올겨울 날씨 뒤흔들 엘니뇨 #shorts / YTN",
+   "views": 10000,
+   "viewsText": "조회수 1만회",
+   "published": "",
+   "kind": "short"
+  },
+  {
+   "id": "HdP1QTppZFk",
+   "title": "이번 주말 서울 도심 피하세요 #shorts / YTN",
+   "views": 4700,
+   "viewsText": "조회수 4.7천회",
+   "published": "",
+   "kind": "short"
+  },
+  {
+   "id": "ikxH7pg0HFA",
+   "title": "한밤중 아수라장 된 식당 #shorts / YTN",
+   "views": 4200,
+   "viewsText": "조회수 4.2천회",
+   "published": "",
+   "kind": "short"
+  },
+  {
+   "id": "R2Veh8qvb3c",
+   "title": "하늘에서 돌덩이가 내려와요 #shorts / YTN",
+   "views": 7200,
+   "viewsText": "조회수 7.2천회",
+   "published": "",
+   "kind": "short",
+   "gain": 6971
   },
   {
    "id": "XV61oOZQ92w",
    "title": "52년 만에 벌어진 일 #shorts / YTN",
-   "views": 48000,
-   "viewsText": "조회수 4.8만회",
+   "views": 87000,
+   "viewsText": "조회수 8.7만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 39000
   },
   {
    "id": "F7sbP4Y3UF8",
    "title": "데뷔 전부터 이런 계약을? #shorts / YTN",
-   "views": 37000,
-   "viewsText": "조회수 3.7만회",
+   "views": 47000,
+   "viewsText": "조회수 4.7만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 10000
   },
   {
    "id": "FgeFu-ccyGw",
    "title": "오바마·바이든 : 낄낄 #shorts / YTN",
-   "views": 150000,
-   "viewsText": "조회수 15만회",
+   "views": 160000,
+   "viewsText": "조회수 16만회",
    "published": "",
    "kind": "short",
-   "gain": 20000
+   "gain": 10000
   },
   {
    "id": "nLJ206KmIFU",
    "title": "60대 양수경에게 절대 없어지지 않는 것 / YTN",
-   "views": 5100,
-   "viewsText": "조회수 5.1천회",
+   "views": 5300,
+   "viewsText": "조회수 5.3천회",
    "published": "",
    "kind": "short",
-   "gain": 700
+   "gain": 200
   },
   {
    "id": "U3tYVRFqILw",
    "title": "하나 둘 늘어나더니... #shorts / YTN",
-   "views": 38000,
-   "viewsText": "조회수 3.8만회",
+   "views": 39000,
+   "viewsText": "조회수 3.9만회",
    "published": "",
    "kind": "short",
-   "gain": 3000
+   "gain": 1000
   },
   {
    "id": "KTX9vdp4-Ck",
    "title": "모든 게 꼬여버린 트럼프 #shorts / YTN",
-   "views": 71000,
-   "viewsText": "조회수 7.1만회",
+   "views": 72000,
+   "viewsText": "조회수 7.2만회",
    "published": "",
    "kind": "short",
-   "gain": 4000
+   "gain": 1000
   },
   {
    "id": "oa9D8ov4Xpo",
    "title": "트럼프 선거 참패 후폭풍 #shorts / YTN",
-   "views": 35000,
-   "viewsText": "조회수 3.5만회",
+   "views": 36000,
+   "viewsText": "조회수 3.6만회",
    "published": "",
    "kind": "short",
-   "gain": 5000
+   "gain": 1000
   },
   {
    "id": "hhgy_L8cykU",
    "title": "전문가는 '0명' #shorts / YTN",
-   "views": 7800,
-   "viewsText": "조회수 7.8천회",
+   "views": 8100,
+   "viewsText": "조회수 8.1천회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 300
   },
   {
    "id": "2zT9uRxdiks",
@@ -89,25 +188,25 @@
    "viewsText": "조회수 5.5만회",
    "published": "",
    "kind": "short",
-   "gain": 3000
+   "gain": 0
   },
   {
    "id": "9UUyzhLhQLI",
    "title": "'우리도 먹고 살아야지...' #shorts / YTN",
-   "views": 96000,
-   "viewsText": "조회수 9.6만회",
+   "views": 98000,
+   "viewsText": "조회수 9.8만회",
    "published": "",
    "kind": "short",
-   "gain": 5000
+   "gain": 2000
   },
   {
    "id": "pyjVss03Evk",
    "title": "워킹으로 나라 지키게? #shorts / YTN",
-   "views": 58000,
-   "viewsText": "조회수 5.8만회",
+   "views": 65000,
+   "viewsText": "조회수 6.5만회",
    "published": "",
    "kind": "short",
-   "gain": 16000
+   "gain": 7000
   },
   {
    "id": "lIH9gMJfY3k",
@@ -116,13 +215,13 @@
    "viewsText": "조회수 10만회",
    "published": "",
    "kind": "short",
-   "gain": 6000
+   "gain": 0
   },
   {
    "id": "bBzHFRwgbO4",
    "title": "믿었던 'MAGA'도 결국 #shorts / YTN",
-   "views": 150000,
-   "viewsText": "조회수 15만회",
+   "views": 160000,
+   "viewsText": "조회수 16만회",
    "published": "",
    "kind": "short",
    "gain": 10000
@@ -130,11 +229,11 @@
   {
    "id": "_aEmt_lNI84",
    "title": "이게 축구야 UFC야 #shorts / YTN",
-   "views": 31000,
-   "viewsText": "조회수 3.1만회",
+   "views": 34000,
+   "viewsText": "조회수 3.4만회",
    "published": "",
    "kind": "short",
-   "gain": 7000
+   "gain": 3000
   },
   {
    "id": "mZOjIgAbjZI",
@@ -143,34 +242,34 @@
    "viewsText": "조회수 1.6만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "myydaE8fB-w",
    "title": "돌아올 수 없는 길 #shorts / YTN",
-   "views": 23000,
-   "viewsText": "조회수 2.3만회",
+   "views": 24000,
+   "viewsText": "조회수 2.4만회",
+   "published": "",
+   "kind": "short",
+   "gain": 1000
+  },
+  {
+   "id": "JIjPJ_w-SUE",
+   "title": "내년부터 '이것' 바뀐다 #shorts / YTN",
+   "views": 66000,
+   "viewsText": "조회수 6.6만회",
    "published": "",
    "kind": "short",
    "gain": 3000
   },
   {
-   "id": "JIjPJ_w-SUE",
-   "title": "내년부터 '이것' 바뀐다 #shorts / YTN",
-   "views": 63000,
-   "viewsText": "조회수 6.3만회",
-   "published": "",
-   "kind": "short",
-   "gain": 6000
-  },
-  {
    "id": "fL4jEpyKOrE",
    "title": "쏟아지는 트럼프 조롱 밈 #shorts / YTN",
-   "views": 670000,
-   "viewsText": "조회수 67만회",
+   "views": 680000,
+   "viewsText": "조회수 68만회",
    "published": "",
    "kind": "short",
-   "gain": 60000
+   "gain": 10000
   },
   {
    "id": "s5zMYUE459g",
@@ -179,31 +278,31 @@
    "viewsText": "조회수 18만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "eOAiitecW8w",
    "title": "AI 차라리 없었다면... #shorts / YTN",
-   "views": 98000,
-   "viewsText": "조회수 9.8만회",
-   "published": "",
-   "kind": "short",
-   "gain": 6000
-  },
-  {
-   "id": "Qz-TkyFjBFo",
-   "title": "이란 : 꼴 좋다 ㅋㅋ #shorts / YTN",
-   "views": 49000,
-   "viewsText": "조회수 4.9만회",
+   "views": 100000,
+   "viewsText": "조회수 10만회",
    "published": "",
    "kind": "short",
    "gain": 2000
   },
   {
+   "id": "Qz-TkyFjBFo",
+   "title": "이란 : 꼴 좋다 ㅋㅋ #shorts / YTN",
+   "views": 50000,
+   "viewsText": "조회수 5만회",
+   "published": "",
+   "kind": "short",
+   "gain": 1000
+  },
+  {
    "id": "QfcyhXBHC9s",
    "title": "이유 없이 몸이 아프다면.. #shorts / 이슈의 서재 #ytn",
-   "views": 8400,
-   "viewsText": "조회수 8.4천회",
+   "views": 8500,
+   "viewsText": "조회수 8.5천회",
    "published": "",
    "kind": "short",
    "gain": 100
@@ -211,8 +310,8 @@
   {
    "id": "iYJ7KRzgph0",
    "title": "트럼프 매 맞을 시간 #shorts / YTN",
-   "views": 110000,
-   "viewsText": "조회수 11만회",
+   "views": 120000,
+   "viewsText": "조회수 12만회",
    "published": "",
    "kind": "short",
    "gain": 10000
@@ -224,16 +323,16 @@
    "viewsText": "조회수 24만회",
    "published": "",
    "kind": "short",
-   "gain": 20000
+   "gain": 0
   },
   {
    "id": "1QU8nWD01RI",
    "title": "침몰한 트럼프호 #shorts / YTN",
-   "views": 85000,
-   "viewsText": "조회수 8.5만회",
+   "views": 86000,
+   "viewsText": "조회수 8.6만회",
    "published": "",
    "kind": "short",
-   "gain": 3000
+   "gain": 1000
   },
   {
    "id": "1Lg8UQfXbw4",
@@ -242,124 +341,16 @@
    "viewsText": "조회수 13만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "fVJvYqoZbXk",
    "title": "트럼프 : 다 죽자 #shorts / YTN",
-   "views": 200000,
-   "viewsText": "조회수 20만회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "mUotY29A328",
-   "title": "애플이 꼽은 최악의 시나리오 #shorts / YTN",
-   "views": 21000,
-   "viewsText": "조회수 2.1만회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "fwXq2VLNbnc",
-   "title": "입맛이 바뀐 게 아니라.. #shorts / 이슈의 서재",
-   "views": 10000,
-   "viewsText": "조회수 1만회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "u8KDoL6COwo",
-   "title": "피해 교수 5㎝ 자상 입어 #shorts / YTN",
-   "views": 29000,
-   "viewsText": "조회수 2.9만회",
-   "published": "",
-   "kind": "short",
-   "gain": 1000
-  },
-  {
-   "id": "wPTY-XQGBdM",
-   "title": "쫄딱 젖은 찰스 3세 #shorts / YTN",
-   "views": 240000,
-   "viewsText": "조회수 24만회",
+   "views": 210000,
+   "viewsText": "조회수 21만회",
    "published": "",
    "kind": "short",
    "gain": 10000
-  },
-  {
-   "id": "KV9LAfaxqrE",
-   "title": "'샤이 트럼프'는 끝 #shorts / YTN",
-   "views": 120000,
-   "viewsText": "조회수 12만회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "AMjtrlK9zR4",
-   "title": "일할 때 예민해지는 거 나만 그래..? #shorts / 이슈의 서재",
-   "views": 4800,
-   "viewsText": "조회수 4.8천회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "vonpat742ww",
-   "title": "양치로도 안 없어질 느낌 #shorts / YTN",
-   "views": 94000,
-   "viewsText": "조회수 9.4만회",
-   "published": "",
-   "kind": "short",
-   "gain": 1000
-  },
-  {
-   "id": "VWCQQ6k61fE",
-   "title": "북한 해커들의 치밀한 수법 #shorts / YTN",
-   "views": 7500,
-   "viewsText": "조회수 7.5천회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "1zHV2fXdzbA",
-   "title": "K-팝 기강 잡으러 옴 ㄷㄷ #shorts / YTN",
-   "views": 6400,
-   "viewsText": "조회수 6.4천회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "2ta_PCGlqYE",
-   "title": "트럼프 응징 나선 미국 유권자들 #shorts / YTN",
-   "views": 40000,
-   "viewsText": "조회수 4만회",
-   "published": "",
-   "kind": "short",
-   "gain": 2000
-  },
-  {
-   "id": "e4qxM_42wh4",
-   "title": "리센느 'with' 극락…♥ #shorts / YTN",
-   "views": 6300,
-   "viewsText": "조회수 6.3천회",
-   "published": "",
-   "kind": "short",
-   "gain": 100
-  },
-  {
-   "id": "9uUXVb7z-Ek",
-   "title": "뼈 부러져도 의지로 붙여? #shorts / 이슈의 서재",
-   "views": 8000,
-   "viewsText": "조회수 8천회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
   }
  ]
 }
