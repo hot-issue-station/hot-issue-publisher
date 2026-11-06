@@ -1,17 +1,25 @@
 {
  "name": "슈카월드",
  "channel": "https://www.youtube.com/@syukaworld",
- "checkedAt": "2026-11-06T22:47+09:00",
+ "checkedAt": "2026-11-07T08:29+09:00",
  "subscribers": "374만",
  "videos": [
   {
+   "id": "lioIrGMoIbs",
+   "title": "좋은 사람 있으면 소개시켜줘",
+   "views": 25000,
+   "viewsText": "조회수 2.5만회",
+   "published": "",
+   "kind": "short"
+  },
+  {
    "id": "D32h_sPWp0g",
    "title": "모르면 못받음",
-   "views": 8400,
-   "viewsText": "조회수 8.4천회",
+   "views": 42000,
+   "viewsText": "조회수 4.2만회",
    "published": "",
    "kind": "short",
-   "gain": 4900
+   "gain": 33600
   },
   {
    "id": "QvMjNxpMmPo",
@@ -160,11 +168,11 @@
   {
    "id": "Fj1dHmEN5vI",
    "title": "유튜브 알고리즘의 노예가 되어가는 과정",
-   "views": 4120000,
-   "viewsText": "조회수 412만회",
+   "views": 4130000,
+   "viewsText": "조회수 413만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "tBmOG0of1q8",
@@ -351,15 +359,6 @@
    "title": "국방 예산이 어디가 늘어났지?",
    "views": 130000,
    "viewsText": "조회수 13만회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "yv1EAg-UwCk",
-   "title": "AI가 발전하면 내 일은 줄어들까?",
-   "views": 490000,
-   "viewsText": "조회수 49만회",
    "published": "",
    "kind": "short",
    "gain": 0
