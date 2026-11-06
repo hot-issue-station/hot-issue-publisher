@@ -1,0 +1,22 @@
+[
+ {
+  "slot": "PM",
+  "kind": "ECO",
+  "candidates": [
+   {
+    "title": "코스피 개장 3분 만에 8% 급락, 서킷브레이커 발동",
+    "scores": {
+     "coverage": 3,
+     "rankings": 2,
+     "fandom": 1,
+     "ourHistory": 1,
+     "freshness": 3,
+     "shareable": 2
+    },
+    "total": 25
+   }
+  ],
+  "picked": null,
+  "createdAt": "2026-11-06T11:30:00+09:00"
+ }
+]
