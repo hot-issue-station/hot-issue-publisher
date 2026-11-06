@@ -1,26 +1,26 @@
 {
  "name": "RESCENE 공식",
  "channel": "https://www.youtube.com/@RESCENE_official",
- "checkedAt": "2026-11-06T08:36+09:00",
- "subscribers": "135만",
+ "checkedAt": "2026-11-06T14:53+09:00",
+ "subscribers": "136만",
  "videos": [
   {
    "id": "GG1QgSloUkU",
    "title": "손댄스 막내즈 ver. 🤍🖤",
-   "views": 240000,
-   "viewsText": "조회수 24만회",
+   "views": 270000,
+   "viewsText": "조회수 27만회",
    "published": "",
    "kind": "short",
-   "gain": 110000
+   "gain": 30000
   },
   {
    "id": "xpaOFvA4K1g",
    "title": "손댄스 언니즈 ver. 🖤",
-   "views": 280000,
-   "viewsText": "조회수 28만회",
+   "views": 300000,
+   "viewsText": "조회수 30만회",
    "published": "",
    "kind": "short",
-   "gain": 100000
+   "gain": 20000
   },
   {
    "id": "_ldpW3AQWWA",
@@ -29,7 +29,7 @@
    "viewsText": "조회수 31만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "4wB0AyS4KSc",
@@ -38,34 +38,34 @@
    "viewsText": "조회수 18만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "kRY9NYgnXLM",
    "title": "With 🤍",
-   "views": 410000,
-   "viewsText": "조회수 41만회",
+   "views": 420000,
+   "viewsText": "조회수 42만회",
    "published": "",
    "kind": "short",
-   "gain": 20000
+   "gain": 10000
   },
   {
    "id": "KcTEkBTAP3I",
    "title": "D-1 🪽",
-   "views": 530000,
-   "viewsText": "조회수 53만회",
+   "views": 540000,
+   "viewsText": "조회수 54만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "sgZms-ImEx0",
    "title": "but you 🫵",
-   "views": 550000,
-   "viewsText": "조회수 55만회",
+   "views": 560000,
+   "viewsText": "조회수 56만회",
    "published": "",
    "kind": "short",
-   "gain": 30000
+   "gain": 10000
   },
   {
    "id": "EYrU4Zphz8s",
@@ -74,49 +74,49 @@
    "viewsText": "조회수 65만회",
    "published": "",
    "kind": "short",
-   "gain": 20000
+   "gain": 0
   },
   {
    "id": "VeZXkwf9esM",
    "title": "날 부르는 메아리 🔊",
-   "views": 770000,
-   "viewsText": "조회수 77만회",
+   "views": 780000,
+   "viewsText": "조회수 78만회",
+   "published": "",
+   "kind": "short",
+   "gain": 10000
+  },
+  {
+   "id": "ygE3V5CbllU",
+   "title": "너라는 꿈 ✨",
+   "views": 720000,
+   "viewsText": "조회수 72만회",
    "published": "",
    "kind": "short",
    "gain": 20000
   },
   {
-   "id": "ygE3V5CbllU",
-   "title": "너라는 꿈 ✨",
-   "views": 700000,
-   "viewsText": "조회수 70만회",
-   "published": "",
-   "kind": "short",
-   "gain": 30000
-  },
-  {
    "id": "A5vmiFpG1yg",
    "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #수이 님",
-   "views": 700000,
-   "viewsText": "조회수 70만회",
+   "views": 710000,
+   "viewsText": "조회수 71만회",
    "published": "",
    "kind": "short",
-   "gain": 30000
+   "gain": 10000
   },
   {
    "id": "Es3qasE2w7w",
    "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #지훈 선배님",
-   "views": 830000,
-   "viewsText": "조회수 83만회",
+   "views": 840000,
+   "viewsText": "조회수 84만회",
    "published": "",
    "kind": "short",
-   "gain": 40000
+   "gain": 10000
   },
   {
    "id": "_KseVSTX0KU",
    "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #니나 선배님",
-   "views": 690000,
-   "viewsText": "조회수 69만회",
+   "views": 700000,
+   "viewsText": "조회수 70만회",
    "published": "",
    "kind": "short",
    "gain": 10000
@@ -128,7 +128,7 @@
    "viewsText": "조회수 91만회",
    "published": "",
    "kind": "short",
-   "gain": 20000
+   "gain": 0
   },
   {
    "id": "pekjAyOrBk4",
@@ -142,11 +142,11 @@
   {
    "id": "QEeCIDjleC8",
    "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #나띠 #하늘 선배님",
-   "views": 800000,
-   "viewsText": "조회수 80만회",
+   "views": 810000,
+   "viewsText": "조회수 81만회",
    "published": "",
    "kind": "short",
-   "gain": 20000
+   "gain": 10000
   },
   {
    "id": "UfaJ4mbAiWc",
@@ -155,7 +155,7 @@
    "viewsText": "조회수 105만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "HN7La9KN2MY",
@@ -164,7 +164,7 @@
    "viewsText": "조회수 56만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "k7y2yvkFJ1k",
@@ -173,7 +173,7 @@
    "viewsText": "조회수 115만회",
    "published": "",
    "kind": "short",
-   "gain": 20000
+   "gain": 0
   },
   {
    "id": "zHwTN5Yu-mI",
@@ -259,11 +259,11 @@
   {
    "id": "Fm_iD_mh2ek",
    "title": "먼저 눈 피하는 사람이 지는 거다?",
-   "views": 540000,
-   "viewsText": "조회수 54만회",
+   "views": 550000,
+   "viewsText": "조회수 55만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "Cyx4FBPJqQQ",
@@ -317,7 +317,7 @@
    "viewsText": "조회수 141만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "NvcektCUDIk",
@@ -331,8 +331,8 @@
   {
    "id": "qLG9tFkOhdo",
    "title": "🖤🤍",
-   "views": 1080000,
-   "viewsText": "조회수 108만회",
+   "views": 1090000,
+   "viewsText": "조회수 109만회",
    "published": "",
    "kind": "short",
    "gain": 10000
@@ -362,7 +362,7 @@
    "viewsText": "조회수 91만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   }
  ]
 }

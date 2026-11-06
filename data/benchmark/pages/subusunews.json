@@ -1,44 +1,44 @@
 {
  "name": "스브스뉴스 (SBS)",
  "channel": "https://www.youtube.com/@subusunews",
- "checkedAt": "2026-11-06T08:36+09:00",
+ "checkedAt": "2026-11-06T14:53+09:00",
  "subscribers": "144만",
  "videos": [
   {
    "id": "bvbHkNEO3t8",
    "title": "이제 소풍 안 간다는 요즘 초등학교 근황 #초등학교 #shorts #스브스뉴스",
-   "views": 11000,
-   "viewsText": "조회수 1.1만회",
+   "views": 15000,
+   "viewsText": "조회수 1.5만회",
    "published": "",
    "kind": "short",
-   "gain": 9000
+   "gain": 4000
   },
   {
    "id": "6LRM6cDTkWU",
    "title": "여름에도 수능 치던 94학번들 #수능 #shorts #스브스뉴스",
-   "views": 7900,
-   "viewsText": "조회수 7.9천회",
+   "views": 9100,
+   "viewsText": "조회수 9.1천회",
    "published": "",
    "kind": "short",
-   "gain": 5200
+   "gain": 1200
   },
   {
    "id": "bRGPA0qxe-w",
    "title": "햇반이 해외에서 인기인 의외의 이유 #shorts / 스브스뉴스",
-   "views": 9200,
-   "viewsText": "조회수 9.2천회",
+   "views": 11000,
+   "viewsText": "조회수 1.1만회",
    "published": "",
    "kind": "short",
-   "gain": 5600
+   "gain": 1800
   },
   {
    "id": "Hi8hop0wrf0",
    "title": "북한이 해킹 주범으로 지목되자 신속하게 대응한 이유 #북한 #shorts #스브스뉴스",
-   "views": 5800,
-   "viewsText": "조회수 5.8천회",
+   "views": 6000,
+   "viewsText": "조회수 6천회",
    "published": "",
    "kind": "short",
-   "gain": 300
+   "gain": 200
   },
   {
    "id": "ZpNFj6J6dpk",
@@ -47,7 +47,7 @@
    "viewsText": "조회수 1.1만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "7gMpoQvh8JA",
@@ -56,7 +56,7 @@
    "viewsText": "조회수 4.7천회",
    "published": "",
    "kind": "short",
-   "gain": 200
+   "gain": 0
   },
   {
    "id": "_S4dpnDTrkY",
@@ -97,11 +97,11 @@
   {
    "id": "fMk1x_SAtmI",
    "title": "업데이트된 시리 진짜 쓸 만한 거임? #시리 #shorts #스브스뉴스",
-   "views": 5000,
-   "viewsText": "조회수 5천회",
+   "views": 5100,
+   "viewsText": "조회수 5.1천회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 100
   },
   {
    "id": "X9iSvXsLJuY",
@@ -146,7 +146,7 @@
    "viewsText": "조회수 34만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "4oWBAsVpDDw",

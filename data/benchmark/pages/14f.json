@@ -1,40 +1,49 @@
 {
  "name": "14F 일사에프 (MBC)",
  "channel": "https://www.youtube.com/@14FMBC",
- "checkedAt": "2026-11-06T08:36+09:00",
+ "checkedAt": "2026-11-06T14:53+09:00",
  "subscribers": "239만",
  "videos": [
   {
-   "id": "UjJznEbPKrw",
-   "title": "북극항로에 베팅한 한국의 큰 그림? #shorts",
-   "views": 645,
-   "viewsText": "조회수 645회",
+   "id": "raKKyS-VS5k",
+   "title": "샤인머스캣 가격 폭락 막기 힘든 이유 #shorts",
+   "views": 1500,
+   "viewsText": "조회수 1.5천회",
    "published": "",
    "kind": "short"
   },
   {
-   "id": "uq0xvYN3L9I",
-   "title": "일본 화물이 부산항에 몰리는 이유 #shorts",
-   "views": 30000,
-   "viewsText": "조회수 3만회",
+   "id": "UjJznEbPKrw",
+   "title": "북극항로에 베팅한 한국의 큰 그림? #shorts",
+   "views": 3600,
+   "viewsText": "조회수 3.6천회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 2955
+  },
+  {
+   "id": "uq0xvYN3L9I",
+   "title": "일본 화물이 부산항에 몰리는 이유 #shorts",
+   "views": 36000,
+   "viewsText": "조회수 3.6만회",
+   "published": "",
+   "kind": "short",
+   "gain": 6000
   },
   {
    "id": "G63QFaqloJQ",
    "title": "샤인머스캣으로 얼마나 벌었을까? #shorts",
-   "views": 6000,
-   "viewsText": "조회수 6천회",
+   "views": 6700,
+   "viewsText": "조회수 6.7천회",
    "published": "",
    "kind": "short",
-   "gain": 800
+   "gain": 700
   },
   {
    "id": "peSpC5kd2t0",
    "title": "홍채로도 운세를 볼 수 있다? #shorts",
-   "views": 9000,
-   "viewsText": "조회수 9천회",
+   "views": 9100,
+   "viewsText": "조회수 9.1천회",
    "published": "",
    "kind": "short",
    "gain": 100
@@ -42,11 +51,11 @@
   {
    "id": "yoyqnf-PE30",
    "title": "우리 집 강아지의 전생을 알 수 있다? #shorts",
-   "views": 5500,
-   "viewsText": "조회수 5.5천회",
+   "views": 5600,
+   "viewsText": "조회수 5.6천회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 100
   },
   {
    "id": "FV2VNAPmk-o",
@@ -55,7 +64,7 @@
    "viewsText": "조회수 1.2만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "M_z0WM3-GO8",
@@ -350,15 +359,6 @@
    "title": "영국인 냉장고에 꼭 있다는 버터 #shorts",
    "views": 16000,
    "viewsText": "조회수 1.6만회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "j8_slSopWsU",
-   "title": "이스라엘의 진짜 문제는 내부에 있다? #shorts",
-   "views": 9200,
-   "viewsText": "조회수 9.2천회",
    "published": "",
    "kind": "short",
    "gain": 0

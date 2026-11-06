@@ -1,17 +1,17 @@
 {
  "name": "안원잘부",
  "channel": "https://www.youtube.com/@helloiamwoninicetomeetyou",
- "checkedAt": "2026-11-06T08:36+09:00",
+ "checkedAt": "2026-11-06T14:53+09:00",
  "subscribers": "241만",
  "videos": [
   {
    "id": "kfK-LENbEUo",
    "title": "정작가의 컴백을 축하합니다",
-   "views": 1330000,
-   "viewsText": "조회수 133만회",
+   "views": 1350000,
+   "viewsText": "조회수 135만회",
    "published": "",
    "kind": "short",
-   "gain": 90000
+   "gain": 20000
   },
   {
    "id": "DKDmFgXzxs8",
@@ -20,7 +20,7 @@
    "viewsText": "조회수 257만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "zxNoW_LtVLE",
@@ -29,7 +29,7 @@
    "viewsText": "조회수 273만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "mFM2hP5LEhM",
@@ -38,7 +38,7 @@
    "viewsText": "조회수 318만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "xCvbDeMKm3E",
@@ -47,7 +47,7 @@
    "viewsText": "조회수 610만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "GsYq_ouLAMQ",
@@ -56,7 +56,7 @@
    "viewsText": "조회수 538만회",
    "published": "",
    "kind": "short",
-   "gain": 20000
+   "gain": 0
   },
   {
    "id": "BUeZskDCMpU",
@@ -65,7 +65,7 @@
    "viewsText": "조회수 290만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "7Q_myxhlcwE",
@@ -74,7 +74,7 @@
    "viewsText": "조회수 177만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "COnZ3rYrAXc",
@@ -92,13 +92,13 @@
    "viewsText": "조회수 330만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "o-B0F16GwL0",
    "title": "[B컷] 의자 안 돌아가요",
-   "views": 13380000,
-   "viewsText": "조회수 1338만회",
+   "views": 13390000,
+   "viewsText": "조회수 1339만회",
    "published": "",
    "kind": "short",
    "gain": 10000
@@ -106,11 +106,11 @@
   {
    "id": "gNJrbCSN2TM",
    "title": "백제자객과 프리티걸",
-   "views": 4660000,
-   "viewsText": "조회수 466만회",
+   "views": 4670000,
+   "viewsText": "조회수 467만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "F5CbMShscuk",
@@ -119,7 +119,7 @@
    "viewsText": "조회수 161만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "VUufd3Hd_2Q",
@@ -142,11 +142,11 @@
   {
    "id": "jilQNKreZBM",
    "title": "원이의 꿈",
-   "views": 910000,
-   "viewsText": "조회수 91만회",
+   "views": 920000,
+   "viewsText": "조회수 92만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "FxbR-V8GOjE",
@@ -196,11 +196,11 @@
   {
    "id": "beKjAiS8n44",
    "title": "쪽팔려게임",
-   "views": 2560000,
-   "viewsText": "조회수 256만회",
+   "views": 2570000,
+   "viewsText": "조회수 257만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "Gnf3QzdopbM",
@@ -263,7 +263,7 @@
    "viewsText": "조회수 752만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "6cPEEeEAKiM",
@@ -322,11 +322,11 @@
   {
    "id": "gRESmZMqlFA",
    "title": "고윤정이 2명",
-   "views": 5460000,
-   "viewsText": "조회수 546만회",
+   "views": 5470000,
+   "viewsText": "조회수 547만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "xsNWeKpL5IQ",
@@ -362,7 +362,7 @@
    "viewsText": "조회수 395만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   }
  ]
 }
