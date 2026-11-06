@@ -62,5 +62,45 @@
   ],
   "picked": null,
   "createdAt": "2026-11-06T17:50:00+09:00"
+ },
+ {
+  "slot": "NT",
+  "kind": "ENT",
+  "candidates": [
+   {
+    "title": "내일 KGMA 고척 개막, 이틀간 40팀",
+    "scores": {
+     "coverage": 2,
+     "rankings": 1,
+     "fandom": 3,
+     "ourHistory": 2,
+     "freshness": 3,
+     "shareable": 2
+    },
+    "total": 29
+   }
+  ],
+  "picked": null,
+  "createdAt": "2026-11-06T20:20:00+09:00"
+ },
+ {
+  "slot": "NT",
+  "kind": "SPO",
+  "candidates": [
+   {
+    "title": "안세영 53연승, 코리아오픈 4강행",
+    "scores": {
+     "coverage": 2,
+     "rankings": 1,
+     "fandom": 3,
+     "ourHistory": 2,
+     "freshness": 3,
+     "shareable": 3
+    },
+    "total": 31
+   }
+  ],
+  "picked": null,
+  "createdAt": "2026-11-06T20:20:00+09:00"
  }
 ]
