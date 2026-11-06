@@ -1,0 +1,46 @@
+[
+ {
+  "slot": "AM",
+  "kind": "SON",
+  "candidates": [
+   {
+    "title": "손흥민 A매치 59골, 차범근 58골 넘다",
+    "scores": {
+     "coverage": 3,
+     "rankings": 1,
+     "fandom": 3,
+     "ourHistory": 2,
+     "freshness": 0,
+     "shareable": 3
+    },
+    "total": 27
+   },
+   {
+    "title": "월드컵 3골, 박지성·안정환과 공동 1위",
+    "scores": {
+     "coverage": 2,
+     "rankings": 0,
+     "fandom": 3,
+     "ourHistory": 2,
+     "freshness": 0,
+     "shareable": 3
+    },
+    "total": 23
+   },
+   {
+    "title": "페널티킥 없이 EPL 득점왕, 23골",
+    "scores": {
+     "coverage": 2,
+     "rankings": 0,
+     "fandom": 3,
+     "ourHistory": 2,
+     "freshness": 0,
+     "shareable": 2
+    },
+    "total": 21
+   }
+  ],
+  "picked": null,
+  "createdAt": "2026-11-06T23:30:00+09:00"
+ }
+]
