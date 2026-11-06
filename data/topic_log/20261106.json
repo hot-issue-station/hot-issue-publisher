@@ -18,5 +18,49 @@
   ],
   "picked": null,
   "createdAt": "2026-11-06T11:30:00+09:00"
+ },
+ {
+  "slot": "RS",
+  "kind": "RS",
+  "candidates": [
+   {
+    "title": "내일 KGMA, 원이는 MC·리센느는 무대",
+    "scores": {
+     "coverage": 1,
+     "rankings": 0,
+     "fandom": 3,
+     "ourHistory": 3,
+     "freshness": 3,
+     "shareable": 2
+    },
+    "total": 27
+   },
+   {
+    "title": "컴백 주 차트: 핫100 1~5위, 3사 1위",
+    "scores": {
+     "coverage": 1,
+     "rankings": 1,
+     "fandom": 3,
+     "ourHistory": 3,
+     "freshness": 1,
+     "shareable": 3
+    },
+    "total": 27
+   },
+   {
+    "title": "이번 앨범의 향은 '머스크', 심장박동 콘셉트",
+    "scores": {
+     "coverage": 1,
+     "rankings": 0,
+     "fandom": 3,
+     "ourHistory": 3,
+     "freshness": 1,
+     "shareable": 3
+    },
+    "total": 25
+   }
+  ],
+  "picked": null,
+  "createdAt": "2026-11-06T17:50:00+09:00"
  }
 ]
