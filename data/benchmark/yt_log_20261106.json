@@ -353,5 +353,161 @@
     "gain": 838
    }
   ]
+ },
+ {
+  "at": "2026-11-06T22:47+09:00",
+  "key": "14f",
+  "ok": true,
+  "new": [],
+  "top": [
+   {
+    "id": "kycuo7xf6zk",
+    "title": "“여행 어디로 가지…” 이왕 간다면 인구소멸 지역 돕는 '이 곳' 주목! / 14F",
+    "views": 12788,
+    "gain": 9950
+   },
+   {
+    "id": "87w5P7QW2vM",
+    "title": "밤 중에도 안전하다고… 외국인들이 깜짝 놀란다는 ‘K-편의점’/ 14F",
+    "views": 300221,
+    "gain": 3081
+   },
+   {
+    "id": "eOXSE6dyRsY",
+    "title": "샤인머스캣 개발한 일본이 땅을 치고 후회하는 이유🥄ㅣ돈슐랭 / 14F",
+    "views": 375589,
+    "gain": 2586
+   }
+  ]
+ },
+ {
+  "at": "2026-11-06T22:47+09:00",
+  "key": "subusunews",
+  "ok": true,
+  "new": [],
+  "top": [
+   {
+    "id": "Zq1d5ckccFQ",
+    "title": "극단적이었던 재민 입맛",
+    "views": 25060,
+    "gain": 1218
+   },
+   {
+    "id": "peMHRTigrOo",
+    "title": "김치찜 먹는 지성이만 봐도 배가 불렀던 재민",
+    "views": 13028,
+    "gain": 1001
+   },
+   {
+    "id": "53YmGEQcPg8",
+    "title": "형이랑 놀았던 시간은 참 재밌었는데, 형은 어땠어?ㅣ우리 사이엔 편지가 있다2 EP.10 엔시티드림 재민&지성",
+    "views": 150656,
+    "gain": 802
+   }
+  ]
+ },
+ {
+  "at": "2026-11-06T22:47+09:00",
+  "key": "vstudio",
+  "ok": true,
+  "new": [],
+  "top": []
+ },
+ {
+  "at": "2026-11-06T22:47+09:00",
+  "key": "syukaworld",
+  "ok": true,
+  "new": [
+   "OeJ-JKlNv_s",
+   "ay3FXHM03T8"
+  ],
+  "top": [
+   {
+    "id": "tK3p2DelS-c",
+    "title": "[니니의 시황방송] 11월6일ㅣ코스피에 체포당했어",
+    "views": 97244,
+    "gain": 27764
+   },
+   {
+    "id": "sYr_AxQcpik",
+    "title": "하락장 유머",
+    "views": 30116,
+    "gain": 16248
+   },
+   {
+    "id": "SmbFOtTIot0",
+    "title": "하보노님 살려주세요",
+    "views": 49770,
+    "gain": 7926
+   }
+  ]
+ },
+ {
+  "at": "2026-11-06T22:47+09:00",
+  "key": "ytn",
+  "ok": true,
+  "new": [
+   "fhLV4_FxX6k",
+   "BsR_pic9INE",
+   "xi2SBmOrVsc",
+   "X0X4fjrQpW8",
+   "0f4kLdrR6nI",
+   "q5An3k-kKRA",
+   "MnuFSj9MJjE",
+   "dMktvfekeB0",
+   "sSJLJmzusMw",
+   "hg7WsZj8S90",
+   "dw-laNZmDzs",
+   "QM2cgGt3zEs",
+   "ICF31DU2btY",
+   "wnjtlws5nLA",
+   "WKqBKz_WMdo"
+  ],
+  "top": [
+   {
+    "id": "xi2SBmOrVsc",
+    "title": "믿었던 미국마저 돌아섰나...이스라엘 안보 '초비상' [이슈픽] / YTN",
+    "views": 16911,
+    "gain": null
+   },
+   {
+    "id": "BsR_pic9INE",
+    "title": "\"미국 역사상 가장 부패한 대통령\"...트럼프 일가에 칼날 겨눈 민주당 [이슈픽] / YTN",
+    "views": 7348,
+    "gain": null
+   },
+   {
+    "id": "sSJLJmzusMw",
+    "title": "강한 남자의 굴욕?...트럼프 패러디가 웃긴 이유 / YTN",
+    "views": 4831,
+    "gain": null
+   }
+  ]
+ },
+ {
+  "at": "2026-11-06T22:47+09:00",
+  "key": "storyk",
+  "ok": true,
+  "new": [],
+  "top": [
+   {
+    "id": "aGdX-njap_8",
+    "title": "김예건 한국 역대 최연소 2위 유럽대항전 출전 - 명문팀 거절하고 1군 노린 18살유망주",
+    "views": 4003,
+    "gain": 3831
+   },
+   {
+    "id": "XnpYo8kDzQo",
+    "title": "손흥민 상업성 끝판왕 미국 경제지의 극찬 - 역대급 수익 이끈 아이콘을 대하는 클럽과 축협",
+    "views": 24351,
+    "gain": 463
+   },
+   {
+    "id": "eMHW9EPF5_g",
+    "title": "손흥민 또 PL 공식 계정이 샤라웃 - 이적 후에도 계속되는 유럽 축구계의 압도적인 존중",
+    "views": 50426,
+    "gain": 384
+   }
+  ]
  }
 ]

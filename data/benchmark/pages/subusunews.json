@@ -1,22 +1,23 @@
 {
  "name": "스브스뉴스 (SBS)",
  "channel": "https://www.youtube.com/@subusunews",
- "checkedAt": "2026-11-06T19:38+09:00",
+ "checkedAt": "2026-11-06T22:47+09:00",
  "subscribers": "144만",
  "videos": [
   {
    "id": "qZaeu4PJUps",
    "title": "롯데홈쇼핑이 직접 교육하는 커머스 인재 학교? #shorts #스브스뉴스",
-   "views": 438,
-   "viewsText": "조회수 438회",
+   "views": 742,
+   "viewsText": "조회수 742회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 304
   },
   {
    "id": "bvbHkNEO3t8",
    "title": "이제 소풍 안 간다는 요즘 초등학교 근황 #초등학교 #shorts #스브스뉴스",
-   "views": 16000,
-   "viewsText": "조회수 1.6만회",
+   "views": 17000,
+   "viewsText": "조회수 1.7만회",
    "published": "",
    "kind": "short",
    "gain": 1000
@@ -24,20 +25,20 @@
   {
    "id": "6LRM6cDTkWU",
    "title": "여름에도 수능 치던 94학번들 #수능 #shorts #스브스뉴스",
-   "views": 9700,
-   "viewsText": "조회수 9.7천회",
+   "views": 10000,
+   "viewsText": "조회수 1만회",
    "published": "",
    "kind": "short",
-   "gain": 600
+   "gain": 300
   },
   {
    "id": "bRGPA0qxe-w",
    "title": "햇반이 해외에서 인기인 의외의 이유 #shorts / 스브스뉴스",
-   "views": 11000,
-   "viewsText": "조회수 1.1만회",
+   "views": 12000,
+   "viewsText": "조회수 1.2만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 1000
   },
   {
    "id": "Hi8hop0wrf0",
@@ -64,7 +65,7 @@
    "viewsText": "조회수 4.8천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "_S4dpnDTrkY",
@@ -154,7 +155,7 @@
    "viewsText": "조회수 35만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "4oWBAsVpDDw",

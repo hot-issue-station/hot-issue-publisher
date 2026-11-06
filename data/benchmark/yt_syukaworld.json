@@ -3,20 +3,46 @@
  "name": "슈카월드",
  "channel": "https://www.youtube.com/@syukaworld",
  "channelId": "UCJo6G1u0e_-wS-JQn3T-zEw",
- "checkedAt": "2026-11-06T19:38+09:00",
+ "checkedAt": "2026-11-06T22:47+09:00",
  "videos": [
+  {
+   "id": "OeJ-JKlNv_s",
+   "title": "우리가 코스피로 돈을 벌었다고?",
+   "published": "2026-11-06T12:43:23+00:00",
+   "url": "https://www.youtube.com/shorts/OeJ-JKlNv_s",
+   "shorts": true,
+   "views": 10457,
+   "likes": 99,
+   "viewsGain": null,
+   "isNew": true,
+   "median": 49770,
+   "multiple": 0.2
+  },
+  {
+   "id": "ay3FXHM03T8",
+   "title": "주식이 떨어지면 뭘 해야할까",
+   "published": "2026-11-06T12:31:37+00:00",
+   "url": "https://www.youtube.com/shorts/ay3FXHM03T8",
+   "shorts": true,
+   "views": 10455,
+   "likes": 215,
+   "viewsGain": null,
+   "isNew": true,
+   "median": 49770,
+   "multiple": 0.2
+  },
   {
    "id": "ri2GLNjEM_s",
    "title": "불안한 주식시장에 내 노후를 맡겨도 될까요",
    "published": "2026-11-06T09:23:54+00:00",
    "url": "https://www.youtube.com/watch?v=ri2GLNjEM_s",
    "shorts": false,
-   "views": 2420,
-   "likes": 186,
-   "viewsGain": null,
-   "isNew": true,
-   "median": 130537.5,
-   "multiple": 0.0
+   "views": 8529,
+   "likes": 430,
+   "viewsGain": 6109,
+   "isNew": false,
+   "median": 130702.0,
+   "multiple": 0.1
   },
   {
    "id": "sYr_AxQcpik",
@@ -24,12 +50,12 @@
    "published": "2026-11-06T08:13:05+00:00",
    "url": "https://www.youtube.com/shorts/sYr_AxQcpik",
    "shorts": true,
-   "views": 13868,
-   "likes": 487,
-   "viewsGain": null,
-   "isNew": true,
-   "median": 141689,
-   "multiple": 0.1
+   "views": 30116,
+   "likes": 968,
+   "viewsGain": 16248,
+   "isNew": false,
+   "median": 49770,
+   "multiple": 0.6
   },
   {
    "id": "tK3p2DelS-c",
@@ -37,12 +63,12 @@
    "published": "2026-11-06T06:44:00+00:00",
    "url": "https://www.youtube.com/watch?v=tK3p2DelS-c",
    "shorts": false,
-   "views": 69480,
-   "likes": 870,
-   "viewsGain": null,
-   "isNew": true,
-   "median": 130537.5,
-   "multiple": 0.5
+   "views": 97244,
+   "likes": 913,
+   "viewsGain": 27764,
+   "isNew": false,
+   "median": 130702.0,
+   "multiple": 0.7
   },
   {
    "id": "SmbFOtTIot0",
@@ -50,12 +76,12 @@
    "published": "2026-11-06T03:49:57+00:00",
    "url": "https://www.youtube.com/shorts/SmbFOtTIot0",
    "shorts": true,
-   "views": 41844,
-   "likes": 602,
-   "viewsGain": null,
-   "isNew": true,
-   "median": 141689,
-   "multiple": 0.3
+   "views": 49770,
+   "likes": 671,
+   "viewsGain": 7926,
+   "isNew": false,
+   "median": 49770,
+   "multiple": 1.0
   },
   {
    "id": "LYXceDpsPYA",
@@ -63,12 +89,12 @@
    "published": "2026-11-05T09:15:17+00:00",
    "url": "https://www.youtube.com/shorts/LYXceDpsPYA",
    "shorts": true,
-   "views": 141689,
-   "likes": 940,
-   "viewsGain": 23486,
+   "views": 144331,
+   "likes": 959,
+   "viewsGain": 2642,
    "isNew": false,
-   "median": 141689,
-   "multiple": 1.0
+   "median": 49770,
+   "multiple": 2.9
   },
   {
    "id": "_8ANk19Ku6A",
@@ -76,12 +102,12 @@
    "published": "2026-11-05T08:56:40+00:00",
    "url": "https://www.youtube.com/shorts/_8ANk19Ku6A",
    "shorts": true,
-   "views": 121519,
-   "likes": 644,
-   "viewsGain": 10937,
+   "views": 122858,
+   "likes": 641,
+   "viewsGain": 1339,
    "isNew": false,
-   "median": 141689,
-   "multiple": 0.9
+   "median": 49770,
+   "multiple": 2.5
   },
   {
    "id": "xsGGzlRlXy8",
@@ -89,12 +115,12 @@
    "published": "2026-11-05T08:28:38+00:00",
    "url": "https://www.youtube.com/shorts/xsGGzlRlXy8",
    "shorts": true,
-   "views": 44951,
-   "likes": 349,
-   "viewsGain": 6767,
+   "views": 45885,
+   "likes": 353,
+   "viewsGain": 934,
    "isNew": false,
-   "median": 141689,
-   "multiple": 0.3
+   "median": 49770,
+   "multiple": 0.9
   },
   {
    "id": "MllkP70RRXg",
@@ -102,11 +128,11 @@
    "published": "2026-11-05T06:40:26+00:00",
    "url": "https://www.youtube.com/watch?v=MllkP70RRXg",
    "shorts": false,
-   "views": 191536,
-   "likes": 1293,
-   "viewsGain": 9993,
+   "views": 192725,
+   "likes": 1292,
+   "viewsGain": 1189,
    "isNew": false,
-   "median": 130537.5,
+   "median": 130702.0,
    "multiple": 1.5
   },
   {
@@ -115,11 +141,11 @@
    "published": "2026-11-03T09:00:07+00:00",
    "url": "https://www.youtube.com/watch?v=Xyk-we1Ehs8",
    "shorts": false,
-   "views": 269341,
-   "likes": 1388,
-   "viewsGain": 7314,
+   "views": 270704,
+   "likes": 1393,
+   "viewsGain": 1363,
    "isNew": false,
-   "median": 130537.5,
+   "median": 130702.0,
    "multiple": 2.1
   },
   {
@@ -128,12 +154,12 @@
    "published": "2026-11-03T08:00:16+00:00",
    "url": "https://www.youtube.com/shorts/KJDqpAOSco0",
    "shorts": true,
-   "views": 289323,
-   "likes": 1791,
-   "viewsGain": 8501,
+   "views": 290247,
+   "likes": 1801,
+   "viewsGain": 924,
    "isNew": false,
-   "median": 141689,
-   "multiple": 2.0
+   "median": 49770,
+   "multiple": 5.8
   },
   {
    "id": "hSerS0aG3Vc",
@@ -141,11 +167,11 @@
    "published": "2026-11-03T06:39:41+00:00",
    "url": "https://www.youtube.com/watch?v=hSerS0aG3Vc",
    "shorts": false,
-   "views": 115067,
+   "views": 115225,
    "likes": 860,
-   "viewsGain": 328,
+   "viewsGain": 158,
    "isNew": false,
-   "median": 130537.5,
+   "median": 130702.0,
    "multiple": 0.9
   },
   {
@@ -154,12 +180,12 @@
    "published": "2026-11-03T03:28:00+00:00",
    "url": "https://www.youtube.com/shorts/YJB4I75hcmc",
    "shorts": true,
-   "views": 200408,
-   "likes": 1727,
-   "viewsGain": 8397,
+   "views": 201396,
+   "likes": 1742,
+   "viewsGain": 988,
    "isNew": false,
-   "median": 141689,
-   "multiple": 1.4
+   "median": 49770,
+   "multiple": 4.0
   },
   {
    "id": "btP-S4xd8m8",
@@ -167,54 +193,49 @@
    "published": "2026-11-02T12:20:40+00:00",
    "url": "https://www.youtube.com/watch?v=btP-S4xd8m8",
    "shorts": false,
-   "views": 146008,
-   "likes": 925,
-   "viewsGain": 320,
+   "views": 146179,
+   "likes": 926,
+   "viewsGain": 171,
    "isNew": false,
-   "median": 130537.5,
-   "multiple": 1.1
-  },
-  {
-   "id": "adtTTCDTFF8",
-   "title": "30년 동안 뭐했니",
-   "published": "2026-11-02T02:41:14+00:00",
-   "url": "https://www.youtube.com/shorts/adtTTCDTFF8",
-   "shorts": true,
-   "views": 153130,
-   "likes": 865,
-   "viewsGain": 4724,
-   "isNew": false,
-   "median": 141689,
-   "multiple": 1.1
-  },
-  {
-   "id": "lO1KCuPlcuo",
-   "title": "돈나무 누나가 알려주는 면접팁",
-   "published": "2026-11-02T02:38:09+00:00",
-   "url": "https://www.youtube.com/shorts/lO1KCuPlcuo",
-   "shorts": true,
-   "views": 153917,
-   "likes": 1687,
-   "viewsGain": 1930,
-   "isNew": false,
-   "median": 141689,
+   "median": 130702.0,
    "multiple": 1.1
   }
  ],
  "viral": [
   {
-   "title": "반도체 수요가 있어요? 그럼 됐네",
-   "url": "https://www.youtube.com/watch?v=Xyk-we1Ehs8",
-   "views": 269341,
-   "multiple": 2.1,
-   "shorts": false
-  },
-  {
    "title": "니니가 물타기 못하는 이유",
    "url": "https://www.youtube.com/shorts/KJDqpAOSco0",
-   "views": 289323,
-   "multiple": 2.0,
+   "views": 290247,
+   "multiple": 5.8,
    "shorts": true
+  },
+  {
+   "title": "인생에 역경이 올 때 뭐 살까요?",
+   "url": "https://www.youtube.com/shorts/YJB4I75hcmc",
+   "views": 201396,
+   "multiple": 4.0,
+   "shorts": true
+  },
+  {
+   "title": "쪼잔하게 돈 버는 법",
+   "url": "https://www.youtube.com/shorts/LYXceDpsPYA",
+   "views": 144331,
+   "multiple": 2.9,
+   "shorts": true
+  },
+  {
+   "title": "왜 반도체한테만 엄격한건데",
+   "url": "https://www.youtube.com/shorts/_8ANk19Ku6A",
+   "views": 122858,
+   "multiple": 2.5,
+   "shorts": true
+  },
+  {
+   "title": "반도체 수요가 있어요? 그럼 됐네",
+   "url": "https://www.youtube.com/watch?v=Xyk-we1Ehs8",
+   "views": 270704,
+   "multiple": 2.1,
+   "shorts": false
   }
  ]
 }

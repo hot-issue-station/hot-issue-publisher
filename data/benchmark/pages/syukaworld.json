@@ -1,16 +1,17 @@
 {
  "name": "슈카월드",
  "channel": "https://www.youtube.com/@syukaworld",
- "checkedAt": "2026-11-06T19:38+09:00",
+ "checkedAt": "2026-11-06T22:47+09:00",
  "subscribers": "374만",
  "videos": [
   {
    "id": "D32h_sPWp0g",
    "title": "모르면 못받음",
-   "views": 3500,
-   "viewsText": "조회수 3.5천회",
+   "views": 8400,
+   "viewsText": "조회수 8.4천회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 4900
   },
   {
    "id": "QvMjNxpMmPo",
@@ -19,7 +20,7 @@
    "viewsText": "조회수 14만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "prQUpQh_gko",
@@ -28,7 +29,7 @@
    "viewsText": "조회수 12만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "JYKRXrbA5x4",
