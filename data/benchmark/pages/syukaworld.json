@@ -1,34 +1,35 @@
 {
  "name": "슈카월드",
  "channel": "https://www.youtube.com/@syukaworld",
- "checkedAt": "2026-11-07T08:29+09:00",
+ "checkedAt": "2026-11-07T14:43+09:00",
  "subscribers": "374만",
  "videos": [
   {
    "id": "lioIrGMoIbs",
    "title": "좋은 사람 있으면 소개시켜줘",
-   "views": 25000,
-   "viewsText": "조회수 2.5만회",
+   "views": 39000,
+   "viewsText": "조회수 3.9만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 14000
   },
   {
    "id": "D32h_sPWp0g",
    "title": "모르면 못받음",
-   "views": 42000,
-   "viewsText": "조회수 4.2만회",
+   "views": 54000,
+   "viewsText": "조회수 5.4만회",
    "published": "",
    "kind": "short",
-   "gain": 33600
+   "gain": 12000
   },
   {
    "id": "QvMjNxpMmPo",
    "title": "수능 주식 문제 1타 강사",
-   "views": 140000,
-   "viewsText": "조회수 14만회",
+   "views": 150000,
+   "viewsText": "조회수 15만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "prQUpQh_gko",
@@ -172,7 +173,7 @@
    "viewsText": "조회수 413만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "tBmOG0of1q8",
