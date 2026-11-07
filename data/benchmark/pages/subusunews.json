@@ -1,14 +1,14 @@
 {
  "name": "스브스뉴스 (SBS)",
  "channel": "https://www.youtube.com/@subusunews",
- "checkedAt": "2026-11-07T22:30+09:00",
+ "checkedAt": "2026-11-08T08:26+09:00",
  "subscribers": "144만",
  "videos": [
   {
    "id": "qZaeu4PJUps",
    "title": "롯데홈쇼핑이 직접 교육하는 커머스 인재 학교? #shorts #스브스뉴스",
-   "views": 2200,
-   "viewsText": "조회수 2.2천회",
+   "views": 2300,
+   "viewsText": "조회수 2.3천회",
    "published": "",
    "kind": "short",
    "gain": 100
@@ -47,7 +47,7 @@
    "viewsText": "조회수 6.2천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "ZpNFj6J6dpk",
@@ -56,7 +56,7 @@
    "viewsText": "조회수 1.2만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "7gMpoQvh8JA",
@@ -74,7 +74,7 @@
    "viewsText": "조회수 1.9만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "u81X5J3miTE",
@@ -268,11 +268,11 @@
   {
    "id": "H6h8ra11H5U",
    "title": "지진 경보 울리고 8분 뒤 벌어진 일 #shorts #스브스뉴스",
-   "views": 37000,
-   "viewsText": "조회수 3.7만회",
+   "views": 38000,
+   "viewsText": "조회수 3.8만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 1000
   },
   {
    "id": "E07k_Tu50w0",

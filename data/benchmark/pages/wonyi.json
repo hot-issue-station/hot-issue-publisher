@@ -1,17 +1,17 @@
 {
  "name": "안원잘부",
  "channel": "https://www.youtube.com/@helloiamwoninicetomeetyou",
- "checkedAt": "2026-11-07T22:30+09:00",
+ "checkedAt": "2026-11-08T08:26+09:00",
  "subscribers": "242만",
  "videos": [
   {
    "id": "kfK-LENbEUo",
    "title": "정작가의 컴백을 축하합니다",
-   "views": 1450000,
-   "viewsText": "조회수 145만회",
+   "views": 1470000,
+   "viewsText": "조회수 147만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 20000
   },
   {
    "id": "DKDmFgXzxs8",
@@ -20,7 +20,7 @@
    "viewsText": "조회수 261만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "zxNoW_LtVLE",
@@ -38,7 +38,7 @@
    "viewsText": "조회수 319만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "xCvbDeMKm3E",
@@ -47,25 +47,25 @@
    "viewsText": "조회수 613만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "GsYq_ouLAMQ",
    "title": "[B컷] 시그니엘 망고 빙수",
-   "views": 5410000,
-   "viewsText": "조회수 541만회",
+   "views": 5430000,
+   "viewsText": "조회수 543만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 20000
   },
   {
    "id": "BUeZskDCMpU",
    "title": "[B컷] 와인 처음 따는 원이",
-   "views": 2900000,
-   "viewsText": "조회수 290만회",
+   "views": 2910000,
+   "viewsText": "조회수 291만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "7Q_myxhlcwE",
@@ -79,11 +79,11 @@
   {
    "id": "COnZ3rYrAXc",
    "title": "리마인이 된 리센느",
-   "views": 1630000,
-   "viewsText": "조회수 163만회",
+   "views": 1640000,
+   "viewsText": "조회수 164만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "8aZYgM9GeL0",
@@ -97,8 +97,8 @@
   {
    "id": "o-B0F16GwL0",
    "title": "[B컷] 의자 안 돌아가요",
-   "views": 13440000,
-   "viewsText": "조회수 1344만회",
+   "views": 13450000,
+   "viewsText": "조회수 1345만회",
    "published": "",
    "kind": "short",
    "gain": 10000
