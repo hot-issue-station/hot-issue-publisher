@@ -22,7 +22,8 @@ jobs:
           IG_USER_ID: ${{ secrets.IG_USER_ID }}
         run: python scripts/read_comments.py
       - name: 응원 랭킹 계산
-        if: always()
+        # 응원 랭킹 이벤트 조기 종료(대표 결정 11/6, 마무리 11/7) — 이벤트를 다시 열면 아래 줄을 always()로 되돌린다
+        if: false
         env:
           IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
           IG_USER_ID: ${{ secrets.IG_USER_ID }}
