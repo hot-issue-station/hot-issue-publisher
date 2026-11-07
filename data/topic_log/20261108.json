@@ -1,0 +1,46 @@
+[
+ {
+  "slot": "AM",
+  "kind": "WORLD",
+  "candidates": [
+   {
+    "title": "안세영 54연승 결승행",
+    "scores": {
+     "coverage": 3,
+     "rankings": 1,
+     "fandom": 3,
+     "ourHistory": 2,
+     "freshness": 3,
+     "shareable": 3
+    },
+    "total": 33
+   },
+   {
+    "title": "최민정 월드투어 금 50개",
+    "scores": {
+     "coverage": 2,
+     "rankings": 0,
+     "fandom": 2,
+     "ourHistory": 2,
+     "freshness": 0,
+     "shareable": 3
+    },
+    "total": 20
+   },
+   {
+    "title": "윤태인 파라클라이밍 첫 메달",
+    "scores": {
+     "coverage": 1,
+     "rankings": 0,
+     "fandom": 1,
+     "ourHistory": 2,
+     "freshness": 2,
+     "shareable": 3
+    },
+    "total": 19
+   }
+  ],
+  "picked": null,
+  "createdAt": "2026-11-07T23:30:00+09:00"
+ }
+]
