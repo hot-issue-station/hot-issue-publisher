@@ -71,5 +71,162 @@
   "key": "storyk",
   "ok": false,
   "error": "HTTPError: HTTP Error 404: Not Found"
+ },
+ {
+  "at": "2026-11-07T19:21+09:00",
+  "key": "14f",
+  "ok": true,
+  "new": [
+   "KT1XfcUxmw0"
+  ],
+  "top": [
+   {
+    "id": "kycuo7xf6zk",
+    "title": "“여행 어디로 가지…” 이왕 간다면 인구소멸 지역 돕는 '이 곳' 주목! / 14F",
+    "views": 54269,
+    "gain": 41481
+   },
+   {
+    "id": "7TgeU5xqUJI",
+    "title": "집이 남아 돌던 스페인, 이제 집이 없어서 문제라고? 스페인 주택난의 모든 것 / 14F",
+    "views": 204771,
+    "gain": 24862
+   },
+   {
+    "id": "87w5P7QW2vM",
+    "title": "밤 중에도 안전하다고… 외국인들이 깜짝 놀란다는 ‘K-편의점’/ 14F",
+    "views": 324951,
+    "gain": 24730
+   }
+  ]
+ },
+ {
+  "at": "2026-11-07T19:21+09:00",
+  "key": "subusunews",
+  "ok": true,
+  "new": [],
+  "top": [
+   {
+    "id": "Zq1d5ckccFQ",
+    "title": "극단적이었던 재민 입맛",
+    "views": 37379,
+    "gain": 12319
+   },
+   {
+    "id": "53YmGEQcPg8",
+    "title": "형이랑 놀았던 시간은 참 재밌었는데, 형은 어땠어?ㅣ우리 사이엔 편지가 있다2 EP.10 엔시티드림 재민&지성",
+    "views": 162169,
+    "gain": 11513
+   },
+   {
+    "id": "peMHRTigrOo",
+    "title": "김치찜 먹는 지성이만 봐도 배가 불렀던 재민",
+    "views": 17312,
+    "gain": 4284
+   }
+  ]
+ },
+ {
+  "at": "2026-11-07T19:21+09:00",
+  "key": "vstudio",
+  "ok": true,
+  "new": [],
+  "top": []
+ },
+ {
+  "at": "2026-11-07T19:21+09:00",
+  "key": "syukaworld",
+  "ok": true,
+  "new": [
+   "h9yF44sFEvc"
+  ],
+  "top": [
+   {
+    "id": "ri2GLNjEM_s",
+    "title": "불안한 주식시장에 내 노후를 맡겨도 될까요",
+    "views": 141671,
+    "gain": 133142
+   },
+   {
+    "id": "sYr_AxQcpik",
+    "title": "하락장 유머",
+    "views": 162719,
+    "gain": 132603
+   },
+   {
+    "id": "OeJ-JKlNv_s",
+    "title": "우리가 코스피로 돈을 벌었다고?",
+    "views": 69056,
+    "gain": 58599
+   }
+  ]
+ },
+ {
+  "at": "2026-11-07T19:21+09:00",
+  "key": "ytn",
+  "ok": true,
+  "new": [
+   "zTcCsq1bUV8",
+   "pBEsa8E_vAI",
+   "QsyNQL5Qkho",
+   "-dcV4l6tgXU",
+   "E0Frls6EEWU",
+   "bpelGobg6Ek",
+   "gKxmlYFHdu8",
+   "r7RSF0xBp84",
+   "Yk4GXScWbOg",
+   "3wi1188W-vw",
+   "NxB1Gc4eqdo",
+   "K9gSc2AuR3w",
+   "m3CK5MJWmpI",
+   "6qChTmDKyz0",
+   "obTTfyt79O4"
+  ],
+  "top": [
+   {
+    "id": "QsyNQL5Qkho",
+    "title": "버티던 네타냐후 끝내 감옥으로?…트럼프 폭탄선언에 '청천벽력' [에디터픽] / YTN",
+    "views": 219476,
+    "gain": null
+   },
+   {
+    "id": "K9gSc2AuR3w",
+    "title": "트럼프 눈 뒤집힐 민주당의 반격…텃밭 사수 실패 참혹한 대가, 친트럼프 '초비상' [에디터픽] / YTN",
+    "views": 125861,
+    "gain": null
+   },
+   {
+    "id": "NxB1Gc4eqdo",
+    "title": "트럼프, 민주당 역습에 허 찌르나…\"이란 파괴 가능\" 안보팀 백악관 집결 [에디터픽] / YTN",
+    "views": 59591,
+    "gain": null
+   }
+  ]
+ },
+ {
+  "at": "2026-11-07T19:21+09:00",
+  "key": "storyk",
+  "ok": true,
+  "new": [],
+  "top": [
+   {
+    "id": "aGdX-njap_8",
+    "title": "김예건 한국 역대 최연소 2위 유럽대항전 출전 - 명문팀 거절하고 1군 노린 18살유망주",
+    "views": 64324,
+    "gain": 60321
+   },
+   {
+    "id": "eMHW9EPF5_g",
+    "title": "손흥민 또 PL 공식 계정이 샤라웃 - 이적 후에도 계속되는 유럽 축구계의 압도적인 존중",
+    "views": 53851,
+    "gain": 3425
+   },
+   {
+    "id": "XnpYo8kDzQo",
+    "title": "손흥민 상업성 끝판왕 미국 경제지의 극찬 - 역대급 수익 이끈 아이콘을 대하는 클럽과 축협",
+    "views": 26054,
+    "gain": 1703
+   }
+  ]
  }
 ]

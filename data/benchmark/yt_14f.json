@@ -3,20 +3,33 @@
  "name": "14F 일사에프 (MBC)",
  "channel": "https://www.youtube.com/@14FMBC",
  "channelId": "UCLKuglhGlMmDteQKoniENIQ",
- "checkedAt": "2026-11-06T22:47+09:00",
+ "checkedAt": "2026-11-07T19:21+09:00",
  "videos": [
+  {
+   "id": "KT1XfcUxmw0",
+   "title": "웨이팅만 3시간! 구미라면축제에서 난리 난 라면의 정체는? | 선발대 / 14F",
+   "published": "2026-11-07T04:00:36+00:00",
+   "url": "https://www.youtube.com/watch?v=KT1XfcUxmw0",
+   "shorts": false,
+   "views": 33787,
+   "likes": 284,
+   "viewsGain": null,
+   "isNew": true,
+   "median": 54269,
+   "multiple": 0.6
+  },
   {
    "id": "BYhL-fwDxcg",
    "title": "태권도 종주국은 한국 아니였어?... ‘북한 전통무술’로 유네스코 등재 유력 / 14F",
    "published": "2026-11-06T09:11:16+00:00",
    "url": "https://www.youtube.com/watch?v=BYhL-fwDxcg",
    "shorts": false,
-   "views": 2531,
-   "likes": 65,
-   "viewsGain": 1972,
+   "views": 23128,
+   "likes": 108,
+   "viewsGain": 20597,
    "isNew": false,
-   "median": 119785,
-   "multiple": 0.0
+   "median": 54269,
+   "multiple": 0.4
   },
   {
    "id": "kycuo7xf6zk",
@@ -24,12 +37,12 @@
    "published": "2026-11-06T08:30:29+00:00",
    "url": "https://www.youtube.com/watch?v=kycuo7xf6zk",
    "shorts": false,
-   "views": 12788,
-   "likes": 180,
-   "viewsGain": 9950,
+   "views": 54269,
+   "likes": 252,
+   "viewsGain": 41481,
    "isNew": false,
-   "median": 119785,
-   "multiple": 0.1
+   "median": 54269,
+   "multiple": 1.0
   },
   {
    "id": "raKKyS-VS5k",
@@ -37,12 +50,12 @@
    "published": "2026-11-06T03:00:05+00:00",
    "url": "https://www.youtube.com/shorts/raKKyS-VS5k",
    "shorts": true,
-   "views": 3272,
-   "likes": 23,
-   "viewsGain": 415,
+   "views": 5683,
+   "likes": 27,
+   "viewsGain": 2411,
    "isNew": false,
-   "median": 6150.0,
-   "multiple": 0.5
+   "median": 9002.5,
+   "multiple": 0.6
   },
   {
    "id": "UjJznEbPKrw",
@@ -50,12 +63,12 @@
    "published": "2026-11-05T23:00:28+00:00",
    "url": "https://www.youtube.com/shorts/UjJznEbPKrw",
    "shorts": true,
-   "views": 5319,
-   "likes": 67,
-   "viewsGain": 505,
+   "views": 9935,
+   "likes": 117,
+   "viewsGain": 4616,
    "isNew": false,
-   "median": 6150.0,
-   "multiple": 0.9
+   "median": 9002.5,
+   "multiple": 1.1
   },
   {
    "id": "CbWF9sd7QDk",
@@ -63,12 +76,12 @@
    "published": "2026-11-05T09:54:42+00:00",
    "url": "https://www.youtube.com/watch?v=CbWF9sd7QDk",
    "shorts": false,
-   "views": 34493,
-   "likes": 212,
-   "viewsGain": 1078,
+   "views": 41952,
+   "likes": 240,
+   "viewsGain": 7459,
    "isNew": false,
-   "median": 119785,
-   "multiple": 0.3
+   "median": 54269,
+   "multiple": 0.8
   },
   {
    "id": "uq0xvYN3L9I",
@@ -76,12 +89,12 @@
    "published": "2026-11-04T23:00:37+00:00",
    "url": "https://www.youtube.com/shorts/uq0xvYN3L9I",
    "shorts": true,
-   "views": 38269,
-   "likes": 382,
-   "viewsGain": 688,
+   "views": 47638,
+   "likes": 442,
+   "viewsGain": 9369,
    "isNew": false,
-   "median": 6150.0,
-   "multiple": 6.2
+   "median": 9002.5,
+   "multiple": 5.3
   },
   {
    "id": "Sn0of6GdNRA",
@@ -89,12 +102,12 @@
    "published": "2026-11-04T09:31:41+00:00",
    "url": "https://www.youtube.com/watch?v=Sn0of6GdNRA",
    "shorts": false,
-   "views": 46867,
-   "likes": 224,
-   "viewsGain": 442,
+   "views": 49943,
+   "likes": 239,
+   "viewsGain": 3076,
    "isNew": false,
-   "median": 119785,
-   "multiple": 0.4
+   "median": 54269,
+   "multiple": 0.9
   },
   {
    "id": "7TgeU5xqUJI",
@@ -102,12 +115,12 @@
    "published": "2026-11-04T08:30:33+00:00",
    "url": "https://www.youtube.com/watch?v=7TgeU5xqUJI",
    "shorts": false,
-   "views": 179909,
-   "likes": 888,
-   "viewsGain": 2486,
+   "views": 204771,
+   "likes": 990,
+   "viewsGain": 24862,
    "isNew": false,
-   "median": 119785,
-   "multiple": 1.5
+   "median": 54269,
+   "multiple": 3.8
   },
   {
    "id": "sV1o0bSCFpE",
@@ -115,11 +128,11 @@
    "published": "2026-11-04T08:00:38+00:00",
    "url": "https://www.youtube.com/watch?v=sV1o0bSCFpE",
    "shorts": false,
-   "views": 866,
-   "likes": 13,
-   "viewsGain": 10,
+   "views": 945,
+   "likes": 15,
+   "viewsGain": 79,
    "isNew": false,
-   "median": 119785,
+   "median": 54269,
    "multiple": 0.0
   },
   {
@@ -128,12 +141,12 @@
    "published": "2026-11-04T03:00:23+00:00",
    "url": "https://www.youtube.com/shorts/G63QFaqloJQ",
    "shorts": true,
-   "views": 6981,
-   "likes": 44,
-   "viewsGain": 137,
+   "views": 8070,
+   "likes": 52,
+   "viewsGain": 1089,
    "isNew": false,
-   "median": 6150.0,
-   "multiple": 1.1
+   "median": 9002.5,
+   "multiple": 0.9
   },
   {
    "id": "uQ0WY7C5Ddo",
@@ -141,12 +154,12 @@
    "published": "2026-11-03T09:30:30+00:00",
    "url": "https://www.youtube.com/watch?v=uQ0WY7C5Ddo",
    "shorts": false,
-   "views": 172678,
-   "likes": 996,
-   "viewsGain": 355,
+   "views": 175799,
+   "likes": 1011,
+   "viewsGain": 3121,
    "isNew": false,
-   "median": 119785,
-   "multiple": 1.4
+   "median": 54269,
+   "multiple": 3.2
   },
   {
    "id": "VipxqupADqE",
@@ -154,12 +167,12 @@
    "published": "2026-11-03T09:01:13+00:00",
    "url": "https://www.youtube.com/watch?v=VipxqupADqE",
    "shorts": false,
-   "views": 214802,
-   "likes": 938,
-   "viewsGain": 658,
+   "views": 217961,
+   "likes": 956,
+   "viewsGain": 3159,
    "isNew": false,
-   "median": 119785,
-   "multiple": 1.8
+   "median": 54269,
+   "multiple": 4.0
   },
   {
    "id": "BjSNy_1blgE",
@@ -167,12 +180,12 @@
    "published": "2026-11-03T08:30:33+00:00",
    "url": "https://www.youtube.com/watch?v=BjSNy_1blgE",
    "shorts": false,
-   "views": 119785,
-   "likes": 580,
-   "viewsGain": 1136,
+   "views": 130268,
+   "likes": 636,
+   "viewsGain": 10483,
    "isNew": false,
-   "median": 119785,
-   "multiple": 1.0
+   "median": 54269,
+   "multiple": 2.4
   },
   {
    "id": "87w5P7QW2vM",
@@ -180,47 +193,55 @@
    "published": "2026-11-02T10:00:06+00:00",
    "url": "https://www.youtube.com/watch?v=87w5P7QW2vM",
    "shorts": false,
-   "views": 300221,
-   "likes": 1388,
-   "viewsGain": 3081,
+   "views": 324951,
+   "likes": 1431,
+   "viewsGain": 24730,
    "isNew": false,
-   "median": 119785,
-   "multiple": 2.5
-  },
-  {
-   "id": "eOXSE6dyRsY",
-   "title": "샤인머스캣 개발한 일본이 땅을 치고 후회하는 이유🥄ㅣ돈슐랭 / 14F",
-   "published": "2026-11-02T09:30:30+00:00",
-   "url": "https://www.youtube.com/watch?v=eOXSE6dyRsY",
-   "shorts": false,
-   "views": 375589,
-   "likes": 1706,
-   "viewsGain": 2586,
-   "isNew": false,
-   "median": 119785,
-   "multiple": 3.1
+   "median": 54269,
+   "multiple": 6.0
   }
  ],
  "viral": [
   {
-   "title": "일본 화물이 부산항에 몰리는 이유 #shorts",
-   "url": "https://www.youtube.com/shorts/uq0xvYN3L9I",
-   "views": 38269,
-   "multiple": 6.2,
-   "shorts": true
-  },
-  {
-   "title": "샤인머스캣 개발한 일본이 땅을 치고 후회하는 이유🥄ㅣ돈슐랭 / 14F",
-   "url": "https://www.youtube.com/watch?v=eOXSE6dyRsY",
-   "views": 375589,
-   "multiple": 3.1,
+   "title": "밤 중에도 안전하다고… 외국인들이 깜짝 놀란다는 ‘K-편의점’/ 14F",
+   "url": "https://www.youtube.com/watch?v=87w5P7QW2vM",
+   "views": 324951,
+   "multiple": 6.0,
    "shorts": false
   },
   {
-   "title": "밤 중에도 안전하다고… 외국인들이 깜짝 놀란다는 ‘K-편의점’/ 14F",
-   "url": "https://www.youtube.com/watch?v=87w5P7QW2vM",
-   "views": 300221,
-   "multiple": 2.5,
+   "title": "일본 화물이 부산항에 몰리는 이유 #shorts",
+   "url": "https://www.youtube.com/shorts/uq0xvYN3L9I",
+   "views": 47638,
+   "multiple": 5.3,
+   "shorts": true
+  },
+  {
+   "title": "공항 가기 전 봐야 하는 영상… 74년 만에 확 바뀐 ‘일본 면세 혜택’ / 14F",
+   "url": "https://www.youtube.com/watch?v=VipxqupADqE",
+   "views": 217961,
+   "multiple": 4.0,
+   "shorts": false
+  },
+  {
+   "title": "집이 남아 돌던 스페인, 이제 집이 없어서 문제라고? 스페인 주택난의 모든 것 / 14F",
+   "url": "https://www.youtube.com/watch?v=7TgeU5xqUJI",
+   "views": 204771,
+   "multiple": 3.8,
+   "shorts": false
+  },
+  {
+   "title": "“헌재를 장악하라” 폴란드 대통령과 헌법재판소 재판관의 몸싸움 / 14F",
+   "url": "https://www.youtube.com/watch?v=uQ0WY7C5Ddo",
+   "views": 175799,
+   "multiple": 3.2,
+   "shorts": false
+  },
+  {
+   "title": "“도쿄 갈 바에는 부산으로” 일본 기업들 몰린다는 요즘 부산항 근황 (김율성X우수한) ㅣ10분 토론 / 14F",
+   "url": "https://www.youtube.com/watch?v=BjSNy_1blgE",
+   "views": 130268,
+   "multiple": 2.4,
    "shorts": false
   }
  ]

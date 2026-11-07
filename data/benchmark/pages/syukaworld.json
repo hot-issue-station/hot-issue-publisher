@@ -1,26 +1,26 @@
 {
  "name": "슈카월드",
  "channel": "https://www.youtube.com/@syukaworld",
- "checkedAt": "2026-11-07T14:43+09:00",
+ "checkedAt": "2026-11-07T19:21+09:00",
  "subscribers": "374만",
  "videos": [
   {
    "id": "lioIrGMoIbs",
    "title": "좋은 사람 있으면 소개시켜줘",
-   "views": 39000,
-   "viewsText": "조회수 3.9만회",
+   "views": 47000,
+   "viewsText": "조회수 4.7만회",
    "published": "",
    "kind": "short",
-   "gain": 14000
+   "gain": 8000
   },
   {
    "id": "D32h_sPWp0g",
    "title": "모르면 못받음",
-   "views": 54000,
-   "viewsText": "조회수 5.4만회",
+   "views": 67000,
+   "viewsText": "조회수 6.7만회",
    "published": "",
    "kind": "short",
-   "gain": 12000
+   "gain": 13000
   },
   {
    "id": "QvMjNxpMmPo",
@@ -29,7 +29,7 @@
    "viewsText": "조회수 15만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "prQUpQh_gko",
@@ -61,11 +61,11 @@
   {
    "id": "zOt7Z_v8AXE",
    "title": "적금 깨고 주식 사도 되나요?",
-   "views": 490000,
-   "viewsText": "조회수 49만회",
+   "views": 500000,
+   "viewsText": "조회수 50만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "UfwnDQNYiLI",
