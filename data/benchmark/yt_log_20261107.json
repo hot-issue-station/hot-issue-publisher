@@ -228,5 +228,160 @@
     "gain": 1703
    }
   ]
+ },
+ {
+  "at": "2026-11-07T22:30+09:00",
+  "key": "14f",
+  "ok": true,
+  "new": [],
+  "top": [
+   {
+    "id": "KT1XfcUxmw0",
+    "title": "웨이팅만 3시간! 구미라면축제에서 난리 난 라면의 정체는? | 선발대 / 14F",
+    "views": 71538,
+    "gain": 37751
+   },
+   {
+    "id": "87w5P7QW2vM",
+    "title": "밤 중에도 안전하다고… 외국인들이 깜짝 놀란다는 ‘K-편의점’/ 14F",
+    "views": 328768,
+    "gain": 3817
+   },
+   {
+    "id": "7TgeU5xqUJI",
+    "title": "집이 남아 돌던 스페인, 이제 집이 없어서 문제라고? 스페인 주택난의 모든 것 / 14F",
+    "views": 207931,
+    "gain": 3160
+   }
+  ]
+ },
+ {
+  "at": "2026-11-07T22:30+09:00",
+  "key": "subusunews",
+  "ok": true,
+  "new": [],
+  "top": [
+   {
+    "id": "53YmGEQcPg8",
+    "title": "형이랑 놀았던 시간은 참 재밌었는데, 형은 어땠어?ㅣ우리 사이엔 편지가 있다2 EP.10 엔시티드림 재민&지성",
+    "views": 163725,
+    "gain": 1556
+   },
+   {
+    "id": "Zq1d5ckccFQ",
+    "title": "극단적이었던 재민 입맛",
+    "views": 38762,
+    "gain": 1383
+   },
+   {
+    "id": "ZS5sPQuxWks",
+    "title": "우사편 게스트 중 최고 악필이에요",
+    "views": 24191,
+    "gain": 313
+   }
+  ]
+ },
+ {
+  "at": "2026-11-07T22:30+09:00",
+  "key": "vstudio",
+  "ok": true,
+  "new": [],
+  "top": []
+ },
+ {
+  "at": "2026-11-07T22:30+09:00",
+  "key": "syukaworld",
+  "ok": true,
+  "new": [],
+  "top": [
+   {
+    "id": "h9yF44sFEvc",
+    "title": "우리 요즘 잘하고 있지 않아요?",
+    "views": 95441,
+    "gain": 81358
+   },
+   {
+    "id": "sYr_AxQcpik",
+    "title": "하락장 유머",
+    "views": 173533,
+    "gain": 10814
+   },
+   {
+    "id": "ri2GLNjEM_s",
+    "title": "불안한 주식시장에 내 노후를 맡겨도 될까요",
+    "views": 147789,
+    "gain": 6118
+   }
+  ]
+ },
+ {
+  "at": "2026-11-07T22:30+09:00",
+  "key": "ytn",
+  "ok": true,
+  "new": [
+   "Dghtk09OE58",
+   "t8SZKX0KUL4",
+   "pd7XhN8Ee_c",
+   "kEq7m52aXbg",
+   "OD_8LG4CQxA",
+   "fU48hEvrSMI",
+   "lNfsD2xutqk",
+   "7FbmDFHT7WQ",
+   "0JrGIGi7iZc",
+   "PrK0CTpNdwQ",
+   "p63Y2lbv_VA",
+   "Rh_fNTvdsDU",
+   "R8IEuAykm0g",
+   "AkR72QUUwCM",
+   "xGylEzgfbss"
+  ],
+  "top": [
+   {
+    "id": "t8SZKX0KUL4",
+    "title": "[🔴현장] 2026 부산불꽃축제 ✨2026 Busan Fireworks Festival✨ / YTN",
+    "views": 20831,
+    "gain": null
+   },
+   {
+    "id": "xGylEzgfbss",
+    "title": "[단독] 귀갓길에 날벼락...온수관 파열 구멍에 빠져 중화상 / YTN",
+    "views": 1031,
+    "gain": null
+   },
+   {
+    "id": "Dghtk09OE58",
+    "title": "'전쟁범죄 혐의' 네타냐후 구속되나…트럼프 폭탄선언에 '날벼락' [이슈픽] / YTN",
+    "views": 880,
+    "gain": null
+   }
+  ]
+ },
+ {
+  "at": "2026-11-07T22:30+09:00",
+  "key": "storyk",
+  "ok": true,
+  "new": [
+   "FhUO1_ZU1Dw"
+  ],
+  "top": [
+   {
+    "id": "aGdX-njap_8",
+    "title": "김예건 한국 역대 최연소 2위 유럽대항전 출전 - 명문팀 거절하고 1군 노린 18살유망주",
+    "views": 65335,
+    "gain": 1011
+   },
+   {
+    "id": "eMHW9EPF5_g",
+    "title": "손흥민 또 PL 공식 계정이 샤라웃 - 이적 후에도 계속되는 유럽 축구계의 압도적인 존중",
+    "views": 54236,
+    "gain": 385
+   },
+   {
+    "id": "XnpYo8kDzQo",
+    "title": "손흥민 상업성 끝판왕 미국 경제지의 극찬 - 역대급 수익 이끈 아이콘을 대하는 클럽과 축협",
+    "views": 26346,
+    "gain": 292
+   }
+  ]
  }
 ]

@@ -1,32 +1,32 @@
 {
  "name": "14F 일사에프 (MBC)",
  "channel": "https://www.youtube.com/@14FMBC",
- "checkedAt": "2026-11-07T19:21+09:00",
+ "checkedAt": "2026-11-07T22:30+09:00",
  "subscribers": "239만",
  "videos": [
   {
    "id": "raKKyS-VS5k",
    "title": "샤인머스캣 가격 폭락 막기 힘든 이유 #shorts",
-   "views": 5600,
-   "viewsText": "조회수 5.6천회",
+   "views": 5800,
+   "viewsText": "조회수 5.8천회",
+   "published": "",
+   "kind": "short",
+   "gain": 200
+  },
+  {
+   "id": "UjJznEbPKrw",
+   "title": "북극항로에 베팅한 한국의 큰 그림? #shorts",
+   "views": 10000,
+   "viewsText": "조회수 1만회",
    "published": "",
    "kind": "short",
    "gain": 100
   },
   {
-   "id": "UjJznEbPKrw",
-   "title": "북극항로에 베팅한 한국의 큰 그림? #shorts",
-   "views": 9900,
-   "viewsText": "조회수 9.9천회",
-   "published": "",
-   "kind": "short",
-   "gain": 600
-  },
-  {
    "id": "uq0xvYN3L9I",
    "title": "일본 화물이 부산항에 몰리는 이유 #shorts",
-   "views": 47000,
-   "viewsText": "조회수 4.7만회",
+   "views": 50000,
+   "viewsText": "조회수 5만회",
    "published": "",
    "kind": "short",
    "gain": 3000
@@ -34,8 +34,8 @@
   {
    "id": "G63QFaqloJQ",
    "title": "샤인머스캣으로 얼마나 벌었을까? #shorts",
-   "views": 8000,
-   "viewsText": "조회수 8천회",
+   "views": 8200,
+   "viewsText": "조회수 8.2천회",
    "published": "",
    "kind": "short",
    "gain": 200
@@ -43,11 +43,11 @@
   {
    "id": "peSpC5kd2t0",
    "title": "홍채로도 운세를 볼 수 있다? #shorts",
-   "views": 9300,
-   "viewsText": "조회수 9.3천회",
+   "views": 9400,
+   "viewsText": "조회수 9.4천회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 100
   },
   {
    "id": "yoyqnf-PE30",

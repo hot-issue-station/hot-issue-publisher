@@ -3,7 +3,7 @@
  "name": "14F 일사에프 (MBC)",
  "channel": "https://www.youtube.com/@14FMBC",
  "channelId": "UCLKuglhGlMmDteQKoniENIQ",
- "checkedAt": "2026-11-07T19:21+09:00",
+ "checkedAt": "2026-11-07T22:30+09:00",
  "videos": [
   {
    "id": "KT1XfcUxmw0",
@@ -11,12 +11,12 @@
    "published": "2026-11-07T04:00:36+00:00",
    "url": "https://www.youtube.com/watch?v=KT1XfcUxmw0",
    "shorts": false,
-   "views": 33787,
-   "likes": 284,
-   "viewsGain": null,
-   "isNew": true,
-   "median": 54269,
-   "multiple": 0.6
+   "views": 71538,
+   "likes": 404,
+   "viewsGain": 37751,
+   "isNew": false,
+   "median": 71538,
+   "multiple": 1.0
   },
   {
    "id": "BYhL-fwDxcg",
@@ -24,12 +24,12 @@
    "published": "2026-11-06T09:11:16+00:00",
    "url": "https://www.youtube.com/watch?v=BYhL-fwDxcg",
    "shorts": false,
-   "views": 23128,
-   "likes": 108,
-   "viewsGain": 20597,
+   "views": 23928,
+   "likes": 106,
+   "viewsGain": 800,
    "isNew": false,
-   "median": 54269,
-   "multiple": 0.4
+   "median": 71538,
+   "multiple": 0.3
   },
   {
    "id": "kycuo7xf6zk",
@@ -37,12 +37,12 @@
    "published": "2026-11-06T08:30:29+00:00",
    "url": "https://www.youtube.com/watch?v=kycuo7xf6zk",
    "shorts": false,
-   "views": 54269,
-   "likes": 252,
-   "viewsGain": 41481,
+   "views": 55276,
+   "likes": 255,
+   "viewsGain": 1007,
    "isNew": false,
-   "median": 54269,
-   "multiple": 1.0
+   "median": 71538,
+   "multiple": 0.8
   },
   {
    "id": "raKKyS-VS5k",
@@ -50,11 +50,11 @@
    "published": "2026-11-06T03:00:05+00:00",
    "url": "https://www.youtube.com/shorts/raKKyS-VS5k",
    "shorts": true,
-   "views": 5683,
+   "views": 5791,
    "likes": 27,
-   "viewsGain": 2411,
+   "viewsGain": 108,
    "isNew": false,
-   "median": 9002.5,
+   "median": 9321.5,
    "multiple": 0.6
   },
   {
@@ -63,11 +63,11 @@
    "published": "2026-11-05T23:00:28+00:00",
    "url": "https://www.youtube.com/shorts/UjJznEbPKrw",
    "shorts": true,
-   "views": 9935,
-   "likes": 117,
-   "viewsGain": 4616,
+   "views": 10431,
+   "likes": 123,
+   "viewsGain": 496,
    "isNew": false,
-   "median": 9002.5,
+   "median": 9321.5,
    "multiple": 1.1
   },
   {
@@ -76,12 +76,12 @@
    "published": "2026-11-05T09:54:42+00:00",
    "url": "https://www.youtube.com/watch?v=CbWF9sd7QDk",
    "shorts": false,
-   "views": 41952,
-   "likes": 240,
-   "viewsGain": 7459,
+   "views": 43238,
+   "likes": 244,
+   "viewsGain": 1286,
    "isNew": false,
-   "median": 54269,
-   "multiple": 0.8
+   "median": 71538,
+   "multiple": 0.6
   },
   {
    "id": "uq0xvYN3L9I",
@@ -89,12 +89,12 @@
    "published": "2026-11-04T23:00:37+00:00",
    "url": "https://www.youtube.com/shorts/uq0xvYN3L9I",
    "shorts": true,
-   "views": 47638,
-   "likes": 442,
-   "viewsGain": 9369,
+   "views": 50062,
+   "likes": 466,
+   "viewsGain": 2424,
    "isNew": false,
-   "median": 9002.5,
-   "multiple": 5.3
+   "median": 9321.5,
+   "multiple": 5.4
   },
   {
    "id": "Sn0of6GdNRA",
@@ -102,12 +102,12 @@
    "published": "2026-11-04T09:31:41+00:00",
    "url": "https://www.youtube.com/watch?v=Sn0of6GdNRA",
    "shorts": false,
-   "views": 49943,
-   "likes": 239,
-   "viewsGain": 3076,
+   "views": 50561,
+   "likes": 247,
+   "viewsGain": 618,
    "isNew": false,
-   "median": 54269,
-   "multiple": 0.9
+   "median": 71538,
+   "multiple": 0.7
   },
   {
    "id": "7TgeU5xqUJI",
@@ -115,12 +115,12 @@
    "published": "2026-11-04T08:30:33+00:00",
    "url": "https://www.youtube.com/watch?v=7TgeU5xqUJI",
    "shorts": false,
-   "views": 204771,
-   "likes": 990,
-   "viewsGain": 24862,
+   "views": 207931,
+   "likes": 998,
+   "viewsGain": 3160,
    "isNew": false,
-   "median": 54269,
-   "multiple": 3.8
+   "median": 71538,
+   "multiple": 2.9
   },
   {
    "id": "sV1o0bSCFpE",
@@ -128,11 +128,11 @@
    "published": "2026-11-04T08:00:38+00:00",
    "url": "https://www.youtube.com/watch?v=sV1o0bSCFpE",
    "shorts": false,
-   "views": 945,
+   "views": 957,
    "likes": 15,
-   "viewsGain": 79,
+   "viewsGain": 12,
    "isNew": false,
-   "median": 54269,
+   "median": 71538,
    "multiple": 0.0
   },
   {
@@ -141,11 +141,11 @@
    "published": "2026-11-04T03:00:23+00:00",
    "url": "https://www.youtube.com/shorts/G63QFaqloJQ",
    "shorts": true,
-   "views": 8070,
+   "views": 8212,
    "likes": 52,
-   "viewsGain": 1089,
+   "viewsGain": 142,
    "isNew": false,
-   "median": 9002.5,
+   "median": 9321.5,
    "multiple": 0.9
   },
   {
@@ -154,12 +154,12 @@
    "published": "2026-11-03T09:30:30+00:00",
    "url": "https://www.youtube.com/watch?v=uQ0WY7C5Ddo",
    "shorts": false,
-   "views": 175799,
-   "likes": 1011,
-   "viewsGain": 3121,
+   "views": 176090,
+   "likes": 1018,
+   "viewsGain": 291,
    "isNew": false,
-   "median": 54269,
-   "multiple": 3.2
+   "median": 71538,
+   "multiple": 2.5
   },
   {
    "id": "VipxqupADqE",
@@ -167,12 +167,12 @@
    "published": "2026-11-03T09:01:13+00:00",
    "url": "https://www.youtube.com/watch?v=VipxqupADqE",
    "shorts": false,
-   "views": 217961,
-   "likes": 956,
-   "viewsGain": 3159,
+   "views": 218806,
+   "likes": 961,
+   "viewsGain": 845,
    "isNew": false,
-   "median": 54269,
-   "multiple": 4.0
+   "median": 71538,
+   "multiple": 3.1
   },
   {
    "id": "BjSNy_1blgE",
@@ -180,12 +180,12 @@
    "published": "2026-11-03T08:30:33+00:00",
    "url": "https://www.youtube.com/watch?v=BjSNy_1blgE",
    "shorts": false,
-   "views": 130268,
-   "likes": 636,
-   "viewsGain": 10483,
+   "views": 131851,
+   "likes": 643,
+   "viewsGain": 1583,
    "isNew": false,
-   "median": 54269,
-   "multiple": 2.4
+   "median": 71538,
+   "multiple": 1.8
   },
   {
    "id": "87w5P7QW2vM",
@@ -193,55 +193,48 @@
    "published": "2026-11-02T10:00:06+00:00",
    "url": "https://www.youtube.com/watch?v=87w5P7QW2vM",
    "shorts": false,
-   "views": 324951,
-   "likes": 1431,
-   "viewsGain": 24730,
+   "views": 328768,
+   "likes": 1439,
+   "viewsGain": 3817,
    "isNew": false,
-   "median": 54269,
-   "multiple": 6.0
+   "median": 71538,
+   "multiple": 4.6
   }
  ],
  "viral": [
   {
-   "title": "밤 중에도 안전하다고… 외국인들이 깜짝 놀란다는 ‘K-편의점’/ 14F",
-   "url": "https://www.youtube.com/watch?v=87w5P7QW2vM",
-   "views": 324951,
-   "multiple": 6.0,
-   "shorts": false
-  },
-  {
    "title": "일본 화물이 부산항에 몰리는 이유 #shorts",
    "url": "https://www.youtube.com/shorts/uq0xvYN3L9I",
-   "views": 47638,
-   "multiple": 5.3,
+   "views": 50062,
+   "multiple": 5.4,
    "shorts": true
+  },
+  {
+   "title": "밤 중에도 안전하다고… 외국인들이 깜짝 놀란다는 ‘K-편의점’/ 14F",
+   "url": "https://www.youtube.com/watch?v=87w5P7QW2vM",
+   "views": 328768,
+   "multiple": 4.6,
+   "shorts": false
   },
   {
    "title": "공항 가기 전 봐야 하는 영상… 74년 만에 확 바뀐 ‘일본 면세 혜택’ / 14F",
    "url": "https://www.youtube.com/watch?v=VipxqupADqE",
-   "views": 217961,
-   "multiple": 4.0,
+   "views": 218806,
+   "multiple": 3.1,
    "shorts": false
   },
   {
    "title": "집이 남아 돌던 스페인, 이제 집이 없어서 문제라고? 스페인 주택난의 모든 것 / 14F",
    "url": "https://www.youtube.com/watch?v=7TgeU5xqUJI",
-   "views": 204771,
-   "multiple": 3.8,
+   "views": 207931,
+   "multiple": 2.9,
    "shorts": false
   },
   {
    "title": "“헌재를 장악하라” 폴란드 대통령과 헌법재판소 재판관의 몸싸움 / 14F",
    "url": "https://www.youtube.com/watch?v=uQ0WY7C5Ddo",
-   "views": 175799,
-   "multiple": 3.2,
-   "shorts": false
-  },
-  {
-   "title": "“도쿄 갈 바에는 부산으로” 일본 기업들 몰린다는 요즘 부산항 근황 (김율성X우수한) ㅣ10분 토론 / 14F",
-   "url": "https://www.youtube.com/watch?v=BjSNy_1blgE",
-   "views": 130268,
-   "multiple": 2.4,
+   "views": 176090,
+   "multiple": 2.5,
    "shorts": false
   }
  ]

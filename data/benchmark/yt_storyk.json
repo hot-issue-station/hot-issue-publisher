@@ -3,20 +3,33 @@
  "name": "스토리K (손흥민 레전드 비교 특집 벤치마킹, 10/31)",
  "channel": "https://www.youtube.com/@story_k",
  "channelId": "UCqzNZeBt0546jG-vDlAQlZg",
- "checkedAt": "2026-11-07T19:21+09:00",
+ "checkedAt": "2026-11-07T22:30+09:00",
  "videos": [
+  {
+   "id": "FhUO1_ZU1Dw",
+   "title": "손흥민 존경 포로의 고백이 감동인 이유 - 월드컵 챔피언이 보증한 축구계의 존중받는 캡틴",
+   "published": "2026-11-07T10:26:57+00:00",
+   "url": "https://www.youtube.com/watch?v=FhUO1_ZU1Dw",
+   "shorts": false,
+   "views": 7455,
+   "likes": 749,
+   "viewsGain": null,
+   "isNew": true,
+   "median": 65335,
+   "multiple": 0.1
+  },
   {
    "id": "aGdX-njap_8",
    "title": "김예건 한국 역대 최연소 2위 유럽대항전 출전 - 명문팀 거절하고 1군 노린 18살유망주",
    "published": "2026-11-06T10:20:26+00:00",
    "url": "https://www.youtube.com/watch?v=aGdX-njap_8",
    "shorts": false,
-   "views": 64324,
-   "likes": 736,
-   "viewsGain": 60321,
+   "views": 65335,
+   "likes": 749,
+   "viewsGain": 1011,
    "isNew": false,
-   "median": 67784,
-   "multiple": 0.9
+   "median": 65335,
+   "multiple": 1.0
   },
   {
    "id": "XnpYo8kDzQo",
@@ -24,11 +37,11 @@
    "published": "2026-11-05T10:03:23+00:00",
    "url": "https://www.youtube.com/watch?v=XnpYo8kDzQo",
    "shorts": false,
-   "views": 26054,
-   "likes": 945,
-   "viewsGain": 1703,
+   "views": 26346,
+   "likes": 951,
+   "viewsGain": 292,
    "isNew": false,
-   "median": 67784,
+   "median": 65335,
    "multiple": 0.4
   },
   {
@@ -37,11 +50,11 @@
    "published": "2026-11-04T10:03:23+00:00",
    "url": "https://www.youtube.com/watch?v=eMHW9EPF5_g",
    "shorts": false,
-   "views": 53851,
-   "likes": 1496,
-   "viewsGain": 3425,
+   "views": 54236,
+   "likes": 1507,
+   "viewsGain": 385,
    "isNew": false,
-   "median": 67784,
+   "median": 65335,
    "multiple": 0.8
   },
   {
@@ -50,12 +63,12 @@
    "published": "2026-11-03T10:03:50+00:00",
    "url": "https://www.youtube.com/watch?v=6WdpcGFmFgQ",
    "shorts": false,
-   "views": 102648,
-   "likes": 1676,
-   "viewsGain": 1575,
+   "views": 102731,
+   "likes": 1679,
+   "viewsGain": 83,
    "isNew": false,
-   "median": 67784,
-   "multiple": 1.5
+   "median": 65335,
+   "multiple": 1.6
   },
   {
    "id": "nrw8lqAulz8",
@@ -63,12 +76,12 @@
    "published": "2026-11-02T10:18:24+00:00",
    "url": "https://www.youtube.com/watch?v=nrw8lqAulz8",
    "shorts": false,
-   "views": 49270,
+   "views": 49332,
    "likes": 1379,
-   "viewsGain": 499,
+   "viewsGain": 62,
    "isNew": false,
-   "median": 67784,
-   "multiple": 0.7
+   "median": 65335,
+   "multiple": 0.8
   },
   {
    "id": "hW2vyayJmLc",
@@ -76,12 +89,12 @@
    "published": "2026-11-01T10:10:44+00:00",
    "url": "https://www.youtube.com/watch?v=hW2vyayJmLc",
    "shorts": false,
-   "views": 117307,
-   "likes": 1870,
-   "viewsGain": 466,
+   "views": 117365,
+   "likes": 1871,
+   "viewsGain": 58,
    "isNew": false,
-   "median": 67784,
-   "multiple": 1.7
+   "median": 65335,
+   "multiple": 1.8
   },
   {
    "id": "kUd8n4RkZwI",
@@ -89,11 +102,11 @@
    "published": "2026-10-30T10:55:36+00:00",
    "url": "https://www.youtube.com/watch?v=kUd8n4RkZwI",
    "shorts": false,
-   "views": 67784,
+   "views": 67795,
    "likes": 1659,
-   "viewsGain": 91,
+   "viewsGain": 11,
    "isNew": false,
-   "median": 67784,
+   "median": 65335,
    "multiple": 1.0
   },
   {
@@ -102,12 +115,12 @@
    "published": "2026-10-29T10:21:36+00:00",
    "url": "https://www.youtube.com/watch?v=T8LOjY7uM8A",
    "shorts": false,
-   "views": 273441,
+   "views": 273487,
    "likes": 3447,
-   "viewsGain": 209,
+   "viewsGain": 46,
    "isNew": false,
-   "median": 67784,
-   "multiple": 4.0
+   "median": 65335,
+   "multiple": 4.2
   },
   {
    "id": "VCrDlYW4s98",
@@ -115,11 +128,11 @@
    "published": "2026-10-28T09:38:38+00:00",
    "url": "https://www.youtube.com/watch?v=VCrDlYW4s98",
    "shorts": false,
-   "views": 42221,
+   "views": 42224,
    "likes": 886,
-   "viewsGain": 29,
+   "viewsGain": 3,
    "isNew": false,
-   "median": 67784,
+   "median": 65335,
    "multiple": 0.6
   },
   {
@@ -128,11 +141,11 @@
    "published": "2026-10-27T08:54:51+00:00",
    "url": "https://www.youtube.com/watch?v=SYpmi4jnRJA",
    "shorts": false,
-   "views": 73407,
+   "views": 73413,
    "likes": 1104,
-   "viewsGain": 97,
+   "viewsGain": 6,
    "isNew": false,
-   "median": 67784,
+   "median": 65335,
    "multiple": 1.1
   },
   {
@@ -143,9 +156,9 @@
    "shorts": false,
    "views": 37590,
    "likes": 1117,
-   "viewsGain": 24,
+   "viewsGain": 0,
    "isNew": false,
-   "median": 67784,
+   "median": 65335,
    "multiple": 0.6
   },
   {
@@ -154,11 +167,11 @@
    "published": "2026-10-25T10:30:05+00:00",
    "url": "https://www.youtube.com/watch?v=0r6jiNTzI8U",
    "shorts": false,
-   "views": 80202,
+   "views": 80217,
    "likes": 1187,
-   "viewsGain": 105,
+   "viewsGain": 15,
    "isNew": false,
-   "median": 67784,
+   "median": 65335,
    "multiple": 1.2
   },
   {
@@ -167,12 +180,12 @@
    "published": "2026-10-24T10:54:42+00:00",
    "url": "https://www.youtube.com/watch?v=e0HpxlENq_o",
    "shorts": false,
-   "views": 63293,
+   "views": 63295,
    "likes": 1704,
-   "viewsGain": 25,
+   "viewsGain": 2,
    "isNew": false,
-   "median": 67784,
-   "multiple": 0.9
+   "median": 65335,
+   "multiple": 1.0
   },
   {
    "id": "RN2I4tb0slE",
@@ -182,38 +195,18 @@
    "shorts": false,
    "views": 71975,
    "likes": 1751,
-   "viewsGain": 34,
+   "viewsGain": 0,
    "isNew": false,
-   "median": 67784,
+   "median": 65335,
    "multiple": 1.1
-  },
-  {
-   "id": "L2J9kPaoXlI",
-   "title": "손흥민 유럽에선 극존칭 한국에선 7번 멸칭 - 황당한 소식들 유독 대표팀에서만 나타난 반전",
-   "published": "2026-10-22T10:52:08+00:00",
-   "url": "https://www.youtube.com/watch?v=L2J9kPaoXlI",
-   "shorts": false,
-   "views": 134695,
-   "likes": 2351,
-   "viewsGain": 98,
-   "isNew": false,
-   "median": 67784,
-   "multiple": 2.0
   }
  ],
  "viral": [
   {
    "title": "손흥민 존중은 베테랑을 향한 마땅한 기본 - 황희찬의 하이파이브 무시와 엄지성 대표팀 발탁",
    "url": "https://www.youtube.com/watch?v=T8LOjY7uM8A",
-   "views": 273441,
-   "multiple": 4.0,
-   "shorts": false
-  },
-  {
-   "title": "손흥민 유럽에선 극존칭 한국에선 7번 멸칭 - 황당한 소식들 유독 대표팀에서만 나타난 반전",
-   "url": "https://www.youtube.com/watch?v=L2J9kPaoXlI",
-   "views": 134695,
-   "multiple": 2.0,
+   "views": 273487,
+   "multiple": 4.2,
    "shorts": false
   }
  ]

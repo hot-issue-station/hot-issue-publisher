@@ -1,24 +1,26 @@
 {
  "name": "안원잘부",
  "channel": "https://www.youtube.com/@helloiamwoninicetomeetyou",
- "checkedAt": "2026-11-07T19:21+09:00",
+ "checkedAt": "2026-11-07T22:30+09:00",
  "subscribers": "242만",
  "videos": [
   {
    "id": "kfK-LENbEUo",
    "title": "정작가의 컴백을 축하합니다",
-   "views": 1440000,
-   "viewsText": "조회수 144만회",
+   "views": 1450000,
+   "viewsText": "조회수 145만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 10000
   },
   {
    "id": "DKDmFgXzxs8",
    "title": "안원잘부 명장면 이모티콘2 출시!",
-   "views": 2600000,
-   "viewsText": "조회수 260만회",
+   "views": 2610000,
+   "viewsText": "조회수 261만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 10000
   },
   {
    "id": "zxNoW_LtVLE",
@@ -26,23 +28,26 @@
    "views": 2740000,
    "viewsText": "조회수 274만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 0
   },
   {
    "id": "mFM2hP5LEhM",
    "title": "스팸 원이 에디션(?)",
-   "views": 3180000,
-   "viewsText": "조회수 318만회",
+   "views": 3190000,
+   "viewsText": "조회수 319만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 10000
   },
   {
    "id": "xCvbDeMKm3E",
    "title": "두 번째 급습",
-   "views": 6120000,
-   "viewsText": "조회수 612만회",
+   "views": 6130000,
+   "viewsText": "조회수 613만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 10000
   },
   {
    "id": "GsYq_ouLAMQ",
@@ -50,7 +55,8 @@
    "views": 5410000,
    "viewsText": "조회수 541만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 0
   },
   {
    "id": "BUeZskDCMpU",
@@ -58,7 +64,8 @@
    "views": 2900000,
    "viewsText": "조회수 290만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 0
   },
   {
    "id": "7Q_myxhlcwE",
@@ -66,7 +73,8 @@
    "views": 1770000,
    "viewsText": "조회수 177만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 0
   },
   {
    "id": "COnZ3rYrAXc",
@@ -74,7 +82,8 @@
    "views": 1630000,
    "viewsText": "조회수 163만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 0
   },
   {
    "id": "8aZYgM9GeL0",
@@ -82,15 +91,17 @@
    "views": 3300000,
    "viewsText": "조회수 330만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 0
   },
   {
    "id": "o-B0F16GwL0",
    "title": "[B컷] 의자 안 돌아가요",
-   "views": 13430000,
-   "viewsText": "조회수 1343만회",
+   "views": 13440000,
+   "viewsText": "조회수 1344만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 10000
   },
   {
    "id": "gNJrbCSN2TM",
@@ -98,7 +109,8 @@
    "views": 4670000,
    "viewsText": "조회수 467만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 0
   },
   {
    "id": "F5CbMShscuk",
@@ -106,7 +118,8 @@
    "views": 1610000,
    "viewsText": "조회수 161만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 0
   },
   {
    "id": "VUufd3Hd_2Q",
@@ -114,7 +127,8 @@
    "views": 1630000,
    "viewsText": "조회수 163만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 0
   },
   {
    "id": "qzhjmlxNl8s",
@@ -122,7 +136,8 @@
    "views": 1620000,
    "viewsText": "조회수 162만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 0
   },
   {
    "id": "jilQNKreZBM",
@@ -130,7 +145,8 @@
    "views": 920000,
    "viewsText": "조회수 92만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 0
   },
   {
    "id": "FxbR-V8GOjE",
@@ -138,7 +154,8 @@
    "views": 5760000,
    "viewsText": "조회수 576만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 0
   },
   {
    "id": "tDs3mcabrFM",
@@ -146,7 +163,8 @@
    "views": 1380000,
    "viewsText": "조회수 138만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 0
   },
   {
    "id": "5qmyo1nR3no",
@@ -154,7 +172,8 @@
    "views": 2430000,
    "viewsText": "조회수 243만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 0
   },
   {
    "id": "GUHzPMtxAqY",
@@ -162,7 +181,8 @@
    "views": 2560000,
    "viewsText": "조회수 256만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 0
   },
   {
    "id": "y2TOOxHF35E",
@@ -170,7 +190,8 @@
    "views": 1200000,
    "viewsText": "조회수 120만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 0
   },
   {
    "id": "beKjAiS8n44",
@@ -178,7 +199,8 @@
    "views": 2570000,
    "viewsText": "조회수 257만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 0
   },
   {
    "id": "Gnf3QzdopbM",
@@ -186,7 +208,8 @@
    "views": 2290000,
    "viewsText": "조회수 229만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 0
   },
   {
    "id": "YDCgJIvro-4",
@@ -194,7 +217,8 @@
    "views": 4880000,
    "viewsText": "조회수 488만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 0
   },
   {
    "id": "LVr2R5_TFME",
@@ -202,7 +226,8 @@
    "views": 5290000,
    "viewsText": "조회수 529만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 0
   },
   {
    "id": "cDDORzB-2Q0",
@@ -210,7 +235,8 @@
    "views": 4600000,
    "viewsText": "조회수 460만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 0
   },
   {
    "id": "5zg26mxu4_w",
@@ -218,7 +244,8 @@
    "views": 4330000,
    "viewsText": "조회수 433만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 0
   },
   {
    "id": "P5GHz5HW9Uk",
@@ -226,7 +253,8 @@
    "views": 6400000,
    "viewsText": "조회수 640만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 0
   },
   {
    "id": "ORksT1QDf3k",
@@ -234,7 +262,8 @@
    "views": 7520000,
    "viewsText": "조회수 752만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 0
   },
   {
    "id": "6cPEEeEAKiM",
@@ -242,7 +271,8 @@
    "views": 1080000,
    "viewsText": "조회수 108만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 0
   },
   {
    "id": "OmjUI2EQiPw",
@@ -250,7 +280,8 @@
    "views": 1330000,
    "viewsText": "조회수 133만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 0
   },
   {
    "id": "XJQMnwcMvcw",
@@ -258,7 +289,8 @@
    "views": 2360000,
    "viewsText": "조회수 236만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 0
   },
   {
    "id": "510hBsWhh0A",
@@ -266,7 +298,8 @@
    "views": 2480000,
    "viewsText": "조회수 248만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 0
   },
   {
    "id": "nHY4EK0kVH0",
@@ -274,7 +307,8 @@
    "views": 6920000,
    "viewsText": "조회수 692만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 0
   },
   {
    "id": "hrFWuCyHXpY",
@@ -282,7 +316,8 @@
    "views": 1640000,
    "viewsText": "조회수 164만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 0
   },
   {
    "id": "gRESmZMqlFA",
@@ -290,7 +325,8 @@
    "views": 5470000,
    "viewsText": "조회수 547만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 0
   },
   {
    "id": "xsNWeKpL5IQ",
@@ -298,7 +334,8 @@
    "views": 1710000,
    "viewsText": "조회수 171만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 0
   },
   {
    "id": "yFyk6KPsGuA",
@@ -306,7 +343,8 @@
    "views": 1370000,
    "viewsText": "조회수 137만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 0
   },
   {
    "id": "IQ4MGDgdr5I",
@@ -314,7 +352,8 @@
    "views": 2490000,
    "viewsText": "조회수 249만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 0
   },
   {
    "id": "PiKBQ65QE1g",
@@ -322,7 +361,8 @@
    "views": 3950000,
    "viewsText": "조회수 395만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 0
   }
  ]
 }
