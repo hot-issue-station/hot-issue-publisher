@@ -1,9 +1,17 @@
 {
  "name": "RESCENE 공식",
  "channel": "https://www.youtube.com/@RESCENE_official",
- "checkedAt": "2026-11-08T19:21+09:00",
+ "checkedAt": "2026-11-08T22:29+09:00",
  "subscribers": "136만",
  "videos": [
+  {
+   "id": "IrcrSlCCkGo",
+   "title": "우리 연주 어때?",
+   "views": 58000,
+   "viewsText": "조회수 5.8만회",
+   "published": "",
+   "kind": "short"
+  },
   {
    "id": "nf0cE5ByIiY",
    "title": "˚｡⋆୨୧˚.˚",
@@ -11,22 +19,22 @@
    "viewsText": "조회수 19만회",
    "published": "",
    "kind": "short",
-   "gain": 20000
+   "gain": 0
   },
   {
    "id": "Vo9WrMtd0bY",
    "title": "함께해줘",
-   "views": 300000,
-   "viewsText": "조회수 30만회",
+   "views": 320000,
+   "viewsText": "조회수 32만회",
    "published": "",
    "kind": "short",
-   "gain": 40000
+   "gain": 20000
   },
   {
    "id": "A5PB2NXHkzY",
    "title": "볼링장 미나미 🎳💙",
-   "views": 430000,
-   "viewsText": "조회수 43만회",
+   "views": 440000,
+   "viewsText": "조회수 44만회",
    "published": "",
    "kind": "short",
    "gain": 10000
@@ -34,8 +42,8 @@
   {
    "id": "WDGxa5Vez5U",
    "title": "리마인 🫵💖",
-   "views": 330000,
-   "viewsText": "조회수 33만회",
+   "views": 340000,
+   "viewsText": "조회수 34만회",
    "published": "",
    "kind": "short",
    "gain": 10000
@@ -43,11 +51,11 @@
   {
    "id": "ydZG-_FdrxI",
    "title": "With 까엉 🤎",
-   "views": 360000,
-   "viewsText": "조회수 36만회",
+   "views": 370000,
+   "viewsText": "조회수 37만회",
    "published": "",
    "kind": "short",
-   "gain": 20000
+   "gain": 10000
   },
   {
    "id": "GG1QgSloUkU",
@@ -92,22 +100,22 @@
    "viewsText": "조회수 47만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "KcTEkBTAP3I",
    "title": "D-1 🪽",
-   "views": 580000,
-   "viewsText": "조회수 58만회",
+   "views": 590000,
+   "viewsText": "조회수 59만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "sgZms-ImEx0",
    "title": "but you 🫵",
-   "views": 670000,
-   "viewsText": "조회수 67만회",
+   "views": 680000,
+   "viewsText": "조회수 68만회",
    "published": "",
    "kind": "short",
    "gain": 10000
@@ -115,11 +123,11 @@
   {
    "id": "EYrU4Zphz8s",
    "title": ". ݁⋆ ꫂ᭪ ݁˖ . ݁ ˖ ݁♬⋆.˚𝄞⋆ ⋆",
-   "views": 710000,
-   "viewsText": "조회수 71만회",
+   "views": 720000,
+   "viewsText": "조회수 72만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "VeZXkwf9esM",
@@ -133,11 +141,11 @@
   {
    "id": "ygE3V5CbllU",
    "title": "너라는 꿈 ✨",
-   "views": 820000,
-   "viewsText": "조회수 82만회",
+   "views": 830000,
+   "viewsText": "조회수 83만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "A5vmiFpG1yg",
@@ -146,13 +154,13 @@
    "viewsText": "조회수 79만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "Es3qasE2w7w",
    "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #지훈 선배님",
-   "views": 960000,
-   "viewsText": "조회수 96만회",
+   "views": 970000,
+   "viewsText": "조회수 97만회",
    "published": "",
    "kind": "short",
    "gain": 10000
@@ -164,7 +172,7 @@
    "viewsText": "조회수 80만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "blswe0wDt8o",
@@ -173,7 +181,7 @@
    "viewsText": "조회수 104만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "pekjAyOrBk4",
@@ -187,17 +195,17 @@
   {
    "id": "QEeCIDjleC8",
    "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #나띠 #하늘 선배님",
-   "views": 900000,
-   "viewsText": "조회수 90만회",
+   "views": 910000,
+   "viewsText": "조회수 91만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "UfaJ4mbAiWc",
    "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #운학 선배님",
-   "views": 1160000,
-   "viewsText": "조회수 116만회",
+   "views": 1170000,
+   "viewsText": "조회수 117만회",
    "published": "",
    "kind": "short",
    "gain": 10000
@@ -209,16 +217,16 @@
    "viewsText": "조회수 59만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "k7y2yvkFJ1k",
    "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #애니 님",
-   "views": 1290000,
-   "viewsText": "조회수 129만회",
+   "views": 1300000,
+   "viewsText": "조회수 130만회",
    "published": "",
    "kind": "short",
-   "gain": 20000
+   "gain": 10000
   },
   {
    "id": "zHwTN5Yu-mI",
@@ -227,7 +235,7 @@
    "viewsText": "조회수 100만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "BRL7ag8oEO0",
@@ -349,20 +357,11 @@
   {
    "id": "txF8jHtsiSs",
    "title": "My Birthday 🎂🩶",
-   "views": 1160000,
-   "viewsText": "조회수 116만회",
+   "views": 1170000,
+   "viewsText": "조회수 117만회",
    "published": "",
    "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "YJr1crCM1Fk",
-   "title": "You",
-   "views": 1460000,
-   "viewsText": "조회수 146만회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
+   "gain": 10000
   }
  ]
 }

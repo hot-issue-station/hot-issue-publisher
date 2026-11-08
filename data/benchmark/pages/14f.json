@@ -1,23 +1,23 @@
 {
  "name": "14F 일사에프 (MBC)",
  "channel": "https://www.youtube.com/@14FMBC",
- "checkedAt": "2026-11-08T19:21+09:00",
+ "checkedAt": "2026-11-08T22:29+09:00",
  "subscribers": "239만",
  "videos": [
   {
    "id": "eJAtWi5dWco",
    "title": "3시간 웨이팅해서 사는 라면 백팩 ㄷㄷ #shorts",
-   "views": 9200,
-   "viewsText": "조회수 9.2천회",
+   "views": 12000,
+   "viewsText": "조회수 1.2만회",
    "published": "",
    "kind": "short",
-   "gain": 5800
+   "gain": 2800
   },
   {
    "id": "raKKyS-VS5k",
    "title": "샤인머스캣 가격 폭락 막기 힘든 이유 #shorts",
-   "views": 6200,
-   "viewsText": "조회수 6.2천회",
+   "views": 6300,
+   "viewsText": "조회수 6.3천회",
    "published": "",
    "kind": "short",
    "gain": 100
@@ -34,11 +34,11 @@
   {
    "id": "uq0xvYN3L9I",
    "title": "일본 화물이 부산항에 몰리는 이유 #shorts",
-   "views": 66000,
-   "viewsText": "조회수 6.6만회",
+   "views": 68000,
+   "viewsText": "조회수 6.8만회",
    "published": "",
    "kind": "short",
-   "gain": 4000
+   "gain": 2000
   },
   {
    "id": "G63QFaqloJQ",
@@ -47,7 +47,7 @@
    "viewsText": "조회수 8.7천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "peSpC5kd2t0",
@@ -65,7 +65,7 @@
    "viewsText": "조회수 5.8천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "FV2VNAPmk-o",

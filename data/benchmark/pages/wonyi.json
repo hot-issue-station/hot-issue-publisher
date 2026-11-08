@@ -1,14 +1,14 @@
 {
  "name": "안원잘부",
  "channel": "https://www.youtube.com/@helloiamwoninicetomeetyou",
- "checkedAt": "2026-11-08T19:21+09:00",
+ "checkedAt": "2026-11-08T22:29+09:00",
  "subscribers": "242만",
  "videos": [
   {
    "id": "kfK-LENbEUo",
    "title": "정작가의 컴백을 축하합니다",
-   "views": 1500000,
-   "viewsText": "조회수 150만회",
+   "views": 1510000,
+   "viewsText": "조회수 151만회",
    "published": "",
    "kind": "short",
    "gain": 10000
@@ -16,11 +16,11 @@
   {
    "id": "DKDmFgXzxs8",
    "title": "안원잘부 명장면 이모티콘2 출시!",
-   "views": 2620000,
-   "viewsText": "조회수 262만회",
+   "views": 2630000,
+   "viewsText": "조회수 263만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "zxNoW_LtVLE",
@@ -29,7 +29,7 @@
    "viewsText": "조회수 275만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "mFM2hP5LEhM",
@@ -52,8 +52,8 @@
   {
    "id": "GsYq_ouLAMQ",
    "title": "[B컷] 시그니엘 망고 빙수",
-   "views": 5440000,
-   "viewsText": "조회수 544만회",
+   "views": 5450000,
+   "viewsText": "조회수 545만회",
    "published": "",
    "kind": "short",
    "gain": 10000
@@ -101,7 +101,7 @@
    "viewsText": "조회수 1348만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "gNJrbCSN2TM",
@@ -151,11 +151,11 @@
   {
    "id": "FxbR-V8GOjE",
    "title": "새로운 등교 친구",
-   "views": 5760000,
-   "viewsText": "조회수 576만회",
+   "views": 5770000,
+   "viewsText": "조회수 577만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "tDs3mcabrFM",
@@ -214,11 +214,11 @@
   {
    "id": "YDCgJIvro-4",
    "title": "혹시 한국인이세요?",
-   "views": 4880000,
-   "viewsText": "조회수 488만회",
+   "views": 4890000,
+   "viewsText": "조회수 489만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "LVr2R5_TFME",
