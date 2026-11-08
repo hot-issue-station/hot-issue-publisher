@@ -1,7 +1,7 @@
 {
  "name": "스브스뉴스 (SBS)",
  "channel": "https://www.youtube.com/@subusunews",
- "checkedAt": "2026-11-08T08:26+09:00",
+ "checkedAt": "2026-11-08T14:43+09:00",
  "subscribers": "144만",
  "videos": [
   {
@@ -11,16 +11,16 @@
    "viewsText": "조회수 2.3천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "bvbHkNEO3t8",
    "title": "이제 소풍 안 간다는 요즘 초등학교 근황 #초등학교 #shorts #스브스뉴스",
-   "views": 20000,
-   "viewsText": "조회수 2만회",
+   "views": 21000,
+   "viewsText": "조회수 2.1만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 1000
   },
   {
    "id": "6LRM6cDTkWU",
@@ -272,7 +272,7 @@
    "viewsText": "조회수 3.8만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "E07k_Tu50w0",

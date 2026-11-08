@@ -1,23 +1,31 @@
 {
  "name": "14F 일사에프 (MBC)",
  "channel": "https://www.youtube.com/@14FMBC",
- "checkedAt": "2026-11-08T08:26+09:00",
+ "checkedAt": "2026-11-08T14:43+09:00",
  "subscribers": "239만",
  "videos": [
   {
+   "id": "eJAtWi5dWco",
+   "title": "3시간 웨이팅해서 사는 라면 백팩 ㄷㄷ #shorts",
+   "views": 3400,
+   "viewsText": "조회수 3.4천회",
+   "published": "",
+   "kind": "short"
+  },
+  {
    "id": "raKKyS-VS5k",
    "title": "샤인머스캣 가격 폭락 막기 힘든 이유 #shorts",
-   "views": 6000,
-   "viewsText": "조회수 6천회",
+   "views": 6100,
+   "viewsText": "조회수 6.1천회",
    "published": "",
    "kind": "short",
-   "gain": 200
+   "gain": 100
   },
   {
    "id": "UjJznEbPKrw",
    "title": "북극항로에 베팅한 한국의 큰 그림? #shorts",
-   "views": 11000,
-   "viewsText": "조회수 1.1만회",
+   "views": 12000,
+   "viewsText": "조회수 1.2만회",
    "published": "",
    "kind": "short",
    "gain": 1000
@@ -25,17 +33,17 @@
   {
    "id": "uq0xvYN3L9I",
    "title": "일본 화물이 부산항에 몰리는 이유 #shorts",
-   "views": 57000,
-   "viewsText": "조회수 5.7만회",
+   "views": 62000,
+   "viewsText": "조회수 6.2만회",
    "published": "",
    "kind": "short",
-   "gain": 7000
+   "gain": 5000
   },
   {
    "id": "G63QFaqloJQ",
    "title": "샤인머스캣으로 얼마나 벌었을까? #shorts",
-   "views": 8400,
-   "viewsText": "조회수 8.4천회",
+   "views": 8600,
+   "viewsText": "조회수 8.6천회",
    "published": "",
    "kind": "short",
    "gain": 200
@@ -43,11 +51,11 @@
   {
    "id": "peSpC5kd2t0",
    "title": "홍채로도 운세를 볼 수 있다? #shorts",
-   "views": 9400,
-   "viewsText": "조회수 9.4천회",
+   "views": 9500,
+   "viewsText": "조회수 9.5천회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 100
   },
   {
    "id": "yoyqnf-PE30",
@@ -74,16 +82,16 @@
    "viewsText": "조회수 6.7천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "Icvrlx6HV-Q",
    "title": "뇌과학자도 당황한 최면 유도술 #shorts",
-   "views": 7100,
-   "viewsText": "조회수 7.1천회",
+   "views": 7200,
+   "viewsText": "조회수 7.2천회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 100
   },
   {
    "id": "zHzHgad2t6c",
@@ -124,11 +132,11 @@
   {
    "id": "X_JgmaOlc8o",
    "title": "74세 해녀가 운영하는 제주 에어비앤비? #shorts",
-   "views": 6900,
-   "viewsText": "조회수 6.9천회",
+   "views": 7000,
+   "viewsText": "조회수 7천회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 100
   },
   {
    "id": "hESTS8rGEQs",
@@ -351,15 +359,6 @@
    "title": "2026 국중박 분장놀이 결선 요약✨ #shorts",
    "views": 34000,
    "viewsText": "조회수 3.4만회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "prGRiSzpMz0",
-   "title": "영국인 냉장고에 꼭 있다는 버터 #shorts",
-   "views": 16000,
-   "viewsText": "조회수 1.6만회",
    "published": "",
    "kind": "short",
    "gain": 0
