@@ -1,7 +1,7 @@
 {
  "name": "스브스뉴스 (SBS)",
  "channel": "https://www.youtube.com/@subusunews",
- "checkedAt": "2026-11-08T14:43+09:00",
+ "checkedAt": "2026-11-08T19:21+09:00",
  "subscribers": "144만",
  "videos": [
   {
@@ -20,7 +20,7 @@
    "viewsText": "조회수 2.1만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "6LRM6cDTkWU",
@@ -34,11 +34,11 @@
   {
    "id": "bRGPA0qxe-w",
    "title": "햇반이 해외에서 인기인 의외의 이유 #shorts / 스브스뉴스",
-   "views": 13000,
-   "viewsText": "조회수 1.3만회",
+   "views": 14000,
+   "viewsText": "조회수 1.4만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 1000
   },
   {
    "id": "Hi8hop0wrf0",
@@ -124,11 +124,11 @@
   {
    "id": "ernsQIVrBi4",
    "title": "노로바이러스 소문 팩트체크 #굴 #shorts #스브스뉴스",
-   "views": 6900,
-   "viewsText": "조회수 6.9천회",
+   "views": 7000,
+   "viewsText": "조회수 7천회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 100
   },
   {
    "id": "cIV-athgSaM",

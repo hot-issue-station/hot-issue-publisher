@@ -90,5 +90,166 @@
   "key": "storyk",
   "ok": false,
   "error": "HTTPError: HTTP Error 404: Not Found"
+ },
+ {
+  "at": "2026-11-08T19:21+09:00",
+  "key": "14f",
+  "ok": true,
+  "new": [
+   "eJAtWi5dWco",
+   "-5SuOuqeZ90"
+  ],
+  "top": [
+   {
+    "id": "KT1XfcUxmw0",
+    "title": "웨이팅만 3시간! 구미라면축제에서 난리 난 라면의 정체는? | 선발대 / 14F",
+    "views": 125607,
+    "gain": 54069
+   },
+   {
+    "id": "uq0xvYN3L9I",
+    "title": "일본 화물이 부산항에 몰리는 이유 #shorts",
+    "views": 66271,
+    "gain": 16209
+   },
+   {
+    "id": "7TgeU5xqUJI",
+    "title": "집이 남아 돌던 스페인, 이제 집이 없어서 문제라고? 스페인 주택난의 모든 것 / 14F",
+    "views": 221995,
+    "gain": 14064
+   }
+  ]
+ },
+ {
+  "at": "2026-11-08T19:21+09:00",
+  "key": "subusunews",
+  "ok": true,
+  "new": [],
+  "top": [
+   {
+    "id": "53YmGEQcPg8",
+    "title": "형이랑 놀았던 시간은 참 재밌었는데, 형은 어땠어?ㅣ우리 사이엔 편지가 있다2 EP.10 엔시티드림 재민&지성",
+    "views": 171216,
+    "gain": 7491
+   },
+   {
+    "id": "Zq1d5ckccFQ",
+    "title": "극단적이었던 재민 입맛",
+    "views": 43298,
+    "gain": 4536
+   },
+   {
+    "id": "RkMOt2YYMUg",
+    "title": "팝핀시키는 연습생 형아들",
+    "views": 21104,
+    "gain": 2008
+   }
+  ]
+ },
+ {
+  "at": "2026-11-08T19:21+09:00",
+  "key": "vstudio",
+  "ok": true,
+  "new": [],
+  "top": []
+ },
+ {
+  "at": "2026-11-08T19:21+09:00",
+  "key": "syukaworld",
+  "ok": true,
+  "new": [
+   "hvjeDlMlPSE",
+   "8DeKtLlHPdI"
+  ],
+  "top": [
+   {
+    "id": "h9yF44sFEvc",
+    "title": "우리 요즘 잘하고 있지 않아요?",
+    "views": 239565,
+    "gain": 46709
+   },
+   {
+    "id": "LYXceDpsPYA",
+    "title": "쪼잔하게 돈 버는 법",
+    "views": 196428,
+    "gain": 13960
+   },
+   {
+    "id": "ri2GLNjEM_s",
+    "title": "불안한 주식시장에 내 노후를 맡겨도 될까요",
+    "views": 171425,
+    "gain": 13098
+   }
+  ]
+ },
+ {
+  "at": "2026-11-08T19:21+09:00",
+  "key": "ytn",
+  "ok": true,
+  "new": [
+   "wfWRAzkidEs",
+   "kzV9QHiaW6U",
+   "czDhII1l-Hk",
+   "4ub2fSQ3gsA",
+   "W0PPbLpGabU",
+   "rxlgjWOkkd8",
+   "ZXpzjwWtuZY",
+   "7Ayrn1w9x1E",
+   "vF-agWnPdnw",
+   "MrAnneb_6zI",
+   "H_q9gYwNiYs",
+   "67byk1VZBts",
+   "hwMyUbRAefg",
+   "fCyoPrO7zeo",
+   "6LXeRENP6Qw"
+  ],
+  "top": [
+   {
+    "id": "MrAnneb_6zI",
+    "title": "삼성, kt 꺾고 12년 만에 한국시리즈 우승 / YTN",
+    "views": 23774,
+    "gain": null
+   },
+   {
+    "id": "fCyoPrO7zeo",
+    "title": "치명적 토마토 바이러스 부산까지 전파 / YTN",
+    "views": 13340,
+    "gain": null
+   },
+   {
+    "id": "hwMyUbRAefg",
+    "title": "저출생 충격...초등 입학생 사상 첫 30만 명 미달 / YTN",
+    "views": 12309,
+    "gain": null
+   }
+  ]
+ },
+ {
+  "at": "2026-11-08T19:21+09:00",
+  "key": "storyk",
+  "ok": true,
+  "new": [
+   "pzqdpN2RPCc"
+  ],
+  "top": [
+   {
+    "id": "FhUO1_ZU1Dw",
+    "title": "손흥민 존경 포로의 고백이 감동인 이유 - 월드컵 챔피언이 보증한 축구계의 존중받는 캡틴",
+    "views": 49699,
+    "gain": 42244
+   },
+   {
+    "id": "aGdX-njap_8",
+    "title": "김예건 한국 역대 최연소 2위 유럽대항전 출전 - 명문팀 거절하고 1군 노린 18살유망주",
+    "views": 68856,
+    "gain": 3521
+   },
+   {
+    "id": "eMHW9EPF5_g",
+    "title": "손흥민 또 PL 공식 계정이 샤라웃 - 이적 후에도 계속되는 유럽 축구계의 압도적인 존중",
+    "views": 56030,
+    "gain": 1794
+   }
+  ]
  }
 ]

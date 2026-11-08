@@ -1,22 +1,23 @@
 {
  "name": "14F 일사에프 (MBC)",
  "channel": "https://www.youtube.com/@14FMBC",
- "checkedAt": "2026-11-08T14:43+09:00",
+ "checkedAt": "2026-11-08T19:21+09:00",
  "subscribers": "239만",
  "videos": [
   {
    "id": "eJAtWi5dWco",
    "title": "3시간 웨이팅해서 사는 라면 백팩 ㄷㄷ #shorts",
-   "views": 3400,
-   "viewsText": "조회수 3.4천회",
+   "views": 9200,
+   "viewsText": "조회수 9.2천회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 5800
   },
   {
    "id": "raKKyS-VS5k",
    "title": "샤인머스캣 가격 폭락 막기 힘든 이유 #shorts",
-   "views": 6100,
-   "viewsText": "조회수 6.1천회",
+   "views": 6200,
+   "viewsText": "조회수 6.2천회",
    "published": "",
    "kind": "short",
    "gain": 100
@@ -28,25 +29,25 @@
    "viewsText": "조회수 1.2만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "uq0xvYN3L9I",
    "title": "일본 화물이 부산항에 몰리는 이유 #shorts",
-   "views": 62000,
-   "viewsText": "조회수 6.2만회",
+   "views": 66000,
+   "viewsText": "조회수 6.6만회",
    "published": "",
    "kind": "short",
-   "gain": 5000
+   "gain": 4000
   },
   {
    "id": "G63QFaqloJQ",
    "title": "샤인머스캣으로 얼마나 벌었을까? #shorts",
-   "views": 8600,
-   "viewsText": "조회수 8.6천회",
+   "views": 8700,
+   "viewsText": "조회수 8.7천회",
    "published": "",
    "kind": "short",
-   "gain": 200
+   "gain": 100
   },
   {
    "id": "peSpC5kd2t0",
@@ -55,16 +56,16 @@
    "viewsText": "조회수 9.5천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "yoyqnf-PE30",
    "title": "우리 집 강아지의 전생을 알 수 있다? #shorts",
-   "views": 5700,
-   "viewsText": "조회수 5.7천회",
+   "views": 5800,
+   "viewsText": "조회수 5.8천회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 100
   },
   {
    "id": "FV2VNAPmk-o",
@@ -91,7 +92,7 @@
    "viewsText": "조회수 7.2천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "zHzHgad2t6c",
@@ -136,7 +137,7 @@
    "viewsText": "조회수 7천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "hESTS8rGEQs",

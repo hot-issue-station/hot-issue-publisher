@@ -1,62 +1,62 @@
 {
  "name": "YTN",
  "channel": "https://www.youtube.com/@ytnnews24",
- "checkedAt": "2026-11-08T14:43+09:00",
+ "checkedAt": "2026-11-08T19:21+09:00",
  "subscribers": "543만",
  "videos": [
   {
    "id": "ytviFiuQfNQ",
    "title": "김성령이 사진 찍으려고 한 시간 반 기다린 사람 / YTN",
-   "views": 14000,
-   "viewsText": "조회수 1.4만회",
-   "published": "",
-   "kind": "short",
-   "gain": 4000
-  },
-  {
-   "id": "uLOE2OzP1II",
-   "title": "\"최악의 날 겪었다\" #shorts / YTN",
-   "views": 90000,
-   "viewsText": "조회수 9만회",
-   "published": "",
-   "kind": "short",
-   "gain": 7000
-  },
-  {
-   "id": "zTLiB94XNO0",
-   "title": "'이 단어' 썼다고 불편... #shorts / YTN",
-   "views": 59000,
-   "viewsText": "조회수 5.9만회",
-   "published": "",
-   "kind": "short",
-   "gain": 4000
-  },
-  {
-   "id": "kes33F1M1us",
-   "title": "헤그세스 '정면 돌파' 예고 #shorts / YTN",
-   "views": 43000,
-   "viewsText": "조회수 4.3만회",
-   "published": "",
-   "kind": "short",
-   "gain": 5000
-  },
-  {
-   "id": "tYjuFAek1vU",
-   "title": "젠슨 황 옆자리의 정체는? #shorts / YTN",
-   "views": 44000,
-   "viewsText": "조회수 4.4만회",
+   "views": 16000,
+   "viewsText": "조회수 1.6만회",
    "published": "",
    "kind": "short",
    "gain": 2000
   },
   {
-   "id": "n4PE_UeJKwg",
-   "title": "'스카프 아저씨' 결국... #shorts / YTN",
-   "views": 620000,
-   "viewsText": "조회수 62만회",
+   "id": "uLOE2OzP1II",
+   "title": "\"최악의 날 겪었다\" #shorts / YTN",
+   "views": 94000,
+   "viewsText": "조회수 9.4만회",
    "published": "",
    "kind": "short",
-   "gain": 40000
+   "gain": 4000
+  },
+  {
+   "id": "zTLiB94XNO0",
+   "title": "'이 단어' 썼다고 불편... #shorts / YTN",
+   "views": 62000,
+   "viewsText": "조회수 6.2만회",
+   "published": "",
+   "kind": "short",
+   "gain": 3000
+  },
+  {
+   "id": "kes33F1M1us",
+   "title": "헤그세스 '정면 돌파' 예고 #shorts / YTN",
+   "views": 47000,
+   "viewsText": "조회수 4.7만회",
+   "published": "",
+   "kind": "short",
+   "gain": 4000
+  },
+  {
+   "id": "tYjuFAek1vU",
+   "title": "젠슨 황 옆자리의 정체는? #shorts / YTN",
+   "views": 45000,
+   "viewsText": "조회수 4.5만회",
+   "published": "",
+   "kind": "short",
+   "gain": 1000
+  },
+  {
+   "id": "n4PE_UeJKwg",
+   "title": "'스카프 아저씨' 결국... #shorts / YTN",
+   "views": 640000,
+   "viewsText": "조회수 64만회",
+   "published": "",
+   "kind": "short",
+   "gain": 20000
   },
   {
    "id": "8S60R0-xwJA",
@@ -65,7 +65,7 @@
    "viewsText": "조회수 6.6천회",
    "published": "",
    "kind": "short",
-   "gain": 200
+   "gain": 0
   },
   {
    "id": "qxzXsZYhfI4",
@@ -83,7 +83,7 @@
    "viewsText": "조회수 3만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "FE7__k6Uucs",
@@ -97,17 +97,17 @@
   {
    "id": "j0CYjFE-zgo",
    "title": "\"제발 찾아주세요\" #shorts / YTN",
-   "views": 75000,
-   "viewsText": "조회수 7.5만회",
+   "views": 76000,
+   "viewsText": "조회수 7.6만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 1000
   },
   {
    "id": "VqvtsixMGJQ",
    "title": "선수 사랑은 역시 박항서 #shorts / YTN",
-   "views": 25000,
-   "viewsText": "조회수 2.5만회",
+   "views": 26000,
+   "viewsText": "조회수 2.6만회",
    "published": "",
    "kind": "short",
    "gain": 1000
@@ -115,11 +115,11 @@
   {
    "id": "Mnkf8iuno10",
    "title": "제주 고씨 : (흐뭇) #shorts / YTN",
-   "views": 22000,
-   "viewsText": "조회수 2.2만회",
+   "views": 23000,
+   "viewsText": "조회수 2.3만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 1000
   },
   {
    "id": "3KgXJTylc6o",
@@ -137,7 +137,7 @@
    "viewsText": "조회수 2.9만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "VXyDTtwVDwc",
@@ -146,13 +146,13 @@
    "viewsText": "조회수 4.2만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "HdP1QTppZFk",
    "title": "이번 주말 서울 도심 피하세요 #shorts / YTN",
-   "views": 9400,
-   "viewsText": "조회수 9.4천회",
+   "views": 9500,
+   "viewsText": "조회수 9.5천회",
    "published": "",
    "kind": "short",
    "gain": 100
@@ -160,8 +160,8 @@
   {
    "id": "ikxH7pg0HFA",
    "title": "한밤중 아수라장 된 식당 #shorts / YTN",
-   "views": 8900,
-   "viewsText": "조회수 8.9천회",
+   "views": 9000,
+   "viewsText": "조회수 9천회",
    "published": "",
    "kind": "short",
    "gain": 100
@@ -178,11 +178,11 @@
   {
    "id": "XV61oOZQ92w",
    "title": "52년 만에 벌어진 일 #shorts / YTN",
-   "views": 130000,
-   "viewsText": "조회수 13만회",
+   "views": 140000,
+   "viewsText": "조회수 14만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "F7sbP4Y3UF8",
@@ -191,7 +191,7 @@
    "viewsText": "조회수 6.9만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "FgeFu-ccyGw",
@@ -200,7 +200,7 @@
    "viewsText": "조회수 18만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "nLJ206KmIFU",
@@ -241,11 +241,11 @@
   {
    "id": "hhgy_L8cykU",
    "title": "전문가는 '0명' #shorts / YTN",
-   "views": 9100,
-   "viewsText": "조회수 9.1천회",
+   "views": 9200,
+   "viewsText": "조회수 9.2천회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 100
   },
   {
    "id": "2zT9uRxdiks",
@@ -322,11 +322,11 @@
   {
    "id": "JIjPJ_w-SUE",
    "title": "내년부터 '이것' 바뀐다 #shorts / YTN",
-   "views": 78000,
-   "viewsText": "조회수 7.8만회",
+   "views": 79000,
+   "viewsText": "조회수 7.9만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 1000
   },
   {
    "id": "fL4jEpyKOrE",
@@ -335,7 +335,7 @@
    "viewsText": "조회수 73만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "s5zMYUE459g",
@@ -349,11 +349,11 @@
   {
    "id": "eOAiitecW8w",
    "title": "AI 차라리 없었다면... #shorts / YTN",
-   "views": 120000,
-   "viewsText": "조회수 12만회",
+   "views": 130000,
+   "viewsText": "조회수 13만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "Qz-TkyFjBFo",

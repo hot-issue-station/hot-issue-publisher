@@ -3,20 +3,33 @@
  "name": "스토리K (손흥민 레전드 비교 특집 벤치마킹, 10/31)",
  "channel": "https://www.youtube.com/@story_k",
  "channelId": "UCqzNZeBt0546jG-vDlAQlZg",
- "checkedAt": "2026-11-07T22:30+09:00",
+ "checkedAt": "2026-11-08T19:21+09:00",
  "videos": [
+  {
+   "id": "pzqdpN2RPCc",
+   "title": "김민수 또 맹활약 레인저스 무패 행진 - 주전 경쟁조차 필요없는 20세 괴물의 질주",
+   "published": "2026-11-08T10:15:12+00:00",
+   "url": "https://www.youtube.com/watch?v=pzqdpN2RPCc",
+   "shorts": false,
+   "views": 104,
+   "likes": 26,
+   "viewsGain": null,
+   "isNew": true,
+   "median": 63337,
+   "multiple": 0.0
+  },
   {
    "id": "FhUO1_ZU1Dw",
    "title": "손흥민 존경 포로의 고백이 감동인 이유 - 월드컵 챔피언이 보증한 축구계의 존중받는 캡틴",
    "published": "2026-11-07T10:26:57+00:00",
    "url": "https://www.youtube.com/watch?v=FhUO1_ZU1Dw",
    "shorts": false,
-   "views": 7455,
-   "likes": 749,
-   "viewsGain": null,
-   "isNew": true,
-   "median": 65335,
-   "multiple": 0.1
+   "views": 49699,
+   "likes": 1314,
+   "viewsGain": 42244,
+   "isNew": false,
+   "median": 63337,
+   "multiple": 0.8
   },
   {
    "id": "aGdX-njap_8",
@@ -24,12 +37,12 @@
    "published": "2026-11-06T10:20:26+00:00",
    "url": "https://www.youtube.com/watch?v=aGdX-njap_8",
    "shorts": false,
-   "views": 65335,
-   "likes": 749,
-   "viewsGain": 1011,
+   "views": 68856,
+   "likes": 775,
+   "viewsGain": 3521,
    "isNew": false,
-   "median": 65335,
-   "multiple": 1.0
+   "median": 63337,
+   "multiple": 1.1
   },
   {
    "id": "XnpYo8kDzQo",
@@ -37,11 +50,11 @@
    "published": "2026-11-05T10:03:23+00:00",
    "url": "https://www.youtube.com/watch?v=XnpYo8kDzQo",
    "shorts": false,
-   "views": 26346,
-   "likes": 951,
-   "viewsGain": 292,
+   "views": 27182,
+   "likes": 963,
+   "viewsGain": 836,
    "isNew": false,
-   "median": 65335,
+   "median": 63337,
    "multiple": 0.4
   },
   {
@@ -50,12 +63,12 @@
    "published": "2026-11-04T10:03:23+00:00",
    "url": "https://www.youtube.com/watch?v=eMHW9EPF5_g",
    "shorts": false,
-   "views": 54236,
-   "likes": 1507,
-   "viewsGain": 385,
+   "views": 56030,
+   "likes": 1526,
+   "viewsGain": 1794,
    "isNew": false,
-   "median": 65335,
-   "multiple": 0.8
+   "median": 63337,
+   "multiple": 0.9
   },
   {
    "id": "6WdpcGFmFgQ",
@@ -63,11 +76,11 @@
    "published": "2026-11-03T10:03:50+00:00",
    "url": "https://www.youtube.com/watch?v=6WdpcGFmFgQ",
    "shorts": false,
-   "views": 102731,
+   "views": 103131,
    "likes": 1679,
-   "viewsGain": 83,
+   "viewsGain": 400,
    "isNew": false,
-   "median": 65335,
+   "median": 63337,
    "multiple": 1.6
   },
   {
@@ -76,11 +89,11 @@
    "published": "2026-11-02T10:18:24+00:00",
    "url": "https://www.youtube.com/watch?v=nrw8lqAulz8",
    "shorts": false,
-   "views": 49332,
-   "likes": 1379,
-   "viewsGain": 62,
+   "views": 49633,
+   "likes": 1382,
+   "viewsGain": 301,
    "isNew": false,
-   "median": 65335,
+   "median": 63337,
    "multiple": 0.8
   },
   {
@@ -89,12 +102,12 @@
    "published": "2026-11-01T10:10:44+00:00",
    "url": "https://www.youtube.com/watch?v=hW2vyayJmLc",
    "shorts": false,
-   "views": 117365,
-   "likes": 1871,
-   "viewsGain": 58,
+   "views": 117754,
+   "likes": 1872,
+   "viewsGain": 389,
    "isNew": false,
-   "median": 65335,
-   "multiple": 1.8
+   "median": 63337,
+   "multiple": 1.9
   },
   {
    "id": "kUd8n4RkZwI",
@@ -102,12 +115,12 @@
    "published": "2026-10-30T10:55:36+00:00",
    "url": "https://www.youtube.com/watch?v=kUd8n4RkZwI",
    "shorts": false,
-   "views": 67795,
-   "likes": 1659,
-   "viewsGain": 11,
+   "views": 67850,
+   "likes": 1660,
+   "viewsGain": 55,
    "isNew": false,
-   "median": 65335,
-   "multiple": 1.0
+   "median": 63337,
+   "multiple": 1.1
   },
   {
    "id": "T8LOjY7uM8A",
@@ -115,12 +128,12 @@
    "published": "2026-10-29T10:21:36+00:00",
    "url": "https://www.youtube.com/watch?v=T8LOjY7uM8A",
    "shorts": false,
-   "views": 273487,
-   "likes": 3447,
-   "viewsGain": 46,
+   "views": 273661,
+   "likes": 3446,
+   "viewsGain": 174,
    "isNew": false,
-   "median": 65335,
-   "multiple": 4.2
+   "median": 63337,
+   "multiple": 4.3
   },
   {
    "id": "VCrDlYW4s98",
@@ -128,12 +141,12 @@
    "published": "2026-10-28T09:38:38+00:00",
    "url": "https://www.youtube.com/watch?v=VCrDlYW4s98",
    "shorts": false,
-   "views": 42224,
-   "likes": 886,
-   "viewsGain": 3,
+   "views": 42245,
+   "likes": 887,
+   "viewsGain": 21,
    "isNew": false,
-   "median": 65335,
-   "multiple": 0.6
+   "median": 63337,
+   "multiple": 0.7
   },
   {
    "id": "SYpmi4jnRJA",
@@ -141,12 +154,12 @@
    "published": "2026-10-27T08:54:51+00:00",
    "url": "https://www.youtube.com/watch?v=SYpmi4jnRJA",
    "shorts": false,
-   "views": 73413,
-   "likes": 1104,
-   "viewsGain": 6,
+   "views": 73495,
+   "likes": 1105,
+   "viewsGain": 82,
    "isNew": false,
-   "median": 65335,
-   "multiple": 1.1
+   "median": 63337,
+   "multiple": 1.2
   },
   {
    "id": "2KjngjLjWIM",
@@ -154,11 +167,11 @@
    "published": "2026-10-26T10:33:18+00:00",
    "url": "https://www.youtube.com/watch?v=2KjngjLjWIM",
    "shorts": false,
-   "views": 37590,
+   "views": 37625,
    "likes": 1117,
-   "viewsGain": 0,
+   "viewsGain": 35,
    "isNew": false,
-   "median": 65335,
+   "median": 63337,
    "multiple": 0.6
   },
   {
@@ -167,12 +180,12 @@
    "published": "2026-10-25T10:30:05+00:00",
    "url": "https://www.youtube.com/watch?v=0r6jiNTzI8U",
    "shorts": false,
-   "views": 80217,
+   "views": 80313,
    "likes": 1187,
-   "viewsGain": 15,
+   "viewsGain": 96,
    "isNew": false,
-   "median": 65335,
-   "multiple": 1.2
+   "median": 63337,
+   "multiple": 1.3
   },
   {
    "id": "e0HpxlENq_o",
@@ -180,33 +193,20 @@
    "published": "2026-10-24T10:54:42+00:00",
    "url": "https://www.youtube.com/watch?v=e0HpxlENq_o",
    "shorts": false,
-   "views": 63295,
+   "views": 63337,
    "likes": 1704,
-   "viewsGain": 2,
+   "viewsGain": 42,
    "isNew": false,
-   "median": 65335,
+   "median": 63337,
    "multiple": 1.0
-  },
-  {
-   "id": "RN2I4tb0slE",
-   "title": "이재성 진짜 태극 전사의 눈물겨운 사투 - 손흥민 친구 이전에 한국 대표팀의 역사적인 공미",
-   "published": "2026-10-23T09:55:11+00:00",
-   "url": "https://www.youtube.com/watch?v=RN2I4tb0slE",
-   "shorts": false,
-   "views": 71975,
-   "likes": 1751,
-   "viewsGain": 0,
-   "isNew": false,
-   "median": 65335,
-   "multiple": 1.1
   }
  ],
  "viral": [
   {
    "title": "손흥민 존중은 베테랑을 향한 마땅한 기본 - 황희찬의 하이파이브 무시와 엄지성 대표팀 발탁",
    "url": "https://www.youtube.com/watch?v=T8LOjY7uM8A",
-   "views": 273487,
-   "multiple": 4.2,
+   "views": 273661,
+   "multiple": 4.3,
    "shorts": false
   }
  ]

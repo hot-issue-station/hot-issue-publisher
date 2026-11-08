@@ -1,17 +1,17 @@
 {
  "name": "안원잘부",
  "channel": "https://www.youtube.com/@helloiamwoninicetomeetyou",
- "checkedAt": "2026-11-08T14:43+09:00",
+ "checkedAt": "2026-11-08T19:21+09:00",
  "subscribers": "242만",
  "videos": [
   {
    "id": "kfK-LENbEUo",
    "title": "정작가의 컴백을 축하합니다",
-   "views": 1490000,
-   "viewsText": "조회수 149만회",
+   "views": 1500000,
+   "viewsText": "조회수 150만회",
    "published": "",
    "kind": "short",
-   "gain": 20000
+   "gain": 10000
   },
   {
    "id": "DKDmFgXzxs8",
@@ -20,16 +20,16 @@
    "viewsText": "조회수 262만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "zxNoW_LtVLE",
    "title": "치명적인 실수",
-   "views": 2740000,
-   "viewsText": "조회수 274만회",
+   "views": 2750000,
+   "viewsText": "조회수 275만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "mFM2hP5LEhM",
@@ -47,16 +47,16 @@
    "viewsText": "조회수 614만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "GsYq_ouLAMQ",
    "title": "[B컷] 시그니엘 망고 빙수",
-   "views": 5430000,
-   "viewsText": "조회수 543만회",
+   "views": 5440000,
+   "viewsText": "조회수 544만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "BUeZskDCMpU",
@@ -92,16 +92,16 @@
    "viewsText": "조회수 331만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "o-B0F16GwL0",
    "title": "[B컷] 의자 안 돌아가요",
-   "views": 13470000,
-   "viewsText": "조회수 1347만회",
+   "views": 13480000,
+   "viewsText": "조회수 1348만회",
    "published": "",
    "kind": "short",
-   "gain": 20000
+   "gain": 10000
   },
   {
    "id": "gNJrbCSN2TM",
@@ -227,7 +227,7 @@
    "viewsText": "조회수 530만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "cDDORzB-2Q0",
@@ -263,7 +263,7 @@
    "viewsText": "조회수 753만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "6cPEEeEAKiM",
