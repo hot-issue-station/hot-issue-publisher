@@ -1,0 +1,88 @@
+{
+ "slot": "AM",
+ "candidates": [
+  {
+   "title": "유현조, KLPGA 최종전 우승 뒤 LPGA Q스쿨로",
+   "summary": "시즌 3승·통산 5승, 11/20 미국 도전 출국",
+   "facts": [
+    "유현조가 11/8 KLPGA 시즌 최종전 대보 하우스디 챔피언십 우승 — 합계 14언더파 202타, 2위 이예원(13언더파)에 1타 차",
+    "시즌 3승, 통산 5승. 5월 DB위민스·10월 HJ중공업·동부건설 챔피언십에 이은 3승째",
+    "평균타수 70.6795타로 1위, 2년 연속 최저타수상",
+    "LPGA 퀄리파잉(Q)스쿨에 도전해 해외 진출을 노리며 20일 출국 예정",
+    "우승 상금 3억원"
+   ],
+   "sources": [
+    {
+     "outlet": "달리안",
+     "title": "18번 홀서 우승 완성한 유현조, LPGA Q스쿨 도전장",
+     "date": "2026-11-08",
+     "url": "https://www.dailian.co.kr/news/view/1712233/18%EB%B2%88-%ED%99%80%EC%84%9C-%EC%9A%B0%EC%8A%B9-%EC%99%84%EC%84%B1%ED%95%9C-%EC%9C%A0%ED%98%84%EC%A1%B0-LP-2026"
+    },
+    {
+     "outlet": "골프한국",
+     "title": "KLPGA 투어 2026시즌 우승자 명단…유현조, '최종전' 대보 하우스디 챔피언십 우승",
+     "date": "2026-11-08",
+     "url": "https://golfhankook.hankooki.com/news/articleView.html?idxno=20022587"
+    }
+   ],
+   "photoQuery": "KLPGA 공식 유튜브 대보 하우스디 챔피언십 / LPGA 공식 채널",
+   "score": 24,
+   "why": "해외 한국인 도전 · 화제도 24점"
+  },
+  {
+   "title": "[민감] 교황, 수술 3주 만에 남미 순방 시작",
+   "summary": "10/13 폐 수술 뒤 우루과이·아르헨티나·페루 순방",
+   "facts": [
+    "레오 14세 교황이 11/6 로마를 출발해 우루과이·아르헨티나·페루 순방(첫 남미 순방) 시작",
+    "11/6 몬테비데오 독립광장 환영 연설 — 고독·불안 속 사람들을 위한 가족과 공동체의 역할 강조",
+    "10/13 악성 종양 수술로 우측 폐 하엽 절제 (프리미시아스 보도)",
+    "11/7 유로뉴스 보도: 교황 '평화는 가능하다' 메시지",
+    "종교 소재 — 대표 판단 필요"
+   ],
+   "sources": [
+    {
+     "outlet": "바티칸뉴스",
+     "title": "Pope Leo XIV sends telegrams on flight from Rome to Montevideo",
+     "date": "2026-11-06",
+     "url": "https://www.vaticannews.va/en/pope/news/2026-11/pope-leo-xiv-telegrams-flight-rome-montevideo-uruguay.html"
+    },
+    {
+     "outlet": "프리미시아스",
+     "title": "El papa León XIV en Uruguay: primer discurso",
+     "date": "2026-11-06",
+     "url": "https://www.primicias.ec/internacional/discurso-papa-leon-xiv-uruguay-montevideo-suicidio-salud-visita-sudamerica-136614/"
+    }
+   ],
+   "photoQuery": "Vatican News 공식 영상 / 교황청 공식 채널(인물 얼굴 위주 화면 제외, 성당·광장 풍경)",
+   "score": 22,
+   "why": "해외 이슈 · 화제도 22점 · 종교·건강 소재 [민감]"
+  },
+  {
+   "title": "시애틀 김기희, 두 달 만의 선발로 승리",
+   "summary": "풀타임 출전, LAFC 2-1 꺾고 플레이오프 와일드카드",
+   "facts": [
+    "11/8 MLS 정규 최종전(34R): 시애틀 2-1 LAFC (루스낙 1분, 고메스 31분 / LAFC 세구라 후반 37분)",
+    "김기희는 약 2개월 만의 선발로 풀타임 출전",
+    "시애틀은 8위(승점 46)로 와일드카드전 진출 — LAFC는 6위(승점 47)로 1라운드 직행",
+    "같은 경기에 손흥민(LAFC)도 풀타임 — 11/9 SON 후보와 같은 경기"
+   ],
+   "sources": [
+    {
+     "outlet": "세계일보",
+     "title": "손흥민, 풀타임에도… 구단 최다 도움新 무산",
+     "date": "2026-11-08",
+     "url": "https://www.segye.com/newsView/20261108509356"
+    },
+    {
+     "outlet": "데일리스포츠한국",
+     "title": "손흥민, 시애틀 원정서 결정적 찬스 못 살려 침묵",
+     "date": "2026-11-08",
+     "url": "https://www.dailysportshankook.co.kr/news/articleView.html?idxno=435268"
+    }
+   ],
+   "photoQuery": "Seattle Sounders FC 공식 유튜브 / MLS 공식 채널 하이라이트",
+   "score": 17,
+   "why": "해외 한국인 · 화제도 17점"
+  }
+ ]
+}
