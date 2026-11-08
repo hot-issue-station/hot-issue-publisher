@@ -20,7 +20,7 @@ rows = [  # (이름, 앨범, 만 장, 표시)
 MX = 416.0
 CSS = """
 *{margin:0;box-sizing:border-box}body{width:1080px;height:1920px;background:#140F24;color:#F6F2FF;font-family:'Noto Sans CJK KR','Noto Sans CJK JP',sans-serif;position:relative;overflow:hidden}
-.bgp{position:absolute;inset:0;background:url(BGURL) center/cover;filter:blur(40px) brightness(.35);transform:scale(1.2)}
+.bgp{position:absolute;inset:0;background:url(BGURL) center/cover;filter:blur(6px) brightness(.62);transform:scale(1.05)}
 .top{position:absolute;top:70px;left:0;right:0;text-align:center}
 .w{font-size:50px;font-weight:900}.y{font-size:66px;font-weight:900;color:#FFD23F;margin-top:10px;line-height:1.2}
 .jp{font-size:30px;color:#D6CCF0;margin-top:14px}
