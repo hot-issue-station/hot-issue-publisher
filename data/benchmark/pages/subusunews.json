@@ -1,39 +1,41 @@
 {
  "name": "스브스뉴스 (SBS)",
  "channel": "https://www.youtube.com/@subusunews",
- "checkedAt": "2026-11-09T22:50+09:00",
+ "checkedAt": "2026-11-10T08:30+09:00",
  "subscribers": "144만",
  "videos": [
   {
    "id": "DqL_SWFWkD8",
    "title": "침착맨 방송 중 사교육 문제 직격타 날린 정승제 #입시 #shorts #스브스뉴스",
-   "views": 3400,
-   "viewsText": "조회수 3.4천회",
+   "views": 43000,
+   "viewsText": "조회수 4.3만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 39600
   },
   {
    "id": "lnryKqOozWk",
    "title": "갑작스러운 사고로 세상 떠난 여행 유튜버 #추모 #shorts #스브스뉴스",
-   "views": 3400,
-   "viewsText": "조회수 3.4천회",
+   "views": 10000,
+   "viewsText": "조회수 1만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 6600
   },
   {
    "id": "pmpb5ZMw3Sw",
    "title": "매번 달라지는 게 없다는 자살예방계획의 민낯 #청소년자살 #shorts #스브스뉴스",
-   "views": 1800,
-   "viewsText": "조회수 1.8천회",
+   "views": 2400,
+   "viewsText": "조회수 2.4천회",
    "published": "",
    "kind": "short",
-   "gain": 400
+   "gain": 600
   },
   {
    "id": "STWniX3sH0g",
    "title": "상반기에만 2배 폭증한 초등학생 자살률 #자살 #shorts #스브스뉴스",
-   "views": 5100,
-   "viewsText": "조회수 5.1천회",
+   "views": 5500,
+   "viewsText": "조회수 5.5천회",
    "published": "",
    "kind": "short",
    "gain": 400
@@ -41,8 +43,8 @@
   {
    "id": "qZaeu4PJUps",
    "title": "롯데홈쇼핑이 직접 교육하는 커머스 인재 학교? #shorts #스브스뉴스",
-   "views": 7200,
-   "viewsText": "조회수 7.2천회",
+   "views": 8500,
+   "viewsText": "조회수 8.5천회",
    "published": "",
    "kind": "short",
    "gain": 1300
@@ -113,11 +115,11 @@
   {
    "id": "u81X5J3miTE",
    "title": "퇴직금 체불 막을 정부의 한 수 #퇴직금 #shorts #스브스뉴스",
-   "views": 13000,
-   "viewsText": "조회수 1.3만회",
+   "views": 14000,
+   "viewsText": "조회수 1.4만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 1000
   },
   {
    "id": "vADM4Rvg1TM",
@@ -266,11 +268,11 @@
   {
    "id": "OM_Jv6A_IZE",
    "title": "매장을 없앴는데 더 잘나갈 수가 있는 거임? #크리스피크림 #shorts #스브스뉴스",
-   "views": 5100,
-   "viewsText": "조회수 5.1천회",
+   "views": 5200,
+   "viewsText": "조회수 5.2천회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 100
   },
   {
    "id": "Wu7xk-C29MI",
