@@ -3,7 +3,7 @@
  "name": "스브스뉴스 (SBS)",
  "channel": "https://www.youtube.com/@subusunews",
  "channelId": "UCxPClUl0bh7BgJajD5k483g",
- "checkedAt": "2026-11-08T22:29+09:00",
+ "checkedAt": "2026-11-09T19:27+09:00",
  "videos": [
   {
    "id": "ZS5sPQuxWks",
@@ -11,11 +11,11 @@
    "published": "2026-11-05T09:00:33+00:00",
    "url": "https://www.youtube.com/shorts/ZS5sPQuxWks",
    "shorts": true,
-   "views": 25488,
-   "likes": 410,
-   "viewsGain": 90,
+   "views": 26105,
+   "likes": 418,
+   "viewsGain": 617,
    "isNew": false,
-   "median": 9983.0,
+   "median": 10146.5,
    "multiple": 2.6
   },
   {
@@ -24,11 +24,11 @@
    "published": "2026-11-05T09:00:12+00:00",
    "url": "https://www.youtube.com/shorts/Ptp13j-jG8o",
    "shorts": true,
-   "views": 13591,
-   "likes": 427,
-   "viewsGain": 743,
+   "views": 14702,
+   "likes": 437,
+   "viewsGain": 1111,
    "isNew": false,
-   "median": 9983.0,
+   "median": 10146.5,
    "multiple": 1.4
   },
   {
@@ -37,12 +37,12 @@
    "published": "2026-11-05T09:00:05+00:00",
    "url": "https://www.youtube.com/shorts/Zq1d5ckccFQ",
    "shorts": true,
-   "views": 43689,
-   "likes": 603,
-   "viewsGain": 391,
+   "views": 46308,
+   "likes": 631,
+   "viewsGain": 2619,
    "isNew": false,
-   "median": 9983.0,
-   "multiple": 4.4
+   "median": 10146.5,
+   "multiple": 4.6
   },
   {
    "id": "peMHRTigrOo",
@@ -50,11 +50,11 @@
    "published": "2026-11-04T22:00:29+00:00",
    "url": "https://www.youtube.com/shorts/peMHRTigrOo",
    "shorts": true,
-   "views": 18617,
-   "likes": 453,
-   "viewsGain": 143,
+   "views": 19267,
+   "likes": 459,
+   "viewsGain": 650,
    "isNew": false,
-   "median": 9983.0,
+   "median": 10146.5,
    "multiple": 1.9
   },
   {
@@ -63,11 +63,11 @@
    "published": "2026-11-04T22:00:08+00:00",
    "url": "https://www.youtube.com/shorts/89sECRzHy-U",
    "shorts": true,
-   "views": 7991,
-   "likes": 343,
-   "viewsGain": 103,
+   "views": 8551,
+   "likes": 361,
+   "viewsGain": 560,
    "isNew": false,
-   "median": 9983.0,
+   "median": 10146.5,
    "multiple": 0.8
   },
   {
@@ -76,11 +76,11 @@
    "published": "2026-11-04T09:59:03+00:00",
    "url": "https://www.youtube.com/shorts/vivfKyBubgA",
    "shorts": true,
-   "views": 17806,
-   "likes": 519,
-   "viewsGain": 96,
+   "views": 18438,
+   "likes": 524,
+   "viewsGain": 632,
    "isNew": false,
-   "median": 9983.0,
+   "median": 10146.5,
    "multiple": 1.8
   },
   {
@@ -89,12 +89,12 @@
    "published": "2026-11-04T09:57:39+00:00",
    "url": "https://www.youtube.com/shorts/RkMOt2YYMUg",
    "shorts": true,
-   "views": 21104,
-   "likes": 670,
-   "viewsGain": 0,
+   "views": 22098,
+   "likes": 687,
+   "viewsGain": 994,
    "isNew": false,
-   "median": 9983.0,
-   "multiple": 2.1
+   "median": 10146.5,
+   "multiple": 2.2
   },
   {
    "id": "pMG6qz-xCGk",
@@ -102,11 +102,11 @@
    "published": "2026-11-04T09:56:38+00:00",
    "url": "https://www.youtube.com/shorts/pMG6qz-xCGk",
    "shorts": true,
-   "views": 2668,
-   "likes": 62,
-   "viewsGain": 22,
+   "views": 2716,
+   "likes": 63,
+   "viewsGain": 48,
    "isNew": false,
-   "median": 9983.0,
+   "median": 10146.5,
    "multiple": 0.3
   },
   {
@@ -115,11 +115,11 @@
    "published": "2026-11-03T22:00:19+00:00",
    "url": "https://www.youtube.com/shorts/926Y0xcpnKE",
    "shorts": true,
-   "views": 6182,
-   "likes": 341,
-   "viewsGain": 11,
+   "views": 6232,
+   "likes": 342,
+   "viewsGain": 50,
    "isNew": false,
-   "median": 9983.0,
+   "median": 10146.5,
    "multiple": 0.6
   },
   {
@@ -128,11 +128,11 @@
    "published": "2026-11-03T22:00:15+00:00",
    "url": "https://www.youtube.com/shorts/X5dI0Lr5VoE",
    "shorts": true,
-   "views": 5923,
-   "likes": 357,
-   "viewsGain": 69,
+   "views": 6050,
+   "likes": 361,
+   "viewsGain": 127,
    "isNew": false,
-   "median": 9983.0,
+   "median": 10146.5,
    "multiple": 0.6
   },
   {
@@ -141,11 +141,11 @@
    "published": "2026-11-03T12:47:10+00:00",
    "url": "https://www.youtube.com/shorts/p-5cPKWiiLQ",
    "shorts": true,
-   "views": 8286,
-   "likes": 708,
-   "viewsGain": 14,
+   "views": 8413,
+   "likes": 711,
+   "viewsGain": 127,
    "isNew": false,
-   "median": 9983.0,
+   "median": 10146.5,
    "multiple": 0.8
   },
   {
@@ -154,11 +154,11 @@
    "published": "2026-11-03T12:44:43+00:00",
    "url": "https://www.youtube.com/shorts/kVSepD8oZTw",
    "shorts": true,
-   "views": 4597,
-   "likes": 459,
-   "viewsGain": 6,
+   "views": 4614,
+   "likes": 460,
+   "viewsGain": 17,
    "isNew": false,
-   "median": 9983.0,
+   "median": 10146.5,
    "multiple": 0.5
   },
   {
@@ -167,11 +167,11 @@
    "published": "2026-11-03T12:26:16+00:00",
    "url": "https://www.youtube.com/shorts/pnfgLnYPymc",
    "shorts": true,
-   "views": 5015,
-   "likes": 360,
-   "viewsGain": 8,
+   "views": 5049,
+   "likes": 361,
+   "viewsGain": 34,
    "isNew": false,
-   "median": 9983.0,
+   "median": 10146.5,
    "multiple": 0.5
   },
   {
@@ -180,11 +180,11 @@
    "published": "2026-11-03T12:24:53+00:00",
    "url": "https://www.youtube.com/shorts/M8BncRdr6JM",
    "shorts": true,
-   "views": 11680,
-   "likes": 569,
-   "viewsGain": 25,
+   "views": 11742,
+   "likes": 570,
+   "viewsGain": 62,
    "isNew": false,
-   "median": 9983.0,
+   "median": 10146.5,
    "multiple": 1.2
   },
   {
@@ -193,9 +193,9 @@
    "published": "2026-11-03T09:00:26+00:00",
    "url": "https://www.youtube.com/watch?v=53YmGEQcPg8",
    "shorts": false,
-   "views": 172658,
-   "likes": 8107,
-   "viewsGain": 1442,
+   "views": 177725,
+   "likes": 8195,
+   "viewsGain": 5067,
    "isNew": false,
    "median": null,
    "multiple": null
@@ -205,22 +205,22 @@
   {
    "title": "극단적이었던 재민 입맛",
    "url": "https://www.youtube.com/shorts/Zq1d5ckccFQ",
-   "views": 43689,
-   "multiple": 4.4,
+   "views": 46308,
+   "multiple": 4.6,
    "shorts": true
   },
   {
    "title": "우사편 게스트 중 최고 악필이에요",
    "url": "https://www.youtube.com/shorts/ZS5sPQuxWks",
-   "views": 25488,
+   "views": 26105,
    "multiple": 2.6,
    "shorts": true
   },
   {
    "title": "팝핀시키는 연습생 형아들",
    "url": "https://www.youtube.com/shorts/RkMOt2YYMUg",
-   "views": 21104,
-   "multiple": 2.1,
+   "views": 22098,
+   "multiple": 2.2,
    "shorts": true
   }
  ]

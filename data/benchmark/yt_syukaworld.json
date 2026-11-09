@@ -3,20 +3,46 @@
  "name": "슈카월드",
  "channel": "https://www.youtube.com/@syukaworld",
  "channelId": "UCJo6G1u0e_-wS-JQn3T-zEw",
- "checkedAt": "2026-11-08T22:29+09:00",
+ "checkedAt": "2026-11-09T19:27+09:00",
  "videos": [
+  {
+   "id": "xCP7MhJdnXM",
+   "title": "황동현 '바람 잘 날 없는 AI 섹터'ㅣ블룸버그 진출한 니니ㅣ최창규,신환종 '코스피 5천, 내 돈을 어떻게 할까'",
+   "published": "2026-11-09T09:44:37+00:00",
+   "url": "https://www.youtube.com/watch?v=xCP7MhJdnXM",
+   "shorts": false,
+   "views": 9821,
+   "likes": 254,
+   "viewsGain": null,
+   "isNew": true,
+   "median": 185568,
+   "multiple": 0.1
+  },
+  {
+   "id": "O2S8hCse54k",
+   "title": "좋소식 순환금융",
+   "published": "2026-11-09T03:43:40+00:00",
+   "url": "https://www.youtube.com/shorts/O2S8hCse54k",
+   "shorts": true,
+   "views": 52564,
+   "likes": 635,
+   "viewsGain": null,
+   "isNew": true,
+   "median": 104129.5,
+   "multiple": 0.5
+  },
   {
    "id": "hvjeDlMlPSE",
    "title": "정치테마주의 계절이 온다",
    "published": "2026-11-08T09:00:10+00:00",
    "url": "https://www.youtube.com/watch?v=hvjeDlMlPSE",
    "shorts": false,
-   "views": 53814,
-   "likes": 588,
-   "viewsGain": 46336,
+   "views": 122296,
+   "likes": 863,
+   "viewsGain": 68482,
    "isNew": false,
-   "median": 201241,
-   "multiple": 0.3
+   "median": 185568,
+   "multiple": 0.7
   },
   {
    "id": "8DeKtLlHPdI",
@@ -24,12 +50,12 @@
    "published": "2026-11-08T02:08:27+00:00",
    "url": "https://www.youtube.com/watch?v=8DeKtLlHPdI",
    "shorts": false,
-   "views": 223290,
-   "likes": 1729,
-   "viewsGain": 48184,
+   "views": 313141,
+   "likes": 2135,
+   "viewsGain": 89851,
    "isNew": false,
-   "median": 201241,
-   "multiple": 1.1
+   "median": 185568,
+   "multiple": 1.7
   },
   {
    "id": "h9yF44sFEvc",
@@ -37,12 +63,12 @@
    "published": "2026-11-07T09:00:11+00:00",
    "url": "https://www.youtube.com/watch?v=h9yF44sFEvc",
    "shorts": false,
-   "views": 247258,
-   "likes": 1616,
-   "viewsGain": 7693,
+   "views": 283213,
+   "likes": 1777,
+   "viewsGain": 35955,
    "isNew": false,
-   "median": 201241,
-   "multiple": 1.2
+   "median": 185568,
+   "multiple": 1.5
   },
   {
    "id": "OeJ-JKlNv_s",
@@ -50,12 +76,12 @@
    "published": "2026-11-06T12:43:23+00:00",
    "url": "https://www.youtube.com/shorts/OeJ-JKlNv_s",
    "shorts": true,
-   "views": 81361,
-   "likes": 454,
-   "viewsGain": 1180,
+   "views": 87143,
+   "likes": 478,
+   "viewsGain": 5782,
    "isNew": false,
-   "median": 118042.5,
-   "multiple": 0.7
+   "median": 104129.5,
+   "multiple": 0.8
   },
   {
    "id": "ay3FXHM03T8",
@@ -63,12 +89,12 @@
    "published": "2026-11-06T12:31:37+00:00",
    "url": "https://www.youtube.com/shorts/ay3FXHM03T8",
    "shorts": true,
-   "views": 77182,
-   "likes": 693,
-   "viewsGain": 1143,
+   "views": 81787,
+   "likes": 720,
+   "viewsGain": 4605,
    "isNew": false,
-   "median": 118042.5,
-   "multiple": 0.7
+   "median": 104129.5,
+   "multiple": 0.8
   },
   {
    "id": "ri2GLNjEM_s",
@@ -76,12 +102,12 @@
    "published": "2026-11-06T09:23:54+00:00",
    "url": "https://www.youtube.com/watch?v=ri2GLNjEM_s",
    "shorts": false,
-   "views": 174421,
-   "likes": 866,
-   "viewsGain": 2996,
+   "views": 185568,
+   "likes": 926,
+   "viewsGain": 11147,
    "isNew": false,
-   "median": 201241,
-   "multiple": 0.9
+   "median": 185568,
+   "multiple": 1.0
   },
   {
    "id": "sYr_AxQcpik",
@@ -89,12 +115,12 @@
    "published": "2026-11-06T08:13:05+00:00",
    "url": "https://www.youtube.com/shorts/sYr_AxQcpik",
    "shorts": true,
-   "views": 193317,
-   "likes": 2297,
-   "viewsGain": 1682,
+   "views": 202987,
+   "likes": 2429,
+   "viewsGain": 9670,
    "isNew": false,
-   "median": 118042.5,
-   "multiple": 1.6
+   "median": 104129.5,
+   "multiple": 1.9
   },
   {
    "id": "tK3p2DelS-c",
@@ -102,12 +128,12 @@
    "published": "2026-11-06T06:44:00+00:00",
    "url": "https://www.youtube.com/watch?v=tK3p2DelS-c",
    "shorts": false,
-   "views": 140713,
-   "likes": 1023,
-   "viewsGain": 574,
+   "views": 182719,
+   "likes": 1027,
+   "viewsGain": 42006,
    "isNew": false,
-   "median": 201241,
-   "multiple": 0.7
+   "median": 185568,
+   "multiple": 1.0
   },
   {
    "id": "SmbFOtTIot0",
@@ -115,12 +141,12 @@
    "published": "2026-11-06T03:49:57+00:00",
    "url": "https://www.youtube.com/shorts/SmbFOtTIot0",
    "shorts": true,
-   "views": 106361,
-   "likes": 959,
-   "viewsGain": 1849,
+   "views": 121116,
+   "likes": 1018,
+   "viewsGain": 14755,
    "isNew": false,
-   "median": 118042.5,
-   "multiple": 0.9
+   "median": 104129.5,
+   "multiple": 1.2
   },
   {
    "id": "LYXceDpsPYA",
@@ -128,12 +154,12 @@
    "published": "2026-11-05T09:15:17+00:00",
    "url": "https://www.youtube.com/shorts/LYXceDpsPYA",
    "shorts": true,
-   "views": 199777,
-   "likes": 1221,
-   "viewsGain": 3349,
+   "views": 227697,
+   "likes": 1342,
+   "viewsGain": 27920,
    "isNew": false,
-   "median": 118042.5,
-   "multiple": 1.7
+   "median": 104129.5,
+   "multiple": 2.2
   },
   {
    "id": "_8ANk19Ku6A",
@@ -141,12 +167,12 @@
    "published": "2026-11-05T08:56:40+00:00",
    "url": "https://www.youtube.com/shorts/_8ANk19Ku6A",
    "shorts": true,
-   "views": 129724,
-   "likes": 664,
-   "viewsGain": 301,
+   "views": 131419,
+   "likes": 672,
+   "viewsGain": 1695,
    "isNew": false,
-   "median": 118042.5,
-   "multiple": 1.1
+   "median": 104129.5,
+   "multiple": 1.3
   },
   {
    "id": "xsGGzlRlXy8",
@@ -154,12 +180,12 @@
    "published": "2026-11-05T08:28:38+00:00",
    "url": "https://www.youtube.com/shorts/xsGGzlRlXy8",
    "shorts": true,
-   "views": 52181,
-   "likes": 379,
-   "viewsGain": 228,
+   "views": 54938,
+   "likes": 394,
+   "viewsGain": 2757,
    "isNew": false,
-   "median": 118042.5,
-   "multiple": 0.4
+   "median": 104129.5,
+   "multiple": 0.5
   },
   {
    "id": "MllkP70RRXg",
@@ -167,46 +193,20 @@
    "published": "2026-11-05T06:40:26+00:00",
    "url": "https://www.youtube.com/watch?v=MllkP70RRXg",
    "shorts": false,
-   "views": 201241,
-   "likes": 1298,
-   "viewsGain": 296,
+   "views": 202801,
+   "likes": 1301,
+   "viewsGain": 1560,
    "isNew": false,
-   "median": 201241,
-   "multiple": 1.0
-  },
-  {
-   "id": "Xyk-we1Ehs8",
-   "title": "반도체 수요가 있어요? 그럼 됐네",
-   "published": "2026-11-03T09:00:07+00:00",
-   "url": "https://www.youtube.com/watch?v=Xyk-we1Ehs8",
-   "shorts": false,
-   "views": 294787,
-   "likes": 1465,
-   "viewsGain": 2915,
-   "isNew": false,
-   "median": 201241,
-   "multiple": 1.5
-  },
-  {
-   "id": "KJDqpAOSco0",
-   "title": "니니가 물타기 못하는 이유",
-   "published": "2026-11-03T08:00:16+00:00",
-   "url": "https://www.youtube.com/shorts/KJDqpAOSco0",
-   "shorts": true,
-   "views": 318449,
-   "likes": 1928,
-   "viewsGain": 2305,
-   "isNew": false,
-   "median": 118042.5,
-   "multiple": 2.7
+   "median": 185568,
+   "multiple": 1.1
   }
  ],
  "viral": [
   {
-   "title": "니니가 물타기 못하는 이유",
-   "url": "https://www.youtube.com/shorts/KJDqpAOSco0",
-   "views": 318449,
-   "multiple": 2.7,
+   "title": "쪼잔하게 돈 버는 법",
+   "url": "https://www.youtube.com/shorts/LYXceDpsPYA",
+   "views": 227697,
+   "multiple": 2.2,
    "shorts": true
   }
  ]

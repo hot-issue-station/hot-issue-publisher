@@ -1,34 +1,35 @@
 {
  "name": "스브스뉴스 (SBS)",
  "channel": "https://www.youtube.com/@subusunews",
- "checkedAt": "2026-11-09T14:58+09:00",
+ "checkedAt": "2026-11-09T19:27+09:00",
  "subscribers": "144만",
  "videos": [
   {
    "id": "pmpb5ZMw3Sw",
    "title": "매번 달라지는 게 없다는 자살예방계획의 민낯 #청소년자살 #shorts #스브스뉴스",
-   "views": 854,
-   "viewsText": "조회수 854회",
+   "views": 1400,
+   "viewsText": "조회수 1.4천회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 546
   },
   {
    "id": "STWniX3sH0g",
    "title": "상반기에만 2배 폭증한 초등학생 자살률 #자살 #shorts #스브스뉴스",
-   "views": 4000,
-   "viewsText": "조회수 4천회",
+   "views": 4700,
+   "viewsText": "조회수 4.7천회",
    "published": "",
    "kind": "short",
-   "gain": 1200
+   "gain": 700
   },
   {
    "id": "qZaeu4PJUps",
    "title": "롯데홈쇼핑이 직접 교육하는 커머스 인재 학교? #shorts #스브스뉴스",
-   "views": 3800,
-   "viewsText": "조회수 3.8천회",
+   "views": 5900,
+   "viewsText": "조회수 5.9천회",
    "published": "",
    "kind": "short",
-   "gain": 1300
+   "gain": 2100
   },
   {
    "id": "bvbHkNEO3t8",
@@ -37,16 +38,16 @@
    "viewsText": "조회수 2.2만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "6LRM6cDTkWU",
    "title": "여름에도 수능 치던 94학번들 #수능 #shorts #스브스뉴스",
-   "views": 11000,
-   "viewsText": "조회수 1.1만회",
+   "views": 12000,
+   "viewsText": "조회수 1.2만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 1000
   },
   {
    "id": "bRGPA0qxe-w",
@@ -82,7 +83,7 @@
    "viewsText": "조회수 5.1천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "_S4dpnDTrkY",

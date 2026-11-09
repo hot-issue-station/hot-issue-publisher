@@ -3,20 +3,59 @@
  "name": "14F 일사에프 (MBC)",
  "channel": "https://www.youtube.com/@14FMBC",
  "channelId": "UCLKuglhGlMmDteQKoniENIQ",
- "checkedAt": "2026-11-08T22:29+09:00",
+ "checkedAt": "2026-11-09T19:27+09:00",
  "videos": [
+  {
+   "id": "NlFjqf5_TH4",
+   "title": "불금에 택시비 더 비싸질까?... 택시 ‘요일별 할증제’ 도입 추진 / 14F",
+   "published": "2026-11-09T09:30:21+00:00",
+   "url": "https://www.youtube.com/watch?v=NlFjqf5_TH4",
+   "shorts": false,
+   "views": 1908,
+   "likes": 77,
+   "viewsGain": null,
+   "isNew": true,
+   "median": 52081.0,
+   "multiple": 0.0
+  },
+  {
+   "id": "RpOT3aIsli8",
+   "title": "???: 한국 프랜차이즈 많이 예뻐해 주고 싶어요 :) 🥄ㅣ돈슐랭 / 14F",
+   "published": "2026-11-09T09:00:25+00:00",
+   "url": "https://www.youtube.com/watch?v=RpOT3aIsli8",
+   "shorts": false,
+   "views": 8610,
+   "likes": 279,
+   "viewsGain": null,
+   "isNew": true,
+   "median": 52081.0,
+   "multiple": 0.2
+  },
+  {
+   "id": "OTeGIZUhKjo",
+   "title": "이게 진짜 라면이라고? 구미 라면 축제 이색 라면 모음 #shorts",
+   "published": "2026-11-09T03:00:18+00:00",
+   "url": "https://www.youtube.com/shorts/OTeGIZUhKjo",
+   "shorts": true,
+   "views": 2472,
+   "likes": 50,
+   "viewsGain": null,
+   "isNew": true,
+   "median": 14246,
+   "multiple": 0.2
+  },
   {
    "id": "eJAtWi5dWco",
    "title": "3시간 웨이팅해서 사는 라면 백팩 ㄷㄷ #shorts",
    "published": "2026-11-08T04:00:37+00:00",
    "url": "https://www.youtube.com/shorts/eJAtWi5dWco",
    "shorts": true,
-   "views": 12473,
-   "likes": 88,
-   "viewsGain": 3187,
+   "views": 20572,
+   "likes": 106,
+   "viewsGain": 8099,
    "isNew": false,
-   "median": 12473,
-   "multiple": 1.0
+   "median": 14246,
+   "multiple": 1.4
   },
   {
    "id": "-5SuOuqeZ90",
@@ -24,12 +63,12 @@
    "published": "2026-11-08T04:00:12+00:00",
    "url": "https://www.youtube.com/watch?v=-5SuOuqeZ90",
    "shorts": false,
-   "views": 94329,
-   "likes": 332,
-   "viewsGain": 36667,
+   "views": 249497,
+   "likes": 641,
+   "viewsGain": 155168,
    "isNew": false,
-   "median": 79755.0,
-   "multiple": 1.2
+   "median": 52081.0,
+   "multiple": 4.8
   },
   {
    "id": "KT1XfcUxmw0",
@@ -37,12 +76,12 @@
    "published": "2026-11-07T04:00:36+00:00",
    "url": "https://www.youtube.com/watch?v=KT1XfcUxmw0",
    "shorts": false,
-   "views": 132744,
-   "likes": 612,
-   "viewsGain": 7137,
+   "views": 153889,
+   "likes": 697,
+   "viewsGain": 21145,
    "isNew": false,
-   "median": 79755.0,
-   "multiple": 1.7
+   "median": 52081.0,
+   "multiple": 3.0
   },
   {
    "id": "BYhL-fwDxcg",
@@ -50,12 +89,12 @@
    "published": "2026-11-06T09:11:16+00:00",
    "url": "https://www.youtube.com/watch?v=BYhL-fwDxcg",
    "shorts": false,
-   "views": 27858,
-   "likes": 136,
-   "viewsGain": 329,
+   "views": 29028,
+   "likes": 142,
+   "viewsGain": 1170,
    "isNew": false,
-   "median": 79755.0,
-   "multiple": 0.3
+   "median": 52081.0,
+   "multiple": 0.6
   },
   {
    "id": "kycuo7xf6zk",
@@ -63,12 +102,12 @@
    "published": "2026-11-06T08:30:29+00:00",
    "url": "https://www.youtube.com/watch?v=kycuo7xf6zk",
    "shorts": false,
-   "views": 65181,
-   "likes": 282,
-   "viewsGain": 1399,
+   "views": 70375,
+   "likes": 307,
+   "viewsGain": 5194,
    "isNew": false,
-   "median": 79755.0,
-   "multiple": 0.8
+   "median": 52081.0,
+   "multiple": 1.4
   },
   {
    "id": "raKKyS-VS5k",
@@ -76,11 +115,11 @@
    "published": "2026-11-06T03:00:05+00:00",
    "url": "https://www.youtube.com/shorts/raKKyS-VS5k",
    "shorts": true,
-   "views": 6346,
-   "likes": 30,
-   "viewsGain": 63,
+   "views": 6888,
+   "likes": 32,
+   "viewsGain": 542,
    "isNew": false,
-   "median": 12473,
+   "median": 14246,
    "multiple": 0.5
   },
   {
@@ -89,11 +128,11 @@
    "published": "2026-11-05T23:00:28+00:00",
    "url": "https://www.youtube.com/shorts/UjJznEbPKrw",
    "shorts": true,
-   "views": 12688,
-   "likes": 160,
-   "viewsGain": 327,
+   "views": 14246,
+   "likes": 168,
+   "viewsGain": 1558,
    "isNew": false,
-   "median": 12473,
+   "median": 14246,
    "multiple": 1.0
   },
   {
@@ -102,12 +141,12 @@
    "published": "2026-11-05T09:54:42+00:00",
    "url": "https://www.youtube.com/watch?v=CbWF9sd7QDk",
    "shorts": false,
-   "views": 47852,
-   "likes": 258,
-   "viewsGain": 529,
+   "views": 49999,
+   "likes": 264,
+   "viewsGain": 2147,
    "isNew": false,
-   "median": 79755.0,
-   "multiple": 0.6
+   "median": 52081.0,
+   "multiple": 1.0
   },
   {
    "id": "uq0xvYN3L9I",
@@ -115,12 +154,12 @@
    "published": "2026-11-04T23:00:37+00:00",
    "url": "https://www.youtube.com/shorts/uq0xvYN3L9I",
    "shorts": true,
-   "views": 68429,
-   "likes": 618,
-   "viewsGain": 2158,
+   "views": 95769,
+   "likes": 850,
+   "viewsGain": 27340,
    "isNew": false,
-   "median": 12473,
-   "multiple": 5.5
+   "median": 14246,
+   "multiple": 6.7
   },
   {
    "id": "Sn0of6GdNRA",
@@ -128,12 +167,12 @@
    "published": "2026-11-04T09:31:41+00:00",
    "url": "https://www.youtube.com/watch?v=Sn0of6GdNRA",
    "shorts": false,
-   "views": 52474,
-   "likes": 251,
-   "viewsGain": 498,
+   "views": 54163,
+   "likes": 257,
+   "viewsGain": 1689,
    "isNew": false,
-   "median": 79755.0,
-   "multiple": 0.7
+   "median": 52081.0,
+   "multiple": 1.0
   },
   {
    "id": "7TgeU5xqUJI",
@@ -141,12 +180,12 @@
    "published": "2026-11-04T08:30:33+00:00",
    "url": "https://www.youtube.com/watch?v=7TgeU5xqUJI",
    "shorts": false,
-   "views": 224879,
-   "likes": 1083,
-   "viewsGain": 2884,
+   "views": 241395,
+   "likes": 1152,
+   "viewsGain": 16516,
    "isNew": false,
-   "median": 79755.0,
-   "multiple": 2.8
+   "median": 52081.0,
+   "multiple": 4.6
   },
   {
    "id": "sV1o0bSCFpE",
@@ -154,80 +193,41 @@
    "published": "2026-11-04T08:00:38+00:00",
    "url": "https://www.youtube.com/watch?v=sV1o0bSCFpE",
    "shorts": false,
-   "views": 1027,
+   "views": 1078,
    "likes": 15,
-   "viewsGain": 6,
+   "viewsGain": 51,
    "isNew": false,
-   "median": 79755.0,
+   "median": 52081.0,
    "multiple": 0.0
-  },
-  {
-   "id": "G63QFaqloJQ",
-   "title": "샤인머스캣으로 얼마나 벌었을까? #shorts",
-   "published": "2026-11-04T03:00:23+00:00",
-   "url": "https://www.youtube.com/shorts/G63QFaqloJQ",
-   "shorts": true,
-   "views": 8772,
-   "likes": 59,
-   "viewsGain": 1,
-   "isNew": false,
-   "median": 12473,
-   "multiple": 0.7
-  },
-  {
-   "id": "uQ0WY7C5Ddo",
-   "title": "“헌재를 장악하라” 폴란드 대통령과 헌법재판소 재판관의 몸싸움 / 14F",
-   "published": "2026-11-03T09:30:30+00:00",
-   "url": "https://www.youtube.com/watch?v=uQ0WY7C5Ddo",
-   "shorts": false,
-   "views": 178342,
-   "likes": 1026,
-   "viewsGain": 399,
-   "isNew": false,
-   "median": 79755.0,
-   "multiple": 2.2
-  },
-  {
-   "id": "VipxqupADqE",
-   "title": "공항 가기 전 봐야 하는 영상… 74년 만에 확 바뀐 ‘일본 면세 혜택’ / 14F",
-   "published": "2026-11-03T09:01:13+00:00",
-   "url": "https://www.youtube.com/watch?v=VipxqupADqE",
-   "shorts": false,
-   "views": 224953,
-   "likes": 1009,
-   "viewsGain": 1046,
-   "isNew": false,
-   "median": 79755.0,
-   "multiple": 2.8
   }
  ],
  "viral": [
   {
    "title": "일본 화물이 부산항에 몰리는 이유 #shorts",
    "url": "https://www.youtube.com/shorts/uq0xvYN3L9I",
-   "views": 68429,
-   "multiple": 5.5,
+   "views": 95769,
+   "multiple": 6.7,
    "shorts": true
+  },
+  {
+   "title": "미국 증시 폭락 이유ㅣ테슬라, 스페이스X 양도세 논란ㅣ주식 결제주기 단축 등 4가지 🥬경제 이슈🥬",
+   "url": "https://www.youtube.com/watch?v=-5SuOuqeZ90",
+   "views": 249497,
+   "multiple": 4.8,
+   "shorts": false
   },
   {
    "title": "집이 남아 돌던 스페인, 이제 집이 없어서 문제라고? 스페인 주택난의 모든 것 / 14F",
    "url": "https://www.youtube.com/watch?v=7TgeU5xqUJI",
-   "views": 224879,
-   "multiple": 2.8,
+   "views": 241395,
+   "multiple": 4.6,
    "shorts": false
   },
   {
-   "title": "공항 가기 전 봐야 하는 영상… 74년 만에 확 바뀐 ‘일본 면세 혜택’ / 14F",
-   "url": "https://www.youtube.com/watch?v=VipxqupADqE",
-   "views": 224953,
-   "multiple": 2.8,
-   "shorts": false
-  },
-  {
-   "title": "“헌재를 장악하라” 폴란드 대통령과 헌법재판소 재판관의 몸싸움 / 14F",
-   "url": "https://www.youtube.com/watch?v=uQ0WY7C5Ddo",
-   "views": 178342,
-   "multiple": 2.2,
+   "title": "웨이팅만 3시간! 구미라면축제에서 난리 난 라면의 정체는? | 선발대 / 14F",
+   "url": "https://www.youtube.com/watch?v=KT1XfcUxmw0",
+   "views": 153889,
+   "multiple": 3.0,
    "shorts": false
   }
  ]

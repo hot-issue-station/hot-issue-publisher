@@ -70,5 +70,165 @@
   "key": "storyk",
   "ok": false,
   "error": "HTTPError: HTTP Error 404: Not Found"
+ },
+ {
+  "at": "2026-11-09T19:27+09:00",
+  "key": "14f",
+  "ok": true,
+  "new": [
+   "NlFjqf5_TH4",
+   "RpOT3aIsli8",
+   "OTeGIZUhKjo"
+  ],
+  "top": [
+   {
+    "id": "-5SuOuqeZ90",
+    "title": "미국 증시 폭락 이유ㅣ테슬라, 스페이스X 양도세 논란ㅣ주식 결제주기 단축 등 4가지 🥬경제 이슈🥬",
+    "views": 249497,
+    "gain": 155168
+   },
+   {
+    "id": "uq0xvYN3L9I",
+    "title": "일본 화물이 부산항에 몰리는 이유 #shorts",
+    "views": 95769,
+    "gain": 27340
+   },
+   {
+    "id": "KT1XfcUxmw0",
+    "title": "웨이팅만 3시간! 구미라면축제에서 난리 난 라면의 정체는? | 선발대 / 14F",
+    "views": 153889,
+    "gain": 21145
+   }
+  ]
+ },
+ {
+  "at": "2026-11-09T19:27+09:00",
+  "key": "subusunews",
+  "ok": true,
+  "new": [],
+  "top": [
+   {
+    "id": "53YmGEQcPg8",
+    "title": "형이랑 놀았던 시간은 참 재밌었는데, 형은 어땠어?ㅣ우리 사이엔 편지가 있다2 EP.10 엔시티드림 재민&지성",
+    "views": 177725,
+    "gain": 5067
+   },
+   {
+    "id": "Zq1d5ckccFQ",
+    "title": "극단적이었던 재민 입맛",
+    "views": 46308,
+    "gain": 2619
+   },
+   {
+    "id": "Ptp13j-jG8o",
+    "title": "가깝기에 평소에 말하지 않았던 이야기",
+    "views": 14702,
+    "gain": 1111
+   }
+  ]
+ },
+ {
+  "at": "2026-11-09T19:27+09:00",
+  "key": "vstudio",
+  "ok": true,
+  "new": [],
+  "top": []
+ },
+ {
+  "at": "2026-11-09T19:27+09:00",
+  "key": "syukaworld",
+  "ok": true,
+  "new": [
+   "xCP7MhJdnXM",
+   "O2S8hCse54k"
+  ],
+  "top": [
+   {
+    "id": "8DeKtLlHPdI",
+    "title": "블룸버그 애널리스트가 본 현재 국장",
+    "views": 313141,
+    "gain": 89851
+   },
+   {
+    "id": "hvjeDlMlPSE",
+    "title": "정치테마주의 계절이 온다",
+    "views": 122296,
+    "gain": 68482
+   },
+   {
+    "id": "tK3p2DelS-c",
+    "title": "[니니의 시황방송] 11월6일ㅣ코스피에 체포당했어",
+    "views": 182719,
+    "gain": 42006
+   }
+  ]
+ },
+ {
+  "at": "2026-11-09T19:27+09:00",
+  "key": "ytn",
+  "ok": true,
+  "new": [
+   "RS5mOVLcvJk",
+   "ash7Nwb5j9U",
+   "eZZ8VdFsNP0",
+   "D-ELKMJB2RA",
+   "bGW3WrMFc7c",
+   "QnNLSvzgc_A",
+   "vPQmPrjyXno",
+   "I4h_immTBcw",
+   "crl1mG6nxxg",
+   "NkZrP5AmoJ4",
+   "hk5TVjOa0xc",
+   "p3IwhZeZLZI",
+   "elPKhbOHc5o",
+   "Tq8va6j6RS8",
+   "RsAyxhbk9jI"
+  ],
+  "top": [
+   {
+    "id": "D-ELKMJB2RA",
+    "title": "참모·동맹국 이견에 진퇴양난…트럼프 패배 직후 이란 '섬뜩' [에디터픽] / YTN",
+    "views": 35568,
+    "gain": null
+   },
+   {
+    "id": "Tq8va6j6RS8",
+    "title": "젠슨 황 불륜 보도 터진 시점 '수상'...뒷말 무성 [자막뉴스]  / YTN",
+    "views": 24200,
+    "gain": null
+   },
+   {
+    "id": "ash7Nwb5j9U",
+    "title": "트럼프 참패 '희생양' 되나…궁지 몰린 헤그세스 \"정면 돌파\" [에디터픽] / YTN",
+    "views": 18790,
+    "gain": null
+   }
+  ]
+ },
+ {
+  "at": "2026-11-09T19:27+09:00",
+  "key": "storyk",
+  "ok": true,
+  "new": [],
+  "top": [
+   {
+    "id": "FhUO1_ZU1Dw",
+    "title": "손흥민 존경 포로의 고백이 감동인 이유 - 월드컵 챔피언이 보증한 축구계의 존중받는 캡틴",
+    "views": 71894,
+    "gain": 20442
+   },
+   {
+    "id": "pzqdpN2RPCc",
+    "title": "김민수 또 맹활약 레인저스 무패 행진 - 주전 경쟁조차 필요없는 20세 괴물의 질주",
+    "views": 19100,
+    "gain": 13682
+   },
+   {
+    "id": "aGdX-njap_8",
+    "title": "김예건 한국 역대 최연소 2위 유럽대항전 출전 - 명문팀 거절하고 1군 노린 18살유망주",
+    "views": 74604,
+    "gain": 5296
+   }
+  ]
  }
 ]
