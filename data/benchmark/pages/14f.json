@@ -1,23 +1,23 @@
 {
  "name": "14F 일사에프 (MBC)",
  "channel": "https://www.youtube.com/@14FMBC",
- "checkedAt": "2026-11-09T19:27+09:00",
+ "checkedAt": "2026-11-09T22:50+09:00",
  "subscribers": "239만",
  "videos": [
   {
    "id": "OTeGIZUhKjo",
    "title": "이게 진짜 라면이라고? 구미 라면 축제 이색 라면 모음 #shorts",
-   "views": 2400,
-   "viewsText": "조회수 2.4천회",
+   "views": 3100,
+   "viewsText": "조회수 3.1천회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 700
   },
   {
    "id": "eJAtWi5dWco",
    "title": "3시간 웨이팅해서 사는 라면 백팩 ㄷㄷ #shorts",
-   "views": 20000,
-   "viewsText": "조회수 2만회",
+   "views": 21000,
+   "viewsText": "조회수 2.1만회",
    "published": "",
    "kind": "short",
    "gain": 1000
@@ -25,11 +25,11 @@
   {
    "id": "raKKyS-VS5k",
    "title": "샤인머스캣 가격 폭락 막기 힘든 이유 #shorts",
-   "views": 6800,
-   "viewsText": "조회수 6.8천회",
+   "views": 6900,
+   "viewsText": "조회수 6.9천회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 100
   },
   {
    "id": "UjJznEbPKrw",
@@ -38,16 +38,16 @@
    "viewsText": "조회수 1.4만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "uq0xvYN3L9I",
    "title": "일본 화물이 부산항에 몰리는 이유 #shorts",
-   "views": 95000,
-   "viewsText": "조회수 9.5만회",
+   "views": 100000,
+   "viewsText": "조회수 10만회",
    "published": "",
    "kind": "short",
-   "gain": 8000
+   "gain": 5000
   },
   {
    "id": "G63QFaqloJQ",
@@ -56,7 +56,7 @@
    "viewsText": "조회수 8.9천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "peSpC5kd2t0",

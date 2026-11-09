@@ -1,236 +1,248 @@
 {
  "name": "YTN",
  "channel": "https://www.youtube.com/@ytnnews24",
- "checkedAt": "2026-11-09T19:27+09:00",
+ "checkedAt": "2026-11-09T22:50+09:00",
  "subscribers": "543만",
  "videos": [
   {
    "id": "hk5TVjOa0xc",
    "title": "강의 중단 후 방송 활동 #shorts / YTN",
-   "views": 12000,
-   "viewsText": "조회수 1.2만회",
+   "views": 78000,
+   "viewsText": "조회수 7.8만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 66000
   },
   {
    "id": "McQltY8OeJ0",
    "title": "세일인데 왜 슬프지... #shorts / YTN",
-   "views": 2900,
-   "viewsText": "조회수 2.9천회",
+   "views": 5900,
+   "viewsText": "조회수 5.9천회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 3000
   },
   {
    "id": "d7HMtPuu9G4",
    "title": "결혼 안 하고 싶음 청년 #shorts / YTN",
-   "views": 4900,
-   "viewsText": "조회수 4.9천회",
+   "views": 7900,
+   "viewsText": "조회수 7.9천회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 3000
   },
   {
    "id": "lUnE_VACVoI",
    "title": "배달 앱이 숨겨온 진실 #shorts / YTN",
-   "views": 1600,
-   "viewsText": "조회수 1.6천회",
+   "views": 3400,
+   "viewsText": "조회수 3.4천회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 1800
   },
   {
    "id": "E2vnl-fsTho",
    "title": "'게임을 시작하지…' #shorts / YTN",
-   "views": 1700,
-   "viewsText": "조회수 1.7천회",
+   "views": 3100,
+   "viewsText": "조회수 3.1천회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 1400
   },
   {
    "id": "bvrbtfTNTUU",
    "title": "중국에서 일어난 참사 #shorts / YTN",
-   "views": 2700,
-   "viewsText": "조회수 2.7천회",
-   "published": "",
-   "kind": "short"
-  },
-  {
-   "id": "qLrUak3sNnw",
-   "title": "마른하늘에 '타이어' #shorts / YTN",
-   "views": 28000,
-   "viewsText": "조회수 2.8만회",
-   "published": "",
-   "kind": "short"
-  },
-  {
-   "id": "HkbQAQxE-jg",
-   "title": "세계 최고 CEO의 추락 #shorts / YTN",
-   "views": 7600,
-   "viewsText": "조회수 7.6천회",
-   "published": "",
-   "kind": "short"
-  },
-  {
-   "id": "UpXq69FYq8g",
-   "title": "대통령과 접촉 사고(?) #shorts / YTN",
-   "views": 4800,
-   "viewsText": "조회수 4.8천회",
-   "published": "",
-   "kind": "short"
-  },
-  {
-   "id": "l3mZJZxFR9o",
-   "title": "아니 저 방금 왔는데요? #shorts / YTN",
-   "views": 87000,
-   "viewsText": "조회수 8.7만회",
-   "published": "",
-   "kind": "short"
-  },
-  {
-   "id": "LbSQG9H3wgg",
-   "title": "훈육이다 vs 학대다 #shorts / YTN",
-   "views": 1500,
-   "viewsText": "조회수 1.5천회",
-   "published": "",
-   "kind": "short"
-  },
-  {
-   "id": "mtnPOnQlgFo",
-   "title": "\"23년 걸렸습니다\" #shorts / YTN",
-   "views": 1400,
-   "viewsText": "조회수 1.4천회",
-   "published": "",
-   "kind": "short"
-  },
-  {
-   "id": "8w57cnVQ19c",
-   "title": "이건 기회야 '쿵' #shorts / YTN",
-   "views": 12000,
-   "viewsText": "조회수 1.2만회",
-   "published": "",
-   "kind": "short",
-   "gain": 9300
-  },
-  {
-   "id": "LMcpb2nNhyI",
-   "title": "'박진혁' 누구길래? #shorts / YTN",
-   "views": 2700,
-   "viewsText": "조회수 2.7천회",
-   "published": "",
-   "kind": "short",
-   "gain": 2202
-  },
-  {
-   "id": "etsPT1W64tI",
-   "title": "수원을 1부로 복귀시킨 이정효 #shorts / YTN",
    "views": 3800,
    "viewsText": "조회수 3.8천회",
    "published": "",
    "kind": "short",
-   "gain": 2800
+   "gain": 1100
   },
   {
-   "id": "PEYufYfnBiw",
-   "title": "\"진짜 트러블메이커네\" #shorts / YTN",
-   "views": 13000,
-   "viewsText": "조회수 1.3만회",
+   "id": "qLrUak3sNnw",
+   "title": "마른하늘에 '타이어' #shorts / YTN",
+   "views": 35000,
+   "viewsText": "조회수 3.5만회",
    "published": "",
    "kind": "short",
    "gain": 7000
   },
   {
-   "id": "d0ENDNMjNVE",
-   "title": "마약을 왜 여기서... #shorts / YTN",
+   "id": "HkbQAQxE-jg",
+   "title": "세계 최고 CEO의 추락 #shorts / YTN",
+   "views": 10000,
+   "viewsText": "조회수 1만회",
+   "published": "",
+   "kind": "short",
+   "gain": 2400
+  },
+  {
+   "id": "UpXq69FYq8g",
+   "title": "대통령과 접촉 사고(?) #shorts / YTN",
+   "views": 5700,
+   "viewsText": "조회수 5.7천회",
+   "published": "",
+   "kind": "short",
+   "gain": 900
+  },
+  {
+   "id": "l3mZJZxFR9o",
+   "title": "아니 저 방금 왔는데요? #shorts / YTN",
+   "views": 210000,
+   "viewsText": "조회수 21만회",
+   "published": "",
+   "kind": "short",
+   "gain": 123000
+  },
+  {
+   "id": "LbSQG9H3wgg",
+   "title": "훈육이다 vs 학대다 #shorts / YTN",
+   "views": 1800,
+   "viewsText": "조회수 1.8천회",
+   "published": "",
+   "kind": "short",
+   "gain": 300
+  },
+  {
+   "id": "mtnPOnQlgFo",
+   "title": "\"23년 걸렸습니다\" #shorts / YTN",
+   "views": 1800,
+   "viewsText": "조회수 1.8천회",
+   "published": "",
+   "kind": "short",
+   "gain": 400
+  },
+  {
+   "id": "8w57cnVQ19c",
+   "title": "이건 기회야 '쿵' #shorts / YTN",
+   "views": 14000,
+   "viewsText": "조회수 1.4만회",
+   "published": "",
+   "kind": "short",
+   "gain": 2000
+  },
+  {
+   "id": "LMcpb2nNhyI",
+   "title": "'박진혁' 누구길래? #shorts / YTN",
    "views": 3200,
    "viewsText": "조회수 3.2천회",
-   "published": "",
-   "kind": "short",
-   "gain": 1500
-  },
-  {
-   "id": "01vx7Xml0Lg",
-   "title": "'콜라'로 불 끄는 법 #shorts / YTN",
-   "views": 100000,
-   "viewsText": "조회수 10만회",
-   "published": "",
-   "kind": "short",
-   "gain": 67000
-  },
-  {
-   "id": "2ObFrletu9o",
-   "title": "조형물 부쉈다가 배상 엔딩 #shorts / YTN",
-   "views": 15000,
-   "viewsText": "조회수 1.5만회",
-   "published": "",
-   "kind": "short",
-   "gain": 6400
-  },
-  {
-   "id": "tgF6l-Z1ox8",
-   "title": "가짜 뉴스에 미국 홍역 창궐 #shorts / YTN",
-   "views": 11000,
-   "viewsText": "조회수 1.1만회",
-   "published": "",
-   "kind": "short",
-   "gain": 4200
-  },
-  {
-   "id": "yffT4L7Xq9A",
-   "title": "'이것'까지 생각 중인 경기도 #shorts / YTN",
-   "views": 16000,
-   "viewsText": "조회수 1.6만회",
-   "published": "",
-   "kind": "short",
-   "gain": 6500
-  },
-  {
-   "id": "xgRDfVJuH-0",
-   "title": "노장의 힘을 보여줘 #shorts / YTN",
-   "views": 8600,
-   "viewsText": "조회수 8.6천회",
-   "published": "",
-   "kind": "short",
-   "gain": 4300
-  },
-  {
-   "id": "XRCqCAywhtM",
-   "title": "'대통령의 Y' 제작비는 무려... #shorts / YTN",
-   "views": 11000,
-   "viewsText": "조회수 1.1만회",
-   "published": "",
-   "kind": "short",
-   "gain": 5700
-  },
-  {
-   "id": "_OElE6us7YM",
-   "title": "내 정보 돌려줘 스엠 #shorts / YTN",
-   "views": 1900,
-   "viewsText": "조회수 1.9천회",
    "published": "",
    "kind": "short",
    "gain": 500
   },
   {
-   "id": "QAJQlRfHbWQ",
-   "title": "만족하며 벌컥벌컥 #shorts / YTN",
-   "views": 14000,
-   "viewsText": "조회수 1.4만회",
+   "id": "etsPT1W64tI",
+   "title": "수원을 1부로 복귀시킨 이정효 #shorts / YTN",
+   "views": 5200,
+   "viewsText": "조회수 5.2천회",
+   "published": "",
+   "kind": "short",
+   "gain": 1400
+  },
+  {
+   "id": "PEYufYfnBiw",
+   "title": "\"진짜 트러블메이커네\" #shorts / YTN",
+   "views": 17000,
+   "viewsText": "조회수 1.7만회",
    "published": "",
    "kind": "short",
    "gain": 4000
   },
   {
-   "id": "pWdITbIO8oI",
-   "title": "호텔 가격인줄 #shorts / YTN",
-   "views": 22000,
-   "viewsText": "조회수 2.2만회",
+   "id": "d0ENDNMjNVE",
+   "title": "마약을 왜 여기서... #shorts / YTN",
+   "views": 3400,
+   "viewsText": "조회수 3.4천회",
    "published": "",
    "kind": "short",
-   "gain": 11000
+   "gain": 200
+  },
+  {
+   "id": "01vx7Xml0Lg",
+   "title": "'콜라'로 불 끄는 법 #shorts / YTN",
+   "views": 170000,
+   "viewsText": "조회수 17만회",
+   "published": "",
+   "kind": "short",
+   "gain": 70000
+  },
+  {
+   "id": "2ObFrletu9o",
+   "title": "조형물 부쉈다가 배상 엔딩 #shorts / YTN",
+   "views": 17000,
+   "viewsText": "조회수 1.7만회",
+   "published": "",
+   "kind": "short",
+   "gain": 2000
+  },
+  {
+   "id": "tgF6l-Z1ox8",
+   "title": "가짜 뉴스에 미국 홍역 창궐 #shorts / YTN",
+   "views": 12000,
+   "viewsText": "조회수 1.2만회",
+   "published": "",
+   "kind": "short",
+   "gain": 1000
+  },
+  {
+   "id": "yffT4L7Xq9A",
+   "title": "'이것'까지 생각 중인 경기도 #shorts / YTN",
+   "views": 19000,
+   "viewsText": "조회수 1.9만회",
+   "published": "",
+   "kind": "short",
+   "gain": 3000
+  },
+  {
+   "id": "xgRDfVJuH-0",
+   "title": "노장의 힘을 보여줘 #shorts / YTN",
+   "views": 9300,
+   "viewsText": "조회수 9.3천회",
+   "published": "",
+   "kind": "short",
+   "gain": 700
+  },
+  {
+   "id": "XRCqCAywhtM",
+   "title": "'대통령의 Y' 제작비는 무려... #shorts / YTN",
+   "views": 15000,
+   "viewsText": "조회수 1.5만회",
+   "published": "",
+   "kind": "short",
+   "gain": 4000
+  },
+  {
+   "id": "_OElE6us7YM",
+   "title": "내 정보 돌려줘 스엠 #shorts / YTN",
+   "views": 2000,
+   "viewsText": "조회수 2천회",
+   "published": "",
+   "kind": "short",
+   "gain": 100
+  },
+  {
+   "id": "QAJQlRfHbWQ",
+   "title": "만족하며 벌컥벌컥 #shorts / YTN",
+   "views": 17000,
+   "viewsText": "조회수 1.7만회",
+   "published": "",
+   "kind": "short",
+   "gain": 3000
+  },
+  {
+   "id": "pWdITbIO8oI",
+   "title": "호텔 가격인줄 #shorts / YTN",
+   "views": 32000,
+   "viewsText": "조회수 3.2만회",
+   "published": "",
+   "kind": "short",
+   "gain": 10000
   },
   {
    "id": "hHhCimL6G7Y",
    "title": "지진 나자 아이부터 감싼 아빠 #shorts / YTN",
-   "views": 11000,
-   "viewsText": "조회수 1.1만회",
+   "views": 12000,
+   "viewsText": "조회수 1.2만회",
    "published": "",
    "kind": "short",
    "gain": 1000
@@ -238,17 +250,17 @@
   {
    "id": "QIlEsD-LzzI",
    "title": "젠슨 황 결국 인정 #shorts / YTN",
-   "views": 83000,
-   "viewsText": "조회수 8.3만회",
+   "views": 100000,
+   "viewsText": "조회수 10만회",
    "published": "",
    "kind": "short",
-   "gain": 44000
+   "gain": 17000
   },
   {
    "id": "ytviFiuQfNQ",
    "title": "김성령이 사진 찍으려고 한 시간 반 기다린 사람 / YTN",
-   "views": 23000,
-   "viewsText": "조회수 2.3만회",
+   "views": 24000,
+   "viewsText": "조회수 2.4만회",
    "published": "",
    "kind": "short",
    "gain": 1000
@@ -283,11 +295,11 @@
   {
    "id": "tYjuFAek1vU",
    "title": "젠슨 황 옆자리의 정체는? #shorts / YTN",
-   "views": 47000,
-   "viewsText": "조회수 4.7만회",
+   "views": 48000,
+   "viewsText": "조회수 4.8만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 1000
   },
   {
    "id": "n4PE_UeJKwg",

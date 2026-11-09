@@ -1,17 +1,17 @@
 {
  "name": "슈카월드",
  "channel": "https://www.youtube.com/@syukaworld",
- "checkedAt": "2026-11-09T19:27+09:00",
+ "checkedAt": "2026-11-09T22:50+09:00",
  "subscribers": "374만",
  "videos": [
   {
    "id": "lioIrGMoIbs",
    "title": "좋은 사람 있으면 소개시켜줘",
-   "views": 76000,
-   "viewsText": "조회수 7.6만회",
+   "views": 78000,
+   "viewsText": "조회수 7.8만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 2000
   },
   {
    "id": "D32h_sPWp0g",
@@ -29,7 +29,7 @@
    "viewsText": "조회수 19만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "prQUpQh_gko",

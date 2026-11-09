@@ -1,35 +1,51 @@
 {
  "name": "스브스뉴스 (SBS)",
  "channel": "https://www.youtube.com/@subusunews",
- "checkedAt": "2026-11-09T19:27+09:00",
+ "checkedAt": "2026-11-09T22:50+09:00",
  "subscribers": "144만",
  "videos": [
   {
+   "id": "DqL_SWFWkD8",
+   "title": "침착맨 방송 중 사교육 문제 직격타 날린 정승제 #입시 #shorts #스브스뉴스",
+   "views": 3400,
+   "viewsText": "조회수 3.4천회",
+   "published": "",
+   "kind": "short"
+  },
+  {
+   "id": "lnryKqOozWk",
+   "title": "갑작스러운 사고로 세상 떠난 여행 유튜버 #추모 #shorts #스브스뉴스",
+   "views": 3400,
+   "viewsText": "조회수 3.4천회",
+   "published": "",
+   "kind": "short"
+  },
+  {
    "id": "pmpb5ZMw3Sw",
    "title": "매번 달라지는 게 없다는 자살예방계획의 민낯 #청소년자살 #shorts #스브스뉴스",
-   "views": 1400,
-   "viewsText": "조회수 1.4천회",
+   "views": 1800,
+   "viewsText": "조회수 1.8천회",
    "published": "",
    "kind": "short",
-   "gain": 546
+   "gain": 400
   },
   {
    "id": "STWniX3sH0g",
    "title": "상반기에만 2배 폭증한 초등학생 자살률 #자살 #shorts #스브스뉴스",
-   "views": 4700,
-   "viewsText": "조회수 4.7천회",
+   "views": 5100,
+   "viewsText": "조회수 5.1천회",
    "published": "",
    "kind": "short",
-   "gain": 700
+   "gain": 400
   },
   {
    "id": "qZaeu4PJUps",
    "title": "롯데홈쇼핑이 직접 교육하는 커머스 인재 학교? #shorts #스브스뉴스",
-   "views": 5900,
-   "viewsText": "조회수 5.9천회",
+   "views": 7200,
+   "viewsText": "조회수 7.2천회",
    "published": "",
    "kind": "short",
-   "gain": 2100
+   "gain": 1300
   },
   {
    "id": "bvbHkNEO3t8",
@@ -47,7 +63,7 @@
    "viewsText": "조회수 1.2만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "bRGPA0qxe-w",
@@ -342,24 +358,6 @@
    "title": "내 차 개인정보도 안전하지 않다? 차 살 때 반드시 확인할 것 #shorts / 스브스뉴스",
    "views": 11000,
    "viewsText": "조회수 1.1만회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "9jjHvraNQ48",
-   "title": "편두통... 치료할 수 있는 거였어? #편두통 #Shorts #스브스뉴스",
-   "views": 4600,
-   "viewsText": "조회수 4.6천회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "AGaAOWp2x0k",
-   "title": "스드메 가격 공개? 어차피 소용없다는 예비부부 근황 #스드메 #Shorts #스브스뉴스",
-   "views": 17000,
-   "viewsText": "조회수 1.7만회",
    "published": "",
    "kind": "short",
    "gain": 0

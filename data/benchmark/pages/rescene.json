@@ -1,35 +1,75 @@
 {
  "name": "RESCENE 공식",
  "channel": "https://www.youtube.com/@RESCENE_official",
- "checkedAt": "2026-11-09T19:27+09:00",
+ "checkedAt": "2026-11-09T22:50+09:00",
  "subscribers": "137만",
  "videos": [
   {
+   "id": "aTfIJqiYBiI",
+   "title": "Pretty",
+   "views": 3400,
+   "viewsText": "조회수 3.4천회",
+   "published": "",
+   "kind": "short"
+  },
+  {
+   "id": "NNsr12BBiE0",
+   "title": "😘😘",
+   "views": 25000,
+   "viewsText": "조회수 2.5만회",
+   "published": "",
+   "kind": "short"
+  },
+  {
+   "id": "_eji6lKLAu0",
+   "title": "🩶",
+   "views": 43000,
+   "viewsText": "조회수 4.3만회",
+   "published": "",
+   "kind": "short"
+  },
+  {
+   "id": "vwyG-5iVXaw",
+   "title": "😚🖤",
+   "views": 38000,
+   "viewsText": "조회수 3.8만회",
+   "published": "",
+   "kind": "short"
+  },
+  {
+   "id": "3XMFZbIkVqw",
+   "title": "Stop",
+   "views": 31000,
+   "viewsText": "조회수 3.1만회",
+   "published": "",
+   "kind": "short"
+  },
+  {
    "id": "IrcrSlCCkGo",
    "title": "우리 연주 어때?",
-   "views": 410000,
-   "viewsText": "조회수 41만회",
+   "views": 460000,
+   "viewsText": "조회수 46만회",
    "published": "",
    "kind": "short",
-   "gain": 40000
+   "gain": 50000
   },
   {
    "id": "nf0cE5ByIiY",
    "title": "˚｡⋆୨୧˚.˚",
-   "views": 220000,
-   "viewsText": "조회수 22만회",
+   "views": 230000,
+   "viewsText": "조회수 23만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "Vo9WrMtd0bY",
    "title": "함께해줘",
-   "views": 370000,
-   "viewsText": "조회수 37만회",
+   "views": 380000,
+   "viewsText": "조회수 38만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "A5PB2NXHkzY",
@@ -43,17 +83,17 @@
   {
    "id": "WDGxa5Vez5U",
    "title": "리마인 🫵💖",
-   "views": 380000,
-   "viewsText": "조회수 38만회",
+   "views": 390000,
+   "viewsText": "조회수 39만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "ydZG-_FdrxI",
    "title": "With 까엉 🤎",
-   "views": 440000,
-   "viewsText": "조회수 44만회",
+   "views": 450000,
+   "viewsText": "조회수 45만회",
    "published": "",
    "kind": "short",
    "gain": 10000
@@ -119,7 +159,7 @@
    "viewsText": "조회수 71만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "EYrU4Zphz8s",
@@ -223,8 +263,8 @@
   {
    "id": "k7y2yvkFJ1k",
    "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #애니 님",
-   "views": 1330000,
-   "viewsText": "조회수 133만회",
+   "views": 1340000,
+   "viewsText": "조회수 134만회",
    "published": "",
    "kind": "short",
    "gain": 10000
@@ -315,51 +355,6 @@
    "title": "먼저 눈 피하는 사람이 지는 거다?",
    "views": 550000,
    "viewsText": "조회수 55만회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "Cyx4FBPJqQQ",
-   "title": "너랑 같이 보고싶은 풍경",
-   "views": 560000,
-   "viewsText": "조회수 56만회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "OgTCRoeYjzA",
-   "title": "널 만난 후, 더 빨라지는 내 심장박동",
-   "views": 730000,
-   "viewsText": "조회수 73만회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "nka_cr8WxzM",
-   "title": "하나, 둘, 셋 눈 떠봐",
-   "views": 780000,
-   "viewsText": "조회수 78만회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "H0rmUNUSA5I",
-   "title": "RESCENE [PULSE] Scheduler",
-   "views": 450000,
-   "viewsText": "조회수 45만회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "txF8jHtsiSs",
-   "title": "My Birthday 🎂🩶",
-   "views": 1170000,
-   "viewsText": "조회수 117만회",
    "published": "",
    "kind": "short",
    "gain": 0

@@ -3,19 +3,32 @@
  "name": "스토리K (손흥민 레전드 비교 특집 벤치마킹, 10/31)",
  "channel": "https://www.youtube.com/@story_k",
  "channelId": "UCqzNZeBt0546jG-vDlAQlZg",
- "checkedAt": "2026-11-09T19:27+09:00",
+ "checkedAt": "2026-11-09T22:51+09:00",
  "videos": [
+  {
+   "id": "Jo4q1DY_adM",
+   "title": "손흥민 모든 걸 해결해줘 한국 대표팀 - 선수 보호 없이 캡틴에게 모든 책임 넘긴 촌극",
+   "published": "2026-11-09T10:29:55+00:00",
+   "url": "https://www.youtube.com/watch?v=Jo4q1DY_adM",
+   "shorts": false,
+   "views": 8042,
+   "likes": 532,
+   "viewsGain": null,
+   "isNew": true,
+   "median": 67888,
+   "multiple": 0.1
+  },
   {
    "id": "pzqdpN2RPCc",
    "title": "김민수 또 맹활약 레인저스 무패 행진 - 주전 경쟁조차 필요없는 20세 괴물의 질주",
    "published": "2026-11-08T10:15:12+00:00",
    "url": "https://www.youtube.com/watch?v=pzqdpN2RPCc",
    "shorts": false,
-   "views": 19100,
-   "likes": 571,
-   "viewsGain": 13682,
+   "views": 19808,
+   "likes": 583,
+   "viewsGain": 708,
    "isNew": false,
-   "median": 67886,
+   "median": 67888,
    "multiple": 0.3
   },
   {
@@ -24,11 +37,11 @@
    "published": "2026-11-07T10:26:57+00:00",
    "url": "https://www.youtube.com/watch?v=FhUO1_ZU1Dw",
    "shorts": false,
-   "views": 71894,
-   "likes": 1475,
-   "viewsGain": 20442,
+   "views": 77849,
+   "likes": 1496,
+   "viewsGain": 5955,
    "isNew": false,
-   "median": 67886,
+   "median": 67888,
    "multiple": 1.1
   },
   {
@@ -37,11 +50,11 @@
    "published": "2026-11-06T10:20:26+00:00",
    "url": "https://www.youtube.com/watch?v=aGdX-njap_8",
    "shorts": false,
-   "views": 74604,
-   "likes": 794,
-   "viewsGain": 5296,
+   "views": 76065,
+   "likes": 796,
+   "viewsGain": 1461,
    "isNew": false,
-   "median": 67886,
+   "median": 67888,
    "multiple": 1.1
   },
   {
@@ -50,11 +63,11 @@
    "published": "2026-11-05T10:03:23+00:00",
    "url": "https://www.youtube.com/watch?v=XnpYo8kDzQo",
    "shorts": false,
-   "views": 27784,
-   "likes": 974,
-   "viewsGain": 475,
+   "views": 27915,
+   "likes": 975,
+   "viewsGain": 131,
    "isNew": false,
-   "median": 67886,
+   "median": 67888,
    "multiple": 0.4
   },
   {
@@ -63,11 +76,11 @@
    "published": "2026-11-04T10:03:23+00:00",
    "url": "https://www.youtube.com/watch?v=eMHW9EPF5_g",
    "shorts": false,
-   "views": 57370,
-   "likes": 1535,
-   "viewsGain": 1106,
+   "views": 57560,
+   "likes": 1537,
+   "viewsGain": 190,
    "isNew": false,
-   "median": 67886,
+   "median": 67888,
    "multiple": 0.8
   },
   {
@@ -76,11 +89,11 @@
    "published": "2026-11-03T10:03:50+00:00",
    "url": "https://www.youtube.com/watch?v=6WdpcGFmFgQ",
    "shorts": false,
-   "views": 103967,
+   "views": 104023,
    "likes": 1680,
-   "viewsGain": 800,
+   "viewsGain": 56,
    "isNew": false,
-   "median": 67886,
+   "median": 67888,
    "multiple": 1.5
   },
   {
@@ -89,11 +102,11 @@
    "published": "2026-11-02T10:18:24+00:00",
    "url": "https://www.youtube.com/watch?v=nrw8lqAulz8",
    "shorts": false,
-   "views": 50020,
-   "likes": 1385,
-   "viewsGain": 345,
+   "views": 50079,
+   "likes": 1387,
+   "viewsGain": 59,
    "isNew": false,
-   "median": 67886,
+   "median": 67888,
    "multiple": 0.7
   },
   {
@@ -102,11 +115,11 @@
    "published": "2026-11-01T10:10:44+00:00",
    "url": "https://www.youtube.com/watch?v=hW2vyayJmLc",
    "shorts": false,
-   "views": 118267,
-   "likes": 1873,
-   "viewsGain": 433,
+   "views": 118327,
+   "likes": 1874,
+   "viewsGain": 60,
    "isNew": false,
-   "median": 67886,
+   "median": 67888,
    "multiple": 1.7
   },
   {
@@ -115,11 +128,11 @@
    "published": "2026-10-30T10:55:36+00:00",
    "url": "https://www.youtube.com/watch?v=kUd8n4RkZwI",
    "shorts": false,
-   "views": 67886,
-   "likes": 1660,
-   "viewsGain": 30,
+   "views": 67888,
+   "likes": 1661,
+   "viewsGain": 2,
    "isNew": false,
-   "median": 67886,
+   "median": 67888,
    "multiple": 1.0
   },
   {
@@ -128,11 +141,11 @@
    "published": "2026-10-29T10:21:36+00:00",
    "url": "https://www.youtube.com/watch?v=T8LOjY7uM8A",
    "shorts": false,
-   "views": 273792,
+   "views": 273809,
    "likes": 3447,
-   "viewsGain": 127,
+   "viewsGain": 17,
    "isNew": false,
-   "median": 67886,
+   "median": 67888,
    "multiple": 4.0
   },
   {
@@ -141,11 +154,11 @@
    "published": "2026-10-28T09:38:38+00:00",
    "url": "https://www.youtube.com/watch?v=VCrDlYW4s98",
    "shorts": false,
-   "views": 42249,
+   "views": 42250,
    "likes": 887,
    "viewsGain": 1,
    "isNew": false,
-   "median": 67886,
+   "median": 67888,
    "multiple": 0.6
   },
   {
@@ -154,11 +167,11 @@
    "published": "2026-10-27T08:54:51+00:00",
    "url": "https://www.youtube.com/watch?v=SYpmi4jnRJA",
    "shorts": false,
-   "views": 73549,
+   "views": 73558,
    "likes": 1106,
-   "viewsGain": 44,
+   "viewsGain": 9,
    "isNew": false,
-   "median": 67886,
+   "median": 67888,
    "multiple": 1.1
   },
   {
@@ -167,11 +180,11 @@
    "published": "2026-10-26T10:33:18+00:00",
    "url": "https://www.youtube.com/watch?v=2KjngjLjWIM",
    "shorts": false,
-   "views": 37638,
+   "views": 37640,
    "likes": 1117,
-   "viewsGain": 12,
+   "viewsGain": 2,
    "isNew": false,
-   "median": 67886,
+   "median": 67888,
    "multiple": 0.6
   },
   {
@@ -180,32 +193,19 @@
    "published": "2026-10-25T10:30:05+00:00",
    "url": "https://www.youtube.com/watch?v=0r6jiNTzI8U",
    "shorts": false,
-   "views": 80486,
+   "views": 80492,
    "likes": 1187,
-   "viewsGain": 132,
+   "viewsGain": 6,
    "isNew": false,
-   "median": 67886,
+   "median": 67888,
    "multiple": 1.2
-  },
-  {
-   "id": "e0HpxlENq_o",
-   "title": "손흥민 존중은 전설 향한 최소한의 품격 - 내부 갈등보다 중요한 새 회장 선거 임박",
-   "published": "2026-10-24T10:54:42+00:00",
-   "url": "https://www.youtube.com/watch?v=e0HpxlENq_o",
-   "shorts": false,
-   "views": 63341,
-   "likes": 1704,
-   "viewsGain": 4,
-   "isNew": false,
-   "median": 67886,
-   "multiple": 0.9
   }
  ],
  "viral": [
   {
    "title": "손흥민 존중은 베테랑을 향한 마땅한 기본 - 황희찬의 하이파이브 무시와 엄지성 대표팀 발탁",
    "url": "https://www.youtube.com/watch?v=T8LOjY7uM8A",
-   "views": 273792,
+   "views": 273809,
    "multiple": 4.0,
    "shorts": false
   }

@@ -3,20 +3,20 @@
  "name": "슈카월드",
  "channel": "https://www.youtube.com/@syukaworld",
  "channelId": "UCJo6G1u0e_-wS-JQn3T-zEw",
- "checkedAt": "2026-11-09T19:27+09:00",
+ "checkedAt": "2026-11-09T22:51+09:00",
  "videos": [
   {
    "id": "xCP7MhJdnXM",
    "title": "황동현 '바람 잘 날 없는 AI 섹터'ㅣ블룸버그 진출한 니니ㅣ최창규,신환종 '코스피 5천, 내 돈을 어떻게 할까'",
-   "published": "2026-11-09T09:44:37+00:00",
+   "published": "2026-11-09T12:28:06+00:00",
    "url": "https://www.youtube.com/watch?v=xCP7MhJdnXM",
    "shorts": false,
-   "views": 9821,
-   "likes": 254,
-   "viewsGain": null,
-   "isNew": true,
-   "median": 185568,
-   "multiple": 0.1
+   "views": 85231,
+   "likes": 615,
+   "viewsGain": 75410,
+   "isNew": false,
+   "median": 187680,
+   "multiple": 0.5
   },
   {
    "id": "O2S8hCse54k",
@@ -24,12 +24,12 @@
    "published": "2026-11-09T03:43:40+00:00",
    "url": "https://www.youtube.com/shorts/O2S8hCse54k",
    "shorts": true,
-   "views": 52564,
-   "likes": 635,
-   "viewsGain": null,
-   "isNew": true,
-   "median": 104129.5,
-   "multiple": 0.5
+   "views": 76013,
+   "likes": 813,
+   "viewsGain": 23449,
+   "isNew": false,
+   "median": 105820.5,
+   "multiple": 0.7
   },
   {
    "id": "hvjeDlMlPSE",
@@ -37,11 +37,11 @@
    "published": "2026-11-08T09:00:10+00:00",
    "url": "https://www.youtube.com/watch?v=hvjeDlMlPSE",
    "shorts": false,
-   "views": 122296,
-   "likes": 863,
-   "viewsGain": 68482,
+   "views": 127774,
+   "likes": 860,
+   "viewsGain": 5478,
    "isNew": false,
-   "median": 185568,
+   "median": 187680,
    "multiple": 0.7
   },
   {
@@ -50,11 +50,11 @@
    "published": "2026-11-08T02:08:27+00:00",
    "url": "https://www.youtube.com/watch?v=8DeKtLlHPdI",
    "shorts": false,
-   "views": 313141,
-   "likes": 2135,
-   "viewsGain": 89851,
+   "views": 324958,
+   "likes": 2176,
+   "viewsGain": 11817,
    "isNew": false,
-   "median": 185568,
+   "median": 187680,
    "multiple": 1.7
   },
   {
@@ -63,12 +63,12 @@
    "published": "2026-11-07T09:00:11+00:00",
    "url": "https://www.youtube.com/watch?v=h9yF44sFEvc",
    "shorts": false,
-   "views": 283213,
-   "likes": 1777,
-   "viewsGain": 35955,
+   "views": 292194,
+   "likes": 1796,
+   "viewsGain": 8981,
    "isNew": false,
-   "median": 185568,
-   "multiple": 1.5
+   "median": 187680,
+   "multiple": 1.6
   },
   {
    "id": "OeJ-JKlNv_s",
@@ -76,11 +76,11 @@
    "published": "2026-11-06T12:43:23+00:00",
    "url": "https://www.youtube.com/shorts/OeJ-JKlNv_s",
    "shorts": true,
-   "views": 87143,
-   "likes": 478,
-   "viewsGain": 5782,
+   "views": 88561,
+   "likes": 483,
+   "viewsGain": 1418,
    "isNew": false,
-   "median": 104129.5,
+   "median": 105820.5,
    "multiple": 0.8
   },
   {
@@ -89,11 +89,11 @@
    "published": "2026-11-06T12:31:37+00:00",
    "url": "https://www.youtube.com/shorts/ay3FXHM03T8",
    "shorts": true,
-   "views": 81787,
-   "likes": 720,
-   "viewsGain": 4605,
+   "views": 82603,
+   "likes": 722,
+   "viewsGain": 816,
    "isNew": false,
-   "median": 104129.5,
+   "median": 105820.5,
    "multiple": 0.8
   },
   {
@@ -102,11 +102,11 @@
    "published": "2026-11-06T09:23:54+00:00",
    "url": "https://www.youtube.com/watch?v=ri2GLNjEM_s",
    "shorts": false,
-   "views": 185568,
-   "likes": 926,
-   "viewsGain": 11147,
+   "views": 187680,
+   "likes": 931,
+   "viewsGain": 2112,
    "isNew": false,
-   "median": 185568,
+   "median": 187680,
    "multiple": 1.0
   },
   {
@@ -115,11 +115,11 @@
    "published": "2026-11-06T08:13:05+00:00",
    "url": "https://www.youtube.com/shorts/sYr_AxQcpik",
    "shorts": true,
-   "views": 202987,
-   "likes": 2429,
-   "viewsGain": 9670,
+   "views": 205069,
+   "likes": 2448,
+   "viewsGain": 2082,
    "isNew": false,
-   "median": 104129.5,
+   "median": 105820.5,
    "multiple": 1.9
   },
   {
@@ -128,11 +128,11 @@
    "published": "2026-11-06T06:44:00+00:00",
    "url": "https://www.youtube.com/watch?v=tK3p2DelS-c",
    "shorts": false,
-   "views": 182719,
-   "likes": 1027,
-   "viewsGain": 42006,
+   "views": 183328,
+   "likes": 1028,
+   "viewsGain": 609,
    "isNew": false,
-   "median": 185568,
+   "median": 187680,
    "multiple": 1.0
   },
   {
@@ -141,11 +141,11 @@
    "published": "2026-11-06T03:49:57+00:00",
    "url": "https://www.youtube.com/shorts/SmbFOtTIot0",
    "shorts": true,
-   "views": 121116,
-   "likes": 1018,
-   "viewsGain": 14755,
+   "views": 123080,
+   "likes": 1033,
+   "viewsGain": 1964,
    "isNew": false,
-   "median": 104129.5,
+   "median": 105820.5,
    "multiple": 1.2
   },
   {
@@ -154,11 +154,11 @@
    "published": "2026-11-05T09:15:17+00:00",
    "url": "https://www.youtube.com/shorts/LYXceDpsPYA",
    "shorts": true,
-   "views": 227697,
-   "likes": 1342,
-   "viewsGain": 27920,
+   "views": 230968,
+   "likes": 1355,
+   "viewsGain": 3271,
    "isNew": false,
-   "median": 104129.5,
+   "median": 105820.5,
    "multiple": 2.2
   },
   {
@@ -167,12 +167,12 @@
    "published": "2026-11-05T08:56:40+00:00",
    "url": "https://www.youtube.com/shorts/_8ANk19Ku6A",
    "shorts": true,
-   "views": 131419,
-   "likes": 672,
-   "viewsGain": 1695,
+   "views": 131569,
+   "likes": 674,
+   "viewsGain": 150,
    "isNew": false,
-   "median": 104129.5,
-   "multiple": 1.3
+   "median": 105820.5,
+   "multiple": 1.2
   },
   {
    "id": "xsGGzlRlXy8",
@@ -180,11 +180,11 @@
    "published": "2026-11-05T08:28:38+00:00",
    "url": "https://www.youtube.com/shorts/xsGGzlRlXy8",
    "shorts": true,
-   "views": 54938,
-   "likes": 394,
-   "viewsGain": 2757,
+   "views": 55208,
+   "likes": 397,
+   "viewsGain": 270,
    "isNew": false,
-   "median": 104129.5,
+   "median": 105820.5,
    "multiple": 0.5
   },
   {
@@ -193,11 +193,11 @@
    "published": "2026-11-05T06:40:26+00:00",
    "url": "https://www.youtube.com/watch?v=MllkP70RRXg",
    "shorts": false,
-   "views": 202801,
+   "views": 203037,
    "likes": 1301,
-   "viewsGain": 1560,
+   "viewsGain": 236,
    "isNew": false,
-   "median": 185568,
+   "median": 187680,
    "multiple": 1.1
   }
  ],
@@ -205,7 +205,7 @@
   {
    "title": "쪼잔하게 돈 버는 법",
    "url": "https://www.youtube.com/shorts/LYXceDpsPYA",
-   "views": 227697,
+   "views": 230968,
    "multiple": 2.2,
    "shorts": true
   }

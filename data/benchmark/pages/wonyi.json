@@ -1,7 +1,7 @@
 {
  "name": "안원잘부",
  "channel": "https://www.youtube.com/@helloiamwoninicetomeetyou",
- "checkedAt": "2026-11-09T19:27+09:00",
+ "checkedAt": "2026-11-09T22:50+09:00",
  "subscribers": "242만",
  "videos": [
   {
@@ -11,7 +11,7 @@
    "viewsText": "조회수 155만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "DKDmFgXzxs8",
@@ -38,7 +38,7 @@
    "viewsText": "조회수 320만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "xCvbDeMKm3E",
@@ -101,7 +101,7 @@
    "viewsText": "조회수 1351만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "gNJrbCSN2TM",
@@ -281,7 +281,7 @@
    "viewsText": "조회수 134만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "XJQMnwcMvcw",
@@ -322,11 +322,11 @@
   {
    "id": "gRESmZMqlFA",
    "title": "고윤정이 2명",
-   "views": 5470000,
-   "viewsText": "조회수 547만회",
+   "views": 5480000,
+   "viewsText": "조회수 548만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "xsNWeKpL5IQ",
@@ -335,7 +335,7 @@
    "viewsText": "조회수 172만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "yFyk6KPsGuA",
