@@ -1,0 +1,82 @@
+{
+  "slot": "AM",
+  "candidates": [
+    {
+      "title": "안세영, 55연승·2년 연속 국제대회 11승",
+      "summary": "코리아오픈 결승 2-1, 시즌 71승 1패 98.6%",
+      "facts": [
+        "11/8 여수 코리아오픈 여자단식 결승, 야마구치(2위)에 2-1(21-12,15-21,21-16)",
+        "시즌 11번째 우승, 2년 연속 국제대회 11승은 배드민턴 사상 처음",
+        "55연승, 시즌 71승 1패(승률 98.6%)",
+        "야마구치 상대 11연승",
+        "엄마 이현희 씨의 '잘하는 거 해!' 응원이 힘이 됐다고 말함"
+      ],
+      "sources": [
+        {
+          "outlet": "파이낸셜뉴스",
+          "title": "\"엄마 목소리 덕분에\"…안세영, 55연승에 국제대회 11번째 우승",
+          "date": "2026-11-08",
+          "url": "https://fnnews.com/news/202611081825003317"
+        },
+        {
+          "outlet": "뉴데일리",
+          "title": "'세계 최강' 안세영, '55연승' 달리며 코리아오픈 우승 … 시즌 11번째 정상",
+          "date": "2026-11-08",
+          "url": "https://www.newdaily.co.kr/site/data/html/2026/11/08/2026110800051.html"
+        }
+      ],
+      "photoQuery": "BWF World Tour Korea Open 2026 official highlights",
+      "score": 33,
+      "note": "국내 대회지만 해외 언론도 보도(홍콩 언론 보도는 직접 열지 못해 미사용). 11/8 후보의 결승 결과 후속"
+    },
+    {
+      "title": "김민솔, 신지애 이후 20년 만의 3관왕",
+      "summary": "신인왕·대상·상금왕, 시즌 상금 16억 돌파",
+      "facts": [
+        "11/8 KLPGA 최종전 종료, 대상 567점으로 서교림(563점)을 4점 차로 제침",
+        "상금 16억 2843만여 원으로 상금왕, 신인왕 확정",
+        "한 시즌 신인왕·대상·상금왕 석권은 2006년 신지애 이후 20년 만",
+        "시즌 상금 16억 원 돌파는 처음"
+      ],
+      "sources": [
+        {
+          "outlet": "데일리안",
+          "title": "18번 홀서 우승 완성한 유현조, LPGA Q스쿨 도전장",
+          "date": "2026-11-08",
+          "url": "https://www.dailian.co.kr/news/view/1712233/18%EB%B2%88-%ED%99%80%EC%84%9C-%EC%9A%B0%EC%8A%B9-%EC%99%84%EC%84%B1%ED%95%9C-%EC%9C%A0%ED%98%84%EC%A1%B0-LP-2026"
+        }
+      ],
+      "photoQuery": "KLPGA official 2026 championship",
+      "score": 22,
+      "note": "출처 1곳만 열어 확인(2곳 미달) · 해외 아닌 국내 소재 · 확인 필요"
+    },
+    {
+      "title": "[민감] 교황, 아르헨티나 장애인 시설 방문",
+      "summary": "410여 명이 사는 90년 된 '작은 집' 방문",
+      "facts": [
+        "교황 레오 14세가 11/9(월) 아르헨티나 방문 이틀째 클레이폴 코톨렝고 돈 오리오네를 찾을 예정",
+        "지적장애인 약 410~415명이 상주(보도마다 수치 차이), 직원 약 400명",
+        "1936년 5월 21일 문을 열어 올해로 90년",
+        "상주 비용은 무료, 기부·보조금·보험으로 운영",
+        "방문 당일 실제 일정은 직접 확인하지 못함(예고 기사 기준)"
+      ],
+      "sources": [
+        {
+          "outlet": "Buenos Aires Times",
+          "title": "Cottolengo Don Orione: 'Pope Leo's visit makes us more visible than ever'",
+          "date": "2026-11-06",
+          "url": "https://batimes.com.ar/news/amp/argentina/cottolengo-don-orione-pope-leos-visit-makes-us-more-visible-than-ever.phtml"
+        },
+        {
+          "outlet": "Buenos Aires Herald",
+          "title": "The story behind the 'little house' for the disabled Pope Leo will visit in Argentina",
+          "date": "2026-11",
+          "url": "https://buenosairesherald.com/society/the-story-behind-the-little-house-for-the-disabled-pope-leo-will-visit-in-argentina"
+        }
+      ],
+      "photoQuery": "Vatican News official Pope Leo XIV Argentina",
+      "score": 20,
+      "note": "종교·장애인 복지 소재 · 11/9 후보(교황 남미 순방)와 겹침 · 방문 실시 여부 확인 필요"
+    }
+  ]
+}
