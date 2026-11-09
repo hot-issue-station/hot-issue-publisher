@@ -1,26 +1,34 @@
 {
  "name": "14F 일사에프 (MBC)",
  "channel": "https://www.youtube.com/@14FMBC",
- "checkedAt": "2026-11-09T08:27+09:00",
+ "checkedAt": "2026-11-09T14:58+09:00",
  "subscribers": "239만",
  "videos": [
   {
+   "id": "OTeGIZUhKjo",
+   "title": "이게 진짜 라면이라고? 구미 라면 축제 이색 라면 모음 #shorts",
+   "views": 1400,
+   "viewsText": "조회수 1.4천회",
+   "published": "",
+   "kind": "short"
+  },
+  {
    "id": "eJAtWi5dWco",
    "title": "3시간 웨이팅해서 사는 라면 백팩 ㄷㄷ #shorts",
-   "views": 17000,
-   "viewsText": "조회수 1.7만회",
+   "views": 19000,
+   "viewsText": "조회수 1.9만회",
    "published": "",
    "kind": "short",
-   "gain": 5000
+   "gain": 2000
   },
   {
    "id": "raKKyS-VS5k",
    "title": "샤인머스캣 가격 폭락 막기 힘든 이유 #shorts",
-   "views": 6500,
-   "viewsText": "조회수 6.5천회",
+   "views": 6800,
+   "viewsText": "조회수 6.8천회",
    "published": "",
    "kind": "short",
-   "gain": 200
+   "gain": 300
   },
   {
    "id": "UjJznEbPKrw",
@@ -29,16 +37,16 @@
    "viewsText": "조회수 1.3만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "uq0xvYN3L9I",
    "title": "일본 화물이 부산항에 몰리는 이유 #shorts",
-   "views": 76000,
-   "viewsText": "조회수 7.6만회",
+   "views": 87000,
+   "viewsText": "조회수 8.7만회",
    "published": "",
    "kind": "short",
-   "gain": 8000
+   "gain": 11000
   },
   {
    "id": "G63QFaqloJQ",
@@ -47,16 +55,16 @@
    "viewsText": "조회수 8.8천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "peSpC5kd2t0",
    "title": "홍채로도 운세를 볼 수 있다? #shorts",
-   "views": 9500,
-   "viewsText": "조회수 9.5천회",
+   "views": 9600,
+   "viewsText": "조회수 9.6천회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 100
   },
   {
    "id": "yoyqnf-PE30",
@@ -351,15 +359,6 @@
    "title": "2026 국중박 분장대회 대상🎉 #shorts",
    "views": 59000,
    "viewsText": "조회수 5.9만회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "OHOGm31j9wk",
-   "title": "2026 국중박 분장놀이 결선 요약✨ #shorts",
-   "views": 34000,
-   "viewsText": "조회수 3.4만회",
    "published": "",
    "kind": "short",
    "gain": 0

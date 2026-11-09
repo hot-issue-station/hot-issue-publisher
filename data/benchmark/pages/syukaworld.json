@@ -1,26 +1,26 @@
 {
  "name": "슈카월드",
  "channel": "https://www.youtube.com/@syukaworld",
- "checkedAt": "2026-11-09T08:27+09:00",
+ "checkedAt": "2026-11-09T14:58+09:00",
  "subscribers": "374만",
  "videos": [
   {
    "id": "lioIrGMoIbs",
    "title": "좋은 사람 있으면 소개시켜줘",
-   "views": 72000,
-   "viewsText": "조회수 7.2만회",
+   "views": 75000,
+   "viewsText": "조회수 7.5만회",
    "published": "",
    "kind": "short",
-   "gain": 4000
+   "gain": 3000
   },
   {
    "id": "D32h_sPWp0g",
    "title": "모르면 못받음",
-   "views": 97000,
-   "viewsText": "조회수 9.7만회",
+   "views": 100000,
+   "viewsText": "조회수 10만회",
    "published": "",
    "kind": "short",
-   "gain": 4000
+   "gain": 3000
   },
   {
    "id": "QvMjNxpMmPo",
@@ -29,7 +29,7 @@
    "viewsText": "조회수 18만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "prQUpQh_gko",
@@ -70,11 +70,11 @@
   {
    "id": "UfwnDQNYiLI",
    "title": "코스피 고점 대비 -40%, 한여름 밤의 꿈",
-   "views": 460000,
-   "viewsText": "조회수 46만회",
+   "views": 470000,
+   "viewsText": "조회수 47만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "Lf89bw8zlXM",
@@ -128,7 +128,7 @@
    "viewsText": "조회수 192만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "TqwwF2cJJgA",

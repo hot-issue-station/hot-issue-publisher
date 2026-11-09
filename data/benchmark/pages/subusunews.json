@@ -1,35 +1,43 @@
 {
  "name": "스브스뉴스 (SBS)",
  "channel": "https://www.youtube.com/@subusunews",
- "checkedAt": "2026-11-09T08:27+09:00",
+ "checkedAt": "2026-11-09T14:58+09:00",
  "subscribers": "144만",
  "videos": [
   {
+   "id": "pmpb5ZMw3Sw",
+   "title": "매번 달라지는 게 없다는 자살예방계획의 민낯 #청소년자살 #shorts #스브스뉴스",
+   "views": 854,
+   "viewsText": "조회수 854회",
+   "published": "",
+   "kind": "short"
+  },
+  {
    "id": "STWniX3sH0g",
    "title": "상반기에만 2배 폭증한 초등학생 자살률 #자살 #shorts #스브스뉴스",
-   "views": 2800,
-   "viewsText": "조회수 2.8천회",
+   "views": 4000,
+   "viewsText": "조회수 4천회",
    "published": "",
    "kind": "short",
-   "gain": 1843
+   "gain": 1200
   },
   {
    "id": "qZaeu4PJUps",
    "title": "롯데홈쇼핑이 직접 교육하는 커머스 인재 학교? #shorts #스브스뉴스",
-   "views": 2500,
-   "viewsText": "조회수 2.5천회",
+   "views": 3800,
+   "viewsText": "조회수 3.8천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 1300
   },
   {
    "id": "bvbHkNEO3t8",
    "title": "이제 소풍 안 간다는 요즘 초등학교 근황 #초등학교 #shorts #스브스뉴스",
-   "views": 21000,
-   "viewsText": "조회수 2.1만회",
+   "views": 22000,
+   "viewsText": "조회수 2.2만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 1000
   },
   {
    "id": "6LRM6cDTkWU",
@@ -56,7 +64,7 @@
    "viewsText": "조회수 6.3천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "ZpNFj6J6dpk",
@@ -70,11 +78,11 @@
   {
    "id": "7gMpoQvh8JA",
    "title": "갈수록 심해지는 소년범죄 #촉법소년 #shorts #스브스뉴스",
-   "views": 5000,
-   "viewsText": "조회수 5천회",
+   "views": 5100,
+   "viewsText": "조회수 5.1천회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 100
   },
   {
    "id": "_S4dpnDTrkY",
@@ -119,7 +127,7 @@
    "viewsText": "조회수 5.2천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "X9iSvXsLJuY",
@@ -351,15 +359,6 @@
    "title": "스드메 가격 공개? 어차피 소용없다는 예비부부 근황 #스드메 #Shorts #스브스뉴스",
    "views": 17000,
    "viewsText": "조회수 1.7만회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "LaYo7GmIxFA",
-   "title": "왜 금지할까? #shorts / 스브스뉴스",
-   "views": 15000,
-   "viewsText": "조회수 1.5만회",
    "published": "",
    "kind": "short",
    "gain": 0
