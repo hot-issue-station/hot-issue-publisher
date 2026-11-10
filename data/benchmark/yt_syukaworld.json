@@ -3,7 +3,7 @@
  "name": "슈카월드",
  "channel": "https://www.youtube.com/@syukaworld",
  "channelId": "UCJo6G1u0e_-wS-JQn3T-zEw",
- "checkedAt": "2026-11-10T22:45+09:00",
+ "checkedAt": "2026-11-11T08:26+09:00",
  "videos": [
   {
    "id": "Ge6BHHlGUmk",
@@ -11,12 +11,12 @@
    "published": "2026-11-10T10:42:29+00:00",
    "url": "https://www.youtube.com/watch?v=Ge6BHHlGUmk",
    "shorts": false,
-   "views": 20863,
-   "likes": 181,
-   "viewsGain": null,
-   "isNew": true,
-   "median": 162426.5,
-   "multiple": 0.1
+   "views": 63250,
+   "likes": 246,
+   "viewsGain": 42387,
+   "isNew": false,
+   "median": 166532.5,
+   "multiple": 0.4
   },
   {
    "id": "gOGolt7zsN8",
@@ -24,12 +24,12 @@
    "published": "2026-11-10T08:00:26+00:00",
    "url": "https://www.youtube.com/shorts/gOGolt7zsN8",
    "shorts": true,
-   "views": 74802,
-   "likes": 1082,
-   "viewsGain": 50939,
+   "views": 121565,
+   "likes": 1332,
+   "viewsGain": 46763,
    "isNew": false,
-   "median": 129899,
-   "multiple": 0.6
+   "median": 131786,
+   "multiple": 0.9
   },
   {
    "id": "aGpktOSGdm0",
@@ -37,12 +37,12 @@
    "published": "2026-11-10T06:30:55+00:00",
    "url": "https://www.youtube.com/watch?v=aGpktOSGdm0",
    "shorts": false,
-   "views": 133387,
-   "likes": 996,
-   "viewsGain": 22194,
+   "views": 147963,
+   "likes": 1046,
+   "viewsGain": 14576,
    "isNew": false,
-   "median": 162426.5,
-   "multiple": 0.8
+   "median": 166532.5,
+   "multiple": 0.9
   },
   {
    "id": "xCP7MhJdnXM",
@@ -50,12 +50,12 @@
    "published": "2026-11-09T12:28:06+00:00",
    "url": "https://www.youtube.com/watch?v=xCP7MhJdnXM",
    "shorts": false,
-   "views": 138830,
-   "likes": 740,
-   "viewsGain": 2809,
+   "views": 140539,
+   "likes": 736,
+   "viewsGain": 1709,
    "isNew": false,
-   "median": 162426.5,
-   "multiple": 0.9
+   "median": 166532.5,
+   "multiple": 0.8
   },
   {
    "id": "O2S8hCse54k",
@@ -63,11 +63,11 @@
    "published": "2026-11-09T03:43:40+00:00",
    "url": "https://www.youtube.com/shorts/O2S8hCse54k",
    "shorts": true,
-   "views": 150816,
-   "likes": 1412,
-   "viewsGain": 12939,
+   "views": 163901,
+   "likes": 1491,
+   "viewsGain": 13085,
    "isNew": false,
-   "median": 129899,
+   "median": 131786,
    "multiple": 1.2
   },
   {
@@ -76,11 +76,11 @@
    "published": "2026-11-08T09:00:10+00:00",
    "url": "https://www.youtube.com/watch?v=hvjeDlMlPSE",
    "shorts": false,
-   "views": 139947,
-   "likes": 921,
-   "viewsGain": 1986,
+   "views": 142114,
+   "likes": 928,
+   "viewsGain": 2167,
    "isNew": false,
-   "median": 162426.5,
+   "median": 166532.5,
    "multiple": 0.9
   },
   {
@@ -89,12 +89,12 @@
    "published": "2026-11-08T02:08:27+00:00",
    "url": "https://www.youtube.com/watch?v=8DeKtLlHPdI",
    "shorts": false,
-   "views": 378692,
-   "likes": 2420,
-   "viewsGain": 12987,
+   "views": 396395,
+   "likes": 2463,
+   "viewsGain": 17703,
    "isNew": false,
-   "median": 162426.5,
-   "multiple": 2.3
+   "median": 166532.5,
+   "multiple": 2.4
   },
   {
    "id": "h9yF44sFEvc",
@@ -102,12 +102,12 @@
    "published": "2026-11-07T09:00:11+00:00",
    "url": "https://www.youtube.com/watch?v=h9yF44sFEvc",
    "shorts": false,
-   "views": 318566,
-   "likes": 1855,
-   "viewsGain": 2976,
+   "views": 321581,
+   "likes": 1865,
+   "viewsGain": 3015,
    "isNew": false,
-   "median": 162426.5,
-   "multiple": 2.0
+   "median": 166532.5,
+   "multiple": 1.9
   },
   {
    "id": "OeJ-JKlNv_s",
@@ -115,11 +115,11 @@
    "published": "2026-11-06T12:43:23+00:00",
    "url": "https://www.youtube.com/shorts/OeJ-JKlNv_s",
    "shorts": true,
-   "views": 93044,
-   "likes": 510,
-   "viewsGain": 1307,
+   "views": 94566,
+   "likes": 518,
+   "viewsGain": 1522,
    "isNew": false,
-   "median": 129899,
+   "median": 131786,
    "multiple": 0.7
   },
   {
@@ -128,11 +128,11 @@
    "published": "2026-11-06T12:31:37+00:00",
    "url": "https://www.youtube.com/shorts/ay3FXHM03T8",
    "shorts": true,
-   "views": 85883,
-   "likes": 748,
-   "viewsGain": 1084,
+   "views": 87259,
+   "likes": 754,
+   "viewsGain": 1376,
    "isNew": false,
-   "median": 129899,
+   "median": 131786,
    "multiple": 0.7
   },
   {
@@ -141,11 +141,11 @@
    "published": "2026-11-06T09:23:54+00:00",
    "url": "https://www.youtube.com/watch?v=ri2GLNjEM_s",
    "shorts": false,
-   "views": 195035,
-   "likes": 956,
-   "viewsGain": 1026,
+   "views": 195791,
+   "likes": 958,
+   "viewsGain": 756,
    "isNew": false,
-   "median": 162426.5,
+   "median": 166532.5,
    "multiple": 1.2
   },
   {
@@ -154,11 +154,11 @@
    "published": "2026-11-06T08:13:05+00:00",
    "url": "https://www.youtube.com/shorts/sYr_AxQcpik",
    "shorts": true,
-   "views": 213708,
-   "likes": 2525,
-   "viewsGain": 1563,
+   "views": 215721,
+   "likes": 2540,
+   "viewsGain": 2013,
    "isNew": false,
-   "median": 129899,
+   "median": 131786,
    "multiple": 1.6
   },
   {
@@ -167,11 +167,11 @@
    "published": "2026-11-06T06:44:00+00:00",
    "url": "https://www.youtube.com/watch?v=tK3p2DelS-c",
    "shorts": false,
-   "views": 184906,
-   "likes": 1026,
-   "viewsGain": 242,
+   "views": 185102,
+   "likes": 1027,
+   "viewsGain": 196,
    "isNew": false,
-   "median": 162426.5,
+   "median": 166532.5,
    "multiple": 1.1
   },
   {
@@ -180,11 +180,11 @@
    "published": "2026-11-06T03:49:57+00:00",
    "url": "https://www.youtube.com/shorts/SmbFOtTIot0",
    "shorts": true,
-   "views": 129899,
-   "likes": 1073,
-   "viewsGain": 1157,
+   "views": 131786,
+   "likes": 1084,
+   "viewsGain": 1887,
    "isNew": false,
-   "median": 129899,
+   "median": 131786,
    "multiple": 1.0
   },
   {
@@ -193,11 +193,11 @@
    "published": "2026-11-05T09:15:17+00:00",
    "url": "https://www.youtube.com/shorts/LYXceDpsPYA",
    "shorts": true,
-   "views": 243712,
-   "likes": 1422,
-   "viewsGain": 2053,
+   "views": 248798,
+   "likes": 1436,
+   "viewsGain": 5086,
    "isNew": false,
-   "median": 129899,
+   "median": 131786,
    "multiple": 1.9
   }
  ],
@@ -205,15 +205,8 @@
   {
    "title": "블룸버그 애널리스트가 본 현재 국장",
    "url": "https://www.youtube.com/watch?v=8DeKtLlHPdI",
-   "views": 378692,
-   "multiple": 2.3,
-   "shorts": false
-  },
-  {
-   "title": "우리 요즘 잘하고 있지 않아요?",
-   "url": "https://www.youtube.com/watch?v=h9yF44sFEvc",
-   "views": 318566,
-   "multiple": 2.0,
+   "views": 396395,
+   "multiple": 2.4,
    "shorts": false
   }
  ]

@@ -3,7 +3,7 @@
  "name": "스토리K (손흥민 레전드 비교 특집 벤치마킹, 10/31)",
  "channel": "https://www.youtube.com/@story_k",
  "channelId": "UCqzNZeBt0546jG-vDlAQlZg",
- "checkedAt": "2026-11-10T22:45+09:00",
+ "checkedAt": "2026-11-11T08:26+09:00",
  "videos": [
   {
    "id": "EvW6ldmE06o",
@@ -11,12 +11,12 @@
    "published": "2026-11-10T09:49:05+00:00",
    "url": "https://www.youtube.com/watch?v=EvW6ldmE06o",
    "shorts": false,
-   "views": 11369,
-   "likes": 741,
-   "viewsGain": 10151,
+   "views": 43255,
+   "likes": 1116,
+   "viewsGain": 31886,
    "isNew": false,
-   "median": 59010,
-   "multiple": 0.2
+   "median": 59316,
+   "multiple": 0.7
   },
   {
    "id": "Jo4q1DY_adM",
@@ -24,11 +24,11 @@
    "published": "2026-11-09T10:29:55+00:00",
    "url": "https://www.youtube.com/watch?v=Jo4q1DY_adM",
    "shorts": false,
-   "views": 33591,
-   "likes": 938,
-   "viewsGain": 1431,
+   "views": 35294,
+   "likes": 957,
+   "viewsGain": 1703,
    "isNew": false,
-   "median": 59010,
+   "median": 59316,
    "multiple": 0.6
   },
   {
@@ -37,11 +37,11 @@
    "published": "2026-11-08T10:15:12+00:00",
    "url": "https://www.youtube.com/watch?v=pzqdpN2RPCc",
    "shorts": false,
-   "views": 23837,
-   "likes": 632,
-   "viewsGain": 258,
+   "views": 24339,
+   "likes": 640,
+   "viewsGain": 502,
    "isNew": false,
-   "median": 59010,
+   "median": 59316,
    "multiple": 0.4
   },
   {
@@ -50,11 +50,11 @@
    "published": "2026-11-07T10:26:57+00:00",
    "url": "https://www.youtube.com/watch?v=FhUO1_ZU1Dw",
    "shorts": false,
-   "views": 87913,
-   "likes": 1528,
-   "viewsGain": 1047,
+   "views": 88824,
+   "likes": 1534,
+   "viewsGain": 911,
    "isNew": false,
-   "median": 59010,
+   "median": 59316,
    "multiple": 1.5
   },
   {
@@ -63,12 +63,12 @@
    "published": "2026-11-06T10:20:26+00:00",
    "url": "https://www.youtube.com/watch?v=aGdX-njap_8",
    "shorts": false,
-   "views": 84486,
-   "likes": 809,
-   "viewsGain": 1210,
+   "views": 87284,
+   "likes": 813,
+   "viewsGain": 2798,
    "isNew": false,
-   "median": 59010,
-   "multiple": 1.4
+   "median": 59316,
+   "multiple": 1.5
   },
   {
    "id": "XnpYo8kDzQo",
@@ -76,11 +76,11 @@
    "published": "2026-11-05T10:03:23+00:00",
    "url": "https://www.youtube.com/watch?v=XnpYo8kDzQo",
    "shorts": false,
-   "views": 28388,
-   "likes": 983,
-   "viewsGain": 83,
+   "views": 28540,
+   "likes": 987,
+   "viewsGain": 152,
    "isNew": false,
-   "median": 59010,
+   "median": 59316,
    "multiple": 0.5
   },
   {
@@ -89,11 +89,11 @@
    "published": "2026-11-04T10:03:23+00:00",
    "url": "https://www.youtube.com/watch?v=eMHW9EPF5_g",
    "shorts": false,
-   "views": 59010,
-   "likes": 1551,
-   "viewsGain": 218,
+   "views": 59316,
+   "likes": 1553,
+   "viewsGain": 306,
    "isNew": false,
-   "median": 59010,
+   "median": 59316,
    "multiple": 1.0
   },
   {
@@ -102,11 +102,11 @@
    "published": "2026-11-03T10:03:50+00:00",
    "url": "https://www.youtube.com/watch?v=6WdpcGFmFgQ",
    "shorts": false,
-   "views": 104467,
-   "likes": 1682,
-   "viewsGain": 49,
+   "views": 104548,
+   "likes": 1683,
+   "viewsGain": 81,
    "isNew": false,
-   "median": 59010,
+   "median": 59316,
    "multiple": 1.8
   },
   {
@@ -115,11 +115,11 @@
    "published": "2026-11-02T10:18:24+00:00",
    "url": "https://www.youtube.com/watch?v=nrw8lqAulz8",
    "shorts": false,
-   "views": 50341,
-   "likes": 1393,
-   "viewsGain": 33,
+   "views": 50441,
+   "likes": 1396,
+   "viewsGain": 100,
    "isNew": false,
-   "median": 59010,
+   "median": 59316,
    "multiple": 0.9
   },
   {
@@ -128,11 +128,11 @@
    "published": "2026-11-01T10:10:44+00:00",
    "url": "https://www.youtube.com/watch?v=hW2vyayJmLc",
    "shorts": false,
-   "views": 118537,
+   "views": 118637,
    "likes": 1876,
-   "viewsGain": 10,
+   "viewsGain": 100,
    "isNew": false,
-   "median": 59010,
+   "median": 59316,
    "multiple": 2.0
   },
   {
@@ -141,12 +141,12 @@
    "published": "2026-10-30T10:55:36+00:00",
    "url": "https://www.youtube.com/watch?v=kUd8n4RkZwI",
    "shorts": false,
-   "views": 67925,
+   "views": 67928,
    "likes": 1660,
-   "viewsGain": 2,
+   "viewsGain": 3,
    "isNew": false,
-   "median": 59010,
-   "multiple": 1.2
+   "median": 59316,
+   "multiple": 1.1
   },
   {
    "id": "T8LOjY7uM8A",
@@ -154,11 +154,11 @@
    "published": "2026-10-29T10:21:36+00:00",
    "url": "https://www.youtube.com/watch?v=T8LOjY7uM8A",
    "shorts": false,
-   "views": 273903,
+   "views": 273933,
    "likes": 3446,
-   "viewsGain": 14,
+   "viewsGain": 30,
    "isNew": false,
-   "median": 59010,
+   "median": 59316,
    "multiple": 4.6
   },
   {
@@ -167,11 +167,11 @@
    "published": "2026-10-28T09:38:38+00:00",
    "url": "https://www.youtube.com/watch?v=VCrDlYW4s98",
    "shorts": false,
-   "views": 42267,
+   "views": 42271,
    "likes": 887,
    "viewsGain": 4,
    "isNew": false,
-   "median": 59010,
+   "median": 59316,
    "multiple": 0.7
   },
   {
@@ -180,11 +180,11 @@
    "published": "2026-10-27T08:54:51+00:00",
    "url": "https://www.youtube.com/watch?v=SYpmi4jnRJA",
    "shorts": false,
-   "views": 73602,
+   "views": 73634,
    "likes": 1107,
-   "viewsGain": 5,
+   "viewsGain": 32,
    "isNew": false,
-   "median": 59010,
+   "median": 59316,
    "multiple": 1.2
   },
   {
@@ -193,11 +193,11 @@
    "published": "2026-10-26T10:33:18+00:00",
    "url": "https://www.youtube.com/watch?v=2KjngjLjWIM",
    "shorts": false,
-   "views": 37653,
+   "views": 37660,
    "likes": 1117,
-   "viewsGain": 0,
+   "viewsGain": 7,
    "isNew": false,
-   "median": 59010,
+   "median": 59316,
    "multiple": 0.6
   }
  ],
@@ -205,14 +205,14 @@
   {
    "title": "손흥민 존중은 베테랑을 향한 마땅한 기본 - 황희찬의 하이파이브 무시와 엄지성 대표팀 발탁",
    "url": "https://www.youtube.com/watch?v=T8LOjY7uM8A",
-   "views": 273903,
+   "views": 273933,
    "multiple": 4.6,
    "shorts": false
   },
   {
    "title": "손흥민 호위무사들과 캡틴 패싱 황희찬 극과극 - 엄지성 미친 도움 대표팀 서사는 폭발 직전",
    "url": "https://www.youtube.com/watch?v=hW2vyayJmLc",
-   "views": 118537,
+   "views": 118637,
    "multiple": 2.0,
    "shorts": false
   }

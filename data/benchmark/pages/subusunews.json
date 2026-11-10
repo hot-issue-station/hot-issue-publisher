@@ -1,48 +1,50 @@
 {
  "name": "스브스뉴스 (SBS)",
  "channel": "https://www.youtube.com/@subusunews",
- "checkedAt": "2026-11-10T22:45+09:00",
+ "checkedAt": "2026-11-11T08:26+09:00",
  "subscribers": "144만",
  "videos": [
   {
    "id": "h8iBMhQ3b-Q",
    "title": "추워질수록 위험하다는 굴운자로 #굴 #shorts #스브스뉴스",
-   "views": 854,
-   "viewsText": "조회수 854회",
+   "views": 3000,
+   "viewsText": "조회수 3천회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 2146
   },
   {
    "id": "uO5xviR9-aM",
    "title": "유독 정치판에서 사이비 종교 논란이 자주 터지는 이유 #사이비 #shorts #스브스뉴스",
-   "views": 1400,
-   "viewsText": "조회수 1.4천회",
+   "views": 3000,
+   "viewsText": "조회수 3천회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 1600
   },
   {
    "id": "Y0Y6eq3a6PE",
    "title": "서울시가 남산에 곤돌라를 만들려는 이유 #shorts / 스브스뉴스",
-   "views": 1900,
-   "viewsText": "조회수 1.9천회",
+   "views": 3100,
+   "viewsText": "조회수 3.1천회",
    "published": "",
    "kind": "short",
-   "gain": 1623
+   "gain": 1200
   },
   {
    "id": "DqL_SWFWkD8",
    "title": "침착맨 방송 중 사교육 문제 직격타 날린 정승제 #입시 #shorts #스브스뉴스",
-   "views": 340000,
-   "viewsText": "조회수 34만회",
+   "views": 400000,
+   "viewsText": "조회수 40만회",
    "published": "",
    "kind": "short",
-   "gain": 50000
+   "gain": 60000
   },
   {
    "id": "lnryKqOozWk",
    "title": "갑작스러운 사고로 세상 떠난 여행 유튜버 #추모 #shorts #스브스뉴스",
-   "views": 14000,
-   "viewsText": "조회수 1.4만회",
+   "views": 15000,
+   "viewsText": "조회수 1.5만회",
    "published": "",
    "kind": "short",
    "gain": 1000
@@ -54,13 +56,13 @@
    "viewsText": "조회수 2.7천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "STWniX3sH0g",
    "title": "상반기에만 2배 폭증한 초등학생 자살률 #자살 #shorts #스브스뉴스",
-   "views": 5800,
-   "viewsText": "조회수 5.8천회",
+   "views": 5900,
+   "viewsText": "조회수 5.9천회",
    "published": "",
    "kind": "short",
    "gain": 100
@@ -68,11 +70,11 @@
   {
    "id": "qZaeu4PJUps",
    "title": "롯데홈쇼핑이 직접 교육하는 커머스 인재 학교? #shorts #스브스뉴스",
-   "views": 17000,
-   "viewsText": "조회수 1.7만회",
+   "views": 19000,
+   "viewsText": "조회수 1.9만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 2000
   },
   {
    "id": "bvbHkNEO3t8",
@@ -275,11 +277,11 @@
   {
    "id": "hRyKzZwyI3g",
    "title": "'스마트 안경'으로 논술 본 수험생, 결국 '형사 고발'까지 #스마트안경 #shorts #스브스뉴스",
-   "views": 30000,
-   "viewsText": "조회수 3만회",
+   "views": 31000,
+   "viewsText": "조회수 3.1만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 1000
   },
   {
    "id": "8r9kRKgHoJw",
@@ -356,11 +358,11 @@
   {
    "id": "X6yA0ltKNU4",
    "title": "겉으론 멀쩡해 보여도 의심해 봐야 하는 '이것' #2030 #shorts #스브스뉴스",
-   "views": 86000,
-   "viewsText": "조회수 8.6만회",
+   "views": 87000,
+   "viewsText": "조회수 8.7만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 1000
   }
  ]
 }
