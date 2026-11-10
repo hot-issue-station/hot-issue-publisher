@@ -1,17 +1,17 @@
 {
  "name": "14F 일사에프 (MBC)",
  "channel": "https://www.youtube.com/@14FMBC",
- "checkedAt": "2026-11-10T19:31+09:00",
+ "checkedAt": "2026-11-10T22:45+09:00",
  "subscribers": "239만",
  "videos": [
   {
    "id": "OTeGIZUhKjo",
    "title": "이게 진짜 라면이라고? 구미 라면 축제 이색 라면 모음 #shorts",
-   "views": 5600,
-   "viewsText": "조회수 5.6천회",
+   "views": 5900,
+   "viewsText": "조회수 5.9천회",
    "published": "",
    "kind": "short",
-   "gain": 400
+   "gain": 300
   },
   {
    "id": "eJAtWi5dWco",
@@ -20,7 +20,7 @@
    "viewsText": "조회수 2.5만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "raKKyS-VS5k",
@@ -43,11 +43,11 @@
   {
    "id": "uq0xvYN3L9I",
    "title": "일본 화물이 부산항에 몰리는 이유 #shorts",
-   "views": 120000,
-   "viewsText": "조회수 12만회",
+   "views": 130000,
+   "viewsText": "조회수 13만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "G63QFaqloJQ",
@@ -65,7 +65,7 @@
    "viewsText": "조회수 9.7천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "yoyqnf-PE30",
@@ -74,7 +74,7 @@
    "viewsText": "조회수 5.9천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "FV2VNAPmk-o",

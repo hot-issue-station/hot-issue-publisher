@@ -1,31 +1,48 @@
 {
  "name": "스브스뉴스 (SBS)",
  "channel": "https://www.youtube.com/@subusunews",
- "checkedAt": "2026-11-10T19:31+09:00",
+ "checkedAt": "2026-11-10T22:45+09:00",
  "subscribers": "144만",
  "videos": [
   {
-   "id": "Y0Y6eq3a6PE",
-   "title": "서울시가 남산에 곤돌라를 만들려는 이유 #shorts / 스브스뉴스",
-   "views": 277,
-   "viewsText": "조회수 277회",
+   "id": "h8iBMhQ3b-Q",
+   "title": "추워질수록 위험하다는 굴운자로 #굴 #shorts #스브스뉴스",
+   "views": 854,
+   "viewsText": "조회수 854회",
    "published": "",
    "kind": "short"
   },
   {
-   "id": "DqL_SWFWkD8",
-   "title": "침착맨 방송 중 사교육 문제 직격타 날린 정승제 #입시 #shorts #스브스뉴스",
-   "views": 290000,
-   "viewsText": "조회수 29만회",
+   "id": "uO5xviR9-aM",
+   "title": "유독 정치판에서 사이비 종교 논란이 자주 터지는 이유 #사이비 #shorts #스브스뉴스",
+   "views": 1400,
+   "viewsText": "조회수 1.4천회",
+   "published": "",
+   "kind": "short"
+  },
+  {
+   "id": "Y0Y6eq3a6PE",
+   "title": "서울시가 남산에 곤돌라를 만들려는 이유 #shorts / 스브스뉴스",
+   "views": 1900,
+   "viewsText": "조회수 1.9천회",
    "published": "",
    "kind": "short",
-   "gain": 100000
+   "gain": 1623
+  },
+  {
+   "id": "DqL_SWFWkD8",
+   "title": "침착맨 방송 중 사교육 문제 직격타 날린 정승제 #입시 #shorts #스브스뉴스",
+   "views": 340000,
+   "viewsText": "조회수 34만회",
+   "published": "",
+   "kind": "short",
+   "gain": 50000
   },
   {
    "id": "lnryKqOozWk",
    "title": "갑작스러운 사고로 세상 떠난 여행 유튜버 #추모 #shorts #스브스뉴스",
-   "views": 13000,
-   "viewsText": "조회수 1.3만회",
+   "views": 14000,
+   "viewsText": "조회수 1.4만회",
    "published": "",
    "kind": "short",
    "gain": 1000
@@ -33,17 +50,17 @@
   {
    "id": "pmpb5ZMw3Sw",
    "title": "매번 달라지는 게 없다는 자살예방계획의 민낯 #청소년자살 #shorts #스브스뉴스",
-   "views": 2600,
-   "viewsText": "조회수 2.6천회",
+   "views": 2700,
+   "viewsText": "조회수 2.7천회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 100
   },
   {
    "id": "STWniX3sH0g",
    "title": "상반기에만 2배 폭증한 초등학생 자살률 #자살 #shorts #스브스뉴스",
-   "views": 5700,
-   "viewsText": "조회수 5.7천회",
+   "views": 5800,
+   "viewsText": "조회수 5.8천회",
    "published": "",
    "kind": "short",
    "gain": 100
@@ -51,11 +68,11 @@
   {
    "id": "qZaeu4PJUps",
    "title": "롯데홈쇼핑이 직접 교육하는 커머스 인재 학교? #shorts #스브스뉴스",
-   "views": 16000,
-   "viewsText": "조회수 1.6만회",
+   "views": 17000,
+   "viewsText": "조회수 1.7만회",
    "published": "",
    "kind": "short",
-   "gain": 6000
+   "gain": 1000
   },
   {
    "id": "bvbHkNEO3t8",
@@ -341,24 +358,6 @@
    "title": "겉으론 멀쩡해 보여도 의심해 봐야 하는 '이것' #2030 #shorts #스브스뉴스",
    "views": 86000,
    "viewsText": "조회수 8.6만회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "3GdNYTTsoEU",
-   "title": "100일 만에 182조 날렸다는 국민연금 근황 #국민연금 #shorts #스브스뉴스",
-   "views": 5200,
-   "viewsText": "조회수 5.2천회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "PcfvLn6DHVw",
-   "title": "누가 사냐더니 예약 직후 물량 소진된 '아이폰 듀오' #애플 #shorts #스브스뉴스",
-   "views": 25000,
-   "viewsText": "조회수 2.5만회",
    "published": "",
    "kind": "short",
    "gain": 0

@@ -1,59 +1,62 @@
 {
  "name": "RESCENE 공식",
  "channel": "https://www.youtube.com/@RESCENE_official",
- "checkedAt": "2026-11-10T19:31+09:00",
+ "checkedAt": "2026-11-10T22:45+09:00",
  "subscribers": "137만",
  "videos": [
   {
    "id": "kOmL4DDTEYw",
    "title": "얍",
-   "views": 100000,
-   "viewsText": "조회수 10만회",
+   "views": 220000,
+   "viewsText": "조회수 22만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 120000
   },
   {
    "id": "TL5LSvvgjDw",
    "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #리리 님@heartofwoman_officl",
-   "views": 68000,
-   "viewsText": "조회수 6.8만회",
+   "views": 110000,
+   "viewsText": "조회수 11만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 42000
   },
   {
    "id": "eDinqteZYUM",
    "title": "Dancing Queen 👑",
-   "views": 100000,
-   "viewsText": "조회수 10만회",
+   "views": 150000,
+   "viewsText": "조회수 15만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 50000
   },
   {
    "id": "aTfIJqiYBiI",
    "title": "Pretty",
-   "views": 140000,
-   "viewsText": "조회수 14만회",
+   "views": 150000,
+   "viewsText": "조회수 15만회",
    "published": "",
    "kind": "short",
-   "gain": 20000
+   "gain": 10000
   },
   {
    "id": "NNsr12BBiE0",
    "title": "😘😘",
-   "views": 100000,
-   "viewsText": "조회수 10만회",
+   "views": 110000,
+   "viewsText": "조회수 11만회",
    "published": "",
    "kind": "short",
-   "gain": 5000
+   "gain": 10000
   },
   {
    "id": "_eji6lKLAu0",
    "title": "🩶",
-   "views": 160000,
-   "viewsText": "조회수 16만회",
+   "views": 170000,
+   "viewsText": "조회수 17만회",
    "published": "",
    "kind": "short",
-   "gain": 20000
+   "gain": 10000
   },
   {
    "id": "vwyG-5iVXaw",
@@ -62,25 +65,25 @@
    "viewsText": "조회수 11만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "3XMFZbIkVqw",
    "title": "Stop",
-   "views": 84000,
-   "viewsText": "조회수 8.4만회",
+   "views": 89000,
+   "viewsText": "조회수 8.9만회",
    "published": "",
    "kind": "short",
-   "gain": 6000
+   "gain": 5000
   },
   {
    "id": "IrcrSlCCkGo",
    "title": "우리 연주 어때?",
-   "views": 490000,
-   "viewsText": "조회수 49만회",
+   "views": 500000,
+   "viewsText": "조회수 50만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "nf0cE5ByIiY",
@@ -94,8 +97,8 @@
   {
    "id": "Vo9WrMtd0bY",
    "title": "함께해줘",
-   "views": 410000,
-   "viewsText": "조회수 41만회",
+   "views": 420000,
+   "viewsText": "조회수 42만회",
    "published": "",
    "kind": "short",
    "gain": 10000
@@ -125,7 +128,7 @@
    "viewsText": "조회수 48만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "GG1QgSloUkU",
@@ -143,7 +146,7 @@
    "viewsText": "조회수 38만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "_ldpW3AQWWA",
@@ -166,11 +169,11 @@
   {
    "id": "kRY9NYgnXLM",
    "title": "With 🤍",
-   "views": 490000,
-   "viewsText": "조회수 49만회",
+   "views": 500000,
+   "viewsText": "조회수 50만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "KcTEkBTAP3I",
@@ -179,7 +182,7 @@
    "viewsText": "조회수 61만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "sgZms-ImEx0",
@@ -188,7 +191,7 @@
    "viewsText": "조회수 72만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "EYrU4Zphz8s",
@@ -269,7 +272,7 @@
    "viewsText": "조회수 93만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "UfaJ4mbAiWc",
@@ -283,17 +286,17 @@
   {
    "id": "HN7La9KN2MY",
    "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #크러쉬 선배님",
-   "views": 590000,
-   "viewsText": "조회수 59만회",
+   "views": 600000,
+   "viewsText": "조회수 60만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "k7y2yvkFJ1k",
    "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #애니 님",
-   "views": 1370000,
-   "viewsText": "조회수 137만회",
+   "views": 1380000,
+   "viewsText": "조회수 138만회",
    "published": "",
    "kind": "short",
    "gain": 10000
