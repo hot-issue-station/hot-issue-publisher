@@ -186,5 +186,172 @@
   "key": "storyk",
   "ok": false,
   "error": "HTTPError: HTTP Error 404: Not Found"
+ },
+ {
+  "at": "2026-11-10T19:31+09:00",
+  "key": "14f",
+  "ok": true,
+  "new": [
+   "zPC08gXKTag",
+   "H7Mr65NjD7g"
+  ],
+  "top": [
+   {
+    "id": "RpOT3aIsli8",
+    "title": "???: 한국 프랜차이즈 많이 예뻐해 주고 싶어요 :) 🥄ㅣ돈슐랭 / 14F",
+    "views": 211270,
+    "gain": 57169
+   },
+   {
+    "id": "-5SuOuqeZ90",
+    "title": "미국 증시 폭락 이유ㅣ테슬라, 스페이스X 양도세 논란ㅣ주식 결제주기 단축 등 4가지 🥬경제 이슈🥬",
+    "views": 324751,
+    "gain": 45141
+   },
+   {
+    "id": "NlFjqf5_TH4",
+    "title": "불금에 택시비 더 비싸질까?... 택시 ‘요일별 할증제’ 도입 추진 / 14F",
+    "views": 47596,
+    "gain": 14770
+   }
+  ]
+ },
+ {
+  "at": "2026-11-10T19:31+09:00",
+  "key": "subusunews",
+  "ok": true,
+  "new": [
+   "fPk1Jmnz5sU",
+   "_i4szpS2iWE",
+   "mZoYzTu6ZyY",
+   "1HzIABBs_lo",
+   "R6snzVYjYF8"
+  ],
+  "top": [
+   {
+    "id": "ZS5sPQuxWks",
+    "title": "우사편 게스트 중 최고 악필이에요",
+    "views": 26806,
+    "gain": 284
+   },
+   {
+    "id": "Zq1d5ckccFQ",
+    "title": "극단적이었던 재민 입맛",
+    "views": 48786,
+    "gain": 225
+   },
+   {
+    "id": "vivfKyBubgA",
+    "title": "아이돌이 가지게 되는 딜레마",
+    "views": 19280,
+    "gain": 90
+   }
+  ]
+ },
+ {
+  "at": "2026-11-10T19:31+09:00",
+  "key": "vstudio",
+  "ok": true,
+  "new": [],
+  "top": []
+ },
+ {
+  "at": "2026-11-10T19:31+09:00",
+  "key": "syukaworld",
+  "ok": true,
+  "new": [
+   "gOGolt7zsN8",
+   "aGpktOSGdm0"
+  ],
+  "top": [
+   {
+    "id": "O2S8hCse54k",
+    "title": "좋소식 순환금융",
+    "views": 137877,
+    "gain": 34574
+   },
+   {
+    "id": "8DeKtLlHPdI",
+    "title": "블룸버그 애널리스트가 본 현재 국장",
+    "views": 365705,
+    "gain": 25570
+   },
+   {
+    "id": "h9yF44sFEvc",
+    "title": "우리 요즘 잘하고 있지 않아요?",
+    "views": 315590,
+    "gain": 14531
+   }
+  ]
+ },
+ {
+  "at": "2026-11-10T19:31+09:00",
+  "key": "ytn",
+  "ok": true,
+  "new": [
+   "OlJ3zn9Lqng",
+   "Rd2tOAqbz-A",
+   "Zq_V3N7MCEI",
+   "mwhOMzN4GaU",
+   "OGDccobaQ1g",
+   "Rw2dA5zI0r8",
+   "O_ejtzkJZ3c",
+   "NSRQId28S-c",
+   "gweEodXcaJI",
+   "vzKamEaNycE",
+   "ed_IjLkwLHA",
+   "eOlBi_tIKAc",
+   "HKEEY5IuDvs",
+   "HNk5BBJ9MNY",
+   "WTAwt0JxNT4"
+  ],
+  "top": [
+   {
+    "id": "Zq_V3N7MCEI",
+    "title": "개표상황표 은닉·위조 사실 포착…경기 광주시 선관위 압수수색 [에디터픽] / YTN",
+    "views": 44120,
+    "gain": null
+   },
+   {
+    "id": "Rd2tOAqbz-A",
+    "title": "시총 260조 증발·주주 집단소송까지…젠슨 황 흔들리자 엔비디아 '초유의 위기' [에디터픽] / YTN",
+    "views": 27598,
+    "gain": null
+   },
+   {
+    "id": "OlJ3zn9Lqng",
+    "title": "엔비디아 주가 장중 9% 폭락…젠슨 황 감싼 트럼프도 '시험대' [YTN실시간뉴스]",
+    "views": 2977,
+    "gain": null
+   }
+  ]
+ },
+ {
+  "at": "2026-11-10T19:31+09:00",
+  "key": "storyk",
+  "ok": true,
+  "new": [
+   "EvW6ldmE06o"
+  ],
+  "top": [
+   {
+    "id": "Jo4q1DY_adM",
+    "title": "손흥민 모든 걸 해결해줘 한국 대표팀 - 선수 보호 없이 캡틴에게 모든 책임 넘긴 촌극",
+    "views": 32160,
+    "gain": 8617
+   },
+   {
+    "id": "FhUO1_ZU1Dw",
+    "title": "손흥민 존경 포로의 고백이 감동인 이유 - 월드컵 챔피언이 보증한 축구계의 존중받는 캡틴",
+    "views": 86866,
+    "gain": 5364
+   },
+   {
+    "id": "aGdX-njap_8",
+    "title": "김예건 한국 역대 최연소 2위 유럽대항전 출전 - 명문팀 거절하고 1군 노린 18살유망주",
+    "views": 83276,
+    "gain": 5197
+   }
+  ]
  }
 ]

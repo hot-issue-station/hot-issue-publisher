@@ -3,20 +3,85 @@
  "name": "스브스뉴스 (SBS)",
  "channel": "https://www.youtube.com/@subusunews",
  "channelId": "UCxPClUl0bh7BgJajD5k483g",
- "checkedAt": "2026-11-10T08:30+09:00",
+ "checkedAt": "2026-11-10T19:31+09:00",
  "videos": [
+  {
+   "id": "fPk1Jmnz5sU",
+   "title": "어쩌면 사랑은 다 우정 안에 있는지도 모르겠다",
+   "published": "2026-11-10T10:16:49+00:00",
+   "url": "https://www.youtube.com/shorts/fPk1Jmnz5sU",
+   "shorts": true,
+   "views": 225,
+   "likes": 6,
+   "viewsGain": null,
+   "isNew": true,
+   "median": 7503.0,
+   "multiple": 0.0
+  },
+  {
+   "id": "_i4szpS2iWE",
+   "title": "누구든 그 상황이었으면 벗어주지 않았을까요?",
+   "published": "2026-11-10T09:33:26+00:00",
+   "url": "https://www.youtube.com/shorts/_i4szpS2iWE",
+   "shorts": true,
+   "views": 718,
+   "likes": 23,
+   "viewsGain": null,
+   "isNew": true,
+   "median": 7503.0,
+   "multiple": 0.1
+  },
+  {
+   "id": "mZoYzTu6ZyY",
+   "title": "나보다 못해주는 남자 만나지 마",
+   "published": "2026-11-10T09:31:05+00:00",
+   "url": "https://www.youtube.com/shorts/mZoYzTu6ZyY",
+   "shorts": true,
+   "views": 1375,
+   "likes": 14,
+   "viewsGain": null,
+   "isNew": true,
+   "median": 7503.0,
+   "multiple": 0.2
+  },
+  {
+   "id": "1HzIABBs_lo",
+   "title": "고도로 발달한 우정은사랑과 구별할 수 없다",
+   "published": "2026-11-10T09:28:45+00:00",
+   "url": "https://www.youtube.com/shorts/1HzIABBs_lo",
+   "shorts": true,
+   "views": 1556,
+   "likes": 23,
+   "viewsGain": null,
+   "isNew": true,
+   "median": 7503.0,
+   "multiple": 0.2
+  },
+  {
+   "id": "R6snzVYjYF8",
+   "title": "한수아 카리나 이 정도로 사랑하고 있는지 알았던 사람?ㅣ우리 사이엔 편지가 있다2 EP.11 배우 한수아",
+   "published": "2026-11-10T09:00:29+00:00",
+   "url": "https://www.youtube.com/watch?v=R6snzVYjYF8",
+   "shorts": false,
+   "views": 4915,
+   "likes": 298,
+   "viewsGain": null,
+   "isNew": true,
+   "median": null,
+   "multiple": null
+  },
   {
    "id": "ZS5sPQuxWks",
    "title": "우사편 게스트 중 최고 악필이에요",
    "published": "2026-11-05T09:00:33+00:00",
    "url": "https://www.youtube.com/shorts/ZS5sPQuxWks",
    "shorts": true,
-   "views": 26522,
-   "likes": 421,
-   "viewsGain": 253,
+   "views": 26806,
+   "likes": 423,
+   "viewsGain": 284,
    "isNew": false,
-   "median": 10256.0,
-   "multiple": 2.6
+   "median": 7503.0,
+   "multiple": 3.6
   },
   {
    "id": "Ptp13j-jG8o",
@@ -24,12 +89,12 @@
    "published": "2026-11-05T09:00:12+00:00",
    "url": "https://www.youtube.com/shorts/Ptp13j-jG8o",
    "shorts": true,
-   "views": 14953,
-   "likes": 437,
-   "viewsGain": 206,
+   "views": 15017,
+   "likes": 438,
+   "viewsGain": 64,
    "isNew": false,
-   "median": 10256.0,
-   "multiple": 1.5
+   "median": 7503.0,
+   "multiple": 2.0
   },
   {
    "id": "Zq1d5ckccFQ",
@@ -37,12 +102,12 @@
    "published": "2026-11-05T09:00:05+00:00",
    "url": "https://www.youtube.com/shorts/Zq1d5ckccFQ",
    "shorts": true,
-   "views": 48561,
-   "likes": 645,
-   "viewsGain": 1663,
+   "views": 48786,
+   "likes": 649,
+   "viewsGain": 225,
    "isNew": false,
-   "median": 10256.0,
-   "multiple": 4.7
+   "median": 7503.0,
+   "multiple": 6.5
   },
   {
    "id": "peMHRTigrOo",
@@ -50,12 +115,12 @@
    "published": "2026-11-04T22:00:29+00:00",
    "url": "https://www.youtube.com/shorts/peMHRTigrOo",
    "shorts": true,
-   "views": 19511,
+   "views": 19587,
    "likes": 464,
-   "viewsGain": 199,
+   "viewsGain": 76,
    "isNew": false,
-   "median": 10256.0,
-   "multiple": 1.9
+   "median": 7503.0,
+   "multiple": 2.6
   },
   {
    "id": "89sECRzHy-U",
@@ -63,12 +128,12 @@
    "published": "2026-11-04T22:00:08+00:00",
    "url": "https://www.youtube.com/shorts/89sECRzHy-U",
    "shorts": true,
-   "views": 8713,
+   "views": 8748,
    "likes": 365,
-   "viewsGain": 120,
+   "viewsGain": 35,
    "isNew": false,
-   "median": 10256.0,
-   "multiple": 0.8
+   "median": 7503.0,
+   "multiple": 1.2
   },
   {
    "id": "vivfKyBubgA",
@@ -76,12 +141,12 @@
    "published": "2026-11-04T09:59:03+00:00",
    "url": "https://www.youtube.com/shorts/vivfKyBubgA",
    "shorts": true,
-   "views": 19190,
-   "likes": 527,
-   "viewsGain": 640,
+   "views": 19280,
+   "likes": 528,
+   "viewsGain": 90,
    "isNew": false,
-   "median": 10256.0,
-   "multiple": 1.9
+   "median": 7503.0,
+   "multiple": 2.6
   },
   {
    "id": "RkMOt2YYMUg",
@@ -89,12 +154,12 @@
    "published": "2026-11-04T09:57:39+00:00",
    "url": "https://www.youtube.com/shorts/RkMOt2YYMUg",
    "shorts": true,
-   "views": 22646,
-   "likes": 696,
-   "viewsGain": 400,
+   "views": 22718,
+   "likes": 698,
+   "viewsGain": 72,
    "isNew": false,
-   "median": 10256.0,
-   "multiple": 2.2
+   "median": 7503.0,
+   "multiple": 3.0
   },
   {
    "id": "pMG6qz-xCGk",
@@ -102,12 +167,12 @@
    "published": "2026-11-04T09:56:38+00:00",
    "url": "https://www.youtube.com/shorts/pMG6qz-xCGk",
    "shorts": true,
-   "views": 2744,
+   "views": 2752,
    "likes": 64,
-   "viewsGain": 19,
+   "viewsGain": 8,
    "isNew": false,
-   "median": 10256.0,
-   "multiple": 0.3
+   "median": 7503.0,
+   "multiple": 0.4
   },
   {
    "id": "926Y0xcpnKE",
@@ -115,12 +180,12 @@
    "published": "2026-11-03T22:00:19+00:00",
    "url": "https://www.youtube.com/shorts/926Y0xcpnKE",
    "shorts": true,
-   "views": 6252,
+   "views": 6258,
    "likes": 343,
-   "viewsGain": 18,
+   "viewsGain": 6,
    "isNew": false,
-   "median": 10256.0,
-   "multiple": 0.6
+   "median": 7503.0,
+   "multiple": 0.8
   },
   {
    "id": "X5dI0Lr5VoE",
@@ -128,99 +193,55 @@
    "published": "2026-11-03T22:00:15+00:00",
    "url": "https://www.youtube.com/shorts/X5dI0Lr5VoE",
    "shorts": true,
-   "views": 6072,
+   "views": 6077,
    "likes": 362,
-   "viewsGain": 17,
+   "viewsGain": 5,
    "isNew": false,
-   "median": 10256.0,
-   "multiple": 0.6
-  },
-  {
-   "id": "p-5cPKWiiLQ",
-   "title": "나의 마지막 무대까지 잘 부탁할게",
-   "published": "2026-11-03T12:47:10+00:00",
-   "url": "https://www.youtube.com/shorts/p-5cPKWiiLQ",
-   "shorts": true,
-   "views": 8453,
-   "likes": 713,
-   "viewsGain": 34,
-   "isNew": false,
-   "median": 10256.0,
+   "median": 7503.0,
    "multiple": 0.8
-  },
-  {
-   "id": "kVSepD8oZTw",
-   "title": "나중에 나이가 많이 들어도 나에게는 12살의 지성이로 남아주기를",
-   "published": "2026-11-03T12:44:43+00:00",
-   "url": "https://www.youtube.com/shorts/kVSepD8oZTw",
-   "shorts": true,
-   "views": 4623,
-   "likes": 461,
-   "viewsGain": 7,
-   "isNew": false,
-   "median": 10256.0,
-   "multiple": 0.5
-  },
-  {
-   "id": "pnfgLnYPymc",
-   "title": "힘들 때 겉으로 티 내지 않는 사람들이 힘을 얻는 소소한 순간",
-   "published": "2026-11-03T12:26:16+00:00",
-   "url": "https://www.youtube.com/shorts/pnfgLnYPymc",
-   "shorts": true,
-   "views": 5064,
-   "likes": 362,
-   "viewsGain": 8,
-   "isNew": false,
-   "median": 10256.0,
-   "multiple": 0.5
-  },
-  {
-   "id": "M8BncRdr6JM",
-   "title": "세상 모든 좋은 일에는 떨리는 연약한 안테나가 숨어 있다",
-   "published": "2026-11-03T12:24:53+00:00",
-   "url": "https://www.youtube.com/shorts/M8BncRdr6JM",
-   "shorts": true,
-   "views": 11799,
-   "likes": 572,
-   "viewsGain": 49,
-   "isNew": false,
-   "median": 10256.0,
-   "multiple": 1.2
-  },
-  {
-   "id": "53YmGEQcPg8",
-   "title": "형이랑 놀았던 시간은 참 재밌었는데, 형은 어땠어?ㅣ우리 사이엔 편지가 있다2 EP.10 엔시티드림 재민&지성",
-   "published": "2026-11-03T09:00:26+00:00",
-   "url": "https://www.youtube.com/watch?v=53YmGEQcPg8",
-   "shorts": false,
-   "views": 180181,
-   "likes": 8262,
-   "viewsGain": 1767,
-   "isNew": false,
-   "median": null,
-   "multiple": null
   }
  ],
  "viral": [
   {
    "title": "극단적이었던 재민 입맛",
    "url": "https://www.youtube.com/shorts/Zq1d5ckccFQ",
-   "views": 48561,
-   "multiple": 4.7,
+   "views": 48786,
+   "multiple": 6.5,
    "shorts": true
   },
   {
    "title": "우사편 게스트 중 최고 악필이에요",
    "url": "https://www.youtube.com/shorts/ZS5sPQuxWks",
-   "views": 26522,
-   "multiple": 2.6,
+   "views": 26806,
+   "multiple": 3.6,
    "shorts": true
   },
   {
    "title": "팝핀시키는 연습생 형아들",
    "url": "https://www.youtube.com/shorts/RkMOt2YYMUg",
-   "views": 22646,
-   "multiple": 2.2,
+   "views": 22718,
+   "multiple": 3.0,
+   "shorts": true
+  },
+  {
+   "title": "김치찜 먹는 지성이만 봐도 배가 불렀던 재민",
+   "url": "https://www.youtube.com/shorts/peMHRTigrOo",
+   "views": 19587,
+   "multiple": 2.6,
+   "shorts": true
+  },
+  {
+   "title": "아이돌이 가지게 되는 딜레마",
+   "url": "https://www.youtube.com/shorts/vivfKyBubgA",
+   "views": 19280,
+   "multiple": 2.6,
+   "shorts": true
+  },
+  {
+   "title": "가깝기에 평소에 말하지 않았던 이야기",
+   "url": "https://www.youtube.com/shorts/Ptp13j-jG8o",
+   "views": 15017,
+   "multiple": 2.0,
    "shorts": true
   }
  ]

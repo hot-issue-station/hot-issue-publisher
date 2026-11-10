@@ -1,30 +1,36 @@
 {
  "name": "RESCENE 공식",
  "channel": "https://www.youtube.com/@RESCENE_official",
- "checkedAt": "2026-11-10T14:48+09:00",
+ "checkedAt": "2026-11-10T19:31+09:00",
  "subscribers": "137만",
  "videos": [
   {
+   "id": "kOmL4DDTEYw",
+   "title": "얍",
+   "views": 100000,
+   "viewsText": "조회수 10만회",
+   "published": "",
+   "kind": "short"
+  },
+  {
+   "id": "TL5LSvvgjDw",
+   "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #리리 님@heartofwoman_officl",
+   "views": 68000,
+   "viewsText": "조회수 6.8만회",
+   "published": "",
+   "kind": "short"
+  },
+  {
+   "id": "eDinqteZYUM",
+   "title": "Dancing Queen 👑",
+   "views": 100000,
+   "viewsText": "조회수 10만회",
+   "published": "",
+   "kind": "short"
+  },
+  {
    "id": "aTfIJqiYBiI",
    "title": "Pretty",
-   "views": 120000,
-   "viewsText": "조회수 12만회",
-   "published": "",
-   "kind": "short",
-   "gain": 23000
-  },
-  {
-   "id": "NNsr12BBiE0",
-   "title": "😘😘",
-   "views": 95000,
-   "viewsText": "조회수 9.5만회",
-   "published": "",
-   "kind": "short",
-   "gain": 13000
-  },
-  {
-   "id": "_eji6lKLAu0",
-   "title": "🩶",
    "views": 140000,
    "viewsText": "조회수 14만회",
    "published": "",
@@ -32,22 +38,40 @@
    "gain": 20000
   },
   {
-   "id": "vwyG-5iVXaw",
-   "title": "😚🖤",
+   "id": "NNsr12BBiE0",
+   "title": "😘😘",
    "views": 100000,
    "viewsText": "조회수 10만회",
    "published": "",
    "kind": "short",
-   "gain": 9000
+   "gain": 5000
+  },
+  {
+   "id": "_eji6lKLAu0",
+   "title": "🩶",
+   "views": 160000,
+   "viewsText": "조회수 16만회",
+   "published": "",
+   "kind": "short",
+   "gain": 20000
+  },
+  {
+   "id": "vwyG-5iVXaw",
+   "title": "😚🖤",
+   "views": 110000,
+   "viewsText": "조회수 11만회",
+   "published": "",
+   "kind": "short",
+   "gain": 10000
   },
   {
    "id": "3XMFZbIkVqw",
    "title": "Stop",
-   "views": 78000,
-   "viewsText": "조회수 7.8만회",
+   "views": 84000,
+   "viewsText": "조회수 8.4만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 6000
   },
   {
    "id": "IrcrSlCCkGo",
@@ -56,7 +80,7 @@
    "viewsText": "조회수 49만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "nf0cE5ByIiY",
@@ -65,16 +89,16 @@
    "viewsText": "조회수 24만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "Vo9WrMtd0bY",
    "title": "함께해줘",
-   "views": 400000,
-   "viewsText": "조회수 40만회",
+   "views": 410000,
+   "viewsText": "조회수 41만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "A5PB2NXHkzY",
@@ -92,16 +116,16 @@
    "viewsText": "조회수 40만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "ydZG-_FdrxI",
    "title": "With 까엉 🤎",
-   "views": 470000,
-   "viewsText": "조회수 47만회",
+   "views": 480000,
+   "viewsText": "조회수 48만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "GG1QgSloUkU",
@@ -110,16 +134,16 @@
    "viewsText": "조회수 35만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "xpaOFvA4K1g",
    "title": "손댄스 언니즈 ver. 🖤",
-   "views": 370000,
-   "viewsText": "조회수 37만회",
+   "views": 380000,
+   "viewsText": "조회수 38만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "_ldpW3AQWWA",
@@ -151,20 +175,20 @@
   {
    "id": "KcTEkBTAP3I",
    "title": "D-1 🪽",
-   "views": 600000,
-   "viewsText": "조회수 60만회",
+   "views": 610000,
+   "viewsText": "조회수 61만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "sgZms-ImEx0",
    "title": "but you 🫵",
-   "views": 710000,
-   "viewsText": "조회수 71만회",
+   "views": 720000,
+   "viewsText": "조회수 72만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "EYrU4Zphz8s",
@@ -218,7 +242,7 @@
    "viewsText": "조회수 83만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "blswe0wDt8o",
@@ -241,11 +265,11 @@
   {
    "id": "QEeCIDjleC8",
    "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #나띠 #하늘 선배님",
-   "views": 920000,
-   "viewsText": "조회수 92만회",
+   "views": 930000,
+   "viewsText": "조회수 93만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "UfaJ4mbAiWc",
@@ -268,11 +292,11 @@
   {
    "id": "k7y2yvkFJ1k",
    "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #애니 님",
-   "views": 1360000,
-   "viewsText": "조회수 136만회",
+   "views": 1370000,
+   "viewsText": "조회수 137만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "zHwTN5Yu-mI",
@@ -333,33 +357,6 @@
    "title": "🤟🤫",
    "views": 490000,
    "viewsText": "조회수 49만회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "HE9S7yp_hV0",
-   "title": "덜컹덜컹 달려간다 🚌",
-   "views": 1950000,
-   "viewsText": "조회수 195만회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "61uE6IQ0ua4",
-   "title": "나랑 드라이브 갈래?",
-   "views": 570000,
-   "viewsText": "조회수 57만회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "Fm_iD_mh2ek",
-   "title": "먼저 눈 피하는 사람이 지는 거다?",
-   "views": 550000,
-   "viewsText": "조회수 55만회",
    "published": "",
    "kind": "short",
    "gain": 0

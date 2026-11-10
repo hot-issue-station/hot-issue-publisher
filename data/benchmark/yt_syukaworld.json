@@ -3,20 +3,46 @@
  "name": "슈카월드",
  "channel": "https://www.youtube.com/@syukaworld",
  "channelId": "UCJo6G1u0e_-wS-JQn3T-zEw",
- "checkedAt": "2026-11-10T08:30+09:00",
+ "checkedAt": "2026-11-10T19:31+09:00",
  "videos": [
+  {
+   "id": "gOGolt7zsN8",
+   "title": "세상에서 누가 제일 예쁘니?",
+   "published": "2026-11-10T08:00:26+00:00",
+   "url": "https://www.youtube.com/shorts/gOGolt7zsN8",
+   "shorts": true,
+   "views": 23863,
+   "likes": 653,
+   "viewsGain": null,
+   "isNew": true,
+   "median": 130953.0,
+   "multiple": 0.2
+  },
+  {
+   "id": "aGpktOSGdm0",
+   "title": "11월10일ㅣ니니 [증시 콤파스]ㅣ이게 왜 니 돈이야 내 돈이야",
+   "published": "2026-11-10T06:30:55+00:00",
+   "url": "https://www.youtube.com/watch?v=aGpktOSGdm0",
+   "shorts": false,
+   "views": 111193,
+   "likes": 904,
+   "viewsGain": null,
+   "isNew": true,
+   "median": 184664,
+   "multiple": 0.6
+  },
   {
    "id": "xCP7MhJdnXM",
    "title": "황동현 '바람 잘 날 없는 AI 섹터'ㅣ블룸버그 진출한 니니ㅣ최창규,신환종 '코스피 5천, 내 돈을 어떻게 할까'",
    "published": "2026-11-09T12:28:06+00:00",
    "url": "https://www.youtube.com/watch?v=xCP7MhJdnXM",
    "shorts": false,
-   "views": 122791,
-   "likes": 694,
-   "viewsGain": 37560,
+   "views": 136021,
+   "likes": 731,
+   "viewsGain": 13230,
    "isNew": false,
-   "median": 189809,
-   "multiple": 0.6
+   "median": 184664,
+   "multiple": 0.7
   },
   {
    "id": "O2S8hCse54k",
@@ -24,12 +50,12 @@
    "published": "2026-11-09T03:43:40+00:00",
    "url": "https://www.youtube.com/shorts/O2S8hCse54k",
    "shorts": true,
-   "views": 103303,
-   "likes": 1037,
-   "viewsGain": 27290,
+   "views": 137877,
+   "likes": 1321,
+   "viewsGain": 34574,
    "isNew": false,
-   "median": 114811.5,
-   "multiple": 0.9
+   "median": 130953.0,
+   "multiple": 1.1
   },
   {
    "id": "hvjeDlMlPSE",
@@ -37,11 +63,11 @@
    "published": "2026-11-08T09:00:10+00:00",
    "url": "https://www.youtube.com/watch?v=hvjeDlMlPSE",
    "shorts": false,
-   "views": 132090,
-   "likes": 882,
-   "viewsGain": 4316,
+   "views": 137961,
+   "likes": 916,
+   "viewsGain": 5871,
    "isNew": false,
-   "median": 189809,
+   "median": 184664,
    "multiple": 0.7
   },
   {
@@ -50,12 +76,12 @@
    "published": "2026-11-08T02:08:27+00:00",
    "url": "https://www.youtube.com/watch?v=8DeKtLlHPdI",
    "shorts": false,
-   "views": 340135,
-   "likes": 2237,
-   "viewsGain": 15177,
+   "views": 365705,
+   "likes": 2357,
+   "viewsGain": 25570,
    "isNew": false,
-   "median": 189809,
-   "multiple": 1.8
+   "median": 184664,
+   "multiple": 2.0
   },
   {
    "id": "h9yF44sFEvc",
@@ -63,12 +89,12 @@
    "published": "2026-11-07T09:00:11+00:00",
    "url": "https://www.youtube.com/watch?v=h9yF44sFEvc",
    "shorts": false,
-   "views": 301059,
-   "likes": 1813,
-   "viewsGain": 8865,
+   "views": 315590,
+   "likes": 1847,
+   "viewsGain": 14531,
    "isNew": false,
-   "median": 189809,
-   "multiple": 1.6
+   "median": 184664,
+   "multiple": 1.7
   },
   {
    "id": "OeJ-JKlNv_s",
@@ -76,12 +102,12 @@
    "published": "2026-11-06T12:43:23+00:00",
    "url": "https://www.youtube.com/shorts/OeJ-JKlNv_s",
    "shorts": true,
-   "views": 90019,
-   "likes": 492,
-   "viewsGain": 1458,
+   "views": 91737,
+   "likes": 503,
+   "viewsGain": 1718,
    "isNew": false,
-   "median": 114811.5,
-   "multiple": 0.8
+   "median": 130953.0,
+   "multiple": 0.7
   },
   {
    "id": "ay3FXHM03T8",
@@ -89,12 +115,12 @@
    "published": "2026-11-06T12:31:37+00:00",
    "url": "https://www.youtube.com/shorts/ay3FXHM03T8",
    "shorts": true,
-   "views": 83543,
-   "likes": 730,
-   "viewsGain": 940,
+   "views": 84799,
+   "likes": 743,
+   "viewsGain": 1256,
    "isNew": false,
-   "median": 114811.5,
-   "multiple": 0.7
+   "median": 130953.0,
+   "multiple": 0.6
   },
   {
    "id": "ri2GLNjEM_s",
@@ -102,12 +128,12 @@
    "published": "2026-11-06T09:23:54+00:00",
    "url": "https://www.youtube.com/watch?v=ri2GLNjEM_s",
    "shorts": false,
-   "views": 189809,
-   "likes": 938,
-   "viewsGain": 2129,
+   "views": 194009,
+   "likes": 952,
+   "viewsGain": 4200,
    "isNew": false,
-   "median": 189809,
-   "multiple": 1.0
+   "median": 184664,
+   "multiple": 1.1
   },
   {
    "id": "sYr_AxQcpik",
@@ -115,12 +141,12 @@
    "published": "2026-11-06T08:13:05+00:00",
    "url": "https://www.youtube.com/shorts/sYr_AxQcpik",
    "shorts": true,
-   "views": 208396,
-   "likes": 2472,
-   "viewsGain": 3327,
+   "views": 212145,
+   "likes": 2514,
+   "viewsGain": 3749,
    "isNew": false,
-   "median": 114811.5,
-   "multiple": 1.8
+   "median": 130953.0,
+   "multiple": 1.6
   },
   {
    "id": "tK3p2DelS-c",
@@ -128,11 +154,11 @@
    "published": "2026-11-06T06:44:00+00:00",
    "url": "https://www.youtube.com/watch?v=tK3p2DelS-c",
    "shorts": false,
-   "views": 184086,
-   "likes": 1028,
-   "viewsGain": 758,
+   "views": 184664,
+   "likes": 1027,
+   "viewsGain": 578,
    "isNew": false,
-   "median": 189809,
+   "median": 184664,
    "multiple": 1.0
   },
   {
@@ -141,12 +167,12 @@
    "published": "2026-11-06T03:49:57+00:00",
    "url": "https://www.youtube.com/shorts/SmbFOtTIot0",
    "shorts": true,
-   "views": 126320,
-   "likes": 1051,
-   "viewsGain": 3240,
+   "views": 128742,
+   "likes": 1065,
+   "viewsGain": 2422,
    "isNew": false,
-   "median": 114811.5,
-   "multiple": 1.1
+   "median": 130953.0,
+   "multiple": 1.0
   },
   {
    "id": "LYXceDpsPYA",
@@ -154,12 +180,12 @@
    "published": "2026-11-05T09:15:17+00:00",
    "url": "https://www.youtube.com/shorts/LYXceDpsPYA",
    "shorts": true,
-   "views": 236866,
-   "likes": 1376,
-   "viewsGain": 5898,
+   "views": 241659,
+   "likes": 1401,
+   "viewsGain": 4793,
    "isNew": false,
-   "median": 114811.5,
-   "multiple": 2.1
+   "median": 130953.0,
+   "multiple": 1.8
   },
   {
    "id": "_8ANk19Ku6A",
@@ -167,47 +193,21 @@
    "published": "2026-11-05T08:56:40+00:00",
    "url": "https://www.youtube.com/shorts/_8ANk19Ku6A",
    "shorts": true,
-   "views": 132567,
-   "likes": 676,
-   "viewsGain": 998,
+   "views": 133164,
+   "likes": 680,
+   "viewsGain": 597,
    "isNew": false,
-   "median": 114811.5,
-   "multiple": 1.2
-  },
-  {
-   "id": "xsGGzlRlXy8",
-   "title": "왜 내 주식만 안 오를까",
-   "published": "2026-11-05T08:28:38+00:00",
-   "url": "https://www.youtube.com/shorts/xsGGzlRlXy8",
-   "shorts": true,
-   "views": 56239,
-   "likes": 400,
-   "viewsGain": 1031,
-   "isNew": false,
-   "median": 114811.5,
-   "multiple": 0.5
-  },
-  {
-   "id": "MllkP70RRXg",
-   "title": "[슈카의 시황방송] 11월5일ㅣ트럼프 대신 심판받는 국장 ㅠㅠㅣ코스피 & 코스닥 매도 사이드카",
-   "published": "2026-11-05T06:40:26+00:00",
-   "url": "https://www.youtube.com/watch?v=MllkP70RRXg",
-   "shorts": false,
-   "views": 203375,
-   "likes": 1301,
-   "viewsGain": 338,
-   "isNew": false,
-   "median": 189809,
-   "multiple": 1.1
+   "median": 130953.0,
+   "multiple": 1.0
   }
  ],
  "viral": [
   {
-   "title": "쪼잔하게 돈 버는 법",
-   "url": "https://www.youtube.com/shorts/LYXceDpsPYA",
-   "views": 236866,
-   "multiple": 2.1,
-   "shorts": true
+   "title": "블룸버그 애널리스트가 본 현재 국장",
+   "url": "https://www.youtube.com/watch?v=8DeKtLlHPdI",
+   "views": 365705,
+   "multiple": 2.0,
+   "shorts": false
   }
  ]
 }

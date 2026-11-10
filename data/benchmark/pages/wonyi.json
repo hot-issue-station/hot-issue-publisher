@@ -1,14 +1,14 @@
 {
  "name": "안원잘부",
  "channel": "https://www.youtube.com/@helloiamwoninicetomeetyou",
- "checkedAt": "2026-11-10T14:48+09:00",
+ "checkedAt": "2026-11-10T19:31+09:00",
  "subscribers": "242만",
  "videos": [
   {
    "id": "kfK-LENbEUo",
    "title": "정작가의 컴백을 축하합니다",
-   "views": 1570000,
-   "viewsText": "조회수 157만회",
+   "views": 1580000,
+   "viewsText": "조회수 158만회",
    "published": "",
    "kind": "short",
    "gain": 10000
@@ -101,7 +101,7 @@
    "viewsText": "조회수 1352만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "gNJrbCSN2TM",
@@ -133,11 +133,11 @@
   {
    "id": "qzhjmlxNl8s",
    "title": "거제 불주먹 양키",
-   "views": 1620000,
-   "viewsText": "조회수 162만회",
+   "views": 1630000,
+   "viewsText": "조회수 163만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "jilQNKreZBM",

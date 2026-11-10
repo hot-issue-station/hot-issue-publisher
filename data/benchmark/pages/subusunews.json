@@ -1,26 +1,34 @@
 {
  "name": "스브스뉴스 (SBS)",
  "channel": "https://www.youtube.com/@subusunews",
- "checkedAt": "2026-11-10T14:48+09:00",
+ "checkedAt": "2026-11-10T19:31+09:00",
  "subscribers": "144만",
  "videos": [
   {
+   "id": "Y0Y6eq3a6PE",
+   "title": "서울시가 남산에 곤돌라를 만들려는 이유 #shorts / 스브스뉴스",
+   "views": 277,
+   "viewsText": "조회수 277회",
+   "published": "",
+   "kind": "short"
+  },
+  {
    "id": "DqL_SWFWkD8",
    "title": "침착맨 방송 중 사교육 문제 직격타 날린 정승제 #입시 #shorts #스브스뉴스",
-   "views": 190000,
-   "viewsText": "조회수 19만회",
+   "views": 290000,
+   "viewsText": "조회수 29만회",
    "published": "",
    "kind": "short",
-   "gain": 147000
+   "gain": 100000
   },
   {
    "id": "lnryKqOozWk",
    "title": "갑작스러운 사고로 세상 떠난 여행 유튜버 #추모 #shorts #스브스뉴스",
-   "views": 12000,
-   "viewsText": "조회수 1.2만회",
+   "views": 13000,
+   "viewsText": "조회수 1.3만회",
    "published": "",
    "kind": "short",
-   "gain": 2000
+   "gain": 1000
   },
   {
    "id": "pmpb5ZMw3Sw",
@@ -29,13 +37,13 @@
    "viewsText": "조회수 2.6천회",
    "published": "",
    "kind": "short",
-   "gain": 200
+   "gain": 0
   },
   {
    "id": "STWniX3sH0g",
    "title": "상반기에만 2배 폭증한 초등학생 자살률 #자살 #shorts #스브스뉴스",
-   "views": 5600,
-   "viewsText": "조회수 5.6천회",
+   "views": 5700,
+   "viewsText": "조회수 5.7천회",
    "published": "",
    "kind": "short",
    "gain": 100
@@ -43,11 +51,11 @@
   {
    "id": "qZaeu4PJUps",
    "title": "롯데홈쇼핑이 직접 교육하는 커머스 인재 학교? #shorts #스브스뉴스",
-   "views": 10000,
-   "viewsText": "조회수 1만회",
+   "views": 16000,
+   "viewsText": "조회수 1.6만회",
    "published": "",
    "kind": "short",
-   "gain": 1500
+   "gain": 6000
   },
   {
    "id": "bvbHkNEO3t8",
@@ -351,15 +359,6 @@
    "title": "누가 사냐더니 예약 직후 물량 소진된 '아이폰 듀오' #애플 #shorts #스브스뉴스",
    "views": 25000,
    "viewsText": "조회수 2.5만회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "Rhe2PkdohJQ",
-   "title": "내 차 개인정보도 안전하지 않다? 차 살 때 반드시 확인할 것 #shorts / 스브스뉴스",
-   "views": 11000,
-   "viewsText": "조회수 1.1만회",
    "published": "",
    "kind": "short",
    "gain": 0
