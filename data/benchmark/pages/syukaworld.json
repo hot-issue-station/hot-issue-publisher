@@ -1,35 +1,51 @@
 {
  "name": "슈카월드",
  "channel": "https://www.youtube.com/@syukaworld",
- "checkedAt": "2026-11-10T08:30+09:00",
+ "checkedAt": "2026-11-10T14:48+09:00",
  "subscribers": "374만",
  "videos": [
   {
+   "id": "xmLFwy-UdNU",
+   "title": "노안의 라식",
+   "views": 20000,
+   "viewsText": "조회수 2만회",
+   "published": "",
+   "kind": "short"
+  },
+  {
+   "id": "xVKY3CWUoSE",
+   "title": "딸깍으로 떠먹여주는 서비스",
+   "views": 7600,
+   "viewsText": "조회수 7.6천회",
+   "published": "",
+   "kind": "short"
+  },
+  {
    "id": "lioIrGMoIbs",
    "title": "좋은 사람 있으면 소개시켜줘",
-   "views": 81000,
-   "viewsText": "조회수 8.1만회",
+   "views": 82000,
+   "viewsText": "조회수 8.2만회",
    "published": "",
    "kind": "short",
-   "gain": 3000
+   "gain": 1000
   },
   {
    "id": "D32h_sPWp0g",
    "title": "모르면 못받음",
-   "views": 100000,
-   "viewsText": "조회수 10만회",
+   "views": 110000,
+   "viewsText": "조회수 11만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "QvMjNxpMmPo",
    "title": "수능 주식 문제 1타 강사",
-   "views": 190000,
-   "viewsText": "조회수 19만회",
+   "views": 200000,
+   "viewsText": "조회수 20만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "prQUpQh_gko",
@@ -342,24 +358,6 @@
    "title": "부모님도 속으실 듯",
    "views": 290000,
    "viewsText": "조회수 29만회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "N24y6znXREE",
-   "title": "돈 없어도 주식 하는 법",
-   "views": 1760000,
-   "viewsText": "조회수 176만회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "SZcWb2H0GNI",
-   "title": "국방 예산이 어디가 늘어났지?",
-   "views": 130000,
-   "viewsText": "조회수 13만회",
    "published": "",
    "kind": "short",
    "gain": 0
