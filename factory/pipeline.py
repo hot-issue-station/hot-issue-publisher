@@ -54,7 +54,8 @@ def tconf(typ):
 def mood_preset(o):
     mp = {}
     for m in o.get("moods", [])[:STD["order"]["max_moods"]]:
-        g = next((k for k, v in STD["mood_presets"].items() if not k.startswith("_") and (m == k or m in v.get("items", []))), None)
+        # 주문판 말꼴(「뭉클한」「소름 돋는」)도 표준표 낱말(「뭉클」「소름」)에 맞춘다
+        g = next((k for k, v in STD["mood_presets"].items() if not k.startswith("_") and (m == k or m.startswith(k) or any(m == i or m.startswith(i) for i in v.get("items", [])))), None)
         if g: mp[g] = {k: v for k, v in STD["mood_presets"][g].items() if k != "items"}
     return mp
 
