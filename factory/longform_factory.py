@@ -412,7 +412,7 @@ def build(spec, base):
         elif p["kind"] == "rewind": j = ("dissolve", 0.2)
         elif want == "cut": j = ("cut", 0.0)
         elif p["layout"] == "horizontal" and sg["layout"] == "vertical" and want != "dissolve": j = ("fold", fd)
-        elif p["layout"] == "vertical" and sg["layout"] == "horizontal" and want != "dissolve": j = ("unfold", fd)
+        elif p["layout"] == "vertical" and sg["layout"] in ("horizontal", "blur") and want != "dissolve": j = ("unfold", fd)
         else: j = ("dissolve", xd)
         if j[0] != "cut": j = (j[0], fr(min(j[1], p["dur"] / 2.2, sg["dur"] / 2.2)))
         sg["join"] = j
