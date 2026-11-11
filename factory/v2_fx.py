@@ -8,7 +8,7 @@
   - v2 썸네일(① 언더독스토리 제목 방식 + ② 안원잘부 대비 매력, 표는 docs)
   - 금지어 검사
 """
-import os, re, math, wave, subprocess
+import os, re, math, wave, subprocess, json
 import numpy as np
 from PIL import Image, ImageDraw, ImageFont, ImageFilter, ImageOps
 
@@ -21,8 +21,9 @@ EMOJI = "/usr/share/fonts/truetype/noto/NotoColorEmoji.ttf"
 def F(p, s): return ImageFont.truetype(p, int(s), index=1)
 
 WH = (255, 255, 255); Y = (255, 222, 40); BK = (0, 0, 0); RD = (255, 48, 64); NAVY = (14, 12, 40); GR = (200, 204, 220)
-BANNER = "월·수·금·일 저녁 7시 쇼츠  /  화·토 저녁 7시 몰아보기"
-BANNED = ["뭐하노"]   # 대표 11/11 20:17 — 제목·썸네일·큰 글씨·우리 자막 금지. 늘리려면 spec "banned_words"
+STD = json.load(open(os.path.join(HERE, "standard_v2.json"), encoding="utf-8"))   # 표준 수치는 모두 여기서
+BANNER = STD["schedule"]["banner"]
+BANNED = STD["banned_words"]   # 대표 11/11 20:17 — 제목·썸네일·큰 글씨·우리 자막 금지. 늘리려면 standard_v2.json 또는 spec "banned_words"
 CROW = os.path.join(HERE, "assets", "sfx_crow.wav")
 
 # ---------------- 글자 ----------------
@@ -56,7 +57,7 @@ def text_img(text, size, maxw, base=WH, hi=Y, stroke=None, font=None, box=None, 
         fo = F(font, size); lines = _wrap(d0, text, fo, maxw)
         if len(lines) <= 3: break
         size -= 4
-    sw = stroke if stroke is not None else max(4, size // 9)
+    size = int(size); sw = int(stroke if stroke is not None else max(4, size // 9)); pad = (int(pad[0]), int(pad[1]))
     lh = int(size * 1.28); widths = [d0.textlength(l, font=fo) for l in lines]
     tw, th = int(max(widths)) + 2 * sw + 2 * pad[0], lh * len(lines) + 2 * sw + 2 * pad[1]
     im = Image.new("RGBA", (tw, th), (0, 0, 0, 0)); d = ImageDraw.Draw(im)
@@ -123,7 +124,7 @@ def react_img(text, name="동네 형", W=1920):
     by = im.height - bh - 5
     d.rounded_rectangle([0, by, bw, by + bh], radius=int(26 * k), fill=(255, 255, 255, 240), outline=(30, 20, 40, 255), width=3)
     d.polygon([(bw - 2, by + bh * .55), (bw + tail, by + bh * .75), (bw - 2, by + bh * .85)], fill=(255, 255, 255, 240))
-    d.text((24 * k, by + 10 * k), "💬 " if False else "▶ " + name, font=fn, fill=(150, 80, 230))
+    d.text((24 * k, by + 10 * k), "▶ " + name, font=fn, fill=(150, 80, 230))
     for i, l in enumerate(lines): d.text((24 * k, by + 46 * k + 50 * k * i), l, font=fo, fill=(30, 20, 60))
     im.alpha_composite(ic, (bw + tail + 4, im.height - ic.height - 2))
     return im
