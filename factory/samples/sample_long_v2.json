@@ -1,0 +1,19 @@
+{"out":"sample_long_v2","series":"거꾸로 걷는 리센느","progress":true,"xfade_sec":0.3,"fold_sec":0.5,"duck_db":-14,
+ "_시험재료":"python longform_factory.py --test-media samples/_test  (가로 h1·h2, 세로 v1, 내레이션 대용 narration.mp3)",
+ "chapters":[
+  {"title":"2026년 11월, 55만 장","sub":"지금의 리센느","scenes":[
+    {"file":"_test/h1.mp4","in":0,"out":5,"subs":[[0.5,3,"첫 주 55만 장"],[3,4.8,"1년 전엔 상상도 못 한 숫자"]],
+     "comments":[{"at":1,"sec":3,"name":"리마인","text":"이 날 진짜 울었어요"}]},
+    {"file":"_test/v1.mp4","in":2,"out":9,"layout":"vertical","audio_lead":0.5,
+     "side_left":{"tag":"직캠","title":"2025.11.07 (금)","lines":["KGMA 2025","인천 인스파이어 아레나"]},
+     "side_right":[{"name":"리마인","text":"표정 연기 미쳤다"},{"name":"덕심","text":"이 무대 다시 보고 싶었어요","at":2},{"name":"팬","text":"엔딩 요정 등장","at":4}],
+     "narration":{"file":"_test/narration.mp3","at":1.5,"volume":0.9},
+     "subs":[[5,6.8,"그날의 함성"]]}]},
+  {"title":"2025년, 기다림","sub":"한 걸음 뒤로","rewind":true,"scenes":[
+    {"file":"_test/h2.mp4","in":0,"out":5,"layout":"split","file2":"_test/v1.mp4","in2":0,"subs":[[0.5,4,"같은 순간, 다른 각도"]]},
+    {"file":"_test/h1.mp4","in":3,"out":12,"audio_lead":0.5,"subs":[[0.5,5,"그때 우리는\n무엇을 기다렸을까"]]}]},
+  {"title":"데뷔 전야","sub":"처음으로","card_style":"full","scenes":[
+    {"file":"_test/v1.mp4","in":0,"out":5,"layout":"vertical","side_left":"2024.03.26\n데뷔 쇼케이스"}]}],
+ "end":{"next":"A-3 데뷔 전야","next_date":"11월 17일 (화) 저녁 7시"},"end_sec":5,
+ "sources":["테스트"],"consent_checked":true,
+ "thumb":{"photo":"../assets/bg_rescene.png","tag":"거꾸로 걷는 리센느","title":"55만 장의 시작","question":"1년 전엔 몇 장?","big":"5.3배","summary":"A-2 기다림 편"}}
