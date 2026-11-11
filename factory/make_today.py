@@ -16,6 +16,7 @@ sys.path.insert(0, HERE)
 DAYS = ["월", "화", "수", "목", "금", "토", "일"]
 SLOTS = {"아침": "07:30", "점심": "12:00", "저녁": "18:30"}
 PH = re.compile(r"\{([^{}]+)\}")
+TEMPLATES = os.path.join(HERE, "templates")   # --templates-dir 로 바꿀 수 있음(기본은 그대로)
 LABEL = {"가수": "가수 이름", "곡": "곡 이름", "숫자": "주인공 숫자(예: 555104)", "순위": "순위(예: 3)",
          "순위표": "순위표 [[순위, 이름, 곡, 숫자], ...]", "카드": "카드 문장 [{\"big\":..., \"small\":...}, ...]",
          "배경": "배경 사진 파일", "출처": "출처·기준 줄(1~2줄)", "확인": "숫자·사실 확인 기록(확인한 곳·시각)",
@@ -28,8 +29,8 @@ def stop(lines):
     sys.exit(2)
 
 def load_preset(day, slot):
-    p = os.path.join(HERE, "templates", f"{day}_{slot}.json")
-    if not os.path.exists(p): stop([f"틀 파일이 없어요: templates/{day}_{slot}.json"])
+    p = os.path.join(TEMPLATES, f"{day}_{slot}.json")
+    if not os.path.exists(p): stop([f"틀 파일이 없어요: {os.path.relpath(p, HERE)}"])
     return json.load(open(p, encoding="utf-8"))
 
 def man(n):
@@ -92,7 +93,7 @@ def build(preset, fill, fill_dir, name):
         if not any(p.startswith(k + ":") for p in problems):
             problems.append(f"{k}: {LABEL.get(k, k)} (쓰이는 곳: {', '.join(sorted(ws))})")
     src = vals.get("출처", []); src = [src] if isinstance(src, str) else src
-    spec = {"out": name, "channel": "덕심저장소", "series": series, "title": hook["title"], "question": hook["question"],
+    spec = {"out": name, "channel": preset.get("channel", "덕심저장소"), "series": series, "title": hook["title"], "question": hook["question"],
             "source": src, "checked": vals.get("확인", ""), "end": end, "thumb": thumb,
             "post": dict(post, tags=tags), "bg": files.get("배경"), "bgm": files.get("음악"),
             "_preset": f"{preset['day']}_{preset['slot']}", "_colors": preset.get("colors", {}),
@@ -219,6 +220,8 @@ def print_table():
     for d in DAYS:
         row = []
         for s in SLOTS:
+            if TEMPLATES != os.path.join(HERE, "templates") and not os.path.exists(os.path.join(TEMPLATES, f"{d}_{s}.json")):
+                row.append("-"); continue   # 다른 틀 폴더는 빈 칸이 있어도 됨(예: 미용실 주 3회)
             p = load_preset(d, s); row.append(f"{p['series'].split(' · ')[0]}({p['template']}, ~{p['length']['target_sec']}초)")
         print(f"{d} | " + " | ".join(row))
 
@@ -228,12 +231,15 @@ def main():
     ap.add_argument("--fill"); ap.add_argument("--dry", action="store_true", help="spec 만 만들고 렌더하지 않음")
     ap.add_argument("--out-dir", help="결과 폴더(기본: factory/out/<날짜>_<요일>_<시간대>)")
     ap.add_argument("--list", action="store_true", help="편성표 보기")
+    ap.add_argument("--templates-dir", help="틀 폴더(기본: factory/templates). 예: templates_salon")
     ap.add_argument("--package", action="store_true", help="렌더 뒤 게시 꾸러미(outbox/)·업로더 계획까지 만들기")
     ap.add_argument("--outbox", help="꾸러미 폴더(기본: factory/outbox)")
     ap.add_argument("--date", help="꾸러미 예약 날짜 YYYY-MM-DD(기본: 틀 요일의 다음 날짜)")
     ap.add_argument("--sites", help="업로더 계획에 넣을 곳(기본 youtube)")
     ap.add_argument("--ai", action="store_true", help="꾸러미 글이 한도를 넘으면 AI 교환대로 줄인 초안 사용")
     a = ap.parse_args()
+    global TEMPLATES
+    if a.templates_dir: TEMPLATES = os.path.abspath(a.templates_dir if os.path.isabs(a.templates_dir) or os.path.isdir(a.templates_dir) else os.path.join(HERE, a.templates_dir))
     if a.list: return print_table()
     miss = [n for n, v in (("--day(요일: 월~일)", a.day), ("--slot(시간대: 아침·점심·저녁)", a.slot), ("--fill(빈칸 파일)", a.fill)) if not v]
     if miss: stop(miss)
