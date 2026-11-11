@@ -4,14 +4,15 @@ from PIL import Image, ImageDraw, ImageFont, ImageFilter
 D = os.path.dirname(os.path.abspath(__file__)); os.chdir(D)
 W, H, FPS = 1080, 1920, 30
 FB = "/usr/share/fonts/opentype/noto/NotoSansCJK-Black.ttc"; FM = "/usr/share/fonts/opentype/noto/NotoSansCJK-Bold.ttc"
-MUSIC = "/home/claude/hot-issue-publisher/music/bright.m4a"
+MUSIC = "/home/claude/hot-issue-publisher/music/suno/7_rescene_sparkling_dance.mp3"; MUSIC_SS = 132  # 대표 11/12 04:42 "쇼츠 때 쓰는 신나는 음악"
 VT, VH = 250, 1500          # 영상 칸: y=250부터 1500 높이(720x1000 자른 것을 1.5배)
 CROP = "crop=720:1000:0:440,scale=1080:1500"
 
 # (파일, 시작, 길이, 천천히 확대?)
-SEG = [("B.mp4",150.5,3.2,True), ("B.mp4",146.0,3.4,False), ("B.mp4",1.0,3.0,True), ("B.mp4",33.0,3.0,False),
-       ("B.mp4",16.0,3.6,False), ("B.mp4",26.0,3.4,False), ("B.mp4",92.0,3.0,True), ("A.mp4",7.6,3.0,True)]
-XF = 0.35
+# 대표 11/12 04:42 "장면 전환이 정신없는 것보다 쭉 보여주는 게 좋겠다" → 긴 장면 3개를 부드럽게 이어 붙임
+SEG = [("B.mp4",145.5,10.0,False), ("B.mp4",0.5,8.0,False), ("B.mp4",16.0,7.5,False)]
+XF = 0.6
+CAPT = [(0,0.2,5.0),(1,5.0,9.7),(2,9.7,13.6),(3,13.6,17.4),(4,17.4,21.0),(5,21.0,24.3)]  # (자막 번호, 시작, 끝)
 CAP = [  # 각 장면 자막(한국어, 일본어, 강조색)
  ("리센느를 걸어서 만나는 곳", "RESCENEに歩いて会える場所", "#FFD640"),
  ("덕심저장소 갤러리 OPEN", "ドクシム・ギャラリー オープン", "#FF7000"),
@@ -74,7 +75,7 @@ def main():
         run(["ffmpeg", "-loglevel", "error", "-y", "-ss", str(ss), "-i", f, "-t", str(du), "-an", "-vf", vf, "-c:v", "libx264", "-preset", "veryfast", "-crf", "18", f"s{i}.mp4"])
     run(["ffmpeg", "-loglevel", "error", "-y", "-loop", "1", "-i", "end.png", "-t", str(END), "-vf", f"fps={FPS},format=yuv420p,setsar=1,zoompan=z='1+0.03*on/{int(END*FPS)}':d=1:s={W}x{H}:fps={FPS}", "-c:v", "libx264", "-preset", "veryfast", "-crf", "18", "send.mp4"])
     clips = [f"s{i}.mp4" for i in range(len(SEG))] + ["send.mp4"]; durs = [s[2] for s in SEG] + [END]
-    kinds = ["fade", "slideleft", "smoothleft", "fade", "zoomin", "slideup", "smoothleft", "fadewhite"]
+    kinds = ["fade", "fade", "fadewhite"]
     inp = sum([["-i", c] for c in clips], []); fl = []; cur = "[0:v]"; t = durs[0]; starts = [0.0]
     for k in range(1, len(clips)):
         off = t - XF; starts.append(off); kd = kinds[(k - 1) % len(kinds)]
@@ -82,14 +83,14 @@ def main():
     total = t
     # 고정 띠 + 장면 자막
     ni = len(clips); inp += ["-i", "frame.png"]; fl.append(f"{cur}[{ni}:v]overlay=0:0:enable='lt(t,{starts[-1]:.3f})'[f0]"); cur = "[f0]"
-    for i in range(len(CAP)):
-        inp += ["-i", f"cap{i}.png"]; a, b = starts[i] + 0.15, starts[i + 1] + XF / 2
-        fl.append(f"{cur}[{ni + 1 + i}:v]overlay=0:0:enable='between(t,{a:.3f},{b:.3f})'[c{i}]"); cur = f"[c{i}]"
+    for j, (i, a, b) in enumerate(CAPT):
+        inp += ["-i", f"cap{i}.png"]
+        fl.append(f"{cur}[{ni + 1 + j}:v]overlay=0:0:enable='between(t,{a:.3f},{b:.3f})'[c{j}]"); cur = f"[c{j}]"
     fl.append(f"{cur}format=yuv420p[vout]")
     run(["ffmpeg", "-loglevel", "error", "-y", *inp, "-filter_complex", ";".join(fl), "-map", "[vout]", "-r", str(FPS), "-c:v", "libx264", "-preset", "medium", "-crf", "19", "v.mp4"])
     # 음악: bright 를 이어 붙여 total 초, 끝 1.5초 줄이기
-    run(["ffmpeg", "-loglevel", "error", "-y", "-stream_loop", "2", "-i", MUSIC, "-t", f"{total:.3f}", "-af", f"afade=t=in:d=0.4,afade=t=out:st={total - 1.6:.3f}:d=1.6,loudnorm=I=-16:TP=-1.5:LRA=11", "-ar", "48000", "a.m4a"])
-    run(["ffmpeg", "-loglevel", "error", "-y", "-i", "v.mp4", "-i", "a.m4a", "-map", "0:v", "-map", "1:a", "-c:v", "copy", "-c:a", "aac", "-b:a", "192k", "-shortest", "-movflags", "+faststart", "덕심갤러리_홍보_30초.mp4"])
+    run(["ffmpeg", "-loglevel", "error", "-y", "-ss", str(MUSIC_SS), "-i", MUSIC, "-vn", "-t", f"{total:.3f}", "-af", f"afade=t=in:d=0.4,afade=t=out:st={total - 1.6:.3f}:d=1.6,loudnorm=I=-16:TP=-1.5:LRA=11", "-ar", "48000", "a.m4a"])
+    run(["ffmpeg", "-loglevel", "error", "-y", "-i", "v.mp4", "-i", "a.m4a", "-map", "0:v", "-map", "1:a", "-c:v", "copy", "-c:a", "aac", "-b:a", "192k", "-shortest", "-movflags", "+faststart", "덕심갤러리_홍보_30초_v2.mp4"])
     # 썸네일: 첫 장면 + 큰 글
     run(["ffmpeg", "-loglevel", "error", "-y", "-ss", "152", "-i", "B.mp4", "-frames:v", "1", "-vf", "crop=720:1000:0:440,scale=1080:1500", "th_bg.png"])
     th = Image.new("RGB", (W, H), (30, 20, 60)); th.paste(Image.open("th_bg.png").convert("RGB"), (0, 420)); d = ImageDraw.Draw(th)
