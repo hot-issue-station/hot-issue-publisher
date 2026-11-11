@@ -1,0 +1,56 @@
+{
+  "_설명": "AI 교환대 순서표. 위에서부터 차례로 시도한다. 순서를 바꾸려면 stages 안의 묶음 순서를 바꾸고, 끄려면 enabled 를 false 로.",
+  "timeout_sec": 60,
+  "default_max_tokens": 800,
+  "default_system": "한국어로 짧고 정확하게 답한다.",
+  "state_file": "state.json",
+  "budget_file": "budget.json",
+  "results_dir": "results",
+  "stages": [
+    {
+      "name": "gemini",
+      "kind": "gemini",
+      "enabled": true,
+      "external_free": true,
+      "key_env": "GEMINI_API_KEY",
+      "model": "gemini-3.1-flash-lite",
+      "url": "https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent",
+      "cooldown_429": "pacific_midnight",
+      "cooldown_error_sec": 3600
+    },
+    {
+      "name": "ollama",
+      "kind": "ollama",
+      "enabled": true,
+      "external_free": false,
+      "model": "exaone3.5:7.8b",
+      "url": "http://localhost:11434",
+      "timeout_sec": 180,
+      "cooldown_429": 3600,
+      "cooldown_error_sec": 3600
+    },
+    {
+      "name": "openrouter",
+      "kind": "openrouter",
+      "enabled": true,
+      "external_free": true,
+      "key_env": "OPENROUTER_API_KEY",
+      "model": "thinkingmachines/inkling-2-small:free",
+      "url": "https://openrouter.ai/api/v1/chat/completions",
+      "app_title": "IssueBrief AI Router",
+      "cooldown_429": 3600,
+      "cooldown_error_sec": 3600
+    },
+    {
+      "name": "claude",
+      "kind": "claude",
+      "enabled": true,
+      "external_free": false,
+      "key_env": "ANTHROPIC_API_KEY",
+      "model": "claude-haiku-5-5",
+      "url": "https://api.anthropic.com/v1/messages",
+      "cooldown_429": 3600,
+      "cooldown_error_sec": 3600
+    }
+  ]
+}
