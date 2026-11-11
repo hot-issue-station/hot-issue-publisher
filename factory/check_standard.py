@@ -124,6 +124,42 @@ def actual_A(spec, total=None):
         r = c.get("role", ""); a, b = got.get(r, (t, t)); got[r] = (min(a, t), t + d); t += d
     return S, got, t
 
+def mood_uses(spec):
+    """기획에 실제로 들어간 연출 요소."""
+    caps = [c for cl in (spec.get("clips") if isinstance(spec.get("clips"), list) else []) for c in cl.get("captions", [])]
+    subs = [x for ch in spec.get("chapters", []) for sc in ch.get("scenes", []) for x in sc.get("subs", [])]
+    styles = {c.get("style", "bracket") for c in caps} | {x[3] for x in subs if len(x) > 3}
+    scenes = [sc for ch in spec.get("chapters", []) for sc in ch.get("scenes", [])]
+    clips = spec.get("clips") if isinstance(spec.get("clips"), list) else []
+    u = set()
+    if "bracket" in styles: u.add("bracket")
+    if "sfx" in styles or any(c.get("sfx") for c in clips + scenes) or spec.get("sfx"): u.add("sfx")
+    if any(c.get("zooms") for c in clips + scenes) or spec.get("template") == "pulse58": u.add("crash_zoom")
+    if spec.get("music_cut") or any(sc.get("music_cut") for sc in scenes): u.add("music_cut")
+    if "emotion" in styles: u.add("emotion")
+    if spec.get("template") == "pulse58": u |= {"fast_cut", "shake"}
+    if len(spec.get("chapters", [])) >= 2: u.add("chapters")
+    if spec.get("template") == "expose" or any(sc.get("audio_lead") for sc in scenes): u.add("j_cut")
+    if spec.get("chapters") and spec.get("xfade_sec", 0.3) > 0: u.add("dissolve")
+    txt = [c.get("text", "") for c in caps] + [str(x[2]) for x in subs if len(x) > 2]
+    if any(any(ch.isdigit() for ch in t) for t in txt): u.add("number_captions")
+    if spec.get("template") == "rank" or spec.get("rank_cards"): u.add("rank_cards")
+    return u
+
+def mood_lines(spec):
+    """주문 moods → 프리셋 요소가 기획에 들어갔는지(알림, 통과 여부에는 안 들어감)."""
+    mp = spec.get("mood_preset") or {}; out = []
+    if not mp: return out
+    used = mood_uses(spec)
+    for g, conf in mp.items():
+        miss = [x for x in conf.get("use", []) if x not in used and x not in ("slow_cut",)]
+        out.append(("ℹ️ " if not miss else "⚠️ ") + f"분위기 「{g}」({conf.get('note', '')})" + (f" — 기획에 없음: {', '.join(miss)}" if miss else " 반영됨"))
+    return out
+
+def long_conf(spec):
+    k = spec.get("long_template")
+    return (k, STD["long_templates"][k]) if k in STD.get("long_templates", {}) else (None, None)
+
 def run(spec, videos):
     items = []; tol = STD["shorts"]["tolerance_sec"]; kind = spec.get("template")
     for v in videos:
@@ -162,6 +198,12 @@ def run(spec, videos):
             items.append((f"[{tag}] 소리 있음", P["audio"]))
             fz = freezes(v, STD["longform_v1"]["max_still_sec"])
             items.append((f"[{tag}] 정지 화면 {STD['longform_v1']['max_still_sec']:g}초 초과 없음" + (f" — {fz}" if fz else ""), not fz))
+            lk, LT = long_conf(spec)
+            if LT and not spec.get("test_sections_check"):
+                lo, hi = LT["range_sec"]; items.append((f"[{tag}] 롱폼 {lk}({LT['name']}) 길이 {lo}~{hi}초 (지금 {P['dur']:.1f})", lo <= P["dur"] <= hi))
+            if LT and not LT["narration"]:
+                nn = [n for ch in spec.get("chapters", []) for sc in ch.get("scenes", []) for n in (sc.get("narration") or [])]
+                items.append((f"[{tag}] {lk}: 내레이션 없음(무대·음악)", not nn and not spec.get("narration")))
             if kind == "molabogi" and spec.get("test_sections_check"):
                 ts = STD["molabogi"]["test_sections"]; end = ts[-1][2]
                 items.append((f"[{tag}] 시험 조각 길이 {end}초 ±0.5 (지금 {P['dur']:.2f})", abs(P["dur"] - end) <= 0.5))
@@ -183,7 +225,7 @@ def run(spec, videos):
         qa = op.get("question_at"); lo, hi = STD["longform_v1"]["question_window"]
         items.append((f"기준서 v1: 질문 {lo}~{hi}초 사이 (지금 {qa})", bool(op.get("question")) and qa is not None and lo <= qa <= hi))
         items.append(("기준서 v1: 엔딩(다음 편·질문)", bool(spec.get("ending"))))
-    return [("✅ " if ok else "❌ ") + n for n, ok in items], all(ok for _, ok in items)
+    return [("✅ " if ok else "❌ ") + n for n, ok in items] + mood_lines(spec), all(ok for _, ok in items)
 
 def main(argv=None):
     import argparse

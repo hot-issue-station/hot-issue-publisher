@@ -22,7 +22,7 @@ TEMPLATES = os.path.join(HERE, "templates")   # --templates-dir 로 바꿀 수 �
 LABEL = {"가수": "가수 이름", "곡": "곡 이름", "숫자": "주인공 숫자(예: 555104)", "순위": "순위(예: 3)",
          "순위표": "순위표 [[순위, 이름, 곡, 숫자], ...]", "카드": "카드 문장 [{\"big\":..., \"small\":...}, ...]",
          "배경": "배경 사진 파일", "출처": "출처·기준 줄(1~2줄)", "확인": "숫자·사실 확인 기록(확인한 곳·시각)",
-         "클립": "무대 클립 {\"A\": [파일, 노래와 맞는 시각], ...}", "음원": "노래 파일", "bpm": "노래 빠르기(bpm)",
+         "클립": "원본 클립 — v2 쇼츠 A: [{\"file\",\"in\",\"out\",\"role\"}, ...] / 옛 교차편집: {\"A\": [파일, 노래와 맞는 시각]}", "음원": "노래 파일", "bpm": "노래 빠르기(bpm)",
          "저작권확인": "저작권·팬캠 양해 확인(true)", "롱폼": "롱폼 예고 문구", "단위": "숫자 단위",
          "제목": "화면 위 제목(괄호 드립 가능)", "소스": "무대 소스 [{\"file\",\"sync\",\"label\"}, ...] 8개 이상", "노래": "노래 {\"file\",\"start\"}",
          "썸네일": "썸네일 {\"quote\"(실제 대사),\"hook\",\"frame\":{file,t}}", "기획": "몰아보기 롱폼 기획 파일(.json)",
@@ -346,8 +346,46 @@ def print_table():
             p = load_preset(d, s); row.append(f"{p['series'].split(' · ')[0]}({p['template']}, ~{p['length']['target_sec']}초)")
         print(f"{d} | " + " | ".join(row))
 
+def order_prep(a):
+    """주문판(factory/order) 주문 1건 → (틀, 빈칸, 이름, 요일). 민감 주문은 대표 확인 전 멈춤. 빈칸 파일이 없으면 재료 목록을 남기고 멈춤."""
+    import check_standard as cs
+    STD = cs.STD; O = STD["order"]
+    try: order = json.load(open(a.order, encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as e: stop([f"주문 파일을 읽을 수 없어요: {a.order} ({e})"])
+    if isinstance(order, list): order = order[0]
+    typ = order.get("type", ""); fmt = order.get("format", "shorts")
+    if typ not in O["type_to_base"]: stop([f"주문 type 이 표에 없어요: {typ} (58-N·58-M·40-N·40-M·L8-N·L8-M·L4-N·L4-M)"])
+    if order.get("sensitive") and order.get("status") != O["approved_status"]:
+        print("⛔ 민감 주문(sensitive) — 대표 확인 전에는 렌더하지 않아요.")
+        print(f"   분야: {order.get('area', '')} · 소재: {', '.join(order.get('subs', []))} · 자유 메모: {order.get('free', '')}")
+        print(f"   → 대표가 확인하면 주문 status 를 \"{O['approved_status']}\" 로 바꾼 뒤 다시 실행"); sys.exit(3)
+    moods = order.get("moods", [])[:O["max_moods"]]; mp = {}
+    for m in moods:
+        g = next((k for k, v in STD["mood_presets"].items() if not k.startswith("_") and (m == k or m in v.get("items", []))), None)
+        if g: mp[g] = {k: v for k, v in STD["mood_presets"][g].items() if k != "items"}
+    at = str(order.get("at", "")).replace("T", " ")
+    try: when = datetime.datetime.fromisoformat(at[:16]) if at else None
+    except ValueError: when = None
+    day = a.day or (DAYS[when.weekday()] if when else None)
+    base = O["type_to_base"][typ]; preset = json.load(open(os.path.join(HERE, "templates_v2", base + ".json"), encoding="utf-8"))
+    preset["day"] = day or preset["day"]; preset["time"] = when.strftime("%H:%M") if when else preset.get("time", "19:00")
+    if fmt == "shorts" or typ[0] in "45": preset["shorts_template"] = typ
+    else: preset["long_template"] = typ
+    name = order.get("이름") or f"주문_{(when or datetime.datetime.now()):%Y%m%d_%H%M}_{typ}"
+    if not a.fill:   # 재료 빈칸 파일 초안을 남기고 멈춤
+        od = os.path.abspath(a.out_dir or os.path.join(HERE, "out", name)); os.makedirs(od, exist_ok=True)
+        sk = {"_주문": order, "_분위기_프리셋": mp, "_필요한_칸": {k: LABEL.get(k, k) for k in preset["need"]}, "이름": name}
+        sk.update({k: "" for k in preset["need"]})
+        if typ in ("40-N", "40-M"): sk["길이"] = 40
+        fp = os.path.join(od, "재료_빈칸.json"); json.dump(sk, open(fp, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
+        stop([f"주문 {typ}({'·'.join(moods) or '분위기 없음'}) — 재료 빈칸 파일을 채워 --fill 로 다시: {fp}"] + [f"{k}: {LABEL.get(k, k)}" for k in preset["need"]])
+    fill = json.load(open(a.fill, encoding="utf-8")); fill.setdefault("이름", name)
+    if typ.startswith("40"): fill["길이"] = 40
+    return preset, fill, mp, typ, order
+
 def main():
     ap = argparse.ArgumentParser(description="요일·시간대 템플릿 쇼츠 만들기")
+    ap.add_argument("--order", help="주문판(factory/order) 주문 1건 JSON — 표준 v2 틀로 바로(민감 주문은 대표 확인 전 멈춤)")
     ap.add_argument("--day", choices=DAYS); ap.add_argument("--slot", choices=list(SLOTS))
     ap.add_argument("--fill"); ap.add_argument("--dry", action="store_true", help="spec 만 만들고 렌더하지 않음")
     ap.add_argument("--out-dir", help="결과 폴더(기본: factory/out/<날짜>_<요일>_<시간대>)")
@@ -362,15 +400,23 @@ def main():
     global TEMPLATES
     if a.templates_dir: TEMPLATES = os.path.abspath(a.templates_dir if os.path.isabs(a.templates_dir) or os.path.isdir(a.templates_dir) else os.path.join(HERE, a.templates_dir))
     if a.list: return print_table()
-    miss = [n for n, v in (("--day(요일: 월~일)", a.day), ("--slot(시간대: 아침·점심·저녁)", a.slot), ("--fill(빈칸 파일)", a.fill)) if not v]
-    if miss: stop(miss)
-    if not os.path.exists(a.fill): stop([f"빈칸 파일이 없어요: {a.fill}"])
-    try: fill = json.load(open(a.fill, encoding="utf-8"))
-    except json.JSONDecodeError as e: stop([f"빈칸 파일 형식이 틀렸어요({e.lineno}번째 줄): {a.fill}"])
-    preset = load_preset(a.day, a.slot)
+    mp = order = None
+    if a.order:
+        preset, fill, mp, typ, order = order_prep(a); a.day = preset["day"]; a.slot = preset["slot"]
+    else:
+        miss = [n for n, v in (("--day(요일: 월~일)", a.day), ("--slot(시간대: 아침·점심·저녁)", a.slot), ("--fill(빈칸 파일)", a.fill)) if not v]
+        if miss: stop(miss)
+        if not os.path.exists(a.fill): stop([f"빈칸 파일이 없어요: {a.fill}"])
+        try: fill = json.load(open(a.fill, encoding="utf-8"))
+        except json.JSONDecodeError as e: stop([f"빈칸 파일 형식이 틀렸어요({e.lineno}번째 줄): {a.fill}"])
+        preset = load_preset(a.day, a.slot)
     name = fill.get("이름") or f"{datetime.date.today():%Y%m%d}_{a.day}_{a.slot}"
     spec, problems = build(preset, fill, os.path.dirname(os.path.abspath(a.fill)), name)
     if problems: stop(problems)
+    if order is not None:   # 주문 정보·분위기 프리셋 기록(점검기가 반영 여부를 알려 줌)
+        spec["order"] = order; spec["mood_preset"] = mp
+        if preset.get("long_template"): spec["long_template"] = preset["long_template"]
+        if mp: print("분위기 프리셋: " + " / ".join(f"{g}({c['note']})" for g, c in mp.items()))
     outdir = os.path.abspath(a.out_dir or os.path.join(HERE, "out", name)); os.makedirs(outdir, exist_ok=True)
     sp = os.path.join(outdir, name + "_spec.json")
     json.dump(spec, open(sp, "w", encoding="utf-8"), ensure_ascii=False, indent=2)

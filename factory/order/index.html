@@ -2,97 +2,94 @@
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@400;700;900&display=swap">
 <style>
-/* 레이아웃: 한 줄 세로 흐름 — 형식 → 종류 → 영역 → 소제목 → 직접 입력 → 분위기 → 주문 → 목록 */
+/* 레이아웃: 위 = 새 주문(1 형식 → 2 컨셉 → 3 길이), 아래 = 주문별 11단계 진행판(8 컨펌·9 언어·11 업로드 버튼) */
 :root{
   --bg:#f6f4fb; --panel:#ffffff; --fg:#1d1a26; --muted:#6b6579; --line:#e2dcef;
-  --accent:#6b3fd6; --accent-fg:#ffffff; --sel:#efe8ff; --ok:#1f8a4c; --warn:#b76e00;
+  --accent:#6b3fd6; --accent-fg:#ffffff; --sel:#efe8ff; --ok:#1f8a4c; --warn:#b76e00; --bad:#c23b3b;
   --font:"Gothic A1","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
   --bg:#14121b; --panel:#1e1b28; --fg:#efeaf8; --muted:#a39cb3; --line:#332e42;
-  --accent:#a383ff; --accent-fg:#14121b; --sel:#2b2342; --ok:#4cc982; --warn:#e3a640; color-scheme:dark}}
+  --accent:#a383ff; --accent-fg:#14121b; --sel:#2b2342; --ok:#4cc982; --warn:#e3a640; --bad:#ff7b7b; color-scheme:dark}}
 :root[data-theme="dark"]{
   --bg:#14121b; --panel:#1e1b28; --fg:#efeaf8; --muted:#a39cb3; --line:#332e42;
-  --accent:#a383ff; --accent-fg:#14121b; --sel:#2b2342; --ok:#4cc982; --warn:#e3a640; color-scheme:dark}
+  --accent:#a383ff; --accent-fg:#14121b; --sel:#2b2342; --ok:#4cc982; --warn:#e3a640; --bad:#ff7b7b; color-scheme:dark}
 body{background:var(--bg);color:var(--fg);font-family:var(--font);font-size:16px;line-height:1.5}
-main{max-width:600px;margin:0 auto;padding-block:20px 48px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:22px}
+main{max-width:620px;margin:0 auto;padding-block:20px 48px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:22px}
 h1{font-weight:900;font-size:24px;margin:0;text-wrap:balance}
 .sub{color:var(--muted);font-size:14px;margin:4px 0 0}
-h2{font-size:15px;font-weight:700;margin:0 0 10px;color:var(--muted);letter-spacing:.02em}
-h2 small{font-weight:400}
-.seg{display:grid;grid-template-columns:1fr 1fr;background:var(--panel);border:2px solid var(--line);border-radius:14px;padding:4px;gap:4px}
-.seg button{border:0;background:transparent;font:inherit;font-weight:900;font-size:17px;color:var(--muted);padding:10px;border-radius:10px;cursor:pointer}
-.seg button[aria-pressed="true"]{background:var(--accent);color:var(--accent-fg)}
+h2{font-size:16px;font-weight:900;margin:0 0 10px}
+h2 small{font-weight:400;color:var(--muted);font-size:13px}
+h3{font-size:14px;font-weight:700;color:var(--muted);margin:14px 0 8px}
 .grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.opt{background:var(--panel);border:2px solid var(--line);border-radius:14px;padding:14px 12px;text-align:left;font:inherit;color:inherit;cursor:pointer;display:flex;flex-direction:column;gap:4px;min-height:96px}
-.opt b{font-size:22px;font-weight:900;font-variant-numeric:tabular-nums}
-.opt span{font-size:14px;color:var(--muted)}
-.opt[aria-pressed="true"]{border-color:var(--accent);background:var(--sel)}
+.opt{background:var(--panel);border:2px solid var(--line);border-radius:14px;padding:12px;text-align:left;font:inherit;color:inherit;cursor:pointer;display:flex;flex-direction:column;gap:2px;min-height:76px}
+.opt b{font-size:19px;font-weight:900}
+.opt span{font-size:13px;color:var(--muted)}
+.opt[aria-pressed="true"],.chip[aria-pressed="true"]{border-color:var(--accent);background:var(--sel)}
 .chips{display:flex;flex-wrap:wrap;gap:8px}
-.chip{background:var(--panel);border:2px solid var(--line);border-radius:999px;padding:9px 14px;font:inherit;font-size:15px;color:inherit;cursor:pointer;text-align:left}
-.chip[aria-pressed="true"]{border-color:var(--accent);background:var(--sel);font-weight:700}
+.chip{background:var(--panel);border:2px solid var(--line);border-radius:999px;padding:8px 13px;font:inherit;font-size:15px;color:inherit;cursor:pointer;text-align:left}
+.chip[aria-pressed="true"]{font-weight:700}
 .chip .h{display:block;font-size:12px;color:var(--muted);font-weight:400}
 .chip.sens::after{content:" ⚠";color:var(--warn)}
 .note{font-size:13px;color:var(--warn);margin:8px 0 0}
-.mg{display:flex;flex-direction:column;gap:6px;margin-bottom:12px}
-.mg .gl{font-size:13px;font-weight:700}
-textarea{width:100%;box-sizing:border-box;min-height:72px;border:2px solid var(--line);border-radius:12px;background:var(--panel);color:var(--fg);font:inherit;padding:10px 12px;resize:vertical}
+.mg{margin-bottom:10px}.mg .gl{font-size:13px;font-weight:700;margin-bottom:6px}
+textarea{width:100%;box-sizing:border-box;min-height:64px;border:2px solid var(--line);border-radius:12px;background:var(--panel);color:var(--fg);font:inherit;padding:10px 12px;resize:vertical}
 textarea:focus,button:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
-.go{background:var(--accent);color:var(--accent-fg);border:0;border-radius:14px;padding:16px;font:inherit;font-size:18px;font-weight:900;cursor:pointer;width:100%}
+.go{background:var(--accent);color:var(--accent-fg);border:0;border-radius:14px;padding:15px;font:inherit;font-size:17px;font-weight:900;cursor:pointer;width:100%}
+.go.sec{background:var(--panel);color:var(--fg);border:2px solid var(--line)}
 .go:disabled{opacity:.45;cursor:default}
-.summary{font-size:14px;color:var(--muted)}
-.msg{font-size:14px;min-height:20px;color:var(--muted)}
-.list{display:flex;flex-direction:column;gap:8px}
-.row{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px;display:flex;justify-content:space-between;gap:10px;align-items:center}
-.row div{min-width:0}
-.row .t{font-weight:700}
-.row .d{font-size:13px;color:var(--muted);overflow-wrap:anywhere}
-.pill{font-size:13px;font-weight:700;padding:4px 10px;border-radius:999px;border:1px solid currentColor;white-space:nowrap}
-.pill.wait{color:var(--warn)} .pill.done{color:var(--ok)} .pill.work{color:var(--accent)}
+.summary,.msg{font-size:14px;color:var(--muted);min-height:20px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:14px;display:flex;flex-direction:column;gap:10px}
+.card .t{font-weight:900;font-size:16px}
+.card .d{font-size:13px;color:var(--muted);overflow-wrap:anywhere}
+.steps{display:grid;grid-template-columns:repeat(11,1fr);gap:3px}
+.steps i{height:8px;border-radius:4px;background:var(--line)}
+.steps i.done{background:var(--ok)} .steps i.now{background:var(--accent)} .steps i.wait{background:var(--warn)}
+.stage{font-size:14px;font-weight:700}
+.stage.need{color:var(--warn)}
+.links a{color:var(--accent);font-size:14px;margin-right:12px}
+.act{display:flex;flex-direction:column;gap:8px;border-top:1px dashed var(--line);padding-top:10px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.issues{font-size:13px;color:var(--bad);margin:0;padding-left:18px}
 .empty{color:var(--muted);font-size:14px}
 .basis{font-size:12px;color:var(--muted)}
+details summary{cursor:pointer;color:var(--muted);font-size:14px}
+ol.flow{margin:6px 0 0;padding-left:20px;font-size:13px;color:var(--muted)}
 </style>
 
 <main>
   <header>
-    <h1>쇼츠·롱폼 주문판</h1>
-    <p class="sub">눌러서 고르고 「만들어 줘」를 누르면 Claude가 제작 표준 v2대로 만듭니다.</p>
+    <h1>제작 주문판</h1>
+    <p class="sub">1~3번을 눌러 주문하면 Claude가 4~7번(시나리오 → 편집 설계 → 내레이션 첫 영상 → 1차 검토)을 하고, 8·9·11번은 아래 진행판에서 버튼으로 정해 주시면 됩니다.</p>
+    <details><summary>11단계 보기</summary>
+      <ol class="flow"><li>형식 선택</li><li>컨셉 정하기</li><li>길이 정하기</li><li>시나리오</li><li>영상 수·편집 방법 설계</li><li>내레이션 입힌 첫 영상</li><li>1차 검토(오류 잡기)</li><li>대표 컨펌</li><li>완성 제작 + 언어(자막·더빙) 선택</li><li>최종 검토(싱크·이상한 곳)</li><li>SNS별 맞춤 업로드</li></ol>
+    </details>
   </header>
 
-  <section><div class="seg" id="fmt"></div></section>
-
-  <section><h2>1. 종류</h2><div class="grid" id="types"></div></section>
+  <section><h2>1. 형식</h2><div class="grid" id="fmt"></div></section>
 
   <section>
-    <h2>2. 영역 <small>(유튜브 인기 기준)</small></h2>
-    <div class="chips" id="areas"></div>
+    <h2>2. 컨셉</h2>
+    <h3>내레이션</h3><div class="chips" id="narr"></div>
+    <h3>영역 <small>(유튜브 인기 기준)</small></h3><div class="chips" id="areas"></div>
     <p class="note" id="areaNote" hidden></p>
-  </section>
-
-  <section id="subWrap" hidden>
-    <h2>3. 소제목 <small>(여러 개 골라도 돼요)</small></h2>
-    <div class="chips" id="subs"></div>
-  </section>
-
-  <section>
-    <h2>4. 직접 쓰기 <small>(선택)</small></h2>
+    <div id="subWrap" hidden><h3>소제목 <small>(여러 개 가능)</small></h3><div class="chips" id="subs"></div></div>
+    <h3>분위기 <small>(최대 3개)</small></h3><div id="moods"></div>
+    <h3>직접 쓰기 <small>(선택)</small></h3>
     <textarea id="free" placeholder="예) 리센느 데뷔 첫 음방 vs 지금 비교, 메이 웃는 장면 위주로"></textarea>
   </section>
 
-  <section>
-    <h2>5. 분위기 <small>(최대 3개)</small></h2>
-    <div id="moods"></div>
-  </section>
+  <section><h2>3. 길이</h2><div class="chips" id="lens"></div></section>
 
   <section style="display:flex;flex-direction:column;gap:8px">
     <div class="summary" id="sum"></div>
-    <button class="go" id="go" disabled>만들어 줘</button>
+    <button class="go" id="go" disabled>주문하기</button>
     <div class="msg" id="msg" aria-live="polite"></div>
   </section>
 
   <section>
-    <h2>주문 목록</h2>
-    <div class="list" id="list"><p class="empty">아직 주문이 없어요. 위에서 골라 첫 주문을 넣어 보세요.</p></div>
+    <h2>진행판</h2>
+    <div id="list" style="display:flex;flex-direction:column;gap:12px"><p class="empty">아직 주문이 없어요. 위에서 골라 첫 주문을 넣으면 여기에 11단계 진행 막대가 생깁니다.</p></div>
   </section>
 
   <p class="basis" id="basis"></p>
@@ -100,31 +97,27 @@ textarea:focus,button:focus-visible{outline:3px solid var(--accent);outline-offs
 
 <script>
 const FMT={
-  shorts:{name:"쇼츠",types:[
-    {id:"58-N",len:"58초",name:"내레이션 있음",desc:"Veda 목소리 + 자막"},
-    {id:"58-M",len:"58초",name:"무대·음악 위주",desc:"내레이션 없이 현장 소리"},
-    {id:"40-N",len:"40초",name:"가벼운 내레이션",desc:"짧은 이야기 하나"},
-    {id:"40-M",len:"40초",name:"가벼운 무대",desc:"한 곡 하이라이트"}]},
-  long:{name:"롱폼",types:[
-    {id:"L8-N",len:"약 8분",name:"몰아보기 내레이션",desc:"Veda 내레이션 + 괄호 자막"},
-    {id:"L8-M",len:"약 8분",name:"무대·음악 모음",desc:"내레이션 없이 무대 위주"},
-    {id:"L4-N",len:"약 4분",name:"가벼운 내레이션",desc:"이야기 한 가지"},
-    {id:"L4-M",len:"약 4분",name:"가벼운 무대 모음",desc:"한 곡·한 무대 중심"}]}
+  shorts:{name:"쇼츠",desc:"세로 영상",lens:["58초","40초"]},
+  long:{name:"롱폼",desc:"가로 영상",lens:["약 8분","약 4분"]},
+  cardreels:{name:"카드릴스",desc:"카드 + 음악 영상",lens:["카드 7장","카드 12장"]},
+  cardnews:{name:"카드뉴스",desc:"인스타 카드",lens:["카드 7장","카드 12장"]}
 };
+const NARR=["내레이션 있음","내레이션 없음(무대·음악 위주)"];
+const STAGES=["형식","컨셉","길이","시나리오","편집 설계","첫 영상","1차 검토","대표 컨펌","완성·언어","최종 검토","업로드"];
+const LANGS=["영어","일본어","중국어(간체)","중국어(번체)","스페인어","포르투갈어","인도네시아어","태국어","베트남어","프랑스어"];
+const PLATS=["유튜브","인스타","틱톡","X","스레드"];
 let CAT={areas:[],moods:[]};
-const S={fmt:"shorts",type:null,area:null,subs:[],moods:[]};
+const S={fmt:null,narr:NARR[0],area:null,subs:[],moods:[],len:null};
 const $=id=>document.getElementById(id);
 const mk=(cls,txt)=>{const b=document.createElement("button");b.type="button";b.className=cls;b.textContent=txt;return b};
+const chipRow=(el,arr,isOn,onClick,idp)=>{$(el).innerHTML="";arr.forEach((v,i)=>{const b=mk("chip",v);b.id=idp+i;b.setAttribute("aria-pressed",isOn(v));b.onclick=()=>onClick(v);$(el).append(b)})};
 
 function draw(){
   $("fmt").innerHTML="";
-  Object.entries(FMT).forEach(([k,f])=>{const b=mk("",f.name);b.id="fmt-"+k;b.setAttribute("aria-pressed",S.fmt===k);
-    b.onclick=()=>{S.fmt=k;S.type=null;draw()};$("fmt").append(b)});
-  $("types").innerHTML="";
-  FMT[S.fmt].types.forEach(t=>{const b=mk("opt","");b.id="t-"+t.id;b.setAttribute("aria-pressed",S.type===t.id);
-    b.innerHTML="<b></b><strong></strong><span></span>";
-    b.querySelector("b").textContent=t.len;b.querySelector("strong").textContent=t.name;b.querySelector("span").textContent=t.desc;
-    b.onclick=()=>{S.type=t.id;draw()};$("types").append(b)});
+  Object.entries(FMT).forEach(([k,f])=>{const b=mk("opt","");b.id="f-"+k;b.setAttribute("aria-pressed",S.fmt===k);
+    b.innerHTML="<b></b><span></span>";b.querySelector("b").textContent=f.name;b.querySelector("span").textContent=f.desc;
+    b.onclick=()=>{S.fmt=k;S.len=null;draw()};$("fmt").append(b)});
+  chipRow("narr",NARR,v=>S.narr===v,v=>{S.narr=v;draw()},"n-");
   $("areas").innerHTML="";
   CAT.areas.forEach(a=>{const b=mk("chip"+(a.sensitive?" sens":""),a.name);b.id="a-"+a.id;b.setAttribute("aria-pressed",S.area===a.id);
     b.onclick=()=>{S.area=S.area===a.id?null:a.id;S.subs=[];draw()};$("areas").append(b)});
@@ -142,47 +135,82 @@ function draw(){
     g.items.forEach((m,i)=>{const b=mk("chip",m);b.id="m-"+gi+"-"+i;b.setAttribute("aria-pressed",S.moods.includes(m));
       b.onclick=()=>{if(S.moods.includes(m))S.moods=S.moods.filter(x=>x!==m);else if(S.moods.length<3)S.moods=[...S.moods,m];draw()};c.append(b)});
     w.append(c);$("moods").append(w)});
-  const t=FMT[S.fmt].types.find(x=>x.id===S.type);
+  if(S.fmt)chipRow("lens",FMT[S.fmt].lens,v=>S.len===v,v=>{S.len=v;draw()},"l-");
+  else $("lens").innerHTML='<p class="empty">1번 형식을 먼저 골라 주세요.</p>';
   const free=$("free").value.trim();
-  $("sum").textContent=t?`${FMT[S.fmt].name} ${t.len} · ${t.name}`+(area?` · ${area.name}`:"")+(S.subs.length?` · ${S.subs.join(", ")}`:"")+(S.moods.length?` · ${S.moods.join(", ")}`:""):"종류를 먼저 골라 주세요.";
-  $("go").disabled=!t||!(area||free);
+  const parts=[S.fmt&&FMT[S.fmt].name,S.narr,area&&area.name,S.subs.join(", "),S.moods.join(", "),S.len].filter(Boolean);
+  $("sum").textContent=parts.length?parts.join(" · "):"형식부터 골라 주세요.";
+  $("go").disabled=!(S.fmt&&S.len&&(area||free));
 }
 $("free").addEventListener("input",draw);
-
 fetch("catalog.json").then(r=>r.json()).then(c=>{CAT=c;$("basis").textContent=`인기 기준: ${c.basis} · 갱신 ${c.updatedAt}`;draw()}).catch(()=>{$("basis").textContent="인기 목록을 불러오지 못했어요. 직접 쓰기 칸으로 주문할 수 있어요.";draw()});
 draw();
 
-const LABEL={wait:"대기",work:"만드는 중",done:"완성"};
-const ALLT=[...FMT.shorts.types,...FMT.long.types];
+let col=null;
+const nowStr=()=>{const n=new Date(),p=x=>String(x).padStart(2,"0");return `${n.getFullYear()}-${p(n.getMonth()+1)}-${p(n.getDate())}T${p(n.getHours())}:${p(n.getMinutes())}:${p(n.getSeconds())}`};
+const pick={}; // 주문별 언어·플랫폼 선택(화면 안에서만)
 function render(rows){
   const L=$("list");L.innerHTML="";
-  if(!rows.length){L.innerHTML='<p class="empty">아직 주문이 없어요. 위에서 골라 첫 주문을 넣어 보세요.</p>';return}
-  rows.forEach(r=>{const d=document.createElement("div");d.className="row";
-    const t=ALLT.find(x=>x.id===r.type);
-    d.innerHTML='<div><div class="t"></div><div class="d"></div></div><span class="pill"></span>';
-    d.querySelector(".t").textContent=(r.format==="long"?"롱폼 ":"쇼츠 ")+(t?t.len+" · "+t.name:r.type);
-    d.querySelector(".d").textContent=[r.area,(r.subs||[]).join(", "),(r.moods||[]).join(", "),r.free,(r.at||"").replace("T"," ").slice(5,16),r.note].filter(Boolean).join(" · ");
-    const p=d.querySelector(".pill");const st=r.status||"wait";p.textContent=LABEL[st]||st;p.classList.add(st);
-    L.append(d)});
+  if(!rows.length){L.innerHTML='<p class="empty">아직 주문이 없어요. 위에서 골라 첫 주문을 넣으면 여기에 11단계 진행 막대가 생깁니다.</p>';return}
+  rows.forEach(r=>{
+    const st=r.stage||3, c=document.createElement("div");c.className="card";
+    const t=document.createElement("div");t.className="t";t.textContent=[(FMT[r.format]||{}).name,r.len,r.narr].filter(Boolean).join(" · ");
+    const d=document.createElement("div");d.className="d";d.textContent=[r.area,(r.subs||[]).join(", "),(r.moods||[]).join(", "),r.free,(r.at||"").replace("T"," ").slice(5,16)].filter(Boolean).join(" · ");
+    const bar=document.createElement("div");bar.className="steps";
+    STAGES.forEach((_,i)=>{const x=document.createElement("i");const n=i+1;x.className=n<st?"done":n===st?(r.waiting?"wait":"now"):"";x.title=n+". "+STAGES[i];bar.append(x)});
+    const sl=document.createElement("div");sl.className="stage"+(r.waiting?" need":"");
+    sl.textContent=`${st}단계 · ${STAGES[st-1]}`+(r.waiting?" — 대표님 차례":" — Claude 작업 중")+(r.status==="done"?" (완료)":"");
+    c.append(t,d,bar,sl);
+    if(r.issues&&r.issues.length){const u=document.createElement("ul");u.className="issues";r.issues.forEach(s=>{const li=document.createElement("li");li.textContent=s;u.append(li)});c.append(u)}
+    if(r.links&&r.links.length){const w=document.createElement("div");w.className="links";r.links.forEach(l=>{const a=document.createElement("a");a.href=l.url;a.target="_blank";a.rel="noopener";a.textContent=l.label||"보기";w.append(a)});c.append(w)}
+    if(r.waiting&&col){
+      const act=document.createElement("div");act.className="act";
+      if(st===8){
+        const ta=document.createElement("textarea");ta.id="fix-"+r.id;ta.placeholder="고칠 점이 있으면 적어 주세요(없으면 비워 두고 컨펌)";
+        const g=document.createElement("div");g.className="row2";
+        const ok=mk("go","컨펌");ok.onclick=()=>upd(r,{decision:"confirm",fix:ta.value.trim(),waiting:false,stage:9});
+        const no=mk("go sec","수정 요청");no.onclick=()=>{if(!ta.value.trim()){ta.focus();return}upd(r,{decision:"revise",fix:ta.value.trim(),waiting:false,stage:6})};
+        g.append(ok,no);act.append(ta,g);
+      }else if(st===9){
+        const P=pick[r.id]=pick[r.id]||{mode:"자막만",langs:[]};
+        const h1=document.createElement("h3");h1.textContent="추가 언어";const lw=document.createElement("div");lw.className="chips";
+        LANGS.forEach((v,i)=>{const b=mk("chip",v);b.id=`lg-${r.id}-${i}`;b.setAttribute("aria-pressed",P.langs.includes(v));b.onclick=()=>{P.langs=P.langs.includes(v)?P.langs.filter(x=>x!==v):[...P.langs,v];render(window.__rows)};lw.append(b)});
+        const h2=document.createElement("h3");h2.textContent="방식";const mw=document.createElement("div");mw.className="chips";
+        ["한국어만","자막만","자막 + 더빙판 따로"].forEach((v,i)=>{const b=mk("chip",v);b.id=`md-${r.id}-${i}`;b.setAttribute("aria-pressed",P.mode===v);b.onclick=()=>{P.mode=v;render(window.__rows)};mw.append(b)});
+        const go=mk("go","이대로 완성 제작");go.onclick=()=>upd(r,{langMode:P.mode,langs:P.mode==="한국어만"?[]:P.langs,waiting:false});
+        act.append(h2,mw,h1,lw,go);
+      }else if(st===11){
+        const P=pick[r.id]=pick[r.id]||{plats:r.format==="cardnews"?["인스타","스레드"]:["유튜브","인스타","틱톡","X"]};
+        const h=document.createElement("h3");h.textContent="올릴 곳";const pw=document.createElement("div");pw.className="chips";
+        PLATS.forEach((v,i)=>{const b=mk("chip",v);b.id=`pl-${r.id}-${i}`;b.setAttribute("aria-pressed",P.plats.includes(v));b.onclick=()=>{P.plats=P.plats.includes(v)?P.plats.filter(x=>x!==v):[...P.plats,v];render(window.__rows)};pw.append(b)});
+        const go=mk("go","올려");go.onclick=()=>{if(!P.plats.length)return;upd(r,{upload:"go",plats:P.plats,waiting:false})};
+        act.append(h,pw,go);
+      }
+      c.append(act);
+    }
+    L.append(c)});
+}
+async function upd(r,patch){
+  try{await col.doc(r.id).update({...patch,["log_"+Date.now()]:nowStr()});$("msg").textContent="전달했어요. Claude가 이어서 진행합니다.";}
+  catch(e){$("msg").textContent="저장하지 못했어요. 잠시 뒤 다시 눌러 주세요.";}
 }
 
 (async()=>{
   const db=await window.claude?.use?.("db");
   if(!db){$("msg").textContent="이 화면에서는 주문을 저장할 수 없어요. claude.ai에 로그인한 상태로 열어 주세요.";return}
-  const col=db.collection("orders");
-  const timer=setTimeout(()=>{$("msg").textContent="주문 목록을 불러오지 못했어요. 잠시 뒤 다시 열어 주세요."},10000);
+  col=db.collection("orders");
+  const timer=setTimeout(()=>{$("msg").textContent="진행판을 불러오지 못했어요. 잠시 뒤 다시 열어 주세요."},10000);
   try{
     col.orderBy("at","desc").limit(20).onSnapshot(s=>{clearTimeout(timer);
-      const rows=[];(s.docs||[]).forEach(d=>rows.push(d.data()));if(!s.docs&&s.forEach)s.forEach(d=>rows.push(d.data()));render(rows)},
-      ()=>{clearTimeout(timer);$("msg").textContent="주문 목록을 불러오지 못했어요."});
+      const rows=[];const push=d=>rows.push({...d.data(),id:d.id});(s.docs||[]).forEach(push);if(!s.docs&&s.forEach)s.forEach(push);
+      window.__rows=rows;render(rows)},
+      ()=>{clearTimeout(timer);$("msg").textContent="진행판을 불러오지 못했어요."});
   }catch(e){clearTimeout(timer)}
   $("go").onclick=async()=>{
     if($("go").disabled)return;$("go").disabled=true;$("msg").textContent="주문 넣는 중…";
-    const now=new Date();const pad=n=>String(n).padStart(2,"0");
-    const at=`${now.getFullYear()}-${pad(now.getMonth()+1)}-${pad(now.getDate())}T${pad(now.getHours())}:${pad(now.getMinutes())}:${pad(now.getSeconds())}`;
     const area=CAT.areas.find(a=>a.id===S.area);
-    try{await col.doc("o"+now.getTime()).set({format:S.fmt,type:S.type,area:area?area.name:"",sensitive:!!(area&&area.sensitive),subs:S.subs,moods:S.moods,free:$("free").value.trim().slice(0,500),at,status:"wait"});
-      $("msg").textContent="주문을 넣었어요. Claude가 만들면 「완성」으로 바뀝니다.";$("free").value="";}
+    try{await col.doc("o"+Date.now()).set({format:S.fmt,narr:S.narr,area:area?area.name:"",sensitive:!!(area&&area.sensitive),subs:S.subs,moods:S.moods,free:$("free").value.trim().slice(0,500),len:S.len,at:nowStr(),stage:4,waiting:false,status:"open"});
+      $("msg").textContent="주문을 넣었어요. 아래 진행판에서 단계가 넘어가는 걸 볼 수 있어요.";$("free").value="";}
     catch(e){$("msg").textContent="주문을 저장하지 못했어요. 이 화면을 연 계정에 편집 권한이 있는지 확인해 주세요.";}
     draw();
   };
