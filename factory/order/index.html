@@ -54,6 +54,10 @@ textarea:focus,button:focus-visible{outline:3px solid var(--accent);outline-offs
 .empty{color:var(--muted);font-size:14px}
 .basis{font-size:12px;color:var(--muted)}
 details summary{cursor:pointer;color:var(--muted);font-size:14px}
+.pv{display:flex;flex-direction:column;gap:8px}
+.pv video,.pv img{width:100%;max-width:100%;border-radius:12px;border:1px solid var(--line);background:#000}
+.pv video{max-height:70vh}
+.pv img.th{max-width:240px}
 .lenfree{display:flex;align-items:center;gap:8px;margin-top:10px;font-size:15px}
 .lenfree input{width:110px;border:2px solid var(--line);border-radius:12px;background:var(--panel);color:var(--fg);font:inherit;padding:8px 10px}
 .lenfree input:focus{outline:3px solid var(--accent);outline-offset:2px}
@@ -98,6 +102,7 @@ ol.flow{margin:6px 0 0;padding-left:20px;font-size:13px;color:var(--muted)}
     <div id="list" style="display:flex;flex-direction:column;gap:12px"><p class="empty">아직 주문이 없어요. 위에서 골라 첫 주문을 넣으면 여기에 11단계 진행 막대가 생깁니다.</p></div>
   </section>
 
+  <nav class="links" aria-label="바로가기"><a href="https://claude.ai/artifact/GGSaGw8q8Lc3bcDifkaFrK" target="_blank" rel="noopener">덕심저장소 갤러리</a><a href="https://claude.ai/artifact/U9VZr9a1bNtZRQwswhv2dz" target="_blank" rel="noopener">이슈브리프 사무실</a></nav>
   <p class="basis" id="basis"></p>
 </main>
 
@@ -176,13 +181,20 @@ function render(rows){
     sl.textContent=`${st}단계 · ${STAGES[st-1]}`+(r.waiting?" — 대표님 차례":" — Claude 작업 중")+(r.status==="done"?" (완료)":"");
     c.append(t,d,bar,sl);
     if(r.issues&&r.issues.length){const u=document.createElement("ul");u.className="issues";r.issues.forEach(s=>{const li=document.createElement("li");li.textContent=s;u.append(li)});c.append(u)}
+    if(r.preview){const pv=document.createElement("div");pv.className="pv";
+      const cap=document.createElement("div");cap.className="stage";cap.textContent=r.preview.label||"미리보기(시험 렌더)";pv.append(cap);
+      if(r.preview.video){const v=document.createElement("video");v.src=r.preview.video;v.controls=true;v.playsInline=true;v.preload="metadata";if(r.preview.thumb)v.poster=r.preview.thumb;pv.append(v)}
+      else if(r.preview.thumb){const im=document.createElement("img");im.src=r.preview.thumb;im.alt="썸네일 미리보기";pv.append(im)}
+      if(r.preview.sheet){const im=document.createElement("img");im.src=r.preview.sheet;im.alt="장면 모음";pv.append(im)}
+      if(r.preview.thumb&&r.preview.video){const im=document.createElement("img");im.src=r.preview.thumb;im.alt="썸네일";im.className="th";pv.append(im)}
+      c.append(pv)}
     if(r.links&&r.links.length){const w=document.createElement("div");w.className="links";r.links.forEach(l=>{const a=document.createElement("a");a.href=l.url;a.target="_blank";a.rel="noopener";a.textContent=l.label||"보기";w.append(a)});c.append(w)}
     if(r.waiting&&col){
       const act=document.createElement("div");act.className="act";
       if(st===8){
         const ta=document.createElement("textarea");ta.id="fix-"+r.id;ta.placeholder="고칠 점이 있으면 적어 주세요(없으면 비워 두고 컨펌)";
         const g=document.createElement("div");g.className="row2";
-        const ok=mk("go","컨펌");ok.onclick=()=>upd(r,{decision:"confirm",fix:ta.value.trim(),waiting:false,stage:9});
+        const ok=mk("go","확인했어요 · 최종 렌더링 준비");ok.onclick=()=>upd(r,{decision:"confirm",fix:ta.value.trim(),waiting:false,stage:9});
         const no=mk("go sec","수정 요청");no.onclick=()=>{if(!ta.value.trim()){ta.focus();return}upd(r,{decision:"revise",fix:ta.value.trim(),waiting:false,stage:6})};
         g.append(ok,no);act.append(ta,g);
       }else if(st===9){
@@ -191,7 +203,7 @@ function render(rows){
         LANGS.forEach((v,i)=>{const b=mk("chip",v);b.id=`lg-${r.id}-${i}`;b.setAttribute("aria-pressed",P.langs.includes(v));b.onclick=()=>{P.langs=P.langs.includes(v)?P.langs.filter(x=>x!==v):[...P.langs,v];render(window.__rows)};lw.append(b)});
         const h2=document.createElement("h3");h2.textContent="방식";const mw=document.createElement("div");mw.className="chips";
         ["한국어만","자막만","자막 + 더빙판 따로"].forEach((v,i)=>{const b=mk("chip",v);b.id=`md-${r.id}-${i}`;b.setAttribute("aria-pressed",P.mode===v);b.onclick=()=>{P.mode=v;render(window.__rows)};mw.append(b)});
-        const go=mk("go","이대로 완성 제작");go.onclick=()=>upd(r,{langMode:P.mode,langs:P.mode==="한국어만"?[]:P.langs,waiting:false});
+        const go=mk("go","최종 렌더링 시작");go.onclick=()=>upd(r,{langMode:P.mode,langs:P.mode==="한국어만"?[]:P.langs,waiting:false});
         act.append(h2,mw,h1,lw,go);
       }else if(st===11){
         const P=pick[r.id]=pick[r.id]||{plats:r.format==="cardnews"?["인스타","스레드"]:["유튜브","인스타","틱톡","X"]};
