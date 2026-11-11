@@ -123,12 +123,12 @@ def make_texts(spec, post_override, use_ai=False):
     if len(yt_tags) < len(tags): warns.append(f"[유튜브 태그] 합계 500자 넘어 {len(tags) - len(yt_tags)}개 뺌")
     T["youtube"] = (f"제목: {title}\n설명:\n{yd}\n태그: {', '.join(yt_tags)}\n첫 댓글(고정): {first}\n")
 
-    def platform(key, body, tg, limit, measure=len, where=""):
-        full = body + ("\n\n" + tag_str(tg) if tg else "")
+    def platform(key, body, tg, limit, measure=len, where="", sep="\n\n"):
+        full = body + (sep + tag_str(tg) if tg else "")
         if use_ai and measure(full) > limit:
             a = ai_shorten(full, limit, measure, where, notes)
             if a: return a
-        return fit(body, tg, limit, measure, warns=warns, where=where)
+        return fit(body, tg, limit, measure, sep=sep, warns=warns, where=where)
 
     # 인스타 릴스: 2200자 · 해시태그 30개
     ig_tags = tags[:LIM["ig_tags"]]
