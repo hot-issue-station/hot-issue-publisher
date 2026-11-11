@@ -57,15 +57,73 @@ def wrap(d, text, fo, maxw):
         out.append(line)
     return out
 
-def sub_png(text, path):
-    """자막: 화면 아래, 한 줄 18자 안쪽 권장, 반투명 띠 위 흰 글씨."""
-    im = Image.new("RGBA", (W, H), (0, 0, 0, 0)); d = ImageDraw.Draw(im); fo = F(FB, 54)
-    lines = text.split("\n"); y0 = H - 90 - 74 * len(lines)
-    for i, line in enumerate(lines):
-        w = d.textlength(line, font=fo); x = (W - w) / 2; y = y0 + 74 * i
-        d.rounded_rectangle([x - 26, y - 6, x + w + 26, y + 70], radius=14, fill=(0, 0, 0, 150))
-        d.text((x, y), line, font=fo, fill=WH)
+SUB_STYLE = {   # 자막 모양: (글자 크기, 위치, 기본 색, 띠)
+    "sub": (58, "bottom", WH, True),        # 보통 자막(화면 아래)
+    "big": (96, "center", WH, False),       # 오프닝 하이라이트 대사·엔딩 주제 한 줄(크게 가운데)
+    "ask": (84, "center", Y, False),        # 엔딩 질문(노란색 가운데)
+    "question": (70, "top", Y, True),       # 오프닝 질문(노란색, 위쪽)
+}
+def plain(t): return str(t).replace("*", "")
+
+def sub_png(text, path, style="sub"):
+    """자막: 흰 굵은 고딕 + 테두리·그림자. *별표* 로 감싼 단어는 노란색(기본색이 노랑이면 흰색)."""
+    size, pos, base, band = SUB_STYLE.get(style, SUB_STYLE["sub"])
+    hi = Y if base == WH else WH
+    im = Image.new("RGBA", (W, H), (0, 0, 0, 0)); d = ImageDraw.Draw(im)
+    lines = []
+    for ln in str(text).split("\n"):
+        segs, on = [], False
+        for k, part in enumerate(ln.split("*")):
+            if part: segs.append((part, hi if on else base))
+            on = not on
+        lines.append(segs)
+    while size > 30:
+        fo = F(FB, size)
+        if max(sum(d.textlength(s, font=fo) for s, _ in L) for L in lines) <= W - 160: break
+        size -= 4
+    fo = F(FB, size); lh = int(size * 1.32); sw = max(3, size // 12); th = lh * len(lines)
+    y0 = {"bottom": H - 96 - th, "center": (H - th) // 2, "top": 120}[pos]
+    sh = Image.new("RGBA", (W, H), (0, 0, 0, 0)); ds = ImageDraw.Draw(sh)
+    rows = []
+    for i, L in enumerate(lines):
+        w = sum(d.textlength(s, font=fo) for s, _ in L); x = (W - w) / 2; y = y0 + lh * i; rows.append((x, y, w, L))
+        if band and L: d.rounded_rectangle([x - 30, y - 8, x + w + 30, y + lh - 4], radius=16, fill=(0, 0, 0, 120))
+        ds.text((x + 4, y + 6), "".join(s for s, _ in L), font=fo, fill=(0, 0, 0, 200), stroke_width=sw, stroke_fill=(0, 0, 0, 200))
+    im = Image.alpha_composite(im, sh.filter(ImageFilter.GaussianBlur(8))); d = ImageDraw.Draw(im)
+    for x, y, w, L in rows:
+        for s, col in L:
+            d.text((x, y), s, font=fo, fill=col, stroke_width=sw, stroke_fill=(10, 6, 30)); x += d.textlength(s, font=fo)
     im.save(path)
+
+def credit_png(text, path):
+    """장면 출처: 오른쪽 아래 구석에 작게."""
+    im = Image.new("RGBA", (W, H), (0, 0, 0, 0)); d = ImageDraw.Draw(im); fo = F(FM, 26); t = "출처 · " + text
+    w = d.textlength(t, font=fo); x = W - 36 - w; y = H - 52
+    d.rounded_rectangle([x - 16, y - 6, x + w + 16, y + 36], radius=18, fill=(0, 0, 0, 120)); d.text((x, y), t, font=fo, fill=(235, 235, 245, 230))
+    im.save(path)
+
+def sources_png(items, path, series):
+    """마지막 '영상 출처' 화면."""
+    im = Image.new("RGB", (W, H), NAVY); d = ImageDraw.Draw(im)
+    ct(d, 110, "영상 출처", F(FB, 80), Y); fo = F(FM, 38); y = 250
+    for it in items[:14]:
+        ct(d, y, it, fo, WH); y += 52
+    ct(d, max(y + 40, 900), "소중한 영상을 남겨 주신 분들께 감사드립니다 · " + series, F(FM, 34), GR)
+    im.save(path)
+
+def image_scene_png(src, path, mode):
+    """SNS 캡처 등 사진 장면: 가운데 사진(둥근 모서리·그림자) + 같은 사진 크게 흐리게·어둡게. mode: narrow/wide/blur"""
+    from PIL import ImageOps, ImageEnhance
+    img = Image.open(src).convert("RGB")
+    bg = ImageEnhance.Brightness(ImageOps.fit(img, (W, H), Image.LANCZOS).filter(ImageFilter.GaussianBlur(36))).enhance(0.55 if mode == "blur" else 0.62).convert("RGBA")
+    if mode != "blur":
+        bw, bh = (680 if mode == "narrow" else 1500), 960; s = min(bw / img.width, bh / img.height)
+        fw, fh = int(img.width * s), int(img.height * s); fg = img.resize((fw, fh), Image.LANCZOS)
+        x, y = (W - fw) // 2, (H - fh) // 2
+        sh = Image.new("RGBA", (W, H), (0, 0, 0, 0)); ImageDraw.Draw(sh).rounded_rectangle([x - 6, y + 6, x + fw + 6, y + fh + 18], radius=34, fill=(0, 0, 0, 190))
+        bg = Image.alpha_composite(bg, sh.filter(ImageFilter.GaussianBlur(22)))
+        m = Image.new("L", (fw, fh), 0); ImageDraw.Draw(m).rounded_rectangle([0, 0, fw - 1, fh - 1], radius=28, fill=255); bg.paste(fg, (x, y), m)
+    bg.convert("RGB").save(path)
 
 def bubble(d, x, y, w, c, name_size=30, text_size=34):
     """말풍선 하나 그리고 높이 돌려줌."""
@@ -182,18 +240,32 @@ def xf(kind):
     return {"fold": f"custom:expr='{FOLD}'", "unfold": f"custom:expr='{UNFOLD}'"}.get(kind, "fade")
 
 # ---------------- 장면 1개 = ffmpeg 1회 ----------------
+def src_of(sc, base, key="file"):
+    return sc[key] if os.path.isabs(sc[key]) else os.path.join(base, sc[key])
+
 def render_scene(sg, sc, base, tmp, tag, comp):
-    src = sc["file"] if os.path.isabs(sc["file"]) else os.path.join(base, sc["file"])
-    has_a, _ = probe(src); lay = sg["layout"]
+    lay = sg["layout"]; is_img = bool(sc.get("image"))
     L, D, T = sg["lead"], sg["dur"], sg["tail"]; tot = L + D + T; N = round(D * FPS)
-    inputs = ["-ss", f"{sc['in'] - L:.3f}", "-t", f"{tot + 0.5:.3f}", "-i", src]; k = 1
+    if is_img:
+        has_a = False; ip = os.path.join(tmp, f"{tag}_img.png")
+        mode = "blur" if lay == "blur" else ("narrow" if (sc.get("side_left") or sc.get("side_right")) else "wide")
+        image_scene_png(src_of(sc, base, "image"), ip, mode)
+        inputs = ["-loop", "1", "-framerate", str(FPS), "-t", f"{tot + 0.5:.3f}", "-i", ip]
+    else:
+        src = src_of(sc, base); has_a, _ = probe(src)
+        inputs = ["-ss", f"{sc['in'] - L:.3f}", "-t", f"{tot + 0.5:.3f}", "-i", src]
+    k = 1
     def add(args):
         nonlocal k; inputs.extend(args); k += 1; return k - 1
     def loopimg(p, t): return add(["-loop", "1", "-framerate", str(FPS), "-t", f"{t:.3f}", "-i", p])
     pre = f"fps={FPS},trim=start={L:.4f},setpts=PTS-STARTPTS,tpad=stop_mode=clone:stop_duration=2,setsar=1"
     blur = "scale=480:270:force_original_aspect_ratio=increase,crop=480:270,boxblur=10:2,scale=1920:1080,eq=brightness=-0.13:saturation=1.1"
     fl = []
-    if lay == "vertical":
+    if is_img:
+        fl.append(f"[0:v]{pre},format=yuv420p[v0]")
+    elif lay == "blur":
+        fl.append(f"[0:v]{pre},{blur},eq=brightness=-0.12[v0]")
+    elif lay == "vertical":
         mk = loopimg(comp["mask_v"], D + 1); sh = add(["-i", comp["shadow_v"]])
         fl += [f"[0:v]{pre},split[pa][pb]", f"[pa]{blur}[bg]",
                f"[pb]scale={VW}:{H}:force_original_aspect_ratio=increase,crop={VW}:{H},format=yuva420p[fg0]",
@@ -220,8 +292,10 @@ def render_scene(sg, sc, base, tmp, tag, comp):
                 for p, at in bubbles_pngs(v, x, 560, os.path.join(tmp, f"{tag}_{key}")): ov.append((add(["-i", p]), at, D + 1))
             else:
                 p = os.path.join(tmp, f"{tag}_{key}.png"); info_png(v, p, x, 560); ov.append((add(["-i", p]), 0, D + 1))
-    for j, s in enumerate(sc.get("subs", [])):        # [시작, 끝, "문장"] (장면 안에서의 초)
-        p = os.path.join(tmp, f"{tag}_s{j}.png"); sub_png(s[2], p); ov.append((add(["-i", p]), s[0], s[1]))
+    for j, s in enumerate(sc.get("subs", [])):        # [시작, 끝, "문장", (모양)] (장면 안에서의 초)
+        p = os.path.join(tmp, f"{tag}_s{j}.png"); sub_png(s[2], p, s[3] if len(s) > 3 else "sub"); ov.append((add(["-i", p]), s[0], s[1]))
+    if sc.get("credit"):                               # 출처: 오른쪽 아래 구석, 장면 내내
+        p = os.path.join(tmp, f"{tag}_cr.png"); credit_png(sc["credit"], p); ov.append((add(["-i", p]), 0, D + 1))
     cx, cw = {"vertical": (VX + VW + 30, 586), "split": (40, 680)}.get(lay, (1180, 680))
     for j, c in enumerate(sc.get("comments", [])):    # {"at":초, "sec":4, "name":"", "text":""}
         p = os.path.join(tmp, f"{tag}_c{j}.png"); comment_png(c, p, j % 3, cx, cw); ov.append((add(["-i", p]), c["at"], c["at"] + c.get("sec", 4)))
@@ -286,16 +360,43 @@ def build(spec, base):
     shadow_png([(VX, 0, VW, H)], comp["shadow_v"]); shadow_png([SPL_H, (SPL_V[0], 0, VW, H)], comp["shadow_s"])
     # 2) 장면 목록(시간표)
     segs = []
+    def scene_seg(sc, ch, tag, label):
+        if sc.get("image"): sc.setdefault("in", 0); sc.setdefault("out", sc["in"] + sc.get("sec", 4))
+        return {"kind": "scene", "sc": sc, "layout": layout_of(sc), "dur": fr(sc["out"] - sc["in"]), "ch": ch, "tag": tag, "label": label}
+    op = spec.get("opening") or {}
+    if op.get("highlight"):                              # 0~3초 하이라이트: 대사 자막 크게 가운데
+        h = dict(op["highlight"]); d = fr(h["out"] - h["in"])
+        if h.get("line"): h["subs"] = [[0, d + 1, h["line"], "big"]] + h.get("subs", [])
+        segs.append(scene_seg(h, 0, "hl", "오프닝 하이라이트"))
     for ci, ch in enumerate(spec["chapters"], 1):
         style = ch.get("card_style", spec.get("card_style", "overlay"))
         if ci > 1 and ch.get("rewind", spec.get("rewind", False)): segs.append({"kind": "rewind", "layout": segs[-1]["layout"], "dur": fr(0.5), "ch": ci})
         card = os.path.join(tmp, f"card{ci}.png"); card_png(ch, ci, card, series, overlay=(style != "full"))
         if style == "full": segs.append({"kind": "card", "layout": "horizontal", "png": card, "dur": fr(spec.get("card_sec", 2.5)), "ch": ci})
         for si, sc in enumerate(ch["scenes"]):
-            sg = {"kind": "scene", "sc": sc, "layout": layout_of(sc), "dur": fr(sc["out"] - sc["in"]), "ch": ci, "tag": f"sc{ci}_{si}"}
+            sg = scene_seg(sc, ci, f"sc{ci}_{si}", f"{ci}장 {si + 1}번" + (" (사진)" if sc.get("image") else ""))
             if si == 0 and style != "full": sg["card_overlay"] = card; sg["card_sec"] = min(spec.get("overlay_card_sec", 2.0), sg["dur"])
             segs.append(sg)
+    en = spec.get("ending") or {}
+    if en.get("line") or en.get("ask"):                  # 끝 화면 앞: 주제 한 줄 → 질문 자막 (마지막 장면을 흐리게 이어 깔고)
+        last = [s for s in segs if s["kind"] == "scene"][-1]["sc"]
+        ls = fr(en.get("line_sec", 3)) if en.get("line") else 0; as_ = fr(en.get("ask_sec", 3.5)) if en.get("ask") else 0; d = ls + as_
+        o = {"layout": "blur", "volume": en.get("volume", 0.6), "subs": []}
+        if last.get("image"): o.update(image=last["image"], **{"in": 0, "out": d})
+        else:
+            sd = probe(src_of(last, base))[1]; st = last["out"] if sd >= last["out"] + d + 0.6 else max(0.0, min(last["in"], sd - d - 0.6))
+            o.update(file=last["file"], **{"in": st, "out": st + d})
+        if ls: o["subs"].append([0, ls, en["line"], "big"])
+        if as_: o["subs"].append([ls, d + 1, en["ask"], "ask"])
+        segs.append(scene_seg(o, None, "outro", "엔딩 질문"))
     segs.append({"kind": "end", "layout": "horizontal", "dur": fr(spec.get("end_sec", 8)), "ch": None})
+    credits = []
+    for s in [op.get("highlight") or {}] + [sc for ch in spec["chapters"] for sc in ch["scenes"]]:
+        if s.get("credit") and s["credit"] not in credits: credits.append(s["credit"])
+    for s in spec.get("sources", []):
+        if s not in credits: credits.append(s)
+    if credits and spec.get("sources_screen", True):     # 마지막 '영상 출처' 화면 4초
+        segs.append({"kind": "credits", "layout": "horizontal", "dur": fr(spec.get("sources_sec", 4)), "ch": None})
     for i, sg in enumerate(segs):     # 전환 종류·길이
         sg.setdefault("lead", 0.0); sg.setdefault("tail", 0.0)
         if i == 0: sg["join"] = ("cut", 0.0); continue
@@ -310,25 +411,38 @@ def build(spec, base):
         sg["join"] = j
     for i, sg in enumerate(segs):
         sg["tin"] = sg["join"][1]; sg["tout"] = segs[i + 1]["join"][1] if i + 1 < len(segs) else 0.0
-        if sg["kind"] == "scene":
-            sc = sg["sc"]; _, sdur = probe(sc["file"] if os.path.isabs(sc["file"]) else os.path.join(base, sc["file"]))
+        if sg["kind"] == "scene" and not sg["sc"].get("image"):
+            sc = sg["sc"]; _, sdur = probe(src_of(sc, base))
             if i > 0: sg["lead"] = max(0.0, min(sc.get("audio_lead", 0), sc["in"], segs[i - 1]["dur"] / 2))
             sg["tail"] = max(0.0, min(sc.get("audio_tail", 0), (sdur - sc["out"]) if sdur else 0, (segs[i + 1]["dur"] / 2) if i + 1 < len(segs) else 0))
     t = 0.0
     for i, sg in enumerate(segs):
         if i: t += segs[i - 1]["dur"] - sg["join"][1]
         sg["S"] = t
-    total = segs[-1]["S"] + segs[-1]["dur"]; E = segs[-1]["S"]   # E = 끝 화면 시작
+    total = segs[-1]["S"] + segs[-1]["dur"]
+    E = next(s["S"] for s in segs if s["kind"] == "end")   # E = 끝 화면 시작
+    # 오프닝 질문: 25초 근처(노란 강조, 위쪽) — 영상 전체 위에 얹음
+    gov = []
+    if op.get("question"):
+        h0 = segs[0]["dur"] if op.get("highlight") else 0
+        qa = max(h0 + 1, min(op.get("question_at", 25), E - 5)); qd = op.get("question_sec", 4)
+        qp = os.path.join(tmp, "op_question.png"); sub_png(op["question"], qp, "question"); gov.append((qp, qa, qa + qd, op["question"]))
     # 3) 장면마다 ffmpeg 1회
-    srt = []
+    srt = [(a, b, t) for _, a, b, t in gov]
+    endcfg = dict(spec.get("end", {}))
+    for k2 in ("next", "next_date"):
+        if en.get(k2): endcfg.setdefault(k2, en[k2])
     for i, sg in enumerate(segs):
         if sg["kind"] == "scene":
             render_scene(sg, sg["sc"], base, tmp, sg["tag"], comp)
-            srt += [(sg["S"] + s[0], sg["S"] + s[1], s[2]) for s in sg["sc"].get("subs", [])]
+            srt += [(sg["S"] + s[0], sg["S"] + min(s[1], sg["dur"]), plain(s[2])) for s in sg["sc"].get("subs", [])]
         elif sg["kind"] == "rewind": render_rewind(segs[i - 1], sg, tmp, f"rw{i}")
         elif sg["kind"] == "card": sg["v"] = os.path.join(tmp, f"card{sg['ch']}.mp4"); render_still(sg["png"], sg["dur"], sg["v"])
+        elif sg["kind"] == "credits":
+            cp = os.path.join(tmp, "sources.png"); sources_png(credits, cp, series); sg["v"] = os.path.join(tmp, "sources.mp4"); render_still(cp, sg["dur"], sg["v"])
         else:
-            ep = os.path.join(tmp, "end.png"); end_png(spec.get("end", {}), ep, series); sg["v"] = os.path.join(tmp, "end.mp4"); render_still(ep, sg["dur"], sg["v"])
+            ep = os.path.join(tmp, "end.png"); end_png(endcfg, ep, series); sg["v"] = os.path.join(tmp, "end.mp4"); render_still(ep, sg["dur"], sg["v"])
+    srt.sort()
     # 4) 소리: 장면 소리를 제자리(J/L컷 포함)에 놓고 섞기 + 내레이션 덕킹 + 배경음악
     nars = [dict(n) for n in (spec.get("narration") or [])] if isinstance(spec.get("narration"), list) else ([dict(spec["narration"])] if spec.get("narration") else [])
     for sg in segs:
