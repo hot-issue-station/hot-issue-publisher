@@ -264,8 +264,11 @@ def thumb_v2(photo_rgb, cfg, size, out):
         t = text_img(cfg["tag"], 40 * k * (1.15 if W > H else 1), W, base=WH, stroke=0, font=FB, box=(230, 30, 40, 240), shadow=False)
         img.alpha_composite(t, (int(30 * k), int(30 * k)))
     em = cfg.get("emph"); em = [em] if isinstance(em, str) else em    # 강조할 말(예: "용인도 서울") → 노랑
-    q = "“" + cfg["quote"] + "”"; qi = text_img(q, (110 if W < H else 92) * k * (1.15 if W > H else 1), W * 0.92, base=WH, hi=Y, emph=em)
-    hk = text_img(cfg.get("hook", ""), (78 if W < H else 64) * k * (1.15 if W > H else 1), W * 0.92, base=Y, hi=WH) if cfg.get("hook") else None
+    if cfg.get("quote"):
+        q = "“" + cfg["quote"] + "”"; qi = text_img(q, (110 if W < H else 92) * k * (1.15 if W > H else 1), W * 0.92, base=WH, hi=Y, emph=em)
+        hk = text_img(cfg.get("hook", ""), (78 if W < H else 64) * k * (1.15 if W > H else 1), W * 0.92, base=Y, hi=WH) if cfg.get("hook") else None
+    else:   # 실제 대사가 없는 무대 쇼츠: 한 줄(hook)을 크게, 강조 말만 노랑
+        qi = text_img(cfg.get("hook", ""), (110 if W < H else 92) * k * (1.15 if W > H else 1), W * 0.92, base=WH, hi=Y, emph=em); hk = None
     yb = H - int(70 * k) - qi.height - (hk.height if hk else 0)
     if hk: img.alpha_composite(hk, ((W - hk.width) // 2, yb)); yb += hk.height
     img.alpha_composite(qi, ((W - qi.width) // 2, yb))
