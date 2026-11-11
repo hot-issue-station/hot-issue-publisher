@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-11-11T15:45+09:00",
+  "checked_at": "2026-11-11T15:55+09:00",
   "criteria": "대표 기준(11/11): 검증된 영상 — 조회수가 높고 좋아요·댓글이 많은 것을 테마로 묶어 배치. 점수 = 0.6×조회수점수(log10 조회수를 0~1로) + 0.4×반응률점수((좋아요+댓글)/조회수를 0~1로). 댓글 수는 아직 확인 못 해 현재 반응률은 좋아요/조회수만으로 계산(임시). 조회수·좋아요는 Return YouTube Dislike 공개 API 값(유튜브 시청 페이지에는 숫자가 표시되지 않음).",
   "stats_source_note": "RYD API는 캐시 값이라 실제 유튜브 화면 숫자와 다를 수 있음. dateCreated는 기록 생성 시각이며 숫자 갱신 시각이 아님.",
   "themes": [
@@ -22,12 +22,14 @@
           "engagement_rate": 0.0164,
           "engagement_basis": "좋아요/조회수(댓글 미포함, 임시)",
           "score": 0.629,
-          "checked_at": "2026-11-11T15:45+09:00",
+          "checked_at": "2026-11-11T15:55+09:00",
           "sources": {
             "stats": "https://returnyoutubedislikeapi.com/votes?videoId=ajhEFz1zNMQ",
             "title_channel": "https://noembed.com/embed?url=https://www.youtube.com/watch?v=ajhEFz1zNMQ"
           },
           "reason": "테마 최고 조회수, 역주행 시기 엠카 스페셜 무대",
+          "start": null,
+          "start_note": "처음부터 재생",
           "kind": "long",
           "kind_note": "형식 이름(무대·브이로그·라이브 등)으로 판단, 길이 미확인"
         },
@@ -46,12 +48,14 @@
           "engagement_rate": 0.0199,
           "engagement_basis": "좋아요/조회수(댓글 미포함, 임시)",
           "score": 0.611,
-          "checked_at": "2026-11-11T15:45+09:00",
+          "checked_at": "2026-11-11T15:55+09:00",
           "sources": {
             "stats": "https://returnyoutubedislikeapi.com/votes?videoId=Esd-KkxROxA",
             "title_channel": "https://www.youtube.com/watch?v=Esd-KkxROxA"
           },
           "reason": "컴백 무대, 반응률 2%로 무대 영상 중 높음",
+          "start": null,
+          "start_note": "처음부터 재생",
           "kind": "long",
           "kind_note": "형식 이름(무대·브이로그·라이브 등)으로 판단, 길이 미확인"
         },
@@ -70,12 +74,14 @@
           "engagement_rate": 0.0302,
           "engagement_basis": "좋아요/조회수(댓글 미포함, 임시)",
           "score": 0.541,
-          "checked_at": "2026-11-11T15:45+09:00",
+          "checked_at": "2026-11-11T15:55+09:00",
           "sources": {
             "stats": "https://returnyoutubedislikeapi.com/votes?videoId=rzfjou7vPP0",
             "title_channel": "https://noembed.com/embed?url=https://www.youtube.com/watch?v=rzfjou7vPP0"
           },
           "reason": "인기가요 1위 앵콜, 반응률 3.0%로 무대 영상 중 최고",
+          "start": null,
+          "start_note": "처음부터 재생",
           "kind": "long",
           "kind_note": "형식 이름(무대·브이로그·라이브 등)으로 판단, 길이 미확인"
         },
@@ -94,12 +100,14 @@
           "engagement_rate": 0.0194,
           "engagement_basis": "좋아요/조회수(댓글 미포함, 임시)",
           "score": 0.516,
-          "checked_at": "2026-11-11T15:45+09:00",
+          "checked_at": "2026-11-11T15:55+09:00",
           "sources": {
             "stats": "https://returnyoutubedislikeapi.com/votes?videoId=KRpt7OF4zso",
             "title_channel": "https://noembed.com/embed?url=https://www.youtube.com/watch?v=KRpt7OF4zso"
           },
           "reason": "밴드 라이브 버전, 라이브 실력을 보여 주는 대표 영상",
+          "start": null,
+          "start_note": "처음부터 재생",
           "kind": "long",
           "kind_note": "형식 이름(무대·브이로그·라이브 등)으로 판단, 길이 미확인"
         },
@@ -118,12 +126,14 @@
           "engagement_rate": 0.0141,
           "engagement_basis": "좋아요/조회수(댓글 미포함, 임시)",
           "score": 0.412,
-          "checked_at": "2026-11-11T15:45+09:00",
+          "checked_at": "2026-11-11T15:55+09:00",
           "sources": {
             "stats": "https://returnyoutubedislikeapi.com/votes?videoId=QJeH6cRtdJA",
             "title_channel": "https://noembed.com/embed?url=https://www.youtube.com/watch?v=QJeH6cRtdJA"
           },
           "reason": "최근(10/28) 무대인데 이미 100만 돌파",
+          "start": null,
+          "start_note": "처음부터 재생",
           "kind": "long",
           "kind_note": "형식 이름(무대·브이로그·라이브 등)으로 판단, 길이 미확인"
         }
@@ -148,12 +158,14 @@
           "engagement_rate": 0.0175,
           "engagement_basis": "좋아요/조회수(댓글 미포함, 임시)",
           "score": 0.76,
-          "checked_at": "2026-11-11T15:45+09:00",
+          "checked_at": "2026-11-11T15:55+09:00",
           "sources": {
             "stats": "https://returnyoutubedislikeapi.com/votes?videoId=OrCOflk2QmQ",
             "title_channel": "https://www.youtube.com/watch?v=OrCOflk2QmQ"
           },
           "reason": "채널 1위 영상, '거제 야호' 화제의 출발점",
+          "start": null,
+          "start_note": "처음부터 재생",
           "kind": "long",
           "kind_note": "형식 이름(무대·브이로그·라이브 등)으로 판단, 길이 미확인"
         },
@@ -172,12 +184,14 @@
           "engagement_rate": 0.0165,
           "engagement_basis": "좋아요/조회수(댓글 미포함, 임시)",
           "score": 0.73,
-          "checked_at": "2026-11-11T15:45+09:00",
+          "checked_at": "2026-11-11T15:55+09:00",
           "sources": {
             "stats": "https://returnyoutubedislikeapi.com/votes?videoId=5JZ5biQ_hMI",
             "title_channel": "https://noembed.com/embed?url=https://www.youtube.com/watch?v=5JZ5biQ_hMI"
           },
           "reason": "1,380만 조회, 반응률 1.65%",
+          "start": null,
+          "start_note": "처음부터 재생",
           "kind": "long",
           "kind_note": "형식 이름(무대·브이로그·라이브 등)으로 판단, 길이 미확인"
         },
@@ -196,12 +210,14 @@
           "engagement_rate": 0.0172,
           "engagement_basis": "좋아요/조회수(댓글 미포함, 임시)",
           "score": 0.713,
-          "checked_at": "2026-11-11T15:45+09:00",
+          "checked_at": "2026-11-11T15:55+09:00",
           "sources": {
             "stats": "https://returnyoutubedislikeapi.com/votes?videoId=FcMaC8akSU8",
             "title_channel": "https://noembed.com/embed?url=https://www.youtube.com/watch?v=FcMaC8akSU8"
           },
           "reason": "미나미 '갸루' 캐릭터 대표 영상, 반응률 1.72%",
+          "start": null,
+          "start_note": "처음부터 재생",
           "kind": "long",
           "kind_note": "형식 이름(무대·브이로그·라이브 등)으로 판단, 길이 미확인"
         },
@@ -220,12 +236,14 @@
           "engagement_rate": 0.0169,
           "engagement_basis": "좋아요/조회수(댓글 미포함, 임시)",
           "score": 0.698,
-          "checked_at": "2026-11-11T15:45+09:00",
+          "checked_at": "2026-11-11T15:55+09:00",
           "sources": {
             "stats": "https://returnyoutubedislikeapi.com/votes?videoId=JJBf0jCcfrQ",
             "title_channel": "https://www.youtube.com/watch?v=JJBf0jCcfrQ"
           },
           "reason": "1,000만 돌파, 반응률 1.69%",
+          "start": null,
+          "start_note": "처음부터 재생",
           "kind": "long",
           "kind_note": "형식 이름(무대·브이로그·라이브 등)으로 판단, 길이 미확인"
         },
@@ -244,12 +262,14 @@
           "engagement_rate": 0.0125,
           "engagement_basis": "좋아요/조회수(댓글 미포함, 임시)",
           "score": 0.683,
-          "checked_at": "2026-11-11T15:45+09:00",
+          "checked_at": "2026-11-11T15:55+09:00",
           "sources": {
             "stats": "https://returnyoutubedislikeapi.com/votes?videoId=NS7tSrMrWsc",
             "title_channel": "https://www.youtube.com/watch?v=NS7tSrMrWsc"
           },
           "reason": "사투리 시리즈 1편, 채널 초기 대표작",
+          "start": null,
+          "start_note": "처음부터 재생",
           "kind": "long",
           "kind_note": "형식 이름(무대·브이로그·라이브 등)으로 판단, 길이 미확인"
         }
@@ -257,7 +277,7 @@
     },
     {
       "id": "tv",
-      "name": "지상파 예능",
+      "name": "TV 예능",
       "videos": [
         {
           "video_id": "3fRTHjtYAes",
@@ -274,36 +294,14 @@
           "engagement_rate": 0.0073,
           "engagement_basis": "좋아요/조회수(댓글 미포함, 임시)",
           "score": 0.44,
-          "checked_at": "2026-11-11T15:45+09:00",
+          "checked_at": "2026-11-11T15:55+09:00",
           "sources": {
             "stats": "https://returnyoutubedislikeapi.com/votes?videoId=3fRTHjtYAes",
             "title_channel": "https://noembed.com/embed?url=https://www.youtube.com/watch?v=3fRTHjtYAes"
           },
           "reason": "전참시 리센느 특집 2시간 통합본, 좋아요가 테마 중 가장 많음",
-          "kind": "long",
-          "kind_note": "형식 이름(무대·브이로그·라이브 등)으로 판단, 길이 미확인"
-        },
-        {
-          "video_id": "pWTBJV0OrqU",
-          "url": "https://www.youtube.com/watch?v=pWTBJV0OrqU",
-          "title": "[전지적 참견 시점 선공개] 최초 단독 게스트, 리센느 야호⭐ 멤버 전원 유행어가 있는 리센느 역시 오이쉬에~, MBC 260808 방송",
-          "channel": "MBCentertainment",
-          "official": "방송사 공식",
-          "published": null,
-          "published_note": "확인 필요(제목의 6자리 숫자는 방송일이며 게시일 아님)",
-          "views": 245400,
-          "likes": 7540,
-          "comments": null,
-          "comments_note": "확인 필요",
-          "engagement_rate": 0.0307,
-          "engagement_basis": "좋아요/조회수(댓글 미포함, 임시)",
-          "score": 0.418,
-          "checked_at": "2026-11-11T15:45+09:00",
-          "sources": {
-            "stats": "https://returnyoutubedislikeapi.com/votes?videoId=pWTBJV0OrqU",
-            "title_channel": "https://noembed.com/embed?url=https://www.youtube.com/watch?v=pWTBJV0OrqU"
-          },
-          "reason": "조회수는 낮지만 반응률 3.1%로 테마 최고",
+          "start": null,
+          "start_note": "처음부터 재생",
           "kind": "long",
           "kind_note": "형식 이름(무대·브이로그·라이브 등)으로 판단, 길이 미확인"
         },
@@ -322,12 +320,14 @@
           "engagement_rate": 0.0031,
           "engagement_basis": "좋아요/조회수(댓글 미포함, 임시)",
           "score": 0.405,
-          "checked_at": "2026-11-11T15:45+09:00",
+          "checked_at": "2026-11-11T15:55+09:00",
           "sources": {
             "stats": "https://returnyoutubedislikeapi.com/votes?videoId=v-6sJD4COF8",
             "title_channel": "https://noembed.com/embed?url=https://www.youtube.com/watch?v=v-6sJD4COF8"
           },
           "reason": "테마 최고 조회수(308만), 음방 대기실 비하인드",
+          "start": null,
+          "start_note": "처음부터 재생",
           "kind": "long",
           "kind_note": "형식 이름(무대·브이로그·라이브 등)으로 판단, 길이 미확인"
         },
@@ -346,12 +346,92 @@
           "engagement_rate": 0.0037,
           "engagement_basis": "좋아요/조회수(댓글 미포함, 임시)",
           "score": 0.353,
-          "checked_at": "2026-11-11T15:45+09:00",
+          "checked_at": "2026-11-11T15:55+09:00",
           "sources": {
             "stats": "https://returnyoutubedislikeapi.com/votes?videoId=QI_aX8GPRvY",
             "title_channel": "https://noembed.com/embed?url=https://www.youtube.com/watch?v=QI_aX8GPRvY"
           },
           "reason": "MBC 공식 채널, 전참시 리센느 특집 회식 편",
+          "start": null,
+          "start_note": "처음부터 재생",
+          "kind": "long",
+          "kind_note": "형식 이름(무대·브이로그·라이브 등)으로 판단, 길이 미확인"
+        },
+        {
+          "video_id": "1h4v7pLBwm0",
+          "url": "https://www.youtube.com/watch?v=1h4v7pLBwm0",
+          "title": "[#간식게임] 눈이 부신 리센느를 숨김없이 보여줘✨ 대세 리센느와 함께한 여름 방학🏖️ #highlight#놀라운토요일 | amazingsaturday EP.430",
+          "channel": "놀라운 토요일 Amazing Saturday",
+          "official": "방송사 공식(tvN)",
+          "published": null,
+          "published_note": "확인 필요(제목의 6자리 숫자는 방송일이며 게시일 아님)",
+          "views": 650568,
+          "likes": 7659,
+          "comments": null,
+          "comments_note": "확인 필요",
+          "engagement_rate": 0.0118,
+          "engagement_basis": "좋아요/조회수(댓글 미포함, 임시)",
+          "score": 0.32,
+          "checked_at": "2026-11-11T15:55+09:00",
+          "sources": {
+            "stats": "https://returnyoutubedislikeapi.com/votes?videoId=1h4v7pLBwm0",
+            "title_channel": "https://noembed.com/embed?url=https://www.youtube.com/watch?v=1h4v7pLBwm0"
+          },
+          "reason": "tvN 놀토 리센느 편, 케이블 예능 중 최고 조회수",
+          "start": null,
+          "start_note": "처음부터 재생",
+          "kind": "long",
+          "kind_note": "형식 이름(무대·브이로그·라이브 등)으로 판단, 길이 미확인"
+        },
+        {
+          "video_id": "KZKQS4hjIYs",
+          "url": "https://www.youtube.com/watch?v=KZKQS4hjIYs",
+          "title": "[전참시] 집에서도 에너지 넘치는 요즘 아이돌의 숙소 몰아보기 MBC260711방송 #전지적참견시점 #리센느 #올데이프로젝트 #아일릿",
+          "channel": "픽잇 :Pick it",
+          "official": "공식 여부 확인 필요",
+          "published": null,
+          "published_note": "확인 필요(제목의 6자리 숫자는 방송일이며 게시일 아님)",
+          "views": 804540,
+          "likes": 4180,
+          "comments": null,
+          "comments_note": "확인 필요",
+          "engagement_rate": 0.0052,
+          "engagement_basis": "좋아요/조회수(댓글 미포함, 임시)",
+          "score": 0.272,
+          "checked_at": "2026-11-11T15:55+09:00",
+          "sources": {
+            "stats": "https://returnyoutubedislikeapi.com/votes?videoId=KZKQS4hjIYs",
+            "title_channel": "https://noembed.com/embed?url=https://www.youtube.com/watch?v=KZKQS4hjIYs"
+          },
+          "reason": "대표 결정(15:4x)으로 포함, 여러 그룹 숙소 합본 중 리센느 장면",
+          "start": null,
+          "start_note": "리센느 장면 시작 시각 확인 필요",
+          "kind": "long",
+          "kind_note": "형식 이름(무대·브이로그·라이브 등)으로 판단, 길이 미확인"
+        },
+        {
+          "video_id": "P0LNFoDtf74",
+          "url": "https://www.youtube.com/watch?v=P0LNFoDtf74",
+          "title": "💚안녕하세요원이입니다아형나왔습니다잘부탁드립니다💚 리센느(RESCENE) 원이 모아보기｜아는 형님｜JTBC 260620 방송",
+          "channel": "JTBC Voyage",
+          "official": "방송사 공식(JTBC)",
+          "published": null,
+          "published_note": "확인 필요(제목의 6자리 숫자는 방송일이며 게시일 아님)",
+          "views": 316145,
+          "likes": 3691,
+          "comments": null,
+          "comments_note": "확인 필요",
+          "engagement_rate": 0.0117,
+          "engagement_basis": "좋아요/조회수(댓글 미포함, 임시)",
+          "score": 0.235,
+          "checked_at": "2026-11-11T15:55+09:00",
+          "sources": {
+            "stats": "https://returnyoutubedislikeapi.com/votes?videoId=P0LNFoDtf74",
+            "title_channel": "https://noembed.com/embed?url=https://www.youtube.com/watch?v=P0LNFoDtf74"
+          },
+          "reason": "JTBC 아는형님 원이 모아보기, 안원잘부와 이어지는 영상",
+          "start": null,
+          "start_note": "처음부터 재생",
           "kind": "long",
           "kind_note": "형식 이름(무대·브이로그·라이브 등)으로 판단, 길이 미확인"
         }
@@ -376,12 +456,14 @@
           "engagement_rate": 0.0267,
           "engagement_basis": "좋아요/조회수(댓글 미포함, 임시)",
           "score": 0.592,
-          "checked_at": "2026-11-11T15:45+09:00",
+          "checked_at": "2026-11-11T15:55+09:00",
           "sources": {
             "stats": "https://returnyoutubedislikeapi.com/votes?videoId=SW7M6MdlrlU",
             "title_channel": "https://noembed.com/embed?url=https://www.youtube.com/watch?v=SW7M6MdlrlU"
           },
           "reason": "테마 최고 조회수·반응률 2.7%, 미나미 보컬",
+          "start": null,
+          "start_note": "처음부터 재생",
           "kind": "long",
           "kind_note": "형식 이름(무대·브이로그·라이브 등)으로 판단, 길이 미확인"
         },
@@ -400,12 +482,14 @@
           "engagement_rate": 0.0293,
           "engagement_basis": "좋아요/조회수(댓글 미포함, 임시)",
           "score": 0.574,
-          "checked_at": "2026-11-11T15:45+09:00",
+          "checked_at": "2026-11-11T15:55+09:00",
           "sources": {
             "stats": "https://returnyoutubedislikeapi.com/votes?videoId=17t9izNAYVE",
             "title_channel": "https://noembed.com/embed?url=https://www.youtube.com/watch?v=17t9izNAYVE"
           },
           "reason": "'거제 야호' 화제를 다룬 문명특급 출연",
+          "start": null,
+          "start_note": "처음부터 재생",
           "kind": "long",
           "kind_note": "형식 이름(무대·브이로그·라이브 등)으로 판단, 길이 미확인"
         },
@@ -424,12 +508,14 @@
           "engagement_rate": 0.028,
           "engagement_basis": "좋아요/조회수(댓글 미포함, 임시)",
           "score": 0.558,
-          "checked_at": "2026-11-11T15:45+09:00",
+          "checked_at": "2026-11-11T15:55+09:00",
           "sources": {
             "stats": "https://returnyoutubedislikeapi.com/votes?videoId=a_c2mBMKuBE",
             "title_channel": "https://noembed.com/embed?url=https://www.youtube.com/watch?v=a_c2mBMKuBE"
           },
           "reason": "리브 단독 출연, 반응률 2.8%",
+          "start": null,
+          "start_note": "처음부터 재생",
           "kind": "long",
           "kind_note": "형식 이름(무대·브이로그·라이브 등)으로 판단, 길이 미확인"
         },
@@ -448,12 +534,14 @@
           "engagement_rate": 0.0193,
           "engagement_basis": "좋아요/조회수(댓글 미포함, 임시)",
           "score": 0.318,
-          "checked_at": "2026-11-11T15:45+09:00",
+          "checked_at": "2026-11-11T15:55+09:00",
           "sources": {
             "stats": "https://returnyoutubedislikeapi.com/votes?videoId=4gqBmjnfJDc",
             "title_channel": "https://noembed.com/embed?url=https://www.youtube.com/watch?v=4gqBmjnfJDc"
           },
           "reason": "다른 유튜버 채널 출연 사례(규모는 작음)",
+          "start": null,
+          "start_note": "처음부터 재생",
           "kind": "long",
           "kind_note": "형식 이름(무대·브이로그·라이브 등)으로 판단, 길이 미확인"
         }
@@ -478,12 +566,14 @@
           "engagement_rate": 0.0389,
           "engagement_basis": "좋아요/조회수(댓글 미포함, 임시)",
           "score": 0.573,
-          "checked_at": "2026-11-11T15:45+09:00",
+          "checked_at": "2026-11-11T15:55+09:00",
           "sources": {
             "stats": "https://returnyoutubedislikeapi.com/votes?videoId=xclVi9zCFdY",
             "title_channel": "https://noembed.com/embed?url=https://www.youtube.com/watch?v=xclVi9zCFdY"
           },
           "reason": "반응률 3.9%로 전체 최고 수준",
+          "start": null,
+          "start_note": "처음부터 재생",
           "kind": "long",
           "kind_note": "형식 이름(무대·브이로그·라이브 등)으로 판단, 길이 미확인"
         },
@@ -502,12 +592,14 @@
           "engagement_rate": 0.0283,
           "engagement_basis": "좋아요/조회수(댓글 미포함, 임시)",
           "score": 0.511,
-          "checked_at": "2026-11-11T15:45+09:00",
+          "checked_at": "2026-11-11T15:55+09:00",
           "sources": {
             "stats": "https://returnyoutubedislikeapi.com/votes?videoId=97YE7zPrON8",
             "title_channel": "https://noembed.com/embed?url=https://www.youtube.com/watch?v=97YE7zPrON8"
           },
           "reason": "미나미 일본 휴가, 반응률 2.8%",
+          "start": null,
+          "start_note": "처음부터 재생",
           "kind": "long",
           "kind_note": "형식 이름(무대·브이로그·라이브 등)으로 판단, 길이 미확인"
         },
@@ -526,12 +618,14 @@
           "engagement_rate": 0.0217,
           "engagement_basis": "좋아요/조회수(댓글 미포함, 임시)",
           "score": 0.508,
-          "checked_at": "2026-11-11T15:45+09:00",
+          "checked_at": "2026-11-11T15:55+09:00",
           "sources": {
             "stats": "https://returnyoutubedislikeapi.com/votes?videoId=faDPwuKSOM4",
             "title_channel": "https://noembed.com/embed?url=https://www.youtube.com/watch?v=faDPwuKSOM4"
           },
           "reason": "공식 브이로그 중 최고 조회수",
+          "start": null,
+          "start_note": "처음부터 재생",
           "kind": "long",
           "kind_note": "형식 이름(무대·브이로그·라이브 등)으로 판단, 길이 미확인"
         },
@@ -550,12 +644,14 @@
           "engagement_rate": 0.0262,
           "engagement_basis": "좋아요/조회수(댓글 미포함, 임시)",
           "score": 0.502,
-          "checked_at": "2026-11-11T15:45+09:00",
+          "checked_at": "2026-11-11T15:55+09:00",
           "sources": {
             "stats": "https://returnyoutubedislikeapi.com/votes?videoId=V-Tz0gvDiG4",
             "title_channel": "https://noembed.com/embed?url=https://www.youtube.com/watch?v=V-Tz0gvDiG4"
           },
           "reason": "두 멤버 일상 케미, 반응률 2.6%",
+          "start": null,
+          "start_note": "처음부터 재생",
           "kind": "long",
           "kind_note": "형식 이름(무대·브이로그·라이브 등)으로 판단, 길이 미확인"
         }
@@ -580,12 +676,40 @@
           "engagement_rate": 0.0257,
           "engagement_basis": "좋아요/조회수(댓글 미포함, 임시)",
           "score": 0.563,
-          "checked_at": "2026-11-11T15:45+09:00",
+          "checked_at": "2026-11-11T15:55+09:00",
           "sources": {
             "stats": "https://returnyoutubedislikeapi.com/votes?videoId=fCrQXP_2u3U",
             "title_channel": "https://noembed.com/embed?url=https://www.youtube.com/watch?v=fCrQXP_2u3U"
           },
           "reason": "리브 생일 라이브, 생일 콘텐츠 중 압도적 조회수",
+          "start": null,
+          "start_note": "처음부터 재생",
+          "kind": "long",
+          "kind_note": "형식 이름(무대·브이로그·라이브 등)으로 판단, 길이 미확인"
+        },
+        {
+          "video_id": "i3BCs-IcIl4",
+          "url": "https://www.youtube.com/watch?v=i3BCs-IcIl4",
+          "title": "HAPPY WONI DAY 🎂💚",
+          "channel": "RESCENE",
+          "official": "리센느 공식",
+          "published": null,
+          "published_note": "확인 필요(제목의 6자리 숫자는 방송일이며 게시일 아님)",
+          "views": 195400,
+          "likes": 6418,
+          "comments": null,
+          "comments_note": "확인 필요",
+          "engagement_rate": 0.0328,
+          "engagement_basis": "좋아요/조회수(댓글 미포함, 임시)",
+          "score": 0.415,
+          "checked_at": "2026-11-11T15:55+09:00",
+          "sources": {
+            "stats": "https://returnyoutubedislikeapi.com/votes?videoId=i3BCs-IcIl4",
+            "title_channel": "https://noembed.com/embed?url=https://www.youtube.com/watch?v=i3BCs-IcIl4"
+          },
+          "reason": "원이 생일 공식 콘텐츠, 반응률 3.3%",
+          "start": null,
+          "start_note": "처음부터 재생",
           "kind": "long",
           "kind_note": "형식 이름(무대·브이로그·라이브 등)으로 판단, 길이 미확인"
         },
@@ -604,12 +728,14 @@
           "engagement_rate": 0.0313,
           "engagement_basis": "좋아요/조회수(댓글 미포함, 임시)",
           "score": 0.315,
-          "checked_at": "2026-11-11T15:45+09:00",
+          "checked_at": "2026-11-11T15:55+09:00",
           "sources": {
             "stats": "https://returnyoutubedislikeapi.com/votes?videoId=zO7ndCNpJfs",
             "title_channel": "https://noembed.com/embed?url=https://www.youtube.com/watch?v=zO7ndCNpJfs"
           },
           "reason": "메이 생일 공식 콘텐츠, 반응률 3.1%",
+          "start": null,
+          "start_note": "처음부터 재생",
           "kind": "long",
           "kind_note": "형식 이름(무대·브이로그·라이브 등)으로 판단, 길이 미확인"
         }
@@ -716,7 +842,7 @@
     {
       "video_id": "QI_aX8GPRvY",
       "url": "https://www.youtube.com/watch?v=QI_aX8GPRvY",
-      "theme": "지상파 예능",
+      "theme": "TV 예능",
       "check": [
         "댓글 수",
         "게시일",
@@ -726,7 +852,7 @@
     {
       "video_id": "v-6sJD4COF8",
       "url": "https://www.youtube.com/watch?v=v-6sJD4COF8",
-      "theme": "지상파 예능",
+      "theme": "TV 예능",
       "check": [
         "댓글 수",
         "게시일",
@@ -737,7 +863,7 @@
     {
       "video_id": "3fRTHjtYAes",
       "url": "https://www.youtube.com/watch?v=3fRTHjtYAes",
-      "theme": "지상파 예능",
+      "theme": "TV 예능",
       "check": [
         "댓글 수",
         "게시일",
@@ -746,9 +872,30 @@
       ]
     },
     {
-      "video_id": "pWTBJV0OrqU",
-      "url": "https://www.youtube.com/watch?v=pWTBJV0OrqU",
-      "theme": "지상파 예능",
+      "video_id": "KZKQS4hjIYs",
+      "url": "https://www.youtube.com/watch?v=KZKQS4hjIYs",
+      "theme": "TV 예능",
+      "check": [
+        "댓글 수",
+        "게시일",
+        "채널 공식 여부",
+        "조회수·좋아요 화면값 대조(RYD 캐시)"
+      ]
+    },
+    {
+      "video_id": "1h4v7pLBwm0",
+      "url": "https://www.youtube.com/watch?v=1h4v7pLBwm0",
+      "theme": "TV 예능",
+      "check": [
+        "댓글 수",
+        "게시일",
+        "조회수·좋아요 화면값 대조(RYD 캐시)"
+      ]
+    },
+    {
+      "video_id": "P0LNFoDtf74",
+      "url": "https://www.youtube.com/watch?v=P0LNFoDtf74",
+      "theme": "TV 예능",
       "check": [
         "댓글 수",
         "게시일",
@@ -847,6 +994,16 @@
       ]
     },
     {
+      "video_id": "i3BCs-IcIl4",
+      "url": "https://www.youtube.com/watch?v=i3BCs-IcIl4",
+      "theme": "생일 이벤트",
+      "check": [
+        "댓글 수",
+        "게시일",
+        "조회수·좋아요 화면값 대조(RYD 캐시)"
+      ]
+    },
+    {
       "video_id": "zO7ndCNpJfs",
       "url": "https://www.youtube.com/watch?v=zO7ndCNpJfs",
       "theme": "생일 이벤트",
@@ -861,7 +1018,7 @@
       "url": "https://www.youtube.com/@RESCENE_official/search?query=생일",
       "theme": "생일 이벤트",
       "check": [
-        "원이·미나미·제나 생일 공식 콘텐츠 찾기(현재 2편뿐)",
+        "미나미·제나 생일 공식 콘텐츠 찾기(검색 3번으로 못 찾음, 팬 채널 SCENEBAG 영상은 조회수가 낮아 제외)",
         "video_id·조회수·좋아요·댓글"
       ]
     },
@@ -884,9 +1041,25 @@
     {
       "video_id": "KZKQS4hjIYs",
       "url": "https://www.youtube.com/watch?v=KZKQS4hjIYs",
-      "theme": "지상파 예능(후보)",
+      "theme": "TV 예능",
       "check": [
-        "픽잇 채널 공식 여부, 여러 그룹 합본이라 넣을지 대표 판단(조회수 804,540·좋아요 4,180)"
+        "리센느 장면 시작 시각(start 초)"
+      ]
+    },
+    {
+      "video_id": "EnJjpUIOWGk",
+      "url": "https://www.youtube.com/watch?v=EnJjpUIOWGk",
+      "theme": "TV 예능(후보)",
+      "check": [
+        "아는형님 프로미스나인X리센느 숙소 편(JTBC Voyage, 조회수 399,752·좋아요 4,368) — 방이 6편이라 뺐음, 넣을지 대표 판단"
+      ]
+    },
+    {
+      "video_id": "pWTBJV0OrqU",
+      "url": "https://www.youtube.com/watch?v=pWTBJV0OrqU",
+      "theme": "TV 예능(후보)",
+      "check": [
+        "전참시 선공개(MBCentertainment, 조회수 245,400·좋아요 7,540) — 케이블 예능에 자리를 내주고 뺐음"
       ]
     }
   ],
