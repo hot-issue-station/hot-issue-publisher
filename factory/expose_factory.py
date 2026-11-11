@@ -79,6 +79,24 @@ def focus_state(focus, t):
             return 1 + (s - 1) * e, 0.5 + (f["x"] - 0.5) * e, 0.5 + (f["y"] - 0.5) * e
     return 1.0, 0.5, 0.5
 
+def transition(kind, A, B, u):
+    """장면 넘김(대표 11/12 02:26 '영상과 영상이 잘 넘어가게'). A=앞 장면, B=새 장면, u=0→1.
+    dissolve 겹침 / slide 밀어내기(다른 날·다른 방송) / whip 빠른 휙(흐림) / zoom 확대하며 통과(감정 고조) / flash 흰 번쩍(반전·발표)."""
+    H, W = A.shape[:2]; e = u * u * (3 - 2 * u)
+    if kind == "slide" or kind == "whip":
+        dx = int(W * e); out = np.empty_like(A); out[:, :W - dx] = A[:, dx:]; out[:, W - dx:] = B[:, :dx]
+        if kind == "whip":
+            k = int(1 + 60 * math.sin(math.pi * u)); k += (k % 2 == 0)
+            if k > 1: out = cv2.blur(out, (k, 1))
+        return out
+    if kind == "zoom":
+        if u < 0.5: return zoom_at(A, 0.5, 0.5, 1 + 0.8 * (u / 0.5) ** 2)
+        return zoom_at(B, 0.5, 0.5, 1 + 0.8 * ((1 - u) / 0.5) ** 2)
+    if kind == "flash":
+        base = A if u < 0.5 else B; w_ = 1 - abs(u - 0.5) * 2
+        return cv2.addWeighted(base, 1 - 0.85 * w_, np.full_like(base, 255), 0.85 * w_, 0)
+    return cv2.addWeighted(B, u, A, 1 - u, 0)
+
 class Split:
     """한 화면 두 영상(대표 11/12 02:13): 위 = 본 클립, 아래 = split 영상. 둘 다 가로 통째(16:9) + 흐린 배경 + 칸마다 이름표."""
     def __init__(self, W, H, first, gap=14):
@@ -314,7 +332,7 @@ def render_expose(spec, outdir, total=None, suffix=""):
             if i < X:   # 겹침 전환: 앞 클립이 계속 재생되며 사라짐
                 p_ = prev; pi = p_["rd"].read(); pi2 = p_["rd2"].read() if p_["rd2"] else None
                 pf = p_["frame_of"](pi, pi2, p_["d"] + tl); a_ = (i + 1) / (X + 1)
-                fr = cv2.addWeighted(fr, a_, pf, 1 - a_, 0)
+                fr = transition(c.get("xfade_type", "dissolve"), pf, fr, a_)
             for o in ovs: o.draw(fr, t + tl)
             write(fr)
         if prev:

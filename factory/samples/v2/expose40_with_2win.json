@@ -21,7 +21,7 @@
  "template": "expose",
  "shorts_template": "40-N",
  "length_sec": 34.0,
- "out": "34초_2관왕_최종_4판",
+ "out": "34초_2관왕_최종_5판",
  "title": "걱정 많았던 컴백, 이틀 동안 생긴 일",
  "series_name": "덕심저장소 · 리센느 응원 특집",
  "source_line": "출처 · THE K-POP 더쇼 261110 · ALL THE K-POP 쇼챔피언 261111",
@@ -95,7 +95,9 @@
      "text": "(두둥!)",
      "style": "sfx"
     }
-   ]
+   ],
+   "xfade": 0.35,
+   "xfade_type": "flash"
   },
   {
    "file": "/mnt/user-data/uploads/with2win/T_theshow_261110.mp4",
@@ -120,7 +122,8 @@
      "text": "(꽃가루 맞고 활짝)",
      "style": "bracket"
     }
-   ]
+   ],
+   "xfade_type": "zoom"
   },
   {
    "file": "/mnt/user-data/uploads/with2win/T_theshow_261110.mp4",
@@ -148,14 +151,15 @@
      "y": 0.42,
      "scale": 1.22
     }
-   ]
+   ],
+   "xfade_type": "dissolve"
   },
   {
    "file": "/mnt/user-data/uploads/with2win/T_theshow_261110.mp4",
    "in": 135.0,
    "out": 138.5,
    "role": "body",
-   "xfade": 0.4,
+   "xfade": 0.35,
    "_확인": "같은 노래 다른 날 앵콜: 위=더쇼 앵콜 클로즈업 / 아래=쇼챔 앵콜 무대(같은 무대 다른 관점)",
    "split": {
     "file": "/mnt/user-data/uploads/with2win/C_showchamp_encore_261111.mp4",
@@ -188,7 +192,8 @@
      "text": "(같은 노래, 이틀의 앵콜)",
      "style": "bracket"
     }
-   ]
+   ],
+   "xfade_type": "whip"
   },
   {
    "file": "/mnt/user-data/uploads/with2win/C_showchamp_encore_261111.mp4",
@@ -205,7 +210,8 @@
      "y": 0.6,
      "scale": 1.35
     }
-   ]
+   ],
+   "xfade_type": "slide"
   },
   {
    "file": "/mnt/user-data/uploads/with2win/C_showchamp_encore_261111.mp4",
@@ -237,7 +243,8 @@
      ]
     }
    ],
-   "xfade": 0.5
+   "xfade": 0.4,
+   "xfade_type": "flash"
   }
  ],
  "narration": [
