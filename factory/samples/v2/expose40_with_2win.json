@@ -1,0 +1,165 @@
+{
+ "_설명": "주문 o20261112_2win — 40-N 틀 34초(내레이션 Veda, 뭉클한). 대표 11/12 01:07 구성 + topicDeep(00:36) 기준. 장면 시각은 녹화본 받으면 확인(_확인). 11/12 Claude 주문 집기.",
+ "_재료": [
+  "T = THE K-POP 「[THE SHOW CHOICE] With - RESCENEㅣ261110 방송」 https://www.youtube.com/watch?v=tedmGWPmZAI — 0:00~1:32 1위 발표·소감, 이어서 앵콜",
+  "C = ALL THE K-POP 「[쇼챔 1위] 11월 2주 챔피언송 With 앵콜 Full ver.」 https://www.youtube.com/watch?v=mTaMFwEQdH4 — 처음부터 끝까지(0:03 '리마인 고마워')",
+  "쇼챔 1위 '발표' 장면은 C 앵콜 영상에 없을 수 있음 → 없으면 C 앵콜 첫 장면 + 자막 [11/11 쇼챔피언 1위]로 대신"
+ ],
+ "_사실확인_일치만": [
+  "11/10 SBS Life 더쇼 「With」 1위 — THE K-POP 원본, MK스포츠 11/11",
+  "11/11 MBC M 쇼챔피언 「With」 1위 — ALL THE K-POP 원본, OSEN 11/11, 엑스포츠뉴스 11/11",
+  "첫 단독 콘서트 2027.2.19~21 올림픽공원 올림픽홀, 11/11 발표 — MK스포츠, 스포츠서울",
+  "데뷔 첫 음방 1위는 7월 「Pretty Girl」 — 스포츠경향 7/29, RESCENE 공식 비하인드"
+ ],
+ "_안_쓴_것": [
+  "초동 60만·멜론 1위(1곳만)",
+  "통산 몇 관왕(1곳만)",
+  "원이 '도망가면 안 돼'(대표 금지·1곳만)",
+  "'데뷔 첫 2관왕'(틀린 표현)",
+  "타 팬덤 견제 댓글"
+ ],
+ "template": "expose",
+ "shorts_template": "40-N",
+ "length_sec": 34.0,
+ "out": "draft",
+ "title": "걱정 많았던 컴백, 이틀 동안 생긴 일",
+ "series_name": "덕심저장소 · 리센느 응원 특집",
+ "source_line": "출처 · THE K-POP 더쇼 261110 · ALL THE K-POP 쇼챔피언 261111",
+ "test_label": "초안 · 대표 확인 전",
+ "layout": "fit",
+ "clips": [
+  {
+   "file": "/mnt/user-data/uploads/with2win/C_showchamp_encore_261111.mp4",
+   "in": 0.5,
+   "out": 3.5,
+   "role": "hook",
+   "_real": "리마인 고마워 고마워(0:03, 자동 자막)",
+   "_확인": "쇼챔 앵콜 첫 장면(트로피·첫 마디)",
+   "captions": [
+    {
+     "at": 0.1,
+     "dur": 2.8,
+     "text": "(부담 많았다던 걸그룹에게 이틀 동안 생긴 일)",
+     "style": "bracket"
+    }
+   ]
+  },
+  {
+   "file": "/mnt/user-data/uploads/with2win/T_theshow_261110.mp4",
+   "in": 20.0,
+   "out": 24.0,
+   "role": "body",
+   "_확인": "더쇼 1위 호명 순간 약 4초(0:00~0:36 사이에서 찾기)",
+   "captions": [
+    {
+     "at": 0.2,
+     "dur": 3.5,
+     "text": "[11/10 더쇼 1위]",
+     "style": "situation"
+    }
+   ]
+  },
+  {
+   "file": "/mnt/user-data/uploads/with2win/C_showchamp_encore_261111.mp4",
+   "in": 4.0,
+   "out": 7.0,
+   "role": "body",
+   "_확인": "쇼챔 트로피 든 장면 약 3초(빠른 교차)",
+   "captions": [
+    {
+     "at": 0.1,
+     "dur": 2.8,
+     "text": "[11/11 쇼챔피언 1위]",
+     "style": "situation"
+    }
+   ]
+  },
+  {
+   "file": "/mnt/user-data/uploads/with2win/T_theshow_261110.mp4",
+   "in": 36.0,
+   "out": 44.0,
+   "role": "body",
+   "_real": "이번 컴백 특히 부담을 많이 가지고 열심히 준비했는데 이렇게 (1등) 하게 될지 진짜 몰랐고요(0:36~, 자동 자막)",
+   "_확인": "소감 원음 그대로, 원본 자막 보존. 말한 멤버 미확인 → 이름 자막 넣지 않음",
+   "captions": [
+    {
+     "at": 0.2,
+     "dur": 7.5,
+     "text": "이번 컴백 특히 부담을 많이 가지고 열심히 준비했는데…",
+     "style": "big"
+    }
+   ]
+  },
+  {
+   "file": "/mnt/user-data/uploads/with2win/C_showchamp_encore_261111.mp4",
+   "in": 20.0,
+   "out": 24.0,
+   "role": "body",
+   "_확인": "앵콜 라이브 보컬 좋은 구간 약 4초(원음 크게)",
+   "captions": [
+    {
+     "at": 0.2,
+     "dur": 3.5,
+     "text": "(그리고 앵콜은 라이브로)",
+     "style": "bracket"
+    }
+   ]
+  },
+  {
+   "file": "/mnt/user-data/uploads/with2win/C_showchamp_encore_261111.mp4",
+   "in": 40.0,
+   "out": 47.0,
+   "role": "body",
+   "_확인": "앵콜 전체샷 약 7초, 위에 단콘 글자 카드",
+   "captions": [
+    {
+     "at": 0.3,
+     "dur": 6.5,
+     "text": "[같은 날 발표] 첫 단독 콘서트\n2027. 2. 19~21 · 올림픽홀",
+     "style": "big"
+    }
+   ]
+  }
+ ],
+ "narration": [
+  {
+   "at": 3.3,
+   "text": "11월 10일 더쇼, 11일 쇼챔피언. 「With」가 이틀 연속 1위에 올랐습니다."
+  },
+  {
+   "at": 18.2,
+   "text": "7월 첫 1위 뒤 넉 달, 한 뼘 더 자란 무대입니다."
+  },
+  {
+   "at": 22.4,
+   "text": "그리고 같은 날, 첫 단독 콘서트 소식까지 전해졌습니다. 내년 2월, 올림픽홀입니다."
+  }
+ ],
+ "outro": {
+  "ask": "(콘서트 가실 분, 댓글로 손!)",
+  "next": "[리센느 이야기는 「거꾸로 걷는 리센느」에서]",
+  "frame": {
+   "file": "/mnt/user-data/uploads/with2win/C_showchamp_encore_261111.mp4",
+   "t": 60.0
+  }
+ },
+ "thumb": {
+  "hook": "걱정 많았던 컴백, 이틀 연속 1위",
+  "emph": "이틀 연속",
+  "tag": "리센느 「With」",
+  "frame": {
+   "file": "/mnt/user-data/uploads/with2win/C_showchamp_encore_261111.mp4",
+   "t": 5.0
+  }
+ },
+ "post": {
+  "title": "걱정 많았던 컴백, 이틀 동안 생긴 일 | 리센느 「With」 2관왕 #shorts",
+  "desc": "11/10 더쇼 → 11/11 쇼챔피언, 「With」 이틀 연속 1위. 같은 날 첫 단독 콘서트(2027.2.19~21 올림픽홀) 소식까지 🪽\n전체 영상은 원본에서 꼭 봐 주세요\n▶ THE K-POP 더쇼 261110 https://www.youtube.com/watch?v=tedmGWPmZAI\n▶ ALL THE K-POP 쇼챔피언 261111 앵콜 https://www.youtube.com/watch?v=mTaMFwEQdH4\n#리센느 #RESCENE #With #PULSE #리마인 #덕심저장소",
+  "first_comment": "콘서트 가실 분, 댓글로 손! 🙋 전체 영상은 THE K-POP·ALL THE K-POP 원본에서 꼭 봐 주세요. 서로 응원하는 따뜻한 댓글 부탁드려요 💜"
+ },
+ "_대표확인": [
+  "훅 자막은 실제 발언('부담을 많이 가지고')을 풀어 쓴 괄호 문구 — 따옴표 없이 씀",
+  "내레이션 '한 뼘 더 자란 무대'는 우리 말(사실 주장 아님)",
+  "쇼챔 1위 발표 장면 원본 유무"
+ ]
+}

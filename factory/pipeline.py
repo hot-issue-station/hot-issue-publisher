@@ -120,6 +120,8 @@ def scenario(o, d):
 # ---------------- 5 설계 ----------------
 def plan(o, d):
     sc = json.load(open(os.path.join(d, "scenario.json"), encoding="utf-8")); typ = sc["type"]; kind, T = tconf(typ)
+    if sc.get("length_sec") and kind == "shorts":   # 주문 길이(예 34초)대로 구간표를 다시 잰다
+        import check_standard as cs_; T = cs_.tconf({"template": T["engine"], "shorts_template": typ, "length_sec": sc["length_sec"]})
     if T.get("engine") == "pulse58": n_src = f"{T.get('min_sources')}~{T.get('max_sources', '')}개 무대(같은 곡)"
     elif kind == "long": n_src = f"장면 {max(6, int(T['target_sec'] / 12))}개 안팎(평균 컷 2~5초, 원본 영상 3~6개)"
     elif kind == "shorts": n_src = f"원본 구간 {len(T['sections']) - 1}~{2 * (len(T['sections']) - 1)}개(원본 영상 1~3개)"

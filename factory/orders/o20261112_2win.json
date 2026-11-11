@@ -1,0 +1,343 @@
+{
+ "area": "아이돌",
+ "at": "2026-11-12T01:08:00",
+ "format": "shorts",
+ "free": "[대표 11/12 01:04~01:07 결정] 2관왕 + 첫 단독 콘서트를 한 편으로. 내레이션(Veda) 넣고 33~35초. 구성: 0~3초 쇼챔 앵콜 첫 장면 + 훅 자막 \"'부담 많이 됐다'던 걸그룹에게 이틀 동안 생긴 일\" / 3~10초 더쇼 11/10 → 쇼챔 11/11 1위 발표 빠른 교차 / 10~22초 더쇼 실제 소감('이번 컴백 특히 부담을 많이 가지고… 리마인 진짜 고마워', tedmGWPmZAI 0:36~0:55) + 쇼챔 앵콜 라이브 / 22~30초 같은 날 발표된 첫 단독 콘서트 글자 카드(2027.2.19~21 올림픽홀) / 끝 화면 '콘서트 가실 분, 댓글로 손!'. 말투: 축하보다 '대견한 성장'(시청자 45~54세 남성 최다, 댓글 '대견하다'). 금지: '데뷔 첫 2관왕', 통산 몇 관왕 숫자, 원이 '도망가면 안 돼' 눈물 발언. '「With」 2관왕'·'컴백 후 2관왕'으로만.",
+ "len": "34초",
+ "moods": [
+  "뭉클한"
+ ],
+ "narr": "내레이션 있음",
+ "narrLangs": [],
+ "orderedBy": "대표 대화창 11/12 01:07",
+ "sensitive": false,
+ "stage": 4,
+ "status": "open",
+ "subs": [
+  "리센느"
+ ],
+ "topicConfirmed": true,
+ "topicDeep": {
+  "angles": [
+   "걱정 → 이틀 연속 1위 → 첫 단콘: 48시간 성장 이야기",
+   "'리마인 고마워'로 시작한 쇼챔 앵콜 라이브(보컬 실력)",
+   "7월 첫 1위와 11월 2관왕 나란히 보기(성장)"
+  ],
+  "askUser": [
+   {
+    "a": "성별 남성 78.5%·여성 21.5%, 연령 45~54세 35.6%·35~44세 22.7%·25~34세 17.9%·55~64세 14.5%. 시간대는 채널 초기라 통계 부족 — 추정으로 저녁 18:30~21:00, 아침 07:30~08:30 권장. 댓글 약 130개 키워드: 멜론 1위·스밍/총공·줄세우기·역주행 / 삼촌팬·센둥이·대견하다·국민걸그룹 / 라이브·음색·보컬. 2관왕 쇼츠는 방송 직후(18:30~19:30) 또는 다음 날 07:30, '차트 1위→트로피 서사 연속성'과 '앵콜 라이브' 강조 권장.",
+    "askedAt": "2026-11-12 00:3x",
+    "q": "우리 채널 리센느 쇼츠 시청자 연령·성별·시청 시간대, 댓글 주요 키워드, 「With」 2관왕 쇼츠 올릴 시점",
+    "to": "유튜브 스튜디오 AI"
+   },
+   {
+    "a": "'도망가면 안 돼'는 11/10 더쇼로 '파악'되지만 장면 직접 검증 못 했다고 함. 통산 8회 주장: Pretty Girl 4(7/14 더쇼, 7/25·8/8·8/15 음악중심), LOVE ATTACK 2(7/26·8/16 인기가요), With 2(11/10 더쇼, 11/11 쇼챔). 기사 제목·링크 제시했으나 Claude는 열어 확인 안 함. 앞선 답(첫 지상파 1위 7/26 음중)과 이번 답(7/25 음중)이 엇갈림.",
+    "askedAt": "2026-11-12 00:3x",
+    "q": "원이 '도망가면 안 돼' 소감은 어느 음방·며칠? 11/11 기준 통산 음방 1위 횟수와 곡·프로그램·날짜별 내역(기사 링크)",
+    "to": "ChatGPT"
+   },
+   {
+    "a": "① 실력형: 앵콜 라이브로 시작 → 더쇼·쇼챔 트로피 교차 → 더쇼 소감 → 올림픽홀 단콘 공지 → 앵콜 전체샷. ② 48시간형: 첫 자막 \"'부담 많이 됐다'던 걸그룹이 48시간 만에 만든 일\" → 1위 2개 빠른 전환 → 소감 → 단콘 공지 → 앵콜. ③ 성장형: 퍼포먼스 하이라이트 → 소감 → 트로피 교차 → '같은 날 도착한 선물' 단콘. 팁: 감성 BGM·효과음 빼고 실제 소감 목소리와 라이브 음량을 키울 것. ※'MR 뚫는' 같은 표현은 확인 안 된 과장이라 쓰지 않음.",
+    "askedAt": "2026-11-12 00:3x",
+    "q": "실제 장면·발언만으로 2관왕+첫 단콘 쇼츠(25~35초) 차별화 구성안 3가지와 첫 3초 자막",
+    "to": "제미나이"
+   }
+  ],
+  "at": "2026-11-12 00:36",
+  "cautions": [
+   "'데뷔 첫 음방 2관왕'은 틀린 표현일 가능성 큼(이전 1위 기록 있음) — 「With」 2관왕으로만 쓰기",
+   "데뷔 첫 1위가 언제·어느 곡인지 AI 답이 엇갈림 — 기사 2곳 확인 필요",
+   "1위 소감·눈물 여부는 어느 AI도 확인 못 함 — 영상 직접 보고 확인 필요",
+   "'데뷔 첫 음방 2관왕' 금지 — 7월 「Pretty Girl」로 이미 1위(기사+공식 영상 확인). '컴백 후 2관왕'·'「With」 2관왕'으로 쓰기",
+   "통산 횟수(8관왕)는 ChatGPT 답과 스포츠서울 '6관왕' 사진 설명뿐 — 기사 2곳 직접 확인 전엔 숫자 쓰지 않기",
+   "AI 답 — 확인 안 됨: 7/14 더쇼 첫 1위·7/25 음중 첫 지상파 1위 등 날짜별 내역(ChatGPT 두 번의 답이 서로 엇갈림)",
+   "원이 '도망가면 안 돼'(눈물) 발언은 스포츠서울 한 곳만, 어느 방송인지 불명 — 더쇼 소감 자막(0:00~1:32)에는 이 문장이 안 보임. 영상 직접 확인 필요(대표님 또는 집 컴퓨터 창)",
+   "소감 인용은 유튜브 자동 자막 기준이라 말한 멤버가 누구인지 미확인 — '리센느'로만 표기",
+   "스포츠서울 사진 설명의 '립밤 이후 약 1년 만에 새 미니앨범'은 7월 「Pretty Girl」 활동과 어긋남 — 인용하지 않기",
+   "쇼챔 앵콜 댓글에 타 팬덤과의 견제·악플 얘기가 있음 — 다루지 않기",
+   "스튜디오 AI의 시청 시간대는 '통계 부족 → 추정'이라고 스스로 밝힘"
+  ],
+  "facts": [
+   {
+    "check": "일치",
+    "sources": [
+     {
+      "name": "THE K-POP — [THE SHOW CHOICE] With - RESCENE 261110",
+      "url": "https://www.youtube.com/watch?v=tedmGWPmZAI"
+     },
+     {
+      "name": "MK스포츠 11/11 「리센느, 음방 1위 이어 데뷔 첫 단독 콘서트 겹경사」",
+      "url": "http://v.daum.net/v/20261111165405695"
+     }
+    ],
+    "text": "11/10 SBS Life 더쇼에서 「With」 1위"
+   },
+   {
+    "check": "일치",
+    "sources": [
+     {
+      "name": "ALL THE K-POP — [쇼챔 1위] 11월 2주 챔피언송 With 앵콜",
+      "url": "https://www.youtube.com/watch?v=mTaMFwEQdH4"
+     },
+     {
+      "name": "OSEN 11/11 「쇼챔 1위, 감격하는 리센느 [사진]」",
+      "url": "http://v.daum.net/v/20261111200718024"
+     },
+     {
+      "name": "엑스포츠뉴스 11/11 「리센느 '음악방송 1위로 대세 입증'」",
+      "url": "http://v.daum.net/v/20261111203942954"
+     }
+    ],
+    "text": "11/11 MBC M 쇼챔피언에서 「With」 1위 (컴백 후 음방 2관왕)"
+   },
+   {
+    "check": "일치",
+    "sources": [
+     {
+      "name": "MK스포츠 11/11 「리센느, 음방 1위 이어 데뷔 첫 단독 콘서트 겹경사」",
+      "url": "http://v.daum.net/v/20261111165405695"
+     },
+     {
+      "name": "스포츠서울 11/11 「“도망가면 안 돼” 리센느 원이 눈물의 부탁」",
+      "url": "http://v.daum.net/v/20261111205726326"
+     }
+    ],
+    "text": "첫 단독 콘서트 '2027 RESCENE CONCERT NOTES : BLOOMING IN SEOUL' 2027.2.19~21 올림픽공원 올림픽홀 (11/11 발표)"
+   },
+   {
+    "check": "한 곳만",
+    "sources": [
+     {
+      "name": "엑스포츠뉴스 11/11 「리센느, 뜨겁다…초동 60만·음원 1위·음방 트로피까지」",
+      "url": "http://v.daum.net/v/20261111180117907"
+     }
+    ],
+    "text": "미니 4집 'PULSE' 11/3 발매, 초동(11/3~9) 60만 2688장(한터차트) — 자체 최고"
+   },
+   {
+    "check": "한 곳만",
+    "sources": [
+     {
+      "name": "MK스포츠 11/11 「리센느, 음방 1위 이어 데뷔 첫 단독 콘서트 겹경사」",
+      "url": "http://v.daum.net/v/20261111165405695"
+     }
+    ],
+    "text": "「With」 멜론 TOP100·벅스·지니 실시간 1위"
+   },
+   {
+    "check": "일치",
+    "sources": [
+     {
+      "name": "스포츠경향 7/29 「리센느, 데뷔 첫 1위 순간 어땠을까?」",
+      "url": "http://v.daum.net/v/20260729211927326"
+     },
+     {
+      "name": "RESCENE — 고마워 리마인 'Pretty Girl' 음악방송 Behind",
+      "url": "https://www.youtube.com/watch?v=sqPUUBJzK1k"
+     }
+    ],
+    "text": "데뷔 첫 음방 1위는 7월 「Pretty Girl」 (멤버들 눈물 비하인드 공식 영상 7/29 공개)"
+   },
+   {
+    "check": "한 곳만",
+    "sources": [
+     {
+      "name": "스포츠서울 11/11 「“도망가면 안 돼” 리센느 원이 눈물의 부탁」",
+      "url": "http://v.daum.net/v/20261111205726326"
+     }
+    ],
+    "text": "「With」 이전 음방 1위 6회(스포츠서울 사진 설명 '음악방송 6관왕') → 이번 2회 더해 통산 8회로 보임"
+   },
+   {
+    "check": "한 곳만",
+    "sources": [
+     {
+      "name": "스포츠서울 11/11 「“도망가면 안 돼” 리센느 원이 눈물의 부탁」",
+      "url": "http://v.daum.net/v/20261111205726326"
+     }
+    ],
+    "text": "원이가 수상 소감에서 눈물 고인 채 '도망가면 안 돼'라고 당부 — 어느 방송인지 기사에 명시 없음"
+   }
+  ],
+  "gaps": [
+   "상위 영상은 방송사 원본(발표·앵콜·무대) 뿐 — '1위 → 단콘 발표'까지 하루 이틀 흐름을 한 편으로 엮은 영상이 검색 상위에 없음",
+   "실제 소감 문장(자막 확인됨)을 그대로 살린 쇼츠가 안 보임",
+   "7월 첫 1위(Pretty Girl) 때와 이번을 이어 붙인 '성장' 구성이 없음",
+   "쇼챔 앵콜 댓글에 '미나미 보컬'·'원이 기죽지 말고' 응원이 많은데 이를 담은 영상이 없음"
+  ],
+  "quotes": [
+   {
+    "note": "유튜브 자동 자막 기준 + MK스포츠 기사 인용과 일치",
+    "text": "이번 컴백 특히 부담을 많이 가지고 열심히 준비했는데 이렇게 (1등) 하게 될지 진짜 몰랐고요. … 리마인 너무 사랑하고 … 리마인 진짜 고마워.",
+    "time": "0:36~0:55",
+    "url": "https://www.youtube.com/watch?v=tedmGWPmZAI",
+    "where": "더쇼 11/10 1위 소감",
+    "who": "리센느(멤버 미확인)"
+   },
+   {
+    "note": "자동 자막 기준",
+    "text": "리마인 고마워 고마워",
+    "time": "0:03",
+    "url": "https://www.youtube.com/watch?v=mTaMFwEQdH4",
+    "where": "쇼챔 11/11 앵콜 시작",
+    "who": "리센느"
+   },
+   {
+    "note": "스포츠경향 7/29 기사 인용 — 영상 분:초 미확인",
+    "text": "계속 상상했던 장면인데 실제가 됐어",
+    "url": "https://www.youtube.com/watch?v=sqPUUBJzK1k",
+    "where": "7월 첫 1위 비하인드(RESCENE 채널)",
+    "who": "메이"
+   }
+  ],
+  "sources": [
+   {
+    "name": "THE K-POP — [THE SHOW CHOICE] With - RESCENE 261110",
+    "url": "https://www.youtube.com/watch?v=tedmGWPmZAI"
+   },
+   {
+    "name": "ALL THE K-POP — [쇼챔 1위] 11월 2주 챔피언송 With 앵콜",
+    "url": "https://www.youtube.com/watch?v=mTaMFwEQdH4"
+   },
+   {
+    "name": "MK스포츠 11/11 「리센느, 음방 1위 이어 데뷔 첫 단독 콘서트 겹경사」",
+    "url": "http://v.daum.net/v/20261111165405695"
+   },
+   {
+    "name": "OSEN 11/11 「쇼챔 1위, 감격하는 리센느 [사진]」",
+    "url": "http://v.daum.net/v/20261111200718024"
+   },
+   {
+    "name": "엑스포츠뉴스 11/11 「리센느 '음악방송 1위로 대세 입증'」",
+    "url": "http://v.daum.net/v/20261111203942954"
+   },
+   {
+    "name": "엑스포츠뉴스 11/11 「리센느, 뜨겁다…초동 60만·음원 1위·음방 트로피까지」",
+    "url": "http://v.daum.net/v/20261111180117907"
+   },
+   {
+    "name": "스포츠서울 11/11 「“도망가면 안 돼” 리센느 원이 눈물의 부탁」",
+    "url": "http://v.daum.net/v/20261111205726326"
+   },
+   {
+    "name": "스포츠경향 7/29 「리센느, 데뷔 첫 1위 순간 어땠을까?」",
+    "url": "http://v.daum.net/v/20260729211927326"
+   },
+   {
+    "name": "RESCENE — 고마워 리마인 'Pretty Girl' 음악방송 Behind",
+    "url": "https://www.youtube.com/watch?v=sqPUUBJzK1k"
+   }
+  ],
+  "story": "7월 「Pretty Girl」로 데뷔 첫 음방 1위를 하며 함께 기뻐했던 리센느가, 넉 달 만의 컴백에서는 '부담을 많이 가지고 준비했다'고 털어놨다. 그 걱정 끝에 11/10 더쇼, 11/11 쇼챔피언에서 이틀 연속 1위를 했고, 같은 날 데뷔 3년 만의 첫 단독 콘서트까지 발표됐다. 쇼챔 앵콜의 첫 마디는 '리마인 고마워'였다. 덕심저장소는 '걱정 → 이틀 연속 1위 → 첫 단콘'을 실제 소감과 앵콜 라이브로 이어, 3050 팬이 '대견하다'고 느낄 성장 이야기로 묶는다.",
+  "summary": "리센느 「With」가 11/10 더쇼, 11/11 쇼챔피언에서 1위(컴백 후 음방 2관왕). 같은 11/11 데뷔 첫 단독 콘서트(2027.2.19~21 올림픽홀)도 발표됐다. 더쇼 1위 영상 28.5시간 759,349회, 쇼챔 앵콜 4.5시간 217,268회(시간당 약 4.8만)로 급상승 중.",
+  "timeline": [
+   {
+    "at": "2026-07",
+    "text": "「Pretty Girl」로 데뷔 첫 음방 1위 (7/29 비하인드 공개)"
+   },
+   {
+    "at": "2026-11-03",
+    "text": "미니 4집 'PULSE'·타이틀 「With」 발매, 쇼케이스"
+   },
+   {
+    "at": "2026-11-10",
+    "text": "SBS Life 더쇼 「With」 1위 — 컴백 후 첫 1위"
+   },
+   {
+    "at": "2026-11-11",
+    "text": "MBC M 쇼챔피언 1위(2관왕) + 첫 단독 콘서트 발표"
+   },
+   {
+    "at": "2027-02-19~21",
+    "text": "첫 단독 콘서트, 올림픽홀"
+   }
+  ],
+  "youtube": [
+   {
+    "angle": "1위 발표+소감(0:00~1:32)+앵콜 원본. 소감 자막이 있어 실제 발언 확인 가능",
+    "channel": "THE K-POP",
+    "title": "[THE SHOW CHOICE] With - RESCENEㅣ261110 방송",
+    "url": "https://www.youtube.com/watch?v=tedmGWPmZAI",
+    "views": 759349
+   },
+   {
+    "angle": "컴백 무대 2곡 묶음",
+    "channel": "THE K-POP",
+    "title": "백화요란 (Inside Out) + With – RESCENE [THE SHOW] 261110",
+    "url": "https://www.youtube.com/watch?v=uDQzPnAj7H8",
+    "views": 345605
+   },
+   {
+    "angle": "앵콜 라이브. 첫 마디 '리마인 고마워 고마워'(0:03). 시간당 약 4.8만회로 가장 빠름",
+    "channel": "ALL THE K-POP",
+    "title": "[쇼챔 1위] 11월 2주 챔피언송 With 앵콜 Full ver.",
+    "url": "https://www.youtube.com/watch?v=mTaMFwEQdH4",
+    "views": 217268
+   },
+   {
+    "angle": "쇼챔 수록곡 무대",
+    "channel": "ALL THE K-POP",
+    "title": "RESCENE - 백화요란 (Inside Out) l Show Champion 261111",
+    "url": "https://www.youtube.com/watch?v=n-rmTxbsjq0",
+    "views": 164586
+   },
+   {
+    "angle": "쇼챔 컴백 무대",
+    "channel": "ALL THE K-POP",
+    "title": "[COMEBACK] RESCENE - With l Show Champion 261111",
+    "url": "https://www.youtube.com/watch?v=EEMdvAl21pQ",
+    "views": 138949
+   },
+   {
+    "angle": "이번 활동 무대 중 조회수 최다(5일차)",
+    "channel": "KBS Kpop",
+    "title": "With - RESCENE [뮤직뱅크] KBS 261106",
+    "url": "https://www.youtube.com/watch?v=ECz-M-jwGzQ",
+    "views": 1630578
+   },
+   {
+    "angle": "이야기형 해설 채널 — 기록·반전 서사로 풀이",
+    "channel": "30초면 일어설 수 있습니다.",
+    "title": "국내용 아이돌 리센느, 중국 차트에서 주걸륜을 꺾었다",
+    "url": "https://www.youtube.com/watch?v=wvypUDE-MoU",
+    "views": 127587
+   },
+   {
+    "angle": "1위 앵콜 직캠",
+    "channel": "THE K-POP",
+    "title": "[FAN CAM 4K] THE SHOW CHOICE - With - RESCENE",
+    "url": "https://www.youtube.com/watch?v=dp7GH8aWePU",
+    "views": 34644
+   }
+  ]
+ },
+ "topicId": "t20261112YT1",
+ "topicNotes": "",
+ "topicSources": [
+  {
+   "name": "ALL THE K-POP — [쇼챔 1위] 11월 2주 챔피언송 ＜RESCENE (",
+   "url": "https://www.youtube.com/watch?v=mTaMFwEQdH4"
+  },
+  {
+   "name": "ALL THE K-POP — [COMEBACK] RESCENE (리센느) - Wit",
+   "url": "https://www.youtube.com/watch?v=EEMdvAl21pQ"
+  },
+  {
+   "name": "ALL THE K-POP — RESCENE (리센느) - 백화요란 (Inside O",
+   "url": "https://www.youtube.com/watch?v=n-rmTxbsjq0"
+  },
+  {
+   "name": "THE K-POP — [THE SHOW CHOICE] With - RESCE",
+   "url": "https://www.youtube.com/watch?v=tedmGWPmZAI"
+  },
+  {
+   "name": "RESCENE — RESCENE (리센느) 'With' Official ",
+   "url": "https://www.youtube.com/watch?v=pey3E47eSc8"
+  }
+ ],
+ "topicTitle": "리센느 「With」 음방 2관왕 (더쇼 11/10 · 쇼챔 11/11)",
+ "waiting": false,
+ "id": "o20261112_2win",
+ "type": "40-N",
+ "spec": "samples/v2/expose40_with_2win.json"
+}
