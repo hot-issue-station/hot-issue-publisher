@@ -123,16 +123,18 @@ def blend(fr, rgb, al, x, y):
     sr = rgb[y0 - y:y1 - y, x0 - x:x1 - x]; sa = al[y0 - y:y1 - y, x0 - x:x1 - x]
     roi = fr[y0:y1, x0:x1].astype(np.float32); fr[y0:y1, x0:x1] = (sr * sa + roi * (1 - sa)).astype(np.uint8)
 
-def caption_ov(c, W, H, t_base, layout_y=None):
+def caption_ov(c, W, H, t_base, layout_y=None, video_top=None):
     """자막 하나 → Ov. 위치: situation 위쪽 / big 가운데 / sfx pos / bracket 은 영상 바로 아래(원본 자막 안 가리게) 또는 pos=[x,y](얼굴 옆, ② 안원잘부 강조 배치)."""
-    st = c.get("style", "bracket"); im = fx.caption_img(c["text"], st, W, tuple(c["color"]) if c.get("color") else None)
+    st = c.get("style", "bracket"); im = fx.caption_img(c["text"], st, W, tuple(c["color"]) if c.get("color") else None, c.get("emph"), tuple(c["hi"]) if c.get("hi") else None)
     if c.get("pos"): x = int(c["pos"][0] * W - im.width / 2); y = int(c["pos"][1] * H - im.height / 2)
     elif st == "situation": x, y = (W - im.width) // 2, int(H * 0.215)
     elif st == "big": x, y = (W - im.width) // 2, (H - im.height) // 2
+    elif st == "upper": x, y = (W - im.width) // 2, int((video_top or H * 0.36) - im.height - 18)
+    elif st == "lower": x, y = (W - im.width) // 2, (layout_y if layout_y else int(H * 0.70))
     elif st == "sfx": x, y = int(W * 0.62 - im.width / 2), int(H * 0.30)
     else: x, y = (W - im.width) // 2, (layout_y if layout_y else int(H * 0.70))
     x = max(10, min(W - im.width - 10, x)); y = max(10, min(H - im.height - 10, y))
-    t0 = t_base + c["at"]; return Ov(im, x, y, t0, t0 + c.get("dur", 1.8), pop=0.14 if st in ("big", "sfx", "bracket") else 0, slide=(0, -30, 0.18) if st == "situation" else None)
+    t0 = t_base + c["at"]; return Ov(im, x, y, t0, t0 + c.get("dur", 1.8), pop=0.14 if st in ("big", "sfx", "bracket", "upper", "lower") else 0, slide=(0, -30, 0.18) if st == "situation" else None)
 
 # ---------------- 소리 ----------------
 def build_audio(events, total, out, bleeps=(), extra=(), narr=(), loudnorm=True):
@@ -213,9 +215,12 @@ def render_expose(spec, outdir, total=None, suffix=""):
     # 위 고정 줄(시리즈·제목) + 출처 줄 + 시험 표시
     fixed = []
     if spec.get("title"):
-        im = fx.text_img(spec["title"], 66, W - 80, base=fx.WH, hi=fx.Y); fixed.append(Ov(im, (W - im.width) // 2, 150, 0, body, fade=0))
+        tk = spec.get("title_emph"); im = fx.text_img(spec["title"], 66, W - 80, base=fx.WH, hi=fx.OR if tk else fx.Y, emph=tk); fixed.append(Ov(im, (W - im.width) // 2, 150, 0, body, fade=0))
     if spec.get("series_name"):
-        im = fx.text_img(spec["series_name"], 36, W - 80, base=fx.GR, stroke=3, font=fx.FB); fixed.append(Ov(im, (W - im.width) // 2, 92, 0, body, fade=0))
+        if spec.get("series_box"):   # 대표 11/12: 시리즈 이름도 색으로 눈에 띄게(보라 상자 + 흰 글씨)
+            im = fx.text_img(spec["series_name"], 34, W - 120, base=fx.WH, hi=fx.Y, stroke=0, font=fx.FB, box=fx.PU + (240,), pad=(22, 8), shadow=False); fixed.append(Ov(im, (W - im.width) // 2, 78, 0, body, fade=0))
+        else:
+            im = fx.text_img(spec["series_name"], 36, W - 80, base=fx.GR, stroke=3, font=fx.FB); fixed.append(Ov(im, (W - im.width) // 2, 92, 0, body, fade=0))
     if spec.get("test_label"):
         im = fx.text_img(spec["test_label"], 34, W, base=fx.WH, stroke=0, font=fx.FB, box=(200, 0, 0, 220), shadow=False); fixed.append(Ov(im, 20, 20, 0, total + 1, fade=0))
     ovs = list(fixed); aud, bleeps, extra, narr = [], [], [], []
@@ -240,7 +245,7 @@ def render_expose(spec, outdir, total=None, suffix=""):
         cr = c.get("credit") or spec.get("source_line", "")
         if cr:
             im = fx.text_img(cr, 28, W - 60, base=fx.GR, hi=fx.GR, stroke=2, font=fx.FM, shadow=False); ovs.append(Ov(im, W - im.width - 16, H - im.height - 150, t, t + d, fade=0))
-        for cap in c.get("captions", []): ovs.append(caption_ov(cap, W, H, t, cap_y))
+        for cap in c.get("captions", []): ovs.append(caption_ov(cap, W, H, t, cap_y, L.y0 if mode != "crop" else None))
         if c.get("role") == "brand" and spec.get("brand") and not brand_done:   # 시리즈 브랜딩 띠(브랜딩 구간 내내)
             bdur = sum(round((x["out"] - x["in"]) * FPS) for x in clips if x.get("role") == "brand") / FPS
             b = spec["brand"]; bt = fx.text_img(b.get("title", ""), 64, W - 100, base=fx.Y, hi=fx.WH, box=(150, 80, 230, 235), stroke=0, font=fx.FK, shadow=False)

@@ -20,7 +20,7 @@ if not os.path.exists(FK): FK = FB
 EMOJI = "/usr/share/fonts/truetype/noto/NotoColorEmoji.ttf"
 def F(p, s): return ImageFont.truetype(p, int(s), index=1)
 
-WH = (255, 255, 255); Y = (255, 222, 40); BK = (0, 0, 0); RD = (255, 48, 64); NAVY = (14, 12, 40); GR = (200, 204, 220)
+WH = (255, 255, 255); Y = (255, 222, 40); BK = (0, 0, 0); RD = (255, 48, 64); NAVY = (14, 12, 40); GR = (200, 204, 220); OR = (255, 112, 0); PU = (150, 80, 230)
 STD = json.load(open(os.path.join(HERE, "standard_v2.json"), encoding="utf-8"))   # 표준 수치는 모두 여기서
 BANNER = STD["schedule"]["banner"]
 BANNED = STD["banned_words"]   # 대표 11/11 20:17 — 제목·썸네일·큰 글씨·우리 자막 금지. 늘리려면 standard_v2.json 또는 spec "banned_words"
@@ -91,7 +91,7 @@ def text_img(text, size, maxw, base=WH, hi=Y, stroke=None, font=None, box=None, 
             d.text((x, y), s, font=fo, fill=col, stroke_width=sw, stroke_fill=BK); x += d.textlength(s, font=fo)
     return im
 
-def caption_img(text, style, W, color=None):
+def caption_img(text, style, W, color=None, emph=None, hi=None):
     """우리 자막 모양.
     bracket  : 괄호 드립 — 투박한 굵은 고딕(Black), 흰 글씨 + 검은 두꺼운 테두리, 괄호 부분 노랑 (③ 제미나이 · ① 자료06 괄호 반응)
     situation: [대괄호] 상황 자막 — 화면 위쪽 검은 반투명 상자 + 노란 테두리 (③)
@@ -104,7 +104,9 @@ def caption_img(text, style, W, color=None):
         im = text_img(text, 50 * k, W - 160 * k, base=color or WH, hi=Y, stroke=0, font=FB, box=(10, 8, 24, 215), pad=(int(30 * k), int(16 * k)), shadow=False)
         d = ImageDraw.Draw(im); d.rounded_rectangle([1, 1, im.width - 2, im.height - 2], radius=14, outline=Y + (255,), width=max(3, int(4 * k)))
         return im
-    if style == "big": return text_img(text, 112 * k, W - 120 * k, base=color or WH)
+    if style == "big": return text_img(text, 112 * k, W - 120 * k, base=color or WH, hi=hi or Y, emph=emph)
+    if style in ("upper", "lower"):   # 대표 11/12 01:50: 가운데 큰 자막이 얼굴을 가림 → 영상 위·아래 빈 곳에 조금 작게, 핵심 말은 진한 주황
+        return text_img(text, (72 if style == "upper" else 64) * k, W - 100 * k, base=color or WH, hi=hi or OR, emph=emph)
     if style == "sfx":
         im = text_img(text, 92 * k, W - 200 * k, base=color or Y, hi=WH)
         return im.rotate(7, resample=Image.BICUBIC, expand=True)
