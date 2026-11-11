@@ -7,7 +7,7 @@
   - API 키는 대표가 직접 환경 변수 ANTHROPIC_API_KEY 에 넣는다(Claude는 키를 입력하지 않음).
   - 기본 모델은 가장 싼 Haiku. 문장 다듬기·번역·댓글 분류·요약 같은 단순 대량 작업만 맡긴다.
   - 같은 system 문장은 캐시(prompt caching)로 묶어 반복 비용을 줄인다.
-  - budget.json 의 월 한도(기본 20달러)를 넘으면 제출하지 않는다.
+  - budget.json 의 월 한도(기본 90달러, 대표 11/12 결정 — 크레딧은 매달 100달러, 남으면 사라짐)를 넘으면 제출하지 않는다.
   - 사실 확인·최종 문구·게시는 하지 않는다(대표실 Claude가 검증).
 """
 import json, os, sys, time, urllib.request
@@ -23,7 +23,7 @@ def req(url, body=None):
     with urllib.request.urlopen(r) as f: return f.read().decode()
 
 def budget():
-    b = json.load(open(BUDGET)) if os.path.exists(BUDGET) else {"monthly_limit_usd": 20, "month": "", "spent_est_usd": 0}
+    b = json.load(open(BUDGET)) if os.path.exists(BUDGET) else {"monthly_limit_usd": 90, "month": "", "spent_est_usd": 0}
     m = time.strftime("%Y-%m")
     if b["month"] != m: b.update(month=m, spent_est_usd=0)
     return b

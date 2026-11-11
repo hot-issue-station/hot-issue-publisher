@@ -50,7 +50,7 @@ def save_json(path, data):
 
 
 def budget(path):  # api_worker.py 와 같은 규칙
-    b = load_json(path, {"monthly_limit_usd": 20, "month": "", "spent_est_usd": 0})
+    b = load_json(path, {"monthly_limit_usd": 90, "month": "", "spent_est_usd": 0})
     m = time.strftime("%Y-%m")
     if b.get("month") != m: b.update(month=m, spent_est_usd=0)
     return b
@@ -173,7 +173,7 @@ def call_openrouter(st, key, system, prompt, max_tokens, timeout, cfg):
 
 def call_claude(st, key, system, prompt, max_tokens, timeout, cfg):
     b = budget(cfg["budget_file"])
-    if b.get("spent_est_usd", 0) >= b.get("monthly_limit_usd", 20):
+    if b.get("spent_est_usd", 0) >= b.get("monthly_limit_usd", 90):
         raise StageFail("skipped", f"이번 달 한도({b['monthly_limit_usd']}달러) 넘음 — budget.json")
     body = {"model": st["model"], "max_tokens": max_tokens, "system": system,
             "messages": [{"role": "user", "content": prompt}]}
