@@ -487,26 +487,55 @@ def build(spec, base):
             s0 = segs[gr[0]]["S"]; bf = os.path.join(tmp, f"batch{gi}.mp4")
             chain([segs[i]["v"] for i in gr], [segs[i]["join"] for i in gr], [segs[i]["S"] - s0 for i in gr], bf, total=segs[gr[-1]]["S"] + segs[gr[-1]]["dur"] - s0)
             files.append(bf); joins.append(segs[gr[0]]["join"]); starts.append(s0)
-    n = len(files)
+    n = len(files); parts = ["null[g0]"]; cur = "g0"; idx = n
     if spec.get("progress"):   # 바탕 막대 → 노란 채움(시간 따라 늘어남) → 챕터 눈금, 끝 화면에선 숨김
-        tail = (f"null[pv];[pv][{n}:v]overlay=0:0:enable='lt(t,{E:.3f})'[p1];color=c=0xFFD640:s={W}x6:r={FPS}[pf];"
-                f"[p1][pf]overlay=x='-w+w*min(t/{E:.3f},1)':y=1:shortest=1:enable='lt(t,{E:.3f})'[p2];[p2][{n + 1}:v]overlay=0:0:enable='lt(t,{E:.3f})'[vout]")
-    fin_in = extra + ["-i", fa]; ai = n + len(extra) // 2
+        parts += [f"[{cur}][{idx}:v]overlay=0:0:enable='lt(t,{E:.3f})'[p1]", f"color=c=0xFFD640:s={W}x6:r={FPS}[pf]",
+                  f"[p1][pf]overlay=x='-w+w*min(t/{E:.3f},1)':y=1:shortest=1:enable='lt(t,{E:.3f})'[p2]", f"[p2][{idx + 1}:v]overlay=0:0:enable='lt(t,{E:.3f})'[p3]"]
+        cur = "p3"; idx += 2
+    for j, (png, a, b, _) in enumerate(gov):   # 영상 전체 시각 기준 자막(오프닝 질문)
+        extra += ["-i", png]; parts.append(f"[{cur}][{idx}:v]overlay=0:0:enable='between(t,{a:.3f},{b:.3f})'[q{j}]"); cur = f"q{j}"; idx += 1
+    parts.append(f"[{cur}]null[vout]"); tail = ";".join(parts)
+    fin_in = extra + ["-i", fa]; ai = idx
     chain(files, joins, starts, final, extra_in=fin_in, tail=tail, final_map=["-map", f"{ai}:a"], enc=VENC + AENC + ["-movflags", "+faststart"], total=total)
     # 6) 자막·썸네일·점검표
     sp = os.path.join(out, spec["out"] + ".srt")
     open(sp, "w", encoding="utf-8").write("".join(f"{i}\n{srt_time(a)} --> {srt_time(b)}\n{t}\n\n" for i, (a, b, t) in enumerate(srt, 1)))
     tp = None
     if spec.get("thumb"): tp = os.path.join(out, spec["out"] + "_thumb.jpg"); thumb_png(spec["thumb"], os.path.join(base, spec["thumb"]["photo"]), tp)
+    # 설명란: 요약 → 챕터 타임스탬프(실제 렌더 시각) → 감사한 출처 → 해시태그 → 3개 언어 요약
+    def ts(t): t = int(t + 0.5); h, r = divmod(t, 3600); return (f"{h}:{r // 60:02}:{r % 60:02}" if h else f"{r // 60}:{r % 60:02}")
+    marks = []
+    if segs[0]["ch"] == 0: marks.append((0.0, spec.get("opening_label", "오프닝")))
+    for ci, ch in enumerate(spec["chapters"], 1):
+        marks.append((next(s["S"] for s in segs if s["ch"] == ci), f"{ci}장 · {ch['title']}"))
+    if any(s["tag"] == "outro" for s in segs if s["kind"] == "scene"): marks.append((next(s["S"] for s in segs if s.get("tag") == "outro"), spec.get("ending_label", "마무리")))
+    marks[0] = (0.0, marks[0][1])
+    short_ch = [m[1] for m, nx in zip(marks, marks[1:] + [(E, "")]) if nx[0] - m[0] < 10]
+    i18n = spec.get("summary_i18n", {}); LB = {"en": "[English]", "ja": "[日本語]", "zh-TW": "[繁體中文]"}
+    tags = " ".join(t if t.startswith("#") else "#" + t for t in spec.get("hashtags", []))
+    desc = [spec.get("summary", "").strip(), "", "■ 챕터"] + [f"{ts(a)} {t}" for a, t in marks] + ["", "■ 감사한 출처"] + [f"- {c}" for c in credits]
+    if tags: desc += ["", tags]
+    for k2 in ("en", "ja", "zh-TW"):
+        if i18n.get(k2): desc += ["", LB[k2], i18n[k2].strip()]
+    dp = os.path.join(out, spec["out"] + "_설명란.txt"); open(dp, "w", encoding="utf-8").write("\n".join(desc).strip() + "\n")
     lim = spec.get("max_still_sec", 8)
-    longs = [f"{s['ch']}장 {s['tag'].split('_')[1]}번({s['dur']:.1f}초)" for s in segs if s["kind"] == "scene" and s["dur"] > lim and not s["sc"].get("long_ok")]
-    excl = [(s["S"], s["S"] + s["dur"]) for s in segs if s["kind"] in ("card", "end")]
+    longs = [f"{s['label']}({s['dur']:.1f}초)" for s in segs if s["kind"] == "scene" and s["dur"] > lim and not s["sc"].get("long_ok")]
+    excl = [(s["S"], s["S"] + s["dur"]) for s in segs if s["kind"] in ("card", "end", "credits")]
     blk = black_check(final, excl)
+    hl = segs[0] if segs[0]["ch"] == 0 else None
+    nocred = [s["label"] for s in segs if s["kind"] == "scene" and s["tag"] != "outro" and not s["sc"].get("credit") and not s["sc"].get("own")]
     chk = [("챕터 카드(" + ("오버레이" if spec.get("card_style", "overlay") != "full" else "전체 화면") + ")", True),
-           ("끝 화면(구독·좋아요·알림·다음 편)", bool(spec.get("end", {}).get("next"))),
-           ("배경음악", bool(spec.get("bgm"))), ("출처(쓴 영상 목록)", bool(spec.get("sources"))), ("썸네일", bool(tp)),
+           (f"오프닝 하이라이트(0~{hl['dur']:.1f}초)" if hl else "오프닝 하이라이트(0~3초)", bool(hl) and hl["dur"] <= 3.5),
+           (f"오프닝 질문 자막({gov[0][1]:.0f}초)" if gov else "오프닝 질문 자막(25초 근처)", bool(gov)),
+           ("엔딩 주제 한 줄 + 질문 자막", bool(en.get("line") and en.get("ask"))),
+           ("끝 화면(구독·좋아요·알림·다음 편)", bool(endcfg.get("next"))),
+           ("배경음악", bool(spec.get("bgm"))), ("출처(쓴 영상 목록)", bool(credits)),
+           ("장면마다 구석 출처 표기" + (" — 없음: " + ", ".join(nocred) if nocred else ""), not nocred),
+           (f"영상 출처 화면({spec.get('sources_sec', 4)}초)", any(s["kind"] == "credits" for s in segs)),
+           ("설명란 3개 언어 요약(en·ja·zh-TW)", all(i18n.get(k2) for k2 in ("en", "ja", "zh-TW"))),
+           ("설명란 요약·해시태그", bool(spec.get("summary") and tags)), ("썸네일", bool(tp)),
            ("팬 영상 양해 확인", bool(spec.get("consent_checked"))),
-           (f"장면 사이 검은 화면 0초 (검출 {blk:.2f}초, 카드·끝 화면 제외)", blk < 0.05)]
+           (f"장면 사이 검은 화면 0초 (검출 {blk:.2f}초, 카드·끝·출처 화면 제외)", blk < 0.05)]
     kinds = {}
     for s in segs[1:]: kinds[s["join"][0]] = kinds.get(s["join"][0], 0) + 1
     print(f"영상: {final} ({total/60:.1f}분, {total:.2f}초)\n자막: {sp}\n썸네일: {tp}")
@@ -514,7 +543,9 @@ def build(spec, base):
           + (f" · 내레이션 {len(nars)}개(덕킹 {spec.get('duck_db', -14)}dB)" if nars else ""))
     for nm, ok in chk: print(("✅ " if ok else "❌ 빠짐: ") + nm)
     print(("⚠️ 긴 정지 장면(" + str(lim) + "초 넘음, 컷 리듬 확인): " + ", ".join(longs)) if longs else f"✅ 긴 정지 장면 없음({lim}초 이하)")
-    return {"final": final, "total": total, "segs": segs, "nars": nars, "black": blk}
+    if short_ch: print("⚠️ 유튜브 챕터는 10초 이상이어야 표시됨 — 짧은 챕터: " + ", ".join(short_ch))
+    print(f"설명란: {dp}")
+    return {"final": final, "total": total, "segs": segs, "nars": nars, "black": blk, "desc": dp, "marks": marks}
 
 def black_check(path, excl):
     """검은 화면 검사(카드·끝 화면 구간 제외) → 남은 검은 초."""
