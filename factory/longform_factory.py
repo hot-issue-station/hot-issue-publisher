@@ -27,10 +27,16 @@ v1(대표 11/8 결정) 위에 벤치마킹(언더독스토리) 두 가지를 기
    - 음악 끊기: "music_cut":[{"at":초,"sec":길이}] → 그 구간 배경음악만 0으로(0.12초 내려가고 0.6초 복귀)
      영상 전체 기준(맨 위) 또는 장면 안 기준(장면 안에 넣으면 장면 시작부터 셈)
    - 결심 한 줄: "ending":{"resolve":"…"} → 검은 화면 위 한 줄 2초 페이드인(resolve_sec 기본 3.5초) → 끝 화면
+ ⑤ 상품 카드(제휴 광고 QR, 언더독스토리 벤치마킹 11/11)
+   - "product_cards":[{"at":초,"sec":6,"name":"상품명","price":"12,900원","url":"https://…","label":"안내 한 줄"}]
+     (맨 위 = 영상 전체 기준, 장면 안 = 장면 시작부터) → 왼쪽 아래 흰 둥근 카드(QR + 「광고 · 제휴 링크」 + 상품명·가격), 0.3초 슬라이드 인
+   - 그 시간에 떠 있는 자막·출처·말풍선·옆 패널과 겹치지 않게 자리 위로 올림(안 되면 오른쪽 아래). QR은 qr.py(순수 파이썬)
+   - 설명란 맨 위에 상품 링크 목록, url에 coupang 있으면 쿠팡 파트너스 고지 문구. 주류·담배·도박·성인 단어는 점검표 ❌
 결과: 롱폼 영상(1920x1080, 30fps) + 썸네일(1280x720) + 자막(.srt) + 설명란(.txt) + 점검표
 """
 import json, os, sys, subprocess, shutil, re
 from PIL import Image, ImageDraw, ImageFont, ImageFilter
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))   # 같은 폴더의 qr.py
 
 W, H, FPS = 1920, 1080, 30
 VW = 608; VX = (W - VW) // 2                      # 세로 틀(높이 1080 맞춤) 폭·위치
@@ -149,6 +155,49 @@ def credit_png(text, path):
     w = d.textlength(t, font=fo); x = W - 36 - w; y = H - 52
     d.rounded_rectangle([x - 16, y - 6, x + w + 16, y + 36], radius=18, fill=(0, 0, 0, 120)); d.text((x, y), t, font=fo, fill=(235, 235, 245, 230))
     im.save(path)
+
+# ---------------- 상품 카드(제휴 광고 QR) ----------------
+AD_MARK = "광고 · 제휴 링크"
+COUPANG_NOTICE = "이 게시물은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다."
+CARD_M = 40                      # 화면 가장자리 여백
+BAN_WORDS = ["주류", "소주", "맥주", "와인", "위스키", "보드카", "막걸리", "양주", "사케", "하이볼", "칵테일", "beer", "wine", "whisky", "whiskey", "vodka", "soju",
+             "담배", "전자담배", "궐련", "니코틴", "시가렛", "cigarette", "vape", "베이프",
+             "도박", "카지노", "토토", "배팅", "베팅", "바카라", "casino", "betting",
+             "성인용품", "성인 전용", "성인전용", "19금", "야동", "adult"]
+
+def product_card_png(c, path):
+    """상품 카드: 흰 둥근 상자 + 왼쪽 QR + 오른쪽 '광고 · 제휴 링크' 표시·상품명·가격·안내. 카드 크기 그림(그림자 포함) 저장 → (폭, 높이)."""
+    from qr import qr_image, qr_info
+    n = qr_info(c["url"])[1]; sc = max(3, round(156 / n)); q = qr_image(c["url"], sc, border=1)   # 카드 흰 여백이 조용한 영역 역할
+    pad, gap, tw, sh = 18, 18, 290, 14                                                       # sh = 그림자 여백
+    fa, fn, fp, fl = F(FB, 22), F(FB, 30), F(FB, 32), F(FM, 22)
+    dm = ImageDraw.Draw(Image.new("RGBA", (1, 1)))
+    name = wrap(dm, c["name"], fn, tw)
+    if len(name) > 2: name = name[:2]; name[1] = name[1][:-1] + "…"
+    rows_h = 40 + 40 * len(name) + (44 if c.get("price") else 0) + 34
+    bw = pad + q.width + gap + tw + pad; bh = pad + max(q.height, rows_h) + pad
+    im = Image.new("RGBA", (bw + sh * 2, bh + sh * 2), (0, 0, 0, 0))
+    shd = Image.new("RGBA", im.size, (0, 0, 0, 0)); ImageDraw.Draw(shd).rounded_rectangle([sh, sh + 4, sh + bw, sh + bh + 4], radius=26, fill=(0, 0, 0, 150))
+    im = Image.alpha_composite(im, shd.filter(ImageFilter.GaussianBlur(8))); d = ImageDraw.Draw(im)
+    x0, y0 = sh, sh
+    d.rounded_rectangle([x0, y0, x0 + bw, y0 + bh], radius=24, fill=(255, 255, 255, 255))
+    im.paste(q, (x0 + pad, y0 + (bh - q.height) // 2))
+    tx = x0 + pad + q.width + gap; ty = y0 + (bh - rows_h) // 2
+    aw = d.textlength(AD_MARK, font=fa); d.rounded_rectangle([tx, ty, tx + aw + 24, ty + 32], radius=16, fill=(235, 236, 242), outline=(150, 150, 165), width=1)
+    d.text((tx + 12, ty + 2), AD_MARK, font=fa, fill=(70, 70, 85)); ty += 40
+    for ln in name: d.text((tx, ty), ln, font=fn, fill=(25, 20, 45)); ty += 40
+    if c.get("price"): d.text((tx, ty + 2), str(c["price"]), font=fp, fill=(230, 40, 70)); ty += 44
+    d.text((tx, ty + 4), c.get("label") or "QR 찍고 상품 보기", font=fl, fill=(110, 110, 125))
+    im.save(path); return im.size
+
+def place_card(size, a, b, occ, m=CARD_M):
+    """카드 자리: 왼쪽 아래에서 시작해 그 시간에 떠 있는 자막·출처·말풍선과 겹치지 않을 때까지 위로. 안 되면 오른쪽 아래. → (x, y, 쪽, 겹침 없음?)"""
+    cw, chh = size; busy = [bb for s0, s1, bb in occ if s0 < b and s1 > a and bb]
+    def free(x, y): return all(x + cw <= bx0 - 8 or x >= bx1 + 8 or y + chh <= by0 - 8 or y >= by1 + 8 for bx0, by0, bx1, by1 in busy)
+    for side, x in (("left", m - 14), ("right", W - m + 14 - cw)):     # 그림 안 그림자 여백(14) 보정
+        for y in range(H - m + 14 - chh, 110, -10):
+            if free(x, y): return x, y, side, True
+    return m - 14, H - m + 14 - chh, "left", False
 
 def sources_png(items, path, series):
     """마지막 '영상 출처' 화면."""
@@ -331,32 +380,33 @@ def render_scene(sg, sc, base, tmp, tag, comp):
     else:
         fl.append(f"[0:v]{pre},scale={W}:{H}:force_original_aspect_ratio=decrease,pad={W}:{H}:(ow-iw)/2:(oh-ih)/2,setsar=1[v0]")
     ov = []   # (입력번호, 시작, 끝)
+    occ = sg.setdefault("occ", [])   # 화면에 얹힌 그림의 (시작, 끝, 그림 경로) — 상품 카드 자리 피하기용
     if lay == "vertical":
         sides = [("side_left", 48), ("side_right", VX + VW + 48)]
         for key, x in sides:
             v = sc.get(key)
             if not v: continue
             if isinstance(v, list) and v and (isinstance(v[0], dict)):
-                for p, at in bubbles_pngs(v, x, 560, os.path.join(tmp, f"{tag}_{key}")): ov.append((add(["-i", p]), at, D + 1))
+                for p, at in bubbles_pngs(v, x, 560, os.path.join(tmp, f"{tag}_{key}")): ov.append((add(["-i", p]), at, D + 1)); occ.append((at, D + 1, p))
             else:
-                p = os.path.join(tmp, f"{tag}_{key}.png"); info_png(v, p, x, 560); ov.append((add(["-i", p]), 0, D + 1))
+                p = os.path.join(tmp, f"{tag}_{key}.png"); info_png(v, p, x, 560); ov.append((add(["-i", p]), 0, D + 1)); occ.append((0, D + 1, p))
     for j, s in enumerate(sc.get("subs", [])):        # [시작, 끝, "문장", (모양), (위치)] (장면 안에서의 초)
         st = s[3] if len(s) > 3 else "sub"; p = os.path.join(tmp, f"{tag}_s{j}.png")
         if st == "emotion":                            # 감정 자막: 옆쪽·기울임, 부드럽게 나타났다 사라짐
             emotion_png(s[2], p, s[4] if len(s) > 4 else "right"); i = loopimg(p, D + 1); fo_ = min(0.3, (s[1] - s[0]) / 3)
             fl.append(f"[{i}:v]format=rgba,fade=t=in:st={s[0]:.3f}:d={min(0.35, (s[1] - s[0]) / 3):.3f}:alpha=1,fade=t=out:st={s[1] - fo_:.3f}:d={fo_:.3f}:alpha=1[em{j}]")
-            ov.append((f"em{j}", s[0], s[1]))
+            ov.append((f"em{j}", s[0], s[1])); occ.append((s[0], s[1], p))
         elif st == "sfx":                              # 효과음 자막: 0.3초 팝 프레임 → 마지막 장 유지
             pat = sfx_frames(s[2], os.path.join(tmp, f"{tag}_fx{j}"), tuple(s[4]) if len(s) > 4 else (0.5, 0.3))
             i = add(["-framerate", str(FPS), "-i", pat])
             fl.append(f"[{i}:v]format=rgba,tpad=stop_mode=clone:stop_duration={max(0.1, s[1] - s[0]):.3f},setpts=PTS+{s[0]:.3f}/TB[fx{j}]")
-            ov.append((f"fx{j}", s[0], s[1]))
-        else: sub_png(s[2], p, st); ov.append((add(["-i", p]), s[0], s[1]))
+            ov.append((f"fx{j}", s[0], s[1])); occ.append((s[0], s[1], pat % (round(0.3 * FPS) - 1)))
+        else: sub_png(s[2], p, st); ov.append((add(["-i", p]), s[0], s[1])); occ.append((s[0], s[1], p))
     if sc.get("credit"):                               # 출처: 오른쪽 아래 구석, 장면 내내
-        p = os.path.join(tmp, f"{tag}_cr.png"); credit_png(sc["credit"], p); ov.append((add(["-i", p]), 0, D + 1))
+        p = os.path.join(tmp, f"{tag}_cr.png"); credit_png(sc["credit"], p); ov.append((add(["-i", p]), 0, D + 1)); occ.append((0, D + 1, p))
     cx, cw = {"vertical": (VX + VW + 30, 586), "split": (40, 680)}.get(lay, (1180, 680))
     for j, c in enumerate(sc.get("comments", [])):    # {"at":초, "sec":4, "name":"", "text":""}
-        p = os.path.join(tmp, f"{tag}_c{j}.png"); comment_png(c, p, j % 3, cx, cw); ov.append((add(["-i", p]), c["at"], c["at"] + c.get("sec", 4)))
+        p = os.path.join(tmp, f"{tag}_c{j}.png"); comment_png(c, p, j % 3, cx, cw); ov.append((add(["-i", p]), c["at"], c["at"] + c.get("sec", 4))); occ.append((c["at"], c["at"] + c.get("sec", 4), p))
     last = "v0"
     for n, (idx, s0, s1) in enumerate(ov):
         src = f"[{idx}]" if isinstance(idx, str) else f"[{idx}:v]"
@@ -583,6 +633,23 @@ def build(spec, base):
         cur = "p3"; idx += 2
     for j, (png, a, b, _) in enumerate(gov):   # 영상 전체 시각 기준 자막(오프닝 질문)
         extra += ["-i", png]; parts.append(f"[{cur}][{idx}:v]overlay=0:0:enable='between(t,{a:.3f},{b:.3f})'[q{j}]"); cur = f"q{j}"; idx += 1
+    # 상품 카드(제휴 QR): 왼쪽 아래, 0.3초 슬라이드 인 · 0.3초 페이드 아웃. 그 시간의 자막·출처·말풍선을 피해 자리 잡기
+    pcards = gather("product_cards"); occ_all = [(a, b, Image.open(png).getbbox()) for png, a, b, _ in gov]
+    for sg in segs:
+        occ_all += [(sg["S"] + s0, sg["S"] + s1, Image.open(pp).getbbox()) for s0, s1, pp in sg.get("occ", [])]
+    nonscene = [(s["S"], s["S"] + s["dur"], s["kind"]) for s in segs if s["kind"] != "scene"]
+    for j, c in enumerate(pcards):
+        a = max(0.0, c.get("at", 0)); sec = max(1.0, c.get("sec", 6)); b = min(a + sec, total); sec = b - a
+        pp = os.path.join(tmp, f"pcard{j}.png"); size = product_card_png(c, pp)
+        x0, y0, side, ok = place_card(size, a, b, occ_all); c.update(_x=x0, _y=y0, _side=side, _ok=ok, _at=a, _end=b)
+        c["_over"] = sorted({k for s0, s1, k in nonscene if s0 < b and s1 > a})
+        occ_all.append((a, b, (x0, y0, x0 + size[0], y0 + size[1])))   # 카드끼리도 안 겹치게
+        u = f"pow(1-clip((t-{a:.3f})/0.3,0,1),3)"
+        xe = f"{x0}-({x0}+w)*{u}" if side == "left" else f"{x0}+(main_w-{x0})*{u}"
+        extra += ["-loop", "1", "-framerate", str(FPS), "-t", f"{sec:.3f}", "-i", pp]
+        parts += [f"[{idx}:v]format=rgba,fade=t=out:st={max(0.0, sec - 0.3):.3f}:d=0.3:alpha=1,setpts=PTS+{a:.3f}/TB[pc{j}]",
+                  f"[{cur}][pc{j}]overlay=x='{xe}':y={y0}:eof_action=pass:enable='between(t,{a:.3f},{b:.3f})'[pq{j}]"]
+        cur = f"pq{j}"; idx += 1
     parts.append(f"[{cur}]null[vout]"); tail = ";".join(parts)
     fin_in = extra + ["-i", fa]; ai = idx
     chain(files, joins, starts, final, extra_in=fin_in, tail=tail, final_map=["-map", f"{ai}:a"], enc=VENC + AENC + ["-movflags", "+faststart"], total=total)
@@ -602,7 +669,11 @@ def build(spec, base):
     short_ch = [m[1] for m, nx in zip(marks, marks[1:] + [(E, "")]) if nx[0] - m[0] < 10]
     i18n = spec.get("summary_i18n", {}); LB = {"en": "[English]", "ja": "[日本語]", "zh-TW": "[繁體中文]"}
     tags = " ".join(t if t.startswith("#") else "#" + t for t in spec.get("hashtags", []))
-    desc = [spec.get("summary", "").strip(), "", "■ 챕터"] + [f"{ts(a)} {t}" for a, t in marks] + ["", "■ 감사한 출처"] + [f"- {c}" for c in credits]
+    desc = []
+    if pcards:                                         # 상품 링크(광고) — 설명란 맨 위에 고지 + 목록
+        if any("coupang" in str(c.get("url", "")).lower() for c in pcards): desc += [COUPANG_NOTICE, ""]
+        desc += [f"■ 상품 링크 ({AD_MARK})"] + [f"- {c['name']}" + (f" ({c['price']})" if c.get("price") else "") + f" ({ts(c['_at'])}) : {c['url']}" for c in pcards] + [""]
+    desc += [spec.get("summary", "").strip(), "", "■ 챕터"] + [f"{ts(a)} {t}" for a, t in marks] + ["", "■ 감사한 출처"] + [f"- {c}" for c in credits]
     if tags: desc += ["", tags]
     for k2 in ("en", "ja", "zh-TW"):
         if i18n.get(k2): desc += ["", LB[k2], i18n[k2].strip()]
@@ -626,6 +697,18 @@ def build(spec, base):
            ("설명란 요약·해시태그", bool(spec.get("summary") and tags)), ("썸네일", bool(tp)),
            ("팬 영상 양해 확인", bool(spec.get("consent_checked"))),
            (f"장면 사이 검은 화면 0초 (검출 {blk:.2f}초, 카드·결심·끝·출처 화면 제외)", blk < 0.05)]
+    bans = [w.lower() for w in BAN_WORDS + list(spec.get("product_ban_words", []))]
+    banned = [f"{c['name']}({w})" for c in pcards for w in bans if w in (str(c.get("name", "")) + " " + str(c.get("label", ""))).lower()]
+    pchk = []
+    if pcards:
+        cp_ = [c for c in pcards if "coupang" in str(c.get("url", "")).lower()]
+        pchk += [(f"상품 카드: {len(pcards)}개, 광고 표시", True)]
+        if cp_: pchk.append((f"쿠팡 파트너스 고지 문구(설명란 맨 위, 쿠팡 링크 {len(cp_)}개)", True))
+        pchk.append(("상품 판매 제한 품목(주류·담배·도박·성인)" + (" — 걸림: " + ", ".join(banned) if banned else " 없음"), not banned))
+        lifted = [f"{c['name']}({c['_side']}, y={c['_y']})" for c in pcards if not c["_ok"]]
+        pchk.append(("상품 카드 자막·출처와 겹침 없음" + (" — 겹침: " + ", ".join(lifted) if lifted else ""), not lifted))
+        for c in pcards:
+            if c["_over"]: print(f"⚠️ 상품 카드 '{c['name']}'가 장면 아닌 화면({', '.join(c['_over'])}) 위에 걸침 — at 확인")
     allsubs = [s for sg in segs if sg["kind"] == "scene" for s in sg["sc"].get("subs", [])]
     n_em = sum(1 for s in allsubs if len(s) > 3 and s[3] == "emotion"); n_fx = sum(1 for s in allsubs if len(s) > 3 and s[3] == "sfx")
     kinds = {}
@@ -634,12 +717,14 @@ def build(spec, base):
     print("전환: " + ", ".join(f"{ {'dissolve':'디졸브','fold':'접힘','unfold':'펼침','cut':'컷'}[k]} {v}" for k, v in kinds.items())
           + (f" · 내레이션 {len(nars)}개(덕킹 {spec.get('duck_db', -14)}dB)" if nars else ""))
     for nm, ok in chk: print(("✅ " if ok else "❌ 빠짐: ") + nm)
+    for nm, ok in pchk: print(f"{nm} {'✅' if ok else '❌'}")
+    if not pcards: print("상품 카드: 0개 (product_cards 없음)")
     print(("⚠️ 긴 정지 장면(" + str(lim) + "초 넘음, 컷 리듬 확인): " + ", ".join(longs)) if longs else f"✅ 긴 정지 장면 없음({lim}초 이하)")
     print(f"기준서 추가: 감정 자막 {n_em}개 · 효과음 자막 {n_fx}개(효과음 소리 {len(sfxs)}개) · 음악 끊기 {len(cuts)}곳"
           + (" ⚠️ 배경음악이 없어 음악 끊기는 효과 없음" if cuts and not spec.get("bgm") else ""))
     if short_ch: print("⚠️ 유튜브 챕터는 10초 이상이어야 표시됨 — 짧은 챕터: " + ", ".join(short_ch))
     print(f"설명란: {dp}")
-    return {"final": final, "total": total, "segs": segs, "nars": nars, "sfx": sfxs, "music_cut": cuts, "black": blk, "desc": dp, "marks": marks}
+    return {"final": final, "total": total, "segs": segs, "product_cards": pcards, "nars": nars, "sfx": sfxs, "music_cut": cuts, "black": blk, "desc": dp, "marks": marks}
 
 def black_check(path, excl):
     """검은 화면 검사(카드·끝 화면 구간 제외) → 남은 검은 초."""

@@ -12,7 +12,8 @@
      "side_right":[{"name":"리마인","text":"표정 연기 미쳤다"},{"name":"덕심","text":"이 무대 다시 보고 싶었어요","at":2},{"name":"팬","text":"엔딩 요정 등장","at":4}],
      "narration":{"file":"_test/narration.mp3","at":1.5,"volume":0.9},
      "subs":[[1.0,2.2,"쿵!","sfx",[0.5,0.22]],[5,6.8,"그날의 *함성*"]],
-     "sfx":[{"at":1.0,"file":"_test/sfx_pop.wav","volume":0.8}]},
+     "sfx":[{"at":1.0,"file":"_test/sfx_pop.wav","volume":0.8}],
+     "product_cards":[{"at":2.5,"name":"RESCENE 응원봉 키링 (공식 굿즈)","price":"9,800원","url":"https://example.com/b?ref=coupang"}]},
     {"image":"_test/capture.png","sec":4,"credit":"X(트위터) 팬 게시물","side_left":"그날 밤\n팬들의 반응","subs":[[0.3,3.8,"팬들이 남긴 *한마디*"]],
      "music_cut":[{"at":1.6,"sec":1.2}]}]},
   {"title":"2025년, 기다림","sub":"한 걸음 뒤로","rewind":true,"scenes":[
@@ -22,6 +23,7 @@
     {"file":"_test/v1.mp4","in":0,"out":5,"layout":"vertical","credit":"직캠 @fancam_test","side_left":"2024.03.26\n데뷔 쇼케이스"}]}],
  "ending":{"line":"55만 장은 *기다림*에서 시작됐다","ask":"여러분이 처음 리센느를 만난 무대는?","next":"A-3 데뷔 전야","next_date":"11월 17일 (화) 저녁 7시",
            "resolve":"그때 우리는 *포기하지 않기로* 했다","resolve_sec":3.5},
+ "product_cards":[{"at":4.0,"sec":6,"name":"리센느 미니 3집 포토카드 세트","price":"12,900원","url":"https://example.com/a","label":"QR 찍고 상품 보기"}],
  "end_sec":5,"sources_sec":4,
  "sources":["배경음악: 자체 제작"],"consent_checked":true,
  "summary":"리센느의 지금에서 출발해 한 걸음씩 거꾸로 걸어가는 시리즈, 두 번째 이야기입니다.",
