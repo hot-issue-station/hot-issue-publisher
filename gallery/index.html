@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>덕심저장소 갤러리</title>
+<meta name="description" content="덕심저장소가 만든 아이돌 쇼츠·롱폼을 한곳에서 모아 보는 모바일 갤러리">
+<style>
+:root{--bg:#0e0c28;--card:#1b1840;--line:#2c2860;--tx:#fff;--sub:#b9bed7;--y:#ffd640;--r:#ff465a;--p:#9650e6}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font-family:"Noto Sans KR",system-ui,sans-serif}
+header{padding:20px 16px 8px;text-align:center}header h1{margin:0;font-size:24px}header p{margin:6px 0 0;color:var(--sub);font-size:14px}
+nav{display:flex;gap:8px;overflow-x:auto;padding:12px 16px;position:sticky;top:0;background:var(--bg);z-index:2}
+nav button{flex:none;border:1px solid var(--line);background:var(--card);color:var(--tx);border-radius:20px;padding:8px 14px;font-size:14px}
+nav button.on{background:var(--y);color:#1e143c;border-color:var(--y);font-weight:700}
+main{max-width:520px;margin:0 auto;padding:0 16px 40px}
+.ad{border:1px dashed var(--line);border-radius:10px;height:60px;display:flex;align-items:center;justify-content:center;color:var(--sub);font-size:12px;margin:14px 0 8px}
+.item{background:var(--card);border-radius:16px;overflow:hidden;margin-bottom:22px}
+.frame{position:relative;width:100%}.frame.short{aspect-ratio:9/16}.frame.long{aspect-ratio:16/9}
+.frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.meta{padding:12px 14px}.meta h2{margin:0;font-size:17px}.meta p{margin:6px 0 0;color:var(--sub);font-size:13px;line-height:1.5}
+.tag{display:inline-block;background:var(--r);border-radius:10px;padding:2px 8px;font-size:12px;font-weight:700;margin-bottom:6px}
+.picks{padding:0 14px 14px}.picks h3{font-size:13px;color:var(--y);margin:4px 0 8px}
+.row{display:flex;gap:8px;overflow-x:auto}
+.pick{flex:none;width:130px;background:#25215a;border-radius:12px;padding:10px;color:var(--tx);text-decoration:none;font-size:13px}
+.pick b{display:block;color:var(--y);margin-top:4px}
+.disc{color:var(--sub);font-size:11px;margin-top:8px;line-height:1.4}
+footer{text-align:center;color:var(--sub);font-size:12px;padding:20px}
+</style>
+</head>
+<body>
+<header><h1>덕심저장소 갤러리</h1><p>우리가 만든 쇼츠·롱폼을 한곳에서</p></header>
+<nav id="tabs"></nav>
+<main id="list"></main>
+<footer>영상은 유튜브 원본을 그대로 보여 줍니다 · 문의: 덕심저장소 유튜브 댓글</footer>
+<script>
+/* 영상 목록: 새 영상이 나오면 여기 한 줄만 추가한다 (공장이 자동으로 추가하게 할 예정)
+   id = 유튜브 영상 주소의 끝부분, kind = short(세로) / long(가로)
+   picks = 추천 상품(선택). 링크는 실제로 확인한 것만, 수수료 링크면 아래 대가성 문구가 자동 표시됨 */
+const VIDEOS = [
+  {id:"nM_01Hkho9Q", kind:"short", group:"리센느", tag:"숫자로 본 TOP", title:"리센느 초동, 숫자로 보면",
+   desc:"리센느 「PULSE」 첫 주 기록을 숫자로 정리했어요.", picks:[]},
+];
+const AFFILIATE_NOTE = "이 게시물은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.";
+const ADS_ON = false; // 애드센스 승인 전에는 광고 자리를 비워 둔다
+const tabs = ["전체", ...new Set(VIDEOS.map(v => v.group))];
+let cur = "전체";
+function draw(){
+  document.getElementById("tabs").innerHTML = tabs.map(t => `<button class="${t===cur?'on':''}" onclick="cur='${t}';draw()">${t}</button>`).join("");
+  document.getElementById("list").innerHTML = VIDEOS.filter(v => cur==="전체" || v.group===cur).map(v => `
+    ${ADS_ON ? '<div class="ad">광고</div>' : ''}
+    <article class="item">
+      <div class="frame ${v.kind}"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/${v.id}" title="${v.title}" allowfullscreen></iframe></div>
+      <div class="meta"><span class="tag">${v.tag}</span><h2>${v.title}</h2><p>${v.desc}</p></div>
+      ${v.picks && v.picks.length ? `<div class="picks"><h3>함께 보면 좋은 것</h3><div class="row">
+        ${v.picks.map(p => `<a class="pick" href="${p.url}" target="_blank" rel="sponsored noopener">${p.name}<b>${p.price||''}</b></a>`).join("")}
+        </div>${v.picks.some(p => /coupang/.test(p.url)) ? `<div class="disc">${AFFILIATE_NOTE}</div>` : ''}</div>` : ''}
+    </article>`).join("");
+}
+draw();
+</script>
+</body>
+</html>
