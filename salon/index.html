@@ -153,7 +153,7 @@ h2{font-size:21px;margin:22px 0 4px}
   <h2>이 앱이 무료인 이유</h2>
   <p class="note" style="margin-top:0">단골 수첩은 '원장님 추천 상품' 칸의 제휴 수수료(쿠팡 파트너스 등)로 운영됩니다. 수수료가 붙어도 상품 가격은 같고, 링크마다 광고 표시를 합니다. 손님 기록은 이 휴대폰 밖으로 나가지 않아요.</p>
   <h2>기록 지키기</h2>
-  <p class="note" style="margin-top:0">기록은 이 휴대폰 안에만 있어요. 휴대폰을 바꾸거나 인터넷 기록을 지우면 사라질 수 있으니 한 달에 한 번 백업해 주세요.</p>
+  <p class="note" style="margin-top:0">기록은 이 휴대폰 안에만 있어요. 휴대폰을 바꾸거나 인터넷 기록을 지우면 사라질 수 있으니 일주일에 한 번 백업해 주세요.</p>
   <button class="big ghost" onclick="backup()">백업 파일로 저장</button>
   <button class="big ghost" onclick="document.getElementById('restore').click()">백업 파일 불러오기</button>
   <input type="file" id="restore" accept=".json,application/json" class="hide" onchange="restore(this.files[0]);this.value=''">
@@ -211,7 +211,8 @@ try{ db=JSON.parse(localStorage.getItem(KEY))||{c:[]} }catch(e){}
 function save(){ try{ localStorage.setItem(KEY,JSON.stringify(db)) }catch(e){ alert("저장 공간이 부족해요. 백업 후 오래된 사진을 지워 주세요.") } }
 const $=id=>document.getElementById(id);
 const won=n=>Number(n||0).toLocaleString()+"원";
-const today=()=>new Date().toISOString().slice(0,10);
+const ymd=d=>{const z=n=>String(n).padStart(2,"0");return d.getFullYear()+"-"+z(d.getMonth()+1)+"-"+z(d.getDate())};
+const today=()=>ymd(new Date());
 const days=d=>Math.round((Date.now()-new Date(d))/864e5);
 function esc(s){return String(s??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]))}
 const TITLES={today:()=>db.shop||"단골 수첩",list:()=>"손님",pick:()=>"누구 시술하셨어요?",newCust:()=>"새 손님",detail:()=>cur.n+" 님",newRec:()=>cur.n+" 님 시술",sales:()=>"매출",settings:()=>"설정",setup:()=>"단골 수첩 시작"};
@@ -298,7 +299,7 @@ function inPeriod(d){ const t=new Date(), x=new Date(d);
   if(period==="오늘") return d===today();
   if(period==="이번 주"){ const s=new Date(t); s.setDate(t.getDate()-((t.getDay()+6)%7)); s.setHours(0,0,0,0); return x>=s }
   if(period==="이번 달") return d.slice(0,7)===today().slice(0,7);
-  if(period==="지난달"){ const p=new Date(t.getFullYear(),t.getMonth()-1,1); return d.slice(0,7)===p.toISOString().slice(0,7) } }
+  if(period==="지난달"){ const p=new Date(t.getFullYear(),t.getMonth()-1,1); return d.slice(0,7)===ymd(p).slice(0,7) } }
 function drawSales(){
   $("periodChips").innerHTML=["오늘","이번 주","이번 달","지난달"].map(p=>`<button class="chip ${p===period?'on':''}" onclick="period='${p}';drawSales()">${p}</button>`).join("");
   const rs=[]; db.c.forEach(c=>c.r.forEach(r=>{ if(inPeriod(r.d)) rs.push(r) }));

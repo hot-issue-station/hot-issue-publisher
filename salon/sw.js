@@ -2,7 +2,7 @@
    - 앱 껍데기(화면 파일·아이콘)는 설치 때 미리 저장 → 인터넷이 없어도 열림
    - 염색 미리보기의 MediaPipe 프로그램·모델은 color.html을 처음 쓸 때 받아서 저장
    - 손님 기록(localStorage)은 여기서 다루지 않음 */
-const VER = "dangol-shell-v1";
+const VER = "dangol-shell-v2";
 const MODEL_CACHE = "dangol-models-v1";
 const SHELL = [
   "./", "index.html", "color.html", "manifest.webmanifest",
