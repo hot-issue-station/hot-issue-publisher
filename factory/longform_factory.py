@@ -424,12 +424,10 @@ def mola_sub_png(text, path, style, pos=None, faces=None):
     im = v2_fx.caption_img(text, style, W); full = Image.new("RGBA", (W, H), (0, 0, 0, 0)); w, h = im.width, im.height
     faces = faces or []
     if pos: x, y = int(pos[0] * W - w / 2), int(pos[1] * H - h / 2)
-    elif style in ("narr", "situation"):
-        top = 28 if style == "narr" else 175
-        cands = [((W - w) // 2, top), (40, top), (W - w - 40, top),            # 위 가운데 → 위 왼쪽 → 위 오른쪽
-                 (40, int(H * 0.60)), (W - w - 40, int(H * 0.60)),          # 얼굴이 위를 다 차지하면 가운데 아래 양옆
-                 ((W - w) // 2, int(H * 0.66))]
-        x, y = pick_spot(w, h, cands, faces + [ORIG_SUB_BAND])
+    elif style == "narr":                             # 대표 11/11 21:38: 위쪽 자막은 화면 맨 위에 바로 붙여서
+        x, y = (W - w) // 2, 0
+    elif style == "situation":                        # 내레이션 자막 바로 아래에 붙여서(맨 위 띠 안)
+        x, y = (W - w) // 2, v2_fx.caption_img("가", "narr", W).height
     else: x, y = (W - w) // 2, int(H * 0.56)    # 원본 자막(화면 아래 0.8~0.95)을 가리지 않게
     full.alpha_composite(im, (max(0, min(W - w, x)), max(0, min(H - h, y)))); full.save(path)
 
