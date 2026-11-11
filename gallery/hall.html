@@ -88,6 +88,32 @@ const MISSIONS = [
    TODO: 대표 계정 Firebase(무료 등급)를 만들면 FIREBASE_CONFIG에 {apiKey, authDomain, projectId, appId}를 넣고
          STATS_FIREBASE.record/get 을 Firestore 증가(increment) 코드로 채운다. null이면 꺼져 있다. */
 const FIREBASE_CONFIG = null;
+
+/* 광고 자리. 이미지(https)와 링크만 넣으면 그 칸에 걸린다(누르면 새 탭, rel="sponsored noopener"). 광고에는 항상 「광고」 표시.
+   place: screen_top(화면 맨 위 띠) | panel_bottom(영상 패널 아래) | street_billboard(건물 밖 전광판) | lobby_billboard(로비 전광판)
+          | lobby_top · hall_top · room_top (벽 위쪽 지하철식 광고판 줄 — 칸 번호 _1, _2 …. 적지 않은 칸은 「광고 자리」 판이 보인다)
+   전광판(street/lobby_billboard)에 이미지가 들어오면 순환 슬라이드 사이에 끼어든다. */
+const ADS = [
+  {slot_id:"screen_top_1",       place:"screen_top",       size:"화면 너비 × 22px",  image:null, link:null, label:"광고"},
+  {slot_id:"panel_bottom_1",     place:"panel_bottom",     size:"패널 너비 × 64px",  image:null, link:null, label:"광고"},
+  {slot_id:"street_billboard_1", place:"street_billboard", size:"512 × 256",         image:null, link:null, label:"광고"},
+  {slot_id:"lobby_billboard_1",  place:"lobby_billboard",  size:"512 × 256",         image:null, link:null, label:"광고"},
+  {slot_id:"room_top_1",         place:"room_top",         size:"512 × 80",          image:null, link:null, label:"광고"},
+];
+/* 광고 문의: form_url = 대표가 만든 구글 설문지 주소(문의가 우리 메일로 발송됨). 메일 주소·전화번호는 화면·코드 어디에도 넣지 않는다. */
+const CONTACT = { text:"광고 문의하기", form_url:null };
+/* 로비 「한국 문화 코너」 — 지금은 빈 진열대. 나중에 한복·한글·한국 음식 등을 {title:{ko,ja,en,zh}, desc?, video_id?} 로 넣는다 */
+const CULTURE_CORNER = { open:false, items:[] };
+/* 추천 상점(여러 상점). 모든 방에 처음부터 진열대와 「함께 보면 좋은 것」 자리가 있고, 비어 있으면 「곧 열려요」.
+   상품의 상점에 맞는 대가성 문구가 자동으로 붙는다. note는 각 제휴 프로그램이 정한 공식 문구로(승인 후 확인해서 바꿀 것). */
+const SHOPS = [
+  {id:"coupang",    name:"쿠팡",      hosts:["coupang.com","coupa.ng"], note:"이 게시물은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다."},
+  {id:"oliveyoung", name:"올리브영",  hosts:["oliveyoung.co.kr"], note:"이 링크로 구매하면 덕심저장소가 올리브영 제휴 활동에 따른 일정액의 수수료를 받을 수 있어요."},   // TODO: 제휴 승인 시 공식 문구로
+  {id:"musinsa",    name:"무신사",    hosts:["musinsa.com"],      note:"이 링크로 구매하면 덕심저장소가 무신사 제휴 활동에 따른 일정액의 수수료를 받을 수 있어요."},     // TODO
+  {id:"ohou",       name:"오늘의집",  hosts:["ohou.se"],          note:"이 링크로 구매하면 덕심저장소가 오늘의집 제휴 활동에 따른 일정액의 수수료를 받을 수 있어요."},   // TODO
+];
+/* 상품: {name, price, url, shop, hall, room} — room 칸의 진열대와 그 방 영상 패널 아래에 함께 보인다. 링크는 직접 열어 확인한 것만 */
+const PRODUCTS = [];
 const THREE_VERSION = "0.186.1"; // importmap 주소와 같이 바꿀 것
 </script>
 <script type="importmap">
@@ -107,7 +133,11 @@ button,select{font:inherit;color:inherit;cursor:pointer}
 #stage{position:fixed;inset:0;touch-action:none;outline:none}
 #stage canvas{display:block;width:100%;height:100%}
 
-.top{position:fixed;left:0;right:0;top:0;z-index:5;padding:calc(10px + env(safe-area-inset-top)) 16px 10px;
+.adtop{position:fixed;left:0;right:0;top:0;z-index:9;height:calc(22px + env(safe-area-inset-top));padding-top:env(safe-area-inset-top);display:flex;align-items:center;justify-content:center;gap:6px;
+  background:#efe7da;color:var(--sub);font-size:11px;text-decoration:none;border-bottom:1px solid var(--line);background-size:cover;background-position:center}
+.adtop b,.adslot b{background:var(--ink);color:#fff;border-radius:4px;padding:1px 5px;font-size:10px}
+.adslot{display:flex;align-items:center;justify-content:center;gap:6px;height:64px;margin-top:14px;border:1px dashed var(--line);border-radius:12px;color:var(--sub);font-size:12px;text-decoration:none;background:#faf6ef center/cover no-repeat}
+.top{position:fixed;left:0;right:0;top:calc(22px + env(safe-area-inset-top));z-index:5;padding:10px 16px 10px;
   background:linear-gradient(var(--bg) 60%,rgba(246,239,227,0));pointer-events:none}
 .top>*{pointer-events:auto}
 body[data-view=outside]:not(.flat) .top{background:linear-gradient(rgba(255,255,255,.75) 55%,rgba(255,255,255,0))}
@@ -122,7 +152,7 @@ body[data-view=outside]:not(.flat) .top{background:linear-gradient(rgba(255,255,
 .crumbs .back{background:var(--ink);color:#fff;border-color:var(--ink);font-weight:700}
 .crumbs .on{background:var(--theme);border-color:var(--theme);font-weight:700}
 .crumbs .lock{color:var(--sub);border-style:dashed}
-.side{position:fixed;right:16px;top:calc(124px + env(safe-area-inset-top));z-index:5;display:flex;flex-direction:column;gap:8px}
+.side{position:fixed;right:16px;top:calc(146px + env(safe-area-inset-top));z-index:5;display:flex;flex-direction:column;gap:8px}
 .side button{border:1px solid var(--line);background:rgba(255,250,242,.94);border-radius:14px;padding:7px 10px;font-size:12px;min-height:38px;box-shadow:0 2px 8px rgba(40,25,10,.1)}
 body.flat .side .mode{display:none}
 body.flat .side{top:auto;bottom:calc(60px + env(safe-area-inset-bottom))}
@@ -136,7 +166,7 @@ body.walk[data-view=outside]:not(.flat) .enterBtn{left:auto;right:16px;transform
   text-align:center;transition:opacity .6s;pointer-events:none}
 .hint.off{opacity:0}
 body[data-view=outside] .hint{bottom:calc(136px + env(safe-area-inset-bottom));max-width:calc(100% - 32px)}
-body.walk .hint{bottom:auto;top:calc(128px + env(safe-area-inset-top));left:16px;transform:none;max-width:calc(100% - 132px)}
+body.walk .hint{bottom:auto;top:calc(150px + env(safe-area-inset-top));left:16px;transform:none;max-width:calc(100% - 132px)}
 .turn{position:fixed;bottom:calc(58px + env(safe-area-inset-bottom));z-index:4;width:46px;height:46px;border-radius:50%;
   border:1px solid var(--line);background:rgba(255,250,242,.92);font-size:20px;box-shadow:var(--shadow);display:flex;align-items:center;justify-content:center}
 .turn.l{left:16px}.turn.r{right:16px}
@@ -156,7 +186,7 @@ body.walk:not(.flat) .joy{display:block}
 .toast{position:fixed;left:50%;top:42%;transform:translate(-50%,-50%) scale(.96);z-index:30;background:var(--ink);color:#fff;
   padding:12px 18px;border-radius:14px;font-size:14px;opacity:0;transition:.25s;pointer-events:none;max-width:calc(100% - 32px);text-align:center;line-height:1.5}
 .toast.on{opacity:1;transform:translate(-50%,-50%) scale(1)}
-.suggest{position:fixed;left:16px;right:16px;top:calc(124px + env(safe-area-inset-top));z-index:8;background:var(--ink);color:#fff;border-radius:14px;padding:10px 12px;font-size:13px;display:none;align-items:center;gap:8px}
+.suggest{position:fixed;left:16px;right:16px;top:calc(146px + env(safe-area-inset-top));z-index:8;background:var(--ink);color:#fff;border-radius:14px;padding:10px 12px;font-size:13px;display:none;align-items:center;gap:8px}
 .suggest.on{display:flex}.suggest span{flex:1}
 .suggest button{border:0;border-radius:999px;padding:7px 12px;font-size:12px;font-weight:700;background:var(--y);color:var(--ink)}
 .suggest button.x{background:transparent;color:#fff}
@@ -178,8 +208,11 @@ body.walk:not(.flat) .joy{display:block}
 .langs{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .langs button,.modes button{border:1px solid var(--line);background:#fff;border-radius:14px;padding:14px 10px;font-size:16px;font-weight:700;min-height:52px}
 .langs button.on,.chars button.on,.modes button.on{border-color:var(--ink);box-shadow:0 0 0 2px var(--ink) inset}
-.petTabs{display:flex;gap:6px;margin-bottom:8px}
-.petTabs button{flex:1;border:1px solid var(--line);background:#fff;border-radius:999px;padding:8px;font-size:14px;font-weight:700;min-height:38px}
+.petTabs{display:flex;gap:6px;margin-bottom:8px;overflow-x:auto;scrollbar-width:none}
+.petTabs button{flex:none;border:1px solid var(--line);background:#fff;border-radius:999px;padding:7px 11px;font-size:13px;font-weight:700;min-height:36px}
+.petIntro{margin:8px 2px 0;font-size:12px;color:var(--sub);line-height:1.5;min-height:18px}
+.contactBtn{display:block;width:100%;margin-top:14px;border:0;background:var(--ink);color:#fff;font-weight:700;font-size:15px;padding:13px;border-radius:999px}
+.contactNote{margin:8px 0 0;font-size:11px;color:var(--sub);text-align:center}
 .petTabs button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
 .chars{display:grid;grid-template-columns:repeat(auto-fit,minmax(60px,1fr));gap:6px}
 .chars button{border:1px solid var(--line);background:#fff;border-radius:14px;padding:8px 2px 6px;font-size:11px;line-height:1.25;display:flex;flex-direction:column;align-items:center;gap:4px;min-height:92px;word-break:keep-all}
@@ -227,6 +260,8 @@ body.walk:not(.flat) .joy{display:block}
 .picks{margin-top:16px;border-top:1px solid var(--line);padding-top:12px}
 .picks[hidden]{display:none}
 .picks h3{margin:0 0 8px;font-size:13px;color:var(--p)}
+.picks h3::after{content:"광고 · AD";margin-left:6px;background:var(--ink);color:#fff;border-radius:4px;padding:1px 5px;font-size:10px;vertical-align:1px}
+.pick small{display:block;color:var(--sub);font-size:11px;margin-top:2px}
 .picks .row{display:flex;gap:8px;overflow-x:auto}
 .pick{flex:none;width:136px;background:var(--bg);border-radius:12px;padding:10px;color:var(--ink);text-decoration:none;font-size:13px;line-height:1.4}
 .pick b{display:block;margin-top:4px;color:var(--r)}
@@ -235,7 +270,7 @@ body.walk:not(.flat) .joy{display:block}
 .sheet .yt{margin:10px 0 0;font-size:11px;color:var(--sub);line-height:1.45}
 
 /* 3D를 못 불러올 때: 평면 화면 (밖 → 로비 → 관 → 방) */
-#flat{display:none;max-width:560px;margin:0 auto;padding:140px 16px 80px}
+#flat{display:none;max-width:560px;margin:0 auto;padding:162px 16px 80px}
 body.flat #flat{display:block}
 body.flat #stage,body.flat .turn,body.flat .hint,body.flat .joy{display:none}
 .warn{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:12px 14px;font-size:13px;line-height:1.55;color:var(--sub);margin-bottom:16px}
@@ -263,6 +298,7 @@ body.flat #stage,body.flat .turn,body.flat .hint,body.flat .joy{display:none}
 <body data-view="outside">
 <div id="stage" tabindex="0" aria-label="3D 미술관"></div>
 
+<a class="adtop" id="adTop" target="_blank" rel="sponsored noopener"></a>
 <header class="top">
   <div class="bar">
     <div class="brand"><h1 id="hTitle"></h1><small id="hSub"></small></div>
@@ -312,21 +348,22 @@ body.flat #stage,body.flat .turn,body.flat .hint,body.flat .joy{display:none}
     <p class="empty" id="picksEmpty" data-t="picksEmpty"></p>
     <p class="disc" id="disc" hidden>이 게시물은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</p>
   </div>
+  <a class="adslot" id="adPanel" target="_blank" rel="sponsored noopener"></a>
   <p class="yt" data-t="embedNote"></p>
 </section>
 
 <script>
 /* ---------- 화면 문구 4개 언어 (영상 제목·설명은 한국어 그대로) ---------- */
 const I18N = {
-  ko:{gallery:"덕심저장소 갤러리", subOut:"3D 미술관 시험판", subLobby:"로비 · 관을 골라 주세요", subHub:"관 홀 · 방을 골라 주세요",
+  ko:{gallery:"덕심저장소 갤러리", adSpace:"광고 자리", adSoon:"이 자리에 광고가 들어갈 예정이에요", contactTitle:"광고 문의", contactBtn:"광고 문의하기", contactSoon:"문의 창 준비 중이에요", contactNote:"남겨 주신 정보는 광고 상담에만 쓰여요", contactDesc:"덕심저장소 미술관의 전광판·광고판 자리에 광고를 걸어 보세요. 아래 버튼으로 문의를 남겨 주시면 연락드릴게요.", bContact:"광고 문의하기", bs1:"이 자리에 광고를 걸어 보세요", bs1b:"광고 문의 환영 · 누르면 「광고 문의하기」", bs2:"덕심저장소", bs2b:"구독하고 다음 전시를 먼저 만나요", bs3:"이번 주 새 전시", bs3b:"새로 걸린 날: {d}", culture:"한국 문화 코너", cultureSoon:"곧 열려요", bCulture:"한국 문화 코너 · 곧 열려요", lobbySub:"Duksim Archive Gallery · トクシム保管庫ギャラリー · Duksim 典藏藝廊", subOut:"3D 미술관 시험판", subLobby:"로비 · 관을 골라 주세요", subHub:"관 홀 · 방을 골라 주세요",
       loading:"미술관 문을 여는 중…", enter:"들어가기", toLobby:"로비로", toHub:"관 홀로", exit:"밖으로",
       hintOut:"「들어가기」를 누르면 계단을 올라 안으로 들어가요", hintOutWalk:"조이스틱으로 걸어서 입구까지 가 보세요",
       hintLobby:"끌어서 둘러보고, 문을 누르면 관으로 들어가요", hintHub:"문을 누르면 방으로 들어가요",
       hintRoom:"끌어서 둘러보고, 액자를 누르면 영상이 나와요", hintWalk:"왼쪽 아래 조이스틱으로 걷고, 다가가면 버튼이 떠요",
       soon:"곧 채워져요", locked:"준비 중", lockedToast:"이 관은 준비 중이에요", videosN:"영상 {n}개",
       photoSoon:"사진 자리", igSoon:"곧 걸려요", photoToast:"이 자리는 곧 사진이 걸려요",
-      goodsSign:"굿즈 진열대 · 준비 중", goodsTitle:"굿즈 진열대", goodsToast:"굿즈 진열대는 준비 중이에요",
-      close:"닫기", picksTitle:"함께 보면 좋은 것", picksEmpty:"아직 준비 중이에요",
+      goodsSign:"추천 상점 · 곧 열려요", goodsTitle:"추천 상점", goodsToast:"추천 상점은 곧 열려요", freeNote:"덕심저장소 갤러리는 광고와 제휴 수수료로 무료로 운영돼요. 상품 가격은 같아요.",
+      close:"닫기", picksTitle:"함께 보면 좋은 것", picksEmpty:"곧 열려요",
       src:"출처", openYT:"유튜브에서 원본 보기", openIG:"인스타그램에서 원본 보기",
       igWait:"인스타그램 게시물을 불러오는 중이에요.\n안 보이면 아래 버튼으로 원본을 열어 주세요.",
       embedNote:"영상·사진은 유튜브·인스타그램 원본을 그대로 불러와요. 조회수와 좋아요는 원작자에게 그대로 가요.",
@@ -336,22 +373,22 @@ const I18N = {
       pickLang:"언어를 골라 주세요", pickChar:"나와 함께 걸을 친구를 골라 주세요", tabDog:"강아지", tabCat:"고양이", pickMode:"둘러보는 방법", start:"시작하기",
       walkMode:"걷기 모드", walkDesc:"엄지로 걸어 다니며, 문·액자 앞에서 버튼을 눌러요", quickMode:"빠른 모드", quickDesc:"화면을 끌어 둘러보고, 눌러서 바로 봐요",
       p_jindo:"진돗개", p_shiba:"시바", p_maltese:"말티즈", p_corgi:"웰시코기", p_golden:"골든 리트리버", p_cheese:"치즈 코숏", p_russian:"러시안블루", p_calico:"삼색이", p_tuxedo:"턱시도",
-      bEnter:"들어가기", bWatch:"영상 보기", bPhoto:"사진 보기", bTalk:"말 걸기", bGoods:"굿즈 보기", bPick:"줍기", bQuiz:"퀴즈 풀기",
-      npc:"안내원 반짝이", npcHello:"어서 오세요! 덕심저장소 갤러리예요.\n열린 관: {open}\n준비 중인 관: {soon}\n\n관 안의 방을 모두 둘러보면 완주 배지를 드려요. 곳곳에 숨은 미션도 찾아보세요!",
+      bEnter:"들어가기", bWatch:"영상 보기", bPhoto:"사진 보기", bTalk:"말 걸기", bGoods:"추천 상점 보기", bPick:"줍기", bQuiz:"퀴즈 풀기",
+      npc:"안내원 반짝이", npcHello:"안녕하세요! 어서 오세요, 덕심저장소 갤러리예요.\n열린 관: {open}\n준비 중인 관: {soon}\n\n관 안의 방을 모두 둘러보면 완주 배지를 드려요. 곳곳에 숨은 미션도 찾아보세요!",
       collection:"수집함", colEmpty:"아직 모은 것이 없어요. 방을 둘러보고 미션을 찾아보세요!", visits:"{hall} 방문 {a}/{b}",
       badge:"{hall} 완주 배지", badgeToast:"🎉 {hall} 완주 배지를 받았어요!", missionOk:"미션 성공! 비밀 액자가 열렸어요",
       rewardSoon:"보상 영상은 곧 채워져요", secret:"비밀 액자", quizWrong:"아쉬워요, 다시 골라 볼까요?",
       like:"추천해요 👍", liked:"추천했어요 👍", likesN:"이 기기 추천 {n} · 열람 {v}", newTag:"새로 걸림",
       slowSuggest:"화면이 조금 느려요. 빠른 모드로 바꿀까요?", switchQuick:"빠른 모드로", modeWalk:"🚶 걷기", modeQuick:"⚡ 빠른"},
-  ja:{gallery:"トクシム保管庫ギャラリー", subOut:"3Dミュージアム(テスト版)", subLobby:"ロビー・館を選んでください", subHub:"館ホール・部屋を選んでください",
+  ja:{gallery:"トクシム保管庫ギャラリー", adSpace:"広告スペース", adSoon:"ここに広告が入る予定です", contactTitle:"広告のお問い合わせ", contactBtn:"広告について問い合わせる", contactSoon:"お問い合わせ窓口は準備中です", contactNote:"いただいた情報は広告のご相談にのみ使用します", contactDesc:"トクシム保管庫ミュージアムの電光掲示板・広告スペースに広告を掲載できます。下のボタンからお問い合わせください。", bContact:"広告のお問い合わせ", bs1:"ここに広告を出してみませんか", bs1b:"広告のお問い合わせ歓迎 · タップでお問い合わせ", bs2:"トクシム保管庫", bs2b:"登録して次の展示をいち早くチェック", bs3:"今週の新しい展示", bs3b:"展示日: {d}", culture:"韓国文化コーナー", cultureSoon:"まもなくオープン", bCulture:"韓国文化コーナー · まもなくオープン", lobbySub:"トクシム保管庫ギャラリー · Duksim Archive Gallery · Duksim 典藏藝廊", subOut:"3Dミュージアム(テスト版)", subLobby:"ロビー・館を選んでください", subHub:"館ホール・部屋を選んでください",
       loading:"ミュージアムを開いています…", enter:"入る", toLobby:"ロビーへ", toHub:"館ホールへ", exit:"外へ",
       hintOut:"「入る」を押すと階段を上って館内へ", hintOutWalk:"スティックで入口まで歩いてみましょう",
       hintLobby:"ドラッグで見回し、扉をタップで館へ", hintHub:"扉をタップすると部屋へ",
       hintRoom:"ドラッグで見回し、額縁をタップすると動画が見られます", hintWalk:"左下のスティックで歩き、近づくとボタンが出ます",
       soon:"まもなく公開", locked:"準備中", lockedToast:"この館は準備中です", videosN:"動画{n}本",
       photoSoon:"写真スペース", igSoon:"まもなく掲示", photoToast:"ここにはまもなく写真が飾られます",
-      goodsSign:"グッズ棚・準備中", goodsTitle:"グッズ棚", goodsToast:"グッズ棚は準備中です",
-      close:"閉じる", picksTitle:"あわせてどうぞ", picksEmpty:"ただいま準備中です",
+      goodsSign:"おすすめショップ・まもなくオープン", goodsTitle:"おすすめショップ", goodsToast:"おすすめショップはまもなくオープン", freeNote:"トクシム保管庫ギャラリーは広告とアフィリエイト手数料で無料運営しています。商品の価格は変わりません。",
+      close:"閉じる", picksTitle:"あわせてどうぞ", picksEmpty:"まもなくオープン",
       src:"出典", openYT:"YouTubeで元の動画を見る", openIG:"Instagramで元の投稿を見る",
       igWait:"Instagramの投稿を読み込んでいます。\n表示されない場合は下のボタンから元の投稿を開いてください。",
       embedNote:"動画・写真はYouTube・Instagramの埋め込みで表示され、再生回数といいねは元の投稿者に届きます。",
@@ -361,22 +398,22 @@ const I18N = {
       pickLang:"言語を選んでください", pickChar:"一緒に歩く仲間を選んでください", tabDog:"犬", tabCat:"猫", pickMode:"見て回る方法", start:"はじめる",
       walkMode:"歩きモード", walkDesc:"親指で歩き、扉や額縁の前でボタンを押します", quickMode:"クイックモード", quickDesc:"ドラッグで見回し、タップですぐ見られます",
       p_jindo:"珍島犬", p_shiba:"柴犬", p_maltese:"マルチーズ", p_corgi:"コーギー", p_golden:"ゴールデン・レトリバー", p_cheese:"茶トラ", p_russian:"ロシアンブルー", p_calico:"三毛猫", p_tuxedo:"タキシード猫",
-      bEnter:"入る", bWatch:"動画を見る", bPhoto:"写真を見る", bTalk:"話しかける", bGoods:"グッズを見る", bPick:"拾う", bQuiz:"クイズに挑戦",
-      npc:"案内係キラリ", npcHello:"ようこそ!トクシム保管庫ギャラリーです。\n開いている館: {open}\n準備中の館: {soon}\n\n館内の部屋をすべて回ると完走バッジがもらえます。隠れたミッションも探してみてください!",
+      bEnter:"入る", bWatch:"動画を見る", bPhoto:"写真を見る", bTalk:"話しかける", bGoods:"ショップを見る", bPick:"拾う", bQuiz:"クイズに挑戦",
+      npc:"案内係キラリ", npcHello:"안녕하세요!(アンニョンハセヨ=韓国語で「こんにちは」)\nようこそ、トクシム保管庫ギャラリーへ。\n開いている館: {open}\n準備中の館: {soon}\n\n館内の部屋をすべて回ると完走バッジがもらえます。隠れたミッションも探してみてください!",
       collection:"コレクション", colEmpty:"まだ何もありません。部屋を回ってミッションを探しましょう!", visits:"{hall} 訪問 {a}/{b}",
       badge:"{hall} 完走バッジ", badgeToast:"🎉 {hall} 完走バッジを獲得!", missionOk:"ミッション成功!秘密の額縁が開きました",
       rewardSoon:"ごほうび動画はまもなく公開", secret:"秘密の額縁", quizWrong:"残念!もう一度選んでみましょう",
       like:"おすすめ 👍", liked:"おすすめ済み 👍", likesN:"この端末のおすすめ {n}・閲覧 {v}", newTag:"NEW",
       slowSuggest:"動作が少し重いようです。クイックモードにしますか?", switchQuick:"クイックモードへ", modeWalk:"🚶 歩き", modeQuick:"⚡ クイック"},
-  en:{gallery:"Duksim Archive Gallery", subOut:"3D museum · preview", subLobby:"Lobby · pick a hall", subHub:"Hall · pick a room",
+  en:{gallery:"Duksim Archive Gallery", adSpace:"AD SPACE", adSoon:"An ad will be placed here", contactTitle:"Advertising inquiry", contactBtn:"Ask about advertising", contactSoon:"The inquiry form is coming soon", contactNote:"Your details are used only to discuss advertising", contactDesc:"Place your ad on the billboards and ad panels of the Duksim Archive museum. Leave an inquiry with the button below and we will get back to you.", bContact:"Advertising inquiry", bs1:"Advertise here", bs1b:"Inquiries welcome · tap to ask about advertising", bs2:"Duksim Archive", bs2b:"Subscribe to see the next exhibition first", bs3:"New this week", bs3b:"Hung on: {d}", culture:"Korean Culture Corner", cultureSoon:"Opening soon", bCulture:"Korean Culture Corner · opening soon", lobbySub:"Duksim Archive Gallery · トクシム保管庫ギャラリー · Duksim 典藏藝廊", subOut:"3D museum · preview", subLobby:"Lobby · pick a hall", subHub:"Hall · pick a room",
       loading:"Opening the museum…", enter:"Enter", toLobby:"Lobby", toHub:"Hall", exit:"Exit",
       hintOut:"Tap Enter to climb the steps and go inside", hintOutWalk:"Use the joystick to walk to the entrance",
       hintLobby:"Drag to look around. Tap a door to enter a hall.", hintHub:"Tap a door to enter a room",
       hintRoom:"Drag to look around. Tap a frame to watch.", hintWalk:"Walk with the joystick; buttons appear when you get close",
       soon:"Coming soon", locked:"Coming soon", lockedToast:"This hall is coming soon", videosN:"{n} videos",
       photoSoon:"Photo spot", igSoon:"Coming soon", photoToast:"A photo will hang here soon",
-      goodsSign:"Goods shelf · soon", goodsTitle:"Goods shelf", goodsToast:"The goods shelf is coming soon",
-      close:"Close", picksTitle:"Goes well with this", picksEmpty:"Nothing here yet",
+      goodsSign:"Recommended shop · opening soon", goodsTitle:"Recommended shop", goodsToast:"The shop opens soon", freeNote:"Duksim Archive Gallery is free, supported by ads and affiliate commissions. Product prices stay the same.",
+      close:"Close", picksTitle:"Goes well with this", picksEmpty:"Opening soon",
       src:"Source", openYT:"Open on YouTube", openIG:"Open on Instagram",
       igWait:"Loading the Instagram post.\nIf it doesn't appear, open the original below.",
       embedNote:"Videos and photos are YouTube/Instagram embeds, so views and likes go to the original creators.",
@@ -386,22 +423,22 @@ const I18N = {
       pickLang:"Choose your language", pickChar:"Pick a friend to walk with you", tabDog:"Dogs", tabCat:"Cats", pickMode:"How to explore", start:"Start",
       walkMode:"Walk mode", walkDesc:"Walk with your thumb and tap buttons near doors and frames", quickMode:"Quick mode", quickDesc:"Drag to look around and tap to watch right away",
       p_jindo:"Jindo", p_shiba:"Shiba", p_maltese:"Maltese", p_corgi:"Welsh Corgi", p_golden:"Golden Retriever", p_cheese:"Orange Tabby", p_russian:"Russian Blue", p_calico:"Calico", p_tuxedo:"Tuxedo Cat",
-      bEnter:"Enter", bWatch:"Watch", bPhoto:"View photo", bTalk:"Talk", bGoods:"View goods", bPick:"Pick up", bQuiz:"Take quiz",
-      npc:"Guide Sparkle", npcHello:"Welcome to the Duksim Archive Gallery!\nOpen halls: {open}\nComing soon: {soon}\n\nVisit every room in a hall to earn a completion badge. Look for hidden missions too!",
+      bEnter:"Enter", bWatch:"Watch", bPhoto:"View photo", bTalk:"Talk", bGoods:"View shop", bPick:"Pick up", bQuiz:"Take quiz",
+      npc:"Guide Sparkle", npcHello:"안녕하세요! (Annyeonghaseyo — \"hello\" in Korean)\nWelcome to the Duksim Archive Gallery!\nOpen halls: {open}\nComing soon: {soon}\n\nVisit every room in a hall to earn a completion badge. Look for hidden missions too!",
       collection:"Collection", colEmpty:"Nothing collected yet. Explore the rooms and find missions!", visits:"{hall} visited {a}/{b}",
       badge:"{hall} complete badge", badgeToast:"🎉 You earned the {hall} complete badge!", missionOk:"Mission complete! A secret frame opened",
       rewardSoon:"The reward video is coming soon", secret:"Secret frame", quizWrong:"Not quite — try again?",
       like:"Recommend 👍", liked:"Recommended 👍", likesN:"On this device: {n} recs · {v} views", newTag:"NEW",
       slowSuggest:"Things look a bit slow. Switch to quick mode?", switchQuick:"Quick mode", modeWalk:"🚶 Walk", modeQuick:"⚡ Quick"},
-  zh:{gallery:"Duksim 典藏藝廊", subOut:"3D 美術館(試用版)", subLobby:"大廳・請選擇展館", subHub:"展館大廳・請選擇房間",
+  zh:{gallery:"Duksim 典藏藝廊", adSpace:"廣告位", adSoon:"這裡將放置廣告", contactTitle:"廣告洽詢", contactBtn:"洽詢廣告", contactSoon:"洽詢表單準備中", contactNote:"您留下的資料只會用於廣告洽談", contactDesc:"歡迎在 Duksim 典藏美術館的電子看板與廣告位刊登廣告。請透過下方按鈕留下洽詢,我們會與您聯繫。", bContact:"廣告洽詢", bs1:"在這裡刊登廣告吧", bs1b:"歡迎洽詢廣告 · 點一下即可洽詢", bs2:"Duksim 典藏", bs2b:"訂閱就能搶先看下一場展覽", bs3:"本週新展出", bs3b:"展出日期:{d}", culture:"韓國文化角", cultureSoon:"即將開放", bCulture:"韓國文化角 · 即將開放", lobbySub:"Duksim 典藏藝廊 · Duksim Archive Gallery · トクシム保管庫ギャラリー", subOut:"3D 美術館(試用版)", subLobby:"大廳・請選擇展館", subHub:"展館大廳・請選擇房間",
       loading:"美術館開門中…", enter:"進入", toLobby:"回大廳", toHub:"回展館大廳", exit:"離開",
       hintOut:"按「進入」就會走上階梯進入館內", hintOutWalk:"用搖桿走到入口看看",
       hintLobby:"拖曳環顧四周,點門即可進入展館", hintHub:"點門即可進入房間",
       hintRoom:"拖曳環顧四周,點畫框即可觀看影片", hintWalk:"用左下角搖桿走動,靠近時會出現按鈕",
       soon:"即將展出", locked:"準備中", lockedToast:"此展館準備中", videosN:"影片 {n} 部",
       photoSoon:"照片位置", igSoon:"即將展出", photoToast:"這裡即將掛上照片",
-      goodsSign:"周邊展示台・準備中", goodsTitle:"周邊展示台", goodsToast:"周邊展示台準備中",
-      close:"關閉", picksTitle:"一起看看", picksEmpty:"準備中",
+      goodsSign:"推薦商店・即將開放", goodsTitle:"推薦商店", goodsToast:"推薦商店即將開放", freeNote:"Duksim 典藏藝廊靠廣告與聯盟佣金免費營運,商品價格不變。",
+      close:"關閉", picksTitle:"一起看看", picksEmpty:"即將開放",
       src:"來源", openYT:"在 YouTube 觀看原片", openIG:"在 Instagram 查看原貼文",
       igWait:"正在載入 Instagram 貼文。\n若無法顯示,請用下方按鈕開啟原貼文。",
       embedNote:"影片與照片以 YouTube・Instagram 嵌入方式顯示,觀看次數與按讚都歸原作者。",
@@ -411,8 +448,8 @@ const I18N = {
       pickLang:"請選擇語言", pickChar:"選一位陪你散步的朋友", tabDog:"狗狗", tabCat:"貓咪", pickMode:"參觀方式", start:"開始",
       walkMode:"散步模式", walkDesc:"用拇指走動,在門或畫框前按按鈕", quickMode:"快速模式", quickDesc:"拖曳環顧,點一下立即觀看",
       p_jindo:"珍島犬", p_shiba:"柴犬", p_maltese:"瑪爾濟斯", p_corgi:"柯基", p_golden:"黃金獵犬", p_cheese:"橘貓", p_russian:"俄羅斯藍貓", p_calico:"三花貓", p_tuxedo:"賓士貓",
-      bEnter:"進入", bWatch:"看影片", bPhoto:"看照片", bTalk:"交談", bGoods:"看周邊", bPick:"撿起", bQuiz:"挑戰猜謎",
-      npc:"導覽員閃閃", npcHello:"歡迎來到 Duksim 典藏藝廊!\n開放中的展館:{open}\n準備中的展館:{soon}\n\n逛完展館內所有房間就能獲得完走徽章。也找找藏起來的任務吧!",
+      bEnter:"進入", bWatch:"看影片", bPhoto:"看照片", bTalk:"交談", bGoods:"看商店", bPick:"撿起", bQuiz:"挑戰猜謎",
+      npc:"導覽員閃閃", npcHello:"안녕하세요!(Annyeonghaseyo,韓語的「你好」)\n歡迎來到 Duksim 典藏藝廊!\n開放中的展館:{open}\n準備中的展館:{soon}\n\n逛完展館內所有房間就能獲得完走徽章。也找找藏起來的任務吧!",
       collection:"收藏冊", colEmpty:"還沒有收集到東西。逛逛房間、找找任務吧!", visits:"{hall} 參觀 {a}/{b}",
       badge:"{hall} 完走徽章", badgeToast:"🎉 獲得 {hall} 完走徽章!", missionOk:"任務成功!秘密畫框打開了",
       rewardSoon:"獎勵影片即將公開", secret:"秘密畫框", quizWrong:"可惜!再選一次吧?",
@@ -422,19 +459,50 @@ const I18N = {
 const FRAMES_PER_ROOM = 7;
 const AFFILIATE_RE = /(^|\.)coupang\.com$|(^|\.)coupa\.ng$/i;
 const IG_RE = /^https:\/\/(www\.)?instagram\.com\/(p|reel)\/[\w-]+\/?$/;
-/* 방문자 캐릭터: 강아지 5종(진돗개가 맨 앞) + 고양이 4종. 실제 마스코트·유명 캐릭터를 닮지 않은 단순 도형 조합.
-   ear: pointy(쫑긋 삼각) | big(코기 큰 귀) | floppy(처진 귀) | fur(처진 털귀) | cat(고양이 삼각 귀)
-   tail: curl(말린 꼬리) | fluffy | stub | long | cat,  legs: 다리 길이,  patches: [[색, x, y, z, 크기]] 무늬 조각 */
+/* 방문자 캐릭터: 나라별 대표 동물 친구들(나라 비교·서열 없이 모두 '친구'). 출신 나라는 확실한 것만, 애매하면 '세계' 묶음.
+   모양은 공통 몸통 + 귀·털·꼬리·색만 바꾼다. 실제 마스코트·유명 캐릭터를 닮지 않은 단순 도형 조합.
+   ear: pointy(쫑긋 삼각) | big(코기 큰 귀) | floppy(처진 귀) | fur(처진 털귀) | cat(고양이 귀)
+   tail: curl(말린 꼬리) | sickle(위로 휜 꼬리) | fluffy | stub | long | cat,  legs: 다리 길이,  patches: [[색, x, y, z, 크기]] 무늬
+   shaggy: 덥수룩한 털(삽살개, 눈을 덮는 앞머리), chubby: 통통한 몸 */
+const PET_GROUPS = [
+  {id:"kr", flag:"🇰🇷", name:{ko:"한국", ja:"韓国", en:"Korea", zh:"韓國"}},
+  {id:"jp", flag:"🇯🇵", name:{ko:"일본", ja:"日本", en:"Japan", zh:"日本"}},
+  {id:"tw", flag:"🇹🇼", name:{ko:"대만", ja:"台湾", en:"Taiwan", zh:"台灣"}},
+  {id:"gb", flag:"🇬🇧", name:{ko:"영국", ja:"イギリス", en:"UK", zh:"英國"}},
+  {id:"ru", flag:"🇷🇺", name:{ko:"러시아", ja:"ロシア", en:"Russia", zh:"俄羅斯"}},
+  {id:"world", flag:"🌍", name:{ko:"세계", ja:"世界", en:"World", zh:"世界"}},
+];
+const LANG_GROUP = {ko:"kr", ja:"jp", zh:"tw", en:"gb"};   // 언어를 고르면 그 나라 묶음이 먼저 보인다
+const KSH = {ko:"한국 골목에서 만나는 코리안 쇼트헤어 친구", ja:"韓国の路地で出会うコリアンショートヘアの友だち", en:"A Korean Shorthair friend from the alleys of Korea", zh:"在韓國巷弄遇見的韓國短毛貓朋友"};
 const CHARS = [
-  {id:"jindo",   kind:"dog", body:"#f6f1e6", belly:"#fffdf8", ear:"pointy", tail:"curl", earIn:"#f0c9b8"},   // 기본 흰색 진돗개
-  {id:"shiba",   kind:"dog", body:"#d98f4b", belly:"#fbf1e2", ear:"pointy", tail:"curl"},
-  {id:"maltese", kind:"dog", body:"#fbf9f4", ear:"fur", tail:"fluffy"},
-  {id:"corgi",   kind:"dog", body:"#e3964f", belly:"#fff6ea", ear:"big", tail:"stub", legs:0.08},
-  {id:"golden",  kind:"dog", body:"#e4b86c", ear:"floppy", earColor:"#cf984d", tail:"long"},
-  {id:"cheese",  kind:"cat", body:"#f3b866", ear:"cat", tail:"cat", patches:[["#df8a3a",0,0.47,0.05,0.11],["#df8a3a",0,0.45,0.22,0.1]]},
-  {id:"russian", kind:"cat", body:"#8f9bae", ear:"cat", tail:"cat"},
-  {id:"calico",  kind:"cat", body:"#fbf6ee", ear:"cat", tail:"cat", earColor:"#e8963e", patches:[["#e8963e",0.1,0.45,0.0,0.13],["#3a3330",-0.1,0.44,0.18,0.12]]},
-  {id:"tuxedo",  kind:"cat", body:"#2f2b35", belly:"#fbf8f2", ear:"cat", tail:"cat"},
+  {id:"jindo", group:"kr", kind:"dog", body:"#f6f1e6", belly:"#fffdf8", ear:"pointy", tail:"curl", earIn:"#f0c9b8",   // 기본 흰색
+   name:{ko:"진돗개", ja:"珍島犬", en:"Jindo", zh:"珍島犬"},
+   intro:{ko:"한국 진도에서 온 충직한 친구 · 대한민국 천연기념물", ja:"韓国・珍島から来た忠実な友だち · 韓国の天然記念物", en:"A loyal friend from Jindo Island, Korea · a Korean Natural Monument", zh:"來自韓國珍島的忠實朋友 · 韓國天然紀念物"}},
+  {id:"sapsali", group:"kr", kind:"dog", body:"#8d949e", ear:"fur", tail:"fluffy", shaggy:true,                      // 기본 회청색
+   name:{ko:"삽살개", ja:"サプサル犬", en:"Sapsali", zh:"薩普薩利犬"},
+   intro:{ko:"귀신 쫓는 개라 불린 한국 토종개", ja:"魔除けの犬と呼ばれた韓国の在来犬", en:"A native Korean dog once called the ghost-chasing dog", zh:"被稱為驅鬼犬的韓國本土犬"}},
+  {id:"cheese", group:"kr", kind:"cat", body:"#f3b866", ear:"cat", tail:"cat", patches:[["#df8a3a",0,0.47,0.05,0.11],["#df8a3a",0,0.45,0.22,0.1]],
+   name:{ko:"치즈 코숏", ja:"コリアンショートヘア(茶トラ)", en:"Korean Shorthair (orange)", zh:"韓國短毛貓(橘)"}, intro:KSH},
+  {id:"calico", group:"kr", kind:"cat", body:"#fbf6ee", ear:"cat", tail:"cat", earColor:"#e8963e", patches:[["#e8963e",0.1,0.45,0.0,0.13],["#3a3330",-0.1,0.44,0.18,0.12]],
+   name:{ko:"삼색이 코숏", ja:"コリアンショートヘア(三毛)", en:"Korean Shorthair (calico)", zh:"韓國短毛貓(三花)"}, intro:KSH},
+  {id:"tuxedo", group:"kr", kind:"cat", body:"#2f2b35", belly:"#fbf8f2", ear:"cat", tail:"cat", eye:"#f6f1e6",
+   name:{ko:"턱시도 코숏", ja:"コリアンショートヘア(ハチワレ)", en:"Korean Shorthair (tuxedo)", zh:"韓國短毛貓(賓士)"}, intro:KSH},
+  {id:"shiba", group:"jp", kind:"dog", body:"#d98f4b", belly:"#fbf1e2", ear:"pointy", tail:"curl",
+   name:{ko:"시바", ja:"柴犬", en:"Shiba", zh:"柴犬"}, intro:{ko:"일본에서 온 친구", ja:"日本から来た友だち", en:"A friend from Japan", zh:"來自日本的朋友"}},
+  {id:"bobtail", group:"jp", kind:"cat", body:"#fbf8f2", ear:"cat", tail:"stub", earColor:"#e8963e", patches:[["#e8963e",0.1,0.45,0.05,0.12],["#2f2b35",-0.1,0.44,0.2,0.1]],
+   name:{ko:"재패니즈 밥테일", ja:"ジャパニーズボブテイル", en:"Japanese Bobtail", zh:"日本短尾貓"}, intro:{ko:"짧은 꼬리가 귀여운 일본 친구", ja:"短いしっぽがかわいい日本の友だち", en:"A short-tailed friend from Japan", zh:"短尾巴很可愛的日本朋友"}},
+  {id:"formosan", group:"tw", kind:"dog", body:"#2e2a2c", ear:"pointy", tail:"sickle", eye:"#f6f1e6", earIn:"#6b5a5a",
+   name:{ko:"대만견", ja:"台湾犬", en:"Formosan Mountain Dog", zh:"台灣犬"}, intro:{ko:"대만 산에서 온 날쌘 친구", ja:"台湾の山から来た身軽な友だち", en:"A nimble friend from Taiwan's mountains", zh:"來自台灣山林的敏捷朋友"}},
+  {id:"corgi", group:"gb", kind:"dog", body:"#e3964f", belly:"#fff6ea", ear:"big", tail:"stub", legs:0.08,
+   name:{ko:"웰시코기", ja:"ウェルシュ・コーギー", en:"Welsh Corgi", zh:"威爾斯柯基"}, intro:{ko:"영국 웨일스에서 온 짧은 다리 친구", ja:"イギリス・ウェールズ出身の短い足の友だち", en:"A short-legged friend from Wales, UK", zh:"來自英國威爾斯的短腿朋友"}},
+  {id:"golden", group:"gb", kind:"dog", body:"#e4b86c", ear:"floppy", earColor:"#cf984d", tail:"long",
+   name:{ko:"골든 리트리버", ja:"ゴールデン・レトリバー", en:"Golden Retriever", zh:"黃金獵犬"}, intro:{ko:"영국 스코틀랜드에서 온 다정한 친구", ja:"イギリス・スコットランド出身のやさしい友だち", en:"A gentle friend from Scotland, UK", zh:"來自英國蘇格蘭的溫柔朋友"}},
+  {id:"british", group:"gb", kind:"cat", body:"#8e98a6", ear:"cat", tail:"cat", chubby:true, eye:"#e9a93a",
+   name:{ko:"브리티시 쇼트헤어", ja:"ブリティッシュショートヘア", en:"British Shorthair", zh:"英國短毛貓"}, intro:{ko:"영국에서 온 동글동글한 친구", ja:"イギリス出身のまんまるな友だち", en:"A round-faced friend from the UK", zh:"來自英國的圓臉朋友"}},
+  {id:"russian", group:"ru", kind:"cat", body:"#8f9bae", ear:"cat", tail:"cat", eye:"#5fae6a",
+   name:{ko:"러시안블루", ja:"ロシアンブルー", en:"Russian Blue", zh:"俄羅斯藍貓"}, intro:{ko:"러시아에서 왔다고 알려진 은빛 친구", ja:"ロシア出身と伝えられる銀色の友だち", en:"A silvery friend said to come from Russia", zh:"據說來自俄羅斯的銀色朋友"}},
+  {id:"maltese", group:"world", kind:"dog", body:"#fbf9f4", ear:"fur", tail:"fluffy",
+   name:{ko:"말티즈", ja:"マルチーズ", en:"Maltese", zh:"瑪爾濟斯"}, intro:{ko:"새하얀 털이 고운 친구", ja:"真っ白な毛がきれいな友だち", en:"A friend with a soft white coat", zh:"擁有雪白毛髮的朋友"}},
 ];
 const NPC_PET = {id:"npc", kind:"cat", body:"#fffaf2", ear:"cat", tail:"cat", earColor:"#f6c7da", ribbon:"#ff7fb0"};   // 안내원 반짝이: 리본 단 흰 고양이
 /* 입장 화면 미리보기: 같은 모양을 2D로 */
@@ -449,8 +517,10 @@ function drawPetIcon(g, sp, S=56){
   (sp.patches||[]).forEach(([col,x],i)=>{ g.fillStyle=col; g.beginPath(); g.arc(28+(x>0?7:x<0?-7:0)+(i?0:0), 19+i*2, 7, Math.PI*1.05, Math.PI*1.95); g.fill(); });
   if(sp.id==="cheese"){ g.strokeStyle="#df8a3a"; g.lineWidth=2; [[24,16],[28,15],[32,16]].forEach(([x,y])=>{ g.beginPath(); g.moveTo(x,y); g.lineTo(x,y+5); g.stroke(); }); }
   if(sp.belly){ g.fillStyle=sp.belly; g.beginPath(); g.ellipse(28,39,sp.kind==="cat"?9:10,7,0,0,7); g.fill(); }
-  g.fillStyle=sp.body==="#2f2b35"?"#f6f1e6":"#2a2230"; g.beginPath(); g.arc(22,29,2.3,0,7); g.arc(34,29,2.3,0,7); g.fill();
-  if(sp.kind==="dog"){ g.fillStyle="#2a2230"; g.beginPath(); g.ellipse(28,35,3,2.2,0,0,7); g.fill(); }
+  if(sp.shaggy){ g.fillStyle=sp.body; for(const [x,y,r] of [[12,40,7],[44,40,7],[20,46,6],[36,46,6]]){ g.beginPath(); g.arc(x,y,r,0,7); g.fill(); }
+    g.fillStyle="#a3a9b2"; g.beginPath(); g.ellipse(28,25,15,8,0,0,7); g.fill(); }   // 눈을 덮는 앞머리
+  else { g.fillStyle=sp.eye||"#2a2230"; g.beginPath(); g.arc(22,29,2.3,0,7); g.arc(34,29,2.3,0,7); g.fill(); }
+  if(sp.kind==="dog"){ g.fillStyle=sp.body==="#2e2a2c"?"#6b5a5a":"#2a2230"; g.beginPath(); g.ellipse(28,35,3,2.2,0,0,7); g.fill(); }
   else { g.fillStyle="#f29bb5"; tri(25.5,34,30.5,34,28,37,"#f29bb5"); g.strokeStyle="rgba(60,50,60,.35)"; g.lineWidth=1; [[18,36,10,35],[18,38,10,40],[38,36,46,35],[38,38,46,40]].forEach(([a,b,cx,d])=>{ g.beginPath(); g.moveTo(a,b); g.lineTo(cx,d); g.stroke(); }); }
   g.restore();
 }
@@ -528,35 +598,40 @@ G.curationReady = (async () => {
 /* ---------- 언어 ---------- */
 { const q=qs.get("lang"), s=store.get("hall-lang"); G.lang = I18N[q]?q : I18N[s]?s : "ko"; }
 G.char = CHARS.some(c=>c.id===store.get("hall-char")) ? store.get("hall-char") : "jindo";
-G.petTab = CHARS.find(c=>c.id===G.char).kind;
+G.petTab = null;   // null이면 선택 언어의 나라 묶음
 G.walk = store.get("hall-mode") ? store.get("hall-mode")==="walk" : !((navigator.hardwareConcurrency||4)<=2);
 function applyLang(){
   document.documentElement.lang = G.lang==="zh" ? "zh-Hant" : G.lang;
   document.querySelectorAll("[data-t]").forEach(el => el.textContent = G.t(el.dataset.t));
   document.querySelectorAll("[data-t-aria]").forEach(el => el.setAttribute("aria-label", G.t(el.dataset.tAria)));
   $("#langSel").value = G.lang;
+  drawAdSlot($("#adTop"),"screen_top_1"); drawAdSlot($("#adPanel"),"panel_bottom_1");
   drawChrome(); drawFlat(); drawIntro(); if(!$("#hint").classList.contains("off")) $("#hint").textContent=hintText();
   G.langHooks.forEach(f => f());
 }
-function setLang(l){ G.lang=l; store.set("hall-lang",l); applyLang(); }
+function setLang(l){ G.lang=l; G.petTab=null; store.set("hall-lang",l); applyLang(); }
 $("#langSel").onchange = e => setLang(e.target.value);
 function setWalk(on){ G.walk=on; store.set("hall-mode", on?"walk":"quick"); document.body.classList.toggle("walk", on); drawChrome(); showHint(); G.onWalkChange?.(); }
 
 /* ---------- 입장 화면: 언어 → 캐릭터 → 방법 ---------- */
+const curGroup = () => G.petTab || LANG_GROUP[G.lang] || "kr";
+function petGroupsOrdered(){ const first=LANG_GROUP[G.lang]||"kr"; return [...PET_GROUPS].sort((a,b)=>(b.id===first)-(a.id===first) || (G.lang==="en" ? (b.id==="world")-(a.id==="world") : 0)); }
 function drawIntro(){
   const box=$("#introBox"); if($("#intro").hidden) return;
   box.innerHTML = `<h2>${esc(G.t("gallery"))}</h2><p>${esc(G.t("pickLang"))}</p>
     <div class="langs">${[["ko","한국어"],["ja","日本語"],["en","English"],["zh","繁體中文"]].map(([k,n])=>`<button data-l="${k}" class="${G.lang===k?'on':''}">${n}</button>`).join("")}</div>
     <div class="sub">${esc(G.t("pickChar"))}</div>
-    <div class="petTabs"><button data-k="dog" class="${G.petTab==='dog'?'on':''}">🐶 ${esc(G.t("tabDog"))}</button><button data-k="cat" class="${G.petTab==='cat'?'on':''}">🐱 ${esc(G.t("tabCat"))}</button></div>
-    <div class="chars">${CHARS.filter(c=>c.kind===G.petTab).map(c=>`<button data-c="${c.id}" class="${G.char===c.id?'on':''}"><canvas width="96" height="96" data-icon="${c.id}"></canvas>${esc(G.t("p_"+c.id))}</button>`).join("")}</div>
+    <div class="petTabs">${petGroupsOrdered().map(gr=>`<button data-k="${gr.id}" class="${gr.id===curGroup()?'on':''}">${gr.flag} ${esc(G.nm(gr.name))}</button>`).join("")}</div>
+    <div class="chars">${CHARS.filter(c=>c.group===curGroup()).map(c=>`<button data-c="${c.id}" class="${G.char===c.id?'on':''}"><canvas width="96" height="96" data-icon="${c.id}"></canvas>${esc(G.nm(c.name))}</button>`).join("")}</div>
+    <p class="petIntro">${(()=>{ const c=CHARS.find(x=>x.id===G.char); const gr=PET_GROUPS.find(x=>x.id===c.group); return esc(gr.flag+" "+G.nm(c.name)+" — "+G.nm(c.intro)); })()}</p>
     <div class="sub">${esc(G.t("pickMode"))}</div>
     <div class="modes"><button data-m="walk" class="${G.walk?'on':''}">${esc(G.t("walkMode"))}<small>${esc(G.t("walkDesc"))}</small></button>
       <button data-m="quick" class="${G.walk?'':'on'}">${esc(G.t("quickMode"))}<small>${esc(G.t("quickDesc"))}</small></button></div>
-    <button class="go" id="introGo">${esc(G.t("start"))}</button>`;
+    <button class="go" id="introGo">${esc(G.t("start"))}</button><p class="contactNote">${esc(G.t("freeNote"))}</p>`;
   box.querySelectorAll("[data-l]").forEach(b=>b.onclick=()=>setLang(b.dataset.l));
   box.querySelectorAll("[data-icon]").forEach(cv=>drawPetIcon(cv.getContext("2d"), CHARS.find(c=>c.id===cv.dataset.icon), 96));
   box.querySelectorAll("[data-k]").forEach(b=>b.onclick=()=>{ G.petTab=b.dataset.k; drawIntro(); });
+  box.querySelector(".petTabs .on")?.scrollIntoView({block:"nearest",inline:"nearest"});
   box.querySelectorAll("[data-c]").forEach(b=>b.onclick=()=>{ G.char=b.dataset.c; store.set("hall-char",G.char); drawIntro(); G.onCharChange?.(); });
   box.querySelectorAll("[data-m]").forEach(b=>b.onclick=()=>{ setWalk(b.dataset.m==="walk"); drawIntro(); });
   $("#introGo").onclick=()=>{ $("#intro").hidden=true; showHint(); };
@@ -628,6 +703,23 @@ function openCollection(){
 }
 $("#colBtn").onclick = openCollection;
 
+/* ---------- 광고 칸·광고 문의 ---------- */
+G.ad = slot => ADS.find(a=>a.slot_id===slot && safeUrl(a.image)) || null;
+G.adsAt = place => ADS.filter(a=>a.place===place && safeUrl(a.image));
+G.openAd = ad => { const u=safeUrl(ad?.link); if(!u) return; const a=document.createElement("a"); a.href=u.href; a.target="_blank"; a.rel="sponsored noopener"; document.body.appendChild(a); a.click(); a.remove(); };
+function drawAdSlot(el, slot){   // 이미지가 있으면 그 광고, 없으면 「AD · 광고 자리」 표시만
+  const ad=G.ad(slot), u=safeUrl(ad?.link);
+  el.style.backgroundImage = ad ? `url("${safeUrl(ad.image).href}")` : "";
+  el.innerHTML = ad ? `<b>${esc(ad.label||"광고")}</b>` : `<b>AD</b> ${esc(G.t("adSpace"))} · ${esc(G.t("adSoon"))}`;
+  if(u) el.href=u.href; else el.removeAttribute("href");
+}
+G.openContact = () => {
+  openItem({type:"text", title:G.t("contactTitle"), desc:G.t("contactDesc"),
+    html:`<button class="contactBtn" id="contactGo">${esc(G.lang==="ko" ? CONTACT.text : G.t("contactBtn"))}</button><p class="contactNote">${esc(G.t("contactNote"))}</p>`});
+  $("#contactGo").onclick = () => { const u=safeUrl(CONTACT.form_url); if(u) window.open(u.href,"_blank","noopener"); else toast(G.t("contactSoon")); };
+};
+G.openCulture = () => { if(CULTURE_CORNER.open && CULTURE_CORNER.items.length) openItem({type:"text", title:G.t("culture"), html:`<ul class="list">${CULTURE_CORNER.items.map(i=>`<li>${esc(G.nm(i.title))}</li>`).join("")}</ul>`}); else toast(G.t("bCulture")); };
+
 /* ---------- 미션 ---------- */
 function completeMission(m){
   const col=store.json("duksim-collection-v1",{}); if(!col[m.id]){ col[m.id]={at:new Date().toISOString().slice(0,10)}; store.put("duksim-collection-v1",col); }
@@ -686,7 +778,7 @@ function openItem(it, ctx={}){
     p.className="player "+kind;
     p.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${encodeURIComponent(it.id)}?rel=0&playsinline=1" title="${esc(it.title)}"
       allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin"></iframe>`;
-    title=it.title||""; desc=it.desc||""; picks=it.picks||[]; vid=it.id; if(isNew(it.added_at)) tag=G.t("newTag");
+    title=it.title||""; desc=it.desc||""; picks=[...(it.picks||[]), ...(G.view==="room" ? G.products() : [])]; vid=it.id; if(isNew(it.added_at)) tag=G.t("newTag");
     srcUrl = kind==="short" ? `https://www.youtube.com/shorts/${encodeURIComponent(it.id)}` : `https://www.youtube.com/watch?v=${encodeURIComponent(it.id)}`;
     srcName = it.channel || (it.official && hall?.official ? hall.official.name : "YouTube"); srcBtn=G.t("openYT");
     STATS.record(it.id, "view");
@@ -697,9 +789,10 @@ function openItem(it, ctx={}){
   $("#src").hidden = !srcUrl; $("#srcName").textContent = srcName ? G.t("src")+": "+srcName : ""; $("#srcLink").href=srcUrl||"#"; $("#srcLink").textContent=srcBtn;
   $("#picks").hidden = !showPicks;
   picks = picks.map(x=>({...x,u:safeUrl(x.url)})).filter(x=>x.u);
-  $("#picksRow").innerHTML = picks.map(x=>`<a class="pick" href="${esc(x.u.href)}" target="_blank" rel="sponsored noopener">${esc(x.name)}<b>${esc(x.price||"")}</b></a>`).join("");
+  $("#picksRow").innerHTML = picks.map(x=>`<a class="pick" href="${esc(x.u.href)}" target="_blank" rel="sponsored noopener">${esc(x.name)}<b>${esc(x.price||"")}</b><small>${esc(shopOf(x)?.name||x.u.hostname)}</small></a>`).join("");
   $("#picksEmpty").hidden = picks.length>0;
-  $("#disc").hidden = !picks.some(x=>AFFILIATE_RE.test(x.u.hostname));
+  const notes=[...new Set(picks.map(x=>shopOf(x)?.note || "이 링크로 구매하면 덕심저장소가 일정액의 수수료를 받을 수 있어요."))];
+  $("#disc").textContent = notes.join(" "); $("#disc").hidden = !notes.length;
   $("#shade").classList.add("on"); const s=$("#sheet"); s.classList.add("on"); s.setAttribute("aria-hidden","false"); s.scrollTop=0;
   $("#close").focus({preventScroll:true});
 }
@@ -709,7 +802,9 @@ function closeItem(){
   setTimeout(()=>{ if(!s.classList.contains("on")) $("#player").innerHTML=""; },350); // 닫으면 재생도 멈춤
 }
 G.openItem=openItem; G.openVideo=v=>openItem(v); G.closeItem=closeItem;
-G.openGoods = room => { if(!room?.goods?.length){ toast(G.t("goodsToast")); return; } openItem({type:"goods", goods:room.goods}); };
+G.products = (hid=G.hallId, rid=G.roomId) => PRODUCTS.filter(x=>(!x.hall||x.hall===hid) && x.room===rid);
+G.openGoods = room => openItem({type:"goods", goods:[...(room?.goods||[]), ...G.products(G.hallId, room?.id)]});
+const shopOf = x => SHOPS.find(sh=>sh.id===x.shop) || SHOPS.find(sh=>sh.hosts.some(h=>x.u.hostname===h || x.u.hostname.endsWith("."+h)));
 G.sheetOpen = () => $("#sheet").classList.contains("on");
 $("#close").onclick=closeItem; $("#shade").onclick=closeItem;
 addEventListener("keydown",e=>{ if(e.key==="Escape") closeItem(); });
@@ -728,7 +823,10 @@ function drawFlat(){
   } else if(v==="lobby"){
     html = `<div class="sec">${esc(G.t("hallsH"))}</div><div class="grid">` + HALLS.map(x=>
       `<button class="card door ${x.open?'':'lock'}" data-hall="${esc(x.id)}"><div class="th" style="background:${esc(x.color)}">${esc(G.nm(x.name))}</div>
-       <div class="tt">${esc(G.nm(x.name))}<small>${x.open ? esc(G.t("videosN",{n:x.rooms.reduce((a,b)=>a+(b.videos?.length||0),0)})) : esc(G.t("locked"))}</small></div></button>`).join("") + `</div>`;
+       <div class="tt">${esc(G.nm(x.name))}<small>${x.open ? esc(G.t("videosN",{n:x.rooms.reduce((a,b)=>a+(b.videos?.length||0),0)})) : esc(G.t("locked"))}</small></div></button>`).join("") + `</div>
+      <div class="grid" style="margin-top:12px"><button class="card" data-culture="1"><div class="tt">🇰🇷 ${esc(G.t("culture"))}<small>${esc(G.t("cultureSoon"))}</small></div></button>
+      <button class="card" data-contact="1"><div class="tt">📣 ${esc(G.t("contactTitle"))}<small>${esc(G.t("bs1"))}</small></div></button></div>
+      <p class="contactNote">${esc(G.t("freeNote"))}</p>`;
   } else if(v==="hub"){
     html = `<div class="sec">${esc(G.t("roomsH"))}</div><div class="grid">` + h.rooms.map(x=>
       `<button class="card door" data-room="${esc(x.id)}"><div class="th" style="background:${esc(G.roomColor(x))}">${esc(G.nm(x.name))}</div>
@@ -744,11 +842,13 @@ function drawFlat(){
     }
     const ms=G.missions(h.id, r.id);
     if(ms.length) html += `<div class="sec">🔎 ${esc(G.t("secret"))}</div><div class="grid">` + ms.map(m=>`<button class="card" data-m="${esc(m.id)}"><div class="tt">${esc(G.nm(m.hint))}</div></button>`).join("") + `</div>`;
-    if(r.decor==="birthday") html += `<div class="sec">${esc(G.t("goodsTitle"))}</div><button class="card" data-goods="1" style="width:100%"><div class="tt">${esc(G.t("goodsSign"))}</div></button>`;
+    html += `<div class="sec">${esc(G.t("goodsTitle"))} <b style="background:var(--ink);color:#fff;border-radius:4px;padding:1px 5px;font-size:10px">광고 · AD</b></div><button class="card" data-goods="1" style="width:100%"><div class="tt">${esc(G.products(h.id,r.id).length||r.goods?.length ? G.t("goodsTitle") : G.t("goodsSign"))}</div></button>`;
   }
   const b=$("#fBody"); b.innerHTML=html; wireNav(b);
   b.querySelectorAll("[data-i]").forEach(x=>x.onclick=()=>openItem(items[+x.dataset.i]));
   b.querySelectorAll("[data-goods]").forEach(x=>x.onclick=()=>G.openGoods(r));
+  b.querySelectorAll("[data-culture]").forEach(x=>x.onclick=G.openCulture);
+  b.querySelectorAll("[data-contact]").forEach(x=>x.onclick=G.openContact);
   b.querySelectorAll("[data-m]").forEach(x=>x.onclick=()=>G.startMission(MISSIONS.find(m=>m.id===x.dataset.m)));
 }
 function showFallback(reason){
@@ -841,6 +941,49 @@ function start(THREE){
   function doorGlow(){ return canvasTex(64,128,(g,w,h)=>{ const gr=g.createLinearGradient(0,0,0,h); gr.addColorStop(0,"#fff6dc"); gr.addColorStop(1,"#f2d49a"); g.fillStyle=gr; g.fillRect(0,0,w,h);
       g.fillStyle="rgba(120,90,50,.35)"; g.fillRect(w/2-1,0,2,h); }); }
 
+  /* ---------- 광고판(지하철 칸 위쪽 광고처럼 같은 크기로 나란히). 말풍선은 띄우지 않는다 ---------- */
+  const adLoader=new THREE.TextureLoader(); adLoader.setCrossOrigin("anonymous");
+  function adPanel(parent, w, h, slot, clickables, relabel){
+    const ad=G.ad(slot), m=textPlane(parent, w, h, 320, (g,W,H)=>{ g.fillStyle="#f3eee6"; g.fillRect(0,0,W,H); g.strokeStyle="#d8ccb8"; g.setLineDash([6,4]); g.lineWidth=2; g.strokeRect(3,3,W-6,H-6); g.setLineDash([]);
+      g.fillStyle="#1e143c"; g.fillRect(8,8,30,16); g.fillStyle="#fff"; g.font=`700 11px ${FONT}`; g.textAlign="center"; g.textBaseline="middle"; g.fillText(ad?(ad.label||"광고"):"AD",23,16.5);
+      if(!ad){ g.fillStyle="#7a7088"; g.font=`700 15px ${FONT}`; g.fillText(`${G.t("adSpace")} · AD SPACE  #${slot.split("_").pop()}`, W/2, H*0.42); g.font=`500 11px ${FONT}`; g.fillText(G.t("adSoon"), W/2, H*0.75); } });
+    if(ad){ adLoader.load(safeUrl(ad.image).href, tex=>{ tex.colorSpace=THREE.SRGBColorSpace; const img=add(m, new THREE.PlaneGeometry(w*0.98,h*0.94), new THREE.MeshBasicMaterial({map:tex}), 0,0,0.002);
+        const badge=textPlane(m, h*0.9, h*0.36, 64, (g,W,H)=>{ g.fillStyle="#1e143c"; g.fillRect(0,0,W,H); g.fillStyle="#fff"; g.font=`700 ${H*0.6}px ${FONT}`; g.textAlign="center"; g.textBaseline="middle"; g.fillText(ad.label||"광고",W/2,H/2+1); });
+        badge.position.set(-w/2+h*0.5, h*0.28, 0.004); ask(); }); }
+    else relabel.push(m.userData.redraw);
+    if(safeUrl(ad?.link)){ m.userData.act=()=>G.openAd(ad); clickables.push(m); }
+    return m;
+  }
+  /* ---------- 전광판: 몇 초마다 바뀌는 순환 슬라이드(밝게 빛나는 화면). 지금 보는 장면 것만 갱신 ---------- */
+  const boards=[];
+  function latestAdded(){ let d=""; HALLS.forEach(h=>h.rooms?.forEach(r=>r.videos?.forEach(v=>{ if((v.added_at||"")>d) d=v.added_at; }))); return d||"—"; }
+  function billboard(scene, parent, w, h, place, clickables, spots, spotPos){
+    const frame=box(parent, w+0.3, h+0.3, 0.2, bas(0x2a2240), 0,0,-0.12);
+    const glow=add(parent, new THREE.PlaneGeometry(w+0.16,h+0.16), new THREE.MeshBasicMaterial({color:0xff7fd0}), 0,0,-0.015);   // 빛나는 테두리
+    const scr=add(parent, new THREE.PlaneGeometry(w,h), new THREE.MeshBasicMaterial({color:0xffffff}), 0,0,0);
+    const badge=textPlane(parent, Math.min(w,h)*0.32, Math.min(w,h)*0.12, 96, (g,W,H)=>{ g.fillStyle="#ffd640"; g.fillRect(0,0,W,H); g.fillStyle="#1e143c"; g.font=`800 ${H*0.62}px ${FONT}`; g.textAlign="center"; g.textBaseline="middle"; g.fillText("광고 · AD",W/2,H/2+1); });
+    badge.position.set(-w/2+Math.min(w,h)*0.18, h/2-Math.min(w,h)*0.08, 0.004);
+    const adTex=[]; G.adsAt(place).forEach(ad=>adLoader.load(safeUrl(ad.image).href, t=>{ t.colorSpace=THREE.SRGBColorSpace; adTex.push({t,ad}); }));
+    const SL=[["#ff4fa3","#7b4dff","bs1","bs1b",true],["#1e143c","#3b2a7a","bs2","bs2b",false],["#ff8a3d","#ffcf3d","bs3","bs3b",false]];
+    const bd={scene, i:-1, tex:null, current:null};
+    bd.show=()=>{ const n=SL.length+adTex.length; bd.i=(bd.i+1)%n; bd.tex?.dispose(); bd.tex=null;
+      if(bd.i>=SL.length){ const a=adTex[bd.i-SL.length]; scr.material.map=a.t; bd.current=a.ad; badge.visible=true; }
+      else { const [c1,c2,k1,k2,isAd]=SL[bd.i]; bd.current=null; badge.visible=isAd;
+        bd.tex=canvasTex(512,256,(g,W,H)=>{ const gr=g.createLinearGradient(0,0,W,H); gr.addColorStop(0,c1); gr.addColorStop(1,c2); g.fillStyle=gr; g.fillRect(0,0,W,H);
+          g.fillStyle="rgba(255,255,255,.12)"; for(let x=0;x<W;x+=6) g.fillRect(x,0,1,H);
+          g.fillStyle="#fff"; g.textAlign="center"; g.textBaseline="middle"; g.font=`800 40px ${FONT}`; wrapText(g,G.t(k1),W/2,H*0.42,W-60,46,2);
+          g.font=`600 22px ${FONT}`; wrapText(g,G.t(k2,{d:latestAdded()}),W/2,H*0.78,W-60,26,2); });
+        scr.material.map=bd.tex; }
+      scr.material.needsUpdate=true; };
+    bd.redraw=()=>{ bd.i--; bd.show(); };
+    bd.show(); boards.push(bd);
+    const act=()=> bd.current ? G.openAd(bd.current) : G.openContact();
+    [scr,frame,glow].forEach(m=>{ m.userData.act=act; clickables.push(m); });
+    if(spots && spotPos) spots.push({p:spotPos, r:3, label:()=>G.t("bContact"), act});
+    return bd;
+  }
+  setInterval(()=>{ boards.forEach(b=>{ if(cur && b.scene===cur.scene && !document.hidden){ b.show(); ask(); } }); }, 4500);
+
   /* 장면 공통 형식:
      {scene, clickables[], relabel[], cam:{pos,yaw,pitch,yawLim?,pitchLim?},
       walk:{spawn:[x,z,yaw], free(x,z)→bool, height?(x,z), camDist, camH, clampCam?(v)}, spots:[{p:Vector3, r, label()→string, act()}]} */
@@ -877,8 +1020,11 @@ function start(THREE){
       add(s, new THREE.PlaneGeometry(8,60), lam(0xe7dfd2), 6, 0.02, 34).rotation.x=-Math.PI/2;
       add(s, new THREE.PlaneGeometry(70,6), lam(0xe7dfd2), 0, 0.025, 4).rotation.x=-Math.PI/2;
       const tc=trees(s, [[16,12],[22,16],[28,11],[34,18],[-38,24],[30,30],[-30,-20],[36,-18]]);
+      add(s, new THREE.CylinderGeometry(0.25,0.3,7,8), lam(0x6d6676), 13,3.5,10);
+      const bb=new THREE.Group(); bb.position.set(13,8.6,10.2); bb.rotation.y=-0.3; s.add(bb);
+      billboard(s, bb, 6.4, 3.2, "street_billboard", clickables, spots, new THREE.Vector3(12,2,13));
       clouds(s, [[-30,34,-80,1.4],[10,40,-90,1.1],[42,30,-70,1],[0,22,-40,.6]]);
-      const free=(x,z)=> x>-40&&x<40&&z>-14.6&&z<62 && !inBox(x,z,[-33.3,-7,-12.3,0.3]) && !inBox(x,z,[7,33.3,-12.3,0.3]) && !inBox(x,z,[-37.6,2.6,7.6,20.4]) && !inCircles(x,z,tc)
+      const free=(x,z)=> x>-40&&x<40&&z>-14.6&&z<62 && !inBox(x,z,[-33.3,-7,-12.3,0.3]) && !inBox(x,z,[7,33.3,-12.3,0.3]) && !inBox(x,z,[-37.6,2.6,7.6,20.4]) && !inCircles(x,z,tc) && Math.hypot(x-13,z-10)>0.6
         && !(Math.abs(x)>=7 && z<-12.3);
       const height=(x,z)=> Math.abs(x)<7 && z<1.2 ? (z<-9 ? 3.15 : Math.min(9,Math.ceil((1.2-z)/1.2))*0.35) : 0;
       return {scene:s, clickables, spots, cam:{pos:[6,2.2,52], yaw:0.08, pitch:0.05, yawLim:[-0.8,0.8], pitchLim:[-0.2,0.4]},
@@ -903,9 +1049,12 @@ function start(THREE){
     textPlane(s, 7.2, 1.1, 768, signDraw).position.set(0, top+7.3, 3.82);
     add(s, new THREE.PlaneGeometry(9,70), lam(0xe9e1d4), 0, 0.02, 40).rotation.x=-Math.PI/2;
     const tc=trees(s, [[-14,10],[14,10],[-17,18],[17,18],[-13,28],[13,28],[-24,2],[24,2]]);
+    add(s, new THREE.CylinderGeometry(0.22,0.28,6.5,8), lam(0x6d6676), 9.6,3.25,8.5);
+    const bb=new THREE.Group(); bb.position.set(9.6,7.9,8.7); bb.rotation.y=-0.35; s.add(bb);
+    billboard(s, bb, 5.2, 2.6, "street_billboard", clickables, spots, new THREE.Vector3(8.6,2,11));
     instanced(s, new THREE.SphereGeometry(0.6,8,6), lam(0x9cc58a), [-10.6,-11.8,10.6,11.8].map(x=>({x,y:0.4,z:6,sy:0.7})));
     clouds(s, [[-30,26,-70,1.3],[12,32,-80,1.1],[38,22,-60,.9],[-8,18,-40,.6]]);
-    const cols=colX.map(x=>({c:[x,3.4,0.6]}));
+    const cols=colX.map(x=>({c:[x,3.4,0.6]})).concat([{c:[9.6,8.5,0.5]}]);
     const free=(x,z)=> x>-30&&x<30&&z>-14&&z<60 && !inBox(x,z,[-7.6,7.6,-8.2,1.1]) && !inCircles(x,z,cols) && !inCircles(x,z,tc);
     const height=(x,z)=>{ let h=0; for(let i=0;i<5;i++) if(z<5.6-0.9*i && z>-8.4+0.0*i && Math.abs(x)<(22-i*0.6)/2) h=(i+1)*0.3; return h; };
     return {scene:s, clickables, spots, cam:{pos:[0,1.8,34], yaw:0, pitch:0.08, yawLim:[-0.8,0.8], pitchLim:[-0.2,0.4]},
@@ -922,16 +1071,19 @@ function start(THREE){
     const C=c=>lam(new THREE.Color(c)), bodyM=C(sp.body), dark=lam(0x2a2230);
     const legH=sp.legs||0.16, by=legH+0.2, cat=sp.kind==="cat";
     instanced(g, new THREE.CylinderGeometry(0.055,0.05,legH+0.06,6), bodyM, [[-0.11,-0.18],[0.11,-0.18],[-0.11,0.2],[0.11,0.2]].map(([x,z])=>({x,y:(legH+0.06)/2,z})));
-    add(torso, new THREE.SphereGeometry(0.26,10,8), bodyM, 0,by,0.02).scale.set(0.95,0.85,1.3);
+    const ch=sp.chubby?1.15:1;
+    add(torso, new THREE.SphereGeometry(0.26,10,8), bodyM, 0,by,0.02).scale.set(0.95*ch,0.85*ch,1.3);
+    if(sp.shaggy) instanced(torso, new THREE.IcosahedronGeometry(0.13,0), bodyM, [[-0.17,0.06,-0.05],[0.17,0.06,-0.05],[0,0.2,0.12],[-0.15,0,0.22],[0.15,0,0.22]].map(([x,y,z],i)=>({x,y:by+y,z,ry:i})));   // 덥수룩한 털
     if(sp.belly) add(torso, new THREE.SphereGeometry(0.17,8,6), C(sp.belly), 0,by-0.03,-0.2).scale.set(0.9,1,0.8);
     (sp.patches||[]).forEach(([c,x,y,z,r])=>add(torso, new THREE.SphereGeometry(r,8,6), C(c), x,by+(y-0.45)+0.17,z).scale.set(1.1,0.45,1.3));
     const hy=by+0.2, hz=-0.36;
-    add(torso, new THREE.SphereGeometry(0.21,10,8), bodyM, 0,hy,hz);
+    add(torso, new THREE.SphereGeometry(0.21*ch,10,8), bodyM, 0,hy,hz);
     if(!cat){ add(torso, new THREE.SphereGeometry(0.1,8,6), C(sp.belly||sp.body), 0,hy-0.06,hz-0.18).scale.set(1,0.8,1.1);
       add(torso, new THREE.SphereGeometry(0.035,6,5), dark, 0,hy-0.03,hz-0.29); }
     else { add(torso, new THREE.SphereGeometry(0.075,8,6), C(sp.belly||sp.body), 0,hy-0.06,hz-0.15).scale.set(1.3,0.8,0.8);
       add(torso, new THREE.SphereGeometry(0.022,5,4), C("#f29bb5"), 0,hy-0.03,hz-0.21); }
-    instanced(torso, new THREE.SphereGeometry(0.028,6,5), sp.body==="#2f2b35"?C("#f6f1e6"):dark, [-0.08,0.08].map(x=>({x,y:hy+0.05,z:hz-0.18})));
+    if(sp.shaggy) add(torso, new THREE.IcosahedronGeometry(0.15,0), C("#a3a9b2"), 0,hy+0.07,hz-0.1).scale.set(1.3,0.7,1);   // 눈을 덮는 앞머리
+    else instanced(torso, new THREE.SphereGeometry(0.028,6,5), sp.eye?C(sp.eye):dark, [-0.08,0.08].map(x=>({x,y:hy+0.05,z:hz-0.18*ch})));
     const em=C(sp.earColor||sp.body), e=sp.ear;
     if(e==="floppy"||e==="fur") instanced(torso, new THREE.SphereGeometry(e==="fur"?0.1:0.085,7,5), em, [-1,1].map(s=>({x:s*0.19,y:hy-0.03,z:hz,sx:0.55,sy:1.35,sz:0.9,rz:s*0.3})));
     else { const big=e==="big", r=big?0.1:cat?0.085:0.07, h=big?0.24:0.15;
@@ -941,6 +1093,7 @@ function start(THREE){
     if(tm==="curl") add(tail, new THREE.TorusGeometry(0.075,0.032,5,10,Math.PI*1.6), C(sp.belly&&sp.id==="jindo"?sp.body:sp.body), 0,0.1,0.02).rotation.y=Math.PI/2;
     else if(tm==="fluffy") add(tail, new THREE.SphereGeometry(0.11,7,5), bodyM, 0,0.06,0.06);
     else if(tm==="stub") add(tail, new THREE.SphereGeometry(0.055,6,5), bodyM, 0,0,0.03);
+    else if(tm==="sickle") add(tail, new THREE.CylinderGeometry(0.025,0.045,0.32,6), bodyM, 0,0.16,0.06).rotation.x=0.35;
     else if(tm==="long") add(tail, new THREE.CylinderGeometry(0.03,0.055,0.34,6), em, 0,0.06,0.13).rotation.x=1.1;
     else add(tail, new THREE.CylinderGeometry(0.022,0.03,0.42,6), bodyM, 0,0.17,0.08).rotation.x=0.45;
     if(sp.ribbon) instanced(torso, new THREE.ConeGeometry(0.06,0.12,4), C(sp.ribbon), [-1,1].map(s=>({x:0.1+s*0.07,y:hy+0.2,z:hz+0.05,rz:s*Math.PI/2})));
@@ -955,9 +1108,9 @@ function start(THREE){
     u.tail.rotation.y = moving ? Math.sin(u.t*16)*0.7 : 0;
     poseCompute(g); return Math.abs(target-u.sit)>0.01;
   }
-  function buildRotunda({color, doors, backLabel, onBack, outdoorBack, npc}){
+  function buildRotunda({color, doors, backLabel, onBack, outdoorBack, npc, adPlace}){
     const s=new THREE.Scene(); s.background=new THREE.Color(0xf6efe3); hemi(s);
-    const R=7, H=4.6, clickables=[], relabel=[], spots=[];
+    const R=7, H=4.6, clickables=[], relabel=[], spots=[]; let culturePos=null;
     add(s, new THREE.CylinderGeometry(R,R,H,36,1,true), new THREE.MeshLambertMaterial({color:0xf5eee2, side:THREE.BackSide}), 0, H/2, 0);
     add(s, new THREE.CylinderGeometry(R-0.02,R-0.02,1,36,1,true), new THREE.MeshLambertMaterial({color:new THREE.Color(mix("#e6d6bd",color,.25)), side:THREE.BackSide}), 0, 0.5, 0);
     const floorTex=canvasTex(256,256,(g,w,h)=>{ g.fillStyle="#efe4d2"; g.fillRect(0,0,w,h);
@@ -983,6 +1136,26 @@ function start(THREE){
       [panel,sign].forEach(m=>{ m.userData.act=d.act; clickables.push(m); });
       spots.push({p:new THREE.Vector3(Math.sin(a)*(R-1.0),1.9,-Math.cos(a)*(R-1.0)), r:1.7, label:()=> d.open ? G.t("bEnter")+" · "+d.title() : d.title()+" · "+G.t("locked"), act:d.act});
     });
+    for(let i=0;i<8;i++){ const a=i*Math.PI/4+Math.PI/8, g=new THREE.Group(); g.position.set(Math.sin(a)*(R-0.1),4.3,-Math.cos(a)*(R-0.1)); g.lookAt(0,4.3,0); s.add(g);
+      adPanel(g, 2.3, 0.38, `${adPlace}_${i+1}`, clickables, relabel); }
+    if(npc){   // 로비 간판(한글 크게 + 작은 외국어) · 중형 전광판 · 한국 문화 코너
+      const sg=new THREE.Group(); sg.position.set(0,0,-(R-0.12)); sg.lookAt(0,0,0); s.add(sg);
+      const sign=textPlane(sg, 3.0, 0.62, 640, (g,W,H)=>{ g.fillStyle="#1e143c"; g.fillRect(0,0,W,H); g.strokeStyle="#c9a45c"; g.lineWidth=5; g.strokeRect(5,5,W-10,H-10);
+        g.fillStyle="#ffd640"; g.textAlign="center"; g.textBaseline="middle"; g.font=`800 58px ${FONT}`; g.fillText("덕심저장소 갤러리",W/2,H*0.42);
+        g.fillStyle="#e8e0ff"; g.font=`500 17px ${FONT}`; g.fillText(G.t("lobbySub"),W/2,H*0.8); });
+      sign.position.set(0,3.72,0); relabel.push(sign.userData.redraw);
+      const fn=textPlane(sg, 3.6, 0.2, 720, (g,W,H)=>{ g.fillStyle="#fffaf2"; g.fillRect(0,0,W,H); g.fillStyle="#6b6280"; g.font=`500 19px ${FONT}`; g.textAlign="center"; g.textBaseline="middle"; wrapText(g,G.t("freeNote"),W/2,H/2+1,W-20,22,1); });
+      fn.position.set(0,3.24,0); relabel.push(fn.userData.redraw);
+      const ba=2.25, bg=new THREE.Group(); bg.position.set(Math.sin(ba)*(R-0.3),2.3,-Math.cos(ba)*(R-0.3)); bg.lookAt(0,2.3,0); s.add(bg);
+      billboard(s, bg, 2.8, 1.4, "lobby_billboard", clickables, spots, new THREE.Vector3(Math.sin(ba)*(R-1.4),1.6,-Math.cos(ba)*(R-1.4)));
+      const ca=-2.25, cx=Math.sin(ca)*(R-1.0), cz=-Math.cos(ca)*(R-1.0), cg=new THREE.Group(); cg.position.set(cx,0,cz); cg.lookAt(0,0,0); s.add(cg);
+      box(cg, 1.6,0.7,0.6, lam(0xeadcc6), 0,0.35,0);
+      instanced(cg, new THREE.CylinderGeometry(0.16,0.18,0.3,10), lam(0xfffaf2), [-0.5,0,0.5].map(x=>({x,y:0.85,z:0})));
+      const cs=textPlane(cg, 1.6, 0.42, 384, (g,W,H)=>label(g,W,H,"#fffdf8","#1e143c","🇰🇷 "+G.t("culture"),G.t("cultureSoon"),40)); cs.position.set(0,1.45,0.05); relabel.push(cs.userData.redraw);
+      [cs].forEach(m=>{ m.userData.act=G.openCulture; clickables.push(m); });
+      spots.push({p:new THREE.Vector3(Math.sin(ca)*(R-2.0),1.2,-Math.cos(ca)*(R-2.0)), r:1.4, label:()=>G.t("bCulture"), act:G.openCulture});
+      culturePos=[cx,cz];
+    }
     const back=new THREE.Group(); back.position.set(0,0,R-0.2); back.lookAt(0,0,0); s.add(back);
     const bf=lam(0x7a5a3a); box(back,0.14,2.9,0.14,bf,-1.15,1.45,0); box(back,0.14,2.9,0.14,bf,1.15,1.45,0); box(back,2.44,0.16,0.14,bf,0,2.92,0);
     const bp=add(back, new THREE.PlaneGeometry(2.16,2.84), new THREE.MeshBasicMaterial({map: outdoorBack ? skyTex() : doorGlow()}), 0, 1.42, -0.02);
@@ -995,19 +1168,20 @@ function start(THREE){
       g.traverse(o=>{ if(o.isMesh){ o.userData.act=G.talkNpc; clickables.push(o); } });
       spots.push({p:new THREE.Vector3(2.2,1.6,2.4), r:1.8, label:()=>G.t("bTalk")+" · "+G.t("npc"), act:G.talkNpc});
       blockers.push({c:[2.2,2.4,0.55]});
+      if(culturePos) blockers.push({c:[culturePos[0],culturePos[1],0.9]});
     }
     const first=angles[doors.findIndex(d=>d.open)] ?? 0;
     return {scene:s, clickables, relabel, spots, cam:{pos:[0,1.7,3.4], yaw:-first*0.35, pitch:0.0, zoom:1.12},
       walk:{spawn:[0,R-1.8,0], free:(x,z)=>Math.hypot(x,z)<R-0.75 && !inCircles(x,z,blockers), camDist:2.8, camH:1.9, clampR:R-0.25}};
   }
   function buildLobby(){
-    return buildRotunda({ color:"#c9a45c", outdoorBack:true, npc:true, backLabel:()=>G.t("exit"), onBack:()=>G.go("outside"),
+    return buildRotunda({ color:"#c9a45c", outdoorBack:true, npc:true, adPlace:"lobby_top", backLabel:()=>G.t("exit"), onBack:()=>G.go("outside"),
       doors: HALLS.map(h=>({ color:h.color, open:h.open, title:()=>G.nm(h.name),
         sub:()=> h.open ? G.t("videosN",{n:h.rooms.reduce((a,r)=>a+(r.videos?.length||0),0)}) : G.t("locked"),
         act:()=> h.open ? G.go("hub",h.id) : G.toast(G.t("lockedToast")) })) });
   }
   function buildHub(hall){
-    return buildRotunda({ color:hall.color, backLabel:()=>G.t("toLobby"), onBack:()=>G.go("lobby"),
+    return buildRotunda({ color:hall.color, adPlace:"hall_top", backLabel:()=>G.t("toLobby"), onBack:()=>G.go("lobby"),
       doors: hall.rooms.map(r=>({ color:G.roomColor(r), open:true, title:()=>G.nm(r.name),
         sub:()=> r.videos?.length ? G.t("videosN",{n:r.videos.length}) : G.t("soon"), act:()=>G.go("room",hall.id,r.id) })) });
   }
@@ -1027,7 +1201,7 @@ function start(THREE){
   function buildRoom(hall, room){
     const D = DECOR[room.decor] || DECOR.plain, color=G.roomColor(room), theme=room.theme, dec=room.decor;
     const s=new THREE.Scene(); s.background=new THREE.Color(D.wall); hemi(s, ...(D.hemi||[0xfff8ee,0xf0dfc2,2.6]));
-    const W=6, H=3.6, clickables=[], relabel=[], frames=[], spots=[], blockers=[], boxes=[];
+    const W=6, H=4.2, clickables=[], relabel=[], frames=[], spots=[], blockers=[], boxes=[];
     const floorTex=canvasTex(256,256,(g,w,h)=>{ for(let i=0;i<8;i++){ g.fillStyle=D.floor[i%2]; g.fillRect(0,i*32,w,32); g.fillStyle="rgba(80,50,20,.14)"; g.fillRect(0,i*32,w,1.5); g.fillRect((i*97)%w,i*32,1.5,32); } });
     floorTex.wrapS=floorTex.wrapT=THREE.RepeatWrapping; floorTex.repeat.set(4,4);
     add(s, new THREE.PlaneGeometry(W*2,W*2), new THREE.MeshLambertMaterial({map:floorTex})).rotation.x=-Math.PI/2;
@@ -1038,6 +1212,9 @@ function start(THREE){
     const pivots=WALLS.map(a=>{ const p=new THREE.Group(); p.rotation.y=a; s.add(p);
       add(p, new THREE.PlaneGeometry(W*2,H), wallMat, 0, H/2, -W); box(p, W*2,0.14,0.04, baseMat, 0,0.07,-W+0.02); return p; });
     const onWall = (wi, x, y, z=0.03) => new THREE.Vector3(x,y,-W+z).applyAxisAngle(Y, WALLS[wi]);
+
+    /* 벽 위쪽 광고판 줄(천장 바로 아래): 앞 3칸 + 오른쪽 4칸 + 왼쪽 4칸 */
+    { let n=0; [[0,[-3.4,0,3.4]],[1,[-4.2,-1.4,1.4,4.2]],[3,[-4.2,-1.4,1.4,4.2]]].forEach(([wi,xs])=>xs.forEach(x=>{ const g=new THREE.Group(); g.position.set(x,3.92,-W+0.04); pivots[wi].add(g); adPanel(g, 2.5, 0.4, `room_top_${++n}`, clickables, relabel); })); }
 
     /* 뒤 벽: 관 홀로 가는 문 */
     { const p=pivots[2], back=()=>G.go("hub",hall.id);
@@ -1150,14 +1327,10 @@ function start(THREE){
       instanced(s, new THREE.SphereGeometry(0.022,6,5), bas(0xffc94d), [-0.08,0,0.08].map(x=>({x,y:ph+0.52,z:cz,sy:1.5})));
       blockers.push({c:[0,cz,0.6]});
       /* 컵홀더 굿즈 진열대(빈 자리) — 뒤 벽 왼쪽 */
-      const gx=-3.2, gz=5.2, goodsAct=()=>G.openGoods(room);
-      const table=box(s, 1.5,0.8,0.55, lam(0xeadcc6), gx,0.4,gz);
+      const gx=-3.2, gz=5.2;   // 컵홀더 굿즈(추천 상점 진열대 위)
       const cups=instanced(s, new THREE.CylinderGeometry(0.075,0.06,0.22,12), lam(0xffffff), [-0.4,0,0.4].map(dx=>({x:gx+dx,y:0.91,z:gz})));
       instanced(s, new THREE.CylinderGeometry(0.08,0.07,0.09,12,1,true), lam(new THREE.Color(color)), [-0.4,0,0.4].map(dx=>({x:gx+dx,y:0.9,z:gz})));
-      const gs=textPlane(s, 1.4, 0.3, 320, (g,w,h)=>label(g,w,h,"#fffdf8","#1e143c",G.t("goodsSign"),"",34)); gs.position.set(gx,0.45,gz-0.28); gs.rotation.y=Math.PI; relabel.push(gs.userData.redraw);
-      [table,cups,gs].forEach(m=>{ m.userData.act=goodsAct; clickables.push(m); });
-      spots.push({p:new THREE.Vector3(gx,1.2,gz-0.9), r:1.3, label:()=>G.t("bGoods"), act:goodsAct});
-      boxes.push([gx-0.85,gx+0.85,gz-0.4,gz+0.4]);
+      cups.userData.act=()=>G.openGoods(room); clickables.push(cups);
       /* 벽 폴라로이드 12장 (살짝 기울게, 마스킹테이프) */
       const PSLOTS=[[0,-5.15,2.05,.10],[0,-5.0,1.2,-.08],[0,5.15,1.95,-.09],[0,5.05,1.15,.07],
                     [1,0,2.2,.06],[1,0,1.3,-.07],[1,4.5,1.85,-.1],
@@ -1186,6 +1359,16 @@ function start(THREE){
         }
       });
     }
+
+    /* ---------- 추천 상점 진열대(모든 방, 뒤 벽 왼쪽). 「광고」 표시 ---------- */
+    { const gx=-3.2, gz=5.2, act=()=>G.openGoods(room);
+      const table=box(s, 1.5,0.8,0.55, lam(0xeadcc6), gx,0.4,gz);
+      const gs=textPlane(s, 1.4, 0.3, 320, (g,w,h)=>{ label(g,w,h,"#fffdf8","#1e143c",G.t("goodsSign"),"",28);
+        g.fillStyle="#1e143c"; g.fillRect(6,6,62,22); g.fillStyle="#fff"; g.font=`700 14px ${FONT}`; g.textAlign="center"; g.textBaseline="middle"; g.fillText("광고 · AD",37,17.5); });
+      gs.position.set(gx,0.45,gz-0.28); gs.rotation.y=Math.PI; relabel.push(gs.userData.redraw);
+      [table,gs].forEach(m=>{ m.userData.act=act; clickables.push(m); });
+      spots.push({p:new THREE.Vector3(gx,1.2,gz-0.9), r:1.3, label:()=>G.t("bGoods"), act});
+      boxes.push([gx-0.85,gx+0.85,gz-0.4,gz+0.4]); }
 
     /* ---------- 미션: find(숨은 반짝이 물건) / quiz(퀴즈 받침대) ---------- */
     G.missions(hall.id, room.id).forEach(m=>{

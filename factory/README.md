@@ -4,10 +4,22 @@
 | 프로그램 | 넣는 것 | 나오는 것 |
 |---|---|---|
 | `shorts_factory.py 기획.json` | 틀(rank 순위표 / cards 문장 카드), 배경 사진, 내용 | 쇼츠 영상(5곳 공용) · 썸네일(11/10 표준) · 게시 문구 · 5줄 점검표 |
-| `longform_factory.py 롱폼.json` | 챕터·장면(파일·시작·끝)·자막·댓글 | 롱폼 영상 · 썸네일 · 자막(.srt) · 점검표 |
+| `longform_factory.py 롱폼.json` | 오프닝·챕터·장면(파일·시작·끝)·자막·댓글·출처·엔딩 | 롱폼 영상 · 썸네일 · 자막(.srt) · 설명란(.txt) · 점검표 |
 
 자동으로 항상 들어가는 것: 끝 화면(구독·좋아요·알림), 배경음악, 출처 줄, 썸네일 표준.
 점검표에 ❌가 하나라도 있으면 올리지 않는다.
+
+### 롱폼 v2 (기준서 v1, 11/11) — 예시 `samples/sample_long_v2.json`
+- 장면 `"layout"`: 기본 가로 / `"vertical"`(가운데 세로 + 흐린 배경, 양옆 `"side_left"`·`"side_right"` = 글 카드 또는 댓글 말풍선 목록) / `"split"`(가로 왼쪽 + `"file2"` 세로 오른쪽). 가로→세로 0.5초 접힘, 반대는 펼침 자동.
+- 사진 장면 `{"image":"캡처.png","sec":4}` → 가운데 사진 + 흐린 배경.
+- 끊김 없음: 장면 사이 0.3초 디졸브(검은 화면·무음 0초), 챕터 카드는 영상 위 2초 오버레이(`"card_style":"full"` 일 때만 전체 화면), `"audio_lead"` J컷, `"rewind":true` 챕터 사이 되감기, `"narration"` 동안 원본·배경음악 -14dB 덕킹.
+- `"opening"`: `{"highlight":{file,in,out,line,credit}, "question":"…"}` → 0~3초 하이라이트(대사 크게 가운데) + 25초 근처 노란 질문.
+- `"ending"`: `{"line","ask","next","next_date"}` → 주제 한 줄 → 질문 자막 → 끝 화면(구독·좋아요·알림·다음 편).
+- 장면 `"credit"` → 오른쪽 아래 구석 출처 + 마지막 '영상 출처' 화면 4초. 직접 찍은 장면은 `"own":true`.
+- 자막: 흰 굵은 고딕, `*단어*` 는 노란색. `[시작, 끝, "문장", "big"|"ask"|"question"]` 로 모양 지정.
+- 설명란 `out/<이름>_설명란.txt`: `summary` → 챕터 시각(실제 렌더 시각) → 감사한 출처 → `hashtags` → `summary_i18n`(en·ja·zh-TW).
+- 점검표 경고: 8초 넘는 장면, 10초 안 되는 챕터(유튜브 챕터 표시 안 됨), 출처 없는 장면.
+- 시험: `python longform_factory.py --test-media samples/_test` 후 `python longform_factory.py samples/sample_long_v2.json` (시험 결과 `out`·`_tmp`·`_test` 는 저장소에 안 올라감).
 
 예시: `samples/` 폴더. 배경 사진은 저작권 문제로 저장소에 올리지 않음(대표 사진을 `assets/`에 넣어 쓰기).
 윈도우에서 쓰려면 `fonts/` 폴더에 Noto Sans CJK(Bold·Medium·Black .ttc)를 넣는다.

@@ -433,7 +433,7 @@ def build(spec, base):
     if op.get("question"):
         h0 = segs[0]["dur"] if op.get("highlight") else 0
         qa = max(h0 + 1, min(op.get("question_at", 25), E - 5)); qd = op.get("question_sec", 4)
-        qp = os.path.join(tmp, "op_question.png"); sub_png(op["question"], qp, "question"); gov.append((qp, qa, qa + qd, op["question"]))
+        qp = os.path.join(tmp, "op_question.png"); sub_png(op["question"], qp, "question"); gov.append((qp, qa, qa + qd, plain(op["question"])))
     # 3) 장면마다 ffmpeg 1회
     srt = [(a, b, t) for _, a, b, t in gov]
     endcfg = dict(spec.get("end", {}))
