@@ -114,14 +114,14 @@ const PROGRESS = { enabled:true, hall:"rescene", order:["stage","anwonjalbu","tv
   openAtStart:2, need:{ default:3 }, watchSeconds:30, fallbackSeconds:20, nextHall:"hall2", secretRoom:"secret" };
 
 /* 광고 자리. 이미지(https)와 링크만 넣으면 그 칸에 걸린다(누르면 새 탭, rel="sponsored noopener"). 광고에는 항상 「광고」 표시.
-   place: screen_top(화면 맨 위 띠 — 영상 패널이 열려 있는 동안은 숨김) | street_billboard(건물 밖 전광판) | lobby_billboard(로비 전광판)
+   place: screen_top(화면 맨 위 띠 — 영상 패널이 열려 있는 동안은 숨김) | lobby_billboard(로비 전광판)
+          ※ 건물 밖 땅에 세운 거리 전광판(street_billboard)은 없앴다(대표 11/11). 건물 밖 광고는 하늘 비행선·홀로그램 판만
           | sky_blimp(건물 밖 하늘 비행선 옆면 가로 띠, 512×96) | sky_holo_1·2·3(입구 위 공중 홀로그램 판, 512×256)
           ※ 영상 패널(유튜브 임베드) 안·바로 아래에는 광고 칸을 두지 않는다(YouTube API 개발자 정책 III.G). panel_bottom은 없앴다
           | lobby_top · hall_top · room_top (벽 위쪽 지하철식 광고판 줄 — 칸 번호 _1, _2 …. 적지 않은 칸은 「광고 자리」 판이 보인다)
-   전광판(street/lobby_billboard)에 이미지가 들어오면 순환 슬라이드 사이에 끼어든다. */
+   로비 전광판(lobby_billboard)에 이미지가 들어오면 순환 슬라이드 사이에 끼어든다. */
 const ADS = [
   {slot_id:"screen_top_1",       place:"screen_top",       size:"화면 너비 × 22px",  image:null, link:null, label:"광고"},
-  {slot_id:"street_billboard_1", place:"street_billboard", size:"512 × 256",         image:null, link:null, label:"광고"},
   {slot_id:"lobby_billboard_1",  place:"lobby_billboard",  size:"512 × 256",         image:null, link:null, label:"광고"},
   {slot_id:"room_top_1",         place:"room_top",         size:"512 × 80",          image:null, link:null, label:"광고"},
   {slot_id:"sky_blimp_1",        place:"sky_blimp",        size:"512 × 96",          image:null, link:null, label:"광고"},
@@ -1428,12 +1428,10 @@ function start(THREE){
       add(s, new THREE.PlaneGeometry(8,60), lam(0xe7dfd2), 6, 0.02, 34).rotation.x=-Math.PI/2;
       add(s, new THREE.PlaneGeometry(70,6), lam(0xe7dfd2), 0, 0.025, 4).rotation.x=-Math.PI/2;
       const tc=trees(s, [[16,12],[22,16],[28,11],[34,18],[-38,24],[30,30],[-30,-20],[36,-18]]);
-      add(s, new THREE.CylinderGeometry(0.25,0.3,7,8), lam(0x6d6676), 13,3.5,10);
-      const bb=new THREE.Group(); bb.position.set(13,8.6,10.2); bb.rotation.y=-0.3; s.add(bb);
-      billboard(s, bb, 6.4, 3.2, "street_billboard", clickables, spots, new THREE.Vector3(12,2,13));
+      /* 땅에 세운 거리 전광판은 뺐다(대표 11/11). 건물 밖 광고는 하늘 비행선·홀로그램 판만 */
       clouds(s, [[-30,34,-80,1.4],[10,40,-90,1.1],[42,30,-70,1],[0,22,-40,.6]]);
       const relabel=[], sky=skyAds(s, clickables, spots, relabel, {orbit:[0,-6,30,17,21,0.06], a0:1.2, holo:[[-6.4,13.0,12],[0,13.8,12.6],[6.4,13.0,12]], holoYaw:[0.18,0,-0.18], holoScale:1.4, holoSpot:new THREE.Vector3(0,2,6)});
-      const free=(x,z)=> x>-40&&x<40&&z>-14.6&&z<62 && !inBox(x,z,[-33.3,-7,-12.3,0.3]) && !inBox(x,z,[7,33.3,-12.3,0.3]) && !inBox(x,z,[-37.6,2.6,7.6,20.4]) && !inCircles(x,z,tc) && Math.hypot(x-13,z-10)>0.6
+      const free=(x,z)=> x>-40&&x<40&&z>-14.6&&z<62 && !inBox(x,z,[-33.3,-7,-12.3,0.3]) && !inBox(x,z,[7,33.3,-12.3,0.3]) && !inBox(x,z,[-37.6,2.6,7.6,20.4]) && !inCircles(x,z,tc)
         && !(Math.abs(x)>=7 && z<-12.3);
       const height=(x,z)=> Math.abs(x)<7 && z<1.2 ? (z<-9 ? 3.15 : Math.min(9,Math.ceil((1.2-z)/1.2))*0.35) : 0;
       return {scene:s, clickables, spots, relabel, animate:sky.animate, sky, cam:{pos:[6,2.2,52], yaw:0.08, pitch:0.05, yawLim:[-0.8,0.8], pitchLim:[-0.2,0.4]},
@@ -1458,13 +1456,11 @@ function start(THREE){
     textPlane(s, 7.2, 1.1, 768, signDraw).position.set(0, top+7.3, 3.82);
     add(s, new THREE.PlaneGeometry(9,70), lam(0xe9e1d4), 0, 0.02, 40).rotation.x=-Math.PI/2;
     const tc=trees(s, [[-14,10],[14,10],[-17,18],[17,18],[-13,28],[13,28],[-24,2],[24,2]]);
-    add(s, new THREE.CylinderGeometry(0.22,0.28,6.5,8), lam(0x6d6676), 9.6,3.25,8.5);
-    const bb=new THREE.Group(); bb.position.set(9.6,7.9,8.7); bb.rotation.y=-0.35; s.add(bb);
-    billboard(s, bb, 5.2, 2.6, "street_billboard", clickables, spots, new THREE.Vector3(8.6,2,11));
+    /* 땅에 세운 거리 전광판은 뺐다(대표 11/11). 건물 밖 광고는 하늘 비행선·홀로그램 판만 */
     instanced(s, new THREE.SphereGeometry(0.6,8,6), lam(0x9cc58a), [-10.6,-11.8,10.6,11.8].map(x=>({x,y:0.4,z:6,sy:0.7})));
     clouds(s, [[-30,26,-70,1.3],[12,32,-80,1.1],[38,22,-60,.9],[-8,18,-40,.6]]);
     const relabel=[], sky=skyAds(s, clickables, spots, relabel, {orbit:[0,-5,22,13,18,0.07], a0:1.1, holo:[[-5.2,12.2,6.4],[0,12.9,6.8],[5.2,12.2,6.4]], holoYaw:[0.2,0,-0.2], holoScale:1.3, holoSpot:new THREE.Vector3(0,2,9.5)});
-    const cols=colX.map(x=>({c:[x,3.4,0.6]})).concat([{c:[9.6,8.5,0.5]}]);
+    const cols=colX.map(x=>({c:[x,3.4,0.6]}));
     const free=(x,z)=> x>-30&&x<30&&z>-14&&z<60 && !inBox(x,z,[-7.6,7.6,-8.2,1.1]) && !inCircles(x,z,cols) && !inCircles(x,z,tc);
     const height=(x,z)=>{ let h=0; for(let i=0;i<5;i++) if(z<5.6-0.9*i && z>-8.4+0.0*i && Math.abs(x)<(22-i*0.6)/2) h=(i+1)*0.3; return h; };
     return {scene:s, clickables, spots, relabel, animate:sky.animate, sky, cam:{pos:[0,1.8,34], yaw:0, pitch:0.08, yawLim:[-0.8,0.8], pitchLim:[-0.2,0.4]},

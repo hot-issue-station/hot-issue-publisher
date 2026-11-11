@@ -20,6 +20,13 @@ v1(대표 11/8 결정) 위에 벤치마킹(언더독스토리) 두 가지를 기
    - 장면 "credit" → 오른쪽 아래 구석 출처 + 마지막 '영상 출처' 화면 4초 자동
    - 자막은 흰 굵은 고딕, *별표* 단어는 노란색. 자막 4번째 칸에 모양("big"/"ask"/"question")
    - 설명란 out/<이름>_설명란.txt : summary → 챕터 타임스탬프(실제 시각) → 감사한 출처 → hashtags → summary_i18n(en/ja/zh-TW)
+ ④ 기준서 v1 추가 4개(11/11)
+   - 감정 자막: subs 4번째 칸 "emotion" (5번째 칸 "left"/"right", 기본 오른쪽) → 작게·화면 옆쪽·기울임·연분홍, 0.35초 페이드
+   - 효과음 자막: subs 4번째 칸 "sfx" (5번째 칸 [x,y] 화면 비율, 기본 [0.5,0.3]) → 짧은 의성어, 0.3초 팝 애니메이션
+     장면 "sfx":[{"at":초,"file":"효과음","volume":1.0}] → 같은 시각 효과음 믹스(배경음악 덕킹 없음)
+   - 음악 끊기: "music_cut":[{"at":초,"sec":길이}] → 그 구간 배경음악만 0으로(0.12초 내려가고 0.6초 복귀)
+     영상 전체 기준(맨 위) 또는 장면 안 기준(장면 안에 넣으면 장면 시작부터 셈)
+   - 결심 한 줄: "ending":{"resolve":"…"} → 검은 화면 위 한 줄 2초 페이드인(resolve_sec 기본 3.5초) → 끝 화면
 결과: 롱폼 영상(1920x1080, 30fps) + 썸네일(1280x720) + 자막(.srt) + 설명란(.txt) + 점검표
 """
 import json, os, sys, subprocess, shutil, re
@@ -69,8 +76,42 @@ SUB_STYLE = {   # 자막 모양: (글자 크기, 위치, 기본 색, 띠)
     "big": (96, "center", WH, False),       # 오프닝 하이라이트 대사·엔딩 주제 한 줄(크게 가운데)
     "ask": (84, "center", Y, False),        # 엔딩 질문(노란색 가운데)
     "question": (70, "top", Y, True),       # 오프닝 질문(노란색, 위쪽)
-}
+    "resolve": (72, "center", WH, False),   # 끝맺음 결심 한 줄(검은 화면 위)
+}   # "emotion"(감정 자막)·"sfx"(효과음 자막)은 emotion_png / sfx_frames 가 따로 그림
+SOFT = (255, 205, 228)   # 감정 자막 연분홍
 def plain(t): return str(t).replace("*", "")
+
+def emotion_png(text, path, side="right"):
+    """감정 자막: 인물 마음을 대신 말하는 한 줄. 작게, 화면 옆쪽(아래 자막 위), 기울임, 부드러운 색. *별표*는 흰색."""
+    size = 42; fo = F(FM, size); dm = ImageDraw.Draw(Image.new("RGBA", (1, 1)))
+    lines = [[(p, WH if k % 2 else SOFT) for k, p in enumerate(ln.split("*")) if p] for ln in str(text).split("\n")]
+    while size > 28 and max(sum(dm.textlength(s, font=fo) for s, _ in L) for L in lines) > 760: size -= 2; fo = F(FM, size)
+    lh = int(size * 1.4); tw = int(max(sum(dm.textlength(s, font=fo) for s, _ in L) for L in lines)) + 60; th = lh * len(lines) + 30
+    lay = Image.new("RGBA", (tw, th), (0, 0, 0, 0)); sh = Image.new("RGBA", (tw, th), (0, 0, 0, 0)); d, ds = ImageDraw.Draw(lay), ImageDraw.Draw(sh)
+    for i, L in enumerate(lines):
+        w = sum(d.textlength(s, font=fo) for s, _ in L); x = (tw - w - 30) if side == "right" else 30; y = 12 + lh * i
+        ds.text((x + 2, y + 3), "".join(s for s, _ in L), font=fo, fill=(0, 0, 0, 210), stroke_width=4, stroke_fill=(0, 0, 0, 210))
+        for s, col in L: d.text((x, y), s, font=fo, fill=col, stroke_width=2, stroke_fill=(40, 20, 50)); x += d.textlength(s, font=fo)
+    lay = Image.alpha_composite(sh.filter(ImageFilter.GaussianBlur(5)), lay)
+    k = 0.2; lay = lay.transform((tw + int(k * th), th), Image.AFFINE, (1, k, -k * th, 0, 1, 0), Image.BICUBIC)   # 기울임(이탤릭)
+    im = Image.new("RGBA", (W, H), (0, 0, 0, 0)); y0 = H - 300 - th
+    im.alpha_composite(lay, (W - 70 - lay.width if side == "right" else 70, y0)); im.save(path)
+
+def sfx_frames(text, prefix, pos=(0.5, 0.3)):
+    """효과음 자막(의성어): 노란 굵은 글씨 살짝 기울여, 0.3초 팝(작게→크게→제자리). 프레임 PNG 9장 → 마지막 장 유지."""
+    fo = F(FB, 120); dm = ImageDraw.Draw(Image.new("RGBA", (1, 1))); t = plain(text)
+    tw, th = int(dm.textlength(t, font=fo)) + 60, 190
+    base = Image.new("RGBA", (tw, th), (0, 0, 0, 0)); ImageDraw.Draw(base).text((30, 10), t, font=fo, fill=Y, stroke_width=10, stroke_fill=(10, 6, 30))
+    base = base.rotate(8, resample=Image.BICUBIC, expand=True)
+    n = max(2, round(0.3 * FPS)); cx, cy = int(W * pos[0]), int(H * pos[1])
+    for i in range(n):
+        u = (i + 1) / n; s = 0.35 + 0.95 * (u / 0.6) if u < 0.6 else 1.3 - 0.3 * ((u - 0.6) / 0.4)   # 0.35 → 1.3 → 1.0
+        a = min(1.0, u / 0.3)
+        fr_ = base.resize((max(1, int(base.width * s)), max(1, int(base.height * s))), Image.BICUBIC)
+        if a < 1: fr_.putalpha(fr_.getchannel("A").point(lambda v: int(v * a)))
+        im = Image.new("RGBA", (W, H), (0, 0, 0, 0)); im.alpha_composite(fr_, (max(0, min(W - fr_.width, cx - fr_.width // 2)), max(0, min(H - fr_.height, cy - fr_.height // 2))))
+        im.save(f"{prefix}_{i:02d}.png")
+    return f"{prefix}_%02d.png"
 
 def sub_png(text, path, style="sub"):
     """자막: 흰 굵은 고딕 + 테두리·그림자. *별표* 로 감싼 단어는 노란색(기본색이 노랑이면 흰색)."""
@@ -299,8 +340,18 @@ def render_scene(sg, sc, base, tmp, tag, comp):
                 for p, at in bubbles_pngs(v, x, 560, os.path.join(tmp, f"{tag}_{key}")): ov.append((add(["-i", p]), at, D + 1))
             else:
                 p = os.path.join(tmp, f"{tag}_{key}.png"); info_png(v, p, x, 560); ov.append((add(["-i", p]), 0, D + 1))
-    for j, s in enumerate(sc.get("subs", [])):        # [시작, 끝, "문장", (모양)] (장면 안에서의 초)
-        p = os.path.join(tmp, f"{tag}_s{j}.png"); sub_png(s[2], p, s[3] if len(s) > 3 else "sub"); ov.append((add(["-i", p]), s[0], s[1]))
+    for j, s in enumerate(sc.get("subs", [])):        # [시작, 끝, "문장", (모양), (위치)] (장면 안에서의 초)
+        st = s[3] if len(s) > 3 else "sub"; p = os.path.join(tmp, f"{tag}_s{j}.png")
+        if st == "emotion":                            # 감정 자막: 옆쪽·기울임, 부드럽게 나타났다 사라짐
+            emotion_png(s[2], p, s[4] if len(s) > 4 else "right"); i = loopimg(p, D + 1); fo_ = min(0.3, (s[1] - s[0]) / 3)
+            fl.append(f"[{i}:v]format=rgba,fade=t=in:st={s[0]:.3f}:d={min(0.35, (s[1] - s[0]) / 3):.3f}:alpha=1,fade=t=out:st={s[1] - fo_:.3f}:d={fo_:.3f}:alpha=1[em{j}]")
+            ov.append((f"em{j}", s[0], s[1]))
+        elif st == "sfx":                              # 효과음 자막: 0.3초 팝 프레임 → 마지막 장 유지
+            pat = sfx_frames(s[2], os.path.join(tmp, f"{tag}_fx{j}"), tuple(s[4]) if len(s) > 4 else (0.5, 0.3))
+            i = add(["-framerate", str(FPS), "-i", pat])
+            fl.append(f"[{i}:v]format=rgba,tpad=stop_mode=clone:stop_duration={max(0.1, s[1] - s[0]):.3f},setpts=PTS+{s[0]:.3f}/TB[fx{j}]")
+            ov.append((f"fx{j}", s[0], s[1]))
+        else: sub_png(s[2], p, st); ov.append((add(["-i", p]), s[0], s[1]))
     if sc.get("credit"):                               # 출처: 오른쪽 아래 구석, 장면 내내
         p = os.path.join(tmp, f"{tag}_cr.png"); credit_png(sc["credit"], p); ov.append((add(["-i", p]), 0, D + 1))
     cx, cw = {"vertical": (VX + VW + 30, 586), "split": (40, 680)}.get(lay, (1180, 680))
