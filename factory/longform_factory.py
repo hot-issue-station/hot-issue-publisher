@@ -167,7 +167,7 @@ def sub_png(text, path, style="sub"):
         if max(sum(d.textlength(s, font=fo) for s, _ in L) for L in lines) <= W - 160: break
         size -= 4
     fo = F(FB, size); lh = int(size * 1.32); sw = max(3, size // 12); th = lh * len(lines)
-    y0 = {"bottom": H - 96 - th, "center": (H - th) // 2, "top": 120}[pos]
+    y0 = {"bottom": H - 96 - th, "center": (H - th) // 2, "top": 0}[pos]   # 위쪽 자막은 맨 위에 붙임(대표 11/11 21:38)
     sh = Image.new("RGBA", (W, H), (0, 0, 0, 0)); ds = ImageDraw.Draw(sh)
     rows = []
     for i, L in enumerate(lines):
@@ -419,7 +419,7 @@ def pick_spot(w, h, cands, avoid):
         if best is None or ov < best[0]: best = (ov, x, y)
     return best[1], best[2]
 
-def mola_sub_png(text, path, style, pos=None, faces=None):
+def mola_sub_png(text, path, style, pos=None, faces=None, below_narr=False):
     """괄호 드립(bracket) · [상황 자막](situation) · 내레이션 자막(narr, 위). 위 자막은 얼굴을 피해 자리 잡고, 원본 자막(아래 띠)은 가리지 않음."""
     import v2_fx
     im = v2_fx.caption_img(text, style, W); full = Image.new("RGBA", (W, H), (0, 0, 0, 0)); w, h = im.width, im.height
@@ -427,8 +427,8 @@ def mola_sub_png(text, path, style, pos=None, faces=None):
     if pos: x, y = int(pos[0] * W - w / 2), int(pos[1] * H - h / 2)
     elif style == "narr":                             # 대표 11/11 21:38: 위쪽 자막은 화면 맨 위에 바로 붙여서
         x, y = (W - w) // 2, 0
-    elif style == "situation":                        # 내레이션 자막 바로 아래에 붙여서(맨 위 띠 안)
-        x, y = (W - w) // 2, v2_fx.caption_img("가", "narr", W).height
+    elif style == "situation":                        # 맨 위에 붙임. 같은 때 내레이션 자막이 있으면 그 바로 아래
+        x, y = (W - w) // 2, (v2_fx.caption_img("가", "narr", W).height if below_narr else 0)
     else: x, y = (W - w) // 2, int(H * 0.56)    # 원본 자막(화면 아래 0.8~0.95)을 가리지 않게
     full.alpha_composite(im, (max(0, min(W - w, x)), max(0, min(H - h, y)))); full.save(path)
 
@@ -527,7 +527,8 @@ def render_scene(sg, sc, base, tmp, tag, comp):
             ov.append((f"fx{j}", s[0], s[1])); occ.append((s[0], s[1], pat % (round(0.3 * FPS) - 1)))
         elif st in ("bracket", "situation", "narr"):   # v2.2 몰아보기 자막
             fc = faces_in(src, sc["in"] + s[0], sc["in"] + s[1]) if (face_ok and st in ("narr", "situation")) else []
-            mola_sub_png(s[2], p, st, s[4] if len(s) > 4 else None, fc); ov.append((add(["-i", p]), s[0], s[1])); occ.append((s[0], s[1], p))
+            bn = st == "situation" and any(t[3] == "narr" and t[0] < s[1] and s[0] < t[1] for t in sc.get("subs", []) if len(t) > 3)
+            mola_sub_png(s[2], p, st, s[4] if len(s) > 4 else None, fc, bn); ov.append((add(["-i", p]), s[0], s[1])); occ.append((s[0], s[1], p))
         else: sub_png(s[2], p, st); ov.append((add(["-i", p]), s[0], s[1])); occ.append((s[0], s[1], p))
     for j, r_ in enumerate(sc.get("reacts", [])):      # v2.2 동네 형 반응 말풍선(오른쪽 아래)
         a_ = r_["at"]; b_ = a_ + r_.get("sec", 3); p = os.path.join(tmp, f"{tag}_r{j}.png")
