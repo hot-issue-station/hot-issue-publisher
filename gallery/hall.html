@@ -1,0 +1,470 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>리센느관 전시실</title>
+<meta name="description" content="덕심저장소 아이돌 갤러리 2단계 — 손가락으로 둘러보는 3D 전시실(시험판)">
+<script>
+/* =====================================================================
+   전시 목록 — 여기 한 곳만 고치면 된다.
+   관 이름 → 영상 배열 {id, title, desc, kind?, picks?}
+   - id    : 유튜브 영상 주소 끝부분 (예: youtube.com/shorts/nM_01Hkho9Q → nM_01Hkho9Q)
+   - kind  : "short"(세로) / "long"(가로). 안 쓰면 "long"
+   - picks : 추천 상품(선택) [{name, price, url}] — 실제로 열어 확인한 링크만.
+             쿠팡 링크가 하나라도 있으면 대가성 문구가 자동으로 붙는다.
+   액자 자리는 관마다 7개. 영상이 7개보다 적으면 나머지는 「곧 채워져요」 빈 액자.
+   ===================================================================== */
+const HALLS = {
+  "리센느관": [
+    {id:"nM_01Hkho9Q", kind:"short", title:"리센느 초동, 숫자로 보면",
+     desc:"리센느 「PULSE」 첫 주 기록을 숫자로 정리했어요.", picks:[]},
+  ],
+};
+/* 관 이름 번역(화면 버튼용). 없으면 한국어 이름 그대로 */
+const HALL_LABELS = {
+  "리센느관": {ko:"리센느관", ja:"RESCENE館", en:"RESCENE Hall"},
+};
+const THREE_VERSION = "0.186.1"; // importmap 주소와 같이 바꿀 것
+</script>
+<script type="importmap">
+{ "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.186.1/build/three.module.js" } }
+</script>
+<style>
+:root{
+  --bg:#f6efe3; --paper:#fffaf2; --ink:#1e143c; --sub:#6b6280; --line:#e4d8c4;
+  --y:#ffd640; --p:#9650e6; --r:#ff465a; --shadow:0 8px 30px rgba(40,25,10,.18);
+  --font:"Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic","Hiragino Sans","Noto Sans CJK KR",system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:var(--bg);color:var(--ink);font-family:var(--font);-webkit-tap-highlight-color:transparent}
+body{overflow:hidden}
+body.flat{overflow:auto}
+button{font:inherit;color:inherit;cursor:pointer}
+#stage{position:fixed;inset:0;touch-action:none;outline:none}
+#stage canvas{display:block;width:100%;height:100%}
+
+/* 위쪽 막대 */
+.top{position:fixed;left:0;right:0;top:0;z-index:5;padding:calc(10px + env(safe-area-inset-top)) 16px 8px;
+  background:linear-gradient(var(--bg) 55%,rgba(246,239,227,0));pointer-events:none}
+.top>*{pointer-events:auto}
+.bar{display:flex;align-items:center;gap:10px}
+.brand{flex:1;min-width:0}
+.brand h1{margin:0;font-size:18px;line-height:1.25;letter-spacing:-.2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.brand small{display:block;font-size:11px;color:var(--sub);margin-top:2px}
+.lang{display:flex;background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:3px;flex:none}
+.lang button{border:0;background:none;border-radius:999px;padding:5px 9px;font-size:12px;min-height:30px}
+.lang button.on{background:var(--ink);color:#fff;font-weight:700}
+.halls{display:flex;gap:8px;margin-top:10px;overflow-x:auto;scrollbar-width:none}
+.halls button{flex:none;border:1px solid var(--line);background:var(--paper);border-radius:999px;padding:8px 14px;font-size:14px;min-height:38px}
+.halls button.on{background:var(--y);border-color:var(--y);font-weight:700}
+.halls button.soon{color:var(--sub);border-style:dashed}
+
+/* 안내 말풍선·돌리기 버튼 */
+.hint{position:fixed;left:50%;bottom:calc(64px + env(safe-area-inset-bottom));transform:translateX(-50%);z-index:4;
+  background:rgba(30,20,60,.82);color:#fff;font-size:13px;padding:9px 14px;border-radius:999px;max-width:calc(100% - 32px);
+  text-align:center;transition:opacity .6s;pointer-events:none}
+.hint.off{opacity:0}
+.turn{position:fixed;bottom:calc(58px + env(safe-area-inset-bottom));z-index:4;width:46px;height:46px;border-radius:50%;
+  border:1px solid var(--line);background:rgba(255,250,242,.92);font-size:20px;box-shadow:var(--shadow);display:flex;align-items:center;justify-content:center}
+.turn.l{left:16px}.turn.r{right:16px}
+.note{position:fixed;left:0;right:0;bottom:0;z-index:4;padding:8px 16px calc(8px + env(safe-area-inset-bottom));
+  font-size:11px;line-height:1.45;color:var(--sub);text-align:center;background:linear-gradient(rgba(246,239,227,0),var(--bg) 40%)}
+.toast{position:fixed;left:50%;top:50%;transform:translate(-50%,-50%) scale(.96);z-index:30;background:var(--ink);color:#fff;
+  padding:12px 18px;border-radius:14px;font-size:14px;opacity:0;transition:.25s;pointer-events:none;max-width:calc(100% - 32px);text-align:center}
+.toast.on{opacity:1;transform:translate(-50%,-50%) scale(1)}
+
+/* 불러오는 중 */
+.loading{position:fixed;inset:0;z-index:3;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;background:var(--bg);color:var(--sub);font-size:14px;transition:opacity .5s}
+.loading.off{opacity:0;pointer-events:none}
+.dots{display:flex;gap:6px}.dots i{width:9px;height:9px;border-radius:50%;background:var(--p);animation:b 1s infinite alternate}
+.dots i:nth-child(2){animation-delay:.2s;background:var(--y)}.dots i:nth-child(3){animation-delay:.4s;background:var(--r)}
+@keyframes b{to{transform:translateY(-8px);opacity:.5}}
+
+/* 아래에서 올라오는 영상 패널 */
+.shade{position:fixed;inset:0;z-index:20;background:rgba(30,20,60,.35);opacity:0;pointer-events:none;transition:opacity .3s}
+.shade.on{opacity:1;pointer-events:auto}
+.sheet{position:fixed;left:0;right:0;bottom:0;z-index:21;max-width:560px;margin:0 auto;max-height:90vh;max-height:90dvh;overflow-y:auto;
+  background:var(--paper);border-radius:22px 22px 0 0;box-shadow:var(--shadow);padding:10px 16px calc(18px + env(safe-area-inset-bottom));
+  transform:translateY(105%);transition:transform .35s cubic-bezier(.2,.8,.2,1);overscroll-behavior:contain}
+.sheet.on{transform:none}
+.grab{width:44px;height:5px;border-radius:5px;background:var(--line);margin:0 auto 8px}
+.sheet .close{position:absolute;right:12px;top:10px;border:0;background:var(--bg);border-radius:999px;padding:6px 12px;font-size:13px;min-height:34px}
+.player{margin:28px auto 0;background:#000;border-radius:14px;overflow:hidden;position:relative}
+.player.long{width:100%;aspect-ratio:16/9}
+.player.short{aspect-ratio:9/16;height:min(56vh,calc((100vw - 32px)*16/9));height:min(56dvh,calc((100vw - 32px)*16/9));max-width:100%}
+.player iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.sheet h2{font-size:18px;margin:14px 0 4px;line-height:1.35}
+.sheet .desc{margin:0;color:var(--sub);font-size:14px;line-height:1.6}
+.picks{margin-top:16px;border-top:1px solid var(--line);padding-top:12px}
+.picks h3{margin:0 0 8px;font-size:13px;color:var(--p)}
+.picks .row{display:flex;gap:8px;overflow-x:auto}
+.pick{flex:none;width:136px;background:var(--bg);border-radius:12px;padding:10px;color:var(--ink);text-decoration:none;font-size:13px;line-height:1.4}
+.pick b{display:block;margin-top:4px;color:var(--r)}
+.picks .empty{margin:0;font-size:12px;color:var(--sub);border:1px dashed var(--line);border-radius:12px;padding:14px;text-align:center}
+.disc{color:var(--sub);font-size:11px;margin:8px 0 0;line-height:1.45}
+.sheet .yt{margin:10px 0 0;font-size:11px;color:var(--sub);line-height:1.45}
+
+/* 3D를 못 불러올 때: 평면 목록 */
+#flat{display:none;max-width:560px;margin:0 auto;padding:142px 16px 70px}
+body.flat #flat{display:block}
+body.flat #stage,body.flat .turn,body.flat .hint{display:none}
+.warn{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:12px 14px;font-size:13px;line-height:1.55;color:var(--sub);margin-bottom:16px}
+.warn button{margin-top:8px;border:0;background:var(--ink);color:#fff;border-radius:999px;padding:7px 14px;font-size:13px;min-height:34px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.card{border:0;padding:0;text-align:left;background:var(--paper);border-radius:14px;overflow:hidden;box-shadow:0 2px 10px rgba(40,25,10,.08)}
+.card .th{aspect-ratio:4/3;background:#e9dfcf center/cover no-repeat;display:flex;align-items:center;justify-content:center;color:var(--sub);font-size:13px;padding:8px;text-align:center}
+.card .tt{padding:8px 10px 10px;font-size:13px;line-height:1.4;font-weight:600}
+.card.blank{cursor:default;opacity:.75}
+.card.blank .th{background:repeating-linear-gradient(45deg,#efe6d6 0 10px,#e9dfcf 10px 20px)}
+@media (min-width:700px){.grid{grid-template-columns:repeat(3,1fr)}}
+</style>
+</head>
+<body>
+<div id="stage" tabindex="0" aria-label="3D 전시실"></div>
+
+<header class="top">
+  <div class="bar">
+    <div class="brand"><h1 data-t="title"></h1><small data-t="sub"></small></div>
+    <div class="lang" role="group" aria-label="언어">
+      <button data-lang="ko">한국어</button><button data-lang="ja">日本語</button><button data-lang="en">EN</button>
+    </div>
+  </div>
+  <nav class="halls" id="halls"></nav>
+</header>
+
+<div class="loading" id="loading"><div class="dots"><i></i><i></i><i></i></div><span data-t="loading"></span></div>
+<div class="hint" id="hint" data-t="hint"></div>
+<button class="turn l" id="turnL" data-t-aria="left">&#8592;</button>
+<button class="turn r" id="turnR" data-t-aria="right">&#8594;</button>
+
+<main id="flat">
+  <div class="warn"><span data-t="flatMsg"></span><br><button id="retry" data-t="retry"></button></div>
+  <div class="grid" id="grid"></div>
+</main>
+
+<p class="note" data-t="embedNote"></p>
+<div class="toast" id="toast"></div>
+
+<div class="shade" id="shade"></div>
+<section class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="vTitle" aria-hidden="true">
+  <div class="grab"></div>
+  <button class="close" id="close" data-t="close"></button>
+  <div class="player" id="player"></div>
+  <h2 id="vTitle"></h2>
+  <p class="desc" id="vDesc"></p>
+  <div class="picks">
+    <h3 data-t="picksTitle"></h3>
+    <div class="row" id="picksRow"></div>
+    <p class="empty" id="picksEmpty" data-t="picksEmpty"></p>
+    <p class="disc" id="disc" hidden>이 게시물은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</p>
+  </div>
+  <p class="yt" data-t="embedNote"></p>
+</section>
+
+<script>
+/* ---------- 화면 문구 3개 언어 (영상 제목·설명은 한국어 그대로) ---------- */
+const I18N = {
+  ko:{title:"덕심저장소 아이돌 갤러리", sub:"3D 전시실 시험판", loading:"전시실 문을 여는 중…",
+      hint:"화면을 끌어서 둘러보고, 액자를 누르면 영상이 나와요", soon:"곧 채워져요", otherSoon:"다른 관 준비 중",
+      nextHall:"다음 관", close:"닫기", picksTitle:"함께 보면 좋은 것", picksEmpty:"아직 준비 중이에요",
+      embedNote:"영상은 유튜브 원본을 그대로 불러와 재생해요. 조회수는 원작자 채널에 그대로 집계돼요.",
+      flatMsg:"이 기기에서는 3D 전시실을 불러오지 못해 목록으로 보여 드려요.", retry:"3D 다시 시도",
+      left:"왼쪽으로 돌기", right:"오른쪽으로 돌기", soonToast:"이 액자는 곧 채워져요", hallToast:"다른 관은 준비 중이에요"},
+  ja:{title:"トクシム保管庫 アイドルギャラリー", sub:"3D展示室(テスト版)", loading:"展示室を開いています…",
+      hint:"ドラッグで見回し、額縁をタップすると動画が見られます", soon:"まもなく公開", otherSoon:"他の館は準備中",
+      nextHall:"次の館", close:"閉じる", picksTitle:"あわせてどうぞ", picksEmpty:"ただいま準備中です",
+      embedNote:"動画はYouTubeの埋め込みで再生され、再生回数は元のチャンネルにカウントされます。",
+      flatMsg:"この端末では3D展示室を読み込めなかったため、一覧で表示しています。", retry:"3Dを再試行",
+      left:"左へ回る", right:"右へ回る", soonToast:"この額縁はまもなく公開です", hallToast:"他の館は準備中です"},
+  en:{title:"Duksim Archive Idol Gallery", sub:"3D hall · preview", loading:"Opening the hall…",
+      hint:"Drag to look around. Tap a frame to watch.", soon:"Coming soon", otherSoon:"More halls soon",
+      nextHall:"Next hall", close:"Close", picksTitle:"Goes well with this", picksEmpty:"Nothing here yet",
+      embedNote:"Videos play as YouTube embeds, so views count for the original creators.",
+      flatMsg:"The 3D hall couldn't load on this device, so here is a simple list.", retry:"Try 3D again",
+      left:"Turn left", right:"Turn right", soonToast:"This frame is coming soon", hallToast:"More halls are on the way"},
+};
+const SLOTS = 7;                       // 관 하나의 액자 수 (3D 배치와 같이 바꿀 것)
+const AFFILIATE_RE = /(^|\.)coupang\.com$|(^|\.)coupa\.ng$/i;
+
+const G = window.Gallery = {
+  HALLS, lang:"ko", hall:Object.keys(HALLS)[0], mode:"loading", langHooks:[], hallHooks:[],
+  t(k){ return (I18N[this.lang]||I18N.ko)[k] ?? I18N.ko[k] ?? k; },
+  slots(hall){ const v=(HALLS[hall]||[]).slice(0,SLOTS); while(v.length<SLOTS) v.push(null); return v; },
+};
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const safeUrl = u => { try{ const x=new URL(u); return x.protocol==="https:" ? x : null; }catch(e){ return null; } };
+const store = { get(k){ try{return localStorage.getItem(k);}catch(e){return null;} }, set(k,v){ try{localStorage.setItem(k,v);}catch(e){} } };
+
+/* ---------- 언어 ---------- */
+function applyLang(){
+  document.documentElement.lang = G.lang;
+  document.querySelectorAll("[data-t]").forEach(el => el.textContent = G.t(el.dataset.t));
+  document.querySelectorAll("[data-t-aria]").forEach(el => el.setAttribute("aria-label", G.t(el.dataset.tAria)));
+  document.querySelectorAll(".lang button").forEach(b => b.classList.toggle("on", b.dataset.lang===G.lang));
+  document.title = (HALL_LABELS[G.hall]?.[G.lang] || G.hall) + " · " + G.t("title");
+  drawHalls(); drawFlat();
+  G.langHooks.forEach(f => f());
+}
+document.querySelectorAll(".lang button").forEach(b => b.onclick = () => { G.lang=b.dataset.lang; store.set("hall-lang",G.lang); applyLang(); });
+{ const q=new URLSearchParams(location.search).get("lang"), s=store.get("hall-lang");
+G.lang = I18N[q]?q : I18N[s]?s : "ko"; }  // 기본은 한국어
+
+/* ---------- 관 이동 버튼 ---------- */
+function drawHalls(){
+  const box=$("#halls");
+  box.innerHTML = Object.keys(HALLS).map(h =>
+    `<button data-hall="${esc(h)}" class="${h===G.hall?'on':''}" aria-pressed="${h===G.hall}">${esc(HALL_LABELS[h]?.[G.lang]||h)}</button>`).join("")
+    + `<button class="soon" data-soon="1">${esc(G.t("otherSoon"))}</button>`;
+  box.querySelectorAll("button").forEach(b => b.onclick = () => {
+    if(b.dataset.soon){ toast(G.t("hallToast")); return; }
+    if(b.dataset.hall===G.hall) return;
+    G.hall=b.dataset.hall; applyLang(); G.hallHooks.forEach(f=>f());
+  });
+}
+
+/* ---------- 알림 ---------- */
+let toastTimer;
+function toast(msg){ const t=$("#toast"); t.textContent=msg; t.classList.add("on"); clearTimeout(toastTimer); toastTimer=setTimeout(()=>t.classList.remove("on"),1600); }
+G.toast = toast;
+
+/* ---------- 영상 패널 ---------- */
+function openVideo(v){
+  if(!v) { toast(G.t("soonToast")); return; }
+  const kind = v.kind==="short" ? "short" : "long";
+  const p=$("#player"); p.className="player "+kind;
+  p.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${encodeURIComponent(v.id)}?rel=0&playsinline=1" title="${esc(v.title)}"
+    allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin"></iframe>`;
+  $("#vTitle").textContent=v.title||""; $("#vDesc").textContent=v.desc||"";
+  const picks=(v.picks||[]).map(x=>({...x,u:safeUrl(x.url)})).filter(x=>x.u);
+  $("#picksRow").innerHTML = picks.map(x=>`<a class="pick" href="${esc(x.u.href)}" target="_blank" rel="sponsored noopener">${esc(x.name)}<b>${esc(x.price||"")}</b></a>`).join("");
+  $("#picksEmpty").hidden = picks.length>0;
+  $("#disc").hidden = !picks.some(x=>AFFILIATE_RE.test(x.u.hostname));
+  $("#shade").classList.add("on"); const s=$("#sheet"); s.classList.add("on"); s.setAttribute("aria-hidden","false"); s.scrollTop=0;
+  $("#close").focus({preventScroll:true});
+}
+function closeVideo(){
+  const s=$("#sheet"); if(!s.classList.contains("on")) return;
+  s.classList.remove("on"); s.setAttribute("aria-hidden","true"); $("#shade").classList.remove("on");
+  setTimeout(()=>{ if(!s.classList.contains("on")) $("#player").innerHTML=""; },350); // 닫으면 재생도 멈춤
+}
+G.openVideo=openVideo; G.closeVideo=closeVideo;
+$("#close").onclick=closeVideo; $("#shade").onclick=closeVideo;
+addEventListener("keydown",e=>{ if(e.key==="Escape") closeVideo(); });
+{ // 패널을 아래로 쓸어내려 닫기
+  let y0=null; const s=$("#sheet");
+  s.addEventListener("touchstart",e=>{ y0 = s.scrollTop<=0 ? e.touches[0].clientY : null; },{passive:true});
+  s.addEventListener("touchend",e=>{ if(y0!==null && e.changedTouches[0].clientY-y0>90) closeVideo(); y0=null; },{passive:true});
+}
+
+/* ---------- 대체 화면: 평면 목록 ---------- */
+function drawFlat(){
+  const vids=G.slots(G.hall);
+  $("#grid").innerHTML = vids.map((v,i)=> v
+    ? `<button class="card" data-i="${i}"><div class="th" style="background-image:url('https://i.ytimg.com/vi/${encodeURIComponent(v.id)}/hqdefault.jpg'),linear-gradient(135deg,#9650e6,#ff465a)"></div><div class="tt">${esc(v.title)}</div></button>`
+    : `<div class="card blank"><div class="th">${esc(G.t("soon"))}</div><div class="tt">&nbsp;</div></div>`).join("");
+  $("#grid").querySelectorAll("button.card").forEach(b=>b.onclick=()=>openVideo(vids[+b.dataset.i]));
+}
+function showFallback(reason){
+  if(G.mode==="3d") return;
+  G.mode="flat"; document.body.classList.add("flat"); $("#loading").classList.add("off");
+  console.warn("[전시실] 3D 대신 평면 목록을 보여 줌:", reason);
+}
+G.showFallback=showFallback;
+$("#retry").onclick=()=>location.reload();
+
+applyLang();
+/* 3D가 12초 안에 안 뜨면 목록으로 */
+setTimeout(()=>{ if(G.mode==="loading") showFallback("시간 초과(Three.js를 받지 못함)"); },12000);
+</script>
+
+<script type="module">
+const G = window.Gallery;
+function hasWebGL(){ try{ const c=document.createElement("canvas"); return !!(c.getContext("webgl2")||c.getContext("webgl")); }catch(e){ return false; } }
+
+if (new URLSearchParams(location.search).has("flat")) G.showFallback("주소에 ?flat");
+else if (!hasWebGL()) G.showFallback("WebGL 없음");
+else {
+  try { start(await import("three")); }
+  catch (e) { G.showFallback("Three.js 불러오기 실패: " + (e && e.message)); }
+}
+
+function start(THREE){
+  if (G.mode !== "loading") return;           // 이미 목록으로 바뀌었으면 그대로 둔다
+  const stage = document.getElementById("stage");
+  const lowEnd = (navigator.hardwareConcurrency||4) <= 4 || (navigator.deviceMemory||4) <= 2;
+  const renderer = new THREE.WebGLRenderer({antialias:!lowEnd, powerPreference:"low-power"});
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio||1, 2));
+  renderer.shadowMap.enabled = false;         // 그림자 끔(저사양 폰)
+  stage.appendChild(renderer.domElement);
+  const maxAniso = Math.min(4, renderer.capabilities.getMaxAnisotropy());
+
+  const scene = new THREE.Scene();
+  scene.background = new THREE.Color(0xf6efe3);
+  const camera = new THREE.PerspectiveCamera(70, 1, 0.1, 60);
+  camera.position.set(0, 1.6, 0);
+  camera.rotation.order = "YXZ";
+
+  /* --- 조명: 밝고 따뜻하게, 그림자 없음 --- */
+  scene.add(new THREE.HemisphereLight(0xfff8ee, 0xf0dfc2, 2.6));
+  const sun = new THREE.DirectionalLight(0xffe9c8, 0.9); sun.position.set(2, 6, 3); scene.add(sun);
+
+  /* --- 캔버스 그림 도우미 (텍스처는 작게) --- */
+  const FONT = getComputedStyle(document.body).fontFamily;
+  function canvasTex(w, h, draw){
+    const c=document.createElement("canvas"); c.width=w; c.height=h; draw(c.getContext("2d"), w, h);
+    const t=new THREE.CanvasTexture(c); t.colorSpace=THREE.SRGBColorSpace; t.anisotropy=maxAniso; return t;
+  }
+  function wrapText(g, text, x, y, maxW, lineH, maxLines){
+    const words=[...String(text)]; let line="", lines=[];
+    for(const ch of words){ const test=line+ch; if(g.measureText(test).width>maxW && line){ lines.push(line); line=ch; } else line=test; }
+    if(line) lines.push(line);
+    if(lines.length>maxLines){ lines=lines.slice(0,maxLines); lines[maxLines-1]=lines[maxLines-1].slice(0,-1)+"…"; }
+    const top=y-(lines.length-1)*lineH/2; lines.forEach((l,i)=>g.fillText(l,x,top+i*lineH));
+  }
+
+  /* --- 방: 12m × 12m, 높이 3.6m --- */
+  const W=6, H=3.6;
+  const floorTex = canvasTex(256,256,(g,w,h)=>{             // 나무 바닥
+    const tones=["#d7b98f","#cfae82","#dcc09a","#d3b388"];
+    for(let i=0;i<8;i++){ g.fillStyle=tones[i%4]; g.fillRect(0,i*32,w,32); g.fillStyle="rgba(120,80,40,.18)"; g.fillRect(0,i*32,w,1.5);
+      g.fillRect(((i*97)%w),i*32,1.5,32); }
+  });
+  floorTex.wrapS=floorTex.wrapT=THREE.RepeatWrapping; floorTex.repeat.set(4,4);
+  const floor=new THREE.Mesh(new THREE.PlaneGeometry(W*2,W*2), new THREE.MeshLambertMaterial({map:floorTex}));
+  floor.rotation.x=-Math.PI/2; scene.add(floor);
+  const ceil=new THREE.Mesh(new THREE.PlaneGeometry(W*2,W*2), new THREE.MeshBasicMaterial({color:0xf7f1e6}));
+  ceil.rotation.x=Math.PI/2; ceil.position.y=H; scene.add(ceil);
+  const lampMat=new THREE.MeshBasicMaterial({color:0xfffbf0});   // 천장 조명줄(그림만)
+  for(const z of [-3,0,3]){ const s=new THREE.Mesh(new THREE.PlaneGeometry(7,0.18),lampMat); s.rotation.x=Math.PI/2; s.position.set(0,H-0.01,z); scene.add(s); }
+
+  const wallMat=new THREE.MeshLambertMaterial({color:0xf4ecdf});
+  const baseMat=new THREE.MeshLambertMaterial({color:0xcdb998});
+  const woodMat=new THREE.MeshLambertMaterial({color:0x9a7448});
+  const matMat=new THREE.MeshBasicMaterial({color:0xfffdf8});
+  const glowTex=canvasTex(128,128,(g,w,h)=>{ const r=g.createRadialGradient(w/2,6,2,w/2,6,w/2); r.addColorStop(0,"rgba(255,236,190,.75)"); r.addColorStop(1,"rgba(255,236,190,0)"); g.fillStyle=r; g.fillRect(0,0,w,h); });
+  const glowMat=new THREE.MeshBasicMaterial({map:glowTex,transparent:true,depthWrite:false});
+
+  const WALLS=[0,-Math.PI/2,Math.PI,Math.PI/2];   // 앞, 오른쪽, 뒤, 왼쪽 (보는 사람 기준)
+  const pivots=WALLS.map(a=>{ const p=new THREE.Group(); p.rotation.y=a; scene.add(p);
+    const wall=new THREE.Mesh(new THREE.PlaneGeometry(W*2,H),wallMat); wall.position.set(0,H/2,-W); p.add(wall);
+    const base=new THREE.Mesh(new THREE.BoxGeometry(W*2,0.14,0.04),baseMat); base.position.set(0,0.07,-W+0.02); p.add(base);
+    return p; });
+
+  /* 뒤쪽 벽: 다음 관으로 가는 문(준비 중) */
+  const clickables=[];
+  { const p=pivots[2];
+    const door=new THREE.Mesh(new THREE.PlaneGeometry(1.8,2.6),new THREE.MeshLambertMaterial({color:0xe2d3bb})); door.position.set(0,1.3,-W+0.01); p.add(door);
+    const frameD=new THREE.Mesh(new THREE.BoxGeometry(2.0,2.75,0.05),woodMat); frameD.position.set(0,1.37,-W+0.005); p.add(frameD); door.position.z+=0.03;
+    const sign=new THREE.Mesh(new THREE.PlaneGeometry(1.6,0.4),new THREE.MeshBasicMaterial()); sign.position.set(0,2.95,-W+0.02); p.add(sign);
+    const drawSign=()=>{ sign.material.map?.dispose(); sign.material.map=canvasTex(512,128,(g,w,h)=>{ g.fillStyle="#1e143c"; g.fillRect(0,0,w,h);
+      g.fillStyle="#ffd640"; g.font=`700 44px ${FONT}`; g.textAlign="center"; g.textBaseline="middle"; g.fillText(G.t("otherSoon"),w/2,h/2+2); }); sign.material.needsUpdate=true; };
+    drawSign(); G.langHooks.push(()=>{ drawSign(); ask(); });
+    door.userData.door=sign.userData.door=true; clickables.push(door,sign);
+  }
+
+  /* --- 액자 자리 7개: 앞벽 3(가운데가 첫 영상) + 오른쪽 2 + 왼쪽 2 --- */
+  const SLOT_POS=[[0,0],[0,-3.4],[0,3.4],[1,-2],[1,2],[3,-2],[3,2]];
+  const frames=[];
+  const loader=new THREE.TextureLoader(); loader.setCrossOrigin("anonymous");
+
+  function emptyTex(){ return canvasTex(256,192,(g,w,h)=>{ g.fillStyle="#efe5d4"; g.fillRect(0,0,w,h);
+      g.strokeStyle="#d8c8ad"; g.setLineDash([8,6]); g.lineWidth=3; g.strokeRect(14,14,w-28,h-28);
+      g.fillStyle="#9a8a70"; g.font=`600 26px ${FONT}`; g.textAlign="center"; g.textBaseline="middle"; g.fillText(G.t("soon"),w/2,h/2); }); }
+  function titleTex(v,portrait){ const w=portrait?192:256, h=portrait?340:192;   // 썸네일을 못 받을 때: 색 판 + 제목
+    return canvasTex(w,h,(g)=>{ const gr=g.createLinearGradient(0,0,w,h); gr.addColorStop(0,"#9650e6"); gr.addColorStop(1,"#ff465a"); g.fillStyle=gr; g.fillRect(0,0,w,h);
+      g.fillStyle="#fff"; g.font=`700 24px ${FONT}`; g.textAlign="center"; g.textBaseline="middle"; wrapText(g,v.title,w/2,h/2,w-32,32,5); }); }
+  function labelTex(text){ return canvasTex(512,96,(g,w,h)=>{ g.fillStyle="#fffdf8"; g.fillRect(0,0,w,h); g.strokeStyle="#e4d8c4"; g.lineWidth=4; g.strokeRect(2,2,w-4,h-4);
+      g.fillStyle="#1e143c"; g.font=`600 32px ${FONT}`; g.textAlign="center"; g.textBaseline="middle"; wrapText(g,text,w/2,h/2+1,w-36,36,1); }); }
+
+  function buildHall(){
+    frames.splice(0).forEach(f=>{ f.group.parent.remove(f.group); f.group.traverse(o=>{ if(o.geometry) o.geometry.dispose(); if(o.material&&o.material!==woodMat&&o.material!==matMat&&o.material!==glowMat){ o.material.map?.dispose(); o.material.dispose(); } }); });
+    for(let i=clickables.length-1;i>=0;i--) if(clickables[i].userData.slot!==undefined) clickables.splice(i,1);
+    G.slots(G.hall).forEach((v,i)=>{
+      const [wi,ox]=SLOT_POS[i]; const portrait = v && v.kind==="short";
+      const fw = portrait?1.12:1.8, fh = portrait?1.99:1.35, cy = portrait?1.72:1.68;
+      const group=new THREE.Group(); group.position.set(ox,0,-W+0.03); pivots[wi].add(group);
+      const border=new THREE.Mesh(new THREE.BoxGeometry(fw+0.22,fh+0.22,0.06),woodMat); border.position.set(0,cy,0.03); group.add(border);
+      const mat=new THREE.Mesh(new THREE.PlaneGeometry(fw+0.1,fh+0.1),matMat); mat.position.set(0,cy,0.062); group.add(mat);
+      const pic=new THREE.Mesh(new THREE.PlaneGeometry(fw,fh),new THREE.MeshBasicMaterial({map: v? titleTex(v,portrait) : emptyTex()}));
+      pic.position.set(0,cy,0.064); group.add(pic);
+      const glow=new THREE.Mesh(new THREE.PlaneGeometry(fw+1.4,1.6),glowMat); glow.position.set(0,cy+fh/2+0.35,0.005); group.add(glow);
+      const label=new THREE.Mesh(new THREE.PlaneGeometry(1.5,0.28),new THREE.MeshBasicMaterial({map:labelTex(v?v.title:G.t("soon"))}));
+      label.position.set(0,cy-fh/2-0.32,0.02); group.add(label);
+      [border,pic,mat].forEach(m=>{ m.userData.slot=i; clickables.push(m); });
+      const f={group,pic,label,v,i}; frames.push(f);
+      if(v){ // 유튜브가 주는 썸네일만 사용. 교차 출처가 막히면 색 판+제목 그대로 둔다
+        loader.load(`https://i.ytimg.com/vi/${encodeURIComponent(v.id)}/hqdefault.jpg`, tex=>{
+          if(!frames.includes(f)) { tex.dispose(); return; }
+          tex.colorSpace=THREE.SRGBColorSpace; tex.anisotropy=maxAniso;
+          if(portrait){ tex.repeat.set(0.42,1); tex.offset.set(0.29,0); } // 쇼츠 썸네일(4:3 안의 세로 화면) 가운데만
+          pic.material.map.dispose(); pic.material.map=tex; pic.material.needsUpdate=true; ask();
+        }, undefined, ()=>console.info("[전시실] 썸네일을 텍스처로 못 받아 색 판으로 대체:", v.id));
+      }
+    });
+    ask();
+  }
+  G.langHooks.push(()=>{ frames.forEach(f=>{ if(!f.v){ f.pic.material.map.dispose(); f.pic.material.map=emptyTex(); f.label.material.map.dispose(); f.label.material.map=labelTex(G.t("soon")); } }); ask(); });
+  G.hallHooks.push(()=>{ buildHall(); turnTo(0); });
+
+  /* --- 둘러보기: 손가락/마우스로 끌기, 두 손가락·휠로 확대 --- */
+  let yaw=0, pitch=0, vy=0, fovBase=70, zoom=1, anim=null, dirty=true;
+  const ask=()=>{ dirty=true; };
+  const ptrs=new Map(); let down=null, pinch0=0, zoom0=1;
+  const el=renderer.domElement;
+  const k=()=>0.0055*camera.fov/70;
+  el.addEventListener("pointerdown",e=>{ el.setPointerCapture(e.pointerId); ptrs.set(e.pointerId,{x:e.clientX,y:e.clientY});
+    anim=null; vy=0; if(ptrs.size===1) down={x:e.clientX,y:e.clientY,t:performance.now(),moved:0};
+    if(ptrs.size===2){ const [a,b]=[...ptrs.values()]; pinch0=Math.hypot(a.x-b.x,a.y-b.y); zoom0=zoom; down=null; } hideHint(); });
+  el.addEventListener("pointermove",e=>{ const p=ptrs.get(e.pointerId); if(!p) return;
+    const dx=e.clientX-p.x, dy=e.clientY-p.y; p.x=e.clientX; p.y=e.clientY;
+    if(ptrs.size===1){ yaw+=dx*k(); pitch=Math.max(-0.5,Math.min(0.5,pitch+dy*k())); vy=dx*k(); if(down) down.moved+=Math.abs(dx)+Math.abs(dy); ask(); }
+    else if(ptrs.size===2){ const [a,b]=[...ptrs.values()]; const d=Math.hypot(a.x-b.x,a.y-b.y); if(pinch0>0){ zoom=Math.max(0.6,Math.min(1.25,zoom0*pinch0/d)); ask(); } } });
+  const up=e=>{ if(!ptrs.has(e.pointerId)) return; ptrs.delete(e.pointerId);
+    if(down && ptrs.size===0 && down.moved<10 && performance.now()-down.t<600) tap(e.clientX,e.clientY);
+    if(ptrs.size===0) down=null; };
+  el.addEventListener("pointerup",up); el.addEventListener("pointercancel",e=>{ ptrs.delete(e.pointerId); down=null; });
+  el.addEventListener("wheel",e=>{ e.preventDefault(); zoom=Math.max(0.6,Math.min(1.25,zoom*(1+e.deltaY*0.001))); ask(); },{passive:false});
+  addEventListener("keydown",e=>{ if(document.getElementById("sheet").classList.contains("on")) return;
+    if(e.key==="ArrowLeft") turnBy(Math.PI/4); if(e.key==="ArrowRight") turnBy(-Math.PI/4); });
+  document.getElementById("turnL").onclick=()=>turnBy(Math.PI/4);
+  document.getElementById("turnR").onclick=()=>turnBy(-Math.PI/4);
+  function turnBy(d){ hideHint(); anim={from:yaw,to:yaw+d,p:0,pf:pitch,pt:0}; ask(); }
+  function turnTo(target,pt=0){ let d=((target-yaw)%(Math.PI*2)+Math.PI*3)%(Math.PI*2)-Math.PI; anim={from:yaw,to:yaw+d,p:0,pf:pitch,pt}; ask(); }
+
+  const ray=new THREE.Raycaster(), ndc=new THREE.Vector2(), tmp=new THREE.Vector3();
+  function tap(x,y){
+    const r=el.getBoundingClientRect(); ndc.set(((x-r.left)/r.width)*2-1, -((y-r.top)/r.height)*2+1);
+    ray.setFromCamera(ndc,camera); const hit=ray.intersectObjects(clickables,false)[0]; if(!hit) return;
+    if(hit.object.userData.door){ G.toast(G.t("hallToast")); return; }
+    const f=frames[hit.object.userData.slot]; if(!f) return;
+    f.pic.getWorldPosition(tmp); turnTo(Math.atan2(-tmp.x,-tmp.z), Math.atan2(tmp.y-1.6, Math.hypot(tmp.x,tmp.z)));
+    if(f.v) setTimeout(()=>G.openVideo(f.v),260); else G.toast(G.t("soonToast"));
+  }
+
+  let hintTimer=setTimeout(hideHint,7000);
+  function hideHint(){ clearTimeout(hintTimer); document.getElementById("hint").classList.add("off"); }
+
+  function resize(){ const w=innerWidth,h=innerHeight; renderer.setSize(w,h,false); camera.aspect=w/h;
+    fovBase = w<h ? 78 : 62; ask(); }
+  addEventListener("resize",resize); resize();
+
+  /* --- 그릴 일이 있을 때만 그림(배터리 절약) --- */
+  const ease=t=>1-Math.pow(1-t,3);
+  function loop(){
+    requestAnimationFrame(loop);
+    if(anim){ anim.p=Math.min(1,anim.p+0.06); const e=ease(anim.p); yaw=anim.from+(anim.to-anim.from)*e; pitch=anim.pf+(anim.pt-anim.pf)*e; if(anim.p>=1) anim=null; dirty=true; }
+    else if(ptrs.size===0 && Math.abs(vy)>0.0004){ yaw+=vy; vy*=0.9; dirty=true; }
+    const fov=fovBase*zoom; if(Math.abs(camera.fov-fov)>0.01){ camera.fov=fov; dirty=true; }
+    if(!dirty || document.hidden) return; dirty=false;
+    camera.rotation.set(pitch,yaw,0); camera.updateProjectionMatrix(); renderer.render(scene,camera);
+  }
+  buildHall();
+  G.mode="3d"; G.three=THREE.REVISION;
+  requestAnimationFrame(()=>{ loop(); document.getElementById("loading").classList.add("off"); });
+  el.addEventListener("webglcontextlost",e=>{ e.preventDefault(); G.mode="lost"; G.showFallback("WebGL 연결이 끊김"); });
+}
+</script>
+</body>
+</html>

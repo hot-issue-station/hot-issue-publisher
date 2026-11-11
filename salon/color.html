@@ -1,0 +1,512 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>염색 미리보기</title>
+<meta name="description" content="손님 사진(앞·옆·뒤)에서 머리카락만 골라 염색 색을 미리 보여 주는 단골 수첩 도구 (사진은 휴대폰 안에서만 쓰여요)">
+<style>
+:root{--bg:#fff8f3;--card:#fff;--tx:#2b2220;--sub:#7a6a64;--main:#c2410c;--line:#ead9cf;--soft:#fdeee4;--ok:#16a34a}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:"Noto Sans KR",system-ui,sans-serif;font-size:20px;line-height:1.45}
+body.modal-open{overflow:hidden}
+header{background:var(--main);color:#fff;padding:16px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:3}
+header h1{margin:0;font-size:25px}
+header a{background:#fff2;color:#fff;border:1px solid #fff8;border-radius:10px;padding:8px 12px;font-size:17px;text-decoration:none}
+main{max-width:560px;margin:0 auto;padding:16px 16px 40px}
+.card{background:var(--card);border:2px solid var(--line);border-radius:16px;padding:14px 16px;margin-top:12px}
+.privacy{background:var(--soft);border:2px solid #f3c9ad;border-radius:16px;padding:14px 16px;font-weight:700;color:var(--main);display:flex;gap:10px;align-items:flex-start}
+.privacy span{font-size:26px;line-height:1}
+.agree{display:flex;gap:14px;align-items:center;font-size:22px;font-weight:700;cursor:pointer;margin:0}
+.agree input{width:32px;height:32px;accent-color:var(--main);flex:none;margin:0}
+.big{display:block;width:100%;font-size:22px;font-weight:700;padding:16px;border:0;border-radius:14px;background:var(--main);color:#fff;margin-top:12px;text-align:center;cursor:pointer;font-family:inherit}
+.big:disabled{background:#d9c9c0;cursor:not-allowed}
+.ghost{background:var(--soft);color:var(--main)}
+.pick{background:var(--ok)}
+.hide{display:none!important}
+.note{color:var(--sub);font-size:17px;line-height:1.5;margin-top:10px}
+h2{font-size:21px;margin:22px 0 6px}
+h2 small{font-weight:400;color:var(--sub);font-size:17px}
+.msg{border-radius:14px;padding:14px 16px;margin-top:12px;font-size:20px;line-height:1.5}
+.msg.info{background:#fff;border:2px solid var(--line)}
+.msg.err{background:#fff4e5;border:2px solid #f5c48a;color:#7c2d12}
+.spin{display:inline-block;width:20px;height:20px;border:3px solid var(--line);border-top-color:var(--main);border-radius:50%;animation:sp 1s linear infinite;vertical-align:-4px;margin-right:6px}
+@keyframes sp{to{transform:rotate(360deg)}}
+/* 사진 칸 */
+.slots{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px}
+.slot{background:#fff;border:2px solid var(--line);border-radius:16px;padding:8px;min-width:0;display:flex;flex-direction:column}
+.slot.ok{border-color:#f0b48f}
+.slot.bad{border-color:#f5c48a;background:#fffaf2}
+.slot .lb{font-weight:700;font-size:20px;display:flex;justify-content:space-between;align-items:center}
+.slot .lb button{border:0;background:var(--soft);color:var(--main);border-radius:10px;font-size:16px;padding:6px 10px;font-family:inherit;cursor:pointer}
+.slot .ph{position:relative;margin-top:6px;aspect-ratio:3/4;border-radius:10px;background:var(--soft);overflow:hidden;display:flex;align-items:center;justify-content:center;color:var(--sub);font-size:17px;text-align:center}
+.slot .ph canvas{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;cursor:zoom-in}
+.slot .st{font-size:16px;line-height:1.4;margin-top:6px;min-height:22px;color:var(--sub);word-break:keep-all}
+.slot.bad .st{color:#7c2d12;font-weight:700}
+.slot .btns{display:flex;gap:6px;margin-top:6px}
+.slot .btns label{flex:1;text-align:center;font-size:18px;font-weight:700;padding:12px 2px;border-radius:12px;background:var(--main);color:#fff;cursor:pointer;white-space:nowrap}
+.slot .btns label.g{background:var(--soft);color:var(--main)}
+.slots.locked .btns label{background:#d9c9c0;color:#fff;cursor:not-allowed}
+/* 색 고르기 */
+.sw{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:8px}
+.sw button{border:3px solid var(--line);background:#fff;border-radius:14px;padding:8px 4px 10px;font-size:17px;font-family:inherit;color:var(--tx);cursor:pointer;line-height:1.25;min-height:96px;word-break:keep-all}
+.sw button i{display:block;width:44px;height:44px;border-radius:50%;margin:0 auto 6px;border:2px solid #0001}
+.sw button.on{border-color:var(--main);background:var(--soft);font-weight:700}
+.range{display:flex;align-items:center;gap:10px;margin-top:8px;font-size:18px;color:var(--sub)}
+.range input{flex:1;height:44px;accent-color:var(--main)}
+.chosen{text-align:center;border:3px solid var(--main);background:#fff;border-radius:18px;padding:16px;margin-top:16px}
+.chosen small{display:block;color:var(--sub);font-size:18px}
+.chosen b{display:block;font-size:34px;color:var(--main);margin:6px 0}
+.chosen .dot{display:inline-block;width:30px;height:30px;border-radius:50%;vertical-align:-5px;margin-right:8px;border:2px solid #0002}
+#savedImg{width:100%;border-radius:12px;margin-top:10px;border:2px solid var(--line)}
+/* 크게 보기 */
+.modal{position:fixed;inset:0;background:#2b2220f2;z-index:10;display:flex;flex-direction:column;padding:12px 16px 16px}
+.modal .top{display:flex;justify-content:space-between;align-items:center;color:#fff;font-size:22px;font-weight:700}
+.modal .top button{border:0;background:#fff;color:var(--main);border-radius:12px;font-size:20px;font-weight:700;padding:10px 16px;font-family:inherit;cursor:pointer}
+.modal .view{flex:1;min-height:0;display:flex;align-items:center;justify-content:center;margin:10px 0}
+.modal canvas{max-width:100%;max-height:100%;border-radius:12px;background:#fff}
+.tabs{display:flex;background:#fff;border-radius:14px;overflow:hidden}
+.tabs button{flex:1;border:0;background:none;padding:14px 0;font-size:20px;color:var(--sub);font-family:inherit;cursor:pointer}
+.tabs button.on{background:var(--main);color:#fff;font-weight:700}
+</style>
+</head>
+<body>
+<header><h1>염색 미리보기</h1><a href="index.html">← 단골 수첩</a></header>
+<main>
+  <div class="privacy" role="note"><span aria-hidden="true">🔒</span><div>사진은 이 휴대폰에서만 쓰이고 저장·전송되지 않아요</div></div>
+
+  <div class="card">
+    <label class="agree"><input type="checkbox" id="agree"> 손님이 사진 촬영에 동의했어요</label>
+    <p class="note">손님께 "염색 색 미리 보여 드리려고 사진 몇 장 찍을게요, 저장은 안 돼요"라고 말씀드린 뒤 체크해 주세요.</p>
+  </div>
+
+  <div id="msg" class="msg info hide" role="status" aria-live="polite"></div>
+
+  <h2>사진 <small>앞·옆·뒤 · 1장만 있어도 돼요</small></h2>
+  <div class="slots locked" id="slots"></div>
+  <p class="note">팁: 밝은 곳에서 머리 전체가 화면에 들어오게 찍어 주세요. 사진을 누르면 크게 보여요.</p>
+
+  <section id="ctrl" class="hide">
+    <h2>색 고르기 <small>모든 사진에 같이 적용돼요</small></h2>
+    <div class="sw" id="sw"></div>
+
+    <h2>강도</h2>
+    <div class="range"><span>약하게</span><input type="range" id="str" min="10" max="100" value="65" aria-label="염색 강도"><span>진하게</span></div>
+
+    <button class="big pick" id="pickBtn">✔ 이 색으로 할게요</button>
+    <div class="chosen hide" id="chosen" aria-live="polite">
+      <small>손님이 고른 색</small>
+      <b><span class="dot" id="chDot"></span><span id="chName"></span></b>
+      <small id="chSub"></small>
+    </div>
+
+    <button class="big ghost" id="saveBtn">⬇ 전후 비교 사진 저장</button>
+    <div id="saveBox" class="hide">
+      <p class="note">저장이 안 되면 아래 사진을 손가락으로 꾹 눌러 "사진 저장"을 고르세요.</p>
+      <img id="savedImg" alt="모든 각도 전후 비교 사진">
+    </div>
+    <p class="note">미리보기는 참고용이에요. 실제 색은 손님 모발 상태·탈색 여부에 따라 달라질 수 있어요.</p>
+  </section>
+
+  <button class="big ghost" id="resetBtn">↺ 사진 모두 지우고 새 손님</button>
+</main>
+
+<div class="modal hide" id="modal" role="dialog" aria-modal="true" aria-labelledby="mTitle">
+  <div class="top"><span id="mTitle"></span><button id="mClose">닫기 ✕</button></div>
+  <div class="view"><canvas id="mCv"></canvas></div>
+  <div class="tabs" role="tablist">
+    <button data-v="before" role="tab">원본</button>
+    <button data-v="after" class="on" role="tab">염색 후</button>
+  </div>
+</div>
+
+<script>
+(function(){
+"use strict";
+const $=id=>document.getElementById(id);
+
+/* ── 설정 ───────────────────────────────────────── */
+const MP_VER="0.10.21";
+const MP_BASE="https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@"+MP_VER;
+const MODELS=[
+  {name:"hair",url:"https://storage.googleapis.com/mediapipe-models/image_segmenter/hair_segmenter/float32/latest/hair_segmenter.tflite",hair:1},
+  {name:"multiclass",url:"https://storage.googleapis.com/mediapipe-models/image_segmenter/selfie_multiclass_256x256/float32/latest/selfie_multiclass_256x256.tflite",hair:1}
+];
+const MAX_SIDE=960;   // 큰 보기·저장용
+const THUMB_SIDE=420; // 칸 미리보기용 (색 바꿀 때 빠르게)
+const MIN_HAIR=0.004; // 머리카락이 사진의 0.4% 미만이면 "못 찾음"
+const SLOT_NAMES=["앞 1","앞 2","옆 (왼쪽)","옆 (오른쪽)","뒤 1","뒤 2"];
+const SWATCHES=[
+  {id:"natural",name:"자연 흑갈색",hex:"#3b2a22"},
+  {id:"choco",name:"초코 브라운",hex:"#5a3420"},
+  {id:"ashbrown",name:"애쉬 브라운",hex:"#6e5e55"},
+  {id:"ashgray",name:"애쉬 그레이",hex:"#8b8b8e"},
+  {id:"milktea",name:"밀크티 베이지",hex:"#b59c82"},
+  {id:"wine",name:"레드 와인",hex:"#6e1f2e"},
+  {id:"pinkbrown",name:"핑크 브라운",hex:"#9c5c62"},
+  {id:"blonde",name:"블론드",hex:"#caa66c"}
+];
+
+/* ── 색 계산 (W3C 'color' 블렌드 방식: 명암은 원본, 색상·채도는 목표색) ── */
+const lum=(r,g,b)=>0.3*r+0.59*g+0.11*b;
+function hexRgb(h){const n=parseInt(h.slice(1),16);return[(n>>16)&255,(n>>8)&255,n&255];}
+function setLum(r,g,b,l){
+  const d=l-lum(r,g,b);r+=d;g+=d;b+=d;
+  const L=lum(r,g,b),n=Math.min(r,g,b),x=Math.max(r,g,b);
+  if(n<0){r=L+(r-L)*L/(L-n);g=L+(g-L)*L/(L-n);b=L+(b-L)*L/(L-n);}
+  if(x>255){r=L+(r-L)*(255-L)/(x-L);g=L+(g-L)*(255-L)/(x-L);b=L+(b-L)*(255-L)/(x-L);}
+  return[r,g,b];
+}
+/* src: 원본 RGBA, mask: 0~1 Float32 (같은 크기), out: 결과 RGBA, hex: 목표색, strength: 0~1, meanL: 머리 평균 밝기(미리 계산해 두면 빠름) */
+function hairMeanLum(src,mask){
+  let sw=0,sl=0;
+  for(let i=0;i<mask.length;i++){const m=mask[i];if(m>0.05){const p=i*4;sw+=m;sl+=m*lum(src[p],src[p+1],src[p+2]);}}
+  return sw>0?sl/sw:NaN;
+}
+function recolorPixels(src,mask,out,hex,strength,meanL){
+  const [tr,tg,tb]=hexRgb(hex),tL=lum(tr,tg,tb),n=mask.length;
+  if(meanL===undefined)meanL=hairMeanLum(src,mask);
+  if(!(meanL>=0))meanL=tL;
+  const lift=(tL-meanL)*strength;           // 머리 전체 밝기를 목표색 쪽으로 옮김 (결은 그대로)
+  const alpha=0.35+0.65*strength;            // 색이 덮이는 정도
+  for(let i=0;i<n;i++){
+    const p=i*4,m=mask[i];
+    out[p+3]=src[p+3];
+    if(m<=0.004){out[p]=src[p];out[p+1]=src[p+1];out[p+2]=src[p+2];continue;}
+    const r=src[p],g=src[p+1],b=src[p+2];
+    let l=lum(r,g,b)+lift; l=l<0?0:l>255?255:l;
+    const c=setLum(tr,tg,tb,l),a=m*alpha;
+    out[p]=r+(c[0]-r)*a;out[p+1]=g+(c[1]-g)*a;out[p+2]=b+(c[2]-b)*a;
+  }
+  return out;
+}
+/* 마스크 가장자리 부드럽게: 분리형 박스 블러 2번 (≈가우시안) */
+function blurMask(m,w,h,rad){
+  rad=Math.max(1,Math.round(rad));
+  let a=Float32Array.from(m),t=new Float32Array(m.length);
+  const pass=(inp,outp,horiz)=>{
+    const len=horiz?w:h,lines=horiz?h:w,win=rad*2+1;
+    for(let L=0;L<lines;L++){
+      const idx=k=>horiz?L*w+k:k*w+L;
+      let s=0;
+      for(let k=-rad;k<=rad;k++)s+=inp[idx(Math.min(len-1,Math.max(0,k)))];
+      for(let k=0;k<len;k++){
+        outp[idx(k)]=s/win;
+        s+=inp[idx(Math.min(len-1,k+rad+1))]-inp[idx(Math.max(0,k-rad))];
+      }
+    }
+  };
+  for(let it=0;it<2;it++){pass(a,t,true);pass(t,a,false);}
+  return a;
+}
+function smooth(m){ // 애매한 값 정리 (0.25~0.75 사이를 부드럽게)
+  const o=new Float32Array(m.length);
+  for(let i=0;i<m.length;i++){let x=(m[i]-0.25)/0.5;x=x<0?0:x>1?1:x;o[i]=x*x*(3-2*x);}
+  return o;
+}
+function resampleMask(f,mw,mh,w,h){
+  if(mw===w&&mh===h)return Float32Array.from(f);
+  const out=new Float32Array(w*h);
+  for(let y=0;y<h;y++){const sy=Math.min(mh-1,Math.floor(y*mh/h));for(let x=0;x<w;x++)out[y*w+x]=f[sy*mw+Math.min(mw-1,Math.floor(x*mw/w))];}
+  return out;
+}
+
+/* ── MediaPipe 이미지 분할 ─────────────────────── */
+let visionP=null,segCache=null;
+function loadVision(){
+  if(visionP)return visionP;
+  visionP=(async()=>{
+    const mod=await import(MP_BASE+"/vision_bundle.mjs");
+    const fs=await mod.FilesetResolver.forVisionTasks(MP_BASE+"/wasm");
+    return {mod,fs};
+  })();
+  visionP.catch(()=>{visionP=null;});
+  return visionP;
+}
+async function makeSeg(model,delegate){
+  const v=await loadVision();
+  return v.mod.ImageSegmenter.createFromOptions(v.fs,{
+    baseOptions:{modelAssetPath:model.url,delegate},
+    runningMode:"IMAGE",outputConfidenceMasks:true,outputCategoryMask:false
+  });
+}
+function readHair(res,model,w,h){
+  const cm=res.confidenceMasks;
+  if(!cm||!cm.length)throw new Error("no-mask");
+  const mk=cm.length>model.hair?cm[model.hair]:cm[cm.length-1];
+  return resampleMask(mk.getAsFloat32Array(),mk.width,mk.height,w,h);
+}
+async function getHairMask(canvas){
+  const w=canvas.width,h=canvas.height;
+  const tries=segCache?[segCache]:[];
+  for(const m of MODELS)for(const d of ["GPU","CPU"])if(!segCache||segCache.m!==m||segCache.d!==d)tries.push({m,d});
+  let lastErr=null;
+  for(const t of tries){
+    try{
+      if(!t.seg)t.seg=await makeSeg(t.m,t.d);
+      const res=t.seg.segment(canvas);
+      const mask=readHair(res,t.m,w,h);
+      if(res.close)res.close();
+      segCache=t;return mask;
+    }catch(e){
+      lastErr=e;console.warn("분할 시도 실패",t.m.name,t.d,e);
+      if(t.seg){try{t.seg.close();}catch(_){}}
+      t.seg=null;if(t===segCache)segCache=null;
+    }
+  }
+  const err=new Error("model-failed");err.cause=lastErr;throw err;
+}
+
+/* ── 상태 ──────────────────────────────────────── */
+const blank=i=>({i,name:SLOT_NAMES[i],status:"empty",full:null,thumb:null,work:null});
+const slots=SLOT_NAMES.map((_,i)=>blank(i));
+const st={sw:SWATCHES[1],strength:0.65,chosen:null,modal:-1,modalView:"after"};
+const msg=(html,kind)=>{const m=$("msg");m.className="msg "+(kind||"info");m.innerHTML=html;};
+const hideMsg=()=>$("msg").classList.add("hide");
+const agreed=()=>$("agree").checked;
+
+/* 칸 그리기 */
+$("slots").innerHTML=slots.map(s=>`
+  <div class="slot" id="slot${s.i}">
+    <div class="lb"><span>${s.name}</span><button class="hide" data-del="${s.i}" aria-label="${s.name} 사진 빼기">빼기</button></div>
+    <div class="ph"><span class="ph-t">사진 없음</span><canvas class="hide" data-open="${s.i}" aria-label="${s.name} 사진 크게 보기"></canvas></div>
+    <div class="st" aria-live="polite"></div>
+    <div class="btns">
+      <label for="cam${s.i}">📷 찍기</label><label class="g" for="gal${s.i}">고르기</label>
+    </div>
+    <input type="file" id="cam${s.i}" class="hide" accept="image/*" capture="user" data-slot="${s.i}" disabled>
+    <input type="file" id="gal${s.i}" class="hide" accept="image/*" data-slot="${s.i}" disabled>
+  </div>`).join("");
+
+function setAgree(on){
+  $("slots").classList.toggle("locked",!on);
+  document.querySelectorAll("#slots input[type=file]").forEach(x=>x.disabled=!on);
+  if(on){hideMsg();loadVision().catch(()=>{});} // 미리 불러 두기
+}
+$("agree").addEventListener("change",e=>setAgree(e.target.checked));
+
+$("slots").addEventListener("click",e=>{
+  const lab=e.target.closest(".btns label");
+  if(lab&&!agreed()){e.preventDefault();msg("먼저 위의 <b>“손님이 사진 촬영에 동의했어요”</b>에 체크해 주세요.","err");$("msg").scrollIntoView({block:"center"});return;}
+  const del=e.target.closest("[data-del]");if(del){clearSlot(+del.dataset.del);return;}
+  const op=e.target.closest("[data-open]");if(op)openModal(+op.dataset.open);
+  const rt=e.target.closest("[data-retry]");if(rt){e.preventDefault();hideMsg();enqueue(+rt.dataset.retry);}
+});
+$("slots").addEventListener("change",e=>{
+  const inp=e.target;if(!inp.dataset||inp.dataset.slot===undefined)return;
+  const f=inp.files&&inp.files[0];inp.value="";if(f)addPhoto(+inp.dataset.slot,f);
+});
+
+function loadImage(file){
+  return new Promise((ok,no)=>{
+    const url=URL.createObjectURL(file),img=new Image();
+    img.onload=()=>{URL.revokeObjectURL(url);ok(img);};
+    img.onerror=()=>{URL.revokeObjectURL(url);no(new Error("bad-image"));};
+    img.src=url;
+  });
+}
+function toCanvas(img,max){
+  const iw=img.naturalWidth||img.width,ih=img.naturalHeight||img.height;
+  const k=Math.min(1,max/Math.max(iw,ih));
+  const c=document.createElement("canvas");c.width=Math.max(1,Math.round(iw*k));c.height=Math.max(1,Math.round(ih*k));
+  c.getContext("2d",{willReadFrequently:true}).drawImage(img,0,0,c.width,c.height);
+  return c;
+}
+
+function slotEl(i){return $("slot"+i);}
+function paintSlot(s){
+  const el=slotEl(s.i),cv=el.querySelector("canvas"),t=el.querySelector(".ph-t"),stx=el.querySelector(".st");
+  el.classList.toggle("ok",s.status==="ok");
+  el.classList.toggle("bad",s.status==="nohair"||s.status==="error");
+  el.querySelector("[data-del]").classList.toggle("hide",s.status==="empty");
+  const hasImg=!!s.thumb;
+  cv.classList.toggle("hide",!hasImg);t.classList.toggle("hide",hasImg);
+  if(hasImg&&s.status!=="ok"){cv.width=s.thumb.w;cv.height=s.thumb.h;cv.getContext("2d").putImageData(s.thumb.src,0,0);}
+  stx.innerHTML={
+    empty:"",
+    busy:'<span class="spin"></span>머리카락 찾는 중…',
+    ok:"✓ 준비됐어요",
+    nohair:"이 각도는 머리를 잘 못 찾았어요, 조금 더 밝은 곳에서 다시 찍어 주세요",
+    error:`머리카락 찾는 기능을 불러오지 못했어요. <a href="#" data-retry="${s.i}">다시 시도</a>`
+  }[s.status];
+  const lb=el.querySelectorAll(".btns label");
+  lb[0].textContent=s.status==="empty"?"📷 찍기":"📷 다시";lb[1].textContent=s.status==="empty"?"고르기":"바꾸기";
+}
+function clearSlot(i){
+  slots[i]=blank(i);paintSlot(slots[i]);
+  if(st.modal===i)closeModal();
+  afterChange();
+}
+async function addPhoto(i,file){
+  if(!agreed()){msg("먼저 손님 동의에 체크해 주세요.","err");return;}
+  if(file.type&&!file.type.startsWith("image/")){msg("사진 파일만 쓸 수 있어요. 다시 골라 주세요.","err");return;}
+  let img;
+  try{img=await loadImage(file);}catch(e){msg(`${SLOT_NAMES[i]}: 이 사진을 열 수 없어요. 다른 사진으로 다시 해 주세요.`,"err");return;}
+  const full=toCanvas(img,MAX_SIDE),thumb=toCanvas(img,THUMB_SIDE);
+  const s=blank(i);s.status="busy";s.work=full;
+  s.thumb={w:thumb.width,h:thumb.height,src:thumb.getContext("2d").getImageData(0,0,thumb.width,thumb.height)};
+  slots[i]=s;paintSlot(s);hideMsg();
+  enqueue(i);
+}
+
+/* 사진마다 마스크는 한 번만 계산 → 순서대로 처리 */
+let queue=Promise.resolve();
+function enqueue(i){
+  const s=slots[i];if(!s.work)return;
+  s.status="busy";paintSlot(s);
+  const job=s;
+  queue=queue.then(()=>processSlot(job)).catch(e=>console.error(e));
+}
+async function processSlot(s){
+  if(slots[s.i]!==s)return; // 그새 지워지거나 바뀜
+  const w=s.work.width,h=s.work.height;
+  let raw;
+  try{raw=await api.getHairMask(s.work);}
+  catch(e){
+    console.error(e);
+    if(slots[s.i]!==s)return;
+    s.status="error";paintSlot(s);
+    msg(navigator.onLine===false
+      ?"인터넷이 꺼져 있어서 머리카락 찾는 기능을 불러오지 못했어요. 와이파이나 데이터를 켜고 사진 칸의 ‘다시 시도’를 눌러 주세요. (처음 한 번만 인터넷이 필요해요)"
+      :"머리카락 찾는 기능을 불러오지 못했어요. 잠시 뒤 사진 칸의 <b>‘다시 시도’</b>를 눌러 주세요. 계속 안 되면 크롬이나 사파리 최신 버전에서 열어 주세요.","err");
+    return;
+  }
+  if(slots[s.i]!==s)return;
+  let cnt=0;for(let k=0;k<raw.length;k++)if(raw[k]>0.5)cnt++;
+  if(cnt/raw.length<MIN_HAIR){s.status="nohair";s.work=s.work;paintSlot(s);afterChange();return;}
+  const src=s.work.getContext("2d",{willReadFrequently:true}).getImageData(0,0,w,h);
+  const mask=blurMask(smooth(raw),w,h,Math.max(2,Math.max(w,h)/220));
+  s.full={w,h,src,mask,meanL:hairMeanLum(src.data,mask),after:new ImageData(w,h),key:""};
+  const tm=resampleMask(mask,w,h,s.thumb.w,s.thumb.h);
+  Object.assign(s.thumb,{mask:tm,meanL:s.full.meanL,after:new ImageData(s.thumb.w,s.thumb.h)});
+  s.work=null;s.status="ok";
+  const c=slotEl(s.i).querySelector("canvas");c.width=s.thumb.w;c.height=s.thumb.h;
+  paintSlot(s);afterChange();
+}
+function okSlots(){return slots.filter(s=>s.status==="ok");}
+function afterChange(){
+  const n=okSlots().length;
+  $("ctrl").classList.toggle("hide",n===0);
+  $("saveBox").classList.add("hide");
+  render();
+}
+
+/* 색·강도 바꿀 때: 저장해 둔 마스크로 칸 미리보기만 다시 칠함 */
+let raf=0;
+const curKey=()=>st.sw.hex+"|"+st.strength;
+function render(){
+  cancelAnimationFrame(raf);
+  raf=requestAnimationFrame(()=>{
+    for(const s of okSlots()){
+      const t=s.thumb;
+      recolorPixels(t.src.data,t.mask,t.after.data,st.sw.hex,st.strength,t.meanL);
+      slotEl(s.i).querySelector("canvas").getContext("2d").putImageData(t.after,0,0);
+    }
+    if(st.modal>=0)drawModal();
+  });
+}
+function fullAfter(s){ // 큰 보기·저장용 (필요할 때만 계산)
+  const f=s.full,k=curKey();
+  if(f.key!==k){recolorPixels(f.src.data,f.mask,f.after.data,st.sw.hex,st.strength,f.meanL);f.key=k;}
+  return f.after;
+}
+
+/* 색 견본 */
+$("sw").innerHTML=SWATCHES.map(s=>`<button data-id="${s.id}" aria-label="${s.name}"><i style="background:${s.hex}"></i>${s.name}</button>`).join("");
+function markSw(){[...$("sw").children].forEach(b=>b.classList.toggle("on",b.dataset.id===st.sw.id));}
+$("sw").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;st.sw=SWATCHES.find(s=>s.id===b.dataset.id);markSw();render();});
+markSw();
+$("str").addEventListener("input",e=>{st.strength=e.target.value/100;render();});
+const strWord=v=>v<0.4?"약하게":v<0.75?"보통":"진하게";
+
+/* 크게 보기 */
+function openModal(i){
+  if(slots[i].status!=="ok")return;
+  st.modal=i;st.modalView="after";
+  [...document.querySelectorAll("#modal .tabs button")].forEach(x=>x.classList.toggle("on",x.dataset.v==="after"));
+  $("modal").classList.remove("hide");document.body.classList.add("modal-open");drawModal();
+}
+function drawModal(){
+  const s=slots[st.modal];if(!s||s.status!=="ok"){closeModal();return;}
+  const f=s.full,c=$("mCv");c.width=f.w;c.height=f.h;
+  c.getContext("2d").putImageData(st.modalView==="after"?fullAfter(s):f.src,0,0);
+  $("mTitle").textContent=s.name+" · "+(st.modalView==="after"?st.sw.name:"원본");
+}
+function closeModal(){st.modal=-1;$("modal").classList.add("hide");document.body.classList.remove("modal-open");}
+$("mClose").addEventListener("click",closeModal);
+document.querySelector("#modal .tabs").addEventListener("click",e=>{
+  const b=e.target.closest("button");if(!b)return;st.modalView=b.dataset.v;
+  [...document.querySelectorAll("#modal .tabs button")].forEach(x=>x.classList.toggle("on",x===b));drawModal();
+});
+document.addEventListener("keydown",e=>{if(e.key==="Escape"&&st.modal>=0)closeModal();});
+
+/* 이 색으로 할게요 */
+$("pickBtn").addEventListener("click",()=>{
+  st.chosen={name:st.sw.name,hex:st.sw.hex,strength:strWord(st.strength),at:new Date().toISOString()};
+  $("chName").textContent=st.chosen.name;$("chDot").style.background=st.chosen.hex;
+  $("chSub").textContent="강도: "+st.chosen.strength+" · 시술 기록에 적어 주세요";
+  $("chosen").classList.remove("hide");
+  try{localStorage.setItem("danggol_color_pick",JSON.stringify(st.chosen));}catch(_){} // 색 이름만 (사진은 저장 안 함)
+  $("chosen").scrollIntoView({behavior:"smooth",block:"center"});
+});
+
+/* 전후 비교 저장: 모든 각도를 한 장 (윗줄 원본 / 아랫줄 염색 후) */
+function makeCompare(){
+  const list=okSlots();if(!list.length)return null;
+  const CH=720,gap=16,labW=150,top=110,head=56,pad=16;
+  const ws=list.map(s=>Math.round(s.full.w*CH/s.full.h));
+  const W=labW+ws.reduce((a,b)=>a+b,0)+gap*(list.length-1)+pad;
+  const H=top+head+CH*2+gap+pad;
+  const c=document.createElement("canvas");c.width=W;c.height=H;
+  const x=c.getContext("2d");
+  x.fillStyle="#fff8f3";x.fillRect(0,0,W,H);
+  const font=(px,b)=>`${b?700:400} ${px}px "Noto Sans KR",system-ui,sans-serif`;
+  const nm=st.chosen?st.chosen.name:st.sw.name, sg=st.chosen?st.chosen.strength:strWord(st.strength);
+  x.textBaseline="middle";x.textAlign="left";
+  x.fillStyle="#c2410c";x.font=font(46,true);x.fillText("염색 미리보기 · "+nm+" ("+sg+")",pad+4,top/2);
+  const tmp=document.createElement("canvas"),tx=tmp.getContext("2d");
+  const put=(img,w0,h0,dx,dy,dw)=>{tmp.width=w0;tmp.height=h0;tx.putImageData(img,0,0);x.drawImage(tmp,dx,dy,dw,CH);};
+  let dx=labW;
+  list.forEach((s,k)=>{
+    x.fillStyle="#2b2220";x.font=font(34,true);x.textAlign="center";
+    x.fillText(s.name,dx+ws[k]/2,top+head/2);
+    put(s.full.src,s.full.w,s.full.h,dx,top+head,ws[k]);
+    put(fullAfter(s),s.full.w,s.full.h,dx,top+head+CH+gap,ws[k]);
+    dx+=ws[k]+gap;
+  });
+  x.textAlign="center";x.font=font(36,true);
+  x.fillStyle="#7a6a64";x.fillText("원본",labW/2,top+head+CH/2);
+  x.fillStyle="#c2410c";x.fillText("염색 후",labW/2,top+head+CH+gap+CH/2);
+  return c;
+}
+$("saveBtn").addEventListener("click",()=>{
+  const c=makeCompare();if(!c){msg("저장할 사진이 없어요. 먼저 사진을 넣어 주세요.","err");return;}
+  const d=new Date(),p=n=>String(n).padStart(2,"0");
+  const fname=`염색미리보기_${d.getFullYear()}${p(d.getMonth()+1)}${p(d.getDate())}_${p(d.getHours())}${p(d.getMinutes())}.jpg`;
+  c.toBlob(b=>{
+    if(!b){msg("사진을 만들지 못했어요. 다시 눌러 주세요.","err");return;}
+    const url=URL.createObjectURL(b);
+    const a=document.createElement("a");a.href=url;a.download=fname;document.body.appendChild(a);a.click();a.remove();
+    const im=$("savedImg");if(im.dataset.url)URL.revokeObjectURL(im.dataset.url);
+    im.src=url;im.dataset.url=url;$("saveBox").classList.remove("hide");
+  },"image/jpeg",0.9);
+});
+
+/* 새 손님 */
+$("resetBtn").addEventListener("click",()=>{
+  closeModal();
+  for(let i=0;i<slots.length;i++){slots[i]=blank(i);paintSlot(slots[i]);}
+  st.chosen=null;$("chosen").classList.add("hide");
+  const im=$("savedImg");if(im.dataset.url){URL.revokeObjectURL(im.dataset.url);im.removeAttribute("src");delete im.dataset.url;}
+  afterChange();hideMsg();window.scrollTo(0,0);
+});
+
+/* 시험용 연결 (화면 동작과 무관) */
+const api={SWATCHES,SLOT_NAMES,recolorPixels,hairMeanLum,blurMask,smooth,getHairMask,MP_VER,MODELS,slots,makeCompare};
+window.ColorLab=api;
+slots.forEach(paintSlot);
+setAgree(agreed());
+})();
+</script>
+</body>
+</html>
