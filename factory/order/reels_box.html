@@ -1,0 +1,451 @@
+
+<title>릴스 재료함</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap">
+<style>
+/* Layout: one narrow column of round cards, newest first — video on top, two big thumb buttons under it. */
+:root{
+  --bg:#F2F4F8; --surface:#FFFFFF; --ink:#101827; --muted:#5B6578; --line:#D8DEE8;
+  --accent:#0A7FA3; --accent-ink:#FFFFFF; --done:#1F7A4A; --pink:#C81E6E; --danger:#C0392B;
+  --f:"Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0B1220; --surface:#141D30; --ink:#F2F5FB; --muted:#A3AFC6; --line:#2A3A59;
+  --accent:#35E0FF; --accent-ink:#0B1220; --done:#5DD39E; --pink:#FF4FA3; --danger:#FF6B5E; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0B1220; --surface:#141D30; --ink:#F2F5FB; --muted:#A3AFC6; --line:#2A3A59;
+  --accent:#35E0FF; --accent-ink:#0B1220; --done:#5DD39E; --pink:#FF4FA3; --danger:#FF6B5E; color-scheme:dark}
+body{background:var(--bg);color:var(--ink);font-family:var(--f);font-size:15px;line-height:1.55}
+.wrap{max-width:560px;margin:0 auto;padding-block:18px 56px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:16px}
+h1{margin:0;font-size:22px;font-weight:900;text-wrap:balance}
+.sub{color:var(--muted);font-size:13px;margin:4px 0 0}
+.item{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:14px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.item.posted{opacity:.6}
+.plat{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px}
+.plat button{min-height:44px;font-size:13px;padding:0 4px}
+.plat button.ok{background:var(--done);border-color:var(--done);color:#fff}
+.item.removing{opacity:.4;pointer-events:none}
+.meta{display:flex;justify-content:space-between;gap:8px;align-items:center;font-size:12px;color:var(--muted)}
+.slot{font-weight:700;color:var(--pink)}
+.topic{font-weight:700;font-size:16px;text-wrap:balance}
+video{width:100%;max-width:100%;aspect-ratio:9/16;max-height:62vh;background:#000;border-radius:12px;display:block}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+button{font:inherit;font-weight:700;border-radius:12px;min-height:46px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
+button.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+button.del{color:var(--danger);border-color:var(--line);background:transparent}
+button.del.armed{background:var(--danger);border-color:var(--danger);color:#fff}
+button:focus-visible{outline:3px solid var(--pink);outline-offset:2px}
+button:disabled{opacity:.5}
+details summary{cursor:pointer;font-size:13px;color:var(--muted)}
+pre{white-space:pre-wrap;font:inherit;font-size:13px;background:var(--bg);border-radius:10px;padding:10px;margin:8px 0 0;min-width:0}
+.cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;margin-top:8px}
+.cards img{width:100%;max-width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:6px;border:1px solid var(--line)}
+.msg{font-size:12px;color:var(--muted);min-height:1em}
+.empty{text-align:center;color:var(--muted);padding:40px 12px;border:1px dashed var(--line);border-radius:16px}
+.chip{font-size:12px;font-weight:700;color:var(--done)}
+.ig{display:flex;align-items:center;justify-content:center;min-height:46px;border-radius:12px;background:var(--pink);color:#fff;font-weight:700;text-decoration:none}
+.ig:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.promo{border:1px solid var(--line);border-radius:12px;padding:10px 12px;display:flex;flex-direction:column;gap:10px}
+.promo summary{font-weight:700;color:var(--ink);font-size:14px}
+.pch{display:flex;flex-direction:column;gap:6px;padding-top:8px;border-top:1px dashed var(--line)}
+.pch h3{margin:0;font-size:13px;font-weight:700;color:var(--pink)}
+.pch pre{margin:0}
+.pch button{min-height:40px}
+.best{font-size:13px;color:var(--done);font-weight:700}
+.nums{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:6px}
+.nums button{min-height:44px;padding:0;font-size:15px}
+.nums button.ok{background:var(--done);border-color:var(--done);color:#fff}
+.numlab{font-size:12px;color:var(--muted)}
+.hooks{display:flex;flex-direction:column;gap:6px}
+.hooks button{min-height:42px;text-align:left;padding:8px 12px;font-weight:700}
+.hooks button.ok{border-color:var(--done);color:var(--done)}
+#plan{background:var(--surface);border:2px solid var(--accent);border-radius:16px;padding:14px;display:flex;flex-direction:column;gap:8px}
+#plan h2{margin:0;font-size:17px}
+#plan table{width:100%;border-collapse:collapse;font-size:13px}
+#plan td,#plan th{border-top:1px solid var(--line);padding:6px 4px;text-align:left;vertical-align:top}
+#plan th{color:var(--muted);font-weight:700;white-space:nowrap}
+.tablewrap{overflow-x:auto}
+#picks{display:flex;flex-direction:column;gap:12px}
+#snips{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:14px;display:flex;flex-direction:column;gap:8px}
+#snips h2{margin:0;font-size:16px}
+#snips .snip{display:flex;gap:8px;align-items:flex-start;border-top:1px solid var(--line);padding-top:8px}
+#snips .snip p{margin:0;flex:1;min-width:0;font-size:14px;line-height:1.5;overflow-wrap:anywhere}
+#snips .snip button{flex:none;min-height:40px;padding:0 12px;border-radius:10px;border:1px solid var(--accent);background:transparent;color:var(--fg);font-weight:700;cursor:pointer}
+#snips .snip button.ok{background:var(--accent);color:#fff}
+#picks > button.primary{min-height:50px}
+.pick button.armed{background:var(--pink);border-color:var(--pink);color:#fff}
+.pick{background:var(--surface);border:2px solid var(--pink);border-radius:16px;padding:14px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.pick h2{margin:0;font-size:17px}
+.cand{display:flex;flex-direction:column;gap:4px;text-align:left;padding:10px 12px;min-height:56px}
+.cand .t{font-weight:700;font-size:15px}
+.cand .s{font-weight:400;font-size:13px;color:var(--muted)}
+.cand.ok{background:var(--done);border-color:var(--done);color:#fff}
+.cand.armed{border:2px solid var(--pink);background:var(--bg)}
+.cand.ok .s{color:#fff}
+.pick input{font:inherit;min-height:46px;border-radius:12px;border:1px solid var(--line);background:var(--bg);color:var(--ink);padding:0 12px;min-width:0;width:100%;box-sizing:border-box}
+.pick .row2{display:grid;grid-template-columns:1fr auto;gap:8px}
+.pick .done{font-weight:700;color:var(--done)}
+
+</style>
+
+<div class="wrap">
+  <header>
+    <h1>릴스 재료함</h1>
+    <p class="sub">회차마다 Claude가 만든 카드, 음악 없는 영상, 릴스 소개글·해시태그가 여기 쌓여요. 필요한 것만 저장해서 인스타그램 앱에서 릴스로 올려 주세요. 필요 없는 재료는 맨 아래 [삭제]를 두 번 눌러 지울 수 있어요.</p>
+    <a class="ig" style="background:var(--accent);color:var(--accent-ink);margin-top:10px" href="https://claude.ai/artifact/DYNjdk9yZ78mJae6VNM4Xf" target="_blank" rel="noopener">소재 고르기·만들 방법은 「영상 제작기」에서 한 번에 →</a>
+  </header>
+  <section id="snips" hidden></section>
+  <section id="picks" hidden></section>
+  <section id="plan" hidden></section>
+  <div id="list"><div class="empty">아직 재료가 없어요.<br>다음 회차(출근 06:35 제작)부터 여기에 영상이 올라와요.</div></div>
+</div>
+
+<script>
+(async () => {
+  const $ = s => document.querySelector(s);
+  const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+  const db = await claude.use("db");
+  const downloads = await claude.use("downloads");
+  const assets = await claude.use("assets");   // 편집 권한이 있는 사람(대표)에게만 열림 → 영상·카드 파일까지 지움
+  if (!db) { $("#list").innerHTML = `<div class="empty">이 화면에서는 재료함을 열 수 없어요. Claude 앱이나 claude.ai에서 열어 주세요.</div>`; return; }
+  let items = [];
+  const armed = new Map();   // 삭제 버튼 첫 번째 누름 → 4초 안에 한 번 더 누르면 삭제
+  const blob = id => "/_blob/" + id;
+  // 한 장씩 저장: 저장한 번호는 초록색(이 휴대폰에만 기억)
+  const SK = "reels_saved_v1";
+  let savedOne = {};
+  try { savedOne = JSON.parse(localStorage.getItem(SK) || "{}") || {}; } catch { savedOne = {}; }
+  const markSaved = k => { savedOne[k] = 1; try { localStorage.setItem(SK, JSON.stringify(savedOne)); } catch {} };
+  function numsHtml(m, key, label){
+    const list = m[key] || []; if (!list.length) return "";
+    return `<div class="numlab">${esc(label)}</div><div class="nums">${list.map((c, i) => `<button type="button" data-act="one" data-key="${key}" data-i="${i}" class="${savedOne[`${m.id}:${key}:${i}`] ? "ok" : ""}" aria-label="${i+1}번 카드 저장">${i+1}</button>`).join("")}</div>`;
+  }
+  // 휴대폰 공유 창(여러 장 한 번에 → 갤러리 저장·인스타)을 쓸 수 있는 화면인지
+  let canShareFiles = false;
+  try { canShareFiles = !!(navigator.canShare && navigator.canShare({ files: [new File([new Uint8Array([255,216,255])], "t.jpg", { type: "image/jpeg" })] })); } catch { canShareFiles = false; }
+  // 압축 없는(STORE) zip 만들기 — 외부 라이브러리 없이
+  const CRC = (() => { const t = new Uint32Array(256); for (let n = 0; n < 256; n++) { let c = n; for (let k = 0; k < 8; k++) c = c & 1 ? 0xEDB88320 ^ (c >>> 1) : c >>> 1; t[n] = c >>> 0; } return t; })();
+  const crc32 = u => { let c = 0xFFFFFFFF; for (let i = 0; i < u.length; i++) c = CRC[(c ^ u[i]) & 255] ^ (c >>> 8); return (c ^ 0xFFFFFFFF) >>> 0; };
+  function makeZip(files){
+    const enc = new TextEncoder(); const parts = []; const central = []; let off = 0;
+    for (const f of files) {
+      const nm = enc.encode(f.name), d = f.data, crc = crc32(d);
+      const h = new DataView(new ArrayBuffer(30));
+      h.setUint32(0, 0x04034b50, true); h.setUint16(4, 20, true); h.setUint16(6, 0x0800, true); h.setUint16(8, 0, true);
+      h.setUint32(14, crc, true); h.setUint32(18, d.length, true); h.setUint32(22, d.length, true); h.setUint16(26, nm.length, true);
+      parts.push(new Uint8Array(h.buffer), nm, d);
+      const c = new DataView(new ArrayBuffer(46));
+      c.setUint32(0, 0x02014b50, true); c.setUint16(4, 20, true); c.setUint16(6, 20, true); c.setUint16(8, 0x0800, true);
+      c.setUint32(16, crc, true); c.setUint32(20, d.length, true); c.setUint32(24, d.length, true); c.setUint16(28, nm.length, true); c.setUint32(42, off, true);
+      central.push(new Uint8Array(c.buffer), nm);
+      off += 30 + nm.length + d.length;
+    }
+    const csize = central.reduce((s, p) => s + p.length, 0);
+    const e = new DataView(new ArrayBuffer(22));
+    e.setUint32(0, 0x06054b50, true); e.setUint16(8, files.length, true); e.setUint16(10, files.length, true); e.setUint32(12, csize, true); e.setUint32(16, off, true);
+    return new Blob([...parts, ...central, new Uint8Array(e.buffer)], { type: "application/zip" });
+  }
+  // 채널별 홍보 재료(분석팀): promo = {bestTime, story:{text,sticker}, threads, shorts:{title,description,tags}, x, community}
+  const PCH = [
+    ["story", "인스타 스토리", p => p.story ? `${p.story.text || ""}${p.story.sticker ? `\n\n[질문 스티커] ${p.story.sticker}` : ""}` : ""],
+    ["threads", "Threads 본문 (앱에서 음악 스티커 붙여 직접 올리기)", p => p.threads || ""],
+    ["thr1", "Threads 내 글에 답글 ①", p => (p.threadsReplies || [])[0] || ""],
+    ["thr2", "Threads 내 글에 답글 ②", p => (p.threadsReplies || [])[1] || ""],
+    ["shorts", "유튜브 쇼츠", p => p.shorts ? `[제목]\n${p.shorts.title || ""}\n\n[설명]\n${p.shorts.description || ""}\n\n[태그]\n${p.shorts.tags || ""}` : ""],
+    ["x", "X(트위터)", p => p.x || ""],
+    ["tiktok", "틱톡", p => p.tiktok || ""],
+    ["community", "팬 커뮤니티", p => p.community || ""],
+  ];
+  function promoHtml(m){
+    const p = m.promo; if (!p) return "";
+    const chans = PCH.map(([k, name, fn]) => [k, name, fn(p)]).filter(c => c[2]);
+    if (!chans.length) return "";
+    return `<details class="promo"><summary>📣 홍보 재료 · 채널 ${chans.length}곳</summary>
+      ${p.bestTime ? `<div class="best">⏰ 추천 시각: ${esc(p.bestTime)}</div>` : ""}
+      ${chans.map(([k, name, t]) => `<div class="pch"><h3>${esc(name)}</h3><pre>${esc(t)}</pre><button data-act="promo" data-key="${k}" type="button">${esc(name)} 글 복사</button></div>`).join("")}
+    </details>`;
+  }
+  // 플랫폼별 올림 표시(대표 결정 10/31, X 추가 11/1): postedTo = {ig, shorts, threads, x}. 예전 posted(인스타)도 인스타로 읽는다.
+  const PLAT = [["ig", "인스타"], ["shorts", "쇼츠"], ["threads", "Threads"], ["x", "X"], ["tiktok", "틱톡"]];   // 틱톡 추가(대표 요청 11/3)
+  const isOn = (m, k) => !!((m.postedTo || {})[k] || (k === "ig" && m.posted && !(m.postedTo && "ig" in m.postedTo)));
+  const platCount = m => PLAT.filter(([k]) => isOn(m, k)).length;
+  function render(){
+    if (!items.length) { $("#list").innerHTML = `<div class="empty">재료함이 비어 있어요.<br>다음 회차가 만들어지면 여기에 올라와요.</div>`; return; }
+    $("#list").innerHTML = items.map(m => `
+      <article class="item ${platCount(m) === PLAT.length ? "posted" : ""}" data-id="${esc(m.id)}">
+        <div class="meta"><span><span class="slot">${esc(m.slotName || m.slot)}</span> · ${esc(m.date || "")}</span>${platCount(m) ? `<span class="chip">올림 ${platCount(m)}/${PLAT.length}</span>` : ""}</div>
+        <div class="topic">${esc(m.topic || "")}</div>
+        ${m.audio ? `<div class="msg">♪ 추천 음원: ${esc(m.audio)}</div>` : ""}
+        ${m.reel ? `<video controls playsinline preload="metadata" src="${esc(blob(m.reel))}"></video>` : ""}
+        <div class="row">
+          <button class="primary" data-act="save" type="button" ${m.reel && downloads ? "" : "disabled"}>영상 저장</button>
+          <button data-act="copy" type="button">소개글 복사</button>
+        </div>
+        ${(m.cards || []).length ? `<div class="row"><button data-act="cards" data-key="cards" type="button">릴스용 카드 ${m.cards.length}장 저장</button>${canShareFiles ? `<button data-act="share" data-key="cards" type="button">${m.cards.length}장 한 번에 공유·저장</button>` : `<button data-act="zip" data-key="cards" type="button">(PC용) ${m.cards.length}장 압축 저장</button>`}</div>` : ""}
+        ${numsHtml(m, "cards", "릴스용 카드 한 장씩 저장 (누른 장은 초록색)")}
+        ${(m.readCards || []).length ? `<div class="row"><button data-act="cards" data-key="readCards" type="button">읽는 카드 ${m.readCards.length}장 저장</button><button data-act="copyRead" type="button">캐러셀 캐션 복사</button></div>` : ""}
+        ${!(m.readCards || []).length && m.readCaption ? `<button data-act="copyRead" type="button">캐러셀 캡션 복사</button>` : ""}
+        ${numsHtml(m, "readCards", "읽는 카드 한 장씩 저장")}
+        <a class="ig" href="https://www.instagram.com/" target="_blank" rel="noopener">인스타 열기 → + → 릴스</a>
+        <div class="numlab">어디에 올렸나요? (누르면 초록색, 다시 누르면 지워져요)</div>
+        <div class="plat">${PLAT.map(([k, name]) => `<button type="button" data-act="plat" data-key="${k}" class="${isOn(m, k) ? "ok" : ""}" aria-pressed="${isOn(m, k)}">${isOn(m, k) ? "✓ " : ""}${name}</button>`).join("")}</div>
+        <div class="msg" aria-live="polite"></div>
+        <details><summary>릴스 소개글·해시태그 보기</summary><pre>${esc(m.caption || "")}</pre></details>
+        ${(m.cards || []).length ? `<details><summary>릴스용 카드 ${m.cards.length}장 보기</summary><div class="cards">${m.cards.map((c,i) => `<img src="${esc(blob(c))}" alt="카드 ${i+1}" loading="lazy">`).join("")}</div></details>` : ""}
+        ${(m.readCards || []).length ? `<details><summary>읽는 카드 ${m.readCards.length}장 보기</summary><div class="cards">${m.readCards.map((c,i) => `<img src="${esc(blob(c))}" alt="읽는 카드 ${i+1}" loading="lazy">`).join("")}</div></details>` : ""}
+        ${(m.hooks || []).length ? `<div class="numlab">훅(첫 화면·첫 줄) 후보 — 눌러서 복사</div><div class="hooks">${m.hooks.map((h, i) => `<button type="button" data-act="hook" data-i="${i}">${["①","②","③"][i] || "·"} ${esc(h)}</button>`).join("")}</div>` : ""}
+        ${promoHtml(m)}
+        <button class="del" data-act="delete" type="button">삭제</button>
+      </article>`).join("");
+  }
+
+  // 소재 고르기(대표 결정 10/31): 자동 회차는 후보만 올리고, 대표가 고른 소재만 만든다.
+  // picks/<YYYYMMDD>_<SLOT> = {date, slot, slotName, makeAt, status:"waiting"|"picked"|"skipped"|"made", candidates:[{title, summary, why, sources}], picked, custom, createdAt}
+  // 버튼을 누르면 "고른 소재 만들기" 작업을 바로 깨운다(대표 결정 10/31: 실시간 이슈를 보고 고르기)
+  const MAKER = "trig_01HJ9Y72Uf1MRw78fkG7czNb";
+  const mcp = await claude.use("mcp");
+  async function wake(why){
+    if (!mcp) return "slow";
+    try { await mcp.callTool("Claude Code Remote", "fire_trigger", { trigger_id: MAKER, text: "재료함 버튼으로 바로 실행: " + why }); return "ok"; }
+    catch (e) { return (e && e.code === "approval_required") ? "approval" : "slow"; }
+  }
+  const wakeMsg = (r, okText) => r === "ok" ? okText : r === "approval" ? "바로 실행하려면 허용이 필요해요. 다시 눌러 허용해 주세요 (안 하면 매시 정각 전 확인 때 처리돼요)" : "요청은 남겼어요. 바로 깨우지 못해 다음 정시 확인 때 처리돼요";
+  let picks = [];
+  function renderPicks(){
+    const el = $("#picks");
+    const show = picks.filter(p => ["waiting", "picked", "refresh", "making", "cards_ready", "confirmed", "redo"].includes(p.status)).slice(0, 4);
+    el.hidden = false;
+    const nowBtn = `<button type="button" class="primary" data-now="1">🔄 지금 시간 기준으로 소재 후보 받기</button><div class="msg" id="nowmsg" aria-live="polite"></div>`;
+    if (!show.length) { el.innerHTML = nowBtn; return; }
+    el.innerHTML = nowBtn + show.map(p => p.status === "cards_ready" ? `
+      <article class="pick" data-id="${esc(p.id)}"><h2>🃏 카드 7장 확인 · ${esc(p.slotName || p.slot)}</h2>
+        <div class="topic">${esc(p.custom || ((p.candidates || [])[p.picked] || {}).title || p.topic || "")}</div>
+        <div class="cards">${(p.cards || []).map((c, i) => `<img src="/_blob/${esc(c)}" alt="카드 ${i + 1}" loading="lazy">`).join("")}</div>
+        <div class="sub">괜찮으면 [확정]을 두 번 누르세요. 그때 릴스로 만들어 재료함에 올려요.</div>
+        <button type="button" class="primary" data-confirm="1">✅ 확정 → 릴스 만들기</button>
+        <div class="row2"><input type="text" maxlength="200" placeholder="고칠 점 (예: 표지 사진 바꿔 줘)" aria-label="고칠 점"><button type="button" data-redo="1">다시 만들기</button></div>
+        <button type="button" class="del" data-skip="1">만들지 않기</button>
+        <div class="msg" aria-live="polite"></div></article>` : ["refresh", "making", "confirmed", "redo"].includes(p.status) ? `
+      <article class="pick" data-id="${esc(p.id)}"><h2>🗳 ${esc(p.slotName || p.slot)} · ${esc(p.date || "")}</h2>
+        <div class="sub">${({making: "고른 소재로 카드 7장을 만드는 중이에요. 다 되면 확인 알림이 가요.", confirmed: "확정하셨어요. 릴스로 만드는 중이에요 (10분쯤).", redo: "말씀하신 대로 카드를 다시 만드는 중이에요."})[p.status] || "지금 이슈로 새 후보를 찾고 있어요 (5분쯤 뒤 알림)."}</div></article>` : `
+      <article class="pick" data-id="${esc(p.id)}">
+        <h2>🗳 ${esc(p.slotName || p.slot)} 소재 고르기 · ${esc(p.date || "")}</h2>
+        ${p.status === "picked"
+          ? `<div class="done">✓ 골랐어요: ${esc(p.custom || ((p.candidates || [])[p.picked] || {}).title || "")}</div><div class="sub">지금 만들고 있어요. 다른 걸로 바꾸려면 아래에서 다시 누르세요.</div>`
+          : `<div class="sub">하나를 두 번 누르면 그 소재로 카드 7장부터 만들어 확인 받아요. 시간이 지나 소식이 묵었으면 [지금 기준으로 다시 찾기]를 눌러 주세요.</div>`}
+        ${(p.candidates || []).map((c, i) => `<button type="button" class="cand ${p.status === "picked" && p.picked === i && !p.custom ? "ok" : ""}" data-pick="${i}"><span class="t">${["①","②","③","④","⑤"][i] || "·"} ${esc(c.title)}</span><span class="s">${esc(c.summary || "")}${c.why ? " · " + esc(c.why) : ""}</span></button>`).join("")}
+        <div class="row2"><input type="text" maxlength="80" placeholder="직접 주제 쓰기 (예: 리센느 음방 1위)" aria-label="직접 주제 쓰기"><button type="button" data-custom="1">보내기</button></div>
+        <div class="row"><button type="button" data-refresh="1">🔄 지금 기준으로 다시 찾기</button><button type="button" class="del" data-skip="1">이번 회차는 쉬기</button></div>
+        <div class="msg" aria-live="polite"></div>
+      </article>`).join("");
+  }
+  db.collection("picks").orderBy("createdAt", "desc").limit(8).onSnapshot(snap => {
+    picks = (snap.docs || []).map(d => ({ id: d.id, ...(d.data?.() || {}) }));
+    renderPicks();
+  }, () => {});
+  $("#picks").addEventListener("click", async e => {
+    const b = e.target.closest("button"); if (!b) return;
+    if (b.dataset.now) {
+      const nm = $("#nowmsg");
+      const open = picks.find(x => ["refresh", "making"].includes(x.status) || (x.slot === "EX" && x.status === "waiting"));
+      if (open) { nm.textContent = open.status === "waiting" ? "아래에 고르지 않은 후보가 있어요. 그중에서 고르거나 [지금 기준으로 다시 찾기]를 눌러 주세요" : "이미 찾는 중이에요. 잠시만 기다려 주세요"; return; } const d = new Date(Date.now() + 9 * 3600e3); const ymd = d.toISOString().slice(0, 10);
+      const id = `${ymd.replace(/-/g, "")}_EX${String(d.getUTCHours()).padStart(2, "0")}${String(d.getUTCMinutes()).padStart(2, "0")}`;
+      b.disabled = true; nm.textContent = "요청하는 중…";
+      try { await db.doc(`picks/${id}`).set({ date: ymd, slot: "EX", slotName: "추가 (지금 요청)", status: "refresh", candidates: [], refreshAt: new Date().toISOString(), createdAt: new Date().toISOString() }); nm.textContent = "지금 이슈를 찾으라고 Claude를 깨우는 중…"; nm.textContent = wakeMsg(await wake("지금 후보 받기 " + id), "지금 이슈를 찾고 있어요. 5분쯤 뒤 후보가 올라오고 알림이 가요"); }
+      catch { nm.textContent = "요청하지 못했어요. 다시 눌러 주세요"; b.disabled = false; }
+      return;
+    }
+    const card = b.closest(".pick"); if (!card) return; const p = picks.find(x => x.id === card.dataset.id); if (!p) return;
+    const msg = card.querySelector(".msg"); let upd = null;
+    if (b.dataset.pick !== undefined) {
+      if (!b.classList.contains("armed")) {   // 실수로 한 번 스친 것으로 만들지 않도록 두 번 눌러야 확정(대표 지적 10/31 19:28)
+        card.querySelectorAll(".cand.armed").forEach(x => { x.classList.remove("armed"); x.querySelector(".t").textContent = x.dataset.t; });
+        b.dataset.t = b.querySelector(".t").textContent; b.classList.add("armed");
+        b.querySelector(".t").textContent = "✋ 한 번 더 누르면 이 소재로 만들어요";
+        setTimeout(() => { if (b.classList.contains("armed")) { b.classList.remove("armed"); b.querySelector(".t").textContent = b.dataset.t; } }, 5000);
+        return;
+      }
+      upd = { status: "picked", picked: Number(b.dataset.pick), custom: "", pickedAt: new Date().toISOString() };
+    }
+    if (b.dataset.custom) { const v = card.querySelector("input").value.trim(); if (!v) { msg.textContent = "주제를 적어 주세요"; return; } upd = { status: "picked", picked: -1, custom: v, pickedAt: new Date().toISOString() }; }
+    if (b.dataset.confirm) {
+      if (!b.classList.contains("armed")) { b.classList.add("armed"); b.textContent = "✋ 한 번 더 누르면 확정해요"; setTimeout(() => { b.classList.remove("armed"); b.textContent = "✅ 확정 → 릴스 만들기"; }, 5000); return; }
+      upd = { status: "confirmed", confirmedAt: new Date().toISOString() };
+    }
+    if (b.dataset.redo) { const v = card.querySelector("input").value.trim(); if (!v) { msg.textContent = "고칠 점을 적어 주세요"; return; } upd = { status: "redo", redoNote: v, redoAt: new Date().toISOString() }; }
+    if (b.dataset.skip) upd = { status: "skipped", pickedAt: new Date().toISOString() };
+    if (b.dataset.refresh) { if (p.status === "refresh") { msg.textContent = "이미 찾는 중이에요"; return; } upd = { status: "refresh", refreshAt: new Date().toISOString() }; }
+    if (!upd) return;
+    b.disabled = true; msg.textContent = "저장하는 중…";
+    try {
+      await db.doc(`picks/${p.id}`).update(upd);
+      if (upd.status === "skipped") msg.textContent = "이번 회차는 쉬어요";
+      else { msg.textContent = "Claude를 깨우는 중…"; msg.textContent = wakeMsg(await wake((upd.status + " ") + p.id), ({refresh: "지금 이슈로 다시 찾고 있어요. 5분쯤 뒤 새 후보 알림이 가요", confirmed: "확정했어요. 릴스로 만들어 재료함에 올릴게요 (10분쯤)", redo: "고칠 점 반영해서 다시 만들게요"})[upd.status] || "골랐어요. 카드 7장부터 만들어 확인 받을게요 (10분쯤)"); }
+    }
+    catch { msg.textContent = "저장하지 못했어요. 다시 눌러 주세요"; b.disabled = false; }
+  });
+  // 맨 위 복사 문구(대표 요청 11/1): snippets/<id> = {title, order, items:[문장]}
+  db.collection("snippets").onSnapshot(snap => {
+    const docs = (snap.docs || []).map(d => d.data?.() || {}).filter(s => (s.items || []).length).sort((a, b) => (a.order || 0) - (b.order || 0));
+    const el = $("#snips");
+    if (!docs.length) { el.hidden = true; return; }
+    el.hidden = false;
+    el.innerHTML = docs.map((s, si) => `<h2>${esc(s.title || "복사 문구")}</h2>${s.items.map((t, i) => `<div class="snip"><p>${esc(t)}</p><button type="button" data-s="${si}" data-i="${i}">${["①","②","③","④","⑤"][i] || i + 1} 복사</button></div>`).join("")}`).join("");
+    el.querySelectorAll("button").forEach(b => b.onclick = async () => {
+      const t = docs[+b.dataset.s].items[+b.dataset.i]; const label = b.textContent;
+      try { await navigator.clipboard.writeText(t); b.classList.add("ok"); b.textContent = "복사했어요 ✓"; setTimeout(() => { b.classList.remove("ok"); b.textContent = label; }, 2000); }
+      catch { const r = document.createRange(); r.selectNodeContents(b.previousElementSibling); const sel = getSelection(); sel.removeAllRanges(); sel.addRange(r); b.textContent = "길게 눌러 복사"; }
+    });
+  }, () => {});
+  // 주간 올리기 계획(분석팀, 매주 일요일 밤): plans/<주 시작일> = {week, title, summary, rows:[{day, time, slot, what, format, note}], at}
+  db.collection("plans").orderBy("at", "desc").limit(1).onSnapshot(snap => {
+    const d = snap.docs?.[0]; const p = d ? (d.data?.() || {}) : null; const el = $("#plan");
+    if (!p || !(p.rows || []).length) { el.hidden = true; return; }
+    el.hidden = false;
+    el.innerHTML = `<h2>🗓 ${esc(p.title || "이번 주 올리기 계획")}</h2>${p.summary ? `<div class="sub">${esc(p.summary)}</div>` : ""}
+      <details><summary>요일별 계획 보기 (${p.rows.length}개)</summary><div class="tablewrap"><table><tbody>${p.rows.map(r => `<tr><th>${esc(r.day || "")}<br>${esc(r.time || "")}</th><td><b>${esc(r.what || "")}</b><br><span class="sub">${esc([r.slot, r.format, r.note].filter(Boolean).join(" · "))}</span></td></tr>`).join("")}</tbody></table></div></details>`;
+  }, () => {});
+  // 항상 최신순(대표 요청 10/29): 시간 표기가 섞여 있어(+09:00 / Z) 글자 순서가 아닌 실제 시각으로 정렬한다
+  const tms = m => { const t = Date.parse(m.createdAt || ""); return isNaN(t) ? 0 : t; };
+  db.collection("materials").orderBy("createdAt", "desc").limit(60).onSnapshot(snap => {
+    items = (snap.docs || []).map(d => ({ id: d.id, ...(d.data?.() || {}) })).sort((a, b) => tms(b) - tms(a));
+    render();
+  }, () => {});
+  $("#list").addEventListener("click", async e => {
+    const b = e.target.closest("button[data-act]"); if (!b) return;
+    const card = b.closest(".item"); const m = items.find(x => x.id === card.dataset.id); if (!m) return;
+    const msg = card.querySelector(".msg");
+    if (b.dataset.act === "copy") {
+      try { await navigator.clipboard.writeText(m.caption || ""); msg.textContent = "캡션을 복사했어요"; }
+      catch { card.querySelector("details").open = true; msg.textContent = "복사가 막혀 있어요. 캡션을 길게 눌러 복사해 주세요"; }
+    }
+    if (b.dataset.act === "copyRead") {
+      try { await navigator.clipboard.writeText(m.readCaption || ""); msg.textContent = "캐러셀 캡션을 복사했어요"; }
+      catch { msg.textContent = "복사가 막혀 있어요"; }
+    }
+    if (b.dataset.act === "save") {
+      b.disabled = true; msg.textContent = "영상을 준비하는 중…";
+      try {
+        const res = await fetch(blob(m.reel)); const data = await res.blob();
+        await downloads.save({ filename: `${m.id}_릴스.mp4`, data });
+        msg.textContent = "저장했어요. 인스타그램 앱에서 릴스로 불러와 음악을 골라 주세요";
+      } catch (err) {
+        msg.textContent = err?.code === "declined" ? "저장을 취소했어요" : "저장하지 못했어요. 영상 위 메뉴(⋮)에서 다운로드를 눌러 보세요";
+      } finally { b.disabled = false; }
+    }
+    if (b.dataset.act === "cards") {
+      if (!downloads) { msg.textContent = "이 화면에서는 저장할 수 없어요. 카드를 길게 눌러 저장해 주세요"; return; }
+      b.disabled = true; const list = m[b.dataset.key] || []; const pre = b.dataset.key === "readCards" ? "r" : "";
+      // 저장 창을 연달아 띄우면 플랫폼이 잠깐 막는다(rate_limited) → 기다렸다가 같은 장부터 이어서 저장
+      let saved = 0;
+      for (const [i, c] of list.entries()) {
+        const data = await (await fetch(blob(c))).blob();
+        let done = false;
+        for (let t = 0; t < 8 && !done; t++) {
+          msg.textContent = t ? `저장 창이 잠시 막혔어요. 기다렸다 이어서 저장해요 (${i+1}/${list.length})` : `카드 ${i+1}/${list.length} 저장 중…`;
+          try { await downloads.save({ filename: `${m.id}_${pre}${String(i+1).padStart(2,"0")}.jpg`, data }); done = true; saved++; }
+          catch (err) {
+            if (err?.code === "declined") { msg.textContent = `카드 ${saved}장까지 저장했어요. 나머지는 다시 눌러 주세요`; b.disabled = false; return; }
+            if (err?.code === "rate_limited") { await new Promise(r => setTimeout(r, 3000 + t * 3000)); continue; }
+            msg.textContent = `카드 ${i+1}번째를 저장하지 못했어요. [한 번에(압축)]을 써 보세요`; b.disabled = false; return;
+          }
+        }
+        if (!done) { msg.textContent = `${saved}장까지 저장했어요. 잠시 뒤 다시 눌러 주거나 [한 번에(압축)]을 써 보세요`; b.disabled = false; return; }
+      }
+      msg.textContent = `카드 ${saved}장을 모두 저장했어요`; b.disabled = false;
+    }
+    if (b.dataset.act === "hook") {
+      const h = (m.hooks || [])[+b.dataset.i] || "";
+      try { await navigator.clipboard.writeText(h); b.classList.add("ok"); msg.textContent = "훅을 복사했어요"; }
+      catch { msg.textContent = "복사가 막혀 있어요. 글을 길게 눌러 복사해 주세요"; }
+      return;
+    }
+    if (b.dataset.act === "one") {
+      if (!downloads) { msg.textContent = "이 화면에서는 저장할 수 없어요. 카드를 길게 눌러 저장해 주세요"; return; }
+      const key = b.dataset.key, i = +b.dataset.i, id = (m[key] || [])[i]; if (!id) return;
+      const pre = key === "readCards" ? "r" : "";
+      b.disabled = true; msg.textContent = `${i+1}번 카드 저장 중…`;
+      try {
+        const res = await fetch(blob(id)); if (!res.ok) throw new Error("fetch");
+        const data = await res.blob();
+        // 5장째 뒤부터 플랫폼이 저장 창을 잠깐 막는다(rate_limited) → 대표가 다시 누르지 않아도 기다렸다가 알아서 이어서 저장
+        const fname = `${m.id}_${pre}${String(i+1).padStart(2,"0")}.jpg`;
+        for (let t = 0; ; t++) {
+          try { await downloads.save({ filename: fname, data }); break; }
+          catch (e2) {
+            if (e2?.code !== "rate_limited" || t >= 12) throw e2;
+            for (let s = 10; s > 0; s--) { msg.textContent = `저장 창이 잠시 막혔어요. ${s}초 뒤 ${i+1}번을 알아서 다시 저장해요 (화면을 켜 두세요)`; await new Promise(r => setTimeout(r, 1000)); }
+          }
+        }
+        markSaved(`${m.id}:${key}:${i}`); b.classList.add("ok"); msg.textContent = `${i+1}번 카드를 저장했어요`;
+      } catch (err) {
+        msg.textContent = err?.code === "declined" ? "저장을 취소했어요" : err?.code === "rate_limited" ? "저장 창이 오래 막혀 있어요. 1분 뒤 같은 번호를 다시 눌러 주세요" : `${i+1}번을 저장하지 못했어요. 다시 눌러 주세요`;
+      } finally { b.disabled = false; }
+      return;
+    }
+    if (b.dataset.act === "share") {
+      b.disabled = true; const list = m[b.dataset.key] || [];
+      try {
+        msg.textContent = "카드를 모으는 중…";
+        const files = [];
+        for (const [i, c] of list.entries()) files.push(new File([await (await fetch(blob(c))).blob()], `${m.id}_${String(i+1).padStart(2,"0")}.jpg`, { type: "image/jpeg" }));
+        await navigator.share({ files });
+        msg.textContent = "공유 창에서 '이미지 저장' 또는 'Instagram'을 고르면 돼요";
+      } catch (err) {
+        msg.textContent = err?.name === "AbortError" ? "공유를 취소했어요" : "이 화면에서는 공유 창을 열 수 없어요. 옆의 [카드 저장]을 써 주세요";
+      } finally { b.disabled = false; }
+    }
+    if (b.dataset.act === "zip") {
+      if (!downloads) { msg.textContent = "이 화면에서는 저장할 수 없어요"; return; }
+      b.disabled = true; const list = m[b.dataset.key] || [];
+      try {
+        msg.textContent = "카드를 모으는 중…";
+        const files = [];
+        for (const [i, c] of list.entries()) files.push({ name: `${m.id}_${String(i+1).padStart(2,"0")}.jpg`, data: new Uint8Array(await (await fetch(blob(c))).arrayBuffer()) });
+        await downloads.save({ filename: `${m.id}_카드${list.length}장.zip`, data: makeZip(files) });
+        msg.textContent = "압축 파일로 저장했어요. 파일 앱에서 압축을 풀면 카드가 나와요";
+      } catch (err) {
+        msg.textContent = err?.code === "declined" ? "저장을 취소했어요" : err?.code === "rate_limited" ? "저장 창이 잠시 막혔어요. 10초 뒤 다시 눌러 주세요" : "저장하지 못했어요";
+      } finally { b.disabled = false; }
+    }
+    if (b.dataset.act === "promo") {
+      const ch = PCH.find(c => c[0] === b.dataset.key); const t = ch && m.promo ? ch[2](m.promo) : "";
+      const pm = b.closest(".pch");
+      try { await navigator.clipboard.writeText(t); b.textContent = "복사했어요 ✓"; setTimeout(() => { b.textContent = `${ch[1]} 글 복사`; }, 2000); }
+      catch { msg.textContent = "복사가 막혀 있어요. 글을 길게 눌러 복사해 주세요"; }
+      return;
+    }
+    if (b.dataset.act === "plat") {
+      const k = b.dataset.key, on = !isOn(m, k), now = new Date().toISOString();
+      const pt = { ...(m.postedTo || {}), [k]: on };
+      if (!m.postedTo && m.posted && k !== "ig") pt.ig = true;
+      const upd = { postedTo: pt, [`postedAt_${k}`]: on ? now : null };
+      if (k === "ig") { upd.posted = on; upd.postedAt = now; }
+      b.disabled = true;
+      try { await db.doc(`materials/${m.id}`).update(upd); }
+      catch { msg.textContent = "표시를 바꾸지 못했어요. 다시 눌러 주세요"; b.disabled = false; }
+    }
+    if (b.dataset.act === "delete") {
+      if (!armed.has(m.id)) {
+        b.classList.add("armed"); b.textContent = "한 번 더 누르면 삭제돼요 (되돌릴 수 없어요)";
+        armed.set(m.id, setTimeout(() => { armed.delete(m.id); b.classList.remove("armed"); b.textContent = "삭제"; }, 4000));
+        return;
+      }
+      clearTimeout(armed.get(m.id)); armed.delete(m.id);
+      card.classList.add("removing"); msg.textContent = "삭제하는 중…";
+      try {
+        await db.doc(`materials/${m.id}`).delete();
+      } catch {
+        card.classList.remove("removing"); b.classList.remove("armed"); b.textContent = "삭제";
+        msg.textContent = "삭제하지 못했어요. 잠시 뒤 다시 눌러 주세요"; return;
+      }
+      // 목록에서 지운 뒤 영상·카드 파일도 정리(편집 권한이 있을 때만). 다른 재료가 같은 파일을 쓰면 남겨 둔다.
+      if (assets) {
+        const inUse = new Set(items.filter(x => x.id !== m.id).flatMap(x => [x.reel, ...(x.cards || []), ...(x.readCards || [])]));
+        const ids = [m.reel, ...(m.cards || []), ...(m.readCards || [])].filter(id => id && !inUse.has(id));
+        for (const id of ids) { try { await assets.delete(id); } catch {} }
+      }
+    }
+  });
+})();
+</script>
