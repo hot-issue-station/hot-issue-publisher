@@ -45,7 +45,7 @@
       ],
       "sfx": [
         {
-          "file": "assets/sfx_impact.wav",
+          "file": "../../assets/sfx_impact.wav",
           "at": 0.1,
           "volume": 0.8
         }
@@ -67,7 +67,7 @@
       "_확인": "더쇼 점수판 4291→8379 뒤집힘 + RESCENE 1위 카드(2~5.5초)",
       "sfx": [
         {
-          "file": "assets/sfx_impact.wav",
+          "file": "../../assets/sfx_impact.wav",
           "at": 0.9,
           "volume": 0.9
         }
@@ -164,7 +164,7 @@
       "_확인": "앵콜 전체샷 + 단콘 카드",
       "sfx": [
         {
-          "file": "assets/sfx_impact.wav",
+          "file": "../../assets/sfx_impact.wav",
           "at": 0.3,
           "volume": 0.7
         }
