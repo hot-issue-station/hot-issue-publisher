@@ -77,6 +77,9 @@ details summary{cursor:pointer;color:var(--muted);font-size:14px}
 .deep ul{margin:4px 0 0;padding-left:18px}
 .deep a{color:var(--accent);overflow-wrap:anywhere}
 .deep p{margin:8px 0 0}
+.deep .ask{border-top:1px solid var(--line);padding-top:6px;margin-top:6px;display:flex;flex-direction:column;gap:4px}
+.deep .muted{color:var(--muted);font-size:12px}
+.deep textarea{margin-top:8px}
 .turn small{display:block;font-weight:400;font-size:13px;opacity:.95}
 ol.flow{margin:6px 0 0;padding-left:20px;font-size:13px;color:var(--muted)}
 </style>
@@ -222,6 +225,16 @@ function drawTopics(){
       add("만들 각도",D.angles,(li,x)=>li.textContent=x);
       add("실제 발언",D.quotes,(li,x)=>li.textContent=x);
       add("주의",D.cautions,(li,x)=>li.textContent=x);
+      add("유튜브 인기 영상 (이 소재로 가장 많이 본 것)",D.youtube,(li,v)=>{const a=document.createElement("a");a.href=v.url||"#";a.target="_blank";a.rel="noopener";a.textContent=[v.title,v.channel,v.views].filter(Boolean).join(" · ");li.append(a);if(v.angle){const sp=document.createElement("div");sp.className="muted";sp.textContent="→ "+v.angle;li.append(sp)}});
+      add("차별화 포인트 (남들이 안 다룬 이야기)",D.gaps,(li,x)=>li.textContent=x);
+      if(D.story){const hh=document.createElement("div");hh.className="dh";hh.textContent="스토리 초안"+(t.confirmed?" ✅ 확정":"");dt.append(hh);const p1=document.createElement("p");p1.textContent=D.story;dt.append(p1)}
+      if(D.askUser&&D.askUser.length){const hh=document.createElement("div");hh.className="dh";hh.textContent="대표님께 부탁 — 아래 질문을 복사해 물어보고 답을 붙여 주세요";dt.append(hh);
+        D.askUser.forEach((q,qi)=>{const row=document.createElement("div");row.className="ask";const lab=document.createElement("div");lab.className="muted";lab.textContent=(q.to||"제미나이")+"에게";const tx=document.createElement("div");tx.textContent=q.q||"";
+          const cb=mk("chip","복사");cb.style.fontSize="13px";cb.onclick=async()=>{try{await navigator.clipboard.writeText(q.q||"");cb.textContent="복사했어요 ✓"}catch(e){cb.textContent="길게 눌러 복사"}};row.append(lab,tx,cb);dt.append(row)});
+        const ta=document.createElement("textarea");ta.id="ans-"+t.id;ta.placeholder="받은 답(여러 개면 이어서)을 여기 붙여 넣기";dt.append(ta);
+        const sb=mk("go","답 보내기 → Claude가 합쳐서 스토리 다듬기");sb.style.marginTop="6px";
+        sb.onclick=async()=>{const v=ta.value.trim();if(!v){ta.focus();return}try{await DB.collection("topics").doc(t.id).update({userNotes:((t.userNotes||"")+"\n\n["+nowStr()+"]\n"+v).slice(-20000)});ta.value="";askRefresh({scope:"merge",topicId:t.id,title:t.title||""})}catch(e){$("refMsg").textContent="답을 저장하지 못했어요. 다시 눌러 주세요."}};dt.append(sb)}
+      if(D.story&&!t.confirmed){const cf=mk("go sec","✅ 이 스토리로 확정");cf.style.marginTop="6px";cf.onclick=async()=>{try{await DB.collection("topics").doc(t.id).update({confirmed:true,confirmedAt:nowStr()})}catch(e){}};dt.append(cf)}
       add("출처",D.sources,(li,x)=>{const a=document.createElement("a");a.href=x.url;a.target="_blank";a.rel="noopener";a.textContent=(x.name||"기사")+(x.date?" · "+x.date:"");li.append(a)});
       wrap.append(dt)}
     W.append(wrap)});
@@ -233,10 +246,10 @@ async function askRefresh(req){
   if(!DB){m.textContent="이 화면에서는 요청을 저장할 수 없어요.";return}
   const id="r"+Date.now();
   try{await DB.collection("refreshq").doc(id).set({...req,at:nowStr(),status:"queued"});}catch(e){m.textContent="요청을 저장하지 못했어요. 다시 눌러 주세요.";return}
-  m.textContent=req.scope==="all"?"지금 기준으로 찾으라고 Claude를 깨우는 중…":req.scope==="deep"?"이 소재를 깊게 조사하라고 깨우는 중…":"이 소재를 지금 기준으로 다시 확인하라고 깨우는 중…";
+  m.textContent=req.scope==="all"?"지금 기준으로 찾으라고 Claude를 깨우는 중…":req.scope==="deep"?"이 소재를 깊게 조사하라고 깨우는 중…":req.scope==="merge"?"보내 주신 답을 합쳐 스토리를 다듬으라고 깨우는 중…":"이 소재를 지금 기준으로 다시 확인하라고 깨우는 중…";
   let ok=false;
   if(MCP){try{await MCP.callTool("Claude Code Remote","fire_trigger",{trigger_id:FINDER,text:"제작기 버튼: refreshq/"+id});ok=true}catch(e){}}
-  m.textContent=ok?(req.scope==="all"?"찾는 중이에요. 5분쯤 뒤 여기에 새 소재가 올라오고 휴대폰 알림이 가요.":req.scope==="deep"?"깊게 조사 중이에요(10~15분). 끝나면 소재 칸 아래에 「깊게 조사 결과」가 생기고 알림이 가요.":"확인 중이에요. 몇 분 뒤 이 칸 내용이 새로 바뀌어요."):"요청은 남겼어요. 바로 깨우려면 허용이 필요해요 — 다시 눌러 「허용」을 골라 주세요.";
+  m.textContent=ok?(req.scope==="all"?"찾는 중이에요. 5분쯤 뒤 여기에 새 소재가 올라오고 휴대폰 알림이 가요.":req.scope==="deep"?"깊게 조사 중이에요(10~15분). 끝나면 소재 칸 아래에 「깊게 조사 결과」가 생기고 알림이 가요.":req.scope==="merge"?"답을 합치는 중이에요(5분쯤). 스토리 초안이 새로 바뀌어요.":"확인 중이에요. 몇 분 뒤 이 칸 내용이 새로 바뀌어요."):"요청은 남겼어요. 바로 깨우려면 허용이 필요해요 — 다시 눌러 「허용」을 골라 주세요.";
   try{DB.collection("refreshq").doc(id).onSnapshot(d=>{const x=d.data?.()||{};if(x.status==="done")m.textContent="✓ "+(x.message||"다 찾았어요");else if(x.status==="failed")m.textContent="찾지 못했어요: "+(x.message||"");else if(x.status==="working")m.textContent="찾는 중… "+(x.message||"")},()=>{})}catch(e){}
 }
 const nowStr=()=>{const n=new Date(),p=x=>String(x).padStart(2,"0");return `${n.getFullYear()}-${p(n.getMonth()+1)}-${p(n.getDate())}T${p(n.getHours())}:${p(n.getMinutes())}:${p(n.getSeconds())}`};
@@ -320,7 +333,7 @@ async function upd(r,patch){
     if($("go").disabled)return;$("go").disabled=true;$("msg").textContent="주문 넣는 중…";
     const area=CAT.areas.find(a=>a.id===S.area);
     const tp=TOPICS.find(t=>t.id===S.topic);
-    try{await col.doc("o"+Date.now()).set({topicId:tp?tp.id:"",topicTitle:tp?tp.title:"",topicSources:tp?(tp.sources||[]):[],topicDeep:tp&&tp.deep?tp.deep:null,sensitive:!!((area&&area.sensitive)||(tp&&tp.sensitive)),format:S.fmt,narr:S.narr,narrLangs:S.nlangs,area:area?area.name:"",subs:S.subs,moods:S.moods,free:$("free").value.trim().slice(0,500),len:S.len,at:nowStr(),stage:4,waiting:false,status:"open"});
+    try{await col.doc("o"+Date.now()).set({topicId:tp?tp.id:"",topicTitle:tp?tp.title:"",topicSources:tp?(tp.sources||[]):[],topicDeep:tp&&tp.deep?tp.deep:null,topicConfirmed:!!(tp&&tp.confirmed),topicNotes:tp&&tp.userNotes?tp.userNotes:"",sensitive:!!((area&&area.sensitive)||(tp&&tp.sensitive)),format:S.fmt,narr:S.narr,narrLangs:S.nlangs,area:area?area.name:"",subs:S.subs,moods:S.moods,free:$("free").value.trim().slice(0,500),len:S.len,at:nowStr(),stage:4,waiting:false,status:"open"});
       $("msg").textContent="주문을 넣었어요. 아래 진행판에서 단계가 넘어가는 걸 볼 수 있어요.";$("free").value="";S.topic=null;}
     catch(e){$("msg").textContent="주문을 저장하지 못했어요. 이 화면을 연 계정에 편집 권한이 있는지 확인해 주세요.";}
     draw();
