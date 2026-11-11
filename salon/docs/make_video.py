@@ -235,8 +235,9 @@ STEPS = [  # key, 자막 큰 줄, 자막 작은 줄, 동작, 설명서 그림 �
 ]
 
 def serve(root):
-    h = functools.partial(http.server.SimpleHTTPRequestHandler, directory=root)
-    h.log_message = lambda *a, **k: None
+    class Quiet(http.server.SimpleHTTPRequestHandler):
+        def log_message(self, *a): pass
+    h = functools.partial(Quiet, directory=root)
     srv = socketserver.TCPServer(("127.0.0.1", 0), h); threading.Thread(target=srv.serve_forever, daemon=True).start()
     return srv
 
@@ -248,7 +249,7 @@ def record(tmp):
         b = p.chromium.launch()
         ctx = b.new_context(viewport={"width": VW, "height": VH}, device_scale_factor=2, is_mobile=True, has_touch=True,
                             locale="ko-KR", timezone_id="Asia/Seoul", accept_downloads=True,
-                            record_video_dir=tmp, record_video_size={"width": VW * 2, "height": VH * 2},
+                            record_video_dir=tmp, record_video_size={"width": VW, "height": VH},
                             user_agent="Mozilla/5.0 (Linux; Android 14; Pixel 7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Mobile Safari/537.36")
         page = ctx.new_page(); r = Recorder(page)
         page.on("dialog", lambda d: d.accept())

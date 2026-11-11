@@ -444,20 +444,36 @@ $("slots").innerHTML=slots.map(s=>`
     <div class="btns">
       <label for="cam${s.i}">📷 찍기</label><label class="g" for="gal${s.i}">고르기</label>
     </div>
-    <input type="file" id="cam${s.i}" class="hide" accept="image/*" capture="user" data-slot="${s.i}" disabled>
-    <input type="file" id="gal${s.i}" class="hide" accept="image/*" data-slot="${s.i}" disabled>
+    <input type="file" id="cam${s.i}" class="hide" accept="image/*" capture="user" data-slot="${s.i}">
+    <input type="file" id="gal${s.i}" class="hide" accept="image/*" data-slot="${s.i}">
   </div>`).join("");
 
+
+function askAgree(inputId){
+  let ov=document.getElementById("agreeOv");
+  if(!ov){
+    ov=document.createElement("div");ov.id="agreeOv";
+    ov.style.cssText="position:fixed;inset:0;background:rgba(0,0,0,.55);display:flex;align-items:center;justify-content:center;z-index:9999;padding:16px";
+    ov.innerHTML='<div style="background:var(--card,#fff);color:var(--ink,#2b2220);border-radius:20px;padding:24px;max-width:360px;width:100%;font-size:19px;line-height:1.5"><b style="font-size:21px">손님 사진 동의</b><p style="margin:12px 0 20px">손님이 사진 촬영·미리보기에 동의하셨나요?<br><small style="color:#7a6a64">사진은 이 휴대폰 안에서만 처리돼요.</small></p><button id="agreeYes" style="width:100%;padding:16px;font-size:20px;font-weight:800;border:0;border-radius:14px;background:#c2410c;color:#fff">네, 동의하셨어요</button><button id="agreeNo" style="width:100%;margin-top:10px;padding:14px;font-size:18px;border:0;border-radius:14px;background:#eee;color:#333">아니요</button></div>';
+    document.body.appendChild(ov);
+    ov.querySelector("#agreeNo").addEventListener("click",()=>{ov.style.display="none";});
+  }
+  ov.style.display="flex";
+  ov.querySelector("#agreeYes").onclick=()=>{
+    ov.style.display="none";
+    const a=$("agree");a.checked=true;setAgree(true);
+    const inp=document.getElementById(inputId);if(inp)inp.click();
+  };
+}
 function setAgree(on){
   $("slots").classList.toggle("locked",!on);
-  document.querySelectorAll("#slots input[type=file]").forEach(x=>x.disabled=!on);
   if(on){hideMsg();loadVision().catch(()=>{});}
 }
 $("agree").addEventListener("change",e=>setAgree(e.target.checked));
 
 $("slots").addEventListener("click",e=>{
   const lab=e.target.closest(".btns label");
-  if(lab&&!agreed()){e.preventDefault();msg("먼저 위의 <b>“손님이 사진 촬영에 동의했어요”</b>에 체크해 주세요.","err");$("msg").scrollIntoView({block:"center"});return;}
+  if(lab&&!agreed()){e.preventDefault();askAgree(lab.getAttribute("for"));return;}
   const del=e.target.closest("[data-del]");if(del){clearSlot(+del.dataset.del);return;}
   const pt=e.target.closest("[data-paint]");if(pt){openEditor(+pt.dataset.paint);return;}
   const op=e.target.closest("[data-open]");if(op)openModal(+op.dataset.open);

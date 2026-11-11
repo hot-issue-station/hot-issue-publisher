@@ -2,18 +2,21 @@
    - 앱 껍데기(화면 파일·아이콘)는 설치 때 미리 저장 → 인터넷이 없어도 열림
    - 염색 미리보기의 MediaPipe 프로그램·모델은 color.html을 처음 쓸 때 받아서 저장
    - 손님 기록(localStorage)은 여기서 다루지 않음 */
-const VER = "dangol-shell-v2";
+const VER = "dangol-shell-v3";
 const MODEL_CACHE = "dangol-models-v1";
 const SHELL = [
   "./", "index.html", "color.html", "manifest.webmanifest",
   "icons/icon.svg", "icons/icon-192.png", "icons/icon-512.png", "icons/apple-touch-icon.png"
 ];
+const OPTIONAL = ["help.html"];
 const isModel = u =>
   (u.hostname === "cdn.jsdelivr.net" && u.pathname.startsWith("/npm/@mediapipe/")) ||
   (u.hostname === "storage.googleapis.com" && u.pathname.startsWith("/mediapipe-models/"));
 
 self.addEventListener("install", e => {
-  e.waitUntil(caches.open(VER).then(c => c.addAll(SHELL)).then(() => self.skipWaiting()));
+  /* help.html(사용법)은 아직 없을 수 있어 따로 받음: 없어도 설치는 계속됨 */
+  e.waitUntil(caches.open(VER).then(c => c.addAll(SHELL).then(() => Promise.all(OPTIONAL.map(u => c.add(u).catch(() => {})))))
+    .then(() => self.skipWaiting()));
 });
 self.addEventListener("activate", e => {
   e.waitUntil(
