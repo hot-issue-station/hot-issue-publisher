@@ -14,14 +14,22 @@
       "ad_videos": [],
       "instagram": "",
       "buy_hint": "도미노피자 매장·자사 주문 (몰 입점 미확인)",
-      "rooms": ["tv", "daily", "goods_ad"],
+      "rooms": [
+        "tv",
+        "daily",
+        "goods_ad"
+      ],
       "sources": [
         "https://www.fnnews.com/news/202607131110048695",
         "https://www.segye.com/newsView/20260713511796",
         "https://mobile.newsis.com/view/NISX20260716_0003712528",
         "https://isplus.com/article/view/isp202611020085"
       ],
-      "note": "광고 누적 조회수 1억 6000만 회 이상(일간스포츠 11/03). 브랜드 공식 광고 영상 ID는 확인하지 못함."
+      "note": "광고 누적 조회수 1억 6000만 회 이상(일간스포츠 11/03). 브랜드 공식 광고 영상 ID는 확인하지 못함.",
+      "gallery": {
+        "id": "dominos",
+        "shown": true
+      }
     },
     {
       "brand": "CU (BGF리테일)",
@@ -34,14 +42,21 @@
       "ad_videos": [],
       "instagram": "",
       "buy_hint": "CU 편의점 매장 (협업 상품은 시즌 한정일 수 있음)",
-      "rooms": ["goods_ad", "daily"],
+      "rooms": [
+        "goods_ad",
+        "daily"
+      ],
       "sources": [
         "https://www.segye.com/newsView/20260713511796",
         "https://www.newsis.com/view/NISX20260728_0003726736",
         "https://www.hankyung.com/article/202609043388g",
         "https://isplus.com/article/view/isp202611020085"
       ],
-      "note": "이코노미스트 10/30 기사는 CU를 '모델'이 아닌 '협업 상품'으로만 적었음. 포토카드 증정 여부는 기사로 확인하지 못함."
+      "note": "이코노미스트 10/30 기사는 CU를 '모델'이 아닌 '협업 상품'으로만 적었음. 포토카드 증정 여부는 기사로 확인하지 못함.",
+      "gallery": {
+        "id": "cu",
+        "shown": true
+      }
     },
     {
       "brand": "동아오츠카 나랑드사이다",
@@ -54,14 +69,22 @@
       "ad_videos": [],
       "instagram": "",
       "buy_hint": "편의점·동아오츠카 자사몰·온라인 채널 (기사 기준. 쿠팡 등 개별 상품명은 미확인)",
-      "rooms": ["tv", "goods_ad", "daily"],
+      "rooms": [
+        "tv",
+        "goods_ad",
+        "daily"
+      ],
       "sources": [
         "https://www.wikitree.co.kr/articles/1155301",
         "https://www.news1.kr/industry/distribution/6270836",
         "https://www.hankyung.com/article/202609043388g",
         "https://economist.co.kr/article/view/ecn202610300057"
       ],
-      "note": "해안도로를 달리며 CM송을 부르는 광고(이코노미스트 8/14). 모델 발탁 뒤 한 달 매출 48% 증가. 거제에 1만 6200캔 기부. 동아오츠카 공식 유튜브 콘텐츠가 1800만 회 이상 조회됐지만 영상 ID는 확인하지 못함."
+      "note": "해안도로를 달리며 CM송을 부르는 광고(이코노미스트 8/14). 모델 발탁 뒤 한 달 매출 48% 증가. 거제에 1만 6200캔 기부. 동아오츠카 공식 유튜브 콘텐츠가 1800만 회 이상 조회됐지만 영상 ID는 확인하지 못함.",
+      "gallery": {
+        "id": "narangd",
+        "shown": true
+      }
     },
     {
       "brand": "할리스",
@@ -74,14 +97,22 @@
       "ad_videos": [],
       "instagram": "",
       "buy_hint": "할리스 매장 (리센느 세트는 시즌 한정일 수 있음)",
-      "rooms": ["tv", "goods_ad", "daily"],
+      "rooms": [
+        "tv",
+        "goods_ad",
+        "daily"
+      ],
       "sources": [
         "https://m.ddaily.co.kr/page/view/2026081817050568051",
         "https://www.specialtimes.co.kr/news/articleView.html?idxno=451506",
         "https://isplus.com/article/view/isp202608260031",
         "https://isplus.com/article/view/isp202611020085"
       ],
-      "note": "광고 3편: 호랑이와 곶감(원이), 별주부전(메이·제나), 금임자 흑임자(리브·미나미)."
+      "note": "광고 3편: 호랑이와 곶감(원이), 별주부전(메이·제나), 금임자 흑임자(리브·미나미).",
+      "gallery": {
+        "id": "hollys",
+        "shown": true
+      }
     },
     {
       "brand": "그레인온 카사베르디",
@@ -92,18 +123,30 @@
       "status_basis": "이코노미스트 10/30 기사에서 현재 모델로 언급",
       "confidence": "확인",
       "ad_videos": [
-        {"video_id": "sa29RXO7ruM", "title": "[BASE NOTES] RESCENE (리센느) 그레인온 카사베루디 광고 Behind", "channel": "RESCENE", "kind": "리센느 공식 채널 비하인드 (브랜드 채널 아님)"}
+        {
+          "video_id": "sa29RXO7ruM",
+          "title": "[BASE NOTES] RESCENE (리센느) 그레인온 카사베루디 광고 Behind",
+          "channel": "RESCENE",
+          "kind": "리센느 공식 채널 비하인드 (브랜드 채널 아님)"
+        }
       ],
       "instagram": "",
       "buy_hint": "미확인",
-      "rooms": ["goods_ad", "daily"],
+      "rooms": [
+        "goods_ad",
+        "daily"
+      ],
       "sources": [
         "https://www.twig24.com/news/2026/07/29/20260729500169",
         "https://isplus.com/article/view/isp202607290114",
         "https://economist.co.kr/article/view/ecn202607290053",
         "https://economist.co.kr/article/view/ecn202610300057"
       ],
-      "note": "레드와인 비니거지만 식초이며 주류가 아니라서 제외 대상이 아님. 그레인온이 카사베르디를 들여오는 회사인지는 기사로 확인하지 못함."
+      "note": "레드와인 비니거지만 식초이며 주류가 아니라서 제외 대상이 아님. 그레인온이 카사베르디를 들여오는 회사인지는 기사로 확인하지 못함.",
+      "gallery": {
+        "id": "casaverdi",
+        "shown": true
+      }
     },
     {
       "brand": "형지엘리트 엘리트학생복",
@@ -116,13 +159,20 @@
       "ad_videos": [],
       "instagram": "",
       "buy_hint": "엘리트학생복 매장 (교복이라 제휴 몰 판매는 해당이 적음)",
-      "rooms": ["goods_ad", "daily"],
+      "rooms": [
+        "goods_ad",
+        "daily"
+      ],
       "sources": [
         "https://www.newsis.com/view/NISX20260728_0003726736",
         "https://economist.co.kr/article/view/ecn202608140004",
         "https://isplus.com/article/view/isp202611020085"
       ],
-      "note": "알려진 단서 '엘리트(학생복?)'는 엘리트학생복이 맞음."
+      "note": "알려진 단서 '엘리트(학생복?)'는 엘리트학생복이 맞음.",
+      "gallery": {
+        "id": "elite",
+        "shown": true
+      }
     },
     {
       "brand": "우리은행",
@@ -133,16 +183,28 @@
       "status_basis": "10/30 광고 공개, 이코노미스트 10/30 기사에서 새 모델로 언급",
       "confidence": "확인",
       "ad_videos": [
-        {"video_id": "spN_ZVoONdg", "title": "우리은행 X RESCENE (리센느)  | '우리는 해' Making Film", "channel": "우리은행", "kind": "브랜드 공식 채널 메이킹 필름"}
+        {
+          "video_id": "spN_ZVoONdg",
+          "title": "우리은행 X RESCENE (리센느)  | '우리는 해' Making Film",
+          "channel": "우리은행",
+          "kind": "브랜드 공식 채널 메이킹 필름"
+        }
       ],
       "instagram": "",
       "buy_hint": "해당 없음 (금융 서비스)",
-      "rooms": ["anwonjalbu", "tv"],
+      "rooms": [
+        "anwonjalbu",
+        "tv"
+      ],
       "sources": [
         "https://economist.co.kr/article/view/ecn202610300005",
         "https://economist.co.kr/article/view/ecn202610300057"
       ],
-      "note": "원이가 '은행 광고 주시면…'이라고 했던 말이 실제로 이뤄져 안원잘부 방과 이어 붙이기 좋음. 출처 2곳이 같은 매체(이코노미스트)의 다른 기사이고, 공식 영상으로 보완함."
+      "note": "원이가 '은행 광고 주시면…'이라고 했던 말이 실제로 이뤄져 안원잘부 방과 이어 붙이기 좋음. 출처 2곳이 같은 매체(이코노미스트)의 다른 기사이고, 공식 영상으로 보완함.",
+      "gallery": {
+        "id": "woori",
+        "shown": true
+      }
     },
     {
       "brand": "MLB (F&F)",
@@ -153,17 +215,29 @@
       "status_basis": "10/07 겨울 캠페인 진행, 이코노미스트 10/30 기사에서 현재 모델로 언급",
       "confidence": "확인",
       "ad_videos": [
-        {"video_id": "SsoyXhImVGc", "title": "[BASE NOTES] RESCENE (리센느) MLB 광고 Behind", "channel": "RESCENE", "kind": "리센느 공식 채널 비하인드 (브랜드 채널 아님)"}
+        {
+          "video_id": "SsoyXhImVGc",
+          "title": "[BASE NOTES] RESCENE (리센느) MLB 광고 Behind",
+          "channel": "RESCENE",
+          "kind": "리센느 공식 채널 비하인드 (브랜드 채널 아님)"
+        }
       ],
       "instagram": "",
       "buy_hint": "MLB 매장·온라인 (몰 입점 미확인)",
-      "rooms": ["goods_ad", "daily"],
+      "rooms": [
+        "goods_ad",
+        "daily"
+      ],
       "sources": [
         "https://supple.kr/news/cmtm7qcg0005th4hgvyjdm9aw",
         "https://www.wikitree.co.kr/articles/1165467",
         "https://economist.co.kr/article/view/ecn202610300057"
       ],
-      "note": "원이가 빠진 이유는 기사에 없음. 원이는 같은 시기 와키윌리 개인 모델(확인 부족 항목 참고)."
+      "note": "원이가 빠진 이유는 기사에 없음. 원이는 같은 시기 와키윌리 개인 모델(확인 부족 항목 참고).",
+      "gallery": {
+        "id": "mlb",
+        "shown": true
+      }
     },
     {
       "brand": "에이페 (epais, 어댑트)",
@@ -176,13 +250,20 @@
       "ad_videos": [],
       "instagram": "",
       "buy_hint": "미확인 (헤어케어 제품이라 올리브영·쿠팡 입점 가능성이 있어 대표 확인 필요)",
-      "rooms": ["goods_ad", "daily"],
+      "rooms": [
+        "goods_ad",
+        "daily"
+      ],
       "sources": [
         "https://cosmorning.com/mobile/article.html?no=53319",
         "https://economist.co.kr/article/view/ecn202608140004",
         "https://economist.co.kr/article/view/ecn202610300057"
       ],
-      "note": "'왓츠 인 마이 백' 콘텐츠로 멤버들의 헤어케어 루틴 소개."
+      "note": "'왓츠 인 마이 백' 콘텐츠로 멤버들의 헤어케어 루틴 소개.",
+      "gallery": {
+        "id": "epais",
+        "shown": true
+      }
     },
     {
       "brand": "한스킨",
@@ -195,12 +276,18 @@
       "ad_videos": [],
       "instagram": "",
       "buy_hint": "미확인 (화장품이라 올리브영 입점 가능성이 있어 대표 확인 필요)",
-      "rooms": ["goods_ad"],
+      "rooms": [
+        "goods_ad"
+      ],
       "sources": [
         "https://www.hankyung.com/article/202609043388g",
         "https://economist.co.kr/article/view/ecn202610300057"
       ],
-      "note": "광고 제품명은 기사로 확인하지 못함."
+      "note": "광고 제품명은 기사로 확인하지 못함.",
+      "gallery": {
+        "id": "hanskin",
+        "shown": true
+      }
     },
     {
       "brand": "티오더",
@@ -213,12 +300,18 @@
       "ad_videos": [],
       "instagram": "",
       "buy_hint": "해당 없음 (가게용 서비스)",
-      "rooms": ["daily"],
+      "rooms": [
+        "daily"
+      ],
       "sources": [
         "https://sports.khan.co.kr/article/202607072318003/amp",
         "https://economist.co.kr/article/view/ecn202610300057"
       ],
-      "note": "리센느의 첫 IT 업계 협업."
+      "note": "리센느의 첫 IT 업계 협업.",
+      "gallery": {
+        "id": "torder",
+        "shown": true
+      }
     },
     {
       "brand": "카카오 카카오톡",
@@ -229,17 +322,29 @@
       "status_basis": "카카오 발표에서 캠페인 기간이 '9월 한 달'. 그러나 이코노미스트 10/30 기사는 현재 모델 목록에 넣음",
       "confidence": "확인",
       "ad_videos": [
-        {"video_id": "3OoTrPkjlyM", "title": "[BASE NOTES] RESCENE (리센느) 카카오톡 광고 Behind", "channel": "RESCENE", "kind": "리센느 공식 채널 비하인드 (브랜드 채널 아님)"}
+        {
+          "video_id": "3OoTrPkjlyM",
+          "title": "[BASE NOTES] RESCENE (리센느) 카카오톡 광고 Behind",
+          "channel": "RESCENE",
+          "kind": "리센느 공식 채널 비하인드 (브랜드 채널 아님)"
+        }
       ],
       "instagram": "",
       "buy_hint": "해당 없음 (앱 서비스)",
-      "rooms": ["tv", "daily"],
+      "rooms": [
+        "tv",
+        "daily"
+      ],
       "sources": [
         "https://www.kakaocorp.com/page/detail/12126",
         "https://www.hankyung.com/article/202609028958g",
         "https://economist.co.kr/article/view/ecn202610300057"
       ],
-      "note": "카카오 공식 보도자료(kakaocorp.com)를 직접 확인함."
+      "note": "카카오 공식 보도자료(kakaocorp.com)를 직접 확인함.",
+      "gallery": {
+        "shown": false,
+        "why": "현재 모델 근거 부족(unclear) — 넣지 않음"
+      }
     },
     {
       "brand": "넥슨 EA SPORTS FC 모바일",
@@ -252,12 +357,19 @@
       "ad_videos": [],
       "instagram": "",
       "buy_hint": "해당 없음 (게임)",
-      "rooms": ["daily"],
+      "rooms": [
+        "daily"
+      ],
       "sources": [
         "https://www.invenglobal.com/articles/22734/its-rescene-not-le-cene-an-fc-mobile-update-guide",
         "https://economist.co.kr/article/view/ecn202610300057"
       ],
-      "note": "인벤글로벌 기사에는 계약 형태(광고 모델인지 협업인지)가 없음. 게임 광고라서 청소년 팬에게 문제는 없지만 확률형 아이템이 있는 게임이므로 넣을지는 대표가 판단."
+      "note": "인벤글로벌 기사에는 계약 형태(광고 모델인지 협업인지)가 없음. 게임 광고라서 청소년 팬에게 문제는 없지만 확률형 아이템이 있는 게임이므로 넣을지는 대표가 판단.",
+      "gallery": {
+        "id": "fcmobile",
+        "shown": false,
+        "why": "hall.html ENDORSEMENTS 에 enabled:false 로만 넣음(대표 결정 대기)"
+      }
     },
     {
       "brand": "랑방 (LANVIN 향수)",
@@ -270,12 +382,18 @@
       "ad_videos": [],
       "instagram": "",
       "buy_hint": "미확인",
-      "rooms": ["goods_ad"],
+      "rooms": [
+        "goods_ad"
+      ],
       "sources": [
         "https://www.newsis.com/view/NISX20260728_0003726736",
         "https://economist.co.kr/article/view/ecn202608140004"
       ],
-      "note": "광고 모델이라기보다 매거진 화보 협업에 가까움. 굿즈샵에 넣을지는 대표가 판단."
+      "note": "광고 모델이라기보다 매거진 화보 협업에 가까움. 굿즈샵에 넣을지는 대표가 판단.",
+      "gallery": {
+        "shown": false,
+        "why": "현재 모델 근거 부족(unclear) — 넣지 않음"
+      }
     },
     {
       "brand": "바이오던스",
@@ -288,11 +406,18 @@
       "ad_videos": [],
       "instagram": "",
       "buy_hint": "미확인",
-      "rooms": ["anwonjalbu", "goods_ad"],
+      "rooms": [
+        "anwonjalbu",
+        "goods_ad"
+      ],
       "sources": [
         "https://economist.co.kr/article/view/ecn202608140004"
       ],
-      "note": "기사 1곳만 확인했으므로 '확인 부족'. 갤러리에 넣기 전에 기사 1곳을 더 확인해야 함."
+      "note": "기사 1곳만 확인했으므로 '확인 부족'. 갤러리에 넣기 전에 기사 1곳을 더 확인해야 함.",
+      "gallery": {
+        "shown": false,
+        "why": "현재 모델 근거 부족(unclear) — 넣지 않음"
+      }
     },
     {
       "brand": "와키윌리",
@@ -305,11 +430,18 @@
       "ad_videos": [],
       "instagram": "",
       "buy_hint": "미확인",
-      "rooms": ["anwonjalbu", "goods_ad"],
+      "rooms": [
+        "anwonjalbu",
+        "goods_ad"
+      ],
       "sources": [
         "https://www.hankyung.com/article/202609043388g"
       ],
-      "note": "기사 1곳만 확인했으므로 '확인 부족'."
+      "note": "기사 1곳만 확인했으므로 '확인 부족'.",
+      "gallery": {
+        "shown": false,
+        "why": "현재 모델 근거 부족(unclear) — 넣지 않음"
+      }
     },
     {
       "brand": "삼성전자 갤럭시 Z 폴드8",
@@ -322,20 +454,28 @@
       "ad_videos": [],
       "instagram": "",
       "buy_hint": "갤럭시 폴드8 (공식 모델 확인 뒤 판단)",
-      "rooms": ["daily"],
+      "rooms": [
+        "daily"
+      ],
       "sources": [
         "https://economist.co.kr/article/view/ecn202609220015",
         "https://biz.sbs.co.kr/amp/article/20000341927",
         "https://economist.co.kr/article/view/ecn202610300057"
       ],
-      "note": "공식 광고 모델 계약은 확인되지 않음. '푸드트럭 역조공'은 열어 본 기사에서 찾지 못함. 기사는 2곳 이상이지만 '공식 모델'이라는 근거가 없어 '확인 부족'."
+      "note": "공식 광고 모델 계약은 확인되지 않음. '푸드트럭 역조공'은 열어 본 기사에서 찾지 못함. 기사는 2곳 이상이지만 '공식 모델'이라는 근거가 없어 '확인 부족'.",
+      "gallery": {
+        "shown": false,
+        "why": "현재 모델 근거 부족(unclear) — 넣지 않음"
+      }
     }
   ],
   "not_found": [
     {
       "brand": "롯데칠성음료",
       "note": "리센느가 모델이라는 기사를 찾지 못함. 이코노미스트 10/30 칠성사이다 기사에서 '칠성사이다 리치' 모델은 하츠투하츠. 리센느의 사이다 광고는 동아오츠카 나랑드사이다이므로, 단서와 헷갈린 것으로 보임.",
-      "sources": ["https://economist.co.kr/article/view/ecn202610300037"]
+      "sources": [
+        "https://economist.co.kr/article/view/ecn202610300037"
+      ]
     }
   ],
   "excluded": [
@@ -354,5 +494,11 @@
     "status": "확인 못 함",
     "items": [],
     "note": "검색 2회(굿즈 관련)와 채널 스토어 페이지 직접 열기를 시도했지만 공식 굿즈 판매처를 확인하지 못함. 유튜브 채널 페이지는 접속 오류가 났고, 다른 채널 ID(UCW5BnP05WrO2FFQTIcc0g7A)는 '리센느비밀일기' 채널이며 스토어 상품이 보이지 않았음. 대표가 휴대폰으로 원이 채널의 '스토어' 탭이나 커뮤니티 공지에 있는 굿즈 판매처 주소를 알려 주면 상품명·판매 기간·제휴 프로그램 여부를 이어서 확인할 수 있음."
+  },
+  "gallery_use": {
+    "updated_at": "2026-11-11",
+    "where": "hall.html 설정 ENDORSEMENTS — 모든 방 뒤 벽 「리센느 공식 광고 모델」 판 + 굿즈 샵 「광고 제품」 구역(goods_ad). 글자 판만(로고·사진 없음), 「유료 광고 아님」 표시, 영상 패널 안에는 넣지 않음(YouTube API 정책 III.G).",
+    "corner": "우리은행 메이킹 필름(spN_ZVoONdg)은 「광고관 코너」 카드로만, 재생은 일반 영상 패널",
+    "excluded": "KGB(주류), unclear 6건(카카오톡·FC모바일·랑방·바이오던스·와키윌리·갤럭시)"
   }
 }

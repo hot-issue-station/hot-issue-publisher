@@ -47,6 +47,9 @@ const HALLS = [
           {id:"nM_01Hkho9Q", kind:"short", added_at:"2026-11-11", title:"리센느 초동, 숫자로 보면",
            desc:"리센느 「PULSE」 첫 주 기록을 숫자로 정리했어요.", channel:"덕심저장소", picks:[]},
         ]},
+      /* 이번 앨범 방: 앨범 정보는 ALBUMS.pulse. 공식 MV·티저가 확인되면 videos 에 {id, kind, official:true, title, added_at} */
+      { id:"album_pulse", name:{ko:"이번 앨범 · PULSE", ja:"最新アルバム · PULSE", en:"New Album · PULSE", zh:"最新專輯 · PULSE"}, decor:"album", color:"#e8739c", album:"pulse",
+        desc:{ko:"2026년 11월 3일 발매 미니 4집", ja:"2026年11月3日リリースのミニ4集", en:"4th mini album, out Nov 3, 2026", zh:"2026年11月3日發行的第四張迷你專輯"}, videos:[] },
       { id:"anwonjalbu", name:{ko:"안원잘부", ja:"アンウォンジャルブ", en:"Anwonjalbu", zh:"Anwonjalbu"}, decor:"cozy", color:"#f2a86e", videos:[] },
       { id:"tv", name:{ko:"TV 예능", ja:"地上波バラエティ", en:"TV Shows", zh:"電視綜藝"}, decor:"studio", color:"#5bb6e6", videos:[] },
       { id:"youtube_guest", name:{ko:"유튜브 출연", ja:"YouTube出演", en:"YouTube Guest", zh:"YouTube 客串"}, decor:"youtube", color:"#ee7d7d", videos:[] },
@@ -76,19 +79,875 @@ const HALLS = [
      넣지 않는 것: 가족·학교·사는 곳 등 사생활, 열애·루머·논란, 공식 확인 안 된 소문.
    ★ quiz는 source(공식 출처 링크)와 checked_at이 비어 있으면 화면에 나오지 않는다(안전장치).
    형식: {id, hall, room, type:"find"|"quiz", hint:{ko,ja,en,zh}, pos?:[x,y,z](find), question?, choices?, answer?(0부터), source?, checked_at?, reward:{video_id, title}} */
+/* 앨범 방 정보. 가사 본문은 저작권 때문에 싣지 않는다 → 곡마다 lyrics_url(멜론·벅스 등 공식 음원 사이트 곡 페이지, 확인 전 null → 버튼 숨김).
+   credits·story 는 확인된 것/우리가 쓴 글만(비어 있으면 숨김). tracks 순서 = 기사에 나온 순서(공식 트랙 순서 확인 필요) */
+const ALBUMS = {
+  pulse:{ title:"PULSE", release:"2026-11-03", kind:{ko:"미니 4집", ja:"ミニ4集", en:"4th mini album", zh:"第四張迷你專輯"},
+    intro:{ko:"2026년 11월 3일에 나온 리센느의 미니 4집 「PULSE」예요. 타이틀곡 「위드」를 비롯해 다섯 곡이 실렸어요. '너'라는 존재의 목소리에 다시 뛰기 시작한 마음, 그리고 서로에게 용기가 되어 주자는 마음을 담았다고 해요. 향기로 장면을 떠올리게 하는 리센느답게, 이번에는 무대와 객석의 온기를 닮은 머스크 향을 골랐대요.",
+           ja:"2026年11月3日にリリースされたRESCENEのミニ4集『PULSE』。タイトル曲「위드」を含む5曲が収録されています。「君」という存在の声に再び動き出した心、そしてお互いの勇気になろうという思いを込めたそうです。香りで場面を思い出させるRESCENEらしく、今回はステージと客席の温もりに似たムスクの香りを選んだそうです。",
+           en:"PULSE is RESCENE's 4th mini album, released November 3, 2026, with five songs led by the title track \"위드.\" It is said to capture a heart that starts beating again at the voice of \"you,\" and the wish to be each other's courage. True to a group that recalls scenes through scent, this time they chose a musk scent that resembles the warmth between the stage and the audience.",
+           zh:"RESCENE於2026年11月3日發行的第四張迷你專輯《PULSE》，收錄主打歌〈위드〉在內共五首歌。據說專輯唱出了因「你」的聲音而再次跳動的心，以及想成為彼此勇氣的心意。延續以香氣喚起場景的RESCENE風格，這次選了宛如舞台與觀眾席溫度的麝香香氣。"},
+    sources:["https://isplus.com/article/view/isp202611010090"], checked_at:"2026-11-11",
+    tracks:[   // title = 기사 표기(공식 영문 표기는 확인 전). story = 우리가 쓸 짧은 곡 해설(TODO). credits = 확인된 작사·작곡만
+      {title:"위드", is_title:true, story:null, lyrics_url:null, credits:{lyrics:[], music:[]}},   // TODO: story
+      {title:"파이니스트 띵", story:null, lyrics_url:null, credits:{lyrics:[], music:[]}},           // TODO
+      {title:"백화요란 (인사이드 아웃)", story:null, lyrics_url:null, credits:{lyrics:[], music:[]}}, // TODO
+      {title:"미미", story:null, lyrics_url:null, credits:{lyrics:[], music:[]}},                   // TODO
+      {title:"드래곤", story:null, lyrics_url:null, credits:{lyrics:[], music:[]}},                 // TODO
+    ]},
+};
+/* ===== 리센느관 전시 문구(gallery/content_rescene.json 에서 합침, 2026-11-11). 다른 작가가 쓰고 출처를 확인한 글 — 고치려면 content_rescene.json 을 고친 뒤 다시 합친다.
+   ※ 고향(출신 도시) 표현은 대표 확인 전이라 뺐다(시 홍보대사·축하 같은 사실은 그대로). zh-Hant → zh. 멤버 공식 색·미확인 생일·포지션은 null(표시 안 함) */
+const CONTENT = {
+ "hall": "rescene",
+ "checked_at": "2026-11-11",
+ "intro": {
+  "ko": "리센느관에 오신 것을 환영해요. 리센느(RESCENE)는 더뮤즈엔터테인먼트의 5인조 걸그룹으로, 원이·리브·미나미·메이·제나가 2024년 3월 26일 싱글 「Re:Scene」으로 데뷔했어요. 2024년 8월 미니 1집 「SCENEDROME」에 실린 「LOVE ATTACK」은 2026년 여름 멜론 TOP100 1위에 오르며 다시 사랑받았고, 같은 여름 「Pretty Girl」로 데뷔 후 첫 음악방송 1위도 안았어요. 팬덤 이름은 '향기로 장면을 떠올리게 한다'는 뜻을 담은 리마인(REMINE). 여섯 개의 방을 천천히 걸으며, 그 장면들을 함께 떠올려 보세요.",
+  "ja": "RESCENE館へようこそ。RESCENE(リセンヌ)はThe Muze Entertainment所属の5人組ガールズグループで、ウォニ・リブ・ミナミ・メイ・ジェナの5人が2024年3月26日、シングル『Re:Scene』でデビューしました。2024年8月のミニ1集『SCENEDROME』に収録された「LOVE ATTACK」は2026年夏にMelon TOP100で1位となって再び愛され、同じ夏には「Pretty Girl」でデビュー後初の音楽番組1位も手にしました。ファンダム名は「香りで場面を思い出させる」という意味を込めたREMINE(リマイン)。6つの部屋をゆっくり歩きながら、その場面を一緒に思い出してみてください。",
+  "en": "Welcome to the RESCENE Hall. RESCENE is a five-member girl group from The Muze Entertainment — WONI, LIV, MINAMI, MAY and ZENA — who debuted on March 26, 2024 with the single album Re:Scene. \"LOVE ATTACK,\" from their August 2024 first mini album SCENEDROME, found new love in summer 2026 when it reached No. 1 on the Melon TOP100, and that same summer \"Pretty Girl\" gave them their first music-show win. Their fandom is called REMINE, a name about being reminded of a scene through a scent. Take your time walking through the six rooms and relive those scenes with us.",
+  "zh": "歡迎來到RESCENE館。RESCENE是The Muze Entertainment旗下的五人女子團體，WONI、LIV、MINAMI、MAY、ZENA於2024年3月26日以單曲專輯《Re:Scene》出道。收錄於2024年8月首張迷你專輯《SCENEDROME》的〈LOVE ATTACK〉在2026年夏天登上Melon TOP100冠軍，再次被大家愛上；同一個夏天，她們也以〈Pretty Girl〉拿下出道後第一座音樂節目一位。粉絲名REMINE，意思是「讓香氣喚起某個場景」。請慢慢走過六個房間，和我們一起重溫那些場景。"
+ },
+ "intro_sources": [
+  "https://isplus.com/article/view/isp202403260139",
+  "https://sports.khan.co.kr/article/202402292225003",
+  "https://v.daum.net/v/20240222183439798",
+  "https://news.tf.co.kr/read/ogmeta/2339259.htm",
+  "https://v.daum.net/v/20260711060326717",
+  "https://www.khan.co.kr/article/202607240600031/",
+  "https://soompi.com/article/1674005wpp/rescene-announces-official-fandom-name"
+ ],
+ "rooms": {
+  "stage": {
+   "desc": {
+    "ko": "엠카운트다운부터 인기가요 1위 앵콜, 밴드 라이브까지 — 리센느의 무대를 한자리에.",
+    "ja": "M COUNTDOWNから人気歌謡1位アンコール、バンドライブまで――RESCENEのステージを一堂に。",
+    "en": "From M COUNTDOWN to an Inkigayo winner's encore and a band live — RESCENE's stages in one room.",
+    "zh": "從M COUNTDOWN、人氣歌謠一位安可到樂團現場——RESCENE的舞台齊聚一堂。"
+   },
+   "story": {
+    "ko": "이 방의 주인공은 단연 「LOVE ATTACK」이에요. 2024년 여름에 나온 노래가 2026년 여름 다시 차트 꼭대기에 오르기까지, 무대는 늘 그 자리에 있었어요. 같은 노래도 스페셜 무대, 1위 앵콜, 밴드 라이브에서 저마다 다른 얼굴을 보여 줘요. 「Pretty Girl」 컴백 무대는 이 곡으로 첫 음악방송 1위를 안기 바로 전의 장면이에요. 오래 기다려 준 노래가 끝내 빛을 보는 이야기, 그 시작을 여기서 만나 보세요.",
+    "ja": "この部屋の主役は、やはり「LOVE ATTACK」。2024年夏に出た曲が2026年夏に再びチャートの頂点に立つまで、ステージはいつもそこにありました。同じ曲でも、スペシャルステージ、1位アンコール、バンドライブでそれぞれ違う表情を見せてくれます。「Pretty Girl」のカムバックステージは、この曲で初の音楽番組1位をつかむ直前の場面です。長く待っていた歌がついに光を浴びる物語、その始まりをここで。",
+    "en": "The star of this room is, without question, \"LOVE ATTACK.\" A song released in summer 2024 climbed back to the top of the charts in summer 2026, and the stage was there all along. The same song shows a different face at a special stage, a winner's encore and a band live. The \"Pretty Girl\" comeback stage captures the moment just before that song brought their first music-show win. This is the story of a song that waited patiently for its light — start it here.",
+    "zh": "這個房間的主角，當然是〈LOVE ATTACK〉。一首2024年夏天發行的歌，在2026年夏天重新登上排行榜頂端，而舞台一直都在。同一首歌，在特別舞台、一位安可和樂團現場裡各有不同的表情。〈Pretty Girl〉回歸舞台，則是她們憑這首歌拿下首座音樂節目一位前夕的畫面。一首耐心等待的歌終於發光的故事，就從這裡開始。"
+   }
+  },
+  "anwonjalbu": {
+   "desc": {
+    "ko": "리더 원이의 개인 채널 「안녕하세요원이입니다잘부탁드립니다」, 줄여서 안원잘부.",
+    "ja": "リーダー・ウォニの個人チャンネル「アンニョンハセヨウォニイムニダチャルプタッカムニダ」、略してアンウォンジャルブ。",
+    "en": "Leader WONI's own channel, \"Hello, I'm Woni, Nice to Meet You\" — Anwonjalbu for short.",
+    "zh": "隊長WONI的個人頻道「안녕하세요원이입니다잘부탁드립니다」，簡稱「安元賈部」(Anwonjalbu)。"
+   },
+   "story": {
+    "ko": "리더 원이가 연 작은 채널에서 큰 이야기가 시작됐어요. 미나미의 '거제 야호!' 한마디가 짧은 영상으로 퍼져 나가면서, 리센느의 노래를 다시 찾아 듣는 사람들이 늘어났어요. 거제시는 2026년 5월 리센느를 홍보대사로 맞았고, 9월에는 시의회가 멤버 모두를 명예시민으로 정했어요. 사투리로 하루를 보내고, 성수를 걷고, 멤버들이 하나둘 찾아오는 동안 채널은 다섯 사람의 놀이터가 되었어요. 웃다 보면 어느새 이 그룹이 좋아져 있는 방이에요.",
+    "ja": "リーダーのウォニが開いた小さなチャンネルから、大きな物語が始まりました。ミナミの「巨済ヤッホー!」のひと言がショート動画で広がり、RESCENEの曲を改めて聴く人が増えていきました。巨済(コジェ)市は2026年5月にRESCENEを広報大使に迎え、9月には市議会がメンバー全員を名誉市民に決めました。方言で一日を過ごし、聖水(ソンス)を歩き、メンバーが一人また一人と訪ねてくるうちに、チャンネルは5人の遊び場になりました。笑っているうちに、いつの間にかこのグループが好きになっている部屋です。",
+    "en": "A big story began on a small channel started by leader WONI. MINAMI's single line, \"Geoje yaho!\", spread through short-form video, and more and more people went back to listen to RESCENE's songs. The city of Geoje named RESCENE its ambassadors in May 2026, and in September the city council made every member an honorary citizen. Through a day spent speaking only in dialect, a walk around Seongsu, and members dropping in one by one, the channel became a playground for all five. Laugh along here, and before you know it you'll be fond of this group.",
+    "zh": "一個大故事，從隊長WONI開的小頻道開始。MINAMI一句「巨濟 야호(呀呼)!」透過短影音傳開，越來越多人回頭去聽RESCENE的歌。巨濟市在2026年5月邀請RESCENE擔任宣傳大使，9月市議會更將全體成員選為榮譽市民。用方言過一整天、逛聖水洞、成員一個個來串門子，這個頻道成了五個人的遊樂場。笑著笑著，不知不覺就喜歡上這個團體了。"
+   }
+  },
+  "tv": {
+   "desc": {
+    "ko": "전참시·놀라운 토요일·아는 형님 — 방송사 예능 속 리센느.",
+    "ja": "『全知的おせっかい視点』『驚きの土曜日』『知ってるお兄さん』――バラエティの中のRESCENE。",
+    "en": "Omniscient Interfering View, Amazing Saturday, Knowing Bros — RESCENE on TV variety.",
+    "zh": "《全知干預視角》《驚人的星期六》《認識的哥哥》——綜藝節目裡的RESCENE。"
+   },
+   "story": {
+    "ko": "노래가 사랑받자 텔레비전도 리센느를 찾아왔어요. 2026년, 리센느는 「아는 형님」과 「전지적 참견 시점」, 「놀라운 토요일」에 얼굴을 비췄어요. 무대에서는 볼 수 없던 대기실의 긴장, 함께 밥을 먹는 시간, 숙소에서의 모습이 이 방에 모여 있어요. 무대 위 다섯 사람과 무대 아래 다섯 사람을 나란히 놓고 보면, 왜 이렇게 응원하고 싶어지는지 조금 알 것 같아요. 편하게 앉아 웃으며 보셔도 좋아요.",
+    "ja": "曲が愛されると、テレビもRESCENEを訪ねてきました。2026年、RESCENEは『知ってるお兄さん』『全知的おせっかい視点』『驚きの土曜日』に出演。ステージでは見られなかった控室の緊張感、みんなで食事をする時間、宿舎での姿がこの部屋に集まっています。ステージの上の5人とステージを降りた5人を並べてみると、なぜこんなに応援したくなるのか少し分かる気がします。気楽に座って、笑いながらご覧ください。",
+    "en": "Once the songs were loved, television came looking for RESCENE too. In 2026 they appeared on Knowing Bros, Omniscient Interfering View and Amazing Saturday. This room gathers what the stage never shows: the nerves in the waiting room, meals shared together, life at the dorm. Put the five on stage beside the five off stage, and you start to see why people want to cheer for them. Sit back and enjoy a laugh.",
+    "zh": "歌曲受到喜愛後，電視節目也找上了RESCENE。2026年，她們登上了《認識的哥哥》《全知干預視角》《驚人的星期六》。舞台上看不到的待機室緊張感、一起吃飯的時光、宿舍裡的模樣，都收在這個房間。把台上的五個人和台下的五個人放在一起看，好像就能明白為什麼會這麼想替她們加油。請放輕鬆，笑著看吧。"
+   }
+  },
+  "youtube_guest": {
+   "desc": {
+    "ko": "리무진서비스·문명특급 등 다른 유튜브 채널에 찾아간 리센느.",
+    "ja": "『リムジンサービス』『文明特急』など、ほかのYouTubeチャンネルを訪ねたRESCENE。",
+    "en": "RESCENE as guests on other YouTube channels, from Limousine Service to MMTG.",
+    "zh": "RESCENE到其他YouTube頻道作客，從Limousine Service到《文明特急》。"
+   },
+   "story": {
+    "ko": "이번엔 리센느가 손님이 되어 다른 채널을 찾아갔어요. KBS 「리무진서비스」에서는 미나미와 리브가 각자 혼자 앉아 좋아하는 노래들을 불렀어요. 「문명특급」에는 원이·미나미·제나가 '거제 야호'를 들고 찾아갔고요. 낯선 무대에서도 자기 목소리로 인사하는 모습이 이 방의 매력이에요. 멤버 한 사람 한 사람의 목소리를 조용히 들어 보고 싶을 때 들러 주세요.",
+    "ja": "今度はRESCENEがゲストとして、ほかのチャンネルを訪ねました。KBS『リムジンサービス』では、ミナミとリブがそれぞれ一人で座り、好きな歌を歌いました。『文明特急』にはウォニ・ミナミ・ジェナが「巨済ヤッホー」を携えて登場。慣れない場所でも自分の声であいさつする姿が、この部屋の魅力です。メンバー一人ひとりの声を静かに聴きたいときに立ち寄ってください。",
+    "en": "This time RESCENE are the guests, visiting other channels. On KBS's Limousine Service, MINAMI and LIV each sat down alone to sing songs they love. On MMTG, WONI, MINAMI and ZENA showed up with \"Geoje yaho\" in hand. Greeting an unfamiliar stage in their own voices is what makes this room special. Drop by when you want to quietly listen to each member's voice.",
+    "zh": "這次換RESCENE當客人，去拜訪別的頻道。在KBS的Limousine Service裡，MINAMI和LIV各自獨自坐下，唱自己喜歡的歌。到了《文明特急》，WONI、MINAMI、ZENA帶著「巨濟 야호」登場。在陌生的地方也用自己的聲音打招呼，正是這個房間的魅力。想靜靜聽每位成員的聲音時，歡迎進來坐坐。"
+   }
+  },
+  "daily": {
+   "desc": {
+    "ko": "공식 채널 브이로그 「Re-log」 — 대만, 일본, LA에서의 하루.",
+    "ja": "公式チャンネルのVlog「Re-log」――台湾、日本、LAでの一日。",
+    "en": "Re-log, the official channel's vlogs — days in Taiwan, Japan and LA.",
+    "zh": "官方頻道Vlog「Re-log」——在台灣、日本、LA的日子。"
+   },
+   "story": {
+    "ko": "무대 의상을 벗은 다섯 사람의 하루가 궁금하다면 이 방으로 오세요. 리센느 공식 채널의 브이로그 「Re-log」에는 대만에서 맛있는 것을 찾아다니는 날, 일본에서 쉬어 가는 날, LA에서의 날이 담겨 있어요. 미나미의 메이크업 교실에 메이가 함께한 날처럼, 멤버 둘이 나란히 보내는 시간도 있어요. 큰일이 일어나지 않아도 괜히 마음이 놓이는 영상들이에요. 하루를 마무리하며 천천히 보기 좋은 방이에요.",
+    "ja": "ステージ衣装を脱いだ5人の一日が気になるなら、この部屋へ。RESCENE公式チャンネルのVlog「Re-log」には、台湾でおいしいものを探し歩く日、日本でひと休みする日、LAでの日が収められています。ミナミのメイク教室にメイが加わった日のように、メンバー2人で並んで過ごす時間も。大きな出来事がなくても、なぜかほっとする映像ばかり。一日の終わりにゆっくり見るのにぴったりの部屋です。",
+    "en": "If you're curious about the five once the stage outfits come off, this is your room. Re-log, the vlog series on RESCENE's official channel, holds a day hunting for good food in Taiwan, a restful break in Japan, and days in LA. There are quiet two-member days too, like the day MAY joined MINAMI's makeup class. Nothing big has to happen for these videos to put you at ease. It's a lovely room to wind down in at the end of the day.",
+    "zh": "想知道脫下舞台服的五個人過著怎樣的一天，就來這個房間吧。RESCENE官方頻道的Vlog「Re-log」裡，有在台灣到處找美食的日子、在日本放鬆休息的日子，還有在LA的日子。也有像MAY參加MINAMI化妝教室那天一樣，兩位成員並肩度過的時光。就算沒發生什麼大事，看著也會莫名安心。很適合在一天結束時慢慢看。"
+   }
+  },
+  "birthday": {
+   "desc": {
+    "ko": "리브·원이·메이의 생일, 공식 채널이 함께 축하한 날들.",
+    "ja": "リブ・ウォニ・メイの誕生日――公式チャンネルが一緒にお祝いした日。",
+    "en": "Birthdays of LIV, WONI and MAY, celebrated on the official channel.",
+    "zh": "LIV、WONI、MAY的生日——官方頻道一起慶祝的日子。"
+   },
+   "story": {
+    "ko": "1년에 한 번, 멤버가 주인공이 되는 날이 있어요. 이 방에는 리센느 공식 채널에 올라온 리브·원이·메이의 생일 영상이 모여 있어요. 메이의 생일에는 고양시가 축하 영상을 공개하고 호수공원 음악분수를 밝혀 주기도 했어요. 팬들과 동네와 멤버들이 한마음으로 '축하해'를 건네는 장면이라, 보고 나면 마음이 따뜻해져요. 아직 이 방에 없는 멤버들의 생일도 차근차근 채워 갈게요.",
+    "ja": "年に一度、メンバーが主役になる日があります。この部屋には、RESCENE公式チャンネルに公開されたリブ・ウォニ・メイの誕生日映像が集まっています。メイの誕生日には、高陽(コヤン)市がお祝い映像を公開し、湖水公園の音楽噴水を灯してくれました。ファンも街もメンバーも心をひとつに「おめでとう」を届ける場面なので、見終わると心が温かくなります。まだこの部屋にいないメンバーの誕生日も、少しずつ加えていきます。",
+    "en": "Once a year, a member gets to be the star of the day. This room collects the birthday videos for LIV, WONI and MAY posted on RESCENE's official channel. For MAY's birthday, the city of Goyang even released a celebration video and lit up the musical fountain at Lake Park. Fans, cities and members all saying \"happy birthday\" together — it warms your heart. We'll keep adding the birthdays of the members not yet in this room.",
+    "zh": "一年一次，總有一天是成員的主場。這個房間收集了RESCENE官方頻道上LIV、WONI、MAY的生日影片。MAY生日那天，高陽市還公開了祝賀影片，點亮湖水公園的音樂噴泉。粉絲、城市和成員們同心說出「生日快樂」，看完心裡暖暖的。還沒出現在這個房間的成員生日，我們也會慢慢補上。"
+   }
+  }
+ },
+ "notes": {
+  "ajhEFz1zNMQ": {
+   "ko": "2026년 6월 18일 방송된 엠카운트다운 EP.933의 「LOVE ATTACK」 스페셜 무대예요. 노래가 다시 사랑받던 시기의 무대로, 이 방에서 조회수가 가장 높아요(11/11 확인 기준 약 590만 회). 다섯 멤버가 함께 만드는 동선을 따라가며 보세요.",
+   "ja": "2026年6月18日放送『M COUNTDOWN』EP.933の「LOVE ATTACK」スペシャルステージ。曲が再び愛され始めた頃のステージで、この部屋で再生回数がいちばん多い映像です(11/11確認時点で約590万回)。5人で作るフォーメーションを追いながらご覧ください。",
+   "en": "A special stage of \"LOVE ATTACK\" from M COUNTDOWN EP.933, aired June 18, 2026. Filmed as the song was finding new love, it's the most-viewed video in this room (about 5.9 million views as of Nov 11). Follow the formations the five build together.",
+   "zh": "2026年6月18日播出的M COUNTDOWN EP.933〈LOVE ATTACK〉特別舞台。這是歌曲重新受到喜愛時期的舞台，也是本房間觀看次數最高的影片(11/11確認時約590萬次)。請跟著五人一起完成的走位來欣賞。"
+  },
+  "Esd-KkxROxA": {
+   "ko": "2026년 7월 9일 엠카운트다운의 「Pretty Girl」 컴백 무대예요. 리센느는 이 곡으로 7월 14일 데뷔 후 첫 음악방송 1위를 차지했어요. 좋아요 비율도 무대 영상 가운데 높은 편이라, 첫 1위 직전의 설렘을 함께 느껴 보세요.",
+   "ja": "2026年7月9日『M COUNTDOWN』での「Pretty Girl」カムバックステージ。RESCENEはこの曲で7月14日、デビュー後初の音楽番組1位を獲得しました。いいねの割合もステージ映像の中で高めです。初1位直前のときめきを一緒に。",
+   "en": "The \"Pretty Girl\" comeback stage on M COUNTDOWN, July 9, 2026. With this song RESCENE won their first-ever music show on July 14. Its like ratio is among the highest of the stage videos — share the excitement just before that first win.",
+   "zh": "2026年7月9日M COUNTDOWN的〈Pretty Girl〉回歸舞台。RESCENE憑這首歌在7月14日拿下出道後首座音樂節目一位。按讚比例在舞台影片中也偏高，一起感受首次一位前夕的心動吧。"
+  },
+  "rzfjou7vPP0": {
+   "ko": "2026년 7월 26일 SBS 인기가요에서 「LOVE ATTACK」으로 1위를 한 날의 앵콜 직캠(4K)이에요. 이 방에서 조회수 대비 좋아요 비율이 가장 높은 영상이에요. 1위를 받은 바로 그 순간의 무대라는 것만으로도 특별해요.",
+   "ja": "2026年7月26日、SBS『人気歌謡』で「LOVE ATTACK」が1位を取った日のアンコール直撮り(4K)。この部屋で再生回数に対するいいねの割合が最も高い映像です。1位を受け取ったその瞬間のステージ、というだけで特別です。",
+   "en": "A 4K encore fancam from the day \"LOVE ATTACK\" took No. 1 on SBS Inkigayo, July 26, 2026. It has the highest like-to-view ratio in this room. Simply being the stage right after a win makes it special.",
+   "zh": "2026年7月26日SBS《人氣歌謠》〈LOVE ATTACK〉拿下一位當天的安可直拍(4K)。這是本房間按讚與觀看比例最高的影片。光是「剛拿到一位那一刻的舞台」就已經很特別。"
+  },
+  "KRpt7OF4zso": {
+   "ko": "음악 라이브 채널 it's Live에서 밴드와 함께 부른 「LOVE ATTACK」이에요. 음원과 다른 밴드 편곡 위에서 다섯 사람의 라이브 목소리를 또렷하게 들을 수 있어요. 리센느의 라이브가 궁금할 때 먼저 권하고 싶은 영상이에요.",
+   "ja": "音楽ライブチャンネル『it's Live』でバンドと一緒に歌った「LOVE ATTACK」。音源とは違うバンドアレンジの上で、5人の生歌をはっきり聴くことができます。RESCENEのライブが気になったら、まずおすすめしたい映像です。",
+   "en": "\"LOVE ATTACK\" performed with a band on the music-live channel it's Live. Over a band arrangement different from the record, you can hear the five's live vocals clearly. It's the first video we'd recommend if you're curious about RESCENE live.",
+   "zh": "在音樂現場頻道it's Live與樂團一起演唱的〈LOVE ATTACK〉。在和音源不同的樂團編曲上，可以清楚聽到五人的現場歌聲。想了解RESCENE現場實力時，最先推薦這支。"
+  },
+  "QJeH6cRtdJA": {
+   "ko": "2026년 10월 28일 엠카운트다운 「PLAY FESTA」에서 다시 선 「LOVE ATTACK」 무대예요. 공개된 지 얼마 되지 않았는데 벌써 100만 회를 넘었어요. 6월 스페셜 무대와 나란히 놓고, 넉 달 사이 달라진 분위기를 비교해 보세요.",
+   "ja": "2026年10月28日『M COUNTDOWN』「PLAY FESTA」で再び披露された「LOVE ATTACK」。公開から間もないのに、すでに100万回を突破しました。6月のスペシャルステージと並べて、4か月の間に変わった雰囲気を比べてみてください。",
+   "en": "\"LOVE ATTACK\" once more, at M COUNTDOWN's PLAY FESTA on October 28, 2026. Though it's recent, it has already passed one million views. Watch it next to the June special stage and compare how the mood has changed in four months.",
+   "zh": "2026年10月28日M COUNTDOWN「PLAY FESTA」再次登場的〈LOVE ATTACK〉。公開沒多久就已突破100萬次。和6月的特別舞台並排看，比較四個月間氛圍的變化吧。"
+  },
+  "OrCOflk2QmQ": {
+   "ko": "원이 채널에서 조회수가 가장 높은 영상이에요(11/11 기준 약 1,640만 회). 미나미의 갸루 분장과 '거제 야호!'가 퍼져 나간 출발점으로 알려진 거제 1편으로, 리센느와 거제의 인연이 여기서 시작됐어요. ※ 영상 설명란에 따르면 주류 유료 광고가 포함된 19세 이상 대상 콘텐츠예요.",
+   "ja": "ウォニのチャンネルで最も再生された映像です(11/11時点で約1,640万回)。ミナミのギャルメイクと「巨済ヤッホー!」が広がるきっかけになったとされる巨済編第1話で、RESCENEと巨済の縁はここから始まりました。※概要欄によると、酒類の有料広告を含む19歳以上向けのコンテンツです。",
+   "en": "The most-viewed video on WONI's channel (about 16.4 million views as of Nov 11). This first Geoje episode is known as the starting point where MINAMI's gyaru look and \"Geoje yaho!\" spread, and where RESCENE's bond with Geoje began. Note: per its description, it includes paid alcohol advertising and is intended for viewers 19 and over.",
+   "zh": "WONI頻道觀看次數最高的影片(11/11約1,640萬次)。這支巨濟第1集被認為是MINAMI辣妹造型和「巨濟 야호!」開始擴散的起點，RESCENE與巨濟的緣分也從這裡開始。※依影片說明欄，內含酒類付費廣告，為19歲以上觀眾內容。"
+  },
+  "5JZ5biQ_hMI": {
+   "ko": "원이·미나미·제나에 이어 리브와 메이가 원이 채널에 처음 함께 나온 영상이에요. 공개 사흘 만에 446만 회를 넘었다고 보도됐고, 지금은 약 1,380만 회예요. 두 사람의 입담이 매력 포인트예요.",
+   "ja": "ウォニ・ミナミ・ジェナに続き、リブとメイが初めてウォニのチャンネルにそろって登場した映像。公開3日で446万回を超えたと報じられ、今では約1,380万回です。2人のトークが見どころ。",
+   "en": "After WONI, MINAMI and ZENA, this is where LIV and MAY first appeared together on WONI's channel. It was reported to pass 4.46 million views within three days, and now stands at about 13.8 million. The pair's banter is the highlight.",
+   "zh": "繼WONI、MINAMI、ZENA之後，LIV和MAY首次一起登上WONI頻道的影片。據報導公開三天即突破446萬次，現在約1,380萬次。兩人的口才是最大看點。"
+  },
+  "FcMaC8akSU8": {
+   "ko": "미나미의 '갸루' 캐릭터를 대표하는 영상으로, 조회수 약 1,120만 회예요. 제목 그대로 미나미가 갸루 모습으로 노래를 이어 부르는 라이브 메들리예요. 웃음과 노래 실력이 한 영상에서 만나는 지점을 즐겨 보세요.",
+   "ja": "ミナミの「ギャル」キャラを代表する映像で、再生回数は約1,120万回。タイトルどおり、ミナミがギャル姿で歌をつないでいくライブメドレーです。笑いと歌唱力がひとつの映像で出会うところを楽しんでください。",
+   "en": "The signature video of MINAMI's \"gyaru\" character, with about 11.2 million views. As the title says, it's a live medley MINAMI sings in her gyaru look. Enjoy the spot where laughs and vocal skill meet.",
+   "zh": "代表MINAMI「辣妹」角色的影片，觀看約1,120萬次。如標題所示，是MINAMI以辣妹造型接連演唱的現場組曲。來享受笑點和唱功在同一支影片相遇的時刻吧。"
+  },
+  "JJBf0jCcfrQ": {
+   "ko": "사투리 시리즈 2편으로, 2026년 5월 29일 공개돼 1,000만 회를 넘었어요. 성수에서 보내는 하루를 담았어요. 1편과 이어 보면 채널이 커져 가던 5월의 분위기를 느낄 수 있어요.",
+   "ja": "方言シリーズ第2話で、2026年5月29日に公開され1,000万回を超えました。聖水(ソンス)で過ごす一日を収めています。第1話と続けて見ると、チャンネルが大きくなっていった5月の空気を感じられます。",
+   "en": "Part 2 of the dialect series, released May 29, 2026, now past 10 million views. It follows a day out in Seongsu. Watch it right after Part 1 to feel the May buzz as the channel grew.",
+   "zh": "方言系列第2集，2026年5月29日公開，已突破1,000萬次。記錄了在聖水洞度過的一天。和第1集接著看，能感受到頻道逐漸壯大的5月氛圍。"
+  },
+  "NS7tSrMrWsc": {
+   "ko": "2026년 5월 1일 공개된 사투리 시리즈 1편으로, 채널 초기의 대표작이에요(약 1,350만 회). 하루 종일 사투리로만 말해 보는 도전이에요. 거제 편보다 먼저 나온 영상이라, 안원잘부가 어떻게 시작됐는지 보기 좋아요.",
+   "ja": "2026年5月1日公開の方言シリーズ第1話で、チャンネル初期の代表作です(約1,350万回)。一日中、方言だけで話してみるチャレンジ。巨済編より先に出た映像なので、アンウォンジャルブの始まりを知るのにぴったりです。",
+   "en": "Part 1 of the dialect series, released May 1, 2026, and an early signature of the channel (about 13.5 million views). The challenge: speak only in dialect all day long. It came out before the Geoje episodes, so it's a great look at how Anwonjalbu began.",
+   "zh": "2026年5月1日公開的方言系列第1集，是頻道初期代表作(約1,350萬次)。挑戰一整天只用方言說話。比巨濟篇更早推出，很適合了解「安元賈部」是怎麼開始的。"
+  },
+  "3fRTHjtYAes": {
+   "ko": "2026년 8월 8일 방송된 MBC 「전지적 참견 시점」 리센느 편을 2시간으로 모은 영상이에요. 이 방에서 좋아요가 가장 많아요. 본방을 놓쳤다면 여기서 처음부터 끝까지 이어 보세요. (게시 채널의 공식 여부는 확인 중이에요.)",
+   "ja": "2026年8月8日放送のMBC『全知的おせっかい視点』RESCENE編を2時間にまとめた映像。この部屋でいいねが最も多い作品です。本放送を見逃したら、ここで最初から最後まで通しでどうぞ。(投稿チャンネルが公式かどうかは確認中です)",
+   "en": "Two hours of RESCENE's episodes of MBC's Omniscient Interfering View, aired August 8, 2026. It has the most likes in this room. If you missed the broadcast, watch it start to finish here. (Whether the uploading channel is official is still being checked.)",
+   "zh": "2026年8月8日播出的MBC《全知干預視角》RESCENE篇兩小時合輯。本房間按讚數最多。錯過正片的話，就在這裡從頭看到尾吧。(上傳頻道是否為官方仍在確認中)"
+  },
+  "v-6sJD4COF8": {
+   "ko": "「전지적 참견 시점」에서 음악방송 1위 후보에 오른 날의 대기실 비하인드를 모은 영상이에요. 이 방에서 조회수가 가장 높아요(약 308만 회). 무대에 오르기 전의 긴장과 기다림을 들여다볼 수 있어요.",
+   "ja": "『全知的おせっかい視点』で、音楽番組の1位候補になった日の控室ビハインドを集めた映像。この部屋で再生回数がいちばん多い作品です(約308万回)。ステージに上がる前の緊張と待ち時間をのぞいてみてください。",
+   "en": "Behind-the-scenes from the waiting room on the day RESCENE were up for a music-show win, from Omniscient Interfering View. It's the most-viewed video in this room (about 3.08 million). A look at the nerves and waiting before they go on stage.",
+   "zh": "收錄《全知干預視角》中，入圍音樂節目一位候補那天的待機室幕後。本房間觀看次數最高(約308萬次)。可以看見上台前的緊張與等待。"
+  },
+  "QI_aX8GPRvY": {
+   "ko": "MBC 공식 종합 채널에 올라온 「전지적 참견 시점」 리센느 편 회식 장면 모음이에요. 「With」 컴백을 기념해 다 함께 밥을 먹는 시간을 담았어요. 무대 밖에서 편안한 다섯 사람을 보고 싶을 때 추천해요.",
+   "ja": "MBC公式総合チャンネルに公開された『全知的おせっかい視点』RESCENE編の会食シーン集。「With」カムバックを記念して、みんなで食事をする時間を収めています。ステージの外でくつろぐ5人を見たいときにおすすめ。",
+   "en": "A compilation of the team-dinner scenes from RESCENE's Omniscient Interfering View episode, on MBC's official channel. It captures a meal together celebrating their \"With\" comeback. Recommended when you want to see the five relaxed, off stage.",
+   "zh": "MBC官方綜合頻道上傳的《全知干預視角》RESCENE篇聚餐片段合輯。記錄為慶祝〈With〉回歸而一起吃飯的時光。想看五個人在舞台外放鬆的樣子時推薦。"
+  },
+  "1h4v7pLBwm0": {
+   "ko": "tvN 「놀라운 토요일」 EP.430 리센느 편의 간식 게임 하이라이트예요. 케이블 예능 영상 가운데 조회수가 가장 높아요. 게임 앞에서 드러나는 멤버들의 승부욕과 리액션을 즐겨 보세요.",
+   "ja": "tvN『驚きの土曜日』EP.430 RESCENE編、おやつゲームのハイライト。ケーブル局バラエティの映像の中で最も再生されています。ゲームを前にしたメンバーの負けず嫌いぶりとリアクションをお楽しみください。",
+   "en": "The snack-game highlights from RESCENE's episode of tvN's Amazing Saturday, EP.430. It's the most-viewed of the cable variety clips. Enjoy the members' competitive streak and reactions when the game is on.",
+   "zh": "tvN《驚人的星期六》EP.430 RESCENE篇的點心遊戲精華。有線台綜藝影片中觀看次數最高。來看看成員們在遊戲前的好勝心和反應吧。"
+  },
+  "KZKQS4hjIYs": {
+   "ko": "2026년 7월 11일 「전지적 참견 시점」에 나온 아이돌 숙소 장면을 모은 영상으로, 올데이프로젝트·아일릿과 함께 리센느의 숙소가 담겨 있어요. 여러 그룹이 함께 나오는 합본이라 리센느 장면을 찾아 보는 재미가 있어요. (게시 채널의 공식 여부는 확인 중이에요.)",
+   "ja": "2026年7月11日の『全知的おせっかい視点』に登場したアイドルの宿舎シーンをまとめた映像で、ALLDAY PROJECT・ILLITとともにRESCENEの宿舎も映っています。複数グループの合本なので、RESCENEの場面を探す楽しみがあります。(投稿チャンネルが公式かどうかは確認中です)",
+   "en": "A compilation of idol dorm scenes from Omniscient Interfering View on July 11, 2026, featuring RESCENE's dorm alongside ALLDAY PROJECT and ILLIT. Since several groups share the video, part of the fun is spotting the RESCENE scenes. (Whether the uploading channel is official is still being checked.)",
+   "zh": "2026年7月11日《全知干預視角》偶像宿舍片段合輯，與ALLDAY PROJECT、ILLIT一起收錄了RESCENE的宿舍。因為是多團合輯，找RESCENE片段也是一種樂趣。(上傳頻道是否為官方仍在確認中)"
+  },
+  "P0LNFoDtf74": {
+   "ko": "2026년 6월 20일 방송된 JTBC 「아는 형님」에서 원이 장면만 모은 영상이에요. 제목부터 원이 채널 이름을 닮아, 안원잘부 방과 자연스럽게 이어져요. 원이를 처음 알게 된 분께 권하고 싶어요.",
+   "ja": "2026年6月20日放送のJTBC『知ってるお兄さん』から、ウォニの場面だけを集めた映像。タイトルからしてウォニのチャンネル名に似ていて、アンウォンジャルブの部屋と自然につながります。ウォニを初めて知った方におすすめ。",
+   "en": "WONI's moments from JTBC's Knowing Bros, aired June 20, 2026. Even the title echoes the name of WONI's channel, linking naturally to the Anwonjalbu room. A good pick if you've just discovered WONI.",
+   "zh": "2026年6月20日播出的JTBC《認識的哥哥》中WONI片段合輯。連標題都模仿WONI頻道名，自然地和「安元賈部」房間串在一起。推薦給剛認識WONI的人。"
+  },
+  "SW7M6MdlrlU": {
+   "ko": "KBS 「리무진서비스」 EP.211에 미나미가 혼자 출연해 「Runaway」, 「나였으면」, 「My Gospel」, 「Timeless」를 불렀어요. 이 방에서 조회수와 좋아요 비율이 모두 가장 높아요. 갸루 캐릭터와는 또 다른 미나미의 목소리를 들어 보세요.",
+   "ja": "KBS『リムジンサービス』EP.211にミナミが単独出演し、「Runaway」「ナヨッスミョン(私だったら)」「My Gospel」「Timeless」を歌いました。この部屋で再生回数・いいねの割合ともにトップ。ギャルキャラとはまた違うミナミの声を聴いてみてください。",
+   "en": "MINAMI appears solo on KBS's Limousine Service EP.211, singing \"Runaway,\" \"If It Were Me (나였으면),\" \"My Gospel\" and \"Timeless.\" It tops this room in both views and like ratio. Hear a side of MINAMI's voice far from her gyaru character.",
+   "zh": "MINAMI獨自登上KBS Limousine Service EP.211，演唱〈Runaway〉〈나였으면(如果是我)〉〈My Gospel〉〈Timeless〉。本房間觀看次數與按讚比例都是第一。來聽聽和辣妹角色截然不同的MINAMI歌聲。"
+  },
+  "17t9izNAYVE": {
+   "ko": "'거제 야호' 화제를 들고 원이·미나미·제나가 「문명특급」을 찾아간 영상이에요. 안원잘부에서 시작된 이야기가 다른 채널로 이어지는 장면이라 의미가 있어요. 안원잘부 방을 보고 왔다면 더 즐겁게 볼 수 있어요.",
+   "ja": "「巨済ヤッホー」の話題を携えて、ウォニ・ミナミ・ジェナが『文明特急』を訪ねた映像。アンウォンジャルブで始まった物語がほかのチャンネルへつながる場面として意味があります。アンウォンジャルブの部屋を見てから来ると、もっと楽しめます。",
+   "en": "WONI, MINAMI and ZENA bring the \"Geoje yaho\" buzz to MMTG. It matters as the moment a story born on Anwonjalbu carried over to another channel. It's even more fun if you've just come from the Anwonjalbu room.",
+   "zh": "WONI、MINAMI、ZENA帶著「巨濟 야호」的話題拜訪《文明特急》。這是從「安元賈部」開始的故事延伸到其他頻道的一幕，很有意義。先看過「安元賈部」房間再來，會更有趣。"
+  },
+  "a_c2mBMKuBE": {
+   "ko": "KBS 「리무진서비스」 EP.240에 리브가 혼자 출연해 「With」, 「그댄 달라요」, 「내 생에 아름다운」, 「왜 그래」를 불렀어요. 조회수 대비 좋아요 비율이 2.8%로 높은 영상이에요. 리브의 목소리에 오롯이 집중해 보세요.",
+   "ja": "KBS『リムジンサービス』EP.240にリブが単独出演し、「With」「クデン タルラヨ(君は違う)」「ネ センエ アルムダウン(我が人生で美しい)」「ウェ グレ(どうして)」を歌いました。再生回数に対するいいねの割合が2.8%と高い映像。リブの声だけに耳を傾けてみてください。",
+   "en": "LIV appears solo on KBS's Limousine Service EP.240, singing \"With,\" \"You're Different (그댄 달라요),\" \"The Most Beautiful in My Life (내 생에 아름다운)\" and \"Why (왜 그래).\" Its like ratio is a high 2.8%. Let yourself focus on LIV's voice alone.",
+   "zh": "LIV獨自登上KBS Limousine Service EP.240，演唱〈With〉〈그댄 달라요(你不一樣)〉〈내 생에 아름다운(我生命中最美的)〉〈왜 그래(為什麼)〉。按讚比例高達2.8%。請專心聆聽LIV的歌聲。"
+  },
+  "4gqBmjnfJDc": {
+   "ko": "배우 김광규의 채널 「김광규의 싱글이 좋아」가 구독자 10만 명을 넘은 것을 기념한 영상에 리센느가 함께했어요. 다른 유튜버의 기념일을 축하하러 간 자리라 분위기가 훈훈해요. 규모는 작지만 다정한 출연이에요. (채널의 공식 여부는 확인 중이에요.)",
+   "ja": "俳優キム・グァンギュのチャンネル『キム・グァンギュのシングルがいい』の登録者10万人突破記念映像に、RESCENEが一緒に出演しました。ほかのYouTuberの記念日をお祝いしに行った場なので、雰囲気がほのぼの。規模は小さくても温かい出演です。(チャンネルが公式かどうかは確認中です)",
+   "en": "RESCENE joined the video celebrating 100,000 subscribers on actor Kim Kwang-kyu's channel. They went to celebrate another YouTuber's milestone, so the mood is warm. A small but kind appearance. (Whether the channel is official is still being checked.)",
+   "zh": "RESCENE參與了演員金光圭頻道「金光圭的單身真好」訂閱突破10萬的紀念影片。是去祝賀其他YouTuber的紀念日，氣氛很溫馨。規模不大，卻是很暖心的出演。(頻道是否為官方仍在確認中)"
+  },
+  "xclVi9zCFdY": {
+   "ko": "리센느 공식 브이로그 「Re-log」에서 원이가 대만으로 떠난 편이에요. 조회수 대비 좋아요 비율이 3.9%로 이 갤러리 영상 중 가장 높은 편이에요. 제목처럼 맛있는 것을 찾아다니는 원이를 따라가 보세요.",
+   "ja": "RESCENE公式Vlog「Re-log」で、ウォニが台湾へ旅立った回。再生回数に対するいいねの割合が3.9%と、このギャラリーの映像の中で最も高い水準です。タイトルどおり、おいしいものを探し歩くウォニについていってみてください。",
+   "en": "WONI heads to Taiwan in this episode of RESCENE's official vlog, Re-log. Its like ratio of 3.9% is among the highest of any video in this gallery. As the title promises, follow WONI on a hunt for good food.",
+   "zh": "RESCENE官方Vlog「Re-log」中WONI前往台灣的一集。按讚比例3.9%，在本藝廊影片中屬最高水準。就像標題說的，跟著WONI一起找美食吧。"
+  },
+  "97YE7zPrON8": {
+   "ko": "「Re-log」에서 미나미가 일본에서 보낸 휴가를 담은 편이에요. 조회수 대비 좋아요 비율 2.8%로 반응이 따뜻했어요. 바쁜 활동 사이 쉬어 가는 미나미의 하루를 편하게 지켜봐 주세요.",
+   "ja": "「Re-log」で、ミナミが日本で過ごした休暇を収めた回。いいねの割合2.8%と、温かい反応が寄せられました。忙しい活動の合間にひと息つくミナミの一日を、気楽に見守ってください。",
+   "en": "In this Re-log episode, MINAMI spends a holiday in Japan. With a 2.8% like ratio, the response was warm. Relax and keep MINAMI company on a day of rest between busy schedules.",
+   "zh": "「Re-log」中MINAMI在日本度假的一集。按讚比例2.8%，反應很溫暖。請輕鬆陪著MINAMI度過忙碌行程間的休息日。"
+  },
+  "faDPwuKSOM4": {
+   "ko": "미국 LA에서 찍은 「Re-log」로, 공식 브이로그 가운데 조회수가 가장 높아요(약 125만 회). 낯선 도시에서의 하루가 담겨 있어요. 「Re-log」를 처음 본다면 이 편부터 시작해도 좋아요.",
+   "ja": "アメリカ・LAで撮影された「Re-log」で、公式Vlogの中で最も再生されています(約125万回)。見知らぬ街での一日が収められています。「Re-log」が初めてなら、この回から始めるのもおすすめ。",
+   "en": "A Re-log filmed in LA, and the most-viewed of the official vlogs (about 1.25 million views). It captures a day in an unfamiliar city. If you're new to Re-log, this is a great place to start.",
+   "zh": "在美國LA拍攝的「Re-log」，是官方Vlog中觀看次數最高的一集(約125萬次)。記錄了在陌生城市的一天。第一次看「Re-log」的話，從這集開始也很好。"
+  },
+  "V-Tz0gvDiG4": {
+   "ko": "미나미의 메이크업 교실에 메이가 함께한 「Re-log」예요. 두 멤버가 나란히 앉아 보내는 시간이라 둘의 케미를 보기 좋아요(좋아요 비율 2.6%). 소소하지만 보고 나면 기분이 좋아지는 편이에요.",
+   "ja": "ミナミのメイク教室にメイが加わった「Re-log」。2人が並んで座って過ごす時間なので、ふたりの相性がよく分かります(いいねの割合2.6%)。ささやかだけど、見終わると気分が明るくなる回です。",
+   "en": "A Re-log of MINAMI's makeup class, with MAY joining in. Two members side by side make it a great look at their chemistry (2.6% like ratio). Small and simple, yet it leaves you in a good mood.",
+   "zh": "MAY一起參加MINAMI化妝教室的「Re-log」。兩位成員並肩而坐，很能看出兩人的默契(按讚比例2.6%)。雖然平凡，看完卻會心情變好。"
+  },
+  "fCrQXP_2u3U": {
+   "ko": "리센느 공식 채널에 올라온 리브의 생일 라이브예요. 이 방의 생일 영상 가운데 조회수가 압도적으로 높아요(약 137만 회). 생일을 맞은 리브와 함께하는 시간을 즐겨 보세요.",
+   "ja": "RESCENE公式チャンネルで公開されたリブの誕生日ライブ。この部屋の誕生日映像の中で、再生回数が圧倒的に多い作品です(約137万回)。誕生日を迎えたリブと一緒の時間をお楽しみください。",
+   "en": "LIV's birthday live on RESCENE's official channel. It has by far the most views of the birthday videos in this room (about 1.37 million). Enjoy spending the time with the birthday girl.",
+   "zh": "RESCENE官方頻道上的LIV生日直播。在本房間的生日影片中觀看次數遙遙領先(約137萬次)。一起享受和壽星LIV相處的時光吧。"
+  },
+  "i3BCs-IcIl4": {
+   "ko": "원이의 생일을 맞아 리센느 공식 채널에 올라온 영상이에요. 조회수 대비 좋아요 비율이 3.3%로 높아, 팬들의 축하가 고스란히 느껴져요. 리더 원이에게 마음속으로 축하 한마디 건네 보세요.",
+   "ja": "ウォニの誕生日に合わせてRESCENE公式チャンネルで公開された映像。いいねの割合が3.3%と高く、ファンのお祝いの気持ちがそのまま伝わってきます。リーダーのウォニに、心の中でお祝いのひと言を。",
+   "en": "A video posted on RESCENE's official channel for WONI's birthday. Its like ratio is a high 3.3%, and you can feel the fans' good wishes. Send leader WONI a quiet \"happy birthday\" of your own.",
+   "zh": "為WONI生日在RESCENE官方頻道上傳的影片。按讚比例高達3.3%，粉絲的祝福滿滿傳遞。也在心裡對隊長WONI說聲生日快樂吧。"
+  },
+  "zO7ndCNpJfs": {
+   "ko": "메이의 생일을 맞아 리센느 공식 채널에 올라온 영상이에요(좋아요 비율 3.1%). 8월 19일 메이의 생일에는 고양시도 축하 영상과 음악분수로 함께했어요. 온 동네가 축하한 생일의 주인공을 만나 보세요.",
+   "ja": "メイの誕生日に合わせてRESCENE公式チャンネルで公開された映像です(いいねの割合3.1%)。8月19日のメイの誕生日には、高陽市もお祝い映像と音楽噴水で祝福しました。街じゅうがお祝いした誕生日の主役に会いに行きましょう。",
+   "en": "A video posted on RESCENE's official channel for MAY's birthday (3.1% like ratio). On her birthday, August 19, the city of Goyang joined in too, with a celebration video and a musical fountain. Meet the birthday girl a whole city celebrated.",
+   "zh": "為MAY生日在RESCENE官方頻道上傳的影片(按讚比例3.1%)。8月19日MAY生日當天，高陽市也以祝賀影片和音樂噴泉一起慶祝。來見見全城一起慶祝的壽星吧。"
+  }
+ },
+ "statues": {
+  "woni": {
+   "birthday": null,
+   "position": {
+    "ko": "리더",
+    "ja": "リーダー",
+    "en": "Leader",
+    "zh": "隊長"
+   },
+   "intro": {
+    "ko": "리센느의 리더로, 개인 유튜브 채널 「안녕하세요원이입니다잘부탁드립니다」를 운영해요.",
+    "ja": "RESCENEのリーダー。個人YouTubeチャンネル「アンニョンハセヨウォニイムニダチャルプタッカムニダ」を運営しています。",
+    "en": "RESCENE's leader, who runs her own YouTube channel, \"Hello, I'm Woni, Nice to Meet You.\"",
+    "zh": "RESCENE的隊長，經營個人YouTube頻道「안녕하세요원이입니다잘부탁드립니다」。"
+   },
+   "sources": [
+    "https://sports.khan.co.kr/article/202402292225003",
+    "https://www.khan.co.kr/article/202607240600031/",
+    "https://v.daum.net/v/20260711060326717",
+    "https://www.mt.co.kr/entertainment/2026/06/10/2026061013417238076",
+    "https://www.hankyung.com/article/2026070335037"
+   ]
+  },
+  "liv": {
+   "birthday": null,
+   "position": null,
+   "intro": {
+    "ko": "수원시 홍보대사로 '수원 방문의 해'를 알리고 있고, KBS 「리무진서비스」에서 홀로 노래를 들려준 멤버예요.",
+    "ja": "水原(スウォン)市の広報大使として「水原訪問の年」をPRし、KBS『リムジンサービス』で一人で歌声を届けたメンバーです。",
+    "en": "An ambassador for the city of Suwon, promoting its Visit Suwon Years, and a member who sang solo on KBS's Limousine Service.",
+    "zh": "擔任水原市宣傳大使，宣傳「水原訪問年」，也曾獨自登上KBS Limousine Service獻唱。"
+   },
+   "sources": [
+    "https://sports.khan.co.kr/article/202402292225003",
+    "https://www.hankyung.com/article/2026070335037",
+    "https://www.youtube.com/watch?v=a_c2mBMKuBE"
+   ]
+  },
+  "minami": {
+   "birthday": null,
+   "position": null,
+   "intro": {
+    "ko": "일본 출신 멤버로 2021년 MBC 오디션 「방과후 설렘」 결선에 올랐고, '거제 야호!'로 많은 사람에게 웃음을 준 주인공이에요.",
+    "ja": "日本出身のメンバー。2021年MBCのオーディション『放課後のときめき』でファイナリストとなり、「巨済ヤッホー!」で多くの人を笑顔にした主人公です。",
+    "en": "The member from Japan, a finalist on MBC's 2021 audition show My Teenage Girl, and the one whose \"Geoje yaho!\" made so many people smile.",
+    "zh": "來自日本的成員，曾進入2021年MBC選秀節目《放學後心動》決賽，也是用一句「巨濟 야호!」逗笑無數人的主角。"
+   },
+   "sources": [
+    "https://sports.khan.co.kr/article/202402292225003",
+    "https://v.daum.net/v/20240222183439798",
+    "https://www.mt.co.kr/entertainment/2026/06/10/2026061013417238076",
+    "https://www.khan.co.kr/article/202607240600031/"
+   ]
+  },
+  "may": {
+   "birthday": "08-19",
+   "position": null,
+   "intro": {
+    "ko": "8월 19일 생일에 고양시가 축하 영상과 음악분수로 함께 축하해 준 멤버로, 고양시 홍보대사로도 활동해요.",
+    "ja": "8月19日の誕生日に、高陽市がお祝い映像と音楽噴水で一緒に祝ってくれたメンバー。高陽市の広報大使としても活動しています。",
+    "en": "On her August 19 birthday, the city of Goyang celebrated with a video and a musical fountain; she's also one of Goyang's ambassadors.",
+    "zh": "8月19日生日時，高陽市以祝賀影片和音樂噴泉一起慶祝；她也擔任高陽市宣傳大使。"
+   },
+   "sources": [
+    "https://sports.khan.co.kr/article/202402292225003",
+    "https://www.wikitree.co.kr/articles/1153682",
+    "https://www.hankyung.com/article/2026070335037"
+   ]
+  },
+  "zena": {
+   "birthday": null,
+   "position": null,
+   "intro": {
+    "ko": "2022년 채널A 「청춘스타」에 출연했고, 지금은 경주시의 관광 홍보대사로 천년고도를 알리고 있어요.",
+    "ja": "2022年にチャンネルA『青春スター』に出演し、今は慶州(キョンジュ)市の観光広報大使として千年の古都をPRしています。",
+    "en": "She appeared on Channel A's Stars Awakening in 2022, and now promotes the ancient capital as a tourism ambassador for the city of Gyeongju.",
+    "zh": "2022年曾參加Channel A《青春明星》，現在擔任慶州市觀光宣傳大使，介紹這座千年古都。"
+   },
+   "sources": [
+    "https://sports.khan.co.kr/article/202402292225003",
+    "https://v.daum.net/v/20240222183439798",
+    "https://www.hankyung.com/article/2026070335037"
+   ]
+  }
+ }
+};
+/* 퀴즈 12개(방별). source = 정답을 확인한 기사(정답을 맞히면 작은 「출처」 링크로 보여 줌). slot = 방 안 퀴즈 받침대 순서 */
+const CONTENT_QUIZZES = [
+ {
+  "id": "q01-members",
+  "hall": "rescene",
+  "room": "stage",
+  "type": "quiz",
+  "slot": 0,
+  "hint": {
+   "ko": "무대 방 퀴즈 1",
+   "ja": "ステージ部屋クイズ1",
+   "en": "Stage room quiz 1",
+   "zh": "舞台房間猜謎 1"
+  },
+  "question": {
+   "ko": "리센느 멤버는 모두 몇 명일까요?",
+   "ja": "RESCENEのメンバーは全部で何人?",
+   "en": "How many members are in RESCENE?",
+   "zh": "RESCENE共有幾位成員?"
+  },
+  "choices": [
+   "4",
+   "5",
+   "6",
+   "7"
+  ],
+  "answer": 1,
+  "source": "https://sports.khan.co.kr/article/202402292225003",
+  "checked_at": "2026-11-11",
+  "reward": {
+   "video_id": "",
+   "title": ""
+  }
+ },
+ {
+  "id": "q02-debut-date",
+  "hall": "rescene",
+  "room": "stage",
+  "type": "quiz",
+  "slot": 1,
+  "hint": {
+   "ko": "무대 방 퀴즈 2",
+   "ja": "ステージ部屋クイズ2",
+   "en": "Stage room quiz 2",
+   "zh": "舞台房間猜謎 2"
+  },
+  "question": {
+   "ko": "리센느의 데뷔일은 언제일까요?",
+   "ja": "RESCENEのデビュー日はいつ?",
+   "en": "When did RESCENE debut?",
+   "zh": "RESCENE的出道日是哪一天?"
+  },
+  "choices": [
+   {
+    "ko": "2023년 11월 2일",
+    "ja": "2023年11月2日",
+    "en": "November 2, 2023",
+    "zh": "2023年11月2日"
+   },
+   {
+    "ko": "2024년 3월 26일",
+    "ja": "2024年3月26日",
+    "en": "March 26, 2024",
+    "zh": "2024年3月26日"
+   },
+   {
+    "ko": "2024년 8월 27일",
+    "ja": "2024年8月27日",
+    "en": "August 27, 2024",
+    "zh": "2024年8月27日"
+   },
+   {
+    "ko": "2025년 2월 5일",
+    "ja": "2025年2月5日",
+    "en": "February 5, 2025",
+    "zh": "2025年2月5日"
+   }
+  ],
+  "answer": 1,
+  "source": "https://isplus.com/article/view/isp202403260139",
+  "checked_at": "2026-11-11",
+  "reward": {
+   "video_id": "",
+   "title": ""
+  }
+ },
+ {
+  "id": "q03-debut-album",
+  "hall": "rescene",
+  "room": "stage",
+  "type": "quiz",
+  "slot": 2,
+  "hint": {
+   "ko": "무대 방 퀴즈 3",
+   "ja": "ステージ部屋クイズ3",
+   "en": "Stage room quiz 3",
+   "zh": "舞台房間猜謎 3"
+  },
+  "question": {
+   "ko": "리센느의 데뷔 싱글 앨범 이름은?",
+   "ja": "RESCENEのデビューシングルアルバムの名前は?",
+   "en": "What is the name of RESCENE's debut single album?",
+   "zh": "RESCENE出道單曲專輯名稱是?"
+  },
+  "choices": [
+   "Re:Scene",
+   "SCENEDROME",
+   "PULSE",
+   "Dearest"
+  ],
+  "answer": 0,
+  "source": "https://isplus.com/article/view/isp202403260139",
+  "checked_at": "2026-11-11",
+  "reward": {
+   "video_id": "",
+   "title": ""
+  }
+ },
+ {
+  "id": "q04-debut-song",
+  "hall": "rescene",
+  "room": "anwonjalbu",
+  "type": "quiz",
+  "slot": 0,
+  "hint": {
+   "ko": "안원잘부 방 퀴즈 1",
+   "ja": "アンウォンジャルブ部屋クイズ1",
+   "en": "Anwonjalbu room quiz 1",
+   "zh": "Anwonjalbu房間猜謎 1"
+  },
+  "question": {
+   "ko": "리센느의 데뷔 타이틀곡은?",
+   "ja": "RESCENEのデビュー曲(タイトル曲)は?",
+   "en": "What was RESCENE's debut title track?",
+   "zh": "RESCENE的出道主打歌是?"
+  },
+  "choices": [
+   "UhUh",
+   "LOVE ATTACK",
+   "Pretty Girl",
+   "Pinball"
+  ],
+  "answer": 0,
+  "source": "https://www.wikitree.co.kr/articles/1158586",
+  "checked_at": "2026-11-11",
+  "reward": {
+   "video_id": "",
+   "title": ""
+  }
+ },
+ {
+  "id": "q05-prerelease",
+  "hall": "rescene",
+  "room": "anwonjalbu",
+  "type": "quiz",
+  "slot": 1,
+  "hint": {
+   "ko": "안원잘부 방 퀴즈 2",
+   "ja": "アンウォンジャルブ部屋クイズ2",
+   "en": "Anwonjalbu room quiz 2",
+   "zh": "Anwonjalbu房間猜謎 2"
+  },
+  "question": {
+   "ko": "데뷔 전 2024년 2월 29일에 먼저 공개된 선공개곡은?",
+   "ja": "デビュー前の2024年2月29日に先行公開された曲は?",
+   "en": "Which pre-release song came out on February 29, 2024, before their debut?",
+   "zh": "出道前於2024年2月29日先行公開的歌曲是?"
+  },
+  "choices": [
+   "YoYo",
+   "UhUh",
+   "Lucky you",
+   "New World"
+  ],
+  "answer": 0,
+  "source": "https://sports.khan.co.kr/article/202402292225003",
+  "checked_at": "2026-11-11",
+  "reward": {
+   "video_id": "",
+   "title": ""
+  }
+ },
+ {
+  "id": "q06-agency",
+  "hall": "rescene",
+  "room": "tv",
+  "type": "quiz",
+  "slot": 0,
+  "hint": {
+   "ko": "TV 예능 방 퀴즈 1",
+   "ja": "バラエティ部屋クイズ1",
+   "en": "TV room quiz 1",
+   "zh": "綜藝房間猜謎 1"
+  },
+  "question": {
+   "ko": "리센느의 소속사는?",
+   "ja": "RESCENEの所属事務所は?",
+   "en": "Which agency is RESCENE with?",
+   "zh": "RESCENE所屬的經紀公司是?"
+  },
+  "choices": [
+   {
+    "ko": "더뮤즈엔터테인먼트",
+    "ja": "The Muze Entertainment",
+    "en": "The Muze Entertainment",
+    "zh": "The Muze Entertainment"
+   },
+   {
+    "ko": "하이브",
+    "ja": "HYBE",
+    "en": "HYBE",
+    "zh": "HYBE"
+   },
+   {
+    "ko": "JYP엔터테인먼트",
+    "ja": "JYPエンターテインメント",
+    "en": "JYP Entertainment",
+    "zh": "JYP Entertainment"
+   },
+   {
+    "ko": "SM엔터테인먼트",
+    "ja": "SMエンターテインメント",
+    "en": "SM Entertainment",
+    "zh": "SM Entertainment"
+   }
+  ],
+  "answer": 0,
+  "source": "https://isplus.com/article/view/isp202403260139",
+  "checked_at": "2026-11-11",
+  "reward": {
+   "video_id": "",
+   "title": ""
+  }
+ },
+ {
+  "id": "q07-fandom",
+  "hall": "rescene",
+  "room": "tv",
+  "type": "quiz",
+  "slot": 1,
+  "hint": {
+   "ko": "TV 예능 방 퀴즈 2",
+   "ja": "バラエティ部屋クイズ2",
+   "en": "TV room quiz 2",
+   "zh": "綜藝房間猜謎 2"
+  },
+  "question": {
+   "ko": "리센느의 공식 팬덤 이름은?",
+   "ja": "RESCENEの公式ファンダム名は?",
+   "en": "What is RESCENE's official fandom name?",
+   "zh": "RESCENE的官方粉絲名是?"
+  },
+  "choices": [
+   {
+    "ko": "리마인(REMINE)",
+    "ja": "REMINE(リマイン)",
+    "en": "REMINE",
+    "zh": "REMINE"
+   },
+   {
+    "ko": "리센터(RECENTER)",
+    "ja": "RECENTER(リセンター)",
+    "en": "RECENTER",
+    "zh": "RECENTER"
+   },
+   {
+    "ko": "씬즈(SCENES)",
+    "ja": "SCENES(シーンズ)",
+    "en": "SCENES",
+    "zh": "SCENES"
+   },
+   {
+    "ko": "러버(LOVER)",
+    "ja": "LOVER(ラバー)",
+    "en": "LOVER",
+    "zh": "LOVER"
+   }
+  ],
+  "answer": 0,
+  "source": "https://soompi.com/article/1674005wpp/rescene-announces-official-fandom-name",
+  "checked_at": "2026-11-11",
+  "reward": {
+   "video_id": "",
+   "title": ""
+  }
+ },
+ {
+  "id": "q08-love-attack-album",
+  "hall": "rescene",
+  "room": "youtube_guest",
+  "type": "quiz",
+  "slot": 0,
+  "hint": {
+   "ko": "유튜브 출연 방 퀴즈 1",
+   "ja": "YouTube出演部屋クイズ1",
+   "en": "YouTube room quiz 1",
+   "zh": "YouTube房間猜謎 1"
+  },
+  "question": {
+   "ko": "「LOVE ATTACK」이 실린 미니 1집의 이름은?",
+   "ja": "「LOVE ATTACK」が収録されたミニ1集の名前は?",
+   "en": "Which first mini album includes \"LOVE ATTACK\"?",
+   "zh": "收錄〈LOVE ATTACK〉的首張迷你專輯是?"
+  },
+  "choices": [
+   "SCENEDROME",
+   "Re:Scene",
+   "Glow Up",
+   "Lip Bomb"
+  ],
+  "answer": 0,
+  "source": "https://news.tf.co.kr/read/ogmeta/2339259.htm",
+  "checked_at": "2026-11-11",
+  "reward": {
+   "video_id": "",
+   "title": ""
+  }
+ },
+ {
+  "id": "q09-leader",
+  "hall": "rescene",
+  "room": "youtube_guest",
+  "type": "quiz",
+  "slot": 1,
+  "hint": {
+   "ko": "유튜브 출연 방 퀴즈 2",
+   "ja": "YouTube出演部屋クイズ2",
+   "en": "YouTube room quiz 2",
+   "zh": "YouTube房間猜謎 2"
+  },
+  "question": {
+   "ko": "리센느의 리더는 누구일까요?",
+   "ja": "RESCENEのリーダーは誰?",
+   "en": "Who is RESCENE's leader?",
+   "zh": "RESCENE的隊長是誰?"
+  },
+  "choices": [
+   {
+    "ko": "원이",
+    "ja": "ウォニ",
+    "en": "WONI",
+    "zh": "WONI"
+   },
+   {
+    "ko": "리브",
+    "ja": "リブ",
+    "en": "LIV",
+    "zh": "LIV"
+   },
+   {
+    "ko": "미나미",
+    "ja": "ミナミ",
+    "en": "MINAMI",
+    "zh": "MINAMI"
+   },
+   {
+    "ko": "메이",
+    "ja": "メイ",
+    "en": "MAY",
+    "zh": "MAY"
+   }
+  ],
+  "answer": 0,
+  "source": "https://www.khan.co.kr/article/202607240600031/",
+  "checked_at": "2026-11-11",
+  "reward": {
+   "video_id": "",
+   "title": ""
+  }
+ },
+ {
+  "id": "q10-first-win",
+  "hall": "rescene",
+  "room": "daily",
+  "type": "quiz",
+  "slot": 0,
+  "hint": {
+   "ko": "일상 방 퀴즈 1",
+   "ja": "日常部屋クイズ1",
+   "en": "Daily room quiz 1",
+   "zh": "日常房間猜謎 1"
+  },
+  "question": {
+   "ko": "리센느에게 데뷔 후 첫 음악방송 1위를 안겨 준 곡은?",
+   "ja": "RESCENEにデビュー後初の音楽番組1位をもたらした曲は?",
+   "en": "Which song gave RESCENE their first music-show win?",
+   "zh": "讓RESCENE拿下出道後首座音樂節目一位的歌是?"
+  },
+  "choices": [
+   "Pretty Girl",
+   "UhUh",
+   "YoYo",
+   "Pinball"
+  ],
+  "answer": 0,
+  "source": "https://www.khan.co.kr/article/202607240600031/",
+  "checked_at": "2026-11-11",
+  "reward": {
+   "video_id": "",
+   "title": ""
+  }
+ },
+ {
+  "id": "q11-pulse",
+  "hall": "rescene",
+  "room": "daily",
+  "type": "quiz",
+  "slot": 1,
+  "hint": {
+   "ko": "일상 방 퀴즈 2",
+   "ja": "日常部屋クイズ2",
+   "en": "Daily room quiz 2",
+   "zh": "日常房間猜謎 2"
+  },
+  "question": {
+   "ko": "2026년 11월 3일 발매된 리센느의 미니 4집 이름은?",
+   "ja": "2026年11月3日発売のRESCENEミニ4集の名前は?",
+   "en": "What is the name of RESCENE's 4th mini album, released November 3, 2026?",
+   "zh": "RESCENE於2026年11月3日發行的第四張迷你專輯名稱是?"
+  },
+  "choices": [
+   "PULSE",
+   "SCENEDROME",
+   "Glow Up",
+   "Re:Scene"
+  ],
+  "answer": 0,
+  "source": "https://isplus.com/article/view/isp202611010090",
+  "checked_at": "2026-11-11",
+  "reward": {
+   "video_id": "",
+   "title": ""
+  }
+ },
+ {
+  "id": "q12-may-bday",
+  "hall": "rescene",
+  "room": "birthday",
+  "type": "quiz",
+  "slot": 0,
+  "hint": {
+   "ko": "생일 방 퀴즈 1",
+   "ja": "誕生日部屋クイズ1",
+   "en": "Birthday room quiz 1",
+   "zh": "生日房間猜謎 1"
+  },
+  "question": {
+   "ko": "메이의 생일은 언제일까요?",
+   "ja": "メイの誕生日はいつ?",
+   "en": "When is MAY's birthday?",
+   "zh": "MAY的生日是哪一天?"
+  },
+  "choices": [
+   {
+    "ko": "5월 25일",
+    "ja": "5月25日",
+    "en": "May 25",
+    "zh": "5月25日"
+   },
+   {
+    "ko": "8월 19일",
+    "ja": "8月19日",
+    "en": "August 19",
+    "zh": "8月19日"
+   },
+   {
+    "ko": "10월 11일",
+    "ja": "10月11日",
+    "en": "October 11",
+    "zh": "10月11日"
+   },
+   {
+    "ko": "11월 27일",
+    "ja": "11月27日",
+    "en": "November 27",
+    "zh": "11月27日"
+   }
+  ],
+  "answer": 1,
+  "source": "https://www.wikitree.co.kr/articles/1153682",
+  "checked_at": "2026-11-11",
+  "reward": {
+   "video_id": "",
+   "title": ""
+  }
+ }
+];
 const MISSIONS = [
   { id:"bday-letter", hall:"rescene", room:"birthday", type:"find", shape:"letter", pos:[4.3, 0.06, -4.2],
     hint:{ko:"생일카페 풍선 아래 어딘가에 편지 한 통이 숨어 있어요", ja:"誕生日カフェの風船の下に手紙が隠れています",
           en:"A letter is hidden somewhere under the balloons", zh:"生日咖啡廳的氣球下藏著一封信"},
     reward:{ video_id:"", title:"" } },   // ← 대표가 고를 보상 영상(공식 공개 영상 ID)
-  { id:"quiz-members", hall:"rescene", room:"stage", type:"quiz",
-    hint:{ko:"무대 방 퀴즈", ja:"ステージ部屋のクイズ", en:"Stage room quiz", zh:"舞台房間猜謎"},
-    question:{ko:"리센느 멤버는 모두 몇 명일까요?", ja:"RESCENEのメンバーは全部で何人?", en:"How many members are in RESCENE?", zh:"RESCENE 共有幾位成員?"},
-    choices:["4","5","6","7"], answer:1,
-    source:"",       // ← 공식 출처 링크(소속사 공식 프로필 등)를 직접 열어 확인한 뒤 넣는다. 비어 있으면 이 문제는 숨김
-    checked_at:"",   // ← 확인한 날짜(예: 2026-11-11)
-    reward:{ video_id:"", title:"" } },
 ];
+MISSIONS.push(...CONTENT_QUIZZES);   // 리센느관 퀴즈 12개(방별)
+/* 방 이야기·한 줄 설명: HALLS 에 비어 있으면 CONTENT 로 채움(curation.json themes[].story·desc 가 있으면 그쪽이 우선) */
+{ const h=HALLS.find(x=>x.id===CONTENT.hall); h?.rooms.forEach(r=>{ if(r.album && !r.story) r.story=ALBUMS[r.album]?.intro; const c=CONTENT.rooms[r.id]; if(!c) return; if(!r.desc) r.desc=c.desc; if(!r.story) r.story=c.story; }); }
 
 /* 추천·열람 집계 어댑터. 지금은 "local"(이 기기 안에서만 셈 — 시험용).
    TODO: 대표 계정 Firebase(무료 등급)를 만들면 FIREBASE_CONFIG에 {apiKey, authDomain, projectId, appId}를 넣고
@@ -119,6 +978,10 @@ const PROGRESS = { enabled:true, hall:"rescene", order:["stage","anwonjalbu","tv
           | sky_blimp(건물 밖 하늘 비행선 옆면 가로 띠, 512×96) | sky_holo_1·2·3(입구 위 공중 홀로그램 판, 512×256)
           ※ 영상 패널(유튜브 임베드) 안·바로 아래에는 광고 칸을 두지 않는다(YouTube API 개발자 정책 III.G). panel_bottom은 없앴다
           | lobby_top · hall_top · room_top (벽 위쪽 지하철식 광고판 줄 — 칸 번호 _1, _2 …. 적지 않은 칸은 「광고 자리」 판이 보인다)
+          | frame_top_<방id>_<n> (각 방 영상 액자 n번 바로 위 가로 띠, n=1~7). 이 칸은 {slot_id, place, kind, image_url, link, label} 를 받는다:
+              kind:"paid"(유료 광고 — 「광고 · AD」 표시) | "official_endorse"(리센느 공식 광고 모델 — 「리센느 광고 모델 · 정보」 표시) | "empty"
+              image_url(https)이 있으면 그 이미지(512px 이하로 줄여 씀), 없으면 글자 판. 브랜드 로고는 광고주가 준 것만(우리가 받아 쓰지 않음)
+              적지 않은 칸은 ENDORSEMENTS(방 연계 순서)가 차례로 채우고, 남으면 「광고 자리 · AD SPACE」
    로비 전광판(lobby_billboard)에 이미지가 들어오면 순환 슬라이드 사이에 끼어든다. */
 const ADS = [
   {slot_id:"screen_top_1",       place:"screen_top",       size:"화면 너비 × 22px",  image:null, link:null, label:"광고"},
@@ -232,17 +1095,68 @@ const ENDORSEMENTS = {
 /* 건물 정면 조각상: 얼굴 없는 양식화된 대리석 상(도형만). 실존 인물 사진·얼굴 닮게 만들기·사진 텍스처 금지.
    그룹별로 추가: {group, enabled, pediment(박공 새김 글자), members:[{id, name, name_en, color, symbol, story}]}
    - symbol: star | flower | note | moon | heart (우리가 고른 일반 장식 도형 — 공식 상징이 아님)
-   - color: 포인트 색. 공식 멤버 색이 확인되지 않아 모두 '확인 필요'
+   - color: 장식용 포인트 색 — 공식 멤버 색 아님(공식 출처 없음)
+   - 소개 패널은 CONTENT.statues[id](포지션·확인된 생일·소개 1문장)를 쓴다. story 를 직접 넣으면 그쪽이 우선
    - story: 공식 공개 정보만(문자열 또는 {ko,ja,en,zh}). 비어 있으면 패널에 이름만 */
 const STATUES = [
   {group:"rescene", enabled:true, pediment:"RESCENE", members:[
-    {id:"woni",   name:"원이",   name_en:"WONI",   color:"#f4a9b8", symbol:"star",   story:""},   // color 확인 필요
-    {id:"liv",    name:"리브",   name_en:"LIV",    color:"#a8c8ec", symbol:"flower", story:""},   // color 확인 필요(생일 방 theme.color와 같게 둠)
-    {id:"minami", name:"미나미", name_en:"MINAMI", color:"#c9b8f0", symbol:"note",   story:""},   // color 확인 필요
-    {id:"may",    name:"메이",   name_en:"MAY",    color:"#9fdcc0", symbol:"moon",   story:""},   // color 확인 필요
-    {id:"zena",   name:"제나",   name_en:"ZENA",   color:"#ffd27a", symbol:"heart",  story:""},   // color 확인 필요
+    {id:"woni",   name:"원이",   name_en:"WONI",   color:"#f4a9b8", symbol:"star",   story:""},   // 장식색 — 공식 아님
+    {id:"liv",    name:"리브",   name_en:"LIV",    color:"#a8c8ec", symbol:"flower", story:""},   // 장식색 — 공식 아님(생일 방 theme.color와 같게 둠)
+    {id:"minami", name:"미나미", name_en:"MINAMI", color:"#c9b8f0", symbol:"note",   story:""},   // 장식색 — 공식 아님
+    {id:"may",    name:"메이",   name_en:"MAY",    color:"#9fdcc0", symbol:"moon",   story:""},   // 장식색 — 공식 아님
+    {id:"zena",   name:"제나",   name_en:"ZENA",   color:"#ffd27a", symbol:"heart",  story:""},   // 장식색 — 공식 아님
   ]},
 ];
+/* 포토 월(방 벽·관 홀·로비): 공식 계정 게시물만, 이미지 파일을 복사하지 않고 공식 출처에서 불러온다.
+   {room:"<방id>"|"lobby"|"hub", src_type:"yt_thumb"|"instagram", url, caption, credit}
+   - yt_thumb: 공식 채널 영상 주소(썸네일은 i.ytimg.com 에서 불러옴). instagram: 공식 게시물 주소(인스타그램 공식 임베드). url 이 비어 있으면 「공식 사진 준비 중」
+   - 방마다 앞 4장만 걸린다. 생일 방은 벽 폴라로이드가 그 역할 */
+const PHOTOS = [
+  {room:"stage", src_type:"yt_thumb", url:"https://www.youtube.com/watch?v=ajhEFz1zNMQ", caption:"'SPECIAL STAGE' RESCENE(리센느) - LOVE ATTACK #엠카운트다운 EP.933 | Mnet 260618 방송", credit:"YouTube · Mnet K-POP"},
+  {room:"stage", src_type:"yt_thumb", url:"https://www.youtube.com/watch?v=Esd-KkxROxA", caption:"'COMEBACK' RESCENE (리센느) - Pretty Girl #엠카운트다운 EP.936 | Mnet 260709 방송", credit:"YouTube · Mnet K-POP"},
+  {room:"stage", src_type:"yt_thumb", url:"https://www.youtube.com/watch?v=rzfjou7vPP0", caption:"[앵콜캠4K] 리센느 'LOVE ATTACK' 인기가요 1위 앵콜 직캠 (RESCENE Encore Fancam) @SBS Inkigayo 260726", credit:"YouTube · SBSKPOP X INKIGAYO"},
+  {room:"stage", src_type:"instagram", url:"", caption:"", credit:"@rescene_official"},   // ← 확인한 공식 게시물 주소
+  {room:"anwonjalbu", src_type:"yt_thumb", url:"https://www.youtube.com/watch?v=OrCOflk2QmQ", caption:"갸루와 거제에 왔습니다 (거제 1편)", credit:"YouTube · 안녕하세요원이입니다잘부탁드립니다"},
+  {room:"anwonjalbu", src_type:"yt_thumb", url:"https://www.youtube.com/watch?v=5JZ5biQ_hMI", caption:"저희도 리센느입니다...", credit:"YouTube · 안녕하세요원이입니다잘부탁드립니다"},
+  {room:"anwonjalbu", src_type:"yt_thumb", url:"https://www.youtube.com/watch?v=FcMaC8akSU8", caption:"미나미의 갸루라이브 메들리!", credit:"YouTube · 안녕하세요원이입니다잘부탁드립니다"},
+  {room:"anwonjalbu", src_type:"instagram", url:"", caption:"", credit:"@rescene_official"},   // ← 확인한 공식 게시물 주소
+  {room:"tv", src_type:"yt_thumb", url:"https://www.youtube.com/watch?v=QI_aX8GPRvY", caption:"[전참시] 오늘도 밥은 줍니꺼? 먹는 것에 진심인 리센느✨ ＜With＞ 컴백 기념 회식 영상 모음집ㅣ#리센느 MBC260808방송", credit:"YouTube · 엠뚜루마뚜루 : MBC 공식 종합 채널"},
+  {room:"tv", src_type:"yt_thumb", url:"https://www.youtube.com/watch?v=1h4v7pLBwm0", caption:"[#간식게임] 눈이 부신 리센느를 숨김없이 보여줘✨ 대세 리센느와 함께한 여름 방학🏖️ #highlight#놀라운토요일 | amazingsaturday EP.430", credit:"YouTube · 놀라운 토요일 Amazing Saturday"},
+  {room:"tv", src_type:"yt_thumb", url:"https://www.youtube.com/watch?v=P0LNFoDtf74", caption:"💚안녕하세요원이입니다아형나왔습니다잘부탁드립니다💚 리센느(RESCENE) 원이 모아보기｜아는 형님｜JTBC 260620 방송", credit:"YouTube · JTBC Voyage"},
+  {room:"tv", src_type:"instagram", url:"", caption:"", credit:"@rescene_official"},   // ← 확인한 공식 게시물 주소
+  {room:"youtube_guest", src_type:"yt_thumb", url:"https://www.youtube.com/watch?v=SW7M6MdlrlU", caption:"[리무진서비스] EP.211 리센느 미나미 | RESCENE MINAMI | Runaway, 나였으면, My Gospel, Timeless", credit:"YouTube · KBS Kpop"},
+  {room:"youtube_guest", src_type:"yt_thumb", url:"https://www.youtube.com/watch?v=17t9izNAYVE", caption:"거제 야호가 문특에 왔습니다 (w. 리센느 원이, 미나미, 제나)", credit:"YouTube · MMTG 문명특급"},
+  {room:"youtube_guest", src_type:"yt_thumb", url:"https://www.youtube.com/watch?v=a_c2mBMKuBE", caption:"[리무진서비스] EP.240 리센느 리브 | RESCENE LIV | With, 그댄 달라요, 내 생에 아름다운, 왜 그래", credit:"YouTube · KBS Kpop"},
+  {room:"youtube_guest", src_type:"instagram", url:"", caption:"", credit:"@rescene_official"},   // ← 확인한 공식 게시물 주소
+  {room:"daily", src_type:"yt_thumb", url:"https://www.youtube.com/watch?v=xclVi9zCFdY", caption:"[Re-log] 먹짱 원짱, 대만에 가다 🍴 | RESCENE (리센느) vlog", credit:"YouTube · RESCENE"},
+  {room:"daily", src_type:"yt_thumb", url:"https://www.youtube.com/watch?v=97YE7zPrON8", caption:"[Re-log] 미나미의 휴가 브이로그 in JAPAN 🏠 | RESCENE (리센느) vlog", credit:"YouTube · RESCENE"},
+  {room:"daily", src_type:"yt_thumb", url:"https://www.youtube.com/watch?v=faDPwuKSOM4", caption:"[Re-log] 까엉티비🐹 in LA US | RESCENE (리센느) vlog", credit:"YouTube · RESCENE"},
+  {room:"daily", src_type:"instagram", url:"", caption:"", credit:"@rescene_official"},   // ← 확인한 공식 게시물 주소
+  {room:"lobby", src_type:"yt_thumb", url:"https://www.youtube.com/watch?v=9XttLI0oH0I", caption:"RESCENE (리센느) 'LOVE ATTACK' Official MV", credit:"YouTube · RESCENE"},
+  {room:"lobby", src_type:"yt_thumb", url:"https://www.youtube.com/watch?v=MC6-82GRK5I", caption:"RESCENE (리센느) 'Bloom' Official MV", credit:"YouTube · RESCENE"},
+  {room:"lobby", src_type:"yt_thumb", url:"https://www.youtube.com/watch?v=ZbO9PBdFRdc", caption:"RESCENE (리센느) 'Deja Vu' Official MV", credit:"YouTube · RESCENE"},
+  {room:"lobby", src_type:"instagram", url:"", caption:"", credit:"@rescene_official"},
+  {room:"hub", src_type:"yt_thumb", url:"https://www.youtube.com/watch?v=xclVi9zCFdY", caption:"[Re-log] 먹짱 원짱, 대만에 가다 🍴 | RESCENE (리센느) vlog", credit:"YouTube · RESCENE"},
+  {room:"hub", src_type:"yt_thumb", url:"https://www.youtube.com/watch?v=97YE7zPrON8", caption:"[Re-log] 미나미의 휴가 브이로그 in JAPAN 🏠 | RESCENE (리센느) vlog", credit:"YouTube · RESCENE"},
+  {room:"hub", src_type:"yt_thumb", url:"https://www.youtube.com/watch?v=i3BCs-IcIl4", caption:"HAPPY WONI DAY 🎂💚", credit:"YouTube · RESCENE"},
+  {room:"hub", src_type:"instagram", url:"", caption:"", credit:"@rescene_official"},
+  {room:"album_pulse", src_type:"instagram", url:"", caption:"", credit:"@rescene_official"},   // ← PULSE 공식 사진 게시물 주소(확인 후)
+  {room:"album_pulse", src_type:"instagram", url:"", caption:"", credit:"@rescene_official"},   // ← PULSE 공식 사진 게시물 주소(확인 후)
+  {room:"album_pulse", src_type:"instagram", url:"", caption:"", credit:"@rescene_official"},   // ← PULSE 공식 사진 게시물 주소(확인 후)
+  {room:"album_pulse", src_type:"instagram", url:"", caption:"", credit:"@rescene_official"},   // ← PULSE 공식 사진 게시물 주소(확인 후)
+];
+/* 멤버별 브랜드 화보 홀로그램(방마다 공중에 1개, 몇 초마다 페이드 전환). 화보 이미지 파일을 받아 쓰지 않는다.
+   {member, brand(ENDORSEMENTS id), src_type:"yt_thumb"|"image", url, credit, link, play?}
+   - yt_thumb: 공식 광고 영상(브랜드 공식 채널·리센느 공식 채널) — 썸네일을 보여 주고, play:true 면 다가가거나 누르면 그 면에서 영상이 음소거로 재생
+   - image: 브랜드·소속사가 제공한 이미지 주소(https). url 이 없으면 「공식 화보 준비 중 · 제공 문의」(누르면 ads.html) */
+const HOLO_GALLERY = [
+  {member:"RESCENE", brand:"woori", src_type:"yt_thumb", url:"https://www.youtube.com/watch?v=spN_ZVoONdg", credit:"YouTube · 우리은행", link:"https://www.youtube.com/watch?v=spN_ZVoONdg", play:true},
+  {member:"LIV · MINAMI · MAY · ZENA", brand:"mlb", src_type:"yt_thumb", url:"https://www.youtube.com/watch?v=SsoyXhImVGc", credit:"YouTube · RESCENE (광고 비하인드)", link:"https://www.youtube.com/watch?v=SsoyXhImVGc", play:true},
+  {member:"RESCENE", brand:"casaverdi", src_type:"yt_thumb", url:"https://www.youtube.com/watch?v=sa29RXO7ruM", credit:"YouTube · RESCENE (광고 비하인드)", link:"https://www.youtube.com/watch?v=sa29RXO7ruM", play:true},
+  {member:"", brand:"", src_type:"image", url:null, credit:"", link:null},   // 빈 자리 → 「공식 화보 준비 중 · 제공 문의」
+];
+/* 공통 안내 링크(같은 폴더 상대 경로, site/src 의 페이지). 현재 언어를 ?lang=ko|ja|en|zh-Hant 로 붙인다. 영상 패널 안에는 넣지 않는다 */
+const SITE_LINKS = [ {href:"about.html", k:"lkAbout"}, {href:"privacy.html", k:"lkPrivacy"}, {href:"terms.html", k:"lkTerms"}, {href:"ads.html", k:"lkAds"}, {href:"takedown.html", k:"lkTakedown"} ];
 const THREE_VERSION = "0.186.1"; // importmap 주소와 같이 바꿀 것
 </script>
 <script type="importmap">
@@ -308,7 +1222,22 @@ body[data-view=outside] .turn, body.walk .turn{display:none}
 /* 걷기 모드: 왼쪽 아래 조이스틱 + 다가가면 뜨는 말풍선 버튼 */
 .joy{position:fixed;left:16px;bottom:calc(56px + env(safe-area-inset-bottom));z-index:6;width:116px;height:116px;border-radius:50%;
   background:rgba(255,250,242,.55);border:2px solid rgba(30,20,60,.18);touch-action:none;display:none}
-body.walk:not(.flat) .joy{display:block}
+body.walk:not(.flat).ctl-joy .joy{display:block}
+/* 8방향 패드: 칸마다 64px 이상, 반투명, 눌린 칸 표시. 패널이 열려 있으면 숨김 */
+.dpadWrap{position:fixed;left:12px;bottom:calc(52px + env(safe-area-inset-bottom));z-index:6;display:none;flex-direction:column;align-items:center;gap:6px;touch-action:none;user-select:none;-webkit-user-select:none}
+body.walk:not(.flat):not(.ctl-joy) .dpadWrap{display:flex}
+body.sheetOn .dpadWrap,body.sheetOn .joy{display:none!important}
+.dpad{display:grid;grid-template-columns:repeat(3,64px);grid-template-rows:repeat(3,64px);gap:3px;padding:4px;border-radius:22px;background:var(--dp-bg);touch-action:none}
+.dpad i{display:flex;align-items:center;justify-content:center;font-style:normal;font-size:24px;color:var(--dp-fg);background:var(--dp-btn);border-radius:16px;border:1px solid var(--dp-line);transition:background .08s,transform .08s}
+.dpad i.stop{font-size:15px;letter-spacing:-1px}
+.dpad i.on{background:var(--dp-on);color:#fff;transform:scale(.95)}
+.rot{display:flex;gap:8px}
+.rot button{width:64px;height:40px;border-radius:14px;border:1px solid var(--dp-line);background:var(--dp-btn);color:var(--dp-fg);font-size:22px;touch-action:none}
+.rot button.on{background:var(--dp-on);color:#fff}
+:root{--dp-bg:rgba(255,250,242,.35);--dp-btn:rgba(255,250,242,.72);--dp-fg:#1e143c;--dp-line:rgba(30,20,60,.18);--dp-on:rgba(30,20,60,.85)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--dp-bg:rgba(20,16,36,.35);--dp-btn:rgba(30,24,52,.72);--dp-fg:#f3eefc;--dp-line:rgba(255,255,255,.2);--dp-on:rgba(255,214,64,.9)}}
+:root[data-theme="dark"]{--dp-bg:rgba(20,16,36,.35);--dp-btn:rgba(30,24,52,.72);--dp-fg:#f3eefc;--dp-line:rgba(255,255,255,.2);--dp-on:rgba(255,214,64,.9)}
+.ctlPick{display:flex;gap:8px;margin-top:12px}.ctlPick button{flex:1;border:1px solid var(--line);background:#fff;border-radius:12px;padding:12px;font-weight:700;min-height:48px}.ctlPick button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
 .joy i{position:absolute;left:50%;top:50%;width:50px;height:50px;margin:-25px 0 0 -25px;border-radius:50%;background:var(--ink);opacity:.85;box-shadow:var(--shadow)}
 .bubble{position:fixed;z-index:7;left:0;top:0;transform:translate(-50%,-100%);border:0;background:#fffdf8;color:var(--ink);
   border-radius:16px;padding:9px 14px;font-size:14px;font-weight:700;box-shadow:var(--shadow);display:none;max-width:70vw;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
@@ -347,6 +1276,25 @@ body.walk:not(.flat) .joy{display:block}
 .petIntro{margin:8px 2px 0;font-size:12px;color:var(--sub);line-height:1.5;min-height:18px}
 .contactBtn{display:block;width:100%;margin-top:14px;border:0;background:var(--ink);color:#fff;font-weight:700;font-size:15px;padding:13px;border-radius:999px}
 .contactNote{margin:8px 0 0;font-size:11px;color:var(--sub);text-align:center}
+.tracks{margin:6px 0 0;padding:0;list-style:none}
+.trk{border-bottom:1px solid var(--line);padding:10px 2px}
+.trk .tag{background:var(--y);border-radius:4px;padding:1px 6px;font-size:11px;font-weight:800}
+.trk small{display:block;color:var(--sub);font-size:12px;margin-top:3px}
+.trk p{margin:4px 0 0;font-size:13px;line-height:1.5}.trk p.soon{color:var(--sub);font-style:italic}
+.trk a.lyr{display:inline-block;margin-top:6px;border:1px solid var(--line);border-radius:999px;padding:5px 10px;font-size:12px;font-weight:700;color:var(--ink);text-decoration:none}
+.holoVid{position:fixed;z-index:3;display:none;background:#000;border-radius:6px;overflow:hidden;box-shadow:0 0 0 2px rgba(120,220,255,.7),0 0 24px rgba(120,220,255,.6)}
+.holoVid.on{display:block}.holoVid iframe{width:100%;height:100%;border:0;display:block}
+.holoBar{position:fixed;z-index:6;display:none;gap:6px}.holoBar.on{display:flex}
+.holoBar button{border:0;border-radius:999px;padding:7px 12px;font-size:12px;font-weight:700;background:rgba(255,250,242,.95);box-shadow:0 2px 8px rgba(0,0,0,.2)}
+body.holoPlaying .adtop{display:none}
+.sfacts{margin:10px 0 0;font-size:13px;font-weight:700;color:var(--ink)}
+.qok{margin:12px 0 0;font-weight:800;color:#2f6b45}
+.choices button.ok{background:#e9f3ec;border-color:#8cc5a0}
+a.srcmini{font-size:11px;color:var(--sub);text-decoration:underline}
+.hallIntro{white-space:pre-wrap;line-height:1.6}
+.siteLinks{display:flex;flex-wrap:wrap;justify-content:center;gap:4px 12px;margin:12px 0 0;font-size:11px}
+.siteLinks a{color:var(--sub);text-decoration:underline;text-underline-offset:2px;padding:4px 0}
+.contactBtn.sub{background:#fff;color:var(--ink);border:1px solid var(--line);margin-top:8px}
 /* 리센느 공식 광고 모델 진열(글자 판만 · 로고·사진 없음) */
 .badges b.info{background:#e9f3ec;color:#2f6b45;border:1px solid #b9dcc4}
 .sec2{margin:14px 0 6px;font-size:13px;font-weight:800;color:var(--ink)}
@@ -438,7 +1386,7 @@ body.playing .adtop{display:none}
 .picks{margin-top:16px;border-top:1px solid var(--line);padding-top:12px}
 .picks[hidden]{display:none}
 .picks h3{margin:0 0 8px;font-size:13px;color:var(--p)}
-.picks h3::after{content:"광고 · AD";margin-left:6px;background:var(--ink);color:#fff;border-radius:4px;padding:1px 5px;font-size:10px;vertical-align:1px}
+.picks h3::after{content:var(--adb,"광고 · AD");margin-left:6px;background:var(--ink);color:#fff;border-radius:4px;padding:1px 5px;font-size:10px;vertical-align:1px}
 .pick small{display:block;color:var(--sub);font-size:11px;margin-top:2px}
 .picks .row{display:flex;gap:8px;overflow-x:auto}
 .pick{flex:none;width:136px;background:var(--bg);border-radius:12px;padding:10px;color:var(--ink);text-decoration:none;font-size:13px;line-height:1.4}
@@ -474,7 +1422,7 @@ body.flat #stage,body.flat .turn,body.flat .hint,body.flat .joy{display:none}
 </style>
 </head>
 <body data-view="outside">
-<div id="stage" tabindex="0" aria-label="3D 미술관"></div>
+<div id="stage" tabindex="0" aria-label="3D 미술관" data-t-aria="stageAria"></div>
 
 <a class="adtop" id="adTop" target="_blank" rel="sponsored noopener"></a>
 <header class="top">
@@ -487,7 +1435,7 @@ body.flat #stage,body.flat .turn,body.flat .hint,body.flat .joy{display:none}
   <nav class="crumbs" id="crumbs"></nav>
   <div class="prog" id="prog"><i><b id="progBar"></b></i><span id="progText"></span></div>
 </header>
-<div class="side"><button id="colBtn" data-t="collection"></button><button class="mode" id="modeBtn"></button></div>
+<div class="side"><button id="colBtn" data-t="collection"></button><button id="infoBtn" data-t="info"></button><button class="mode" id="modeBtn"></button></div>
 
 <div class="loading" id="loading"><div class="dots"><i></i><i></i><i></i></div><span data-t="loading"></span></div>
 <div class="hint" id="hint"></div>
@@ -496,6 +1444,14 @@ body.flat #stage,body.flat .turn,body.flat .hint,body.flat .joy{display:none}
 <button class="turn l" id="turnL" data-t-aria="left">&#8592;</button>
 <button class="turn r" id="turnR" data-t-aria="right">&#8594;</button>
 <div class="joy" id="joy" aria-hidden="true"><i id="joyKnob"></i></div>
+<!-- 걷기 모드 8방향 패드(기본). 가운데 칸 = 회전(누른 채 좌우로 끌기, 짧게 탭하면 오른쪽 45°). 화면 드래그 회전도 그대로 -->
+<div class="dpadWrap" id="dpadWrap">
+  <div class="dpad" id="dpad" role="group" data-t-aria="dPad">
+    <i data-c="-1,1" data-t-aria="dFL">↖</i><i data-c="0,1" data-t-aria="dF">▲</i><i data-c="1,1" data-t-aria="dFR">↗</i>
+    <i data-c="-1,0" data-t-aria="dL">◀</i><i data-c="0,0" class="stop" data-t-aria="dRot">⟲⟳</i><i data-c="1,0" data-t-aria="dR">▶</i>
+    <i data-c="-1,-1" data-t-aria="dBL">↙</i><i data-c="0,-1" data-t-aria="dB">▼</i><i data-c="1,-1" data-t-aria="dBR">↘</i>
+  </div>
+</div>
 <button class="bubble" id="bubble"></button>
 
 <main id="flat">
@@ -504,6 +1460,7 @@ body.flat #stage,body.flat .turn,body.flat .hint,body.flat .joy{display:none}
 </main>
 
 <p class="note" data-t="embedNote"></p>
+<div class="holoVid" id="holoVid"></div><div class="holoBar" id="holoBar"><button id="holoSound" data-t="holoSound"></button><button id="holoStop" data-t="holoStop"></button></div>
 <div class="toast" id="toast"></div>
 <div class="fade" id="fade"></div>
 
@@ -549,7 +1506,7 @@ body.flat #stage,body.flat .turn,body.flat .hint,body.flat .joy{display:none}
 <script>
 /* ---------- 화면 문구 4개 언어 (영상 제목·설명은 한국어 그대로) ---------- */
 const I18N = {
-  ko:{enTitle:"리센느 공식 광고 모델", enNotAd:"유료 광고 아님 · 정보", enDesc:"리센느가 지금 모델로 활동 중인 공식 광고예요. 덕심저장소가 돈을 받은 광고가 아니고, 제휴 링크도 아니에요.", enSrc:"출처 기사", enChecked:"확인한 날: {d}", enCorner:"광고관 코너", enCornerSub:"광고 영상 · 누르면 재생", enCount:"공식 광고 모델 {n}곳", bEndorse:"공식 광고 모델 보기", agTitle:"안원잘부 굿즈", agSoon:"공식 굿즈 링크 준비 중", agGo:"공식 스토어 보러 가기", agDesc:"원이 개인 채널 「안원잘부」의 공식 굿즈 자리예요.", notAff:"제휴 링크가 아니에요. 덕심저장소는 수수료를 받지 않아요.", notAffB:"제휴 아님", bAg:"안원잘부 굿즈 보기", stTitle:"{g} 조각상", stNote:"얼굴 없이 도형으로 만든 장식 조각이에요. 실제 모습을 본뜨지 않았어요.", bStatue:"조각상 보기", gallery:"덕심저장소 갤러리", shop:"굿즈 샵", shopOf:"{g} 굿즈 샵", shopSub:"구역을 둘러보고 상품을 눌러 보세요", pickIdol:"아이돌을 골라 주세요", zoneSoon:"곧 들어와요", itemsN:"상품 {n}개", sellerSlot:"입점 자리 · 판매자 모집", sellerBtn:"입점 문의하기", sellerTitle:"입점 문의", sellerDesc:"덕심저장소 굿즈 샵에 상품을 입점해 보세요. 아래 버튼으로 문의를 남겨 주시면 연락드릴게요.", sellerResp:"입점 판매자 상품이에요. 판매·배송·교환은 판매자가 책임져요.", sellerBadge:"입점", goBuy:"보러 가기", noLink:"링크 준비 중", bProduct:"상품 보기", bSeller:"입점 문의하기", hintShop:"끌어서 둘러보고, 진열대를 누르면 상품이 나와요", imgCredit:"이미지 출처", progLabel:"클리어 {a}/{b}", roomProg:"이 방 {s} ({a}/{b})", lockedLeft:"🔒 {n}편 더", lockedRoom:"「{room}」 방에서 영상 {n}편 더 보면 열려요", watchedOk:"시청 완료! {s}", roomClear:"방 클리어! 다음 방이 열렸어요!", roomClearLast:"방 클리어!", nextOpened:"다음 방이 열렸어요!", hallClear:"🎉 {hall} 클리어! 비밀의 방이 열렸어요", clearReward:"클리어 보상: 먼저 열림", colClear:"{hall} 클리어 {a}/{b}", adSpace:"광고 자리", adSoon:"이 자리에 광고가 들어갈 예정이에요", contactTitle:"광고 문의", contactBtn:"광고 문의하기", contactSoon:"문의 창 준비 중이에요", contactNote:"남겨 주신 정보는 광고 상담에만 쓰여요", contactDesc:"덕심저장소 미술관의 전광판·광고판 자리에 광고를 걸어 보세요. 아래 버튼으로 문의를 남겨 주시면 연락드릴게요.", bContact:"광고 문의하기", bs1:"이 자리에 광고를 걸어 보세요", bs1b:"광고 문의 환영 · 누르면 「광고 문의하기」", bs2:"덕심저장소", bs2b:"구독하고 다음 전시를 먼저 만나요", bs3:"이번 주 새 전시", bs3b:"새로 걸린 날: {d}", culture:"한국 문화 코너", cultureSoon:"곧 열려요", bCulture:"한국 문화 코너 · 곧 열려요", lobbySub:"Deoksim Archive Gallery · 推し心アーカイブ・ギャラリー · 追星心意典藏館", subOut:"3D 미술관 시험판", subLobby:"로비 · 관을 골라 주세요", subHub:"관 홀 · 방을 골라 주세요",
+  ko:{dRot:"회전 — 누른 채 좌우로 끌기, 탭하면 오른쪽으로 45도", hintWalkD:"왼쪽 아래 방향 버튼으로 걷고(가운데 칸을 끌면 돌아요), 다가가면 버튼이 떠요", hintOutWalkD:"왼쪽 아래 방향 버튼으로 입구까지 걸어가요", dPad:"이동 방향 버튼", dF:"앞으로", dB:"뒤로", dL:"왼쪽으로 옆걸음", dR:"오른쪽으로 옆걸음", dFL:"왼쪽 앞으로", dFR:"오른쪽 앞으로", dBL:"왼쪽 뒤로", dBR:"오른쪽 뒤로", dStop:"멈춤", dRotL:"왼쪽으로 돌기", dRotR:"오른쪽으로 돌기", ctlTitle:"걷기 조작 방식", ctlDpad:"방향 버튼", ctlJoy:"조이스틱", frEndorse:"리센느 광고 모델 · 정보", frEmpty:"광고 자리 · AD SPACE", pwTitle:"포토 월 · 공식 사진", pwSoon:"공식 사진 준비 중", bPhotoWall:"사진 크게 보기", holoSoon:"공식 화보 준비 중 · 제공 문의", holoTitle:"브랜드 화보", bHolo:"화보 영상 보기", holoSound:"🔊 소리 켜기", holoStop:"✕ 닫기", openSrc:"출처 보기", alTracks:"수록곡", alTitleTrack:"타이틀곡", alLyrics:"공식 가사 보기", alLyricist:"작사", alComposer:"작곡", alStorySoon:"곡 이야기 준비 중", alOrderNote:"곡 순서는 기사에 나온 순서예요(공식 트랙 순서 확인 중).", alRelease:"발매 {d}", bAlbum:"앨범 보기", alNoLyrics:"가사 본문은 저작권 때문에 싣지 않아요.", stPos:"포지션: {p}", stBday:"생일: {d}", qOk:"정답이에요!", introT:"안내", bIntro:"관 안내 읽기", affNote:"이 링크로 구매하면 덕심저장소가 일정액의 수수료를 받을 수 있어요.", stageAria:"3D 미술관", adBadge:"광고 · AD", adLabel:"광고", lkAbout:"소개", lkPrivacy:"개인정보", lkTerms:"약관", lkAds:"광고 문의", lkTakedown:"권리 신고", info:"정보", adsPage:"광고 문의 페이지 열기", enTitle:"리센느 공식 광고 모델", enNotAd:"유료 광고 아님 · 정보", enDesc:"리센느가 지금 모델로 활동 중인 공식 광고예요. 덕심저장소가 돈을 받은 광고가 아니고, 제휴 링크도 아니에요.", enSrc:"출처 기사", enChecked:"확인한 날: {d}", enCorner:"광고관 코너", enCornerSub:"광고 영상 · 누르면 재생", enCount:"공식 광고 모델 {n}곳", bEndorse:"공식 광고 모델 보기", agTitle:"안원잘부 굿즈", agSoon:"공식 굿즈 링크 준비 중", agGo:"공식 스토어 보러 가기", agDesc:"원이 개인 채널 「안원잘부」의 공식 굿즈 자리예요.", notAff:"제휴 링크가 아니에요. 덕심저장소는 수수료를 받지 않아요.", notAffB:"제휴 아님", bAg:"안원잘부 굿즈 보기", stTitle:"{g} 조각상", stNote:"얼굴 없이 도형으로 만든 장식 조각이에요. 실제 모습을 본뜨지 않았어요.", bStatue:"조각상 보기", gallery:"덕심저장소 갤러리", shop:"굿즈 샵", shopOf:"{g} 굿즈 샵", shopSub:"구역을 둘러보고 상품을 눌러 보세요", pickIdol:"아이돌을 골라 주세요", zoneSoon:"곧 들어와요", itemsN:"상품 {n}개", sellerSlot:"입점 자리 · 판매자 모집", sellerBtn:"입점 문의하기", sellerTitle:"입점 문의", sellerDesc:"덕심저장소 굿즈 샵에 상품을 입점해 보세요. 아래 버튼으로 문의를 남겨 주시면 연락드릴게요.", sellerResp:"입점 판매자 상품이에요. 판매·배송·교환은 판매자가 책임져요.", sellerBadge:"입점", goBuy:"보러 가기", noLink:"링크 준비 중", bProduct:"상품 보기", bSeller:"입점 문의하기", hintShop:"끌어서 둘러보고, 진열대를 누르면 상품이 나와요", imgCredit:"이미지 출처", progLabel:"클리어 {a}/{b}", roomProg:"이 방 {s} ({a}/{b})", lockedLeft:"🔒 {n}편 더", lockedRoom:"「{room}」 방에서 영상 {n}편 더 보면 열려요", watchedOk:"시청 완료! {s}", roomClear:"방 클리어! 다음 방이 열렸어요!", roomClearLast:"방 클리어!", nextOpened:"다음 방이 열렸어요!", hallClear:"🎉 {hall} 클리어! 비밀의 방이 열렸어요", clearReward:"클리어 보상: 먼저 열림", colClear:"{hall} 클리어 {a}/{b}", adSpace:"광고 자리", adSoon:"이 자리에 광고가 들어갈 예정이에요", contactTitle:"광고 문의", contactBtn:"광고 문의하기", contactSoon:"문의 창 준비 중이에요", contactNote:"남겨 주신 정보는 광고 상담에만 쓰여요", contactDesc:"덕심저장소 미술관의 전광판·광고판 자리에 광고를 걸어 보세요. 아래 버튼으로 문의를 남겨 주시면 연락드릴게요.", bContact:"광고 문의하기", bs1:"이 자리에 광고를 걸어 보세요", bs1b:"광고 문의 환영 · 누르면 「광고 문의하기」", bs2:"덕심저장소", bs2b:"구독하고 다음 전시를 먼저 만나요", bs3:"이번 주 새 전시", bs3b:"새로 걸린 날: {d}", culture:"한국 문화 코너", cultureSoon:"곧 열려요", bCulture:"한국 문화 코너 · 곧 열려요", lobbySub:"Deoksim Archive Gallery · 推し心アーカイブ・ギャラリー · 追星心意典藏館", subOut:"3D 미술관 시험판", subLobby:"로비 · 관을 골라 주세요", subHub:"관 홀 · 방을 골라 주세요",
       loading:"미술관 문을 여는 중…", enter:"들어가기", toLobby:"로비로", toHub:"관 홀로", exit:"밖으로",
       hintOut:"「들어가기」를 누르면 계단을 올라 안으로 들어가요", hintOutWalk:"조이스틱으로 걸어서 입구까지 가 보세요",
       hintLobby:"끌어서 둘러보고, 문을 누르면 관으로 들어가요", hintHub:"문을 누르면 방으로 들어가요",
@@ -574,7 +1531,7 @@ const I18N = {
       rewardSoon:"보상 영상은 곧 채워져요", secret:"비밀 액자", quizWrong:"아쉬워요, 다시 골라 볼까요?",
       like:"♡ 좋아요", liked:"❤ 좋아요", likesN:"좋아요 {n} · 열람 {v}", localOnly:"(지금은 이 기기 기준)", cTabG:"갤러리 댓글", cTabY:"유튜브 댓글", cNote:"갤러리 방문자끼리 나누는 댓글이에요 · 유튜브 원본 댓글은 「유튜브에서 보기」", cName:"닉네임(선택)", cText:"댓글을 남겨 주세요 (200자까지)", cPost:"올리기", cEmpty:"첫 댓글을 남겨 주세요", cAnon:"방문자", cReport:"신고", cReported:"신고했어요. 이 댓글은 숨겨져요", cBad:"올릴 수 없는 말이 있어요", cLink:"링크는 올릴 수 없어요", cTooLong:"200자까지 쓸 수 있어요", cOk:"댓글을 올렸어요", cLocal:"지금은 이 기기에만 저장돼요", ytWrite:"유튜브에서 댓글 달기", ytNote:"유튜브 인기 댓글 5개 · 원문 그대로 · 출처: YouTube", ytStats:"유튜브: 조회수 {v} · 좋아요 {l}", ytErr:"유튜브 댓글을 불러오지 못했어요", ytNone:"유튜브 댓글이 없어요", anaNote:"익명 방문 통계를 모아요(개인정보 없음)", newTag:"새로 걸림",
       slowSuggest:"화면이 조금 느려요. 빠른 모드로 바꿀까요?", switchQuick:"빠른 모드로", modeWalk:"🚶 걷기", modeQuick:"⚡ 빠른"},
-  ja:{enTitle:"RESCENE 公式広告モデル", enNotAd:"有料広告ではありません · 情報", enDesc:"RESCENEが現在モデルを務める公式広告です。当ギャラリーが報酬を受けた広告ではなく、アフィリエイトリンクでもありません。", enSrc:"出典記事", enChecked:"確認日: {d}", enCorner:"広告館コーナー", enCornerSub:"広告映像 · タップで再生", enCount:"公式広告モデル {n}社", bEndorse:"公式広告モデルを見る", agTitle:"アンウォンジャルブ グッズ", agSoon:"公式グッズのリンク準備中", agGo:"公式ストアを見る", agDesc:"ウォニの個人チャンネル「アンウォンジャルブ」の公式グッズコーナーです。", notAff:"アフィリエイトリンクではありません。当ギャラリーは手数料を受け取りません。", notAffB:"提携なし", bAg:"グッズを見る", stTitle:"{g} の彫像", stNote:"顔のない、図形で作った装飾彫刻です。実際の姿を模していません。", bStatue:"彫像を見る", gallery:"推し心アーカイブ・ギャラリー", shop:"グッズショップ", shopOf:"{g} グッズショップ", shopSub:"コーナーを見て回り、商品をタップしてください", pickIdol:"アイドルを選んでください", zoneSoon:"まもなく入荷", itemsN:"商品{n}点", sellerSlot:"出店スペース・出店者募集", sellerBtn:"出店について問い合わせる", sellerTitle:"出店のお問い合わせ", sellerDesc:"推し心アーカイブグッズショップに出店しませんか。下のボタンからお問い合わせください。", sellerResp:"出店者の商品です。販売・配送・交換は出店者の責任で行われます。", sellerBadge:"出店", goBuy:"見に行く", noLink:"リンク準備中", bProduct:"商品を見る", bSeller:"出店のお問い合わせ", hintShop:"ドラッグで見回し、棚をタップすると商品が見られます", imgCredit:"画像提供", progLabel:"クリア {a}/{b}", roomProg:"この部屋 {s} ({a}/{b})", lockedLeft:"🔒 あと{n}本", lockedRoom:"「{room}」で動画をあと{n}本見ると開きます", watchedOk:"視聴完了!{s}", roomClear:"部屋クリア!次の部屋が開きました!", roomClearLast:"部屋クリア!", nextOpened:"次の部屋が開きました!", hallClear:"🎉 {hall}クリア!秘密の部屋が開きました", clearReward:"クリア特典:先行オープン", colClear:"{hall} クリア {a}/{b}", adSpace:"広告スペース", adSoon:"ここに広告が入る予定です", contactTitle:"広告のお問い合わせ", contactBtn:"広告について問い合わせる", contactSoon:"お問い合わせ窓口は準備中です", contactNote:"いただいた情報は広告のご相談にのみ使用します", contactDesc:"推し心アーカイブミュージアムの電光掲示板・広告スペースに広告を掲載できます。下のボタンからお問い合わせください。", bContact:"広告のお問い合わせ", bs1:"ここに広告を出してみませんか", bs1b:"広告のお問い合わせ歓迎 · タップでお問い合わせ", bs2:"推し心アーカイブ", bs2b:"登録して次の展示をいち早くチェック", bs3:"今週の新しい展示", bs3b:"展示日: {d}", culture:"韓国文化コーナー", cultureSoon:"まもなくオープン", bCulture:"韓国文化コーナー · まもなくオープン", lobbySub:"推し心アーカイブ・ギャラリー · Deoksim Archive Gallery · 追星心意典藏館", subOut:"3Dミュージアム(テスト版)", subLobby:"ロビー・館を選んでください", subHub:"館ホール・部屋を選んでください",
+  ja:{dRot:"回転 — 押したまま左右にドラッグ、タップで右に45度", hintWalkD:"左下の方向ボタンで歩き(中央をドラッグで回転)、近づくとボタンが出ます", hintOutWalkD:"左下の方向ボタンで入口まで歩きましょう", dPad:"移動ボタン", dF:"前へ", dB:"後ろへ", dL:"左へ横歩き", dR:"右へ横歩き", dFL:"左前へ", dFR:"右前へ", dBL:"左後ろへ", dBR:"右後ろへ", dStop:"止まる", dRotL:"左に回る", dRotR:"右に回る", ctlTitle:"歩きモードの操作", ctlDpad:"方向ボタン", ctlJoy:"ジョイスティック", frEndorse:"RESCENE広告モデル · 情報", frEmpty:"広告スペース · AD SPACE", pwTitle:"フォトウォール · 公式写真", pwSoon:"公式写真 準備中", bPhotoWall:"写真を大きく見る", holoSoon:"公式グラビア準備中 · ご提供のお問い合わせ", holoTitle:"ブランドグラビア", bHolo:"グラビア映像を見る", holoSound:"🔊 音を出す", holoStop:"✕ 閉じる", openSrc:"出典を見る", alTracks:"収録曲", alTitleTrack:"タイトル曲", alLyrics:"公式歌詞を見る", alLyricist:"作詞", alComposer:"作曲", alStorySoon:"曲の話 準備中", alOrderNote:"曲順は記事の掲載順です(公式トラック順は確認中)。", alRelease:"リリース {d}", bAlbum:"アルバムを見る", alNoLyrics:"歌詞本文は著作権のため掲載しません。", stPos:"ポジション: {p}", stBday:"誕生日: {d}", qOk:"正解です!", introT:"ご案内", bIntro:"館の案内を読む", affNote:"このリンクから購入すると、当ギャラリーが一定の手数料を受け取る場合があります。", stageAria:"3Dミュージアム", adBadge:"広告 · AD", adLabel:"広告", lkAbout:"紹介", lkPrivacy:"プライバシー", lkTerms:"利用規約", lkAds:"広告のお問い合わせ", lkTakedown:"権利侵害の申告", info:"情報", adsPage:"広告のお問い合わせページを開く", enTitle:"RESCENE 公式広告モデル", enNotAd:"有料広告ではありません · 情報", enDesc:"RESCENEが現在モデルを務める公式広告です。当ギャラリーが報酬を受けた広告ではなく、アフィリエイトリンクでもありません。", enSrc:"出典記事", enChecked:"確認日: {d}", enCorner:"広告館コーナー", enCornerSub:"広告映像 · タップで再生", enCount:"公式広告モデル {n}社", bEndorse:"公式広告モデルを見る", agTitle:"アンウォンジャルブ グッズ", agSoon:"公式グッズのリンク準備中", agGo:"公式ストアを見る", agDesc:"ウォニの個人チャンネル「アンウォンジャルブ」の公式グッズコーナーです。", notAff:"アフィリエイトリンクではありません。当ギャラリーは手数料を受け取りません。", notAffB:"提携なし", bAg:"グッズを見る", stTitle:"{g} の彫像", stNote:"顔のない、図形で作った装飾彫刻です。実際の姿を模していません。", bStatue:"彫像を見る", gallery:"推し心アーカイブ・ギャラリー", shop:"グッズショップ", shopOf:"{g} グッズショップ", shopSub:"コーナーを見て回り、商品をタップしてください", pickIdol:"アイドルを選んでください", zoneSoon:"まもなく入荷", itemsN:"商品{n}点", sellerSlot:"出店スペース・出店者募集", sellerBtn:"出店について問い合わせる", sellerTitle:"出店のお問い合わせ", sellerDesc:"推し心アーカイブグッズショップに出店しませんか。下のボタンからお問い合わせください。", sellerResp:"出店者の商品です。販売・配送・交換は出店者の責任で行われます。", sellerBadge:"出店", goBuy:"見に行く", noLink:"リンク準備中", bProduct:"商品を見る", bSeller:"出店のお問い合わせ", hintShop:"ドラッグで見回し、棚をタップすると商品が見られます", imgCredit:"画像提供", progLabel:"クリア {a}/{b}", roomProg:"この部屋 {s} ({a}/{b})", lockedLeft:"🔒 あと{n}本", lockedRoom:"「{room}」で動画をあと{n}本見ると開きます", watchedOk:"視聴完了!{s}", roomClear:"部屋クリア!次の部屋が開きました!", roomClearLast:"部屋クリア!", nextOpened:"次の部屋が開きました!", hallClear:"🎉 {hall}クリア!秘密の部屋が開きました", clearReward:"クリア特典:先行オープン", colClear:"{hall} クリア {a}/{b}", adSpace:"広告スペース", adSoon:"ここに広告が入る予定です", contactTitle:"広告のお問い合わせ", contactBtn:"広告について問い合わせる", contactSoon:"お問い合わせ窓口は準備中です", contactNote:"いただいた情報は広告のご相談にのみ使用します", contactDesc:"推し心アーカイブミュージアムの電光掲示板・広告スペースに広告を掲載できます。下のボタンからお問い合わせください。", bContact:"広告のお問い合わせ", bs1:"ここに広告を出してみませんか", bs1b:"広告のお問い合わせ歓迎 · タップでお問い合わせ", bs2:"推し心アーカイブ", bs2b:"登録して次の展示をいち早くチェック", bs3:"今週の新しい展示", bs3b:"展示日: {d}", culture:"韓国文化コーナー", cultureSoon:"まもなくオープン", bCulture:"韓国文化コーナー · まもなくオープン", lobbySub:"推し心アーカイブ・ギャラリー · Deoksim Archive Gallery · 追星心意典藏館", subOut:"3Dミュージアム(テスト版)", subLobby:"ロビー・館を選んでください", subHub:"館ホール・部屋を選んでください",
       loading:"ミュージアムを開いています…", enter:"入る", toLobby:"ロビーへ", toHub:"館ホールへ", exit:"外へ",
       hintOut:"「入る」を押すと階段を上って館内へ", hintOutWalk:"スティックで入口まで歩いてみましょう",
       hintLobby:"ドラッグで見回し、扉をタップで館へ", hintHub:"扉をタップすると部屋へ",
@@ -599,7 +1556,7 @@ const I18N = {
       rewardSoon:"ごほうび動画はまもなく公開", secret:"秘密の額縁", quizWrong:"残念!もう一度選んでみましょう",
       like:"♡ いいね", liked:"❤ いいね", likesN:"いいね {n}・閲覧 {v}", localOnly:"(現在はこの端末のみ)", cTabG:"ギャラリーのコメント", cTabY:"YouTubeのコメント", cNote:"ギャラリー来場者どうしのコメントです・YouTube元動画のコメントは「YouTubeで見る」から", cName:"ニックネーム(任意)", cText:"コメントを書いてください(200字まで)", cPost:"投稿", cEmpty:"最初のコメントをどうぞ", cAnon:"来場者", cReport:"通報", cReported:"通報しました。このコメントは非表示になります", cBad:"投稿できない言葉が含まれています", cLink:"リンクは投稿できません", cTooLong:"200字まで書けます", cOk:"コメントを投稿しました", cLocal:"現在はこの端末にのみ保存されます", ytWrite:"YouTubeでコメントする", ytNote:"YouTubeの人気コメント5件・原文のまま・出典: YouTube", ytStats:"YouTube: 再生回数 {v}・高評価 {l}", ytErr:"YouTubeのコメントを読み込めませんでした", ytNone:"YouTubeのコメントはありません", anaNote:"匿名の訪問統計を集めています(個人情報なし)", newTag:"NEW",
       slowSuggest:"動作が少し重いようです。クイックモードにしますか?", switchQuick:"クイックモードへ", modeWalk:"🚶 歩き", modeQuick:"⚡ クイック"},
-  en:{enTitle:"RESCENE official ad models", enNotAd:"Not a paid ad · info", enDesc:"Official ads RESCENE currently models for. We are not paid for this, and these are not affiliate links.", enSrc:"Source article", enChecked:"Checked: {d}", enCorner:"Ad Hall corner", enCornerSub:"Ad video · tap to play", enCount:"{n} official ad brands", bEndorse:"View official ad models", agTitle:"Anwonjalbu goods", agSoon:"Official goods link coming soon", agGo:"Visit the official store", agDesc:"A spot for official goods from Woni's personal channel, Anwonjalbu.", notAff:"Not an affiliate link. We earn no commission.", notAffB:"Not affiliate", bAg:"View Anwonjalbu goods", stTitle:"{g} statues", stNote:"A faceless decorative statue made of simple shapes. It does not depict anyone's real appearance.", bStatue:"View statue", gallery:"Deoksim Archive Gallery", shop:"Goods Shop", shopOf:"{g} Goods Shop", shopSub:"Browse the corners and tap an item", pickIdol:"Choose an idol", zoneSoon:"Coming soon", itemsN:"{n} items", sellerSlot:"Seller spot · now recruiting", sellerBtn:"Apply to sell here", sellerTitle:"Seller inquiry", sellerDesc:"Sell your products in the Deoksim Archive Goods Shop. Leave an inquiry with the button below and we will get back to you.", sellerResp:"This item is from a partner seller. The seller is responsible for sales, shipping and exchanges.", sellerBadge:"Seller", goBuy:"View item", noLink:"Link coming soon", bProduct:"View items", bSeller:"Apply to sell", hintShop:"Drag to look around. Tap a shelf to see items.", imgCredit:"Image", progLabel:"Cleared {a}/{b}", roomProg:"This room {s} ({a}/{b})", lockedLeft:"🔒 {n} more", lockedRoom:"Watch {n} more videos in \"{room}\" to open this", watchedOk:"Watched! {s}", roomClear:"Room cleared! The next room is open!", roomClearLast:"Room cleared!", nextOpened:"The next room is open!", hallClear:"🎉 {hall} cleared! The Secret Room is open", clearReward:"Clear reward: opens first", colClear:"{hall} cleared {a}/{b}", adSpace:"AD SPACE", adSoon:"An ad will be placed here", contactTitle:"Advertising inquiry", contactBtn:"Ask about advertising", contactSoon:"The inquiry form is coming soon", contactNote:"Your details are used only to discuss advertising", contactDesc:"Place your ad on the billboards and ad panels of the Deoksim Archive museum. Leave an inquiry with the button below and we will get back to you.", bContact:"Advertising inquiry", bs1:"Advertise here", bs1b:"Inquiries welcome · tap to ask about advertising", bs2:"Deoksim Archive", bs2b:"Subscribe to see the next exhibition first", bs3:"New this week", bs3b:"Hung on: {d}", culture:"Korean Culture Corner", cultureSoon:"Opening soon", bCulture:"Korean Culture Corner · opening soon", lobbySub:"Deoksim Archive Gallery · 推し心アーカイブ・ギャラリー · 追星心意典藏館", subOut:"3D museum · preview", subLobby:"Lobby · pick a hall", subHub:"Hall · pick a room",
+  en:{dRot:"Turn — hold and drag left or right; tap to turn right 45°", hintWalkD:"Walk with the direction buttons (drag the center to turn); buttons appear when you get close", hintOutWalkD:"Use the direction buttons to walk to the entrance", dPad:"Movement buttons", dF:"Forward", dB:"Back", dL:"Step left", dR:"Step right", dFL:"Forward left", dFR:"Forward right", dBL:"Back left", dBR:"Back right", dStop:"Stop", dRotL:"Turn left", dRotR:"Turn right", ctlTitle:"Walking controls", ctlDpad:"Direction buttons", ctlJoy:"Joystick", frEndorse:"RESCENE ad model · info", frEmpty:"AD SPACE", pwTitle:"Photo wall · official photos", pwSoon:"Official photo coming soon", bPhotoWall:"View photo", holoSoon:"Official photos coming soon · contact us", holoTitle:"Brand gallery", bHolo:"Watch the ad", holoSound:"🔊 Sound on", holoStop:"✕ Close", openSrc:"View source", alTracks:"Tracks", alTitleTrack:"Title track", alLyrics:"Official lyrics", alLyricist:"Lyrics", alComposer:"Music", alStorySoon:"Song story coming soon", alOrderNote:"Tracks are listed in the order given in the article (official order being checked).", alRelease:"Released {d}", bAlbum:"View album", alNoLyrics:"We do not reprint lyrics because of copyright.", stPos:"Position: {p}", stBday:"Birthday: {d}", qOk:"Correct!", introT:"Welcome", bIntro:"Read the hall guide", affNote:"If you buy through this link, we may earn a commission.", stageAria:"3D museum", adBadge:"AD", adLabel:"AD", lkAbout:"About", lkPrivacy:"Privacy", lkTerms:"Terms", lkAds:"Advertising", lkTakedown:"Rights report", info:"Info", adsPage:"Open the advertising page", enTitle:"RESCENE official ad models", enNotAd:"Not a paid ad · info", enDesc:"Official ads RESCENE currently models for. We are not paid for this, and these are not affiliate links.", enSrc:"Source article", enChecked:"Checked: {d}", enCorner:"Ad Hall corner", enCornerSub:"Ad video · tap to play", enCount:"{n} official ad brands", bEndorse:"View official ad models", agTitle:"Anwonjalbu goods", agSoon:"Official goods link coming soon", agGo:"Visit the official store", agDesc:"A spot for official goods from Woni's personal channel, Anwonjalbu.", notAff:"Not an affiliate link. We earn no commission.", notAffB:"Not affiliate", bAg:"View Anwonjalbu goods", stTitle:"{g} statues", stNote:"A faceless decorative statue made of simple shapes. It does not depict anyone's real appearance.", bStatue:"View statue", gallery:"Deoksim Archive Gallery", shop:"Goods Shop", shopOf:"{g} Goods Shop", shopSub:"Browse the corners and tap an item", pickIdol:"Choose an idol", zoneSoon:"Coming soon", itemsN:"{n} items", sellerSlot:"Seller spot · now recruiting", sellerBtn:"Apply to sell here", sellerTitle:"Seller inquiry", sellerDesc:"Sell your products in the Deoksim Archive Goods Shop. Leave an inquiry with the button below and we will get back to you.", sellerResp:"This item is from a partner seller. The seller is responsible for sales, shipping and exchanges.", sellerBadge:"Seller", goBuy:"View item", noLink:"Link coming soon", bProduct:"View items", bSeller:"Apply to sell", hintShop:"Drag to look around. Tap a shelf to see items.", imgCredit:"Image", progLabel:"Cleared {a}/{b}", roomProg:"This room {s} ({a}/{b})", lockedLeft:"🔒 {n} more", lockedRoom:"Watch {n} more videos in \"{room}\" to open this", watchedOk:"Watched! {s}", roomClear:"Room cleared! The next room is open!", roomClearLast:"Room cleared!", nextOpened:"The next room is open!", hallClear:"🎉 {hall} cleared! The Secret Room is open", clearReward:"Clear reward: opens first", colClear:"{hall} cleared {a}/{b}", adSpace:"AD SPACE", adSoon:"An ad will be placed here", contactTitle:"Advertising inquiry", contactBtn:"Ask about advertising", contactSoon:"The inquiry form is coming soon", contactNote:"Your details are used only to discuss advertising", contactDesc:"Place your ad on the billboards and ad panels of the Deoksim Archive museum. Leave an inquiry with the button below and we will get back to you.", bContact:"Advertising inquiry", bs1:"Advertise here", bs1b:"Inquiries welcome · tap to ask about advertising", bs2:"Deoksim Archive", bs2b:"Subscribe to see the next exhibition first", bs3:"New this week", bs3b:"Hung on: {d}", culture:"Korean Culture Corner", cultureSoon:"Opening soon", bCulture:"Korean Culture Corner · opening soon", lobbySub:"Deoksim Archive Gallery · 推し心アーカイブ・ギャラリー · 追星心意典藏館", subOut:"3D museum · preview", subLobby:"Lobby · pick a hall", subHub:"Hall · pick a room",
       loading:"Opening the museum…", enter:"Enter", toLobby:"Lobby", toHub:"Hall", exit:"Exit",
       hintOut:"Tap Enter to climb the steps and go inside", hintOutWalk:"Use the joystick to walk to the entrance",
       hintLobby:"Drag to look around. Tap a door to enter a hall.", hintHub:"Tap a door to enter a room",
@@ -624,7 +1581,7 @@ const I18N = {
       rewardSoon:"The reward video is coming soon", secret:"Secret frame", quizWrong:"Not quite — try again?",
       like:"♡ Like", liked:"❤ Liked", likesN:"{n} likes · {v} views", localOnly:"(this device only for now)", cTabG:"Gallery comments", cTabY:"YouTube comments", cNote:"Comments shared among gallery visitors · for the original YouTube comments, use “Open on YouTube”", cName:"Nickname (optional)", cText:"Leave a comment (up to 200 characters)", cPost:"Post", cEmpty:"Be the first to comment", cAnon:"Visitor", cReport:"Report", cReported:"Reported. This comment is now hidden", cBad:"Your comment contains words we can't post", cLink:"Links can't be posted", cTooLong:"Up to 200 characters", cOk:"Comment posted", cLocal:"Saved on this device only for now", ytWrite:"Comment on YouTube", ytNote:"Top 5 YouTube comments · shown as written · Source: YouTube", ytStats:"YouTube: {v} views · {l} likes", ytErr:"Couldn't load YouTube comments", ytNone:"No YouTube comments", anaNote:"We collect anonymous visit statistics (no personal data)", newTag:"NEW",
       slowSuggest:"Things look a bit slow. Switch to quick mode?", switchQuick:"Quick mode", modeWalk:"🚶 Walk", modeQuick:"⚡ Quick"},
-  zh:{enTitle:"RESCENE 官方代言", enNotAd:"非付費廣告 · 資訊", enDesc:"RESCENE 目前擔任模特兒的官方廣告。這不是本館收費的廣告,也不是聯盟連結。", enSrc:"出處報導", enChecked:"確認日期:{d}", enCorner:"廣告館專區", enCornerSub:"廣告影片 · 點一下播放", enCount:"官方代言 {n} 家", bEndorse:"看官方代言", agTitle:"Anwonjalbu 周邊", agSoon:"官方周邊連結準備中", agGo:"前往官方商店", agDesc:"Woni 個人頻道「Anwonjalbu」的官方周邊專區。", notAff:"這不是聯盟連結,本館不收取佣金。", notAffB:"非聯盟", bAg:"看 Anwonjalbu 周邊", stTitle:"{g} 雕像", stNote:"沒有臉孔、以簡單形狀做成的裝飾雕像,並未模仿真實樣貌。", bStatue:"看雕像", gallery:"追星心意典藏館", shop:"周邊商店", shopOf:"{g} 周邊商店", shopSub:"逛逛各區,點商品看看", pickIdol:"請選擇偶像", zoneSoon:"即將上架", itemsN:"商品 {n} 件", sellerSlot:"進駐位置・招募賣家", sellerBtn:"洽詢進駐", sellerTitle:"進駐洽詢", sellerDesc:"歡迎在追星心意典藏館周邊商店上架商品。請透過下方按鈕留下洽詢,我們會與您聯繫。", sellerResp:"這是進駐賣家的商品。銷售、配送與退換貨由賣家負責。", sellerBadge:"進駐", goBuy:"前往查看", noLink:"連結準備中", bProduct:"看商品", bSeller:"洽詢進駐", hintShop:"拖曳環顧,點貨架即可看商品", imgCredit:"圖片來源", progLabel:"已過關 {a}/{b}", roomProg:"這個房間 {s} ({a}/{b})", lockedLeft:"🔒 再看{n}部", lockedRoom:"在「{room}」再看 {n} 部影片就會打開", watchedOk:"觀看完成!{s}", roomClear:"房間過關!下一個房間打開了!", roomClearLast:"房間過關!", nextOpened:"下一個房間打開了!", hallClear:"🎉 {hall} 過關!秘密房間打開了", clearReward:"過關獎勵:搶先開放", colClear:"{hall} 過關 {a}/{b}", adSpace:"廣告位", adSoon:"這裡將放置廣告", contactTitle:"廣告洽詢", contactBtn:"洽詢廣告", contactSoon:"洽詢表單準備中", contactNote:"您留下的資料只會用於廣告洽談", contactDesc:"歡迎在追星心意典藏館的電子看板與廣告位刊登廣告。請透過下方按鈕留下洽詢,我們會與您聯繫。", bContact:"廣告洽詢", bs1:"在這裡刊登廣告吧", bs1b:"歡迎洽詢廣告 · 點一下即可洽詢", bs2:"追星心意典藏館", bs2b:"訂閱就能搶先看下一場展覽", bs3:"本週新展出", bs3b:"展出日期:{d}", culture:"韓國文化角", cultureSoon:"即將開放", bCulture:"韓國文化角 · 即將開放", lobbySub:"追星心意典藏館 · Deoksim Archive Gallery · 推し心アーカイブ・ギャラリー", subOut:"3D 美術館(試用版)", subLobby:"大廳・請選擇展館", subHub:"展館大廳・請選擇房間",
+  zh:{dRot:"轉向 — 按住左右拖曳,點一下向右轉45度", hintWalkD:"用左下角方向鍵走動(拖曳中間格可轉向),靠近時會出現按鈕", hintOutWalkD:"用左下角方向鍵走到入口", dPad:"移動方向鍵", dF:"向前", dB:"向後", dL:"向左橫移", dR:"向右橫移", dFL:"左前", dFR:"右前", dBL:"左後", dBR:"右後", dStop:"停止", dRotL:"向左轉", dRotR:"向右轉", ctlTitle:"走路操作方式", ctlDpad:"方向鍵", ctlJoy:"搖桿", frEndorse:"RESCENE 代言 · 資訊", frEmpty:"廣告位 · AD SPACE", pwTitle:"照片牆 · 官方照片", pwSoon:"官方照片準備中", bPhotoWall:"看大圖", holoSoon:"官方畫報準備中 · 歡迎提供", holoTitle:"品牌畫報", bHolo:"看畫報影片", holoSound:"🔊 開啟聲音", holoStop:"✕ 關閉", openSrc:"查看出處", alTracks:"收錄曲", alTitleTrack:"主打歌", alLyrics:"官方歌詞", alLyricist:"作詞", alComposer:"作曲", alStorySoon:"歌曲故事準備中", alOrderNote:"曲目依報導列出的順序(官方曲序確認中)。", alRelease:"發行 {d}", bAlbum:"看專輯", alNoLyrics:"因著作權不刊登歌詞全文。", stPos:"定位:{p}", stBday:"生日:{d}", qOk:"答對了!", introT:"導覽", bIntro:"閱讀展館導覽", affNote:"透過此連結購買,本館可能會獲得一定比例的佣金。", stageAria:"3D 美術館", adBadge:"廣告 · AD", adLabel:"廣告", lkAbout:"關於", lkPrivacy:"隱私權", lkTerms:"使用條款", lkAds:"廣告洽詢", lkTakedown:"權利申訴", info:"資訊", adsPage:"開啟廣告洽詢頁面", enTitle:"RESCENE 官方代言", enNotAd:"非付費廣告 · 資訊", enDesc:"RESCENE 目前擔任模特兒的官方廣告。這不是本館收費的廣告,也不是聯盟連結。", enSrc:"出處報導", enChecked:"確認日期:{d}", enCorner:"廣告館專區", enCornerSub:"廣告影片 · 點一下播放", enCount:"官方代言 {n} 家", bEndorse:"看官方代言", agTitle:"Anwonjalbu 周邊", agSoon:"官方周邊連結準備中", agGo:"前往官方商店", agDesc:"Woni 個人頻道「Anwonjalbu」的官方周邊專區。", notAff:"這不是聯盟連結,本館不收取佣金。", notAffB:"非聯盟", bAg:"看 Anwonjalbu 周邊", stTitle:"{g} 雕像", stNote:"沒有臉孔、以簡單形狀做成的裝飾雕像,並未模仿真實樣貌。", bStatue:"看雕像", gallery:"追星心意典藏館", shop:"周邊商店", shopOf:"{g} 周邊商店", shopSub:"逛逛各區,點商品看看", pickIdol:"請選擇偶像", zoneSoon:"即將上架", itemsN:"商品 {n} 件", sellerSlot:"進駐位置・招募賣家", sellerBtn:"洽詢進駐", sellerTitle:"進駐洽詢", sellerDesc:"歡迎在追星心意典藏館周邊商店上架商品。請透過下方按鈕留下洽詢,我們會與您聯繫。", sellerResp:"這是進駐賣家的商品。銷售、配送與退換貨由賣家負責。", sellerBadge:"進駐", goBuy:"前往查看", noLink:"連結準備中", bProduct:"看商品", bSeller:"洽詢進駐", hintShop:"拖曳環顧,點貨架即可看商品", imgCredit:"圖片來源", progLabel:"已過關 {a}/{b}", roomProg:"這個房間 {s} ({a}/{b})", lockedLeft:"🔒 再看{n}部", lockedRoom:"在「{room}」再看 {n} 部影片就會打開", watchedOk:"觀看完成!{s}", roomClear:"房間過關!下一個房間打開了!", roomClearLast:"房間過關!", nextOpened:"下一個房間打開了!", hallClear:"🎉 {hall} 過關!秘密房間打開了", clearReward:"過關獎勵:搶先開放", colClear:"{hall} 過關 {a}/{b}", adSpace:"廣告位", adSoon:"這裡將放置廣告", contactTitle:"廣告洽詢", contactBtn:"洽詢廣告", contactSoon:"洽詢表單準備中", contactNote:"您留下的資料只會用於廣告洽談", contactDesc:"歡迎在追星心意典藏館的電子看板與廣告位刊登廣告。請透過下方按鈕留下洽詢,我們會與您聯繫。", bContact:"廣告洽詢", bs1:"在這裡刊登廣告吧", bs1b:"歡迎洽詢廣告 · 點一下即可洽詢", bs2:"追星心意典藏館", bs2b:"訂閱就能搶先看下一場展覽", bs3:"本週新展出", bs3b:"展出日期:{d}", culture:"韓國文化角", cultureSoon:"即將開放", bCulture:"韓國文化角 · 即將開放", lobbySub:"追星心意典藏館 · Deoksim Archive Gallery · 推し心アーカイブ・ギャラリー", subOut:"3D 美術館(試用版)", subLobby:"大廳・請選擇展館", subHub:"展館大廳・請選擇房間",
       loading:"美術館開門中…", enter:"進入", toLobby:"回大廳", toHub:"回展館大廳", exit:"離開",
       hintOut:"按「進入」就會走上階梯進入館內", hintOutWalk:"用搖桿走到入口看看",
       hintLobby:"拖曳環顧四周,點門即可進入展館", hintHub:"點門即可進入房間",
@@ -891,7 +1848,7 @@ G.curationReady.then(()=>{ const h=HALLS.find(x=>x.id===PROGRESS.hall), sr=h?.ro
   MISSIONS.filter(m=>m.hall===h.id && /^[\w-]{11}$/.test(m.reward?.video_id||"")).forEach(m=>{ if(!sr.videos.some(v=>v.id===m.reward.video_id)) sr.videos.push({id:m.reward.video_id, title:m.reward.title||"", kind:m.reward.kind||"long", official:true, desc:""}); }); });
 
 /* ---------- 언어 ---------- */
-{ const q=qs.get("lang"), s=store.get("hall-lang"); G.lang = I18N[q]?q : I18N[s]?s : "ko"; }
+{ const q0=qs.get("lang"), q=/^zh/i.test(q0||"") ? "zh" : q0, s=store.get("hall-lang"); G.lang = I18N[q]?q : I18N[s]?s : "ko"; }
 G.char = CHARS.some(c=>c.id===store.get("hall-char")) ? store.get("hall-char") : "jindo";
 G.petTab = null;   // null이면 선택 언어의 나라 묶음
 G.walk = store.get("hall-mode") ? store.get("hall-mode")==="walk" : !((navigator.hardwareConcurrency||4)<=2);
@@ -903,6 +1860,7 @@ function applyLang(){
   $("#langSel").value = G.lang;
   drawAdSlot($("#adTop"),"screen_top_1");
   drawChrome(); drawFlat(); drawIntro(); if(!$("#hint").classList.contains("off")) $("#hint").textContent=hintText();
+  document.documentElement.style.setProperty("--adb", JSON.stringify(G.t("adBadge")));
   G.langHooks.forEach(f => f());
 }
 function setLang(l){ G.lang=l; G.petTab=null; store.set("hall-lang",l); applyLang(); }
@@ -923,7 +1881,7 @@ function drawIntro(){
     <div class="sub">${esc(G.t("pickMode"))}</div>
     <div class="modes"><button data-m="walk" class="${G.walk?'on':''}">${esc(G.t("walkMode"))}<small>${esc(G.t("walkDesc"))}</small></button>
       <button data-m="quick" class="${G.walk?'':'on'}">${esc(G.t("quickMode"))}<small>${esc(G.t("quickDesc"))}</small></button></div>
-    <button class="go" id="introGo">${esc(G.t("start"))}</button><p class="contactNote">${esc(G.t("freeNote"))}</p><p class="contactNote anaNote">${esc(G.t("anaNote"))}</p>`;
+    <button class="go" id="introGo">${esc(G.t("start"))}</button><p class="contactNote">${esc(G.t("freeNote"))}</p><p class="contactNote anaNote">${esc(G.t("anaNote"))}</p>${G.siteLinks()}`;
   box.querySelectorAll("[data-l]").forEach(b=>b.onclick=()=>setLang(b.dataset.l));
   box.querySelectorAll("[data-icon]").forEach(cv=>drawPetIcon(cv.getContext("2d"), CHARS.find(c=>c.id===cv.dataset.icon), 96));
   box.querySelectorAll("[data-k]").forEach(b=>b.onclick=()=>{ G.petTab=b.dataset.k; drawIntro(); });
@@ -989,7 +1947,7 @@ function drawProgress(){
 
 /* ---------- 안내 말풍선·알림 ---------- */
 let hintTimer;
-function hintText(){ return G.t(G.walk && G.mode!=="flat" ? (G.view==="outside" ? "hintOutWalk" : "hintWalk") : {outside:"hintOut",lobby:"hintLobby",hub:"hintHub",room:"hintRoom",shop:"hintShop"}[G.view]); }
+function hintText(){ return G.t(G.walk && G.mode!=="flat" ? (G.view==="outside" ? (G.ctl==="joy"?"hintOutWalk":"hintOutWalkD") : (G.ctl==="joy"?"hintWalk":"hintWalkD")) : {outside:"hintOut",lobby:"hintLobby",hub:"hintHub",room:"hintRoom",shop:"hintShop"}[G.view]); }
 function showHint(){ const el=$("#hint");
   el.textContent=hintText(); el.classList.remove("off"); clearTimeout(hintTimer); hintTimer=setTimeout(hideHint, 6000); }
 function hideHint(){ clearTimeout(hintTimer); $("#hint").classList.add("off"); }
@@ -1016,6 +1974,18 @@ function openCollection(){
   document.querySelectorAll("[data-rw]").forEach(b=>b.onclick=()=>playReward(MISSIONS.find(x=>x.id===b.dataset.rw)));
 }
 $("#colBtn").onclick = openCollection;
+G.adLabel = ad => (!ad?.label || ad.label==="광고") ? G.t("adLabel") : ad.label;   // 기본 「광고」 표시는 언어별로
+/* ---------- 공통 안내 링크(소개·개인정보·약관·광고 문의·권리 신고) ---------- */
+G.langParam = () => G.lang==="zh" ? "zh-Hant" : G.lang;
+G.siteLinks = () => `<nav class="siteLinks">${SITE_LINKS.map(x=>`<a href="${esc(x.href)}?lang=${esc(G.langParam())}" target="_blank" rel="noopener">${esc(G.t(x.k))}</a>`).join("")}</nav>`;
+/* 걷기 조작 방식: "dpad"(8방향 버튼, 기본) | "joy"(조이스틱). localStorage 에 기억(실패해도 기본값으로 동작) */
+G.ctl = store.get("hall-ctl")==="joy" ? "joy" : "dpad";
+G.setCtl = v => { G.ctl = v==="joy" ? "joy" : "dpad"; store.set("hall-ctl", G.ctl); document.body.classList.toggle("ctl-joy", G.ctl==="joy"); G.onCtlChange?.(); };
+document.body.classList.toggle("ctl-joy", G.ctl==="joy");
+G.openInfo = () => { openItem({type:"text", title:G.t("info"), desc:G.t("gallery"),
+    html:`<div class="sec2">🎮 ${esc(G.t("ctlTitle"))}</div><div class="ctlPick">${["dpad","joy"].map(v=>`<button data-ctl="${v}" class="${G.ctl===v?"on":""}">${esc(G.t(v==="dpad"?"ctlDpad":"ctlJoy"))}</button>`).join("")}</div>${G.siteLinks()}`});
+  document.querySelectorAll("#extra [data-ctl]").forEach(b=>b.onclick=()=>{ G.setCtl(b.dataset.ctl); document.querySelectorAll("#extra [data-ctl]").forEach(x=>x.classList.toggle("on", x.dataset.ctl===G.ctl)); }); };
+$("#infoBtn").onclick = G.openInfo;
 
 /* ---------- 광고 칸·광고 문의 ---------- */
 G.ad = slot => ADS.find(a=>a.slot_id===slot && safeUrl(a.image)) || null;
@@ -1026,12 +1996,12 @@ G.openAd = ad => { const u=safeUrl(ad?.link); if(!u) return; const a=document.cr
 function drawAdSlot(el, slot){   // 이미지가 있으면 그 광고, 없으면 「AD · 광고 자리」 표시만
   const ad=G.ad(slot), u=safeUrl(ad?.link);
   el.style.backgroundImage = ad ? `url("${safeUrl(ad.image).href}")` : "";
-  el.innerHTML = ad ? `<b>${esc(ad.label||"광고")}</b>` : `<b>AD</b> ${esc(G.t("adSpace"))} · ${esc(G.t("adSoon"))}`;
+  el.innerHTML = ad ? `<b>${esc(G.adLabel(ad))}</b>` : `<b>AD</b> ${esc(G.t("adSpace"))} · ${esc(G.t("adSoon"))}`;
   if(u) el.href=u.href; else el.removeAttribute("href");
 }
 G.openContact = () => {
   openItem({type:"text", title:G.t("contactTitle"), desc:G.t("contactDesc"),
-    html:`<button class="contactBtn" id="contactGo">${esc(G.lang==="ko" ? CONTACT.text : G.t("contactBtn"))}</button><p class="contactNote">${esc(G.t("contactNote"))}</p>`});
+    html:`<button class="contactBtn" id="contactGo">${esc(G.lang==="ko" ? CONTACT.text : G.t("contactBtn"))}</button><a class="contactBtn sub" href="ads.html?lang=${esc(G.langParam())}" target="_blank" rel="noopener">${esc(G.t("adsPage"))}</a><p class="contactNote">${esc(G.t("contactNote"))}</p>`});
   $("#contactGo").onclick = () => { const u=safeUrl(CONTACT.form_url); if(u) window.open(u.href,"_blank","noopener"); else toast(G.t("contactSoon")); };
 };
 /* ---------- 굿즈 샵 ---------- */
@@ -1052,17 +2022,17 @@ G.openZone = (gid, cat) => {
   const items=G.shopItems(gid, cat.id);
   const en = cat.id==="endorse" && G.endorseOn(gid) ? G.endorseList("goods_ad") : [];
   openItem({type:"text", title:G.nm(cat.name), desc: items.length ? G.t("itemsN",{n:items.length}) : en.length ? G.t("enCount",{n:en.length}) : G.t("zoneSoon"),
-    html:`${en.length ? `<div class="sec2">${esc(G.t("enTitle"))}</div><div class="badges"><b class="info">${esc(G.t("enNotAd"))}</b></div><div class="elist">${G.endorseCards("goods_ad")}</div><div class="sec2">${esc(G.nm(cat.name))}</div>` : ""}<div class="badges"><b>광고 · AD</b></div><div class="grid" style="margin-top:12px">${items.map((x,i)=>`<button class="card" data-pi="${i}"><div class="tt">${esc(x.name)}<small>${esc(x.price||"")}${x.seller?" · "+esc(G.t("sellerBadge")):""}</small></div></button>`).join("")}
+    html:`${en.length ? `<div class="sec2">${esc(G.t("enTitle"))}</div><div class="badges"><b class="info">${esc(G.t("enNotAd"))}</b></div><div class="elist">${G.endorseCards("goods_ad")}</div><div class="sec2">${esc(G.nm(cat.name))}</div>` : ""}<div class="badges"><b>${esc(G.t("adBadge"))}</b></div><div class="grid" style="margin-top:12px">${items.map((x,i)=>`<button class="card" data-pi="${i}"><div class="tt">${esc(x.name)}<small>${esc(x.price||"")}${x.seller?" · "+esc(G.t("sellerBadge")):""}</small></div></button>`).join("")}
       <button class="card" data-sell="1" style="border:1px dashed var(--line)"><div class="tt">🏪 ${esc(G.t("sellerSlot"))}<small>${esc(G.t("sellerBtn"))}</small></div></button></div>`});
   document.querySelectorAll("[data-pi]").forEach(b=>b.onclick=()=>G.openProduct(items[+b.dataset.pi]));
   document.querySelector("[data-sell]").onclick=()=>G.openSeller();
 };
 G.openProduct = x => {
   const u=safeUrl(x.url), img=safeUrl(x.image), sh=u ? shopOf({...x,u}) : SHOPS.find(z=>z.id===x.shop);
-  const note = sh?.affiliate===false ? G.t("notAff") : (sh?.note || (u && !x.seller ? "이 링크로 구매하면 덕심저장소가 일정액의 수수료를 받을 수 있어요." : ""));
+  const note = sh?.affiliate===false ? G.t("notAff") : (u && !x.seller) || sh ? (G.lang==="ko" && sh?.note ? sh.note : G.t("affNote")) : "";   // 상점 공식 문구는 한국어 화면에서, 다른 언어는 번역 문구
   openItem({type:"text", title:x.name, desc:[x.price, sh?.name].filter(Boolean).join(" · "),
     html:`${img ? `<img class="prodImg" src="${esc(img.href)}" alt="${esc(x.image_alt||x.name)}" loading="lazy"><p class="contactNote">${esc(G.t("imgCredit"))}: ${esc(x.image_credit||"")}</p>` : ""}
-      <div class="badges"><b>광고 · AD</b>${x.seller ? `<b class="sel">${esc(x.badge||G.t("sellerBadge"))}</b>` : ""}</div>
+      <div class="badges"><b>${esc(G.t("adBadge"))}</b>${x.seller ? `<b class="sel">${esc(x.badge||G.t("sellerBadge"))}</b>` : ""}</div>
       <a class="contactBtn" ${u ? `href="${esc(u.href)}"` : 'aria-disabled="true"'} target="_blank" rel="sponsored noopener">${esc(u ? G.t("goBuy") : G.t("noLink"))}</a>
       ${x.seller ? `<p class="contactNote">${esc(G.t("sellerResp"))}</p>` : ""}${note ? `<p class="disc">${esc(note)}</p>` : ""}`});
 };
@@ -1102,8 +2072,67 @@ G.openAg = () => {
 };
 /* ---------- 건물 정면 조각상 소개(공식 공개 정보만. 비어 있으면 이름만) ---------- */
 G.statueGroup = () => STATUES.find(g=>g.enabled!==false && g.members?.length) || null;
-G.openStatue = m => { const st = !m.story ? "" : typeof m.story==="object" ? G.nm(m.story) : String(m.story);
-  openItem({type:"text", title:`${m.name} · ${m.name_en}`, desc:st, html:`<p class="contactNote">${esc(G.t("stNote"))}</p>`}); };
+
+/* ---------- 액자 위 광고 띠(frame_top_<방>_<n>) — 공용 광고 자리. 영상 패널 안에는 없음 ---------- */
+G.frameAd = (hid, rid, n) => {
+  const a=ADS.find(x=>x.place===`frame_top_${rid}_${n}` || x.slot_id===`frame_top_${rid}_${n}`);
+  if(a && a.kind!=="empty" && (a.kind || a.image_url || a.image || a.label)) return {...a, kind:a.kind||"paid", image_url:safeUrl(a.image_url||a.image)?.href||null};
+  const e=G.endorseOn(hid) ? G.endorseList(rid)[n-1] : null;
+  return e ? {kind:"official_endorse", brand:e, image_url:null, link:null} : {kind:"empty"};
+};
+G.frameAdAct = (rid, ad) => ad.kind==="official_endorse" ? G.openEndorse(rid, ad.brand.id) : (ad.kind==="paid" && safeUrl(ad.link)) ? G.openAd(ad) : G.openContact();
+/* ---------- 포토 월(공식 출처에서 불러오기 — 파일 복사 없음) ---------- */
+const ytIdOf = u => { const m=String(u||"").match(/(?:v=|youtu\.be\/|shorts\/|embed\/)([\w-]{11})/); return m ? m[1] : (/^[\w-]{11}$/.test(u||"") ? u : null); };
+G.photosFor = key => PHOTOS.filter(x=>x.room===key).slice(0,4);
+G.photoOk = x => x && (x.src_type==="yt_thumb" ? !!ytIdOf(x.url) : IG_RE.test(x.url||""));
+G.openPhoto = x => {
+  if(!G.photoOk(x)){ toast(G.t("pwSoon")); return; }
+  if(x.src_type==="instagram"){ openItem({type:"instagram", url:x.url, caption:x.caption}); return; }
+  const id=ytIdOf(x.url);
+  openItem({type:"text", title:x.caption||"", desc:x.credit||"",
+    html:`<img class="prodImg" src="https://i.ytimg.com/vi/${encodeURIComponent(id)}/hqdefault.jpg" alt="${esc(x.caption||"")}" loading="lazy"><a class="contactBtn sub" href="https://www.youtube.com/watch?v=${encodeURIComponent(id)}" target="_blank" rel="noopener">${esc(G.t("openSrc"))} · YouTube</a>`});
+};
+/* ---------- 브랜드 화보 홀로그램 ---------- */
+G.holoSlides = rid => { const real=HOLO_GALLERY.filter(x=>x.url && (x.src_type==="yt_thumb" ? ytIdOf(x.url) : safeUrl(x.url))), empty=HOLO_GALLERY.filter(x=>!x.url);
+  const rank=b=>{ const i=G.endorseList(rid).findIndex(e=>e.id===b); return i<0?99:i; };
+  return [...real.sort((a,b)=>rank(a.brand)-rank(b.brand)), ...(empty.length ? [empty[0]] : [])]; };
+G.holoBrand = x => G.nm(ENDORSEMENTS.items.find(e=>e.id===x.brand)?.brand) || "";
+G.openHoloInfo = x => {   // 3D 불가 기기·평면 화면: 영상이면 기존 영상 패널로, 빈 자리는 ads.html
+  if(!x?.url){ window.open(`ads.html?lang=${G.langParam()}`, "_blank", "noopener"); return; }
+  const id = x.src_type==="yt_thumb" ? ytIdOf(x.url) : null;
+  if(id && x.play){ openItem({id, kind:"long", title:`${G.holoBrand(x)} · ${x.member}`, desc:"", channel:x.credit.replace(/^YouTube · /,""), official:true}); return; }
+  const u=safeUrl(x.link||x.url); if(u) window.open(u.href,"_blank","noopener");
+};
+/* ---------- 앨범 방 ---------- */
+G.albumHtml = a => {
+  const loc=G.lang==="zh"?"zh-TW":G.lang, d=new Date(a.release+"T00:00:00").toLocaleDateString(loc,{year:"numeric",month:"long",day:"numeric"});
+  const tr=a.tracks.map((t,i)=>{ const lu=safeUrl(t.lyrics_url), cr=t.credits||{}, crs=[cr.lyrics?.length ? G.t("alLyricist")+" "+cr.lyrics.join(", ") : "", cr.music?.length ? G.t("alComposer")+" "+cr.music.join(", ") : ""].filter(Boolean).join(" · ");
+    const st = t.story ? (typeof t.story==="object" ? G.nm(t.story) : String(t.story)) : "";
+    return `<li class="trk"><div><b>${i+1}. ${esc(t.title)}</b>${t.is_title ? ` <span class="tag">${esc(G.t("alTitleTrack"))}</span>` : ""}</div>
+      ${crs ? `<small>${esc(crs)}</small>` : ""}<p class="${st?"":"soon"}">${esc(st || G.t("alStorySoon"))}</p>
+      ${lu ? `<a class="lyr" href="${esc(lu.href)}" target="_blank" rel="noopener">${esc(G.t("alLyrics"))}</a>` : ""}</li>`; }).join("");
+  return `<p class="sfacts">${esc(G.nm(a.kind))} · ${esc(G.t("alRelease",{d}))}</p><div class="sec2">${esc(G.t("alTracks"))}</div><ol class="tracks">${tr}</ol>
+    <p class="contactNote">${esc(G.t("alOrderNote"))} ${esc(G.t("alNoLyrics"))}</p>
+    <p class="src">${esc(G.t("src"))}: ${(a.sources||[]).filter(u=>safeUrl(u)).map(u=>`<a class="srcmini" href="${esc(safeUrl(u).href)}" target="_blank" rel="noopener">${esc(hostOf(u))}</a>`).join(" ")} · ${esc(a.checked_at||"")}</p>`;
+};
+G.openAlbum = key => { const a=ALBUMS[key]; if(!a) return; openItem({type:"text", title:`${a.title} · ${G.nm(a.kind)}`, desc:G.nm(a.intro), html:G.albumHtml(a)}); };
+/* 평면 화면: 포토 월·화보 */
+G.flatPhotos = key => { const l=G.photosFor(key); if(!l.length) return "";
+  return `<div class="sec">📷 ${esc(G.t("pwTitle"))}</div><div class="grid">` + l.map((x,i)=>{ const ok=G.photoOk(x), id=ok&&x.src_type==="yt_thumb"?ytIdOf(x.url):null;
+    return `<button class="card${ok?"":" blank"}" data-ph="${esc(key)}|${i}"><div class="th" style="${id?`background-image:url('https://i.ytimg.com/vi/${id}/hqdefault.jpg')`:""}">${ok?"":esc(G.t("pwSoon"))}</div><div class="tt">${esc(ok?(x.caption||x.credit||""):"")}<small>${esc(x.credit||"")}</small></div></button>`; }).join("") + `</div>`; };
+G.flatHolo = rid => { const l=G.holoSlides(rid); if(!l.length) return "";
+  return `<div class="sec">✨ ${esc(G.t("holoTitle"))}</div><div class="grid">` + l.map((x,i)=>`<button class="card" data-holo="${i}"><div class="tt">${esc(x.url ? G.holoBrand(x)+" · "+x.member : G.t("holoSoon"))}<small>${esc(x.url ? x.credit+" · "+G.t("frEndorse") : "")}</small></div></button>`).join("") + `</div>`; };
+/* ---------- 관 입구 안내(CONTENT.intro) — 관 홀 첫 안내판·평면 화면 맨 위 ---------- */
+G.hallIntro = h => h && h.id===CONTENT.hall && CONTENT.intro ? G.nm(CONTENT.intro) : "";
+G.openHallIntro = h => { const src=(CONTENT.intro_sources||[]).filter(u=>safeUrl(u));
+  openItem({type:"text", title:`${G.nm(h.name)} · ${G.t("introT")}`, desc:G.hallIntro(h),
+    html:`<p class="src">${esc(G.t("src"))}: ${src.map(u=>`<a class="srcmini" href="${esc(safeUrl(u).href)}" target="_blank" rel="noopener">${esc(hostOf(u))}</a>`).join(" ")} · ${esc(CONTENT.checked_at)}</p>`}); };
+G.openStatue = m => { const ci=CONTENT.statues?.[m.id]||{}, st = m.story ? (typeof m.story==="object" ? G.nm(m.story) : String(m.story)) : ci.intro ? G.nm(ci.intro) : "";
+  const loc=G.lang==="zh"?"zh-TW":G.lang, bd=/^\d\d-\d\d$/.test(ci.birthday||"") ? new Date(2000,+ci.birthday.slice(0,2)-1,+ci.birthday.slice(3)).toLocaleDateString(loc,{month:"long",day:"numeric"}) : "";
+  const facts=[ci.position ? G.t("stPos",{p:G.nm(ci.position)}) : "", bd ? G.t("stBday",{d:bd}) : ""].filter(Boolean).join(" · ");
+  const src=(ci.sources||[]).filter(u=>safeUrl(u)).slice(0,3);
+  openItem({type:"text", title: G.lang==="ko" ? `${m.name} · ${m.name_en}` : m.name_en, desc:st,
+    html:`${facts ? `<p class="sfacts">${esc(facts)}</p>` : ""}${st && src.length ? `<p class="src">${esc(G.t("src"))}: ${src.map(u=>`<a class="srcmini" href="${esc(safeUrl(u).href)}" target="_blank" rel="noopener">${esc(hostOf(u))}</a>`).join(" ")}</p>` : ""}<p class="contactNote">${esc(G.t("stNote"))}</p>`}); };
 
 /* ---------- 미션 ---------- */
 function completeMission(m){
@@ -1117,11 +2146,16 @@ function playReward(m){
 }
 G.hasMission = id => !!store.json("duksim-collection-v1",{})[id];
 G.startMission = m => {
-  if(G.hasMission(m.id)){ playReward(m); return; }
+  if(G.hasMission(m.id) && (m.type!=="quiz" || /^[\w-]{11}$/.test(m.reward?.video_id||""))){ playReward(m); return; }
   if(m.type==="find"){ completeMission(m); return; }
   openItem({type:"text", title:G.nm(m.question), html:`<div class="choices">${m.choices.map((c,i)=>`<button data-a="${i}">${esc(typeof c==="object"?G.nm(c):c)}</button>`).join("")}</div>
-    <p class="src">${esc(G.t("src"))}: <a href="${esc(m.source)}" target="_blank" rel="noopener">${esc(new URL(m.source).hostname)}</a> · ${esc(m.checked_at)}</p>`});
-  document.querySelectorAll("[data-a]").forEach(b=>b.onclick=()=>{ if(+b.dataset.a===m.answer){ closeItem(); completeMission(m); } else toast(G.t("quizWrong")); });
+    <div id="qDone"></div>`});
+  /* 정답을 맞히면 그 자리에 「정답」과 작은 「출처」 링크(정답을 확인한 기사) */
+  document.querySelectorAll("[data-a]").forEach(b=>b.onclick=()=>{ if(+b.dataset.a!==m.answer){ toast(G.t("quizWrong")); return; }
+    const c=m.choices[m.answer], u=safeUrl(m.source);
+    document.querySelectorAll("[data-a]").forEach(x=>{ x.disabled=true; x.classList.toggle("ok", +x.dataset.a===m.answer); });
+    $("#qDone").innerHTML=`<p class="qok">✅ ${esc(G.t("qOk"))} ${esc(typeof c==="object"?G.nm(c):c)}</p>${u ? `<p class="src">${esc(G.t("src"))}: <a class="srcmini" href="${esc(u.href)}" target="_blank" rel="noopener">${esc(hostOf(m.source))}</a> · ${esc(m.checked_at)}</p>` : ""}`;
+    if(!G.hasMission(m.id)) completeMission(m); });
 };
 G.talkNpc = () => {
   const open=HALLS.filter(h=>h.open).map(h=>G.nm(h.name)).join(", "), soon=HALLS.filter(h=>!h.open).map(h=>G.nm(h.name)).join(", ");
@@ -1143,6 +2177,7 @@ async function drawReact(id){
 }
 function openItem(it, ctx={}){
   if(!it){ toast(G.t("soon")); return; }
+  G.holoStop?.();   // 홀로그램 재생 중이면 멈춤(동시에 1개만)
   const hall = ctx.hall || G.hall(), p=$("#player");
   let title="", desc="", srcName="", srcUrl="", srcBtn="", picks=[], extra="", vid=null, showPicks=true, tag="", note="", playing=false;
   if(it.type==="instagram"){
@@ -1165,7 +2200,7 @@ function openItem(it, ctx={}){
     p.innerHTML = `<iframe id="ytFrame" src="https://www.youtube-nocookie.com/embed/${encodeURIComponent(it.id)}?rel=0&playsinline=1&enablejsapi=1${og}" title="${esc(it.title)}"
       allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin"></iframe>`;
     /* 유튜브 정책 III.G: 영상 패널 안·바로 아래에는 광고·추천 상점을 두지 않는다(picks는 방의 추천 상점 진열대에서만) */
-    title=it.title||""; desc=it.desc||""; note=it.note ? (typeof it.note==="object" ? G.nm(it.note) : String(it.note)) : ""; showPicks=false; playing=true; vid=it.id; if(isNew(it.added_at)) tag=G.t("newTag");
+    title=it.title||""; desc=it.desc||""; note=it.note ? (typeof it.note==="object" ? G.nm(it.note) : String(it.note)) : CONTENT.notes?.[it.id] ? G.nm(CONTENT.notes[it.id]) : "";   // 영상 note: 직접 넣은 것 → content_rescene 순 showPicks=false; playing=true; vid=it.id; if(isNew(it.added_at)) tag=G.t("newTag");
     srcUrl = kind==="short" ? `https://www.youtube.com/shorts/${encodeURIComponent(it.id)}` : `https://www.youtube.com/watch?v=${encodeURIComponent(it.id)}`;
     srcName = it.channel || (it.official && hall?.official ? hall.official.name : "YouTube"); srcBtn=G.t("openYT");
     STATS.record(it.id, "view"); ANALYTICS.video(it.id, "open"); startWatch(it);
@@ -1180,9 +2215,9 @@ function openItem(it, ctx={}){
   picks = picks.map(x=>({...x,u:safeUrl(x.url)})).filter(x=>x.u);
   $("#picksRow").innerHTML = picks.map(x=>`<a class="pick" href="${esc(x.u.href)}" target="_blank" rel="sponsored noopener">${esc(x.name)}<b>${esc(x.price||"")}</b><small>${esc(shopOf(x)?.name||x.u.hostname)}</small></a>`).join("");
   $("#picksEmpty").hidden = picks.length>0;
-  const notes=[...new Set(picks.map(x=>shopOf(x)?.note || "이 링크로 구매하면 덕심저장소가 일정액의 수수료를 받을 수 있어요."))];
+  const notes=[...new Set(picks.map(x=>G.lang==="ko" && shopOf(x)?.note ? shopOf(x).note : G.t("affNote")))];
   $("#disc").textContent = notes.join(" "); $("#disc").hidden = !notes.length;
-  $("#shade").classList.add("on"); const s=$("#sheet"); s.classList.add("on"); s.setAttribute("aria-hidden","false"); s.scrollTop=0;
+  $("#shade").classList.add("on"); document.body.classList.add("sheetOn"); const s=$("#sheet"); s.classList.add("on"); s.setAttribute("aria-hidden","false"); s.scrollTop=0;
   $("#close").focus({preventScroll:true});
 }
 /* 유튜브 IFrame Player API(공식 스크립트)로 재생 상태를 받아 '시청 완료' 판정. 못 쓰면 패널을 fallbackSeconds초 열어 두면 인정 */
@@ -1266,7 +2301,7 @@ G._creditWatch = (hid, rid, id) => creditWatch(G.hall(hid), G.room(hid, rid), id
 
 function closeItem(){
   const s=$("#sheet"); if(!s.classList.contains("on")) return;
-  s.classList.remove("on"); s.setAttribute("aria-hidden","true"); $("#shade").classList.remove("on"); stopWatch(); document.body.classList.remove("playing"); cmtVid=null;
+  s.classList.remove("on"); s.setAttribute("aria-hidden","true"); $("#shade").classList.remove("on"); document.body.classList.remove("sheetOn"); stopWatch(); document.body.classList.remove("playing"); cmtVid=null;
   setTimeout(()=>{ if(!s.classList.contains("on")) $("#player").innerHTML=""; },350); // 닫으면 재생도 멈춤
 }
 G.openItem=openItem; G.openVideo=v=>openItem(v); G.closeItem=closeItem;
@@ -1295,24 +2330,26 @@ function drawFlat(){
        <div class="tt">${esc(G.nm(x.name))}<small>${x.open ? esc(G.t("videosN",{n:x.rooms.reduce((a,b)=>a+(b.videos?.length||0),0)})) : esc(G.t("locked"))}</small></div></button>`).join("") + `</div>
       <div class="grid" style="margin-top:12px"><button class="card door" data-shoppick="1"><div class="th" style="background:#ff9ad5">🛍 ${esc(G.t("shop"))}</div><div class="tt">${esc(G.t("shop"))}<small>${esc(G.t("pickIdol"))}</small></div></button><button class="card" data-culture="1"><div class="tt">🇰🇷 ${esc(G.t("culture"))}<small>${esc(G.t("cultureSoon"))}</small></div></button>
       <button class="card" data-contact="1"><div class="tt">📣 ${esc(G.t("contactTitle"))}<small>${esc(G.t("bs1"))}</small></div></button></div>
-      <p class="contactNote">${esc(G.t("freeNote"))}</p>`;
+      <p class="contactNote">${esc(G.t("freeNote"))}</p>` + G.flatPhotos("lobby");
   } else if(v==="shop"){
     const gid=G.shopGroup;
     html = SHOP_CATEGORIES.map(c=>{ const it=G.shopItems(gid,c.id);
       const en = c.id==="endorse" && G.endorseOn(gid) ? `<div class="sec2">${esc(G.t("enTitle"))}</div><div class="badges"><b class="info">${esc(G.t("enNotAd"))}</b></div><div class="elist" style="margin-bottom:10px">${G.endorseCards("goods_ad")}</div>` : "";
-      return `<div class="sec">${esc(G.nm(c.name))} <b style="background:var(--ink);color:#fff;border-radius:4px;padding:1px 5px;font-size:10px">광고 · AD</b></div>${en}<div class="grid">`
+      return `<div class="sec">${esc(G.nm(c.name))} <b style="background:var(--ink);color:#fff;border-radius:4px;padding:1px 5px;font-size:10px">${esc(G.t("adBadge"))}</b></div>${en}<div class="grid">`
         + it.map((x,i)=>`<button class="card" data-prod="${esc(c.id)}:${i}"><div class="tt">${esc(x.name)}<small>${esc(x.price||"")}${x.seller?" · "+esc(G.t("sellerBadge")):""}</small></div></button>`).join("")
         + (it.length ? "" : `<div class="card blank"><div class="tt">${esc(G.t("zoneSoon"))}</div></div>`)
         + `<button class="card" data-seller="1" style="border:1px dashed var(--line)"><div class="tt">🏪 ${esc(G.t("sellerSlot"))}</div></button></div>`; }).join("")
       + `<p class="contactNote">${esc(G.t("freeNote"))}</p>`;
   } else if(v==="hub"){
-    html = `<div class="sec">${esc(G.t("roomsH"))}</div><div class="grid">` + G.visibleRooms(h).map(x=>{ const op=G.roomOpen(h,x), nd=G.roomNeed(x);
+    html = (G.hallIntro(h) ? `<div class="warn hallIntro" style="color:var(--ink)"><b>${esc(G.nm(h.name))} · ${esc(G.t("introT"))}</b><br>${esc(G.hallIntro(h))}<br><button class="card" data-intro="1" style="margin-top:8px;padding:8px 12px">${esc(G.t("src"))}</button></div>` : "")
+      + G.flatPhotos("hub") + `<div class="sec">${esc(G.t("roomsH"))}</div><div class="grid">` + G.visibleRooms(h).map(x=>{ const op=G.roomOpen(h,x), nd=G.roomNeed(x);
       return `<button class="card door ${op?'':'lock'}" data-room="${esc(x.id)}"><div class="th" style="background:${esc(G.roomColor(x))}">${op?'':'🔒 '}${esc(G.nm(x.name))}</div>
        <div class="tt">${esc(G.roomTitle(x))}<small>${G.inProgress(h)&&nd ? G.stars(G.roomCount(h,x),nd)+" · " : ""}${op ? (x.videos?.length ? esc(G.t("videosN",{n:x.videos.length})) : esc(G.t("soon"))) : esc(G.lockedText(h,x))}</small>
        ${op ? "" : `<small>${(x.videos||[]).slice(0,3).map(v=>"· "+esc(v.title)).join("<br>")}</small>`}</div></button>`; }).join("") + `</div>`;
   } else if(v==="room"){
     const st=G.roomStory(r);
     html = `<div class="warn" style="color:var(--ink)"><b>${esc(G.nm(r.name))}</b><br>${esc(st.text||st.line)}</div>`;
+    if(r.album && ALBUMS[r.album]) html += `<button class="card" data-album="${esc(r.album)}" style="width:100%;margin-top:10px"><div class="tt">💿 ${esc(ALBUMS[r.album].title)} · ${esc(G.nm(ALBUMS[r.album].kind))}<small>${esc(G.t("bAlbum"))}</small></div></button>`;
     html += `<div class="sec">${esc(G.t("videosH"))}</div><div class="grid">` + G.frames(r).map(x=>{ if(!x) return `<div class="card blank"><div class="th">${esc(G.t("soon"))}</div><div class="tt">&nbsp;</div></div>`;
         items.push(x); return `<button class="card" data-i="${items.length-1}"><div class="th" style="background-image:url('${thumb(x.id)}'),linear-gradient(135deg,var(--theme),#ff465a)"></div><div class="tt">${esc(x.title)}</div></button>`; }).join("") + `</div>`;
     if(r.photos?.length){
@@ -1321,9 +2358,10 @@ function drawFlat(){
           items.push(x); return `<button class="card ig" data-i="${items.length-1}"><div class="th">@${esc(h.official?.igHandle||"instagram")}<br>${esc(x.date||"")}</div><div class="tt">${esc(x.caption||"Instagram")}</div></button>`; }
         items.push(x); return `<button class="card" data-i="${items.length-1}"><div class="th" style="background-image:url('${thumb(x.id)}'),linear-gradient(135deg,var(--theme),#ff465a)"></div><div class="tt">${esc(x.title||"")}</div></button>`; }).join("") + `</div>`;
     }
+    html += G.flatPhotos(r.id) + G.flatHolo(r.id);
     const ms=G.missions(h.id, r.id);
     if(ms.length) html += `<div class="sec">🔎 ${esc(G.t("secret"))}</div><div class="grid">` + ms.map(m=>`<button class="card" data-m="${esc(m.id)}"><div class="tt">${esc(G.nm(m.hint))}</div></button>`).join("") + `</div>`;
-    html += `<div class="sec">${esc(G.t("goodsTitle"))} <b style="background:var(--ink);color:#fff;border-radius:4px;padding:1px 5px;font-size:10px">광고 · AD</b></div><button class="card" data-goods="1" style="width:100%"><div class="tt">${esc(G.products(h.id,r.id).length||r.goods?.length||G.roomPicks(r).length ? G.t("goodsTitle") : G.t("goodsSign"))}</div></button>`;
+    html += `<div class="sec">${esc(G.t("goodsTitle"))} <b style="background:var(--ink);color:#fff;border-radius:4px;padding:1px 5px;font-size:10px">${esc(G.t("adBadge"))}</b></div><button class="card" data-goods="1" style="width:100%"><div class="tt">${esc(G.products(h.id,r.id).length||r.goods?.length||G.roomPicks(r).length ? G.t("goodsTitle") : G.t("goodsSign"))}</div></button>`;
     if(r.id==="anwonjalbu") html += `<div class="sec">🎁 ${esc(G.t("agTitle"))}</div><button class="card" data-ag="1" style="width:100%"><div class="tt">${esc(G.t("agTitle"))}<small>${esc(safeUrl(G.agShop()?.store_url) ? G.t("agGo") : G.t("agSoon"))} · ${esc(G.t("notAffB"))}</small></div></button>`;
     if(G.endorseOn(h.id)) html += `<div class="sec">${esc(G.t("enTitle"))}</div><div class="badges"><b class="info">${esc(G.t("enNotAd"))}</b></div><div class="elist">${G.endorseCards(r.id)}</div>`
       + G.endorseCorner().map((c,i)=>`<button class="card ecorner" data-cv="${i}" style="margin-top:8px"><div class="tt">▶ ${esc(G.t("enCorner"))} · ${esc(c.video.title)}<small>${esc(G.t("enCornerSub"))}</small></div></button>`).join("");
@@ -1332,6 +2370,10 @@ function drawFlat(){
   b.querySelectorAll("[data-i]").forEach(x=>x.onclick=()=>openItem(items[+x.dataset.i]));
   b.querySelectorAll("[data-goods]").forEach(x=>x.onclick=()=>G.openGoods(r));
   b.querySelectorAll("[data-ag]").forEach(x=>x.onclick=G.openAg);
+  b.querySelectorAll("[data-album]").forEach(x=>x.onclick=()=>G.openAlbum(x.dataset.album));
+  b.querySelectorAll("[data-ph]").forEach(x=>x.onclick=()=>{ const [k,i]=x.dataset.ph.split("|"); G.openPhoto(G.photosFor(k)[+i]); });
+  b.querySelectorAll("[data-holo]").forEach(x=>x.onclick=()=>G.openHoloInfo(G.holoSlides(r?.id||"")[+x.dataset.holo]));
+  b.querySelectorAll("[data-intro]").forEach(x=>x.onclick=()=>G.openHallIntro(h));
   b.querySelectorAll("[data-cv]").forEach(x=>x.onclick=()=>openItem({...G.endorseCorner()[+x.dataset.cv].video, desc:""}));
   b.querySelectorAll("[data-culture]").forEach(x=>x.onclick=G.openCulture);
   b.querySelectorAll("[data-contact]").forEach(x=>x.onclick=G.openContact);
@@ -1433,10 +2475,10 @@ function start(THREE){
   const adLoader=new THREE.TextureLoader(); adLoader.setCrossOrigin("anonymous");
   function adPanel(parent, w, h, slot, clickables, relabel){
     const ad=G.ad(slot), m=textPlane(parent, w, h, 320, (g,W,H)=>{ g.fillStyle="#f3eee6"; g.fillRect(0,0,W,H); g.strokeStyle="#d8ccb8"; g.setLineDash([6,4]); g.lineWidth=2; g.strokeRect(3,3,W-6,H-6); g.setLineDash([]);
-      g.fillStyle="#1e143c"; g.fillRect(8,8,30,16); g.fillStyle="#fff"; g.font=`700 11px ${FONT}`; g.textAlign="center"; g.textBaseline="middle"; g.fillText(ad?(ad.label||"광고"):"AD",23,16.5);
+      g.fillStyle="#1e143c"; g.fillRect(8,8,30,16); g.fillStyle="#fff"; g.font=`700 11px ${FONT}`; g.textAlign="center"; g.textBaseline="middle"; g.fillText(ad?G.adLabel(ad):"AD",23,16.5);
       if(!ad){ g.fillStyle="#7a7088"; g.font=`700 15px ${FONT}`; g.fillText(`${G.t("adSpace")} · AD SPACE  #${slot.split("_").pop()}`, W/2, H*0.42); g.font=`500 11px ${FONT}`; g.fillText(G.t("adSoon"), W/2, H*0.75); } });
     if(ad){ adLoader.load(safeUrl(ad.image).href, tex=>{ tex.colorSpace=THREE.SRGBColorSpace; const img=add(m, new THREE.PlaneGeometry(w*0.98,h*0.94), new THREE.MeshBasicMaterial({map:tex}), 0,0,0.002);
-        const badge=textPlane(m, h*0.9, h*0.36, 64, (g,W,H)=>{ g.fillStyle="#1e143c"; g.fillRect(0,0,W,H); g.fillStyle="#fff"; g.font=`700 ${H*0.6}px ${FONT}`; g.textAlign="center"; g.textBaseline="middle"; g.fillText(ad.label||"광고",W/2,H/2+1); });
+        const badge=textPlane(m, h*0.9, h*0.36, 64, (g,W,H)=>{ g.fillStyle="#1e143c"; g.fillRect(0,0,W,H); g.fillStyle="#fff"; g.font=`700 ${H*0.6}px ${FONT}`; g.textAlign="center"; g.textBaseline="middle"; g.fillText(G.adLabel(ad),W/2,H/2+1); });
         badge.position.set(-w/2+h*0.5, h*0.28, 0.004); ask(); }); }
     else relabel.push(m.userData.redraw);
     if(safeUrl(ad?.link)){ m.userData.act=()=>G.openAd(ad); clickables.push(m); }
@@ -1449,7 +2491,7 @@ function start(THREE){
     const frame=box(parent, w+0.3, h+0.3, 0.2, bas(0x2a2240), 0,0,-0.12);
     const glow=add(parent, new THREE.PlaneGeometry(w+0.16,h+0.16), new THREE.MeshBasicMaterial({color:0xff7fd0}), 0,0,-0.015);   // 빛나는 테두리
     const scr=add(parent, new THREE.PlaneGeometry(w,h), new THREE.MeshBasicMaterial({color:0xffffff}), 0,0,0);
-    const badge=textPlane(parent, Math.min(w,h)*0.32, Math.min(w,h)*0.12, 96, (g,W,H)=>{ g.fillStyle="#ffd640"; g.fillRect(0,0,W,H); g.fillStyle="#1e143c"; g.font=`800 ${H*0.62}px ${FONT}`; g.textAlign="center"; g.textBaseline="middle"; g.fillText("광고 · AD",W/2,H/2+1); });
+    const badge=textPlane(parent, Math.min(w,h)*0.32, Math.min(w,h)*0.12, 96, (g,W,H)=>{ g.fillStyle="#ffd640"; g.fillRect(0,0,W,H); g.fillStyle="#1e143c"; g.font=`800 ${H*0.62}px ${FONT}`; g.textAlign="center"; g.textBaseline="middle"; g.fillText(G.t("adBadge"),W/2,H/2+1); });
     badge.position.set(-w/2+Math.min(w,h)*0.18, h/2-Math.min(w,h)*0.08, 0.004);
     const adTex=[]; G.adsAt(place).forEach(ad=>adLoader.load(safeUrl(ad.image).href, t=>{ t.colorSpace=THREE.SRGBColorSpace; adTex.push({t,ad}); }));
     const SL=[["#ff4fa3","#7b4dff","bs1","bs1b",true],["#1e143c","#3b2a7a","bs2","bs2b",false],["#ff8a3d","#ffcf3d","bs3","bs3b",false]];
@@ -1522,7 +2564,7 @@ function start(THREE){
       const act=()=>G.openStatue(m);
       [...parts, plate].forEach(o=>{ o.userData.act=act; clickables.push(o); }); sym.traverse(o=>{ if(o.isMesh){ o.userData.act=act; clickables.push(o); } });
       const front=new THREE.Vector3(Math.sin(pos.ry||0),0,Math.cos(pos.ry||0));
-      spots.push({p:new THREE.Vector3(pos.x,(pos.y||0)+1.6,pos.z).addScaledVector(front,1.0), r:2.0, label:()=>G.t("bStatue")+" · "+m.name+" "+m.name_en, act});
+      spots.push({p:new THREE.Vector3(pos.x,(pos.y||0)+1.6,pos.z).addScaledVector(front,1.0), r:2.0, label:()=>G.t("bStatue")+" · "+(G.lang==="ko" ? m.name+" "+m.name_en : m.name_en), act});
     });
     return circles;
   }
@@ -1543,13 +2585,13 @@ function start(THREE){
     const bandMat=new THREE.MeshBasicMaterial({color:0xffffff, side:THREE.DoubleSide});
     const drawBand=()=>{ if(blAd && bandMat.map && !bandTex) return; bandTex?.dispose();
       bandTex=canvasTex(512,96,(g,w,h)=>{ const gr=g.createLinearGradient(0,0,w,0); gr.addColorStop(0,"#ff4fa3"); gr.addColorStop(1,"#7b4dff"); g.fillStyle=gr; g.fillRect(0,0,w,h);
-        g.fillStyle="#ffd640"; g.fillRect(10,30,74,36); g.fillStyle="#1e143c"; g.font=`800 19px ${FONT}`; g.textAlign="center"; g.textBaseline="middle"; g.fillText("광고 · AD",47,49);
+        g.fillStyle="#ffd640"; g.fillRect(10,30,74,36); g.fillStyle="#1e143c"; g.font=`800 19px ${FONT}`; g.textAlign="center"; g.textBaseline="middle"; g.fillText(G.t("adBadge"),47,49);
         g.fillStyle="#fff"; g.font=`800 26px ${FONT}`; wrapText(g, SKY_MSG[mi], w/2+44, h/2+2, w-110, 30, 1); });
       bandMat.map=bandTex; bandMat.needsUpdate=true; };
     if(blAd) adLoader.load(safeUrl(blAd.image).href, t=>{ t.colorSpace=THREE.SRGBColorSpace; bandTex?.dispose(); bandTex=null; bandMat.map=t; bandMat.needsUpdate=true; ask(); });
     drawBand();
     [1,-1].forEach(sd=>{ const b=add(bl, new THREE.PlaneGeometry(7.2,1.35), bandMat, 0.2,0.05,sd*1.93); if(sd<0) b.rotation.y=Math.PI; b.userData.act=act(blAd); b.userData.adSlot="sky_blimp_1"; clickables.push(b); });
-    if(blAd){ const badge=textPlane(bl, 1.3, 0.42, 128, (g,w,h)=>{ g.fillStyle="#ffd640"; g.fillRect(0,0,w,h); g.fillStyle="#1e143c"; g.font=`800 ${h*0.6}px ${FONT}`; g.textAlign="center"; g.textBaseline="middle"; g.fillText(blAd.label||"광고",w/2,h/2+1); });
+    if(blAd){ const badge=textPlane(bl, 1.3, 0.42, 128, (g,w,h)=>{ g.fillStyle="#ffd640"; g.fillRect(0,0,w,h); g.fillStyle="#1e143c"; g.font=`800 ${h*0.6}px ${FONT}`; g.textAlign="center"; g.textBaseline="middle"; g.fillText(G.adLabel(blAd),w/2,h/2+1); });
       badge.position.set(-2.6,0.62,1.95); }
     hull.userData.act=act(blAd); hull.userData.adSlot="sky_blimp_1"; clickables.push(hull);
     boards.push({scene:s, show:()=>{ if(blAd) return; mi=(mi+1)%SKY_MSG.length; drawBand(); }});
@@ -1562,7 +2604,7 @@ function start(THREE){
         const gr=c.createLinearGradient(0,0,0,h); gr.addColorStop(0,"rgba(110,220,255,.55)"); gr.addColorStop(1,"rgba(190,120,255,.5)"); c.fillStyle=gr; c.fillRect(0,0,w,h);
         c.fillStyle="rgba(255,255,255,.14)"; for(let yy=0;yy<h;yy+=6) c.fillRect(0,yy,w,2);
         c.strokeStyle="rgba(220,250,255,.95)"; c.lineWidth=6; c.strokeRect(4,4,w-8,h-8);
-        c.fillStyle="#ffd640"; c.fillRect(16,16,112,36); c.fillStyle="#1e143c"; c.font=`800 22px ${FONT}`; c.textAlign="center"; c.textBaseline="middle"; c.fillText("광고 · AD",72,35);
+        c.fillStyle="#ffd640"; c.fillRect(16,16,112,36); c.fillStyle="#1e143c"; c.font=`800 22px ${FONT}`; c.textAlign="center"; c.textBaseline="middle"; c.fillText(G.t("adBadge"),72,35);
         if(!ad){ c.fillStyle="#fff"; c.shadowColor="rgba(80,220,255,.9)"; c.shadowBlur=12; c.font=`800 46px ${FONT}`; c.fillText(G.lang==="en"?"AD SPACE":G.t("adSpace")+" · AD SPACE", w/2, h*0.52);
           c.font=`600 22px ${FONT}`; c.fillText(G.t("bs1b"), w/2, h*0.78); c.shadowBlur=0; } });
       scr.material.side=THREE.DoubleSide; scr.material.depthWrite=false; scr.material.fog=false; scr.material.opacity=0.92;
@@ -1698,7 +2740,7 @@ function start(THREE){
     u.tail.rotation.y = moving ? Math.sin(u.t*16)*0.7 : 0;
     poseCompute(g); return Math.abs(target-u.sit)>0.01;
   }
-  function buildRotunda({color, doors, backLabel, onBack, outdoorBack, npc, adPlace, after}){
+  function buildRotunda({color, doors, backLabel, onBack, outdoorBack, npc, adPlace, after, intro, photoKey, photoAngle}){
     const s=new THREE.Scene(); s.background=new THREE.Color(0xf6efe3); hemi(s);
     const R=7, H=4.6, clickables=[], relabel=[], spots=[]; let culturePos=null;
     add(s, new THREE.CylinderGeometry(R,R,H,36,1,true), new THREE.MeshLambertMaterial({color:0xf5eee2, side:THREE.BackSide}), 0, H/2, 0);
@@ -1738,7 +2780,7 @@ function start(THREE){
     if(npc){   // 로비 간판(한글 크게 + 작은 외국어) · 중형 전광판 · 한국 문화 코너
       const sg=new THREE.Group(); sg.position.set(0,0,-(R-0.12)); sg.lookAt(0,0,0); s.add(sg);
       const sign=textPlane(sg, 3.0, 0.62, 640, (g,W,H)=>{ g.fillStyle="#1e143c"; g.fillRect(0,0,W,H); g.strokeStyle="#c9a45c"; g.lineWidth=5; g.strokeRect(5,5,W-10,H-10);
-        g.fillStyle="#ffd640"; g.textAlign="center"; g.textBaseline="middle"; g.font=`800 58px ${FONT}`; g.fillText("덕심저장소 갤러리",W/2,H*0.42);
+        g.fillStyle="#ffd640"; g.textAlign="center"; g.textBaseline="middle"; { const nm=G.t("gallery"); let fs=58; do{ g.font=`800 ${fs}px ${FONT}`; fs-=2; } while(g.measureText(nm).width>W-40 && fs>20); g.fillText(nm,W/2,H*0.42); }
         g.fillStyle="#e8e0ff"; g.font=`500 17px ${FONT}`; g.fillText(G.t("lobbySub"),W/2,H*0.8); });
       sign.position.set(0,3.72,0); relabel.push(sign.userData.redraw);
       const fn=textPlane(sg, 3.6, 0.2, 720, (g,W,H)=>{ g.fillStyle="#fffaf2"; g.fillRect(0,0,W,H); g.fillStyle="#6b6280"; g.font=`500 19px ${FONT}`; g.textAlign="center"; g.textBaseline="middle"; wrapText(g,G.t("freeNote"),W/2,H/2+1,W-20,22,1); });
@@ -1752,6 +2794,21 @@ function start(THREE){
       [cs].forEach(m=>{ m.userData.act=G.openCulture; clickables.push(m); });
       spots.push({p:new THREE.Vector3(Math.sin(ca)*(R-2.0),1.2,-Math.cos(ca)*(R-2.0)), r:1.4, label:()=>G.t("bCulture"), act:G.openCulture});
       culturePos=[cx,cz];
+    }
+    if(intro){   // 관 입구 안내판: 정면(문 사이 빈 벽). 정면에 문이 있으면 뒤 문 왼쪽 벽
+      const ia = angles.some(x=>Math.abs(x)<0.32) ? Math.PI-0.62 : 0;
+      const ig=new THREE.Group(); ig.position.set(Math.sin(ia)*(R-0.15),0,-Math.cos(ia)*(R-0.15)); ig.lookAt(0,0,0); s.add(ig);
+      const ib=textPlane(ig, 2.5, 1.5, 640, (g,W,H)=>{ g.fillStyle="#fffdf8"; g.fillRect(0,0,W,H); g.fillStyle=color; g.fillRect(0,0,W,12); g.strokeStyle="#e4d8c4"; g.lineWidth=4; g.strokeRect(2,2,W-4,H-4);
+        g.fillStyle="#1e143c"; g.textAlign="center"; g.textBaseline="middle"; g.font=`800 34px ${FONT}`; wrapText(g, intro.title(), W/2, 48, W-40, 36, 1);
+        g.fillStyle="#4a4060"; g.font=`500 19px ${FONT}`; wrapText(g, intro.text(), W/2, H*0.56, W-56, 26, 10);
+        g.fillStyle="#9650e6"; g.font=`700 17px ${FONT}`; g.fillText("▶ "+G.t("bIntro"), W/2, H-26); });
+      ib.position.set(0,2.05,0); relabel.push(ib.userData.redraw); ib.userData.act=intro.act; clickables.push(ib);
+      spots.push({p:new THREE.Vector3(Math.sin(ia)*(R-1.3),1.7,-Math.cos(ia)*(R-1.3)), r:1.6, label:()=>G.t("bIntro"), act:intro.act});
+    }
+    let photoTiles=[];
+    if(photoKey){   // 포토 월(관 홀·로비)
+      const pa=photoAngle, pg=new THREE.Group(); pg.position.set(Math.sin(pa)*(R-0.15),0,-Math.cos(pa)*(R-0.15)); pg.lookAt(0,0,0); s.add(pg);
+      photoTiles=photoWall(pg, photoKey, 0, 2.15, 0, clickables, spots, relabel, (tx,ty)=>new THREE.Vector3(Math.sin(pa)*(R-1.2),1.6,-Math.cos(pa)*(R-1.2)));
     }
     const back=new THREE.Group(); back.position.set(0,0,R-0.2); back.lookAt(0,0,0); s.add(back);
     const bf=lam(0x7a5a3a); box(back,0.14,2.9,0.14,bf,-1.15,1.45,0); box(back,0.14,2.9,0.14,bf,1.15,1.45,0); box(back,2.44,0.16,0.14,bf,0,2.92,0);
@@ -1769,17 +2826,18 @@ function start(THREE){
     }
     after?.();
     const jIdx=doors.findIndex(d=>d.justOpened), first = jIdx>=0 ? angles[jIdx]/0.35 : (angles[doors.findIndex(d=>d.open)] ?? 0);
-    return {scene:s, clickables, relabel, spots, cam:{pos:[0,1.7,3.4], yaw:-first*0.35, pitch:0.0, zoom:1.12},
+    return {scene:s, clickables, relabel, spots, animate: photoTiles.length ? dt=>captionsAnimate(photoTiles, dt) : null, cam:{pos:[0,1.7,3.4], yaw:-first*0.35, pitch:0.0, zoom:1.12},
       walk:{spawn:[0,R-1.8,0], free:(x,z)=>Math.hypot(x,z)<R-0.75 && !inCircles(x,z,blockers), camDist:2.8, camH:1.9, clampR:R-0.25}};
   }
   function buildLobby(){
-    return buildRotunda({ color:"#c9a45c", outdoorBack:true, npc:true, adPlace:"lobby_top", backLabel:()=>G.t("exit"), onBack:()=>G.go("outside"),
+    return buildRotunda({ color:"#c9a45c", outdoorBack:true, npc:true, adPlace:"lobby_top", backLabel:()=>G.t("exit"), onBack:()=>G.go("outside"), photoKey:"lobby", photoAngle:2.72,
       doors: HALLS.map(h=>({ color:h.color, open:h.open, title:()=>G.nm(h.name),
         sub:()=> h.open ? G.t("videosN",{n:h.rooms.reduce((a,r)=>a+(r.videos?.length||0),0)}) : (h.id===PROGRESS.nextHall && HALLS.some(x=>x.id===PROGRESS.hall && G.hallCleared(x)) ? "🏆 "+G.t("clearReward") : G.t("locked")),
         act:()=> h.open ? G.go("hub",h.id) : G.toast(G.t("lockedToast")) })).concat([{ color:"#ff9ad5", open:true, title:()=>"🛍 "+G.t("shop"), sub:()=>G.t("pickIdol"), act:()=>G.openShopPicker() }]) });
   }
   function buildHub(hall){
-    return buildRotunda({ color:hall.color, adPlace:"hall_top", backLabel:()=>G.t("toLobby"), onBack:()=>G.go("lobby"),
+    return buildRotunda({ color:hall.color, adPlace:"hall_top", backLabel:()=>G.t("toLobby"), onBack:()=>G.go("lobby"), photoKey:"hub", photoAngle:-(Math.PI-0.62),
+      intro: G.hallIntro(hall) ? { title:()=>`${G.nm(hall.name)} · ${G.t("introT")}`, text:()=>G.hallIntro(hall), act:()=>G.openHallIntro(hall) } : null,
       doors: G.visibleRooms(hall).map(r=>{ const op=G.roomOpen(hall,r), nd=G.roomNeed(r), jo=G.justUnlocked===r.id;
         return { color:G.roomColor(r), open:op, justOpened:jo, title:()=>G.nm(r.name),
           sub:()=> !op ? (()=>{ const pr=G.prevRoom(hall,r); return G.t("lockedLeft",{n:pr?G.roomNeed(pr)-G.roomCount(hall,pr):0}); })()
@@ -1791,6 +2849,133 @@ function start(THREE){
   /* ==========================================================
      3) 방 — 액자 7개 + 방마다 다른 꾸밈(도형만) + 미션
      ========================================================== */
+  /* ==========================================================
+     포토 월 · 브랜드 화보 홀로그램 · 액자 위 광고 띠 (방·관 홀·로비 공용)
+     ========================================================== */
+  const thumbLoader=new THREE.TextureLoader(); thumbLoader.setCrossOrigin("anonymous");
+  function loadThumb(id, onTex, onFail){ thumbLoader.load(`https://i.ytimg.com/vi/${encodeURIComponent(id)}/hqdefault.jpg`, t=>{ t.colorSpace=THREE.SRGBColorSpace; t.repeat.set(1,0.75); t.offset.set(0,0.125); onTex(t); ask(); }, undefined, ()=>onFail?.()); }
+  /* 포토 월: 2×2 칸. 사진 앞에 잠깐 서 있으면(걷기: 가까이 / 빠른 모드: 화면 가운데) 캡션이 떠오른다 */
+  function photoWall(parent, key, x, y, z, clickables, spots, relabel, spotFn){
+    const list=G.photosFor(key), tiles=[]; if(!list.length) return tiles;
+    const g=new THREE.Group(); g.position.set(x,y,z); parent.add(g);
+    const bg=textPlane(g, 2.3, 1.62, 512, (c,w,h)=>{ c.fillStyle="#fffdf8"; c.fillRect(0,0,w,h); c.strokeStyle="#c9b48f"; c.lineWidth=5; c.strokeRect(2.5,2.5,w-5,h-5);
+      c.fillStyle="#1e143c"; c.fillRect(0,0,w,46); c.fillStyle="#ffd640"; c.textAlign="center"; c.textBaseline="middle"; c.font=`800 22px ${FONT}`; wrapText(c,"📷 "+G.t("pwTitle"),w/2,24,w-30,24,1); });
+    relabel.push(bg.userData.redraw);
+    list.forEach((it,i)=>{ const tx=(i%2?0.54:-0.54), ty=(i<2?0.2:-0.44), ok=G.photoOk(it);
+      const soonTex=()=>canvasTex(256,144,(c,w,h)=>{ c.fillStyle="#efe7da"; c.fillRect(0,0,w,h); c.strokeStyle="#d8c8ad"; c.setLineDash([6,5]); c.lineWidth=3; c.strokeRect(8,8,w-16,h-16);
+        c.fillStyle="#9a8a70"; c.font=`600 18px ${FONT}`; c.textAlign="center"; c.textBaseline="middle"; wrapText(c, it.src_type==="instagram" ? "Instagram · "+G.t("pwSoon") : G.t("pwSoon"), w/2, h/2, w-30, 20, 2); });
+      const igTex=()=>canvasTex(256,144,(c,w,h)=>{ const gr=c.createLinearGradient(0,0,w,h); gr.addColorStop(0,"#ff8fc4"); gr.addColorStop(.6,"#b48cff"); gr.addColorStop(1,"#ffb36b"); c.fillStyle=gr; c.fillRect(0,0,w,h);
+        c.fillStyle="#fff"; c.font=`700 18px ${FONT}`; c.textAlign="center"; c.textBaseline="middle"; c.fillText(it.credit||"Instagram", w/2, h/2); });
+      const ytWait=()=>canvasTex(256,144,(c,w,h)=>{ const gr=c.createLinearGradient(0,0,w,h); gr.addColorStop(0,"#3b2f63"); gr.addColorStop(1,"#c04a6e"); c.fillStyle=gr; c.fillRect(0,0,w,h);   // 썸네일을 받기 전(또는 못 받을 때) 출처 표시
+        c.fillStyle="#fff"; c.font=`700 16px ${FONT}`; c.textAlign="center"; c.textBaseline="middle"; wrapText(c, it.credit||"YouTube", w/2, h/2, w-24, 18, 2); });
+      const tile=add(g, new THREE.PlaneGeometry(1.0,0.56), new THREE.MeshBasicMaterial({map: ok ? (it.src_type==="instagram" ? igTex() : ytWait()) : soonTex()}), tx, ty, 0.004);
+      if(ok && it.src_type==="yt_thumb") loadThumb(ytIdOf(it.url), t=>{ tile.material.map.dispose(); tile.material.map=t; tile.material.needsUpdate=true; });
+      else if(!ok) relabel.push(()=>{ tile.material.map.dispose(); tile.material.map=soonTex(); tile.material.needsUpdate=true; });
+      const capText=()=> ok ? (it.caption||it.credit||"") : G.t("pwSoon");
+      const cap=textPlane(g, 1.0, 0.17, 320, (c,w,h)=>{ c.fillStyle="rgba(30,20,60,.88)"; c.fillRect(0,0,w,h); c.fillStyle="#fff"; c.font=`600 17px ${FONT}`; c.textAlign="center"; c.textBaseline="middle"; wrapText(c, capText(), w/2, h/2+1, w-16, 18, 1); });
+      cap.material.opacity=0; cap.material.depthWrite=false; cap.position.set(tx, ty-0.2, 0.008); relabel.push(cap.userData.redraw);
+      const act=()=>G.openPhoto(it); tile.userData.act=act; clickables.push(tile);
+      const wp=new THREE.Vector3(); tiles.push({tile, cap, y0:ty-0.2, t:0, wp, ok});
+      if(spotFn) spots.push({p:spotFn(tx,ty), r:1.2, label:()=> ok ? G.t("bPhotoWall")+" · "+capText() : G.t("pwSoon"), act});
+    });
+    return tiles;
+  }
+  const _v=new THREE.Vector3();
+  function captionsAnimate(tiles, dt){   // 반환값: 그림을 다시 그려야 하면 true
+    let ch=false;
+    for(const t of tiles){ t.tile.getWorldPosition(t.wp);
+      let near; if(G.walk) near=Math.hypot(t.wp.x-player.x, t.wp.z-player.z)<1.9;
+      else { _v.copy(t.wp).project(camera); near=_v.z<1 && Math.abs(_v.x)<0.3 && Math.abs(_v.y)<0.45 && camera.position.distanceTo(t.wp)<8; }
+      t.t = near ? t.t+dt : 0; const target = t.t>0.7 ? 1 : 0, o=t.cap.material.opacity, no=o+(target-o)*Math.min(1,dt*6);
+      if(Math.abs(no-o)>0.002){ t.cap.material.opacity=no; t.cap.position.y=t.y0+0.06*no; ch=true; } }
+    return ch;
+  }
+  /* 브랜드 화보 홀로그램: 사진이 몇 초마다 페이드로 바뀜. 공식 광고 영상이면 다가가거나 누르면 그 면에서 음소거 재생(동시에 1개) */
+  const holoPlay={cur:null, hidden:[]};
+  function holoStop(){ const h=holoPlay.cur; if(!h) return; holoPlay.cur=null; h.playing=false; h.label.visible=true;
+    const box=document.getElementById("holoVid"); box.innerHTML=""; box.classList.remove("on"); document.getElementById("holoBar").classList.remove("on"); document.body.classList.remove("holoPlaying");
+    holoPlay.hidden.forEach(m=>m.visible=true); holoPlay.hidden=[]; ask(); }
+  G.holoStop=holoStop;
+  function holoStart(h){
+    const sl=h.slide(), id=ytIdOf(sl?.url); if(!id || !sl.play) { G.openHoloInfo(sl); return; }
+    if(holoPlay.cur===h) return; holoStop(); holoPlay.cur=h; h.playing=true; h.label.visible=false;
+    /* 유튜브 정책: 재생 화면 주변에 우리 광고·광고 표시를 두지 않는다 → 재생 동안 장면의 광고 칸·맨 위 광고 띠를 숨김 */
+    holoPlay.hidden=(cur?.clickables||[]).filter(m=>m.userData.adSlot && m.visible); holoPlay.hidden.forEach(m=>m.visible=false); document.body.classList.add("holoPlaying");
+    const og = /^https?:/.test(location.origin) ? "&origin="+encodeURIComponent(location.origin) : "";
+    const box=document.getElementById("holoVid");
+    box.innerHTML=`<iframe id="holoFrame" src="https://www.youtube-nocookie.com/embed/${encodeURIComponent(id)}?autoplay=1&mute=1&playsinline=1&rel=0&enablejsapi=1${og}" title="${esc(G.holoBrand(sl))}" allow="autoplay; encrypted-media; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin"></iframe>`;
+    box.classList.add("on"); document.getElementById("holoBar").classList.add("on");
+    STATS.record(id,"view"); ANALYTICS.video(id,"open"); holoPos(); ask();
+  }
+  const _c=[new THREE.Vector3(),new THREE.Vector3(),new THREE.Vector3(),new THREE.Vector3()];
+  function holoPos(){ const h=holoPlay.cur; if(!h) return;
+    const r=renderer.domElement.getBoundingClientRect(); let x0=1e9,y0=1e9,x1=-1e9,y1=-1e9, behind=false;
+    [[-1,-1],[1,-1],[1,1],[-1,1]].forEach(([sx,sy],i)=>{ _c[i].set(sx*h.w/2, sy*h.h/2, 0.01); h.a.localToWorld(_c[i]); _c[i].project(camera); if(_c[i].z>1) behind=true;
+      const px=(_c[i].x+1)/2*r.width+r.left, py=(1-_c[i].y)/2*r.height+r.top; x0=Math.min(x0,px); x1=Math.max(x1,px); y0=Math.min(y0,py); y1=Math.max(y1,py); });
+    if(behind || x1<0 || x0>r.width || y1<0 || y0>r.height){ holoStop(); return; }
+    const box=document.getElementById("holoVid"), bar=document.getElementById("holoBar"), wv=Math.max(160,x1-x0), hv=wv*9/16;
+    box.style.left=(x0+x1)/2-wv/2+"px"; box.style.top=(y0+y1)/2-hv/2+"px"; box.style.width=wv+"px"; box.style.height=hv+"px";
+    bar.style.left=Math.max(8,(x0+x1)/2-90)+"px"; bar.style.top=Math.min(innerHeight-120,(y0+y1)/2+hv/2+8)+"px"; }
+  document.getElementById("holoStop").onclick=()=>holoStop();
+  document.getElementById("holoSound").onclick=()=>{ try{ document.getElementById("holoFrame")?.contentWindow?.postMessage(JSON.stringify({event:"command",func:"unMute",args:[]}),"*"); document.getElementById("holoFrame")?.contentWindow?.postMessage(JSON.stringify({event:"command",func:"setVolume",args:[80]}),"*"); }catch(e){} };
+  function holoPanel(s, pos, rid, clickables, spots){
+    const slides=G.holoSlides(rid); if(!slides.length) return null;
+    const g=new THREE.Group(); g.position.set(...pos); g.lookAt(0,pos[1],0); s.add(g);
+    const w=1.5, hh=0.84, cyan=0x7fe3ff;
+    const mk=()=>add(g, new THREE.PlaneGeometry(w,hh), new THREE.MeshBasicMaterial({transparent:true, opacity:0, depthWrite:false}), 0,0,0.01);
+    const a=mk(), b=mk(); b.position.z=0.012;
+    const fm=new THREE.MeshBasicMaterial({color:cyan, transparent:true, opacity:.75});
+    box(g, w+0.08,0.03,0.02, fm, 0,hh/2+0.03,0); box(g, w+0.08,0.03,0.02, fm, 0,-hh/2-0.03,0); box(g, 0.03,hh+0.06,0.02, fm, -w/2-0.03,0,0); box(g, 0.03,hh+0.06,0.02, fm, w/2+0.03,0,0);
+    add(g, new THREE.CylinderGeometry(0.16,0.2,0.06,16), lam(0x3a4660), 0,-hh/2-0.55,0);
+    add(g, new THREE.ConeGeometry(0.75,0.5,16,1,true), new THREE.MeshBasicMaterial({color:cyan, transparent:true, opacity:.12, depthWrite:false, side:THREE.DoubleSide}), 0,-hh/2-0.28,0).rotation.x=Math.PI;
+    const tex=slides.map(()=>null);
+    const phTex=sl=>canvasTex(320,180,(c,W,H)=>{ const gr=c.createLinearGradient(0,0,W,H); gr.addColorStop(0,"#2a3f6a"); gr.addColorStop(1,"#6b4fa8"); c.fillStyle=gr; c.fillRect(0,0,W,H);
+      c.fillStyle="rgba(127,227,255,.25)"; for(let y=0;y<H;y+=4) c.fillRect(0,y,W,1);
+      c.fillStyle="#e8fbff"; c.textAlign="center"; c.textBaseline="middle"; c.font=`800 22px ${FONT}`; wrapText(c, sl.url ? (G.holoBrand(sl)||"RESCENE") : G.t("holoSoon"), W/2, H/2, W-30, 26, 2); });
+    const getTex=i=>{ if(tex[i]) return tex[i]; const sl=slides[i]; tex[i]=phTex(sl); const id=sl.src_type==="yt_thumb" ? ytIdOf(sl.url) : null;
+      if(id) loadThumb(id, t=>{ tex[i]=t; if(h.i===i){ a.material.map=t; a.material.needsUpdate=true; } });
+      return tex[i]; };
+    const h={g, a, w, h:hh, i:0, t:0, fade:0, playing:false, slide:()=>slides[h.i]};
+    const label=textPlane(g, w, 0.24, 512, (c,W,H)=>{ const sl=slides[h.i]; c.fillStyle="rgba(20,30,60,.82)"; c.fillRect(0,0,W,H); c.textAlign="left"; c.textBaseline="middle";
+      if(sl.url){ c.fillStyle="#7fe3ff"; c.font=`800 24px ${FONT}`; c.fillText(G.holoBrand(sl), 14, H*0.34); c.fillStyle="#fff"; c.font=`500 16px ${FONT}`; wrapText(c, [sl.member, sl.credit].filter(Boolean).join(" · "), W/2+20, H*0.74, W-40, 18, 1);
+        c.fillStyle="#e9f3ec"; c.fillRect(W-196,8,186,26); c.fillStyle="#2f6b45"; c.font=`700 14px ${FONT}`; c.textAlign="center"; c.fillText(G.t("frEndorse"), W-103, 21.5); }
+      else { c.fillStyle="#fff"; c.font=`700 20px ${FONT}`; c.textAlign="center"; c.fillText(G.t("holoSoon"), W/2, H/2); } });
+    label.position.set(0,-hh/2-0.18,0.01);
+    h.label=label;
+    a.material.map=getTex(0); a.material.opacity=0.92; a.material.needsUpdate=true;
+    const act=()=>holoStart(h);
+    [a,b].forEach(m=>{ m.userData.act=act; clickables.push(m); }); label.userData.act=()=>G.openHoloInfo(h.slide()); clickables.push(label);
+    spots.push({p:new THREE.Vector3(pos[0]*0.75,1.6,pos[2]*0.75), r:2.2, label:()=> h.slide().play ? G.t("bHolo")+" · "+G.holoBrand(h.slide()) : G.t("holoSoon"), act});
+    h.redraw=()=>{ label.userData.redraw(); };
+    h.animate=dt=>{
+      if(G.walk && !G.sheetOpen()){ const d=Math.hypot(pos[0]-player.x, pos[2]-player.z); if(!h.playing && !holoPlay.cur && d<2.3 && h.slide().play) holoStart(h); else if(h.playing && d>3.4) holoStop(); }
+      if(h.playing){ holoPos(); return false; }
+      if(slides.length<2) return false;
+      h.t+=dt;
+      if(h.fade>0){ h.fade=Math.min(1,h.fade+dt/0.8); b.material.opacity=0.92*h.fade; a.material.opacity=0.92*(1-h.fade);
+        if(h.fade>=1){ a.material.map=b.material.map; a.material.opacity=0.92; b.material.opacity=0; a.material.needsUpdate=true; h.fade=0; label.userData.redraw(); } return true; }
+      if(h.t>4.5){ h.t=0; h.i=(h.i+1)%slides.length; b.material.map=getTex(h.i); b.material.needsUpdate=true; h.fade=0.001; return true; }
+      return false; };
+    return h;
+  }
+  /* 액자 위 광고 띠(frame_top_<방>_<n>) */
+  function frameStrip(parent, hid, rid, n, sw, clickables, relabel){
+    const ad=G.frameAd(hid, rid, n), col=G.roomColor(G.room(hid,rid)); let img=null;
+    const m=textPlane(parent, sw, 0.3, 512, (c,w,h)=>{
+      if(img){ c.drawImage(img,0,0,w,h); }
+      else if(ad.kind==="official_endorse"){ const e=ad.brand; c.fillStyle="#fffdf8"; c.fillRect(0,0,w,h); c.fillStyle=col; c.fillRect(0,0,8,h); c.strokeStyle="#e4d8c4"; c.lineWidth=3; c.strokeRect(1.5,1.5,w-3,h-3);
+        c.fillStyle="#1e143c"; c.textAlign="left"; c.textBaseline="middle"; c.font=`800 24px ${FONT}`; c.fillText(G.nm(e.brand), 20, h*0.36);
+        c.fillStyle="#6b6280"; c.font=`500 13px ${FONT}`; c.textAlign="left"; const ln=G.nm(e.line); let t=ln; while(c.measureText(t).width>w-40 && t.length>4) t=t.slice(0,-2); c.fillText(t===ln?t:t+"…", 20, h*0.76); }
+      else if(ad.kind==="paid"){ c.fillStyle="#fff8e6"; c.fillRect(0,0,w,h); c.fillStyle="#1e143c"; c.textAlign="center"; c.textBaseline="middle"; c.font=`700 22px ${FONT}`; wrapText(c, ad.label||G.t("adLabel"), w/2, h/2+4, w-160, 24, 1); }
+      else { c.fillStyle="#f3eee6"; c.fillRect(0,0,w,h); c.strokeStyle="#d8ccb8"; c.setLineDash([6,4]); c.lineWidth=2; c.strokeRect(3,3,w-6,h-6); c.setLineDash([]);
+        c.fillStyle="#7a7088"; c.textAlign="center"; c.textBaseline="middle"; c.font=`700 18px ${FONT}`; c.fillText(G.t("frEmpty")+"  #"+n, w/2, h/2+1); }
+      /* 종류 표시(오른쪽 위) */
+      const tag = ad.kind==="official_endorse" ? G.t("frEndorse") : ad.kind==="paid" ? G.t("adBadge") : "";
+      if(tag){ c.font=`700 12px ${FONT}`; const tw=c.measureText(tag).width+14; c.fillStyle = ad.kind==="paid" ? "#1e143c" : "#e9f3ec"; c.fillRect(w-tw-6,5,tw,20); c.fillStyle = ad.kind==="paid" ? "#fff" : "#2f6b45"; c.textAlign="center"; c.textBaseline="middle"; c.fillText(tag, w-6-tw/2, 15.5); } });
+    if(ad.image_url){ const im=new Image(); im.crossOrigin="anonymous"; im.onload=()=>{ img=im; m.userData.redraw(); ask(); }; im.onerror=()=>{}; im.src=ad.image_url; }   // 512px 캔버스에 그려 줄여 씀
+    relabel.push(m.userData.redraw); m.userData.adSlot=`frame_top_${rid}_${n}`; m.userData.act=()=>G.frameAdAct(rid, ad); clickables.push(m);
+    return m;
+  }
   const DECOR = {
     plain:  {wall:0xf4ecdf, floor:["#d7b98f","#cfae82"], ceil:0xf7f1e6, base:0xcdb998},
     stage:  {wall:0x3a3158, floor:["#2b2540","#262036"], ceil:0x1f1a30, base:0x55487e, hemi:[0xd9ccff,0x3a3158,1.6]},
@@ -1799,6 +2984,7 @@ function start(THREE){
     youtube:{wall:0xfbf1f0, floor:["#e9e1dc","#e1d8d2"], ceil:0xffffff, base:0xd9b8b4},
     daily:  {wall:0xf0f6ec, floor:["#d9c29c","#d0b890"], ceil:0xfbfdf8, base:0xb9cfa8},
     birthday:{wall:0xf4ecdf, floor:["#d7b98f","#cfae82"], ceil:0xf7f1e6, base:0xcdb998},
+    album:  {wall:0xfbf0f3, floor:["#e6d3d8","#dccad0"], ceil:0xfffafb, base:0xd9b3c0},
   };
   function buildRoom(hall, room){
     const D = DECOR[room.decor] || DECOR.plain, color=G.roomColor(room), theme=room.theme, dec=room.decor;
@@ -1832,7 +3018,8 @@ function start(THREE){
         g.strokeStyle="#e4d8c4"; g.lineWidth=3; g.strokeRect(1.5,1.5,w-3,h-3);
         g.fillStyle="#1e143c"; g.textAlign="center"; g.textBaseline="middle"; g.font=`800 30px ${FONT}`; g.fillText(G.nm(room.name), w/2, s0.text ? 36 : h*0.4);
         g.fillStyle="#4a4060"; g.font=`500 ${s0.text?17:20}px ${FONT}`;
-        if(s0.text){ const lines=s0.text.split(/\n/).slice(0,4); let y=68; lines.forEach(l=>{ wrapText(g, l, w/2, y, w-44, 22, 2); y+= g.measureText(l).width>w-44 ? 44 : 23; }); }
+        if(s0.text && !/\n/.test(s0.text)) wrapText(g, s0.text, w/2, 104, w-44, 22, 4);   // 한 문단이면 4줄까지(나머지는 누르면 전체)
+        else if(s0.text){ const lines=s0.text.split(/\n/).slice(0,4); let y=68; lines.forEach(l=>{ wrapText(g, l, w/2, y, w-44, 22, 2); y+= g.measureText(l).width>w-44 ? 44 : 23; }); }
         else wrapText(g, s0.line, w/2, h*0.68, w-44, 24, 1); });
       board.position.set(0,3.36,-W+0.05); relabel.push(board.userData.redraw);
       board.userData.act=()=>{ const s0=G.roomStory(room); G.openItem({type:"text", title:G.nm(room.name), desc:s0.text||s0.line}); }; clickables.push(board); }
@@ -1844,10 +3031,10 @@ function start(THREE){
         g.fillStyle="#ffffff"; g.textAlign="center"; g.textBaseline="middle"; g.font=`800 52px ${FONT}`;
         g.fillText(`HAPPY ${(theme?.memberEn||theme?.member||"").toUpperCase()} DAY`, w/2, theme?.date ? 34 : (h-12)/2+2);
         if(theme?.date){ g.font=`600 20px ${FONT}`; g.fillText(theme.date, w/2, 70); } });
-      ban.position.set(0,2.84,-W+0.09);
+      ban.position.set(0,3.38,-W+0.09);   // 액자 위 광고 띠 자리 때문에 위로
     } else {
       const t=textPlane(pivots[0], 2.6, 0.46, 448, (g,w,h)=>label(g,w,h, dec==="stage"?"#1e143c":"#fffdf8", dec==="stage"?color:"#1e143c", G.nm(room.name), "", 46));
-      t.position.set(0,3.2,-W+0.05); relabel.push(t.userData.redraw);
+      t.position.set(0,3.42,-W+0.05); relabel.push(t.userData.redraw);   // 액자 위 광고 띠 자리 때문에 위로
     }
 
     /* 액자 7개: 앞 3(가운데가 첫 영상) + 오른쪽 2 + 왼쪽 2 */
@@ -1875,6 +3062,8 @@ function start(THREE){
       [border,pic,mat].forEach(m=>{ m.userData.act=act; clickables.push(m); });
       spots.push({p:onWall(wi,ox,cy,1.3), r:1.5, label:()=> v ? G.t("bWatch")+" · "+v.title : G.t("soon"), act});
       frames.push({pic,lab,v});
+      /* 액자 위 빈 벽: 가로 광고 띠(frame_top_<방>_<n>) — 공식 광고 모델/유료 광고/빈 자리 */
+      frameStrip(grp, hall.id, room.id, i+1, Math.min(fw+0.5, 2.0), clickables, relabel).position.set(0, 2.98, 0.05);
       if(v) ytTexture(v.id, tex=>{ if(portrait){ tex.repeat.set(0.42,1); tex.offset.set(0.29,0); } pic.material.map.dispose(); pic.material.map=tex; pic.material.needsUpdate=true; });
     });
     relabel.push(()=>frames.forEach(f=>{ if(!f.v){ f.pic.material.map.dispose(); f.pic.material.map=emptyTex(); f.lab.material.map.dispose(); f.lab.material.map=labelTex(G.t("soon")); } }));
@@ -1973,39 +3162,39 @@ function start(THREE){
       });
     }
 
+    /* ---------- 포토 월(뒤 벽, 문 오른쪽). 생일 방은 벽 폴라로이드가 대신 ---------- */
+    const photoTiles = dec==="birthday" ? [] : photoWall(pivots[2], room.id, -3.7, 2.2, -W+0.05, clickables, spots, relabel, (tx,ty)=>onWall(2,-3.7+tx,2.2+ty,1.1));
+    /* ---------- 앨범 방: 가운데 앨범 받침대 + 뒤 벽 수록곡 판 ---------- */
+    if(room.album && ALBUMS[room.album]){
+      const al=ALBUMS[room.album], act=()=>G.openAlbum(room.album), cz=-2.4;
+      const ped=add(s, new THREE.CylinderGeometry(0.45,0.52,0.9,20), lam(0xfffaf7), 0,0.45,cz);
+      const cover=box(s, 0.62,0.62,0.06, lam(new THREE.Color(color)), 0,1.25,cz); cover.rotation.x=-0.18;
+      const disc=add(s, new THREE.CylinderGeometry(0.28,0.28,0.02,28), lam(0x1e1a24), 0.22,1.28,cz-0.05); disc.rotation.x=Math.PI/2-0.18;
+      const ct=textPlane(s, 0.56, 0.56, 256, (c,w,h)=>{ const gr=c.createRadialGradient(w/2,h/2,10,w/2,h/2,w/1.4); gr.addColorStop(0,"#ffd6e4"); gr.addColorStop(1,color); c.fillStyle=gr; c.fillRect(0,0,w,h);
+        c.strokeStyle="rgba(255,255,255,.7)"; c.lineWidth=3; for(let k=0;k<5;k++){ c.beginPath(); c.moveTo(20,h/2); for(let x=20;x<w-20;x+=8) c.lineTo(x, h/2+Math.sin((x+k*30)/14)*(k*6+4)*(x>w*0.35&&x<w*0.65?1:0.3)); c.stroke(); }
+        c.fillStyle="#fff"; c.textAlign="center"; c.textBaseline="middle"; c.font=`900 44px ${FONT}`; c.fillText(al.title, w/2, h*0.82); });
+      ct.position.set(0,1.25,cz+0.035); ct.rotation.x=-0.18;
+      [ped,cover,disc,ct].forEach(m=>{ m.userData.act=act; clickables.push(m); }); blockers.push({c:[0,cz,0.7]});
+      spots.push({p:new THREE.Vector3(0,1.4,cz+1.0), r:1.6, label:()=>G.t("bAlbum")+" · "+al.title, act});
+      const tb=textPlane(pivots[2], 2.4, 1.62, 512, (c,w,h)=>{ c.fillStyle="#fffdf8"; c.fillRect(0,0,w,h); c.fillStyle=color; c.fillRect(0,0,w,10); c.strokeStyle="#e4d8c4"; c.lineWidth=4; c.strokeRect(2,2,w-4,h-4);
+        c.fillStyle="#1e143c"; c.textAlign="center"; c.textBaseline="middle"; c.font=`900 34px ${FONT}`; c.fillText(al.title, w/2, 42); c.font=`600 15px ${FONT}`; c.fillStyle="#6b6280"; c.fillText(G.nm(al.kind)+" · "+al.release, w/2, 72);
+        c.textAlign="left"; al.tracks.slice(0,7).forEach((t,k)=>{ c.fillStyle="#1e143c"; c.font=`${t.is_title?800:600} 20px ${FONT}`; const tt=`${k+1}. ${t.title}`, tw=c.measureText(tt).width; c.fillText(tt, 40, 112+k*32); if(t.is_title){ c.fillStyle="#d4467a"; c.font=`700 13px ${FONT}`; c.fillText("★ "+G.t("alTitleTrack"), 50+tw, 112+k*32); } });
+        c.textAlign="center"; c.fillStyle="#9650e6"; c.font=`700 15px ${FONT}`; c.fillText("▶ "+G.t("bAlbum"), w/2, h-22); });
+      tb.position.set(3.7,2.2,-W+0.05); relabel.push(tb.userData.redraw); tb.userData.act=act; clickables.push(tb);
+      spots.push({p:onWall(2,3.7,1.8,1.2), r:1.4, label:()=>G.t("bAlbum")+" · "+al.title, act});
+    }
+    /* ---------- 브랜드 화보 홀로그램(공중, 앞 왼쪽 구석). 영상 패널과 별개 ---------- */
+    const holo = holoPanel(s, dec==="birthday" ? [-4.5,2.95,4.5] : [-4.6,2.75,-4.6], room.id, clickables, spots);
+
     /* ---------- 추천 상점 진열대(모든 방, 뒤 벽 왼쪽). 「광고」 표시 ---------- */
     { const gx=-3.2, gz=5.2, act=()=>G.openGoods(room);
       const table=box(s, 1.5,0.8,0.55, lam(0xeadcc6), gx,0.4,gz);
       const gs=textPlane(s, 1.4, 0.3, 320, (g,w,h)=>{ label(g,w,h,"#fffdf8","#1e143c",G.t("goodsSign"),"",28);
-        g.fillStyle="#1e143c"; g.fillRect(6,6,62,22); g.fillStyle="#fff"; g.font=`700 14px ${FONT}`; g.textAlign="center"; g.textBaseline="middle"; g.fillText("광고 · AD",37,17.5); });
+        g.fillStyle="#1e143c"; g.fillRect(6,6,62,22); g.fillStyle="#fff"; g.font=`700 14px ${FONT}`; g.textAlign="center"; g.textBaseline="middle"; g.fillText(G.t("adBadge"),37,17.5); });
       gs.position.set(gx,0.45,gz-0.28); gs.rotation.y=Math.PI; relabel.push(gs.userData.redraw);
       [table,gs].forEach(m=>{ m.userData.act=act; clickables.push(m); });
       spots.push({p:new THREE.Vector3(gx,1.2,gz-0.9), r:1.3, label:()=>G.t("bGoods"), act});
       boxes.push([gx-0.85,gx+0.85,gz-0.4,gz+0.4]); }
-
-    /* ---------- 리센느 공식 광고 모델 판(뒤 벽, 문 오른쪽). 글자 판만 — 로고·실존 인물 사진 없음. 「유료 광고 아님」 표시 ----------
-       방 테마와 맞는 브랜드(ENDORSEMENTS.order[방id])가 앞줄에 오고 방 색 띠가 붙는다. 마지막 칸은 「광고관 코너」(광고 영상 카드) */
-    if(G.endorseOn(hall.id)){
-      const p=pivots[2], bx=-3.7, by=2.12, bw=2.6, bh=1.72, list=G.endorseList(room.id), corner=G.endorseCorner();
-      const bg=textPlane(p, bw, bh, 640, (g,w,h)=>{ g.fillStyle="#fffdf8"; g.fillRect(0,0,w,h); g.strokeStyle="#c9b48f"; g.lineWidth=5; g.strokeRect(2.5,2.5,w-5,h-5);
-        g.fillStyle="#1e143c"; g.fillRect(0,0,w,64); g.fillStyle="#ffd640"; g.textAlign="center"; g.textBaseline="middle"; g.font=`800 28px ${FONT}`; wrapText(g, G.t("enTitle"), w/2-60, 33, w-170, 30, 1);
-        g.fillStyle="#e9f3ec"; g.fillRect(w-150,16,138,32); g.fillStyle="#2f6b45"; g.font=`700 14px ${FONT}`; wrapText(g, G.t("enNotAd"), w-81, 33, 130, 16, 1); });
-      bg.position.set(bx,by,-W+0.045); relabel.push(bg.userData.redraw);
-      const open=id=>()=>G.openEndorse(room.id, id); bg.userData.act=open(null); clickables.push(bg);
-      const cells=[...list.map(x=>({x})), ...corner.slice(0,1).map(c=>({c}))].slice(0,12);
-      const cols=3, cw=(bw-0.16)/cols, ch=0.31, top=by+bh/2-0.21-ch/2-0.03;
-      cells.forEach((cell,i)=>{ const cx=bx-bw/2+0.08+cw*(i%cols)+cw/2, cy=top-Math.floor(i/cols)*(ch+0.05), x=cell.x, th=x && G.endorseThemed(room.id, x.id);
-        const pl=textPlane(p, cw-0.05, ch, 256, (g,w,h)=>{
-          if(x){ g.fillStyle="#ffffff"; g.fillRect(0,0,w,h); g.strokeStyle="#e4d8c4"; g.lineWidth=3; g.strokeRect(1.5,1.5,w-3,h-3); if(th){ g.fillStyle=color; g.fillRect(0,0,10,h); }
-            g.fillStyle="#1e143c"; g.textAlign="center"; g.textBaseline="middle"; g.font=`800 ${G.nm(x.brand).length>12?20:26}px ${FONT}`; wrapText(g, G.nm(x.brand), w/2+4, h*0.36, w-26, 26, 1);
-            g.fillStyle="#6b6280"; g.font=`500 13px ${FONT}`; wrapText(g, G.nm(x.line), w/2+4, h*0.75, w-24, 14, 1); }
-          else { g.fillStyle="#1e143c"; g.fillRect(0,0,w,h); g.fillStyle="#ffd640"; g.textAlign="center"; g.textBaseline="middle"; g.font=`800 22px ${FONT}`; wrapText(g, "▶ "+G.t("enCorner"), w/2, h*0.38, w-20, 22, 1);
-            g.fillStyle="#ffffff"; g.font=`500 13px ${FONT}`; wrapText(g, G.t("enCornerSub"), w/2, h*0.75, w-20, 14, 1); } });
-        pl.position.set(cx, cy, -W+0.055); relabel.push(pl.userData.redraw);
-        /* 광고관 코너 칸: 이 판의 목록 패널을 열고, 거기서 영상 카드를 누르면 일반 영상 패널로 재생 */
-        pl.userData.act = x ? open(x.id) : open(null); clickables.push(pl); });
-      spots.push({p:onWall(2,bx,1.8,1.3), r:1.5, label:()=>G.t("bEndorse"), act:open(null)});
-    }
 
     /* ---------- 안원잘부 굿즈 진열대(안원잘부 방만, 광고 모델 판 아래). 제휴 링크 아님 ---------- */
     if(room.id==="anwonjalbu"){
@@ -2034,7 +3223,7 @@ function start(THREE){
         [env,spark].forEach(o=>{ o.userData.act=act; clickables.push(o); });
         spots.push({p:new THREE.Vector3(x,0.6,z), r:1.0, label:()=>G.t("bPick")+" ✉", act, once:true});
       } else if(m.type==="quiz"){
-        const qx=4.6, qz=-1.2;
+        const qx=4.6, qz=-1.2+(m.slot||0)*1.4;   // 방에 퀴즈가 여러 개면 받침대를 나란히
         add(s, new THREE.CylinderGeometry(0.25,0.3,0.9,12), lam(0xfffaf2), qx,0.45,qz);
         const q=textPlane(s, 0.5, 0.5, 128, (g,w,h)=>{ g.fillStyle="#ffd640"; g.beginPath(); g.arc(w/2,h/2,w/2-4,0,7); g.fill(); g.fillStyle="#1e143c"; g.font=`800 72px ${FONT}`; g.textAlign="center"; g.textBaseline="middle"; g.fillText("?",w/2,h/2+4); });
         q.position.set(qx,1.25,qz); q.rotation.y=-Math.PI/2+0.3;
@@ -2044,7 +3233,8 @@ function start(THREE){
     });
 
     const free=(x,z)=> Math.abs(x)<W-0.45 && Math.abs(z)<W-0.45 && !inCircles(x,z,blockers) && !boxes.some(b=>inBox(x,z,b));
-    return {scene:s, clickables, relabel, spots, cam:{pos:[0,1.6,1.6], yaw:0, pitch:0}, dispose(){ alive=false; },
+    const animate = dt => { let ch=captionsAnimate(photoTiles, dt); if(holo && holo.animate(dt)) ch=true; return ch; };
+    return {scene:s, clickables, relabel, spots, animate, cam:{pos:[0,1.6,1.6], yaw:0, pitch:0}, dispose(){ alive=false; if(holo?.playing) holoStop(); },
       walk:{spawn:[0,W-1.7,0], free, camDist:3.0, camH:2.05, clampBox:W-0.2}};
   }
 
@@ -2083,7 +3273,7 @@ function start(THREE){
       const wi = i<3 ? 3 : 1, x=[-4.2,0,4.2][i%3], pv=pivots[wi], items=G.shopItems(gid, cat.id), zoneAct=()=>G.openZone(gid, cat); const nEn = cat.id==="endorse" && G.endorseOn(gid) ? G.endorseList("goods_ad").length : 0;
       const shelf=box(pv, 3.0,0.9,0.6, lam(0xf1e4d2), x,0.45,-W+0.35);
       const zs=textPlane(pv, 3.0, 0.62, 448, (g,w,h)=>{ label(g,w,h,"#1e143c","#ffffff",G.nm(cat.name), items.length ? G.t("itemsN",{n:items.length}) : nEn ? G.t("enCount",{n:nEn}) : G.t("zoneSoon"), 38);
-        g.fillStyle="#ffd640"; g.fillRect(8,8,84,24); g.fillStyle="#1e143c"; g.font=`800 15px ${FONT}`; g.textAlign="center"; g.textBaseline="middle"; g.fillText("광고 · AD",50,21); });
+        g.fillStyle="#ffd640"; g.fillRect(8,8,84,24); g.fillStyle="#1e143c"; g.font=`800 15px ${FONT}`; g.textAlign="center"; g.textBaseline="middle"; g.fillText(G.t("adBadge"),50,21); });
       zs.position.set(x,2.0,-W+0.04); relabel.push(zs.userData.redraw);
       [shelf,zs].forEach(m=>{ m.userData.act=zoneAct; clickables.push(m); });
       items.slice(0,3).forEach((it,k)=>{ const gx=x-1.05+k*0.7;
@@ -2151,7 +3341,7 @@ function start(THREE){
   const tweens=[];
   function tween(ms, fn){ return new Promise(res=>{ const t0=performance.now(); tweens.push(now=>{ const t=Math.min(1,(now-t0)/ms); fn(t); if(t>=1){ res(); return false; } return true; }); ask(); }); }
   G.go3d = async (view, hallId, roomId) => {
-    if(busy) return; busy=true; G.hideHint(); G.closeItem(); bubbleOff();
+    if(busy) return; busy=true; holoStop(); G.hideHint(); G.closeItem(); bubbleOff();
     try{
       if(G.view==="outside" && view==="lobby" && cur?.path && !G.walk){   // 들어가기: 앞길 → 계단 → 입구
         const curve=new THREE.CatmullRomCurve3(cur.path.map(p=>new THREE.Vector3(...p))), y0=yaw, p0=pitch; let fading=false;
@@ -2171,6 +3361,23 @@ function start(THREE){
   joyEl.addEventListener("pointermove",e=>{ if(e.pointerId===joy.id) moveJoy(e); });
   const endJoy=e=>{ if(e.pointerId!==joy.id) return; joy.id=null; joy.x=joy.y=0; knob.style.transform=""; };
   joyEl.addEventListener("pointerup",endJoy); joyEl.addEventListener("pointercancel",endJoy);
+  /* 8방향 패드: 누른 칸 방향으로 이동, 누른 채 미끄러지면 그 칸 방향으로 바로 바뀜. 패드 밖으로 나가면 멈춤.
+     가운데 칸 = 회전: 누른 채 좌우로 끌면 끈 거리만큼 빠르게 회전, 짧게 탭하면 오른쪽 45° */
+  const pad={x:0,y:0,id:null, rot:0, spin:null}, padEl=document.getElementById("dpad"), cells=[...padEl.querySelectorAll("[data-c]")], mid=cells[4];
+  function cellAt(e){ const r=padEl.getBoundingClientRect();
+    if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom) return null;
+    return cells[Math.min(2,Math.floor((e.clientY-r.top)/(r.height/3)))*3+Math.min(2,Math.floor((e.clientX-r.left)/(r.width/3)))]; }
+  function setPad(cell){ const [x,y]=cell && cell!==mid ? cell.dataset.c.split(",").map(Number) : [0,0]; pad.x=x; pad.y=y; cells.forEach(c=>c.classList.toggle("on", c===cell && c!==mid)); ask(); }
+  padEl.addEventListener("pointerdown",e=>{ e.preventDefault(); pad.id=e.pointerId; padEl.setPointerCapture(e.pointerId); G.hideHint();
+    const c=cellAt(e); if(c===mid){ pad.spin={x0:e.clientX, t0:performance.now(), moved:0}; mid.classList.add("on"); } else setPad(c); });
+  padEl.addEventListener("pointermove",e=>{ if(e.pointerId!==pad.id) return;
+    if(pad.spin){ const dx=e.clientX-pad.spin.x0; pad.spin.moved=Math.max(pad.spin.moved,Math.abs(dx)); pad.rot = Math.abs(dx)<6 ? 0 : -Math.max(-1,Math.min(1,dx/50)); ask(); }   // 오른쪽으로 끌면 오른쪽으로 돎
+    else setPad(cellAt(e)); });
+  const endPad=e=>{ if(e.pointerId!==pad.id) return; pad.id=null;
+    if(pad.spin){ if(pad.spin.moved<8 && performance.now()-pad.spin.t0<350) turnBy(-Math.PI/4); pad.spin=null; pad.rot=0; mid.classList.remove("on"); }
+    setPad(null); };
+  ["pointerup","pointercancel","lostpointercapture"].forEach(t=>padEl.addEventListener(t,endPad));
+  G.onCtlChange = () => { setPad(null); pad.rot=0; joy.x=joy.y=0; knob.style.transform=""; };
   function moveJoy(e){ const r=joyEl.getBoundingClientRect(), R=r.width/2; let dx=e.clientX-r.left-R, dy=e.clientY-r.top-R; const d=Math.hypot(dx,dy), m=R*0.7;
     if(d>m){ dx*=m/d; dy*=m/d; } joy.x=dx/m; joy.y=dy/m; knob.style.transform=`translate(${dx}px,${dy}px)`; ask(); }
   addEventListener("keydown",e=>{ if(G.sheetOpen()) return; const k=e.key.toLowerCase(); if(["w","a","s","d","arrowup","arrowdown","arrowleft","arrowright"].includes(k)){ if(G.walk){ keys.add(k); e.preventDefault(); } }
@@ -2182,7 +3389,8 @@ function start(THREE){
   bubble.onclick=()=>{ if(nearSpot){ const s=nearSpot; if(s.once) cur.spots.splice(cur.spots.indexOf(s),1); bubbleOff(); s.act(); } };
   let skyAcc=0, lastT=0, slowFrames=0, frameCount=0, suggested=false;
   function walkStep(dt){
-    let fx=-joy.y, sx=joy.x;
+    let fx=-joy.y+pad.y, sx=joy.x+pad.x;
+    if(pad.rot) yaw+=2.2*dt*pad.rot;
     if(keys.has("w")||keys.has("arrowup")) fx+=1; if(keys.has("s")||keys.has("arrowdown")) fx-=1;
     if(keys.has("a")) sx-=1; if(keys.has("d")) sx+=1;
     if(keys.has("arrowleft")) yaw+=1.8*dt; if(keys.has("arrowright")) yaw-=1.8*dt;
@@ -2193,6 +3401,7 @@ function start(THREE){
       if(f(player.x+dx,player.z+dz)){ player.x+=dx; player.z+=dz; } else if(f(player.x+dx,player.z)) player.x+=dx; else if(f(player.x,player.z+dz)) player.z+=dz;
       player.face=Math.atan2(dx,dz)+Math.PI; moving=true;
     }
+    if(pad.rot) moving=true;   // 회전 중에도 계속 그림
     syncPlayer();
     /* 3인칭 카메라: 캐릭터 뒤 */
     const w=cur.walk, d=w.camDist, base=player.y;
@@ -2267,7 +3476,7 @@ function start(THREE){
     if(document.hidden || !cur) return;
     let moving=false;
     /* 장면 움직임(하늘 비행선 등): 30fps로만, 패널이 열려 있으면 멈춤 */
-    if(cur.animate && !G.sheetOpen()){ skyAcc+=dt; if(skyAcc>=1/30){ cur.animate(skyAcc); skyAcc=0; dirty=true; } }
+    if(cur.animate && !G.sheetOpen()){ skyAcc+=dt; if(skyAcc>=1/30){ if(cur.animate(skyAcc)!==false) dirty=true; skyAcc=0; } }   // false = 바뀐 것 없음
     if(G.walk && cur.walk && player.g && !busy && !G.sheetOpen()){ if(walkStep(dt)) { moving=true; dirty=true; } else if(dirty) walkStep(0); if(animatePet(player.g, dt, moving)) dirty=true; }
     if(!dirty) return;
     renderNow(); drawBubble();
@@ -2282,7 +3491,7 @@ function start(THREE){
       const seen=new Set(); list.forEach(o=>{ if(o.visible && fr.intersectsObject(o)) seen.add(o.userData.adSlot); }); seen.forEach(sl=>ANALYTICS.adSeen(sl, 1000)); }, 1000); }
   setScene(G.view, G.hallId, G.roomId);
   G.mode="3d"; G.three=THREE.REVISION;
-  G._debug = { player, get yaw(){return yaw;}, set yaw(v){yaw=v; ask();}, get pitch(){return pitch;}, set pitch(v){pitch=v; ask();}, joy, ask, cur:()=>cur, boards };
+  G._debug = { pad, player, get yaw(){return yaw;}, set yaw(v){yaw=v; ask();}, get pitch(){return pitch;}, set pitch(v){pitch=v; ask();}, joy, ask, cur:()=>cur, boards };
   requestAnimationFrame(t=>{ loop(t); document.getElementById("loading").classList.add("off"); });
   el.addEventListener("webglcontextlost",e=>{ e.preventDefault(); G.mode="lost"; G.showFallback("WebGL 연결이 끊김"); });
 }
