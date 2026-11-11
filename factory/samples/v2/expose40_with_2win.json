@@ -30,11 +30,26 @@
   "clips": [
     {
       "file": "/mnt/user-data/uploads/with2win/C_showchamp_encore_261111.mp4",
-      "in": 0.5,
-      "out": 3.5,
+      "in": 18.0,
+      "out": 21.0,
       "role": "hook",
-      "_real": "리마인 고마워 고마워(0:03, 자동 자막)",
-      "_확인": "쇼챔 앵콜 첫 장면(트로피·첫 마디)",
+      "_확인": "쇼챔 트로피 들고 활짝(18~21초) — 썸네일과 같은 장면, 크래시 줌",
+      "zooms": [
+        {
+          "at": 0.15,
+          "x": 0.5,
+          "y": 0.45,
+          "scale": 1.25,
+          "hold": 2.6
+        }
+      ],
+      "sfx": [
+        {
+          "file": "assets/sfx_impact.wav",
+          "at": 0.1,
+          "volume": 0.8
+        }
+      ],
       "captions": [
         {
           "at": 0.1,
@@ -46,45 +61,78 @@
     },
     {
       "file": "/mnt/user-data/uploads/with2win/T_theshow_261110.mp4",
-      "in": 0.5,
-      "out": 4.0,
+      "in": 2.0,
+      "out": 4.5,
       "role": "body",
-      "_확인": "확인됨 11/12: 0~3초 THE SHOW CHOICE 1위 RESCENE 그래픽",
+      "_확인": "더쇼 점수판 4291→8379 뒤집힘 + RESCENE 1위 카드(2~5.5초)",
+      "sfx": [
+        {
+          "file": "assets/sfx_impact.wav",
+          "at": 0.9,
+          "volume": 0.9
+        }
+      ],
       "captions": [
         {
-          "at": 0.2,
-          "dur": 3.5,
+          "at": 0.1,
+          "dur": 3.3,
           "text": "[11/10 더쇼 1위]",
           "style": "situation"
+        },
+        {
+          "at": 0.9,
+          "dur": 2.4,
+          "text": "(두둥!)",
+          "style": "sfx"
         }
       ]
     },
     {
       "file": "/mnt/user-data/uploads/with2win/C_showchamp_encore_261111.mp4",
-      "in": 51.0,
-      "out": 54.0,
+      "in": 12.0,
+      "out": 15.0,
       "role": "body",
-      "_확인": "확인됨 11/12: 51~57초 트로피 든 클로즈업",
+      "_확인": "쇼챔 1위 직후 서로 끌어안고 축하(12~15초)",
       "captions": [
         {
           "at": 0.1,
           "dur": 2.8,
           "text": "[11/11 쇼챔피언 1위]",
           "style": "situation"
+        },
+        {
+          "at": 0.4,
+          "dur": 2.5,
+          "text": "(축하 포옹 릴레이)",
+          "style": "bracket"
+        }
+      ]
+    },
+    {
+      "file": "/mnt/user-data/uploads/with2win/T_theshow_261110.mp4",
+      "in": 5.5,
+      "out": 8.0,
+      "role": "body",
+      "_확인": "꽃가루 터지고 기뻐하는 전체샷",
+      "captions": [
+        {
+          "at": 0.1,
+          "dur": 2.3,
+          "text": "(꽃가루 맞고 활짝)",
+          "style": "bracket"
         }
       ]
     },
     {
       "file": "/mnt/user-data/uploads/with2win/T_theshow_261110.mp4",
       "in": 36.0,
-      "out": 44.0,
+      "out": 42.5,
       "role": "body",
-      "_real": "이번 컴백 특히 부담을 많이 가지고 열심히 준비했는데 이렇게 (1등) 하게 될지 진짜 몰랐고요(0:36~, 자동 자막)",
-      "_확인": "소감 원음 그대로, 원본 자막 보존. 말한 멤버 미확인 → 이름 자막 넣지 않음",
+      "_real": "이번 컴백 특히 부담을 많이 가지고 열심히 준비했는데(0:36~, 자동 자막)",
       "captions": [
         {
           "at": 0.2,
-          "dur": 7.5,
+          "dur": 6.1,
           "text": "이번 컴백 특히 부담을 많이 가지고 열심히 준비했는데…",
           "style": "upper",
           "emph": [
@@ -96,13 +144,13 @@
     {
       "file": "/mnt/user-data/uploads/with2win/C_showchamp_encore_261111.mp4",
       "in": 24.0,
-      "out": 28.0,
+      "out": 27.5,
       "role": "body",
-      "_확인": "확인됨 11/12: 24초~ 앵콜 노래 클로즈업",
+      "_확인": "앵콜 라이브 클로즈업",
       "captions": [
         {
           "at": 0.2,
-          "dur": 3.5,
+          "dur": 3.1,
           "text": "(그리고 앵콜은 라이브로)",
           "style": "bracket"
         }
@@ -111,17 +159,29 @@
     {
       "file": "/mnt/user-data/uploads/with2win/C_showchamp_encore_261111.mp4",
       "in": 60.0,
-      "out": 67.5,
+      "out": 68.0,
       "role": "body",
-      "_확인": "확인됨 11/12: 60초 앵콜 전체샷",
+      "_확인": "앵콜 전체샷 + 단콘 카드",
+      "sfx": [
+        {
+          "file": "assets/sfx_impact.wav",
+          "at": 0.3,
+          "volume": 0.7
+        }
+      ],
       "captions": [
         {
           "at": 0.3,
-          "dur": 6.5,
+          "dur": 7.4,
           "text": "[같은 날 발표] 첫 단독 콘서트\n2027. 2. 19~21 · 올림픽홀",
           "style": "lower",
+          "color": [
+            255,
+            222,
+            40
+          ],
           "emph": [
-            "같은 날 발표",
+            "[같은 날 발표]",
             "첫 단독 콘서트"
           ]
         }
@@ -130,11 +190,11 @@
   ],
   "narration": [
     {
-      "at": 3.3,
+      "at": 3.2,
       "text": "더쇼에 이어 쇼챔피언까지. 「With」, 이틀 연속 1위."
     },
     {
-      "at": 22.4,
+      "at": 21.6,
       "text": "그리고 같은 날, 첫 단독 콘서트 발표. 내년 2월, 올림픽홀."
     }
   ],
@@ -143,16 +203,17 @@
     "next": "[리센느 이야기는 「거꾸로 걷는 리센느」에서]",
     "frame": {
       "file": "/mnt/user-data/uploads/with2win/C_showchamp_encore_261111.mp4",
-      "t": 63.0
+      "t": 19.5
     }
   },
   "thumb": {
-    "hook": "걱정 많았던 컴백, 이틀 연속 1위",
-    "emph": "이틀 연속",
+    "quote": "부담을 많이 가지고 준비했는데",
+    "emph": "부담",
+    "hook": "(이틀 연속 1위에 첫 콘서트까지)",
     "tag": "리센느 「With」",
     "frame": {
       "file": "/mnt/user-data/uploads/with2win/C_showchamp_encore_261111.mp4",
-      "t": 5.0
+      "t": 19.0
     }
   },
   "post": {
@@ -170,5 +231,25 @@
     "컴백",
     "이틀"
   ],
-  "series_box": true
+  "series_box": true,
+  "thumb_A": {
+    "quote": "부담을 많이 가지고 준비했는데",
+    "emph": "부담",
+    "hook": "(이틀 연속 1위에 첫 콘서트까지)",
+    "tag": "리센느 「With」",
+    "frame": {
+      "file": "/mnt/user-data/uploads/with2win/C_showchamp_encore_261111.mp4",
+      "t": 19.0
+    }
+  },
+  "thumb_B": {
+    "hook": "이틀 연속 1위, 그날 밤 첫 단독 콘서트",
+    "emph": "이틀 연속",
+    "quote": "",
+    "tag": "리센느 「With」",
+    "frame": {
+      "file": "/mnt/user-data/uploads/with2win/C_showchamp_encore_261111.mp4",
+      "t": 19.0
+    }
+  }
 }
