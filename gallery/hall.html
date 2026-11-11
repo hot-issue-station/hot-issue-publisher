@@ -18,9 +18,13 @@ const BUILDING_STYLE = "classic";
    관: {id, name:{ko,ja,en,zh}, color, open, official?, curation?, rooms:[...]}
      - open:false    → 잠긴 문(흐리게, 「준비 중」)
      - curation:true → gallery/curation.json 이 있으면 themes[].id 와 같은 id의 방 액자를 그 목록으로 채운다
-   방: {id, name:{ko,ja,en,zh}, decor, color, videos:[], photos?:[], goods?:[], theme?}
+   방: {id, name:{ko,ja,en,zh}, decor, color, videos:[], photos?:[], goods?:[], theme?, desc?, story?}
+     - desc: 방 한 줄 설명(문자열 또는 {ko,ja,en,zh}). story: 방 이야기 카드 문구(우리가 쓴 글, 2~4줄) — 방 입구 벽 큰 안내판에 표시.
+             story가 비어 있으면 안내판에 방 이름과 한 줄 설명만. curation.json themes[].story·desc 로도 넣을 수 있다
      - decor: stage(무대) | cozy(안원잘부) | studio(TV 예능) | youtube(유튜브 출연) | daily(일상) | birthday(생일카페) | plain
-     - videos: {id, title, desc, kind:"short"|"long", added_at:"YYYY-MM-DD", official?, channel?, picks?:[{name,price,url}]}
+     - videos: {id, title, desc, note?, kind:"short"|"long", added_at:"YYYY-MM-DD", official?, channel?, picks?:[{name,price,url}]}
+               note = 우리가 쓴 소개 2~3줄(영상 패널 제목 아래에 표시, 비어 있으면 숨김). curation.json 영상 항목의 note도 읽는다.
+               picks는 영상 패널에 보이지 않고 그 방 「추천 상점」 진열대에서만 보인다(유튜브 API 정책 III.G: 플레이어 위·안·바로 아래 광고 금지)
                액자는 방마다 7개, 모자라면 「곧 채워져요」. 걸린 지 7일 이내면 「새로 걸림」 꼬리표.
                picks에 쿠팡 링크가 하나라도 있으면 대가성 문구가 자동으로 붙는다.
      - photos(생일카페 벽 폴라로이드): 사진 파일을 복사하지 않는다.
@@ -99,15 +103,20 @@ const PROGRESS = { enabled:true, hall:"rescene", order:["stage","anwonjalbu","tv
   openAtStart:2, need:{ default:3 }, watchSeconds:30, fallbackSeconds:20, nextHall:"hall2", secretRoom:"secret" };
 
 /* 광고 자리. 이미지(https)와 링크만 넣으면 그 칸에 걸린다(누르면 새 탭, rel="sponsored noopener"). 광고에는 항상 「광고」 표시.
-   place: screen_top(화면 맨 위 띠) | panel_bottom(영상 패널 아래) | street_billboard(건물 밖 전광판) | lobby_billboard(로비 전광판)
+   place: screen_top(화면 맨 위 띠 — 영상 패널이 열려 있는 동안은 숨김) | street_billboard(건물 밖 전광판) | lobby_billboard(로비 전광판)
+          | sky_blimp(건물 밖 하늘 비행선 옆면 가로 띠, 512×96) | sky_holo_1·2·3(입구 위 공중 홀로그램 판, 512×256)
+          ※ 영상 패널(유튜브 임베드) 안·바로 아래에는 광고 칸을 두지 않는다(YouTube API 개발자 정책 III.G). panel_bottom은 없앴다
           | lobby_top · hall_top · room_top (벽 위쪽 지하철식 광고판 줄 — 칸 번호 _1, _2 …. 적지 않은 칸은 「광고 자리」 판이 보인다)
    전광판(street/lobby_billboard)에 이미지가 들어오면 순환 슬라이드 사이에 끼어든다. */
 const ADS = [
   {slot_id:"screen_top_1",       place:"screen_top",       size:"화면 너비 × 22px",  image:null, link:null, label:"광고"},
-  {slot_id:"panel_bottom_1",     place:"panel_bottom",     size:"패널 너비 × 64px",  image:null, link:null, label:"광고"},
   {slot_id:"street_billboard_1", place:"street_billboard", size:"512 × 256",         image:null, link:null, label:"광고"},
   {slot_id:"lobby_billboard_1",  place:"lobby_billboard",  size:"512 × 256",         image:null, link:null, label:"광고"},
   {slot_id:"room_top_1",         place:"room_top",         size:"512 × 80",          image:null, link:null, label:"광고"},
+  {slot_id:"sky_blimp_1",        place:"sky_blimp",        size:"512 × 96",          image:null, link:null, label:"광고"},
+  {slot_id:"sky_holo_1",         place:"sky_holo_1",       size:"512 × 256",         image:null, link:null, label:"광고"},
+  {slot_id:"sky_holo_2",         place:"sky_holo_2",       size:"512 × 256",         image:null, link:null, label:"광고"},
+  {slot_id:"sky_holo_3",         place:"sky_holo_3",       size:"512 × 256",         image:null, link:null, label:"광고"},
 ];
 /* 광고 문의: form_url = 대표가 만든 구글 설문지 주소(문의가 우리 메일로 발송됨). 메일 주소·전화번호는 화면·코드 어디에도 넣지 않는다. */
 const CONTACT = { text:"광고 문의하기", form_url:null };
@@ -123,7 +132,7 @@ const SHOPS = [
 ];
 /* 상품. 링크는 직접 열어 확인한 것만.
    {name, price, url, shop, hall?, room?, group?, category?, color?, image:null, image_alt?, image_credit?, seller?, badge?}
-   - hall·room  → 그 방의 추천 상점 진열대와 영상 패널 아래 「함께 보면 좋은 것」
+   - hall·room  → 그 방의 추천 상점 진열대(영상 패널에는 넣지 않음 — 유튜브 정책)
    - group·category → 로비 「굿즈 샵」의 해당 아이돌·구역 진열대(사진 없이 우리가 그린 모양으로 형상화)
    - image: 비워 둔다. TODO: 제휴사가 공식 제공하는 상품 이미지 API를 승인받으면 연결.
             입점 판매자가 권리를 가진 이미지를 주면 사용 가능 — 그때 image_alt와 image_credit(출처) 필수
@@ -284,6 +293,9 @@ a.contactBtn{text-align:center;text-decoration:none}a.contactBtn[aria-disabled=t
 .sheet .tag{display:inline-block;background:var(--r);color:#fff;border-radius:8px;padding:2px 8px;font-size:11px;font-weight:700;vertical-align:middle;margin-left:6px}
 .sheet .desc{margin:0;color:var(--sub);font-size:14px;line-height:1.6;white-space:pre-line}
 .sheet .desc:empty{display:none}
+.vnote{margin:6px 0 8px;padding:10px 12px;background:var(--paper);border-left:3px solid var(--theme);border-radius:8px;font-size:14px;line-height:1.65;color:var(--ink);white-space:pre-line}
+.vnote:empty{display:none}
+body.playing .adtop{display:none}   /* 유튜브 정책: 영상 패널이 열려 있는 동안 맨 위 광고 띠 숨김 */
 .react{display:flex;align-items:center;gap:8px;margin-top:10px}
 .react[hidden]{display:none}
 .react button{border:1px solid var(--line);background:#fff;border-radius:999px;padding:7px 14px;font-size:13px;font-weight:700;min-height:36px}
@@ -379,6 +391,7 @@ body.flat #stage,body.flat .turn,body.flat .hint,body.flat .joy{display:none}
   <button class="close" id="close" data-t="close"></button>
   <div class="player" id="player"></div>
   <h2 id="vTitle"></h2>
+  <p class="vnote" id="vNote"></p>
   <p class="desc" id="vDesc"></p>
   <div class="react" id="react" hidden><button id="likeBtn"></button><span id="likeN"></span></div>
   <div class="src" id="src" hidden><span id="srcName"></span><a id="srcLink" target="_blank" rel="noopener"></a></div>
@@ -389,7 +402,6 @@ body.flat #stage,body.flat .turn,body.flat .hint,body.flat .joy{display:none}
     <p class="empty" id="picksEmpty" data-t="picksEmpty"></p>
     <p class="disc" id="disc" hidden>이 게시물은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</p>
   </div>
-  <a class="adslot" id="adPanel" target="_blank" rel="sponsored noopener"></a>
   <p class="yt" data-t="embedNote"></p>
 </section>
 
@@ -626,6 +638,9 @@ const G = window.Gallery = {
   room(hid=this.hallId, rid=this.roomId){ return this.hall(hid)?.rooms?.find(r=>r.id===rid); },
   frames(room){ const v=(room?.videos||[]).slice(0,FRAMES_PER_ROOM); while(v.length<FRAMES_PER_ROOM) v.push(null); return v; },
   roomTitle(room){ return room?.theme ? (this.lang==="ko" ? room.theme.title : this.t("bday",{m:room.theme.memberEn||room.theme.member})) : this.nm(room?.name); },
+  /* 방 이야기: story(우리가 쓴 글)가 있으면 그 글, 없으면 한 줄 설명(desc → 영상 수) */
+  roomStory(room){ const f=v=> !v ? "" : typeof v==="object" ? this.nm(v) : String(v);
+    return { text:f(room?.story).trim(), line:f(room?.desc).trim() || (room?.videos?.length ? this.t("videosN",{n:room.videos.length}) : this.t("soon")) }; },
   roomColor(room){ return room?.theme?.color || room?.color || "#9db8e8"; },
   PROG,
   inProgress(h){ return PROGRESS.enabled && h?.id===PROGRESS.hall; },
@@ -655,12 +670,13 @@ G.curationReady = (async () => {
     const DECORS=["stage","cozy","studio","youtube","daily","birthday","plain"];
     for(const t of data.themes){
       const hall = HALLS.find(h => t.hall ? h.id===t.hall : h.curation); if(!hall || !t.id) continue;
-      const vids = (t.videos||[]).map(v => ({ id:String(v.video_id||v.id||""), title:String(v.title||""), desc:String(v.desc||v.description||""),
+      const vids = (t.videos||[]).map(v => ({ id:String(v.video_id||v.id||""), title:String(v.title||""), desc:String(v.desc||v.description||""), note:String(v.note||""),
         kind: v.kind==="short" ? "short" : "long", official: !!v.official, channel: v.channel ? String(v.channel) : "",
         added_at: String(v.added_at||""), picks: Array.isArray(v.picks)?v.picks:[] })).filter(v => /^[\w-]{11}$/.test(v.id));
       let room = hall.rooms.find(r => r.id===t.id);
       if(!room){ room = {id:String(t.id), name:{ko:String(t.name||t.id)}, decor: DECORS.includes(t.decor)?t.decor:"plain", color:"#c8b6e8", videos:[]}; hall.rooms.push(room); }
       if(vids.length) room.videos = vids;
+      if(t.story) room.story = t.story; if(t.desc) room.desc = t.desc;
     }
     console.info("[미술관] curation.json 반영:", data.themes.length, "개 테마");
     return true;
@@ -680,7 +696,7 @@ function applyLang(){
   document.querySelectorAll("[data-t]").forEach(el => el.textContent = G.t(el.dataset.t));
   document.querySelectorAll("[data-t-aria]").forEach(el => el.setAttribute("aria-label", G.t(el.dataset.tAria)));
   $("#langSel").value = G.lang;
-  drawAdSlot($("#adTop"),"screen_top_1"); drawAdSlot($("#adPanel"),"panel_bottom_1");
+  drawAdSlot($("#adTop"),"screen_top_1");
   drawChrome(); drawFlat(); drawIntro(); if(!$("#hint").classList.contains("off")) $("#hint").textContent=hintText();
   G.langHooks.forEach(f => f());
 }
@@ -883,14 +899,14 @@ async function drawReact(id){
 function openItem(it, ctx={}){
   if(!it){ toast(G.t("soon")); return; }
   const hall = ctx.hall || G.hall(), p=$("#player");
-  let title="", desc="", srcName="", srcUrl="", srcBtn="", picks=[], extra="", vid=null, showPicks=true, tag="";
+  let title="", desc="", srcName="", srcUrl="", srcBtn="", picks=[], extra="", vid=null, showPicks=true, tag="", note="", playing=false;
   if(it.type==="instagram"){
     if(!IG_RE.test(it.url||"")){ toast(G.t("photoToast")); return; }
     const url = it.url.endsWith("/") ? it.url : it.url+"/";
     p.className="player insta";
     p.innerHTML = `<blockquote class="instagram-media" data-instgrm-permalink="${esc(url)}?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14">
       <a class="igwait" href="${esc(url)}" target="_blank" rel="noopener">${esc(G.t("igWait")).replace("\n","<br>")}</a></blockquote>`;
-    loadInstagram();
+    loadInstagram(); playing=true; showPicks=false;
     title = it.caption || it.date || "Instagram";
     srcName = "@" + (it.account || hall?.official?.igHandle || "instagram"); srcUrl=url; srcBtn=G.t("openIG");
   } else if(it.type==="goods"){
@@ -903,12 +919,14 @@ function openItem(it, ctx={}){
     const og = /^https?:/.test(location.origin) ? "&origin="+encodeURIComponent(location.origin) : "";
     p.innerHTML = `<iframe id="ytFrame" src="https://www.youtube-nocookie.com/embed/${encodeURIComponent(it.id)}?rel=0&playsinline=1&enablejsapi=1${og}" title="${esc(it.title)}"
       allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin"></iframe>`;
-    title=it.title||""; desc=it.desc||""; picks=[...(it.picks||[]), ...(G.view==="room" ? G.products() : [])]; vid=it.id; if(isNew(it.added_at)) tag=G.t("newTag");
+    /* 유튜브 정책 III.G: 영상 패널 안·바로 아래에는 광고·추천 상점을 두지 않는다(picks는 방의 추천 상점 진열대에서만) */
+    title=it.title||""; desc=it.desc||""; note=it.note ? (typeof it.note==="object" ? G.nm(it.note) : String(it.note)) : ""; showPicks=false; playing=true; vid=it.id; if(isNew(it.added_at)) tag=G.t("newTag");
     srcUrl = kind==="short" ? `https://www.youtube.com/shorts/${encodeURIComponent(it.id)}` : `https://www.youtube.com/watch?v=${encodeURIComponent(it.id)}`;
     srcName = it.channel || (it.official && hall?.official ? hall.official.name : "YouTube"); srcBtn=G.t("openYT");
     STATS.record(it.id, "view"); startWatch(it);
   }
-  $("#vTitle").innerHTML = esc(title) + (tag ? ` <span class="tag">${esc(tag)}</span>` : ""); $("#vDesc").textContent=desc; $("#extra").innerHTML=extra;
+  $("#vTitle").innerHTML = esc(title) + (tag ? ` <span class="tag">${esc(tag)}</span>` : ""); $("#vDesc").textContent=desc; $("#vNote").textContent=note; $("#extra").innerHTML=extra;
+  document.body.classList.toggle("playing", playing);
   $("#react").hidden = !vid;
   if(vid){ drawReact(vid); $("#likeBtn").onclick=()=>{ if(STATS.hasLiked(vid)) return; STATS.markLiked(vid); STATS.record(vid,"like"); drawReact(vid); }; }
   $("#src").hidden = !srcUrl; $("#srcName").textContent = srcName ? G.t("src")+": "+srcName : ""; $("#srcLink").href=srcUrl||"#"; $("#srcLink").textContent=srcBtn;
@@ -959,12 +977,13 @@ G._creditWatch = (hid, rid, id) => creditWatch(G.hall(hid), G.room(hid, rid), id
 
 function closeItem(){
   const s=$("#sheet"); if(!s.classList.contains("on")) return;
-  s.classList.remove("on"); s.setAttribute("aria-hidden","true"); $("#shade").classList.remove("on"); stopWatch();
+  s.classList.remove("on"); s.setAttribute("aria-hidden","true"); $("#shade").classList.remove("on"); stopWatch(); document.body.classList.remove("playing");
   setTimeout(()=>{ if(!s.classList.contains("on")) $("#player").innerHTML=""; },350); // 닫으면 재생도 멈춤
 }
 G.openItem=openItem; G.openVideo=v=>openItem(v); G.closeItem=closeItem;
 G.products = (hid=G.hallId, rid=G.roomId) => PRODUCTS.filter(x=>(!x.hall||x.hall===hid) && x.room===rid);
-G.openGoods = room => openItem({type:"goods", goods:[...(room?.goods||[]), ...G.products(G.hallId, room?.id)]});
+G.roomPicks = room => (room?.videos||[]).flatMap(v=>Array.isArray(v.picks)?v.picks:[]);   // 영상별 picks는 방 진열대로 모은다
+G.openGoods = room => openItem({type:"goods", goods:[...(room?.goods||[]), ...G.roomPicks(room), ...G.products(G.hallId, room?.id)]});
 const shopOf = x => SHOPS.find(sh=>sh.id===x.shop) || SHOPS.find(sh=>sh.hosts.some(h=>x.u.hostname===h || x.u.hostname.endsWith("."+h)));
 G.sheetOpen = () => $("#sheet").classList.contains("on");
 $("#close").onclick=closeItem; $("#shade").onclick=closeItem;
@@ -1002,7 +1021,9 @@ function drawFlat(){
        <div class="tt">${esc(G.roomTitle(x))}<small>${G.inProgress(h)&&nd ? G.stars(G.roomCount(h,x),nd)+" · " : ""}${op ? (x.videos?.length ? esc(G.t("videosN",{n:x.videos.length})) : esc(G.t("soon"))) : esc(G.lockedText(h,x))}</small>
        ${op ? "" : `<small>${(x.videos||[]).slice(0,3).map(v=>"· "+esc(v.title)).join("<br>")}</small>`}</div></button>`; }).join("") + `</div>`;
   } else if(v==="room"){
-    html = `<div class="sec">${esc(G.t("videosH"))}</div><div class="grid">` + G.frames(r).map(x=>{ if(!x) return `<div class="card blank"><div class="th">${esc(G.t("soon"))}</div><div class="tt">&nbsp;</div></div>`;
+    const st=G.roomStory(r);
+    html = `<div class="warn" style="color:var(--ink)"><b>${esc(G.nm(r.name))}</b><br>${esc(st.text||st.line)}</div>`;
+    html += `<div class="sec">${esc(G.t("videosH"))}</div><div class="grid">` + G.frames(r).map(x=>{ if(!x) return `<div class="card blank"><div class="th">${esc(G.t("soon"))}</div><div class="tt">&nbsp;</div></div>`;
         items.push(x); return `<button class="card" data-i="${items.length-1}"><div class="th" style="background-image:url('${thumb(x.id)}'),linear-gradient(135deg,var(--theme),#ff465a)"></div><div class="tt">${esc(x.title)}</div></button>`; }).join("") + `</div>`;
     if(r.photos?.length){
       html += `<div class="sec">${esc(G.t("photosH"))}</div><div class="grid">` + r.photos.map(x=>{
@@ -1012,7 +1033,7 @@ function drawFlat(){
     }
     const ms=G.missions(h.id, r.id);
     if(ms.length) html += `<div class="sec">🔎 ${esc(G.t("secret"))}</div><div class="grid">` + ms.map(m=>`<button class="card" data-m="${esc(m.id)}"><div class="tt">${esc(G.nm(m.hint))}</div></button>`).join("") + `</div>`;
-    html += `<div class="sec">${esc(G.t("goodsTitle"))} <b style="background:var(--ink);color:#fff;border-radius:4px;padding:1px 5px;font-size:10px">광고 · AD</b></div><button class="card" data-goods="1" style="width:100%"><div class="tt">${esc(G.products(h.id,r.id).length||r.goods?.length ? G.t("goodsTitle") : G.t("goodsSign"))}</div></button>`;
+    html += `<div class="sec">${esc(G.t("goodsTitle"))} <b style="background:var(--ink);color:#fff;border-radius:4px;padding:1px 5px;font-size:10px">광고 · AD</b></div><button class="card" data-goods="1" style="width:100%"><div class="tt">${esc(G.products(h.id,r.id).length||r.goods?.length||G.roomPicks(r).length ? G.t("goodsTitle") : G.t("goodsSign"))}</div></button>`;
   }
   const b=$("#fBody"); b.innerHTML=html; wireNav(b);
   b.querySelectorAll("[data-i]").forEach(x=>x.onclick=()=>openItem(items[+x.dataset.i]));
@@ -1169,6 +1190,59 @@ function start(THREE){
   const inBox=(x,z,b)=>x>b[0]&&x<b[1]&&z>b[2]&&z<b[3];
   const inCircles=(x,z,cs)=>cs.some(({c})=>Math.hypot(x-c[0],z-c[1])<c[2]);
 
+  /* ---------- 하늘 광고: 건물 위를 천천히 도는 비행선 1대 + 입구 위 공중 홀로그램 판 3장 ----------
+     저사양: 도형 적게(비행선 7개·판마다 2개), 텍스처 512px 이하, 이동은 삼각함수 한 번. 30fps로만 갱신, 패널이 열리면 멈춤.
+     광고 이미지가 없으면 「광고 문의 환영 · AD SPACE」(4개 언어 순환) / 「광고 자리 · AD SPACE」. 누르거나 다가가면 광고 문의 */
+  const SKY_MSG=["광고 문의 환영 · AD SPACE","広告募集中 · AD SPACE","Advertise with us · AD SPACE","歡迎廣告洽詢 · AD SPACE"];
+  function skyAds(s, clickables, spots, relabel, o){
+    const ctx={t:0}, act=ad=>()=> safeUrl(ad?.link) ? G.openAd(ad) : G.openContact();
+    /* 비행선 */
+    const bl=new THREE.Group(); s.add(bl); const blAd=G.adsAt("sky_blimp")[0]||null;
+    const hull=add(bl, new THREE.SphereGeometry(1,18,10), lam(0xf4f1ff)); hull.scale.set(6,1.9,1.9);
+    const finM=lam(0x9650e6), fins=new THREE.Group(); fins.position.x=-5.2; bl.add(fins);
+    box(fins, 1.6,1.9,0.12, finM, 0,0,0); box(fins, 1.6,0.12,1.9, finM, 0,0,0);
+    box(bl, 1.8,0.5,0.7, lam(0x1e143c), 0.4,-2.05,0);   // 곤돌라
+    let bandTex=null, mi=Math.max(0,["ko","ja","en","zh"].indexOf(G.lang));
+    const bandMat=new THREE.MeshBasicMaterial({color:0xffffff, side:THREE.DoubleSide});
+    const drawBand=()=>{ if(blAd && bandMat.map && !bandTex) return; bandTex?.dispose();
+      bandTex=canvasTex(512,96,(g,w,h)=>{ const gr=g.createLinearGradient(0,0,w,0); gr.addColorStop(0,"#ff4fa3"); gr.addColorStop(1,"#7b4dff"); g.fillStyle=gr; g.fillRect(0,0,w,h);
+        g.fillStyle="#ffd640"; g.fillRect(10,30,74,36); g.fillStyle="#1e143c"; g.font=`800 19px ${FONT}`; g.textAlign="center"; g.textBaseline="middle"; g.fillText("광고 · AD",47,49);
+        g.fillStyle="#fff"; g.font=`800 30px ${FONT}`; wrapText(g, SKY_MSG[mi], w/2+40, h/2+2, w-120, 32, 1); });
+      bandMat.map=bandTex; bandMat.needsUpdate=true; };
+    if(blAd) adLoader.load(safeUrl(blAd.image).href, t=>{ t.colorSpace=THREE.SRGBColorSpace; bandTex?.dispose(); bandTex=null; bandMat.map=t; bandMat.needsUpdate=true; ask(); });
+    drawBand();
+    [1,-1].forEach(sd=>{ const b=add(bl, new THREE.PlaneGeometry(7.2,1.35), bandMat, 0.2,0.05,sd*1.93); if(sd<0) b.rotation.y=Math.PI; b.userData.act=act(blAd); clickables.push(b); });
+    if(blAd){ const badge=textPlane(bl, 1.3, 0.42, 128, (g,w,h)=>{ g.fillStyle="#ffd640"; g.fillRect(0,0,w,h); g.fillStyle="#1e143c"; g.font=`800 ${h*0.6}px ${FONT}`; g.textAlign="center"; g.textBaseline="middle"; g.fillText(blAd.label||"광고",w/2,h/2+1); });
+      badge.position.set(-2.6,0.62,1.95); }
+    hull.userData.act=act(blAd); clickables.push(hull);
+    boards.push({scene:s, show:()=>{ if(blAd) return; mi=(mi+1)%SKY_MSG.length; drawBand(); }});
+    /* 홀로그램 판 */
+    const holos=o.holo.map(([x,y,z],i)=>{
+      const ad=G.adsAt(`sky_holo_${i+1}`)[0]||null, g=new THREE.Group(); g.position.set(x,y,z); g.rotation.y=o.holoYaw?.[i]||0; s.add(g);
+      const glow=add(g, new THREE.PlaneGeometry(3.6,2.0), new THREE.MeshBasicMaterial({map:canvasTex(64,64,(c,w,h)=>{ const r=c.createRadialGradient(w/2,h/2,4,w/2,h/2,w/2); r.addColorStop(0,"rgba(120,230,255,.55)"); r.addColorStop(1,"rgba(120,230,255,0)"); c.fillStyle=r; c.fillRect(0,0,w,h); }),
+        transparent:true, depthWrite:false, blending:THREE.AdditiveBlending, fog:false, side:THREE.DoubleSide}), 0,0,-0.03);
+      const scr=textPlane(g, 3.0, 1.5, 512, (c,w,h)=>{ c.clearRect(0,0,w,h);
+        const gr=c.createLinearGradient(0,0,0,h); gr.addColorStop(0,"rgba(110,220,255,.55)"); gr.addColorStop(1,"rgba(190,120,255,.5)"); c.fillStyle=gr; c.fillRect(0,0,w,h);
+        c.fillStyle="rgba(255,255,255,.14)"; for(let yy=0;yy<h;yy+=6) c.fillRect(0,yy,w,2);
+        c.strokeStyle="rgba(220,250,255,.95)"; c.lineWidth=6; c.strokeRect(4,4,w-8,h-8);
+        c.fillStyle="#ffd640"; c.fillRect(16,16,112,36); c.fillStyle="#1e143c"; c.font=`800 22px ${FONT}`; c.textAlign="center"; c.textBaseline="middle"; c.fillText("광고 · AD",72,35);
+        if(!ad){ c.fillStyle="#fff"; c.shadowColor="rgba(80,220,255,.9)"; c.shadowBlur=12; c.font=`800 46px ${FONT}`; c.fillText(G.lang==="en"?"AD SPACE":G.t("adSpace")+" · AD SPACE", w/2, h*0.52);
+          c.font=`600 22px ${FONT}`; c.fillText(G.t("bs1b"), w/2, h*0.78); c.shadowBlur=0; } });
+      scr.material.side=THREE.DoubleSide; scr.material.depthWrite=false; scr.material.fog=false; scr.material.opacity=0.92;
+      if(ad) adLoader.load(safeUrl(ad.image).href, t=>{ t.colorSpace=THREE.SRGBColorSpace; add(g, new THREE.PlaneGeometry(2.86,1.36), new THREE.MeshBasicMaterial({map:t, transparent:true, opacity:.9, fog:false}), 0,0,0.01); ask(); });
+      else relabel.push(scr.userData.redraw);
+      [scr,glow].forEach(m=>{ m.userData.act=act(ad); clickables.push(m); });
+      return {g, y, ph:i*1.9};
+    });
+    if(o.holoSpot) spots.push({p:o.holoSpot, r:3.2, label:()=>G.t("bContact"), act:G.openContact});
+    const [cx,cz,rx,rz,hy,sp]=o.orbit; let a=o.a0||0;
+    ctx.animate=dt=>{ ctx.t+=dt; a+=sp*dt;
+      const x=cx+rx*Math.cos(a), z=cz+rz*Math.sin(a), dx=-rx*Math.sin(a), dz=rz*Math.cos(a);
+      bl.position.set(x, hy+Math.sin(ctx.t*0.6)*0.4, z); bl.rotation.set(0, Math.atan2(-dz, dx), Math.sin(ctx.t*0.6)*0.03);
+      holos.forEach(h=>{ h.g.position.y = h.y + Math.sin(ctx.t*1.3+h.ph)*0.22; }); };
+    ctx.animate(0); ctx.blimp=bl; return ctx;
+  }
+
   function buildOutside(){
     const s=new THREE.Scene(); s.background=skyTex(); s.fog=new THREE.Fog(0xeef4f6, 70, 190); hemi(s, 0xffffff, 0xd9e6c8, 2.4);
     const clickables=[], spots=[];
@@ -1196,10 +1270,11 @@ function start(THREE){
       const bb=new THREE.Group(); bb.position.set(13,8.6,10.2); bb.rotation.y=-0.3; s.add(bb);
       billboard(s, bb, 6.4, 3.2, "street_billboard", clickables, spots, new THREE.Vector3(12,2,13));
       clouds(s, [[-30,34,-80,1.4],[10,40,-90,1.1],[42,30,-70,1],[0,22,-40,.6]]);
+      const relabel=[], sky=skyAds(s, clickables, spots, relabel, {orbit:[0,-6,30,17,21,0.06], a0:1.2, holo:[[-5.2,13.2,4],[0,13.8,4.6],[5.2,13.2,4]], holoYaw:[0.18,0,-0.18], holoSpot:new THREE.Vector3(0,2,6)});
       const free=(x,z)=> x>-40&&x<40&&z>-14.6&&z<62 && !inBox(x,z,[-33.3,-7,-12.3,0.3]) && !inBox(x,z,[7,33.3,-12.3,0.3]) && !inBox(x,z,[-37.6,2.6,7.6,20.4]) && !inCircles(x,z,tc) && Math.hypot(x-13,z-10)>0.6
         && !(Math.abs(x)>=7 && z<-12.3);
       const height=(x,z)=> Math.abs(x)<7 && z<1.2 ? (z<-9 ? 3.15 : Math.min(9,Math.ceil((1.2-z)/1.2))*0.35) : 0;
-      return {scene:s, clickables, spots, cam:{pos:[6,2.2,52], yaw:0.08, pitch:0.05, yawLim:[-0.8,0.8], pitchLim:[-0.2,0.4]},
+      return {scene:s, clickables, spots, relabel, animate:sky.animate, sky, cam:{pos:[6,2.2,52], yaw:0.08, pitch:0.05, yawLim:[-0.8,0.8], pitchLim:[-0.2,0.4]},
         path:[[6,2.2,52],[6,2.2,14],[1,2.4,4],[0,5.2,-8],[-4.2,4.9,-10.8]], endYaw:Math.PI/2,
         walk:{spawn:[6,44,0], free, height, camDist:5, camH:2.6}};
     }
@@ -1226,10 +1301,11 @@ function start(THREE){
     billboard(s, bb, 5.2, 2.6, "street_billboard", clickables, spots, new THREE.Vector3(8.6,2,11));
     instanced(s, new THREE.SphereGeometry(0.6,8,6), lam(0x9cc58a), [-10.6,-11.8,10.6,11.8].map(x=>({x,y:0.4,z:6,sy:0.7})));
     clouds(s, [[-30,26,-70,1.3],[12,32,-80,1.1],[38,22,-60,.9],[-8,18,-40,.6]]);
+    const relabel=[], sky=skyAds(s, clickables, spots, relabel, {orbit:[0,-5,22,13,18,0.07], a0:1.1, holo:[[-4.6,12.0,6.2],[0,12.6,6.6],[4.6,12.0,6.2]], holoYaw:[0.2,0,-0.2], holoSpot:new THREE.Vector3(0,2,9.5)});
     const cols=colX.map(x=>({c:[x,3.4,0.6]})).concat([{c:[9.6,8.5,0.5]}]);
     const free=(x,z)=> x>-30&&x<30&&z>-14&&z<60 && !inBox(x,z,[-7.6,7.6,-8.2,1.1]) && !inCircles(x,z,cols) && !inCircles(x,z,tc);
     const height=(x,z)=>{ let h=0; for(let i=0;i<5;i++) if(z<5.6-0.9*i && z>-8.4+0.0*i && Math.abs(x)<(22-i*0.6)/2) h=(i+1)*0.3; return h; };
-    return {scene:s, clickables, spots, cam:{pos:[0,1.8,34], yaw:0, pitch:0.08, yawLim:[-0.8,0.8], pitchLim:[-0.2,0.4]},
+    return {scene:s, clickables, spots, relabel, animate:sky.animate, sky, cam:{pos:[0,1.8,34], yaw:0, pitch:0.08, yawLim:[-0.8,0.8], pitchLim:[-0.2,0.4]},
       path:[[0,1.8,34],[0,1.8,12],[0,3.3,6],[0,3.3,2.2]], endYaw:0,
       walk:{spawn:[0,24,0], free, height, camDist:5, camH:2.6}};
   }
@@ -1407,6 +1483,17 @@ function start(THREE){
       const sign=textPlane(p, 1.6, 0.38, 320, (g,w,h)=>label(g,w,h,"#1e143c","#ffd640","← "+G.t("toHub"),"",40)); sign.position.set(0,2.35,-W+0.06); relabel.push(sign.userData.redraw);
       [door,sign].forEach(m=>{ m.userData.act=back; clickables.push(m); });
       spots.push({p:onWall(2,0,1.9,1.0), r:1.3, label:()=>"← "+G.t("toHub"), act:back}); }
+
+    /* 입구 벽(뒤 벽) 문 위: 방 이야기 큰 안내판. story가 없으면 방 이름 + 한 줄 설명만. 누르면 글 전체 */
+    { const p=pivots[2], st=()=>G.roomStory(room);
+      const board=textPlane(p, 3.6, 1.14, 512, (g,w,h)=>{ const s0=st(); g.fillStyle="#fffdf8"; g.fillRect(0,0,w,h); g.fillStyle=color; g.fillRect(0,0,w,10); g.fillRect(0,h-4,w,4);
+        g.strokeStyle="#e4d8c4"; g.lineWidth=3; g.strokeRect(1.5,1.5,w-3,h-3);
+        g.fillStyle="#1e143c"; g.textAlign="center"; g.textBaseline="middle"; g.font=`800 30px ${FONT}`; g.fillText(G.nm(room.name), w/2, s0.text ? 36 : h*0.4);
+        g.fillStyle="#4a4060"; g.font=`500 ${s0.text?17:20}px ${FONT}`;
+        if(s0.text){ const lines=s0.text.split(/\n/).slice(0,4); let y=68; lines.forEach(l=>{ wrapText(g, l, w/2, y, w-44, 22, 2); y+= g.measureText(l).width>w-44 ? 44 : 23; }); }
+        else wrapText(g, s0.line, w/2, h*0.68, w-44, 24, 1); });
+      board.position.set(0,3.36,-W+0.05); relabel.push(board.userData.redraw);
+      board.userData.act=()=>{ const s0=G.roomStory(room); G.openItem({type:"text", title:G.nm(room.name), desc:s0.text||s0.line}); }; clickables.push(board); }
 
     /* 앞 벽 위: 방 이름(생일카페는 현수막) */
     if(dec==="birthday"){
@@ -1713,7 +1800,7 @@ function start(THREE){
   let nearSpot=null;
   function bubbleOff(){ nearSpot=null; bubble.classList.remove("on"); }
   bubble.onclick=()=>{ if(nearSpot){ const s=nearSpot; if(s.once) cur.spots.splice(cur.spots.indexOf(s),1); bubbleOff(); s.act(); } };
-  let lastT=0, slowFrames=0, frameCount=0, suggested=false;
+  let skyAcc=0, lastT=0, slowFrames=0, frameCount=0, suggested=false;
   function walkStep(dt){
     let fx=-joy.y, sx=joy.x;
     if(keys.has("w")||keys.has("arrowup")) fx+=1; if(keys.has("s")||keys.has("arrowdown")) fx-=1;
@@ -1798,6 +1885,8 @@ function start(THREE){
     const fov=fovBase*zoom; if(Math.abs(camera.fov-fov)>0.01){ camera.fov=fov; dirty=true; }
     if(document.hidden || !cur) return;
     let moving=false;
+    /* 장면 움직임(하늘 비행선 등): 30fps로만, 패널이 열려 있으면 멈춤 */
+    if(cur.animate && !G.sheetOpen()){ skyAcc+=dt; if(skyAcc>=1/30){ cur.animate(skyAcc); skyAcc=0; dirty=true; } }
     if(G.walk && cur.walk && player.g && !busy && !G.sheetOpen()){ if(walkStep(dt)) { moving=true; dirty=true; } else if(dirty) walkStep(0); if(animatePet(player.g, dt, moving)) dirty=true; }
     if(!dirty) return;
     renderNow(); drawBubble();
