@@ -116,7 +116,8 @@ def build_cards(spec):
     """문장 카드: 카드마다 큰 글씨 한 줄 + 작은 설명이 아래에서 올라오고, 다음 카드로 바뀐다."""
     tl = []; t = 1.2; per = spec.get("card_sec", 3.0)
     for c in spec["cards"]:
-        L = layer(); d = ImageDraw.Draw(L)
+        L = background(c["photo"]) if c.get("photo") else layer()  # 카드마다 다른 사진(덕심 편지 12장용)
+        d = ImageDraw.Draw(L)
         d.rounded_rectangle([70, 560, 1010, 1380], radius=40, fill=(255, 255, 255, 30))
         y = 640
         if c.get("label"): ct(d, y, c["label"], F(FM, 40), Y); y += 80
@@ -240,6 +241,8 @@ if __name__ == "__main__":
     base = os.path.dirname(os.path.abspath(path))
     for k in ("bg", "bgm"): spec[k] = os.path.join(base, spec[k]) if not os.path.isabs(spec[k]) else spec[k]
     if spec.get("thumb", {}).get("photo"): spec["thumb"]["photo"] = os.path.join(base, spec["thumb"]["photo"])
+    for c in spec.get("cards", []):
+        if c.get("photo"): c["photo"] = os.path.join(base, c["photo"])
     outdir = os.path.join(base, "out"); os.makedirs(outdir, exist_ok=True)
     v, dur, t_end = render(spec, outdir)
     th = thumbnail(spec, outdir) if spec.get("thumb") else None

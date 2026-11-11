@@ -1,0 +1,7 @@
+factory/assets/bg_*.png
+factory/assets/test_clip.mp4
+factory/**/out/
+factory/**/_tmp*/
+factory/results/
+factory/budget.json
+__pycache__/
