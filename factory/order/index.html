@@ -65,6 +65,10 @@ details summary{cursor:pointer;color:var(--muted);font-size:14px}
 .topic[aria-pressed="true"]{border-color:var(--accent);background:var(--sel)}
 .topic b{font-size:16px}.topic span{font-size:13px;color:var(--muted)}
 .topic .tag{font-size:12px;font-weight:700;color:var(--accent)}
+.rep{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:10px 12px;display:flex;flex-direction:column;gap:4px}
+.rep .rh{font-size:13px;font-weight:700;color:var(--accent)}
+.rep .rt{font-size:14px;white-space:pre-wrap;overflow-wrap:anywhere}
+.rep button{align-self:flex-end;background:transparent;border:1px solid var(--line);border-radius:999px;padding:4px 12px;font:inherit;font-size:13px;color:var(--muted);cursor:pointer}
 .turn{display:block;background:var(--warn);color:var(--bg);border-radius:14px;padding:13px 14px;font-weight:900;font-size:16px;text-decoration:none}
 .turn small{display:block;font-weight:400;font-size:13px;opacity:.95}
 ol.flow{margin:6px 0 0;padding-left:20px;font-size:13px;color:var(--muted)}
@@ -79,6 +83,11 @@ ol.flow{margin:6px 0 0;padding-left:20px;font-size:13px;color:var(--muted)}
       <ol class="flow"><li>형식 선택</li><li>컨셉 정하기</li><li>길이 정하기</li><li>시나리오</li><li>영상 수·편집 방법 설계</li><li>내레이션 입힌 첫 영상</li><li>1차 검토(오류 잡기)</li><li>대표 컨펌</li><li>완성 제작 + 언어(자막·더빙) 선택</li><li>최종 검토(싱크·이상한 곳)</li><li>SNS별 맞춤 업로드</li></ol>
     </details>
   </header>
+
+  <section id="repWrap" hidden>
+    <h2>팀 보고 <small>(예약 작업들이 한 일 · 확인하면 「읽음」)</small></h2>
+    <div id="reports" style="display:flex;flex-direction:column;gap:8px"></div>
+  </section>
 
   <section>
     <h2>0. 오늘의 소재 <small>(리서치팀이 찾은 후보 · 누르면 아래에서 만들 방법을 골라요)</small></h2>
@@ -260,6 +269,11 @@ async function upd(r,patch){
       window.__rows=rows;render(rows)},
       ()=>{clearTimeout(timer);$("msg").textContent="진행판을 불러오지 못했어요."});
   }catch(e){clearTimeout(timer)}
+  try{ db.collection("reports").orderBy("at","desc").limit(15).onSnapshot(s=>{const rows=[];const push=d=>rows.push({...d.data(),id:d.id});(s.docs||[]).forEach(push);if(!s.docs&&s.forEach)s.forEach(push);
+      const un=rows.filter(r=>!r.read);$("repWrap").hidden=!un.length;const W=$("reports");W.innerHTML="";
+      un.forEach(r=>{const c=document.createElement("div");c.className="rep";const h=document.createElement("div");h.className="rh";h.textContent=["["+(r.team||"")+"]",r.task||"",(r.at||"").replace("T"," ").slice(5,16)].join(" ");
+        const t=document.createElement("div");t.className="rt";t.textContent=r.text||"";const b=document.createElement("button");b.type="button";b.textContent="읽음";
+        b.onclick=async()=>{try{await db.collection("reports").doc(r.id).update({read:true})}catch(e){}};c.append(h,t,b);W.append(c)})},()=>{}); }catch(e){}
   try{ db.collection("topics").orderBy("at","desc").limit(12).onSnapshot(s=>{const rows=[];const push=d=>rows.push({...d.data(),id:d.id});(s.docs||[]).forEach(push);if(!s.docs&&s.forEach)s.forEach(push);
       TOPICS=rows.filter(r=>r.status!=="used");drawTopics()},()=>{}); }catch(e){}
   $("go").onclick=async()=>{
