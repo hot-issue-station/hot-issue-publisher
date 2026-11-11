@@ -98,6 +98,23 @@ body.novoice .mic,body.novoice #vBtn{display:none!important}
 @keyframes pl{0%{box-shadow:0 0 0 0 #7c2d1288}100%{box-shadow:0 0 0 26px #7c2d1200}}
 #toast{position:fixed;left:16px;right:16px;top:76px;max-width:528px;margin:0 auto;z-index:30;background:#2b2220;color:#fff;border-radius:14px;padding:14px 16px;font-size:18px;text-align:center}
 svg text{font-family:inherit}
+/* v3.1 */
+#today:not(.hide){display:flex;flex-direction:column}
+.trust{background:#f0fdf4;border:2px solid #86efac;border-radius:16px;padding:14px 16px;margin-top:12px}
+.trust b{font-size:20px;color:#166534}.trust ul{margin:8px 0 0;padding:0;list-style:none}.trust li{font-size:19px;line-height:1.45;padding:4px 0 4px 30px;position:relative}
+.trust li::before{content:"✓";position:absolute;left:4px;top:3px;font-weight:900;color:#16a34a}
+.lastc{background:#fff;border:3px solid var(--main);border-radius:18px;padding:14px 16px;margin-top:4px}
+.lastc .lh{font-size:18px;color:var(--main);font-weight:700}.lastc .lt{font-size:28px;font-weight:900;margin:2px 0 4px}
+.lastc .lx{font-size:21px;line-height:1.45}.lastc .lm{font-size:20px;color:var(--tx);margin-top:6px;white-space:pre-line}
+.lastc .ln{font-size:23px;font-weight:800;background:#fffbeb;border-radius:12px;padding:8px 12px;margin-top:10px}
+.rxg{border-top:1px dashed var(--line);margin-top:10px;padding-top:8px}.rxg>b{font-size:19px}
+.rxr{display:flex;gap:6px;align-items:center;flex-wrap:wrap;margin-top:6px}.rxr input{flex:1;min-width:64px;padding:10px;font-size:20px}.rxr span{font-size:16px;color:var(--sub);white-space:nowrap}
+details.card>summary{list-style:none;cursor:pointer}details.card>summary::-webkit-details-marker{display:none}
+.thumb{width:48px;height:48px;border-radius:10px;object-fit:cover;flex:none}
+.tag.np{background:#e0e7ff;color:#3730a3}
+.qrbox{background:#fff;border:2px solid var(--line);border-radius:16px;padding:12px;text-align:center;margin-top:10px}
+.qrbox canvas{width:min(78vw,300px);height:auto;image-rendering:pixelated}
+.slot{background:#ecfdf5;border-color:#86efac;color:#166534;font-weight:700}
 </style>
 </head>
 <body>
@@ -109,33 +126,40 @@ svg text{font-family:inherit}
   <h2>어떤 가게세요?</h2>
   <p class="note">고르시면 기본 시술 메뉴와 가격이 자동으로 들어가요. 가격은 나중에 바꾸실 수 있어요.</p>
   <div class="chips" id="bizChips"></div>
+  <p class="note" id="bizNote"></p>
   <label>가게 이름</label><input id="shopName" placeholder="예: 하나 헤어">
   <button class="big" onclick="finishSetup()">시작하기</button>
+  <div id="trustSetup"></div>
 </section>
 
 <!-- 오늘 -->
 <section id="today" class="hide">
   <div style="text-align:right"><a class="help" href="help.html">❓ 사용법</a></div>
-  <a href="shop.html" class="big ghost" style="display:block;text-align:center;text-decoration:none;margin:8px 0">🛒 장보기 — 말로 찾고 제일 싼 것 고르기</a>
+  <a href="shop.html" id="tShop" class="big ghost" style="display:block;text-align:center;text-decoration:none;margin:8px 0">🛒 장보기 — 말로 찾고 제일 싼 것 고르기</a>
   <div id="bkNote"></div>
   <div id="instNote"></div>
-  <div id="bkBox"></div>
+  <!-- 예약 중심 업종(속눈썹·네일·피부)은 아래 순서를 바꿔서 보여 줌: 오늘 예약 → 빈 시간 → 리터치 알림 -->
+  <div id="bkToday"></div>
+  <div id="bkFree"></div>
+  <div id="bkTmr"></div>
   <div class="card" id="signal" style="display:flex;gap:14px;align-items:center"></div>
-  <div class="sum"><div class="card">오늘 손님<b id="tCnt">0</b></div><div class="card">오늘 매출<b id="tSum">0</b></div></div>
-  <button class="big" onclick="go('pick')">+ 시술 기록하기</button>
+  <div class="sum" id="tSumBox"><div class="card">오늘 손님<b id="tCnt">0</b></div><div class="card">오늘 매출<b id="tSum">0</b></div></div>
+  <button class="big" id="tRecBtn" onclick="go('pick')">+ 시술 기록하기</button>
+  <div id="dayEnd"></div>
   <div id="rvBox"></div>
-  <h2>오늘 기록</h2><div id="tList"></div>
-  <h2>오래 안 오신 손님</h2><p class="note" style="margin-top:0">마지막 방문 뒤 60일이 지난 분이에요. 문자로 안부를 전해 보세요.</p><div id="longList"></div>
-  <h2>원장님 추천 상품 <span style="font-size:15px;color:var(--sub);font-weight:400">· 광고</span></h2>
+  <div id="tRec"><h2>오늘 기록</h2><div id="tList"></div></div>
+  <div id="tLong"><h2>오래 안 오신 손님</h2><p class="note" style="margin-top:0">마지막 방문 뒤 60일이 지난 분이에요. 문자로 안부를 전해 보세요.</p><div id="longList"></div></div>
+  <div id="tPicks"><h2>원장님 추천 상품 <span style="font-size:15px;color:var(--sub);font-weight:400">· 광고</span></h2>
   <div id="picks"></div>
-  <p class="note" style="margin-top:6px">단골 수첩은 추천 상품 수수료로 운영돼서 무료예요. 상품을 사도 가격은 똑같고, 일정 수수료가 운영비로 쓰여요.</p>
+  <p class="note" style="margin-top:6px">단골 수첩은 추천 상품 수수료로 운영돼서 무료예요. 상품을 사도 가격은 똑같고, 일정 수수료가 운영비로 쓰여요.</p></div>
 </section>
 
 <!-- 손님 목록 -->
 <section id="list" class="hide">
-  <div class="mw"><input id="q" placeholder="이름이나 전화번호 뒷자리" oninput="drawList()" autocomplete="off"><button class="mic" onclick="dictate('q')" aria-label="말로 찾기">🎤</button></div>
+  <div class="mw"><input id="q" placeholder="이름·별명·특징·번호 뒷자리" oninput="drawList()" autocomplete="off"><button class="mic" onclick="dictate('q')" aria-label="말로 찾기">🎤</button></div>
   <button class="big" onclick="go('newCust')">+ 새 손님</button>
   <div class="row2"><button class="big ghost" onclick="go('imp')">📥 연락처·엑셀 불러오기</button><button class="big ghost" id="grpBtn" onclick="go('group')">✉ 단체 문자</button></div>
+  <div class="row2"><button class="big ghost" onclick="qrOpen()">📱 번호 남기기 QR</button><button class="big ghost" onclick="atOpen()">📩 받은 번호 붙이기</button></div>
   <div id="custs"></div>
   <p class="note" id="stat"></p>
 </section>
@@ -149,21 +173,31 @@ svg text{font-family:inherit}
 
 <!-- 새 손님 -->
 <section id="newCust" class="hide">
-  <label>이름</label><input id="cn">
-  <label>전화번호</label><input id="cp" type="tel" placeholder="010-">
+  <p class="note" style="margin-top:0">이름·별명·특징 중 <b>하나만</b> 적어도 저장돼요. 전화번호는 없어도 돼요.</p>
+  <label>이름 (모르시면 비워 두세요)</label><input id="cn" autocomplete="off">
+  <label>별명·부르는 이름 (선택)</label><input id="cnk" placeholder="예: 목요일 안경 사장님" autocomplete="off">
+  <label>특징 (선택 · 다음에 알아보게)</label><div class="mw"><input id="cft" placeholder="예: 안경·짧은 투블럭" autocomplete="off"><button class="mic" onclick="dictate('cft')" aria-label="말로 특징">🎤</button></div>
+  <div class="chips" id="ftChips" style="margin-top:8px"></div>
+  <label>전화번호 (선택 · 없어도 돼요)</label><input id="cp" type="tel" placeholder="010-">
+  <p class="note" style="margin-top:6px">번호를 여쭙기 어려우면 비워 두세요. 손님이 원하시면 나중에 <b>'번호 남기기 QR'</b>로 손님이 직접 문자로 남기실 수 있어요.</p>
+  <label>사진 (선택 · 뒷모습·머리 모양)</label><input id="cph" type="file" accept="image/*" capture="environment">
   <label>메모 (모발 상태, 좋아하는 스타일 등)</label><div class="mw"><textarea id="cm"></textarea><button class="mic" onclick="dictate('cm')" aria-label="말로 메모">🎤</button></div>
-  <label style="font-weight:400"><input type="checkbox" id="agree" style="width:auto"> 손님이 연락처·사진 보관에 동의했어요</label>
+  <label style="font-weight:400"><input type="checkbox" id="agree" style="width:auto"> 손님이 번호·사진 보관에 동의했어요 <span class="d">(번호나 사진을 적을 때만 필요해요)</span></label>
   <button class="big" onclick="saveCust()">저장</button>
 </section>
 
 <!-- 손님 상세 -->
 <section id="detail" class="hide">
+  <div id="lastCard"></div>
   <div id="info"></div>
-  <div class="two"><a id="smsBtn" class="sms">문자 보내기</a><a id="callBtn" class="call">전화</a></div>
+  <div class="two" id="telBtns"><a id="smsBtn" class="sms">문자 보내기</a><a id="callBtn" class="call">전화</a></div>
+  <div id="noTel"></div>
   <button class="big" onclick="go('newRec')">+ 오늘 시술 기록</button>
   <button class="big ghost" id="dBkBtn" onclick="bkStart({cid:cur.id})">+ 예약 잡기</button>
   <div id="ptInfo"></div>
-  <a class="big ghost" href="color.html">🎨 염색 미리보기 (손님 사진으로)</a>
+  <div id="colorBox"><a class="big ghost" id="colorLink" href="color.html">🎨 염색 미리보기 (손님 사진으로)</a>
+  <div class="row2"><a class="big ghost" id="colorBig" href="color.html?big=1" style="text-decoration:none;text-align:center">📺 태블릿·큰 화면으로 손님께 보여 주기</a></div>
+  <p class="note" style="margin-top:6px">태블릿이나 휴대폰을 <b>가로로 돌려</b> 열면, 사진을 고른 뒤 바로 <b>전체 화면 비교</b>(원본 ↔ 결과 밀어서 보기)로 열려요.</p></div>
   <div id="recs"></div>
   <button class="big ghost" onclick="editMemo()">메모 고치기</button>
   <button class="big ghost" onclick="delCust()">이 손님 삭제</button>
@@ -175,7 +209,8 @@ svg text{font-family:inherit}
   <div class="chips" id="menuChips"></div>
   <label>금액</label><input id="rp" type="number" inputmode="numeric" placeholder="원" oninput="drawPtBox()">
   <div id="ptBox"></div>
-  <label>약·호수·시간 (다음에 똑같이 하려면)</label><div class="mw"><textarea id="rm" placeholder="예: 7호 + 산화제 6%, 25분"></textarea><button class="mic" onclick="dictate('rm')" aria-label="말로 메모">🎤</button></div>
+  <label>메모 (다음에 똑같이 하려면)</label><div class="mw"><textarea id="rm" placeholder="예: 7호 + 산화제 6%, 25분"></textarea><button class="mic" onclick="dictate('rm')" aria-label="말로 메모">🎤</button></div>
+  <div id="rxBox"></div>
   <label>날짜</label><input id="rd" type="date">
   <label>사진 (선택)</label><input id="rf" type="file" accept="image/*" capture="environment">
   <div id="snsRecBox"></div>
@@ -270,6 +305,14 @@ svg text{font-family:inherit}
 <!-- 설정 -->
 <section id="settings" class="hide">
   <div style="text-align:right"><a class="help" href="help.html" style="font-size:19px;padding:8px 16px">❓ 사용법·자주 묻는 질문</a></div>
+  <div id="trustSet"></div>
+  <h2>가게 정보</h2>
+  <label style="margin-top:4px">원장님 휴대폰 번호 <span class="d">(번호 남기기 QR에 들어가요)</span></label>
+  <input id="shopTel" type="tel" placeholder="010-" onchange="db.tel=this.value.trim();save()">
+  <button class="big ghost" onclick="qrOpen()">📱 번호 남기기 QR 보기</button>
+  <label>'오늘' 화면 배치</label>
+  <div class="chips" id="layChips"></div>
+  <div id="hrsBox"></div>
   <h2>기능 고르기</h2>
   <p class="note" style="margin-top:0">안 쓰는 기능은 꺼 두면 화면이 단순해져요. 꺼도 적어 둔 기록은 지워지지 않아요.</p>
   <div id="featBox"></div>
@@ -294,6 +337,8 @@ svg text{font-family:inherit}
   <button class="big ghost" onclick="document.getElementById('restore').click()">백업 파일 불러오기</button>
   <input type="file" id="restore" accept=".json,application/json" class="hide" onchange="restore(this.files[0]);this.value=''">
   <p class="note" id="bkLast"></p>
+  <button class="big ghost" onclick="exportCSV()">📤 손님 목록 엑셀(CSV)로 내보내기</button>
+  <p class="note" style="margin-top:6px">다른 프로그램으로 옮기거나 그만두실 때 쓰세요. 엑셀에서 바로 열려요.</p>
   <h2>휴대폰에 앱으로 설치</h2>
   <p class="note" style="margin-top:0" id="instState">홈 화면에 아이콘을 만들어 두면 인터넷 없이도 바로 열려요.</p>
   <button class="big ghost" id="instBtn" onclick="installApp()">📲 홈 화면에 추가</button>
@@ -365,11 +410,19 @@ function drawPicks(){ const el=$("picks"); if(!el) return;
 const PRESET={
   "헤어":[["여성 커트",20000],["남성 커트",15000],["앞머리",5000],["일반 펌",70000],["디지털 펌",120000],["셋팅 펌",100000],["다운 펌",30000],["뿌리 염색",50000],["전체 염색",80000],["매직",120000],["클리닉",50000],["드라이",15000]],
   "바버":[["커트",20000],["페이드 커트",25000],["면도",10000],["다운 펌",30000],["염색",40000]],
-  "네일":[["젤 원컬러",40000],["젤 아트",60000],["젤 제거",10000],["케어",15000],["패디 젤",50000]],
-  "속눈썹":[["연장",50000],["리터치",30000],["펌",40000],["제거",10000]],
-  "피부":[["기본 관리",50000],["여드름 관리",60000],["리프팅",80000],["각질 관리",40000]],
+  "속눈썹":[["클래식 연장",50000,3],["볼륨 연장",70000,3],["리터치",30000,3],["속눈썹 펌",40000,6],["하부 연장",20000,3],["제거",10000,0]],
+  "네일":[["젤 원컬러",40000,3],["젤 아트",60000,3],["젤 리터치",35000,3],["젤 제거",10000,0],["케어",15000,3],["패디 젤",50000,4]],
+  "피부":[["기본 관리",50000,4],["여드름 관리",60000,3],["리프팅",80000,4],["각질 관리",40000,3],["수분 관리",50000,4]],
   "기타":[["기본 시술",30000]]
 };
+/* [이름, 가격 예시, 다시 오실 때(주)] — 세 번째 칸이 없으면 시술 이름으로 짐작(defW) */
+const RES_BIZ=["속눈썹","네일","피부"];
+const BIZ_NOTE={"헤어":"다시 오실 때 알림 중심 화면이에요. (커트 5주, 펌 3달처럼)","바버":"다시 오실 때 알림 중심 화면이에요.",
+  "속눈썹":"예약 중심 화면으로 시작해요: 오늘 예약 → 빈 시간 → 리터치 알림 (보통 3~4주)","네일":"예약 중심 화면으로 시작해요: 오늘 예약 → 빈 시간 → 리터치 알림 (보통 3주)",
+  "피부":"예약 중심 화면으로 시작해요: 오늘 예약 → 빈 시간 → 다음 관리 알림 (보통 3~4주)","기타":"메뉴는 설정에서 바꾸실 수 있어요."};
+/* 예약 중심 배치인지: 설정에서 고른 값(db.lay)이 먼저, 없으면 업종으로 */
+const isRes=()=>db.lay?db.lay==="res":RES_BIZ.includes(db.biz);
+const TRUST=`<div class="trust" role="note"><b>🤝 처음 쓰시는 원장님께</b><ul><li><b>선결제·계약 없음</b> — 돈을 먼저 받지 않아요</li><li><b>카드 정보 안 받음</b> — 결제 화면 자체가 없어요</li><li><b>기록은 이 휴대폰에만</b> — 저희도 볼 수 없어요</li><li><b>언제든 내보내고 그만둘 수 있어요</b> — 설정 → 엑셀(CSV)로 내보내기</li></ul></div>`;
 /* ── 데이터 ─────────────────────────────────────────
    저장 키·형식은 v2와 같음(dangol_v1). 새로 생긴 칸은 모두 '없어도 되는' 추가 칸:
    db.feat {bk,rv,grp,pt,voice} 기능 켜기·끄기 / db.bk [{id,cid,d,tm,t,m,sent,done}] 예약
@@ -411,12 +464,14 @@ function go(v,back){
 }
 function last(c){ return c.r.length? c.r[c.r.length-1] : null }
 function lastD(c){ const l=last(c), a=l?l.d:""; return (c.lv||"")>a?c.lv:a }
-function custRow(c,fn){const l=last(c), ld=lastD(c);return `<div class="card cust" onclick="${fn}('${c.id}')"><div><b>${esc(c.n)}</b><small>${l&&l.d===ld?`${l.d} · ${esc(l.t)}`:ld?`마지막 방문 ${ld} (옮겨 온 기록)`:c.p?esc(c.p):"아직 기록 없음"}</small></div><span>›</span></div>`}
-function match(c,q){q=q.replace(/-/g,"").replace(/\s/g,"");return !q||c.n.replace(/\s/g,"").includes(q)||c.p.replace(/-/g,"").includes(q)}
+/* 이름 말고 알아보는 단서(별명·특징): 이름과 같으면 빼고 */
+const clue=c=>[c.nk,c.ft].filter(x=>x&&x!==c.n).join(" · ");
+function custRow(c,fn){const l=last(c), ld=lastD(c), cl=clue(c);return `<div class="card cust" onclick="${fn}('${c.id}')">${c.ph?`<img class="thumb" src="${c.ph}" alt="">`:""}<div style="flex:1;min-width:0"><b>${esc(c.n)}</b>${c.p?"":` <span class="tag np">번호 없음</span>`}${cl?`<small>${esc(cl)}</small>`:""}<small>${l&&l.d===ld?`${l.d} · ${esc(l.t)}`:ld?`마지막 방문 ${ld} (옮겨 온 기록)`:c.p?esc(c.p):"아직 기록 없음"}</small></div><span>›</span></div>`}
+function match(c,q){q=q.replace(/-/g,"").replace(/\s/g,"");const k=s=>String(s||"").replace(/\s/g,"");return !q||k(c.n).includes(q)||k(c.nk).includes(q)||k(c.ft).replace(/[·,]/g,"").includes(q.replace(/[·,]/g,""))||(!!c.p&&c.p.replace(/-/g,"").includes(q))}
 /* 처음 실행 */
 let biz="헤어";
-function drawSetup(){ $("bizChips").innerHTML=Object.keys(PRESET).map(k=>`<button class="chip ${k===biz?'on':''}" onclick="biz='${k}';drawSetup()">${k}</button>`).join("") }
-function finishSetup(){ db.biz=biz; db.shop=$("shopName").value.trim()||"단골 수첩"; db.menu=PRESET[biz].map(([n,p])=>({n,p})); save(); go("today") }
+function drawSetup(){ $("bizChips").innerHTML=Object.keys(PRESET).map(k=>`<button class="chip ${k===biz?'on':''}" onclick="biz='${k}';drawSetup()">${k}</button>`).join(""); $("bizNote").textContent=BIZ_NOTE[biz]||""; $("trustSetup").innerHTML=TRUST }
+function finishSetup(){ db.biz=biz; db.shop=$("shopName").value.trim()||"단골 수첩"; db.menu=PRESET[biz].map(([n,p,w])=>w!=null?{n,p,w}:{n,p}); delete db.lay; if(RES_BIZ.includes(biz)) db.feat=Object.assign({},FEAT_DEF,db.feat||{},{bk:1}); save(); go("today") }
 const shopIs=()=>db.shop&&db.shop!=="단골 수첩"?db.shop:"";
 
 /* ── 다시 오실 때 (재방문 주기) ───────────────── */
@@ -449,7 +504,13 @@ const TPL_DEF=[
   "{이름} 님, {가게}예요. 요즘 머리는 마음에 드세요? 시간 나실 때 한번 들러 주세요. 기다릴게요.",
   "{이름} 님, {가게}입니다. 이번 주에 예약 자리가 있어요. 원하시는 날과 시간 답장 주시면 잡아 둘게요."
 ];
-const tpls=()=>[0,1,2].map(i=>(db.tpl&&db.tpl[i])||TPL_DEF[i]);
+const TPL_RES=[
+  "{이름} 님, 안녕하세요. {가게}입니다. 지난번 {시술} 하신 지 {주}주쯤 됐어요. 리터치 예약 원하시면 편한 날과 시간 답장 주세요 :)",
+  "{이름} 님, {가게}예요. 요즘 잘 유지되고 있으세요? 불편한 곳 있으면 편하게 말씀 주세요.",
+  "{이름} 님, {가게}입니다. 이번 주에 예약 자리가 있어요. 원하시는 날과 시간 답장 주시면 잡아 둘게요."
+];
+const tplDef=()=>isRes()?TPL_RES:TPL_DEF;
+const tpls=()=>[0,1,2].map(i=>(db.tpl&&db.tpl[i])||tplDef()[i]);
 function fill(t,v){ return String(t).replace(/\{(이름|가게|시술|주|날짜|시각)\}/g,(_,k)=>v[k]!=null?v[k]:"").replace(/\s{2,}/g," ").replace(/^\s+|\s+$/g,"") }
 function varsOf(c,extra){ const l=last(c); return Object.assign({이름:c.n,가게:shopIs()||"저희 가게",시술:l?l.t:"시술",주:l?Math.max(1,Math.round(days(l.d)/7)):""},extra||{}) }
 function smsLink(tel,body){ tel=digits(tel); return tel?`sms:${tel}?body=${encodeURIComponent(body)}`:"" }
