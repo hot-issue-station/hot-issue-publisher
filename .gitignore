@@ -6,3 +6,4 @@ factory/results/
 factory/budget.json
 __pycache__/
 factory/samples/_test/
+private/
