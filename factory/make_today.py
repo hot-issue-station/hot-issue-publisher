@@ -127,6 +127,17 @@ def build(preset, fill, fill_dir, name):
                 c["photo"] = p
         spec.update(template="cards", cards=cards, card_sec=C["card_sec"], min_body_sec=L["target_sec"] - 3.8)
         est = max(1.2 + len(cards) * C["card_sec"] + 3.5, spec["min_body_sec"]) + 3.8
+    elif kind == "clips":   # 원본 영상 하이라이트(shorts_factory clips 틀). 클립 = [{"file","in","out","credit"}, ...]
+        C = preset.get("clips", {}); cl = []
+        for i, c in enumerate(vals.get("클립") or []):
+            p = resolve(c.get("file", ""), fill_dir) if isinstance(c, dict) else None
+            if not p or "in" not in c or "out" not in c: problems.append(f"클립 {i+1}번째: {{\"file\",\"in\",\"out\",\"credit\"}} 확인 → {c}"); continue
+            cl.append(dict(c, file=p, **{"in": float(c["in"]), "out": float(c["out"])}))
+        spec.update(template="clips", clips=cl, hook=hook["question"], top_bar={"channel": vals.get("채널", vals.get("가수", "")), "title": hook["title"]},
+                    source_line=src[0] if src else "", original_sub_note=vals.get("원본자막", C.get("original_sub_note", True)),
+                    layout=vals.get("배치", C.get("layout", "fit")), end_sec=C.get("end_sec", 3.5))
+        if src and len(src) > 1: spec["source"] = src
+        est = sum(c["out"] - c["in"] for c in cl) + spec["end_sec"]
     else:
         S = preset["stagemix"]; clips = vals.get("클립") or {}
         cl = {}
@@ -188,7 +199,7 @@ def render(spec, outdir):
     if c.get("tag"): sf.RD = hexrgb(c["tag"])
     if c.get("summary"): sf.PB = hexrgb(c["summary"])
     if c.get("number"): sf.Y = hexrgb(c["number"])
-    if spec["template"] in ("rank", "cards"):
+    if spec["template"] in ("rank", "cards", "clips"):
         v, dur, t_end = sf.render(spec, outdir)
         th = sf.thumbnail(spec, outdir); pt = sf.post_text(spec, outdir)
         lines, ok = sf.checklist(spec, v, dur, t_end)

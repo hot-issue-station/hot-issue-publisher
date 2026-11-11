@@ -1,4 +1,4 @@
-"""덕심저장소 롱폼 공장 v2
+"""덕심저장소 롱폼 공장 v2.1
 사용법: python longform_factory.py 롱폼기획.json
         python longform_factory.py --test-media 폴더   (시험용 가짜 영상·소리 만들기)
 v1(대표 11/8 결정) 위에 벤치마킹(언더독스토리) 두 가지를 기본 기능으로 넣었다.
@@ -32,6 +32,10 @@ v1(대표 11/8 결정) 위에 벤치마킹(언더독스토리) 두 가지를 기
      (맨 위 = 영상 전체 기준, 장면 안 = 장면 시작부터) → 왼쪽 아래 흰 둥근 카드(QR + 「광고 · 제휴 링크」 + 상품명·가격), 0.3초 슬라이드 인
    - 그 시간에 떠 있는 자막·출처·말풍선·옆 패널과 겹치지 않게 자리 위로 올림(안 되면 오른쪽 아래). QR은 qr.py(순수 파이썬)
    - 설명란 맨 위에 상품 링크 목록, url에 coupang 있으면 쿠팡 파트너스 고지 문구. 주류·담배·도박·성인 단어는 점검표 ❌
+ ⑥ v2.1 (11/11)
+   - 장면 "rewind": true (또는 "rewind":"날짜") → 그 장면에 들어갈 때 0.5초 역재생 + 날짜 도장(챕터 카드 없이, 챕터 중간 어디서나)
+     날짜 글은 "date"(또는 rewind 문자열), 자리 "stamp_pos":[x,y] 비율(기본 [0.8,0.2]), 보이는 길이 "stamp_sec"(기본 1.8)
+   - 챕터 "card": false → 챕터 카드(오버레이·전체 화면) 생략하고 바로 장면. 챕터 "rewind": true 는 예전 그대로
 결과: 롱폼 영상(1920x1080, 30fps) + 썸네일(1280x720) + 자막(.srt) + 설명란(.txt) + 점검표
 """
 import json, os, sys, subprocess, shutil, re
@@ -118,6 +122,24 @@ def sfx_frames(text, prefix, pos=(0.5, 0.3)):
         im = Image.new("RGBA", (W, H), (0, 0, 0, 0)); im.alpha_composite(fr_, (max(0, min(W - fr_.width, cx - fr_.width // 2)), max(0, min(H - fr_.height, cy - fr_.height // 2))))
         im.save(f"{prefix}_{i:02d}.png")
     return f"{prefix}_%02d.png"
+
+def stamp_frames(text, prefix, pos=(0.8, 0.2)):
+    """날짜 도장: 빨간 잉크 테두리 + 날짜, 살짝 기울여 '쾅' 찍히듯(1.8배 → 1.0배, 0.25초). 프레임 PNG → 마지막 장 유지."""
+    fo = F(FB, 64); dm = ImageDraw.Draw(Image.new("RGBA", (1, 1))); t = plain(text)
+    tw = int(dm.textlength(t, font=fo)); bw, bh = tw + 90, 130
+    base = Image.new("RGBA", (bw + 20, bh + 20), (0, 0, 0, 0)); d = ImageDraw.Draw(base); ink = RD + (235,)
+    d.rounded_rectangle([10, 10, 10 + bw, 10 + bh], radius=18, outline=ink, width=8)
+    d.rounded_rectangle([24, 24, bw - 4, bh - 4], radius=12, outline=RD + (150,), width=3)
+    d.text((10 + (bw - tw) / 2, 10 + (bh - 64) / 2 - 12), t, font=fo, fill=ink, stroke_width=2, stroke_fill=(255, 255, 255, 200))
+    base = base.rotate(-8, resample=Image.BICUBIC, expand=True)
+    n = max(2, round(0.25 * FPS)); cx, cy = int(W * pos[0]), int(H * pos[1])
+    for i in range(n):
+        u = (i + 1) / n; s = 1.8 - 0.8 * (u ** 2) if u < 1 else 1.0; a = min(1.0, 0.25 + u)
+        fr_ = base.resize((max(1, int(base.width * s)), max(1, int(base.height * s))), Image.BICUBIC)
+        if a < 1: fr_.putalpha(fr_.getchannel("A").point(lambda v: int(v * a)))
+        im = Image.new("RGBA", (W, H), (0, 0, 0, 0)); im.alpha_composite(fr_, (max(0, min(W - fr_.width, cx - fr_.width // 2)), max(0, min(H - fr_.height, cy - fr_.height // 2))))
+        im.save(f"{prefix}_{i:02d}.png")
+    return f"{prefix}_%02d.png", n
 
 def sub_png(text, path, style="sub"):
     """자막: 흰 굵은 고딕 + 테두리·그림자. *별표* 로 감싼 단어는 노란색(기본색이 노랑이면 흰색)."""
@@ -414,6 +436,11 @@ def render_scene(sg, sc, base, tmp, tag, comp):
     cx, cw = {"vertical": (VX + VW + 30, 586), "split": (40, 680)}.get(lay, (1180, 680))
     for j, c in enumerate(sc.get("comments", [])):    # {"at":초, "sec":4, "name":"", "text":""}
         p = os.path.join(tmp, f"{tag}_c{j}.png"); comment_png(c, p, j % 3, cx, cw); ov.append((add(["-i", p]), c["at"], c["at"] + c.get("sec", 4))); occ.append((c["at"], c["at"] + c.get("sec", 4), p))
+    if sc.get("_stamp"):                                # 날짜 도장(장면 되감기 직후): 찍히고 → 머물고 → 0.4초 페이드 아웃
+        ss = min(sc.get("stamp_sec", 1.8), D); pat, nfr = stamp_frames(sc["_stamp"], os.path.join(tmp, f"{tag}_stamp"), tuple(sc.get("stamp_pos", (0.8, 0.2))))
+        i = add(["-framerate", str(FPS), "-i", pat])
+        fl.append(f"[{i}:v]format=rgba,tpad=stop_mode=clone:stop_duration={max(0.1, ss - nfr / FPS):.3f},fade=t=out:st={max(0.1, ss - 0.4):.3f}:d=0.4:alpha=1[stp]")
+        ov.append(("stp", 0, ss)); occ.append((0, ss, pat % (nfr - 1)))
     last = "v0"
     for n, (idx, s0, s1) in enumerate(ov):
         src = f"[{idx}]" if isinstance(idx, str) else f"[{idx}:v]"
@@ -495,11 +522,19 @@ def build(spec, base):
     for ci, ch in enumerate(spec["chapters"], 1):
         style = ch.get("card_style", spec.get("card_style", "overlay"))
         if ci > 1 and ch.get("rewind", spec.get("rewind", False)): segs.append({"kind": "rewind", "layout": segs[-1]["layout"], "dur": fr(0.5), "ch": ci})
-        card = os.path.join(tmp, f"card{ci}.png"); card_png(ch, ci, card, series, overlay=(style != "full"))
-        if style == "full": segs.append({"kind": "card", "layout": "horizontal", "png": card, "dur": fr(spec.get("card_sec", 2.5)), "ch": ci})
+        use_card = ch.get("card", True) is not False        # v2.1: "card": false → 챕터 카드 생략
+        card = os.path.join(tmp, f"card{ci}.png")
+        if use_card: card_png(ch, ci, card, series, overlay=(style != "full"))
+        if use_card and style == "full": segs.append({"kind": "card", "layout": "horizontal", "png": card, "dur": fr(spec.get("card_sec", 2.5)), "ch": ci})
         for si, sc in enumerate(ch["scenes"]):
-            sg = scene_seg(sc, ci, f"sc{ci}_{si}", f"{ci}장 {si + 1}번" + (" (사진)" if sc.get("image") else ""))
-            if si == 0 and style != "full": sg["card_overlay"] = card; sg["card_sec"] = min(spec.get("overlay_card_sec", 2.0), sg["dur"])
+            rw = sc.get("rewind")                           # v2.1: 장면 되감기(0.5초 역재생 + 날짜 도장, 챕터 카드 없이)
+            if rw:
+                stamp = sc.get("date") or (rw if isinstance(rw, str) else None)
+                if stamp: sc["_stamp"] = stamp
+                else: print(f"⚠️ {ci}장 {si + 1}번 장면 rewind: 날짜(\"date\")가 없어 도장 없이 되감기만")
+                if segs and segs[-1]["kind"] == "scene": segs.append({"kind": "rewind", "layout": segs[-1]["layout"], "dur": fr(0.5), "ch": ci, "scene_rw": True})
+            sg = scene_seg(sc, ci, f"sc{ci}_{si}", f"{ci}장 {si + 1}번" + (" (사진)" if sc.get("image") else "") + (" (되감기)" if rw else ""))
+            if si == 0 and use_card and style != "full": sg["card_overlay"] = card; sg["card_sec"] = min(spec.get("overlay_card_sec", 2.0), sg["dur"])
             segs.append(sg)
     en = spec.get("ending") or {}
     if en.get("line") or en.get("ask"):                  # 끝 화면 앞: 주제 한 줄 → 질문 자막 (마지막 장면을 흐리게 이어 깔고)
@@ -691,7 +726,8 @@ def build(spec, base):
     blk = black_check(final, excl)
     hl = segs[0] if segs[0]["ch"] == 0 else None
     nocred = [s["label"] for s in segs if s["kind"] == "scene" and s["tag"] != "outro" and not s["sc"].get("credit") and not s["sc"].get("own")]
-    chk = [("챕터 카드(" + ("오버레이" if spec.get("card_style", "overlay") != "full" else "전체 화면") + ")", True),
+    nocard = [str(ci) for ci, ch in enumerate(spec["chapters"], 1) if ch.get("card", True) is False]
+    chk = [("챕터 카드(" + ("오버레이" if spec.get("card_style", "overlay") != "full" else "전체 화면") + ")" + (f" — 생략: {','.join(nocard)}장" if nocard else ""), True),
            (f"오프닝 하이라이트(0~{hl['dur']:.1f}초)" if hl else "오프닝 하이라이트(0~3초)", bool(hl) and hl["dur"] <= 3.5),
            (f"오프닝 질문 자막({gov[0][1]:.0f}초)" if gov else "오프닝 질문 자막(25초 근처)", bool(gov)),
            ("엔딩 주제 한 줄 + 질문 자막", bool(en.get("line") and en.get("ask"))),
@@ -727,6 +763,9 @@ def build(spec, base):
     for nm, ok in pchk: print(f"{nm} {'✅' if ok else '❌'}")
     if not pcards: print("상품 카드: 0개 (product_cards 없음)")
     print(("⚠️ 긴 정지 장면(" + str(lim) + "초 넘음, 컷 리듬 확인): " + ", ".join(longs)) if longs else f"✅ 긴 정지 장면 없음({lim}초 이하)")
+    srw = [s for s in segs if s.get("scene_rw")]
+    if srw or any(s.get("sc", {}).get("rewind") for s in segs):
+        print(f"장면 되감기: {len(srw)}회 (" + ", ".join(f"{s['S']:.1f}초" for s in srw) + ") · 날짜 도장 " + str(sum(1 for s in segs if s.get("sc", {}).get("_stamp"))) + "개")
     print(f"기준서 추가: 감정 자막 {n_em}개 · 효과음 자막 {n_fx}개(효과음 소리 {len(sfxs)}개) · 음악 끊기 {len(cuts)}곳"
           + (" ⚠️ 배경음악이 없어 음악 끊기는 효과 없음" if cuts and not spec.get("bgm") else ""))
     if short_ch: print("⚠️ 유튜브 챕터는 10초 이상이어야 표시됨 — 짧은 챕터: " + ", ".join(short_ch))
