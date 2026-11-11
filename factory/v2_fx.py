@@ -55,8 +55,21 @@ def _paren_runs(line, base, hi):
     if buf: runs.append((buf, hi if depth else base))
     return runs
 
-def text_img(text, size, maxw, base=WH, hi=Y, stroke=None, font=None, box=None, pad=(26, 14), radius=14, shadow=True):
-    """여러 줄 글 → 꽉 맞는 RGBA. 괄호 부분은 hi 색. box=(r,g,b,a) 이면 뒤에 상자."""
+def _emph_runs(line, base, hi, emph):
+    """emph(강조할 말 목록)에 든 부분만 hi 색, 나머지는 base 색 (대표 11/11 21:22 썸네일 강조)."""
+    runs, i = [], 0
+    while i < len(line):
+        hit = None
+        for e in emph:
+            j = line.find(e, i)
+            if j >= 0 and (hit is None or j < hit[0]): hit = (j, e)
+        if not hit: runs.append((line[i:], base)); break
+        if hit[0] > i: runs.append((line[i:hit[0]], base))
+        runs.append((hit[1], hi)); i = hit[0] + len(hit[1])
+    return runs
+
+def text_img(text, size, maxw, base=WH, hi=Y, stroke=None, font=None, box=None, pad=(26, 14), radius=14, shadow=True, emph=None):
+    """여러 줄 글 → 꽉 맞는 RGBA. 괄호 부분은 hi 색. emph=[말,...] 이면 그 말만 hi 색. box=(r,g,b,a) 이면 뒤에 상자."""
     font = font or FK; d0 = ImageDraw.Draw(Image.new("RGBA", (1, 1)))
     while size > 26:
         fo = F(font, size); lines = _wrap(d0, text, fo, maxw)
@@ -74,7 +87,7 @@ def text_img(text, size, maxw, base=WH, hi=Y, stroke=None, font=None, box=None, 
         im = Image.alpha_composite(im, sh.filter(ImageFilter.GaussianBlur(6))); d = ImageDraw.Draw(im)
     for i, l in enumerate(lines):
         x = (tw - widths[i]) / 2; y = pad[1] + sw + lh * i
-        for s, col in _paren_runs(l, base, hi):
+        for s, col in (_emph_runs(l, base, hi, emph) if emph else _paren_runs(l, base, hi)):
             d.text((x, y), s, font=fo, fill=col, stroke_width=sw, stroke_fill=BK); x += d.textlength(s, font=fo)
     return im
 
@@ -239,7 +252,7 @@ def outro_layers(W, H, end_frame_bgr, cfg):
 def thumb_v2(photo_rgb, cfg, size, out):
     """v2 썸네일(docs 표 근거): 실제 장면 한 장(밝게) + 실제로 한 말 한 줄을 큰따옴표로(① 자료09 제목 “천막 치울 수 있을까요?”)
     + 대비·반전 한 줄(② 이유1 갸루×시골 대비, ① 자료03 '1위보다 놀라운') + 시리즈 꼬리표 + 아래 작은 출처(① 자료15).
-    cfg: {"quote": 실제 대사(따옴표 없이), "hook": 대비 한 줄, "tag": 시리즈, "source": 출처, "test": 시험 표시}"""
+    cfg: {"quote": 실제 대사(따옴표 없이), "emph": 대사 안 강조할 말(노랑), "hook": 대비 한 줄, "tag": 시리즈, "source": 출처, "test": 시험 표시}"""
     W, H = size; img = ImageOps.fit(photo_rgb.convert("RGB"), (W, H), Image.LANCZOS, centering=(0.5, 0.4)).convert("RGBA")
     k = min(W, H) / 1080 if W < H else H / 720 * 0.72
     ov = Image.new("RGBA", (W, H), (0, 0, 0, 0)); o = ImageDraw.Draw(ov)
@@ -250,7 +263,8 @@ def thumb_v2(photo_rgb, cfg, size, out):
     if cfg.get("tag"):
         t = text_img(cfg["tag"], 40 * k * (1.15 if W > H else 1), W, base=WH, stroke=0, font=FB, box=(230, 30, 40, 240), shadow=False)
         img.alpha_composite(t, (int(30 * k), int(30 * k)))
-    q = "“" + cfg["quote"] + "”"; qi = text_img(q, (110 if W < H else 92) * k * (1.15 if W > H else 1), W * 0.92, base=WH, hi=Y)
+    em = cfg.get("emph"); em = [em] if isinstance(em, str) else em    # 강조할 말(예: "용인도 서울") → 노랑
+    q = "“" + cfg["quote"] + "”"; qi = text_img(q, (110 if W < H else 92) * k * (1.15 if W > H else 1), W * 0.92, base=WH, hi=Y, emph=em)
     hk = text_img(cfg.get("hook", ""), (78 if W < H else 64) * k * (1.15 if W > H else 1), W * 0.92, base=Y, hi=WH) if cfg.get("hook") else None
     yb = H - int(70 * k) - qi.height - (hk.height if hk else 0)
     if hk: img.alpha_composite(hk, ((W - hk.width) // 2, yb)); yb += hk.height

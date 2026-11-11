@@ -378,20 +378,69 @@ def xf(kind):
 def _STD():
     import v2_fx; return v2_fx.STD
 
-def mola_sub_png(text, path, style, pos=None):
-    """괄호 드립(bracket) · [상황 자막](situation, 왼쪽 위 상자) · 내레이션 자막(narr, 위 가운데). 원본 자막(화면 아래)을 가리지 않는 자리."""
-    import v2_fx
-    im = v2_fx.caption_img(text, style, W); full = Image.new("RGBA", (W, H), (0, 0, 0, 0))
-    if pos: x, y = int(pos[0] * W - im.width / 2), int(pos[1] * H - im.height / 2)
-    elif style == "situation": x, y = 40, 175          # 내레이션 자막(위 가운데) 아래
-    elif style == "narr": x, y = (W - im.width) // 2, 28
-    else: x, y = (W - im.width) // 2, int(H * 0.56)    # 원본 자막(화면 아래 0.8~0.95)을 가리지 않게
-    full.alpha_composite(im, (max(0, min(W - im.width, x)), max(0, min(H - im.height, y)))); full.save(path)
+# ---- v2.3 (대표 11/11 21:21): 위 자막은 얼굴을 피하고, 반응 말풍선은 원본 자막(화면 아래)을 피한다 ----
+ORIG_SUB_BAND = (0, int(H * 0.78), W, H - int(H * 0.78))   # 원본 영상 자막이 오는 아래 띠
+_FACE_CACHE = {}
+def faces_in(src, t0, t1):
+    """원본 src 의 t0~t1초 프레임 3장에서 얼굴(머리카락 포함 넓힘) 상자 목록, 출력 화면(W×H) 좌표."""
+    key = (src, round(t0, 2), round(t1, 2))
+    if key in _FACE_CACHE: return _FACE_CACHE[key]
+    boxes = []
+    try:
+        import cv2, numpy as np
+        fr_ = cv2.CascadeClassifier(cv2.data.haarcascades + "haarcascade_frontalface_default.xml")
+        pr_ = cv2.CascadeClassifier(cv2.data.haarcascades + "haarcascade_profileface.xml")
+        for t in (t0 + 0.05, (t0 + t1) / 2, max(t0, t1 - 0.1)):
+            r = subprocess.run(["ffmpeg", "-loglevel", "error", "-ss", f"{max(0, t):.3f}", "-i", src, "-frames:v", "1",
+                                "-vf", f"scale={W}:{H}", "-f", "image2pipe", "-vcodec", "png", "-"], capture_output=True)
+            if not r.stdout: continue
+            g = cv2.cvtColor(cv2.imdecode(np.frombuffer(r.stdout, np.uint8), cv2.IMREAD_COLOR), cv2.COLOR_BGR2GRAY)
+            found = list(fr_.detectMultiScale(g, 1.1, 5, minSize=(70, 70)))
+            found += list(pr_.detectMultiScale(g, 1.1, 5, minSize=(70, 70)))
+            found += [(W - x - w, y, w, h) for x, y, w, h in pr_.detectMultiScale(cv2.flip(g, 1), 1.1, 5, minSize=(70, 70))]
+            for x, y, w, h in found:   # 머리카락·이마까지: 위로 0.7h, 옆으로 0.35w 넓힘
+                boxes.append((int(x - 0.35 * w), int(y - 0.7 * h), int(1.7 * w), int(1.9 * h)))
+    except Exception as e:
+        print("얼굴 찾기 건너뜀:", e)
+    _FACE_CACHE[key] = boxes; return boxes
 
-def react_png(r, path):
+def _overlap(a, b):
+    ax, ay, aw, ah = a; bx, by, bw, bh = b
+    return max(0, min(ax + aw, bx + bw) - max(ax, bx)) * max(0, min(ay + ah, by + bh) - max(ay, by))
+
+def pick_spot(w, h, cands, avoid):
+    """후보 자리 중 피할 상자와 안 겹치는 첫 자리, 없으면 가장 덜 겹치는 자리."""
+    best = None
+    for x, y in cands:
+        x = max(0, min(W - w, int(x))); y = max(0, min(H - h, int(y)))
+        ov = sum(_overlap((x, y, w, h), b) for b in avoid)
+        if ov == 0: return x, y
+        if best is None or ov < best[0]: best = (ov, x, y)
+    return best[1], best[2]
+
+def mola_sub_png(text, path, style, pos=None, faces=None):
+    """괄호 드립(bracket) · [상황 자막](situation) · 내레이션 자막(narr, 위). 위 자막은 얼굴을 피해 자리 잡고, 원본 자막(아래 띠)은 가리지 않음."""
     import v2_fx
-    im = v2_fx.react_img(r.get("text", ""), r.get("name", "동네 형"), W); full = Image.new("RGBA", (W, H), (0, 0, 0, 0))
-    full.alpha_composite(im, (W - im.width - 40, H - im.height - 110)); full.save(path)
+    im = v2_fx.caption_img(text, style, W); full = Image.new("RGBA", (W, H), (0, 0, 0, 0)); w, h = im.width, im.height
+    faces = faces or []
+    if pos: x, y = int(pos[0] * W - w / 2), int(pos[1] * H - h / 2)
+    elif style in ("narr", "situation"):
+        top = 28 if style == "narr" else 175
+        cands = [((W - w) // 2, top), (40, top), (W - w - 40, top),            # 위 가운데 → 위 왼쪽 → 위 오른쪽
+                 (40, int(H * 0.60)), (W - w - 40, int(H * 0.60)),          # 얼굴이 위를 다 차지하면 가운데 아래 양옆
+                 ((W - w) // 2, int(H * 0.66))]
+        x, y = pick_spot(w, h, cands, faces + [ORIG_SUB_BAND])
+    else: x, y = (W - w) // 2, int(H * 0.56)    # 원본 자막(화면 아래 0.8~0.95)을 가리지 않게
+    full.alpha_composite(im, (max(0, min(W - w, x)), max(0, min(H - h, y)))); full.save(path)
+
+def react_png(r, path, faces=None):
+    """동네 형 반응 말풍선: 원본 영상 자막(아래 띠)을 가리지 않게 그 위로, 얼굴도 피함(오른쪽 → 왼쪽 → 오른쪽 위)."""
+    import v2_fx
+    im = v2_fx.react_img(r.get("text", ""), r.get("name", "동네 형"), W); full = Image.new("RGBA", (W, H), (0, 0, 0, 0)); w, h = im.width, im.height
+    bot = ORIG_SUB_BAND[1] - 12
+    cands = [(W - w - 40, bot - h), (40, bot - h), (W - w - 40, 150), (40, 150)]
+    x, y = pick_spot(w, h, cands, (faces or []) + [ORIG_SUB_BAND])
+    full.alpha_composite(im, (x, y)); full.save(path)
 
 def zoom_filter(zooms):
     """크래시 줌(zoompan, 프레임마다): at 에서 ramp(0.15)초 급확대 → hold 초 유지 → 원래대로."""
@@ -427,6 +476,8 @@ def render_scene(sg, sc, base, tmp, tag, comp):
         nonlocal k; inputs.extend(args); k += 1; return k - 1
     def loopimg(p, t): return add(["-loop", "1", "-framerate", str(FPS), "-t", f"{t:.3f}", "-i", p])
     pre = f"fps={FPS},trim=start={L:.4f},setpts=PTS-STARTPTS,tpad=stop_mode=clone:stop_duration=2,setsar=1"
+    face_ok = (not is_img) and lay not in ("vertical", "split", "blur")   # 원본이 화면 전체(16:9)일 때만 얼굴 좌표가 맞음
+    if is_img: src = None
     blur = "scale=480:270:force_original_aspect_ratio=increase,crop=480:270,boxblur=10:2,scale=1920:1080,eq=brightness=-0.13:saturation=1.1"
     fl = []
     if is_img:
@@ -476,10 +527,12 @@ def render_scene(sg, sc, base, tmp, tag, comp):
             fl.append(f"[{i}:v]format=rgba,tpad=stop_mode=clone:stop_duration={max(0.1, s[1] - s[0]):.3f},setpts=PTS+{s[0]:.3f}/TB[fx{j}]")
             ov.append((f"fx{j}", s[0], s[1])); occ.append((s[0], s[1], pat % (round(0.3 * FPS) - 1)))
         elif st in ("bracket", "situation", "narr"):   # v2.2 몰아보기 자막
-            mola_sub_png(s[2], p, st, s[4] if len(s) > 4 else None); ov.append((add(["-i", p]), s[0], s[1])); occ.append((s[0], s[1], p))
+            fc = faces_in(src, sc["in"] + s[0], sc["in"] + s[1]) if (face_ok and st in ("narr", "situation")) else []
+            mola_sub_png(s[2], p, st, s[4] if len(s) > 4 else None, fc); ov.append((add(["-i", p]), s[0], s[1])); occ.append((s[0], s[1], p))
         else: sub_png(s[2], p, st); ov.append((add(["-i", p]), s[0], s[1])); occ.append((s[0], s[1], p))
     for j, r_ in enumerate(sc.get("reacts", [])):      # v2.2 동네 형 반응 말풍선(오른쪽 아래)
-        p = os.path.join(tmp, f"{tag}_r{j}.png"); react_png(r_, p); a_ = r_["at"]; b_ = a_ + r_.get("sec", 3)
+        a_ = r_["at"]; b_ = a_ + r_.get("sec", 3); p = os.path.join(tmp, f"{tag}_r{j}.png")
+        react_png(r_, p, faces_in(src, sc["in"] + a_, sc["in"] + b_) if face_ok else [])
         ov.append((add(["-i", p]), a_, b_)); occ.append((a_, b_, p))
     if sc.get("credit"):                               # 출처: 오른쪽 아래 구석, 장면 내내
         p = os.path.join(tmp, f"{tag}_cr.png"); credit_png(sc["credit"], p); ov.append((add(["-i", p]), 0, D + 1)); occ.append((0, D + 1, p))
