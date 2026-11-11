@@ -207,9 +207,9 @@
     }
   },
   "thumb": {
-    "quote": "부담을 많이 가지고 준비했는데",
-    "emph": "부담",
-    "hook": "(이틀 연속 1위에 첫 콘서트까지)",
+    "hook": "이틀 연속 1위\n그날 밤 첫 단독 콘서트",
+    "emph": "이틀 연속",
+    "quote": "",
     "tag": "리센느 「With」",
     "frame": {
       "file": "/mnt/user-data/uploads/with2win/C_showchamp_encore_261111.mp4",
@@ -243,7 +243,7 @@
     }
   },
   "thumb_B": {
-    "hook": "이틀 연속 1위, 그날 밤 첫 단독 콘서트",
+    "hook": "이틀 연속 1위\n그날 밤 첫 단독 콘서트",
     "emph": "이틀 연속",
     "quote": "",
     "tag": "리센느 「With」",
