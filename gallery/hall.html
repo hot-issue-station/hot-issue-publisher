@@ -125,6 +125,7 @@ body[data-view=outside]:not(.flat) .top{background:linear-gradient(rgba(255,255,
 .side{position:fixed;right:16px;top:calc(124px + env(safe-area-inset-top));z-index:5;display:flex;flex-direction:column;gap:8px}
 .side button{border:1px solid var(--line);background:rgba(255,250,242,.94);border-radius:14px;padding:7px 10px;font-size:12px;min-height:38px;box-shadow:0 2px 8px rgba(40,25,10,.1)}
 body.flat .side .mode{display:none}
+body.flat .side{top:auto;bottom:calc(60px + env(safe-area-inset-bottom))}
 
 .enterBtn{position:fixed;left:50%;bottom:calc(70px + env(safe-area-inset-bottom));transform:translateX(-50%);z-index:6;border:0;
   background:var(--ink);color:#fff;font-weight:700;font-size:17px;padding:14px 34px;border-radius:999px;box-shadow:var(--shadow);display:none}
@@ -932,7 +933,7 @@ function start(THREE){
       blockers.push({c:[2.2,2.4,0.55]});
     }
     const first=angles[doors.findIndex(d=>d.open)] ?? 0;
-    return {scene:s, clickables, relabel, spots, cam:{pos:[0,1.7,3.4], yaw:-first*0.35, pitch:0.12, zoom:1.18},
+    return {scene:s, clickables, relabel, spots, cam:{pos:[0,1.7,3.4], yaw:-first*0.35, pitch:0.0, zoom:1.12},
       walk:{spawn:[0,R-1.8,0], free:(x,z)=>Math.hypot(x,z)<R-0.75 && !inCircles(x,z,blockers), camDist:2.8, camH:1.9, clampR:R-0.25}};
   }
   function buildLobby(){
