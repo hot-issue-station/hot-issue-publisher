@@ -36,6 +36,13 @@ def frame_png():   # 위·아래 고정 띠(배경 + 시리즈 이름)
     d.rounded_rectangle([(W - w) / 2 - 22, 36, (W + w) / 2 + 22, 86], 14, fill=(150, 80, 230)); d.text(((W - w) / 2, 40), t, font=f, fill="white")
     f2 = font(FM, 34); text_center(d, VT + VH + 40, "duksim-gallery.pages.dev", f2, "#FFD640", 0)
     f3 = font(FM, 24); text_center(d, VT + VH + 96, "영상·사진은 유튜브·인스타 공식 원본 그대로", f3, "#cfc6ea", 0)
+    # 대표 11/12 04:47: 오른쪽 아래 「갤러리 놀러가기 → 프로필 링크」 표시(영상 속 버튼은 눌리지 않으므로 프로필 링크로 안내)
+    fb = font(FB, 34); fs = font(FM, 24); t1 = "💜 갤러리 놀러가기"; t1 = "갤러리 놀러가기"; t2 = "프로필 링크에서 바로 →"
+    bw = max(d.textlength(t1, font=fb), d.textlength(t2, font=fs)) + 70; bh = 104; x1 = W - 28; x0 = x1 - bw; y1 = VT + VH - 24; y0 = y1 - bh
+    d.rounded_rectangle([x0 + 4, y0 + 6, x1 + 4, y1 + 6], 26, fill=(0, 0, 0, 90))
+    d.rounded_rectangle([x0, y0, x1, y1], 26, fill=(150, 80, 230, 245), outline=(255, 214, 64, 255), width=4)
+    hx = x0 + 30; hy = y0 + 30; d.ellipse([hx - 11, hy - 8, hx + 1, hy + 4], fill="#FFD640"); d.ellipse([hx - 1, hy - 8, hx + 11, hy + 4], fill="#FFD640"); d.polygon([(hx - 11, hy), (hx + 11, hy), (hx, hy + 13)], fill="#FFD640")
+    d.text((x0 + 50, y0 + 10), t1, font=fb, fill="white"); d.text((x0 + 50, y0 + 60), t2, font=fs, fill="#FFE9A0")
     im.save("frame.png")
 
 def cap_png(i, ko, ja, col):
