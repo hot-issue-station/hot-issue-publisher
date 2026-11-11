@@ -228,8 +228,8 @@ details.card>summary{list-style:none;cursor:pointer}details.card>summary::-webki
   </div>
   <div id="bkNewBox" class="hide">
     <label>이름</label><input id="bkN">
-    <label>전화번호</label><input id="bkP" type="tel" placeholder="010-">
-    <label style="font-weight:400"><input type="checkbox" id="bkAgree" style="width:auto"> 손님이 연락처 보관에 동의했어요</label>
+    <label>전화번호 (선택)</label><input id="bkP" type="tel" placeholder="010-">
+    <label style="font-weight:400"><input type="checkbox" id="bkAgree" style="width:auto"> 손님이 연락처 보관에 동의했어요 <span class="d">(번호를 적을 때만)</span></label>
     <button class="chip" style="margin-top:8px" onclick="bkNewMode(false)">← 있는 손님에서 찾기</button>
   </div>
   <label>날짜</label>
@@ -548,13 +548,23 @@ function bkRow(b){ const c=db.c.find(x=>x.id===b.cid)||{n:"(지운 손님)",p:""
   return `<div class="bk ${b.done?'done':''}" onclick="bkOpen('${b.id}')"><div class="tm">${esc(b.tm||"--:--")}</div><div class="who"><b>${esc(c.n)}</b><small>${esc(b.t||"시술 미정")}${b.m?` · ${esc(b.m)}`:""}${b.done?" · 다녀가심 ✓":b.sent?" · 알림 보냄 ✓":""}</small></div><span>›</span></div>` }
 const bkOn=d=>db.bk.filter(b=>b.d===d).sort((a,b)=>(a.tm||"").localeCompare(b.tm||""));
 function drawBkBox(){
-  if(!F("bk")){ $("bkBox").innerHTML=""; return }
-  const t=today(), tm=addDay(t,1), a=bkOn(t), b=bkOn(tm), need=b.filter(x=>!x.done&&!x.sent&&(db.c.find(c=>c.id===x.cid)||{}).p);
-  $("bkBox").innerHTML=`<h2 style="margin-top:6px">오늘 예약 <span class="d">${fmtD(t)}</span></h2>${a.map(bkRow).join("")||`<p class="note" style="margin-top:4px">오늘 예약이 없어요.</p>`}
-   <h2>내일 예약 <span class="d">${fmtD(tm)}</span></h2>${b.map(bkRow).join("")||`<p class="note" style="margin-top:4px">내일 예약이 없어요.</p>`}
-   ${b.length?`<button class="big sms" id="tmrBtn" onclick="bkRemind()">📩 내일 예약 알림 문자 보내기 ${need.length?`(${need.length}명)`:"(모두 보냄 ✓)"}</button>`:""}
-   <div class="row2"><button class="big" onclick="bkStart({})">+ 예약 추가</button><button class="big ghost" onclick="wkOff=0;go('week')">📅 주간 달력</button></div>`;
+  if(!F("bk")){ ["bkToday","bkFree","bkTmr"].forEach(i=>$(i).innerHTML=""); return }
+  const t=today(), tm=addDay(t,1), a=bkOn(t), b=bkOn(tm), need=b.filter(x=>!x.done&&!x.sent&&(db.c.find(c=>c.id===x.cid)||{}).p), res=isRes();
+  const btns=`<div class="row2"><button class="big" onclick="bkStart({})">+ 예약 추가</button><button class="big ghost" onclick="wkOff=0;go('week')">📅 주간 달력</button></div>`;
+  $("bkToday").innerHTML=`<h2 style="margin-top:6px">오늘 예약 <span class="d">${fmtD(t)}</span></h2>${a.map(bkRow).join("")||`<p class="note" style="margin-top:4px">오늘 예약이 없어요.</p>`}${res?btns:""}`;
+  $("bkTmr").innerHTML=`<h2>내일 예약 <span class="d">${fmtD(tm)}</span></h2>${b.map(bkRow).join("")||`<p class="note" style="margin-top:4px">내일 예약이 없어요.</p>`}
+   ${b.length?`<button class="big sms" id="tmrBtn" onclick="bkRemind()">📩 내일 예약 알림 문자 보내기 ${need.length?`(${need.length}명)`:"(모두 보냄 ✓)"}</button>`:""}${res?"":btns}`;
+  /* 빈 시간: 예약 중심 업종만 */
+  if(!res){ $("bkFree").innerHTML=""; return }
+  let d=t, fr=freeSlots(t), lab="오늘 빈 시간"; if(!fr.length){ d=tm; fr=freeSlots(tm); lab="오늘은 남은 빈 시간이 없어요 · 내일 빈 시간" }
+  $("bkFree").innerHTML=`<h2>${lab}</h2><p class="note" style="margin-top:0">${esc(hrs().o)}~${esc(hrs().c)} 중 예약이 없는 1시간 칸이에요. 누르면 그 시간으로 예약을 잡아요.</p><div class="chips" id="freeChips">${fr.map(s=>`<button class="chip slot" onclick="bkStart({d:'${d}',tm:'${s}'})">${fmtT(s).replace("오전 ","오전 ").replace("오후 ","오후 ")}</button>`).join("")||`<span class="note">빈 시간이 없어요.</span>`}</div>`;
 }
+/* 영업시간(예약 중심 업종의 빈 시간 계산용, 설정에서 바꿈) */
+const hrs=()=>Object.assign({o:"10:00",c:"20:00"},db.hrs||{});
+const toMin=t=>{ const [a,b]=String(t||"0:0").split(":").map(Number); return a*60+(b||0) };
+function freeSlots(d){ const h=hrs(), busy=bkOn(d).filter(b=>b.tm&&!b.cancel).map(b=>toMin(b.tm)), now=new Date(), nowM=d===today()?now.getHours()*60+now.getMinutes():-1, out=[];
+  for(let m=toMin(h.o); m+60<=toMin(h.c); m+=60){ if(m<nowM) continue; if(busy.some(b=>b<m+60&&b+60>m)) continue; out.push(`${p2(Math.floor(m/60))}:${p2(m%60)}`) }
+  return out }
 const REMIND="{이름} 님, 안녕하세요. {가게}입니다. 내일 {날짜} {시각} 예약 잊지 않으셨죠? 시간 바꾸실 일 있으면 편하게 연락 주세요 :)";
 function bkRemind(){ const tm=addDay(today(),1);
   const items=bkOn(tm).filter(b=>!b.done).map(b=>({c:db.c.find(c=>c.id===b.cid),b})).filter(x=>x.c);
@@ -578,8 +588,8 @@ function newCustId(k){ return (Date.now()+(k||0)).toString(36) }
 function saveBk(){ const d=bkDraft; let c=d.cid&&db.c.find(x=>x.id===d.cid);
   if(!c&&d.nw){ const n=$("bkN").value.trim(), p=$("bkP").value.trim();
     if(!n) return alert("손님 이름을 적어 주세요");
-    if(!$("bkAgree").checked) return alert("손님 동의를 받은 뒤 체크해 주세요");
-    const same=p&&db.c.find(x=>digits(x.p)===digits(p));
+    if(p&&!$("bkAgree").checked) return alert("전화번호를 적으셨어요. 손님 동의를 받은 뒤 체크해 주세요");
+    const same=p&&db.c.find(x=>x.p&&digits(x.p)===digits(p));
     c=same||{id:newCustId(),n,p,m:"",r:[]}; if(!same) db.c.push(c) }
   if(!c) return alert("손님을 골라 주세요");
   const dd=$("bkD").value, tm=$("bkT").value; if(!dd) return alert("날짜를 골라 주세요"); if(!tm) return alert("시각을 골라 주세요");
