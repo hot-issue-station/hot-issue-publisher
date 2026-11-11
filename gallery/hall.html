@@ -47,6 +47,7 @@ const HALLS = [
       { id:"tv", name:{ko:"TV 예능", ja:"地上波バラエティ", en:"TV Shows", zh:"電視綜藝"}, decor:"studio", color:"#5bb6e6", videos:[] },
       { id:"youtube_guest", name:{ko:"유튜브 출연", ja:"YouTube出演", en:"YouTube Guest", zh:"YouTube 客串"}, decor:"youtube", color:"#ee7d7d", videos:[] },
       { id:"daily", name:{ko:"멤버들의 일상", ja:"メンバーの日常", en:"Daily Life", zh:"成員日常"}, decor:"daily", color:"#7fc796", videos:[] },
+      { id:"secret", name:{ko:"비밀의 방", ja:"秘密の部屋", en:"Secret Room", zh:"秘密房間"}, decor:"stage", color:"#ffd640", hidden:true, videos:[] },
       { id:"birthday", name:{ko:"생일 이벤트", ja:"誕生日イベント", en:"Birthday", zh:"生日活動"}, decor:"birthday", color:"#a8c8ec",
         theme:{ member:"리브", memberEn:"LIV", color:"#a8c8ec", accent:"#c9b8f0", title:"리브 생일카페", date:"" },
         videos:[],
@@ -59,6 +60,7 @@ const HALLS = [
         ],
         goods:[] },   // 굿즈 진열대(나중에 추천 상품 자판기와 연결) — {name, price, url}
     ]},
+  /* 비밀의 방: 관을 클리어하면 나타난다(hidden). 액자는 MISSIONS 보상 영상 + 여기 videos. 공식 채널에 공개된 영상의 임베드만, 비공개·유출 영상 금지 */
   { id:"hall2", name:{ko:"2관", ja:"第2館", en:"Hall 2", zh:"第2館"}, color:"#f3bfa0", open:false, rooms:[] },
   { id:"hall3", name:{ko:"3관", ja:"第3館", en:"Hall 3", zh:"第3館"}, color:"#a9dcb8", open:false, rooms:[] },
   { id:"hall4", name:{ko:"4관", ja:"第4館", en:"Hall 4", zh:"第4館"}, color:"#f0d27e", open:false, rooms:[] },
@@ -89,6 +91,13 @@ const MISSIONS = [
          STATS_FIREBASE.record/get 을 Firestore 증가(increment) 코드로 채운다. null이면 꺼져 있다. */
 const FIREBASE_CONFIG = null;
 
+/* 진행(게임 클리어 방식). 방 순서대로: 처음엔 openAtStart개만 열리고, 한 방에서 영상 need편을 '시청 완료'하면 다음 방 문이 열린다.
+   관의 방을 모두 클리어하면 비밀의 방이 열리고, 로비의 nextHall 문에 「클리어 보상: 먼저 열림」 표시.
+   시청 완료 = 유튜브 IFrame Player API로 watchSeconds초 이상 재생 또는 끝까지(쇼츠는 끝까지). API를 못 쓰면 패널을 fallbackSeconds초 열어 두면 인정.
+   enabled:false → 전체 잠금 해제(운영용). 방마다 need를 바꾸려면 need:{방id: 편수} */
+const PROGRESS = { enabled:true, hall:"rescene", order:["stage","anwonjalbu","tv","youtube_guest","daily","birthday"],
+  openAtStart:2, need:{ default:3 }, watchSeconds:30, fallbackSeconds:20, nextHall:"hall2", secretRoom:"secret" };
+
 /* 광고 자리. 이미지(https)와 링크만 넣으면 그 칸에 걸린다(누르면 새 탭, rel="sponsored noopener"). 광고에는 항상 「광고」 표시.
    place: screen_top(화면 맨 위 띠) | panel_bottom(영상 패널 아래) | street_billboard(건물 밖 전광판) | lobby_billboard(로비 전광판)
           | lobby_top · hall_top · room_top (벽 위쪽 지하철식 광고판 줄 — 칸 번호 _1, _2 …. 적지 않은 칸은 「광고 자리」 판이 보인다)
@@ -112,8 +121,29 @@ const SHOPS = [
   {id:"musinsa",    name:"무신사",    hosts:["musinsa.com"],      note:"이 링크로 구매하면 덕심저장소가 무신사 제휴 활동에 따른 일정액의 수수료를 받을 수 있어요."},     // TODO
   {id:"ohou",       name:"오늘의집",  hosts:["ohou.se"],          note:"이 링크로 구매하면 덕심저장소가 오늘의집 제휴 활동에 따른 일정액의 수수료를 받을 수 있어요."},   // TODO
 ];
-/* 상품: {name, price, url, shop, hall, room} — room 칸의 진열대와 그 방 영상 패널 아래에 함께 보인다. 링크는 직접 열어 확인한 것만 */
+/* 상품. 링크는 직접 열어 확인한 것만.
+   {name, price, url, shop, hall?, room?, group?, category?, color?, image:null, image_alt?, image_credit?, seller?, badge?}
+   - hall·room  → 그 방의 추천 상점 진열대와 영상 패널 아래 「함께 보면 좋은 것」
+   - group·category → 로비 「굿즈 샵」의 해당 아이돌·구역 진열대(사진 없이 우리가 그린 모양으로 형상화)
+   - image: 비워 둔다. TODO: 제휴사가 공식 제공하는 상품 이미지 API를 승인받으면 연결.
+            입점 판매자가 권리를 가진 이미지를 주면 사용 가능 — 그때 image_alt와 image_credit(출처) 필수
+   - seller:true, badge:"입점" → 입점 판매자 상품(「입점」 꼬리표 + 판매자 책임 안내) */
 const PRODUCTS = [];
+/* 굿즈 샵: 아이돌 고르기 → 구역 6개 진열대. 클리어와 무관하게 늘 열려 있음 */
+const SHOP_GROUPS = [
+  {id:"rescene", name:{ko:"리센느", ja:"RESCENE", en:"RESCENE", zh:"RESCENE"}, color:"#9db8e8", open:true},
+  {id:"more",    name:{ko:"다른 아이돌", ja:"ほかのアイドル", en:"More idols", zh:"其他偶像"}, color:"#d9d2c6", open:false},
+];
+const SHOP_CATEGORIES = [
+  {id:"album",      shape:"album",    name:{ko:"앨범", ja:"アルバム", en:"Albums", zh:"專輯"}},
+  {id:"photocard",  shape:"card",     name:{ko:"포토카드", ja:"フォトカード", en:"Photocards", zh:"小卡"}},
+  {id:"lightstick", shape:"stick",    name:{ko:"응원봉", ja:"ペンライト", en:"Light sticks", zh:"應援棒"}},
+  {id:"season",     shape:"calendar", name:{ko:"시즌 그리팅·달력", ja:"シーズングリーティング・カレンダー", en:"Season's greetings · calendars", zh:"季節問候・年曆"}},
+  {id:"apparel",    shape:"tshirt",   name:{ko:"의류·잡화", ja:"アパレル・雑貨", en:"Apparel & goods", zh:"服飾・雜貨"}},
+  {id:"endorse",    shape:"bottle",   name:{ko:"광고 제품", ja:"広告モデル商品", en:"Endorsed products", zh:"代言商品"}},   // 멤버가 모델인 제품
+];
+/* 입점 문의: form_url = 대표가 만든 구글 설문지 주소. 메일 주소는 화면·코드 어디에도 넣지 않는다 */
+const SELLER_CONTACT = { text:"입점 문의하기", form_url:null };
 const THREE_VERSION = "0.186.1"; // importmap 주소와 같이 바꿀 것
 </script>
 <script type="importmap">
@@ -148,6 +178,11 @@ body[data-view=outside]:not(.flat) .top{background:linear-gradient(rgba(255,255,
 .langSel{flex:none;border:1px solid var(--line);background:var(--paper);border-radius:999px;padding:7px 10px;font-size:13px;min-height:36px}
 .crumbs{display:flex;gap:8px;margin-top:10px;overflow-x:auto;scrollbar-width:none}
 .crumbs:empty{display:none}
+.prog{display:none;align-items:center;gap:8px;margin-top:8px;font-size:12px;color:var(--sub)}
+body[data-view=hub] .prog.on,body[data-view=room] .prog.on{display:flex}
+.prog i{flex:1;height:8px;border-radius:8px;background:#e9e0d1;overflow:hidden;max-width:180px}
+.prog i b{display:block;height:100%;background:linear-gradient(90deg,var(--y),var(--r));border-radius:8px;transition:width .6s}
+.crumbs .lockr{color:var(--sub)}
 .crumbs button{flex:none;border:1px solid var(--line);background:var(--paper);border-radius:999px;padding:8px 14px;font-size:14px;min-height:38px}
 .crumbs .back{background:var(--ink);color:#fff;border-color:var(--ink);font-weight:700}
 .crumbs .on{background:var(--theme);border-color:var(--theme);font-weight:700}
@@ -213,6 +248,11 @@ body.walk:not(.flat) .joy{display:block}
 .petIntro{margin:8px 2px 0;font-size:12px;color:var(--sub);line-height:1.5;min-height:18px}
 .contactBtn{display:block;width:100%;margin-top:14px;border:0;background:var(--ink);color:#fff;font-weight:700;font-size:15px;padding:13px;border-radius:999px}
 .contactNote{margin:8px 0 0;font-size:11px;color:var(--sub);text-align:center}
+.badges{display:flex;gap:6px;margin-top:8px}.badges b{background:var(--ink);color:#fff;border-radius:4px;padding:2px 6px;font-size:11px}.badges b.sel{background:var(--r)}
+a.contactBtn{text-align:center;text-decoration:none}a.contactBtn[aria-disabled=true]{opacity:.45;pointer-events:none}
+.prodImg{width:100%;max-height:46vh;object-fit:contain;background:#fff;border-radius:12px}
+.idols{display:grid;gap:8px;margin-top:12px}.idols button{border:1px solid var(--line);background:#fff;border-radius:14px;padding:14px;font-size:16px;font-weight:700;text-align:left}
+.idols button[disabled]{opacity:.5}
 .petTabs button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
 .chars{display:grid;grid-template-columns:repeat(auto-fit,minmax(60px,1fr));gap:6px}
 .chars button{border:1px solid var(--line);background:#fff;border-radius:14px;padding:8px 2px 6px;font-size:11px;line-height:1.25;display:flex;flex-direction:column;align-items:center;gap:4px;min-height:92px;word-break:keep-all}
@@ -255,7 +295,7 @@ body.walk:not(.flat) .joy{display:block}
 .choices{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}
 .choices button{border:1px solid var(--line);background:#fff;border-radius:12px;padding:12px;font-size:16px;font-weight:700}
 .list{margin:12px 0 0;padding:0;list-style:none}
-.list li{display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid var(--line);padding:10px 2px;font-size:14px}
+.list li{display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 10px;border-bottom:1px solid var(--line);padding:10px 2px;font-size:14px}
 .list li small{color:var(--sub)}
 .picks{margin-top:16px;border-top:1px solid var(--line);padding-top:12px}
 .picks[hidden]{display:none}
@@ -307,6 +347,7 @@ body.flat #stage,body.flat .turn,body.flat .hint,body.flat .joy{display:none}
     </select>
   </div>
   <nav class="crumbs" id="crumbs"></nav>
+  <div class="prog" id="prog"><i><b id="progBar"></b></i><span id="progText"></span></div>
 </header>
 <div class="side"><button id="colBtn" data-t="collection"></button><button class="mode" id="modeBtn"></button></div>
 
@@ -355,7 +396,7 @@ body.flat #stage,body.flat .turn,body.flat .hint,body.flat .joy{display:none}
 <script>
 /* ---------- 화면 문구 4개 언어 (영상 제목·설명은 한국어 그대로) ---------- */
 const I18N = {
-  ko:{gallery:"덕심저장소 갤러리", adSpace:"광고 자리", adSoon:"이 자리에 광고가 들어갈 예정이에요", contactTitle:"광고 문의", contactBtn:"광고 문의하기", contactSoon:"문의 창 준비 중이에요", contactNote:"남겨 주신 정보는 광고 상담에만 쓰여요", contactDesc:"덕심저장소 미술관의 전광판·광고판 자리에 광고를 걸어 보세요. 아래 버튼으로 문의를 남겨 주시면 연락드릴게요.", bContact:"광고 문의하기", bs1:"이 자리에 광고를 걸어 보세요", bs1b:"광고 문의 환영 · 누르면 「광고 문의하기」", bs2:"덕심저장소", bs2b:"구독하고 다음 전시를 먼저 만나요", bs3:"이번 주 새 전시", bs3b:"새로 걸린 날: {d}", culture:"한국 문화 코너", cultureSoon:"곧 열려요", bCulture:"한국 문화 코너 · 곧 열려요", lobbySub:"Duksim Archive Gallery · トクシム保管庫ギャラリー · Duksim 典藏藝廊", subOut:"3D 미술관 시험판", subLobby:"로비 · 관을 골라 주세요", subHub:"관 홀 · 방을 골라 주세요",
+  ko:{gallery:"덕심저장소 갤러리", shop:"굿즈 샵", shopOf:"{g} 굿즈 샵", shopSub:"구역을 둘러보고 상품을 눌러 보세요", pickIdol:"아이돌을 골라 주세요", zoneSoon:"곧 들어와요", itemsN:"상품 {n}개", sellerSlot:"입점 자리 · 판매자 모집", sellerBtn:"입점 문의하기", sellerTitle:"입점 문의", sellerDesc:"덕심저장소 굿즈 샵에 상품을 입점해 보세요. 아래 버튼으로 문의를 남겨 주시면 연락드릴게요.", sellerResp:"입점 판매자 상품이에요. 판매·배송·교환은 판매자가 책임져요.", sellerBadge:"입점", goBuy:"보러 가기", noLink:"링크 준비 중", bProduct:"상품 보기", bSeller:"입점 문의하기", hintShop:"끌어서 둘러보고, 진열대를 누르면 상품이 나와요", imgCredit:"이미지 출처", progLabel:"클리어 {a}/{b}", roomProg:"이 방 {s} ({a}/{b})", lockedLeft:"🔒 {n}편 더", lockedRoom:"「{room}」 방에서 영상 {n}편 더 보면 열려요", watchedOk:"시청 완료! {s}", roomClear:"방 클리어! 다음 방이 열렸어요!", roomClearLast:"방 클리어!", nextOpened:"다음 방이 열렸어요!", hallClear:"🎉 {hall} 클리어! 비밀의 방이 열렸어요", clearReward:"클리어 보상: 먼저 열림", colClear:"{hall} 클리어 {a}/{b}", adSpace:"광고 자리", adSoon:"이 자리에 광고가 들어갈 예정이에요", contactTitle:"광고 문의", contactBtn:"광고 문의하기", contactSoon:"문의 창 준비 중이에요", contactNote:"남겨 주신 정보는 광고 상담에만 쓰여요", contactDesc:"덕심저장소 미술관의 전광판·광고판 자리에 광고를 걸어 보세요. 아래 버튼으로 문의를 남겨 주시면 연락드릴게요.", bContact:"광고 문의하기", bs1:"이 자리에 광고를 걸어 보세요", bs1b:"광고 문의 환영 · 누르면 「광고 문의하기」", bs2:"덕심저장소", bs2b:"구독하고 다음 전시를 먼저 만나요", bs3:"이번 주 새 전시", bs3b:"새로 걸린 날: {d}", culture:"한국 문화 코너", cultureSoon:"곧 열려요", bCulture:"한국 문화 코너 · 곧 열려요", lobbySub:"Duksim Archive Gallery · トクシム保管庫ギャラリー · Duksim 典藏藝廊", subOut:"3D 미술관 시험판", subLobby:"로비 · 관을 골라 주세요", subHub:"관 홀 · 방을 골라 주세요",
       loading:"미술관 문을 여는 중…", enter:"들어가기", toLobby:"로비로", toHub:"관 홀로", exit:"밖으로",
       hintOut:"「들어가기」를 누르면 계단을 올라 안으로 들어가요", hintOutWalk:"조이스틱으로 걸어서 입구까지 가 보세요",
       hintLobby:"끌어서 둘러보고, 문을 누르면 관으로 들어가요", hintHub:"문을 누르면 방으로 들어가요",
@@ -380,7 +421,7 @@ const I18N = {
       rewardSoon:"보상 영상은 곧 채워져요", secret:"비밀 액자", quizWrong:"아쉬워요, 다시 골라 볼까요?",
       like:"추천해요 👍", liked:"추천했어요 👍", likesN:"이 기기 추천 {n} · 열람 {v}", newTag:"새로 걸림",
       slowSuggest:"화면이 조금 느려요. 빠른 모드로 바꿀까요?", switchQuick:"빠른 모드로", modeWalk:"🚶 걷기", modeQuick:"⚡ 빠른"},
-  ja:{gallery:"トクシム保管庫ギャラリー", adSpace:"広告スペース", adSoon:"ここに広告が入る予定です", contactTitle:"広告のお問い合わせ", contactBtn:"広告について問い合わせる", contactSoon:"お問い合わせ窓口は準備中です", contactNote:"いただいた情報は広告のご相談にのみ使用します", contactDesc:"トクシム保管庫ミュージアムの電光掲示板・広告スペースに広告を掲載できます。下のボタンからお問い合わせください。", bContact:"広告のお問い合わせ", bs1:"ここに広告を出してみませんか", bs1b:"広告のお問い合わせ歓迎 · タップでお問い合わせ", bs2:"トクシム保管庫", bs2b:"登録して次の展示をいち早くチェック", bs3:"今週の新しい展示", bs3b:"展示日: {d}", culture:"韓国文化コーナー", cultureSoon:"まもなくオープン", bCulture:"韓国文化コーナー · まもなくオープン", lobbySub:"トクシム保管庫ギャラリー · Duksim Archive Gallery · Duksim 典藏藝廊", subOut:"3Dミュージアム(テスト版)", subLobby:"ロビー・館を選んでください", subHub:"館ホール・部屋を選んでください",
+  ja:{gallery:"トクシム保管庫ギャラリー", shop:"グッズショップ", shopOf:"{g} グッズショップ", shopSub:"コーナーを見て回り、商品をタップしてください", pickIdol:"アイドルを選んでください", zoneSoon:"まもなく入荷", itemsN:"商品{n}点", sellerSlot:"出店スペース・出店者募集", sellerBtn:"出店について問い合わせる", sellerTitle:"出店のお問い合わせ", sellerDesc:"トクシム保管庫グッズショップに出店しませんか。下のボタンからお問い合わせください。", sellerResp:"出店者の商品です。販売・配送・交換は出店者の責任で行われます。", sellerBadge:"出店", goBuy:"見に行く", noLink:"リンク準備中", bProduct:"商品を見る", bSeller:"出店のお問い合わせ", hintShop:"ドラッグで見回し、棚をタップすると商品が見られます", imgCredit:"画像提供", progLabel:"クリア {a}/{b}", roomProg:"この部屋 {s} ({a}/{b})", lockedLeft:"🔒 あと{n}本", lockedRoom:"「{room}」で動画をあと{n}本見ると開きます", watchedOk:"視聴完了!{s}", roomClear:"部屋クリア!次の部屋が開きました!", roomClearLast:"部屋クリア!", nextOpened:"次の部屋が開きました!", hallClear:"🎉 {hall}クリア!秘密の部屋が開きました", clearReward:"クリア特典:先行オープン", colClear:"{hall} クリア {a}/{b}", adSpace:"広告スペース", adSoon:"ここに広告が入る予定です", contactTitle:"広告のお問い合わせ", contactBtn:"広告について問い合わせる", contactSoon:"お問い合わせ窓口は準備中です", contactNote:"いただいた情報は広告のご相談にのみ使用します", contactDesc:"トクシム保管庫ミュージアムの電光掲示板・広告スペースに広告を掲載できます。下のボタンからお問い合わせください。", bContact:"広告のお問い合わせ", bs1:"ここに広告を出してみませんか", bs1b:"広告のお問い合わせ歓迎 · タップでお問い合わせ", bs2:"トクシム保管庫", bs2b:"登録して次の展示をいち早くチェック", bs3:"今週の新しい展示", bs3b:"展示日: {d}", culture:"韓国文化コーナー", cultureSoon:"まもなくオープン", bCulture:"韓国文化コーナー · まもなくオープン", lobbySub:"トクシム保管庫ギャラリー · Duksim Archive Gallery · Duksim 典藏藝廊", subOut:"3Dミュージアム(テスト版)", subLobby:"ロビー・館を選んでください", subHub:"館ホール・部屋を選んでください",
       loading:"ミュージアムを開いています…", enter:"入る", toLobby:"ロビーへ", toHub:"館ホールへ", exit:"外へ",
       hintOut:"「入る」を押すと階段を上って館内へ", hintOutWalk:"スティックで入口まで歩いてみましょう",
       hintLobby:"ドラッグで見回し、扉をタップで館へ", hintHub:"扉をタップすると部屋へ",
@@ -405,7 +446,7 @@ const I18N = {
       rewardSoon:"ごほうび動画はまもなく公開", secret:"秘密の額縁", quizWrong:"残念!もう一度選んでみましょう",
       like:"おすすめ 👍", liked:"おすすめ済み 👍", likesN:"この端末のおすすめ {n}・閲覧 {v}", newTag:"NEW",
       slowSuggest:"動作が少し重いようです。クイックモードにしますか?", switchQuick:"クイックモードへ", modeWalk:"🚶 歩き", modeQuick:"⚡ クイック"},
-  en:{gallery:"Duksim Archive Gallery", adSpace:"AD SPACE", adSoon:"An ad will be placed here", contactTitle:"Advertising inquiry", contactBtn:"Ask about advertising", contactSoon:"The inquiry form is coming soon", contactNote:"Your details are used only to discuss advertising", contactDesc:"Place your ad on the billboards and ad panels of the Duksim Archive museum. Leave an inquiry with the button below and we will get back to you.", bContact:"Advertising inquiry", bs1:"Advertise here", bs1b:"Inquiries welcome · tap to ask about advertising", bs2:"Duksim Archive", bs2b:"Subscribe to see the next exhibition first", bs3:"New this week", bs3b:"Hung on: {d}", culture:"Korean Culture Corner", cultureSoon:"Opening soon", bCulture:"Korean Culture Corner · opening soon", lobbySub:"Duksim Archive Gallery · トクシム保管庫ギャラリー · Duksim 典藏藝廊", subOut:"3D museum · preview", subLobby:"Lobby · pick a hall", subHub:"Hall · pick a room",
+  en:{gallery:"Duksim Archive Gallery", shop:"Goods Shop", shopOf:"{g} Goods Shop", shopSub:"Browse the corners and tap an item", pickIdol:"Choose an idol", zoneSoon:"Coming soon", itemsN:"{n} items", sellerSlot:"Seller spot · now recruiting", sellerBtn:"Apply to sell here", sellerTitle:"Seller inquiry", sellerDesc:"Sell your products in the Duksim Archive Goods Shop. Leave an inquiry with the button below and we will get back to you.", sellerResp:"This item is from a partner seller. The seller is responsible for sales, shipping and exchanges.", sellerBadge:"Seller", goBuy:"View item", noLink:"Link coming soon", bProduct:"View items", bSeller:"Apply to sell", hintShop:"Drag to look around. Tap a shelf to see items.", imgCredit:"Image", progLabel:"Cleared {a}/{b}", roomProg:"This room {s} ({a}/{b})", lockedLeft:"🔒 {n} more", lockedRoom:"Watch {n} more videos in \"{room}\" to open this", watchedOk:"Watched! {s}", roomClear:"Room cleared! The next room is open!", roomClearLast:"Room cleared!", nextOpened:"The next room is open!", hallClear:"🎉 {hall} cleared! The Secret Room is open", clearReward:"Clear reward: opens first", colClear:"{hall} cleared {a}/{b}", adSpace:"AD SPACE", adSoon:"An ad will be placed here", contactTitle:"Advertising inquiry", contactBtn:"Ask about advertising", contactSoon:"The inquiry form is coming soon", contactNote:"Your details are used only to discuss advertising", contactDesc:"Place your ad on the billboards and ad panels of the Duksim Archive museum. Leave an inquiry with the button below and we will get back to you.", bContact:"Advertising inquiry", bs1:"Advertise here", bs1b:"Inquiries welcome · tap to ask about advertising", bs2:"Duksim Archive", bs2b:"Subscribe to see the next exhibition first", bs3:"New this week", bs3b:"Hung on: {d}", culture:"Korean Culture Corner", cultureSoon:"Opening soon", bCulture:"Korean Culture Corner · opening soon", lobbySub:"Duksim Archive Gallery · トクシム保管庫ギャラリー · Duksim 典藏藝廊", subOut:"3D museum · preview", subLobby:"Lobby · pick a hall", subHub:"Hall · pick a room",
       loading:"Opening the museum…", enter:"Enter", toLobby:"Lobby", toHub:"Hall", exit:"Exit",
       hintOut:"Tap Enter to climb the steps and go inside", hintOutWalk:"Use the joystick to walk to the entrance",
       hintLobby:"Drag to look around. Tap a door to enter a hall.", hintHub:"Tap a door to enter a room",
@@ -430,7 +471,7 @@ const I18N = {
       rewardSoon:"The reward video is coming soon", secret:"Secret frame", quizWrong:"Not quite — try again?",
       like:"Recommend 👍", liked:"Recommended 👍", likesN:"On this device: {n} recs · {v} views", newTag:"NEW",
       slowSuggest:"Things look a bit slow. Switch to quick mode?", switchQuick:"Quick mode", modeWalk:"🚶 Walk", modeQuick:"⚡ Quick"},
-  zh:{gallery:"Duksim 典藏藝廊", adSpace:"廣告位", adSoon:"這裡將放置廣告", contactTitle:"廣告洽詢", contactBtn:"洽詢廣告", contactSoon:"洽詢表單準備中", contactNote:"您留下的資料只會用於廣告洽談", contactDesc:"歡迎在 Duksim 典藏美術館的電子看板與廣告位刊登廣告。請透過下方按鈕留下洽詢,我們會與您聯繫。", bContact:"廣告洽詢", bs1:"在這裡刊登廣告吧", bs1b:"歡迎洽詢廣告 · 點一下即可洽詢", bs2:"Duksim 典藏", bs2b:"訂閱就能搶先看下一場展覽", bs3:"本週新展出", bs3b:"展出日期:{d}", culture:"韓國文化角", cultureSoon:"即將開放", bCulture:"韓國文化角 · 即將開放", lobbySub:"Duksim 典藏藝廊 · Duksim Archive Gallery · トクシム保管庫ギャラリー", subOut:"3D 美術館(試用版)", subLobby:"大廳・請選擇展館", subHub:"展館大廳・請選擇房間",
+  zh:{gallery:"Duksim 典藏藝廊", shop:"周邊商店", shopOf:"{g} 周邊商店", shopSub:"逛逛各區,點商品看看", pickIdol:"請選擇偶像", zoneSoon:"即將上架", itemsN:"商品 {n} 件", sellerSlot:"進駐位置・招募賣家", sellerBtn:"洽詢進駐", sellerTitle:"進駐洽詢", sellerDesc:"歡迎在 Duksim 典藏周邊商店上架商品。請透過下方按鈕留下洽詢,我們會與您聯繫。", sellerResp:"這是進駐賣家的商品。銷售、配送與退換貨由賣家負責。", sellerBadge:"進駐", goBuy:"前往查看", noLink:"連結準備中", bProduct:"看商品", bSeller:"洽詢進駐", hintShop:"拖曳環顧,點貨架即可看商品", imgCredit:"圖片來源", progLabel:"已過關 {a}/{b}", roomProg:"這個房間 {s} ({a}/{b})", lockedLeft:"🔒 再看{n}部", lockedRoom:"在「{room}」再看 {n} 部影片就會打開", watchedOk:"觀看完成!{s}", roomClear:"房間過關!下一個房間打開了!", roomClearLast:"房間過關!", nextOpened:"下一個房間打開了!", hallClear:"🎉 {hall} 過關!秘密房間打開了", clearReward:"過關獎勵:搶先開放", colClear:"{hall} 過關 {a}/{b}", adSpace:"廣告位", adSoon:"這裡將放置廣告", contactTitle:"廣告洽詢", contactBtn:"洽詢廣告", contactSoon:"洽詢表單準備中", contactNote:"您留下的資料只會用於廣告洽談", contactDesc:"歡迎在 Duksim 典藏美術館的電子看板與廣告位刊登廣告。請透過下方按鈕留下洽詢,我們會與您聯繫。", bContact:"廣告洽詢", bs1:"在這裡刊登廣告吧", bs1b:"歡迎洽詢廣告 · 點一下即可洽詢", bs2:"Duksim 典藏", bs2b:"訂閱就能搶先看下一場展覽", bs3:"本週新展出", bs3b:"展出日期:{d}", culture:"韓國文化角", cultureSoon:"即將開放", bCulture:"韓國文化角 · 即將開放", lobbySub:"Duksim 典藏藝廊 · Duksim Archive Gallery · トクシム保管庫ギャラリー", subOut:"3D 美術館(試用版)", subLobby:"大廳・請選擇展館", subHub:"展館大廳・請選擇房間",
       loading:"美術館開門中…", enter:"進入", toLobby:"回大廳", toHub:"回展館大廳", exit:"離開",
       hintOut:"按「進入」就會走上階梯進入館內", hintOutWalk:"用搖桿走到入口看看",
       hintLobby:"拖曳環顧四周,點門即可進入展館", hintHub:"點門即可進入房間",
@@ -559,6 +600,23 @@ const STATS = {
   markLiked(id){ const a=store.json("duksim-liked-v1",[]); if(!a.includes(id)){ a.push(id); store.put("duksim-liked-v1",a); } },
 };
 
+/* ---------- 진행 저장 어댑터(나중에 Firebase 계정별로 옮길 수 있게) ----------
+   PROG.list(hall, room) → 시청 완료한 영상 id 배열,  PROG.add(hall, room, videoId) → 새로 인정되면 true
+   PROG.hallCleared(hall) / PROG.setHallCleared(hall)
+   local 저장 형식: localStorage["duksim-progress-v1"] = {"watched":{"<hall>":{"<room>":["videoId",…]}}, "cleared":{"<hall>":"YYYY-MM-DD"}} */
+const PROG_LOCAL = {
+  load(){ const d=store.json("duksim-progress-v1",{}); d.watched ||= {}; d.cleared ||= {}; return d; },
+  save(d){ store.put("duksim-progress-v1", d); },
+};
+const PROG_FIREBASE = PROG_LOCAL;   // TODO: FIREBASE_CONFIG가 생기면 로그인 계정 문서 progress/<uid> 로 읽고 쓰기
+const PROG = {
+  get b(){ return FIREBASE_CONFIG ? PROG_FIREBASE : PROG_LOCAL; },
+  list(h, r){ return this.b.load().watched[h]?.[r] || []; },
+  add(h, r, id){ const d=this.b.load(); const a=((d.watched[h] ||= {})[r] ||= []); if(a.includes(id)) return false; a.push(id); this.b.save(d); return true; },
+  hallCleared(h){ return !!this.b.load().cleared[h]; },
+  setHallCleared(h){ const d=this.b.load(); d.cleared[h] ||= new Date().toISOString().slice(0,10); this.b.save(d); },
+};
+
 const G = window.Gallery = {
   HALLS, MISSIONS, STATS, style: (qs.get("style")==="museum"||qs.get("style")==="classic") ? qs.get("style") : BUILDING_STYLE,
   lang:"ko", view:"outside", hallId:null, roomId:null, mode:"loading", langHooks:[], walk:false, char:"capsule",
@@ -569,6 +627,20 @@ const G = window.Gallery = {
   frames(room){ const v=(room?.videos||[]).slice(0,FRAMES_PER_ROOM); while(v.length<FRAMES_PER_ROOM) v.push(null); return v; },
   roomTitle(room){ return room?.theme ? (this.lang==="ko" ? room.theme.title : this.t("bday",{m:room.theme.memberEn||room.theme.member})) : this.nm(room?.name); },
   roomColor(room){ return room?.theme?.color || room?.color || "#9db8e8"; },
+  PROG,
+  inProgress(h){ return PROGRESS.enabled && h?.id===PROGRESS.hall; },
+  roomNeed(r){ const n=r?.need ?? PROGRESS.need[r?.id] ?? PROGRESS.need.default ?? 3; return Math.min(n, r?.videos?.length||0); },
+  roomCount(h, r){ const ids=new Set((r.videos||[]).map(v=>v.id)); return PROG.list(h.id, r.id).filter(id=>ids.has(id)).length; },
+  roomCleared(h, r){ return this.roomCount(h, r) >= this.roomNeed(r); },
+  roomOpen(h, r){ if(!this.inProgress(h)) return true; if(r.hidden) return this.hallCleared(h);
+    const i=PROGRESS.order.indexOf(r.id); if(i<0 || i<PROGRESS.openAtStart) return true;
+    const prev=h.rooms.find(x=>x.id===PROGRESS.order[i-1]); return !prev || this.roomCleared(h, prev); },
+  prevRoom(h, r){ const i=PROGRESS.order.indexOf(r.id); return h.rooms.find(x=>x.id===PROGRESS.order[i-1]); },
+  lockedText(h, r){ const pr=this.prevRoom(h, r); if(!pr) return this.t("locked"); return this.t("lockedRoom",{room:this.nm(pr.name), n:this.roomNeed(pr)-this.roomCount(h, pr)}); },
+  orderRooms(h){ return PROGRESS.order.map(id=>h.rooms.find(r=>r.id===id)).filter(Boolean); },
+  hallCleared(h){ if(!this.inProgress(h)) return false; return PROG.hallCleared(h.id) || this.orderRooms(h).every(r=>this.roomCleared(h, r)); },
+  visibleRooms(h){ return (h?.rooms||[]).filter(r=>!r.hidden || (this.inProgress(h) ? this.hallCleared(h) : false)).sort((a,b)=>(!!a.hidden)-(!!b.hidden)); },
+  stars(a, b){ return "★".repeat(Math.min(a,b))+"☆".repeat(Math.max(0,b-a)); },
   /* 퀴즈 안전장치: 출처·확인 날짜가 없으면 숨김 */
   missions(hid, rid){ return MISSIONS.filter(m => m.hall===hid && m.room===rid && (m.type!=="quiz" || (safeUrl(m.source) && m.checked_at))); },
 };
@@ -594,6 +666,9 @@ G.curationReady = (async () => {
     return true;
   }catch(e){ return false; }
 })();
+
+G.curationReady.then(()=>{ const h=HALLS.find(x=>x.id===PROGRESS.hall), sr=h?.rooms.find(r=>r.id===PROGRESS.secretRoom); if(!sr) return;
+  MISSIONS.filter(m=>m.hall===h.id && /^[\w-]{11}$/.test(m.reward?.video_id||"")).forEach(m=>{ if(!sr.videos.some(v=>v.id===m.reward.video_id)) sr.videos.push({id:m.reward.video_id, title:m.reward.title||"", kind:m.reward.kind||"long", official:true, desc:""}); }); });
 
 /* ---------- 언어 ---------- */
 { const q=qs.get("lang"), s=store.get("hall-lang"); G.lang = I18N[q]?q : I18N[s]?s : "ko"; }
@@ -639,33 +714,40 @@ function drawIntro(){
 
 /* ---------- 화면 이동 ---------- */
 G.go = (view, hallId=G.hallId, roomId=null) => {
+  if(view==="shop"){ const sg=SHOP_GROUPS.find(x=>x.id===hallId); if(!sg?.open){ toast(G.t("locked")); return; } }
   if(view==="hub" || view==="room"){ const h=G.hall(hallId); if(!h || !h.open){ toast(G.t("lockedToast")); return; } }
+  if(view==="room"){ const h=G.hall(hallId), r=G.room(hallId, roomId); if(!r || !G.visibleRooms(h).includes(r)) return; if(!G.roomOpen(h, r)){ toast(G.lockedText(h, r), 2400); return; } }
   if(G.mode==="3d" && G.go3d) G.go3d(view, hallId, roomId); else G.applyView(view, hallId, roomId);
 };
 G.applyView = (view, hallId=null, roomId=null) => {
-  G.view=view; G.hallId = view==="outside"||view==="lobby" ? null : hallId; G.roomId = view==="room" ? roomId : null;
+  G.view=view; G.shopGroup = view==="shop" ? hallId : null; G.hallId = view==="outside"||view==="lobby"||view==="shop" ? null : hallId; G.roomId = view==="room" ? roomId : null;
   document.body.dataset.view = view;
-  document.documentElement.style.setProperty("--theme", view==="room" ? G.roomColor(G.room()) : (G.hall()?.color || "#9db8e8"));
-  try{ history.replaceState(null, "", location.pathname + location.search + (G.hallId ? "#/"+G.hallId+(G.roomId?"/"+G.roomId:"") : view==="lobby" ? "#/lobby" : "")); }catch(e){}
+  document.documentElement.style.setProperty("--theme", view==="room" ? G.roomColor(G.room()) : view==="shop" ? (G.shopG()?.color||"#ff9ad5") : (G.hall()?.color || "#9db8e8"));
+  try{ history.replaceState(null, "", location.pathname + location.search + (view==="shop" ? "#/shop/"+G.shopGroup : G.hallId ? "#/"+G.hallId+(G.roomId?"/"+G.roomId:"") : view==="lobby" ? "#/lobby" : "")); }catch(e){}
   if(view==="room") markVisit(G.hallId, G.roomId);
   drawChrome(); drawFlat(); showHint();
   if(G.mode==="flat") scrollTo(0,0);
 };
 function drawChrome(){
   const h=G.hall(), r=G.room(), v=G.view;
-  $("#hTitle").textContent = v==="room" ? G.roomTitle(r) : v==="hub" ? G.nm(h.name) : G.t("gallery");
-  $("#hSub").textContent = v==="room" ? G.nm(h.name)+" · "+G.nm(r.name) : v==="hub" ? G.t("subHub") : v==="lobby" ? G.t("subLobby") : G.t("subOut");
+  $("#hTitle").textContent = v==="room" ? G.roomTitle(r) : v==="hub" ? G.nm(h.name) : v==="shop" ? G.t("shopOf",{g:G.nm(G.shopG()?.name)}) : G.t("gallery");
+  $("#hSub").textContent = v==="room" ? G.nm(h.name)+" · "+G.nm(r.name) : v==="hub" ? G.t("subHub") : v==="shop" ? G.t("shopSub") : v==="lobby" ? G.t("subLobby") : G.t("subOut");
   document.title = $("#hTitle").textContent + (v==="outside"||v==="lobby" ? "" : " · " + G.t("gallery"));
   let html="";
-  if(v==="lobby") html = HALLS.map(x=>`<button data-hall="${esc(x.id)}" class="${x.open?'':'lock'}">${esc(G.nm(x.name))}${x.open?'':' · '+esc(G.t("locked"))}</button>`).join("");
-  if(v==="hub") html = `<button class="back" data-go="lobby">← ${esc(G.t("toLobby"))}</button>` + h.rooms.map(x=>`<button data-room="${esc(x.id)}">${esc(G.nm(x.name))}</button>`).join("");
-  if(v==="room") html = `<button class="back" data-go="hub">← ${esc(G.t("toHub"))}</button>` + h.rooms.map(x=>`<button data-room="${esc(x.id)}" class="${x.id===G.roomId?'on':''}">${esc(G.nm(x.name))}</button>`).join("");
-  const c=$("#crumbs"); c.innerHTML=html; wireNav(c);
+  if(v==="shop") html = `<button class="back" data-go="lobby">← ${esc(G.t("toLobby"))}</button>` + SHOP_GROUPS.map(x=>`<button data-shop="${esc(x.id)}" class="${x.id===G.shopGroup?'on':''} ${x.open?'':'lock'}">${esc(G.nm(x.name))}${x.open?'':' · '+esc(G.t("locked"))}</button>`).join("") + `<button data-seller="1">🏪 ${esc(G.t("bSeller"))}</button>`;
+  if(v==="lobby") html = HALLS.map(x=>`<button data-hall="${esc(x.id)}" class="${x.open?'':'lock'}">${esc(G.nm(x.name))}${x.open?'':' · '+esc(G.t("locked"))}</button>`).join("") + `<button data-shoppick="1">🛍 ${esc(G.t("shop"))}</button>`;
+  const rb = x => `<button data-room="${esc(x.id)}" class="${x.id===G.roomId?'on':''} ${G.roomOpen(h,x)?'':'lockr'}">${G.roomOpen(h,x)?'':'🔒 '}${esc(G.nm(x.name))}</button>`;
+  if(v==="hub") html = `<button class="back" data-go="lobby">← ${esc(G.t("toLobby"))}</button>` + G.visibleRooms(h).map(rb).join("");
+  if(v==="room") html = `<button class="back" data-go="hub">← ${esc(G.t("toHub"))}</button>` + G.visibleRooms(h).map(rb).join("");
+  const c=$("#crumbs"); c.innerHTML=html; wireNav(c); drawProgress();
   $("#modeBtn").textContent = G.walk ? G.t("modeWalk") : G.t("modeQuick");
 }
 function wireNav(box){
   box.querySelectorAll("[data-go]").forEach(b=>b.onclick=()=>G.go(b.dataset.go));
   box.querySelectorAll("[data-hall]").forEach(b=>b.onclick=()=>G.go("hub", b.dataset.hall));
+  box.querySelectorAll("[data-shop]").forEach(b=>b.onclick=()=>{ if(b.dataset.shop!==G.shopGroup) G.go("shop", b.dataset.shop); });
+  box.querySelectorAll("[data-shoppick]").forEach(b=>b.onclick=()=>G.openShopPicker());
+  box.querySelectorAll("[data-seller]").forEach(b=>b.onclick=()=>G.openSeller());
   box.querySelectorAll("[data-room]").forEach(b=>b.onclick=()=>{ if(b.dataset.room!==G.roomId) G.go("room", G.hallId, b.dataset.room); });
 }
 $("#enter").onclick = () => G.go("lobby");
@@ -674,9 +756,18 @@ $("#sugYes").onclick = () => { setWalk(false); $("#suggest").classList.remove("o
 $("#sugNo").onclick = () => $("#suggest").classList.remove("on");
 G.suggestQuick = () => $("#suggest").classList.add("on");
 
+function drawProgress(){
+  const h=G.hall(), el=$("#prog"), on=!!h && G.inProgress(h) && (G.view==="hub"||G.view==="room"); el.classList.toggle("on", on); if(!on) return;
+  const rs=G.orderRooms(h), a=rs.filter(r=>G.roomCleared(h,r)).length;
+  $("#progBar").style.width=(a/rs.length*100)+"%";
+  let t=G.t("progLabel",{a, b:rs.length});
+  const r=G.room(); if(G.view==="room" && r && G.roomNeed(r)) t += " · "+G.t("roomProg",{s:G.stars(G.roomCount(h,r),G.roomNeed(r)), a:G.roomCount(h,r), b:G.roomNeed(r)});
+  $("#progText").textContent=t;
+}
+
 /* ---------- 안내 말풍선·알림 ---------- */
 let hintTimer;
-function hintText(){ return G.t(G.walk && G.mode!=="flat" ? (G.view==="outside" ? "hintOutWalk" : "hintWalk") : {outside:"hintOut",lobby:"hintLobby",hub:"hintHub",room:"hintRoom"}[G.view]); }
+function hintText(){ return G.t(G.walk && G.mode!=="flat" ? (G.view==="outside" ? "hintOutWalk" : "hintWalk") : {outside:"hintOut",lobby:"hintLobby",hub:"hintHub",room:"hintRoom",shop:"hintShop"}[G.view]); }
 function showHint(){ const el=$("#hint");
   el.textContent=hintText(); el.classList.remove("off"); clearTimeout(hintTimer); hintTimer=setTimeout(hideHint, 6000); }
 function hideHint(){ clearTimeout(hintTimer); $("#hint").classList.add("off"); }
@@ -689,14 +780,15 @@ G.toast = toast;
 function markVisit(hid, rid){
   const v=store.json("duksim-visits-v1",{}); const a=v[hid]||(v[hid]=[]); if(a.includes(rid)) return;
   a.push(rid); store.put("duksim-visits-v1",v);
-  const h=G.hall(hid); const all=h.rooms.every(r=>a.includes(r.id));
+  const h=G.hall(hid); const all=G.visibleRooms(h).filter(r=>!r.hidden).every(r=>a.includes(r.id));
   const badges=store.json("duksim-badges-v1",[]);
   if(all && !badges.includes(hid)){ badges.push(hid); store.put("duksim-badges-v1",badges); setTimeout(()=>toast(G.t("badgeToast",{hall:G.nm(h.name)}),2600),700); }
 }
 function openCollection(){
   const v=store.json("duksim-visits-v1",{}), badges=store.json("duksim-badges-v1",[]), col=store.json("duksim-collection-v1",{});
   const rows=[];
-  HALLS.filter(h=>h.open).forEach(h=>rows.push(`<li><span>${esc(G.t("visits",{hall:G.nm(h.name),a:(v[h.id]||[]).filter(id=>h.rooms.some(r=>r.id===id)).length,b:h.rooms.length}))}</span>${badges.includes(h.id)?`<b>🏅 ${esc(G.t("badge",{hall:G.nm(h.name)}))}</b>`:""}</li>`));
+  HALLS.filter(h=>h.open).forEach(h=>rows.push(`<li><span>${esc(G.t("visits",{hall:G.nm(h.name),a:(v[h.id]||[]).filter(id=>h.rooms.some(r=>r.id===id&&!r.hidden)).length,b:h.rooms.filter(r=>!r.hidden).length}))}</span>${badges.includes(h.id)?`<b>🏅 ${esc(G.t("badge",{hall:G.nm(h.name)}))}</b>`:""}</li>`));
+  HALLS.filter(h=>G.inProgress(h)).forEach(h=>{ const rs=G.orderRooms(h); rows.push(`<li><span>🏁 ${esc(G.t("colClear",{hall:G.nm(h.name),a:rs.filter(r=>G.roomCleared(h,r)).length,b:rs.length}))}</span><small>${rs.map(r=>esc(G.nm(r.name))+" "+G.stars(G.roomCount(h,r),G.roomNeed(r))).join(" · ")}</small></li>`); });
   Object.entries(col).forEach(([id,c])=>{ const m=MISSIONS.find(x=>x.id===id); rows.push(`<li><span>🔓 ${esc(G.t("secret"))} · ${esc(m?G.nm(m.hint):id)}</span>${m?.reward?.video_id?`<button data-rw="${esc(id)}">▶</button>`:`<small>${esc(G.t("rewardSoon"))}</small>`}</li>`); });
   openItem({type:"text", title:G.t("collection"), html:`<ul class="list">${rows.join("")||`<li>${esc(G.t("colEmpty"))}</li>`}</ul>`});
   document.querySelectorAll("[data-rw]").forEach(b=>b.onclick=()=>playReward(MISSIONS.find(x=>x.id===b.dataset.rw)));
@@ -718,6 +810,38 @@ G.openContact = () => {
     html:`<button class="contactBtn" id="contactGo">${esc(G.lang==="ko" ? CONTACT.text : G.t("contactBtn"))}</button><p class="contactNote">${esc(G.t("contactNote"))}</p>`});
   $("#contactGo").onclick = () => { const u=safeUrl(CONTACT.form_url); if(u) window.open(u.href,"_blank","noopener"); else toast(G.t("contactSoon")); };
 };
+/* ---------- 굿즈 샵 ---------- */
+G.shopG = () => SHOP_GROUPS.find(x=>x.id===G.shopGroup);
+G.shopItems = (gid, cat) => PRODUCTS.filter(x=>x.group===gid && x.category===cat);
+G.openShopPicker = () => {
+  openItem({type:"text", title:"🛍 "+G.t("shop"), desc:G.t("pickIdol"),
+    html:`<div class="idols">${SHOP_GROUPS.map(x=>`<button data-g="${esc(x.id)}" ${x.open?'':'disabled'} style="border-left:8px solid ${esc(x.color)}">${esc(G.nm(x.name))}${x.open?'':' · '+esc(G.t("locked"))}</button>`).join("")}</div>
+      <p class="contactNote">${esc(G.t("freeNote"))}</p>`});
+  document.querySelectorAll(".idols [data-g]").forEach(b=>b.onclick=()=>{ closeItem(); G.go("shop", b.dataset.g); });
+};
+G.openSeller = () => {
+  openItem({type:"text", title:G.t("sellerTitle"), desc:G.t("sellerDesc"),
+    html:`<button class="contactBtn" id="sellerGo">${esc(G.lang==="ko" ? SELLER_CONTACT.text : G.t("sellerBtn"))}</button><p class="contactNote">${esc(G.t("contactNote"))}</p>`});
+  $("#sellerGo").onclick = () => { const u=safeUrl(SELLER_CONTACT.form_url); if(u) window.open(u.href,"_blank","noopener"); else toast(G.t("contactSoon")); };
+};
+G.openZone = (gid, cat) => {
+  const items=G.shopItems(gid, cat.id);
+  openItem({type:"text", title:G.nm(cat.name), desc: items.length ? G.t("itemsN",{n:items.length}) : G.t("zoneSoon"),
+    html:`<div class="badges"><b>광고 · AD</b></div><div class="grid" style="margin-top:12px">${items.map((x,i)=>`<button class="card" data-pi="${i}"><div class="tt">${esc(x.name)}<small>${esc(x.price||"")}${x.seller?" · "+esc(G.t("sellerBadge")):""}</small></div></button>`).join("")}
+      <button class="card" data-sell="1" style="border:1px dashed var(--line)"><div class="tt">🏪 ${esc(G.t("sellerSlot"))}<small>${esc(G.t("sellerBtn"))}</small></div></button></div>`});
+  document.querySelectorAll("[data-pi]").forEach(b=>b.onclick=()=>G.openProduct(items[+b.dataset.pi]));
+  document.querySelector("[data-sell]").onclick=()=>G.openSeller();
+};
+G.openProduct = x => {
+  const u=safeUrl(x.url), img=safeUrl(x.image), sh=u ? shopOf({...x,u}) : SHOPS.find(z=>z.id===x.shop);
+  const note = sh?.note || (u && !x.seller ? "이 링크로 구매하면 덕심저장소가 일정액의 수수료를 받을 수 있어요." : "");
+  openItem({type:"text", title:x.name, desc:[x.price, sh?.name].filter(Boolean).join(" · "),
+    html:`${img ? `<img class="prodImg" src="${esc(img.href)}" alt="${esc(x.image_alt||x.name)}" loading="lazy"><p class="contactNote">${esc(G.t("imgCredit"))}: ${esc(x.image_credit||"")}</p>` : ""}
+      <div class="badges"><b>광고 · AD</b>${x.seller ? `<b class="sel">${esc(x.badge||G.t("sellerBadge"))}</b>` : ""}</div>
+      <a class="contactBtn" ${u ? `href="${esc(u.href)}"` : 'aria-disabled="true"'} target="_blank" rel="sponsored noopener">${esc(u ? G.t("goBuy") : G.t("noLink"))}</a>
+      ${x.seller ? `<p class="contactNote">${esc(G.t("sellerResp"))}</p>` : ""}${note ? `<p class="disc">${esc(note)}</p>` : ""}`});
+};
+
 G.openCulture = () => { if(CULTURE_CORNER.open && CULTURE_CORNER.items.length) openItem({type:"text", title:G.t("culture"), html:`<ul class="list">${CULTURE_CORNER.items.map(i=>`<li>${esc(G.nm(i.title))}</li>`).join("")}</ul>`}); else toast(G.t("bCulture")); };
 
 /* ---------- 미션 ---------- */
@@ -776,12 +900,13 @@ function openItem(it, ctx={}){
   } else {
     const kind = it.kind==="short" ? "short" : "long";
     p.className="player "+kind;
-    p.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${encodeURIComponent(it.id)}?rel=0&playsinline=1" title="${esc(it.title)}"
+    const og = /^https?:/.test(location.origin) ? "&origin="+encodeURIComponent(location.origin) : "";
+    p.innerHTML = `<iframe id="ytFrame" src="https://www.youtube-nocookie.com/embed/${encodeURIComponent(it.id)}?rel=0&playsinline=1&enablejsapi=1${og}" title="${esc(it.title)}"
       allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin"></iframe>`;
     title=it.title||""; desc=it.desc||""; picks=[...(it.picks||[]), ...(G.view==="room" ? G.products() : [])]; vid=it.id; if(isNew(it.added_at)) tag=G.t("newTag");
     srcUrl = kind==="short" ? `https://www.youtube.com/shorts/${encodeURIComponent(it.id)}` : `https://www.youtube.com/watch?v=${encodeURIComponent(it.id)}`;
     srcName = it.channel || (it.official && hall?.official ? hall.official.name : "YouTube"); srcBtn=G.t("openYT");
-    STATS.record(it.id, "view");
+    STATS.record(it.id, "view"); startWatch(it);
   }
   $("#vTitle").innerHTML = esc(title) + (tag ? ` <span class="tag">${esc(tag)}</span>` : ""); $("#vDesc").textContent=desc; $("#extra").innerHTML=extra;
   $("#react").hidden = !vid;
@@ -796,9 +921,45 @@ function openItem(it, ctx={}){
   $("#shade").classList.add("on"); const s=$("#sheet"); s.classList.add("on"); s.setAttribute("aria-hidden","false"); s.scrollTop=0;
   $("#close").focus({preventScroll:true});
 }
+/* 유튜브 IFrame Player API(공식 스크립트)로 재생 상태를 받아 '시청 완료' 판정. 못 쓰면 패널을 fallbackSeconds초 열어 두면 인정 */
+let ytPromise=null, watch=null;
+function loadYT(){
+  if(window.YT?.Player) return Promise.resolve(window.YT);
+  return ytPromise ||= new Promise((res, rej)=>{
+    const prev=window.onYouTubeIframeAPIReady; window.onYouTubeIframeAPIReady=()=>{ prev?.(); res(window.YT); };
+    const sc=document.createElement("script"); sc.src="https://www.youtube.com/iframe_api"; sc.async=true; sc.onerror=()=>{ ytPromise=null; rej(new Error("iframe_api")); };
+    document.head.appendChild(sc); setTimeout(()=>rej(new Error("timeout")), 8000); });
+}
+function stopWatch(){ if(!watch) return; watch.timers.forEach(clearInterval); watch=null; }
+function startWatch(it){
+  stopWatch();
+  const h=G.hall(), r=G.room();
+  if(G.view!=="room" || !h || !r || !G.inProgress(h) || !(r.videos||[]).some(v=>v.id===it.id) || PROG.list(h.id,r.id).includes(it.id)) return;
+  const w=watch={short:it.kind==="short", played:0, playing:false, done:false, api:false, opened:Date.now(), timers:[]};
+  const credit=()=>{ if(w.done) return; w.done=true; creditWatch(h, r, it.id); };
+  w.timers.push(setInterval(()=>{ if(watch!==w) return;
+    if(w.playing){ w.played++; if(!w.short && w.played>=PROGRESS.watchSeconds) credit(); }
+    if(!w.api && Date.now()-w.opened >= PROGRESS.fallbackSeconds*1000) credit(); }, 1000));
+  loadYT().then(YT=>{ const el=document.getElementById("ytFrame"); if(watch!==w || !el) return;
+    w.player=new YT.Player(el, {events:{ onReady:()=>{ w.api=true; }, onStateChange:e=>{ w.api=true; w.playing = e.data===1; if(e.data===0) credit(); } }}); }).catch(()=>{});
+}
+function creditWatch(h, r, id){
+  const was=G.roomCleared(h, r), hallWas=G.hallCleared(h);
+  if(!PROG.add(h.id, r.id, id)) return;
+  toast(G.t("watchedOk",{s:G.stars(G.roomCount(h,r), G.roomNeed(r))}));
+  if(!was && G.roomCleared(h, r)){
+    const i=PROGRESS.order.indexOf(r.id), nx=PROGRESS.order[i+1];
+    if(nx && i+1>=PROGRESS.openAtStart) G.justUnlocked=nx;
+    setTimeout(()=>toast(G.t(nx ? "roomClear" : "roomClearLast"), 2200), 1800);
+  }
+  if(!hallWas && G.hallCleared(h)){ PROG.setHallCleared(h.id); G.justUnlocked=PROGRESS.secretRoom; setTimeout(()=>toast(G.t("hallClear",{hall:G.nm(h.name)}), 3000), 4200); }
+  drawChrome(); drawFlat(); G.onProgress?.();
+}
+G._creditWatch = (hid, rid, id) => creditWatch(G.hall(hid), G.room(hid, rid), id);   // 시험용
+
 function closeItem(){
   const s=$("#sheet"); if(!s.classList.contains("on")) return;
-  s.classList.remove("on"); s.setAttribute("aria-hidden","true"); $("#shade").classList.remove("on");
+  s.classList.remove("on"); s.setAttribute("aria-hidden","true"); $("#shade").classList.remove("on"); stopWatch();
   setTimeout(()=>{ if(!s.classList.contains("on")) $("#player").innerHTML=""; },350); // 닫으면 재생도 멈춤
 }
 G.openItem=openItem; G.openVideo=v=>openItem(v); G.closeItem=closeItem;
@@ -824,13 +985,22 @@ function drawFlat(){
     html = `<div class="sec">${esc(G.t("hallsH"))}</div><div class="grid">` + HALLS.map(x=>
       `<button class="card door ${x.open?'':'lock'}" data-hall="${esc(x.id)}"><div class="th" style="background:${esc(x.color)}">${esc(G.nm(x.name))}</div>
        <div class="tt">${esc(G.nm(x.name))}<small>${x.open ? esc(G.t("videosN",{n:x.rooms.reduce((a,b)=>a+(b.videos?.length||0),0)})) : esc(G.t("locked"))}</small></div></button>`).join("") + `</div>
-      <div class="grid" style="margin-top:12px"><button class="card" data-culture="1"><div class="tt">🇰🇷 ${esc(G.t("culture"))}<small>${esc(G.t("cultureSoon"))}</small></div></button>
+      <div class="grid" style="margin-top:12px"><button class="card door" data-shoppick="1"><div class="th" style="background:#ff9ad5">🛍 ${esc(G.t("shop"))}</div><div class="tt">${esc(G.t("shop"))}<small>${esc(G.t("pickIdol"))}</small></div></button><button class="card" data-culture="1"><div class="tt">🇰🇷 ${esc(G.t("culture"))}<small>${esc(G.t("cultureSoon"))}</small></div></button>
       <button class="card" data-contact="1"><div class="tt">📣 ${esc(G.t("contactTitle"))}<small>${esc(G.t("bs1"))}</small></div></button></div>
       <p class="contactNote">${esc(G.t("freeNote"))}</p>`;
+  } else if(v==="shop"){
+    const gid=G.shopGroup;
+    html = SHOP_CATEGORIES.map(c=>{ const it=G.shopItems(gid,c.id);
+      return `<div class="sec">${esc(G.nm(c.name))} <b style="background:var(--ink);color:#fff;border-radius:4px;padding:1px 5px;font-size:10px">광고 · AD</b></div><div class="grid">`
+        + it.map((x,i)=>`<button class="card" data-prod="${esc(c.id)}:${i}"><div class="tt">${esc(x.name)}<small>${esc(x.price||"")}${x.seller?" · "+esc(G.t("sellerBadge")):""}</small></div></button>`).join("")
+        + (it.length ? "" : `<div class="card blank"><div class="tt">${esc(G.t("zoneSoon"))}</div></div>`)
+        + `<button class="card" data-seller="1" style="border:1px dashed var(--line)"><div class="tt">🏪 ${esc(G.t("sellerSlot"))}</div></button></div>`; }).join("")
+      + `<p class="contactNote">${esc(G.t("freeNote"))}</p>`;
   } else if(v==="hub"){
-    html = `<div class="sec">${esc(G.t("roomsH"))}</div><div class="grid">` + h.rooms.map(x=>
-      `<button class="card door" data-room="${esc(x.id)}"><div class="th" style="background:${esc(G.roomColor(x))}">${esc(G.nm(x.name))}</div>
-       <div class="tt">${esc(G.roomTitle(x))}<small>${x.videos?.length ? esc(G.t("videosN",{n:x.videos.length})) : esc(G.t("soon"))}</small></div></button>`).join("") + `</div>`;
+    html = `<div class="sec">${esc(G.t("roomsH"))}</div><div class="grid">` + G.visibleRooms(h).map(x=>{ const op=G.roomOpen(h,x), nd=G.roomNeed(x);
+      return `<button class="card door ${op?'':'lock'}" data-room="${esc(x.id)}"><div class="th" style="background:${esc(G.roomColor(x))}">${op?'':'🔒 '}${esc(G.nm(x.name))}</div>
+       <div class="tt">${esc(G.roomTitle(x))}<small>${G.inProgress(h)&&nd ? G.stars(G.roomCount(h,x),nd)+" · " : ""}${op ? (x.videos?.length ? esc(G.t("videosN",{n:x.videos.length})) : esc(G.t("soon"))) : esc(G.lockedText(h,x))}</small>
+       ${op ? "" : `<small>${(x.videos||[]).slice(0,3).map(v=>"· "+esc(v.title)).join("<br>")}</small>`}</div></button>`; }).join("") + `</div>`;
   } else if(v==="room"){
     html = `<div class="sec">${esc(G.t("videosH"))}</div><div class="grid">` + G.frames(r).map(x=>{ if(!x) return `<div class="card blank"><div class="th">${esc(G.t("soon"))}</div><div class="tt">&nbsp;</div></div>`;
         items.push(x); return `<button class="card" data-i="${items.length-1}"><div class="th" style="background-image:url('${thumb(x.id)}'),linear-gradient(135deg,var(--theme),#ff465a)"></div><div class="tt">${esc(x.title)}</div></button>`; }).join("") + `</div>`;
@@ -849,6 +1019,7 @@ function drawFlat(){
   b.querySelectorAll("[data-goods]").forEach(x=>x.onclick=()=>G.openGoods(r));
   b.querySelectorAll("[data-culture]").forEach(x=>x.onclick=G.openCulture);
   b.querySelectorAll("[data-contact]").forEach(x=>x.onclick=G.openContact);
+  b.querySelectorAll("[data-prod]").forEach(x=>x.onclick=()=>{ const [c,i]=x.dataset.prod.split(":"); G.openProduct(G.shopItems(G.shopGroup,c)[+i]); });
   b.querySelectorAll("[data-m]").forEach(x=>x.onclick=()=>G.startMission(MISSIONS.find(m=>m.id===x.dataset.m)));
 }
 function showFallback(reason){
@@ -863,6 +1034,7 @@ $("#retry").onclick=()=>location.reload();
 document.body.classList.toggle("walk", G.walk);
 { const m=location.hash.match(/^#\/([\w-]+)(?:\/([\w-]+))?/);
   if(m && m[1]==="lobby") G.applyView("lobby");
+  else if(m && m[1]==="shop" && SHOP_GROUPS.find(x=>x.id===m[2])?.open) G.applyView("shop", m[2]);
   else if(m && G.hall(m[1])?.open) G.curationReady.then(()=>{ if(G.view==="outside") G.go(m[2] && G.room(m[1],m[2]) ? "room" : "hub", m[1], m[2]); });
   else { G.applyView("outside"); if(!qs.has("nointro")) $("#intro").hidden=false; } }
 applyLang();
@@ -1108,7 +1280,7 @@ function start(THREE){
     u.tail.rotation.y = moving ? Math.sin(u.t*16)*0.7 : 0;
     poseCompute(g); return Math.abs(target-u.sit)>0.01;
   }
-  function buildRotunda({color, doors, backLabel, onBack, outdoorBack, npc, adPlace}){
+  function buildRotunda({color, doors, backLabel, onBack, outdoorBack, npc, adPlace, after}){
     const s=new THREE.Scene(); s.background=new THREE.Color(0xf6efe3); hemi(s);
     const R=7, H=4.6, clickables=[], relabel=[], spots=[]; let culturePos=null;
     add(s, new THREE.CylinderGeometry(R,R,H,36,1,true), new THREE.MeshLambertMaterial({color:0xf5eee2, side:THREE.BackSide}), 0, H/2, 0);
@@ -1134,7 +1306,14 @@ function start(THREE){
       const sign=textPlane(grp, 2.3, 0.56, 384, (g,w,h)=>label(g,w,h,c, d.open?"#1e143c":"#5d574f", d.title(), d.sub(), 40));
       sign.position.set(0, 3.3, 0); relabel.push(sign.userData.redraw);
       [panel,sign].forEach(m=>{ m.userData.act=d.act; clickables.push(m); });
-      spots.push({p:new THREE.Vector3(Math.sin(a)*(R-1.0),1.9,-Math.cos(a)*(R-1.0)), r:1.7, label:()=> d.open ? G.t("bEnter")+" · "+d.title() : d.title()+" · "+G.t("locked"), act:d.act});
+      spots.push({p:new THREE.Vector3(Math.sin(a)*(R-1.0),1.9,-Math.cos(a)*(R-1.0)), r:1.7, label:()=> d.open ? G.t("bEnter")+" · "+d.title() : d.title()+" · "+(d.lockLabel?.()||G.t("locked")), act:d.act});
+      if(d.justOpened){   // 방금 열린 문: 잠긴 문짝이 안쪽으로 열리는 연출
+        const hinge=new THREE.Group(); hinge.position.set(-0.92,0,0.01); grp.add(hinge);
+        add(hinge, new THREE.PlaneGeometry(1.84,2.74), new THREE.MeshBasicMaterial({side:THREE.DoubleSide, map:canvasTex(64,96,(g,w,h)=>{ g.fillStyle="#cfc8bd"; g.fillRect(0,0,w,h);
+          g.fillStyle="#8f877c"; g.fillRect(w/2-9,h/2-2,18,16); g.strokeStyle="#8f877c"; g.lineWidth=3; g.beginPath(); g.arc(w/2,h/2-2,6,Math.PI,0); g.stroke(); })}), 0.92,1.37,0);
+        const glow=add(grp, new THREE.PlaneGeometry(2.6,3.2), new THREE.MeshBasicMaterial({color:0xffe9a8, transparent:true, opacity:0, depthWrite:false}), 0,1.5,-0.03);
+        setTimeout(()=>{ G.toast(G.t("nextOpened"), 2200); tween(1100, t=>{ const e=1-Math.pow(1-t,3); hinge.rotation.y=-1.75*e; glow.material.opacity=Math.sin(Math.PI*t)*0.8; }); }, 750);
+      }
     });
     for(let i=0;i<8;i++){ const a=i*Math.PI/4+Math.PI/8, g=new THREE.Group(); g.position.set(Math.sin(a)*(R-0.1),4.3,-Math.cos(a)*(R-0.1)); g.lookAt(0,4.3,0); s.add(g);
       adPanel(g, 2.3, 0.38, `${adPlace}_${i+1}`, clickables, relabel); }
@@ -1170,20 +1349,25 @@ function start(THREE){
       blockers.push({c:[2.2,2.4,0.55]});
       if(culturePos) blockers.push({c:[culturePos[0],culturePos[1],0.9]});
     }
-    const first=angles[doors.findIndex(d=>d.open)] ?? 0;
+    after?.();
+    const jIdx=doors.findIndex(d=>d.justOpened), first = jIdx>=0 ? angles[jIdx]/0.35 : (angles[doors.findIndex(d=>d.open)] ?? 0);
     return {scene:s, clickables, relabel, spots, cam:{pos:[0,1.7,3.4], yaw:-first*0.35, pitch:0.0, zoom:1.12},
       walk:{spawn:[0,R-1.8,0], free:(x,z)=>Math.hypot(x,z)<R-0.75 && !inCircles(x,z,blockers), camDist:2.8, camH:1.9, clampR:R-0.25}};
   }
   function buildLobby(){
     return buildRotunda({ color:"#c9a45c", outdoorBack:true, npc:true, adPlace:"lobby_top", backLabel:()=>G.t("exit"), onBack:()=>G.go("outside"),
       doors: HALLS.map(h=>({ color:h.color, open:h.open, title:()=>G.nm(h.name),
-        sub:()=> h.open ? G.t("videosN",{n:h.rooms.reduce((a,r)=>a+(r.videos?.length||0),0)}) : G.t("locked"),
-        act:()=> h.open ? G.go("hub",h.id) : G.toast(G.t("lockedToast")) })) });
+        sub:()=> h.open ? G.t("videosN",{n:h.rooms.reduce((a,r)=>a+(r.videos?.length||0),0)}) : (h.id===PROGRESS.nextHall && HALLS.some(x=>x.id===PROGRESS.hall && G.hallCleared(x)) ? "🏆 "+G.t("clearReward") : G.t("locked")),
+        act:()=> h.open ? G.go("hub",h.id) : G.toast(G.t("lockedToast")) })).concat([{ color:"#ff9ad5", open:true, title:()=>"🛍 "+G.t("shop"), sub:()=>G.t("pickIdol"), act:()=>G.openShopPicker() }]) });
   }
   function buildHub(hall){
     return buildRotunda({ color:hall.color, adPlace:"hall_top", backLabel:()=>G.t("toLobby"), onBack:()=>G.go("lobby"),
-      doors: hall.rooms.map(r=>({ color:G.roomColor(r), open:true, title:()=>G.nm(r.name),
-        sub:()=> r.videos?.length ? G.t("videosN",{n:r.videos.length}) : G.t("soon"), act:()=>G.go("room",hall.id,r.id) })) });
+      doors: G.visibleRooms(hall).map(r=>{ const op=G.roomOpen(hall,r), nd=G.roomNeed(r), jo=G.justUnlocked===r.id;
+        return { color:G.roomColor(r), open:op, justOpened:jo, title:()=>G.nm(r.name),
+          sub:()=> !op ? (()=>{ const pr=G.prevRoom(hall,r); return G.t("lockedLeft",{n:pr?G.roomNeed(pr)-G.roomCount(hall,pr):0}); })()
+                  : (G.inProgress(hall)&&nd ? G.stars(G.roomCount(hall,r),nd)+"  " : "") + (r.videos?.length ? G.t("videosN",{n:r.videos.length}) : G.t("soon")),
+          lockLabel:()=>G.lockedText(hall,r),
+          act:()=>G.go("room",hall.id,r.id) }; }), after:()=>{ G.justUnlocked=null; } });
   }
 
   /* ==========================================================
@@ -1398,6 +1582,72 @@ function start(THREE){
   }
 
   /* ==========================================================
+     4) 굿즈 샵 — 구역 6개 진열대. 상품은 사진 없이 우리가 그린 모양으로
+     ========================================================== */
+  function goodsShape(parent, shape, col, x, y, z){
+    const m=lam(new THREE.Color(col)), wh=lam(0xfffaf2), g=new THREE.Group(); g.position.set(x,y,z); g.scale.setScalar(1.7); parent.add(g);
+    if(shape==="album"){ box(g, 0.32,0.32,0.05, m, 0,0.17,0).rotation.x=-0.15; box(g, 0.22,0.04,0.052, wh, 0,0.12,0.001).rotation.x=-0.15; }
+    else if(shape==="card"){ [-0.12,0,0.12].forEach((r,i)=>{ const c=box(g, 0.12,0.17,0.006, i===1?m:wh, i*0.03-0.03,0.1+i*0.005,i*0.01); c.rotation.z=r; }); }
+    else if(shape==="stick"){ add(g, new THREE.CylinderGeometry(0.022,0.026,0.32,8), lam(0xffffff), 0,0.16,0); add(g, new THREE.SphereGeometry(0.075,12,8), new THREE.MeshBasicMaterial({color:new THREE.Color(col)}), 0,0.36,0); }
+    else if(shape==="calendar"){ box(g, 0.34,0.25,0.02, wh, 0,0.15,0).rotation.x=-0.25; box(g, 0.3,0.06,0.022, m, 0,0.24,0.012).rotation.x=-0.25; }
+    else if(shape==="tshirt"){ const sh=new THREE.Shape(); sh.moveTo(-0.1,0); sh.lineTo(0.1,0); sh.lineTo(0.1,0.18); sh.lineTo(0.17,0.14); sh.lineTo(0.21,0.21); sh.lineTo(0.08,0.28); sh.lineTo(0.03,0.25); sh.lineTo(-0.03,0.25); sh.lineTo(-0.08,0.28); sh.lineTo(-0.21,0.21); sh.lineTo(-0.17,0.14); sh.lineTo(-0.1,0.18); sh.lineTo(-0.1,0);
+      add(g, new THREE.ExtrudeGeometry(sh,{depth:0.03,bevelEnabled:false}), m, 0,0.02,0); }
+    else { add(g, new THREE.CylinderGeometry(0.055,0.06,0.2,10), m, 0,0.1,0); add(g, new THREE.CylinderGeometry(0.025,0.025,0.05,8), wh, 0,0.225,0); }
+    return g;
+  }
+  function buildShop(gid){
+    const grp=SHOP_GROUPS.find(x=>x.id===gid)||SHOP_GROUPS[0], color=grp.color||"#ff9ad5";
+    const s=new THREE.Scene(); s.background=new THREE.Color(0xfbf7f2); hemi(s, 0xffffff, 0xf3e9da, 2.8);
+    const W=7, H=4.2, clickables=[], relabel=[], spots=[];
+    const ft=canvasTex(128,128,(g,w,h)=>{ for(let i=0;i<4;i++) for(let j=0;j<4;j++){ g.fillStyle=(i+j)%2?"#f6eee4":mix("#fdf3f6",color,.12); g.fillRect(i*32,j*32,32,32); } });
+    ft.wrapS=ft.wrapT=THREE.RepeatWrapping; ft.repeat.set(5,5);
+    add(s, new THREE.PlaneGeometry(W*2,W*2), new THREE.MeshLambertMaterial({map:ft})).rotation.x=-Math.PI/2;
+    add(s, new THREE.PlaneGeometry(W*2,W*2), bas(0xffffff), 0,H,0).rotation.x=Math.PI/2;
+    const WALLS=[0,-Math.PI/2,Math.PI,Math.PI/2], wallM=lam(0xfffaf4), baseM=lam(new THREE.Color(mix("#e6d6bd",color,.4)));
+    const pivots=WALLS.map(a=>{ const p=new THREE.Group(); p.rotation.y=a; s.add(p); add(p, new THREE.PlaneGeometry(W*2,H), wallM, 0,H/2,-W); box(p, W*2,0.14,0.04, baseM, 0,0.07,-W+0.02); return p; });
+    const onWall=(wi,x,y,z)=>new THREE.Vector3(x,y,-W+z).applyAxisAngle(Y, WALLS[wi]);
+    /* 앞 벽: 큰 간판 + 운영 안내 */
+    const sign=textPlane(pivots[0], 4.6, 0.8, 640, (g,w,h)=>{ g.fillStyle=color; g.fillRect(0,0,w,h); g.fillStyle="#1e143c"; g.textAlign="center"; g.textBaseline="middle"; g.font=`800 50px ${FONT}`; g.fillText("🛍 "+G.t("shopOf",{g:G.nm(grp.name)}),w/2,h/2+2); });
+    sign.position.set(0,2.9,-W+0.04); relabel.push(sign.userData.redraw);
+    const fn=textPlane(pivots[0], 4.6, 0.22, 720, (g,w,h)=>{ g.fillStyle="#fffaf2"; g.fillRect(0,0,w,h); g.fillStyle="#6b6280"; g.font=`500 19px ${FONT}`; g.textAlign="center"; g.textBaseline="middle"; wrapText(g,G.t("freeNote"),w/2,h/2+1,w-20,22,1); });
+    fn.position.set(0,2.36,-W+0.04); relabel.push(fn.userData.redraw);
+    /* 양쪽 벽: 구역 6개 진열대(상품 최대 3개 + 끝에 「입점 자리」) */
+    SHOP_CATEGORIES.forEach((cat,i)=>{
+      const wi = i<3 ? 3 : 1, x=[-4.2,0,4.2][i%3], pv=pivots[wi], items=G.shopItems(gid, cat.id), zoneAct=()=>G.openZone(gid, cat);
+      const shelf=box(pv, 3.0,0.9,0.6, lam(0xf1e4d2), x,0.45,-W+0.35);
+      const zs=textPlane(pv, 3.0, 0.62, 448, (g,w,h)=>{ label(g,w,h,"#1e143c","#ffffff",G.nm(cat.name), items.length ? G.t("itemsN",{n:items.length}) : G.t("zoneSoon"), 38);
+        g.fillStyle="#ffd640"; g.fillRect(8,8,84,24); g.fillStyle="#1e143c"; g.font=`800 15px ${FONT}`; g.textAlign="center"; g.textBaseline="middle"; g.fillText("광고 · AD",50,21); });
+      zs.position.set(x,2.0,-W+0.04); relabel.push(zs.userData.redraw);
+      [shelf,zs].forEach(m=>{ m.userData.act=zoneAct; clickables.push(m); });
+      items.slice(0,3).forEach((it,k)=>{ const gx=x-1.05+k*0.7;
+        const gm=goodsShape(pv, cat.shape, it.color||mix(color,["#ff7fb0","#7fb0ff","#ffd166"][k],.5), gx,0.9,-W+0.4);
+        const tag=textPlane(pv, 0.6, 0.18, 192, (g,w,h)=>{ g.fillStyle="#fffdf8"; g.fillRect(0,0,w,h); g.strokeStyle="#e4d8c4"; g.strokeRect(1,1,w-2,h-2);
+          g.fillStyle="#1e143c"; g.font=`700 18px ${FONT}`; g.textAlign="center"; g.textBaseline="middle"; wrapText(g,(it.seller?"["+(it.badge||G.t("sellerBadge"))+"] ":"")+(it.price||it.name),w/2,h/2+1,w-10,20,1); });
+        tag.position.set(gx,0.62,-W+0.66); relabel.push(tag.userData.redraw);
+        gm.traverse(o=>{ if(o.isMesh){ o.userData.act=()=>G.openProduct(it); clickables.push(o); } }); tag.userData.act=()=>G.openProduct(it); clickables.push(tag); });
+      const slot=box(pv, 0.5,0.4,0.4, new THREE.MeshBasicMaterial({color:0xffffff, transparent:true, opacity:0.5}), x+1.15,1.1,-W+0.4);
+      const st=textPlane(pv, 0.62, 0.2, 192, (g,w,h)=>label(g,w,h,"#fff1f6","#c2416f",G.t("sellerBadge")+" +","",20)); st.position.set(x+1.15,0.62,-W+0.66); relabel.push(st.userData.redraw);
+      [slot,st].forEach(m=>{ m.userData.act=()=>G.openSeller(); clickables.push(m); });
+      spots.push({p:onWall(wi,x,1.0,1.4), r:1.7, label:()=>G.t("bProduct")+" · "+G.nm(cat.name), act:zoneAct});
+    });
+    /* 뒤 벽: 로비로 가는 문 + 입구 「입점 자리 · 판매자 모집」 */
+    { const p=pivots[2], back=()=>G.go("lobby");
+      box(p, 2.0,2.75,0.05, lam(0x9a7448), 0,1.37,-W+0.005);
+      const door=add(p, new THREE.PlaneGeometry(1.8,2.6), new THREE.MeshBasicMaterial({map:doorGlow()}), 0,1.3,-W+0.04);
+      const ds=textPlane(p, 1.6, 0.38, 320, (g,w,h)=>label(g,w,h,"#1e143c","#ffd640","← "+G.t("toLobby"),"",40)); ds.position.set(0,2.35,-W+0.06); relabel.push(ds.userData.redraw);
+      [door,ds].forEach(m=>{ m.userData.act=back; clickables.push(m); });
+      spots.push({p:onWall(2,0,1.9,1.0), r:1.3, label:()=>"← "+G.t("toLobby"), act:back});
+      const sx=3.4, sellAct=()=>G.openSeller();
+      const sb=box(p, 2.2,0.9,0.6, lam(0xfff1f6), sx,0.45,-W+0.35);
+      const ss=textPlane(p, 2.6, 0.6, 448, (g,w,h)=>label(g,w,h,"#c2416f","#ffffff","🏪 "+G.t("sellerSlot"),G.t("sellerBtn"),34)); ss.position.set(sx,1.75,-W+0.04); relabel.push(ss.userData.redraw);
+      [sb,ss].forEach(m=>{ m.userData.act=sellAct; clickables.push(m); });
+      spots.push({p:onWall(2,sx,1.0,1.4), r:1.5, label:()=>G.t("bSeller"), act:sellAct}); }
+    const free=(x,z)=> Math.abs(x)<W-1.05 && Math.abs(z)<W-0.5 && !(z>W-1.1 && x<-2.1 && x>-4.7);
+    return {scene:s, clickables, relabel, spots, cam:{pos:[0,1.6,4.6], yaw:0, pitch:0.02, zoom:1.08},
+      walk:{spawn:[0,W-1.8,0], free, camDist:3.0, camH:2.05, clampBox:W-0.2}};
+  }
+
+  /* ==========================================================
      장면 관리 — 지금 보는 곳만 만들고 그린다(나머지는 버림)
      ========================================================== */
   const cache={}; let cur=null, curKey="";
@@ -1406,6 +1656,7 @@ function start(THREE){
     if(view==="outside") return cache.outside ||= buildOutside();
     if(view==="lobby") return cache.lobby ||= buildLobby();
     if(view==="hub") return buildHub(G.hall(hallId));
+    if(view==="shop") return buildShop(hallId);
     return buildRoom(G.hall(hallId), G.room(hallId, roomId));
   }
   function placePlayer(){
@@ -1424,6 +1675,7 @@ function start(THREE){
   G.onWalkChange = () => { placePlayer(); if(!G.walk){ camera.position.set(...cur.cam.pos); yaw=cur.cam.yaw; pitch=cur.cam.pitch; } bubbleOff(); ask(); };
   G.onCharChange = () => { if(G.walk) { const {x,z,face}=player; placePlayer(); player.x=x; player.z=z; player.face=face; syncPlayer(); ask(); } };
   G.langHooks.push(()=>{ for(const c of [cache.outside, cache.lobby, cur]) c?.relabel?.forEach(f=>f()); ask(); });
+  G.onProgress = () => { cache.lobby?.relabel?.forEach(f=>f()); ask(); };
 
   let busy=false;
   const sleep=ms=>new Promise(r=>setTimeout(r,ms));
