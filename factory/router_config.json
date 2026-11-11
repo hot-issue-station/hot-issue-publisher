@@ -23,7 +23,7 @@
       "kind": "ollama",
       "enabled": true,
       "external_free": false,
-      "model": "exaone3.5:7.8b",
+      "model": "qwen3:8b",
       "url": "http://localhost:11434",
       "timeout_sec": 180,
       "cooldown_429": 3600,

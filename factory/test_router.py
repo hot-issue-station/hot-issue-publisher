@@ -38,7 +38,7 @@ class Fake(BaseHTTPRequestHandler):
     def do_GET(self):
         if self.path.startswith("/ollama/api/tags"):
             if self._common("ollama_tags") is None: return
-            self._send(200, {"models": [{"name": "exaone3.5:7.8b", "model": "exaone3.5:7.8b"}]})
+            self._send(200, {"models": [{"name": "qwen3:8b", "model": "qwen3:8b"}]})
         else: self._send(404, {})
 
     def do_POST(self):
@@ -107,7 +107,7 @@ class RouterTest(unittest.TestCase):
         Fake.mode = {"gemini": "429"}
         c = self.cfg()
         r = ai_router.route("번역해 줘: hello", cfg=c)
-        self.assertEqual(r["answered_by"], "ollama:exaone3.5:7.8b")
+        self.assertEqual(r["answered_by"], "ollama:qwen3:8b")
         self.assertEqual(r["answer"], "올라마 답")
         self.assertTrue(r["draft"]); self.assertIn("초안", r["note"])
         self.assertEqual(r["tried"][0]["outcome"], "limit")
@@ -130,7 +130,7 @@ class RouterTest(unittest.TestCase):
     # ② private → 제미나이·OpenRouter는 한 번도 안 불림
     def test_2_private_skips_external(self):
         r = ai_router.route("고객 전화번호 정리", private=True, cfg=self.cfg())
-        self.assertEqual(r["answered_by"], "ollama:exaone3.5:7.8b")
+        self.assertEqual(r["answered_by"], "ollama:qwen3:8b")
         self.assertNotIn("gemini", self.stages_hit()); self.assertNotIn("openrouter", self.stages_hit())
         Fake.hits = []
         r = ai_router.route("고객 전화번호 정리", private=True, cfg=self.cfg(ollama=self.dead))  # 노트북 꺼짐
