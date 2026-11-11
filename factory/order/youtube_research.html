@@ -1,0 +1,320 @@
+<title>유튜브 딥리서치 작업실</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;600;700&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* 레이아웃: 한 줄로 내려가는 작업대. 단계마다 번호 칸(실제 순서), 진행 상태는 칩으로 */
+:root{
+  --bg:#f3f4f7; --card:#ffffff; --fg:#17191f; --mute:#5d6372; --line:#d9dce4;
+  --accent:#d93a2b; --accent-soft:#fbe7e4; --ok:#1d7a4b; --ok-soft:#e1f3e9; --warn:#a86500; --warn-soft:#fff1d9;
+  --sans:"IBM Plex Sans KR",system-ui,-apple-system,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#121318; --card:#1b1d24; --fg:#eceef3; --mute:#9aa0ae; --line:#2e313b;
+  --accent:#ff6a5a; --accent-soft:#3a1d1a; --ok:#53c48a; --ok-soft:#163023; --warn:#f0b04a; --warn-soft:#352812; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#121318; --card:#1b1d24; --fg:#eceef3; --mute:#9aa0ae; --line:#2e313b;
+  --accent:#ff6a5a; --accent-soft:#3a1d1a; --ok:#53c48a; --ok-soft:#163023; --warn:#f0b04a; --warn-soft:#352812; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:15px;line-height:1.55;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:18px 60px}
+.wrap{max-width:720px;margin:0 auto;display:flex;flex-direction:column;gap:14px}
+header h1{font-size:22px;margin:0;letter-spacing:-.01em;text-wrap:balance}
+header p{margin:4px 0 0;color:var(--mute);font-size:13.5px}
+.links{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.links a{color:var(--accent);font-size:13px;text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:3px 10px;background:var(--card)}
+.step{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.step h2{margin:0;font-size:16px;display:flex;align-items:center;gap:8px}
+.no{font-family:var(--mono);font-size:12px;color:var(--accent);border:1px solid var(--accent);border-radius:6px;padding:0 6px}
+.hint{color:var(--mute);font-size:13px;margin:0}
+input[type=text],input[type=url],textarea,select{width:100%;font:inherit;color:var(--fg);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:9px 10px}
+textarea{min-height:84px;resize:vertical}
+input:focus,textarea:focus,select:focus,button:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+button{font:inherit;font-weight:600;border-radius:9px;border:1px solid var(--line);background:var(--card);color:var(--fg);padding:9px 14px;cursor:pointer}
+button.go{background:var(--accent);border-color:var(--accent);color:#fff}
+button.sm{padding:5px 10px;font-size:13px;font-weight:500}
+button:disabled{opacity:.5;cursor:default}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.row>input{flex:1 1 200px;min-width:0}
+.list{display:flex;flex-direction:column;gap:8px}
+.item{border:1px solid var(--line);border-radius:9px;padding:9px 10px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.item a{color:var(--accent);word-break:break-all;font-size:13.5px}
+.chip{display:inline-block;font-size:12px;border-radius:999px;padding:1px 9px;background:var(--accent-soft);color:var(--accent);font-weight:600}
+.chip.ok{background:var(--ok-soft);color:var(--ok)}
+.chip.wait{background:var(--warn-soft);color:var(--warn)}
+.shots{display:grid;grid-template-columns:repeat(auto-fill,minmax(96px,1fr));gap:8px}
+.shot{position:relative;border:1px solid var(--line);border-radius:8px;overflow:hidden;aspect-ratio:9/16;background:var(--bg)}
+.shot img{width:100%;height:100%;object-fit:cover;display:block}
+.shot button{position:absolute;top:4px;right:4px;padding:1px 7px;font-size:12px}
+.q .qt{font-weight:600;white-space:pre-wrap;word-break:break-word}
+.out{white-space:pre-wrap;word-break:break-word;background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:10px;font-size:14px;max-height:520px;overflow:auto}
+.out h4{margin:10px 0 4px;font-size:14px}
+.msg{font-size:13px;color:var(--mute);min-height:1em}
+.empty{color:var(--mute);font-size:13.5px;border:1px dashed var(--line);border-radius:9px;padding:12px;text-align:center}
+.top{display:flex;gap:8px;flex-wrap:wrap}
+.top select{flex:1 1 220px;min-width:0}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap">
+  <header>
+    <h1>유튜브 딥리서치 작업실</h1>
+    <p>영상 주소·캡처를 모으고, 다른 AI에게 물을 질문을 받아 답을 붙여 넣으면 하나로 취합해 시나리오까지 씁니다.</p>
+    <div class="links">
+      <a href="https://claude.ai/artifact/DYNjdk9yZ78mJae6VNM4Xf" target="_blank" rel="noopener">영상 제작기</a>
+      <a href="https://www.youtube.com/" target="_blank" rel="noopener">유튜브</a>
+      <a href="https://gemini.google.com/" target="_blank" rel="noopener">제미나이</a>
+      <a href="https://studio.youtube.com/" target="_blank" rel="noopener">유튜브 스튜디오</a>
+    </div>
+  </header>
+
+  <section class="step">
+    <h2><span class="no">1</span>조사 주제</h2>
+    <div class="top">
+      <select id="pick" aria-label="조사 고르기"><option value="">+ 새 조사</option></select>
+      <button class="sm" id="newBtn">새 조사</button>
+    </div>
+    <input type="text" id="title" placeholder="예: 리센느 「With」 음악방송 2관왕">
+    <input type="text" id="topicId" placeholder="제작기 소재 번호(있으면, 예: t20261111NT1)">
+    <div class="row"><button class="go" id="saveTitle">주제 저장</button><span class="msg" id="m1"></span></div>
+  </section>
+
+  <section class="step">
+    <h2><span class="no">2</span>유튜브 주소</h2>
+    <p class="hint">조회수 높은 영상, 참고할 경쟁 채널 영상, 원본 무대 영상을 넣어 주세요. 한 줄 메모를 함께 남기면 취합할 때 씁니다.</p>
+    <div class="row"><input type="url" id="url" placeholder="https://www.youtube.com/watch?v=…"><input type="text" id="urlNote" placeholder="메모(예: 조회수 120만, 썸네일 좋음)"><button id="addUrl">넣기</button></div>
+    <div class="list" id="urls"></div>
+  </section>
+
+  <section class="step">
+    <h2><span class="no">3</span>캡처 사진</h2>
+    <p class="hint">유튜브 검색 결과·조회수·댓글·스튜디오 분석 화면 캡처를 올려 주세요. 취합할 때 Claude가 사진 속 글자를 읽습니다.</p>
+    <div class="row"><input type="file" id="file" accept="image/*" multiple><span class="msg" id="m3"></span></div>
+    <div class="shots" id="shots"></div>
+  </section>
+
+  <section class="step">
+    <h2><span class="no">4</span>다른 AI에게 물을 질문</h2>
+    <p class="hint">질문을 복사해 해당 AI에 묻고, 받은 답을 아래 칸에 그대로 붙여 넣으세요.</p>
+    <div class="row"><button class="go" id="genQ">질문 만들기</button><button id="addQ" class="sm">질문 직접 추가</button><span class="msg" id="m4"></span></div>
+    <div class="list" id="qs"></div>
+  </section>
+
+  <section class="step">
+    <h2><span class="no">5</span>취합</h2>
+    <p class="hint">주소·캡처·답을 한데 모아 사실, 인기 영상의 공통점, 우리만의 차별점, 스토리 방향으로 정리합니다.</p>
+    <div class="row"><button class="go" id="merge">취합하기</button><span class="msg" id="m5"></span></div>
+    <div id="brief"></div>
+  </section>
+
+  <section class="step">
+    <h2><span class="no">6</span>시나리오 초안</h2>
+    <div class="row">
+      <select id="fmt" style="flex:1 1 160px">
+        <option value="58-N">쇼츠 58초 · 내레이션</option><option value="58-M">쇼츠 58초 · 무대</option>
+        <option value="40-N">쇼츠 40초 · 내레이션</option><option value="40-M">쇼츠 40초 · 무대</option>
+        <option value="L8">롱폼 약 8분</option><option value="L4">롱폼 약 4분</option>
+        <option value="card">카드뉴스·카드릴스</option>
+      </select>
+      <button class="go" id="scen">시나리오 쓰기</button><span class="msg" id="m6"></span>
+    </div>
+    <div id="scenOut"></div>
+  </section>
+
+  <section class="step">
+    <h2><span class="no">7</span>제작기로 보내기</h2>
+    <p class="hint">취합 결과와 시나리오를 영상 제작기 소재로 넘깁니다. 제작기에서 형식을 고르면 이 내용으로 만듭니다.</p>
+    <div class="row"><button class="go" id="send">제작기로 보내기</button><span class="msg" id="m7"></span></div>
+  </section>
+</div>
+
+<script>
+const $=id=>document.getElementById(id);
+const FINDER="trig_016gjKp4gw6Vmad8nDaPkWRY";
+const AIS=["제미나이","유튜브 스튜디오 AI","GPT·퍼플렉시티","직접 확인"];
+let DB=null,AS=null,SAMPLE=null,MCP=null,P=null,PID="",unsub=null,saving=Promise.resolve();
+const nowStr=()=>{const d=new Date(),z=n=>String(n).padStart(2,"0");return d.getFullYear()+"-"+z(d.getMonth()+1)+"-"+z(d.getDate())+" "+z(d.getHours())+":"+z(d.getMinutes())};
+const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const blank=()=>({title:"",topicId:"",urls:[],shots:[],questions:[],brief:null,scenario:"",scenFmt:"",status:"draft",at:nowStr()});
+
+function save(patch){
+  if(!DB||!PID)return Promise.resolve(false);
+  P={...P,...patch,updatedAt:nowStr()};render();
+  saving=saving.then(()=>DB.collection("projects").doc(PID).update({...patch,updatedAt:nowStr()})).then(()=>true).catch(()=>{$("m1").textContent="저장하지 못했어요. 다시 해 주세요.";return false});
+  return saving;
+}
+async function ensureProject(){
+  if(PID)return true;
+  if(!DB){$("m1").textContent="저장 공간에 연결되지 않았어요. 로그인한 상태에서 열어 주세요.";return false}
+  PID="p"+Date.now();P=blank();P.title=$("title").value.trim();P.topicId=$("topicId").value.trim();
+  try{await DB.collection("projects").doc(PID).set(P)}catch(e){PID="";$("m1").textContent="새 조사를 만들지 못했어요.";return false}
+  watch(PID);return true;
+}
+function watch(id){
+  if(unsub){try{unsub()}catch(e){}}
+  PID=id;
+  try{unsub=DB.collection("projects").doc(id).onSnapshot(d=>{const x=d.data?.();if(x){P={...blank(),...x};render()}},()=>{})}catch(e){}
+  try{history.replaceState(null,"","#"+id)}catch(e){}
+}
+
+function render(){
+  const p=P||blank();
+  if(document.activeElement!==$("title"))$("title").value=p.title||"";
+  if(document.activeElement!==$("topicId"))$("topicId").value=p.topicId||"";
+  // 주소
+  const U=$("urls");U.innerHTML="";
+  if(!p.urls.length)U.innerHTML='<div class="empty">아직 넣은 주소가 없어요.</div>';
+  p.urls.forEach((u,i)=>{const it=document.createElement("div");it.className="item";
+    it.innerHTML='<a href="'+esc(u.u)+'" target="_blank" rel="noopener">'+esc(u.u)+'</a>'+(u.note?'<span class="hint">'+esc(u.note)+'</span>':'');
+    const b=document.createElement("button");b.className="sm";b.textContent="빼기";b.onclick=()=>save({urls:p.urls.filter((_,j)=>j!==i)});
+    it.append(b);U.append(it)});
+  // 캡처
+  const S=$("shots");S.innerHTML="";
+  if(!p.shots.length)S.innerHTML='<div class="empty" style="grid-column:1/-1">아직 올린 캡처가 없어요.</div>';
+  p.shots.forEach((s,i)=>{const d=document.createElement("div");d.className="shot";
+    d.innerHTML='<img alt="캡처 '+(i+1)+'" src="'+esc(s.url||("/_blob/"+s.id))+'">';
+    const b=document.createElement("button");b.textContent="✕";b.title="빼기";b.onclick=()=>save({shots:p.shots.filter((_,j)=>j!==i)});
+    d.append(b);S.append(d)});
+  // 질문
+  const Q=$("qs");Q.innerHTML="";
+  if(!p.questions.length)Q.innerHTML='<div class="empty">「질문 만들기」를 누르면 주제·주소를 보고 질문을 만들어 드려요.</div>';
+  p.questions.forEach((q,i)=>{const it=document.createElement("div");it.className="item q";
+    const head=document.createElement("div");head.className="row";
+    head.innerHTML='<span class="chip">'+esc(q.to||"제미나이")+'</span>'+(q.a?'<span class="chip ok">답 있음</span>':'<span class="chip wait">답 기다림</span>');
+    const cp=document.createElement("button");cp.className="sm";cp.textContent="질문 복사";
+    cp.onclick=async()=>{try{await navigator.clipboard.writeText(q.q);cp.textContent="복사됨"}catch(e){qt.focus();const r=document.createRange();r.selectNodeContents(qt);const s=getSelection();s.removeAllRanges();s.addRange(r);cp.textContent="길게 눌러 복사"}setTimeout(()=>cp.textContent="질문 복사",1800)};
+    const del=document.createElement("button");del.className="sm";del.textContent="빼기";del.onclick=()=>save({questions:p.questions.filter((_,j)=>j!==i)});
+    head.append(cp,del);
+    const qt=document.createElement("div");qt.className="qt";qt.textContent=q.q;
+    if(q.custom){qt.contentEditable="true";qt.onblur=()=>{const v=qt.textContent.trim();if(v!==q.q){const a=p.questions.slice();a[i]={...q,q:v};save({questions:a})}}}
+    const ta=document.createElement("textarea");ta.id="ans_"+(q.id||i);ta.placeholder="받은 답을 여기에 붙여 넣으세요";ta.value=q.a||"";
+    const sv=document.createElement("button");sv.className="sm";sv.textContent="답 저장";
+    sv.onclick=()=>{const a=p.questions.slice();a[i]={...q,a:ta.value.trim().slice(0,15000),aAt:nowStr()};save({questions:a}).then(ok=>{if(ok){sv.textContent="저장됨";setTimeout(()=>sv.textContent="답 저장",1500)}})};
+    it.append(head,qt,ta,sv);Q.append(it)});
+  // 취합
+  const B=$("brief");B.innerHTML="";
+  if(p.brief){const b=p.brief,o=document.createElement("div");o.className="out";
+    const sec=(h,arr)=>arr&&arr.length?'<h4>'+h+'</h4>'+arr.map(x=>"· "+esc(typeof x==="string"?x:(x.text||x.title||JSON.stringify(x)))).join("\n"):"";
+    o.innerHTML=(b.summary?'<b>'+esc(b.summary)+'</b>':'')+sec("확인된 사실",b.facts)+sec("인기 영상의 공통점",b.youtube)+sec("아직 아무도 안 한 것 (차별화)",b.gaps)+sec("주의할 점",b.cautions)+(b.story?'<h4>스토리 방향</h4>'+esc(b.story):'')+sec("더 확인할 것",b.todo);
+    B.append(o)}
+  else B.innerHTML='<div class="empty">답을 몇 개 붙여 넣은 뒤 「취합하기」를 눌러 주세요.</div>';
+  // 시나리오
+  const O=$("scenOut");O.innerHTML="";
+  if(p.scenario){const o=document.createElement("div");o.className="out";o.textContent=p.scenario;O.append(o)}
+  else O.innerHTML='<div class="empty">취합이 끝나면 형식을 골라 시나리오를 쓸 수 있어요.</div>';
+  if(p.scenFmt)$("fmt").value=p.scenFmt;
+  $("m7").textContent=p.status==="sent"?"✓ 제작기로 보냈어요 ("+(p.sentAt||"")+")"+(p.importMsg?" · "+p.importMsg:""):"";
+}
+
+async function loadList(){
+  if(!DB)return;
+  try{DB.collection("projects").orderBy("at","desc").limit(30).onSnapshot(s=>{
+    const sel=$("pick"),cur=PID;sel.innerHTML='<option value="">+ 새 조사</option>';
+    const rows=[];const push=d=>rows.push({...d.data(),id:d.id});(s.docs||[]).forEach(push);if(!s.docs&&s.forEach)s.forEach(push);
+    rows.forEach(r=>{const o=document.createElement("option");o.value=r.id;o.textContent=(r.title||"(제목 없음)")+" · "+(r.at||"").slice(5);sel.append(o)});
+    sel.value=cur||"";
+    if(!PID&&rows.length&&!location.hash.slice(1))watch(rows[0].id);
+  },()=>{})}catch(e){}
+}
+
+// 1. 주제
+$("pick").onchange=e=>{const v=e.target.value;if(v)watch(v);else{PID="";P=blank();render()}};
+$("newBtn").onclick=()=>{PID="";P=blank();$("pick").value="";render();$("title").focus()};
+$("saveTitle").onclick=async()=>{if(!(await ensureProject()))return;await save({title:$("title").value.trim().slice(0,120),topicId:$("topicId").value.trim().slice(0,40)});$("m1").textContent="저장했어요."};
+// 2. 주소
+$("addUrl").onclick=async()=>{const u=$("url").value.trim();if(!/^https?:\/\//.test(u)){$("url").focus();return}
+  if(!(await ensureProject()))return;await save({urls:[...(P.urls||[]),{u:u.slice(0,400),note:$("urlNote").value.trim().slice(0,200),at:nowStr()}]});$("url").value="";$("urlNote").value=""};
+// 3. 캡처
+$("file").onchange=async e=>{const fs=[...e.target.files];if(!fs.length)return;
+  if(!AS){$("m3").textContent="이 화면에서는 사진을 올릴 수 없어요(편집 권한이 필요해요).";return}
+  if(!(await ensureProject()))return;
+  const add=[];for(const [i,f] of fs.entries()){$("m3").textContent="올리는 중 "+(i+1)+"/"+fs.length;
+    try{const r=await AS.upload(f);add.push({id:r.id,url:r.url,name:f.name.slice(0,80),at:nowStr()})}catch(err){$("m3").textContent=f.name+" 올리기 실패 (20MB 이하 사진만)"}}
+  if(add.length){await save({shots:[...(P.shots||[]),...add]});$("m3").textContent=add.length+"장 올렸어요."}
+  e.target.value=""};
+
+// Claude 호출 공통
+async function ask(prompt,{images=[],tier="default"}={}){
+  if(!SAMPLE)throw new Error("Claude에 연결되지 않았어요");
+  const opts={modelTier:tier,cache:false};
+  if(images.length){try{const lim=await SAMPLE.limits?.();if(!lim||lim.images)opts.images=images}catch(e){}}
+  return SAMPLE.json(prompt,opts);
+}
+async function shotBlobs(max=6){
+  const out=[];for(const s of (P.shots||[]).slice(-max)){try{const r=await fetch(s.url||("/_blob/"+s.id));if(r.ok)out.push(await r.blob())}catch(e){}}return out;
+}
+const ctx=()=>"주제: "+(P.title||"(없음)")+"\n유튜브 주소:\n"+((P.urls||[]).map(u=>"- "+u.u+(u.note?" ("+u.note+")":"")).join("\n")||"(없음)");
+const RULES="규칙: 한국어로만 쓴다. 실제로 있었던 장면·실제 발언만 쓰고 지어내지 않는다. 확인 안 된 것은 '확인 필요'로 표시한다. 실존 인물 사진·뉴스 사진은 쓰지 않는다. 논란 단어나 멤버를 깎아내리는 표현은 쓰지 않는다. 사건·사고·정치는 사실만 담담하게.";
+
+// 4. 질문 만들기
+$("genQ").onclick=async()=>{if(!(await ensureProject()))return;const t=($("title").value||P.title||"").trim();
+  if(!t){$("m4").textContent="먼저 주제를 적어 주세요.";$("title").focus();return}
+  if(t!==P.title)await save({title:t});
+  const b=$("genQ");b.disabled=true;$("m4").textContent="질문을 만드는 중…";
+  try{const imgs=await shotBlobs(4);
+    const r=await ask("너는 유튜브 채널 「덕심저장소」(아이돌·예능 쇼츠·롱폼)의 리서치 담당이다. 아래 주제로 차별화된 영상 스토리를 만들기 위해, 대표가 다른 AI에게 직접 물어볼 질문 6~8개를 만든다.\n"+ctx()+"\n"+(imgs.length?"첨부한 캡처도 참고한다.\n":"")+
+      "질문 대상(to)은 다음 중 하나: 제미나이(유튜브 영상 내용 요약·장면 시각·자막 확인에 강함, 영상 주소를 넣어 물을 수 있음), 유튜브 스튜디오 AI(우리 채널 시청자·검색어 분석), GPT·퍼플렉시티(최신 기사·출처 확인), 직접 확인(대표가 영상을 보고 확인할 것).\n"+
+      "좋은 질문: 인기 영상들의 공통 구성과 첫 3초, 댓글에서 시청자가 가장 반응한 장면, 아직 아무도 다루지 않은 각도, 정확한 장면 시각(분:초)과 실제 대사, 사실 확인. 영상 주소가 있으면 질문 안에 그 주소를 그대로 넣는다. 질문은 복사해 바로 붙여 넣을 수 있게 완결된 문장으로 쓴다.\n"+RULES+
+      '\n답은 JSON만: {"questions":[{"to":"제미나이","q":"…"}]}',{images:imgs});
+    const qs=(r&&r.questions||[]).filter(x=>x&&x.q).slice(0,10).map((x,i)=>({id:"q"+Date.now()+i,to:AIS.includes(x.to)?x.to:"제미나이",q:String(x.q).slice(0,1500),a:""}));
+    if(!qs.length)throw new Error("질문이 비어 있어요");
+    await save({questions:[...(P.questions||[]).filter(q=>q.a||q.custom),...qs]});$("m4").textContent=qs.length+"개 만들었어요.";
+  }catch(e){$("m4").textContent=(e&&e.code==="rate_limited")?"잠시 뒤 다시 눌러 주세요.":"질문을 만들지 못했어요: "+(e.message||e.code||"")}
+  b.disabled=false};
+$("addQ").onclick=async()=>{if(!(await ensureProject()))return;await save({questions:[...(P.questions||[]),{id:"q"+Date.now(),to:"제미나이",q:"(여기에 질문을 적으세요)",a:"",custom:true}]})};
+
+// 5. 취합
+$("merge").onclick=async()=>{if(!PID){$("m5").textContent="먼저 주제를 저장해 주세요.";return}
+  const answered=(P.questions||[]).filter(q=>q.a);
+  if(!answered.length&&!(P.shots||[]).length){$("m5").textContent="붙여 넣은 답이나 캡처가 하나 이상 있어야 해요.";return}
+  const b=$("merge");b.disabled=true;$("m5").textContent="취합하는 중… (1분쯤 걸려요)";
+  try{const imgs=await shotBlobs(6);
+    const r=await ask("너는 「덕심저장소」 리서치 편집자다. 대표가 모은 자료를 하나의 리서치 요약으로 정리한다.\n"+ctx()+"\n\n다른 AI에게서 받은 답:\n"+
+      (answered.map((q,i)=>"["+(i+1)+"] ("+q.to+") 질문: "+q.q+"\n답: "+q.a).join("\n\n")||"(없음)")+
+      (imgs.length?"\n\n첨부 캡처 "+imgs.length+"장: 사진 속 제목·조회수·댓글·수치를 읽어 반영한다.":"")+
+      "\n\n서로 다른 답이 엇갈리면 facts에 넣지 말고 cautions에 '엇갈림'으로 적는다. 출처가 분명한 것만 facts에 넣고 끝에 (출처: …)를 붙인다.\n"+RULES+
+      '\n답은 JSON만: {"summary":"한 줄 요약","facts":["…"],"youtube":["인기 영상들의 공통 구성·훅·조회수 근거"],"gaps":["아직 아무도 안 한 각도"],"story":"우리만의 스토리 방향 3~5문장","cautions":["…"],"todo":["더 확인할 것"]}',{images:imgs,tier:"complex"});
+    if(!r||!r.summary)throw new Error("결과가 비어 있어요");
+    await save({brief:{...r,at:nowStr()},status:P.status==="sent"?"sent":"merged"});$("m5").textContent="취합했어요.";
+  }catch(e){$("m5").textContent=(e&&e.code==="rate_limited")?"잠시 뒤 다시 눌러 주세요.":"취합하지 못했어요: "+(e.message||e.code||"")}
+  b.disabled=false};
+
+// 6. 시나리오
+const FMT={"58-N":"쇼츠 58.0초, 내레이션 있음. 구성 [0~3초 훅][3~5 반전][5~25 이야기1][25~45 이야기2][45~53 시리즈 브랜딩][53~58 아웃트로]",
+ "58-M":"쇼츠 58.0초, 내레이션 없이 무대·음악 위주. 큰 자막 몇 줄만",
+ "40-N":"쇼츠 40초, 내레이션 있음, 가벼운 구성","40-M":"쇼츠 40초, 무대·음악 위주",
+ "L8":"롱폼 약 8분 몰아보기. [0~30초 초고속 오프닝: 0초 하이라이트 3초, 25초 무렵 질문 한 줄][30초~1:30 발단][1:30~ 본편 여러 장면][결심 한 줄][다음 편 예고·구독]",
+ "L4":"롱폼 약 4분. 오프닝 하이라이트, 질문 한 줄, 본편, 결심 한 줄",
+ "card":"카드뉴스 7~10장. 1장 제목 카드, 마지막 장 정리·응원 문구"};
+$("scen").onclick=async()=>{if(!P||!P.brief){$("m6").textContent="먼저 취합해 주세요.";return}
+  const f=$("fmt").value,b=$("scen");b.disabled=true;$("m6").textContent="시나리오를 쓰는 중…";
+  try{const r=await ask("너는 「덕심저장소」 작가다. 아래 리서치 요약만 근거로 시나리오 초안을 쓴다.\n형식: "+FMT[f]+"\n"+ctx()+"\n\n리서치 요약:\n"+JSON.stringify(P.brief)+
+      "\n\n쓰는 법: 장면마다 '시간 | 화면(어느 영상의 몇 분 몇 초, 모르면 [장면 시각 확인 필요]) | 내레이션 | 자막(위 자막은 화면 맨 위, [대괄호 상황 자막], (괄호 드립))'을 한 줄씩. 썸네일 문구 2안(강조할 단어는 *별표*로)과 제목 3안, 출처 목록을 끝에 붙인다. 내레이션은 빠르고 따뜻한 말투, 실제 대사는 따옴표로 원문 그대로.\n"+RULES+
+      '\n답은 JSON만: {"scenario":"전체 시나리오 텍스트"}',{tier:"complex"});
+    if(!r||!r.scenario)throw new Error("결과가 비어 있어요");
+    await save({scenario:String(r.scenario).slice(0,30000),scenFmt:f,scenAt:nowStr()});$("m6").textContent="썼어요. 고칠 점은 답 칸에 적고 다시 취합해도 돼요.";
+  }catch(e){$("m6").textContent=(e&&e.code==="rate_limited")?"잠시 뒤 다시 눌러 주세요.":"쓰지 못했어요: "+(e.message||e.code||"")}
+  b.disabled=false};
+
+// 7. 제작기로 보내기
+$("send").onclick=async()=>{if(!P||!P.brief){$("m7").textContent="먼저 취합해 주세요.";return}
+  await save({status:"queued",sentAt:nowStr(),importMsg:""});
+  let ok=false;if(MCP){try{await MCP.callTool("Claude Code Remote","fire_trigger",{trigger_id:FINDER,text:"유튜브 딥리서치 import projects/"+PID});ok=true}catch(e){}}
+  $("m7").textContent=ok?"보냈어요. 몇 분 뒤 제작기 「오늘의 소재」에 올라옵니다.":"요청은 저장했어요. 다음 소재 찾기 때 함께 넘어갑니다.";
+};
+
+(async()=>{
+  render();
+  const c=window.claude;if(!c||!c.use){$("m1").textContent="저장 공간에 연결되지 않았어요.";return}
+  const t=setTimeout(()=>{if(!DB)$("m1").textContent="연결이 늦어요. 새로고침해 주세요."},10000);
+  [DB,AS,SAMPLE,MCP]=await Promise.all(["db","assets","sample","mcp"].map(n=>c.use(n).catch(()=>null)));
+  clearTimeout(t);
+  if(!DB){$("m1").textContent="로그인한 상태에서 열어야 저장돼요.";return}
+  const h=location.hash.slice(1);
+  if(/^p\d+$/.test(h))watch(h);
+  else if(/^t[\w-]+$/.test(h)){$("topicId").value=h}
+  loadList();
+  if(!SAMPLE){["genQ","merge","scen"].forEach(id=>$(id).disabled=true);$("m4").textContent="이 화면에서는 Claude 질문 만들기를 쓸 수 없어요."}
+})();
+</script>

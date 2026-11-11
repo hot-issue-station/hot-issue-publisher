@@ -135,7 +135,7 @@ ol.flow{margin:6px 0 0;padding-left:20px;font-size:13px;color:var(--muted)}
     <div id="list" style="display:flex;flex-direction:column;gap:12px"><p class="empty">아직 주문이 없어요. 위에서 골라 첫 주문을 넣으면 여기에 11단계 진행 막대가 생깁니다.</p></div>
   </section>
 
-  <nav class="links" aria-label="바로가기"><a href="https://claude.ai/artifact/GGSaGw8q8Lc3bcDifkaFrK" target="_blank" rel="noopener">덕심저장소 갤러리</a><a href="https://claude.ai/artifact/U9VZr9a1bNtZRQwswhv2dz" target="_blank" rel="noopener">이슈브리프 사무실</a><a href="https://claude.ai/artifact/Xxp8hf3gz6aWW5uemGphWS" target="_blank" rel="noopener">릴스 재료함</a><a href="https://claude.ai/artifact/H9d1SRr3uSYZEX6pYDNswV" target="_blank" rel="noopener">이슈브리프 스튜디오</a></nav>
+  <nav class="links" aria-label="바로가기"><a href="https://claude.ai/artifact/GGSaGw8q8Lc3bcDifkaFrK" target="_blank" rel="noopener">덕심저장소 갤러리</a><a href="https://claude.ai/artifact/U9VZr9a1bNtZRQwswhv2dz" target="_blank" rel="noopener">이슈브리프 사무실</a><a href="https://claude.ai/artifact/F5bCHmxmzT3tzUFHaRdyM8" target="_blank" rel="noopener">유튜브 딥리서치 작업실</a><a href="https://claude.ai/artifact/Xxp8hf3gz6aWW5uemGphWS" target="_blank" rel="noopener">릴스 재료함</a><a href="https://claude.ai/artifact/H9d1SRr3uSYZEX6pYDNswV" target="_blank" rel="noopener">이슈브리프 스튜디오</a></nav>
   <p class="basis" id="basis"></p>
 </main>
 
@@ -228,6 +228,7 @@ function drawTopics(){
       add("유튜브 인기 영상 (이 소재로 가장 많이 본 것)",D.youtube,(li,v)=>{const a=document.createElement("a");a.href=v.url||"#";a.target="_blank";a.rel="noopener";a.textContent=[v.title,v.channel,v.views].filter(Boolean).join(" · ");li.append(a);if(v.angle){const sp=document.createElement("div");sp.className="muted";sp.textContent="→ "+v.angle;li.append(sp)}});
       add("차별화 포인트 (남들이 안 다룬 이야기)",D.gaps,(li,x)=>li.textContent=x);
       if(D.story){const hh=document.createElement("div");hh.className="dh";hh.textContent="스토리 초안"+(t.confirmed?" ✅ 확정":"");dt.append(hh);const p1=document.createElement("p");p1.textContent=D.story;dt.append(p1)}
+      {const wl=document.createElement("a");wl.href="https://claude.ai/artifact/F5bCHmxmzT3tzUFHaRdyM8#"+t.id;wl.target="_blank";wl.rel="noopener";wl.className="chip";wl.style.cssText="display:inline-block;margin:6px 0;font-size:13px";wl.textContent="📺 유튜브 딥리서치 작업실에서 주소·캡처·답 모으기";dt.append(wl)}
       if(D.askUser&&D.askUser.length){const hh=document.createElement("div");hh.className="dh";hh.textContent="대표님께 부탁 — 아래 질문을 복사해 물어보고 답을 붙여 주세요";dt.append(hh);
         D.askUser.forEach((q,qi)=>{const row=document.createElement("div");row.className="ask";const lab=document.createElement("div");lab.className="muted";lab.textContent=(q.to||"제미나이")+"에게";const tx=document.createElement("div");tx.textContent=q.q||"";
           const cb=mk("chip","복사");cb.style.fontSize="13px";cb.onclick=async()=>{try{await navigator.clipboard.writeText(q.q||"");cb.textContent="복사했어요 ✓"}catch(e){cb.textContent="길게 눌러 복사"}};row.append(lab,tx,cb);dt.append(row)});
