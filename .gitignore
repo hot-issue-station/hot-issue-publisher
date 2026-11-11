@@ -5,3 +5,4 @@ factory/**/_tmp*/
 factory/results/
 factory/budget.json
 __pycache__/
+factory/samples/_test/
