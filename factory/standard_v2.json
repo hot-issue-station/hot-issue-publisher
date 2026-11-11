@@ -50,31 +50,33 @@
     "_근거": "G 58초·9:16 / 아웃트로 5초 G",
     "platforms": {
       "youtube": 58.0,
-      "instagram": 58.0,
-      "facebook": 58.0,
-      "x": 58.0,
-      "tiktok": 62.0
+      "tiktok": 62.0,
+      "instagram": 62.0,
+      "facebook": 62.0,
+      "x": 62.0,
+      "threads": 62.0
     },
     "versions": {
-      "58": {
+      "yt58": {
         "sec": 58.0,
-        "suffix": "_58",
+        "suffix": "_yt58",
         "for": [
-          "youtube",
-          "instagram",
-          "facebook",
-          "x"
+          "youtube"
         ]
       },
-      "tiktok62": {
+      "62": {
         "sec": 62.0,
-        "suffix": "_tiktok62",
+        "suffix": "_62",
         "for": [
-          "tiktok"
+          "tiktok",
+          "instagram",
+          "facebook",
+          "x",
+          "threads"
         ]
       }
     },
-    "_플랫폼_근거": "대표 지시 11/11 20:34: 틱톡은 1분 2초(62.0초) 별도 버전. 본문 구간을 비례로 4초 늘리고 아웃트로 5초는 그대로"
+    "_플랫폼_근거": "대표 정정 11/11 20:35: 유튜브 쇼츠만 58.0초(_yt58.mp4), 나머지 플랫폼 전부 62.0초(_62.mp4). 본문 구간을 비례로 4초 늘리고 아웃트로 5초는 그대로"
   },
   "style_A": {
     "template": "expose",
