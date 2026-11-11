@@ -967,10 +967,16 @@ function saveJpg(c,prefix){
   if(!c){msg("저장할 사진이 없어요. 먼저 사진을 넣어 주세요.","err");return;}
   const d=new Date(),p=n=>String(n).padStart(2,"0");
   const fname=`${prefix}_${d.getFullYear()}${p(d.getMonth()+1)}${p(d.getDate())}_${p(d.getHours())}${p(d.getMinutes())}.jpg`;
-  c.toBlob(b=>{
+  c.toBlob(async b=>{
     if(!b){msg("사진을 만들지 못했어요. 다시 눌러 주세요.","err");return;}
     const url=URL.createObjectURL(b);
-    const a=document.createElement("a");a.href=url;a.download=fname;document.body.appendChild(a);a.click();a.remove();
+    let dl=null;
+    try{ if(window.claude&&window.claude.use) dl=await window.claude.use("downloads"); }catch(e){ dl=null; }
+    if(dl){
+      try{ await dl.save({filename:fname,data:b}); }catch(e){ msg("저장하지 않았어요. 아래 사진을 길게 눌러 저장할 수도 있어요.","err"); }
+    }else{
+      const a=document.createElement("a");a.href=url;a.download=fname;document.body.appendChild(a);a.click();a.remove();
+    }
     const im=$("savedImg");if(im.dataset.url)URL.revokeObjectURL(im.dataset.url);
     im.src=url;im.dataset.url=url;$("saveBox").classList.remove("hide");
   },"image/jpeg",0.9);
