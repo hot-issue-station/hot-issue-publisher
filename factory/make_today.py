@@ -21,9 +21,6 @@ LABEL = {"가수": "가수 이름", "곡": "곡 이름", "숫자": "주인공 �
          "클립": "무대 클립 {\"A\": [파일, 노래와 맞는 시각], ...}", "음원": "노래 파일", "bpm": "노래 빠르기(bpm)",
          "저작권확인": "저작권·팬캠 양해 확인(true)", "롱폼": "롱폼 예고 문구", "단위": "숫자 단위"}
 
-class Missing(Exception):
-    pass
-
 def stop(lines):
     print("❌ 아직 만들 수 없어요. 아래를 채워 주세요:")
     for l in lines: print("  - " + l)
@@ -61,6 +58,8 @@ def resolve(path, fill_dir):
         q = os.path.join(b, path)
         if os.path.exists(q): return os.path.abspath(q)
     return None
+
+def rng(a, b): return f"{a}" if a == b else f"{a}~{b}"
 
 def hexrgb(h): h = h.lstrip("#"); return tuple(int(h[i:i + 2], 16) for i in (0, 2, 4))
 
@@ -102,7 +101,7 @@ def build(preset, fill, fill_dir, name):
     if kind == "rank":
         R = preset["rank"]; rows = vals.get("순위표") or []
         if rows and not (R["rows_min"] <= len(rows) <= R["rows_max"]):
-            problems.append(f"순위표: 이 시간대는 {R['rows_min']}~{R['rows_max']}줄이에요 (지금 {len(rows)}줄)")
+            problems.append(f"순위표: 이 시간대는 {rng(R['rows_min'], R['rows_max'])}줄이에요 (지금 {len(rows)}줄)")
         for i, r in enumerate(rows):
             if not (isinstance(r, list) and len(r) == 4): problems.append(f"순위표 {i+1}번째 줄: [순위, 이름, 곡, 숫자] 4칸이어야 해요")
         num = vals.get("숫자")
@@ -116,7 +115,7 @@ def build(preset, fill, fill_dir, name):
     elif kind == "cards":
         C = preset["cards"]; cards = vals.get("카드") or []
         if cards and not (C["min"] <= len(cards) <= C["max"]):
-            problems.append(f"카드: 이 시간대는 {C['min']}~{C['max']}장이에요 (지금 {len(cards)}장)")
+            problems.append(f"카드: 이 시간대는 {rng(C['min'], C['max'])}장이에요 (지금 {len(cards)}장)")
         for i, c in enumerate(cards):
             if not (isinstance(c, dict) and c.get("big")): problems.append(f"카드 {i+1}번째: \"big\"(큰 글씨 한 줄)이 없어요")
             elif c.get("photo"):
@@ -139,7 +138,6 @@ def build(preset, fill, fill_dir, name):
         spec.update(template="stagemix", song=files.get("음원"), song_start=float(vals.get("노래시작", 0.0)), bpm=bpm,
                     clips=cl, plan=plan, sub=hook["question"], sources=src,
                     copyright_checked=bool(vals.get("저작권확인")))
-        if not spec["bg"] and cl: spec["bg"] = None  # 썸네일 사진은 렌더 때 첫 클립에서 뽑는다
         # 클립 길이 확인(잘린 장면 방지)
         for k, (p, sync) in cl.items():
             d = probe_dur(p)

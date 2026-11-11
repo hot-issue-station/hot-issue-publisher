@@ -1,0 +1,11 @@
+{
+  "_설명": "토요일 「교차편집」 예시 빈칸. 클립·음원은 시험용 샘플",
+  "가수": "리센느",
+  "곡": "PULSE",
+  "클립": {"A": ["assets/test_clip.mp4", 0.0], "B": ["/home/claude/shorts_factory/test_clip.mp4", 0.0]},
+  "음원": "assets/bgm_morning.m4a",
+  "bpm": 120,
+  "출처": ["시험용 샘플 영상"],
+  "확인": "시험",
+  "저작권확인": true
+}
