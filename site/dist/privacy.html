@@ -1,0 +1,179 @@
+<!doctype html>
+<!-- 개인정보 처리방침 초안. 법률 자문이 아님 — 참고용 초안이며, 실제 수집 방식(익명 통계 도구, Firebase 댓글 저장 여부 등)이 바뀌면 이 문서도 함께 고칠 것.
+     근거로 맞춘 실제 동작(2026-11-11 gallery/hall.html 기준): 댓글·좋아요·방문 도장·통계는 지금 이 기기 localStorage에만 저장(FIREBASE_CONFIG=null),
+     유튜브 임베드는 youtube-nocookie.com, 유튜브 숫자·인기 댓글은 YouTube Data API(읽기 전용, 로그인 없음), 쿠팡 링크에 대가성 문구 자동 표시. -->
+<html lang="ko" data-lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f6efe3">
+<title>개인정보 처리방침 · 덕심저장소 갤러리</title>
+<meta name="description" content="덕심저장소 갤러리가 어떤 정보를 어떻게 다루는지 안내합니다.">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body data-page="privacy">
+<header class="top" id="top"><div class="bar"><a class="home" href="./"><b>덕심저장소 갤러리</b><small>← 갤러리로</small></a></div></header>
+<main>
+
+<article lang="ko">
+  <h1>개인정보 처리방침</h1>
+  <p class="lead">덕심저장소 갤러리(이하 “갤러리”)는 회원 가입이 없고, 이름·연락처 같은 개인정보를 받지 않아요. 꼭 필요한 정보만, 아래처럼 다뤄요.</p>
+  <section class="card"><h2>1. 모으는 정보</h2>
+    <ul>
+      <li><b>익명 방문 통계</b> — 어떤 방·영상을 몇 번 보았는지, 광고 자리가 보인 시간과 눌린 횟수. 누구인지 알 수 있는 정보와 묶지 않아요.</li>
+      <li><b>갤러리 댓글</b> — 직접 적은 닉네임(선택, 20자까지)과 댓글 본문(200자까지), 올린 시각. 닉네임을 비우면 “방문자”로 보여요. 실명·연락처는 적지 말아 주세요.</li>
+      <li><b>신고 기록</b> — 신고한 댓글의 번호.</li>
+    </ul>
+  </section>
+  <section class="card"><h2>2. 쿠키와 기기 저장소</h2>
+    <p>갤러리는 광고 추적용 쿠키를 쓰지 않아요. 대신 브라우저의 로컬 저장소(localStorage)에 언어·안내 캐릭터·둘러보기 방식, 좋아요·방문 도장·수집 배지, 갤러리 댓글, 신고 목록, 영상 숫자 임시 저장을 남겨요. 이 정보는 지금은 이 기기 안에만 있고, 브라우저의 “사이트 데이터 삭제”로 언제든 지울 수 있어요.</p>
+    <p>나중에 댓글을 다른 방문자와 함께 보도록 바꾸면 댓글(닉네임·본문·시각)은 저장 서버에 보관되며, 그때 이 방침을 먼저 고쳐 알려 드려요.</p>
+  </section>
+  <section class="card"><h2>3. 이용 목적과 보관 기간</h2>
+    <ul>
+      <li>통계: 많이 본 영상과 방을 알고 갤러리를 더 낫게 만들기 위해. 모은 날로부터 최대 1년 뒤 지우거나 합계만 남겨요.</li>
+      <li>댓글: 방문자끼리 이야기를 나누기 위해. 직접 지우기를 요청하거나 갤러리를 닫을 때까지 보관하고, 규칙 위반 댓글은 바로 지워요.</li>
+    </ul>
+  </section>
+  <section class="card"><h2>4. 함께 쓰는 외부 서비스(제3자)</h2>
+    <ul>
+      <li><b>YouTube</b> — 영상은 YouTube 임베드 플레이어(youtube-nocookie.com)로 재생되고, 조회수·좋아요 수와 인기 댓글은 YouTube API 서비스로 읽어 와요. 영상을 재생하면 YouTube(Google)가 자체 방침에 따라 정보를 처리할 수 있어요. <a href="https://policies.google.com/privacy" rel="noopener" target="_blank">Google 개인정보처리방침</a> · <a href="https://www.youtube.com/t/terms" rel="noopener" target="_blank">YouTube 서비스 약관</a></li>
+      <li><b>제휴 링크</b> — 일부 상품 링크는 제휴(어필리에이트) 링크예요. 누르면 해당 쇼핑몰로 이동하고, 그 뒤의 정보 처리는 그 쇼핑몰의 방침을 따라요. 갤러리는 누가 무엇을 샀는지 알 수 없어요.<br><span class="note" style="display:block;margin-top:6px">이 게시물은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</span></li>
+      <li><b>사이트 호스팅</b> — 갤러리는 Netlify에서 서비스돼요. 접속 시 서버가 보안을 위해 접속 기록(IP 주소, 브라우저 종류, 시각)을 잠시 남길 수 있어요.</li>
+    </ul>
+    <p>위 경우 말고는 정보를 다른 곳에 팔거나 넘기지 않아요.</p>
+  </section>
+  <section class="card"><h2>5. 어린이</h2>
+    <p>만 14세 미만 방문자는 댓글에 이름·학교·연락처 같은 정보를 적지 말아 주세요. 그런 정보가 보이면 바로 지워요.</p>
+  </section>
+  <section class="card"><h2>6. 내 정보 확인·삭제 요청</h2>
+    <p>내가 쓴 댓글을 지우고 싶거나 궁금한 점이 있으면 문의 양식으로 알려 주세요. 댓글 위치(방·영상 이름)와 닉네임을 적어 주시면 빨리 찾을 수 있어요.</p>
+    <a class="cta" data-form href="#">문의 양식 열기</a><p class="ctaNote" data-form-note hidden></p>
+    <p>개인정보 보호책임자: <span data-c="PRIVACY_OFFICER">PRIVACY_OFFICER</span> (연락은 위 문의 양식으로)</p>
+  </section>
+  <p class="meta">시행일: <span data-c="EFFECTIVE_DATE">EFFECTIVE_DATE</span> · 내용이 바뀌면 이 페이지에서 먼저 알려 드려요.</p>
+</article>
+
+<article lang="ja">
+  <h1>プライバシーポリシー</h1>
+  <p class="lead">本ギャラリーには会員登録がなく、氏名や連絡先などの個人情報はお預かりしません。必要な情報だけを以下のように扱います。</p>
+  <section class="card"><h2>1. 収集する情報</h2>
+    <ul>
+      <li><b>匿名の訪問統計</b> — どの部屋・映像が何回見られたか、広告枠の表示時間とクリック数。個人を特定できる情報とは結び付けません。</li>
+      <li><b>ギャラリーコメント</b> — 任意のニックネーム（20文字まで）、本文（200文字まで）、投稿時刻。ニックネームが空欄の場合は「訪問者」と表示されます。本名や連絡先は書かないでください。</li>
+      <li><b>通報記録</b> — 通報したコメントの番号。</li>
+    </ul>
+  </section>
+  <section class="card"><h2>2. Cookieと端末内の保存</h2>
+    <p>広告トラッキング用のCookieは使いません。ブラウザのローカルストレージ（localStorage）に、言語・案内キャラクター・閲覧モード、いいね・訪問スタンプ・バッジ、ギャラリーコメント、通報リスト、映像の数値の一時保存を残します。現在これらはこの端末内だけにあり、ブラウザの「サイトデータを削除」でいつでも消せます。</p>
+    <p>今後コメントを他の訪問者と共有する形に変える場合、コメント（ニックネーム・本文・時刻）はサーバーに保存されます。その際は先にこのポリシーを改定してお知らせします。</p>
+  </section>
+  <section class="card"><h2>3. 利用目的と保存期間</h2>
+    <ul>
+      <li>統計：よく見られる映像・部屋を把握し、ギャラリーを改善するため。収集から最長1年で削除、または合計値のみ残します。</li>
+      <li>コメント：訪問者同士の交流のため。削除のご依頼またはギャラリー閉鎖まで保存し、ルール違反のコメントはすぐ削除します。</li>
+    </ul>
+  </section>
+  <section class="card"><h2>4. 外部サービス（第三者）</h2>
+    <ul>
+      <li><b>YouTube</b> — 映像はYouTube埋め込みプレーヤー（youtube-nocookie.com）で再生し、再生回数・いいね数・人気コメントはYouTube APIサービスで取得します。再生時はYouTube（Google）が独自の方針で情報を処理する場合があります。<a href="https://policies.google.com/privacy" rel="noopener" target="_blank">Googleプライバシーポリシー</a> · <a href="https://www.youtube.com/t/terms" rel="noopener" target="_blank">YouTube利用規約</a></li>
+      <li><b>アフィリエイトリンク</b> — 一部の商品リンクはアフィリエイトリンクです。クリックすると各ショップへ移動し、以降はそのショップの方針に従います。誰が何を購入したかはギャラリーには分かりません。<br><span class="note" style="display:block;margin-top:6px">この投稿はクーパン・パートナーズ活動の一環であり、これに伴い一定の手数料を受け取ります。（原文：이 게시물은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.）</span></li>
+      <li><b>ホスティング</b> — 本ギャラリーはNetlifyで配信されます。アクセス時、セキュリティのためサーバーが接続記録（IPアドレス、ブラウザの種類、時刻）を一時的に残すことがあります。</li>
+    </ul>
+    <p>上記以外に情報を販売・提供することはありません。</p>
+  </section>
+  <section class="card"><h2>5. お子さまへ</h2>
+    <p>14歳未満の方は、コメントに名前・学校・連絡先などを書かないでください。見つけた場合はすぐに削除します。</p>
+  </section>
+  <section class="card"><h2>6. 確認・削除のご依頼</h2>
+    <p>ご自身のコメントの削除やご質問は、お問い合わせフォームからお知らせください。部屋・映像名とニックネームを書いていただくと早く対応できます。</p>
+    <a class="cta" data-form href="#">お問い合わせフォームを開く</a><p class="ctaNote" data-form-note hidden></p>
+    <p>個人情報保護責任者：<span data-c="PRIVACY_OFFICER">PRIVACY_OFFICER</span>（ご連絡は上記フォームから）</p>
+  </section>
+  <p class="meta">施行日：<span data-c="EFFECTIVE_DATE">EFFECTIVE_DATE</span> · 内容を変更する場合は、まずこのページでお知らせします。</p>
+</article>
+
+<article lang="en">
+  <h1>Privacy Policy</h1>
+  <p class="lead">The gallery has no sign-up and does not ask for your name or contact details. We handle only what we need, as described below.</p>
+  <section class="card"><h2>1. What we collect</h2>
+    <ul>
+      <li><b>Anonymous visit statistics</b> — how often rooms and videos are viewed, how long ad spaces are visible and how often they are tapped. Never linked to anything that identifies you.</li>
+      <li><b>Gallery comments</b> — an optional nickname (up to 20 characters), the comment text (up to 200 characters) and the time posted. Without a nickname you appear as “Visitor”. Please don't write real names or contact details.</li>
+      <li><b>Reports</b> — the ID of a comment you reported.</li>
+    </ul>
+  </section>
+  <section class="card"><h2>2. Cookies and on-device storage</h2>
+    <p>We don't use advertising or tracking cookies. We use your browser's local storage (localStorage) for your language, guide character and browsing mode, likes, visit stamps and badges, gallery comments, your report list and temporarily cached video counts. For now this stays on your device only, and you can erase it anytime with your browser's “clear site data”.</p>
+    <p>If we later let visitors see each other's comments, comments (nickname, text, time) will be stored on a server. We will update this policy before that happens.</p>
+  </section>
+  <section class="card"><h2>3. Purpose and retention</h2>
+    <ul>
+      <li>Statistics: to learn which videos and rooms people enjoy and improve the gallery. Deleted, or reduced to totals only, within one year.</li>
+      <li>Comments: so visitors can talk with each other. Kept until you ask us to remove them or the gallery closes; comments that break the rules are removed right away.</li>
+    </ul>
+  </section>
+  <section class="card"><h2>4. Third-party services</h2>
+    <ul>
+      <li><b>YouTube</b> — videos play in the YouTube embedded player (youtube-nocookie.com), and view/like counts and top comments are read through YouTube API Services. When you play a video, YouTube (Google) may process information under its own policies. <a href="https://policies.google.com/privacy" rel="noopener" target="_blank">Google Privacy Policy</a> · <a href="https://www.youtube.com/t/terms" rel="noopener" target="_blank">YouTube Terms of Service</a></li>
+      <li><b>Affiliate links</b> — some product links are affiliate links. Tapping one takes you to that store, whose own policy then applies. The gallery cannot see who bought what.<br><span class="note" style="display:block;margin-top:6px">This post is part of the Coupang Partners program, and we receive a commission as a result. (Original: 이 게시물은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.)</span></li>
+      <li><b>Hosting</b> — the gallery is served by Netlify. For security, its servers may briefly keep access logs (IP address, browser type, time).</li>
+    </ul>
+    <p>Other than the above, we never sell or hand over information.</p>
+  </section>
+  <section class="card"><h2>5. Children</h2>
+    <p>Visitors under 14: please don't put your name, school or contact details in comments. If we see such information we delete it right away.</p>
+  </section>
+  <section class="card"><h2>6. Your requests</h2>
+    <p>To delete your comment or ask a question, use the contact form. Including the room or video name and your nickname helps us find it quickly.</p>
+    <a class="cta" data-form href="#">Open contact form</a><p class="ctaNote" data-form-note hidden></p>
+    <p>Privacy officer: <span data-c="PRIVACY_OFFICER">PRIVACY_OFFICER</span> (reach us through the form above)</p>
+  </section>
+  <p class="meta">Effective: <span data-c="EFFECTIVE_DATE">EFFECTIVE_DATE</span> · Changes will be announced on this page first.</p>
+</article>
+
+<article lang="zh-Hant">
+  <h1>隱私權政策</h1>
+  <p class="lead">本館不需註冊，也不收集姓名、聯絡方式等個人資料。我們只處理必要的資訊，方式如下。</p>
+  <section class="card"><h2>1. 收集的資訊</h2>
+    <ul>
+      <li><b>匿名造訪統計</b> — 哪些展間與影片被看了幾次、廣告版位的顯示時間與點擊次數。不會與可識別個人的資訊連結。</li>
+      <li><b>畫廊留言</b> — 自填暱稱（選填，最多 20 字）、留言內容（最多 200 字）與發布時間。未填暱稱會顯示為「訪客」。請勿寫下真實姓名或聯絡方式。</li>
+      <li><b>檢舉紀錄</b> — 被檢舉留言的編號。</li>
+    </ul>
+  </section>
+  <section class="card"><h2>2. Cookie 與裝置內儲存</h2>
+    <p>本館不使用廣告追蹤 Cookie。我們會在瀏覽器的本機儲存空間（localStorage）保存語言、導覽角色、瀏覽方式、按讚、造訪印章與徽章、畫廊留言、檢舉清單，以及影片數字的暫存。目前這些資料只存在你的裝置中，可隨時以瀏覽器的「清除網站資料」刪除。</p>
+    <p>日後若改為讓訪客彼此看到留言，留言（暱稱、內容、時間）將存放於伺服器，屆時會先修訂本政策並公告。</p>
+  </section>
+  <section class="card"><h2>3. 使用目的與保存期間</h2>
+    <ul>
+      <li>統計：了解受歡迎的影片與展間，以改善本館。收集後最長一年內刪除或只保留總計。</li>
+      <li>留言：讓訪客彼此交流。保存至你要求刪除或本館關閉為止；違規留言會立即刪除。</li>
+    </ul>
+  </section>
+  <section class="card"><h2>4. 第三方服務</h2>
+    <ul>
+      <li><b>YouTube</b> — 影片以 YouTube 嵌入式播放器（youtube-nocookie.com）播放，觀看次數、按讚數與熱門留言透過 YouTube API 服務讀取。播放影片時，YouTube（Google）可能依其政策處理資訊。<a href="https://policies.google.com/privacy" rel="noopener" target="_blank">Google 隱私權政策</a> · <a href="https://www.youtube.com/t/terms" rel="noopener" target="_blank">YouTube 服務條款</a></li>
+      <li><b>聯盟連結</b> — 部分商品連結為聯盟行銷連結。點擊後會前往該購物網站，之後適用該網站的政策。本館無法得知誰購買了什麼。<br><span class="note" style="display:block;margin-top:6px">本文為 Coupang 夥伴計畫活動的一部分，我們會因此獲得一定的佣金。（原文：이 게시물은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.）</span></li>
+      <li><b>網站代管</b> — 本館由 Netlify 提供服務。基於安全，伺服器可能短暫保留連線紀錄（IP 位址、瀏覽器類型、時間）。</li>
+    </ul>
+    <p>除上述情況外，絕不出售或提供資訊給他人。</p>
+  </section>
+  <section class="card"><h2>5. 兒童</h2>
+    <p>未滿 14 歲的訪客，請勿在留言中寫下姓名、學校、聯絡方式。發現時我們會立即刪除。</p>
+  </section>
+  <section class="card"><h2>6. 查詢與刪除申請</h2>
+    <p>想刪除自己的留言或有疑問，請透過洽詢表單告訴我們。寫下展間或影片名稱與暱稱，能更快找到。</p>
+    <a class="cta" data-form href="#">開啟洽詢表單</a><p class="ctaNote" data-form-note hidden></p>
+    <p>個人資料保護負責人：<span data-c="PRIVACY_OFFICER">PRIVACY_OFFICER</span>（請透過上方表單聯絡）</p>
+  </section>
+  <p class="meta">施行日：<span data-c="EFFECTIVE_DATE">EFFECTIVE_DATE</span> · 內容若有變更，會先在本頁公告。</p>
+</article>
+
+</main>
+<footer class="foot" id="foot"><nav><a href="about.html">소개</a><a href="privacy.html">개인정보 처리방침</a><a href="terms.html">이용 약관</a><a href="ads.html">광고 문의</a><a href="takedown.html">권리 침해 신고</a></nav></footer>
+<script src="assets/site-config.js"></script>
+<script src="assets/site.js"></script>
+</body>
+</html>

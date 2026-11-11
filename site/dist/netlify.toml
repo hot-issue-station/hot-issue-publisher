@@ -1,0 +1,36 @@
+# 덕심저장소 갤러리 — Netlify 설정 (Free 플랜)
+# site/ 폴더를 기준으로 배포할 때 사용. build.sh 가 dist/ 를 만들고, 끌어 놓기 배포용 사본(publish=".")과 _headers 도 dist/ 안에 넣는다.
+# _redirects 는 쓰지 않음(모든 페이지가 실제 파일이라 불필요).
+
+[build]
+  publish = "."
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Frame-Options = "SAMEORIGIN"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+
+# 페이지·데이터는 매번 새로 확인(큐레이션을 고치면 바로 반영)
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/*.json"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# 공용 CSS·JS 는 1시간 캐시 (FORM_URL 을 바꿔도 1시간 안에 반영. 파일 이름에 버전이 없으므로 immutable 은 쓰지 않음)
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"
