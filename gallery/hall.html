@@ -1554,7 +1554,7 @@ function start(THREE){
   }
   setScene(G.view, G.hallId, G.roomId);
   G.mode="3d"; G.three=THREE.REVISION;
-  G._debug = { player, get yaw(){return yaw;}, set yaw(v){yaw=v; ask();}, joy, ask, cur:()=>cur };
+  G._debug = { player, get yaw(){return yaw;}, set yaw(v){yaw=v; ask();}, get pitch(){return pitch;}, set pitch(v){pitch=v; ask();}, joy, ask, cur:()=>cur, boards };
   requestAnimationFrame(t=>{ loop(t); document.getElementById("loading").classList.add("off"); });
   el.addEventListener("webglcontextlost",e=>{ e.preventDefault(); G.mode="lost"; G.showFallback("WebGL 연결이 끊김"); });
 }
