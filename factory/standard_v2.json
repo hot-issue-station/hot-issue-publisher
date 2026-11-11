@@ -73,7 +73,8 @@
     "_플랫폼_근거": "대표 최종 확정 11/11 20:40: 모든 쇼츠(A·B) 모든 플랫폼 58.0초 하나로 통일. 62초 버전·두 버전 렌더 폐기",
     "_유튜브_한도_근거": "대표 20:36: 유튜브 칸에 58.0초 초과 파일이 들어가면 package.py 가 멈춘다(1분 넘는 쇼츠 Content ID 시 전 세계 차단)",
     "max_sec": 58.0,
-    "_한도_근거": "대표 20:36·20:40: 58.0초 초과 파일이면 package.py 가 멈춘다(1분 넘는 쇼츠 Content ID 시 전 세계 차단)"
+    "_한도_근거": "대표 20:36·20:40: 58.0초 초과 파일이면 package.py 가 멈춘다(1분 넘는 쇼츠 Content ID 시 전 세계 차단)",
+    "_설명": "쇼츠 공통. 템플릿별 길이·구간은 shorts_templates. 모든 플랫폼 같은 파일(대표 20:40·20:43)"
   },
   "style_A": {
     "template": "expose",
@@ -303,5 +304,150 @@
     "썸네일 빨간 띠→보라 띠(11/10 표준)",
     "댓글 캡처 자막 기본",
     "기존 make_today 07:30·12:00·18:30 편성"
-  ]
+  ],
+  "shorts_templates": {
+    "_설명": "대표 20:43 확정: 쇼츠 4종. N=내레이션(Veda)+자막, M=내레이션 없이 무대·음악(현장음 loudnorm). 모든 플랫폼 같은 파일.",
+    "58-N": {
+      "engine": "expose",
+      "total_sec": 58.0,
+      "outro_sec": 5.0,
+      "narration": true,
+      "narrator": "Veda",
+      "sections": [
+        [
+          "hook",
+          0,
+          3
+        ],
+        [
+          "twist",
+          3,
+          5
+        ],
+        [
+          "expose1",
+          5,
+          25
+        ],
+        [
+          "expose2",
+          25,
+          45
+        ],
+        [
+          "brand",
+          45,
+          53
+        ],
+        [
+          "outro",
+          53,
+          58
+        ]
+      ],
+      "_근거": "스타일 A 계열(G 예능 폭로형) + 내레이션(U 자료06 존댓말 내레이션)"
+    },
+    "58-M": {
+      "engine": "pulse58",
+      "total_sec": 58.0,
+      "outro_sec": 5.0,
+      "narration": false,
+      "loudnorm": true,
+      "min_sources": 8,
+      "sections": [
+        [
+          "change8",
+          0,
+          6
+        ],
+        [
+          "split",
+          6,
+          26
+        ],
+        [
+          "jump",
+          26,
+          46
+        ],
+        [
+          "pump",
+          46,
+          53
+        ],
+        [
+          "outro",
+          53,
+          58
+        ]
+      ],
+      "_근거": "스타일 B 계열(G 8단 교차편집)"
+    },
+    "40-N": {
+      "engine": "expose",
+      "total_sec": 40.0,
+      "outro_sec": 5.0,
+      "narration": true,
+      "narrator": "Veda",
+      "sections": [
+        [
+          "hook",
+          0,
+          3
+        ],
+        [
+          "body",
+          3,
+          35
+        ],
+        [
+          "outro",
+          35,
+          40
+        ]
+      ],
+      "_근거": "대표 20:43 — 이야기 1개, 짧은 내레이션+자막"
+    },
+    "40-M": {
+      "engine": "pulse58",
+      "total_sec": 40.0,
+      "outro_sec": 5.0,
+      "narration": false,
+      "loudnorm": true,
+      "min_sources": 4,
+      "max_sources": 6,
+      "sections": [
+        [
+          "hook",
+          0,
+          3
+        ],
+        [
+          "mix",
+          3,
+          35
+        ],
+        [
+          "outro",
+          35,
+          40
+        ]
+      ],
+      "_근거": "대표 20:43 — 한 곡 하이라이트, 교차편집 4~6단"
+    }
+  },
+  "shorts_templates_default": {
+    "expose": "58-N",
+    "pulse58": "58-M"
+  },
+  "loudnorm": {
+    "I": -14,
+    "TP": -1.5,
+    "LRA": 11,
+    "_근거": "내레이션 없는 판은 현장음 loudnorm(대표 20:43). 쇼츠 전 템플릿 마지막 단계에 적용"
+  },
+  "narration": {
+    "duck_db": -14,
+    "fallback": "파일이 없으면 글을 narr 자막으로(Veda 파일이 생기면 그대로 소리로)"
+  }
 }

@@ -8,6 +8,8 @@
 - 대표가 정하는 빈칸만 fill.json 에 쓴다(가수·곡·숫자·순위표·카드·클립·출처·확인 등). docs/templates.md 참고.
 - 빈칸이 빠지면 무엇이 빠졌는지 알려 주고 멈춘다.
 - rank·cards 는 shorts_factory.py, stagemix 는 stagemix_factory.py 로 렌더하고 기존 점검표를 그대로 돌린다.
+- 제작 표준 v2(11/11): --templates-dir templates_v2 → 월·수·금·일 19:00 쇼츠(expose=스타일 A / pulse58=스타일 B), 화·토 19:00 몰아보기(molabogi).
+  v2 틀은 옛 점검표(숫자 확인·5줄)를 쓰지 않고, 렌더 뒤 check_standard.py(standard_v2.json 기준)를 자동으로 돌린다. docs/표준v2_사용법.md
 """
 import argparse, datetime, json, os, re, shutil, subprocess, sys
 
@@ -21,7 +23,9 @@ LABEL = {"가수": "가수 이름", "곡": "곡 이름", "숫자": "주인공 �
          "순위표": "순위표 [[순위, 이름, 곡, 숫자], ...]", "카드": "카드 문장 [{\"big\":..., \"small\":...}, ...]",
          "배경": "배경 사진 파일", "출처": "출처·기준 줄(1~2줄)", "확인": "숫자·사실 확인 기록(확인한 곳·시각)",
          "클립": "무대 클립 {\"A\": [파일, 노래와 맞는 시각], ...}", "음원": "노래 파일", "bpm": "노래 빠르기(bpm)",
-         "저작권확인": "저작권·팬캠 양해 확인(true)", "롱폼": "롱폼 예고 문구", "단위": "숫자 단위"}
+         "저작권확인": "저작권·팬캠 양해 확인(true)", "롱폼": "롱폼 예고 문구", "단위": "숫자 단위",
+         "제목": "화면 위 제목(괄호 드립 가능)", "소스": "무대 소스 [{\"file\",\"sync\",\"label\"}, ...] 8개 이상", "노래": "노래 {\"file\",\"start\"}",
+         "썸네일": "썸네일 {\"quote\"(실제 대사),\"hook\",\"frame\":{file,t}}", "기획": "몰아보기 롱폼 기획 파일(.json)"}
 
 def stop(lines):
     print("❌ 아직 만들 수 없어요. 아래를 채워 주세요:")
@@ -65,7 +69,94 @@ def rng(a, b): return f"{a}" if a == b else f"{a}~{b}"
 
 def hexrgb(h): h = h.lstrip("#"); return tuple(int(h[i:i + 2], 16) for i in (0, 2, 4))
 
+V2_KINDS = ("expose", "pulse58", "molabogi")
+
+def build_v2(preset, fill, fill_dir, name):
+    """표준 v2 틀 → 공장 spec. 대표가 정하는 칸: 쇼츠 A(클립·제목·출처·썸네일), 쇼츠 B(소스·노래·제목·출처·저작권확인), 몰아보기(기획 파일)."""
+    import check_standard as cs
+    STD = cs.STD; vals = dict(preset.get("defaults", {})); vals.update({k: v for k, v in fill.items() if v not in ("", None)})
+    kind = preset["template"]; problems = []
+    for k in preset["need"]:
+        if k not in vals or vals[k] in ("", None, [], {}, False): problems.append(f"{k}: {LABEL.get(k, k)}")
+    missing = {}
+    post = fill_text(preset["post"], vals, missing, "게시 문구"); tags = [t.replace(" ", "") for t in fill_text(preset["hashtags"], vals, missing, "해시태그")]
+    for k, ws in missing.items():
+        if not any(p.startswith(k + ":") for p in problems): problems.append(f"{k}: {LABEL.get(k, k)} (쓰이는 곳: {', '.join(sorted(ws))})")
+    common = {"out": name, "template": kind, "_preset": f"{preset['day']}_{preset['slot']}", "_time": preset.get("time", STD["schedule"]["time"]),
+              "_slot_up": STD["schedule"]["uploader_slot"], "post": dict(post, tags=tags), "checked": vals.get("확인", ""),
+              "source": [vals["출처"]] if isinstance(vals.get("출처"), str) else (vals.get("출처") or []),
+              "_vals": {"가수": vals.get("가수", ""), "곡": vals.get("곡", vals.get("제목", ""))}, "series": preset["series"]}
+    def absf(p_):
+        q = resolve(p_, fill_dir) if p_ else None
+        if not q: problems.append(f"파일을 찾을 수 없어요 → {p_}")
+        return q or p_
+    if kind == "expose":
+        clips = [dict(c) for c in (vals.get("클립") or [])]
+        for i, c in enumerate(clips):
+            if not all(k in c for k in ("file", "in", "out", "role")): problems.append(f"클립 {i + 1}번째: file·in·out·role 이 있어야 해요"); continue
+            c["file"] = absf(c["file"])
+        spec = dict(common, title=vals.get("제목", ""), series_name=vals.get("시리즈이름", preset["series"]), source_line=common["source"][0] if common["source"] else "",
+                    clips=clips, brand=dict(preset.get("brand", {}), **vals.get("브랜드", {})), outro=dict(preset.get("outro", {}), **vals.get("아웃트로", {})),
+                    thumb=dict(preset.get("thumb", {}), **vals.get("썸네일", {})), clean_ranges=vals.get("본편구간", []), forbidden_ranges=vals.get("금지구간", []))
+        for k_ in ("outro", "thumb"):
+            fr_ = spec[k_].get("frame")
+            if fr_: fr_["file"] = absf(fr_["file"])
+        if clips and not problems:   # 렌더 전에 구간 시간 미리 확인(점검기와 같은 계산)
+            S, got, body = cs.actual_A(spec, STD["shorts"]["total_sec"])
+            for n, a, b in S[:-1]:
+                g = got.get(n)
+                if not g or abs(g[0] - a) > 0.05 or abs(g[1] - b) > 0.05: problems.append(f"구간 {n}: {a:g}~{b:g}초여야 해요" + (f" (지금 {g[0]:.2f}~{g[1]:.2f})" if g else " (없음)"))
+        spec["_est_sec"] = STD["shorts"]["total_sec"]
+    elif kind == "pulse58":
+        srcs = [dict(x) for x in (vals.get("소스") or [])]
+        for x in srcs: x["file"] = absf(x.get("file", ""))
+        if srcs and len(srcs) < STD["style_B"]["min_sources"]: problems.append(f"소스: {STD['style_B']['min_sources']}개 이상이어야 해요 (지금 {len(srcs)}개)")
+        song = dict(vals.get("노래") or {}); 
+        if song: song["file"] = absf(song.get("file", ""))
+        spec = dict(common, preset="pulse58", song=song, sources=srcs, title=vals.get("제목", ""), source_line=common["source"][0] if common["source"] else "",
+                    outro=dict(preset.get("outro", {}), **vals.get("아웃트로", {})), copyright_checked=bool(vals.get("저작권확인")), _est_sec=STD["shorts"]["total_sec"])
+        if vals.get("bpm"): spec["bpm"] = vals["bpm"]
+        if vals.get("썸네일"): spec["thumb"] = dict(preset.get("thumb", {}), **vals["썸네일"])
+    else:   # molabogi: 롱폼 기획 파일(longform_factory 형식 + v2.2 몰아보기 칸)
+        p_ = absf(vals.get("기획", "")); lf = json.load(open(p_, encoding="utf-8")) if p_ and os.path.exists(p_) else {}
+        spec = dict(lf, **{k: v for k, v in common.items() if k not in ("source",)}); spec["template"] = "molabogi"; spec["_spec_dir"] = os.path.dirname(p_) if p_ else fill_dir
+        en = dict(preset.get("ending", {})); en.update(lf.get("ending", {})); spec["ending"] = en
+        spec["_est_sec"] = STD["molabogi"]["target_sec"]
+    return spec, problems
+
+def precheck_v2(spec):
+    import check_standard as cs
+    hits = cs.check_words(spec); src = bool(spec.get("source_line") or spec.get("source") or spec.get("credits") or any(sc.get("credit") for ch in spec.get("chapters", []) for sc in ch.get("scenes", [])))
+    items = [("출처 표시", src), ("금지어 없음" + (" — " + ", ".join(hits) if hits else ""), not hits),
+             ("게시 제목·설명", bool(spec.get("post", {}).get("title") and spec.get("post", {}).get("desc")))]
+    if spec["template"] == "pulse58": items.append(("저작권·팬캠 양해 확인", spec.get("copyright_checked")))
+    return [("✅ " if ok else "❌ 빠짐: ") + n for n, ok in items], all(ok for _, ok in items)
+
+def render_v2(spec, outdir):
+    """표준 v2 렌더 → check_standard 결과를 spec 파일(_v2_check)에 남김(package.py 가 읽음)."""
+    import shorts_factory as sf
+    sp = os.path.join(outdir, spec["out"] + "_spec.json")
+    if spec["template"] == "expose":
+        import expose_factory as ef
+        json.dump(spec, open(sp, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
+        vids, th, lines, ok = ef.main(sp, outdir)
+    elif spec["template"] == "pulse58":
+        import stagemix_factory as sm
+        _, th, lines, ok = sm.pulse58(json.loads(json.dumps(spec)), outdir, outdir)
+    else:
+        import longform_factory as lf, check_standard as cs
+        s2 = json.loads(json.dumps(spec)); s2["_out_dir"] = outdir; s2["_tmp_dir"] = os.path.join(outdir, "_tmp_" + spec["out"])
+        res = lf.build(s2, spec.get("_spec_dir", outdir)); lines, ok = cs.run(spec, [res["final"]])
+        print("■ 표준 v2 점검"); print("\n".join(lines)); print("→ 통과" if ok else "→ 위반 있음(❌)")
+    if spec["template"] in ("expose", "pulse58"):
+        spec["post"].setdefault("first_comment", spec.get("outro", {}).get("ask", ""))
+        sf.post_text(spec, outdir)
+    spec["_v2_check"] = lines
+    json.dump(spec, open(sp, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
+    return ok
+
 def build(preset, fill, fill_dir, name):
+    if preset["template"] in V2_KINDS: return build_v2(preset, fill, fill_dir, name)
     vals = dict(preset.get("defaults", {})); vals.update({k: v for k, v in fill.items() if v not in ("", None)})
     kind = preset["template"]; problems = []
     if kind == "stagemix" and "숫자" not in fill and isinstance(vals.get("클립"), dict):
@@ -194,6 +285,7 @@ def precheck(spec):
     return [("✅ " if ok else "❌ 빠짐: ") + n for n, ok in items], all(ok for _, ok in items)
 
 def render(spec, outdir):
+    if spec["template"] in V2_KINDS: return render_v2(spec, outdir)
     import shorts_factory as sf
     c = spec.get("_colors", {})
     if c.get("tag"): sf.RD = hexrgb(c["tag"])
@@ -227,6 +319,13 @@ def render(spec, outdir):
     return ok
 
 def print_table():
+    if os.path.basename(TEMPLATES.rstrip(os.sep)) == "templates_v2":   # 표준 v2 편성(19:00 한 번)
+        print("요일 | 시각 | 틀")
+        for d in DAYS:
+            p = os.path.join(TEMPLATES, f"{d}_저녁.json")
+            if not os.path.exists(p): print(f"{d} | - | 쉼"); continue
+            q = json.load(open(p, encoding="utf-8")); print(f"{d} | {q.get('time')} | {q['series']} ({q['template']})")
+        return
     print("요일 | 아침 07:30 | 점심 12:00 | 저녁 18:30")
     for d in DAYS:
         row = []
@@ -264,15 +363,22 @@ def main():
     outdir = os.path.abspath(a.out_dir or os.path.join(HERE, "out", name)); os.makedirs(outdir, exist_ok=True)
     sp = os.path.join(outdir, name + "_spec.json")
     json.dump(spec, open(sp, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
-    print(f"틀: {a.day}요일 {a.slot}({SLOTS[a.slot]}) · {preset['series']} · {spec['template']} · 예상 {spec['_est_sec']}초")
-    print(f"첫 3초: {spec['title']} / {spec['question']}")
-    print(f"썸네일: {spec['thumb']['tag']} | {spec['thumb']['title']} | {spec['thumb']['question']} | {spec['thumb']['big']} | {spec['thumb']['summary']}")
-    print(f"spec: {sp}")
-    lines, ok = precheck(spec); print("\n".join(lines))
+    print(f"틀: {a.day}요일 {a.slot}({preset.get('time', SLOTS[a.slot])}) · {preset['series']} · {spec['template']} · 예상 {spec['_est_sec']}초")
+    if spec["template"] in V2_KINDS:
+        print(f"제목: {spec.get('title', '')}  · 썸네일 대사: {(spec.get('thumb') or spec.get('thumb_v2') or {}).get('quote', '')}")
+        print(f"spec: {sp}"); lines, ok = precheck_v2(spec)
+    else:
+        print(f"첫 3초: {spec['title']} / {spec['question']}")
+        print(f"썸네일: {spec['thumb']['tag']} | {spec['thumb']['title']} | {spec['thumb']['question']} | {spec['thumb']['big']} | {spec['thumb']['summary']}")
+        print(f"spec: {sp}")
+        lines, ok = precheck(spec)
+    print("\n".join(lines))
     if a.dry:
         print("(--dry: 렌더하지 않음)"); return
     if not ok: stop(["점검표에 빠진 것이 있어 렌더하지 않았어요(위 ❌ 참고)"])
     ok = render(spec, outdir)
+    if a.package and spec["template"] == "molabogi":
+        print("ℹ️ 몰아보기(롱폼)는 쇼츠 꾸러미 대상이 아니에요 — 롱폼 업로드 순서로"); return
     if a.package:
         import package
         if not ok: print("⚠️ 점검표에 ❌가 있어요. 꾸러미는 만들지만 업로더 계획은 통과하지 못합니다.")

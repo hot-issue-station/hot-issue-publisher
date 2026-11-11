@@ -24,6 +24,12 @@ def freezes(path, limit):
     st = [float(x) for x in re.findall(r"freeze_start: ([\d.]+)", r.stderr)]; en = [float(x) for x in re.findall(r"freeze_end: ([\d.]+)", r.stderr)]
     return [(a, en[i] if i < len(en) else None) for i, a in enumerate(st)]
 
+def tkey(spec):
+    """쇼츠 템플릿 이름(58-N·58-M·40-N·40-M). spec "shorts_template" 이 없으면 엔진 기본값."""
+    return spec.get("shorts_template") or STD["shorts_templates_default"].get(spec.get("template"), "58-N")
+
+def tconf(spec): return STD["shorts_templates"][tkey(spec)]
+
 def platform_of(path, spec):
     n = os.path.basename(path)
     for key, v in STD["shorts"]["versions"].items():
@@ -96,17 +102,17 @@ def check_quotes(spec):
     q = [t for w, t in texts_of(spec) if ("자막" in w or "말풍선" in w) and any(ch in str(t) for ch in "\"“”")]
     return q
 
-def shorts_sections(spec, total):
-    kind = spec.get("template")
-    if kind == "expose": S, roles = STD["style_A"]["sections"], STD["style_A"]["stretch_roles"]
-    else: S, roles = STD["style_B"]["sections"], []
-    return stretched_sections(S, roles, total)
+def shorts_sections(spec, total=None):
+    T = tconf(spec); S = T["sections"]
+    roles = STD["style_A"]["stretch_roles"] if T["engine"] == "expose" else []
+    return stretched_sections(S, roles, total or T["total_sec"])
 
 def stretch_clips(spec, total, fps=None):
     """스타일 A 플랫폼 버전: 늘릴 역할(standard_v2 style_A.stretch_roles) 클립의 out 을 비례로 늘린 클립 목록(프레임 단위, 합이 정확히 맞게).
     공장(expose_factory)과 점검기가 같은 함수를 쓴다."""
     fps = fps or STD["shorts"]["fps"]; roles = STD["style_A"]["stretch_roles"]; clips = [dict(c) for c in spec["clips"]]
     S = shorts_sections(spec, total)
+    if abs(total - tconf(spec)["total_sec"]) < 1e-6: return clips
     idx = [i for i, c in enumerate(clips) if c.get("role") in roles]
     base = sum(clips[i]["out"] - clips[i]["in"] for i in idx); target = sum(b - a for n, a, b in S if n in roles)
     if not idx or abs(target - base) < 1e-6: return clips
@@ -116,9 +122,9 @@ def stretch_clips(spec, total, fps=None):
         acc += n; c["out"] = c["in"] + n / fps
     return clips
 
-def actual_A(spec, total):
-    """스타일 A: 클립 역할별 실제 시각."""
-    S = shorts_sections(spec, total); t = 0.0; got = {}
+def actual_A(spec, total=None):
+    """스타일 A 계열(58-N·40-N): 클립 역할별 실제 시각."""
+    total = total or tconf(spec)["total_sec"]; S = shorts_sections(spec, total); t = 0.0; got = {}
     for c in stretch_clips(spec, total):
         d = round((c["out"] - c["in"]) * 30) / 30
         r = c.get("role", ""); a, b = got.get(r, (t, t)); got[r] = (min(a, t), t + d); t += d
@@ -130,8 +136,8 @@ def run(spec, videos, platform=None):
         if not os.path.exists(v): items.append((f"결과 파일 있음: {v}", False)); continue
         P = probe(v); tag = os.path.basename(v)
         if kind in ("expose", "pulse58"):
-            key, sec = platform_of(v, spec)
-            if platform: sec = STD["shorts"]["platforms"].get(platform, sec)
+            T = tconf(spec); sec = T["total_sec"]   # 템플릿별 길이(58.0 / 40.0), 모든 플랫폼 같은 파일
+            items.append((f"[{tag}] 쇼츠 템플릿 {tkey(spec)} ({'내레이션+자막' if T['narration'] else '무대·음악, 내레이션 없음'})", True))
             items.append((f"[{tag}] 길이 {sec:.1f}초 ±{tol} (지금 {P['dur']:.2f} · 영상 {P['vdur']:.2f} · 소리 {P['adur']:.2f})",
                           abs(P["dur"] - sec) <= tol and abs(P["vdur"] - sec) <= tol))
             items.append((f"[{tag}] 해상도 {STD['shorts']['size'][0]}x{STD['shorts']['size'][1]} (지금 {P['w']}x{P['h']})", [P["w"], P["h"]] == STD["shorts"]["size"]))
@@ -145,11 +151,16 @@ def run(spec, videos, platform=None):
                 order = [c.get("role") for c in spec["clips"]]; want = [n for n, _, _ in S[:-1]]
                 seq = [r for i, r in enumerate(order) if i == 0 or r != order[i - 1]]
                 items.append((f"[{tag}] 구간 순서 {'→'.join(want)}", seq == want))
-                o = S[-1]; items.append((f"[{tag}] 아웃트로 {o[2] - o[1]:g}초 ({o[1]:g}~{o[2]:g})", abs(sec - body - STD["shorts"]["outro_sec"]) <= tol))
+                o = S[-1]; items.append((f"[{tag}] 아웃트로 {o[2] - o[1]:g}초 ({o[1]:g}~{o[2]:g})", abs(sec - body - T["outro_sec"]) <= tol))
+                if T["narration"]:
+                    nn = spec.get("narration") or []
+                    nf = sum(1 for n in nn if n.get("file") and os.path.exists(n["file"]))
+                    items.append((f"[{tag}] 내레이션 자리 {len(nn)}개 ({T.get('narrator', '')} 파일 {nf}개, 나머지는 자막)", bool(nn)))
             else:
                 items.append((f"[{tag}] 구간표 " + " / ".join(f"{n} {a:g}~{b:g}" for n, a, b in S), True))
-                n_src = len(spec.get("sources", []))
-                items.append((f"[{tag}] 소스 {STD['style_B']['min_sources']}개 이상 (지금 {n_src})", n_src >= STD["style_B"]["min_sources"]))
+                n_src = len(spec.get("sources", [])); lo = T.get("min_sources", 1); hi = T.get("max_sources")
+                items.append((f"[{tag}] 소스 {lo}개 이상" + (f" {hi}개 이하" if hi else "") + f" (지금 {n_src})", n_src >= lo and (not hi or n_src <= hi)))
+                if not T["narration"]: items.append((f"[{tag}] 내레이션 트랙 없음(현장음 loudnorm)", not spec.get("narration")))
             fz = freezes(v, STD["longform_v1"]["max_still_sec"])
             items.append((f"[{tag}] 정지 화면 {STD['longform_v1']['max_still_sec']:g}초 초과 없음" + (f" — {fz}" if fz else ""), not fz))
         else:   # 롱폼(몰아보기 포함)
@@ -167,8 +178,7 @@ def run(spec, videos, platform=None):
         or any(sc.get("credit") for ch in spec.get("chapters", []) for sc in ch.get("scenes", []))
     items.append(("출처 표시(화면 출처 줄/credit)", has_src))
     rspecs = [spec]
-    if kind == "expose":
-        for v in STD["shorts"]["versions"].values(): rspecs.append(dict(spec, clips=stretch_clips(spec, v["sec"])))
+    if kind == "expose": rspecs.append(dict(spec, clips=stretch_clips(spec, tconf(spec)["total_sec"])))
     bad = sorted({b for sp in rspecs for b in check_ranges(sp)}); items.append(("금지 구간·광고 구간 안 씀" + (" — " + "; ".join(bad) if bad else ""), not bad))
     ad = check_ad_words(spec); items.append(("술·담배·도박·성인 광고 구간 없음" + (" — " + "; ".join(ad) if ad else ""), not ad))
     q = check_quotes(spec); items.append(("우리 자막에 따옴표 대사 없음(드립은 괄호)" + (" — " + " / ".join(q) if q else ""), not q))
