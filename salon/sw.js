@@ -2,11 +2,12 @@
    - 앱 껍데기(화면 파일·아이콘)는 설치 때 미리 저장 → 인터넷이 없어도 열림
    - 염색 미리보기의 MediaPipe 프로그램·모델은 color.html을 처음 쓸 때 받아서 저장
    - 손님 기록(localStorage)은 여기서 다루지 않음 */
-const VER = "dangol-shell-v3";
+const VER = "dangol-shell-v4";
 const MODEL_CACHE = "dangol-models-v1";
 const SHELL = [
   "./", "index.html", "color.html", "manifest.webmanifest",
-  "icons/icon.svg", "icons/icon-192.png", "icons/icon-512.png", "icons/apple-touch-icon.png"
+  "icons/icon.svg", "icons/icon-192.png", "icons/icon-512.png", "icons/apple-touch-icon.png",
+  "shop.html", "shop/parser.js", "shop/rank.js", "shop/search.js", "shop/data.js", "shop/app.js"
 ];
 const OPTIONAL = ["help.html"];
 const isModel = u =>
@@ -30,6 +31,7 @@ self.addEventListener("fetch", e => {
   const req = e.request;
   if (req.method !== "GET") return;
   const url = new URL(req.url);
+  if (url.pathname.startsWith("/.netlify/functions/")) return; /* 장보기 검색 결과는 저장하지 않음 */
 
   /* MediaPipe: 한 번 받으면 저장해 두고 계속 씀 (cache-first) */
   if (isModel(url)) {

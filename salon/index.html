@@ -116,6 +116,7 @@ svg text{font-family:inherit}
 <!-- 오늘 -->
 <section id="today" class="hide">
   <div style="text-align:right"><a class="help" href="help.html">❓ 사용법</a></div>
+  <a href="shop.html" class="big ghost" style="display:block;text-align:center;text-decoration:none;margin:8px 0">🛒 장보기 — 말로 찾고 제일 싼 것 고르기</a>
   <div id="bkNote"></div>
   <div id="instNote"></div>
   <div id="bkBox"></div>
@@ -1128,7 +1129,7 @@ function dictate(id){ const el=$(id); if(!F("voice")) return;
 function wipeAll(){
   if(!confirm(`손님 ${db.c.length}명의 기록·사진·메뉴·매출·예약을 이 휴대폰에서 모두 지울까요?`)) return;
   if(!confirm("정말 지울까요? 지우면 되돌릴 수 없어요.\n(백업 파일이 있으면 나중에 '백업 파일 불러오기'로 살릴 수 있어요)")) return;
-  [KEY,"danggol_color_pick",BK_AT,BK_SNOOZE,V_INTRO].forEach(ls.del);
+  [KEY,"danggol_color_pick","dangol_shop_v1",BK_AT,BK_SNOOZE,V_INTRO].forEach(ls.del);
   db={c:[],bk:[]}; cur=null; stack=[]; alert("모두 지웠어요."); go("setup");
 }
 /* ── 저장 안 된 입력 보호 ─────────────────────── */

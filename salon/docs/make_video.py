@@ -386,23 +386,28 @@ def factory_clips(howto, chapters, dst):
         s0 = max(0.0, o - t_song); f = os.path.join(dst, f"clip_{name}_{k}.mp4")
         ff(["-ss", f"{s0:.2f}", "-i", howto, "-t", f"{body + 0.5:.2f}", "-vf", f"tpad=stop_mode=clone:stop_duration={body:.2f}",
             "-t", f"{body + 0.5:.2f}", *ENC, f])
-        clips[name] = [os.path.basename(f), 0.0]; plan.append([name, "cut", int(CLIP_SEC * BPM / 60)]); labels.append(c["title"])
+        clips[name] = [os.path.join(os.path.basename(dst), os.path.basename(f)), 0.0]; plan.append([name, "cut", int(CLIP_SEC * BPM / 60)]); labels.append(c["title"])
     fill = {"_설명": "수요일 「기능 30초 소개」 빈칸 — make_video.py --factory-clips 가 사용법 영상에서 잘라 만든 것(앱 실제 화면, 시험용 가짜 손님)",
             "이름": "salon_기능소개_샘플", "곡": "기능 한눈에", "숫자": len(keys),
             "클립": clips, "편집": plan, "bpm": BPM, "음원": "assets/bgm_morning.m4a",
             "출처": ["단골 수첩 실제 화면 녹화 · 화면 속 손님은 가짜 이름"],
             "확인": f"{dt.datetime.now(KST):%Y-%m-%d %H:%M} make_video.py 녹화본에서 자름(기능: {', '.join(labels)})",
             "저작권확인": True}
-    fp = os.path.join(dst, "fill_수_기능소개.json")
+    fp = os.path.join(os.path.dirname(os.path.abspath(dst)), "fill_수_기능소개.json")   # 클립 폴더 바로 위(경로는 채우기 파일 기준)
     json.dump(fill, open(fp, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
     return fp
 
 def main():
     ap = argparse.ArgumentParser(description="단골 수첩 사용 영상 만들기")
     ap.add_argument("--out-dir", default=SCRATCH); ap.add_argument("--keep-raw", action="store_true")
-    ap.add_argument("--factory-clips", metavar="폴더", help="쇼츠 공장 「기능 30초 소개」 클립·채우기 파일 만들 폴더")
+    ap.add_argument("--factory-clips", metavar="폴더", help="쇼츠 공장 「기능 30초 소개」 클립 폴더(채우기 파일은 그 바로 위에). 예: ../../factory/templates_salon/fills/기능소개_클립")
+    ap.add_argument("--clips-only", action="store_true", help="녹화 없이, 이미 만든 사용법 영상·장면 기록(salon_howto_chapters.json)으로 공장 클립만")
     a = ap.parse_args()
     os.makedirs(a.out_dir, exist_ok=True)
+    if a.clips_only:
+        if not a.factory_clips: sys.exit("--clips-only 는 --factory-clips 폴더와 함께 써 주세요")
+        ch = json.load(open(os.path.join(a.out_dir, "salon_howto_chapters.json"), encoding="utf-8"))["chapters"]
+        print("채우기 파일:", factory_clips(os.path.join(a.out_dir, "salon_howto.mp4"), ch, a.factory_clips)); return
     tmp = os.path.join(a.out_dir, "_salon_video_tmp"); shutil.rmtree(tmp, ignore_errors=True); os.makedirs(tmp)
     print("① 앱을 눌러 가며 녹화 중…")
     raw, steps, skipped = record(tmp)
