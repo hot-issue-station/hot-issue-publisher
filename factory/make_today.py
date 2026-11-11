@@ -2,6 +2,7 @@
 사용법:
   python3 make_today.py --day 수 --slot 저녁 --fill fill.json          # spec 만들고 바로 렌더
   python3 make_today.py --day 수 --slot 저녁 --fill fill.json --dry    # spec 만 만들고 점검(렌더 안 함)
+  python3 make_today.py --day 수 --slot 저녁 --fill fill.json --package # 렌더 뒤 게시 꾸러미까지(outbox/)
   python3 make_today.py --list                                          # 편성표 보기
 - 틀: templates/<요일>_<시간대>.json (요일 월~일, 시간대 아침·점심·저녁)
 - 대표가 정하는 빈칸만 fill.json 에 쓴다(가수·곡·숫자·순위표·카드·클립·출처·확인 등). docs/templates.md 참고.
@@ -94,7 +95,8 @@ def build(preset, fill, fill_dir, name):
     spec = {"out": name, "channel": "덕심저장소", "series": series, "title": hook["title"], "question": hook["question"],
             "source": src, "checked": vals.get("확인", ""), "end": end, "thumb": thumb,
             "post": dict(post, tags=tags), "bg": files.get("배경"), "bgm": files.get("음악"),
-            "_preset": f"{preset['day']}_{preset['slot']}", "_colors": preset.get("colors", {})}
+            "_preset": f"{preset['day']}_{preset['slot']}", "_colors": preset.get("colors", {}),
+            "_vals": {"가수": vals.get("가수", ""), "곡": vals.get("곡", "")}}   # 꾸러미 폴더 이름용(package.py)
     if files.get("썸네일사진"): spec["thumb"]["photo"] = files["썸네일사진"]
     L = preset["length"]
     # 4) 종류별 재료
@@ -226,6 +228,11 @@ def main():
     ap.add_argument("--fill"); ap.add_argument("--dry", action="store_true", help="spec 만 만들고 렌더하지 않음")
     ap.add_argument("--out-dir", help="결과 폴더(기본: factory/out/<날짜>_<요일>_<시간대>)")
     ap.add_argument("--list", action="store_true", help="편성표 보기")
+    ap.add_argument("--package", action="store_true", help="렌더 뒤 게시 꾸러미(outbox/)·업로더 계획까지 만들기")
+    ap.add_argument("--outbox", help="꾸러미 폴더(기본: factory/outbox)")
+    ap.add_argument("--date", help="꾸러미 예약 날짜 YYYY-MM-DD(기본: 틀 요일의 다음 날짜)")
+    ap.add_argument("--sites", help="업로더 계획에 넣을 곳(기본 youtube)")
+    ap.add_argument("--ai", action="store_true", help="꾸러미 글이 한도를 넘으면 AI 교환대로 줄인 초안 사용")
     a = ap.parse_args()
     if a.list: return print_table()
     miss = [n for n, v in (("--day(요일: 월~일)", a.day), ("--slot(시간대: 아침·점심·저녁)", a.slot), ("--fill(빈칸 파일)", a.fill)) if not v]
@@ -248,7 +255,13 @@ def main():
     if a.dry:
         print("(--dry: 렌더하지 않음)"); return
     if not ok: stop(["점검표에 빠진 것이 있어 렌더하지 않았어요(위 ❌ 참고)"])
-    render(spec, outdir)
+    ok = render(spec, outdir)
+    if a.package:
+        import package
+        if not ok: print("⚠️ 점검표에 ❌가 있어요. 꾸러미는 만들지만 업로더 계획은 통과하지 못합니다.")
+        sites = [s.strip() for s in a.sites.split(",")] if a.sites else None
+        _, _, probs = package.make_package(outdir, a.outbox, a.date, sites, a.ai)
+        if probs: sys.exit(1)
 
 if __name__ == "__main__":
     main()
