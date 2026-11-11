@@ -176,10 +176,14 @@ def s_record(r):
     r.type("7호 + 산화제 6%, 25분", "#rm", "section:not(.hide) textarea", delay=70)
     r.tap("text=기록 저장", after=2.0)
 
-def s_voice(r):   # v3: 「🎤 말로 기록」 버튼이 있을 때만 (마이크는 켜지 않고 버튼 위치만 보여 줌)
+def s_voice(r):   # v3: 「🎤 말로 기록」 — 처음 안내 화면까지만 보여 주고 닫음(마이크는 켜지 않음)
     loc = r.find("button:has-text('말로 기록')", "text=말로 기록", timeout=800)
     if not loc: raise LookupError("말로 기록 버튼 없음")
-    r.show_tap(loc, 1.2); time.sleep(1.4)
+    r.show_tap(loc, 0.5); loc.click(); time.sleep(3.2)
+    r.page.screenshot(path=os.path.join(SHOTS, "04b_말로기록_안내.png"))
+    try: r.page.evaluate("typeof vCancel==='function'&&vCancel()")
+    except Exception: pass
+    time.sleep(0.4)
 
 def s_search(r):
     tab(r, "손님")
@@ -189,16 +193,31 @@ def s_search(r):
 
 def s_sms(r):
     tab(r, "오늘")
-    scroll_to(r, "text=오래 안 오신 손님")
-    loc = r.find("#longList >> text=문자", "a.chip:has-text('문자')")
+    scroll_to(r, "text=다시 오실 때 된 손님", "text=오래 안 오신 손님")
+    loc = r.find("#rvBox >> text=문자", "#longList >> text=문자", "a.chip:has-text('문자')", "button:has-text('문자')")
     if loc: r.show_tap(loc, 1.0)
-    time.sleep(1.2)
+    time.sleep(1.4)
 
-def s_booking(r):   # v3: 예약
-    r.tap("nav >> text=예약", "button:has-text('예약')", "text=예약", after=2.4)
+def s_import(r):    # v3: 연락처·엑셀 불러오기 (파일은 고르지 않고 화면만)
+    tab(r, "손님")
+    r.tap("button:has-text('불러오기')", "text=연락처·엑셀 불러오기", after=2.6)
 
-def s_group(r):     # v3: 단체 문자 도우미
+def s_group(r):     # v3: 단체 문자 도우미 (문자는 보내지 않음)
+    tab(r, "손님")
     r.tap("button:has-text('단체 문자')", "text=단체 문자", after=2.4)
+
+def s_booking(r):   # v3: 예약 잡기
+    tab(r, "오늘")
+    r.tap("button:has-text('예약 추가')", "button:has-text('예약 잡기')", after=1.0)
+    r.type("김미소", "#bkQ", "input[placeholder*='찾기']", delay=120)
+    r.tap("#bkFound >> text=고르기", "#bkFound button", after=0.8)
+    try:
+        r.tap("#bkDayChips button >> nth=1", after=0.6)
+        r.tap("#bkTimeChips button >> nth=2", after=0.6)
+    except LookupError: pass
+    r.tap("text=예약 저장", after=1.8)
+    loc = r.find("button:has-text('예약 알림 문자')", "text=예약 알림 문자", timeout=800)
+    if loc: r.show_tap(loc, 1.2)
 
 def s_sales(r):
     tab(r, "매출")
@@ -219,19 +238,20 @@ def s_color(r):
     loc = r.find("#agree", "input[type=checkbox]")
     if loc: r.show_tap(loc, 0.4); loc.click(); time.sleep(1.6)
 
-STEPS = [  # key, 자막 큰 줄, 자막 작은 줄, 동작, 설명서 그림 파일, v3 전용(없으면 조용히 건너뜀)
-    ("setup",   "1. 처음 한 번만",        "업종 고르고 가게 이름 적기",        s_setup,   "01_업종고르기.png", False),
-    ("today",   "2. '오늘' 화면",         "오늘 손님 수와 매출이 한눈에",      s_today,   "02_오늘화면.png", False),
-    ("newcust", "3. 새 손님 등록",        "이름·번호·메모 적고 동의 체크",     s_newcust, "03_새손님.png", False),
-    ("record",  "4. 시술 기록",           "메뉴를 누르면 금액이 저절로",       s_record,  "04_시술기록.png", False),
-    ("voice",   "말로 기록",              "버튼 누르고 말하면 글자로 적혀요",  s_voice,   "04b_말로기록.png", True),
-    ("search",  "5. 손님 찾기",           "이름이나 번호 뒷자리로",            s_search,  "05_손님찾기.png", False),
-    ("sms",     "6. 오래 안 오신 손님",   "'문자' 한 번이면 안부 인사",        s_sms,     "06_오래안오신손님.png", False),
-    ("booking", "예약",                   "예약 날짜·시간을 적어 두세요",      s_booking, "06b_예약.png", True),
-    ("group",   "단체 문자 도우미",       "여러 손님께 차례로 보내기",         s_group,   "06c_단체문자.png", True),
-    ("sales",   "7. 매출 보기",           "오늘·이번 주·이번 달",              s_sales,   "07_매출.png", False),
-    ("backup",  "8. 일주일에 한 번 백업", "휴대폰을 바꿔도 기록이 남아요",     s_backup,  "08_백업.png", False),
-    ("color",   "9. 염색 미리보기",       "사진은 저장도 전송도 안 돼요",      s_color,   "09_염색미리보기.png", False),
+STEPS = [  # key, 자막 큰 줄(번호는 자동), 자막 작은 줄, 동작, 설명서 그림 파일, v3 기능(없으면 조용히 건너뜀)
+    ("setup",   "처음 한 번만",          "업종 고르고 가게 이름 적기",          s_setup,   "01_업종고르기.png", False),
+    ("today",   "'오늘' 화면",           "오늘 손님·매출·예약이 한눈에",        s_today,   "02_오늘화면.png", False),
+    ("newcust", "새 손님 등록",          "이름·번호·메모 적고 동의 체크",       s_newcust, "03_새손님.png", False),
+    ("record",  "시술 기록",             "메뉴를 누르면 금액이 저절로",         s_record,  "04_시술기록.png", False),
+    ("voice",   "말로 기록",             "처음 한 번, 말소리가 어디로 가는지 안내", s_voice, None, True),
+    ("search",  "손님 찾기",             "이름이나 번호 뒷자리로",              s_search,  "05_손님찾기.png", False),
+    ("import",  "연락처·엑셀 불러오기",  "다른 곳 손님 목록을 한 번에",         s_import,  "05b_불러오기.png", True),
+    ("group",   "단체 문자 도우미",      "한 분씩 확인하고 보내요",             s_group,   "05c_단체문자.png", True),
+    ("sms",     "다시 오실 때 알림",     "때가 된 손님께 문자 한 번",           s_sms,     "06_다시오실때.png", False),
+    ("booking", "예약 잡기",             "날짜·시각 누르고 저장",               s_booking, "06b_예약.png", True),
+    ("sales",   "매출 보기",             "달마다 그래프 · 기간별 합계",         s_sales,   "07_매출.png", False),
+    ("backup",  "일주일에 한 번 백업",   "휴대폰을 바꿔도 기록이 남아요",       s_backup,  "08_백업.png", False),
+    ("color",   "염색 미리보기",         "사진은 이 휴대폰 안에서만 써요",      s_color,   "09_염색미리보기.png", False),
 ]
 
 def serve(root):
@@ -243,6 +263,7 @@ def serve(root):
 
 def record(tmp):
     from playwright.sync_api import sync_playwright
+    shutil.rmtree(SHOTS, ignore_errors=True); os.makedirs(SHOTS)
     srv = serve(APP); url = f"http://127.0.0.1:{srv.server_address[1]}/index.html"
     now = dt.datetime.now(KST)
     with sync_playwright() as p:
@@ -256,6 +277,8 @@ def record(tmp):
         page.goto(url); page.wait_for_load_state("networkidle")
         for key, title, sub, fn, shot, opt in STEPS:
             r.step(key, title, sub, fn, shot, opt)
+            if key == "voice":   # 안내 창이 남아 있으면 닫기(영상에서는 잘려 나감)
+                page.reload(); page.wait_for_load_state("networkidle"); time.sleep(0.5)
             if key == "setup":   # 시험용 가짜 손님 넣기(영상에서는 잘려 나감)
                 k = page.evaluate(SEED_JS, seed_customers(now))
                 if not k: print("  ⚠️ 가짜 손님을 넣지 못했어요(저장 형식이 바뀌었을 수 있음)")
@@ -302,28 +325,29 @@ def dur_of(p):
     r = subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", p], capture_output=True, text=True)
     return float(r.stdout.strip() or 0)
 
-MAXSEG = 9.0   # 한 단계 최대 길이(넘으면 빠르게 재생)
+MAXSEG = 7.0   # 한 단계 최대 길이(넘으면 빠르게 재생)
 
 def make_howto(raw, steps, tmp, out):
     parts, chapters, t = [], [], 0.0
     p = os.path.join(tmp, "h_intro.png")
     card_png(p, [("단골 수첩", 120, MAIN), ("3분 사용법", 92, TX), ("", 40, TX), ("동네 미용실 원장님용", 50, SUB), ("큰 글씨 · 무료 · 휴대폰 하나로", 50, SUB)])
-    v = os.path.join(tmp, "h00.mp4"); seg_still(p, 3.0, v); parts.append(v); t += 3.0
+    v = os.path.join(tmp, "h00.mp4"); seg_still(p, 2.5, v); parts.append(v); t += 2.5
     for i, s in enumerate(steps):
         d = s["end"] - s["start"] + 0.4; speed = max(1.0, d / MAXSEG); out_d = d / speed
+        s["title"] = f"{i + 1}. {s['title']}"
         bg = os.path.join(tmp, f"h_{s['key']}.png"); frame_png(bg, s["title"], s["sub"])
         v = os.path.join(tmp, f"h{i + 1:02}.mp4"); seg_clip(raw, bg, max(0, s["start"] - 0.2), out_d, v, speed)
         parts.append(v); chapters.append({"key": s["key"], "title": s["title"], "start": round(t, 2), "dur": round(out_d, 2)}); t += out_d
     p = os.path.join(tmp, "h_outro.png")
     card_png(p, [("단골 수첩", 110, MAIN), ("손님 기록은 이 휴대폰 안에만", 54, TX), ("일주일에 한 번 백업 잊지 마세요", 54, TX),
                  ("", 30, TX), ("설치 주소: (QR 자리)", 46, SUB)], foot="자세한 방법은 앱 설정의 도움말에서")
-    v = os.path.join(tmp, "h99.mp4"); seg_still(p, 4.0, v); parts.append(v)
+    v = os.path.join(tmp, "h99.mp4"); seg_still(p, 3.5, v); parts.append(v)
     join(parts, out, tmp)
     return chapters
 
 TEASER = [  # key, 큰 줄, 작은 줄, 길이(초)
     ("record", "손님별 시술 기록", "약 호수·시간까지 한 번에", 3.5),
-    ("sms", "오래 안 오신 손님", "문자 한 번으로 안부 인사", 3.0),
+    ("sms", "다시 오실 때 된 손님", "문자 한 번으로 안부 인사", 3.0),
     ("sales", "매출이 한눈에", "오늘·이번 주·이번 달", 3.0),
 ]
 

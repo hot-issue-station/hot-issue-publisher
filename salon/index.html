@@ -96,7 +96,7 @@ body.novoice .mic,body.novoice #vBtn{display:none!important}
 .vsaid{font-size:17px;color:var(--sub);background:var(--soft);border-radius:10px;padding:8px 12px}
 .pulse{width:96px;height:96px;border-radius:50%;background:var(--deep);margin:16px auto;display:flex;align-items:center;justify-content:center;font-size:44px;animation:pl 1.2s infinite}
 @keyframes pl{0%{box-shadow:0 0 0 0 #7c2d1288}100%{box-shadow:0 0 0 26px #7c2d1200}}
-#toast{position:fixed;left:16px;right:16px;bottom:150px;z-index:30;background:#2b2220;color:#fff;border-radius:14px;padding:14px 16px;font-size:18px;text-align:center}
+#toast{position:fixed;left:16px;right:16px;top:76px;max-width:528px;margin:0 auto;z-index:30;background:#2b2220;color:#fff;border-radius:14px;padding:14px 16px;font-size:18px;text-align:center}
 svg text{font-family:inherit}
 </style>
 </head>
@@ -968,13 +968,15 @@ function korNum(s){ s=String(s).replace(/[,\s원]/g,""); if(!s) return NaN; if(/
   return Math.round(total+sec+num) }
 function lev(a,b){ const m=a.length,n=b.length, d=Array.from({length:m+1},(_,i)=>[i,...Array(n).fill(0)]); for(let j=1;j<=n;j++) d[0][j]=j;
   for(let i=1;i<=m;i++) for(let j=1;j<=n;j++) d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+(a[i-1]===b[j-1]?0:1)); return d[m][n] }
+/* 소리가 비슷한 이름(김영이↔김영희)만 맞춤: 자모로 풀어 2개 이하 차이 + 성(첫 글자) 같음 */
+function jamo(s){ return [...s].map(ch=>{ const x=ch.charCodeAt(0)-0xAC00; return x>=0&&x<11172?String.fromCharCode(0x1100+Math.floor(x/588),0x1161+Math.floor(x%588/28))+(x%28?String.fromCharCode(0x11A7+x%28):""):ch }).join("") }
 function findCust(tok){ const t=tok.replace(/\s/g,""); if(t.length<2) return [];
   return db.c.map(c=>{ const n=c.n.replace(/\s/g,""); let s=9;
-    if(n===t) s=0; else if(n.length===3&&t.length===2&&n.slice(1)===t) s=.5; else if(t.length>=3&&n.length===t.length&&lev(n,t)===1) s=1;
+    if(n===t) s=0; else if(n.length===3&&t.length===2&&n.slice(1)===t) s=.5; else if(t.length>=3&&n.length===t.length&&n[0]===t[0]&&lev(n,t)===1&&lev(jamo(n),jamo(t))<=2) s=1;
     return {c,s} }).filter(x=>x.s<=1).sort((a,b)=>a.s-b.s) }
 function parseVoice(text,base){
   const B=base||today(), raw=String(text||"").trim();
-  let S=" "+raw.replace(/[.,!?~]/g," ").replace(/\s+/g," ")+" ";
+  let S=" "+raw.replace(/(\d)[,.](\d{3})/g,"$1$2").replace(/[.,!?~]/g," ").replace(/\s+/g," ")+" ";
   const out={kind:"rec",text:raw,cust:null,cands:[],newName:"",sel:[],price:null,d:B,tm:"",memo:""};
   /* 매출 묻기 */
   if(/매출|얼마\s*벌|얼마\s*팔/.test(S)&&!/예약|메모/.test(S)){ out.kind="sales"; out.period=/이번\s*달|이달/.test(S)?"이번 달":/지난\s*달/.test(S)?"지난달":/이번\s*주/.test(S)?"이번 주":/어제/.test(S)?"어제":"오늘"; return out }
@@ -1011,7 +1013,7 @@ function parseVoice(text,base){
   const menu=db.menu||[], rx=s=>new RegExp(s.replace(/\s+/g,"").split("").map(ch=>ch.replace(/[.*+?^${}()|[\]\\]/g,"\\$&")).join("\\s*"));
   menu.map((x,i)=>[i,x.n]).sort((a,b)=>b[1].length-a[1].length).forEach(([i,n])=>{ const r=rx(n); if(r.test(S)){ out.sel.push(i); S=S.replace(r," ") } });
   const GEN=/^(여성|남성|일반|전체|기본|새)$/;
-  const words=[...new Set(menu.flatMap(x=>x.n.split(/\s+/)).filter(w=>w.length>=2&&!GEN.test(w)))].sort((a,b)=>b.length-a.length);
+  const words=[...new Set(menu.flatMap(x=>x.n.split(/\s+/)).filter(w=>(w.length>=2||/^[펌젤]$/.test(w))&&!GEN.test(w)))].sort((a,b)=>b.length-a.length);
   words.forEach(w=>{ if(!S.includes(w)) return; const has=menu.map((x,i)=>[i,x]).filter(([i,x])=>x.n.split(/\s+/).includes(w)&&!out.sel.includes(i)); if(!has.length) return;
     S=S.replace(w," ");
     if(out.sel.some(i=>menu[i].n.split(/\s+/).includes(w))) return;
