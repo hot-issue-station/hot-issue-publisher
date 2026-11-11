@@ -952,7 +952,7 @@ MISSIONS.push(...CONTENT_QUIZZES);   // 리센느관 퀴즈 12개(방별)
 /* 추천·열람 집계 어댑터. 지금은 "local"(이 기기 안에서만 셈 — 시험용).
    TODO: 대표 계정 Firebase(무료 등급)를 만들면 FIREBASE_CONFIG에 {apiKey, authDomain, projectId, appId}를 넣고
          STATS_FIREBASE.record/get 을 Firestore 증가(increment) 코드로 채운다. null이면 꺼져 있다. */
-const FIREBASE_CONFIG = null;
+const FIREBASE_CONFIG = { apiKey:"AIzaSyCEqTuEead8nzsmhd9z3chbW_PSPnSbasc", authDomain:"duksim-gallery.firebaseapp.com", projectId:"duksim-gallery", appId:"1:717574317447:web:db4ecc3b611c5f65b75f22" };   // 대표 11/12 03:53 연결(공개용 웹 설정). 쓰기 범위는 Firestore 규칙(조회·좋아요 +1, 200자 댓글 추가만)으로 막음
 
 /* 유튜브 원본 숫자·인기 댓글(읽기 전용). key = YouTube Data API v3 키(무료 할당량). null이면 「유튜브 댓글」 탭과 숫자를 숨긴다.
    ★ 키는 화면 코드에 그대로 보이므로 Google Cloud 콘솔에서 「HTTP 리퍼러 제한(우리 사이트 주소만)」+「YouTube Data API v3만」으로 꼭 묶을 것.
@@ -1699,13 +1699,25 @@ const STATS_LOCAL = {
   record(id, kind){ const s=store.json("duksim-stats-v1",{}); const r=s[id]||(s[id]={view:0,like:0}); r[kind]=(r[kind]||0)+1; store.put("duksim-stats-v1",s); },
   async get(id){ const r=store.json("duksim-stats-v1",{})[id]; return {view:r?.view||0, like:r?.like||0}; },
 };
-const STATS_FIREBASE = {   // TODO: FIREBASE_CONFIG가 생기면 Firestore 문서 stats/<videoId> 에 {view, like}를 increment로 더하고 읽는다
-  record(id, kind){ STATS_LOCAL.record(id, kind); },
-  async get(id){ return STATS_LOCAL.get(id); },
+/* Firestore REST(라이브러리 없이 가볍게). 실패하면 이 기기 기록으로 대신 보여 준다 */
+const FS = FIREBASE_CONFIG ? {
+  base:`https://firestore.googleapis.com/v1/projects/${FIREBASE_CONFIG.projectId}/databases/(default)/documents`,
+  doc(p){ return `projects/${FIREBASE_CONFIG.projectId}/databases/(default)/documents/${p}`; },
+  url(p, q=""){ return `${this.base}/${p}?key=${FIREBASE_CONFIG.apiKey}${q}`; },
+  async get(p, q){ const r=await fetch(this.url(p,q)); if(r.status===404) return null; if(!r.ok) throw new Error("fs "+r.status); return r.json(); },
+  async commit(writes){ const r=await fetch(`${this.base}:commit?key=${FIREBASE_CONFIG.apiKey}`,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({writes})}); if(!r.ok) throw new Error("fs "+r.status); return r.json(); },
+  async add(p, fields){ const r=await fetch(this.url(p),{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({fields})}); if(!r.ok) throw new Error("fs "+r.status); return r.json(); },
+  num(f){ return +(f?.integerValue ?? f?.doubleValue ?? 0) || 0; },
+} : null;
+const fsKey = id => encodeURIComponent(String(id).replace(/[\/]/g,"_").slice(0,120));
+const STATS_FIREBASE = {
+  record(id, kind){ STATS_LOCAL.record(id, kind); if(kind!=="view" && kind!=="like") return;
+    return FS.commit([{transform:{document:FS.doc("stats/"+fsKey(id)), fieldTransforms:[{fieldPath:kind, increment:{integerValue:"1"}}]}}]).catch(e=>console.info("[미술관] 통계 저장 실패 → 이 기기만", e.message)); },
+  async get(id){ try{ const d=await FS.get("stats/"+fsKey(id)); return {view:FS.num(d?.fields?.view), like:FS.num(d?.fields?.like)}; }catch(e){ return STATS_LOCAL.get(id); } },
 };
 const STATS = {
   mode: FIREBASE_CONFIG ? "firebase" : "local",
-  record(id, kind){ (this.mode==="firebase" ? STATS_FIREBASE : STATS_LOCAL).record(id, kind); },
+  record(id, kind){ return (this.mode==="firebase" ? STATS_FIREBASE : STATS_LOCAL).record(id, kind); },
   get(id){ return (this.mode==="firebase" ? STATS_FIREBASE : STATS_LOCAL).get(id); },
   hasLiked(id){ return store.json("duksim-liked-v1",[]).includes(id); },
   markLiked(id){ const a=store.json("duksim-liked-v1",[]); if(!a.includes(id)){ a.push(id); store.put("duksim-liked-v1",a); } },
@@ -1734,7 +1746,15 @@ const COMMENTS_LOCAL = {
     all[vid]=all[vid].slice(-200); store.put("duksim-comments-v1", all); return {ok:true}; },
   async report(id){ const a=store.json("duksim-reported-v1",[]); if(!a.includes(id)){ a.push(id); store.put("duksim-reported-v1",a); } },
 };
-const COMMENTS_FIREBASE = { list:v=>COMMENTS_LOCAL.list(v), add:(v,c)=>COMMENTS_LOCAL.add(v,c), report:id=>COMMENTS_LOCAL.report(id) };   // TODO: Firestore
+const COMMENTS_FIREBASE = {
+  async list(vid){ try{ const rep=store.json("duksim-reported-v1",[]);
+      const d=await FS.get(`comments/${fsKey(vid)}/items`, "&pageSize=60&orderBy=ts%20desc");
+      return (d?.documents||[]).map(x=>({id:x.name.split("/").pop(), name:x.fields?.name?.stringValue||"", text:x.fields?.text?.stringValue||"", at:FS.num(x.fields?.ts)})).filter(c=>!rep.includes(c.id)); }
+    catch(e){ console.info("[미술관] 댓글 불러오기 실패 → 이 기기만", e.message); return COMMENTS_LOCAL.list(vid); } },
+  async add(vid, c){ try{ await FS.add(`comments/${fsKey(vid)}/items`, {name:{stringValue:c.name||""}, text:{stringValue:c.text}, ts:{integerValue:String(Date.now())}}); return {ok:true}; }
+    catch(e){ return COMMENTS_LOCAL.add(vid, c); } },
+  report:id=>COMMENTS_LOCAL.report(id),   // 신고: 이 기기에서 숨김(공용 신고 집계는 다음 단계)
+};
 const COMMENTS = {
   mode: FIREBASE_CONFIG ? "firebase" : "local",
   get impl(){ return this.mode==="firebase" ? COMMENTS_FIREBASE : COMMENTS_LOCAL; },
@@ -2215,7 +2235,7 @@ function openItem(it, ctx={}){
   document.body.classList.toggle("playing", playing);
   drawComments(vid, srcUrl);
   $("#react").hidden = !vid;
-  if(vid){ drawReact(vid); $("#likeBtn").onclick=()=>{ if(STATS.hasLiked(vid)) return; STATS.markLiked(vid); STATS.record(vid,"like"); drawReact(vid); }; }
+  if(vid){ drawReact(vid); $("#likeBtn").onclick=()=>{ if(STATS.hasLiked(vid)) return; STATS.markLiked(vid); Promise.resolve(STATS.record(vid,"like")).finally(()=>drawReact(vid)); }; }
   $("#src").hidden = !srcUrl; $("#srcName").textContent = srcName ? G.t("src")+": "+srcName : ""; $("#srcLink").href=srcUrl||"#"; $("#srcLink").textContent=srcBtn;
   $("#picks").hidden = !showPicks;
   picks = picks.map(x=>({...x,u:safeUrl(x.url)})).filter(x=>x.u);
