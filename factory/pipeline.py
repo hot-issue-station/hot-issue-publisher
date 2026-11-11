@@ -210,6 +210,13 @@ def draft(o, d):
         spec["narration"] = attach_voice(d, sc.get("narration", []))
         nf, ni = narration_scripts(o, d, spec["narration"]); issues += ni
         for i, f in enumerate(nf): files[f"내레이션 원고 {i + 1}"] = f
+    # 장면 시각·파일이 비었거나 영상 파일이 아직 없으면 렌더하지 않고 멈춘다(원고는 위에서 이미 만듦)
+    clips = spec.get("clips") or []
+    gaps = [f"{i}번 장면 시각 빈칸" for i, c in enumerate(clips, 1) if c.get("in") is None or c.get("out") is None]
+    gaps += sorted({f"영상 파일 없음: {os.path.basename(c['file'])}" for c in clips if c.get("file") and not os.path.exists(c["file"])})
+    if gaps:
+        json.dump(spec, open(os.path.join(d, "draft_spec.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+        return files, issues + gaps + ["재료가 채워지면 draft 를 다시 돌리세요"]
     v, th, lines, ok = render(spec, d, "draft")
     files.update({"draft.mp4": v, "draft 썸네일": th}); json.dump(spec, open(os.path.join(d, "draft_spec.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     issues += [l[2:] for l in lines if l.startswith("❌")]

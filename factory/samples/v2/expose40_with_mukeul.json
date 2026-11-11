@@ -1,0 +1,78 @@
+{
+ "_설명": "주문 o1794397627359 — 40-N 뭉클한, PULSE 「With」 무대. 원고·자막·끝 화면은 확정 초안, 장면 시각은 영상 받으면 확인(_확인 표시). 11/11 22시 Claude.",
+ "_재료": [
+  "A = KBS Kpop 뮤직뱅크 261106 「With」 https://www.youtube.com/watch?v=ECz-M-jwGzQ — 11/7 쇼츠 때 유튜브 소유권 주장만, 공개 유지(저작권 기록)",
+  "B = Spotify Korea 셔플쇼 「With」 https://www.youtube.com/watch?v=Av2cbx41eyE — 16:41~ 라이브, 11/7 쇼츠 때 유튜브 문제 없음",
+  "둘 다 대표 노트북 OBS 녹화(11/7)가 있을 수 있음 → 먼저 노트북에서 찾고, 없으면 OBS 다시 녹화"
+ ],
+ "_사실확인": [
+  "2024년 데뷔, 약 2년간 인지도 낮음 — MTN 11/6, 스포츠경향 7/15(데뷔 2년 만 첫 1위)",
+  "올해 3월 유튜브 장면(거제 야호)으로 「러브 어택」 역주행 — MTN 11/6, 경향 11/4(3월 안원잘부로 화제)",
+  "「With」 11/3 18시 발매, 약 2시간 뒤 멜론 톱100·핫100 1위 — MTN 11/6, 경향 11/4",
+  "「With」 = 오랫동안 꿈꿔 온 상대와 마주하는 순간 — 더팩트 11/3(제나 설명), 나무위키 곡 소개",
+  "PULSE = 심장박동, 너와 함께할 때 뛰는 마음 — 더팩트 11/3(원이 설명), iMBC(앨범 제목 뜻)"
+ ],
+ "template": "expose",
+ "shorts_template": "40-N",
+ "out": "draft",
+ "title": "2년 동안 아무도 몰랐던 그룹의 「With」",
+ "series_name": "덕심저장소 · 리센느 응원 특집",
+ "source_line": "출처 · KBS Kpop 뮤직뱅크 261106 · Spotify Korea 셔플쇼",
+ "test_label": "초안 · 대표 확인 전",
+ "layout": "fit",
+ "mood_preset": {"감동": {"use": ["music_cut", "slow_cut", "emotion"], "cut_sec": [4, 6]}},
+ "clips": [
+  {
+   "file": "/mnt/user-data/uploads/with/A_mb_with.mp4",
+   "in": 196.0, "out": 199.0, "role": "hook",
+   "_확인": "마지막 후렴 터지는 첫 3초(11/7 쇼츠 구간 3:16~4:10의 앞머리)",
+   "captions": [{"at": 0.15, "dur": 2.7, "text": "(데뷔 2년 만에 찾아온 순간)", "style": "bracket"}]
+  },
+  {
+   "file": "/mnt/user-data/uploads/with/A_mb_with.mp4",
+   "in": null, "out": null, "role": "body",
+   "_확인": "곡 도입부 서정적인 부분, 약 7초(느린 컷). 내레이션 1",
+   "captions": [{"at": 0.0, "dur": 3.0, "text": "[2024년 데뷔]", "style": "situation"}]
+  },
+  {
+   "file": "/mnt/user-data/uploads/with/B_shuffle_with.mp4",
+   "in": null, "out": null, "role": "body",
+   "_확인": "셔플쇼 라이브 1절, 약 8초. 내레이션 2(역주행)",
+   "captions": [{"at": 0.0, "dur": 3.0, "text": "[올해 3월, 역주행 시작]", "style": "situation"}]
+  },
+  {
+   "file": "/mnt/user-data/uploads/with/A_mb_with.mp4",
+   "in": null, "out": null, "role": "body",
+   "_확인": "후렴 전 쌓아 올리는 부분, 약 7초. 내레이션 3(멜론 1위)",
+   "captions": [{"at": 0.3, "dur": 2.8, "text": "[발매 2시간 → 멜론 1위]", "style": "situation"}]
+  },
+  {
+   "file": "/mnt/user-data/uploads/with/A_mb_with.mp4",
+   "in": 199.0, "out": 209.0, "role": "body",
+   "_확인": "마지막 후렴 이어서 약 10초, 음악 끊기(music_cut)로 정적 1초 뒤 끝 화면",
+   "captions": [{"at": 6.5, "dur": 3.0, "text": "(이 무대가 그 순간)", "style": "emotion"}]
+  }
+ ],
+ "narration": [
+  {"at": 3.3, "text": "2024년에 데뷔한 리센느. 2년 가까이, 이름을 아는 사람이 많지 않았습니다."},
+  {"at": 10.6, "text": "올해 3월, 유튜브 속 한 장면이 퍼지면서 2024년 노래 「러브 어택」이 거꾸로 차트를 올라갔죠."},
+  {"at": 18.6, "text": "그리고 11월 3일 나온 새 노래 「With」는 발매 두 시간 만에 멜론 1위에 올랐습니다."},
+  {"at": 25.6, "text": "오랫동안 꿈꿔 온 누군가와 마침내 마주하는 순간을 노래한 곡. 지금 이 무대가, 그 순간입니다."}
+ ],
+ "outro": {
+  "ask": "(처음 리센느를 알게 된 노래는?)",
+  "next": "[리센느 이야기는 「거꾸로 걷는 리센느」에서]",
+  "frame": {"file": "/mnt/user-data/uploads/with/A_mb_with.mp4", "t": 209.0}
+ },
+ "thumb": {
+  "hook": "2년 동안 아무도 몰랐던 그룹",
+  "emph": "2년",
+  "tag": "리센느 「With」",
+  "frame": {"file": "/mnt/user-data/uploads/with/A_mb_with.mp4", "t": 197.0}
+ },
+ "post": {
+  "title": "2년 동안 아무도 몰랐던 그룹의 「With」 #shorts",
+  "desc": "2024년 데뷔 → 올해 3월 역주행 → 「With」 발매 2시간 만에 멜론 1위. 리센느(RESCENE) 「With」 무대예요 🪽\n전곡은 원본에서 꼭 봐 주세요\n▶ KBS Kpop 뮤직뱅크 261106 https://www.youtube.com/watch?v=ECz-M-jwGzQ\n▶ Spotify Korea 셔플쇼 https://www.youtube.com/watch?v=Av2cbx41eyE\n#리센느 #RESCENE #With #PULSE #리마인 #덕심저장소",
+  "first_comment": "처음 리센느를 알게 된 노래는 무엇이었나요? 🪽 댓글로 들려주세요! 전곡은 KBS Kpop·Spotify Korea 원본에서 꼭 봐 주세요. 서로 응원하는 따뜻한 댓글 부탁드려요 💜"
+ }
+}
