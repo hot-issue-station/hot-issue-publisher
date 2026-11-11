@@ -3,20 +3,33 @@
  "name": "슈카월드",
  "channel": "https://www.youtube.com/@syukaworld",
  "channelId": "UCJo6G1u0e_-wS-JQn3T-zEw",
- "checkedAt": "2026-11-11T08:26+09:00",
+ "checkedAt": "2026-11-11T19:36+09:00",
  "videos": [
+  {
+   "id": "pP0j-VEICls",
+   "title": "[슈카의 시황방송] 11월11일ㅣ코어위브 적자에도 급등, 국장도 출발하나요?",
+   "published": "2026-11-11T06:45:25+00:00",
+   "url": "https://www.youtube.com/watch?v=pP0j-VEICls",
+   "shorts": false,
+   "views": 98999,
+   "likes": 792,
+   "viewsGain": null,
+   "isNew": true,
+   "median": 156340,
+   "multiple": 0.6
+  },
   {
    "id": "Ge6BHHlGUmk",
    "title": "요즘같은 시기, 채권투자 아직도 안하세요?",
    "published": "2026-11-10T10:42:29+00:00",
    "url": "https://www.youtube.com/watch?v=Ge6BHHlGUmk",
    "shorts": false,
-   "views": 63250,
-   "likes": 246,
-   "viewsGain": 42387,
+   "views": 83691,
+   "likes": 308,
+   "viewsGain": 20441,
    "isNew": false,
-   "median": 166532.5,
-   "multiple": 0.4
+   "median": 156340,
+   "multiple": 0.5
   },
   {
    "id": "gOGolt7zsN8",
@@ -24,12 +37,12 @@
    "published": "2026-11-10T08:00:26+00:00",
    "url": "https://www.youtube.com/shorts/gOGolt7zsN8",
    "shorts": true,
-   "views": 121565,
-   "likes": 1332,
-   "viewsGain": 46763,
+   "views": 145555,
+   "likes": 1517,
+   "viewsGain": 23990,
    "isNew": false,
-   "median": 131786,
-   "multiple": 0.9
+   "median": 139909.5,
+   "multiple": 1.0
   },
   {
    "id": "aGpktOSGdm0",
@@ -37,12 +50,12 @@
    "published": "2026-11-10T06:30:55+00:00",
    "url": "https://www.youtube.com/watch?v=aGpktOSGdm0",
    "shorts": false,
-   "views": 147963,
-   "likes": 1046,
-   "viewsGain": 14576,
+   "views": 156340,
+   "likes": 1069,
+   "viewsGain": 8377,
    "isNew": false,
-   "median": 166532.5,
-   "multiple": 0.9
+   "median": 156340,
+   "multiple": 1.0
   },
   {
    "id": "xCP7MhJdnXM",
@@ -50,12 +63,12 @@
    "published": "2026-11-09T12:28:06+00:00",
    "url": "https://www.youtube.com/watch?v=xCP7MhJdnXM",
    "shorts": false,
-   "views": 140539,
-   "likes": 736,
-   "viewsGain": 1709,
+   "views": 142742,
+   "likes": 743,
+   "viewsGain": 2203,
    "isNew": false,
-   "median": 166532.5,
-   "multiple": 0.8
+   "median": 156340,
+   "multiple": 0.9
   },
   {
    "id": "O2S8hCse54k",
@@ -63,11 +76,11 @@
    "published": "2026-11-09T03:43:40+00:00",
    "url": "https://www.youtube.com/shorts/O2S8hCse54k",
    "shorts": true,
-   "views": 163901,
-   "likes": 1491,
-   "viewsGain": 13085,
+   "views": 172726,
+   "likes": 1562,
+   "viewsGain": 8825,
    "isNew": false,
-   "median": 131786,
+   "median": 139909.5,
    "multiple": 1.2
   },
   {
@@ -76,11 +89,11 @@
    "published": "2026-11-08T09:00:10+00:00",
    "url": "https://www.youtube.com/watch?v=hvjeDlMlPSE",
    "shorts": false,
-   "views": 142114,
-   "likes": 928,
-   "viewsGain": 2167,
+   "views": 145434,
+   "likes": 947,
+   "viewsGain": 3320,
    "isNew": false,
-   "median": 166532.5,
+   "median": 156340,
    "multiple": 0.9
   },
   {
@@ -89,12 +102,12 @@
    "published": "2026-11-08T02:08:27+00:00",
    "url": "https://www.youtube.com/watch?v=8DeKtLlHPdI",
    "shorts": false,
-   "views": 396395,
-   "likes": 2463,
-   "viewsGain": 17703,
+   "views": 416819,
+   "likes": 2525,
+   "viewsGain": 20424,
    "isNew": false,
-   "median": 166532.5,
-   "multiple": 2.4
+   "median": 156340,
+   "multiple": 2.7
   },
   {
    "id": "h9yF44sFEvc",
@@ -102,12 +115,12 @@
    "published": "2026-11-07T09:00:11+00:00",
    "url": "https://www.youtube.com/watch?v=h9yF44sFEvc",
    "shorts": false,
-   "views": 321581,
-   "likes": 1865,
-   "viewsGain": 3015,
+   "views": 328300,
+   "likes": 1888,
+   "viewsGain": 6719,
    "isNew": false,
-   "median": 166532.5,
-   "multiple": 1.9
+   "median": 156340,
+   "multiple": 2.1
   },
   {
    "id": "OeJ-JKlNv_s",
@@ -115,11 +128,11 @@
    "published": "2026-11-06T12:43:23+00:00",
    "url": "https://www.youtube.com/shorts/OeJ-JKlNv_s",
    "shorts": true,
-   "views": 94566,
-   "likes": 518,
-   "viewsGain": 1522,
+   "views": 96034,
+   "likes": 526,
+   "viewsGain": 1468,
    "isNew": false,
-   "median": 131786,
+   "median": 139909.5,
    "multiple": 0.7
   },
   {
@@ -128,12 +141,12 @@
    "published": "2026-11-06T12:31:37+00:00",
    "url": "https://www.youtube.com/shorts/ay3FXHM03T8",
    "shorts": true,
-   "views": 87259,
-   "likes": 754,
-   "viewsGain": 1376,
+   "views": 89080,
+   "likes": 764,
+   "viewsGain": 1821,
    "isNew": false,
-   "median": 131786,
-   "multiple": 0.7
+   "median": 139909.5,
+   "multiple": 0.6
   },
   {
    "id": "ri2GLNjEM_s",
@@ -141,12 +154,12 @@
    "published": "2026-11-06T09:23:54+00:00",
    "url": "https://www.youtube.com/watch?v=ri2GLNjEM_s",
    "shorts": false,
-   "views": 195791,
-   "likes": 958,
-   "viewsGain": 756,
+   "views": 197311,
+   "likes": 962,
+   "viewsGain": 1520,
    "isNew": false,
-   "median": 166532.5,
-   "multiple": 1.2
+   "median": 156340,
+   "multiple": 1.3
   },
   {
    "id": "sYr_AxQcpik",
@@ -154,11 +167,11 @@
    "published": "2026-11-06T08:13:05+00:00",
    "url": "https://www.youtube.com/shorts/sYr_AxQcpik",
    "shorts": true,
-   "views": 215721,
-   "likes": 2540,
-   "viewsGain": 2013,
+   "views": 217979,
+   "likes": 2564,
+   "viewsGain": 2258,
    "isNew": false,
-   "median": 131786,
+   "median": 139909.5,
    "multiple": 1.6
   },
   {
@@ -167,12 +180,12 @@
    "published": "2026-11-06T06:44:00+00:00",
    "url": "https://www.youtube.com/watch?v=tK3p2DelS-c",
    "shorts": false,
-   "views": 185102,
+   "views": 185341,
    "likes": 1027,
-   "viewsGain": 196,
+   "viewsGain": 239,
    "isNew": false,
-   "median": 166532.5,
-   "multiple": 1.1
+   "median": 156340,
+   "multiple": 1.2
   },
   {
    "id": "SmbFOtTIot0",
@@ -180,33 +193,27 @@
    "published": "2026-11-06T03:49:57+00:00",
    "url": "https://www.youtube.com/shorts/SmbFOtTIot0",
    "shorts": true,
-   "views": 131786,
-   "likes": 1084,
-   "viewsGain": 1887,
+   "views": 134264,
+   "likes": 1106,
+   "viewsGain": 2478,
    "isNew": false,
-   "median": 131786,
+   "median": 139909.5,
    "multiple": 1.0
-  },
-  {
-   "id": "LYXceDpsPYA",
-   "title": "쪼잔하게 돈 버는 법",
-   "published": "2026-11-05T09:15:17+00:00",
-   "url": "https://www.youtube.com/shorts/LYXceDpsPYA",
-   "shorts": true,
-   "views": 248798,
-   "likes": 1436,
-   "viewsGain": 5086,
-   "isNew": false,
-   "median": 131786,
-   "multiple": 1.9
   }
  ],
  "viral": [
   {
    "title": "블룸버그 애널리스트가 본 현재 국장",
    "url": "https://www.youtube.com/watch?v=8DeKtLlHPdI",
-   "views": 396395,
-   "multiple": 2.4,
+   "views": 416819,
+   "multiple": 2.7,
+   "shorts": false
+  },
+  {
+   "title": "우리 요즘 잘하고 있지 않아요?",
+   "url": "https://www.youtube.com/watch?v=h9yF44sFEvc",
+   "views": 328300,
+   "multiple": 2.1,
    "shorts": false
   }
  ]

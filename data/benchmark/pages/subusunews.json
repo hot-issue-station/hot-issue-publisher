@@ -1,44 +1,60 @@
 {
  "name": "스브스뉴스 (SBS)",
  "channel": "https://www.youtube.com/@subusunews",
- "checkedAt": "2026-11-11T14:53+09:00",
+ "checkedAt": "2026-11-11T19:36+09:00",
  "subscribers": "144만",
  "videos": [
   {
-   "id": "h8iBMhQ3b-Q",
-   "title": "추워질수록 위험하다는 굴운자로 #굴 #shorts #스브스뉴스",
-   "views": 3800,
-   "viewsText": "조회수 3.8천회",
+   "id": "phk3JBktfX8",
+   "title": "[선공개] 인간관계 정리되는 요즘 경조사",
+   "views": 518,
+   "viewsText": "조회수 518회",
    "published": "",
-   "kind": "short",
-   "gain": 800
+   "kind": "short"
   },
   {
-   "id": "uO5xviR9-aM",
-   "title": "유독 정치판에서 사이비 종교 논란이 자주 터지는 이유 #사이비 #shorts #스브스뉴스",
-   "views": 3700,
-   "viewsText": "조회수 3.7천회",
+   "id": "80Prr9snsIk",
+   "title": "[선공개] 죽여달라는 거지?",
+   "views": 1100,
+   "viewsText": "조회수 1.1천회",
+   "published": "",
+   "kind": "short"
+  },
+  {
+   "id": "h8iBMhQ3b-Q",
+   "title": "추워질수록 위험하다는 굴운자로 #굴 #shorts #스브스뉴스",
+   "views": 4500,
+   "viewsText": "조회수 4.5천회",
    "published": "",
    "kind": "short",
    "gain": 700
   },
   {
-   "id": "Y0Y6eq3a6PE",
-   "title": "서울시가 남산에 곤돌라를 만들려는 이유 #shorts / 스브스뉴스",
-   "views": 3600,
-   "viewsText": "조회수 3.6천회",
+   "id": "uO5xviR9-aM",
+   "title": "유독 정치판에서 사이비 종교 논란이 자주 터지는 이유 #사이비 #shorts #스브스뉴스",
+   "views": 4000,
+   "viewsText": "조회수 4천회",
    "published": "",
    "kind": "short",
-   "gain": 500
+   "gain": 300
+  },
+  {
+   "id": "Y0Y6eq3a6PE",
+   "title": "서울시가 남산에 곤돌라를 만들려는 이유 #shorts / 스브스뉴스",
+   "views": 3900,
+   "viewsText": "조회수 3.9천회",
+   "published": "",
+   "kind": "short",
+   "gain": 300
   },
   {
    "id": "DqL_SWFWkD8",
    "title": "침착맨 방송 중 사교육 문제 직격타 날린 정승제 #입시 #shorts #스브스뉴스",
-   "views": 430000,
-   "viewsText": "조회수 43만회",
+   "views": 450000,
+   "viewsText": "조회수 45만회",
    "published": "",
    "kind": "short",
-   "gain": 30000
+   "gain": 20000
   },
   {
    "id": "lnryKqOozWk",
@@ -47,7 +63,7 @@
    "viewsText": "조회수 1.6만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "pmpb5ZMw3Sw",
@@ -56,13 +72,13 @@
    "viewsText": "조회수 2.8천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "STWniX3sH0g",
    "title": "상반기에만 2배 폭증한 초등학생 자살률 #자살 #shorts #스브스뉴스",
-   "views": 6000,
-   "viewsText": "조회수 6천회",
+   "views": 6100,
+   "viewsText": "조회수 6.1천회",
    "published": "",
    "kind": "short",
    "gain": 100
@@ -70,8 +86,8 @@
   {
    "id": "qZaeu4PJUps",
    "title": "롯데홈쇼핑이 직접 교육하는 커머스 인재 학교? #shorts #스브스뉴스",
-   "views": 21000,
-   "viewsText": "조회수 2.1만회",
+   "views": 23000,
+   "viewsText": "조회수 2.3만회",
    "published": "",
    "kind": "short",
    "gain": 2000
@@ -110,7 +126,7 @@
    "viewsText": "조회수 6.4천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "ZpNFj6J6dpk",
@@ -342,24 +358,6 @@
    "title": "안세영, 6점 차 뒤집고 기적의 역전승 #shorts #스브스뉴스",
    "views": 95000,
    "viewsText": "조회수 9.5만회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "O67zy3k_I8U",
-   "title": "점점 늘어난다는 한국 내 마약 유통 #마약 #shorts #스브스뉴스",
-   "views": 12000,
-   "viewsText": "조회수 1.2만회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "X6yA0ltKNU4",
-   "title": "겉으론 멀쩡해 보여도 의심해 봐야 하는 '이것' #2030 #shorts #스브스뉴스",
-   "views": 87000,
-   "viewsText": "조회수 8.7만회",
    "published": "",
    "kind": "short",
    "gain": 0

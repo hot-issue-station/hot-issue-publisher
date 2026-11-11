@@ -1,51 +1,53 @@
 {
  "name": "슈카월드",
  "channel": "https://www.youtube.com/@syukaworld",
- "checkedAt": "2026-11-11T14:53+09:00",
+ "checkedAt": "2026-11-11T19:36+09:00",
  "subscribers": "374만",
  "videos": [
   {
    "id": "5mSF8npmm9A",
    "title": "이거 진짜에요?",
-   "views": 7600,
-   "viewsText": "조회수 7.6천회",
+   "views": 34000,
+   "viewsText": "조회수 3.4만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 26400
   },
   {
    "id": "5LEMniVcweU",
    "title": "걱정 노노",
-   "views": 3800,
-   "viewsText": "조회수 3.8천회",
+   "views": 16000,
+   "viewsText": "조회수 1.6만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 12200
   },
   {
    "id": "xmLFwy-UdNU",
    "title": "노안의 라식",
-   "views": 190000,
-   "viewsText": "조회수 19만회",
+   "views": 200000,
+   "viewsText": "조회수 20만회",
    "published": "",
    "kind": "short",
-   "gain": 20000
+   "gain": 10000
   },
   {
    "id": "xVKY3CWUoSE",
    "title": "딸깍으로 떠먹여주는 서비스",
-   "views": 47000,
-   "viewsText": "조회수 4.7만회",
+   "views": 49000,
+   "viewsText": "조회수 4.9만회",
    "published": "",
    "kind": "short",
-   "gain": 4000
+   "gain": 2000
   },
   {
    "id": "lioIrGMoIbs",
    "title": "좋은 사람 있으면 소개시켜줘",
-   "views": 86000,
-   "viewsText": "조회수 8.6만회",
+   "views": 87000,
+   "viewsText": "조회수 8.7만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 1000
   },
   {
    "id": "D32h_sPWp0g",

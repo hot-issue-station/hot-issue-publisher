@@ -1,7 +1,7 @@
 {
  "name": "안원잘부",
  "channel": "https://www.youtube.com/@helloiamwoninicetomeetyou",
- "checkedAt": "2026-11-11T14:53+09:00",
+ "checkedAt": "2026-11-11T19:36+09:00",
  "subscribers": "243만",
  "videos": [
   {
@@ -11,7 +11,7 @@
    "viewsText": "조회수 161만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "DKDmFgXzxs8",
@@ -52,11 +52,11 @@
   {
    "id": "GsYq_ouLAMQ",
    "title": "[B컷] 시그니엘 망고 빙수",
-   "views": 5480000,
-   "viewsText": "조회수 548만회",
+   "views": 5490000,
+   "viewsText": "조회수 549만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "BUeZskDCMpU",
