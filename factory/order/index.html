@@ -92,7 +92,9 @@ ol.flow{margin:6px 0 0;padding-left:20px;font-size:13px;color:var(--muted)}
 
   <section>
     <h2>0. 오늘의 소재 <small>(리서치팀이 찾은 후보 · 누르면 아래에서 만들 방법을 골라요)</small></h2>
-    <div id="topics" style="display:flex;flex-direction:column;gap:8px"><p class="empty">오늘 올라온 소재 후보가 아직 없어요. 후보가 올라오면 여기에 뜹니다. 소재 없이 아래에서 바로 주문해도 돼요.</p></div>
+    <button class="go" id="refreshAll" type="button" style="margin-bottom:8px">🔎 지금 기준으로 소재 찾기</button>
+    <div class="msg" id="refMsg" aria-live="polite"></div>
+    <div id="topics" style="display:flex;flex-direction:column;gap:8px"><p class="empty">위 버튼을 누르면 지금 이 시각 기준으로 소재를 찾아 5분쯤 뒤 여기에 올려요. 소재 없이 아래에서 바로 주문해도 돼요.</p></div>
   </section>
 
   <section><h2>1. 형식</h2><div class="grid" id="fmt"></div></section>
@@ -198,8 +200,23 @@ function drawTopics(){
     const h=document.createElement("b");h.textContent=t.title||"";
     const sm=document.createElement("span");sm.textContent=t.summary||"";
     b.append(tg,h,sm);
+    const wrap=document.createElement("div");wrap.style.cssText="display:flex;flex-direction:column;gap:4px";
     b.onclick=()=>{S.topic=S.topic===t.id?null:t.id;draw();if(S.topic)$("fmt").scrollIntoView({behavior:"smooth",block:"start"})};
-    W.append(b)});
+    const rc=mk("chip","🔄 지금 다시 확인");rc.style.alignSelf="flex-end";rc.style.fontSize="13px";rc.onclick=()=>askRefresh({scope:"topic",topicId:t.id,title:t.title||""});
+    wrap.append(b,rc);W.append(wrap)});
+}
+const FINDER="trig_016gjKp4gw6Vmad8nDaPkWRY";
+let DB=null,MCP=null;
+async function askRefresh(req){
+  const m=$("refMsg");
+  if(!DB){m.textContent="이 화면에서는 요청을 저장할 수 없어요.";return}
+  const id="r"+Date.now();
+  try{await DB.collection("refreshq").doc(id).set({...req,at:nowStr(),status:"queued"});}catch(e){m.textContent="요청을 저장하지 못했어요. 다시 눌러 주세요.";return}
+  m.textContent=req.scope==="all"?"지금 기준으로 찾으라고 Claude를 깨우는 중…":"이 소재를 지금 기준으로 다시 확인하라고 깨우는 중…";
+  let ok=false;
+  if(MCP){try{await MCP.callTool("Claude Code Remote","fire_trigger",{trigger_id:FINDER,text:"제작기 버튼: refreshq/"+id});ok=true}catch(e){}}
+  m.textContent=ok?(req.scope==="all"?"찾는 중이에요. 5분쯤 뒤 여기에 새 소재가 올라오고 휴대폰 알림이 가요.":"확인 중이에요. 몇 분 뒤 이 칸 내용이 새로 바뀌어요."):"요청은 남겼어요. 바로 깨우려면 허용이 필요해요 — 다시 눌러 「허용」을 골라 주세요.";
+  try{DB.collection("refreshq").doc(id).onSnapshot(d=>{const x=d.data?.()||{};if(x.status==="done")m.textContent="✓ "+(x.message||"다 찾았어요");else if(x.status==="failed")m.textContent="찾지 못했어요: "+(x.message||"");else if(x.status==="working")m.textContent="찾는 중… "+(x.message||"")},()=>{})}catch(e){}
 }
 const nowStr=()=>{const n=new Date(),p=x=>String(x).padStart(2,"0");return `${n.getFullYear()}-${p(n.getMonth()+1)}-${p(n.getDate())}T${p(n.getHours())}:${p(n.getMinutes())}:${p(n.getSeconds())}`};
 const pick={}; // 주문별 언어·플랫폼 선택(화면 안에서만)
@@ -262,7 +279,8 @@ async function upd(r,patch){
 (async()=>{
   const db=await window.claude?.use?.("db");
   if(!db){$("msg").textContent="이 화면에서는 주문을 저장할 수 없어요. claude.ai에 로그인한 상태로 열어 주세요.";return}
-  col=db.collection("orders");
+  col=db.collection("orders"); DB=db; MCP=await window.claude?.use?.("mcp");
+  $("refreshAll").onclick=()=>askRefresh({scope:"all"});
   const timer=setTimeout(()=>{$("msg").textContent="진행판을 불러오지 못했어요. 잠시 뒤 다시 열어 주세요."},10000);
   try{
     col.orderBy("at","desc").limit(20).onSnapshot(s=>{clearTimeout(timer);
@@ -276,7 +294,7 @@ async function upd(r,patch){
         const t=document.createElement("div");t.className="rt";t.textContent=r.text||"";const b=document.createElement("button");b.type="button";b.textContent="읽음";
         b.onclick=async()=>{try{await db.collection("reports").doc(r.id).update({read:true})}catch(e){}};c.append(h,t,b);W.append(c)})},()=>{}); }catch(e){}
   try{ db.collection("topics").orderBy("at","desc").limit(12).onSnapshot(s=>{const rows=[];const push=d=>rows.push({...d.data(),id:d.id});(s.docs||[]).forEach(push);if(!s.docs&&s.forEach)s.forEach(push);
-      TOPICS=rows.filter(r=>r.status!=="used");drawTopics()},()=>{}); }catch(e){}
+      TOPICS=rows.filter(r=>r.status!=="used"&&r.status!=="old");drawTopics()},()=>{}); }catch(e){}
   $("go").onclick=async()=>{
     if($("go").disabled)return;$("go").disabled=true;$("msg").textContent="주문 넣는 중…";
     const area=CAT.areas.find(a=>a.id===S.area);
