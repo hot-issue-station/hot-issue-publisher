@@ -1,0 +1,48 @@
+/* 덕심저장소 갤러리 — 안내 페이지 공용 스타일 (gallery/hall.html 과 같은 색·글꼴, 휴대폰 우선, 외부 라이브러리 없음) */
+:root{
+  --bg:#f6efe3; --paper:#fffaf2; --ink:#1e143c; --sub:#6b6280; --line:#e4d8c4; --y:#ffd640; --soft:#efe7da;
+  --font:"Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic","Hiragino Sans","PingFang TC","Noto Sans CJK KR",system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+html,body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);-webkit-tap-highlight-color:transparent}
+body{min-height:100vh;display:flex;flex-direction:column;overflow-x:hidden;line-height:1.7;font-size:15px;word-break:keep-all;overflow-wrap:anywhere}
+a{color:var(--ink)}
+button,select{font:inherit;color:inherit;cursor:pointer}
+
+.top{position:sticky;top:0;z-index:5;padding:calc(10px + env(safe-area-inset-top)) 16px 10px;background:rgba(246,239,227,.94);border-bottom:1px solid var(--line);backdrop-filter:blur(6px)}
+.bar{display:flex;align-items:center;gap:10px;max-width:720px;margin:0 auto}
+.home{flex:1;min-width:0;text-decoration:none;display:block}
+.home b{display:block;font-size:17px;line-height:1.25;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.home small{display:block;font-size:11px;color:var(--sub);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.langSel{flex:none;border:1px solid var(--line);background:var(--paper);border-radius:999px;padding:7px 10px;font-size:13px;min-height:36px}
+
+main{flex:1;width:100%;max-width:720px;margin:0 auto;padding:18px 16px 28px}
+article{display:none}
+html[data-lang=ko] article[lang=ko],html[data-lang=ja] article[lang=ja],
+html[data-lang=en] article[lang=en],html[data-lang=zh] article[lang=zh-Hant]{display:block}
+h1{font-size:23px;line-height:1.35;margin:4px 0 6px}
+.lead{color:var(--sub);margin:0 0 16px}
+h2{font-size:17px;line-height:1.4;margin:0 0 6px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:16px;margin:0 0 12px;box-shadow:0 2px 10px rgba(40,25,10,.05)}
+.card p{margin:0 0 8px}.card p:last-child{margin:0}
+ul,ol{margin:4px 0 0;padding-left:20px}li{margin:3px 0}
+.meta{font-size:12px;color:var(--sub);margin-top:18px}
+.note{background:var(--soft);border-radius:12px;padding:10px 12px;font-size:13px;color:var(--sub)}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px;padding:0;list-style:none}
+.tags li{margin:0;border:1px solid var(--line);background:#fff;border-radius:999px;padding:5px 12px;font-size:13px;font-weight:700}
+.tags.no li{background:#fff3f3;border-color:#f1cccc;color:#8a2a2a}
+.slots{display:grid;grid-template-columns:1fr;gap:10px;margin-top:8px}
+@media (min-width:560px){.slots{grid-template-columns:1fr 1fr}}
+.slot{border:1px dashed var(--line);border-radius:14px;padding:12px;background:#fff}
+.slot b{display:block;font-size:15px}.slot span{font-size:13px;color:var(--sub)}
+
+.cta{display:flex;align-items:center;justify-content:center;width:100%;min-height:52px;margin:6px 0 4px;border:0;border-radius:999px;background:var(--ink);color:#fff;font-weight:800;font-size:16px;text-decoration:none;padding:12px 20px;text-align:center}
+.cta[aria-disabled=true]{background:#b8b2c6;pointer-events:none}
+.ctaNote{font-size:12px;color:var(--sub);text-align:center;margin:4px 0 0}
+
+.foot{border-top:1px solid var(--line);background:var(--paper);padding:16px 16px calc(18px + env(safe-area-inset-bottom))}
+.foot nav{max-width:720px;margin:0 auto;display:flex;flex-wrap:wrap;gap:6px 4px;justify-content:center}
+.foot nav a{font-size:13px;text-decoration:none;color:var(--ink);padding:8px 10px;border-radius:999px;min-height:36px;display:inline-flex;align-items:center}
+.foot nav a[aria-current=page]{background:var(--ink);color:#fff;font-weight:700}
+.foot p{max-width:720px;margin:8px auto 0;text-align:center;font-size:11px;color:var(--sub)}

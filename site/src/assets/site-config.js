@@ -1,0 +1,10 @@
+/* ===== 대표가 바꾸는 곳 (이 파일 하나만 고치면 5개 페이지에 모두 반영) =====
+   메모장으로 열어 따옴표 안의 글자만 바꾸고 저장 → dist 폴더를 Netlify에 다시 끌어 놓기.
+   - FORM_URL       : 문의 양식 주소 (예: 구글 설문지 "보내기 → 링크" 주소). 바꾸기 전에는 버튼이 '준비 중'으로 잠겨 있음.
+   - EFFECTIVE_DATE : 방침·약관 시행일 (예: "2026-12-01")
+   - PRIVACY_OFFICER: 개인정보 보호책임자 이름 또는 직함 (예: "덕심저장소 운영자"). 이메일·전화번호는 쓰지 않음(문의는 양식으로). */
+window.SITE_CONFIG = {
+  FORM_URL: "FORM_URL",
+  EFFECTIVE_DATE: "EFFECTIVE_DATE",
+  PRIVACY_OFFICER: "PRIVACY_OFFICER"
+};

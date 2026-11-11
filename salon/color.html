@@ -4,6 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <title>염색 미리보기</title>
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#c2410c">
+<link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
 <meta name="description" content="손님 사진(앞·옆·뒤)에서 머리카락만 골라 염색 색을 미리 보여 주는 단골 수첩 도구 (사진은 휴대폰 안에서만 쓰여요)">
 <style>
 :root{--bg:#fff8f3;--card:#fff;--tx:#2b2220;--sub:#7a6a64;--main:#c2410c;--line:#ead9cf;--soft:#fdeee4;--ok:#16a34a}
@@ -507,6 +511,8 @@ window.ColorLab=api;
 slots.forEach(paintSlot);
 setAgree(agreed());
 })();
+/* 홈 화면 앱: 이 화면을 먼저 열어도 모델이 저장되도록 서비스워커 등록 */
+if("serviceWorker" in navigator&&location.protocol!=="file:")navigator.serviceWorker.register("sw.js").catch(e=>console.warn("서비스워커 등록 실패",e));
 </script>
 </body>
 </html>
