@@ -70,6 +70,27 @@ def crash_zoom_state(zooms, t):
             return 1 + (s - 1) * e, 0.5 + (z["x"] - 0.5) * e, 0.5 + (z["y"] - 0.5) * e
     return 1.0, 0.5, 0.5
 
+def focus_state(focus, t):
+    """멤버 부각(대표 11/12 02:13): at 부터 0.6초 동안 천천히 (x,y) 쪽으로 scale 배 확대 → dur 끝 0.3초 동안 원래대로."""
+    for f in focus:
+        a = f["at"]; d = f.get("dur", 2.0); s = f.get("scale", 1.6)
+        if a <= t < a + d:
+            u = min(1, (t - a) / 0.6, max(0, (a + d - t) / 0.3)); e = u * u * (3 - 2 * u)
+            return 1 + (s - 1) * e, 0.5 + (f["x"] - 0.5) * e, 0.5 + (f["y"] - 0.5) * e
+    return 1.0, 0.5, 0.5
+
+class Split:
+    """한 화면 두 영상(대표 11/12 02:13): 위 = 본 클립, 아래 = split 영상. 둘 다 가로 통째(16:9) + 흐린 배경 + 칸마다 이름표."""
+    def __init__(self, W, H, first, gap=14):
+        self.W, self.H = W, H; self.fh = round(W * 9 / 16 / 2) * 2; self.gap = gap
+        self.y_top = H // 2 - self.fh - gap // 2 - 40; self.y_bot = H // 2 + gap // 2 - 40
+        self.bg = Layout(W, H, "fit", 16, 9, first=first).bg
+    def place(self, a, b):
+        out = self.bg.copy()
+        out[self.y_top:self.y_top + self.fh] = cv2.resize(a, (self.W, self.fh), interpolation=cv2.INTER_AREA)
+        out[self.y_bot:self.y_bot + self.fh] = cv2.resize(b, (self.W, self.fh), interpolation=cv2.INTER_AREA)
+        return out
+
 def rotate_shake(img, deg, scale=1.0, dx=0, dy=0):
     h, w = img.shape[:2]; M = cv2.getRotationMatrix2D((w / 2, h / 2), deg, scale); M[0, 2] += dx; M[1, 2] += dy
     return cv2.warpAffine(img, M, (w, h), flags=cv2.INTER_LINEAR, borderMode=cv2.BORDER_REFLECT)
@@ -235,7 +256,7 @@ def render_expose(spec, outdir, total=None, suffix=""):
     t = 0.0
     vpath = os.path.join(tmp, "v.mp4"); wr = open_writer(vpath, W, H)
     def write(fr): wr.stdin.write(fr.tobytes())
-    brand_done = False
+    brand_done = False; prev = None
     for ci, c in enumerate(clips):
         n = round((c["out"] - c["in"]) * FPS); d = n / FPS
         sw, sh = ffprobe_wh(c["file"]); mode = c.get("layout", spec.get("layout", STD["style_A"]["layout_default"]))
@@ -245,7 +266,11 @@ def render_expose(spec, outdir, total=None, suffix=""):
         cr = c.get("credit") or spec.get("source_line", "")
         if cr:
             im = fx.text_img(cr, 28, W - 60, base=fx.GR, hi=fx.GR, stroke=2, font=fx.FM, shadow=False); ovs.append(Ov(im, W - im.width - 16, H - im.height - 150, t, t + d, fade=0))
-        for cap in c.get("captions", []): ovs.append(caption_ov(cap, W, H, t, cap_y, L.y0 if mode != "crop" else None))
+        if c.get("split"):   # 두 영상 칸: 자막은 위 칸 위 / 아래 칸 아래
+            fh_ = round(W * 9 / 16 / 2) * 2; ytop = H // 2 - fh_ - 7 - 40; cap_y = H // 2 + 7 - 40 + fh_ + 20
+            for cap in c.get("captions", []): ovs.append(caption_ov(cap, W, H, t, cap_y, ytop))
+        else:
+            for cap in c.get("captions", []): ovs.append(caption_ov(cap, W, H, t, cap_y, L.y0 if mode != "crop" else None))
         if c.get("role") == "brand" and spec.get("brand") and not brand_done:   # 시리즈 브랜딩 띠(브랜딩 구간 내내)
             bdur = sum(round((x["out"] - x["in"]) * FPS) for x in clips if x.get("role") == "brand") / FPS
             b = spec["brand"]; bt = fx.text_img(b.get("title", ""), 64, W - 100, base=fx.Y, hi=fx.WH, box=(150, 80, 230, 235), stroke=0, font=fx.FK, shadow=False)
@@ -257,14 +282,49 @@ def render_expose(spec, outdir, total=None, suffix=""):
         for s in c.get("sfx", []): extra.append((fx.sfx_path(s, base), t + s["at"], s.get("volume", 0.9)))
         lead = c.get("audio_lead", 0.0 if ci == 0 else LEAD)                  # 오디오 오버랩(J컷 = ① 오디오 브리지): 다음 장면 소리 먼저
         aud.append((c["file"], c["in"] - lead, d + lead, t - lead, c.get("volume", 1.0), 0.06 if ci == 0 else lead, 0.5 if ci < len(clips) - 1 else 0.3))
-        rd = Reader(c["file"], c["in"], d); zooms = c.get("zooms", [])
+        nx = clips[ci + 1].get("xfade", 0) if ci + 1 < len(clips) else 0   # 다음 클립과 겹치는 초(겹침 전환)
+        rd = Reader(c["file"], c["in"], d + nx); zooms = c.get("zooms", []); focus = c.get("focus", [])
+        sp = c.get("split"); SP = rd2 = None
+        if sp:
+            sf = sp["file"] if os.path.isabs(sp["file"]) else os.path.join(base, sp["file"])
+            SP = Split(W, H, first); rd2 = Reader(sf, sp["in"], d + nx)
+            for k_, lab in enumerate(sp.get("labels", [])):
+                if lab:
+                    im = fx.text_img(lab, 38, W - 80, base=fx.WH, hi=fx.Y, stroke=0, font=fx.FB, box=(fx.OR if k_ == 0 else fx.PU) + (235,), pad=(18, 6), shadow=False)
+                    yy = (SP.y_top + 14) if k_ == 0 else (SP.y_bot + 14)
+                    ovs.append(Ov(im, 20, yy, t, t + d, fade=0.1, slide=(-W // 2, 0, 0.25)))
+        for f in focus:
+            if f.get("name"):
+                im = fx.text_img(f["name"], 46, W - 80, base=fx.WH, hi=fx.Y, stroke=0, font=fx.FB, box=fx.PU + (235,), pad=(22, 8), shadow=False)
+                yv = (SP.y_top + SP.fh - im.height - 16) if SP else ((L.y0 + L.fh - im.height - 16) if mode != "crop" else int(H * 0.62))
+                ovs.append(Ov(im, int(min(max(f["x"] * W - im.width / 2, 20), W - im.width - 20)), yv, t + f["at"] + 0.3, t + f["at"] + f.get("dur", 2.0) - 0.2, pop=0.14))
+        def frame_of(img, img2, tl, zooms=zooms, focus=focus, SP=SP, sp=sp, L=L):
+            s_, zx, zy = crash_zoom_state(zooms, tl)
+            if s_ <= 1.001: s_, zx, zy = focus_state(focus, tl)
+            img = zoom_at(img, zx, zy, s_)
+            if SP is not None:
+                s2 = sp.get("focus")
+                if s2: s3, x3, y3 = focus_state(s2, tl); img2 = zoom_at(img2, x3, y3, s3)
+                return SP.place(img, img2)
+            return L.place(img)
+        X = round(c.get("xfade", 0) * FPS) if prev else 0
         for i in range(n):
-            tl = i / FPS; img = rd.read()
-            s, zx, zy = crash_zoom_state(zooms, tl); img = zoom_at(img, zx, zy, s)
-            fr = L.place(img)
+            tl = i / FPS; img = rd.read(); img2 = rd2.read() if rd2 else None
+            fr = frame_of(img, img2, tl)
+            if i < X:   # 겹침 전환: 앞 클립이 계속 재생되며 사라짐
+                p_ = prev; pi = p_["rd"].read(); pi2 = p_["rd2"].read() if p_["rd2"] else None
+                pf = p_["frame_of"](pi, pi2, p_["d"] + tl); a_ = (i + 1) / (X + 1)
+                fr = cv2.addWeighted(fr, a_, pf, 1 - a_, 0)
             for o in ovs: o.draw(fr, t + tl)
             write(fr)
-        rd.close(); t += d
+        if prev:
+            prev["rd"].close()
+            if prev["rd2"]: prev["rd2"].close()
+        prev = {"rd": rd, "rd2": rd2, "frame_of": frame_of, "d": d} if nx else None
+        if not nx:
+            rd.close()
+            if rd2: rd2.close()
+        t += d
     # 아웃트로
     oc = dict(spec.get("outro", {})); of = oc.get("frame") or {"file": clips[-1]["file"], "t": clips[-1]["out"] - 0.5}
     ofile = of["file"] if os.path.isabs(of["file"]) else os.path.join(base, of["file"])
