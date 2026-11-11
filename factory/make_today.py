@@ -25,7 +25,8 @@ LABEL = {"가수": "가수 이름", "곡": "곡 이름", "숫자": "주인공 �
          "클립": "무대 클립 {\"A\": [파일, 노래와 맞는 시각], ...}", "음원": "노래 파일", "bpm": "노래 빠르기(bpm)",
          "저작권확인": "저작권·팬캠 양해 확인(true)", "롱폼": "롱폼 예고 문구", "단위": "숫자 단위",
          "제목": "화면 위 제목(괄호 드립 가능)", "소스": "무대 소스 [{\"file\",\"sync\",\"label\"}, ...] 8개 이상", "노래": "노래 {\"file\",\"start\"}",
-         "썸네일": "썸네일 {\"quote\"(실제 대사),\"hook\",\"frame\":{file,t}}", "기획": "몰아보기 롱폼 기획 파일(.json)"}
+         "썸네일": "썸네일 {\"quote\"(실제 대사),\"hook\",\"frame\":{file,t}}", "기획": "몰아보기 롱폼 기획 파일(.json)",
+         "길이": "쇼츠 길이 58 또는 40(40이면 40-N/40-M)", "내레이션": "Veda 내레이션 [{\"at\",\"file\"?,\"text\"}]"}
 
 def stop(lines):
     print("❌ 아직 만들 수 없어요. 아래를 채워 주세요:")
@@ -82,7 +83,12 @@ def build_v2(preset, fill, fill_dir, name):
     post = fill_text(preset["post"], vals, missing, "게시 문구"); tags = [t.replace(" ", "") for t in fill_text(preset["hashtags"], vals, missing, "해시태그")]
     for k, ws in missing.items():
         if not any(p.startswith(k + ":") for p in problems): problems.append(f"{k}: {LABEL.get(k, k)} (쓰이는 곳: {', '.join(sorted(ws))})")
-    common = {"out": name, "template": kind, "_preset": f"{preset['day']}_{preset['slot']}", "_time": preset.get("time", STD["schedule"]["time"]),
+    tk = preset.get("shorts_template")
+    if kind in ("expose", "pulse58"):      # fill "길이": 40 → 같은 계열 40초 판(58-N→40-N, 58-M→40-M)
+        tk = tk or STD["shorts_templates_default"][kind]
+        if str(vals.get("길이", "")).startswith("40"): tk = "40-" + tk.split("-")[1]
+        if str(vals.get("길이", "")).startswith("58"): tk = "58-" + tk.split("-")[1]
+    common = {"out": name, "template": kind, "shorts_template": tk, "_preset": f"{preset['day']}_{preset['slot']}", "_time": preset.get("time", STD["schedule"]["time"]),
               "_slot_up": STD["schedule"]["uploader_slot"], "post": dict(post, tags=tags), "checked": vals.get("확인", ""),
               "source": [vals["출처"]] if isinstance(vals.get("출처"), str) else (vals.get("출처") or []),
               "_vals": {"가수": vals.get("가수", ""), "곡": vals.get("곡", vals.get("제목", ""))}, "series": preset["series"]}
@@ -95,26 +101,31 @@ def build_v2(preset, fill, fill_dir, name):
         for i, c in enumerate(clips):
             if not all(k in c for k in ("file", "in", "out", "role")): problems.append(f"클립 {i + 1}번째: file·in·out·role 이 있어야 해요"); continue
             c["file"] = absf(c["file"])
-        spec = dict(common, title=vals.get("제목", ""), series_name=vals.get("시리즈이름", preset["series"]), source_line=common["source"][0] if common["source"] else "",
-                    clips=clips, brand=dict(preset.get("brand", {}), **vals.get("브랜드", {})), outro=dict(preset.get("outro", {}), **vals.get("아웃트로", {})),
-                    thumb=dict(preset.get("thumb", {}), **vals.get("썸네일", {})), clean_ranges=vals.get("본편구간", []), forbidden_ranges=vals.get("금지구간", []))
+        ft = lambda k_: fill_text(preset.get(k_, {}), vals, missing, k_)
+        spec = dict(common, title=vals.get("제목", ""), series_name=vals.get("시리즈이름", preset["series"] + (" · " + vals["시리즈"] if vals.get("시리즈") else "")),
+                    source_line=common["source"][0] if common["source"] else "",
+                    clips=clips, brand=dict(ft("brand"), **vals.get("브랜드", {})), outro=dict(ft("outro"), **vals.get("아웃트로", {})),
+                    thumb=dict(ft("thumb"), **vals.get("썸네일", {})), clean_ranges=vals.get("본편구간", []), forbidden_ranges=vals.get("금지구간", []))
         for k_ in ("outro", "thumb"):
             fr_ = spec[k_].get("frame")
             if fr_: fr_["file"] = absf(fr_["file"])
         if clips and not problems:   # 렌더 전에 구간 시간 미리 확인(점검기와 같은 계산)
-            S, got, body = cs.actual_A(spec, STD["shorts"]["total_sec"])
+            S, got, body = cs.actual_A(spec)
             for n, a, b in S[:-1]:
                 g = got.get(n)
                 if not g or abs(g[0] - a) > 0.05 or abs(g[1] - b) > 0.05: problems.append(f"구간 {n}: {a:g}~{b:g}초여야 해요" + (f" (지금 {g[0]:.2f}~{g[1]:.2f})" if g else " (없음)"))
-        spec["_est_sec"] = STD["shorts"]["total_sec"]
+        spec["_est_sec"] = STD["shorts_templates"][tk]["total_sec"]
+        if vals.get("내레이션"): spec["narration"] = vals["내레이션"]
     elif kind == "pulse58":
         srcs = [dict(x) for x in (vals.get("소스") or [])]
         for x in srcs: x["file"] = absf(x.get("file", ""))
-        if srcs and len(srcs) < STD["style_B"]["min_sources"]: problems.append(f"소스: {STD['style_B']['min_sources']}개 이상이어야 해요 (지금 {len(srcs)}개)")
+        T_ = STD["shorts_templates"][tk]
+        if srcs and len(srcs) < T_["min_sources"]: problems.append(f"소스: {tk} 은 {T_['min_sources']}개 이상이어야 해요 (지금 {len(srcs)}개)")
+        if srcs and T_.get("max_sources") and len(srcs) > T_["max_sources"]: problems.append(f"소스: {tk} 은 {T_['max_sources']}개 이하(지금 {len(srcs)}개)")
         song = dict(vals.get("노래") or {}); 
         if song: song["file"] = absf(song.get("file", ""))
         spec = dict(common, preset="pulse58", song=song, sources=srcs, title=vals.get("제목", ""), source_line=common["source"][0] if common["source"] else "",
-                    outro=dict(preset.get("outro", {}), **vals.get("아웃트로", {})), copyright_checked=bool(vals.get("저작권확인")), _est_sec=STD["shorts"]["total_sec"])
+                    outro=dict(fill_text(preset.get("outro", {}), vals, missing, "outro"), **vals.get("아웃트로", {})), copyright_checked=bool(vals.get("저작권확인")), _est_sec=STD["shorts_templates"][tk]["total_sec"])
         if vals.get("bpm"): spec["bpm"] = vals["bpm"]
         if vals.get("썸네일"): spec["thumb"] = dict(preset.get("thumb", {}), **vals["썸네일"])
     else:   # molabogi: 롱폼 기획 파일(longform_factory 형식 + v2.2 몰아보기 칸)

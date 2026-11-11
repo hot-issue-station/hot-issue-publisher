@@ -1,6 +1,8 @@
 """쇼츠 스타일 A 「예능 폭로형」 공장 (제작 표준 v2, 11/11) — template:"expose"
 사용법: python3 expose_factory.py 기획.json [결과폴더]
-정확히 58.0초 · 1080x1920 · 30fps · 48kHz. 구간: [0~3 훅][3~5 반전][5~25 폭로1][25~45 폭로2][45~53 시리즈 브랜딩][53~58 아웃트로]
+템플릿 "shorts_template": 58-N(기본, 정확히 58.0초: [0~3 훅][3~5 반전][5~25 폭로1][25~45 폭로2][45~53 브랜딩][53~58 아웃트로])
+  / 40-N(40.0초: [0~3 훅][3~35 본문 body][35~40 아웃트로]) · 1080x1920 · 30fps · 48kHz · 현장음 loudnorm
+  narration:[{at(영상 전체 초), file(Veda 내레이션, 없으면 text 를 자막으로), text}]
 기획(JSON) 예: docs/제작표준_v2_사용법.md, samples/expose_anwon_test.json
   clips:[{file,in,out,role:"hook|twist|expose1|expose2|brand", layout:"fit|crop", x_center,
           zooms:[{at,x,y,scale,hold}], bleeps:[{at,dur}], sfx:[{at,name|file,volume}], captions:[{at,dur,text,style,pos,color}],
@@ -18,8 +20,7 @@ import check_standard as cs
 
 STD = fx.STD   # standard_v2.json
 FPS = STD["shorts"]["fps"]; SR = STD["shorts"]["audio_hz"]
-SECTIONS_A = [tuple(x) for x in STD["style_A"]["sections"]]
-TOTAL_A = STD["shorts"]["total_sec"]; TOL = STD["shorts"]["tolerance_sec"]
+TOL = STD["shorts"]["tolerance_sec"]   # 템플릿별 길이·구간은 standard_v2.json shorts_templates(58-N / 40-N), check_standard.tconf
 CZ = STD["style_A"]["crash_zoom"]; LEAD = STD["style_A"]["audio_lead_sec"]
 
 def ffprobe_wh(f):
@@ -134,7 +135,7 @@ def caption_ov(c, W, H, t_base, layout_y=None):
     t0 = t_base + c["at"]; return Ov(im, x, y, t0, t0 + c.get("dur", 1.8), pop=0.14 if st in ("big", "sfx", "bracket") else 0, slide=(0, -30, 0.18) if st == "situation" else None)
 
 # ---------------- 소리 ----------------
-def build_audio(events, total, out, bleeps=(), extra=()):
+def build_audio(events, total, out, bleeps=(), extra=(), narr=(), loudnorm=True):
     """events: [(file, src_in, src_dur, place_at, volume, fade_in, fade_out)] 원음 조각 → 섞고, bleeps 구간 원음을 줄이고 1kHz 삐-, extra: [(file, at, volume)] 효과음.
     마지막에 정확히 total 초로 자르고 채운다."""
     inp, fl, labs = [], [], []
@@ -145,6 +146,10 @@ def build_audio(events, total, out, bleeps=(), extra=()):
     n = len(events)
     fl.append("".join(labs) + f"amix=inputs={n}:normalize=0:duration=longest[raw]" if n > 1 else f"{labs[0]}anull[raw]")
     cur = "raw"
+    if narr:   # 내레이션 나오는 동안 원음 덕킹(standard_v2 narration.duck_db)
+        G = 10 ** (STD["narration"]["duck_db"] / 20); m = "0"
+        for f, a, ln, vol in narr: m = f"max({m},clip(min((t-{a - 0.25:.3f})/0.25,({a + ln + 0.4:.3f}-t)/0.4),0,1))"
+        fl.append(f"[{cur}]volume='1-{1 - G:.4f}*{m}':eval=frame[dk]"); cur = "dk"
     for j, (a, d) in enumerate(bleeps):   # 원음 줄이기
         fl.append(f"[{cur}]volume=0.04:enable='between(t,{a:.3f},{a + d:.3f})'[bd{j}]"); cur = f"bd{j}"
     mix = [f"[{cur}]"]; k = n
@@ -152,11 +157,15 @@ def build_audio(events, total, out, bleeps=(), extra=()):
         inp += ["-f", "lavfi", "-t", f"{d:.3f}", "-i", f"sine=frequency={STD['style_A']['bleep_hz']}:sample_rate={SR}"]
         fl.append(f"[{k}:a]aformat=sample_fmts=fltp:channel_layouts=stereo,volume=0.32,afade=t=in:d=0.01,afade=t=out:st={max(0, d - 0.02):.3f}:d=0.02,adelay={int(a * 1000)}:all=1[bp{j}]")
         mix.append(f"[bp{j}]"); k += 1
+    for j, (f, a, ln, vol) in enumerate(narr):
+        inp += ["-i", f]
+        fl.append(f"[{k}:a]aresample={SR},aformat=sample_fmts=fltp:channel_layouts=stereo,volume={vol},adelay={int(a * 1000)}:all=1[nr{j}]"); mix.append(f"[nr{j}]"); k += 1
     for j, (f, a, vol) in enumerate(extra):
         inp += ["-i", f]
         fl.append(f"[{k}:a]aresample={SR},aformat=sample_fmts=fltp:channel_layouts=stereo,volume={vol},adelay={int(a * 1000)}:all=1[sx{j}]"); mix.append(f"[sx{j}]"); k += 1
-    fl.append("".join(mix) + f"amix=inputs={len(mix)}:normalize=0:duration=longest,apad=whole_dur={total:.4f},atrim=0:{total:.4f},alimiter=limit=0.95[aout]"
-              if len(mix) > 1 else f"{mix[0]}apad=whole_dur={total:.4f},atrim=0:{total:.4f}[aout]")
+    L_ = STD["loudnorm"]; ln_ = f"loudnorm=I={L_['I']}:TP={L_['TP']}:LRA={L_['LRA']},aresample={SR}," if loudnorm else ""   # 현장음 loudnorm
+    fl.append("".join(mix) + f"amix=inputs={len(mix)}:normalize=0:duration=longest,{ln_}apad=whole_dur={total:.4f},atrim=0:{total:.4f},alimiter=limit=0.95[aout]"
+              if len(mix) > 1 else f"{mix[0]}{ln_}apad=whole_dur={total:.4f},atrim=0:{total:.4f}[aout]")
     r = subprocess.run(["ffmpeg", "-loglevel", "error", "-y", *inp, "-filter_complex", ";".join(fl), "-map", "[aout]", "-c:a", "pcm_s16le", "-ar", str(SR), out], capture_output=True, text=True)
     if r.returncode: sys.exit("소리 만들기 오류:\n" + r.stderr[-1500:])
 
@@ -192,9 +201,9 @@ def outro_render(write, W, H, t0, dur, frame_bgr, cfg, extra_ovs=()):
 
 # ---------------- 스타일 A ----------------
 def render_expose(spec, outdir, total=None, suffix=""):
-    """total 초 렌더(표준: 모든 플랫폼 58.0 하나 — standard_v2.json shorts.versions). total 이 58.0이 아니면 폭로 1·2를 비례로 늘림(check_standard.stretch_clips)."""
+    """템플릿 길이(standard_v2.json shorts_templates) 영상 하나 렌더. total 을 따로 주면 폭로 1·2를 비례로 늘림(check_standard.stretch_clips)."""
     base = spec.get("_base", os.getcwd()); W, H = STD["shorts"]["size"]
-    total = total or TOTAL_A
+    T = cs.tconf(spec); total = total or T["total_sec"]
     name = spec["out"] + suffix; os.makedirs(outdir, exist_ok=True); tmp = os.path.join(outdir, "_tmp_" + name); os.makedirs(tmp, exist_ok=True)
     for c in spec["clips"]:
         if not os.path.isabs(c["file"]): c["file"] = os.path.join(base, c["file"])
@@ -209,7 +218,15 @@ def render_expose(spec, outdir, total=None, suffix=""):
         im = fx.text_img(spec["series_name"], 36, W - 80, base=fx.GR, stroke=3, font=fx.FB); fixed.append(Ov(im, (W - im.width) // 2, 92, 0, body, fade=0))
     if spec.get("test_label"):
         im = fx.text_img(spec["test_label"], 34, W, base=fx.WH, stroke=0, font=fx.FB, box=(200, 0, 0, 220), shadow=False); fixed.append(Ov(im, 20, 20, 0, total + 1, fade=0))
-    ovs = list(fixed); aud, bleeps, extra = [], [], []
+    ovs = list(fixed); aud, bleeps, extra, narr = [], [], [], []
+    # 내레이션(58-N·40-N, Veda): 영상 전체 시각 기준 [{at, file?, text}] — 파일이 있으면 소리(원음 덕킹), 없으면 narr 자막
+    for n_ in spec.get("narration", []) if T["narration"] else []:
+        f_ = n_.get("file"); f_ = (f_ if not f_ or os.path.isabs(f_) else os.path.join(base, f_))
+        if f_ and os.path.exists(f_): narr.append((f_, n_["at"], ffprobe_dur(f_), n_.get("volume", 1.0)))
+        if n_.get("text") and (not (f_ and os.path.exists(f_)) or spec.get("narration_subs", True)):
+            im = fx.caption_img(n_["text"], "narr", W); d_ = n_.get("sec") or round(0.8 + len(n_["text"]) * 0.14, 2)
+            ovs.append(Ov(im, (W - im.width) // 2, int(H * 0.80), n_["at"], n_["at"] + d_, fade=0.15, fadein=0.12))
+    if spec.get("narration") and not T["narration"]: print("⚠️ 이 템플릿은 내레이션 없는 판 — narration 무시")
     t = 0.0
     vpath = os.path.join(tmp, "v.mp4"); wr = open_writer(vpath, W, H)
     def write(fr): wr.stdin.write(fr.tobytes())
@@ -251,7 +268,7 @@ def render_expose(spec, outdir, total=None, suffix=""):
     if spec.get("bgm"):
         bg = spec["bgm"] if os.path.isabs(spec["bgm"]) else os.path.join(base, spec["bgm"])
         aud.append((bg, 0, END + 0.3, t - 0.3, spec.get("bgm_volume", 0.45), 0.3, 1.2))
-    apath = os.path.join(tmp, "a.wav"); build_audio(aud, total, apath, bleeps, extra)
+    apath = os.path.join(tmp, "a.wav"); build_audio(aud, total, apath, bleeps, extra, narr, T.get("loudnorm", True))
     out = os.path.join(outdir, name + ".mp4"); mux(vpath, apath, out, total)
     return out
 
@@ -269,14 +286,11 @@ def thumbnail(spec, outdir):
     out = os.path.join(outdir, spec["out"] + "_thumb.png")
     return fx.thumb_v2(img, dict(th, source=th.get("source", spec.get("source_line", "")), test=spec.get("test_label")), tuple(STD["shorts"]["size"]), out)
 
-def main(path, outdir=None, versions=None):
-    """58.0초 영상 하나(모든 플랫폼 공용, 대표 20:40) + 썸네일 → check_standard 자동 점검."""
+def main(path, outdir=None):
+    """템플릿 길이(58-N 58.0 / 40-N 40.0) 영상 하나(모든 플랫폼 공용) + 썸네일 → check_standard 자동 점검."""
     spec = json.load(open(path, encoding="utf-8")); spec["_base"] = os.path.dirname(os.path.abspath(path))
     outdir = os.path.abspath(outdir or os.path.join(spec["_base"], "out"))
-    vids = []
-    for key, v in STD["shorts"]["versions"].items():
-        if versions and key not in versions: continue
-        vids.append(render_expose(spec, outdir, v["sec"], v["suffix"]))
+    vids = [render_expose(spec, outdir)]
     th = thumbnail(spec, outdir)
     lines, ok = cs.run(spec, vids)
     print("영상: " + " / ".join(vids) + f"\n썸네일: {th}"); print("\n".join(lines)); print("→ 표준 v2 점검 통과" if ok else "→ ❌ 부터 고치기")

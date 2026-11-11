@@ -121,7 +121,7 @@ def hyung_icon(size=150):
 
 def react_img(text, name="동네 형", W=1920):
     """오른쪽 아래: 원형 아이콘 + 흰 말풍선(이름 + 한두 줄). 실존 인물 얼굴 대신 일러스트(① 관찰자 시점 · ③ MC 콘셉트)."""
-    k = W / 1920; ic = hyung_icon(int(130 * k)); fo = F(FB, 38 * k); fn = F(FB, 28 * k)
+    k = W / 1920 * 1.35; ic = hyung_icon(int(130 * k)); fo = F(FB, 38 * k); fn = F(FB, 28 * k)
     d0 = ImageDraw.Draw(Image.new("RGBA", (1, 1))); lines = _wrap(d0, text, fo, 560 * k)[:2]
     bw = int(max(d0.textlength(l, font=fo) for l in lines) + 60 * k); bw = max(bw, int(200 * k))
     bh = int(56 * k + 50 * k * len(lines)); tail = int(26 * k)
@@ -248,17 +248,17 @@ def thumb_v2(photo_rgb, cfg, size, out):
         o.line([(0, y), (W, y)], fill=(8, 6, 20, min(235, a)))
     img = Image.alpha_composite(img, ov); d = ImageDraw.Draw(img)
     if cfg.get("tag"):
-        t = text_img(cfg["tag"], 40 * k * (1.6 if W > H else 1), W, base=WH, stroke=0, font=FB, box=(230, 30, 40, 240), shadow=False)
+        t = text_img(cfg["tag"], 40 * k * (1.15 if W > H else 1), W, base=WH, stroke=0, font=FB, box=(230, 30, 40, 240), shadow=False)
         img.alpha_composite(t, (int(30 * k), int(30 * k)))
-    q = "“" + cfg["quote"] + "”"; qi = text_img(q, (110 if W < H else 92) * k * (1.6 if W > H else 1), W * 0.92, base=WH, hi=Y)
-    hk = text_img(cfg.get("hook", ""), (78 if W < H else 64) * k * (1.6 if W > H else 1), W * 0.92, base=Y, hi=WH) if cfg.get("hook") else None
+    q = "“" + cfg["quote"] + "”"; qi = text_img(q, (110 if W < H else 92) * k * (1.15 if W > H else 1), W * 0.92, base=WH, hi=Y)
+    hk = text_img(cfg.get("hook", ""), (78 if W < H else 64) * k * (1.15 if W > H else 1), W * 0.92, base=Y, hi=WH) if cfg.get("hook") else None
     yb = H - int(70 * k) - qi.height - (hk.height if hk else 0)
     if hk: img.alpha_composite(hk, ((W - hk.width) // 2, yb)); yb += hk.height
     img.alpha_composite(qi, ((W - qi.width) // 2, yb))
     if cfg.get("source"):
-        fo = F(FM, 26 * k * (1.5 if W > H else 1)); d = ImageDraw.Draw(img); tw = d.textlength(cfg["source"], font=fo)
-        d.text((W - tw - 20 * k, H - 44 * k * (1.4 if W > H else 1)), cfg["source"], font=fo, fill=GR, stroke_width=2, stroke_fill=BK)
+        fo = F(FM, 26 * k * (1.1 if W > H else 1)); d = ImageDraw.Draw(img); tw = d.textlength(cfg["source"], font=fo)
+        d.text((W - tw - 20 * k, H - 44 * k * (1.1 if W > H else 1)), cfg["source"], font=fo, fill=GR, stroke_width=2, stroke_fill=BK)
     if cfg.get("test"):
-        t = text_img(cfg["test"], 44 * k * (1.6 if W > H else 1), W, base=WH, stroke=0, font=FB, box=(200, 0, 0, 230), shadow=False)
+        t = text_img(cfg["test"], 44 * k * (1.15 if W > H else 1), W, base=WH, stroke=0, font=FB, box=(200, 0, 0, 230), shadow=False)
         img.alpha_composite(t, (W - t.width - int(30 * k), int(30 * k)))
     img.convert("RGB").save(out); return out

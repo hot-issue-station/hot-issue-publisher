@@ -1,0 +1,33 @@
+{
+  "_설명": "토요일 19:00 · 롱폼 몰아보기(약 8분). fill 의 \"기획\" = longform_factory 형식 기획 파일(+ v2.2 몰아보기 칸). 구조는 standard_v2.json molabogi.sections",
+  "day": "토",
+  "slot": "저녁",
+  "time": "19:00",
+  "series": "덕심저장소 몰아보기",
+  "template": "molabogi",
+  "length": {
+    "target_sec": 480,
+    "max_sec": 720
+  },
+  "ending": {
+    "ask": "여러분의 생각은? 댓글로 알려 주세요",
+    "next_date": "다음 몰아보기: 화·토 저녁 7시"
+  },
+  "hashtags": [
+    "{가수}",
+    "몰아보기",
+    "덕심저장소"
+  ],
+  "post": {
+    "title": "{제목}",
+    "desc": "{설명}"
+  },
+  "need": [
+    "기획",
+    "제목",
+    "설명"
+  ],
+  "defaults": {
+    "가수": "리센느"
+  }
+}

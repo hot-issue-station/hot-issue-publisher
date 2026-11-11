@@ -1,0 +1,49 @@
+{
+ "_설명": "수요일 스타일 B 40초 형식 시험 fill(공개용 아님)",
+ "이름": "v2_수_B40_시험",
+ "길이": 40,
+ "가수": "리센느",
+ "곡": "LOVE ATTACK",
+ "제목": "[형식 시험] 한 곡 하이라이트",
+ "출처": "출처 · Mnet 엠카운트다운 (6/18 LOVE ATTACK)",
+ "소스": [
+  {
+   "file": "/mnt/user-data/uploads/녹화/2026-11-11 19-55-24.mp4",
+   "sync": 8.0,
+   "label": "가상 소스 1"
+  },
+  {
+   "file": "/mnt/user-data/uploads/녹화/2026-11-11 19-55-24.mp4",
+   "sync": 28.0,
+   "label": "가상 소스 2"
+  },
+  {
+   "file": "/mnt/user-data/uploads/녹화/2026-11-11 19-55-24.mp4",
+   "sync": 48.0,
+   "label": "가상 소스 3"
+  },
+  {
+   "file": "/mnt/user-data/uploads/녹화/2026-11-11 19-55-24.mp4",
+   "sync": 68.0,
+   "label": "가상 소스 4"
+  },
+  {
+   "file": "/mnt/user-data/uploads/녹화/2026-11-11 19-55-24.mp4",
+   "sync": 88.0,
+   "label": "가상 소스 5"
+  }
+ ],
+ "노래": {
+  "file": "/mnt/user-data/uploads/녹화/2026-11-11 19-55-24.mp4",
+  "start": 90.0
+ },
+ "아웃트로": {
+  "ask": "(가장 좋았던 무대는?)",
+  "next": "[형식 시험 — 실제 편은 4~6개 무대로]",
+  "frame": {
+   "file": "/mnt/user-data/uploads/녹화/2026-11-11 19-55-24.mp4",
+   "t": 222.0
+  }
+ },
+ "저작권확인": true
+}

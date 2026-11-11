@@ -383,9 +383,9 @@ def mola_sub_png(text, path, style, pos=None):
     import v2_fx
     im = v2_fx.caption_img(text, style, W); full = Image.new("RGBA", (W, H), (0, 0, 0, 0))
     if pos: x, y = int(pos[0] * W - im.width / 2), int(pos[1] * H - im.height / 2)
-    elif style == "situation": x, y = 40, 120
-    elif style == "narr": x, y = (W - im.width) // 2, 30
-    else: x, y = (W - im.width) // 2, int(H * 0.66)
+    elif style == "situation": x, y = 40, 175          # 내레이션 자막(위 가운데) 아래
+    elif style == "narr": x, y = (W - im.width) // 2, 28
+    else: x, y = (W - im.width) // 2, int(H * 0.56)    # 원본 자막(화면 아래 0.8~0.95)을 가리지 않게
     full.alpha_composite(im, (max(0, min(W - im.width, x)), max(0, min(H - im.height, y)))); full.save(path)
 
 def react_png(r, path):

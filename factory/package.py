@@ -20,7 +20,7 @@ import upload_plan as up  # noqa: E402  (X 글자 수·해시태그·예약 시�
 DAYS = ["월", "화", "수", "목", "금", "토", "일"]
 SLOT_TIME = {"아침": "07:30", "점심": "12:00", "저녁": "18:30"}
 SLOT_UP = {"아침": "출근", "점심": "점심", "저녁": "퇴근"}   # 업로더 시간대 이름
-V2 = ("expose", "pulse58")   # 제작 표준 v2 쇼츠(standard_v2.json): 모든 칸 같은 58.0초 파일, 58초 넘으면 멈춤
+V2 = ("expose", "pulse58")   # 제작 표준 v2 쇼츠(standard_v2.json): 모든 칸 같은 파일 하나, 템플릿 길이(58.0/40.0) 넘으면 멈춤
 STD2 = json.load(open(os.path.join(HERE, "standard_v2.json"), encoding="utf-8"))
 def slot_time(spec, slot): return spec.get("_time") or SLOT_TIME[slot]          # v2 틀은 spec 에 19:00
 def slot_up(spec, slot): return spec.get("_slot_up") or SLOT_UP[slot]          # v2 틀은 업로더 '저녁7시'
@@ -332,9 +332,12 @@ def make_package(result_dir, outbox=None, date=None, sites=None, use_ai=False, n
     sites = sites or ["youtube"]; now = now or dt.datetime.now(up.KST)
     if spec.get("template") == "molabogi":
         raise SystemExit("❌ 롱폼 몰아보기는 쇼츠 꾸러미(package.py) 대상이 아니에요 → 롱폼 업로드 순서(dukssim-longform)로")
-    info = up.probe(video) or {}; cap = STD2["shorts"]["max_sec"] + STD2["shorts"]["tolerance_sec"]
-    if info.get("dur", 0) > cap:          # 대표 20:36·20:40: 58.0초 넘는 쇼츠는 어느 칸에도 넣지 않는다(Content ID 전 세계 차단 위험)
-        raise SystemExit(f"❌ 영상이 {info['dur']:.2f}초 — 쇼츠는 모든 플랫폼 {STD2['shorts']['max_sec']:.1f}초 이하만(꾸러미 만들지 않고 멈춤)")
+    info = up.probe(video) or {}
+    if spec.get("template") in V2:        # 템플릿 길이(58-N·58-M 58.0 / 40-N·40-M 40.0)
+        tk = spec.get("shorts_template") or STD2["shorts_templates_default"][spec["template"]]; lim = STD2["shorts_templates"][tk]["total_sec"]
+    else: tk, lim = "옛 틀", STD2["shorts"]["max_sec"]
+    if info.get("dur", 0) > lim + STD2["shorts"]["tolerance_sec"]:   # 대표 20:36·20:40·20:43: 길이 넘으면 어느 칸에도 넣지 않고 멈춤(1분 넘는 쇼츠 Content ID 전 세계 차단 위험)
+        raise SystemExit(f"❌ 영상이 {info['dur']:.2f}초 — {tk} 템플릿은 {lim:.1f}초 이하만(꾸러미 만들지 않고 멈춤). 모든 칸 같은 파일")
     d = pick_date(day, slot, date, now, spec.get("_time"))
     if DAYS[d.weekday()] != day: notes0 = [f"예약 날짜 {d}는 {DAYS[d.weekday()]}요일인데 틀은 {day}요일이에요"]
     else: notes0 = []

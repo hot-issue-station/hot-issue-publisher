@@ -1,8 +1,8 @@
 """표준 v2 자동 점검기 — 기획 JSON + 렌더 결과(mp4)를 standard_v2.json 기준으로 점검해 통과/위반 목록을 낸다.
 사용법:
-  python3 check_standard.py 기획.json 결과.mp4 [--platform youtube|tiktok|...] [--json]
+  python3 check_standard.py 기획.json 결과.mp4 [--json]
 종류(template): expose(쇼츠 A) · pulse58(쇼츠 B) · molabogi(롱폼 몰아보기). 그 밖의 롱폼 spec 은 기준서 v1 항목만.
-점검: 쇼츠 길이(모든 플랫폼 58.0 ±0.05) · 해상도 · 구간 순서·시간 · 금지어(제목·썸네일·큰 자막·우리 자막·게시 문구) · 출처 표시 ·
+점검: 쇼츠 템플릿별 길이(58-N·58-M 58.0 / 40-N·40-M 40.0, ±0.05, 모든 플랫폼 같은 파일) · 해상도 · 구간 순서·시간 · 금지어(제목·썸네일·큰 자막·우리 자막·게시 문구) · 출처 표시 ·
       정지 화면(8초 초과) · 기준서 v1 필수 요소(롱폼: 하이라이트 3초·질문 25초 무렵·출처·엔딩) · 금지·광고 구간 · 따옴표 대사 · 술·담배·도박·성인 광고 단어.
 돌려주는 값(코드에서): run(spec, videos) → (lines, ok)
 """
@@ -29,12 +29,6 @@ def tkey(spec):
     return spec.get("shorts_template") or STD["shorts_templates_default"].get(spec.get("template"), "58-N")
 
 def tconf(spec): return STD["shorts_templates"][tkey(spec)]
-
-def platform_of(path, spec):
-    n = os.path.basename(path)
-    for key, v in STD["shorts"]["versions"].items():
-        if n.endswith(v["suffix"] + ".mp4"): return key, v["sec"]
-    return "58", STD["shorts"]["total_sec"]
 
 def stretched_sections(sections, roles, total):
     """플랫폼 길이에 맞게 늘릴 구간(roles)만 비례로 늘린 구간표."""
@@ -130,7 +124,7 @@ def actual_A(spec, total=None):
         r = c.get("role", ""); a, b = got.get(r, (t, t)); got[r] = (min(a, t), t + d); t += d
     return S, got, t
 
-def run(spec, videos, platform=None):
+def run(spec, videos):
     items = []; tol = STD["shorts"]["tolerance_sec"]; kind = spec.get("template")
     for v in videos:
         if not os.path.exists(v): items.append((f"결과 파일 있음: {v}", False)); continue
@@ -194,8 +188,8 @@ def run(spec, videos, platform=None):
 def main(argv=None):
     import argparse
     ap = argparse.ArgumentParser(description="표준 v2 자동 점검"); ap.add_argument("spec"); ap.add_argument("videos", nargs="+")
-    ap.add_argument("--platform"); ap.add_argument("--json", action="store_true"); a = ap.parse_args(argv)
-    spec = json.load(open(a.spec, encoding="utf-8")); lines, ok = run(spec, a.videos, a.platform)
+    ap.add_argument("--json", action="store_true"); a = ap.parse_args(argv)
+    spec = json.load(open(a.spec, encoding="utf-8")); lines, ok = run(spec, a.videos)
     if a.json: print(json.dumps({"ok": ok, "lines": lines}, ensure_ascii=False, indent=1))
     else: print("■ 표준 v2 점검 — " + os.path.basename(a.spec)); print("\n".join(lines)); print("→ 통과" if ok else "→ 위반 있음(❌)")
     return 0 if ok else 1

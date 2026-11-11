@@ -103,7 +103,7 @@ def pulse58(spec, base, outdir=None):
     import numpy as np, math, cv2
     import v2_fx as fx, expose_factory as ef, check_standard as cs
     STD = fx.STD; SB = STD["style_B"]; W2, H2 = STD["shorts"]["size"]; FPS2 = STD["shorts"]["fps"]
-    total = STD["shorts"]["total_sec"]; suffix = spec.get("suffix", "")
+    T = cs.tconf(spec); total = T["total_sec"]; suffix = spec.get("suffix", "")   # 58-M(58.0) / 40-M(40.0)
     outdir = os.path.abspath(outdir or os.path.join(base, "out")); os.makedirs(outdir, exist_ok=True)
     tmp = os.path.join(outdir, "_tmp_" + spec["out"]); os.makedirs(tmp, exist_ok=True)
     srcs = spec["sources"]
@@ -113,7 +113,7 @@ def pulse58(spec, base, outdir=None):
     if spec.get("bpm"): bpm, phase, conf = float(spec["bpm"]), float(spec.get("beat_phase", 0.0)), 1.0
     else: bpm, phase, conf = fx.estimate_beat(sf, song["start"], total)
     beat = 60 / bpm
-    sec = {n: (a, b) for n, a, b in SB["sections"]}
+    sec = {n: (a, b) for n, a, b in T["sections"]}
     def grid(a, b, step):
         """a~b 사이 컷 시각(박자 격자에 맞춤)."""
         pts = [a]; k = math.ceil((a - phase) / step + 1e-6); 
@@ -124,18 +124,37 @@ def pulse58(spec, base, outdir=None):
         return pts + [b]
     def snap(target):   # 목표 간격에 가장 가까운 박자 배수(반 박 단위)
         return beat * max(0.25, round(target / beat * 4) / 4)
+    def even_cuts(a, b, n):   # n 칸으로 고르게 나누고 각 컷을 ±0.15초 안의 반 박에 맞춤(8단 = 정확히 8컷)
+        pts = [a]
+        for i in range(1, n):
+            x = a + (b - a) * i / n; g = phase + round((x - phase) / (beat / 2)) * (beat / 2)
+            pts.append(g if abs(g - x) <= 0.15 and pts[-1] + 0.3 < g < b - 0.3 else x)
+        return pts + [b]
     shots = []   # (t0, t1, kind, 소스번호들, 추가)
-    a, b = sec["change8"]; cuts = grid(a, b, snap(SB["change_sec"])); n8 = 0
-    for i in range(len(cuts) - 1): shots.append((cuts[i], cuts[i + 1], "change", [i % len(srcs)], {})); n8 += 1
-    a, b = sec["split"]; step = snap(1.0); cuts = grid(a, b, step)
-    half_cuts = {"top": [], "bot": []}; k = 0
-    for i in range(len(cuts) - 1):   # 엇박: 위는 짝수 칸, 아래는 홀수 칸에서 바뀜
-        half_cuts["top" if i % 2 == 0 else "bot"].append(cuts[i])
-    shots.append((a, b, "split", [], {"cuts": half_cuts}))
-    a, b = sec["jump"]; cuts = grid(a, b, snap(SB["jump_sec"]))
-    for i in range(len(cuts) - 1): shots.append((cuts[i], cuts[i + 1], "jump", [(i * 3) % len(srcs)], {"sign": 1 if i % 2 == 0 else -1}))
-    a, b = sec["pump"]; cuts = grid(a, b, beat * 2)
-    for i in range(len(cuts) - 1): shots.append((cuts[i], cuts[i + 1], "pump", [(i + 5) % len(srcs)], {}))
+    n8 = 0
+    if "change8" in sec:      # 58-M [0~6] 8단 체인지
+        a, b = sec["change8"]; cuts = even_cuts(a, b, round((b - a) / SB["change_sec"]))
+        for i in range(len(cuts) - 1): shots.append((cuts[i], cuts[i + 1], "change", [i % len(srcs)], {})); n8 += 1
+    if "hook" in sec:         # 40-M [0~3] 훅: 0.75초 체인지 4컷 + 크래시 줌
+        a, b = sec["hook"]; cuts = even_cuts(a, b, round((b - a) / SB["change_sec"]))
+        for i in range(len(cuts) - 1): shots.append((cuts[i], cuts[i + 1], "change", [i % len(srcs)], {})); n8 += 1
+    if "mix" in sec:          # 40-M [3~35] 한 곡 하이라이트: 4~6단 교차(2박마다 컷), 8컷마다 2분할 한 번, 4컷마다 크래시 줌
+        a, b = sec["mix"]; cuts = grid(a, b, snap(1.0)); j = 0
+        for i in range(len(cuts) - 1):
+            if i % 8 == 5: shots.append((cuts[i], cuts[i + 1], "split", [], {"cuts": {"top": [cuts[i]], "bot": [cuts[i] + (cuts[i + 1] - cuts[i]) / 2]}}))
+            else: shots.append((cuts[i], cuts[i + 1], "change" if i % 4 == 0 else "cut", [j % len(srcs)], {})); j += 1
+    if "split" in sec:          # 58-M [6~26] 상하 2분할 엇박 + 수평 패닝 슬라이드
+      a, b = sec["split"]; step = snap(1.0); cuts = grid(a, b, step)
+      half_cuts = {"top": [], "bot": []}; k = 0
+      for i in range(len(cuts) - 1):   # 엇박: 위는 짝수 칸, 아래는 홀수 칸에서 바뀜
+          half_cuts["top" if i % 2 == 0 else "bot"].append(cuts[i])
+      shots.append((a, b, "split", [], {"cuts": half_cuts}))
+    if "jump" in sec:
+        a, b = sec["jump"]; cuts = grid(a, b, snap(SB["jump_sec"]))
+        for i in range(len(cuts) - 1): shots.append((cuts[i], cuts[i + 1], "jump", [(i * 3) % len(srcs)], {"sign": 1 if i % 2 == 0 else -1}))
+    if "pump" in sec:
+        a, b = sec["pump"]; cuts = grid(a, b, beat * 2)
+        for i in range(len(cuts) - 1): shots.append((cuts[i], cuts[i + 1], "pump", [(i + 5) % len(srcs)], {}))
     body = sec["outro"][0]
     # 고정 얹기
     fixed = []
@@ -166,7 +185,7 @@ def pulse58(spec, base, outdir=None):
             seqs = {"top": half_seq(tops, 1), "bot": [(t0, bots[0], 2 % len(srcs))] + half_seq(bots, 4) if bots else [(t0, t1, 2)]}
             rd = {}
             for fi in range(f0, f1):
-                t = fi / FPS2; fr = np.zeros((H2, W2, 3), np.uint8)
+                t = min(max(fi / FPS2, t0), t1 - 1e-4); fr = np.zeros((H2, W2, 3), np.uint8)   # 프레임 반올림으로 구간 밖에 걸치지 않게
                 for hk, yy, dirn in (("top", 0, -1), ("bot", hh, 1)):
                     seg = next(sg for sg in seqs[hk] if sg[0] - 1e-6 <= t < sg[1] + 1e-6)
                     key = (hk, seg[0])
@@ -200,7 +219,7 @@ def pulse58(spec, base, outdir=None):
     ef.outro_render(write, W2, H2, frame_i / FPS2, end, ef.grab(of["file"], of["t"]), oc, [o for o in fixed if o.t1 > total])
     wr.stdin.close(); wr.wait()
     apath = os.path.join(tmp, "a.wav")
-    ef.build_audio([(sf, song["start"], total, 0.0, spec.get("song_volume", 1.0), 0.05, 1.5)], total, apath)
+    ef.build_audio([(sf, song["start"], total, 0.0, spec.get("song_volume", 1.0), 0.05, 1.5)], total, apath, loudnorm=T.get("loudnorm", True))   # 내레이션 없이 현장음 loudnorm
     out = os.path.join(outdir, spec["out"] + suffix + ".mp4"); ef.mux(vpath, apath, out, total)
     # 썸네일: 2분할 장면 한 장 대신 v2 썸네일(첫 소스)
     th = spec.get("thumb") or {}
@@ -211,7 +230,7 @@ def pulse58(spec, base, outdir=None):
     fx.thumb_v2(img, dict(th, quote=th.get("quote", ""), source=spec.get("source_line", ""), test=spec.get("test_label")), (W2, H2), thp) if th.get("quote") else img.save(thp)
     spec["_beat"] = {"bpm": bpm, "phase": phase, "confidence": conf, "change8_shots": n8}
     lines, ok = cs.run(spec, [out])
-    print(f"영상: {out}\n썸네일: {thp}\n박자: {bpm} bpm (첫 박 {phase}s, 신뢰도 {conf}) · 8단 체인지 {n8}컷")
+    print(f"영상: {out}\n썸네일: {thp}\n박자: {bpm} bpm (첫 박 {phase}s, 신뢰도 {conf}) · 체인지(훅) {n8}컷")
     print("\n".join(lines)); print("→ 표준 v2 점검 통과" if ok else "→ ❌ 확인")
     return out, thp, lines, ok
 
