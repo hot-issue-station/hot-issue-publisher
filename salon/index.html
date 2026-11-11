@@ -786,8 +786,7 @@ function rxIn(k,lab,unit,ph,mode){ return `<span>${lab}</span><input data-rx="${
 function drawRx(){ const el=$("rxBox"); if(!el) return; const res=isRes(), names=sel.map(i=>(db.menu[i]||{}).n||"").join(" "),
   perm=!res&&(/펌|매직/.test(names)||rx.rod||rx.chem||rx.pmin), dye=!res&&(/염색|탈색|컬러/.test(names)||rx.lv||rx.ratio||rx.ox||rx.dmin), lx=cur&&last(cur)&&last(cur).x;
   const open=rxOpen||perm||dye||Object.keys(rx).some(k=>k!=="tg"&&rx[k])||rx.tg.length, tags=rxTags=[...new Set([...(res?TG_RES:TG_HAIR),...rx.tg])];
-  el.innerHTML=`<details class="card" ${open?"open":""} ontoggle="rxOpen=this.open"><summary><b style="font-size:20px">📝 시술 상세 메모 (선택)</b><div class="d">${res?"취향·다음엔 이렇게":"롯드·약제·염색 호수·방치 시간·기장"} — 다음에 똑같이 해 드리려면</div></summary>
-   ${lx?`<button class="chip" style="margin-top:10px" onclick="rx=JSON.parse(JSON.stringify(last(cur).x));rx.tg=rx.tg||[];rxOpen=true;drawRx()">↺ 지난번 그대로 불러오기</button>`:""}
+  el.innerHTML=`${lx?`<button class="chip" style="margin-top:12px" onclick="rx=JSON.parse(JSON.stringify(last(cur).x));rx.tg=rx.tg||[];rxOpen=true;drawRx()">↺ 상세 메모 지난번 그대로 불러오기</button>`:""}<details class="card" ${open?"open":""} ontoggle="rxOpen=this.open"><summary><b style="font-size:20px">📝 시술 상세 메모 (선택)</b><div class="d">${res?"취향·다음엔 이렇게":"롯드·약제·염색 호수·방치 시간·기장"} — 다음에 똑같이 해 드리려면</div></summary>
    ${res?"":`<div class="rxg"${perm?"":` style="opacity:.75"`}><b>펌</b><div class="rxr">${rxIn("rod","롯드","호","6","decimal")}${rxIn("pmin","방치","분","15","numeric")}</div><div class="rxr">${rxIn("chem","약제","","예: 시스테인")}</div></div>
    <div class="rxg"${dye?"":` style="opacity:.75"`}><b>염색</b><div class="rxr">${rxIn("lv","호수","호","7","decimal")}${rxIn("ratio","비율","","1:1")}</div><div class="rxr">${rxIn("ox","산화제","%","6","decimal")}${rxIn("dmin","방치","분","30","numeric")}</div></div>
    <div class="rxg"><div class="rxr">${rxIn("len","기장","cm","예: 20","decimal")}</div></div>`}
