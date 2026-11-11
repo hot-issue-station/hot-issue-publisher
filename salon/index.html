@@ -1110,7 +1110,7 @@ function snsLinks(){ const L=snsCfg().links||{}; return SNSL.filter(([k])=>L[k])
 function snsTail(){ const c=snsCfg(); if(!F("sns")||!c.tail) return ""; const l=snsLinks(); return l.length?"\n\n"+l.join("\n"):"" }
 function drawSnsSet(){ const el=$("snsSet"); if(!F("sns")){ el.innerHTML=""; return } const c=snsCfg();
   el.innerHTML=`<h2>📷 SNS 설정</h2><label>가게·지역 해시태그</label><input value="${esc(c.tags)}" placeholder="예: #○○동미용실 #○○헤어" onchange="snsSetV('tags',this.value)">
-   <label>가게 전화번호 (블로그 글 안내용)</label><input type="tel" value="${esc(c.tel)}" placeholder="예: 02-123-4567" onchange="snsSetV('tel',this.value)">
+   <label>가게 전화번호 (게시 글 안내용)</label><input type="tel" value="${esc(c.tel)}" placeholder="예: 02-123-4567" onchange="snsSetV('tel',this.value)">
    <h2 style="font-size:19px">내 SNS 주소</h2>${SNSL.map(([k,l])=>`<label>${l}</label><input type="url" inputmode="url" value="${esc((c.links||{})[k]||"")}" placeholder="https://" onchange="snsSetV('l.${k}',this.value)">`).join("")}
    <label style="font-weight:400"><input type="checkbox" style="width:auto" ${c.tail?"checked":""} onchange="snsSetV('tail',this.checked?1:0)"> 예약 알림·다시 오실 때 문자 끝에 SNS 주소 붙이기</label>` }
 function shrinkTo(file,max,q){ return new Promise(res=>{ const img=new Image(); img.onload=()=>{ const s=Math.min(1,max/Math.max(img.width,img.height)), cv=document.createElement("canvas"); cv.width=Math.round(img.width*s); cv.height=Math.round(img.height*s); cv.getContext("2d").drawImage(img,0,0,cv.width,cv.height); URL.revokeObjectURL(img.src); res(cv.toDataURL("image/jpeg",q)) }; img.onerror=()=>res(null); img.src=URL.createObjectURL(file) }) }
