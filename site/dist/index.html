@@ -2852,8 +2852,9 @@ function start(THREE){
   /* ==========================================================
      포토 월 · 브랜드 화보 홀로그램 · 액자 위 광고 띠 (방·관 홀·로비 공용)
      ========================================================== */
+  /* 11/12: 같은 썸네일을 <img>(CORS 없이)로 먼저 받으면 휴대폰이 그 캐시를 재사용해 3D 텍스처가 막힘 → 텍스처용 주소에 ?gl=1 을 붙여 캐시를 나눈다 */
   const thumbLoader=new THREE.TextureLoader(); thumbLoader.setCrossOrigin("anonymous");
-  function loadThumb(id, onTex, onFail){ thumbLoader.load(`https://i.ytimg.com/vi/${encodeURIComponent(id)}/hqdefault.jpg`, t=>{ t.colorSpace=THREE.SRGBColorSpace; t.repeat.set(1,0.75); t.offset.set(0,0.125); onTex(t); ask(); }, undefined, ()=>onFail?.()); }
+  function loadThumb(id, onTex, onFail){ thumbLoader.load(`https://i.ytimg.com/vi/${encodeURIComponent(id)}/hqdefault.jpg?gl=1`, t=>{ t.colorSpace=THREE.SRGBColorSpace; t.repeat.set(1,0.75); t.offset.set(0,0.125); onTex(t); ask(); }, undefined, ()=>onFail?.()); }
   /* 포토 월: 2×2 칸. 사진 앞에 잠깐 서 있으면(걷기: 가까이 / 빠른 모드: 화면 가운데) 캡션이 떠오른다 */
   function photoWall(parent, key, x, y, z, clickables, spots, relabel, spotFn){
     const list=G.photosFor(key), tiles=[]; if(!list.length) return tiles;
@@ -3047,7 +3048,7 @@ function start(THREE){
     const labelTex=text=>canvasTex(512,96,(g,w,h)=>{ g.fillStyle="#fffdf8"; g.fillRect(0,0,w,h); g.strokeStyle="#e4d8c4"; g.lineWidth=4; g.strokeRect(2,2,w-4,h-4);
       g.fillStyle="#1e143c"; g.font=`600 32px ${FONT}`; g.textAlign="center"; g.textBaseline="middle"; wrapText(g,text,w/2,h/2+1,w-36,36,1); });
     let alive=true;
-    function ytTexture(id, onTex){ loader.load(`https://i.ytimg.com/vi/${encodeURIComponent(id)}/hqdefault.jpg`, tex=>{ if(!alive){ tex.dispose(); return; } tex.colorSpace=THREE.SRGBColorSpace; tex.anisotropy=maxAniso; onTex(tex); ask(); },
+    function ytTexture(id, onTex){ loader.load(`https://i.ytimg.com/vi/${encodeURIComponent(id)}/hqdefault.jpg?gl=1`, tex=>{ if(!alive){ tex.dispose(); return; } tex.colorSpace=THREE.SRGBColorSpace; tex.anisotropy=maxAniso; onTex(tex); ask(); },
       undefined, ()=>console.info("[미술관] 썸네일을 텍스처로 못 받아 색 판으로 대체:", id)); }
     G.frames(room).forEach((v,i)=>{
       const [wi,ox]=SLOT_POS[i]; const portrait = v && v.kind==="short";
@@ -3236,7 +3237,7 @@ function start(THREE){
     /* 걷는 느낌(대표 11/12 03:10~03:11 "걷는 느낌이 더 중요, 무거우면 썸네일만"): 액자 앞에 서 있으면
        유튜브가 공개하는 장면 썸네일(hq1·hq2·hq3)을 1.4초마다 바꿔 보여 주고 천천히 확대(움직이는 미리보기). 영상 재생·iframe 없음 → 가볍다 */
     const _fp=new THREE.Vector3();
-    function prevTex(id, n, cb){ loader.load(`https://i.ytimg.com/vi/${encodeURIComponent(id)}/hq${n}.jpg`, tex=>{ if(!alive){ tex.dispose(); return; } tex.colorSpace=THREE.SRGBColorSpace; tex.anisotropy=maxAniso; cb(tex); }, undefined, ()=>cb(null)); }
+    function prevTex(id, n, cb){ loader.load(`https://i.ytimg.com/vi/${encodeURIComponent(id)}/hq${n}.jpg?gl=1`, tex=>{ if(!alive){ tex.dispose(); return; } tex.colorSpace=THREE.SRGBColorSpace; tex.anisotropy=maxAniso; cb(tex); }, undefined, ()=>cb(null)); }
     function setView(f, tex, z){ const r0=f.portrait?0.42:1, o0=f.portrait?0.29:0, rx=r0/z, ry=1/z;
       tex.repeat.set(rx, ry); tex.offset.set(o0+(r0-rx)/2, (1-ry)/2); }
     function framesAnimate(dt){ let ch=false;
