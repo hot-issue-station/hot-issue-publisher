@@ -5,6 +5,6 @@
    - PRIVACY_OFFICER: 개인정보 보호책임자 이름 또는 직함 (예: "덕심저장소 운영자"). 이메일·전화번호는 쓰지 않음(문의는 양식으로). */
 window.SITE_CONFIG = {
   FORM_URL: "FORM_URL",
-  EFFECTIVE_DATE: "EFFECTIVE_DATE",
-  PRIVACY_OFFICER: "PRIVACY_OFFICER"
+  EFFECTIVE_DATE: "2026-11-12",
+  PRIVACY_OFFICER: "덕심저장소 운영자"
 };
