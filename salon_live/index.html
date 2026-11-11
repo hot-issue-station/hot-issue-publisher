@@ -1,0 +1,1153 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>우리동네 대기 현황</title>
+<style>
+/* 색은 이슈브리프 사무실(office/index.html)과 같은 토큰 */
+:root{
+  --bg:#f6f1e9; --paper:#fffdf9; --ink:#2d2a26; --ink-2:#6b645b; --ink-3:#9a9187;
+  --line:#e6ddd0; --wall:#e9e0d2; --wall-side:#d6c9b5; --floor:#faf6ef;
+  --ok:#2f9e5b; --ok-bg:#e3f4ea; --wait:#d99a12; --wait-bg:#fdf1d3;
+  --idle:#9a9187; --idle-bg:#eeeae4; --done:#3b7bd6; --done-bg:#e3edfb;
+  --bad:#c94a3c; --accent:#e0794f; --accent-ink:#ffffff;
+  --shadow:0 1px 2px rgba(60,40,20,.08),0 4px 14px rgba(60,40,20,.06);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#1b1a19; --paper:#252321; --ink:#efe9e1; --ink-2:#b8afa4; --ink-3:#857c72;
+    --line:#38342f; --wall:#2e2b28; --wall-side:#24211f; --floor:#2a2725;
+    --ok:#4cc27b; --ok-bg:#1d3326; --wait:#f0b63a; --wait-bg:#3a3018;
+    --idle:#8e867c; --idle-bg:#302d2a; --done:#6ea3ef; --done-bg:#1d2a3d;
+    --bad:#ef7b6d; --accent:#ef8f66; --accent-ink:#1b1a19;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 4px 14px rgba(0,0,0,.25);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#1b1a19; --paper:#252321; --ink:#efe9e1; --ink-2:#b8afa4; --ink-3:#857c72;
+  --line:#38342f; --wall:#2e2b28; --wall-side:#24211f; --floor:#2a2725;
+  --ok:#4cc27b; --ok-bg:#1d3326; --wait:#f0b63a; --wait-bg:#3a3018;
+  --idle:#8e867c; --idle-bg:#302d2a; --done:#6ea3ef; --done-bg:#1d2a3d;
+  --bad:#ef7b6d; --accent:#ef8f66; --accent-ink:#1b1a19;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 4px 14px rgba(0,0,0,.25);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Pretendard","Noto Sans KR","Malgun Gothic",sans-serif;font-size:15px;line-height:1.45;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.wrap{max-width:560px;margin:0 auto;padding:16px 16px 40px}
+button{font:inherit;color:inherit}
+a{color:inherit}
+
+header.top{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-bottom:10px}
+h1{font-size:21px;margin:0;letter-spacing:-.02em}
+.sub{color:var(--ink-2);font-size:12.5px;margin-top:2px}
+.fake{display:inline-block;font-size:11px;font-weight:700;padding:2px 7px;border-radius:7px;background:var(--idle-bg);color:var(--ink-2);margin-left:4px;vertical-align:2px}
+.chip{display:inline-flex;align-items:center;gap:6px;font-size:12px;padding:4px 9px;border-radius:999px;background:var(--idle-bg);color:var(--ink-2);white-space:nowrap;flex:none}
+.chip .dot{width:7px;height:7px;border-radius:50%;background:var(--idle)}
+.chip.live{background:var(--ok-bg);color:var(--ok)} .chip.live .dot{background:var(--ok)}
+.chip.slow{background:var(--wait-bg);color:var(--wait)} .chip.slow .dot{background:var(--wait)}
+.chip.err{color:var(--bad)} .chip.err .dot{background:var(--bad)}
+
+.tabs{display:grid;grid-template-columns:1fr 1fr;gap:6px;background:var(--idle-bg);padding:4px;border-radius:14px;margin:0 0 14px}
+.tabs button{border:0;background:transparent;border-radius:10px;padding:10px 6px;font-weight:700;font-size:14.5px;cursor:pointer;color:var(--ink-2)}
+.tabs button[aria-selected="true"]{background:var(--paper);color:var(--ink);box-shadow:var(--shadow)}
+.view[hidden]{display:none!important}
+
+.card{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:16px;box-shadow:var(--shadow);margin-bottom:12px;min-width:0}
+.card h2{font-size:15px;margin:0 0 10px;display:flex;justify-content:space-between;align-items:center;gap:8px}
+.card h2 small{font-weight:500;color:var(--ink-3);font-size:12px}
+.notice{font-size:12.5px;padding:8px 12px;border-radius:12px;background:var(--wait-bg);color:var(--ink);margin:0 0 12px}
+.notice[hidden]{display:none}
+
+/* 큰 숫자 */
+.big{text-align:center;padding:18px 12px 16px}
+.status{display:inline-flex;align-items:center;gap:7px;font-size:14px;font-weight:800;padding:6px 12px;border-radius:999px;background:var(--ok-bg);color:var(--ok)}
+.status .dot{width:9px;height:9px;border-radius:50%;background:currentColor}
+.status.away{background:var(--wait-bg);color:var(--wait)}
+.status.closed,.status.holiday{background:var(--idle-bg);color:var(--ink-2)}
+.status.open .dot{animation:pulse 1.6s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--ok) 60%,transparent)}70%{box-shadow:0 0 0 7px transparent}100%{box-shadow:0 0 0 0 transparent}}
+.nowline{font-size:22px;font-weight:800;margin:14px 0 0;letter-spacing:-.02em}
+.nowline .n{display:inline-block;font-size:64px;line-height:1;color:var(--accent);font-variant-numeric:tabular-nums;margin:0 4px;vertical-align:-6px}
+.nowline .n.bump{animation:bump .5s ease}
+@keyframes bump{0%{transform:scale(1)}35%{transform:scale(1.25)}100%{transform:scale(1)}}
+.est{font-size:19px;font-weight:700;margin-top:8px}
+.est b{color:var(--accent)}
+.closedmsg{font-size:22px;font-weight:800;margin:16px 0 4px}
+.upd{font-size:12.5px;color:var(--ink-3);margin-top:10px}
+.upd.stale{color:var(--wait);font-weight:700}
+
+.dz{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:minmax(0,1fr);gap:8px}
+.dz li{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:12px;background:var(--idle-bg)}
+.dz .lamp{width:11px;height:11px;border-radius:50%;flex:none}
+.dz .lamp.busy{background:var(--wait)} .dz .lamp.free{background:var(--ok)}
+.dz .nm{font-weight:700;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.dz .st{font-size:13px;font-weight:700}
+.dz .st.busy{color:var(--wait)} .dz .st.free{color:var(--ok)}
+
+.kv{display:grid;grid-template-columns:80px 1fr;gap:6px 10px;font-size:14px;margin:0}
+.kv dt{color:var(--ink-3)} .kv dd{margin:0}
+.acts{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}
+.btn{display:flex;align-items:center;justify-content:center;gap:6px;text-decoration:none;border:1px solid var(--line);background:var(--paper);border-radius:14px;padding:13px 10px;font-weight:800;font-size:15px;cursor:pointer;text-align:center;min-height:48px}
+.btn.pri{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btn[disabled],.btn[aria-disabled="true"]{opacity:.45;cursor:not-allowed}
+.tiny{font-size:11.5px;color:var(--ink-3);margin-top:6px}
+.map{margin-top:12px;border:2px dashed var(--line);border-radius:14px;overflow:hidden;position:relative;height:120px;background:var(--idle-bg)}
+.map svg{display:block;width:100%;height:100%}
+.map span{position:absolute;left:0;right:0;bottom:8px;text-align:center;font-size:12px;color:var(--ink-2);font-weight:700}
+
+/* 2D 대체 그림 (3D가 안 될 때) */
+.flat{margin-bottom:12px;background:var(--wall);border-radius:20px;padding:8px;box-shadow:0 6px 0 var(--wall-side),var(--shadow)}
+.flat svg{display:block;width:100%;height:auto}
+.try3d .flat{display:none}
+.p-pop{transform-box:fill-box;transform-origin:50% 100%;animation:pop .55s cubic-bezier(.3,1.6,.5,1)}
+@keyframes pop{0%{transform:translateX(30px) scale(.2);opacity:0}100%{transform:none;opacity:1}}
+@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
+
+/* 3D 매장 (사무실 3D와 같은 틀) */
+.o3d{display:none;margin-bottom:12px}
+.try3d .o3d{display:block}
+.o3d-stage{position:relative;height:min(52vh,460px);min-height:320px;border-radius:20px;overflow:hidden;background:var(--wall);box-shadow:0 6px 0 var(--wall-side),var(--shadow);touch-action:none;-webkit-user-select:none;user-select:none}
+.o3d-stage canvas{display:block;width:100%!important;height:100%!important;outline:none;cursor:grab}
+.o3d-msg{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--ink-2);font-size:14px;pointer-events:none}
+.o3d-bar{position:absolute;left:6px;right:6px;bottom:8px;display:flex;gap:5px;justify-content:center;flex-wrap:wrap;pointer-events:none}
+.o3d-bar button{pointer-events:auto;border:1px solid var(--line);background:color-mix(in srgb,var(--paper) 88%,transparent);color:var(--ink);border-radius:999px;padding:7px 11px;font-size:12.5px;font-weight:700;cursor:pointer;box-shadow:var(--shadow);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.o3d-bar button[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.o3d-hint{font-size:11.5px;color:var(--ink-3);text-align:center;margin-top:10px}
+
+/* 진열대·관리 팁 */
+.shelf{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:minmax(0,1fr);gap:8px}
+.shelf li button{all:unset;box-sizing:border-box;display:flex;gap:10px;align-items:center;width:100%;padding:10px;border-radius:12px;background:var(--idle-bg);cursor:pointer}
+.shelf li button:focus-visible{outline:2px solid var(--ink)}
+.pic{width:46px;height:46px;border-radius:10px;flex:none;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.pic img{width:100%;height:100%;object-fit:cover}
+.shelf .t{flex:1;min-width:0}
+.shelf .t b{display:block;font-size:14px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.shelf .t > span{display:block;font-size:12px;color:var(--ink-3);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.cat{font-size:11px;font-weight:700;padding:2px 7px;border-radius:7px;background:var(--paper);color:var(--ink-2);white-space:nowrap}
+.ex{font-size:10.5px;font-weight:800;padding:1px 6px;border-radius:6px;background:var(--wait-bg);color:var(--wait);margin-left:4px;vertical-align:1px}
+.tips{display:grid;gap:8px}
+.tip{padding:10px 12px;border-radius:12px;background:var(--idle-bg)}
+.tip b{display:block;font-size:14px;margin-bottom:2px}
+.tip p{margin:0;font-size:13px;color:var(--ink-2)}
+
+/* 아래에서 올라오는 패널 */
+.sheet-bg{position:fixed;inset:0;background:rgba(20,15,10,.45);display:none;align-items:flex-end;justify-content:center;z-index:20}
+.sheet-bg.open{display:flex}
+.sheet{background:var(--paper);width:100%;max-width:520px;border-radius:20px 20px 0 0;padding:16px 16px 26px;max-height:82vh;overflow:auto;box-shadow:var(--shadow)}
+.sheet .hd{display:flex;gap:10px;align-items:center;margin:-16px -16px 10px;padding:16px 16px 10px;position:sticky;top:-16px;background:var(--paper);z-index:2}
+.sheet h3{margin:0;font-size:18px}
+.sheet .close{margin-left:auto;background:var(--idle-bg);border:0;border-radius:10px;padding:7px 12px;font-size:13px;cursor:pointer}
+.disc{font-size:12px;line-height:1.5;color:var(--ink-2);background:var(--idle-bg);border-radius:10px;padding:8px 10px;margin:0 0 10px}
+.disc p{margin:0} .disc p+p{margin-top:4px}
+.prod{border:1px solid var(--line);border-radius:14px;padding:12px;margin-bottom:10px}
+.prod.focus{border-color:var(--accent);box-shadow:0 0 0 2px color-mix(in srgb,var(--accent) 30%,transparent)}
+.prod .row{display:flex;gap:10px;align-items:center}
+.prod h4{margin:0;font-size:15px}
+.prod .note{font-size:13.5px;margin:8px 0 4px}
+.prod .note::before{content:"원장님 한마디 · ";color:var(--ink-3);font-size:12px}
+.prod .price{font-size:12.5px;color:var(--ink-3)}
+.prod .btn{margin-top:10px;width:100%}
+
+/* 원장님 화면 */
+.lock{display:flex;gap:8px;align-items:center;font-size:14px;font-weight:700;padding:12px;border-radius:14px;background:var(--idle-bg);color:var(--ink-2);margin-bottom:12px}
+.lock[hidden]{display:none}
+.huge{display:grid;gap:10px;margin-bottom:12px}
+.huge button{border:0;border-radius:20px;padding:22px 12px;font-size:26px;font-weight:900;cursor:pointer;letter-spacing:-.02em;min-height:92px;box-shadow:0 5px 0 rgba(0,0,0,.14)}
+.huge button small{display:block;font-size:13px;font-weight:600;opacity:.85;margin-top:4px;letter-spacing:0}
+.huge .plus{background:var(--accent);color:var(--accent-ink)}
+.huge .minus{background:var(--done);color:#fff}
+.huge button:active:not([disabled]){transform:translateY(3px);box-shadow:0 2px 0 rgba(0,0,0,.14)}
+.huge button[disabled]{opacity:.4;cursor:not-allowed}
+.counts{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px}
+.counts div{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:12px;text-align:center}
+.counts b{display:block;font-size:34px;line-height:1.1;font-variant-numeric:tabular-nums}
+.counts span{font-size:13px;color:var(--ink-2)}
+.step{display:flex;align-items:center;gap:8px}
+.step button{width:56px;height:48px;border-radius:12px;border:1px solid var(--line);background:var(--idle-bg);font-size:20px;font-weight:800;cursor:pointer}
+.step output{flex:1;text-align:center;font-size:24px;font-weight:800;font-variant-numeric:tabular-nums}
+.step button[disabled]{opacity:.4;cursor:not-allowed}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.grid2 button,.dsw button{border:1px solid var(--line);background:var(--idle-bg);border-radius:14px;padding:14px 8px;font-size:15px;font-weight:800;cursor:pointer;min-height:52px}
+.grid2 button[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.grid2 button[disabled],.dsw button[disabled]{opacity:.45;cursor:not-allowed}
+.dsw{display:grid;grid-template-columns:minmax(0,1fr);gap:8px}
+.dsw button{display:flex;justify-content:space-between;align-items:center;text-align:left}
+.dsw button.busy{background:var(--wait-bg);border-color:var(--wait)}
+.dsw button.free{background:var(--ok-bg);border-color:var(--ok)}
+.dsw button em{font-style:normal;font-size:13.5px}
+.foot{margin-top:16px;text-align:center;font-size:11.5px;color:var(--ink-3)}
+.toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);background:var(--ink);color:var(--paper);padding:9px 14px;border-radius:12px;font-size:13px;font-weight:700;z-index:30;opacity:0;transition:opacity .2s;pointer-events:none;max-width:calc(100% - 32px);text-align:center}
+.toast.on{opacity:1}
+</style>
+<script>
+/* WebGL 되면 3D 먼저 준비(2D 그림은 숨김). 3D가 안 되면 module 쪽에서 try3d를 지워 2D 그림으로 돌아감 (사무실과 같은 방식) */
+(function(){ try{
+  if(/[?&]flat(=|&|$)/.test(location.search)) return;
+  var c=document.createElement("canvas"), g=c.getContext("webgl2")||c.getContext("webgl");
+  if(!g) return;
+  var x=g.getExtension("WEBGL_lose_context"); if(x) x.loseContext();
+  document.documentElement.classList.add("try3d");
+}catch(e){} })();
+</script>
+<script type="importmap">
+{ "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.186.1/build/three.module.js" } }
+</script>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div>
+      <h1>햇살 헤어<span class="fake">가상 매장</span></h1>
+      <div class="sub">실존 상호가 아니에요 · 대기 현황 기능 시연용</div>
+    </div>
+    <span class="chip" id="conn"><span class="dot"></span><span id="connText">연결 확인 중</span></span>
+  </header>
+
+  <div class="tabs" role="tablist" aria-label="화면 고르기">
+    <button type="button" role="tab" id="tabGuest" aria-controls="vGuest" aria-selected="true">손님 화면</button>
+    <button type="button" role="tab" id="tabOwner" aria-controls="vOwner" aria-selected="false">원장님 화면</button>
+  </div>
+  <p class="notice" id="demoNote" hidden>데모 모드 — 이 기기에서만 바뀌어요. (공유 저장소에 연결되지 않았어요)</p>
+
+  <!-- ① 손님 화면 -->
+  <section class="view" id="vGuest" role="tabpanel" aria-labelledby="tabGuest">
+    <section class="o3d" id="o3d" aria-label="3D 가상 미용실">
+      <div class="o3d-stage" id="o3dStage">
+        <div class="o3d-msg" id="o3dMsg">3D 매장 준비 중…</div>
+        <div class="o3d-bar">
+          <button type="button" id="o3dAll">전체</button>
+          <button type="button" id="o3dSofa">대기석</button>
+          <button type="button" id="o3dChairs">미용 의자</button>
+          <button type="button" id="o3dShelf">진열대</button>
+          <button type="button" id="o3dSpin" aria-pressed="false">회전</button>
+        </div>
+      </div>
+      <div class="o3d-hint">한 손가락으로 돌리고, 두 손가락으로 확대해요. 진열대·관리 팁 판을 누르면 자세히 보여요.</div>
+    </section>
+    <div class="flat" id="flat" aria-label="매장 그림"></div>
+
+    <div class="card big" aria-live="polite">
+      <span class="status open" id="gStatus"><span class="dot"></span><span id="gStatusText">영업 중</span></span>
+      <div id="gNumbers">
+        <div class="nowline">지금 대기<span class="n" id="gWait">0</span>명</div>
+        <div class="est" id="gEst"></div>
+      </div>
+      <div class="closedmsg" id="gClosed" hidden></div>
+      <div class="upd" id="gUpd"></div>
+    </div>
+
+    <div class="card">
+      <h2>디자이너 <small id="gFree"></small></h2>
+      <ul class="dz" id="gDesigners"></ul>
+    </div>
+
+    <div class="card">
+      <h2>오늘 영업시간</h2>
+      <dl class="kv">
+        <dt>오늘</dt><dd id="gHours"></dd>
+        <dt>평일</dt><dd>10:00 – 20:00</dd>
+        <dt>토요일</dt><dd>10:00 – 18:00</dd>
+        <dt>일요일</dt><dd>정기 휴무</dd>
+      </dl>
+      <div class="acts">
+        <a class="btn pri" id="callBtn" href="tel:01000000000">전화 걸기</a>
+        <a class="btn" id="smsBtn" href="#">예약 문자</a>
+      </div>
+      <div class="tiny">시연용 가짜 번호(010-0000-0000)예요. 실제로 연결되지 않아요.</div>
+      <div class="map" aria-label="지도 자리">
+        <svg viewBox="0 0 360 120" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <rect width="360" height="120" fill="var(--idle-bg)"/>
+          <path d="M0 70 H360 M120 0 V120 M260 0 V120" stroke="var(--paper)" stroke-width="14"/>
+          <path d="M0 70 H360 M120 0 V120 M260 0 V120" stroke="var(--line)" stroke-width="1" stroke-dasharray="6 6"/>
+          <circle cx="190" cy="48" r="12" fill="var(--accent)"/><circle cx="190" cy="48" r="4.5" fill="var(--paper)"/>
+          <path d="M182 56 L190 70 L198 56 Z" fill="var(--accent)"/>
+        </svg>
+        <span>지도 자리 · 실제 매장 주소가 들어갈 곳</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>원장님 추천 홈케어 <small>예시 상품</small></h2>
+      <ul class="shelf" id="shelfList"></ul>
+      <div class="tiny" id="shelfDisc"></div>
+    </div>
+
+    <div class="card">
+      <h2>시술 받은 머리, 이렇게 관리하세요</h2>
+      <div class="tips" id="tipsList"></div>
+    </div>
+    <div class="foot">손님 이름 같은 개인정보는 받지 않아요. 숫자만 보여 줘요.</div>
+  </section>
+
+  <!-- ② 원장님 화면 -->
+  <section class="view" id="vOwner" role="tabpanel" aria-labelledby="tabOwner" hidden>
+    <div class="lock" id="oLock" hidden>🔒 <span id="oLockText">원장님만 바꿀 수 있어요</span></div>
+    <div class="huge">
+      <button type="button" class="plus" id="oPlus">+ 손님 왔어요<small>빈 의자가 있으면 바로 시술 중으로</small></button>
+      <button type="button" class="minus" id="oMinus">- 한 분 끝났어요<small>대기 손님이 있으면 다음 분이 앉아요</small></button>
+    </div>
+    <div class="counts">
+      <div><b id="oWait">0</b><span>대기</span></div>
+      <div><b id="oIn">0</b><span>시술 중</span></div>
+    </div>
+    <div class="card">
+      <h2>대기 숫자만 고치기 <small>잘못 눌렀을 때</small></h2>
+      <div class="step">
+        <button type="button" id="oWDown" aria-label="대기 1명 빼기">−</button>
+        <output id="oWOut">0명</output>
+        <button type="button" id="oWUp" aria-label="대기 1명 더하기">+</button>
+      </div>
+    </div>
+    <div class="card">
+      <h2>1인 평균 시술 시간</h2>
+      <div class="step">
+        <button type="button" id="oAvgDown" aria-label="5분 줄이기">−</button>
+        <output id="oAvg">30분</output>
+        <button type="button" id="oAvgUp" aria-label="5분 늘리기">+</button>
+      </div>
+      <div class="tiny">손님 화면의 "예상 약 ○분"을 계산할 때 써요.</div>
+    </div>
+    <div class="card">
+      <h2>영업 상태</h2>
+      <div class="grid2" id="oStatus"></div>
+    </div>
+    <div class="card">
+      <h2>디자이너 상태 <small>눌러서 바꾸기</small></h2>
+      <div class="dsw" id="oDesigners"></div>
+    </div>
+    <div class="card">
+      <h2>하루 시작</h2>
+      <button type="button" class="btn" id="oReset" style="width:100%">대기·시술 모두 0으로</button>
+      <div class="tiny">실수 방지를 위해 두 번 눌러야 바뀌어요.</div>
+    </div>
+    <div class="foot" id="oFoot">손님 이름·전화번호는 받지 않아요. 숫자만 저장돼요.</div>
+  </section>
+</div>
+
+<div class="sheet-bg" id="sheetBg" role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+  <div class="sheet" id="sheet"></div>
+</div>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+(function(){
+"use strict";
+
+/* ---------- 원장님 추천 홈케어 진열대 (코드 설정) ----------
+   지금은 예시 상품 6개(가상 상품명). url이 null이면 「준비 중」 버튼.
+   나중에 원장님 앱에서 고르게 할 예정 — 그때는 이 배열 대신 db 문서(예: live/shelf)에서 읽어 오면 됨.
+   image_url: 상품 사진은 우리가 임의로 가져다 쓰지 않음. 판매처·브랜드에게 제공받았거나 공식 위젯일 때만 https 주소를 넣는다. */
+var SHELF = [
+  {name:"(예시) 햇살 순한 약산성 샴푸", category:"샴푸", note:"염색·펌 하신 분은 약산성으로 바꾸시면 색이 오래가요.", price_hint:"1만 원대", url:null, affiliate:true, source:"coupang", image_url:null, example:true},
+  {name:"(예시) 촉촉 단백질 트리트먼트", category:"트리트먼트", note:"주 2회, 끝부분 위주로 바르고 3분 뒤 헹궈 주세요.", price_hint:"1만 원대", url:null, affiliate:true, source:"oliveyoung", image_url:null, example:true},
+  {name:"(예시) 가벼운 헤어 에센스", category:"에센스", note:"말리기 전 젖은 머리에 동전 크기만큼이면 충분해요.", price_hint:"1~2만 원대", url:null, affiliate:true, source:"coupang", image_url:null, example:true},
+  {name:"(예시) 내추럴 컬 크림", category:"스타일링", note:"펌 컬을 살릴 때 손으로 쥐었다 놓듯 발라 주세요.", price_hint:"1만 원대", url:null, affiliate:true, source:"oliveyoung", image_url:null, example:true},
+  {name:"(예시) 엉킴 없는 쿠션 빗", category:"빗·드라이어", note:"젖은 머리는 끝부터 살살 빗어야 덜 끊겨요.", price_hint:"1만 원 안팎", url:null, affiliate:true, source:"coupang", image_url:null, example:true},
+  {name:"(예시) 저소음 미니 드라이어", category:"빗·드라이어", note:"찬바람 마무리 기능이 있으면 윤기가 달라져요.", price_hint:"3~5만 원대", url:null, affiliate:false, source:"other", image_url:null, example:true}
+];
+var CAT_COLOR = {"샴푸":"#7fb8d9","트리트먼트":"#e8a0b4","에센스":"#f0c36a","스타일링":"#9b8fd6","빗·드라이어":"#8fc79a"};
+var SOURCES = {
+  coupang:{btn:"쿠팡에서 보기", disc:"이 게시물은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다."},
+  // TODO: 올리브영 큐레이터(제휴) 공식 고지 문구 원문을 확인한 뒤 그대로 바꿔 넣을 것. 지금은 임시 문구.
+  oliveyoung:{btn:"올리브영에서 보기", disc:"제휴 링크 · 구매 시 수수료를 받을 수 있어요."},
+  other:{btn:"판매처에서 보기", disc:"제휴 링크 · 구매 시 수수료를 받을 수 있어요."}
+};
+/* 시술별 관리 팁 (우리 글) */
+var TIPS = [
+  {title:"염색한 날", text:"오늘은 샴푸를 쉬어 주세요. 색이 자리 잡는 데 하루쯤 걸려요. 미지근한 물로 감으면 색이 덜 빠져요."},
+  {title:"펌한 날", text:"이틀은 묶거나 모자를 쓰지 않는 게 좋아요. 말릴 때는 비비지 말고 손으로 쥐어 짜듯 말려 주세요."},
+  {title:"커트한 날", text:"앞머리는 드라이어 바람을 위에서 아래로. 다음 손질은 4~6주 뒤가 모양이 가장 예뻐요."},
+  {title:"클리닉 받은 날", text:"뜨거운 고데기는 하루 쉬어 주세요. 잘 때 머리를 완전히 말리면 효과가 오래가요."}
+];
+
+var STATUS = {open:{label:"영업 중"}, away:{label:"잠시 자리 비움"}, closed:{label:"오늘 마감"}, holiday:{label:"휴무"}};
+var STATUS_ORDER = ["open","away","closed","holiday"];
+var HOURS = {0:null, 1:["10:00","20:00"], 2:["10:00","20:00"], 3:["10:00","20:00"], 4:["10:00","20:00"], 5:["10:00","20:00"], 6:["10:00","18:00"]};
+var DAYS = ["일","월","화","수","목","금","토"];
+var DEMO_START = {waiting:2, in_service:2, avg_min:30, status:"open",
+  designers:[{name:"원장",state:"busy"},{name:"하늘 디자이너",state:"free"},{name:"바다 디자이너",state:"busy"}], updated_at:null};
+var EMPTY_NAMES = ["원장","하늘 디자이너","바다 디자이너"];
+
+function esc(s){ return String(s==null?"":s).replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];}); }
+function safeUrl(u){ return (typeof u==="string" && /^https:\/\//i.test(u)) ? u : null; }
+function int(v, lo, hi, d){ var n=Math.round(Number(v)); if(!isFinite(n)) return d; return Math.max(lo, Math.min(hi, n)); }
+function pad(n){ return (n<10?"0":"")+n; }
+
+/* db 문서 → 화면에서 쓰는 모양 (이상한 값은 고쳐서) */
+function normalize(raw){
+  raw = raw && typeof raw==="object" ? raw : {};
+  var ds = Array.isArray(raw.designers) ? raw.designers.slice(0,3) : [];
+  var designers = [];
+  for(var i=0;i<3;i++){
+    var x = ds[i] && typeof ds[i]==="object" ? ds[i] : {};
+    designers.push({name: String(x.name||EMPTY_NAMES[i]).slice(0,20), state: x.state==="busy" ? "busy" : "free"});
+  }
+  return {
+    waiting: int(raw.waiting, 0, 99, 0),
+    in_service: designers.filter(function(d){ return d.state==="busy"; }).length,
+    avg_min: int(raw.avg_min, 5, 180, 30),
+    status: STATUS[raw.status] ? raw.status : "open",
+    designers: designers,
+    updated_at: typeof raw.updated_at==="string" ? raw.updated_at : null
+  };
+}
+function same(a,b){ var x=Object.assign({},a), y=Object.assign({},b); delete x.updated_at; delete y.updated_at; return JSON.stringify(x)===JSON.stringify(y); }
+
+var state = {mode:"connecting", doc:normalize(DEMO_START), exists:true, canEdit:false, writeLocked:false, lockReason:"", err:null};
+var db=null, ref=null, prevWait=null, resetArmed=0, toastT=0;
+
+/* ---------- 계산 ---------- */
+function freeCount(d){ return d.designers.filter(function(x){ return x.state!=="busy"; }).length; }
+// 예상 대기: 아주 대략. (대기 인원 ÷ 디자이너 수) × 1인 평균. 5분 단위로 올림
+function estimate(d){
+  var D=Math.max(1,d.designers.length), free=freeCount(d);
+  if(d.waiting===0 && free>0) return 0;
+  var m=(d.waiting + (free>0?0:0.5)) / D * d.avg_min;
+  return Math.max(5, Math.ceil(m/5)*5);
+}
+function ago(iso){
+  if(!iso) return null; var t=Date.parse(iso); if(!isFinite(t)) return null;
+  var s=Math.max(0,(Date.now()-t)/1000);
+  if(s<60) return {text:"방금 전", stale:false};
+  if(s<3600) return {text:Math.floor(s/60)+"분 전", stale:s>3600};
+  if(s<86400) return {text:Math.floor(s/3600)+"시간 전", stale:true};
+  var d=new Date(t); return {text:(d.getMonth()+1)+"월 "+d.getDate()+"일", stale:true};
+}
+function todayHours(){ var d=new Date(), h=HOURS[d.getDay()]; return "("+DAYS[d.getDay()]+") "+(h ? h[0]+" – "+h[1] : "정기 휴무일"); }
+function editable(){ return state.mode==="demo" || (state.canEdit && !state.writeLocked); }
+
+/* ---------- 손님 화면 ---------- */
+function renderGuest(){
+  var d=state.doc, st=d.status;
+  var sEl=document.getElementById("gStatus"); sEl.className="status "+st;
+  document.getElementById("gStatusText").textContent=STATUS[st].label;
+  var closed = st==="closed"||st==="holiday";
+  document.getElementById("gNumbers").hidden = closed;
+  var cm=document.getElementById("gClosed"); cm.hidden=!closed;
+  cm.textContent = st==="holiday" ? "오늘은 쉬어요. 다음 영업일에 만나요!" : "오늘 영업이 끝났어요. 내일 만나요!";
+  var n=document.getElementById("gWait");
+  if(String(d.waiting)!==n.textContent){ n.textContent=d.waiting; if(prevWait!==null){ n.classList.remove("bump"); void n.offsetWidth; n.classList.add("bump"); } }
+  prevWait=d.waiting;
+  var m=estimate(d);
+  document.getElementById("gEst").innerHTML = m===0 ? "지금 오시면 <b>바로</b> 앉을 수 있어요" : "예상 약 <b>"+m+"분</b> 기다려요"+(st==="away"?" (원장님이 잠시 자리 비움)":"");
+  var u=document.getElementById("gUpd"), a=ago(d.updated_at);
+  if(!state.exists){ u.textContent="아직 원장님이 소식을 올리지 않았어요"; u.className="upd stale"; }
+  else if(a){ u.textContent="마지막 갱신 "+a.text+(a.stale?" · 지금과 다를 수 있어요":""); u.className="upd"+(a.stale?" stale":""); }
+  else { u.textContent = state.mode==="demo" ? "데모 숫자예요" : ""; u.className="upd"; }
+  document.getElementById("gFree").textContent = "빈 자리 "+freeCount(d)+" / "+d.designers.length;
+  document.getElementById("gDesigners").innerHTML = d.designers.map(function(x){
+    return '<li><span class="lamp '+x.state+'"></span><span class="nm">'+esc(x.name)+'</span><span class="st '+x.state+'">'+(x.state==="busy"?"시술 중":"비어 있음")+'</span></li>'; }).join("");
+  document.getElementById("gHours").textContent = todayHours();
+  renderFlat();
+}
+
+/* 2D 그림 (3D가 안 될 때): 의자 3개 + 앉은 손님, 대기 소파 + 대기 손님, 진열대 */
+var flatPrev=null;
+function person(x,y,col,pop,k){ return '<g class="'+(pop?"p-pop":"")+'" data-k="'+k+'"><ellipse cx="'+x+'" cy="'+(y+19)+'" rx="12" ry="3" fill="rgba(0,0,0,.12)"/><rect x="'+(x-10)+'" y="'+(y)+'" width="20" height="18" rx="9" fill="'+col+'"/><circle cx="'+x+'" cy="'+(y-7)+'" r="9" fill="'+col+'"/><circle cx="'+(x-3)+'" cy="'+(y-8)+'" r="1.4" fill="#2b2622"/><circle cx="'+(x+3)+'" cy="'+(y-8)+'" r="1.4" fill="#2b2622"/></g>'; }
+var PCOL=["#f0d6ab","#c9c3bb","#b98a5e","#eac08c","#e8945a","#a9c7e8"];
+function renderFlat(){
+  var d=state.doc, dark=d.status==="closed"||d.status==="holiday";
+  var s='<svg viewBox="0 0 360 230" role="img" aria-label="대기 '+d.waiting+'명, 시술 중 '+d.in_service+'명">';
+  s+='<rect x="0" y="0" width="360" height="230" rx="14" fill="var(--floor)"/>';
+  s+='<rect x="0" y="0" width="360" height="56" rx="14" fill="var(--wall-side)"/>';
+  s+='<rect x="292" y="10" width="52" height="34" rx="4" fill="'+(dark?"#2c3f66":"#cfe8f6")+'"/>'+(dark?"":'<circle cx="332" cy="20" r="6" fill="#ffd66b"/>');
+  d.designers.forEach(function(x,i){
+    var cx=50+i*85, busy=x.state==="busy";
+    s+='<rect x="'+(cx-22)+'" y="8" width="44" height="40" rx="8" fill="#dfeef5" stroke="#b9c3cc" stroke-width="3"/>';
+    s+='<circle cx="'+(cx+18)+'" cy="12" r="4" fill="'+(busy?"#f0b63a":"#35c46d")+'"/>';
+    s+='<rect x="'+(cx-16)+'" y="74" width="32" height="26" rx="7" fill="#d98f7e"/><rect x="'+(cx-3)+'" y="100" width="6" height="12" fill="#6b5a52"/><rect x="'+(cx-14)+'" y="110" width="28" height="5" rx="2" fill="#6b5a52"/>';
+    if(busy) s+=person(cx, 70, PCOL[i%6], flatPrev && !flatPrev.busy[i], "c"+i);
+    s+=person(cx+30, 82, "#f5f0e8", false, "d"+i);
+    s+='<text x="'+cx+'" y="128" text-anchor="middle" font-size="10.5" font-weight="700" fill="var(--ink-2)">'+esc(x.name.slice(0,7))+'</text><text x="'+cx+'" y="141" text-anchor="middle" font-size="10.5" font-weight="800" fill="'+(busy?"#d99a12":"#2f9e5b")+'">'+(busy?"시술 중":"비어 있음")+'</text>';
+  });
+  // 소파
+  s+='<rect x="40" y="168" width="200" height="40" rx="12" fill="#9fb3a4"/><rect x="40" y="160" width="200" height="16" rx="8" fill="#7f9a86"/>';
+  var shown=Math.min(d.waiting,4);
+  for(var i=0;i<shown;i++) s+=person(65+i*50, 160, PCOL[(i+3)%6], flatPrev && i>=flatPrev.shown, "w"+i);
+  if(d.waiting>4) s+='<rect x="244" y="150" width="50" height="26" rx="13" fill="#e0794f"/><text x="269" y="168" text-anchor="middle" font-size="14" font-weight="800" fill="#fff">+'+(d.waiting-4)+'</text>';
+  s+='<text x="140" y="224" text-anchor="middle" font-size="12" font-weight="800" fill="var(--ink)">대기 소파 · '+d.waiting+'명</text>';
+  // 진열대
+  s+='<rect x="300" y="120" width="50" height="70" rx="4" fill="#c49a6c"/>';
+  SHELF.slice(0,6).forEach(function(p,i){ s+='<rect x="'+(305+(i%3)*15)+'" y="'+(128+Math.floor(i/3)*28)+'" width="11" height="18" rx="2" fill="'+(CAT_COLOR[p.category]||"#ccc")+'"/>'; });
+  s+='<text x="325" y="204" text-anchor="middle" font-size="10" font-weight="700" fill="var(--ink-2)">진열대</text>';
+  // 문 + 팻말
+  s+='<rect x="320" y="60" width="34" height="52" rx="3" fill="#a0785a"/><rect x="323" y="76" width="28" height="12" rx="2" fill="'+(dark?"#c94a3c":"#2f9e5b")+'"/><text x="337" y="85.5" text-anchor="middle" font-size="7.5" font-weight="800" fill="#fff">'+(dark?(d.status==="holiday"?"휴무":"마감"):"OPEN")+'</text>';
+  if(dark) s+='<rect x="0" y="0" width="360" height="230" rx="14" fill="rgba(10,10,30,.35)"/>';
+  s+='</svg>';
+  document.getElementById("flat").innerHTML=s;
+  flatPrev={busy:d.designers.map(function(x){return x.state==="busy";}), shown:shown};
+}
+
+/* 진열대 목록 + 관리 팁 (2D, 3D 모두 같은 데이터) */
+function picHTML(p){
+  var img=safeUrl(p.image_url), col=CAT_COLOR[p.category]||"#cccccc";
+  if(img) return '<span class="pic"><img src="'+esc(img)+'" alt="" loading="lazy" referrerpolicy="no-referrer"></span>';
+  var bottle = p.category!=="빗·드라이어";
+  return '<span class="pic" style="background:'+col+'33"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true">'+
+    (bottle ? '<rect x="9" y="9" width="12" height="18" rx="4" fill="'+col+'"/><rect x="12" y="4" width="6" height="6" rx="1.5" fill="'+col+'"/>'
+            : '<rect x="6" y="5" width="18" height="8" rx="4" fill="'+col+'"/><rect x="13" y="12" width="4" height="14" rx="2" fill="'+col+'"/>')+'</svg></span>';
+}
+function renderShelfList(){
+  document.getElementById("shelfList").innerHTML = SHELF.map(function(p,i){
+    return '<li><button type="button" data-p="'+i+'">'+picHTML(p)+'<span class="t"><b>'+esc(p.name)+(p.example?'<span class="ex">예시</span>':'')+'</b><span>'+esc(p.note)+'</span></span><span class="cat">'+esc(p.category)+'</span></button></li>'; }).join("");
+  document.querySelectorAll("#shelfList [data-p]").forEach(function(b){ b.onclick=function(){ openShelf(+b.dataset.p); }; });
+  document.getElementById("shelfDisc").textContent = discLines().join(" ") + " 가격은 판매처 기준이에요.";
+  document.getElementById("tipsList").innerHTML = TIPS.map(function(t){ return '<div class="tip"><b>'+esc(t.title)+'</b><p>'+esc(t.text)+'</p></div>'; }).join("");
+}
+function discLines(){
+  var out=[], seen={};
+  SHELF.forEach(function(p){ if(p.affiliate){ var k=SOURCES[p.source]?p.source:"other"; if(!seen[k]){ seen[k]=1; out.push(SOURCES[k].disc); } } });
+  return out;
+}
+function prodHTML(p,i,focus){
+  var src=SOURCES[p.source]?p.source:"other", url=safeUrl(p.url);
+  var btn = url ? '<a class="btn pri" href="'+esc(url)+'" target="_blank" rel="'+(p.affiliate?"sponsored ":"")+'noopener noreferrer">'+SOURCES[src].btn+'</a>'
+                : '<button type="button" class="btn" disabled>준비 중</button>';
+  return '<div class="prod'+(focus?" focus":"")+'" id="prod'+i+'"><div class="row">'+picHTML(p)+'<div style="min-width:0;flex:1"><span class="cat">'+esc(p.category)+'</span>'+(p.example?'<span class="ex">예시</span>':'')+
+    '<h4>'+esc(p.name)+'</h4><div class="price">'+esc(p.price_hint||"")+(p.affiliate?" · 제휴":"")+'</div></div></div><p class="note">'+esc(p.note)+'</p>'+btn+'</div>';
+}
+function openSheet(title, body){
+  document.getElementById("sheet").innerHTML='<div class="hd"><h3 id="sheetTitle">'+esc(title)+'</h3><button type="button" class="close" id="sheetClose">닫기</button></div>'+body;
+  document.getElementById("sheetClose").onclick=closeSheet;
+  document.getElementById("sheetBg").classList.add("open");
+}
+function closeSheet(){ document.getElementById("sheetBg").classList.remove("open"); }
+function openShelf(i){
+  var disc = discLines().map(function(t){ return '<p>'+esc(t)+'</p>'; }).join("") + '<p>가격은 판매처 기준이에요. 매장에서 파는 상품이 아니에요.</p>';
+  openSheet("원장님 추천 홈케어", '<div class="disc">'+disc+'</div>'+SHELF.map(function(p,k){ return prodHTML(p,k,k===i); }).join(""));
+  if(typeof i==="number"){ var el=document.getElementById("prod"+i); if(el && el.scrollIntoView) el.scrollIntoView({block:"nearest"}); }
+}
+function openTips(){ openSheet("시술 받은 머리, 이렇게 관리하세요", '<div class="tips">'+TIPS.map(function(t){ return '<div class="tip"><b>'+esc(t.title)+'</b><p>'+esc(t.text)+'</p></div>'; }).join("")+'</div><div class="tiny">햇살 헤어(가상)의 일반적인 관리 안내예요. 두피·모발 상태에 따라 다를 수 있어요.</div>'); }
+document.getElementById("sheetBg").addEventListener("click", function(e){ if(e.target.id==="sheetBg") closeSheet(); });
+document.addEventListener("keydown", function(e){ if(e.key==="Escape") closeSheet(); });
+
+/* ---------- 원장님 화면 ---------- */
+function renderOwner(){
+  var d=state.doc, on=editable();
+  var lk=document.getElementById("oLock"); lk.hidden=on;
+  document.getElementById("oLockText").textContent = state.lockReason || "원장님만 바꿀 수 있어요";
+  document.getElementById("oWait").textContent=d.waiting;
+  document.getElementById("oIn").textContent=d.in_service;
+  document.getElementById("oWOut").textContent=d.waiting+"명";
+  document.getElementById("oAvg").textContent=d.avg_min+"분";
+  document.getElementById("oPlus").disabled=!on || d.waiting>=99;
+  document.getElementById("oMinus").disabled=!on || (d.waiting===0 && d.in_service===0);
+  document.getElementById("oWDown").disabled=!on || d.waiting===0;
+  document.getElementById("oWUp").disabled=!on || d.waiting>=99;
+  document.getElementById("oAvgDown").disabled=!on || d.avg_min<=5;
+  document.getElementById("oAvgUp").disabled=!on || d.avg_min>=180;
+  document.getElementById("oReset").disabled=!on;
+  document.getElementById("oReset").textContent = resetArmed ? "한 번 더 누르면 0으로 바꿔요" : "대기·시술 모두 0으로";
+  document.getElementById("oStatus").innerHTML = STATUS_ORDER.map(function(k){ return '<button type="button" data-s="'+k+'" aria-pressed="'+(d.status===k)+'"'+(on?"":" disabled")+'>'+STATUS[k].label+'</button>'; }).join("");
+  document.querySelectorAll("#oStatus [data-s]").forEach(function(b){ b.onclick=function(){ change(function(x){ x.status=b.dataset.s; }); }; });
+  document.getElementById("oDesigners").innerHTML = d.designers.map(function(x,i){ return '<button type="button" data-d="'+i+'" class="'+x.state+'"'+(on?"":" disabled")+'><span>'+esc(x.name)+'</span><em>'+(x.state==="busy"?"시술 중 → 비우기":"비어 있음 → 시술 시작")+'</em></button>'; }).join("");
+  document.querySelectorAll("#oDesigners [data-d]").forEach(function(b){ b.onclick=function(){ change(function(x){ var t=x.designers[+b.dataset.d]; t.state = t.state==="busy"?"free":"busy"; }); }; });
+}
+function plus(x){ var i=x.designers.findIndex(function(t){ return t.state!=="busy"; }); if(i>=0) x.designers[i].state="busy"; else x.waiting++; }
+function minus(x){
+  if(x.waiting>0){ x.waiting--; return; }          // 한 분 끝 → 대기 손님이 그 자리에 앉음
+  for(var i=x.designers.length-1;i>=0;i--) if(x.designers[i].state==="busy"){ x.designers[i].state="free"; return; }
+}
+document.getElementById("oPlus").onclick=function(){ change(plus); };
+document.getElementById("oMinus").onclick=function(){ change(minus); };
+document.getElementById("oWUp").onclick=function(){ change(function(x){ x.waiting++; }); };
+document.getElementById("oWDown").onclick=function(){ change(function(x){ x.waiting=Math.max(0,x.waiting-1); }); };
+document.getElementById("oAvgUp").onclick=function(){ change(function(x){ x.avg_min+=5; }); };
+document.getElementById("oAvgDown").onclick=function(){ change(function(x){ x.avg_min-=5; }); };
+document.getElementById("oReset").onclick=function(){
+  if(!resetArmed){ resetArmed=setTimeout(function(){ resetArmed=0; renderOwner(); }, 3000); renderOwner(); return; }
+  clearTimeout(resetArmed); resetArmed=0;
+  change(function(x){ x.waiting=0; x.designers.forEach(function(t){ t.state="free"; }); });
+};
+
+/* 값을 바꾸고, 실제로 달라졌을 때만 저장 */
+function change(fn){
+  if(!editable()) return;
+  var next=normalize(JSON.parse(JSON.stringify(state.doc))); fn(next); next=normalize(next);
+  if(same(next, state.doc)) return;               // 달라진 게 없으면 쓰지 않음
+  next.updated_at=new Date().toISOString();
+  state.doc=next; state.exists=true; render();
+  if(state.mode==="demo"){ try{ localStorage.setItem("salon-live-demo", JSON.stringify(next)); }catch(e){} return; }
+  queueWrite();
+}
+
+/* ---------- 저장: 한 번에 하나씩, 연달아 누르면 마지막 값 하나로 모아서 ---------- */
+var writing=false, dirty=false, wTimer=0, retried=false;
+function queueWrite(){ dirty=true; clearTimeout(wTimer); wTimer=setTimeout(flush, 350); }
+async function flush(){
+  if(writing || !dirty || !ref) return;
+  writing=true; dirty=false;
+  var body=JSON.parse(JSON.stringify(state.doc));
+  try{ await ref.set(body); retried=false; }
+  catch(e){
+    var code=e && e.code;
+    if(code==="unavailable" && !retried){ retried=true; dirty=true; writing=false; setTimeout(flush, 600+Math.random()*900); return; }
+    if(code==="invalid_argument" || code==="not_granted" || code==="revoked"){ state.writeLocked=true; state.lockReason="원장님만 바꿀 수 있어요 (저장 권한이 없어요)"; }
+    else if(code==="quota_exceeded"){ toast("저장 공간이 가득 찼어요. 관리자에게 알려 주세요."); }
+    else toast("저장하지 못했어요. 잠시 뒤 다시 눌러 주세요.");
+    render();
+  }
+  finally{ if(writing){ writing=false; if(dirty) flush(); } }
+}
+function toast(t){ var el=document.getElementById("toast"); el.textContent=t; el.classList.add("on"); clearTimeout(toastT); toastT=setTimeout(function(){ el.classList.remove("on"); }, 2600); }
+
+/* ---------- 연결 표시 ---------- */
+function renderConn(){
+  var c=document.getElementById("conn"), t=document.getElementById("connText");
+  var m={connecting:["","연결 확인 중"], live:["live","실시간"], slow:["slow","연결이 늦어요"], error:["err","연결 끊김"], demo:["slow","데모 모드"]}[state.mode]||["",""];
+  c.className="chip "+m[0]; t.textContent=m[1];
+  document.getElementById("demoNote").hidden = state.mode!=="demo";
+}
+function render(){ renderConn(); renderGuest(); renderOwner(); if(window.__salon3d) window.__salon3d(); }
+
+/* ---------- 탭 ---------- */
+function setTab(owner){
+  document.getElementById("tabGuest").setAttribute("aria-selected", String(!owner));
+  document.getElementById("tabOwner").setAttribute("aria-selected", String(owner));
+  document.getElementById("vGuest").hidden=owner; document.getElementById("vOwner").hidden=!owner;
+  try{ localStorage.setItem("salon-live-tab", owner?"owner":"guest"); }catch(e){}
+}
+document.getElementById("tabGuest").onclick=function(){ setTab(false); };
+document.getElementById("tabOwner").onclick=function(){ setTab(true); };
+(function(){ var q=new URLSearchParams(location.search).get("mode"), saved=null; try{ saved=localStorage.getItem("salon-live-tab"); }catch(e){}
+  setTab(q==="owner" || (q!=="guest" && saved==="owner")); })();
+document.getElementById("smsBtn").href = "sms:01000000000?body="+encodeURIComponent("[햇살 헤어] 예약 문의드려요. 원하는 날짜/시간: ");
+
+window.Salon = { data:function(){ return state.doc; }, state:state, SHELF:SHELF, TIPS:TIPS, CAT_COLOR:CAT_COLOR,
+  openShelf:openShelf, openTips:openTips, closeSheet:closeSheet, editable:editable, estimate:estimate,
+  sheetOpen:function(){ return document.getElementById("sheetBg").classList.contains("open"); } };
+
+/* ---------- 공유 저장소(db) 연결 ----------
+   문서 하나: 컬렉션 live / 문서 shop
+   { waiting, in_service, avg_min, status:"open|away|closed|holiday", designers:[{name, state:"busy|free"}], updated_at:"ISO 시각" }
+   ※ 실제 서비스로 갈 때(Firebase 무료 요금제 등) 바꿀 자리:
+     - 아래 claude.use("db") → firebase.firestore().doc("shops/<매장id>/live/shop") 처럼 매장별 문서로
+     - onSnapshot·set 은 Firestore와 이름·모양이 같아서 거의 그대로 씀
+     - canEdit() → Firebase Auth 로그인 + 보안 규칙(원장님 uid만 write, 누구나 read)으로 바꿈
+     - SHELF·TIPS 도 매장별 문서(shops/<매장id>/shelf)로 옮기면 원장님 앱에서 고를 수 있음 */
+async function init(){
+  render();
+  setInterval(function(){ renderGuest(); }, 30000);       // "3분 전" 글자만 새로 (저장은 안 함)
+  try{ if(window.claude && typeof window.claude.use==="function") db = await window.claude.use("db"); }catch(e){ db=null; }
+  if(!db){
+    state.mode="demo";
+    var saved=null; try{ saved=JSON.parse(localStorage.getItem("salon-live-demo")||"null"); }catch(e){}
+    state.doc=normalize(saved||DEMO_START); render(); return;
+  }
+  // 원장님(편집 권한)만 조작 가능. 손님(보기만)은 읽기만
+  try{ var user = await window.claude.use("user"); state.canEdit = user ? !!(await user.canEdit()) : false; }catch(e){ state.canEdit=false; }
+  if(!state.canEdit) state.lockReason="원장님만 바꿀 수 있어요";
+  state.mode="connecting"; render();
+  var timer=setTimeout(function(){ if(state.mode==="connecting"){ state.mode="slow"; render(); } }, 10000);
+  try{
+    ref = db.collection("live").doc("shop");
+    ref.onSnapshot(function(snap){                         // 한 번만 구독
+      if(writing || dirty){ if(!snap.metadata || !snap.metadata.fromCache){ clearTimeout(timer); if(state.mode!=="error") state.mode="live"; renderConn(); } return; }
+      state.exists = !!snap.exists;
+      state.doc = snap.exists ? normalize(snap.data()) : normalize({designers:EMPTY_NAMES.map(function(n){ return {name:n, state:"free"}; })});
+      if(!snap.metadata || !snap.metadata.fromCache){ clearTimeout(timer); state.mode="live"; }
+      render();
+    }, function(e){ clearTimeout(timer); state.err=e&&e.code; state.mode="error"; state.writeLocked=true; state.lockReason="연결이 끊겨 지금은 바꿀 수 없어요"; render(); });
+  }catch(e){ clearTimeout(timer); state.mode="error"; render(); }
+}
+renderShelfList();
+init();
+})();
+</script>
+
+<script type="module">
+/* ---------- 3D 가상 미용실 (three.js r186, 사무실 3D 구조를 복사해 변형. 실패하면 2D 그림으로) ---------- */
+const O = window.Salon;
+const root = document.documentElement;
+const S = window.Salon3D = { mode:"loading", reason:"", three:null };
+let stopAll = null;
+S.fail = function(why){
+  if(S.mode==="flat") return;
+  S.mode="flat"; S.reason=String(why||"");
+  root.classList.remove("try3d");
+  window.__salon3d = null;
+  try{ if(stopAll) stopAll(); }catch(e){}
+};
+(async function boot(){
+  if(!root.classList.contains("try3d")){ S.mode="flat"; S.reason="WebGL 없음 또는 ?flat"; return; }
+  let THREE;
+  try{ THREE = await Promise.race([ import("three"), new Promise((_,rej)=>setTimeout(()=>rej(new Error("시간 초과")),15000)) ]); }
+  catch(e){ S.fail("Three.js 불러오기 실패: "+(e&&e.message)); return; }
+  if(S.mode==="flat") return;
+  try{ start(THREE); }catch(e){ S.fail("3D 시작 실패: "+(e&&e.message)); }
+})();
+
+function start(THREE){
+  const stage=document.getElementById("o3dStage"), msg=document.getElementById("o3dMsg");
+  const lowEnd=(navigator.hardwareConcurrency||4)<=4 || (navigator.deviceMemory||4)<=2;
+  const renderer=new THREE.WebGLRenderer({antialias:!lowEnd, powerPreference:"low-power"});
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio||1, 2));
+  renderer.shadowMap.enabled=false;                         // 그림자 끔 (바닥 동그란 그림자만)
+  renderer.domElement.setAttribute("aria-label","3D 가상 미용실 화면");
+  stage.insertBefore(renderer.domElement, stage.firstChild);
+  renderer.domElement.addEventListener("webglcontextlost", e=>{ e.preventDefault(); S.fail("그래픽 연결 끊김"); });
+  const scene=new THREE.Scene(), camera=new THREE.PerspectiveCamera(38,1,0.3,200), V3=THREE.Vector3;
+
+  /* ---- 공용 모양·재질 ---- */
+  const GC={}, MC={};
+  const geo=(k,f)=>GC[k]||(GC[k]=f());
+  const box=(w,h,d)=>geo(`b${w},${h},${d}`,()=>new THREE.BoxGeometry(w,h,d));
+  const cyl=(a,b,h,s=8)=>geo(`c${a},${b},${h},${s}`,()=>new THREE.CylinderGeometry(a,b,h,s));
+  const cone=(r,h,s=6)=>geo(`k${r},${h},${s}`,()=>new THREE.ConeGeometry(r,h,s));
+  const ball=(r,d=1)=>geo(`s${r},${d}`,()=>new THREE.IcosahedronGeometry(r,d));
+  const plane=(w,h)=>geo(`p${w},${h}`,()=>new THREE.PlaneGeometry(w,h));
+  const disc=r=>geo(`d${r}`,()=>new THREE.CircleGeometry(r,16));
+  function mat(c,o){ const k=c+(o?JSON.stringify(o):""); return MC[k]||(MC[k]=new THREE.MeshLambertMaterial(Object.assign({color:c, flatShading:true},o||{}))); }
+  function basic(c,o){ const k="B"+c+(o?JSON.stringify(o):""); return MC[k]||(MC[k]=new THREE.MeshBasicMaterial(Object.assign({color:c},o||{}))); }
+  function mesh(g,m,x=0,y=0,z=0,parent){ const o=new THREE.Mesh(g,m); o.position.set(x,y,z); if(parent) parent.add(o); return o; }
+
+  /* ---- 밝은/어두운 테마 + 영업 상태 조명 ---- */
+  const THEMES={
+    light:{ bg:"#efe6d8", floor:"#e8d3b4", wall:"#f7efe4", wallTop:"#e0cdb5", sky:"#cfe8f6", hemi:[0xffffff,0xcbb89c,2.3], dir:[0xfff1dc,1.7], lamp:"#fff0c8", shadow:0.14, label:"#ffffff", labelInk:"#2d2a26", labelLine:"#e3d9cb", out:"#fff6dc" },
+    dark:{ bg:"#17161a", floor:"#5b4836", wall:"#3a3631", wallTop:"#2a2724", sky:"#1d2b47", hemi:[0x8a96c0,0x2a221b,1.15], dir:[0xffd6a0,0.75], lamp:"#ffd48a", shadow:0.3, label:"#33302d", labelInk:"#efe9e1", labelLine:"#47423c", out:"#3a4560" }
+  };
+  const LIGHT={open:1, away:0.8, closed:0.34, holiday:0.34};
+  const mq=window.matchMedia?matchMedia("(prefers-color-scheme: dark)"):null;
+  function isDark(){ const t=root.getAttribute("data-theme"); if(t==="dark") return true; if(t==="light") return false; return !!(mq&&mq.matches); }
+  let TH=THEMES[isDark()?"dark":"light"];
+  const TM={ floor:new THREE.MeshLambertMaterial({color:TH.floor}), wall:new THREE.MeshLambertMaterial({color:TH.wall, flatShading:true}),
+    wallTop:new THREE.MeshLambertMaterial({color:TH.wallTop}), sky:new THREE.MeshBasicMaterial({color:TH.sky}), lamp:new THREE.MeshBasicMaterial({color:TH.lamp}),
+    sun:new THREE.MeshBasicMaterial({color:0xffd66b}), beam:new THREE.MeshBasicMaterial({color:0xfff1b8, transparent:true, opacity:0.38, depthWrite:false}),
+    out:new THREE.MeshBasicMaterial({color:TH.out}), shadow:new THREE.MeshBasicMaterial({color:0x000000, transparent:true, opacity:TH.shadow, depthWrite:false}) };
+  const hemi=new THREE.HemisphereLight(TH.hemi[0],TH.hemi[1],TH.hemi[2]); scene.add(hemi);
+  const sun=new THREE.DirectionalLight(TH.dir[0],TH.dir[1]); sun.position.set(-6,16,12); scene.add(sun);
+  const floorCanvas=document.createElement("canvas"); floorCanvas.width=floorCanvas.height=128;
+  const floorTex=new THREE.CanvasTexture(floorCanvas); floorTex.colorSpace=THREE.SRGBColorSpace; floorTex.wrapS=floorTex.wrapT=THREE.RepeatWrapping; TM.floor.map=floorTex;
+  function drawFloorTex(){ const x=floorCanvas.getContext("2d"); x.fillStyle="#ffffff"; x.fillRect(0,0,128,128);
+    x.fillStyle=isDark()?"rgba(0,0,0,.16)":"rgba(120,80,40,.09)"; for(let i=0;i<2;i++) for(let j=0;j<2;j++) if((i+j)%2) x.fillRect(i*64,j*64,64,64);
+    x.fillStyle=isDark()?"rgba(0,0,0,.2)":"rgba(120,80,40,.12)"; x.fillRect(0,0,128,2); x.fillRect(0,64,128,2); x.fillRect(0,0,2,128); x.fillRect(64,0,2,128);
+    floorTex.needsUpdate=true; }
+  let curStatus="open";
+  function applyTheme(){
+    TH=THEMES[isDark()?"dark":"light"];
+    const k=LIGHT[curStatus]||1, night=curStatus==="closed"||curStatus==="holiday";
+    scene.background=new THREE.Color(TH.bg).lerp(new THREE.Color("#0f1220"), night?0.6:0);
+    TM.floor.color.set(TH.floor); TM.wall.color.set(TH.wall); TM.wallTop.color.set(TH.wallTop);
+    TM.sky.color.set(night?"#1a2440":TH.sky); TM.lamp.color.set(night?"#4a4540":TH.lamp); TM.out.color.set(night?"#202638":TH.out); TM.shadow.opacity=TH.shadow;
+    TM.sun.color.set(night?"#e9eefc":"#ffd66b");
+    TM.beam.opacity = night ? 0 : (isDark()?0.12:0.38)*k;
+    hemi.color.set(TH.hemi[0]); hemi.groundColor.set(TH.hemi[1]); hemi.intensity=TH.hemi[2]*k;
+    sun.color.set(TH.dir[0]); sun.intensity=TH.dir[1]*k;
+    drawFloorTex();
+  }
+
+  /* ---- 글씨 그림(스프라이트) ---- */
+  const FONT='-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Pretendard","Noto Sans KR","Noto Sans CJK KR","Malgun Gothic",sans-serif';
+  function rr(x,X,Y,W,H,R){ x.beginPath(); x.moveTo(X+R,Y); x.arcTo(X+W,Y,X+W,Y+H,R); x.arcTo(X+W,Y+H,X,Y+H,R); x.arcTo(X,Y+H,X,Y,R); x.arcTo(X,Y,X+W,Y,R); x.closePath(); }
+  function fit(x,s,maxW){ s=String(s||""); if(x.measureText(s).width<=maxW) return s; const a=[...s]; while(a.length && x.measureText(a.join("")+"…").width>maxW) a.pop(); return a.join("")+"…"; }
+  function pillCanvas({text,bg,fg,line,dot,size=30,weight=700,maxW=360,tail=false,pad=16}){
+    const c=document.createElement("canvas"), x=c.getContext("2d"); x.font=`${weight} ${size}px ${FONT}`;
+    const t=fit(x,text,maxW), dotW=dot?size*0.55:0;
+    const W=Math.ceil(x.measureText(t).width+pad*2+dotW), H=Math.ceil(size*1.55), TL=tail?Math.ceil(size*0.4):0;
+    c.width=W+4; c.height=H+TL+4; x.font=`${weight} ${size}px ${FONT}`;
+    rr(x,2,2,W,H,H/2); x.fillStyle=bg; x.fill(); if(line){ x.lineWidth=2.5; x.strokeStyle=line; x.stroke(); }
+    if(tail){ x.beginPath(); x.moveTo(2+W/2-TL,H+1); x.lineTo(2+W/2,H+TL+1); x.lineTo(2+W/2+TL,H+1); x.closePath(); x.fillStyle=bg; x.fill(); }
+    if(dot){ x.beginPath(); x.arc(2+pad+size*0.2,2+H/2,size*0.2,0,Math.PI*2); x.fillStyle=dot; x.fill(); }
+    x.fillStyle=fg; x.textBaseline="middle"; x.fillText(t,2+pad+dotW,2+H/2+1);
+    return {canvas:c, w:c.width, h:c.height};
+  }
+  // 이름표처럼 계속 바뀌는 글씨: 자리(key)마다 하나씩, 바뀔 때만 다시 그림
+  const labels={}, allSprites=[];
+  function label(key, parent, pos, spec, screenH, bottom=0){
+    const sig=JSON.stringify(spec)+screenH;
+    let L=labels[key];
+    if(L && L.sig===sig) return L.s;
+    if(L){ L.s.material.map.dispose(); L.s.material.dispose(); L.s.parent && L.s.parent.remove(L.s); allSprites.splice(allSprites.indexOf(L.s),1); }
+    const cv=pillCanvas(spec), t=new THREE.CanvasTexture(cv.canvas); t.colorSpace=THREE.SRGBColorSpace; t.minFilter=THREE.LinearFilter; t.generateMipmaps=false;
+    const m=new THREE.SpriteMaterial({map:t, transparent:true, depthTest:false, depthWrite:false, sizeAttenuation:false});
+    const s=new THREE.Sprite(m); s.scale.set(screenH*cv.w/cv.h, screenH, 1); s.userData.base=s.scale.clone(); s.center.set(0.5,-bottom/screenH); s.renderOrder=10;
+    s.position.copy(pos); parent.add(s); allSprites.push(s);
+    labels[key]={s, sig}; return s;
+  }
+  function canvasTex(w,h,draw){ const c=document.createElement("canvas"); c.width=w; c.height=h; draw(c.getContext("2d"),w,h); const t=new THREE.CanvasTexture(c); t.colorSpace=THREE.SRGBColorSpace; return t; }
+
+  /* ---- 동물 캐릭터 (사무실과 같은 모양. 몸 기준점 = 엉덩이, 서기/앉기/걷기 가능. 앞 = +z) ---- */
+  const ANIM={
+    jindo:{c:"#f0d6ab",e:"#e3bf86",muzzle:"#fff7ea",ears:"point"}, cat:{c:"#c9c3bb",e:"#a9a199",muzzle:"#f1ede8",ears:"cat"},
+    rabbit:{c:"#f5f0e8",e:"#f2c4c8",muzzle:"#ffffff",ears:"long"}, bear:{c:"#b98a5e",e:"#9b6f47",muzzle:"#e6c9a6",ears:"round"},
+    fox:{c:"#e8945a",e:"#c96f37",muzzle:"#fff3e6",ears:"point"}, panda:{c:"#f7f5f2",e:"#2f2f33",muzzle:"#ffffff",ears:"round",patch:true},
+    penguin:{c:"#3e4756",e:"#3e4756",muzzle:"#f7f5f2",ears:"none",beak:true}, hamster:{c:"#eac08c",e:"#d9a46a",muzzle:"#fff4e4",ears:"small",cheek:true},
+    owl:{c:"#a98563",e:"#8a6a4b",muzzle:"#efe2cc",ears:"tuft",owl:true}
+  };
+  const GUEST_ANIMALS=["cat","hamster","panda","jindo","penguin","owl","bear","rabbit","fox"];
+  const STAND_H=0.52;
+  function charMesh(key, role){
+    const a=ANIM[key]||ANIM.cat, g=new THREE.Group(), body=new THREE.Group(); g.add(body);
+    const C=mat(a.c), E=mat(a.e), Z=mat(a.muzzle), D=mat("#2b2622");
+    mesh(ball(0.28),C,0,0.22,0,body).scale.set(1,1.05,0.88);
+    mesh(ball(0.19),Z,0,0.19,0.15,body).scale.set(1,1.1,0.55);
+    let cape=null, scissors=null;
+    if(role==="designer"){ mesh(box(0.42,0.36,0.05),mat("#3f5a6e"),0,0.15,0.235,body); mesh(box(0.1,0.06,0.02),mat("#f0c36a"),0.09,0.24,0.265,body); }
+    if(role==="guest"){ cape=new THREE.Group(); mesh(cone(0.46,0.6,10),mat("#f2f2f4"),0,0.16,0.03,cape); mesh(cyl(0.1,0.13,0.06,10),mat("#7fb8d9"),0,0.47,0.02,cape); cape.visible=false; body.add(cape); }
+    const head=new THREE.Group(); head.position.set(0,0.64,0); body.add(head);
+    let top=0.94;
+    mesh(ball(0.27),C,0,0,0,head);
+    if(a.beak||a.ears==="none") mesh(ball(0.2),Z,0,-0.02,0.12,head).scale.set(1,0.95,0.7);
+    else if(a.owl){ for(const s of [-1,1]) mesh(ball(0.1),Z,s*0.1,0.03,0.2,head).scale.set(1,1,0.5); }
+    else mesh(ball(0.12),Z,0,-0.07,0.2,head).scale.set(1.15,0.75,0.8);
+    if(a.patch) for(const s of [-1,1]){ const p=mesh(ball(0.07),mat("#2f2f33"),s*0.1,0.04,0.21,head); p.scale.set(0.9,1.2,0.5); p.rotation.z=s*0.4; }
+    const eyes=new THREE.Group(); eyes.position.y=0.04; head.add(eyes);
+    for(const s of [-1,1]) mesh(ball(0.035,0),a.patch?basic("#ffffff"):D,s*0.1,0,a.owl?0.25:0.245,eyes);
+    if(a.beak||a.owl) mesh(cone(0.05,0.1,4),mat(a.owl?"#e0a13a":"#f0a63a"),0,-0.05,0.29,head).rotation.x=Math.PI/2;
+    else mesh(ball(0.035,0),mat("#3a302a"),0,-0.03,0.3,head);
+    if(a.cheek) for(const s of [-1,1]) mesh(ball(0.06,0),mat("#f2a7a0"),s*0.17,-0.07,0.17,head).scale.set(1,0.8,0.5);
+    if(a.ears==="point"||a.ears==="cat"){ for(const s of [-1,1]){ const e=mesh(cone(a.ears==="cat"?0.1:0.085,a.ears==="cat"?0.17:0.22,4),C,s*0.15,0.25,0,head); e.rotation.z=-s*0.35;
+        mesh(cone(0.045,0.12,4),E,s*0.145,0.24,0.04,head).rotation.z=-s*0.35; } top=1.12; }
+    else if(a.ears==="long"){ for(const s of [-1,1]){ mesh(ball(0.15),C,s*0.1,0.38,0,head).scale.set(0.4,1.4,0.3); mesh(ball(0.08),E,s*0.1,0.38,0.03,head).scale.set(0.4,1.6,0.3); } top=1.29; }
+    else if(a.ears==="round"){ for(const s of [-1,1]) mesh(ball(0.09),E,s*0.19,0.21,0,head); top=1.04; }
+    else if(a.ears==="small"){ for(const s of [-1,1]) mesh(ball(0.065),E,s*0.17,0.22,0,head); top=1.0; }
+    else if(a.ears==="tuft"){ for(const s of [-1,1]) mesh(cone(0.06,0.14,4),E,s*0.16,0.25,0,head).rotation.z=-s*0.4; top=1.06; }
+    const arms=[];
+    for(const s of [-1,1]){ const p=new THREE.Group(); p.position.set(s*0.27,0.42,0.02); body.add(p);
+      mesh(cyl(0.06,0.055,0.32,6),C,0,-0.16,0,p); mesh(ball(0.075,0),C,0,-0.34,0,p); arms.push(p); }
+    if(role==="designer"){ scissors=new THREE.Group(); for(const s of [-1,1]){ const b=mesh(box(0.025,0.02,0.2),mat("#c9d1d9"),0,0,0.08,scissors); b.rotation.y=s*0.18; }
+      mesh(cyl(0.03,0.03,0.02,8),mat("#e0794f"),0,0,-0.02,scissors); scissors.position.set(0,-0.38,0.04); arms[1].add(scissors); }
+    const legs=[];
+    for(const s of [-1,1]){ const hip=new THREE.Group(); hip.position.set(s*0.11,0,0.03); g.add(hip);
+      mesh(cyl(0.068,0.065,0.24,6),C,0,-0.12,0,hip);
+      const knee=new THREE.Group(); knee.position.y=-0.24; hip.add(knee);
+      mesh(cyl(0.062,0.058,0.22,6),C,0,-0.11,0,knee); mesh(ball(0.085,0),Z,0,-0.24,0.05,knee).scale.set(1,0.6,1.3);
+      legs.push({hip,knee}); }
+    const shadow=mesh(disc(0.32),TM.shadow,0,0,0); shadow.rotation.x=-Math.PI/2;
+    Object.assign(g.userData,{body,head,eyes,armL:arms[0],armR:arms[1],legs,cape,scissors,top,shadow});
+    return g;
+  }
+
+  /* ---- 가구 ---- */
+  function salonChair(){
+    const g=new THREE.Group(), c=mat("#d98f7e"), k=mat("#5b5550"), m=mat("#c9d1d9");
+    mesh(cyl(0.3,0.36,0.07,12),k,0,0.035,0,g); mesh(cyl(0.06,0.06,0.34,8),m,0,0.24,0,g);
+    mesh(box(0.62,0.14,0.56),c,0,0.48,0.02,g);
+    mesh(box(0.62,0.5,0.12),c,0,0.8,-0.27,g); mesh(box(0.34,0.16,0.1),c,0,1.12,-0.27,g);
+    for(const s of [-1,1]){ mesh(box(0.08,0.06,0.5),k,s*0.36,0.66,0.02,g); mesh(box(0.05,0.14,0.05),k,s*0.36,0.59,0.2,g); }
+    mesh(box(0.42,0.04,0.16),m,0,0.16,0.42,g); mesh(box(0.04,0.3,0.04),m,0,0.3,0.32,g);
+    mesh(disc(0.46),TM.shadow,0,0.012,0.05,g).rotation.x=-Math.PI/2;
+    return g;
+  }
+  function sofaMesh(seats,col){
+    const g=new THREE.Group(), c=mat(col||"#9fb3a4"), w=seats*0.72+0.3;
+    mesh(box(w,0.32,0.8),c,0,0.24,0,g); mesh(box(w,0.62,0.2),c,0,0.55,-0.33,g);
+    for(const s of [-1,1]) mesh(box(0.18,0.46,0.8),c,s*(w/2-0.09),0.33,0,g);
+    for(let i=0;i<seats;i++) mesh(box(0.66,0.1,0.62),mat("#b5c7b9"),(i-(seats-1)/2)*0.72,0.42,0.05,g);
+    mesh(disc(0.8),TM.shadow,0,0.012,0,g).rotation.x=-Math.PI/2; return g;
+  }
+  function plantMesh(s=1){
+    const g=new THREE.Group(); mesh(cyl(0.22*s,0.17*s,0.36*s,7),mat("#c97b56"),0,0.18*s,0,g);
+    const L=mat("#5f9c5a"), L2=mat("#4d8a4c");
+    mesh(ball(0.32*s,0),L,0,0.62*s,0,g); mesh(ball(0.24*s,0),L2,0.14*s,0.85*s,0.05*s,g); mesh(ball(0.2*s,0),L,-0.12*s,0.92*s,-0.06*s,g);
+    mesh(disc(0.3*s),TM.shadow,0,0.012,0,g).rotation.x=-Math.PI/2; return g;
+  }
+
+  /* ---- 장면 (한 번 만들고, 숫자 바뀌면 캐릭터만 움직임) ---- */
+  const W=10, D=8, HX=W/2, WALLH=2.4, bounds={W,D};
+  const world=new THREE.Group(); world.position.z=-D/2; scene.add(world);
+  const decor=new THREE.Group(); world.add(decor);
+  const walls=[], pickables=[], focusPts={};
+  mesh(box(W,0.2,D),TM.floor,0,-0.1,D/2,decor); floorTex.repeat.set(W/2,D/2);
+  function wallGroup(cx,cz,nx,nz){ const g=new THREE.Group(); g.position.set(cx,0,cz); g.userData.mroot=true; decor.add(g); walls.push({g, n:new V3(nx,0,nz), p:new V3(cx,0,cz-D/2)}); return g; }
+  function slab(g,sx,sz,x=0,z=0,y0=0,h=WALLH){ mesh(box(sx,h,sz),TM.wall,x,y0+h/2,z,g); if(y0+h>=WALLH-0.01) mesh(box(sx+0.02,0.08,sz+0.02),TM.wallTop,x,WALLH+0.04,z,g); }
+  // 뒤 벽: 햇살 드는 창문 2개
+  const back=wallGroup(0,-0.1,0,-1); slab(back,W+0.4,0.2);
+  [-2.3,2.5].forEach((x,i)=>{ mesh(box(1.9,1.3,0.06),mat("#ffffff"),x,1.5,0.1,back); mesh(plane(1.7,1.12),TM.sky,x,1.5,0.14,back);
+    mesh(box(0.05,1.12,0.03),mat("#ffffff"),x,1.5,0.15,back); if(i===1) mesh(disc(0.17),TM.sun,x+0.45,1.8,0.145,back);
+    const bm=mesh(plane(1.8,2.4),TM.beam,x+0.25,0.02,1.4,decor); bm.rotation.x=-Math.PI/2; bm.userData.keep=true; });
+  // 왼쪽 벽: 거울 3개 (미용 의자 = 사무실 책상 자리)
+  const left=wallGroup(-HX-0.1,D/2,-1,0); slab(left,0.2,D);
+  const CHAIR=[1.6,3.75,5.9].map(z=>({x:-3.75, z}));
+  const lamps=[];
+  CHAIR.forEach((c,i)=>{ const z=c.z-D/2;
+    mesh(box(0.06,1.3,1.0),mat("#e9e2d8"),0.12,1.45,z,left); const mr=mesh(plane(0.86,1.14),mat("#cfe2ea",{flatShading:false}),0.16,1.45,z,left); mr.rotation.y=Math.PI/2;
+    mesh(box(0.34,0.05,1.1),mat("#a8865f"),0.27,0.86,z,left);
+    for(let k=0;k<3;k++) mesh(cyl(0.04,0.04,0.16,6),mat(["#7fb8d9","#e8a0b4","#f0c36a"][(i+k)%3]),0.3,0.97,z-0.3+k*0.18,left);
+    const lp=mesh(ball(0.06,1),basic("#35c46d"),0.18,2.18,z,left); lp.userData.keep=true; lamps.push(lp);
+    for(const s of [-1,1]) mesh(box(0.08,0.2,0.08),TM.lamp,0.16,2.0,z+s*0.62,left);
+    const ch=salonChair(); ch.position.set(c.x,0,c.z); ch.rotation.y=-Math.PI/2; decor.add(ch);
+    mesh(box(1.9,0.025,1.7),mat("#d9c7b0"),c.x+0.35,0.013,c.z,decor); });
+  // 오른쪽 벽: 입구 문 (가운데 비움)
+  const DOORZ=5.6, right=wallGroup(HX+0.1,D/2,1,0);
+  const dz=DOORZ-D/2; slab(right,0.2,(dz-0.55)+D/2,0,(-D/2+dz-0.55)/2); slab(right,0.2,D/2-(dz+0.55),0,(dz+0.55+D/2)/2); slab(right,0.2,1.1,0,dz,2.05,WALLH-2.05);
+  const outside=mesh(plane(1.1,2.05),TM.out,0.25,1.03,dz,right); outside.rotation.y=-Math.PI/2;
+  for(const s of [-1,1]) mesh(box(0.24,2.1,0.06),mat("#8a6a52"),0,1.05,dz+s*0.53,right);
+  const door=new THREE.Group(); door.position.set(-0.04,0,dz-0.5); door.userData.mroot=true; right.add(door);
+  mesh(box(0.06,2.0,1.0),mat("#a0785a"),0,1.0,0.5,door); mesh(box(0.065,0.9,0.6),mat("#cfe8f6",{transparent:true,opacity:0.55}),0,1.35,0.5,door);
+  mesh(ball(0.04,0),mat("#e9c46a"),-0.06,1.0,0.88,door);
+  const plaqueM=new THREE.MeshBasicMaterial({transparent:true}); const plaque=mesh(plane(0.56,0.26),plaqueM,-0.045,1.42,0.5,door); plaque.rotation.y=-Math.PI/2;
+  mesh(box(0.9,0.02,1.2),mat("#7a5a46"),HX-0.5,0.012,DOORZ,decor);
+  const DOOR_IN=new V3(HX-0.85,0,DOORZ), DOOR_OUT=new V3(HX+0.9,0,DOORZ);
+  // 앞 벽 (낮은 벽)
+  const front=wallGroup(0,D+0.1,0,1); slab(front,W+0.4,0.2);
+  // 대기 소파 (사무실 손님 라운지처럼) — 앉은 캐릭터 수 = 대기 인원(최대 4)
+  const SOFA={x:1.0, z:6.75}; const sofa=sofaMesh(4,"#9fb3a4"); sofa.position.set(SOFA.x,0,SOFA.z-0.05); decor.add(sofa);
+  const SEATS=[0,1,2,3].map(i=>new V3(SOFA.x+(i-1.5)*0.72,0,SOFA.z));
+  mesh(cyl(0.32,0.32,0.04,12),mat("#d9b98f"),-2.3,0.5,7.3,decor); mesh(cyl(0.06,0.1,0.48,8),mat("#a8865f"),-2.3,0.25,7.3,decor);
+  for(let k=0;k<3;k++) mesh(box(0.26,0.02,0.34),mat(["#e8a0b4","#7fb8d9","#f0c36a"][k]),-2.3+(k-1)*0.04,0.53+k*0.02,7.3,decor);
+  const QUEUE=new V3(3.4,0,7.3);
+  // 카운터 + 「원장님 추천 홈케어」 진열대 + 관리 팁 입간판
+  mesh(box(1.8,0.95,0.6),mat("#c49a6c"),3.5,0.48,1.7,decor); mesh(box(1.9,0.06,0.7),mat("#8a5a3a"),3.5,0.98,1.7,decor);
+  mesh(box(0.3,0.22,0.24),mat("#3a3f48"),3.1,1.12,1.65,decor); mesh(box(0.22,0.02,0.16),mat("#ffffff"),3.7,1.02,1.7,decor);
+  const shelfG=new THREE.Group(); shelfG.position.set(1.3,0,0.4); shelfG.userData.mroot=true; decor.add(shelfG);
+  for(const s of [-1,1]) mesh(box(0.06,1.8,0.42),mat("#a8865f"),s*0.95,0.9,0,shelfG);
+  mesh(box(1.96,1.8,0.04),mat("#d9b98f"),0,0.9,-0.2,shelfG);
+  [0.12,0.62,1.12,1.62].forEach(y=>mesh(box(1.9,0.05,0.42),mat("#8a5a3a"),0,y,0,shelfG));
+  const prodRoot=new THREE.Group(); prodRoot.userData.mroot=true; shelfG.add(prodRoot);
+  (O.SHELF||[]).slice(0,6).forEach((p,i)=>{
+    const g=new THREE.Group(), col=mat(O.CAT_COLOR[p.category]||"#cccccc"), x=((i%3)-1)*0.6, y=i<3?1.645:1.145;
+    g.position.set(x,y,0.02); g.userData.mroot=true; prodRoot.add(g);
+    if(p.category==="빗·드라이어"){ mesh(box(0.34,0.16,0.14),col,0,0.12,0,g); mesh(box(0.08,0.24,0.1),col,0.08,0.16,0,g); }
+    else { mesh(cyl(0.09,0.1,0.32,10),col,-0.08,0.16,0,g); mesh(cyl(0.035,0.035,0.08,6),mat("#ffffff"),-0.08,0.36,0,g); mesh(box(0.16,0.24,0.12),col,0.12,0.12,0,g); }
+    const tag=mesh(box(0.42,0.05,0.02),mat("#fffdf9"),0,0.01,0.22,g); tag.userData.keep=true;
+    const pk={type:"product", i}; g.traverse(o=>{ o.userData.pick=pk; }); pickables.push(g);
+  });
+  for(let k=0;k<3;k++){ mesh(box(0.5,0.3,0.36),mat("#e9dccb"),(k-1)*0.6,0.3,0,shelfG); }
+  const pkS={type:"shelf"}; shelfG.traverse(o=>{ if(!o.userData.pick) o.userData.pick=pkS; }); pickables.push(shelfG);
+  const easel=new THREE.Group(); easel.position.set(-0.6,0,1.1); easel.rotation.y=0.25; easel.userData.mroot=true; decor.add(easel);
+  for(const s of [-1,1]){ const l=mesh(box(0.05,1.5,0.05),mat("#8a5a3a"),s*0.38,0.72,0,easel); l.rotation.z=s*0.06; }
+  const tipTex=canvasTex(256,320,(x,w,h)=>{ x.fillStyle="#2f4a3e"; x.fillRect(0,0,w,h); x.strokeStyle="#c49a6c"; x.lineWidth=14; x.strokeRect(0,0,w,h);
+    x.fillStyle="#ffffff"; x.font=`800 30px ${FONT}`; x.textAlign="center"; x.fillText("관리 팁",w/2,58);
+    x.font=`600 20px ${FONT}`; (O.TIPS||[]).slice(0,4).forEach((t,i)=>{ x.fillStyle=["#ffd66b","#9be3b0","#8fd3ff","#f3a6c8"][i%4]; x.fillText("· "+t.title, w/2, 112+i*48); });
+    x.fillStyle="#c9d8cf"; x.font=`500 16px ${FONT}`; x.fillText("눌러서 읽기",w/2,h-24); });
+  mesh(box(0.86,1.06,0.04),mat("#8a5a3a"),0,1.0,-0.01,easel);
+  mesh(plane(0.8,1.0),new THREE.MeshBasicMaterial({map:tipTex}),0,1.0,0.015,easel);
+  const pkT={type:"tips"}; easel.traverse(o=>{ o.userData.pick=pkT; }); pickables.push(easel);
+  [[4.45,0.5],[-4.4,7.45],[4.45,7.45],[-1.9,0.5]].forEach(p=>{ const pl=plantMesh(1.1); pl.position.set(p[0],0,p[1]); decor.add(pl); });
+  focusPts.sofa={x:SOFA.x, z:SOFA.z-D/2-0.4, r:8.5, theta:0.12, phi:0.85};
+  focusPts.chairs={x:-3.2, z:3.75-D/2, r:9.5, theta:0.9, phi:0.8};
+  focusPts.shelf={x:1.0, z:0.9-D/2, r:7, theta:-0.05, phi:0.72};
+  // 고정 글씨
+  label("shop", decor, new V3(3.5,1.45,1.7), {text:"햇살 헤어 (가상 매장)", bg:"#e0794f", fg:"#ffffff", size:30, weight:800}, 0.032);
+  label("shelfSign", decor, new V3(1.3,2.0,0.45), {text:"원장님 추천 홈케어 · 예시", bg:"#ffffff", fg:"#2d2a26", line:"#e3d9cb", size:28, weight:800}, 0.03);
+  freeze(decor);
+
+  /* ---- 움직이지 않는 조각은 재질별로 합침 (사무실과 같음) ---- */
+  function mergeGeos(gs,uv){ let n=0; gs.forEach(g=>n+=g.attributes.position.count);
+    const P=new Float32Array(n*3), N=new Float32Array(n*3), U=uv?new Float32Array(n*2):null; let o=0;
+    gs.forEach(g=>{ const a=g.attributes; P.set(a.position.array,o*3); if(a.normal) N.set(a.normal.array,o*3); if(U&&a.uv) U.set(a.uv.array,o*2); o+=a.position.count; });
+    const m=new THREE.BufferGeometry(); m.setAttribute("position",new THREE.BufferAttribute(P,3)); m.setAttribute("normal",new THREE.BufferAttribute(N,3));
+    if(U) m.setAttribute("uv",new THREE.BufferAttribute(U,2)); m.computeBoundingSphere(); m.computeBoundingBox(); return m; }
+  function freeze(top){
+    const roots=new Set([top]); top.traverse(o=>{ if(o.userData.mroot) roots.add(o); }); top.updateMatrixWorld(true);
+    const inv=new THREE.Matrix4(), rel=new THREE.Matrix4();
+    roots.forEach(R=>{ const victims=[];
+      (function walk(o){ for(const c of o.children){ if(roots.has(c)) continue; if(c.isMesh && !c.userData.keep && c.visible) victims.push(c); else if(!c.isSprite) walk(c); } })(R);
+      if(victims.length<2) return; inv.copy(R.matrixWorld).invert(); const buckets=new Map();
+      victims.forEach(m=>{ let b=buckets.get(m.material); if(!b){ b={geos:[], pick:m.userData.pick, same:true}; buckets.set(m.material,b); } if(b.pick!==m.userData.pick) b.same=false;
+        const g=m.geometry.index?m.geometry.toNonIndexed():m.geometry.clone(); g.applyMatrix4(rel.multiplyMatrices(inv,m.matrixWorld)); b.geos.push(g); m.parent.remove(m); });
+      buckets.forEach((b,mt)=>{ const g=mergeGeos(b.geos,!!mt.map); b.geos.forEach(x=>x.dispose()); const mm=new THREE.Mesh(g,mt); if(b.same&&b.pick) mm.userData.pick=b.pick; R.add(mm); });
+    });
+  }
+
+  /* ---- 디자이너 3명 (상태 불빛 = 사무실 책상등처럼) ---- */
+  const dyn=new THREE.Group(); world.add(dyn);
+  const DES_ANIMALS=["rabbit","fox","bear"];
+  const designers=CHAIR.map((c,i)=>{ const g=charMesh(DES_ANIMALS[i],"designer"); dyn.add(g); dyn.add(g.userData.shadow);
+    const busy={x:c.x+0.2, z:c.z+0.72, r:Math.atan2(-0.2,-0.72)}, free={x:c.x+1.05, z:c.z+0.55, r:0.35};
+    g.position.set(free.x,STAND_H,free.z); g.rotation.y=free.r;
+    return {g, ud:g.userData, busy, free, st:"free", ph:i*1.7, anchor:new V3()}; });
+
+  /* ---- 손님 캐릭터 (문으로 들어오고 나감) ---- */
+  let actors=[], chairOcc=[null,null,null], sofaOcc=[], seedN=0, swapPtr=0;
+  function newActor(at){
+    const key=GUEST_ANIMALS[(seedN++*4+1)%GUEST_ANIMALS.length];
+    const g=charMesh(key,"guest"); dyn.add(g); dyn.add(g.userData.shadow);
+    const a={g, ud:g.userData, path:[], seat:null, sitT:0, leaving:false, ph:Math.random()*6.28, walk:0, loc:at};
+    const p=at==="door"?DOOR_OUT:at==="queue"?QUEUE:DOOR_IN; g.position.set(p.x,STAND_H,p.z);
+    actors.push(a); return a;
+  }
+  function seatOf(kind,i){ if(kind==="chair"){ const c=CHAIR[i]; return {kind, i, p:new V3(c.x,0,c.z), r:-Math.PI/2, h:0.6}; } return {kind, i, p:SEATS[i].clone(), r:0, h:0.5}; }
+  const FRONT=z=>z+0.62;
+  // 지나갈 길 (소파 등받이·의자를 피해서 돌아감)
+  function exitPts(a){ const s=a.seat; if(!s) return a.loc==="door"?[DOOR_IN.clone()]:[]; if(s.kind==="sofa") return [new V3(s.p.x,0,FRONT(SOFA.z))]; return [new V3(s.p.x+1.1,0,s.p.z)]; }
+  function route(a, to){
+    const from=a.seat?a.seat.kind:a.loc, pts=exitPts(a);
+    if(to.kind==="chair"){ if(from==="sofa") pts.push(new V3(-1.1,0,FRONT(SOFA.z)), new V3(-1.1,0,6.0)); if(from==="queue") pts.push(new V3(3.4,0,5.9));
+      pts.push(new V3(to.p.x+1.1,0,to.p.z), to.p.clone()); }
+    else if(to.kind==="sofa"){ if(from==="chair") pts.push(new V3(-1.1,0,6.0), new V3(-1.1,0,FRONT(SOFA.z))); if(from==="door") pts.push(new V3(3.1,0,FRONT(SOFA.z)));
+      pts.push(new V3(to.p.x,0,FRONT(SOFA.z)), to.p.clone()); }
+    else { if(from==="sofa") pts.push(new V3(3.1,0,FRONT(SOFA.z))); pts.push(DOOR_IN.clone(), DOOR_OUT.clone()); }
+    a.path=pts; a.seat = to.kind==="door" ? null : to; a.leaving = to.kind==="door"; a.loc = to.kind==="door" ? "door" : to.kind;
+  }
+  function sendTo(a, kind, i){ if(a.seat && a.seat.kind===kind && a.seat.i===i) return; route(a, kind==="door"?{kind:"door"}:seatOf(kind,i)); }
+  function placeNow(a, kind, i){ const s=seatOf(kind,i); a.seat=s; a.loc=kind; a.path=[]; a.sitT=1; a.g.position.set(s.p.x, s.h+0.04, s.p.z); a.g.rotation.y=s.r; }
+  let prev=null;
+  function sync(d, instant){
+    const busy=d.designers.map(x=>x.state==="busy"), W=d.waiting, target=Math.min(W,4);
+    if(instant || !prev){
+      actors.forEach(a=>{ dyn.remove(a.g); dyn.remove(a.ud.shadow); }); actors=[]; chairOcc=[null,null,null]; sofaOcc=[];
+      busy.forEach((b,i)=>{ if(b){ const a=newActor("in"); placeNow(a,"chair",i); chairOcc[i]=a; } });
+      for(let i=0;i<target;i++){ const a=newActor("in"); placeNow(a,"sofa",i); sofaOcc.push(a); }
+      prev={W, busy}; return;
+    }
+    const dW=W-prev.W;
+    let fromWait = dW<0 ? -dW : 0; const seated=new Set();
+    busy.forEach((b,i)=>{ if(!b && chairOcc[i]){ sendTo(chairOcc[i],"door"); chairOcc[i]=null; } });   // 끝난 손님은 문으로
+    const take=()=>sofaOcc.shift() || newActor("queue");
+    busy.forEach((b,i)=>{ if(b && !chairOcc[i] && fromWait>0){ fromWait--; const a=take(); sendTo(a,"chair",i); chairOcc[i]=a; seated.add(i); } });
+    for(let k=0;k<3 && fromWait>0;k++){ const i=(swapPtr+k)%3;            // 한 분 끝 → 대기 손님이 그 의자로
+      if(busy[i] && chairOcc[i] && !seated.has(i)){ sendTo(chairOcc[i],"door"); const a=take(); sendTo(a,"chair",i); chairOcc[i]=a; seated.add(i); fromWait--; swapPtr=i+1; } }
+    busy.forEach((b,i)=>{ if(b && !chairOcc[i]){ const a=newActor("door"); sendTo(a,"chair",i); chairOcc[i]=a; } });   // 바로 앉는 새 손님
+    while(sofaOcc.length>target) sendTo(sofaOcc.pop(),"door");
+    while(sofaOcc.length<target) sofaOcc.push(newActor(dW>0?"door":"queue"));
+    sofaOcc.forEach((a,i)=>sendTo(a,"sofa",i));
+    prev={W, busy};
+  }
+
+  /* ---- 숫자·상태 → 글씨·불빛·조명 ---- */
+  const PLAQUE={open:["영업 중","#2f9e5b"], away:["잠시 자리 비움","#d99a12"], closed:["마감","#c94a3c"], holiday:["휴무","#c94a3c"]};
+  let plaqueKey="";
+  function updateSigns(d){
+    if(curStatus!==d.status){ curStatus=d.status; applyTheme(); }
+    if(plaqueKey!==d.status){ plaqueKey=d.status; if(plaqueM.map) plaqueM.map.dispose();
+      plaqueM.map=canvasTex(224,104,(x,w,h)=>{ const [t,c]=PLAQUE[d.status]; rr(x,4,4,w-8,h-8,16); x.fillStyle=c; x.fill(); x.fillStyle="#fff"; x.font=`900 ${t.length>4?30:44}px ${FONT}`; x.textAlign="center"; x.textBaseline="middle"; x.fillText(t,w/2,h/2+2); });
+      plaqueM.needsUpdate=true; }
+    const [pt,pc]=PLAQUE[d.status];
+    label("door", dyn, new V3(HX-0.35,2.25,DOORZ), {text:pt, bg:pc, fg:"#ffffff", size:30, weight:800, dot:"#ffffff"}, 0.032);
+    const w=d.waiting;
+    label("wait", dyn, new V3(SOFA.x,1.55,SOFA.z-0.3), {text: w ? `대기 ${w}명` : "대기 없음", bg: w?"#e0794f":TH.label, fg: w?"#ffffff":TH.labelInk, line: w?null:TH.labelLine, size:34, weight:900}, 0.04);
+    const more=label("more", dyn, new V3(SOFA.x+1.9,1.15,SOFA.z+0.2), {text:`+${Math.max(0,w-4)}명 더`, bg:"#ffffff", fg:"#e0794f", line:"#e0794f", size:30, weight:900}, 0.036);
+    more.visible = w>4;
+    d.designers.forEach((x,i)=>{ const b=x.state==="busy";
+      designers[i].st=x.state; lamps[i].material=basic(b?"#f0b63a":"#35c46d");
+      const sp=label("des"+i, designers[i].g, new V3(0, designers[i].ud.top+0.12, 0), {text:`${x.name} · ${b?"시술 중":"비어 있음"}`, bg:TH.label, fg:TH.labelInk, line:TH.labelLine, dot:b?"#f0b63a":"#35c46d", size:26, maxW:300}, 0.028);
+      sp.material.depthTest=false; });
+  }
+
+  /* ---- 카메라 (사무실과 같은 조작: 한 손가락 돌리기, 두 손가락 확대) ---- */
+  const cam={theta:0.16, phi:0.72, r:20, tx:0, tz:0}; let goal=null;
+  let spin=true; try{ spin=localStorage.getItem("salon3d-spin")!=="off"; }catch(e){}
+  const spinBtn=document.getElementById("o3dSpin");
+  function setSpin(v){ spin=!!v; spinBtn.setAttribute("aria-pressed",spin?"true":"false"); spinBtn.textContent=spin?"회전 끄기":"회전 켜기"; try{ localStorage.setItem("salon3d-spin",spin?"on":"off"); }catch(e){} }
+  setSpin(spin);
+  function placeCam(){ const sp=Math.sin(cam.phi); camera.position.set(cam.tx+cam.r*sp*Math.sin(cam.theta), 0.6+cam.r*Math.cos(cam.phi), cam.tz+cam.r*sp*Math.cos(cam.theta)); camera.lookAt(cam.tx,0.6,cam.tz); }
+  function fitR(o){ const save={...cam}, pts=[]; for(const x of [-1,1]) for(const z of [-1,1]) for(const y of [0,WALLH]) pts.push(new V3(x*W/2,y,z*D/2));
+    const ok=r=>{ Object.assign(cam,o,{r}); placeCam(); camera.updateMatrixWorld(); return pts.every(p=>{ const v=p.clone().project(camera); return Math.abs(v.x)<1.04 && v.y<0.86 && v.y>-0.8; }); };
+    let lo=4, hi=120; for(let i=0;i<22;i++){ const m=(lo+hi)/2; if(ok(m)) hi=m; else lo=m; } Object.assign(cam,save); placeCam(); return hi; }
+  let ovCache=null;
+  function overview(){ const key=(camera.aspect||1).toFixed(3); if(ovCache&&ovCache.key===key) return Object.assign({},ovCache.o);
+    let best=null; for(let tz=-D*0.3; tz<=D*0.3; tz+=D*0.05){ const o={tx:0,tz,theta:0.16,phi:0.72}; o.r=fitR(o); if(!best||o.r<best.r) best=o; }
+    ovCache={key,o:best}; return Object.assign({},best); }
+  function rLimits(){ return [4, overview().r*1.4]; }
+  function focus(name){ goal = focusPts[name] ? Object.assign({},focusPts[name]) : overview(); if(focusPts[name]) setSpin(false); }
+  S.focus=focus; S.setSpin=setSpin; S.cam=cam;
+  document.getElementById("o3dAll").onclick=()=>focus("all");
+  document.getElementById("o3dSofa").onclick=()=>focus("sofa");
+  document.getElementById("o3dChairs").onclick=()=>focus("chairs");
+  document.getElementById("o3dShelf").onclick=()=>focus("shelf");
+  spinBtn.onclick=()=>setSpin(!spin);
+  let lastTouch=-1e9;
+  const el=renderer.domElement, ptrs=new Map(); let downAt=null, moved=0, pinch=null;
+  el.addEventListener("pointerdown",e=>{ el.setPointerCapture&&el.setPointerCapture(e.pointerId); ptrs.set(e.pointerId,{x:e.clientX,y:e.clientY}); goal=null; lastTouch=performance.now();
+    if(ptrs.size===1){ downAt={x:e.clientX,y:e.clientY}; moved=0; } else { downAt=null; pinch=null; } });
+  el.addEventListener("pointermove",e=>{ const p=ptrs.get(e.pointerId); if(!p) return; lastTouch=performance.now();
+    const dx=e.clientX-p.x, dy=e.clientY-p.y; p.x=e.clientX; p.y=e.clientY; moved+=Math.abs(dx)+Math.abs(dy);
+    if(ptrs.size===1){ cam.theta-=dx*0.009; cam.phi=Math.max(0.3,Math.min(1.2,cam.phi-dy*0.006)); }
+    else if(ptrs.size===2){ const [a,b]=[...ptrs.values()]; const dist=Math.hypot(a.x-b.x,a.y-b.y), mx=(a.x+b.x)/2, my=(a.y+b.y)/2;
+      if(pinch){ const [lo,hi]=rLimits(); cam.r=Math.max(lo,Math.min(hi,cam.r*pinch.d/Math.max(dist,1)));
+        const k=cam.r/el.clientHeight*0.7, pdx=mx-pinch.x, pdy=my-pinch.y, c=Math.cos(cam.theta), s=Math.sin(cam.theta);
+        cam.tx-=(pdx*c+pdy*s)*k; cam.tz-=(-pdx*s+pdy*c)*k; clampT(); }
+      pinch={d:dist,x:mx,y:my}; } });
+  function endPtr(e){ const wasTap=ptrs.size===1&&downAt&&moved<8; ptrs.delete(e.pointerId); pinch=null; if(wasTap&&e.type==="pointerup") tap(e.clientX,e.clientY); if(!ptrs.size) downAt=null; }
+  el.addEventListener("pointerup",endPtr); el.addEventListener("pointercancel",endPtr);
+  el.addEventListener("wheel",e=>{ e.preventDefault(); goal=null; lastTouch=performance.now(); const [lo,hi]=rLimits(); cam.r=Math.max(lo,Math.min(hi,cam.r*Math.exp(e.deltaY*0.0012))); },{passive:false});
+  function clampT(){ cam.tx=Math.max(-W/2,Math.min(W/2,cam.tx)); cam.tz=Math.max(-D/2,Math.min(D/2,cam.tz)); }
+  const ray=new THREE.Raycaster(), ndc=new THREE.Vector2();
+  function tap(cx,cy){ const r=el.getBoundingClientRect(); ndc.set((cx-r.left)/r.width*2-1, -(cy-r.top)/r.height*2+1); ray.setFromCamera(ndc,camera);
+    const hits=ray.intersectObjects(pickables,true).filter(h=>h.object.userData.pick && !h.object.isSprite), h=hits.find(x=>x.object.userData.pick.type==="product")||hits[0]; if(!h) return;
+    const p=h.object.userData.pick; if(p.type==="product") O.openShelf(p.i); else if(p.type==="shelf") O.openShelf(); else if(p.type==="tips") O.openTips(); }
+  S.tap=tap;
+  S.hitTypes=(cx,cy)=>{ const r=el.getBoundingClientRect(); ndc.set((cx-r.left)/r.width*2-1, -(cy-r.top)/r.height*2+1); ray.setFromCamera(ndc,camera); return ray.intersectObjects(pickables,true).map(h=>(h.object.userData.pick||{}).type+(h.object.userData.pick&&h.object.userData.pick.i!=null?h.object.userData.pick.i:"")+"@"+h.distance.toFixed(2)); };
+  S.screenOf=function(kind){ const g = kind==="tips"?easel : kind==="shelf"?prodRoot.children[0] : null; if(!g) return null; const v=new V3(); g.getWorldPosition(v); v.y+=kind==="tips"?1.0:0.15; v.project(camera); const r=el.getBoundingClientRect(); return {x:r.left+(v.x+1)/2*r.width, y:r.top+(1-v.y)/2*r.height}; };
+
+  /* ---- 움직임 ---- */
+  const L=(a,b,k)=>a+(b-a)*k, SPEED=2.4;
+  function pose(u, sitT, walk, t, ph){
+    const sw=Math.sin(walk)*0.55*(1-sitT);
+    u.legs[0].hip.rotation.x=-Math.PI/2*sitT+sw; u.legs[1].hip.rotation.x=-Math.PI/2*sitT-sw;
+    u.legs[0].knee.rotation.x=u.legs[1].knee.rotation.x=Math.PI/2*sitT;
+    u.eyes.scale.y=((t+ph)%4<0.12)?0.15:1;
+  }
+  function animate(dt,t){
+    let doorNear=false;
+    actors=actors.filter(a=>{
+      const g=a.g, u=a.ud;
+      if(a.path.length){
+        if(a.sitT>0){ a.sitT=Math.max(0,a.sitT-dt*3.5); }               // 먼저 일어남
+        else { const tgt=a.path[0], dx=tgt.x-g.position.x, dz=tgt.z-g.position.z, dist=Math.hypot(dx,dz), step=SPEED*dt;
+          if(dist<=step){ g.position.x=tgt.x; g.position.z=tgt.z; a.path.shift(); }
+          else { g.position.x+=dx/dist*step; g.position.z+=dz/dist*step; const want=Math.atan2(dx,dz); let dr=((want-g.rotation.y+Math.PI)%(2*Math.PI)+2*Math.PI)%(2*Math.PI)-Math.PI; g.rotation.y+=dr*Math.min(1,dt*10); }
+          a.walk+=dt*11; }
+      } else if(a.leaving){ dyn.remove(g); dyn.remove(u.shadow); return false; }
+      else if(a.seat){ a.sitT=Math.min(1,a.sitT+dt*3); let dr=((a.seat.r-g.rotation.y+Math.PI)%(2*Math.PI)+2*Math.PI)%(2*Math.PI)-Math.PI; g.rotation.y+=dr*Math.min(1,dt*8); }
+      const sh=a.seat?a.seat.h+0.04:0.5;
+      g.position.y=L(STAND_H,sh,a.sitT)+(a.path.length&&a.sitT===0?Math.abs(Math.sin(a.walk))*0.05:0);
+      pose(u,a.sitT,a.walk,t,a.ph);
+      const inChair=a.seat&&a.seat.kind==="chair"&&!a.path.length;
+      if(u.cape) u.cape.visible=inChair&&a.sitT>0.9;
+      const arm=a.path.length&&a.sitT===0?Math.sin(a.walk)*0.5:(a.sitT>0.5?-0.55:0);
+      u.armL.rotation.x=L(u.armL.rotation.x,arm,0.4); u.armR.rotation.x=L(u.armR.rotation.x,a.path.length?-arm:arm,0.4);
+      u.head.rotation.y = (!a.path.length && a.seat && a.seat.kind==="sofa") ? Math.sin(t*0.6+a.ph)*0.35 : 0;
+      u.shadow.position.set(g.position.x,0.012,g.position.z);
+      if(Math.hypot(g.position.x-(HX-0.1),g.position.z-DOORZ)<1.6) doorNear=true;
+      return true;
+    });
+    door.rotation.y=L(door.rotation.y, doorNear?-1.25:0, Math.min(1,dt*6));
+    designers.forEach(ds=>{ const g=ds.g, u=ds.ud, sp=ds.st==="busy"?ds.busy:ds.free, k=Math.min(1,dt*3);
+      const moving=Math.hypot(sp.x-g.position.x,sp.z-g.position.z)>0.05;
+      g.position.x=L(g.position.x,sp.x,k); g.position.z=L(g.position.z,sp.z,k); g.position.y=STAND_H+(moving?Math.abs(Math.sin(t*11))*0.04:0);
+      let dr=((sp.r-g.rotation.y+Math.PI)%(2*Math.PI)+2*Math.PI)%(2*Math.PI)-Math.PI; g.rotation.y+=dr*k;
+      pose(u,0,moving?t*11:0,t,ds.ph);
+      if(ds.st==="busy"){ u.armR.rotation.x=-1.25+Math.sin(t*9+ds.ph)*0.12; u.armL.rotation.x=-0.9; u.scissors.rotation.z=Math.sin(t*18+ds.ph)*0.25; u.head.rotation.x=0.2; }
+      else { u.armR.rotation.x=L(u.armR.rotation.x,0,0.2); u.armL.rotation.x=L(u.armL.rotation.x,0,0.2); u.head.rotation.x=0; u.body.rotation.z=Math.sin(t*1.2+ds.ph)*0.05; }
+      u.shadow.position.set(g.position.x,0.012,g.position.z); });
+    lamps.forEach((lp,i)=>{ lp.scale.setScalar(designers[i].st==="busy"?1+0.25*Math.sin(t*5+i):1); });
+    const f=Math.max(0.75,Math.min(1.1,16/cam.r)); allSprites.forEach(sp=>sp.scale.copy(sp.userData.base).multiplyScalar(f));
+    walls.forEach(w=>{ w.g.visible=new V3().subVectors(camera.position,w.p).dot(w.n)<0.5; });
+  }
+  function camStep(dt){
+    if(goal){ const k=Math.min(1,dt*3.2); let dth=((goal.theta-cam.theta+Math.PI)%(2*Math.PI)+2*Math.PI)%(2*Math.PI)-Math.PI;
+      cam.theta+=dth*k; cam.phi=L(cam.phi,goal.phi,k); cam.r=L(cam.r,goal.r,k); cam.tx=L(cam.tx,goal.x??goal.tx,k); cam.tz=L(cam.tz,goal.z??goal.tz,k);
+      if(Math.abs(cam.r-goal.r)<0.05&&Math.abs(dth)<0.003) goal=null; }
+    else if(spin && performance.now()-lastTouch>4000) cam.theta+=dt*0.08;          // 자동으로 천천히 회전
+    placeCam();
+  }
+
+  /* ---- 크기·반복 (30fps, 탭 숨김/화면 밖이면 멈춤) ---- */
+  function resize(){ const w=stage.clientWidth||360, h=stage.clientHeight||400; renderer.setSize(w,h,false); camera.aspect=w/h; camera.updateProjectionMatrix(); }
+  const ro=window.ResizeObserver?new ResizeObserver(()=>{ const was=ovCache; resize(); if(lastTouch<0 && !goal && was && was.key!==(camera.aspect||1).toFixed(3)){ const o=overview(); cam.r=o.r; cam.tx=o.tx; cam.tz=o.tz; } }):null;
+  if(ro) ro.observe(stage); else window.addEventListener("resize",resize);
+  let raf=0, last=0, onScreen=true, frames=0, fpsT=0;
+  function frame(now){ raf=requestAnimationFrame(frame); if(now-last<1000/30-2) return;
+    const dt=Math.min(0.1,(now-last)/1000||0.033); last=now; camStep(dt); animate(dt,now/1000); renderer.render(scene,camera);
+    frames++; if(now-fpsT>1000){ S.fps=frames; frames=0; fpsT=now; } }
+  function run(){ if(!raf && !document.hidden && onScreen){ last=performance.now(); raf=requestAnimationFrame(frame); } }
+  function pause(){ if(raf){ cancelAnimationFrame(raf); raf=0; } }
+  S.running=()=>!!raf;
+  document.addEventListener("visibilitychange",()=>{ document.hidden?pause():run(); });
+  if(window.IntersectionObserver) new IntersectionObserver(es=>{ onScreen=es[0].isIntersecting; onScreen?run():pause(); }).observe(stage);
+  stopAll=()=>{ pause(); try{ ro&&ro.disconnect(); }catch(e){} try{ renderer.dispose(); }catch(e){} if(renderer.domElement.parentNode) renderer.domElement.remove(); };
+
+  /* ---- 데이터 바뀌면 반영 (같은 내용이면 그대로) ---- */
+  let sig="";
+  function refresh(){ const d=O.data(), s=JSON.stringify([isDark(),d.waiting,d.status,d.designers]); if(s===sig) return; const first=!sig; sig=s; updateSigns(d); sync(d, first); }
+  window.__salon3d=refresh;
+  function themeChanged(){ applyTheme(); sig=""; const d=O.data(); updateSigns(d); sig=JSON.stringify([isDark(),d.waiting,d.status,d.designers]); }
+  if(mq&&mq.addEventListener) mq.addEventListener("change",themeChanged);
+  new MutationObserver(themeChanged).observe(root,{attributes:true, attributeFilter:["data-theme"]});
+
+  applyTheme(); resize(); { const o=overview(); cam.r=o.r; cam.tx=o.tx; cam.tz=o.tz; }
+  refresh(); placeCam(); renderer.render(scene,camera);
+  msg.remove();
+  S.mode="3d"; S.three=THREE.REVISION; S.lowEnd=lowEnd;
+  S.counts=()=>({actors:actors.length, walking:actors.filter(a=>a.path.length).length, sofa:sofaOcc.length, chairs:chairOcc.filter(Boolean).length, more:labels.more?labels.more.s.visible:false, door:+door.rotation.y.toFixed(2), light:+hemi.intensity.toFixed(2)});
+  S.info=()=>({calls:renderer.info.render.calls, tris:renderer.info.render.triangles, pr:renderer.getPixelRatio(), shadows:renderer.shadowMap.enabled, fps:S.fps});
+  run();
+}
+</script>
+</body>
+</html>

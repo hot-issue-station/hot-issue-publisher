@@ -13,7 +13,7 @@
 - 배경음악 없음(무음 트랙만). 폰트: 시스템 Noto Sans CJK KR.
 필요한 것: python3, playwright(chromium), Pillow, ffmpeg
 """
-import argparse, datetime as dt, functools, http.server, json, os, shutil, socketserver, subprocess, sys, threading, time
+import argparse, datetime as dt, functools, re, http.server, json, os, shutil, socketserver, subprocess, sys, threading, time
 from zoneinfo import ZoneInfo
 from PIL import Image, ImageDraw, ImageFont
 
@@ -304,6 +304,7 @@ def ff(args):
     if r.returncode: sys.exit("ffmpeg 오류:\n" + r.stderr[-1500:])
 
 ENC = ["-c:v", "libx264", "-preset", "medium", "-crf", "20", "-pix_fmt", "yuv420p", "-r", str(FPS), "-an"]
+ENC_FAST = ["-c:v", "libx264", "-preset", "veryfast", "-crf", "18", "-pix_fmt", "yuv420p", "-r", str(FPS), "-an"]   # 공장 재료(중간 파일)
 
 def seg_clip(raw, bg, start, dur, out, speed=1.0):
     vf = (f"[1:v]setpts=(PTS-STARTPTS)/{speed:.3f},scale={SW}:{SH}:flags=lanczos,setsar=1,fps={FPS}[s];"
@@ -384,8 +385,13 @@ def factory_clips(howto, chapters, dst):
         c = by[k]; name = chr(65 + i); t_song = i * CLIP_SEC
         o = c["start"] + max(0.0, (c["dur"] - CLIP_SEC) * 0.5)          # 그 기능 장면의 가운데 2.5초
         s0 = max(0.0, o - t_song); f = os.path.join(dst, f"clip_{name}_{k}.mp4")
-        ff(["-ss", f"{s0:.2f}", "-i", howto, "-t", f"{body + 0.5:.2f}", "-vf", f"tpad=stop_mode=clone:stop_duration={body:.2f}",
-            "-t", f"{body + 0.5:.2f}", *ENC, f])
+        # 사용법 영상의 번호 붙은 자막(예: "3. 새 손님 등록")을 번호 없는 자막으로 덮는다(홍보 영상에선 번호가 어색함)
+        title = re.sub(r"^\d+\.\s*", "", c["title"]); sub = next((st[2] for st in STEPS if st[0] == k), "")
+        band = os.path.join(dst, f"_band_{name}.png"); frame_png(band, title, sub, foot=None)
+        Image.open(band).crop((0, 0, W, SY - 10)).save(band)
+        ff(["-ss", f"{s0:.2f}", "-i", howto, "-i", band, "-filter_complex",
+            f"[0:v][1:v]overlay=0:0,tpad=stop_mode=clone:stop_duration={body:.2f}[v]", "-map", "[v]",
+            "-t", f"{body + 0.5:.2f}", *ENC_FAST, f]); os.remove(band)
         clips[name] = [os.path.join(os.path.basename(dst), os.path.basename(f)), 0.0]; plan.append([name, "cut", int(CLIP_SEC * BPM / 60)]); labels.append(c["title"])
     fill = {"_설명": "수요일 「기능 30초 소개」 빈칸 — make_video.py --factory-clips 가 사용법 영상에서 잘라 만든 것(앱 실제 화면, 시험용 가짜 손님)",
             "이름": "salon_기능소개_샘플", "곡": "기능 한눈에", "숫자": len(keys),
