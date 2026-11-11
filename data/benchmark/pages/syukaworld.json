@@ -1,26 +1,42 @@
 {
  "name": "슈카월드",
  "channel": "https://www.youtube.com/@syukaworld",
- "checkedAt": "2026-11-11T08:26+09:00",
+ "checkedAt": "2026-11-11T14:53+09:00",
  "subscribers": "374만",
  "videos": [
   {
+   "id": "5mSF8npmm9A",
+   "title": "이거 진짜에요?",
+   "views": 7600,
+   "viewsText": "조회수 7.6천회",
+   "published": "",
+   "kind": "short"
+  },
+  {
+   "id": "5LEMniVcweU",
+   "title": "걱정 노노",
+   "views": 3800,
+   "viewsText": "조회수 3.8천회",
+   "published": "",
+   "kind": "short"
+  },
+  {
    "id": "xmLFwy-UdNU",
    "title": "노안의 라식",
-   "views": 170000,
-   "viewsText": "조회수 17만회",
+   "views": 190000,
+   "viewsText": "조회수 19만회",
    "published": "",
    "kind": "short",
-   "gain": 60000
+   "gain": 20000
   },
   {
    "id": "xVKY3CWUoSE",
    "title": "딸깍으로 떠먹여주는 서비스",
-   "views": 43000,
-   "viewsText": "조회수 4.3만회",
+   "views": 47000,
+   "viewsText": "조회수 4.7만회",
    "published": "",
    "kind": "short",
-   "gain": 13000
+   "gain": 4000
   },
   {
    "id": "lioIrGMoIbs",
@@ -29,7 +45,7 @@
    "viewsText": "조회수 8.6만회",
    "published": "",
    "kind": "short",
-   "gain": 2000
+   "gain": 0
   },
   {
    "id": "D32h_sPWp0g",
@@ -38,7 +54,7 @@
    "viewsText": "조회수 12만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "QvMjNxpMmPo",
@@ -47,7 +63,7 @@
    "viewsText": "조회수 21만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "prQUpQh_gko",
@@ -74,7 +90,7 @@
    "viewsText": "조회수 45만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "zOt7Z_v8AXE",
@@ -342,24 +358,6 @@
    "title": "시드 머니를 모으는 가장 좋은 방법",
    "views": 790000,
    "viewsText": "조회수 79만회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "B_K4lAgcTmM",
-   "title": "하늘을 나는 잉어",
-   "views": 300000,
-   "viewsText": "조회수 30만회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "JwWBJJbV7VU",
-   "title": "부모님도 속으실 듯",
-   "views": 290000,
-   "viewsText": "조회수 29만회",
    "published": "",
    "kind": "short",
    "gain": 0

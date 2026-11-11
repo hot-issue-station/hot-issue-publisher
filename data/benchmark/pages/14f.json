@@ -1,23 +1,31 @@
 {
  "name": "14F 일사에프 (MBC)",
  "channel": "https://www.youtube.com/@14FMBC",
- "checkedAt": "2026-11-11T08:26+09:00",
+ "checkedAt": "2026-11-11T14:53+09:00",
  "subscribers": "239만",
  "videos": [
   {
+   "id": "yJ40uku5fg0",
+   "title": "대기업이 프랜차이즈를 안 하는 이유 #shorts",
+   "views": 2400,
+   "viewsText": "조회수 2.4천회",
+   "published": "",
+   "kind": "short"
+  },
+  {
    "id": "OTeGIZUhKjo",
    "title": "이게 진짜 라면이라고? 구미 라면 축제 이색 라면 모음 #shorts",
-   "views": 6500,
-   "viewsText": "조회수 6.5천회",
+   "views": 6700,
+   "viewsText": "조회수 6.7천회",
    "published": "",
    "kind": "short",
-   "gain": 600
+   "gain": 200
   },
   {
    "id": "eJAtWi5dWco",
    "title": "3시간 웨이팅해서 사는 라면 백팩 ㄷㄷ #shorts",
-   "views": 26000,
-   "viewsText": "조회수 2.6만회",
+   "views": 27000,
+   "viewsText": "조회수 2.7만회",
    "published": "",
    "kind": "short",
    "gain": 1000
@@ -25,8 +33,8 @@
   {
    "id": "raKKyS-VS5k",
    "title": "샤인머스캣 가격 폭락 막기 힘든 이유 #shorts",
-   "views": 7200,
-   "viewsText": "조회수 7.2천회",
+   "views": 7300,
+   "viewsText": "조회수 7.3천회",
    "published": "",
    "kind": "short",
    "gain": 100
@@ -47,7 +55,7 @@
    "viewsText": "조회수 14만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "G63QFaqloJQ",
@@ -124,11 +132,11 @@
   {
    "id": "W-siQWRZ2RM",
    "title": "디카페인이 맛 없었던 이유 #shorts",
-   "views": 64000,
-   "viewsText": "조회수 6.4만회",
+   "views": 65000,
+   "viewsText": "조회수 6.5만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 1000
   },
   {
    "id": "Z0urIy4GzKA",
@@ -351,15 +359,6 @@
    "title": "조선시대 박보검 #shorts",
    "views": 25000,
    "viewsText": "조회수 2.5만회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "gVaaDLHgCo8",
-   "title": "2026 국중박 분장대회 대상🎉 #shorts",
-   "views": 59000,
-   "viewsText": "조회수 5.9만회",
    "published": "",
    "kind": "short",
    "gain": 0

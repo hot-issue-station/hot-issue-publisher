@@ -1,14 +1,14 @@
 {
  "name": "안원잘부",
  "channel": "https://www.youtube.com/@helloiamwoninicetomeetyou",
- "checkedAt": "2026-11-11T08:26+09:00",
+ "checkedAt": "2026-11-11T14:53+09:00",
  "subscribers": "243만",
  "videos": [
   {
    "id": "kfK-LENbEUo",
    "title": "정작가의 컴백을 축하합니다",
-   "views": 1600000,
-   "viewsText": "조회수 160만회",
+   "views": 1610000,
+   "viewsText": "조회수 161만회",
    "published": "",
    "kind": "short",
    "gain": 10000
@@ -20,7 +20,7 @@
    "viewsText": "조회수 266만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "zxNoW_LtVLE",
@@ -47,7 +47,7 @@
    "viewsText": "조회수 617만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "GsYq_ouLAMQ",
@@ -101,7 +101,7 @@
    "viewsText": "조회수 1353만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "gNJrbCSN2TM",
@@ -263,7 +263,7 @@
    "viewsText": "조회수 754만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "6cPEEeEAKiM",
