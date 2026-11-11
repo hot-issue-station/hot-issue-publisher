@@ -61,6 +61,10 @@ details summary{cursor:pointer;color:var(--muted);font-size:14px}
 .lenfree{display:flex;align-items:center;gap:8px;margin-top:10px;font-size:15px}
 .lenfree input{width:110px;border:2px solid var(--line);border-radius:12px;background:var(--panel);color:var(--fg);font:inherit;padding:8px 10px}
 .lenfree input:focus{outline:3px solid var(--accent);outline-offset:2px}
+.topic{background:var(--panel);border:2px solid var(--line);border-radius:14px;padding:12px;text-align:left;font:inherit;color:inherit;cursor:pointer;display:flex;flex-direction:column;gap:3px}
+.topic[aria-pressed="true"]{border-color:var(--accent);background:var(--sel)}
+.topic b{font-size:16px}.topic span{font-size:13px;color:var(--muted)}
+.topic .tag{font-size:12px;font-weight:700;color:var(--accent)}
 .turn{display:block;background:var(--warn);color:var(--bg);border-radius:14px;padding:13px 14px;font-weight:900;font-size:16px;text-decoration:none}
 .turn small{display:block;font-weight:400;font-size:13px;opacity:.95}
 ol.flow{margin:6px 0 0;padding-left:20px;font-size:13px;color:var(--muted)}
@@ -75,6 +79,11 @@ ol.flow{margin:6px 0 0;padding-left:20px;font-size:13px;color:var(--muted)}
       <ol class="flow"><li>형식 선택</li><li>컨셉 정하기</li><li>길이 정하기</li><li>시나리오</li><li>영상 수·편집 방법 설계</li><li>내레이션 입힌 첫 영상</li><li>1차 검토(오류 잡기)</li><li>대표 컨펌</li><li>완성 제작 + 언어(자막·더빙) 선택</li><li>최종 검토(싱크·이상한 곳)</li><li>SNS별 맞춤 업로드</li></ol>
     </details>
   </header>
+
+  <section>
+    <h2>0. 오늘의 소재 <small>(리서치팀이 찾은 후보 · 누르면 아래에서 만들 방법을 골라요)</small></h2>
+    <div id="topics" style="display:flex;flex-direction:column;gap:8px"><p class="empty">오늘 올라온 소재 후보가 아직 없어요. 후보가 올라오면 여기에 뜹니다. 소재 없이 아래에서 바로 주문해도 돼요.</p></div>
+  </section>
 
   <section><h2>1. 형식</h2><div class="grid" id="fmt"></div></section>
 
@@ -105,7 +114,7 @@ ol.flow{margin:6px 0 0;padding-left:20px;font-size:13px;color:var(--muted)}
     <div id="list" style="display:flex;flex-direction:column;gap:12px"><p class="empty">아직 주문이 없어요. 위에서 골라 첫 주문을 넣으면 여기에 11단계 진행 막대가 생깁니다.</p></div>
   </section>
 
-  <nav class="links" aria-label="바로가기"><a href="https://claude.ai/artifact/GGSaGw8q8Lc3bcDifkaFrK" target="_blank" rel="noopener">덕심저장소 갤러리</a><a href="https://claude.ai/artifact/U9VZr9a1bNtZRQwswhv2dz" target="_blank" rel="noopener">이슈브리프 사무실</a></nav>
+  <nav class="links" aria-label="바로가기"><a href="https://claude.ai/artifact/GGSaGw8q8Lc3bcDifkaFrK" target="_blank" rel="noopener">덕심저장소 갤러리</a><a href="https://claude.ai/artifact/U9VZr9a1bNtZRQwswhv2dz" target="_blank" rel="noopener">이슈브리프 사무실</a><a href="https://claude.ai/artifact/Xxp8hf3gz6aWW5uemGphWS" target="_blank" rel="noopener">릴스 재료함</a><a href="https://claude.ai/artifact/H9d1SRr3uSYZEX6pYDNswV" target="_blank" rel="noopener">이슈브리프 스튜디오</a></nav>
   <p class="basis" id="basis"></p>
 </main>
 
@@ -120,8 +129,8 @@ const NARR=["내레이션 있음","내레이션 없음(무대·음악 위주)"];
 const STAGES=["형식","컨셉","길이","시나리오","편집 설계","첫 영상","1차 검토","대표 컨펌","완성·언어","최종 검토","업로드"];
 const LANGS=["영어","일본어","중국어(간체)","대만(번체 중국어)","스페인어","포르투갈어","인도네시아어","태국어","베트남어","프랑스어"];
 const PLATS=["유튜브","인스타","틱톡","X","스레드"];
-let CAT={areas:[],moods:[]};
-const S={fmt:null,narr:NARR[0],nlangs:[],area:null,subs:[],moods:[],len:null};
+let CAT={areas:[],moods:[]}, TOPICS=[];
+const S={topic:null,fmt:null,narr:NARR[0],nlangs:[],area:null,subs:[],moods:[],len:null};
 const $=id=>document.getElementById(id);
 const mk=(cls,txt)=>{const b=document.createElement("button");b.type="button";b.className=cls;b.textContent=txt;return b};
 const chipRow=(el,arr,isOn,onClick,idp)=>{$(el).innerHTML="";arr.forEach((v,i)=>{const b=mk("chip",v);b.id=idp+i;b.setAttribute("aria-pressed",isOn(v));b.onclick=()=>onClick(v);$(el).append(b)})};
@@ -159,9 +168,11 @@ function draw(){
     $("lenNote").hidden=!over;if(over)$("lenNote").textContent=(F.warn||"")+` 최대 ${F.max}${F.unit}로 만듭니다.`;}
   else{$("lens").innerHTML='<p class="empty">1번 형식을 먼저 골라 주세요.</p>';$("lenFreeWrap").hidden=true;$("lenNote").hidden=true;}
   const free=$("free").value.trim();
-  const parts=[S.fmt&&FMT[S.fmt].name,S.narr+(S.nlangs.length?" (+"+S.nlangs.join(", ")+" 더빙)":""),area&&area.name,S.subs.join(", "),S.moods.join(", "),S.len].filter(Boolean);
+  const tp=TOPICS.find(t=>t.id===S.topic);
+  const parts=[tp&&("소재: "+tp.title),S.fmt&&FMT[S.fmt].name,S.narr+(S.nlangs.length?" (+"+S.nlangs.join(", ")+" 더빙)":""),area&&area.name,S.subs.join(", "),S.moods.join(", "),S.len].filter(Boolean);
   $("sum").textContent=parts.length?parts.join(" · "):"형식부터 골라 주세요.";
-  $("go").disabled=!(S.fmt&&S.len&&(area||free));
+  $("go").disabled=!(S.fmt&&S.len&&(area||free||tp));
+  drawTopics();
 }
 $("free").addEventListener("input",draw);
 $("lenFree").addEventListener("input",()=>{const n=Math.floor(Number($("lenFree").value));if(S.fmt&&n>0){const F=FMT[S.fmt];S.len=(S.fmt==="long"?"약 ":"")+(S.fmt.startsWith("card")?"카드 ":"")+Math.min(n,F.max)+F.unit;}else S.len=null;draw()});
@@ -169,6 +180,17 @@ fetch("catalog.json").then(r=>r.json()).then(c=>{CAT=c;$("basis").textContent=`�
 draw();
 
 let col=null;
+function drawTopics(){
+  const W=$("topics"); if(!TOPICS.length) return;
+  W.innerHTML="";
+  TOPICS.forEach(t=>{const b=mk("topic","");b.id="tp-"+t.id;b.setAttribute("aria-pressed",S.topic===t.id);
+    const tg=document.createElement("span");tg.className="tag";tg.textContent=[t.slot,t.area,t.sensitive?"⚠ 민감":""].filter(Boolean).join(" · ");
+    const h=document.createElement("b");h.textContent=t.title||"";
+    const sm=document.createElement("span");sm.textContent=t.summary||"";
+    b.append(tg,h,sm);
+    b.onclick=()=>{S.topic=S.topic===t.id?null:t.id;draw();if(S.topic)$("fmt").scrollIntoView({behavior:"smooth",block:"start"})};
+    W.append(b)});
+}
 const nowStr=()=>{const n=new Date(),p=x=>String(x).padStart(2,"0");return `${n.getFullYear()}-${p(n.getMonth()+1)}-${p(n.getDate())}T${p(n.getHours())}:${p(n.getMinutes())}:${p(n.getSeconds())}`};
 const pick={}; // 주문별 언어·플랫폼 선택(화면 안에서만)
 function render(rows){
@@ -238,11 +260,14 @@ async function upd(r,patch){
       window.__rows=rows;render(rows)},
       ()=>{clearTimeout(timer);$("msg").textContent="진행판을 불러오지 못했어요."});
   }catch(e){clearTimeout(timer)}
+  try{ db.collection("topics").orderBy("at","desc").limit(12).onSnapshot(s=>{const rows=[];const push=d=>rows.push({...d.data(),id:d.id});(s.docs||[]).forEach(push);if(!s.docs&&s.forEach)s.forEach(push);
+      TOPICS=rows.filter(r=>r.status!=="used");drawTopics()},()=>{}); }catch(e){}
   $("go").onclick=async()=>{
     if($("go").disabled)return;$("go").disabled=true;$("msg").textContent="주문 넣는 중…";
     const area=CAT.areas.find(a=>a.id===S.area);
-    try{await col.doc("o"+Date.now()).set({format:S.fmt,narr:S.narr,narrLangs:S.nlangs,area:area?area.name:"",sensitive:!!(area&&area.sensitive),subs:S.subs,moods:S.moods,free:$("free").value.trim().slice(0,500),len:S.len,at:nowStr(),stage:4,waiting:false,status:"open"});
-      $("msg").textContent="주문을 넣었어요. 아래 진행판에서 단계가 넘어가는 걸 볼 수 있어요.";$("free").value="";}
+    const tp=TOPICS.find(t=>t.id===S.topic);
+    try{await col.doc("o"+Date.now()).set({topicId:tp?tp.id:"",topicTitle:tp?tp.title:"",topicSources:tp?(tp.sources||[]):[],sensitive:!!((area&&area.sensitive)||(tp&&tp.sensitive)),format:S.fmt,narr:S.narr,narrLangs:S.nlangs,area:area?area.name:"",subs:S.subs,moods:S.moods,free:$("free").value.trim().slice(0,500),len:S.len,at:nowStr(),stage:4,waiting:false,status:"open"});
+      $("msg").textContent="주문을 넣었어요. 아래 진행판에서 단계가 넘어가는 걸 볼 수 있어요.";$("free").value="";S.topic=null;}
     catch(e){$("msg").textContent="주문을 저장하지 못했어요. 이 화면을 연 계정에 편집 권한이 있는지 확인해 주세요.";}
     draw();
   };
