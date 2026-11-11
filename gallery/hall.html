@@ -3149,7 +3149,7 @@ function start(THREE){
       spots.push({p:new THREE.Vector3(0,1.4,cz+1.0), r:1.6, label:()=>G.t("bAlbum")+" · "+al.title, act});
       const tb=textPlane(pivots[2], 2.4, 1.62, 512, (c,w,h)=>{ c.fillStyle="#fffdf8"; c.fillRect(0,0,w,h); c.fillStyle=color; c.fillRect(0,0,w,10); c.strokeStyle="#e4d8c4"; c.lineWidth=4; c.strokeRect(2,2,w-4,h-4);
         c.fillStyle="#1e143c"; c.textAlign="center"; c.textBaseline="middle"; c.font=`900 34px ${FONT}`; c.fillText(al.title, w/2, 42); c.font=`600 15px ${FONT}`; c.fillStyle="#6b6280"; c.fillText(G.nm(al.kind)+" · "+al.release, w/2, 72);
-        c.textAlign="left"; al.tracks.slice(0,7).forEach((t,k)=>{ c.fillStyle="#1e143c"; c.font=`${t.is_title?800:600} 20px ${FONT}`; c.fillText(`${k+1}. ${t.title}`, 40, 112+k*32); if(t.is_title){ c.fillStyle="#d4467a"; c.font=`700 13px ${FONT}`; c.fillText("★ "+G.t("alTitleTrack"), 40+c.measureText(`${k+1}. ${t.title}`).width*1.55, 112+k*32); } });
+        c.textAlign="left"; al.tracks.slice(0,7).forEach((t,k)=>{ c.fillStyle="#1e143c"; c.font=`${t.is_title?800:600} 20px ${FONT}`; const tt=`${k+1}. ${t.title}`, tw=c.measureText(tt).width; c.fillText(tt, 40, 112+k*32); if(t.is_title){ c.fillStyle="#d4467a"; c.font=`700 13px ${FONT}`; c.fillText("★ "+G.t("alTitleTrack"), 50+tw, 112+k*32); } });
         c.textAlign="center"; c.fillStyle="#9650e6"; c.font=`700 15px ${FONT}`; c.fillText("▶ "+G.t("bAlbum"), w/2, h-22); });
       tb.position.set(3.7,2.2,-W+0.05); relabel.push(tb.userData.redraw); tb.userData.act=act; clickables.push(tb);
       spots.push({p:onWall(2,3.7,1.8,1.2), r:1.4, label:()=>G.t("bAlbum")+" · "+al.title, act});
