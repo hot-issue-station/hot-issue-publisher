@@ -74,6 +74,7 @@ ol.flow{margin:6px 0 0;padding-left:20px;font-size:13px;color:var(--muted)}
   <section>
     <h2>2. 컨셉</h2>
     <h3>내레이션</h3><div class="chips" id="narr"></div>
+    <div id="nlWrap"><h3>내레이션 언어 <small>(한국어는 기본, 추가로 더빙판을 만들 언어를 고르세요)</small></h3><div class="chips" id="nlangs"></div></div>
     <h3>영역 <small>(유튜브 인기 기준)</small></h3><div class="chips" id="areas"></div>
     <p class="note" id="areaNote" hidden></p>
     <div id="subWrap" hidden><h3>소제목 <small>(여러 개 가능)</small></h3><div class="chips" id="subs"></div></div>
@@ -102,17 +103,17 @@ ol.flow{margin:6px 0 0;padding-left:20px;font-size:13px;color:var(--muted)}
 
 <script>
 const FMT={
-  shorts:{name:"쇼츠",desc:"세로 영상",lens:["58초","40초"],unit:"초",max:58,warn:"유튜브는 58초를 넘으면 저작권 음악 때문에 막힐 수 있어요(최대 58초로 맞춥니다)."},
-  long:{name:"롱폼",desc:"가로 영상",lens:["약 8분","약 4분"],unit:"분",max:60},
-  cardreels:{name:"카드릴스",desc:"카드 + 음악 영상",lens:["카드 7장","카드 12장"],unit:"장",max:20,warn:"인스타 캐러셀은 한 번에 20장까지예요."},
-  cardnews:{name:"카드뉴스",desc:"인스타 카드",lens:["카드 7장","카드 12장"],unit:"장",max:20,warn:"인스타 캐러셀은 한 번에 20장까지예요."}
+  shorts:{name:"쇼츠",desc:"세로 영상",lens:[["58초","기본 · 이야기형 (30~60초가 제작 1위 구간)"],["40초","가벼운 형"],["25초","초단타 · 크리에이터 53%가 조회수 1위로 꼽은 30초 아래"]],unit:"초",max:58,warn:"유튜브는 58초를 넘으면 저작권 음악 때문에 막힐 수 있어요(최대 58초로 맞춥니다)."},
+  long:{name:"롱폼",desc:"가로 영상",lens:[["약 8분","우리 표준 · 화·토 본편"],["약 4분","가벼운 형 · 케이팝 인기 중간값 3.6분"],["약 6분","하이라이트형 · 스포츠 인기 중간값 6.5분"],["약 20분","예능·비하인드 인기 구간"],["약 30분","몰아보기형 · 몰아보기 인기 중간값 33분"]],unit:"분",max:60},
+  cardreels:{name:"카드릴스",desc:"카드 + 음악 영상",lens:[["카드 7장","기본"],["카드 10장","중간"],["카드 12장","덱비·컴백 깊게"]],unit:"장",max:20,warn:"인스타 캐러셀은 한 번에 20장까지예요."},
+  cardnews:{name:"카드뉴스",desc:"인스타 카드",lens:[["카드 7장","기본"],["카드 10장","중간"],["카드 12장","깊게"],["카드 20장","최대"]],unit:"장",max:20,warn:"인스타 캐러셀은 한 번에 20장까지예요."}
 };
 const NARR=["내레이션 있음","내레이션 없음(무대·음악 위주)"];
 const STAGES=["형식","컨셉","길이","시나리오","편집 설계","첫 영상","1차 검토","대표 컨펌","완성·언어","최종 검토","업로드"];
-const LANGS=["영어","일본어","중국어(간체)","중국어(번체)","스페인어","포르투갈어","인도네시아어","태국어","베트남어","프랑스어"];
+const LANGS=["영어","일본어","중국어(간체)","대만(번체 중국어)"];
 const PLATS=["유튜브","인스타","틱톡","X","스레드"];
 let CAT={areas:[],moods:[]};
-const S={fmt:null,narr:NARR[0],area:null,subs:[],moods:[],len:null};
+const S={fmt:null,narr:NARR[0],nlangs:[],area:null,subs:[],moods:[],len:null};
 const $=id=>document.getElementById(id);
 const mk=(cls,txt)=>{const b=document.createElement("button");b.type="button";b.className=cls;b.textContent=txt;return b};
 const chipRow=(el,arr,isOn,onClick,idp)=>{$(el).innerHTML="";arr.forEach((v,i)=>{const b=mk("chip",v);b.id=idp+i;b.setAttribute("aria-pressed",isOn(v));b.onclick=()=>onClick(v);$(el).append(b)})};
@@ -122,7 +123,9 @@ function draw(){
   Object.entries(FMT).forEach(([k,f])=>{const b=mk("opt","");b.id="f-"+k;b.setAttribute("aria-pressed",S.fmt===k);
     b.innerHTML="<b></b><span></span>";b.querySelector("b").textContent=f.name;b.querySelector("span").textContent=f.desc;
     b.onclick=()=>{S.fmt=k;S.len=null;$("lenFree").value="";draw()};$("fmt").append(b)});
-  chipRow("narr",NARR,v=>S.narr===v,v=>{S.narr=v;draw()},"n-");
+  chipRow("narr",NARR,v=>S.narr===v,v=>{S.narr=v;if(v!==NARR[0])S.nlangs=[];draw()},"n-");
+  $("nlWrap").hidden=S.narr!==NARR[0];
+  chipRow("nlangs",["한국어만",...LANGS],v=>v==="한국어만"?!S.nlangs.length:S.nlangs.includes(v),v=>{if(v==="한국어만")S.nlangs=[];else S.nlangs=S.nlangs.includes(v)?S.nlangs.filter(x=>x!==v):[...S.nlangs,v];draw()},"nl-");
   $("areas").innerHTML="";
   CAT.areas.forEach(a=>{const b=mk("chip"+(a.sensitive?" sens":""),a.name);b.id="a-"+a.id;b.setAttribute("aria-pressed",S.area===a.id);
     b.onclick=()=>{S.area=S.area===a.id?null:a.id;S.subs=[];draw()};$("areas").append(b)});
@@ -140,13 +143,15 @@ function draw(){
     g.items.forEach((m,i)=>{const b=mk("chip",m);b.id="m-"+gi+"-"+i;b.setAttribute("aria-pressed",S.moods.includes(m));
       b.onclick=()=>{if(S.moods.includes(m))S.moods=S.moods.filter(x=>x!==m);else if(S.moods.length<3)S.moods=[...S.moods,m];draw()};c.append(b)});
     w.append(c);$("moods").append(w)});
-  if(S.fmt){const F=FMT[S.fmt];chipRow("lens",F.lens,v=>S.len===v,v=>{S.len=v;$("lenFree").value="";draw()},"l-");
+  if(S.fmt){const F=FMT[S.fmt];$("lens").innerHTML="";
+    F.lens.forEach(([v,why],i)=>{const b=mk("chip",v);b.id="l-"+i;const h=document.createElement("span");h.className="h";h.textContent=why;b.append(h);
+      b.setAttribute("aria-pressed",S.len===v);b.onclick=()=>{S.len=v;$("lenFree").value="";draw()};$("lens").append(b)});
     $("lenFreeWrap").hidden=false;$("lenUnit").textContent=F.unit;
     const n=Number($("lenFree").value);const over=n>F.max;
     $("lenNote").hidden=!over;if(over)$("lenNote").textContent=(F.warn||"")+` 최대 ${F.max}${F.unit}로 만듭니다.`;}
   else{$("lens").innerHTML='<p class="empty">1번 형식을 먼저 골라 주세요.</p>';$("lenFreeWrap").hidden=true;$("lenNote").hidden=true;}
   const free=$("free").value.trim();
-  const parts=[S.fmt&&FMT[S.fmt].name,S.narr,area&&area.name,S.subs.join(", "),S.moods.join(", "),S.len].filter(Boolean);
+  const parts=[S.fmt&&FMT[S.fmt].name,S.narr+(S.nlangs.length?" (+"+S.nlangs.join(", ")+" 더빙)":""),area&&area.name,S.subs.join(", "),S.moods.join(", "),S.len].filter(Boolean);
   $("sum").textContent=parts.length?parts.join(" · "):"형식부터 골라 주세요.";
   $("go").disabled=!(S.fmt&&S.len&&(area||free));
 }
@@ -218,7 +223,7 @@ async function upd(r,patch){
   $("go").onclick=async()=>{
     if($("go").disabled)return;$("go").disabled=true;$("msg").textContent="주문 넣는 중…";
     const area=CAT.areas.find(a=>a.id===S.area);
-    try{await col.doc("o"+Date.now()).set({format:S.fmt,narr:S.narr,area:area?area.name:"",sensitive:!!(area&&area.sensitive),subs:S.subs,moods:S.moods,free:$("free").value.trim().slice(0,500),len:S.len,at:nowStr(),stage:4,waiting:false,status:"open"});
+    try{await col.doc("o"+Date.now()).set({format:S.fmt,narr:S.narr,narrLangs:S.nlangs,area:area?area.name:"",sensitive:!!(area&&area.sensitive),subs:S.subs,moods:S.moods,free:$("free").value.trim().slice(0,500),len:S.len,at:nowStr(),stage:4,waiting:false,status:"open"});
       $("msg").textContent="주문을 넣었어요. 아래 진행판에서 단계가 넘어가는 걸 볼 수 있어요.";$("free").value="";}
     catch(e){$("msg").textContent="주문을 저장하지 못했어요. 이 화면을 연 계정에 편집 권한이 있는지 확인해 주세요.";}
     draw();
