@@ -2670,6 +2670,31 @@ function start(THREE){
     ctx.animate(0); ctx.blimp=bl; return ctx;
   }
 
+  /* 털복숭이 친구 「몽글이」(대표 11/12 04:07 "건물 밖에서 어슬렁거리게"): 우리가 만든 오리지널 캐릭터 — 동글한 털 뭉치 몸, 동그란 귀, 까만 눈.
+     MV 속 캐릭터를 본뜨지 않는다(색·모양 우리 것). 광장을 천천히 걷다 멈춰 두리번, 누르면 인사 */
+  function fluffyFriend(s, clickables, route){
+    const g=new THREE.Group(); s.add(g); const body=new THREE.Group(); g.add(body);
+    const furA=lam(0xf3e6ff), furB=lam(0xe6d3fb), dark=lam(0x2a2140), pink=lam(0xffb3c8);
+    add(body, new THREE.SphereGeometry(0.62,14,10), furA, 0,0.85,0).scale.set(1,0.92,0.95);
+    const clump=new THREE.SphereGeometry(0.2,7,5), N=46, ga=Math.PI*(3-Math.sqrt(5));
+    for(let i=0;i<N;i++){ const y=1-2*(i+0.5)/N, r=Math.sqrt(1-y*y), t=ga*i; const m=add(body, clump, i%3?furA:furB, Math.cos(t)*r*0.6, 0.85+y*0.56, Math.sin(t)*r*0.58); m.scale.setScalar(0.8+((i*37)%10)/25); }
+    [-1,1].forEach(sd=>{ add(body, new THREE.SphereGeometry(0.17,10,8), furB, sd*0.38,1.45,0); add(body, new THREE.SphereGeometry(0.08,8,6), pink, sd*0.38,1.45,0.1);
+      add(body, new THREE.SphereGeometry(0.065,8,6), dark, sd*0.2,0.98,0.56); add(body, new THREE.SphereGeometry(0.07,8,6), pink, sd*0.33,0.84,0.52).scale.set(1.3,0.6,0.5); });
+    add(body, new THREE.SphereGeometry(0.05,8,6), dark, 0,0.86,0.6);
+    const feet=[-1,1].map(sd=>add(g, new THREE.SphereGeometry(0.16,8,6), furB, sd*0.25,0.12,0.12));
+    const hi=()=>G.toast(G.lang==="ja"?"モングリ:ようこそ!ゆっくり見ていってね 💜":G.lang==="en"?"Monggeuli: Welcome! Take your time 💜":G.lang==="zh"?"蒙格力:歡迎!慢慢逛喔 💜":"몽글이: 어서 와요! 천천히 둘러보세요 💜", 2200);
+    body.traverse(o=>{ if(o.isMesh){ o.userData.act=hi; clickables.push(o); } });
+    let i=0, t=0, wait=0, look=0; g.position.set(...route[0]);
+    return dt=>{ t+=dt;
+      if(wait>0){ wait-=dt; look+=dt; body.rotation.y=Math.sin(look*2)*0.5; body.position.y=Math.abs(Math.sin(t*2))*0.03; return true; }
+      const tg=route[(i+1)%route.length], dx=tg[0]-g.position.x, dz=tg[2]-g.position.z, d=Math.hypot(dx,dz);
+      if(d<0.15){ i=(i+1)%route.length; if(i%2===0){ wait=1.5+((i*7)%3); look=0; } return true; }
+      const sp=Math.min(d, dt*1.1); g.position.x+=dx/d*sp; g.position.z+=dz/d*sp;
+      const ang=Math.atan2(dx,dz); g.rotation.y+= (((ang-g.rotation.y+Math.PI*3)%(Math.PI*2))-Math.PI)*Math.min(1,dt*4); body.rotation.y*=0.9;
+      body.position.y=Math.abs(Math.sin(t*7))*0.12; body.rotation.z=Math.sin(t*7)*0.08;
+      feet.forEach((f,k)=>{ f.position.z=0.12+Math.sin(t*7+k*Math.PI)*0.12; });
+      return true; };
+  }
   function buildOutside(){
     const s=new THREE.Scene(); s.background=skyTex(); s.fog=new THREE.Fog(0xeef4f6, 70, 190); hemi(s, 0xffffff, 0xd9e6c8, 2.4);
     const clickables=[], spots=[];
@@ -2702,7 +2727,8 @@ function start(THREE){
       const free=(x,z)=> x>-40&&x<40&&z>-14.6&&z<62 && !inBox(x,z,[-33.3,-7,-12.3,0.3]) && !inBox(x,z,[7,33.3,-12.3,0.3]) && !inBox(x,z,[-37.6,2.6,7.6,20.4]) && !inCircles(x,z,tc) && !inCircles(x,z,stc)
         && !(Math.abs(x)>=7 && z<-12.3);
       const height=(x,z)=> Math.abs(x)<7 && z<1.2 ? (z<-9 ? 3.15 : Math.min(9,Math.ceil((1.2-z)/1.2))*0.35) : 0;
-      return {scene:s, clickables, spots, relabel, animate:sky.animate, sky, cam:{pos:[6,2.2,52], yaw:0.08, pitch:0.05, yawLim:[-0.8,0.8], pitchLim:[-0.2,0.4]},
+      const friend=fluffyFriend(s, clickables, [[0,0,26],[10,0,30],[6,0,40],[-4,0,36]]);
+      return {scene:s, clickables, spots, relabel, animate:dt=>{ sky.animate(dt); friend(dt); return true; }, sky, cam:{pos:[6,2.2,52], yaw:0.08, pitch:0.05, yawLim:[-0.8,0.8], pitchLim:[-0.2,0.4]},
         path:[[6,2.2,52],[6,2.2,14],[1,2.4,4],[0,5.2,-8],[-4.2,4.9,-10.8]], endYaw:Math.PI/2,
         walk:{spawn:[6,44,0], free, height, camDist:5, camH:2.6}};
     }
@@ -2736,7 +2762,8 @@ function start(THREE){
     const cols=colX.map(x=>({c:[x,3.4,0.6]}));
     const free=(x,z)=> x>-30&&x<30&&z>-14&&z<60 && !inBox(x,z,[-7.6,7.6,-8.2,1.1]) && !inCircles(x,z,cols) && !inCircles(x,z,tc) && !inCircles(x,z,stc);
     const height=(x,z)=>{ let h=0; for(let i=0;i<5;i++) if(z<5.6-0.9*i && z>-8.4+0.0*i && Math.abs(x)<(22-i*0.6)/2) h=(i+1)*0.3; return h; };
-    return {scene:s, clickables, spots, relabel, animate:sky.animate, sky, cam:{pos:[0,1.8,34], yaw:0, pitch:0.08, yawLim:[-0.8,0.8], pitchLim:[-0.2,0.4]},
+    const friend=fluffyFriend(s, clickables, [[-6,0,14],[6,0,13],[9,0,20],[0,0,24],[-9,0,19]]);
+    return {scene:s, clickables, spots, relabel, animate:dt=>{ sky.animate(dt); friend(dt); return true; }, sky, cam:{pos:[0,1.8,34], yaw:0, pitch:0.08, yawLim:[-0.8,0.8], pitchLim:[-0.2,0.4]},
       path:[[0,1.8,34],[0,1.8,12],[0,3.3,6],[0,3.3,2.2]], endYaw:0,
       walk:{spawn:[0,24,0], free, height, camDist:5, camH:2.6}};
   }
