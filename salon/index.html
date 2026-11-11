@@ -345,6 +345,14 @@ svg text{font-family:inherit}
 <div class="sheet hide" id="vSheet" role="dialog" aria-modal="true" aria-label="말로 기록"><div id="vBox"></div></div>
 <div id="toast" class="hide" role="status"></div>
 <script>
+// 파일 저장: claude.ai 화면 안이면 그 저장 기능, 아니면 일반 다운로드
+async function saveBlob(blob,name){
+  let dl=null; try{ if(window.claude&&window.claude.use) dl=await window.claude.use("downloads") }catch(e){ dl=null }
+  if(dl){ try{ await dl.save({filename:name,data:blob}); return true }catch(e){ return false } }
+  const a=document.createElement("a"); a.href=URL.createObjectURL(blob); a.download=name; document.body.appendChild(a); a.click(); a.remove(); setTimeout(()=>URL.revokeObjectURL(a.href),4000); return true;
+}
+</script>
+<script>
 /* 추천 상품(자판기) — 처음부터 자리를 두고 투명하게 표시. 실제 상품·제휴 링크는 운영자가 채움.
    제휴 링크면 아래 문구를 반드시 함께 표시(공정위 지침). 원장님 수익 나눔은 각 제휴 약관 확인 뒤에만. */
 const PICKS = []; // 예: {name:"두피 클렌징 샴푸", price:"12,900원", url:"https://link.coupang.com/...", store:"쿠팡"}
@@ -813,8 +821,7 @@ const BACKUP={
         if(isIOS()&&isStandalone()&&file&&navigator.canShare&&navigator.canShare({files:[file]})){
           await navigator.share({files:[file],title:name}); return name;
         }
-        const a=document.createElement("a"); a.href=URL.createObjectURL(blob); a.download=name;
-        document.body.appendChild(a); a.click(); a.remove(); setTimeout(()=>URL.revokeObjectURL(a.href),4000);
+        await saveBlob(blob,name);
         return name;
       },
       load(file){ return new Promise((ok,no)=>{ const fr=new FileReader(); fr.onload=()=>{ try{ ok(JSON.parse(fr.result)) }catch(e){ no(e) } }; fr.onerror=no; fr.readAsText(file) }) }
@@ -945,7 +952,7 @@ function blogText(){ const r=sn.r, c=snsCfg(), s=shopIs()||"저희 가게";
 async function snsShare(){ const text=$("snText").value; await copyText(text,"문구를 복사해 뒀어요. 올릴 때 붙여 넣으세요");
   const blob=await new Promise(ok=>$("snCv").toBlob(ok,"image/jpeg",.9)); const file=new File([blob],`시술사진_${today()}.jpg`,{type:"image/jpeg"});
   if(navigator.canShare&&navigator.canShare({files:[file]})){ try{ await navigator.share({files:[file],text}) }catch(e){ if(e.name!=="AbortError") toast("공유가 안 됐어요. 다시 눌러 주세요") } return }
-  const a=document.createElement("a"); a.href=URL.createObjectURL(blob); a.download=file.name; document.body.appendChild(a); a.click(); a.remove(); setTimeout(()=>URL.revokeObjectURL(a.href),4000);
+  await saveBlob(blob,file.name);
   toast("이 휴대폰은 바로 공유가 안 돼서 사진을 저장하고 문구를 복사했어요") }
 
 /* ── 🎤 말로 기록 ─────────────────────────────────
