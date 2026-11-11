@@ -13,7 +13,14 @@ v1(대표 11/8 결정) 위에 벤치마킹(언더독스토리) 두 가지를 기
    - J컷 "audio_lead"(다음 소리 먼저) / L컷 "audio_tail"(앞 소리 이어서)
    - 내레이션 "narration" → 나오는 동안 원본·배경음악 자동 덕킹(-14dB)
    - 8초 넘는 한 장면은 점검표에 "긴 정지 장면" 경고, 화면 위 챕터 진행 막대("progress": true)
-결과: 롱폼 영상(1920x1080, 30fps) + 썸네일(1280x720) + 자막(.srt) + 점검표
+   - 사진 장면 "image": 파일 (SNS 캡처 등) → 가운데 사진 + 같은 사진 흐린 배경, 길이 "sec"
+ ③ 기준서 v1(11/11) 기능
+   - "opening": {"highlight":{file,in,out,line,credit}, "question":"…", "question_at":25} → 0~3초 하이라이트(대사 크게 가운데) + 25초 근처 노란 질문
+   - "ending": {"line","ask","next","next_date"} → 끝 화면 앞 주제 한 줄 → 질문 자막 → 끝 화면
+   - 장면 "credit" → 오른쪽 아래 구석 출처 + 마지막 '영상 출처' 화면 4초 자동
+   - 자막은 흰 굵은 고딕, *별표* 단어는 노란색. 자막 4번째 칸에 모양("big"/"ask"/"question")
+   - 설명란 out/<이름>_설명란.txt : summary → 챕터 타임스탬프(실제 시각) → 감사한 출처 → hashtags → summary_i18n(en/ja/zh-TW)
+결과: 롱폼 영상(1920x1080, 30fps) + 썸네일(1280x720) + 자막(.srt) + 설명란(.txt) + 점검표
 """
 import json, os, sys, subprocess, shutil, re
 from PIL import Image, ImageDraw, ImageFont, ImageFilter
@@ -348,7 +355,7 @@ def chain(files, joins, starts, out, extra_in=(), tail="", final_map=(), enc=VTM
     if total: cmd += ["-t", f"{total:.4f}"]
     run(cmd + [out])
 
-def layout_of(sc): return sc.get("layout", "horizontal")
+def layout_of(sc): return sc.get("layout", "vertical" if sc.get("image") else "horizontal")
 
 def build(spec, base):
     tmp = os.path.join(base, "_tmp"); out = os.path.join(base, "out"); os.makedirs(tmp, exist_ok=True); os.makedirs(out, exist_ok=True)
@@ -563,6 +570,12 @@ def make_test_media(d):
                        ("v1.mp4", "testsrc2=s=1080x1920:r=30:d=12", "sine=f=440:r=48000:d=12")]:
         run(["ffmpeg", "-y", *lv(v), *lv(a), "-shortest", *VTMP, *AENC, os.path.join(d, name)])
     run(["ffmpeg", "-y", *lv("sine=f=1000:r=48000:d=3"), "-c:a", "libmp3lame", "-b:a", "128k", os.path.join(d, "narration.mp3")])
+    im = Image.new("RGB", (1080, 1350), (250, 250, 252)); dr = ImageDraw.Draw(im)   # SNS 캡처 대용(세로 사진)
+    dr.rectangle([0, 0, 1080, 140], fill=(150, 80, 230)); dr.text((50, 40), "SNS 캡처 (시험)", font=F(FB, 56), fill=WH)
+    for i in range(6):
+        y = 200 + i * 185; dr.ellipse([50, y, 140, y + 90], fill=(200, 200, 215))
+        dr.text((170, y), f"팬{i + 1}", font=F(FB, 40), fill=(30, 20, 60)); dr.text((170, y + 56), "응원 댓글 시험 문장입니다", font=F(FM, 38), fill=(60, 60, 80))
+    im.save(os.path.join(d, "capture.png"))
     print("시험 재료:", d)
 
 if __name__ == "__main__":
