@@ -379,6 +379,14 @@ def render_still(png, D, path, fade_in=False):
     N = round(D * FPS); vf = "format=yuv420p" + (",fade=in:0:12" if fade_in else "")
     run(["ffmpeg", "-y", "-loop", "1", "-framerate", str(FPS), "-i", png, "-vf", vf, "-frames:v", str(N), *VTMP, path])
 
+def render_resolve(text, D, fade, tmp):
+    """끝맺음 결심 한 줄: 검은 화면 위에 한 줄이 fade초 동안 천천히 나타남."""
+    p = os.path.join(tmp, "resolve.png"); out = os.path.join(tmp, "resolve.mp4"); sub_png(text, p, "resolve")
+    run(["ffmpeg", "-y", "-f", "lavfi", "-i", f"color=c=black:s={W}x{H}:r={FPS}:d={D + 0.5:.3f}", "-loop", "1", "-framerate", str(FPS), "-t", f"{D + 0.5:.3f}", "-i", p,
+         "-filter_complex", f"[1:v]format=rgba,fade=t=in:st=0:d={fade:.3f}:alpha=1[t];[0:v][t]overlay=0:0,format=yuv420p[v]",
+         "-map", "[v]", "-frames:v", str(round(D * FPS)), *VTMP, out])
+    return out
+
 def render_rewind(prev, sg, tmp, tag):
     """되감기: 앞 장면 끝 1.2초를 거꾸로·빠르게(0.5초)."""
     sg["v"] = os.path.join(tmp, f"{tag}.mp4"); sg["a"] = os.path.join(tmp, f"{tag}.wav")
@@ -448,6 +456,8 @@ def build(spec, base):
         if ls: o["subs"].append([0, ls, en["line"], "big"])
         if as_: o["subs"].append([ls, d + 1, en["ask"], "ask"])
         segs.append(scene_seg(o, None, "outro", "엔딩 질문"))
+    if en.get("resolve"):                                # 결심 한 줄: 검은 화면 + 2초 페이드인 → 끝 화면
+        segs.append({"kind": "resolve", "layout": "horizontal", "dur": fr(max(en.get("resolve_sec", 3.5), en.get("resolve_fade", 2.0) + 0.5)), "ch": None})
     segs.append({"kind": "end", "layout": "horizontal", "dur": fr(spec.get("end_sec", 8)), "ch": None})
     credits = []
     for s in [op.get("highlight") or {}] + [sc for ch in spec["chapters"] for sc in ch["scenes"]]:
@@ -463,6 +473,7 @@ def build(spec, base):
         if sg["kind"] == "rewind": j = ("cut", 0.0)
         elif p["kind"] == "rewind": j = ("dissolve", 0.2)
         elif want == "cut": j = ("cut", 0.0)
+        elif "resolve" in (sg["kind"], p["kind"]): j = ("dissolve", xd)
         elif p["layout"] == "horizontal" and sg["layout"] == "vertical" and want != "dissolve": j = ("fold", fd)
         elif p["layout"] == "vertical" and sg["layout"] in ("horizontal", "blur") and want != "dissolve": j = ("unfold", fd)
         else: j = ("dissolve", xd)
@@ -494,8 +505,10 @@ def build(spec, base):
     for i, sg in enumerate(segs):
         if sg["kind"] == "scene":
             render_scene(sg, sg["sc"], base, tmp, sg["tag"], comp)
-            srt += [(sg["S"] + s[0], sg["S"] + min(s[1], sg["dur"]), plain(s[2])) for s in sg["sc"].get("subs", [])]
+            srt += [(sg["S"] + s[0], sg["S"] + min(s[1], sg["dur"]), ("[" + plain(s[2]) + "]") if len(s) > 3 and s[3] == "sfx" else plain(s[2])) for s in sg["sc"].get("subs", [])]
         elif sg["kind"] == "rewind": render_rewind(segs[i - 1], sg, tmp, f"rw{i}")
+        elif sg["kind"] == "resolve":
+            sg["v"] = render_resolve(en["resolve"], sg["dur"], en.get("resolve_fade", 2.0), tmp); srt.append((sg["S"], sg["S"] + sg["dur"], plain(en["resolve"])))
         elif sg["kind"] == "card": sg["v"] = os.path.join(tmp, f"card{sg['ch']}.mp4"); render_still(sg["png"], sg["dur"], sg["v"])
         elif sg["kind"] == "credits":
             cp = os.path.join(tmp, "sources.png"); sources_png(credits, cp, series); sg["v"] = os.path.join(tmp, "sources.mp4"); render_still(cp, sg["dur"], sg["v"])
@@ -509,6 +522,19 @@ def build(spec, base):
         for x in ([n] if isinstance(n, dict) else (n or [])): x = dict(x); x["at"] = sg["S"] + x.get("at", 0); nars.append(x)
     for n in nars:
         n["path"] = n["file"] if os.path.isabs(n["file"]) else os.path.join(base, n["file"]); n["len"] = probe(n["path"])[1]
+    def gather(key):   # 영상 전체 기준(맨 위) + 장면 안 기준(장면 시작 S 더함)
+        out_ = [dict(x) for x in (spec.get(key) or [])]
+        for sg in segs:
+            for x in (sg.get("sc", {}).get(key) or []): x = dict(x); x["at"] = sg["S"] + x.get("at", 0); out_.append(x)
+        return out_
+    sfxs = gather("sfx")                               # 효과음 파일(같은 시각 효과음 자막과 짝)
+    for x in sfxs: x["path"] = x["file"] if os.path.isabs(x["file"]) else os.path.join(base, x["file"])
+    cuts = gather("music_cut")                         # 음악 끊기(강조용 정적): 배경음악만 0
+    mc = "0"
+    for c in cuts:
+        a, b, f1, f2 = c["at"], c["at"] + c.get("sec", 1.0), c.get("fade_out", 0.12), c.get("fade_in", 0.6)
+        mc = f"max({mc},clip(min((t-{a - f1:.3f})/{f1},({b + f2:.3f}-t)/{f2}),0,1))"
+    mcut = f",volume='1-{mc}':eval=frame" if cuts else ""
     ain = []; ag = []; k = 0
     for sg in segs:
         if not sg.get("a"): continue
@@ -522,10 +548,13 @@ def build(spec, base):
     ag.append(f"[orig]{duck}[od]"); mix = ["[od]"]
     if spec.get("bgm"):
         ain += ["-stream_loop", "-1", "-i", os.path.join(base, spec["bgm"])]
-        ag.append(f"[{k}:a]aresample=48000,aformat=channel_layouts=stereo,atrim=0:{total:.4f},volume={spec.get('bgm_volume', 0.12)},{duck},afade=t=out:st={total - 3:.3f}:d=3[bg]"); mix.append("[bg]"); k += 1
+        ag.append(f"[{k}:a]aresample=48000,aformat=channel_layouts=stereo,atrim=0:{total:.4f},volume={spec.get('bgm_volume', 0.12)},{duck}{mcut},afade=t=out:st={total - 3:.3f}:d=3[bg]"); mix.append("[bg]"); k += 1
     for n in nars:
         ain += ["-i", n["path"]]
         ag.append(f"[{k}:a]aresample=48000,aformat=channel_layouts=stereo,volume={n.get('volume', 1.0)},adelay={int(round(n['at'] * 1000))}:all=1[n{k}]"); mix.append(f"[n{k}]"); k += 1
+    for x in sfxs:
+        ain += ["-i", x["path"]]
+        ag.append(f"[{k}:a]aresample=48000,aformat=channel_layouts=stereo,volume={x.get('volume', 1.0)},adelay={int(round(x['at'] * 1000))}:all=1[x{k}]"); mix.append(f"[x{k}]"); k += 1
     ag.append("".join(mix) + (f"amix=inputs={len(mix)}:normalize=0:duration=first," if len(mix) > 1 else "") + f"alimiter=limit=0.97,atrim=0:{total:.4f}[aout]")
     fa = os.path.join(tmp, "final.wav")
     run(["ffmpeg", "-y", *ain, "-filter_complex", ";".join(ag), "-map", "[aout]", "-c:a", "pcm_s16le", fa])
@@ -579,7 +608,7 @@ def build(spec, base):
     dp = os.path.join(out, spec["out"] + "_설명란.txt"); open(dp, "w", encoding="utf-8").write("\n".join(desc).strip() + "\n")
     lim = spec.get("max_still_sec", 8)
     longs = [f"{s['label']}({s['dur']:.1f}초)" for s in segs if s["kind"] == "scene" and s["dur"] > lim and not s["sc"].get("long_ok")]
-    excl = [(s["S"], s["S"] + s["dur"]) for s in segs if s["kind"] in ("card", "end", "credits")]
+    excl = [(s["S"], s["S"] + s["dur"]) for s in segs if s["kind"] in ("card", "end", "credits", "resolve")]
     blk = black_check(final, excl)
     hl = segs[0] if segs[0]["ch"] == 0 else None
     nocred = [s["label"] for s in segs if s["kind"] == "scene" and s["tag"] != "outro" and not s["sc"].get("credit") and not s["sc"].get("own")]
@@ -587,6 +616,7 @@ def build(spec, base):
            (f"오프닝 하이라이트(0~{hl['dur']:.1f}초)" if hl else "오프닝 하이라이트(0~3초)", bool(hl) and hl["dur"] <= 3.5),
            (f"오프닝 질문 자막({gov[0][1]:.0f}초)" if gov else "오프닝 질문 자막(25초 근처)", bool(gov)),
            ("엔딩 주제 한 줄 + 질문 자막", bool(en.get("line") and en.get("ask"))),
+           ("끝맺음 결심 한 줄(검은 화면 페이드인)", bool(en.get("resolve"))),
            ("끝 화면(구독·좋아요·알림·다음 편)", bool(endcfg.get("next"))),
            ("배경음악", bool(spec.get("bgm"))), ("출처(쓴 영상 목록)", bool(credits)),
            ("장면마다 구석 출처 표기" + (" — 없음: " + ", ".join(nocred) if nocred else ""), not nocred),
@@ -594,7 +624,9 @@ def build(spec, base):
            ("설명란 3개 언어 요약(en·ja·zh-TW)", all(i18n.get(k2) for k2 in ("en", "ja", "zh-TW"))),
            ("설명란 요약·해시태그", bool(spec.get("summary") and tags)), ("썸네일", bool(tp)),
            ("팬 영상 양해 확인", bool(spec.get("consent_checked"))),
-           (f"장면 사이 검은 화면 0초 (검출 {blk:.2f}초, 카드·끝·출처 화면 제외)", blk < 0.05)]
+           (f"장면 사이 검은 화면 0초 (검출 {blk:.2f}초, 카드·결심·끝·출처 화면 제외)", blk < 0.05)]
+    allsubs = [s for sg in segs if sg["kind"] == "scene" for s in sg["sc"].get("subs", [])]
+    n_em = sum(1 for s in allsubs if len(s) > 3 and s[3] == "emotion"); n_fx = sum(1 for s in allsubs if len(s) > 3 and s[3] == "sfx")
     kinds = {}
     for s in segs[1:]: kinds[s["join"][0]] = kinds.get(s["join"][0], 0) + 1
     print(f"영상: {final} ({total/60:.1f}분, {total:.2f}초)\n자막: {sp}\n썸네일: {tp}")
@@ -602,9 +634,11 @@ def build(spec, base):
           + (f" · 내레이션 {len(nars)}개(덕킹 {spec.get('duck_db', -14)}dB)" if nars else ""))
     for nm, ok in chk: print(("✅ " if ok else "❌ 빠짐: ") + nm)
     print(("⚠️ 긴 정지 장면(" + str(lim) + "초 넘음, 컷 리듬 확인): " + ", ".join(longs)) if longs else f"✅ 긴 정지 장면 없음({lim}초 이하)")
+    print(f"기준서 추가: 감정 자막 {n_em}개 · 효과음 자막 {n_fx}개(효과음 소리 {len(sfxs)}개) · 음악 끊기 {len(cuts)}곳"
+          + (" ⚠️ 배경음악이 없어 음악 끊기는 효과 없음" if cuts and not spec.get("bgm") else ""))
     if short_ch: print("⚠️ 유튜브 챕터는 10초 이상이어야 표시됨 — 짧은 챕터: " + ", ".join(short_ch))
     print(f"설명란: {dp}")
-    return {"final": final, "total": total, "segs": segs, "nars": nars, "black": blk, "desc": dp, "marks": marks}
+    return {"final": final, "total": total, "segs": segs, "nars": nars, "sfx": sfxs, "music_cut": cuts, "black": blk, "desc": dp, "marks": marks}
 
 def black_check(path, excl):
     """검은 화면 검사(카드·끝 화면 구간 제외) → 남은 검은 초."""
@@ -622,6 +656,7 @@ def make_test_media(d):
                        ("v1.mp4", "testsrc2=s=1080x1920:r=30:d=12", "sine=f=440:r=48000:d=12")]:
         run(["ffmpeg", "-y", *lv(v), *lv(a), "-shortest", *VTMP, *AENC, os.path.join(d, name)])
     run(["ffmpeg", "-y", *lv("sine=f=1000:r=48000:d=3"), "-c:a", "libmp3lame", "-b:a", "128k", os.path.join(d, "narration.mp3")])
+    run(["ffmpeg", "-y", *lv("sine=f=1600:r=48000:d=0.3"), "-af", "afade=t=out:st=0.05:d=0.25", "-c:a", "pcm_s16le", os.path.join(d, "sfx_pop.wav")])   # 효과음 대용
     im = Image.new("RGB", (1080, 1350), (250, 250, 252)); dr = ImageDraw.Draw(im)   # SNS 캡처 대용(세로 사진)
     dr.rectangle([0, 0, 1080, 140], fill=(150, 80, 230)); dr.text((50, 40), "SNS 캡처 (시험)", font=F(FB, 56), fill=WH)
     for i in range(6):
