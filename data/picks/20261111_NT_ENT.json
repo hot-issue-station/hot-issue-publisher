@@ -1,0 +1,59 @@
+{
+ "slot": "NT",
+ "candidates": [
+  {
+   "title": "리센느 'With' 컴백 후 첫 음악방송 1위",
+   "summary": "더쇼 1위, 'PULSE' 첫 주 60만 장 돌파",
+   "facts": [
+    "11/10 SBS Life 더쇼에서 'With'로 컴백 후 첫 음악방송 1위",
+    "멜론 TOP100·벅스 실시간·지니 TOP200 1위",
+    "미니 4집 PULSE 첫 주 판매 60만 장 이상(소속사 발표: 하반기 걸그룹 첫 주 최다)",
+    "11/11 쇼챔피언 생방송 출연 예정(톱스타뉴스)"
+   ],
+   "sources": [
+    {
+     "outlet": "뉴스엔",
+     "title": "리센느, 음원 차트 이어 음악방송 정상…'With'로 첫 1위",
+     "date": "2026-11-11",
+     "url": "https://www.newsen.com/news_view.php?uid=202611111544292410"
+    },
+    {
+     "outlet": "스포츠경향(영문)",
+     "title": "RESCENE dominated 'The Show'!",
+     "date": "2026-11-11",
+     "url": "https://sports.khan.co.kr/en/article/202611110813007/"
+    }
+   ],
+   "photoQuery": "RESCENE With official MV 리센느 공식 유튜브",
+   "score": 29,
+   "note": "리센느 18:30 RS 회차와 내용 겹칠 수 있음"
+  },
+  {
+   "title": "규현, 1년 만의 새 EP 'CONTINUE' 오늘 발매",
+   "summary": "11/11 18시 발매, 12/18~20 장충 공연",
+   "facts": [
+    "새 EP 'CONTINUE' 11/11 오후 6시 발매",
+    "직전 EP 'The Classic' 이후 약 1년 만의 컴백",
+    "아시아 투어 서울 공연 12/18~20 장충체육관(미주중앙일보 기준)",
+    "소속사 안테나 발표(스포츠경향)"
+   ],
+   "sources": [
+    {
+     "outlet": "미주중앙일보",
+     "title": "규현, 신보 'CONTINUE' 프리뷰 공개",
+     "date": "2026-11-06",
+     "url": "https://www.koreadaily.com/article/20261106151450492"
+    },
+    {
+     "outlet": "스포츠경향(영문)",
+     "title": "Kyuhyun confirms comeback after one year",
+     "date": "2026-10-20",
+     "url": "https://sports.khan.co.kr/en/article/202610201001007"
+    }
+   ],
+   "photoQuery": "규현 CONTINUE 안테나 공식 유튜브",
+   "score": 20,
+   "note": "타이틀곡명이 매체마다 달라 제목에 쓰지 않음"
+  }
+ ]
+}
