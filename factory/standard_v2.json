@@ -50,24 +50,18 @@
     "_근거": "G 58초·9:16 / 아웃트로 5초 G",
     "platforms": {
       "youtube": 58.0,
-      "tiktok": 62.0,
-      "instagram": 62.0,
-      "facebook": 62.0,
-      "x": 62.0,
-      "threads": 62.0
+      "tiktok": 58.0,
+      "instagram": 58.0,
+      "facebook": 58.0,
+      "x": 58.0,
+      "threads": 58.0
     },
     "versions": {
-      "yt58": {
+      "58": {
         "sec": 58.0,
-        "suffix": "_yt58",
+        "suffix": "",
         "for": [
-          "youtube"
-        ]
-      },
-      "62": {
-        "sec": 62.0,
-        "suffix": "_62",
-        "for": [
+          "youtube",
           "tiktok",
           "instagram",
           "facebook",
@@ -76,9 +70,10 @@
         ]
       }
     },
-    "_플랫폼_근거": "대표 정정 11/11 20:35: 유튜브 쇼츠만 58.0초(_yt58.mp4), 나머지 플랫폼 전부 62.0초(_62.mp4). 본문 구간을 비례로 4초 늘리고 아웃트로 5초는 그대로",
-    "youtube_max_sec": 58.0,
-    "_유튜브_한도_근거": "대표 20:36: 유튜브 칸에 58.0초 초과 파일이 들어가면 package.py 가 멈춘다(1분 넘는 쇼츠 Content ID 시 전 세계 차단)"
+    "_플랫폼_근거": "대표 최종 확정 11/11 20:40: 모든 쇼츠(A·B) 모든 플랫폼 58.0초 하나로 통일. 62초 버전·두 버전 렌더 폐기",
+    "_유튜브_한도_근거": "대표 20:36: 유튜브 칸에 58.0초 초과 파일이 들어가면 package.py 가 멈춘다(1분 넘는 쇼츠 Content ID 시 전 세계 차단)",
+    "max_sec": 58.0,
+    "_한도_근거": "대표 20:36·20:40: 58.0초 초과 파일이면 package.py 가 멈춘다(1분 넘는 쇼츠 Content ID 시 전 세계 차단)"
   },
   "style_A": {
     "template": "expose",
@@ -126,7 +121,8 @@
     "stretch_roles": [
       "expose1",
       "expose2"
-    ]
+    ],
+    "_stretch_설명": "길이가 58.0이 아닌 버전을 만들 때만 쓰는 비례 늘이기 대상(지금은 58.0 하나라 쓰이지 않음)"
   },
   "style_B": {
     "template": "pulse58",
@@ -161,15 +157,7 @@
     "change_sec": 0.75,
     "jump_sec": 0.3,
     "roll_deg": 15,
-    "_근거": "G 8단 교차편집 프로토콜",
-    "stretch_sections": [
-      "split",
-      "jump"
-    ],
-    "render_versions": [
-      "yt58"
-    ],
-    "plan_62": "62초 버전은 영상 늘이기 대신 노래 한 마디(약 4초)를 더 쓰는 방식(후렴 점프컷 구간 뒤에 한 마디 추가) — 설계만, 대표 결정 전까지 렌더 안 함(대표 20:36)"
+    "_근거": "G 8단 교차편집 프로토콜"
   },
   "molabogi": {
     "template": "molabogi",

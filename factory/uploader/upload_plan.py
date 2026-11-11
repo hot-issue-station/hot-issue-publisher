@@ -27,9 +27,10 @@ try:
 except Exception:  # 윈도우에 tzdata가 없을 때(pip install tzdata 권장) — 한국은 서머타임이 없어 +9 고정과 같다
     KST = dt.timezone(dt.timedelta(hours=9), "KST")
 
-SLOTS = {"출근": "07:30", "점심": "12:00", "퇴근": "18:30"}
+SLOTS = {"출근": "07:30", "점심": "12:00", "퇴근": "18:30", "저녁7시": "19:00"}   # 저녁7시 = 제작 표준 v2 편성(11/11)
 SLOT_ALIAS = {"1": "출근", "2": "점심", "3": "퇴근", "0730": "출근", "07:30": "출근", "1200": "점심", "12:00": "점심",
-              "1830": "퇴근", "18:30": "퇴근", "출근길": "출근", "아침": "출근", "저녁": "퇴근", "퇴근길": "퇴근"}
+              "1830": "퇴근", "18:30": "퇴근", "출근길": "출근", "아침": "출근", "저녁": "퇴근", "퇴근길": "퇴근",
+              "1900": "저녁7시", "19:00": "저녁7시", "4": "저녁7시"}
 ALL_SITES = ["youtube", "tiktok", "meta", "x"]
 SITE_KO = {"youtube": "유튜브", "tiktok": "틱톡", "meta": "인스타·페이스북", "x": "X"}
 MIN_LEAD_MIN = 20  # 예약은 지금부터 최소 20분 뒤(틱톡은 15분 이상 뒤만 예약 가능 — 여유를 둠)
@@ -130,7 +131,7 @@ def hashtags(text): return re.findall(r"#[^\s#]+", text)
 def pick_schedule(slot=None, date=None, now=None, ask=False):
     now = now or dt.datetime.now(KST)
     if slot: slot = SLOT_ALIAS.get(str(slot).strip(), str(slot).strip())
-    if slot and slot not in SLOTS: raise SystemExit(f"시간대는 출근(07:30)·점심(12:00)·퇴근(18:30) 중에서 골라 주세요: {slot}")
+    if slot and slot not in SLOTS: raise SystemExit(f"시간대는 출근(07:30)·점심(12:00)·퇴근(18:30)·저녁7시(19:00) 중에서 골라 주세요: {slot}")
     if not slot and ask:
         print("예약 시간대를 골라 주세요:  1) 출근 07:30   2) 점심 12:00   3) 퇴근 18:30")
         slot = SLOT_ALIAS.get(input("번호: ").strip(), None) or "점심"

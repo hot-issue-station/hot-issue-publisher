@@ -97,13 +97,13 @@ def _entry(path, outdir=None):
 #  "sources":[{"file":"쇼케이스.mp4","sync":30.0,"label":"쇼케이스"}, ... 8개 이상],   # sync = 노래 start 와 맞는 그 영상의 시각
 #  "title":"…","source_line":"출처 · …","outro":{"ask":"…","next":"…","frame":{"file":…,"t":…}},"test_label":"형식 시험 · 공개용 아님"}
 # bpm 이 없으면 v2_fx.estimate_beat(ffmpeg 소리 → numpy 온셋)로 추정해 컷을 박자에 맞춘다(추정값·신뢰도는 결과에 출력).
-# 62초 버전: 노래 한 마디(약 4초)를 더 쓰는 방식으로 설계만(standard_v2 style_B.plan_62) — 대표 결정 전까지 58초 하나만.
+# 길이: 모든 플랫폼 58.0초 하나(대표 20:40 최종 확정).
 # ======================================================================
 def pulse58(spec, base, outdir=None):
     import numpy as np, math, cv2
     import v2_fx as fx, expose_factory as ef, check_standard as cs
     STD = fx.STD; SB = STD["style_B"]; W2, H2 = STD["shorts"]["size"]; FPS2 = STD["shorts"]["fps"]
-    total = STD["shorts"]["versions"]["yt58"]["sec"]; suffix = spec.get("suffix", "")
+    total = STD["shorts"]["total_sec"]; suffix = spec.get("suffix", "")
     outdir = os.path.abspath(outdir or os.path.join(base, "out")); os.makedirs(outdir, exist_ok=True)
     tmp = os.path.join(outdir, "_tmp_" + spec["out"]); os.makedirs(tmp, exist_ok=True)
     srcs = spec["sources"]

@@ -192,7 +192,7 @@ def outro_render(write, W, H, t0, dur, frame_bgr, cfg, extra_ovs=()):
 
 # ---------------- 스타일 A ----------------
 def render_expose(spec, outdir, total=None, suffix=""):
-    """total 초 버전 하나 렌더(유튜브 58.0 / 그 밖 62.0 — standard_v2.json shorts.versions). 늘리는 구간은 check_standard.stretch_clips 와 같은 계산."""
+    """total 초 렌더(표준: 모든 플랫폼 58.0 하나 — standard_v2.json shorts.versions). total 이 58.0이 아니면 폭로 1·2를 비례로 늘림(check_standard.stretch_clips)."""
     base = spec.get("_base", os.getcwd()); W, H = STD["shorts"]["size"]
     total = total or TOTAL_A
     name = spec["out"] + suffix; os.makedirs(outdir, exist_ok=True); tmp = os.path.join(outdir, "_tmp_" + name); os.makedirs(tmp, exist_ok=True)
@@ -270,7 +270,7 @@ def thumbnail(spec, outdir):
     return fx.thumb_v2(img, dict(th, source=th.get("source", spec.get("source_line", "")), test=spec.get("test_label")), tuple(STD["shorts"]["size"]), out)
 
 def main(path, outdir=None, versions=None):
-    """두 버전(유튜브 _yt58 · 그 밖 _62) + 썸네일 → check_standard 자동 점검."""
+    """58.0초 영상 하나(모든 플랫폼 공용, 대표 20:40) + 썸네일 → check_standard 자동 점검."""
     spec = json.load(open(path, encoding="utf-8")); spec["_base"] = os.path.dirname(os.path.abspath(path))
     outdir = os.path.abspath(outdir or os.path.join(spec["_base"], "out"))
     vids = []

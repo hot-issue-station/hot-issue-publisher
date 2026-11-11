@@ -32,6 +32,15 @@ v1(대표 11/8 결정) 위에 벤치마킹(언더독스토리) 두 가지를 기
      (맨 위 = 영상 전체 기준, 장면 안 = 장면 시작부터) → 왼쪽 아래 흰 둥근 카드(QR + 「광고 · 제휴 링크」 + 상품명·가격), 0.3초 슬라이드 인
    - 그 시간에 떠 있는 자막·출처·말풍선·옆 패널과 겹치지 않게 자리 위로 올림(안 되면 오른쪽 아래). QR은 qr.py(순수 파이썬)
    - 설명란 맨 위에 상품 링크 목록, url에 coupang 있으면 쿠팡 파트너스 고지 문구. 주류·담배·도박·성인 단어는 점검표 ❌
+ ⑦ v2.2 몰아보기(제작 표준 v2, 11/11) — "template":"molabogi" 또는 아무 롱폼 장면에서 쓸 수 있음. 기존 v2.1 기능은 그대로
+   - 자막 모양 추가: "bracket"(괄호 드립, 괄호 부분 노랑) · "situation"([대괄호] 상황 자막, 왼쪽 위 상자) · "narr"(내레이션 자막)
+     subs 5번째 칸 [x,y] 화면 비율로 자리 지정 가능(얼굴 옆 등)
+   - 장면 "reacts":[{"at","sec","text","name"}] → 오른쪽 아래 「동네 형」 일러스트 원형 아이콘 + 말풍선(실존 인물 얼굴 없음)
+   - 장면 "zooms":[{"at","x","y","scale","hold"}] → 크래시 줌(0.15초 급확대 후 hold초 유지, x·y 화면 비율)
+   - 장면 "bleeps":[{"at","dur"}] → 그 구간 원음 줄이고 1kHz 삐-
+   - "sfx":[{"at","name":"crow"}] → 공장이 합성한 까마귀 효과음(assets/sfx_crow.wav). file 대신 name 가능
+   - 내레이션 파일이 없으면(narration 의 file 없음/파일 없음) "text"(또는 "_text")를 "narr" 자막으로 대신 보여 줌(워크맨식 빠른 내레이션 자리)
+   - 렌더 뒤 check_standard.py(표준 v2 점검) 자동 실행
  ⑥ v2.1 (11/11)
    - 장면 "rewind": true (또는 "rewind":"날짜") → 그 장면에 들어갈 때 0.5초 역재생 + 날짜 도장(챕터 카드 없이, 챕터 중간 어디서나)
      날짜 글은 "date"(또는 rewind 문자열), 자리 "stamp_pos":[x,y] 비율(기본 [0.8,0.2]), 보이는 길이 "stamp_sec"(기본 1.8)
@@ -365,6 +374,39 @@ UNFOLD = SMOOTH + f";st(1,(1-ld(0))*{BX:.5f});st(2,clip(ld(0)/0.4,0,1));if(betwe
 def xf(kind):
     return {"fold": f"custom:expr='{FOLD}'", "unfold": f"custom:expr='{UNFOLD}'"}.get(kind, "fade")
 
+# ---------------- v2.2 몰아보기 도구 ----------------
+def _STD():
+    import v2_fx; return v2_fx.STD
+
+def mola_sub_png(text, path, style, pos=None):
+    """괄호 드립(bracket) · [상황 자막](situation, 왼쪽 위 상자) · 내레이션 자막(narr, 위 가운데). 원본 자막(화면 아래)을 가리지 않는 자리."""
+    import v2_fx
+    im = v2_fx.caption_img(text, style, W); full = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    if pos: x, y = int(pos[0] * W - im.width / 2), int(pos[1] * H - im.height / 2)
+    elif style == "situation": x, y = 40, 120
+    elif style == "narr": x, y = (W - im.width) // 2, 30
+    else: x, y = (W - im.width) // 2, int(H * 0.66)
+    full.alpha_composite(im, (max(0, min(W - im.width, x)), max(0, min(H - im.height, y)))); full.save(path)
+
+def react_png(r, path):
+    import v2_fx
+    im = v2_fx.react_img(r.get("text", ""), r.get("name", "동네 형"), W); full = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    full.alpha_composite(im, (W - im.width - 40, H - im.height - 110)); full.save(path)
+
+def zoom_filter(zooms):
+    """크래시 줌(zoompan, 프레임마다): at 에서 ramp(0.15)초 급확대 → hold 초 유지 → 원래대로."""
+    cz = _STD()["style_A"]["crash_zoom"]; zs, xs, ys = [], [], []
+    for z in zooms:
+        a = z["at"]; r = z.get("ramp", cz["ramp_sec"]); b = a + r + z.get("hold", cz["hold_sec"]); sc = z.get("scale", cz["scale"])
+        cond = f"between(it,{a:.3f},{b:.3f})"
+        zs.append(f"{cond}*{sc - 1:.3f}*min(1,(it-{a:.3f})/{r:.3f})")
+        xs.append((cond, f"min(max({z['x']:.3f}*iw-iw/zoom/2,0),iw-iw/zoom)")); ys.append((cond, f"min(max({z['y']:.3f}*ih-ih/zoom/2,0),ih-ih/zoom)"))
+    def nest(lst, dflt):
+        e = dflt
+        for c, v in reversed(lst): e = f"if({c},{v},{e})"
+        return e
+    return (f"zoompan=z='1+{'+'.join(zs)}':x='{nest(xs, '(iw-iw/zoom)/2')}':y='{nest(ys, '(ih-ih/zoom)/2')}':d=1:s={W}x{H}:fps={FPS},setsar=1")
+
 # ---------------- 장면 1개 = ffmpeg 1회 ----------------
 def src_of(sc, base, key="file"):
     return sc[key] if os.path.isabs(sc[key]) else os.path.join(base, sc[key])
@@ -408,6 +450,9 @@ def render_scene(sg, sc, base, tmp, tag, comp):
                f"[bg][{sh}:v]overlay=0:0[b1]", f"[b1][hf]overlay={x}:{y}:shortest=1[b2]", f"[b2][sf]overlay={SPL_V[0]}:{SPL_V[1]}:shortest=1[v0]"]
     else:
         fl.append(f"[0:v]{pre},scale={W}:{H}:force_original_aspect_ratio=decrease,pad={W}:{H}:(ow-iw)/2:(oh-ih)/2,setsar=1[v0]")
+    v0n = "v0"
+    if sc.get("zooms"):                                # v2.2 크래시 줌(자막·출처는 줌 위에 얹힘)
+        fl.append(f"[v0]{zoom_filter(sc['zooms'])}[v0z]"); v0n = "v0z"
     ov = []   # (입력번호, 시작, 끝)
     occ = sg.setdefault("occ", [])   # 화면에 얹힌 그림의 (시작, 끝, 그림 경로) — 상품 카드 자리 피하기용
     if lay == "vertical":
@@ -430,7 +475,12 @@ def render_scene(sg, sc, base, tmp, tag, comp):
             i = add(["-framerate", str(FPS), "-i", pat])
             fl.append(f"[{i}:v]format=rgba,tpad=stop_mode=clone:stop_duration={max(0.1, s[1] - s[0]):.3f},setpts=PTS+{s[0]:.3f}/TB[fx{j}]")
             ov.append((f"fx{j}", s[0], s[1])); occ.append((s[0], s[1], pat % (round(0.3 * FPS) - 1)))
+        elif st in ("bracket", "situation", "narr"):   # v2.2 몰아보기 자막
+            mola_sub_png(s[2], p, st, s[4] if len(s) > 4 else None); ov.append((add(["-i", p]), s[0], s[1])); occ.append((s[0], s[1], p))
         else: sub_png(s[2], p, st); ov.append((add(["-i", p]), s[0], s[1])); occ.append((s[0], s[1], p))
+    for j, r_ in enumerate(sc.get("reacts", [])):      # v2.2 동네 형 반응 말풍선(오른쪽 아래)
+        p = os.path.join(tmp, f"{tag}_r{j}.png"); react_png(r_, p); a_ = r_["at"]; b_ = a_ + r_.get("sec", 3)
+        ov.append((add(["-i", p]), a_, b_)); occ.append((a_, b_, p))
     if sc.get("credit"):                               # 출처: 오른쪽 아래 구석, 장면 내내
         p = os.path.join(tmp, f"{tag}_cr.png"); credit_png(sc["credit"], p); ov.append((add(["-i", p]), 0, D + 1)); occ.append((0, D + 1, p))
     cx, cw = {"vertical": (VX + VW + 30, 586), "split": (40, 680)}.get(lay, (1180, 680))
@@ -441,7 +491,7 @@ def render_scene(sg, sc, base, tmp, tag, comp):
         i = add(["-framerate", str(FPS), "-i", pat])
         fl.append(f"[{i}:v]format=rgba,tpad=stop_mode=clone:stop_duration={max(0.1, ss - nfr / FPS):.3f},fade=t=out:st={max(0.1, ss - 0.4):.3f}:d=0.4:alpha=1[stp]")
         ov.append(("stp", 0, ss)); occ.append((0, ss, pat % (nfr - 1)))
-    last = "v0"
+    last = v0n
     for n, (idx, s0, s1) in enumerate(ov):
         src = f"[{idx}]" if isinstance(idx, str) else f"[{idx}:v]"
         fl.append(f"[{last}]{src}overlay=0:0:enable='between(t,{s0},{s1})'[o{n}]"); last = f"o{n}"
@@ -453,8 +503,16 @@ def render_scene(sg, sc, base, tmp, tag, comp):
     if has_a: ain = "[0:a]"
     else: ain = f"[{add(['-f', 'lavfi', '-t', f'{tot + 0.5:.3f}', '-i', 'anullsrc=r=48000:cl=stereo'])}:a]"
     fi, fo = max(0.02, L + sg["tin"]), max(0.02, T + sg["tout"])
+    bl = sc.get("bleeps", [])                          # v2.2 삐-: 원음 줄이고 1kHz
     fl.append(f"{ain}aresample=48000,aformat=sample_fmts=fltp:channel_layouts=stereo,volume={sc.get('volume', 1.0)},apad=whole_dur={tot:.4f},atrim=0:{tot:.4f},"
-              f"afade=t=in:st=0:d={fi:.3f},afade=t=out:st={tot - fo:.4f}:d={fo:.3f}[aout]")
+              f"afade=t=in:st=0:d={fi:.3f},afade=t=out:st={tot - fo:.4f}:d={fo:.3f}" + "".join(f",volume=0.04:enable='between(t,{L + b['at']:.3f},{L + b['at'] + b.get('dur', 0.5):.3f})'" for b in bl)
+              + ("[a0]" if bl else "[aout]"))
+    if bl:
+        bp = []
+        for j, b in enumerate(bl):
+            bi = add(["-f", "lavfi", "-t", f"{b.get('dur', 0.5):.3f}", "-i", f"sine=frequency={_STD()['style_A']['bleep_hz']}:sample_rate=48000"])
+            fl.append(f"[{bi}:a]aformat=sample_fmts=fltp:channel_layouts=stereo,volume=0.32,afade=t=in:d=0.01,adelay={int((L + b['at']) * 1000)}:all=1[bp{j}]"); bp.append(f"[bp{j}]")
+        fl.append("[a0]" + "".join(bp) + f"amix=inputs={len(bp) + 1}:normalize=0:duration=first,atrim=0:{tot:.4f}[aout]")
     sg["v"] = os.path.join(tmp, f"{tag}.mp4"); sg["a"] = os.path.join(tmp, f"{tag}.wav")
     run(["ffmpeg", "-y", *inputs, "-filter_complex", ";".join(fl), "-map", "[vout]", "-an", "-frames:v", str(N), *VTMP, sg["v"],
          "-map", "[aout]", "-vn", "-c:a", "pcm_s16le", sg["a"]])
@@ -501,8 +559,26 @@ def chain(files, joins, starts, out, extra_in=(), tail="", final_map=(), enc=VTM
 
 def layout_of(sc): return sc.get("layout", "vertical" if sc.get("image") else "horizontal")
 
+def narration_fallback(spec, base):
+    """v2.2: 내레이션 파일이 없으면 글(text/_text)을 'narr' 자막으로 대신(파일 생기면 그대로 소리로)."""
+    n_sub = 0
+    for ch in spec.get("chapters", []):
+        for sc in ch.get("scenes", []):
+            ns = sc.get("narration"); ns = [ns] if isinstance(ns, dict) else (ns or []); keep = []
+            for n in ns:
+                f = n.get("file"); ok = bool(f) and os.path.exists(f if os.path.isabs(f) else os.path.join(base, f))
+                txt = n.get("text") or n.get("_text")
+                if ok or not txt: keep.append(n); continue
+                d = n.get("_예상초") or n.get("sec") or round(0.8 + len(txt) * 0.14, 2)
+                sc.setdefault("subs", []).append([n.get("at", 0), n.get("at", 0) + d, txt, "narr"]); n_sub += 1
+            if isinstance(sc.get("narration"), (list, dict)): sc["narration"] = keep
+    return n_sub
+
 def build(spec, base):
     tmp = os.path.join(base, "_tmp"); out = os.path.join(base, "out"); os.makedirs(tmp, exist_ok=True); os.makedirs(out, exist_ok=True)
+    tmp = spec.get("_tmp_dir", tmp); out = spec.get("_out_dir", out); os.makedirs(tmp, exist_ok=True); os.makedirs(out, exist_ok=True)
+    n_narr_sub = narration_fallback(spec, base)
+    if n_narr_sub: print(f"내레이션 파일 없음 → 자막으로 대신: {n_narr_sub}개")
     series = spec.get("series", "덕심저장소"); xd = spec.get("xfade_sec", 0.3); fd = spec.get("fold_sec", 0.5)
     # 1) 재료 그림
     comp = {"mask_v": os.path.join(tmp, "mask_v.png"), "mask_sh": os.path.join(tmp, "mask_sh.png"),
@@ -621,7 +697,9 @@ def build(spec, base):
             for x in (sg.get("sc", {}).get(key) or []): x = dict(x); x["at"] = sg["S"] + x.get("at", 0); out_.append(x)
         return out_
     sfxs = gather("sfx")                               # 효과음 파일(같은 시각 효과음 자막과 짝)
-    for x in sfxs: x["path"] = x["file"] if os.path.isabs(x["file"]) else os.path.join(base, x["file"])
+    for x in sfxs:
+        if x.get("file"): x["path"] = x["file"] if os.path.isabs(x["file"]) else os.path.join(base, x["file"])
+        else: import v2_fx; x["path"] = v2_fx.sfx_path(x, base)   # v2.2 이름 효과음(crow 등)
     cuts = gather("music_cut")                         # 음악 끊기(강조용 정적): 배경음악만 0
     mc = "0"
     for c in cuts:
@@ -799,4 +877,15 @@ def make_test_media(d):
 
 if __name__ == "__main__":
     if sys.argv[1] == "--test-media": make_test_media(sys.argv[2]); sys.exit()
-    p = sys.argv[1]; build(json.load(open(p, encoding="utf-8")), os.path.dirname(os.path.abspath(p)))
+    p = sys.argv[1]; sp_ = json.load(open(p, encoding="utf-8"))
+    if len(sys.argv) > 2: sp_["_out_dir"] = os.path.abspath(sys.argv[2]); sp_["_tmp_dir"] = os.path.join(sp_["_out_dir"], "_tmp_" + sp_["out"])
+    res = build(json.loads(json.dumps(sp_)), os.path.dirname(os.path.abspath(p)))
+    if sp_.get("thumb_v2"):                           # v2.2 썸네일(standard_v2 thumbnail_v2) 1280x720
+        import v2_fx, expose_factory as ef, cv2
+        tv = sp_["thumb_v2"]; bgr = ef.grab(tv["frame"]["file"], tv["frame"]["t"])
+        if tv.get("zoom"): bgr = ef.zoom_at(bgr, *tv["zoom"])
+        tp_ = os.path.join(os.path.dirname(res["final"]), sp_["out"] + "_thumb.png")
+        v2_fx.thumb_v2(Image.fromarray(cv2.cvtColor(bgr, cv2.COLOR_BGR2RGB)), dict(tv, source=tv.get("source", (sp_.get("credits") or [""])[0] if sp_.get("credits") else ""), test=sp_.get("test_label")), (1280, 720), tp_)
+        print("썸네일(v2):", tp_)
+    import check_standard as cs                       # v2.2: 표준 v2 자동 점검
+    lines, ok = cs.run(sp_, [res["final"]]); print("■ 표준 v2 점검"); print("\n".join(lines)); print("→ 통과" if ok else "→ 위반 있음(❌)")

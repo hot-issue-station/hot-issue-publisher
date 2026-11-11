@@ -1,9 +1,8 @@
 """표준 v2 자동 점검기 — 기획 JSON + 렌더 결과(mp4)를 standard_v2.json 기준으로 점검해 통과/위반 목록을 낸다.
 사용법:
   python3 check_standard.py 기획.json 결과.mp4 [--platform youtube|tiktok|...] [--json]
-  python3 check_standard.py 기획.json 결과_58.mp4 결과_tiktok62.mp4      # 쇼츠 두 버전 한 번에
 종류(template): expose(쇼츠 A) · pulse58(쇼츠 B) · molabogi(롱폼 몰아보기). 그 밖의 롱폼 spec 은 기준서 v1 항목만.
-점검: 플랫폼 길이(58.0/62.0 ±0.05) · 해상도 · 구간 순서·시간 · 금지어(제목·썸네일·큰 자막·우리 자막·게시 문구) · 출처 표시 ·
+점검: 쇼츠 길이(모든 플랫폼 58.0 ±0.05) · 해상도 · 구간 순서·시간 · 금지어(제목·썸네일·큰 자막·우리 자막·게시 문구) · 출처 표시 ·
       정지 화면(8초 초과) · 기준서 v1 필수 요소(롱폼: 하이라이트 3초·질문 25초 무렵·출처·엔딩) · 금지·광고 구간 · 따옴표 대사 · 술·담배·도박·성인 광고 단어.
 돌려주는 값(코드에서): run(spec, videos) → (lines, ok)
 """
@@ -100,7 +99,7 @@ def check_quotes(spec):
 def shorts_sections(spec, total):
     kind = spec.get("template")
     if kind == "expose": S, roles = STD["style_A"]["sections"], STD["style_A"]["stretch_roles"]
-    else: S, roles = STD["style_B"]["sections"], STD["style_B"]["stretch_sections"]
+    else: S, roles = STD["style_B"]["sections"], []
     return stretched_sections(S, roles, total)
 
 def stretch_clips(spec, total, fps=None):

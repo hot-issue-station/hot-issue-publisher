@@ -20,6 +20,10 @@ import upload_plan as up  # noqa: E402  (X 글자 수·해시태그·예약 시�
 DAYS = ["월", "화", "수", "목", "금", "토", "일"]
 SLOT_TIME = {"아침": "07:30", "점심": "12:00", "저녁": "18:30"}
 SLOT_UP = {"아침": "출근", "점심": "점심", "저녁": "퇴근"}   # 업로더 시간대 이름
+V2 = ("expose", "pulse58")   # 제작 표준 v2 쇼츠(standard_v2.json): 모든 칸 같은 58.0초 파일, 58초 넘으면 멈춤
+STD2 = json.load(open(os.path.join(HERE, "standard_v2.json"), encoding="utf-8"))
+def slot_time(spec, slot): return spec.get("_time") or SLOT_TIME[slot]          # v2 틀은 spec 에 19:00
+def slot_up(spec, slot): return spec.get("_slot_up") or SLOT_UP[slot]          # v2 틀은 업로더 '저녁7시'
 LIM = {"yt_title": 100, "yt_desc": 5000, "yt_tags": 500, "ig": 2200, "ig_tags": 30, "tt": 2200, "x": 280, "th": 500}
 FILES = ["video.mp4", "thumb.jpg", "youtube.txt", "instagram.txt", "tiktok.txt", "x.txt", "threads.txt",
          "sources.md", "checklist.txt", "upload_plan.json"]
@@ -87,9 +91,9 @@ def song_of(spec):
     return (m.group(1) if m else spec["out"]), ""
 
 
-def pick_date(day, slot, date=None, now=None):
-    """템플릿 요일·시간대의 다음 예약 시각(지금부터 20분 이후). date 를 주면 그 날."""
-    now = now or dt.datetime.now(up.KST); h, m = map(int, SLOT_TIME[slot].split(":"))
+def pick_date(day, slot, date=None, now=None, time=None):
+    """템플릿 요일·시간대의 다음 예약 시각(지금부터 20분 이후). date 를 주면 그 날. time 을 주면 그 시각(v2: 19:00)."""
+    now = now or dt.datetime.now(up.KST); h, m = map(int, (time or SLOT_TIME[slot]).split(":"))
     if date: return dt.date.fromisoformat(date)
     for add in range(0, 8):
         d = now.date() + dt.timedelta(days=add)
@@ -188,6 +192,11 @@ def sources_md(spec, made_at):
         if hl.get("note"): L += [f"- 메모(비교 문장): {hl['note']}  [ ] 근거 확인", ""]
     elif spec.get("template") == "cards":
         L += ["## 카드 문장 (사실이 들어간 문장은 원문 대조)"] + [f"- [ ] {c.get('big', '')} / {c.get('small', '')}" for c in spec.get("cards", [])] + [""]
+    elif spec.get("template") in V2:      # 표준 v2 쇼츠: 쓴 원본 구간 목록
+        L += ["## 쓴 원본 구간(표준 v2)", f"- 출처 줄: {spec.get('source_line', '')}", f"- 저작권·팬캠 양해 확인: {'예' if spec.get('copyright_checked') else '아니요(확인 필요)'}"]
+        for c in (spec.get("clips") or spec.get("sources") or []):
+            L.append(f"- {os.path.basename(c['file'])} " + (f"{c['in']:.1f}~{c['out']:.1f}초 ({c.get('role', '')})" if "in" in c else f"sync {c.get('sync', 0)}초 {c.get('label', '')}"))
+        L.append("")
     else:
         L += ["## 무대 클립", f"- 저작권·팬캠 양해 확인: {'예' if spec.get('copyright_checked') else '아니요 ❌'}"]
         L += [f"- {k}: {os.path.basename(v[0])}" for k, v in (spec.get("clips") or {}).items()] + [""]
@@ -231,7 +240,11 @@ def build_plan(pkg, spec, sites, slot, date, now=None, base_lines=()):
     if s.get("template") == "stagemix":   # 업로더 끝 화면 계산은 rank·cards 용 → 교차편집은 실제 길이·끝 화면 4초로 맞춤
         d = (up.probe(os.path.join(pkg, "video.mp4")) or {}).get("dur") or s.get("_est_sec", 30)
         s.update(template="cards", cards=[], dur=d, min_body_sec=d - 4.0)
-    s["upload"] = {"slot": SLOT_UP[slot], "date": date}
+    if s.get("template") in V2:           # v2: 아웃트로 5초. 옛 5줄 점검표(숫자 확인 등)는 v2 에서 끔 → 아래에서 표준 v2 점검으로 바꿈
+        d = (up.probe(os.path.join(pkg, "video.mp4")) or {}).get("dur") or STD2["shorts"]["total_sec"]
+        s.update(template="cards", cards=[], dur=d, min_body_sec=d - STD2["shorts"]["outro_sec"], checked=s.get("checked") or "표준 v2 점검기",
+                 source=s.get("source") or [s.get("source_line", "")])
+    s["upload"] = {"slot": slot_up(spec, slot), "date": date}
     with tempfile.TemporaryDirectory() as tmp:
         os.makedirs(os.path.join(tmp, "out"))
         sp = os.path.join(tmp, name + "_spec.json"); json.dump(s, open(sp, "w", encoding="utf-8"), ensure_ascii=False)
@@ -248,10 +261,13 @@ def build_plan(pkg, spec, sites, slot, date, now=None, base_lines=()):
     bad = [x for x in base_lines if x.startswith("❌")]   # 공장 점검표 ❌ 는 계획도 통과 못 함
     if bad and not any("5줄 점검표" in q for q in plan["problems"]):
         plan["problems"].append("공장 점검표 ❌: " + " / ".join(bad)); plan["ok"] = False
-    if spec.get("template") == "stagemix" and not spec.get("copyright_checked"):
+    if spec.get("template") in V2:        # 옛 5줄 점검표 대신 표준 v2 점검(base_lines) 결과만
+        plan["problems"] = [q for q in plan["problems"] if "5줄 점검표" not in q]
+        plan["ok"] = not plan["problems"]
+    if spec.get("template") in ("stagemix", "pulse58") and not spec.get("copyright_checked"):
         plan["problems"].append("저작권·팬캠 양해 확인 안 됨"); plan["ok"] = False
-    if (plan["schedule"]["slot"], plan["schedule"]["time"]) != (SLOT_UP[slot], SLOT_TIME[slot]):
-        plan["problems"].append(f"예약 시간대가 틀({slot} {SLOT_TIME[slot]})과 다름"); plan["ok"] = False
+    if (plan["schedule"]["slot"], plan["schedule"]["time"]) != (slot_up(spec, slot), slot_time(spec, slot)):
+        plan["problems"].append(f"예약 시간대가 틀({slot} {slot_time(spec, slot)})과 다름"); plan["ok"] = False
     return plan
 
 
@@ -314,7 +330,12 @@ def make_package(result_dir, outbox=None, date=None, sites=None, use_ai=False, n
     spec, spec_path, video, thumb, ptxt = find_result(os.path.abspath(result_dir))
     day, slot = spec["_preset"].split("_")
     sites = sites or ["youtube"]; now = now or dt.datetime.now(up.KST)
-    d = pick_date(day, slot, date, now)
+    if spec.get("template") == "molabogi":
+        raise SystemExit("❌ 롱폼 몰아보기는 쇼츠 꾸러미(package.py) 대상이 아니에요 → 롱폼 업로드 순서(dukssim-longform)로")
+    info = up.probe(video) or {}; cap = STD2["shorts"]["max_sec"] + STD2["shorts"]["tolerance_sec"]
+    if info.get("dur", 0) > cap:          # 대표 20:36·20:40: 58.0초 넘는 쇼츠는 어느 칸에도 넣지 않는다(Content ID 전 세계 차단 위험)
+        raise SystemExit(f"❌ 영상이 {info['dur']:.2f}초 — 쇼츠는 모든 플랫폼 {STD2['shorts']['max_sec']:.1f}초 이하만(꾸러미 만들지 않고 멈춤)")
+    d = pick_date(day, slot, date, now, spec.get("_time"))
     if DAYS[d.weekday()] != day: notes0 = [f"예약 날짜 {d}는 {DAYS[d.weekday()]}요일인데 틀은 {day}요일이에요"]
     else: notes0 = []
     song, _ = song_of(spec)
@@ -341,6 +362,9 @@ def base_check(spec, video):
     if spec.get("template") in ("rank", "cards"):
         dur, t_end = up.end_timing(spec); info = up.probe(video)
         return sf.checklist(spec, video, info["dur"] if info else dur, t_end)[0]
+    if spec.get("template") in V2:        # 표준 v2: make_today 가 렌더 뒤 돌린 check_standard 결과(없으면 지금 돌림)
+        if spec.get("_v2_check"): return spec["_v2_check"]
+        import check_standard as cs; return cs.run(spec, [video])[0]
     import make_today as mt
     lines, _ = mt.precheck(spec); info = up.probe(video) or {}
     n_src = len({v[0] for v in (spec.get("clips") or {}).values()})   # make_today.render 와 같은 기준
