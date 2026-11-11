@@ -3,7 +3,7 @@
  "name": "스브스뉴스 (SBS)",
  "channel": "https://www.youtube.com/@subusunews",
  "channelId": "UCxPClUl0bh7BgJajD5k483g",
- "checkedAt": "2026-11-11T22:50+09:00",
+ "checkedAt": "2026-11-12T08:41+09:00",
  "videos": [
   {
    "id": "TEE7OYw0omU",
@@ -11,12 +11,12 @@
    "published": "2026-11-11T09:00:35+00:00",
    "url": "https://www.youtube.com/shorts/TEE7OYw0omU",
    "shorts": true,
-   "views": 2446,
-   "likes": 37,
-   "viewsGain": 1368,
+   "views": 5001,
+   "likes": 65,
+   "viewsGain": 2555,
    "isNew": false,
-   "median": 20411.5,
-   "multiple": 0.1
+   "median": 21437.0,
+   "multiple": 0.2
   },
   {
    "id": "SsgQRa2QH0U",
@@ -24,12 +24,12 @@
    "published": "2026-11-11T09:00:32+00:00",
    "url": "https://www.youtube.com/shorts/SsgQRa2QH0U",
    "shorts": true,
-   "views": 4941,
-   "likes": 44,
-   "viewsGain": 2994,
+   "views": 10706,
+   "likes": 84,
+   "viewsGain": 5765,
    "isNew": false,
-   "median": 20411.5,
-   "multiple": 0.2
+   "median": 21437.0,
+   "multiple": 0.5
   },
   {
    "id": "8ZxqxRnlAhg",
@@ -37,12 +37,12 @@
    "published": "2026-11-11T09:00:31+00:00",
    "url": "https://www.youtube.com/shorts/8ZxqxRnlAhg",
    "shorts": true,
-   "views": 3683,
-   "likes": 50,
-   "viewsGain": 2263,
+   "views": 7321,
+   "likes": 76,
+   "viewsGain": 3638,
    "isNew": false,
-   "median": 20411.5,
-   "multiple": 0.2
+   "median": 21437.0,
+   "multiple": 0.3
   },
   {
    "id": "fPk1Jmnz5sU",
@@ -50,12 +50,12 @@
    "published": "2026-11-10T10:16:49+00:00",
    "url": "https://www.youtube.com/shorts/fPk1Jmnz5sU",
    "shorts": true,
-   "views": 108200,
-   "likes": 2824,
-   "viewsGain": 25042,
+   "views": 161276,
+   "likes": 3445,
+   "viewsGain": 53076,
    "isNew": false,
-   "median": 20411.5,
-   "multiple": 5.3
+   "median": 21437.0,
+   "multiple": 7.5
   },
   {
    "id": "_i4szpS2iWE",
@@ -63,12 +63,12 @@
    "published": "2026-11-10T09:33:26+00:00",
    "url": "https://www.youtube.com/shorts/_i4szpS2iWE",
    "shorts": true,
-   "views": 27258,
-   "likes": 518,
-   "viewsGain": 4694,
+   "views": 34799,
+   "likes": 571,
+   "viewsGain": 7541,
    "isNew": false,
-   "median": 20411.5,
-   "multiple": 1.3
+   "median": 21437.0,
+   "multiple": 1.6
   },
   {
    "id": "mZoYzTu6ZyY",
@@ -76,12 +76,12 @@
    "published": "2026-11-10T09:31:05+00:00",
    "url": "https://www.youtube.com/shorts/mZoYzTu6ZyY",
    "shorts": true,
-   "views": 44341,
-   "likes": 536,
-   "viewsGain": 5758,
+   "views": 61215,
+   "likes": 656,
+   "viewsGain": 16874,
    "isNew": false,
-   "median": 20411.5,
-   "multiple": 2.2
+   "median": 21437.0,
+   "multiple": 2.9
   },
   {
    "id": "1HzIABBs_lo",
@@ -89,12 +89,12 @@
    "published": "2026-11-10T09:28:45+00:00",
    "url": "https://www.youtube.com/shorts/1HzIABBs_lo",
    "shorts": true,
-   "views": 20737,
-   "likes": 221,
-   "viewsGain": 1233,
+   "views": 22657,
+   "likes": 228,
+   "viewsGain": 1920,
    "isNew": false,
-   "median": 20411.5,
-   "multiple": 1.0
+   "median": 21437.0,
+   "multiple": 1.1
   },
   {
    "id": "R6snzVYjYF8",
@@ -102,9 +102,9 @@
    "published": "2026-11-10T09:00:29+00:00",
    "url": "https://www.youtube.com/watch?v=R6snzVYjYF8",
    "shorts": false,
-   "views": 251954,
-   "likes": 3679,
-   "viewsGain": 28393,
+   "views": 289986,
+   "likes": 3898,
+   "viewsGain": 38032,
    "isNew": false,
    "median": null,
    "multiple": null
@@ -115,12 +115,12 @@
    "published": "2026-11-05T09:00:33+00:00",
    "url": "https://www.youtube.com/shorts/ZS5sPQuxWks",
    "shorts": true,
-   "views": 27585,
-   "likes": 429,
-   "viewsGain": 90,
+   "views": 27794,
+   "likes": 432,
+   "viewsGain": 209,
    "isNew": false,
-   "median": 20411.5,
-   "multiple": 1.4
+   "median": 21437.0,
+   "multiple": 1.3
   },
   {
    "id": "Ptp13j-jG8o",
@@ -128,12 +128,12 @@
    "published": "2026-11-05T09:00:12+00:00",
    "url": "https://www.youtube.com/shorts/Ptp13j-jG8o",
    "shorts": true,
-   "views": 15567,
-   "likes": 445,
-   "viewsGain": 37,
+   "views": 15760,
+   "likes": 446,
+   "viewsGain": 193,
    "isNew": false,
-   "median": 20411.5,
-   "multiple": 0.8
+   "median": 21437.0,
+   "multiple": 0.7
   },
   {
    "id": "Zq1d5ckccFQ",
@@ -141,12 +141,12 @@
    "published": "2026-11-05T09:00:05+00:00",
    "url": "https://www.youtube.com/shorts/Zq1d5ckccFQ",
    "shorts": true,
-   "views": 49802,
-   "likes": 655,
-   "viewsGain": 247,
+   "views": 50091,
+   "likes": 659,
+   "viewsGain": 289,
    "isNew": false,
-   "median": 20411.5,
-   "multiple": 2.4
+   "median": 21437.0,
+   "multiple": 2.3
   },
   {
    "id": "peMHRTigrOo",
@@ -154,12 +154,12 @@
    "published": "2026-11-04T22:00:29+00:00",
    "url": "https://www.youtube.com/shorts/peMHRTigrOo",
    "shorts": true,
-   "views": 20086,
-   "likes": 470,
-   "viewsGain": 73,
+   "views": 20217,
+   "likes": 472,
+   "viewsGain": 131,
    "isNew": false,
-   "median": 20411.5,
-   "multiple": 1.0
+   "median": 21437.0,
+   "multiple": 0.9
   },
   {
    "id": "89sECRzHy-U",
@@ -167,11 +167,11 @@
    "published": "2026-11-04T22:00:08+00:00",
    "url": "https://www.youtube.com/shorts/89sECRzHy-U",
    "shorts": true,
-   "views": 9001,
-   "likes": 367,
-   "viewsGain": 25,
+   "views": 9089,
+   "likes": 368,
+   "viewsGain": 88,
    "isNew": false,
-   "median": 20411.5,
+   "median": 21437.0,
    "multiple": 0.4
   },
   {
@@ -180,12 +180,12 @@
    "published": "2026-11-04T09:59:03+00:00",
    "url": "https://www.youtube.com/shorts/vivfKyBubgA",
    "shorts": true,
-   "views": 19646,
-   "likes": 534,
-   "viewsGain": 0,
+   "views": 19743,
+   "likes": 535,
+   "viewsGain": 97,
    "isNew": false,
-   "median": 20411.5,
-   "multiple": 1.0
+   "median": 21437.0,
+   "multiple": 0.9
   },
   {
    "id": "RkMOt2YYMUg",
@@ -193,11 +193,11 @@
    "published": "2026-11-04T09:57:39+00:00",
    "url": "https://www.youtube.com/shorts/RkMOt2YYMUg",
    "shorts": true,
-   "views": 22942,
-   "likes": 699,
-   "viewsGain": 23,
+   "views": 22968,
+   "likes": 700,
+   "viewsGain": 26,
    "isNew": false,
-   "median": 20411.5,
+   "median": 21437.0,
    "multiple": 1.1
   }
  ],
@@ -205,22 +205,22 @@
   {
    "title": "어쩌면 사랑은 다 우정 안에 있는지도 모르겠다",
    "url": "https://www.youtube.com/shorts/fPk1Jmnz5sU",
-   "views": 108200,
-   "multiple": 5.3,
-   "shorts": true
-  },
-  {
-   "title": "극단적이었던 재민 입맛",
-   "url": "https://www.youtube.com/shorts/Zq1d5ckccFQ",
-   "views": 49802,
-   "multiple": 2.4,
+   "views": 161276,
+   "multiple": 7.5,
    "shorts": true
   },
   {
    "title": "나보다 못해주는 남자 만나지 마",
    "url": "https://www.youtube.com/shorts/mZoYzTu6ZyY",
-   "views": 44341,
-   "multiple": 2.2,
+   "views": 61215,
+   "multiple": 2.9,
+   "shorts": true
+  },
+  {
+   "title": "극단적이었던 재민 입맛",
+   "url": "https://www.youtube.com/shorts/Zq1d5ckccFQ",
+   "views": 50091,
+   "multiple": 2.3,
    "shorts": true
   }
  ]

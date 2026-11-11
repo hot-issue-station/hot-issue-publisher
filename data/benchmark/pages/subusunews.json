@@ -1,56 +1,59 @@
 {
  "name": "스브스뉴스 (SBS)",
  "channel": "https://www.youtube.com/@subusunews",
- "checkedAt": "2026-11-11T22:50+09:00",
+ "checkedAt": "2026-11-12T08:41+09:00",
  "subscribers": "144만",
  "videos": [
   {
    "id": "QSXv2yiIveI",
    "title": "귀신 훈육 놀이에 터져버린 아동 학대 논란 #한국민속촌 #shorts #스브스뉴스",
-   "views": 1000,
-   "viewsText": "조회수 1천회",
+   "views": 4800,
+   "viewsText": "조회수 4.8천회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 3800
   },
   {
    "id": "7UWF0GGYftg",
    "title": "[선공개] 신혼여행 따라갔던 부부에게 연락이 안 온다",
-   "views": 1700,
-   "viewsText": "조회수 1.7천회",
+   "views": 3800,
+   "viewsText": "조회수 3.8천회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 2100
   },
   {
    "id": "vS6l_n2uJzs",
    "title": "젠슨 황 내연녀 앨리스 황, 10조 원어치 ‘엔비디아 AI칩’ 중국으로 유출? #엔비디아 #shorts #스브스뉴스",
-   "views": 2000,
-   "viewsText": "조회수 2천회",
+   "views": 4500,
+   "viewsText": "조회수 4.5천회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 2500
   },
   {
    "id": "phk3JBktfX8",
    "title": "[선공개] 인간관계 정리되는 요즘 경조사",
-   "views": 2200,
-   "viewsText": "조회수 2.2천회",
+   "views": 4800,
+   "viewsText": "조회수 4.8천회",
    "published": "",
    "kind": "short",
-   "gain": 1682
+   "gain": 2600
   },
   {
    "id": "80Prr9snsIk",
    "title": "[선공개] 죽여달라는 거지?",
-   "views": 2300,
-   "viewsText": "조회수 2.3천회",
+   "views": 4800,
+   "viewsText": "조회수 4.8천회",
    "published": "",
    "kind": "short",
-   "gain": 1200
+   "gain": 2500
   },
   {
    "id": "h8iBMhQ3b-Q",
    "title": "추워질수록 위험하다는 굴운자로 #굴 #shorts #스브스뉴스",
-   "views": 5100,
-   "viewsText": "조회수 5.1천회",
+   "views": 5700,
+   "viewsText": "조회수 5.7천회",
    "published": "",
    "kind": "short",
    "gain": 600
@@ -58,17 +61,17 @@
   {
    "id": "uO5xviR9-aM",
    "title": "유독 정치판에서 사이비 종교 논란이 자주 터지는 이유 #사이비 #shorts #스브스뉴스",
-   "views": 4100,
-   "viewsText": "조회수 4.1천회",
+   "views": 4300,
+   "viewsText": "조회수 4.3천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 200
   },
   {
    "id": "Y0Y6eq3a6PE",
    "title": "서울시가 남산에 곤돌라를 만들려는 이유 #shorts / 스브스뉴스",
-   "views": 4100,
-   "viewsText": "조회수 4.1천회",
+   "views": 4300,
+   "viewsText": "조회수 4.3천회",
    "published": "",
    "kind": "short",
    "gain": 200
@@ -76,47 +79,47 @@
   {
    "id": "DqL_SWFWkD8",
    "title": "침착맨 방송 중 사교육 문제 직격타 날린 정승제 #입시 #shorts #스브스뉴스",
-   "views": 460000,
-   "viewsText": "조회수 46만회",
+   "views": 480000,
+   "viewsText": "조회수 48만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 20000
   },
   {
    "id": "lnryKqOozWk",
    "title": "갑작스러운 사고로 세상 떠난 여행 유튜버 #추모 #shorts #스브스뉴스",
-   "views": 16000,
-   "viewsText": "조회수 1.6만회",
+   "views": 17000,
+   "viewsText": "조회수 1.7만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 1000
   },
   {
    "id": "pmpb5ZMw3Sw",
    "title": "매번 달라지는 게 없다는 자살예방계획의 민낯 #청소년자살 #shorts #스브스뉴스",
-   "views": 2800,
-   "viewsText": "조회수 2.8천회",
+   "views": 2900,
+   "viewsText": "조회수 2.9천회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 100
   },
   {
    "id": "STWniX3sH0g",
    "title": "상반기에만 2배 폭증한 초등학생 자살률 #자살 #shorts #스브스뉴스",
-   "views": 6100,
-   "viewsText": "조회수 6.1천회",
+   "views": 6200,
+   "viewsText": "조회수 6.2천회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 100
   },
   {
    "id": "qZaeu4PJUps",
    "title": "롯데홈쇼핑이 직접 교육하는 커머스 인재 학교? #shorts #스브스뉴스",
-   "views": 26000,
-   "viewsText": "조회수 2.6만회",
+   "views": 27000,
+   "viewsText": "조회수 2.7만회",
    "published": "",
    "kind": "short",
-   "gain": 3000
+   "gain": 1000
   },
   {
    "id": "bvbHkNEO3t8",
@@ -139,11 +142,11 @@
   {
    "id": "bRGPA0qxe-w",
    "title": "햇반이 해외에서 인기인 의외의 이유 #shorts / 스브스뉴스",
-   "views": 14000,
-   "viewsText": "조회수 1.4만회",
+   "views": 15000,
+   "viewsText": "조회수 1.5만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 1000
   },
   {
    "id": "Hi8hop0wrf0",

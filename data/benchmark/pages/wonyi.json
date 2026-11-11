@@ -1,7 +1,7 @@
 {
  "name": "안원잘부",
  "channel": "https://www.youtube.com/@helloiamwoninicetomeetyou",
- "checkedAt": "2026-11-11T22:50+09:00",
+ "checkedAt": "2026-11-12T08:41+09:00",
  "subscribers": "243만",
  "videos": [
   {
@@ -11,7 +11,7 @@
    "viewsText": "조회수 162만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "DKDmFgXzxs8",
@@ -25,11 +25,11 @@
   {
    "id": "zxNoW_LtVLE",
    "title": "치명적인 실수",
-   "views": 2760000,
-   "viewsText": "조회수 276만회",
+   "views": 2770000,
+   "viewsText": "조회수 277만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "mFM2hP5LEhM",
@@ -88,11 +88,11 @@
   {
    "id": "8aZYgM9GeL0",
    "title": "드라켄의 진실",
-   "views": 3310000,
-   "viewsText": "조회수 331만회",
+   "views": 3320000,
+   "viewsText": "조회수 332만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "o-B0F16GwL0",
@@ -101,7 +101,7 @@
    "viewsText": "조회수 1354만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "gNJrbCSN2TM",
@@ -164,7 +164,7 @@
    "viewsText": "조회수 139만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "5qmyo1nR3no",

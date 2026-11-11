@@ -1,26 +1,34 @@
 {
  "name": "14F 일사에프 (MBC)",
  "channel": "https://www.youtube.com/@14FMBC",
- "checkedAt": "2026-11-11T22:50+09:00",
+ "checkedAt": "2026-11-12T08:41+09:00",
  "subscribers": "239만",
  "videos": [
   {
+   "id": "yzQjanfzMkg",
+   "title": "예멘 무장 단체 후티 반군의 탄생 #shorts",
+   "views": 353,
+   "viewsText": "조회수 353회",
+   "published": "",
+   "kind": "short"
+  },
+  {
    "id": "yJ40uku5fg0",
    "title": "대기업이 프랜차이즈를 안 하는 이유 #shorts",
-   "views": 9300,
-   "viewsText": "조회수 9.3천회",
+   "views": 12000,
+   "viewsText": "조회수 1.2만회",
    "published": "",
    "kind": "short",
-   "gain": 2200
+   "gain": 2700
   },
   {
    "id": "OTeGIZUhKjo",
    "title": "이게 진짜 라면이라고? 구미 라면 축제 이색 라면 모음 #shorts",
-   "views": 7500,
-   "viewsText": "조회수 7.5천회",
+   "views": 8000,
+   "viewsText": "조회수 8천회",
    "published": "",
    "kind": "short",
-   "gain": 200
+   "gain": 500
   },
   {
    "id": "eJAtWi5dWco",
@@ -52,8 +60,8 @@
   {
    "id": "uq0xvYN3L9I",
    "title": "일본 화물이 부산항에 몰리는 이유 #shorts",
-   "views": 160000,
-   "viewsText": "조회수 16만회",
+   "views": 170000,
+   "viewsText": "조회수 17만회",
    "published": "",
    "kind": "short",
    "gain": 10000
@@ -65,16 +73,16 @@
    "viewsText": "조회수 9천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "peSpC5kd2t0",
    "title": "홍채로도 운세를 볼 수 있다? #shorts",
-   "views": 9700,
-   "viewsText": "조회수 9.7천회",
+   "views": 9800,
+   "viewsText": "조회수 9.8천회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 100
   },
   {
    "id": "yoyqnf-PE30",
@@ -106,11 +114,11 @@
   {
    "id": "Icvrlx6HV-Q",
    "title": "뇌과학자도 당황한 최면 유도술 #shorts",
-   "views": 7200,
-   "viewsText": "조회수 7.2천회",
+   "views": 7300,
+   "viewsText": "조회수 7.3천회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 100
   },
   {
    "id": "zHzHgad2t6c",
@@ -351,15 +359,6 @@
    "title": "궁예는 왜 나락으로 갔을까? #shorts",
    "views": 20000,
    "viewsText": "조회수 2만회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "57DQb4d0CPs",
-   "title": "조선시대 박보검 #shorts",
-   "views": 25000,
-   "viewsText": "조회수 2.5만회",
    "published": "",
    "kind": "short",
    "gain": 0

@@ -1,26 +1,26 @@
 {
  "name": "슈카월드",
  "channel": "https://www.youtube.com/@syukaworld",
- "checkedAt": "2026-11-11T22:50+09:00",
+ "checkedAt": "2026-11-12T08:41+09:00",
  "subscribers": "374만",
  "videos": [
   {
    "id": "5mSF8npmm9A",
    "title": "이거 진짜에요?",
-   "views": 64000,
-   "viewsText": "조회수 6.4만회",
+   "views": 92000,
+   "viewsText": "조회수 9.2만회",
    "published": "",
    "kind": "short",
-   "gain": 30000
+   "gain": 28000
   },
   {
    "id": "5LEMniVcweU",
    "title": "걱정 노노",
-   "views": 27000,
-   "viewsText": "조회수 2.7만회",
+   "views": 43000,
+   "viewsText": "조회수 4.3만회",
    "published": "",
    "kind": "short",
-   "gain": 11000
+   "gain": 16000
   },
   {
    "id": "xmLFwy-UdNU",
@@ -29,22 +29,22 @@
    "viewsText": "조회수 21만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "xVKY3CWUoSE",
    "title": "딸깍으로 떠먹여주는 서비스",
-   "views": 50000,
-   "viewsText": "조회수 5만회",
+   "views": 52000,
+   "viewsText": "조회수 5.2만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 2000
   },
   {
    "id": "lioIrGMoIbs",
    "title": "좋은 사람 있으면 소개시켜줘",
-   "views": 88000,
-   "viewsText": "조회수 8.8만회",
+   "views": 89000,
+   "viewsText": "조회수 8.9만회",
    "published": "",
    "kind": "short",
    "gain": 1000
@@ -61,11 +61,11 @@
   {
    "id": "QvMjNxpMmPo",
    "title": "수능 주식 문제 1타 강사",
-   "views": 210000,
-   "viewsText": "조회수 21만회",
+   "views": 220000,
+   "viewsText": "조회수 22만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "prQUpQh_gko",
@@ -286,11 +286,11 @@
   {
    "id": "CXRchmrrXj0",
    "title": "대부분의 개미가 낚이는 과정",
-   "views": 650000,
-   "viewsText": "조회수 65만회",
+   "views": 660000,
+   "viewsText": "조회수 66만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "Kkwfabj2Dq0",
