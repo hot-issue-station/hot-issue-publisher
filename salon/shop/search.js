@@ -25,14 +25,32 @@
                   hosts: ["naver.com", "naver.me"] }
   };
 
-  const cfg = Object.assign({ mode: "mock", endpoint: "/.netlify/functions/shop-search", sources: ["coupang"], subId: "dangol" }, root.SHOP_CONFIG || {});
+  /* 영업 파트너 실적 구분 — 제휴처가 쓰는 실제 파라미터 이름을 확인하기 전이라 null.
+     null이면 파트너 코드를 어디에도 붙이지 않음. 확인 뒤 예: "subId" (docs/영업파트너_설계.md 「확인 필요」 참고)
+     SHOP_CONFIG.partnerParam 으로도 바꿀 수 있음 */
+  const PARTNER_PARAM = null;
+
+  const cfg = Object.assign({ mode: "mock", endpoint: "/.netlify/functions/shop-search", sources: ["coupang"], subId: "dangol", partnerParam: PARTNER_PARAM }, root.SHOP_CONFIG || {});
   try { const m = new URLSearchParams(location.search).get("mode"); if (m === "mock" || m === "netlify") cfg.mode = m; } catch (e) {}
+
+  /* 원장님 앱(index.html)에 저장된 '소개해 준 분 코드'만 읽음 (손님 기록은 읽지 않음) */
+  function partnerCode() {
+    try { const c = (JSON.parse(localStorage.getItem("dangol_v1")) || {}).pc; return /^[A-Z0-9]{4,12}$/.test(c || "") ? c : ""; } catch (e) { return ""; }
+  }
+  /* 실적 구분 값: 기본 subId + "_" + 파트너 코드 (예: dangol_JEJU01). 파트너 코드가 없거나 PARTNER_PARAM이 null이면 기본 subId */
+  function subIdFor() { const c = partnerCode(); return cfg.partnerParam && c ? cfg.subId + "_" + c : cfg.subId; }
+  /* 제휴 링크(수수료가 있는 판매처)에만 파트너 표시를 붙임. 네이버(수수료 없음)는 그대로 */
+  function withPartner(url, src) {
+    const c = partnerCode();
+    if (!cfg.partnerParam || !c || !src.notice) return url;
+    try { const u = new URL(url); u.searchParams.set(cfg.partnerParam, subIdFor()); return u.toString(); } catch (e) { return url; }
+  }
 
   /* 링크: 서버가 준 제휴 링크(p.url)가 있으면 그것, 없으면(예시) 판매처 검색 주소 */
   function linkFor(p) {
     const src = SOURCES[p.source] || SOURCES.coupang;
-    if (p.url && /^https:\/\//.test(p.url) && src.hosts.some(h => new URL(p.url).hostname.endsWith(h))) return p.url;
-    return src.searchUrl(String(p.name || "").replace(/^\[예시\]\s*/, "").replace(/\(.*?\)/g, "").trim());
+    if (p.url && /^https:\/\//.test(p.url) && src.hosts.some(h => new URL(p.url).hostname.endsWith(h))) return withPartner(p.url, src);
+    return withPartner(src.searchUrl(String(p.name || "").replace(/^\[예시\]\s*/, "").replace(/\(.*?\)/g, "").trim()), src);
   }
 
   /* API 결과에 호수·용량·묶음 칸이 없으면 상품명에서 짐작 */
@@ -52,7 +70,7 @@
 
   async function findNetlify(q) {
     if (q.item && q.item.group === "꾸미기") return { items: D.DECOR.map(p => Object.assign({}, p)), sample: true, from: "우리가 고른 목록" };
-    const url = cfg.endpoint + "?q=" + encodeURIComponent(q.query) + "&source=" + encodeURIComponent(cfg.sources.join(",")) + "&subId=" + encodeURIComponent(cfg.subId);
+    const url = cfg.endpoint + "?q=" + encodeURIComponent(q.query) + "&source=" + encodeURIComponent(cfg.sources.join(",")) + "&subId=" + encodeURIComponent(subIdFor());
     const res = await fetch(url, { headers: { accept: "application/json" } });
     const j = await res.json().catch(() => ({}));
     if (!res.ok || !j.ok) throw new Error(j.message || "검색 서버가 답하지 않아요 (" + res.status + ")");
@@ -64,6 +82,8 @@
     config: cfg,
     SOURCES,
     linkFor,
+    partnerCode,
+    subIdFor,
     find: q => (cfg.mode === "netlify" ? findNetlify(q) : findMock(q))
   };
   root.SEARCH = SEARCH;

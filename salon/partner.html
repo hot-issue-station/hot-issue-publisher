@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>소개 QR 만들기</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#c2410c">
+<style>
+:root{--bg:#fff8f3;--card:#fff;--tx:#2b2220;--sub:#7a6a64;--main:#c2410c;--line:#ead9cf;--soft:#fdeee4;--deep:#7c2d12}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:"Noto Sans KR",system-ui,sans-serif;font-size:19px}
+header{background:var(--main);color:#fff;padding:16px}
+header h1{margin:0;font-size:24px}
+header p{margin:4px 0 0;font-size:15px;opacity:.9}
+main{max-width:560px;margin:0 auto;padding:16px}
+label{display:block;margin:16px 0 6px;font-weight:700}
+input{width:100%;font-size:24px;padding:14px;border:2px solid var(--line);border-radius:14px;background:#fff;color:var(--tx);font-family:inherit}
+#code{text-transform:uppercase;letter-spacing:3px;font-weight:800}
+.d{color:var(--sub);font-size:15px}
+.note{color:var(--sub);font-size:16px;line-height:1.5}
+.big{display:block;width:100%;font-size:21px;font-weight:700;padding:15px;border:0;border-radius:14px;background:var(--main);color:#fff;margin-top:12px;font-family:inherit;cursor:pointer}
+.ghost{background:var(--soft);color:var(--main)}
+.row{display:flex;gap:8px}.row .big{flex:1}
+.err{color:#b91c1c;font-size:16px;margin-top:6px;min-height:1em}
+details{margin-top:14px}summary{cursor:pointer;color:var(--sub);font-size:16px}
+/* 원장님께 보여 드리는 카드 (인쇄하면 이것만 나옴) */
+#card{background:var(--card);border:2px solid var(--line);border-radius:20px;padding:18px;margin-top:18px;text-align:center}
+#card h2{margin:0;font-size:26px;color:var(--deep)}
+#card .lead{margin:6px 0 10px;font-size:17px}
+#qr{width:min(76vw,300px);height:auto;image-rendering:pixelated;display:block;margin:0 auto}
+#card .cd{font-size:30px;font-weight:800;letter-spacing:4px;margin-top:6px}
+#card ul{text-align:left;font-size:16px;line-height:1.6;margin:12px 0 0;padding-left:20px}
+#link{word-break:break-all;font-size:14px;color:var(--sub);margin-top:8px}
+.hide{display:none!important}
+@media print{header,#form,#acts,details,.noprint{display:none!important}body{background:#fff}#card{border:0}}
+</style>
+</head>
+<body>
+<header><h1>소개 QR 만들기</h1><p>단골 수첩을 원장님께 소개하는 분용 · 원장님 손님 기록은 이 화면에 없어요</p></header>
+<main>
+  <section id="form">
+    <label for="code">내 소개 코드</label>
+    <input id="code" placeholder="예: JEJU01" maxlength="14" autocomplete="off" autocapitalize="characters" inputmode="text">
+    <div class="d">본사에서 받은 코드(영어·숫자 4~12자)를 그대로 적어 주세요.</div>
+    <div class="err" id="err" role="alert"></div>
+    <button class="big" id="make">QR 만들기</button>
+    <details>
+      <summary>설치 주소 바꾸기 (보통은 그대로 두세요)</summary>
+      <label for="base">단골 수첩 주소</label>
+      <input id="base" style="font-size:16px" autocomplete="off">
+    </details>
+  </section>
+
+  <section id="out" class="hide">
+    <div id="card">
+      <h2>단골 수첩</h2>
+      <p class="lead">원장님 손님 기록장 · <b>무료</b></p>
+      <canvas id="qr" aria-label="단골 수첩 설치 QR 코드"></canvas>
+      <div class="d">휴대폰 카메라로 비추면 설치 주소가 열려요</div>
+      <div class="cd" id="cdShow"></div>
+      <div class="d">소개 코드 (설치하면 자동으로 들어가요)</div>
+      <ul>
+        <li>가입비·월 사용료·약정 없음, 카드 정보 안 받음</li>
+        <li>손님 기록은 원장님 휴대폰에만 저장 — 소개한 사람도 못 봐요</li>
+        <li>앱은 장보기 추천 링크의 제휴 수수료로 운영돼요(상품 가격은 같아요)</li>
+      </ul>
+      <div id="link"></div>
+    </div>
+    <div id="acts">
+      <div class="row"><button class="big" id="savePng">QR 그림 저장</button><button class="big ghost" id="copy">링크 복사</button></div>
+      <button class="big ghost" id="print">인쇄하기</button>
+      <button class="big ghost" id="again">다른 코드로 다시</button>
+    </div>
+  </section>
+
+  <p class="note noprint" style="margin-top:22px">이 화면은 코드를 어디에도 보내지 않아요. 휴대폰 안에서 QR만 그려요.<br>원장님이 QR로 설치하시면 원장님 앱에 소개 코드만 저장되고, 그 코드는 장보기 추천 링크의 실적을 나누는 데만 쓰여요. 원장님께 돈이나 개인정보를 받는 일은 없어요.</p>
+</main>
+<script src="qr.js"></script>
+<script>
+"use strict";
+const $ = id => document.getElementById(id);
+const RE = /^[A-Z0-9]{4,12}$/;
+const norm = s => String(s || "").trim().toUpperCase().replace(/[\s-]/g, "");
+const defBase = () => new URL("index.html", location.href).href;
+let lastLink = "", lastCode = "";
+$("base").value = defBase();
+try { const c = new URLSearchParams(location.search).get("code"); if (c) $("code").value = norm(c); } catch (e) {}
+
+function installLink(code) {
+  const u = new URL($("base").value.trim() || defBase(), location.href);
+  u.searchParams.set("p", code);
+  return u.href;
+}
+function make() {
+  const code = norm($("code").value);
+  $("err").textContent = "";
+  if (!RE.test(code)) { $("err").textContent = "코드는 영어와 숫자 4~12자예요. 다시 확인해 주세요."; return; }
+  let link;
+  try { link = installLink(code); } catch (e) { $("err").textContent = "설치 주소가 올바르지 않아요."; return; }
+  if (!/^https?:/.test(link)) { $("err").textContent = "설치 주소는 http(s)로 시작해야 해요."; return; }
+  try { QR.draw($("qr"), link, 8, 4); } catch (e) { $("err").textContent = "QR을 만들지 못했어요: " + e.message; return; }
+  lastLink = link; lastCode = code;
+  $("cdShow").textContent = code;
+  $("link").textContent = link;
+  $("form").classList.add("hide");
+  $("out").classList.remove("hide");
+  scrollTo(0, 0);
+}
+$("make").onclick = make;
+$("code").addEventListener("keydown", e => { if (e.key === "Enter") make(); });
+$("again").onclick = () => { $("out").classList.add("hide"); $("form").classList.remove("hide"); $("code").focus(); };
+$("print").onclick = () => print();
+$("copy").onclick = async () => {
+  try { await navigator.clipboard.writeText(lastLink); $("copy").textContent = "복사했어요"; }
+  catch (e) { prompt("아래 링크를 길게 눌러 복사해 주세요", lastLink); }
+  setTimeout(() => { $("copy").textContent = "링크 복사"; }, 2000);
+};
+$("savePng").onclick = () => {
+  $("qr").toBlob(async b => {
+    const name = "단골수첩_소개QR_" + lastCode + ".png";
+    const file = new File([b], name, { type: "image/png" });
+    if (navigator.canShare && navigator.canShare({ files: [file] })) { try { await navigator.share({ files: [file], title: "단골 수첩 소개 QR" }); return; } catch (e) { if (e.name === "AbortError") return; } }
+    const a = Object.assign(document.createElement("a"), { href: URL.createObjectURL(b), download: name });
+    document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(a.href), 4000);
+  }, "image/png");
+};
+</script>
+</body>
+</html>

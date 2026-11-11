@@ -128,6 +128,7 @@ details.card>summary{list-style:none;cursor:pointer}details.card>summary::-webki
   <div class="chips" id="bizChips"></div>
   <p class="note" id="bizNote"></p>
   <label>가게 이름</label><input id="shopName" placeholder="예: 하나 헤어">
+  <div id="pcSetup"></div>
   <button class="big" onclick="finishSetup()">시작하기</button>
   <div id="trustSetup"></div>
 </section>
@@ -329,6 +330,7 @@ details.card>summary{list-style:none;cursor:pointer}details.card>summary::-webki
   <h2>다른 곳 기록 옮겨 오기</h2>
   <p class="note" style="margin-top:0">엑셀(CSV)이나 휴대폰 연락처(.vcf)로 손님을 한 번에 불러와요.</p>
   <button class="big ghost" onclick="go('imp')">📥 연락처·엑셀 불러오기</button>
+  <div id="pcSet"></div>
   <h2>이 앱이 무료인 이유</h2>
   <p class="note" style="margin-top:0">단골 수첩은 '원장님 추천 상품' 칸의 제휴 수수료(쿠팡 파트너스 등)로 운영됩니다. 수수료가 붙어도 상품 가격은 같고, 링크마다 광고 표시를 합니다. 손님 기록은 이 휴대폰 밖으로 나가지 않아요.</p>
   <h2>기록 지키기</h2>
@@ -428,7 +430,8 @@ const TRUST=`<div class="trust" role="note"><b>🤝 처음 쓰시는 원장님�
    db.feat {bk,rv,grp,pt,voice} 기능 켜기·끄기 / db.bk [{id,cid,d,tm,t,m,sent,done}] 예약
    db.tpl [문구 틀 3개] / db.ptRate 적립률(%) / menu[i].w 다시 오실 때(주)
    손님 c.lv 불러온 마지막 방문일 / c.rvs 재방문 문자 보낸 날 / c.pt 포인트 / c.mb 회원권 잔액 / c.mbl 충전 기록
-   시술 r.pa 적립 / r.pu 포인트 사용 / r.mu 회원권 사용 */
+   시술 r.pa 적립 / r.pu 포인트 사용 / r.mu 회원권 사용
+   db.pc 소개해 준 분 코드 / db.pcAt 저장한 날 / db.pcBy "link"(설치 주소 ?p=) 또는 "input"(직접 입력) — v3.2 */
 const KEY="dangol_v1"; let db={c:[]}, cur=null, view=null, stack=[], pickNew=false, period="이번 달";
 try{ db=JSON.parse(localStorage.getItem(KEY))||{c:[]} }catch(e){}
 function normDb(){ if(!db||typeof db!=="object") db={c:[]}; if(!Array.isArray(db.c)) db.c=[]; db.c.forEach(c=>{ if(!Array.isArray(c.r)) c.r=[]; c.n=String(c.n||""); c.p=String(c.p||"") }); if(!Array.isArray(db.bk)) db.bk=[] }
@@ -448,7 +451,20 @@ const fmtT=t=>{ if(!t) return ""; let [h,m]=t.split(":").map(Number); const ap=h
 const digits=s=>String(s||"").replace(/\D/g,"");
 function esc(s){return String(s??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]))}
 function toast(t){ const el=$("toast"); el.textContent=t; el.classList.remove("hide"); clearTimeout(toast.h); toast.h=setTimeout(()=>el.classList.add("hide"),3200) }
-const TITLES={today:()=>db.shop||"단골 수첩",list:()=>"손님",pick:()=>"누구 시술하셨어요?",newCust:()=>"새 손님",detail:()=>cur.n+" 님",newRec:()=>cur.n+" 님 시술",sales:()=>"매출",settings:()=>"설정",setup:()=>"단골 수첩 시작",newBk:()=>bkDraft&&bkDraft.id?"예약 고치기":"예약 잡기",week:()=>"주간 예약",group:()=>"단체 문자",imp:()=>"손님 불러오기"};
+/* ── 소개해 준 분(영업 파트너) 코드 ────────────────
+   한 번만 저장(바꾸기 없음). 장보기 제휴 링크의 실적 구분에만 쓰임(shop/search.js가 읽음).
+   손님 기록·연락처·매출은 파트너에게 가지 않음. 설치 주소 ?p=코드 로 열면 처음 한 번 자동 저장 */
+const PC_RE=/^[A-Z0-9]{4,12}$/;
+const pcNorm=s=>String(s||"").trim().toUpperCase().replace(/[\s-]/g,"");
+function pcSet(code,how){ code=pcNorm(code); if(db.pc||!PC_RE.test(code)) return false; db.pc=code; db.pcAt=today(); db.pcBy=how; save(); return true }
+try{ const u=new URL(location.href); if(u.searchParams.has("p")){ if(pcSet(u.searchParams.get("p"),"link")) setTimeout(()=>toast(`소개 코드(${db.pc})를 저장했어요`),300); u.searchParams.delete("p"); history.replaceState(history.state,"",u.pathname+u.search+u.hash) } }catch(e){}
+const PC_NOTE=`<p class="note">코드는 장보기 추천 링크의 실적을 나누는 데만 쓰여요. 소개해 준 분은 원장님 손님 기록·연락처·매출을 볼 수 없고, 원장님이 내시는 돈도 없어요.</p>`;
+function pcBox(where){ return db.pc?`<div class="card" id="pcCard_${where}"><div class="d">소개해 준 분 코드</div><b style="font-size:26px;letter-spacing:2px" id="pcShow_${where}">${esc(db.pc)}</b><div class="d">${esc(db.pcAt||"")} 등록 · 한 번 정하면 바꿀 수 없어요</div></div>`
+  :`<label>소개해 준 분 코드 <span class="d">(있으면 · 선택)</span></label><input id="pcIn_${where}" placeholder="예: JEJU01" autocapitalize="characters" autocomplete="off" maxlength="14"><p class="note" style="margin-top:4px">없으면 비워 두셔도 돼요. <b>한 번 저장하면 바꿀 수 없어요.</b></p>` }
+function pcSave(){ const v=pcNorm($("pcIn_set").value); if(!v) return;
+  if(!PC_RE.test(v)) return alert("코드는 영어와 숫자 4~12자예요. 다시 확인해 주세요.");
+  if(!confirm(`'${v}' 코드로 저장할까요?\n한 번 저장하면 바꿀 수 없어요.`)) return;
+  pcSet(v,"input"); drawSettings(); toast("소개해 준 분 코드를 저장했어요") }const TITLES={today:()=>db.shop||"단골 수첩",list:()=>"손님",pick:()=>"누구 시술하셨어요?",newCust:()=>"새 손님",detail:()=>cur.n+" 님",newRec:()=>cur.n+" 님 시술",sales:()=>"매출",settings:()=>"설정",setup:()=>"단골 수첩 시작",newBk:()=>bkDraft&&bkDraft.id?"예약 고치기":"예약 잡기",week:()=>"주간 예약",group:()=>"단체 문자",imp:()=>"손님 불러오기"};
 const TAB=["today","list","sales","settings"];
 function go(v,back){
   if(!back && view && v!==view && !TAB.includes(v)) stack.push(view);
@@ -470,8 +486,11 @@ function custRow(c,fn){const l=last(c), ld=lastD(c), cl=clue(c);return `<div cla
 function match(c,q){q=q.replace(/-/g,"").replace(/\s/g,"");const k=s=>String(s||"").replace(/\s/g,"");return !q||k(c.n).includes(q)||k(c.nk).includes(q)||k(c.ft).replace(/[·,]/g,"").includes(q.replace(/[·,]/g,""))||(!!c.p&&c.p.replace(/-/g,"").includes(q))}
 /* 처음 실행 */
 let biz="헤어";
-function drawSetup(){ $("bizChips").innerHTML=Object.keys(PRESET).map(k=>`<button class="chip ${k===biz?'on':''}" onclick="biz='${k}';drawSetup()">${k}</button>`).join(""); $("bizNote").textContent=BIZ_NOTE[biz]||""; $("trustSetup").innerHTML=TRUST }
-function finishSetup(){ db.biz=biz; db.shop=$("shopName").value.trim()||"단골 수첩"; db.menu=PRESET[biz].map(([n,p,w])=>w!=null?{n,p,w}:{n,p}); delete db.lay; if(RES_BIZ.includes(biz)) db.feat=Object.assign({},FEAT_DEF,db.feat||{},{bk:1}); save(); go("today") }
+function drawSetup(){ $("bizChips").innerHTML=Object.keys(PRESET).map(k=>`<button class="chip ${k===biz?'on':''}" onclick="biz='${k}';drawSetup()">${k}</button>`).join(""); $("bizNote").textContent=BIZ_NOTE[biz]||""; $("trustSetup").innerHTML=TRUST; $("pcSetup").innerHTML=pcBox("setup") }
+function finishSetup(){ const pi=$("pcIn_setup"), pv=pi?pcNorm(pi.value):"";
+  if(pv&&!PC_RE.test(pv)) return alert("소개해 준 분 코드는 영어와 숫자 4~12자예요. 모르시면 비워 두세요.");
+  if(pv) pcSet(pv,"input");
+  db.biz=biz; db.shop=$("shopName").value.trim()||"단골 수첩"; db.menu=PRESET[biz].map(([n,p,w])=>w!=null?{n,p,w}:{n,p}); delete db.lay; if(RES_BIZ.includes(biz)) db.feat=Object.assign({},FEAT_DEF,db.feat||{},{bk:1}); save(); go("today") }
 const shopIs=()=>db.shop&&db.shop!=="단골 수첩"?db.shop:"";
 
 /* ── 다시 오실 때 (재방문 주기) ───────────────── */
@@ -1007,6 +1026,7 @@ function drawSettings(){ const at=Number(ls.get(BK_AT)); $("bkLast").textContent
   $("ptSet").innerHTML=F("pt")?`<h2>포인트 적립률</h2><div class="mw"><input type="number" inputmode="numeric" value="${ptRate()}" onchange="db.ptRate=Math.max(0,Number(this.value)||0);save()"><span style="align-self:center;font-size:22px">%</span></div><p class="note" style="margin-top:4px">시술 금액의 몇 %를 포인트로 쌓을지예요. 1점 = 1원으로 써요.</p>`:"";
   $("tplSet").innerHTML=F("rv")?`<h2>'다시 오실 때' 문자 문구 틀</h2><p class="note" style="margin-top:0">{이름} {가게} {시술} {주} 자리에 알아서 들어가요. 보낼 때마다 또 고칠 수 있어요.</p>`+tpls().map((t,i)=>`<label>문구 ${i+1}</label><textarea onchange="db.tpl=tpls();db.tpl[${i}]=this.value||tplDef()[${i}];save()">${esc(t)}</textarea>`).join("")+`<button class="chip" style="margin-top:8px" onclick="delete db.tpl;save();drawSettings()">처음 문구로 되돌리기</button>`:"";
   drawSnsSet();
+  $("pcSet").innerHTML=`<h2>소개해 준 분</h2>`+pcBox("set")+(db.pc?"":`<button class="big ghost" onclick="pcSave()">코드 저장</button>`)+PC_NOTE;
   $("menuEdit").innerHTML=(db.menu||[]).map((m,i)=>`<div class="mrow"><input value="${esc(m.n)}" data-i="${i}" data-k="n" aria-label="시술 이름"><div class="r2"><input type="number" value="${m.p}" data-i="${i}" data-k="p" aria-label="가격" style="flex:1.4"><span>원</span><input type="number" value="${cycW(m)}" data-i="${i}" data-k="w" aria-label="다시 오실 때(주)" style="flex:.8"><span>주</span><button class="chip" onclick="db.menu.splice(${i},1);drawSettings()">빼기</button></div></div>`).join("") }
 /* 손님 목록 내보내기: 엑셀에서 바로 열리는 CSV (불러오기 화면에서 다시 읽을 수 있는 칸 이름) */
 function exportCSV(){ const q=v=>{ v=String(v??""); return /[",\r\n]/.test(v)?'"'+v.replace(/"/g,'""')+'"':v };
@@ -1062,7 +1082,7 @@ async function backup(){
   if(view==="today") drawToday(); if(view==="settings") drawSettings();
 }
 function restore(f){ if(!f) return; BACKUP.get().load(f).then(d=>{ if(!d||!Array.isArray(d.c)) throw 0;
-  if(confirm(`백업의 손님 ${d.c.length}명으로 바꿀까요?`)){ db=d; normDb(); save(); stack=[]; go("today") } }).catch(()=>alert("백업 파일이 아니에요")) }
+  if(confirm(`백업의 손님 ${d.c.length}명으로 바꿀까요?`)){ const pk=db.pc?{pc:db.pc,pcAt:db.pcAt,pcBy:db.pcBy}:null; db=d; if(pk) Object.assign(db,pk); normDb(); save(); stack=[]; go("today") } }).catch(()=>alert("백업 파일이 아니에요")) }
 /* 일주일 넘게 백업을 안 했으면 '오늘' 탭 위에 알림 (처음 손님 등록일 기준으로 셈) */
 function backupDue(){
   if(!db.c.length) return 0;
