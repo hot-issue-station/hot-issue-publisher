@@ -1,0 +1,595 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>이슈브리프 사무실</title>
+<style>
+:root{
+  --bg:#f6f1e9; --paper:#fffdf9; --ink:#2d2a26; --ink-2:#6b645b; --ink-3:#9a9187;
+  --line:#e6ddd0; --wall:#e9e0d2; --wall-side:#d6c9b5; --floor:#faf6ef;
+  --desk:#d9b98f; --desk-side:#b8956a; --laptop:#5b6472; --chair:#8a95a8;
+  --ok:#2f9e5b; --ok-bg:#e3f4ea; --wait:#d99a12; --wait-bg:#fdf1d3;
+  --idle:#9a9187; --idle-bg:#eeeae4; --done:#3b7bd6; --done-bg:#e3edfb;
+  --bad:#c94a3c; --badge:#e0533f;
+  --bubble:#ffffff; --bubble-line:#e3d9cb; --shadow:0 1px 2px rgba(60,40,20,.08),0 4px 14px rgba(60,40,20,.06);
+  --ceo:#c98a4b;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#1b1a19; --paper:#252321; --ink:#efe9e1; --ink-2:#b8afa4; --ink-3:#857c72;
+    --line:#38342f; --wall:#2e2b28; --wall-side:#24211f; --floor:#2a2725;
+    --desk:#8a6d4c; --desk-side:#6a5238; --laptop:#9aa4b3; --chair:#56607a;
+    --ok:#4cc27b; --ok-bg:#1d3326; --wait:#f0b63a; --wait-bg:#3a3018;
+    --idle:#8e867c; --idle-bg:#302d2a; --done:#6ea3ef; --done-bg:#1d2a3d;
+    --bad:#ef7b6d; --badge:#ef6a55;
+    --bubble:#33302d; --bubble-line:#47423c; --shadow:0 1px 2px rgba(0,0,0,.3),0 4px 14px rgba(0,0,0,.25);
+    --ceo:#d9a066;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#1b1a19; --paper:#252321; --ink:#efe9e1; --ink-2:#b8afa4; --ink-3:#857c72;
+  --line:#38342f; --wall:#2e2b28; --wall-side:#24211f; --floor:#2a2725;
+  --desk:#8a6d4c; --desk-side:#6a5238; --laptop:#9aa4b3; --chair:#56607a;
+  --ok:#4cc27b; --ok-bg:#1d3326; --wait:#f0b63a; --wait-bg:#3a3018;
+  --idle:#8e867c; --idle-bg:#302d2a; --done:#6ea3ef; --done-bg:#1d2a3d;
+  --bad:#ef7b6d; --badge:#ef6a55;
+  --bubble:#33302d; --bubble-line:#47423c; --shadow:0 1px 2px rgba(0,0,0,.3),0 4px 14px rgba(0,0,0,.25);
+  --ceo:#d9a066;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Pretendard","Noto Sans KR","Malgun Gothic",sans-serif;font-size:15px;line-height:1.45;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.wrap{max-width:720px;margin:0 auto;padding:16px 16px 40px}
+button{font:inherit;color:inherit}
+
+/* header */
+header.top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:12px}
+h1{font-size:21px;margin:0;letter-spacing:-.02em}
+.sub{color:var(--ink-2);font-size:13px;margin-top:2px}
+.chip{display:inline-flex;align-items:center;gap:6px;font-size:12px;padding:4px 9px;border-radius:999px;background:var(--idle-bg);color:var(--ink-2);white-space:nowrap}
+.chip .dot{width:7px;height:7px;border-radius:50%;background:var(--idle)}
+.chip.live{background:var(--ok-bg);color:var(--ok)} .chip.live .dot{background:var(--ok)}
+.chip.slow{background:var(--wait-bg);color:var(--wait)} .chip.slow .dot{background:var(--wait)}
+.chip.err{background:var(--idle-bg);color:var(--bad)} .chip.err .dot{background:var(--bad)}
+.counts{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 14px}
+.count{font-size:12.5px;padding:5px 10px;border-radius:10px;background:var(--paper);border:1px solid var(--line);display:flex;align-items:center;gap:6px}
+.count b{font-variant-numeric:tabular-nums}
+
+/* office floor */
+.office{position:relative;background:var(--wall);border-radius:20px;padding:10px;box-shadow:0 6px 0 var(--wall-side),var(--shadow);margin-bottom:22px}
+.room{position:relative;border-radius:14px;padding:30px 8px 8px;background:var(--floor);box-shadow:0 4px 0 var(--zside, var(--wall-side));min-width:0}
+.room::before{content:"";position:absolute;inset:0;border-radius:14px;pointer-events:none;
+  background-image:linear-gradient(135deg,rgba(0,0,0,.035) 25%,transparent 25%,transparent 50%,rgba(0,0,0,.035) 50%,rgba(0,0,0,.035) 75%,transparent 75%);background-size:22px 22px}
+.room-label{position:absolute;top:7px;left:10px;right:10px;display:flex;justify-content:space-between;align-items:center;font-size:12.5px;font-weight:700;gap:6px}
+.room-label .name{display:flex;align-items:center;gap:6px;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.room-label .sw{width:9px;height:9px;border-radius:3px;background:var(--zc);flex:none}
+.room-label .n{font-weight:500;color:var(--ink-3);font-size:11.5px;white-space:nowrap}
+.ceo{margin-bottom:12px;--zc:var(--ceo)}
+.ceo .members{justify-content:flex-start}
+.inbox{position:absolute;right:10px;top:34px;width:92px;border-radius:12px;background:var(--paper);border:1px solid var(--line);padding:8px 6px 6px;text-align:center;cursor:pointer;box-shadow:0 3px 0 var(--line)}
+.inbox svg{display:block;margin:0 auto}
+.inbox .lbl{font-size:11.5px;font-weight:700;margin-top:2px}
+.inbox .badge{position:absolute;top:-8px;right:-6px;min-width:24px;height:24px;padding:0 7px;border-radius:12px;background:var(--badge);color:#fff;font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center;border:2px solid var(--paper)}
+.inbox .badge.zero{background:var(--idle)}
+.ceo .members{padding-right:100px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px 10px}
+.grid .room.wide{grid-column:span 2}
+.room.zone{background:color-mix(in srgb,var(--zc) 16%,var(--floor));--zside:color-mix(in srgb,var(--zc) 40%,var(--wall-side))}
+.ceo.room{background:color-mix(in srgb,var(--ceo) 14%,var(--floor));--zside:color-mix(in srgb,var(--ceo) 40%,var(--wall-side))}
+.guest.room{background:repeating-linear-gradient(90deg,color-mix(in srgb,var(--zc) 10%,var(--floor)) 0 18px,color-mix(in srgb,var(--zc) 16%,var(--floor)) 18px 36px)}
+.members{position:relative;display:flex;flex-wrap:wrap;gap:4px;justify-content:space-around}
+.empty-room{font-size:12px;color:var(--ink-3);padding:18px 4px;text-align:center;width:100%}
+
+/* member */
+.m{all:unset;box-sizing:border-box;position:relative;width:80px;display:flex;flex-direction:column;align-items:center;cursor:pointer;border-radius:12px;padding:2px 0 4px}
+.m:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.bubble{position:relative;background:var(--bubble);border:1px solid var(--bubble-line);border-radius:10px;padding:4px 6px;font-size:11px;line-height:1.3;width:100%;min-height:31px;text-align:center;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;word-break:keep-all;overflow-wrap:anywhere;color:var(--ink)}
+.bubble-tail{width:9px;height:9px;background:var(--bubble);border-right:1px solid var(--bubble-line);border-bottom:1px solid var(--bubble-line);transform:rotate(45deg);margin-top:-5px;z-index:1}
+.m.waiting_approval .bubble{background:var(--wait-bg);border-color:var(--wait)}
+.m.waiting_approval .bubble-tail{background:var(--wait-bg);border-color:var(--wait)}
+.m svg.char{width:72px;height:72px;display:block;margin-top:-2px}
+.m .nm{font-size:11.5px;font-weight:700;display:flex;align-items:center;gap:4px;max-width:100%}
+.m .nm span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.lamp{width:8px;height:8px;border-radius:50%;background:var(--idle);flex:none}
+.lamp.working{background:var(--ok);box-shadow:0 0 0 0 var(--ok);animation:pulse 1.6s infinite}
+.lamp.waiting_approval{background:var(--wait)}
+.lamp.done{background:var(--done)}
+.m .st{font-size:10.5px;color:var(--ink-3)}
+.m.waiting_approval .st{color:var(--wait);font-weight:700}
+.m.working .st{color:var(--ok)}
+@keyframes pulse{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--ok) 60%,transparent)}70%{box-shadow:0 0 0 6px transparent}100%{box-shadow:0 0 0 0 transparent}}
+
+/* svg parts */
+.desk-top{fill:var(--desk)} .desk-side{fill:var(--desk-side)} .laptop{fill:var(--laptop)} .chair{fill:var(--chair)}
+.paw{transform-box:fill-box;transform-origin:center}
+.working .paw-l{animation:tap .32s infinite alternate}
+.working .paw-r{animation:tap .32s .16s infinite alternate}
+@keyframes tap{from{transform:translateY(0)}to{transform:translateY(-3px)}}
+.waiting_approval .arm-up{transform-box:fill-box;transform-origin:50% 100%;animation:wave 1.2s ease-in-out infinite}
+@keyframes wave{0%,100%{transform:rotate(-6deg)}50%{transform:rotate(8deg)}}
+.steam{fill:none;stroke:var(--ink-3);stroke-width:1.4;stroke-linecap:round;opacity:.7;animation:steam 2.4s ease-in-out infinite}
+.steam.s2{animation-delay:1.2s}
+@keyframes steam{0%{transform:translateY(2px);opacity:0}40%{opacity:.7}100%{transform:translateY(-5px);opacity:0}}
+.zz{font-size:9px;fill:var(--ink-3);font-weight:700}
+@media (prefers-reduced-motion: reduce){*{animation:none!important}}
+
+/* panels */
+.panels{display:grid;gap:14px}
+@media (min-width:640px){.panels{grid-template-columns:1fr 1fr}}
+.panel{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:14px;box-shadow:var(--shadow);min-width:0}
+.panel h2{font-size:15px;margin:0 0 10px;display:flex;align-items:center;justify-content:space-between;gap:8px}
+.panel h2 small{font-weight:500;color:var(--ink-3);font-size:12px}
+.list{list-style:none;margin:0;padding:0}
+.list li{display:flex;gap:8px;align-items:flex-start;padding:8px 0;border-top:1px solid var(--line);font-size:13.5px}
+.list li:first-child{border-top:0;padding-top:2px}
+.tag{font-size:11px;font-weight:700;padding:2px 7px;border-radius:7px;white-space:nowrap;flex:none;margin-top:1px}
+.tag.approval{background:var(--wait-bg);color:var(--wait)}
+.tag.todo{background:var(--idle-bg);color:var(--ink-2)}
+.tag.ok{background:var(--ok-bg);color:var(--ok)}
+.tag.done{background:var(--done-bg);color:var(--done)}
+.tag.skip{background:var(--idle-bg);color:var(--ink-3)}
+.li-main{flex:1;min-width:0;overflow-wrap:anywhere}
+.li-meta{font-size:11.5px;color:var(--ink-3)}
+.is-done .li-title{text-decoration:line-through;color:var(--ink-3)}
+.time{font-variant-numeric:tabular-nums;font-weight:700;width:44px;flex:none}
+.sched li.now{background:color-mix(in srgb,var(--ok) 8%,transparent);border-radius:8px;padding-left:6px;padding-right:6px}
+.muted{color:var(--ink-3);font-size:13px;padding:6px 0}
+.bar{height:12px;border-radius:6px;background:var(--idle-bg);overflow:hidden;margin:6px 0 4px}
+.bar i{display:block;height:100%;border-radius:6px;background:var(--ok);transition:width .4s}
+.bar i.mid{background:var(--wait)} .bar i.high{background:var(--bad)}
+.usage-row{margin-bottom:12px}
+.usage-row .hd{display:flex;justify-content:space-between;font-size:13px}
+.usage-row .hd b{font-size:18px;font-variant-numeric:tabular-nums}
+.feed li .who{font-weight:700;font-size:12px;flex:none;width:56px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.feed li .time{width:40px;font-weight:500;color:var(--ink-3);font-size:12px;margin-top:1px}
+
+/* sheet */
+.sheet-bg{position:fixed;inset:0;background:rgba(20,15,10,.4);display:none;align-items:flex-end;justify-content:center;z-index:20}
+.sheet-bg.open{display:flex}
+.sheet{background:var(--paper);width:100%;max-width:520px;border-radius:20px 20px 0 0;padding:18px 16px 26px;max-height:80vh;overflow:auto;box-shadow:var(--shadow)}
+.sheet .hd{display:flex;gap:12px;align-items:center;margin-bottom:12px}
+.sheet .hd svg{width:64px;height:64px;flex:none}
+.sheet h3{margin:0;font-size:18px}
+.sheet .close{margin-left:auto;align-self:flex-start;background:var(--idle-bg);border:0;border-radius:10px;padding:6px 12px;font-size:13px;cursor:pointer}
+.kv{display:grid;grid-template-columns:72px 1fr;gap:8px 10px;font-size:14px;margin:0 0 14px}
+.kv dt{color:var(--ink-3)} .kv dd{margin:0;overflow-wrap:anywhere}
+.outs{list-style:none;padding:0;margin:0}
+.outs li{border-top:1px solid var(--line)}
+.outs a{display:block;padding:10px 2px;color:var(--done);text-decoration:none;font-size:14px;overflow-wrap:anywhere}
+.outs span{display:block;padding:10px 2px;color:var(--ink-2);font-size:14px}
+.foot{margin-top:18px;text-align:center;font-size:11.5px;color:var(--ink-3)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div>
+      <h1>이슈브리프 사무실</h1>
+      <div class="sub" id="clock">&nbsp;</div>
+    </div>
+    <span class="chip" id="conn"><span class="dot"></span><span id="connText">연결 확인 중</span></span>
+  </header>
+  <div class="counts" id="counts"></div>
+
+  <section class="office" aria-label="사무실 평면도">
+    <div id="ceoRoom"></div>
+    <div class="grid" id="floor"></div>
+  </section>
+
+  <div class="panels">
+    <section class="panel" aria-labelledby="h-q"><h2 id="h-q">오늘 할 일 · 승인 대기 <small id="qCount"></small></h2><ul class="list" id="queue"></ul></section>
+    <section class="panel" aria-labelledby="h-s"><h2 id="h-s">오늘 예약 작업 <small id="sDate"></small></h2><ul class="list sched" id="sched"></ul></section>
+    <section class="panel" aria-labelledby="h-u"><h2 id="h-u">사용량 <small id="uChecked"></small></h2><div id="usage"></div></section>
+    <section class="panel" aria-labelledby="h-f"><h2 id="h-f">최근 소식</h2><ul class="list feed" id="feed"></ul></section>
+  </div>
+  <div class="foot" id="foot">대표는 승인만, 일은 팀이 합니다.</div>
+</div>
+
+<div class="sheet-bg" id="sheetBg" role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+  <div class="sheet" id="sheet"></div>
+</div>
+
+<script>
+(function(){
+"use strict";
+
+/* ---------- 예시 데이터 (db 연결 안 될 때만) ---------- */
+var FALLBACK = {
+  teams: [
+    {id:"ceo", kind:"ceo", name:"대표실", color:"#c98a4b", order:0, members:[
+      {id:"boss", name:"대표", animal:"jindo", status:"idle", task:"결재함 확인 대기", since:"", outputs:[]},
+      {id:"agent", name:"대표 에이전트", animal:"cat", status:"working", task:"오늘 업무 나눠 주는 중", since:"", outputs:[]}
+    ]},
+    {id:"secretary", name:"비서실", color:"#d77a8f", order:1, members:[{id:"s1", name:"비서", animal:"rabbit", status:"idle", task:"일정 정리 끝, 쉬는 중", since:"", outputs:[]}]},
+    {id:"research", name:"리서치팀", color:"#4f8fd1", order:2, members:[{id:"r1", name:"리서처", animal:"fox", status:"working", task:"소재 후보 찾는 중", since:"", outputs:[]}]},
+    {id:"content", name:"콘텐츠팀", color:"#e08a3c", order:3, members:[{id:"c1", name:"작가", animal:"bear", status:"waiting_approval", task:"문구 초안 승인 기다림", since:"", outputs:[]}]},
+    {id:"video", name:"영상팀", color:"#8a6fd1", order:4, members:[{id:"v1", name:"편집자", animal:"panda", status:"idle", task:"다음 영상 대기", since:"", outputs:[]}]},
+    {id:"ops", name:"운영팀", color:"#3aa58a", order:5, members:[{id:"o1", name:"예약 담당", animal:"penguin", status:"done", task:"오늘 예약 확인 끝", since:"", outputs:[]}]},
+    {id:"analytics", name:"분석팀", color:"#5c9c3f", order:6, members:[{id:"a1", name:"분석가", animal:"owl", status:"idle", task:"새 통계 기다리는 중", since:"", outputs:[]}]},
+    {id:"promo", name:"홍보팀", color:"#d3584f", order:7, members:[{id:"p1", name:"홍보 담당", animal:"hamster", status:"idle", task:"쉬는 중", since:"", outputs:[]}]},
+    {id:"channel2", name:"채널2팀", color:"#c7a21f", order:8, members:[{id:"ch1", name:"채널2 담당", animal:"cat", status:"idle", task:"쉬는 중", since:"", outputs:[]}]},
+    {id:"guests", kind:"guest", name:"외부 무료 AI 손님석", color:"#7a8899", order:9, members:[
+      {id:"g1", name:"손님 1", animal:"robot", status:"idle", task:"부르면 옵니다", since:"", outputs:[]},
+      {id:"g2", name:"손님 2", animal:"robot", status:"idle", task:"부르면 옵니다", since:"", outputs:[]}
+    ]}
+  ],
+  queue: [
+    {id:"q1", title:"(예시) 문구 초안 승인", team:"콘텐츠팀", kind:"approval", status:"pending", created:""},
+    {id:"q2", title:"(예시) 소재 후보 정리", team:"리서치팀", kind:"todo", status:"pending", created:""}
+  ],
+  schedule: [
+    {id:"s1", time:"07:30", name:"(예시) 아침 게시", status:"pending", date:""},
+    {id:"s2", time:"12:00", name:"(예시) 점심 게시", status:"pending", date:""},
+    {id:"s3", time:"18:30", name:"(예시) 저녁 게시", status:"pending", date:""}
+  ],
+  feed: [
+    {id:"f1", at:"", team:"사무실", text:"실시간 연결이 되면 팀 소식이 여기에 쌓입니다."}
+  ],
+  usage: null
+};
+
+var STATUS = {
+  working:{label:"일하는 중"}, waiting_approval:{label:"대표 승인 대기"},
+  idle:{label:"쉬는 중"}, done:{label:"끝"}
+};
+var SCHED = {pending:["대기","todo"], running:["진행 중","ok"], done:["완료","done"], skipped:["건너뜀","skip"]};
+var DAYS = ["일","월","화","수","목","금","토"];
+
+var state = {mode:"connecting", teams:null, queue:null, schedule:null, feed:null, usage:undefined, err:null};
+var openMember = null; // {team, id}
+
+/* ---------- 도우미 ---------- */
+function esc(s){ return String(s==null?"":s).replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];}); }
+function safeColor(c, d){ return (typeof c==="string" && /^#[0-9a-fA-F]{3,8}$/.test(c)) ? c : d; }
+function safeUrl(u){ return (typeof u==="string" && /^https?:\/\//i.test(u)) ? u : null; }
+function pad(n){ return (n<10?"0":"")+n; }
+function todayStr(){ var d=new Date(); return d.getFullYear()+"-"+pad(d.getMonth()+1)+"-"+pad(d.getDate()); }
+function parseT(v){
+  if(v==null || v==="") return null;
+  if(typeof v==="number") return new Date(v);
+  if(typeof v==="string"){ if(/^\d{1,2}:\d{2}$/.test(v)) return null; var d=new Date(v); return isNaN(d)?null:d; }
+  return null;
+}
+function hhmm(v){ var d=parseT(v); if(d) return pad(d.getHours())+":"+pad(d.getMinutes()); return (typeof v==="string" && /^\d{1,2}:\d{2}$/.test(v)) ? v : ""; }
+function whenLabel(v){
+  var d=parseT(v); if(!d) return hhmm(v);
+  var same = d.toDateString()===new Date().toDateString();
+  return same ? hhmm(v) : (d.getMonth()+1)+"/"+d.getDate()+" "+hhmm(v);
+}
+function longDate(v){ var d=parseT(v); if(!d) return ""; return (d.getMonth()+1)+"/"+d.getDate()+"("+DAYS[d.getDay()]+") "+pad(d.getHours())+":"+pad(d.getMinutes()); }
+function num(v){ if(v==null||v==="") return null; var n=Number(v); return isFinite(n)?n:null; }
+
+/* ---------- 캐릭터 SVG ---------- */
+var ANIMALS = {
+  jindo:  {c:"#f0d6ab", e:"#e3bf86", muzzle:"#fff7ea", ears:"point"},
+  cat:    {c:"#c9c3bb", e:"#a9a199", muzzle:"#f1ede8", ears:"cat", whisk:true},
+  rabbit: {c:"#f5f0e8", e:"#f2c4c8", muzzle:"#ffffff", ears:"long"},
+  bear:   {c:"#b98a5e", e:"#9b6f47", muzzle:"#e6c9a6", ears:"round"},
+  fox:    {c:"#e8945a", e:"#c96f37", muzzle:"#fff3e6", ears:"point"},
+  panda:  {c:"#f7f5f2", e:"#2f2f33", muzzle:"#ffffff", ears:"round", patch:true},
+  penguin:{c:"#3e4756", e:"#3e4756", muzzle:"#f7f5f2", ears:"none", beak:true},
+  hamster:{c:"#eac08c", e:"#d9a46a", muzzle:"#fff4e4", ears:"small", cheek:true},
+  owl:    {c:"#a98563", e:"#8a6a4b", muzzle:"#efe2cc", ears:"tuft", owl:true},
+  robot:  {c:"#b9c4d1", e:"#8796a8", muzzle:"#e7edf3", ears:"antenna", robot:true}
+};
+function charSVG(member, cls){
+  var a = ANIMALS[member.animal] || ANIMALS.cat;
+  var st = STATUS[member.status] ? member.status : "idle";
+  var s = '<svg class="'+(cls||"char")+' '+st+'" viewBox="0 0 100 100" aria-hidden="true">';
+  s += '<ellipse cx="50" cy="93" rx="38" ry="5" fill="rgba(0,0,0,.08)"/>';
+  // chair back
+  s += '<rect class="chair" x="31" y="40" width="38" height="34" rx="10"/>';
+  // body
+  s += '<ellipse cx="50" cy="64" rx="17" ry="14" fill="'+a.c+'"/>';
+  s += '<ellipse cx="50" cy="67" rx="10" ry="9" fill="'+a.muzzle+'" opacity=".9"/>';
+  // ears
+  var hx=50, hy=40;
+  if(a.ears==="point"){ s+='<path d="M34 34 L37 16 L47 28 Z" fill="'+a.c+'"/><path d="M66 34 L63 16 L53 28 Z" fill="'+a.c+'"/><path d="M37 30 L38.5 21 L44 28 Z" fill="'+a.e+'"/><path d="M63 30 L61.5 21 L56 28 Z" fill="'+a.e+'"/>'; }
+  else if(a.ears==="cat"){ s+='<path d="M34 34 L35 18 L47 27 Z" fill="'+a.c+'"/><path d="M66 34 L65 18 L53 27 Z" fill="'+a.c+'"/>'; }
+  else if(a.ears==="long"){ s+='<ellipse cx="42" cy="17" rx="5" ry="14" fill="'+a.c+'"/><ellipse cx="58" cy="17" rx="5" ry="14" fill="'+a.c+'"/><ellipse cx="42" cy="18" rx="2.4" ry="10" fill="'+a.e+'"/><ellipse cx="58" cy="18" rx="2.4" ry="10" fill="'+a.e+'"/>'; }
+  else if(a.ears==="round"){ s+='<circle cx="36" cy="27" r="7" fill="'+a.e+'"/><circle cx="64" cy="27" r="7" fill="'+a.e+'"/>'; }
+  else if(a.ears==="small"){ s+='<circle cx="37" cy="28" r="5" fill="'+a.e+'"/><circle cx="63" cy="28" r="5" fill="'+a.e+'"/>'; }
+  else if(a.ears==="tuft"){ s+='<path d="M36 30 L34 19 L44 26 Z" fill="'+a.e+'"/><path d="M64 30 L66 19 L56 26 Z" fill="'+a.e+'"/>'; }
+  else if(a.ears==="antenna"){ s+='<line x1="50" y1="24" x2="50" y2="15" stroke="'+a.e+'" stroke-width="2"/><circle cx="50" cy="14" r="3" fill="#f0b63a"/>'; }
+  // head
+  if(a.robot){ s+='<rect x="34" y="24" width="32" height="30" rx="9" fill="'+a.c+'"/><rect x="38" y="31" width="24" height="14" rx="5" fill="#33404f"/>'; }
+  else { s+='<circle cx="'+hx+'" cy="'+hy+'" r="16" fill="'+a.c+'"/>'; }
+  if(a.patch){ s+='<ellipse cx="43.5" cy="39" rx="4.5" ry="5.5" fill="#2f2f33" transform="rotate(-20 43.5 39)"/><ellipse cx="56.5" cy="39" rx="4.5" ry="5.5" fill="#2f2f33" transform="rotate(20 56.5 39)"/>'; }
+  if(a.beak || a.c==="#3e4756"){ s+='<ellipse cx="50" cy="43" rx="12" ry="10" fill="'+a.muzzle+'"/>'; }
+  else if(a.owl){ s+='<circle cx="44" cy="39" r="6" fill="'+a.muzzle+'"/><circle cx="56" cy="39" r="6" fill="'+a.muzzle+'"/>'; }
+  else if(!a.robot){ s+='<ellipse cx="50" cy="46" rx="8" ry="5.5" fill="'+a.muzzle+'"/>'; }
+  // eyes
+  var eyeCol = a.robot ? "#7fe0b0" : (a.patch ? "#ffffff" : "#2b2622");
+  if(st==="done"){ s+='<path d="M41 39 q3 -3 6 0 M53 39 q3 -3 6 0" stroke="'+eyeCol+'" stroke-width="1.8" fill="none" stroke-linecap="round"/>'; }
+  else if(st==="idle"){ s+='<path d="M41 39 h5 M54 39 h5" stroke="'+eyeCol+'" stroke-width="1.8" stroke-linecap="round"/>'; }
+  else { s+='<circle cx="44" cy="39" r="2" fill="'+eyeCol+'"/><circle cx="56" cy="39" r="2" fill="'+eyeCol+'"/>'; }
+  // nose / beak
+  if(a.beak){ s+='<path d="M47 44 L53 44 L50 48 Z" fill="#f0a63a"/>'; }
+  else if(a.owl){ s+='<path d="M48.5 43 L51.5 43 L50 47 Z" fill="#e0a13a"/>'; }
+  else if(!a.robot){ s+='<ellipse cx="50" cy="44" rx="2.2" ry="1.6" fill="#3a302a"/>'; }
+  if(a.cheek){ s+='<circle cx="38" cy="46" r="3.4" fill="#f2a7a0" opacity=".7"/><circle cx="62" cy="46" r="3.4" fill="#f2a7a0" opacity=".7"/>'; }
+  if(a.whisk){ s+='<path d="M36 45 h-6 M36 47.5 l-6 2 M64 45 h6 M64 47.5 l6 2" stroke="#8a8279" stroke-width=".8"/>'; }
+  // desk (isometric slab)
+  s += '<polygon class="desk-side" points="12,76 50,90 50,95 12,81"/>';
+  s += '<polygon class="desk-side" points="88,76 50,90 50,95 88,81" opacity=".8"/>';
+  s += '<polygon class="desk-top" points="12,76 50,64 88,76 50,90"/>';
+  // laptop (seen from behind)
+  s += '<polygon class="laptop" points="38,72 50,68 62,72 50,76" opacity=".55"/>';
+  s += '<polygon class="laptop" points="40,71 50,68 60,71 60,62 50,59 40,62"/>';
+  s += '<circle cx="50" cy="65" r="1.6" fill="#ffffff" opacity=".6"/>';
+  // arms per status
+  if(st==="working"){
+    s+='<ellipse class="paw paw-l" cx="36" cy="72" rx="5" ry="4" fill="'+a.c+'"/><ellipse class="paw paw-r" cx="64" cy="72" rx="5" ry="4" fill="'+a.c+'"/>';
+  } else if(st==="waiting_approval"){
+    s+='<ellipse cx="36" cy="72" rx="5" ry="4" fill="'+a.c+'"/>';
+    s+='<g class="arm-up"><rect x="64" y="30" width="7" height="28" rx="3.5" fill="'+a.c+'" transform="rotate(14 67 58)"/><circle cx="73" cy="29" r="5.5" fill="'+a.c+'"/></g>';
+    s+='<text x="78" y="22" font-size="13" font-weight="800" fill="#d99a12">!</text>';
+  } else if(st==="idle"){
+    s+='<ellipse cx="36" cy="72" rx="5" ry="4" fill="'+a.c+'"/>';
+    s+='<rect x="66" y="60" width="11" height="12" rx="2.5" fill="#ffffff" stroke="#c9bfb2"/><path d="M77 63 q4 0 4 3.5 q0 3.5 -4 3.5" fill="none" stroke="#c9bfb2" stroke-width="1.6"/><rect x="67.2" y="61.5" width="8.6" height="3" fill="#8a5a3a"/>';
+    s+='<ellipse cx="65" cy="67" rx="4.5" ry="4" fill="'+a.c+'"/>';
+    s+='<path class="steam" d="M70 57 q-2 -3 0 -6 q2 -3 0 -6"/><path class="steam s2" d="M74 57 q-2 -3 0 -6 q2 -3 0 -6"/>';
+  } else if(st==="done"){
+    s+='<ellipse cx="36" cy="72" rx="5" ry="4" fill="'+a.c+'"/><ellipse cx="64" cy="72" rx="5" ry="4" fill="'+a.c+'"/>';
+    s+='<circle cx="80" cy="24" r="10" fill="#3b7bd6"/><path d="M75 24 l3.5 3.5 l6.5 -7" stroke="#fff" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>';
+  }
+  s += '</svg>';
+  return s;
+}
+
+function inboxSVG(){
+  return '<svg width="54" height="38" viewBox="0 0 54 38" aria-hidden="true">'+
+    '<polygon points="4,16 27,8 50,16 27,24" fill="var(--desk)"/>'+
+    '<polygon points="4,16 27,24 27,34 4,26" fill="var(--desk-side)"/>'+
+    '<polygon points="50,16 27,24 27,34 50,26" fill="var(--desk-side)" opacity=".8"/>'+
+    '<polygon points="14,14 27,9.5 40,14 27,18.5" fill="#ffffff" stroke="#d6cbbb"/>'+
+    '<polygon points="14,11 27,6.5 40,11 27,15.5" fill="#ffffff" stroke="#d6cbbb"/>'+
+    '<path d="M22 11 l3 2 l7 -4" stroke="#c94a3c" stroke-width="1.5" fill="none"/>'+
+  '</svg>';
+}
+
+/* ---------- 데이터 선택 ---------- */
+function data(){
+  if(state.mode==="offline") return FALLBACK;
+  return {teams:state.teams||[], queue:state.queue||[], schedule:state.schedule||[], feed:state.feed||[], usage:state.usage||null};
+}
+function loaded(k){ return state.mode==="offline" || state[k]!==null; }
+function sortedTeams(teams){
+  return teams.slice().sort(function(a,b){ return (num(a.order)==null?999:num(a.order)) - (num(b.order)==null?999:num(b.order)); });
+}
+function pendingApprovals(q){ return q.filter(function(x){ return x.kind==="approval" && x.status!=="done"; }); }
+
+/* ---------- 렌더 ---------- */
+function memberHTML(team, m){
+  var st = STATUS[m.status] ? m.status : "idle";
+  return '<button class="m '+st+'" data-team="'+esc(team.id)+'" data-id="'+esc(m.id)+'" aria-label="'+esc(m.name)+', '+STATUS[st].label+', '+esc(m.task)+'">'+
+    '<div class="bubble">'+(esc(m.task)||"&nbsp;")+'</div><div class="bubble-tail"></div>'+
+    charSVG(m)+
+    '<div class="nm"><i class="lamp '+st+'"></i><span>'+esc(m.name)+'</span></div>'+
+    '<div class="st">'+STATUS[st].label+'</div>'+
+  '</button>';
+}
+function roomHTML(team, extraCls){
+  var members = Array.isArray(team.members) ? team.members : [];
+  var color = safeColor(team.color, "#9a9187");
+  var working = members.filter(function(m){return m.status==="working";}).length;
+  return '<div class="room '+(extraCls||"zone")+(members.length>2?" wide":"")+'" style="--zc:'+color+'">'+
+    '<div class="room-label"><span class="name"><i class="sw"></i>'+esc(team.name)+'</span><span class="n">'+(members.length?working+"/"+members.length+" 일하는 중":"")+'</span></div>'+
+    '<div class="members">'+(members.length? members.map(function(m){return memberHTML(team,m);}).join("") : '<div class="empty-room">빈자리</div>')+'</div>'+
+  '</div>';
+}
+
+function render(){
+  var d = data();
+  var teams = sortedTeams(d.teams);
+  var ceo = teams.filter(function(t){ return t.kind==="ceo" || t.id==="ceo"; })[0];
+  var rest = teams.filter(function(t){ return t!==ceo; });
+  var approvals = pendingApprovals(d.queue);
+
+  // 연결 표시
+  var conn = document.getElementById("conn"), ct = document.getElementById("connText");
+  var map = {offline:["","실시간 연결 안 됨"], connecting:["","불러오는 중"], live:["live","실시간"], slow:["slow","데이터 연결 지연"], error:["err","연결 끊김"]};
+  var mm = map[state.mode]||map.connecting;
+  conn.className = "chip "+mm[0]; ct.textContent = mm[1];
+
+  // 인원 집계
+  var all=[]; teams.forEach(function(t){ (t.members||[]).forEach(function(m){ all.push(m); }); });
+  function cnt(s){ return all.filter(function(m){ return (STATUS[m.status]?m.status:"idle")===s; }).length; }
+  document.getElementById("counts").innerHTML =
+    '<span class="count"><i class="lamp working"></i>일하는 중 <b>'+cnt("working")+'</b></span>'+
+    '<span class="count"><i class="lamp waiting_approval"></i>승인 대기 <b>'+cnt("waiting_approval")+'</b></span>'+
+    '<span class="count"><i class="lamp"></i>쉬는 중 <b>'+cnt("idle")+'</b></span>'+
+    '<span class="count"><i class="lamp done"></i>끝 <b>'+cnt("done")+'</b></span>';
+
+  // 대표실
+  var ceoTeam = ceo || {id:"ceo", name:"대표실", members:[]};
+  var ceoMembers = Array.isArray(ceoTeam.members)?ceoTeam.members:[];
+  document.getElementById("ceoRoom").innerHTML =
+    '<div class="room ceo">'+
+      '<div class="room-label"><span class="name"><i class="sw"></i>'+esc(ceoTeam.name||"대표실")+'</span></div>'+
+      '<div class="members">'+(ceoMembers.length?ceoMembers.map(function(m){return memberHTML(ceoTeam,m);}).join(""):'<div class="empty-room">'+(loaded("teams")?"빈자리":"불러오는 중")+'</div>')+'</div>'+
+      '<div class="inbox" id="inboxBtn" role="button" tabindex="0" aria-label="결재함, 승인 대기 '+approvals.length+'건">'+
+        '<span class="badge'+(approvals.length?"":" zero")+'">'+approvals.length+'</span>'+inboxSVG()+'<div class="lbl">결재함</div>'+
+      '</div>'+
+    '</div>';
+
+  // 팀 구역
+  var floor = document.getElementById("floor");
+  if(!loaded("teams")) floor.innerHTML = '<div class="muted" style="grid-column:span 2">사무실 불러오는 중…</div>';
+  else if(!rest.length) floor.innerHTML = '<div class="muted" style="grid-column:span 2">아직 팀이 없습니다.</div>';
+  else floor.innerHTML = rest.map(function(t){
+    var guest = t.kind==="guest";
+    return roomHTML(t, guest?"zone guest":"zone");
+  }).join("");
+  // 손님석은 항상 넓게
+  Array.prototype.forEach.call(floor.querySelectorAll(".room.guest"), function(el){ el.classList.add("wide"); });
+  // 홀수 칸 마지막 방은 넓게 채우기
+  balanceGrid(floor);
+
+  renderQueue(d.queue);
+  renderSchedule(d.schedule);
+  renderUsage(d.usage);
+  renderFeed(d.feed);
+  if(openMember) renderSheet();
+}
+
+function balanceGrid(floor){
+  var col=0, rooms=floor.querySelectorAll(".room"), lastNarrow=null;
+  Array.prototype.forEach.call(rooms, function(el){
+    if(el.classList.contains("wide")){ if(col===1 && lastNarrow){ lastNarrow.classList.add("wide"); } col=0; lastNarrow=null; }
+    else { col = (col+1)%2; lastNarrow = col===1 ? el : null; }
+  });
+  if(col===1 && lastNarrow) lastNarrow.classList.add("wide");
+}
+
+function renderQueue(q){
+  var el=document.getElementById("queue");
+  if(!loaded("queue")){ el.innerHTML='<li class="muted">불러오는 중…</li>'; return; }
+  var items = q.slice().sort(function(a,b){
+    var da=a.status==="done"?1:0, db=b.status==="done"?1:0; if(da!==db) return da-db;
+    var ka=a.kind==="approval"?0:1, kb=b.kind==="approval"?0:1; if(ka!==kb) return ka-kb;
+    var ta=parseT(a.created), tb=parseT(b.created); return (ta?ta.getTime():0)-(tb?tb.getTime():0);
+  });
+  var open = items.filter(function(x){return x.status!=="done";}).length;
+  document.getElementById("qCount").textContent = items.length ? "남은 일 "+open+"건" : "";
+  if(!items.length){ el.innerHTML='<li class="muted">오늘 할 일이 없습니다.</li>'; return; }
+  el.innerHTML = items.map(function(x){
+    var done = x.status==="done";
+    var tag = done ? '<span class="tag done">끝</span>' : (x.kind==="approval" ? '<span class="tag approval">승인 대기</span>' : '<span class="tag todo">할 일</span>');
+    var meta = [esc(x.team), whenLabel(x.created)].filter(Boolean).join(" · ");
+    return '<li class="'+(done?"is-done":"")+'">'+tag+'<div class="li-main"><div class="li-title">'+esc(x.title)+'</div>'+(meta?'<div class="li-meta">'+meta+'</div>':"")+'</div></li>';
+  }).join("");
+}
+
+function renderSchedule(list){
+  var el=document.getElementById("sched");
+  var t = todayStr();
+  var now=new Date(); document.getElementById("sDate").textContent = (now.getMonth()+1)+"/"+now.getDate()+"("+DAYS[now.getDay()]+")";
+  if(!loaded("schedule")){ el.innerHTML='<li class="muted">불러오는 중…</li>'; return; }
+  var items = list.filter(function(x){ return !x.date || x.date===t; })
+    .sort(function(a,b){ return String(a.time||"").localeCompare(String(b.time||"")); });
+  if(!items.length){ el.innerHTML='<li class="muted">오늘 예약된 작업이 없습니다.</li>'; return; }
+  el.innerHTML = items.map(function(x){
+    var s = SCHED[x.status] || SCHED.pending;
+    return '<li class="'+(x.status==="running"?"now":"")+'"><span class="time">'+esc(x.time)+'</span><div class="li-main">'+esc(x.name)+'</div><span class="tag '+s[1]+'">'+s[0]+'</span></li>';
+  }).join("");
+}
+
+function barHTML(label, pct, note){
+  var p = num(pct);
+  if(p==null) return '<div class="usage-row"><div class="hd"><span>'+label+'</span><b>—</b></div><div class="bar"><i style="width:0"></i></div>'+(note?'<div class="li-meta">'+note+'</div>':"")+'</div>';
+  var w = Math.max(0, Math.min(100, p));
+  var cls = w>=85 ? "high" : (w>=60 ? "mid" : "");
+  return '<div class="usage-row"><div class="hd"><span>'+label+'</span><b>'+Math.round(p)+'%</b></div>'+
+    '<div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="'+Math.round(w)+'" aria-label="'+label+'"><i class="'+cls+'" style="width:'+w+'%"></i></div>'+
+    (note?'<div class="li-meta">'+note+'</div>':"")+'</div>';
+}
+function renderUsage(u){
+  var el=document.getElementById("usage");
+  if(state.mode!=="offline" && state.usage===undefined){ el.innerHTML='<div class="muted">불러오는 중…</div>'; document.getElementById("uChecked").textContent=""; return; }
+  if(!u){ el.innerHTML = barHTML("주간 사용량", null, "아직 기록이 없습니다.") + barHTML("이번 세션", null, ""); document.getElementById("uChecked").textContent=""; return; }
+  var reset = longDate(u.reset_at);
+  el.innerHTML = barHTML("주간 사용량", u.weekly_pct, reset ? "초기화 "+esc(reset) : "") + barHTML("이번 세션", u.session_pct, "");
+  var ck = longDate(u.checked_at);
+  document.getElementById("uChecked").textContent = ck ? "확인 "+ck : "";
+}
+
+function renderFeed(f){
+  var el=document.getElementById("feed");
+  if(!loaded("feed")){ el.innerHTML='<li class="muted">불러오는 중…</li>'; return; }
+  var items = f.slice().sort(function(a,b){ var ta=parseT(a.at), tb=parseT(b.at); return (tb?tb.getTime():0)-(ta?ta.getTime():0); }).slice(0,30);
+  if(!items.length){ el.innerHTML='<li class="muted">아직 소식이 없습니다.</li>'; return; }
+  el.innerHTML = items.map(function(x){
+    return '<li><span class="time">'+esc(whenLabel(x.at))+'</span><span class="who" title="'+esc(x.team)+'">'+esc(x.team)+'</span><div class="li-main">'+esc(x.text)+'</div></li>';
+  }).join("");
+}
+
+/* ---------- 상세 시트 ---------- */
+function findMember(){
+  if(!openMember) return null;
+  var teams = data().teams;
+  for(var i=0;i<teams.length;i++){ var t=teams[i]; if(String(t.id)!==openMember.team) continue;
+    var ms=t.members||[]; for(var j=0;j<ms.length;j++){ if(String(ms[j].id)===openMember.id) return {team:t, m:ms[j]}; } }
+  return null;
+}
+function renderSheet(){
+  var f = findMember(), bg=document.getElementById("sheetBg");
+  if(!f){ closeSheet(); return; }
+  var m=f.m, st=STATUS[m.status]?m.status:"idle";
+  var outs = Array.isArray(m.outputs)?m.outputs:[];
+  var since = whenLabel(m.since);
+  document.getElementById("sheet").innerHTML =
+    '<div class="hd">'+charSVG(m,"char-lg")+'<div><h3 id="sheetTitle">'+esc(m.name)+'</h3><div class="sub"><i class="lamp '+st+'" style="display:inline-block;margin-right:5px"></i>'+STATUS[st].label+'</div></div><button class="close" id="closeBtn">닫기</button></div>'+
+    '<dl class="kv"><dt>팀</dt><dd>'+esc(f.team.name)+'</dd><dt>맡은 일</dt><dd>'+(esc(m.task)||"—")+'</dd><dt>시작</dt><dd>'+(esc(since)||"—")+'</dd></dl>'+
+    '<div style="font-size:13px;font-weight:700;margin-bottom:4px">산출물</div>'+
+    '<ul class="outs">'+(outs.length? outs.map(function(o){ var u=safeUrl(o&&o.url); var lb=esc((o&&o.label)||u||"산출물"); return '<li>'+(u?'<a href="'+esc(u)+'" target="_blank" rel="noopener">'+lb+' ↗</a>':'<span>'+lb+'</span>')+'</li>'; }).join("") : '<li><span>아직 없습니다.</span></li>')+'</ul>';
+  bg.classList.add("open");
+  document.getElementById("closeBtn").onclick = closeSheet;
+}
+function closeSheet(){ openMember=null; document.getElementById("sheetBg").classList.remove("open"); }
+
+document.addEventListener("click", function(e){
+  var b = e.target.closest && e.target.closest(".m");
+  if(b && !b.closest(".sheet")){ openMember={team:b.getAttribute("data-team"), id:b.getAttribute("data-id")}; renderSheet(); return; }
+  if(e.target.id==="sheetBg") closeSheet();
+  var ib = e.target.closest && e.target.closest("#inboxBtn");
+  if(ib){ var q=document.getElementById("h-q"); if(q) q.scrollIntoView({behavior:"smooth",block:"start"}); }
+});
+document.addEventListener("keydown", function(e){
+  if(e.key==="Escape") closeSheet();
+  if((e.key==="Enter"||e.key===" ") && document.activeElement && document.activeElement.id==="inboxBtn"){ e.preventDefault(); document.getElementById("h-q").scrollIntoView({behavior:"smooth"}); }
+});
+
+function tick(){
+  var d=new Date();
+  document.getElementById("clock").textContent = (d.getMonth()+1)+"월 "+d.getDate()+"일 ("+DAYS[d.getDay()]+") "+pad(d.getHours())+":"+pad(d.getMinutes())+" · 대표는 결재만";
+}
+
+/* ---------- db 연결 ---------- */
+function docsOf(snap){ return snap.docs.map(function(ds){ var o=Object.assign({}, ds.data()||{}); o.id=ds.id; return o; }); }
+
+async function init(){
+  tick(); setInterval(tick, 30000);
+  render();
+  var db = null;
+  try{
+    if(window.claude && typeof window.claude.use==="function") db = await window.claude.use("db");
+  }catch(e){ db = null; }
+  if(!db){ state.mode="offline"; render(); return; }
+
+  state.mode="connecting"; render();
+  var confirmed = {teams:false, queue:false, schedule:false, feed:false, usage:false};
+  var timer = setTimeout(function(){
+    if(state.mode==="connecting"){ state.mode="slow"; render(); }
+  }, 10000);
+  function settle(key, fromCache){
+    if(!fromCache) confirmed[key]=true;
+    var all = Object.keys(confirmed).every(function(k){ return confirmed[k]; });
+    if(all && state.mode!=="error"){ clearTimeout(timer); state.mode="live"; }
+    render();
+  }
+  function onErr(key){ return function(e){
+    clearTimeout(timer);
+    state.err = e && e.code; state.mode = "error";
+    if(key==="usage"){ if(state.usage===undefined) state.usage=null; }
+    else if(state[key]===null) state[key]=[];
+    render();
+  }; }
+
+  try{
+    db.collection("office_teams").onSnapshot(function(s){ state.teams=docsOf(s); settle("teams", s.metadata && s.metadata.fromCache); }, onErr("teams"));
+    db.collection("office_queue").onSnapshot(function(s){ state.queue=docsOf(s); settle("queue", s.metadata && s.metadata.fromCache); }, onErr("queue"));
+    db.collection("office_schedule").onSnapshot(function(s){ state.schedule=docsOf(s); settle("schedule", s.metadata && s.metadata.fromCache); }, onErr("schedule"));
+    db.collection("office_feed").orderBy("at","desc").limit(30).onSnapshot(function(s){ state.feed=docsOf(s); settle("feed", s.metadata && s.metadata.fromCache); }, onErr("feed"));
+    db.doc("office_meta/usage").onSnapshot(function(ds){ state.usage = ds.exists ? (ds.data()||null) : null; settle("usage", ds.metadata && ds.metadata.fromCache); }, onErr("usage"));
+  }catch(e){
+    clearTimeout(timer); state.mode="offline"; render();
+  }
+}
+init();
+})();
+</script>
+</body>
+</html>

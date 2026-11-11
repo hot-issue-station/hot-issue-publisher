@@ -95,6 +95,17 @@ const MISSIONS = [
          STATS_FIREBASE.record/get 을 Firestore 증가(increment) 코드로 채운다. null이면 꺼져 있다. */
 const FIREBASE_CONFIG = null;
 
+/* 유튜브 원본 숫자·인기 댓글(읽기 전용). key = YouTube Data API v3 키(무료 할당량). null이면 「유튜브 댓글」 탭과 숫자를 숨긴다.
+   ★ 키는 화면 코드에 그대로 보이므로 Google Cloud 콘솔에서 「HTTP 리퍼러 제한(우리 사이트 주소만)」+「YouTube Data API v3만」으로 꼭 묶을 것.
+   쓰는 호출(공식 문서 developers.google.com/youtube/v3/docs):
+     videos.list         GET https://www.googleapis.com/youtube/v3/videos?part=statistics&id=<영상ID>&key=<키>
+                         → items[0].statistics.viewCount · likeCount (commentCount도 있음)
+     commentThreads.list GET https://www.googleapis.com/youtube/v3/commentThreads?part=snippet&videoId=<영상ID>&order=relevance&maxResults=5&textFormat=plainText&key=<키>
+                         → items[].snippet.topLevelComment.snippet.authorDisplayName · authorChannelUrl · textDisplay · likeCount · publishedAt
+   받은 값은 저장하지 않고(새로고침하면 다시 조회) 작성자 이름·원문을 고치지 않고 그대로, 「출처: YouTube」와 함께 보여 준다.
+   유튜브에 직접 댓글 달기는 구글 로그인(OAuth) 앱 심사가 필요해 넣지 않음 — 「유튜브에서 댓글 달기」 버튼(원본 링크)만 */
+const YT_API = { key:null };
+
 /* 진행(게임 클리어 방식). 방 순서대로: 처음엔 openAtStart개만 열리고, 한 방에서 영상 need편을 '시청 완료'하면 다음 방 문이 열린다.
    관의 방을 모두 클리어하면 비밀의 방이 열리고, 로비의 nextHall 문에 「클리어 보상: 먼저 열림」 표시.
    시청 완료 = 유튜브 IFrame Player API로 watchSeconds초 이상 재생 또는 끝까지(쇼츠는 끝까지). API를 못 쓰면 패널을 fallbackSeconds초 열어 두면 인정.
@@ -295,7 +306,31 @@ a.contactBtn{text-align:center;text-decoration:none}a.contactBtn[aria-disabled=t
 .sheet .desc:empty{display:none}
 .vnote{margin:6px 0 8px;padding:10px 12px;background:var(--paper);border-left:3px solid var(--theme);border-radius:8px;font-size:14px;line-height:1.65;color:var(--ink);white-space:pre-line}
 .vnote:empty{display:none}
-body.playing .adtop{display:none}   /* 유튜브 정책: 영상 패널이 열려 있는 동안 맨 위 광고 띠 숨김 */
+body.playing .adtop{display:none}
+.ytstats{margin:8px 0 0;font-size:12px;color:var(--sub)}
+.ytstats[hidden],.cmt[hidden],#ctY[hidden],#ctG[hidden]{display:none}
+.cmt{margin-top:14px;border-top:1px solid var(--line);padding-top:10px}
+.ctabs{display:flex;gap:6px;margin-bottom:8px}
+.ctabs button{border:1px solid var(--line);background:#fff;border-radius:999px;padding:6px 12px;font-size:13px;font-weight:700;min-height:34px}
+.ctabs button.on{background:var(--ink);border-color:var(--ink);color:#fff}
+.ctabs button[hidden]{display:none}
+.cnote{margin:0 0 8px;font-size:12px;color:var(--sub);line-height:1.5}
+#cForm{display:grid;gap:6px}
+#cForm input,#cForm textarea{width:100%;border:1px solid var(--line);border-radius:10px;padding:9px 10px;font:inherit;font-size:16px;background:#fff;color:var(--ink);resize:vertical}
+.crow{display:flex;align-items:center;gap:8px}
+.crow small{color:var(--sub);font-size:11px}
+.crow .clocal{flex:1}
+.crow button{border:0;background:var(--p);color:#fff;border-radius:999px;padding:8px 16px;font-size:13px;font-weight:700;min-height:36px}
+.clist{list-style:none;margin:10px 0 0;padding:0}
+.clist li{border-bottom:1px solid var(--line);padding:9px 2px;font-size:14px;line-height:1.5}
+.clist li .who{display:flex;gap:6px;align-items:center;font-size:12px;color:var(--sub);margin-bottom:2px}
+.clist li .who b{color:var(--ink)}
+.clist li .who a{color:var(--ink);font-weight:700;text-decoration:none}
+.clist li .who button{margin-left:auto;border:0;background:none;color:var(--sub);font-size:11px;text-decoration:underline;padding:4px}
+.clist li p{margin:0;white-space:pre-wrap;word-break:break-word}
+.clist li.empty{color:var(--sub);font-size:12px;text-align:center;border:0}
+.ytwrite{display:inline-block;margin-top:10px;border:1px solid var(--line);border-radius:999px;padding:7px 12px;font-size:12px;font-weight:700;color:var(--ink);text-decoration:none;background:#fff}
+.anaNote{margin:6px 0 0!important;font-size:11px!important;opacity:.8}   /* 유튜브 정책: 영상 패널이 열려 있는 동안 맨 위 광고 띠 숨김 */
 .react{display:flex;align-items:center;gap:8px;margin-top:10px}
 .react[hidden]{display:none}
 .react button{border:1px solid var(--line);background:#fff;border-radius:999px;padding:7px 14px;font-size:13px;font-weight:700;min-height:36px}
@@ -395,6 +430,21 @@ body.flat #stage,body.flat .turn,body.flat .hint,body.flat .joy{display:none}
   <p class="desc" id="vDesc"></p>
   <div class="react" id="react" hidden><button id="likeBtn"></button><span id="likeN"></span></div>
   <div class="src" id="src" hidden><span id="srcName"></span><a id="srcLink" target="_blank" rel="noopener"></a></div>
+  <p class="ytstats" id="ytStats" hidden></p>
+  <div class="cmt" id="cmt" hidden>
+    <div class="ctabs" role="tablist"><button data-ct="g" class="on" data-t="cTabG"></button><button data-ct="y" id="ytTab" hidden data-t="cTabY"></button></div>
+    <div id="ctG">
+      <p class="cnote" data-t="cNote"></p>
+      <form id="cForm" autocomplete="off">
+        <input id="cName" maxlength="20" data-t-ph="cName">
+        <textarea id="cText" maxlength="200" rows="2" data-t-ph="cText"></textarea>
+        <div class="crow"><small id="cCount">0/200</small><small class="clocal" id="cLocal" data-t="cLocal"></small><button type="submit" data-t="cPost"></button></div>
+      </form>
+      <ul class="clist" id="cList"></ul>
+    </div>
+    <div id="ctY" hidden><p class="cnote" data-t="ytNote"></p><ul class="clist" id="ytList"></ul></div>
+    <a class="ytwrite" id="ytWrite" target="_blank" rel="noopener" data-t="ytWrite"></a>
+  </div>
   <div id="extra"></div>
   <div class="picks" id="picks">
     <h3 data-t="picksTitle"></h3>
@@ -612,6 +662,69 @@ const STATS = {
   markLiked(id){ const a=store.json("duksim-liked-v1",[]); if(!a.includes(id)){ a.push(id); store.put("duksim-liked-v1",a); } },
 };
 
+/* ---------- 갤러리 댓글 어댑터 ----------
+   COMMENTS.list(videoId) → Promise<[{id, name, text, at}]> (최신순, 신고한 댓글 제외)
+   COMMENTS.add(videoId, {name, text}) → Promise<{ok, reason?}>  (닉네임 선택·20자, 본문 200자, 금칙어·링크 막기)
+   COMMENTS.report(id) → 신고(이 기기에서 바로 숨김. firebase가 되면 신고 수가 쌓여 일정 수 이상이면 숨김)
+   mode "local" = 이 기기에서만 보임(시험용). TODO: FIREBASE_CONFIG가 생기면 Firestore comments/<videoId>/items 에 저장해 모두가 보게.
+   local 저장: localStorage["duksim-comments-v1"] = {"<videoId>":[{id,name,text,at}]}, ["duksim-reported-v1"] = [id,...] */
+const BAD_WORDS = ["씨발","시발","ㅅㅂ","ㅆㅂ","병신","ㅂㅅ","개새끼","좆","존나","미친놈","미친년","fuck","shit","bitch","asshole","死ね","しね","クソ","操你","幹你","他媽","賤人"];
+const COMMENT_MAX = 200;
+function commentCheck(name, text){
+  const t=String(text||"").trim(), n=String(name||"").trim().slice(0,20);
+  if(!t) return {ok:false, reason:"cEmpty"};
+  if([...t].length>COMMENT_MAX) return {ok:false, reason:"cTooLong"};
+  if(/https?:\/\/|www\.|\.(com|net|kr|co|io|ly|me)\b/i.test(t+" "+n)) return {ok:false, reason:"cLink"};
+  const flat=(t+" "+n).toLowerCase().replace(/[\s.·_\-*~!?]/g,"");
+  if(BAD_WORDS.some(w=>flat.includes(w))) return {ok:false, reason:"cBad"};
+  return {ok:true, name:n, text:t};
+}
+const COMMENTS_LOCAL = {
+  async list(vid){ const rep=store.json("duksim-reported-v1",[]); return (store.json("duksim-comments-v1",{})[vid]||[]).filter(c=>!rep.includes(c.id)).sort((a,b)=>b.at-a.at); },
+  async add(vid, c){ const all=store.json("duksim-comments-v1",{}); (all[vid] ||= []).push({id:Date.now().toString(36)+Math.random().toString(36).slice(2,6), name:c.name, text:c.text, at:Date.now()});
+    all[vid]=all[vid].slice(-200); store.put("duksim-comments-v1", all); return {ok:true}; },
+  async report(id){ const a=store.json("duksim-reported-v1",[]); if(!a.includes(id)){ a.push(id); store.put("duksim-reported-v1",a); } },
+};
+const COMMENTS_FIREBASE = { list:v=>COMMENTS_LOCAL.list(v), add:(v,c)=>COMMENTS_LOCAL.add(v,c), report:id=>COMMENTS_LOCAL.report(id) };   // TODO: Firestore
+const COMMENTS = {
+  mode: FIREBASE_CONFIG ? "firebase" : "local",
+  get impl(){ return this.mode==="firebase" ? COMMENTS_FIREBASE : COMMENTS_LOCAL; },
+  list(vid){ return this.impl.list(vid); },
+  async add(vid, c){ const ck=commentCheck(c?.name, c?.text); if(!ck.ok) return ck; return this.impl.add(vid, {name:ck.name, text:ck.text}); },
+  report(id){ return this.impl.report(id); },
+};
+
+/* ---------- 체류·수요 익명 집계(광고 협상용). 개인정보·기기 식별값은 모으지 않고 숫자만 ----------
+   visits(방문 수, 날짜별), rooms["관/방"]={ms 체류, n 입장}, videos[id]={open 패널 열람, credit 재생 인정},
+   ads[slot]={ms 화면에 보인 시간, click}. 지금은 local(이 기기) + 콘솔 요약 Gallery.analyticsSummary().
+   TODO: 무료 분석 도구(예: 쿠키 없는 방식)나 Firebase로 보낼 때는 ANALYTICS.flush 안에서 보낸다. */
+const ANALYTICS = {
+  mode:"local", KEY:"duksim-analytics-v1",
+  load(){ return store.json(this.KEY, {visits:0, days:{}, rooms:{}, videos:{}, ads:{}}); },
+  save(d){ store.put(this.KEY, d); },
+  edit(fn){ const d=this.load(); fn(d); this.save(d); },
+  visit(){ let first=true; try{ if(sessionStorage.getItem("duksim-visit")) first=false; else sessionStorage.setItem("duksim-visit","1"); }catch(e){}
+    if(!first) return; const day=new Date().toISOString().slice(0,10); this.edit(d=>{ d.visits++; d.days[day]=(d.days[day]||0)+1; }); },
+  _room:null, _t0:0,
+  enter(key){ this.leave(); if(!key) return; this._room=key; this._t0=Date.now(); this.edit(d=>{ (d.rooms[key] ||= {ms:0,n:0}).n++; }); },
+  leave(){ if(!this._room) return; const k=this._room, ms=Math.min(Date.now()-this._t0, 30*60e3); this._room=null; this.edit(d=>{ (d.rooms[k] ||= {ms:0,n:0}).ms+=ms; }); },
+  pause(){ const k=this._room; this.leave(); this._resume=k; }, resume(){ if(this._resume && !this._room){ this._room=this._resume; this._t0=Date.now(); } this._resume=null; },
+  video(id, kind){ this.edit(d=>{ const v=(d.videos[id] ||= {open:0,credit:0}); v[kind]=(v[kind]||0)+1; }); },
+  _ad:{}, adSeen(slot, ms){ this._ad[slot]=(this._ad[slot]||0)+ms; },
+  adClick(slot){ this.edit(d=>{ (d.ads[slot] ||= {ms:0,click:0}).click++; }); },
+  flush(){ const a=this._ad; this._ad={}; if(!Object.keys(a).length) return; this.edit(d=>{ for(const k in a) (d.ads[k] ||= {ms:0,click:0}).ms+=a[k]; }); },
+  summary(){ this.flush(); const d=this.load(), sec=ms=>Math.round(ms/1000);
+    console.info("[미술관 익명 집계] 방문", d.visits, "회 (이 기기 기준)");
+    console.table(Object.fromEntries(Object.entries(d.rooms).map(([k,v])=>[k,{입장:v.n, 체류초:sec(v.ms)}])));
+    console.table(Object.fromEntries(Object.entries(d.videos).map(([k,v])=>[k,{패널열람:v.open, 재생인정:v.credit}])));
+    console.table(Object.fromEntries(Object.entries(d.ads).map(([k,v])=>[k,{노출초:sec(v.ms), 클릭:v.click}])));
+    return d; },
+};
+ANALYTICS.visit();
+setInterval(()=>ANALYTICS.flush(), 15000);
+addEventListener("visibilitychange",()=>{ if(document.hidden){ ANALYTICS.pause(); ANALYTICS.flush(); } else ANALYTICS.resume(); });
+addEventListener("pagehide",()=>{ ANALYTICS.leave(); ANALYTICS.flush(); });
+
 /* ---------- 진행 저장 어댑터(나중에 Firebase 계정별로 옮길 수 있게) ----------
    PROG.list(hall, room) → 시청 완료한 영상 id 배열,  PROG.add(hall, room, videoId) → 새로 인정되면 true
    PROG.hallCleared(hall) / PROG.setHallCleared(hall)
@@ -695,6 +808,7 @@ function applyLang(){
   document.documentElement.lang = G.lang==="zh" ? "zh-Hant" : G.lang;
   document.querySelectorAll("[data-t]").forEach(el => el.textContent = G.t(el.dataset.t));
   document.querySelectorAll("[data-t-aria]").forEach(el => el.setAttribute("aria-label", G.t(el.dataset.tAria)));
+  document.querySelectorAll("[data-t-ph]").forEach(el => el.setAttribute("placeholder", G.t(el.dataset.tPh)));
   $("#langSel").value = G.lang;
   drawAdSlot($("#adTop"),"screen_top_1");
   drawChrome(); drawFlat(); drawIntro(); if(!$("#hint").classList.contains("off")) $("#hint").textContent=hintText();
@@ -718,7 +832,7 @@ function drawIntro(){
     <div class="sub">${esc(G.t("pickMode"))}</div>
     <div class="modes"><button data-m="walk" class="${G.walk?'on':''}">${esc(G.t("walkMode"))}<small>${esc(G.t("walkDesc"))}</small></button>
       <button data-m="quick" class="${G.walk?'':'on'}">${esc(G.t("quickMode"))}<small>${esc(G.t("quickDesc"))}</small></button></div>
-    <button class="go" id="introGo">${esc(G.t("start"))}</button><p class="contactNote">${esc(G.t("freeNote"))}</p>`;
+    <button class="go" id="introGo">${esc(G.t("start"))}</button><p class="contactNote">${esc(G.t("freeNote"))}</p><p class="contactNote anaNote">${esc(G.t("anaNote"))}</p>`;
   box.querySelectorAll("[data-l]").forEach(b=>b.onclick=()=>setLang(b.dataset.l));
   box.querySelectorAll("[data-icon]").forEach(cv=>drawPetIcon(cv.getContext("2d"), CHARS.find(c=>c.id===cv.dataset.icon), 96));
   box.querySelectorAll("[data-k]").forEach(b=>b.onclick=()=>{ G.petTab=b.dataset.k; drawIntro(); });
@@ -741,6 +855,7 @@ G.applyView = (view, hallId=null, roomId=null) => {
   document.documentElement.style.setProperty("--theme", view==="room" ? G.roomColor(G.room()) : view==="shop" ? (G.shopG()?.color||"#ff9ad5") : (G.hall()?.color || "#9db8e8"));
   try{ history.replaceState(null, "", location.pathname + location.search + (view==="shop" ? "#/shop/"+G.shopGroup : G.hallId ? "#/"+G.hallId+(G.roomId?"/"+G.roomId:"") : view==="lobby" ? "#/lobby" : "")); }catch(e){}
   if(view==="room") markVisit(G.hallId, G.roomId);
+  ANALYTICS.enter(view==="room" ? G.hallId+"/"+G.roomId : view==="shop" ? "shop/"+G.shopGroup : view==="hub" ? G.hallId+"/(hub)" : view);
   drawChrome(); drawFlat(); showHint();
   if(G.mode==="flat") scrollTo(0,0);
 };
@@ -814,6 +929,8 @@ $("#colBtn").onclick = openCollection;
 /* ---------- 광고 칸·광고 문의 ---------- */
 G.ad = slot => ADS.find(a=>a.slot_id===slot && safeUrl(a.image)) || null;
 G.adsAt = place => ADS.filter(a=>a.place===place && safeUrl(a.image));
+$("#adTop").addEventListener("click",()=>ANALYTICS.adClick("screen_top_1"));
+setInterval(()=>{ if(!document.hidden && G.mode!=="loading" && getComputedStyle($("#adTop")).display!=="none") ANALYTICS.adSeen("screen_top_1", 1000); }, 1000);
 G.openAd = ad => { const u=safeUrl(ad?.link); if(!u) return; const a=document.createElement("a"); a.href=u.href; a.target="_blank"; a.rel="sponsored noopener"; document.body.appendChild(a); a.click(); a.remove(); };
 function drawAdSlot(el, slot){   // 이미지가 있으면 그 광고, 없으면 「AD · 광고 자리」 표시만
   const ad=G.ad(slot), u=safeUrl(ad?.link);
@@ -894,7 +1011,7 @@ const isNew = d => { const t=Date.parse(d||""); return t && (Date.now()-t) < 7*8
 async function drawReact(id){
   const liked=STATS.hasLiked(id), s=await STATS.get(id);
   const b=$("#likeBtn"); b.textContent = liked ? G.t("liked") : G.t("like"); b.disabled = liked;
-  $("#likeN").textContent = G.t("likesN",{n:s.like, v:s.view});
+  $("#likeN").textContent = G.t("likesN",{n:s.like, v:s.view}) + (STATS.mode==="local" ? " "+G.t("localOnly") : "");
 }
 function openItem(it, ctx={}){
   if(!it){ toast(G.t("soon")); return; }
@@ -923,10 +1040,11 @@ function openItem(it, ctx={}){
     title=it.title||""; desc=it.desc||""; note=it.note ? (typeof it.note==="object" ? G.nm(it.note) : String(it.note)) : ""; showPicks=false; playing=true; vid=it.id; if(isNew(it.added_at)) tag=G.t("newTag");
     srcUrl = kind==="short" ? `https://www.youtube.com/shorts/${encodeURIComponent(it.id)}` : `https://www.youtube.com/watch?v=${encodeURIComponent(it.id)}`;
     srcName = it.channel || (it.official && hall?.official ? hall.official.name : "YouTube"); srcBtn=G.t("openYT");
-    STATS.record(it.id, "view"); startWatch(it);
+    STATS.record(it.id, "view"); ANALYTICS.video(it.id, "open"); startWatch(it);
   }
   $("#vTitle").innerHTML = esc(title) + (tag ? ` <span class="tag">${esc(tag)}</span>` : ""); $("#vDesc").textContent=desc; $("#vNote").textContent=note; $("#extra").innerHTML=extra;
   document.body.classList.toggle("playing", playing);
+  drawComments(vid, srcUrl);
   $("#react").hidden = !vid;
   if(vid){ drawReact(vid); $("#likeBtn").onclick=()=>{ if(STATS.hasLiked(vid)) return; STATS.markLiked(vid); STATS.record(vid,"like"); drawReact(vid); }; }
   $("#src").hidden = !srcUrl; $("#srcName").textContent = srcName ? G.t("src")+": "+srcName : ""; $("#srcLink").href=srcUrl||"#"; $("#srcLink").textContent=srcBtn;
@@ -964,6 +1082,7 @@ function startWatch(it){
 function creditWatch(h, r, id){
   const was=G.roomCleared(h, r), hallWas=G.hallCleared(h);
   if(!PROG.add(h.id, r.id, id)) return;
+  ANALYTICS.video(id, "credit");
   toast(G.t("watchedOk",{s:G.stars(G.roomCount(h,r), G.roomNeed(r))}));
   if(!was && G.roomCleared(h, r)){
     const i=PROGRESS.order.indexOf(r.id), nx=PROGRESS.order[i+1];
@@ -973,11 +1092,53 @@ function creditWatch(h, r, id){
   if(!hallWas && G.hallCleared(h)){ PROG.setHallCleared(h.id); G.justUnlocked=PROGRESS.secretRoom; setTimeout(()=>toast(G.t("hallClear",{hall:G.nm(h.name)}), 3000), 4200); }
   drawChrome(); drawFlat(); G.onProgress?.();
 }
+/* ---------- 영상 패널: 갤러리 댓글 + 유튜브 원본 숫자·인기 댓글(읽기 전용) ---------- */
+let cmtVid=null; const ytCache={};
+const fmtN = n => { const x=Number(n); return isFinite(x) ? x.toLocaleString(G.lang==="zh"?"zh-TW":G.lang) : "—"; };
+const fmtD = t => { try{ return new Date(t).toLocaleDateString(G.lang==="zh"?"zh-TW":G.lang); }catch(e){ return ""; } };
+function drawComments(vid, srcUrl){
+  cmtVid=vid; $("#cmt").hidden=!vid; $("#ytStats").hidden=true; if(!vid) return;
+  $("#ytWrite").href=srcUrl||"#"; $("#cLocal").hidden = COMMENTS.mode!=="local";
+  const hasKey=!!(YT_API.key && /^[\w-]{20,60}$/.test(YT_API.key)); $("#ytTab").hidden=!hasKey; setCTab("g");
+  $("#cText").value=""; $("#cCount").textContent="0/"+COMMENT_MAX;
+  $("#cName").value=store.get("duksim-cname")||"";
+  listComments(vid);
+  if(hasKey) loadYTData(vid);
+}
+async function listComments(vid){
+  const list=await COMMENTS.list(vid); if(cmtVid!==vid) return;
+  $("#cList").innerHTML = list.length ? list.map(c=>`<li><div class="who"><b>${esc(c.name||G.t("cAnon"))}</b><span>${esc(fmtD(c.at))}</span><button data-rep="${esc(c.id)}">${esc(G.t("cReport"))}</button></div><p>${esc(c.text)}</p></li>`).join("")
+    : `<li class="empty">${esc(G.t("cEmpty"))}</li>`;
+  $("#cList").querySelectorAll("[data-rep]").forEach(b=>b.onclick=async()=>{ await COMMENTS.report(b.dataset.rep); toast(G.t("cReported")); listComments(vid); });
+}
+function setCTab(k){ document.querySelectorAll(".ctabs button").forEach(b=>b.classList.toggle("on", b.dataset.ct===k)); $("#ctG").hidden = k!=="g"; $("#ctY").hidden = k!=="y"; }
+document.querySelectorAll(".ctabs button").forEach(b=>b.onclick=()=>setCTab(b.dataset.ct));
+$("#cText").addEventListener("input",()=>{ $("#cCount").textContent=[...$("#cText").value].length+"/"+COMMENT_MAX; });
+$("#cForm").onsubmit = async e => { e.preventDefault(); if(!cmtVid) return;
+  const name=$("#cName").value, r=await COMMENTS.add(cmtVid, {name, text:$("#cText").value});
+  if(!r.ok){ toast(G.t(r.reason)); return; }
+  store.set("duksim-cname", name.trim().slice(0,20)); $("#cText").value=""; $("#cCount").textContent="0/"+COMMENT_MAX; toast(G.t("cOk")); listComments(cmtVid); };
+async function loadYTData(vid){
+  const k=encodeURIComponent(YT_API.key), id=encodeURIComponent(vid), base="https://www.googleapis.com/youtube/v3/";
+  const c = ytCache[vid] ||= Promise.all([
+    fetch(`${base}videos?part=statistics&id=${id}&key=${k}`).then(r=>r.ok?r.json():null).catch(()=>null),
+    fetch(`${base}commentThreads?part=snippet&videoId=${id}&order=relevance&maxResults=5&textFormat=plainText&key=${k}`).then(r=>r.ok?r.json():null).catch(()=>null) ]);
+  const [v, ct]=await c; if(cmtVid!==vid) return;
+  const st=v?.items?.[0]?.statistics;
+  if(st){ $("#ytStats").textContent = G.t("ytStats",{v:fmtN(st.viewCount), l: st.likeCount!=null ? fmtN(st.likeCount) : "—"}); $("#ytStats").hidden=false; }
+  const items=ct?.items;
+  $("#ytList").innerHTML = !items ? `<li class="empty">${esc(G.t("ytErr"))}</li>` : !items.length ? `<li class="empty">${esc(G.t("ytNone"))}</li>`
+    : items.map(t=>{ const c=t?.snippet?.topLevelComment?.snippet||{}, u=safeUrl(c.authorChannelUrl);
+        const who = u ? `<a href="${esc(u.href)}" target="_blank" rel="noopener">${esc(c.authorDisplayName||"")}</a>` : `<b>${esc(c.authorDisplayName||"")}</b>`;
+        return `<li><div class="who">${who}<span>${esc(fmtD(c.publishedAt))} · 👍 ${esc(fmtN(c.likeCount||0))}</span></div><p>${esc(c.textDisplay||"")}</p></li>`; }).join("");
+}
+G.analyticsSummary = () => ANALYTICS.summary();
+
 G._creditWatch = (hid, rid, id) => creditWatch(G.hall(hid), G.room(hid, rid), id);   // 시험용
 
 function closeItem(){
   const s=$("#sheet"); if(!s.classList.contains("on")) return;
-  s.classList.remove("on"); s.setAttribute("aria-hidden","true"); $("#shade").classList.remove("on"); stopWatch(); document.body.classList.remove("playing");
+  s.classList.remove("on"); s.setAttribute("aria-hidden","true"); $("#shade").classList.remove("on"); stopWatch(); document.body.classList.remove("playing"); cmtVid=null;
   setTimeout(()=>{ if(!s.classList.contains("on")) $("#player").innerHTML=""; },350); // 닫으면 재생도 멈춤
 }
 G.openItem=openItem; G.openVideo=v=>openItem(v); G.closeItem=closeItem;
@@ -989,7 +1150,7 @@ G.sheetOpen = () => $("#sheet").classList.contains("on");
 $("#close").onclick=closeItem; $("#shade").onclick=closeItem;
 addEventListener("keydown",e=>{ if(e.key==="Escape") closeItem(); });
 { let y0=null; const s=$("#sheet");
-  s.addEventListener("touchstart",e=>{ y0 = s.scrollTop<=0 ? e.touches[0].clientY : null; },{passive:true});
+  s.addEventListener("touchstart",e=>{ y0 = s.scrollTop<=0 && !e.target.closest("input,textarea,.cmt") ? e.touches[0].clientY : null; },{passive:true});
   s.addEventListener("touchend",e=>{ if(y0!==null && e.changedTouches[0].clientY-y0>90) closeItem(); y0=null; },{passive:true}); }
 
 /* ---------- 대체 화면: 평면 (밖 → 로비 → 관 → 방) ---------- */
@@ -1145,7 +1306,7 @@ function start(THREE){
         badge.position.set(-w/2+h*0.5, h*0.28, 0.004); ask(); }); }
     else relabel.push(m.userData.redraw);
     if(safeUrl(ad?.link)){ m.userData.act=()=>G.openAd(ad); clickables.push(m); }
-    return m;
+    m.userData.adSlot=slot; return m;
   }
   /* ---------- 전광판: 몇 초마다 바뀌는 순환 슬라이드(밝게 빛나는 화면). 지금 보는 장면 것만 갱신 ---------- */
   const boards=[];
@@ -1171,7 +1332,7 @@ function start(THREE){
     bd.redraw=()=>{ bd.i--; bd.show(); };
     bd.show(); boards.push(bd);
     const act=()=> bd.current ? G.openAd(bd.current) : G.openContact();
-    [scr,frame,glow].forEach(m=>{ m.userData.act=act; clickables.push(m); });
+    [scr,frame,glow].forEach(m=>{ m.userData.act=act; m.userData.adSlot=place+"_1"; clickables.push(m); });
     if(spots && spotPos) spots.push({p:spotPos, r:3, label:()=>G.t("bContact"), act});
     return bd;
   }
@@ -1193,7 +1354,7 @@ function start(THREE){
   /* ---------- 하늘 광고: 건물 위를 천천히 도는 비행선 1대 + 입구 위 공중 홀로그램 판 3장 ----------
      저사양: 도형 적게(비행선 7개·판마다 2개), 텍스처 512px 이하, 이동은 삼각함수 한 번. 30fps로만 갱신, 패널이 열리면 멈춤.
      광고 이미지가 없으면 「광고 문의 환영 · AD SPACE」(4개 언어 순환) / 「광고 자리 · AD SPACE」. 누르거나 다가가면 광고 문의 */
-  const SKY_MSG=["광고 문의 환영 · AD SPACE","広告募集中 · AD SPACE","Advertise with us · AD SPACE","歡迎廣告洽詢 · AD SPACE"];
+  const SKY_MSG=["광고 문의 환영 · AD SPACE","広告募集中 · AD SPACE","Advertise here · AD SPACE","歡迎廣告洽詢 · AD SPACE"];
   function skyAds(s, clickables, spots, relabel, o){
     const ctx={t:0}, act=ad=>()=> safeUrl(ad?.link) ? G.openAd(ad) : G.openContact();
     /* 비행선 */
@@ -1207,14 +1368,14 @@ function start(THREE){
     const drawBand=()=>{ if(blAd && bandMat.map && !bandTex) return; bandTex?.dispose();
       bandTex=canvasTex(512,96,(g,w,h)=>{ const gr=g.createLinearGradient(0,0,w,0); gr.addColorStop(0,"#ff4fa3"); gr.addColorStop(1,"#7b4dff"); g.fillStyle=gr; g.fillRect(0,0,w,h);
         g.fillStyle="#ffd640"; g.fillRect(10,30,74,36); g.fillStyle="#1e143c"; g.font=`800 19px ${FONT}`; g.textAlign="center"; g.textBaseline="middle"; g.fillText("광고 · AD",47,49);
-        g.fillStyle="#fff"; g.font=`800 30px ${FONT}`; wrapText(g, SKY_MSG[mi], w/2+40, h/2+2, w-120, 32, 1); });
+        g.fillStyle="#fff"; g.font=`800 26px ${FONT}`; wrapText(g, SKY_MSG[mi], w/2+44, h/2+2, w-110, 30, 1); });
       bandMat.map=bandTex; bandMat.needsUpdate=true; };
     if(blAd) adLoader.load(safeUrl(blAd.image).href, t=>{ t.colorSpace=THREE.SRGBColorSpace; bandTex?.dispose(); bandTex=null; bandMat.map=t; bandMat.needsUpdate=true; ask(); });
     drawBand();
-    [1,-1].forEach(sd=>{ const b=add(bl, new THREE.PlaneGeometry(7.2,1.35), bandMat, 0.2,0.05,sd*1.93); if(sd<0) b.rotation.y=Math.PI; b.userData.act=act(blAd); clickables.push(b); });
+    [1,-1].forEach(sd=>{ const b=add(bl, new THREE.PlaneGeometry(7.2,1.35), bandMat, 0.2,0.05,sd*1.93); if(sd<0) b.rotation.y=Math.PI; b.userData.act=act(blAd); b.userData.adSlot="sky_blimp_1"; clickables.push(b); });
     if(blAd){ const badge=textPlane(bl, 1.3, 0.42, 128, (g,w,h)=>{ g.fillStyle="#ffd640"; g.fillRect(0,0,w,h); g.fillStyle="#1e143c"; g.font=`800 ${h*0.6}px ${FONT}`; g.textAlign="center"; g.textBaseline="middle"; g.fillText(blAd.label||"광고",w/2,h/2+1); });
       badge.position.set(-2.6,0.62,1.95); }
-    hull.userData.act=act(blAd); clickables.push(hull);
+    hull.userData.act=act(blAd); hull.userData.adSlot="sky_blimp_1"; clickables.push(hull);
     boards.push({scene:s, show:()=>{ if(blAd) return; mi=(mi+1)%SKY_MSG.length; drawBand(); }});
     /* 홀로그램 판 */
     const holos=o.holo.map(([x,y,z],i)=>{
@@ -1231,7 +1392,8 @@ function start(THREE){
       scr.material.side=THREE.DoubleSide; scr.material.depthWrite=false; scr.material.fog=false; scr.material.opacity=0.92;
       if(ad) adLoader.load(safeUrl(ad.image).href, t=>{ t.colorSpace=THREE.SRGBColorSpace; add(g, new THREE.PlaneGeometry(2.86,1.36), new THREE.MeshBasicMaterial({map:t, transparent:true, opacity:.9, fog:false}), 0,0,0.01); ask(); });
       else relabel.push(scr.userData.redraw);
-      [scr,glow].forEach(m=>{ m.userData.act=act(ad); clickables.push(m); });
+      [scr,glow].forEach(m=>{ m.userData.act=act(ad); m.userData.adSlot=`sky_holo_${i+1}`; clickables.push(m); });
+      g.scale.setScalar(o.holoScale||1);
       return {g, y, ph:i*1.9};
     });
     if(o.holoSpot) spots.push({p:o.holoSpot, r:3.2, label:()=>G.t("bContact"), act:G.openContact});
@@ -1270,7 +1432,7 @@ function start(THREE){
       const bb=new THREE.Group(); bb.position.set(13,8.6,10.2); bb.rotation.y=-0.3; s.add(bb);
       billboard(s, bb, 6.4, 3.2, "street_billboard", clickables, spots, new THREE.Vector3(12,2,13));
       clouds(s, [[-30,34,-80,1.4],[10,40,-90,1.1],[42,30,-70,1],[0,22,-40,.6]]);
-      const relabel=[], sky=skyAds(s, clickables, spots, relabel, {orbit:[0,-6,30,17,21,0.06], a0:1.2, holo:[[-5.2,13.2,4],[0,13.8,4.6],[5.2,13.2,4]], holoYaw:[0.18,0,-0.18], holoSpot:new THREE.Vector3(0,2,6)});
+      const relabel=[], sky=skyAds(s, clickables, spots, relabel, {orbit:[0,-6,30,17,21,0.06], a0:1.2, holo:[[-6.4,13.0,12],[0,13.8,12.6],[6.4,13.0,12]], holoYaw:[0.18,0,-0.18], holoScale:1.4, holoSpot:new THREE.Vector3(0,2,6)});
       const free=(x,z)=> x>-40&&x<40&&z>-14.6&&z<62 && !inBox(x,z,[-33.3,-7,-12.3,0.3]) && !inBox(x,z,[7,33.3,-12.3,0.3]) && !inBox(x,z,[-37.6,2.6,7.6,20.4]) && !inCircles(x,z,tc) && Math.hypot(x-13,z-10)>0.6
         && !(Math.abs(x)>=7 && z<-12.3);
       const height=(x,z)=> Math.abs(x)<7 && z<1.2 ? (z<-9 ? 3.15 : Math.min(9,Math.ceil((1.2-z)/1.2))*0.35) : 0;
@@ -1301,7 +1463,7 @@ function start(THREE){
     billboard(s, bb, 5.2, 2.6, "street_billboard", clickables, spots, new THREE.Vector3(8.6,2,11));
     instanced(s, new THREE.SphereGeometry(0.6,8,6), lam(0x9cc58a), [-10.6,-11.8,10.6,11.8].map(x=>({x,y:0.4,z:6,sy:0.7})));
     clouds(s, [[-30,26,-70,1.3],[12,32,-80,1.1],[38,22,-60,.9],[-8,18,-40,.6]]);
-    const relabel=[], sky=skyAds(s, clickables, spots, relabel, {orbit:[0,-5,22,13,18,0.07], a0:1.1, holo:[[-4.6,12.0,6.2],[0,12.6,6.6],[4.6,12.0,6.2]], holoYaw:[0.2,0,-0.2], holoSpot:new THREE.Vector3(0,2,9.5)});
+    const relabel=[], sky=skyAds(s, clickables, spots, relabel, {orbit:[0,-5,22,13,18,0.07], a0:1.1, holo:[[-5.2,12.2,6.4],[0,12.9,6.8],[5.2,12.2,6.4]], holoYaw:[0.2,0,-0.2], holoScale:1.3, holoSpot:new THREE.Vector3(0,2,9.5)});
     const cols=colX.map(x=>({c:[x,3.4,0.6]})).concat([{c:[9.6,8.5,0.5]}]);
     const free=(x,z)=> x>-30&&x<30&&z>-14&&z<60 && !inBox(x,z,[-7.6,7.6,-8.2,1.1]) && !inCircles(x,z,cols) && !inCircles(x,z,tc);
     const height=(x,z)=>{ let h=0; for(let i=0;i<5;i++) if(z<5.6-0.9*i && z>-8.4+0.0*i && Math.abs(x)<(22-i*0.6)/2) h=(i+1)*0.3; return h; };
@@ -1867,6 +2029,7 @@ function start(THREE){
     ray.setFromCamera(ndc,camera); const hit=ray.intersectObjects(cur.clickables,false)[0]; if(!hit) return;
     if(G.view==="room" && !G.walk){ hit.object.getWorldPosition(tmp); const dx=tmp.x-camera.position.x, dz=tmp.z-camera.position.z;
       turnTo(Math.atan2(-dx,-dz), Math.max(-0.4,Math.min(0.4,Math.atan2(tmp.y-1.6, Math.hypot(dx,dz))))); }
+    if(hit.object.userData.adSlot) ANALYTICS.adClick(hit.object.userData.adSlot);
     hit.object.userData.act?.();
   }
 
@@ -1893,6 +2056,12 @@ function start(THREE){
     /* 저사양 감지: 걷는 중 프레임이 계속 느리면 빠른 모드 제안(한 번만) */
     if(moving && !suggested){ frameCount++; if(dt>0.045) slowFrames++; if(frameCount>90){ if(slowFrames/frameCount>0.6){ suggested=true; G.suggestQuick(); } frameCount=slowFrames=0; } }
   }
+  /* 광고판 노출: 1초마다 지금 장면에서 화면(시야) 안에 든 광고판 칸을 세어 노출 시간에 더한다(가려짐은 따지지 않는 근사값) */
+  { const fr=new THREE.Frustum(), pm=new THREE.Matrix4();
+    setInterval(()=>{ if(!cur || document.hidden || G.sheetOpen() || G.mode!=="3d") return;
+      const list = cur._adMeshes ||= (()=>{ const a=[]; cur.scene.traverse(o=>{ if(o.userData?.adSlot && o.isMesh) a.push(o); }); return a; })();
+      if(!list.length) return; camera.updateMatrixWorld(); pm.multiplyMatrices(camera.projectionMatrix, camera.matrixWorldInverse); fr.setFromProjectionMatrix(pm);
+      const seen=new Set(); list.forEach(o=>{ if(o.visible && fr.intersectsObject(o)) seen.add(o.userData.adSlot); }); seen.forEach(sl=>ANALYTICS.adSeen(sl, 1000)); }, 1000); }
   setScene(G.view, G.hallId, G.roomId);
   G.mode="3d"; G.three=THREE.REVISION;
   G._debug = { player, get yaw(){return yaw;}, set yaw(v){yaw=v; ask();}, get pitch(){return pitch;}, set pitch(v){pitch=v; ask();}, joy, ask, cur:()=>cur, boards };
