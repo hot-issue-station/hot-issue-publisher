@@ -76,19 +76,858 @@ const HALLS = [
      넣지 않는 것: 가족·학교·사는 곳 등 사생활, 열애·루머·논란, 공식 확인 안 된 소문.
    ★ quiz는 source(공식 출처 링크)와 checked_at이 비어 있으면 화면에 나오지 않는다(안전장치).
    형식: {id, hall, room, type:"find"|"quiz", hint:{ko,ja,en,zh}, pos?:[x,y,z](find), question?, choices?, answer?(0부터), source?, checked_at?, reward:{video_id, title}} */
+/* ===== 리센느관 전시 문구(gallery/content_rescene.json 에서 합침, 2026-11-11). 다른 작가가 쓰고 출처를 확인한 글 — 고치려면 content_rescene.json 을 고친 뒤 다시 합친다.
+   ※ 고향(출신 도시) 표현은 대표 확인 전이라 뺐다(시 홍보대사·축하 같은 사실은 그대로). zh-Hant → zh. 멤버 공식 색·미확인 생일·포지션은 null(표시 안 함) */
+const CONTENT = {
+ "hall": "rescene",
+ "checked_at": "2026-11-11",
+ "intro": {
+  "ko": "리센느관에 오신 것을 환영해요. 리센느(RESCENE)는 더뮤즈엔터테인먼트의 5인조 걸그룹으로, 원이·리브·미나미·메이·제나가 2024년 3월 26일 싱글 「Re:Scene」으로 데뷔했어요. 2024년 8월 미니 1집 「SCENEDROME」에 실린 「LOVE ATTACK」은 2026년 여름 멜론 TOP100 1위에 오르며 다시 사랑받았고, 같은 여름 「Pretty Girl」로 데뷔 후 첫 음악방송 1위도 안았어요. 팬덤 이름은 '향기로 장면을 떠올리게 한다'는 뜻을 담은 리마인(REMINE). 여섯 개의 방을 천천히 걸으며, 그 장면들을 함께 떠올려 보세요.",
+  "ja": "RESCENE館へようこそ。RESCENE(リセンヌ)はThe Muze Entertainment所属の5人組ガールズグループで、ウォニ・リブ・ミナミ・メイ・ジェナの5人が2024年3月26日、シングル『Re:Scene』でデビューしました。2024年8月のミニ1集『SCENEDROME』に収録された「LOVE ATTACK」は2026年夏にMelon TOP100で1位となって再び愛され、同じ夏には「Pretty Girl」でデビュー後初の音楽番組1位も手にしました。ファンダム名は「香りで場面を思い出させる」という意味を込めたREMINE(リマイン)。6つの部屋をゆっくり歩きながら、その場面を一緒に思い出してみてください。",
+  "en": "Welcome to the RESCENE Hall. RESCENE is a five-member girl group from The Muze Entertainment — WONI, LIV, MINAMI, MAY and ZENA — who debuted on March 26, 2024 with the single album Re:Scene. \"LOVE ATTACK,\" from their August 2024 first mini album SCENEDROME, found new love in summer 2026 when it reached No. 1 on the Melon TOP100, and that same summer \"Pretty Girl\" gave them their first music-show win. Their fandom is called REMINE, a name about being reminded of a scene through a scent. Take your time walking through the six rooms and relive those scenes with us.",
+  "zh": "歡迎來到RESCENE館。RESCENE是The Muze Entertainment旗下的五人女子團體，WONI、LIV、MINAMI、MAY、ZENA於2024年3月26日以單曲專輯《Re:Scene》出道。收錄於2024年8月首張迷你專輯《SCENEDROME》的〈LOVE ATTACK〉在2026年夏天登上Melon TOP100冠軍，再次被大家愛上；同一個夏天，她們也以〈Pretty Girl〉拿下出道後第一座音樂節目一位。粉絲名REMINE，意思是「讓香氣喚起某個場景」。請慢慢走過六個房間，和我們一起重溫那些場景。"
+ },
+ "intro_sources": [
+  "https://isplus.com/article/view/isp202403260139",
+  "https://sports.khan.co.kr/article/202402292225003",
+  "https://v.daum.net/v/20240222183439798",
+  "https://news.tf.co.kr/read/ogmeta/2339259.htm",
+  "https://v.daum.net/v/20260711060326717",
+  "https://www.khan.co.kr/article/202607240600031/",
+  "https://soompi.com/article/1674005wpp/rescene-announces-official-fandom-name"
+ ],
+ "rooms": {
+  "stage": {
+   "desc": {
+    "ko": "엠카운트다운부터 인기가요 1위 앵콜, 밴드 라이브까지 — 리센느의 무대를 한자리에.",
+    "ja": "M COUNTDOWNから人気歌謡1位アンコール、バンドライブまで――RESCENEのステージを一堂に。",
+    "en": "From M COUNTDOWN to an Inkigayo winner's encore and a band live — RESCENE's stages in one room.",
+    "zh": "從M COUNTDOWN、人氣歌謠一位安可到樂團現場——RESCENE的舞台齊聚一堂。"
+   },
+   "story": {
+    "ko": "이 방의 주인공은 단연 「LOVE ATTACK」이에요. 2024년 여름에 나온 노래가 2026년 여름 다시 차트 꼭대기에 오르기까지, 무대는 늘 그 자리에 있었어요. 같은 노래도 스페셜 무대, 1위 앵콜, 밴드 라이브에서 저마다 다른 얼굴을 보여 줘요. 「Pretty Girl」 컴백 무대는 이 곡으로 첫 음악방송 1위를 안기 바로 전의 장면이에요. 오래 기다려 준 노래가 끝내 빛을 보는 이야기, 그 시작을 여기서 만나 보세요.",
+    "ja": "この部屋の主役は、やはり「LOVE ATTACK」。2024年夏に出た曲が2026年夏に再びチャートの頂点に立つまで、ステージはいつもそこにありました。同じ曲でも、スペシャルステージ、1位アンコール、バンドライブでそれぞれ違う表情を見せてくれます。「Pretty Girl」のカムバックステージは、この曲で初の音楽番組1位をつかむ直前の場面です。長く待っていた歌がついに光を浴びる物語、その始まりをここで。",
+    "en": "The star of this room is, without question, \"LOVE ATTACK.\" A song released in summer 2024 climbed back to the top of the charts in summer 2026, and the stage was there all along. The same song shows a different face at a special stage, a winner's encore and a band live. The \"Pretty Girl\" comeback stage captures the moment just before that song brought their first music-show win. This is the story of a song that waited patiently for its light — start it here.",
+    "zh": "這個房間的主角，當然是〈LOVE ATTACK〉。一首2024年夏天發行的歌，在2026年夏天重新登上排行榜頂端，而舞台一直都在。同一首歌，在特別舞台、一位安可和樂團現場裡各有不同的表情。〈Pretty Girl〉回歸舞台，則是她們憑這首歌拿下首座音樂節目一位前夕的畫面。一首耐心等待的歌終於發光的故事，就從這裡開始。"
+   }
+  },
+  "anwonjalbu": {
+   "desc": {
+    "ko": "리더 원이의 개인 채널 「안녕하세요원이입니다잘부탁드립니다」, 줄여서 안원잘부.",
+    "ja": "リーダー・ウォニの個人チャンネル「アンニョンハセヨウォニイムニダチャルプタッカムニダ」、略してアンウォンジャルブ。",
+    "en": "Leader WONI's own channel, \"Hello, I'm Woni, Nice to Meet You\" — Anwonjalbu for short.",
+    "zh": "隊長WONI的個人頻道「안녕하세요원이입니다잘부탁드립니다」，簡稱「安元賈部」(Anwonjalbu)。"
+   },
+   "story": {
+    "ko": "리더 원이가 연 작은 채널에서 큰 이야기가 시작됐어요. 미나미의 '거제 야호!' 한마디가 짧은 영상으로 퍼져 나가면서, 리센느의 노래를 다시 찾아 듣는 사람들이 늘어났어요. 거제시는 2026년 5월 리센느를 홍보대사로 맞았고, 9월에는 시의회가 멤버 모두를 명예시민으로 정했어요. 사투리로 하루를 보내고, 성수를 걷고, 멤버들이 하나둘 찾아오는 동안 채널은 다섯 사람의 놀이터가 되었어요. 웃다 보면 어느새 이 그룹이 좋아져 있는 방이에요.",
+    "ja": "リーダーのウォニが開いた小さなチャンネルから、大きな物語が始まりました。ミナミの「巨済ヤッホー!」のひと言がショート動画で広がり、RESCENEの曲を改めて聴く人が増えていきました。巨済(コジェ)市は2026年5月にRESCENEを広報大使に迎え、9月には市議会がメンバー全員を名誉市民に決めました。方言で一日を過ごし、聖水(ソンス)を歩き、メンバーが一人また一人と訪ねてくるうちに、チャンネルは5人の遊び場になりました。笑っているうちに、いつの間にかこのグループが好きになっている部屋です。",
+    "en": "A big story began on a small channel started by leader WONI. MINAMI's single line, \"Geoje yaho!\", spread through short-form video, and more and more people went back to listen to RESCENE's songs. The city of Geoje named RESCENE its ambassadors in May 2026, and in September the city council made every member an honorary citizen. Through a day spent speaking only in dialect, a walk around Seongsu, and members dropping in one by one, the channel became a playground for all five. Laugh along here, and before you know it you'll be fond of this group.",
+    "zh": "一個大故事，從隊長WONI開的小頻道開始。MINAMI一句「巨濟 야호(呀呼)!」透過短影音傳開，越來越多人回頭去聽RESCENE的歌。巨濟市在2026年5月邀請RESCENE擔任宣傳大使，9月市議會更將全體成員選為榮譽市民。用方言過一整天、逛聖水洞、成員一個個來串門子，這個頻道成了五個人的遊樂場。笑著笑著，不知不覺就喜歡上這個團體了。"
+   }
+  },
+  "tv": {
+   "desc": {
+    "ko": "전참시·놀라운 토요일·아는 형님 — 방송사 예능 속 리센느.",
+    "ja": "『全知的おせっかい視点』『驚きの土曜日』『知ってるお兄さん』――バラエティの中のRESCENE。",
+    "en": "Omniscient Interfering View, Amazing Saturday, Knowing Bros — RESCENE on TV variety.",
+    "zh": "《全知干預視角》《驚人的星期六》《認識的哥哥》——綜藝節目裡的RESCENE。"
+   },
+   "story": {
+    "ko": "노래가 사랑받자 텔레비전도 리센느를 찾아왔어요. 2026년, 리센느는 「아는 형님」과 「전지적 참견 시점」, 「놀라운 토요일」에 얼굴을 비췄어요. 무대에서는 볼 수 없던 대기실의 긴장, 함께 밥을 먹는 시간, 숙소에서의 모습이 이 방에 모여 있어요. 무대 위 다섯 사람과 무대 아래 다섯 사람을 나란히 놓고 보면, 왜 이렇게 응원하고 싶어지는지 조금 알 것 같아요. 편하게 앉아 웃으며 보셔도 좋아요.",
+    "ja": "曲が愛されると、テレビもRESCENEを訪ねてきました。2026年、RESCENEは『知ってるお兄さん』『全知的おせっかい視点』『驚きの土曜日』に出演。ステージでは見られなかった控室の緊張感、みんなで食事をする時間、宿舎での姿がこの部屋に集まっています。ステージの上の5人とステージを降りた5人を並べてみると、なぜこんなに応援したくなるのか少し分かる気がします。気楽に座って、笑いながらご覧ください。",
+    "en": "Once the songs were loved, television came looking for RESCENE too. In 2026 they appeared on Knowing Bros, Omniscient Interfering View and Amazing Saturday. This room gathers what the stage never shows: the nerves in the waiting room, meals shared together, life at the dorm. Put the five on stage beside the five off stage, and you start to see why people want to cheer for them. Sit back and enjoy a laugh.",
+    "zh": "歌曲受到喜愛後，電視節目也找上了RESCENE。2026年，她們登上了《認識的哥哥》《全知干預視角》《驚人的星期六》。舞台上看不到的待機室緊張感、一起吃飯的時光、宿舍裡的模樣，都收在這個房間。把台上的五個人和台下的五個人放在一起看，好像就能明白為什麼會這麼想替她們加油。請放輕鬆，笑著看吧。"
+   }
+  },
+  "youtube_guest": {
+   "desc": {
+    "ko": "리무진서비스·문명특급 등 다른 유튜브 채널에 찾아간 리센느.",
+    "ja": "『リムジンサービス』『文明特急』など、ほかのYouTubeチャンネルを訪ねたRESCENE。",
+    "en": "RESCENE as guests on other YouTube channels, from Limousine Service to MMTG.",
+    "zh": "RESCENE到其他YouTube頻道作客，從Limousine Service到《文明特急》。"
+   },
+   "story": {
+    "ko": "이번엔 리센느가 손님이 되어 다른 채널을 찾아갔어요. KBS 「리무진서비스」에서는 미나미와 리브가 각자 혼자 앉아 좋아하는 노래들을 불렀어요. 「문명특급」에는 원이·미나미·제나가 '거제 야호'를 들고 찾아갔고요. 낯선 무대에서도 자기 목소리로 인사하는 모습이 이 방의 매력이에요. 멤버 한 사람 한 사람의 목소리를 조용히 들어 보고 싶을 때 들러 주세요.",
+    "ja": "今度はRESCENEがゲストとして、ほかのチャンネルを訪ねました。KBS『リムジンサービス』では、ミナミとリブがそれぞれ一人で座り、好きな歌を歌いました。『文明特急』にはウォニ・ミナミ・ジェナが「巨済ヤッホー」を携えて登場。慣れない場所でも自分の声であいさつする姿が、この部屋の魅力です。メンバー一人ひとりの声を静かに聴きたいときに立ち寄ってください。",
+    "en": "This time RESCENE are the guests, visiting other channels. On KBS's Limousine Service, MINAMI and LIV each sat down alone to sing songs they love. On MMTG, WONI, MINAMI and ZENA showed up with \"Geoje yaho\" in hand. Greeting an unfamiliar stage in their own voices is what makes this room special. Drop by when you want to quietly listen to each member's voice.",
+    "zh": "這次換RESCENE當客人，去拜訪別的頻道。在KBS的Limousine Service裡，MINAMI和LIV各自獨自坐下，唱自己喜歡的歌。到了《文明特急》，WONI、MINAMI、ZENA帶著「巨濟 야호」登場。在陌生的地方也用自己的聲音打招呼，正是這個房間的魅力。想靜靜聽每位成員的聲音時，歡迎進來坐坐。"
+   }
+  },
+  "daily": {
+   "desc": {
+    "ko": "공식 채널 브이로그 「Re-log」 — 대만, 일본, LA에서의 하루.",
+    "ja": "公式チャンネルのVlog「Re-log」――台湾、日本、LAでの一日。",
+    "en": "Re-log, the official channel's vlogs — days in Taiwan, Japan and LA.",
+    "zh": "官方頻道Vlog「Re-log」——在台灣、日本、LA的日子。"
+   },
+   "story": {
+    "ko": "무대 의상을 벗은 다섯 사람의 하루가 궁금하다면 이 방으로 오세요. 리센느 공식 채널의 브이로그 「Re-log」에는 대만에서 맛있는 것을 찾아다니는 날, 일본에서 쉬어 가는 날, LA에서의 날이 담겨 있어요. 미나미의 메이크업 교실에 메이가 함께한 날처럼, 멤버 둘이 나란히 보내는 시간도 있어요. 큰일이 일어나지 않아도 괜히 마음이 놓이는 영상들이에요. 하루를 마무리하며 천천히 보기 좋은 방이에요.",
+    "ja": "ステージ衣装を脱いだ5人の一日が気になるなら、この部屋へ。RESCENE公式チャンネルのVlog「Re-log」には、台湾でおいしいものを探し歩く日、日本でひと休みする日、LAでの日が収められています。ミナミのメイク教室にメイが加わった日のように、メンバー2人で並んで過ごす時間も。大きな出来事がなくても、なぜかほっとする映像ばかり。一日の終わりにゆっくり見るのにぴったりの部屋です。",
+    "en": "If you're curious about the five once the stage outfits come off, this is your room. Re-log, the vlog series on RESCENE's official channel, holds a day hunting for good food in Taiwan, a restful break in Japan, and days in LA. There are quiet two-member days too, like the day MAY joined MINAMI's makeup class. Nothing big has to happen for these videos to put you at ease. It's a lovely room to wind down in at the end of the day.",
+    "zh": "想知道脫下舞台服的五個人過著怎樣的一天，就來這個房間吧。RESCENE官方頻道的Vlog「Re-log」裡，有在台灣到處找美食的日子、在日本放鬆休息的日子，還有在LA的日子。也有像MAY參加MINAMI化妝教室那天一樣，兩位成員並肩度過的時光。就算沒發生什麼大事，看著也會莫名安心。很適合在一天結束時慢慢看。"
+   }
+  },
+  "birthday": {
+   "desc": {
+    "ko": "리브·원이·메이의 생일, 공식 채널이 함께 축하한 날들.",
+    "ja": "リブ・ウォニ・メイの誕生日――公式チャンネルが一緒にお祝いした日。",
+    "en": "Birthdays of LIV, WONI and MAY, celebrated on the official channel.",
+    "zh": "LIV、WONI、MAY的生日——官方頻道一起慶祝的日子。"
+   },
+   "story": {
+    "ko": "1년에 한 번, 멤버가 주인공이 되는 날이 있어요. 이 방에는 리센느 공식 채널에 올라온 리브·원이·메이의 생일 영상이 모여 있어요. 메이의 생일에는 고양시가 축하 영상을 공개하고 호수공원 음악분수를 밝혀 주기도 했어요. 팬들과 동네와 멤버들이 한마음으로 '축하해'를 건네는 장면이라, 보고 나면 마음이 따뜻해져요. 아직 이 방에 없는 멤버들의 생일도 차근차근 채워 갈게요.",
+    "ja": "年に一度、メンバーが主役になる日があります。この部屋には、RESCENE公式チャンネルに公開されたリブ・ウォニ・メイの誕生日映像が集まっています。メイの誕生日には、高陽(コヤン)市がお祝い映像を公開し、湖水公園の音楽噴水を灯してくれました。ファンも街もメンバーも心をひとつに「おめでとう」を届ける場面なので、見終わると心が温かくなります。まだこの部屋にいないメンバーの誕生日も、少しずつ加えていきます。",
+    "en": "Once a year, a member gets to be the star of the day. This room collects the birthday videos for LIV, WONI and MAY posted on RESCENE's official channel. For MAY's birthday, the city of Goyang even released a celebration video and lit up the musical fountain at Lake Park. Fans, cities and members all saying \"happy birthday\" together — it warms your heart. We'll keep adding the birthdays of the members not yet in this room.",
+    "zh": "一年一次，總有一天是成員的主場。這個房間收集了RESCENE官方頻道上LIV、WONI、MAY的生日影片。MAY生日那天，高陽市還公開了祝賀影片，點亮湖水公園的音樂噴泉。粉絲、城市和成員們同心說出「生日快樂」，看完心裡暖暖的。還沒出現在這個房間的成員生日，我們也會慢慢補上。"
+   }
+  }
+ },
+ "notes": {
+  "ajhEFz1zNMQ": {
+   "ko": "2026년 6월 18일 방송된 엠카운트다운 EP.933의 「LOVE ATTACK」 스페셜 무대예요. 노래가 다시 사랑받던 시기의 무대로, 이 방에서 조회수가 가장 높아요(11/11 확인 기준 약 590만 회). 다섯 멤버가 함께 만드는 동선을 따라가며 보세요.",
+   "ja": "2026年6月18日放送『M COUNTDOWN』EP.933の「LOVE ATTACK」スペシャルステージ。曲が再び愛され始めた頃のステージで、この部屋で再生回数がいちばん多い映像です(11/11確認時点で約590万回)。5人で作るフォーメーションを追いながらご覧ください。",
+   "en": "A special stage of \"LOVE ATTACK\" from M COUNTDOWN EP.933, aired June 18, 2026. Filmed as the song was finding new love, it's the most-viewed video in this room (about 5.9 million views as of Nov 11). Follow the formations the five build together.",
+   "zh": "2026年6月18日播出的M COUNTDOWN EP.933〈LOVE ATTACK〉特別舞台。這是歌曲重新受到喜愛時期的舞台，也是本房間觀看次數最高的影片(11/11確認時約590萬次)。請跟著五人一起完成的走位來欣賞。"
+  },
+  "Esd-KkxROxA": {
+   "ko": "2026년 7월 9일 엠카운트다운의 「Pretty Girl」 컴백 무대예요. 리센느는 이 곡으로 7월 14일 데뷔 후 첫 음악방송 1위를 차지했어요. 좋아요 비율도 무대 영상 가운데 높은 편이라, 첫 1위 직전의 설렘을 함께 느껴 보세요.",
+   "ja": "2026年7月9日『M COUNTDOWN』での「Pretty Girl」カムバックステージ。RESCENEはこの曲で7月14日、デビュー後初の音楽番組1位を獲得しました。いいねの割合もステージ映像の中で高めです。初1位直前のときめきを一緒に。",
+   "en": "The \"Pretty Girl\" comeback stage on M COUNTDOWN, July 9, 2026. With this song RESCENE won their first-ever music show on July 14. Its like ratio is among the highest of the stage videos — share the excitement just before that first win.",
+   "zh": "2026年7月9日M COUNTDOWN的〈Pretty Girl〉回歸舞台。RESCENE憑這首歌在7月14日拿下出道後首座音樂節目一位。按讚比例在舞台影片中也偏高，一起感受首次一位前夕的心動吧。"
+  },
+  "rzfjou7vPP0": {
+   "ko": "2026년 7월 26일 SBS 인기가요에서 「LOVE ATTACK」으로 1위를 한 날의 앵콜 직캠(4K)이에요. 이 방에서 조회수 대비 좋아요 비율이 가장 높은 영상이에요. 1위를 받은 바로 그 순간의 무대라는 것만으로도 특별해요.",
+   "ja": "2026年7月26日、SBS『人気歌謡』で「LOVE ATTACK」が1位を取った日のアンコール直撮り(4K)。この部屋で再生回数に対するいいねの割合が最も高い映像です。1位を受け取ったその瞬間のステージ、というだけで特別です。",
+   "en": "A 4K encore fancam from the day \"LOVE ATTACK\" took No. 1 on SBS Inkigayo, July 26, 2026. It has the highest like-to-view ratio in this room. Simply being the stage right after a win makes it special.",
+   "zh": "2026年7月26日SBS《人氣歌謠》〈LOVE ATTACK〉拿下一位當天的安可直拍(4K)。這是本房間按讚與觀看比例最高的影片。光是「剛拿到一位那一刻的舞台」就已經很特別。"
+  },
+  "KRpt7OF4zso": {
+   "ko": "음악 라이브 채널 it's Live에서 밴드와 함께 부른 「LOVE ATTACK」이에요. 음원과 다른 밴드 편곡 위에서 다섯 사람의 라이브 목소리를 또렷하게 들을 수 있어요. 리센느의 라이브가 궁금할 때 먼저 권하고 싶은 영상이에요.",
+   "ja": "音楽ライブチャンネル『it's Live』でバンドと一緒に歌った「LOVE ATTACK」。音源とは違うバンドアレンジの上で、5人の生歌をはっきり聴くことができます。RESCENEのライブが気になったら、まずおすすめしたい映像です。",
+   "en": "\"LOVE ATTACK\" performed with a band on the music-live channel it's Live. Over a band arrangement different from the record, you can hear the five's live vocals clearly. It's the first video we'd recommend if you're curious about RESCENE live.",
+   "zh": "在音樂現場頻道it's Live與樂團一起演唱的〈LOVE ATTACK〉。在和音源不同的樂團編曲上，可以清楚聽到五人的現場歌聲。想了解RESCENE現場實力時，最先推薦這支。"
+  },
+  "QJeH6cRtdJA": {
+   "ko": "2026년 10월 28일 엠카운트다운 「PLAY FESTA」에서 다시 선 「LOVE ATTACK」 무대예요. 공개된 지 얼마 되지 않았는데 벌써 100만 회를 넘었어요. 6월 스페셜 무대와 나란히 놓고, 넉 달 사이 달라진 분위기를 비교해 보세요.",
+   "ja": "2026年10月28日『M COUNTDOWN』「PLAY FESTA」で再び披露された「LOVE ATTACK」。公開から間もないのに、すでに100万回を突破しました。6月のスペシャルステージと並べて、4か月の間に変わった雰囲気を比べてみてください。",
+   "en": "\"LOVE ATTACK\" once more, at M COUNTDOWN's PLAY FESTA on October 28, 2026. Though it's recent, it has already passed one million views. Watch it next to the June special stage and compare how the mood has changed in four months.",
+   "zh": "2026年10月28日M COUNTDOWN「PLAY FESTA」再次登場的〈LOVE ATTACK〉。公開沒多久就已突破100萬次。和6月的特別舞台並排看，比較四個月間氛圍的變化吧。"
+  },
+  "OrCOflk2QmQ": {
+   "ko": "원이 채널에서 조회수가 가장 높은 영상이에요(11/11 기준 약 1,640만 회). 미나미의 갸루 분장과 '거제 야호!'가 퍼져 나간 출발점으로 알려진 거제 1편으로, 리센느와 거제의 인연이 여기서 시작됐어요. ※ 영상 설명란에 따르면 주류 유료 광고가 포함된 19세 이상 대상 콘텐츠예요.",
+   "ja": "ウォニのチャンネルで最も再生された映像です(11/11時点で約1,640万回)。ミナミのギャルメイクと「巨済ヤッホー!」が広がるきっかけになったとされる巨済編第1話で、RESCENEと巨済の縁はここから始まりました。※概要欄によると、酒類の有料広告を含む19歳以上向けのコンテンツです。",
+   "en": "The most-viewed video on WONI's channel (about 16.4 million views as of Nov 11). This first Geoje episode is known as the starting point where MINAMI's gyaru look and \"Geoje yaho!\" spread, and where RESCENE's bond with Geoje began. Note: per its description, it includes paid alcohol advertising and is intended for viewers 19 and over.",
+   "zh": "WONI頻道觀看次數最高的影片(11/11約1,640萬次)。這支巨濟第1集被認為是MINAMI辣妹造型和「巨濟 야호!」開始擴散的起點，RESCENE與巨濟的緣分也從這裡開始。※依影片說明欄，內含酒類付費廣告，為19歲以上觀眾內容。"
+  },
+  "5JZ5biQ_hMI": {
+   "ko": "원이·미나미·제나에 이어 리브와 메이가 원이 채널에 처음 함께 나온 영상이에요. 공개 사흘 만에 446만 회를 넘었다고 보도됐고, 지금은 약 1,380만 회예요. 두 사람의 입담이 매력 포인트예요.",
+   "ja": "ウォニ・ミナミ・ジェナに続き、リブとメイが初めてウォニのチャンネルにそろって登場した映像。公開3日で446万回を超えたと報じられ、今では約1,380万回です。2人のトークが見どころ。",
+   "en": "After WONI, MINAMI and ZENA, this is where LIV and MAY first appeared together on WONI's channel. It was reported to pass 4.46 million views within three days, and now stands at about 13.8 million. The pair's banter is the highlight.",
+   "zh": "繼WONI、MINAMI、ZENA之後，LIV和MAY首次一起登上WONI頻道的影片。據報導公開三天即突破446萬次，現在約1,380萬次。兩人的口才是最大看點。"
+  },
+  "FcMaC8akSU8": {
+   "ko": "미나미의 '갸루' 캐릭터를 대표하는 영상으로, 조회수 약 1,120만 회예요. 제목 그대로 미나미가 갸루 모습으로 노래를 이어 부르는 라이브 메들리예요. 웃음과 노래 실력이 한 영상에서 만나는 지점을 즐겨 보세요.",
+   "ja": "ミナミの「ギャル」キャラを代表する映像で、再生回数は約1,120万回。タイトルどおり、ミナミがギャル姿で歌をつないでいくライブメドレーです。笑いと歌唱力がひとつの映像で出会うところを楽しんでください。",
+   "en": "The signature video of MINAMI's \"gyaru\" character, with about 11.2 million views. As the title says, it's a live medley MINAMI sings in her gyaru look. Enjoy the spot where laughs and vocal skill meet.",
+   "zh": "代表MINAMI「辣妹」角色的影片，觀看約1,120萬次。如標題所示，是MINAMI以辣妹造型接連演唱的現場組曲。來享受笑點和唱功在同一支影片相遇的時刻吧。"
+  },
+  "JJBf0jCcfrQ": {
+   "ko": "사투리 시리즈 2편으로, 2026년 5월 29일 공개돼 1,000만 회를 넘었어요. 성수에서 보내는 하루를 담았어요. 1편과 이어 보면 채널이 커져 가던 5월의 분위기를 느낄 수 있어요.",
+   "ja": "方言シリーズ第2話で、2026年5月29日に公開され1,000万回を超えました。聖水(ソンス)で過ごす一日を収めています。第1話と続けて見ると、チャンネルが大きくなっていった5月の空気を感じられます。",
+   "en": "Part 2 of the dialect series, released May 29, 2026, now past 10 million views. It follows a day out in Seongsu. Watch it right after Part 1 to feel the May buzz as the channel grew.",
+   "zh": "方言系列第2集，2026年5月29日公開，已突破1,000萬次。記錄了在聖水洞度過的一天。和第1集接著看，能感受到頻道逐漸壯大的5月氛圍。"
+  },
+  "NS7tSrMrWsc": {
+   "ko": "2026년 5월 1일 공개된 사투리 시리즈 1편으로, 채널 초기의 대표작이에요(약 1,350만 회). 하루 종일 사투리로만 말해 보는 도전이에요. 거제 편보다 먼저 나온 영상이라, 안원잘부가 어떻게 시작됐는지 보기 좋아요.",
+   "ja": "2026年5月1日公開の方言シリーズ第1話で、チャンネル初期の代表作です(約1,350万回)。一日中、方言だけで話してみるチャレンジ。巨済編より先に出た映像なので、アンウォンジャルブの始まりを知るのにぴったりです。",
+   "en": "Part 1 of the dialect series, released May 1, 2026, and an early signature of the channel (about 13.5 million views). The challenge: speak only in dialect all day long. It came out before the Geoje episodes, so it's a great look at how Anwonjalbu began.",
+   "zh": "2026年5月1日公開的方言系列第1集，是頻道初期代表作(約1,350萬次)。挑戰一整天只用方言說話。比巨濟篇更早推出，很適合了解「安元賈部」是怎麼開始的。"
+  },
+  "3fRTHjtYAes": {
+   "ko": "2026년 8월 8일 방송된 MBC 「전지적 참견 시점」 리센느 편을 2시간으로 모은 영상이에요. 이 방에서 좋아요가 가장 많아요. 본방을 놓쳤다면 여기서 처음부터 끝까지 이어 보세요. (게시 채널의 공식 여부는 확인 중이에요.)",
+   "ja": "2026年8月8日放送のMBC『全知的おせっかい視点』RESCENE編を2時間にまとめた映像。この部屋でいいねが最も多い作品です。本放送を見逃したら、ここで最初から最後まで通しでどうぞ。(投稿チャンネルが公式かどうかは確認中です)",
+   "en": "Two hours of RESCENE's episodes of MBC's Omniscient Interfering View, aired August 8, 2026. It has the most likes in this room. If you missed the broadcast, watch it start to finish here. (Whether the uploading channel is official is still being checked.)",
+   "zh": "2026年8月8日播出的MBC《全知干預視角》RESCENE篇兩小時合輯。本房間按讚數最多。錯過正片的話，就在這裡從頭看到尾吧。(上傳頻道是否為官方仍在確認中)"
+  },
+  "v-6sJD4COF8": {
+   "ko": "「전지적 참견 시점」에서 음악방송 1위 후보에 오른 날의 대기실 비하인드를 모은 영상이에요. 이 방에서 조회수가 가장 높아요(약 308만 회). 무대에 오르기 전의 긴장과 기다림을 들여다볼 수 있어요.",
+   "ja": "『全知的おせっかい視点』で、音楽番組の1位候補になった日の控室ビハインドを集めた映像。この部屋で再生回数がいちばん多い作品です(約308万回)。ステージに上がる前の緊張と待ち時間をのぞいてみてください。",
+   "en": "Behind-the-scenes from the waiting room on the day RESCENE were up for a music-show win, from Omniscient Interfering View. It's the most-viewed video in this room (about 3.08 million). A look at the nerves and waiting before they go on stage.",
+   "zh": "收錄《全知干預視角》中，入圍音樂節目一位候補那天的待機室幕後。本房間觀看次數最高(約308萬次)。可以看見上台前的緊張與等待。"
+  },
+  "QI_aX8GPRvY": {
+   "ko": "MBC 공식 종합 채널에 올라온 「전지적 참견 시점」 리센느 편 회식 장면 모음이에요. 「With」 컴백을 기념해 다 함께 밥을 먹는 시간을 담았어요. 무대 밖에서 편안한 다섯 사람을 보고 싶을 때 추천해요.",
+   "ja": "MBC公式総合チャンネルに公開された『全知的おせっかい視点』RESCENE編の会食シーン集。「With」カムバックを記念して、みんなで食事をする時間を収めています。ステージの外でくつろぐ5人を見たいときにおすすめ。",
+   "en": "A compilation of the team-dinner scenes from RESCENE's Omniscient Interfering View episode, on MBC's official channel. It captures a meal together celebrating their \"With\" comeback. Recommended when you want to see the five relaxed, off stage.",
+   "zh": "MBC官方綜合頻道上傳的《全知干預視角》RESCENE篇聚餐片段合輯。記錄為慶祝〈With〉回歸而一起吃飯的時光。想看五個人在舞台外放鬆的樣子時推薦。"
+  },
+  "1h4v7pLBwm0": {
+   "ko": "tvN 「놀라운 토요일」 EP.430 리센느 편의 간식 게임 하이라이트예요. 케이블 예능 영상 가운데 조회수가 가장 높아요. 게임 앞에서 드러나는 멤버들의 승부욕과 리액션을 즐겨 보세요.",
+   "ja": "tvN『驚きの土曜日』EP.430 RESCENE編、おやつゲームのハイライト。ケーブル局バラエティの映像の中で最も再生されています。ゲームを前にしたメンバーの負けず嫌いぶりとリアクションをお楽しみください。",
+   "en": "The snack-game highlights from RESCENE's episode of tvN's Amazing Saturday, EP.430. It's the most-viewed of the cable variety clips. Enjoy the members' competitive streak and reactions when the game is on.",
+   "zh": "tvN《驚人的星期六》EP.430 RESCENE篇的點心遊戲精華。有線台綜藝影片中觀看次數最高。來看看成員們在遊戲前的好勝心和反應吧。"
+  },
+  "KZKQS4hjIYs": {
+   "ko": "2026년 7월 11일 「전지적 참견 시점」에 나온 아이돌 숙소 장면을 모은 영상으로, 올데이프로젝트·아일릿과 함께 리센느의 숙소가 담겨 있어요. 여러 그룹이 함께 나오는 합본이라 리센느 장면을 찾아 보는 재미가 있어요. (게시 채널의 공식 여부는 확인 중이에요.)",
+   "ja": "2026年7月11日の『全知的おせっかい視点』に登場したアイドルの宿舎シーンをまとめた映像で、ALLDAY PROJECT・ILLITとともにRESCENEの宿舎も映っています。複数グループの合本なので、RESCENEの場面を探す楽しみがあります。(投稿チャンネルが公式かどうかは確認中です)",
+   "en": "A compilation of idol dorm scenes from Omniscient Interfering View on July 11, 2026, featuring RESCENE's dorm alongside ALLDAY PROJECT and ILLIT. Since several groups share the video, part of the fun is spotting the RESCENE scenes. (Whether the uploading channel is official is still being checked.)",
+   "zh": "2026年7月11日《全知干預視角》偶像宿舍片段合輯，與ALLDAY PROJECT、ILLIT一起收錄了RESCENE的宿舍。因為是多團合輯，找RESCENE片段也是一種樂趣。(上傳頻道是否為官方仍在確認中)"
+  },
+  "P0LNFoDtf74": {
+   "ko": "2026년 6월 20일 방송된 JTBC 「아는 형님」에서 원이 장면만 모은 영상이에요. 제목부터 원이 채널 이름을 닮아, 안원잘부 방과 자연스럽게 이어져요. 원이를 처음 알게 된 분께 권하고 싶어요.",
+   "ja": "2026年6月20日放送のJTBC『知ってるお兄さん』から、ウォニの場面だけを集めた映像。タイトルからしてウォニのチャンネル名に似ていて、アンウォンジャルブの部屋と自然につながります。ウォニを初めて知った方におすすめ。",
+   "en": "WONI's moments from JTBC's Knowing Bros, aired June 20, 2026. Even the title echoes the name of WONI's channel, linking naturally to the Anwonjalbu room. A good pick if you've just discovered WONI.",
+   "zh": "2026年6月20日播出的JTBC《認識的哥哥》中WONI片段合輯。連標題都模仿WONI頻道名，自然地和「安元賈部」房間串在一起。推薦給剛認識WONI的人。"
+  },
+  "SW7M6MdlrlU": {
+   "ko": "KBS 「리무진서비스」 EP.211에 미나미가 혼자 출연해 「Runaway」, 「나였으면」, 「My Gospel」, 「Timeless」를 불렀어요. 이 방에서 조회수와 좋아요 비율이 모두 가장 높아요. 갸루 캐릭터와는 또 다른 미나미의 목소리를 들어 보세요.",
+   "ja": "KBS『リムジンサービス』EP.211にミナミが単独出演し、「Runaway」「ナヨッスミョン(私だったら)」「My Gospel」「Timeless」を歌いました。この部屋で再生回数・いいねの割合ともにトップ。ギャルキャラとはまた違うミナミの声を聴いてみてください。",
+   "en": "MINAMI appears solo on KBS's Limousine Service EP.211, singing \"Runaway,\" \"If It Were Me (나였으면),\" \"My Gospel\" and \"Timeless.\" It tops this room in both views and like ratio. Hear a side of MINAMI's voice far from her gyaru character.",
+   "zh": "MINAMI獨自登上KBS Limousine Service EP.211，演唱〈Runaway〉〈나였으면(如果是我)〉〈My Gospel〉〈Timeless〉。本房間觀看次數與按讚比例都是第一。來聽聽和辣妹角色截然不同的MINAMI歌聲。"
+  },
+  "17t9izNAYVE": {
+   "ko": "'거제 야호' 화제를 들고 원이·미나미·제나가 「문명특급」을 찾아간 영상이에요. 안원잘부에서 시작된 이야기가 다른 채널로 이어지는 장면이라 의미가 있어요. 안원잘부 방을 보고 왔다면 더 즐겁게 볼 수 있어요.",
+   "ja": "「巨済ヤッホー」の話題を携えて、ウォニ・ミナミ・ジェナが『文明特急』を訪ねた映像。アンウォンジャルブで始まった物語がほかのチャンネルへつながる場面として意味があります。アンウォンジャルブの部屋を見てから来ると、もっと楽しめます。",
+   "en": "WONI, MINAMI and ZENA bring the \"Geoje yaho\" buzz to MMTG. It matters as the moment a story born on Anwonjalbu carried over to another channel. It's even more fun if you've just come from the Anwonjalbu room.",
+   "zh": "WONI、MINAMI、ZENA帶著「巨濟 야호」的話題拜訪《文明特急》。這是從「安元賈部」開始的故事延伸到其他頻道的一幕，很有意義。先看過「安元賈部」房間再來，會更有趣。"
+  },
+  "a_c2mBMKuBE": {
+   "ko": "KBS 「리무진서비스」 EP.240에 리브가 혼자 출연해 「With」, 「그댄 달라요」, 「내 생에 아름다운」, 「왜 그래」를 불렀어요. 조회수 대비 좋아요 비율이 2.8%로 높은 영상이에요. 리브의 목소리에 오롯이 집중해 보세요.",
+   "ja": "KBS『リムジンサービス』EP.240にリブが単独出演し、「With」「クデン タルラヨ(君は違う)」「ネ センエ アルムダウン(我が人生で美しい)」「ウェ グレ(どうして)」を歌いました。再生回数に対するいいねの割合が2.8%と高い映像。リブの声だけに耳を傾けてみてください。",
+   "en": "LIV appears solo on KBS's Limousine Service EP.240, singing \"With,\" \"You're Different (그댄 달라요),\" \"The Most Beautiful in My Life (내 생에 아름다운)\" and \"Why (왜 그래).\" Its like ratio is a high 2.8%. Let yourself focus on LIV's voice alone.",
+   "zh": "LIV獨自登上KBS Limousine Service EP.240，演唱〈With〉〈그댄 달라요(你不一樣)〉〈내 생에 아름다운(我生命中最美的)〉〈왜 그래(為什麼)〉。按讚比例高達2.8%。請專心聆聽LIV的歌聲。"
+  },
+  "4gqBmjnfJDc": {
+   "ko": "배우 김광규의 채널 「김광규의 싱글이 좋아」가 구독자 10만 명을 넘은 것을 기념한 영상에 리센느가 함께했어요. 다른 유튜버의 기념일을 축하하러 간 자리라 분위기가 훈훈해요. 규모는 작지만 다정한 출연이에요. (채널의 공식 여부는 확인 중이에요.)",
+   "ja": "俳優キム・グァンギュのチャンネル『キム・グァンギュのシングルがいい』の登録者10万人突破記念映像に、RESCENEが一緒に出演しました。ほかのYouTuberの記念日をお祝いしに行った場なので、雰囲気がほのぼの。規模は小さくても温かい出演です。(チャンネルが公式かどうかは確認中です)",
+   "en": "RESCENE joined the video celebrating 100,000 subscribers on actor Kim Kwang-kyu's channel. They went to celebrate another YouTuber's milestone, so the mood is warm. A small but kind appearance. (Whether the channel is official is still being checked.)",
+   "zh": "RESCENE參與了演員金光圭頻道「金光圭的單身真好」訂閱突破10萬的紀念影片。是去祝賀其他YouTuber的紀念日，氣氛很溫馨。規模不大，卻是很暖心的出演。(頻道是否為官方仍在確認中)"
+  },
+  "xclVi9zCFdY": {
+   "ko": "리센느 공식 브이로그 「Re-log」에서 원이가 대만으로 떠난 편이에요. 조회수 대비 좋아요 비율이 3.9%로 이 갤러리 영상 중 가장 높은 편이에요. 제목처럼 맛있는 것을 찾아다니는 원이를 따라가 보세요.",
+   "ja": "RESCENE公式Vlog「Re-log」で、ウォニが台湾へ旅立った回。再生回数に対するいいねの割合が3.9%と、このギャラリーの映像の中で最も高い水準です。タイトルどおり、おいしいものを探し歩くウォニについていってみてください。",
+   "en": "WONI heads to Taiwan in this episode of RESCENE's official vlog, Re-log. Its like ratio of 3.9% is among the highest of any video in this gallery. As the title promises, follow WONI on a hunt for good food.",
+   "zh": "RESCENE官方Vlog「Re-log」中WONI前往台灣的一集。按讚比例3.9%，在本藝廊影片中屬最高水準。就像標題說的，跟著WONI一起找美食吧。"
+  },
+  "97YE7zPrON8": {
+   "ko": "「Re-log」에서 미나미가 일본에서 보낸 휴가를 담은 편이에요. 조회수 대비 좋아요 비율 2.8%로 반응이 따뜻했어요. 바쁜 활동 사이 쉬어 가는 미나미의 하루를 편하게 지켜봐 주세요.",
+   "ja": "「Re-log」で、ミナミが日本で過ごした休暇を収めた回。いいねの割合2.8%と、温かい反応が寄せられました。忙しい活動の合間にひと息つくミナミの一日を、気楽に見守ってください。",
+   "en": "In this Re-log episode, MINAMI spends a holiday in Japan. With a 2.8% like ratio, the response was warm. Relax and keep MINAMI company on a day of rest between busy schedules.",
+   "zh": "「Re-log」中MINAMI在日本度假的一集。按讚比例2.8%，反應很溫暖。請輕鬆陪著MINAMI度過忙碌行程間的休息日。"
+  },
+  "faDPwuKSOM4": {
+   "ko": "미국 LA에서 찍은 「Re-log」로, 공식 브이로그 가운데 조회수가 가장 높아요(약 125만 회). 낯선 도시에서의 하루가 담겨 있어요. 「Re-log」를 처음 본다면 이 편부터 시작해도 좋아요.",
+   "ja": "アメリカ・LAで撮影された「Re-log」で、公式Vlogの中で最も再生されています(約125万回)。見知らぬ街での一日が収められています。「Re-log」が初めてなら、この回から始めるのもおすすめ。",
+   "en": "A Re-log filmed in LA, and the most-viewed of the official vlogs (about 1.25 million views). It captures a day in an unfamiliar city. If you're new to Re-log, this is a great place to start.",
+   "zh": "在美國LA拍攝的「Re-log」，是官方Vlog中觀看次數最高的一集(約125萬次)。記錄了在陌生城市的一天。第一次看「Re-log」的話，從這集開始也很好。"
+  },
+  "V-Tz0gvDiG4": {
+   "ko": "미나미의 메이크업 교실에 메이가 함께한 「Re-log」예요. 두 멤버가 나란히 앉아 보내는 시간이라 둘의 케미를 보기 좋아요(좋아요 비율 2.6%). 소소하지만 보고 나면 기분이 좋아지는 편이에요.",
+   "ja": "ミナミのメイク教室にメイが加わった「Re-log」。2人が並んで座って過ごす時間なので、ふたりの相性がよく分かります(いいねの割合2.6%)。ささやかだけど、見終わると気分が明るくなる回です。",
+   "en": "A Re-log of MINAMI's makeup class, with MAY joining in. Two members side by side make it a great look at their chemistry (2.6% like ratio). Small and simple, yet it leaves you in a good mood.",
+   "zh": "MAY一起參加MINAMI化妝教室的「Re-log」。兩位成員並肩而坐，很能看出兩人的默契(按讚比例2.6%)。雖然平凡，看完卻會心情變好。"
+  },
+  "fCrQXP_2u3U": {
+   "ko": "리센느 공식 채널에 올라온 리브의 생일 라이브예요. 이 방의 생일 영상 가운데 조회수가 압도적으로 높아요(약 137만 회). 생일을 맞은 리브와 함께하는 시간을 즐겨 보세요.",
+   "ja": "RESCENE公式チャンネルで公開されたリブの誕生日ライブ。この部屋の誕生日映像の中で、再生回数が圧倒的に多い作品です(約137万回)。誕生日を迎えたリブと一緒の時間をお楽しみください。",
+   "en": "LIV's birthday live on RESCENE's official channel. It has by far the most views of the birthday videos in this room (about 1.37 million). Enjoy spending the time with the birthday girl.",
+   "zh": "RESCENE官方頻道上的LIV生日直播。在本房間的生日影片中觀看次數遙遙領先(約137萬次)。一起享受和壽星LIV相處的時光吧。"
+  },
+  "i3BCs-IcIl4": {
+   "ko": "원이의 생일을 맞아 리센느 공식 채널에 올라온 영상이에요. 조회수 대비 좋아요 비율이 3.3%로 높아, 팬들의 축하가 고스란히 느껴져요. 리더 원이에게 마음속으로 축하 한마디 건네 보세요.",
+   "ja": "ウォニの誕生日に合わせてRESCENE公式チャンネルで公開された映像。いいねの割合が3.3%と高く、ファンのお祝いの気持ちがそのまま伝わってきます。リーダーのウォニに、心の中でお祝いのひと言を。",
+   "en": "A video posted on RESCENE's official channel for WONI's birthday. Its like ratio is a high 3.3%, and you can feel the fans' good wishes. Send leader WONI a quiet \"happy birthday\" of your own.",
+   "zh": "為WONI生日在RESCENE官方頻道上傳的影片。按讚比例高達3.3%，粉絲的祝福滿滿傳遞。也在心裡對隊長WONI說聲生日快樂吧。"
+  },
+  "zO7ndCNpJfs": {
+   "ko": "메이의 생일을 맞아 리센느 공식 채널에 올라온 영상이에요(좋아요 비율 3.1%). 8월 19일 메이의 생일에는 고양시도 축하 영상과 음악분수로 함께했어요. 온 동네가 축하한 생일의 주인공을 만나 보세요.",
+   "ja": "メイの誕生日に合わせてRESCENE公式チャンネルで公開された映像です(いいねの割合3.1%)。8月19日のメイの誕生日には、高陽市もお祝い映像と音楽噴水で祝福しました。街じゅうがお祝いした誕生日の主役に会いに行きましょう。",
+   "en": "A video posted on RESCENE's official channel for MAY's birthday (3.1% like ratio). On her birthday, August 19, the city of Goyang joined in too, with a celebration video and a musical fountain. Meet the birthday girl a whole city celebrated.",
+   "zh": "為MAY生日在RESCENE官方頻道上傳的影片(按讚比例3.1%)。8月19日MAY生日當天，高陽市也以祝賀影片和音樂噴泉一起慶祝。來見見全城一起慶祝的壽星吧。"
+  }
+ },
+ "statues": {
+  "woni": {
+   "birthday": null,
+   "position": {
+    "ko": "리더",
+    "ja": "リーダー",
+    "en": "Leader",
+    "zh": "隊長"
+   },
+   "intro": {
+    "ko": "리센느의 리더로, 개인 유튜브 채널 「안녕하세요원이입니다잘부탁드립니다」를 운영해요.",
+    "ja": "RESCENEのリーダー。個人YouTubeチャンネル「アンニョンハセヨウォニイムニダチャルプタッカムニダ」を運営しています。",
+    "en": "RESCENE's leader, who runs her own YouTube channel, \"Hello, I'm Woni, Nice to Meet You.\"",
+    "zh": "RESCENE的隊長，經營個人YouTube頻道「안녕하세요원이입니다잘부탁드립니다」。"
+   },
+   "sources": [
+    "https://sports.khan.co.kr/article/202402292225003",
+    "https://www.khan.co.kr/article/202607240600031/",
+    "https://v.daum.net/v/20260711060326717",
+    "https://www.mt.co.kr/entertainment/2026/06/10/2026061013417238076",
+    "https://www.hankyung.com/article/2026070335037"
+   ]
+  },
+  "liv": {
+   "birthday": null,
+   "position": null,
+   "intro": {
+    "ko": "수원시 홍보대사로 '수원 방문의 해'를 알리고 있고, KBS 「리무진서비스」에서 홀로 노래를 들려준 멤버예요.",
+    "ja": "水原(スウォン)市の広報大使として「水原訪問の年」をPRし、KBS『リムジンサービス』で一人で歌声を届けたメンバーです。",
+    "en": "An ambassador for the city of Suwon, promoting its Visit Suwon Years, and a member who sang solo on KBS's Limousine Service.",
+    "zh": "擔任水原市宣傳大使，宣傳「水原訪問年」，也曾獨自登上KBS Limousine Service獻唱。"
+   },
+   "sources": [
+    "https://sports.khan.co.kr/article/202402292225003",
+    "https://www.hankyung.com/article/2026070335037",
+    "https://www.youtube.com/watch?v=a_c2mBMKuBE"
+   ]
+  },
+  "minami": {
+   "birthday": null,
+   "position": null,
+   "intro": {
+    "ko": "일본 출신 멤버로 2021년 MBC 오디션 「방과후 설렘」 결선에 올랐고, '거제 야호!'로 많은 사람에게 웃음을 준 주인공이에요.",
+    "ja": "日本出身のメンバー。2021年MBCのオーディション『放課後のときめき』でファイナリストとなり、「巨済ヤッホー!」で多くの人を笑顔にした主人公です。",
+    "en": "The member from Japan, a finalist on MBC's 2021 audition show My Teenage Girl, and the one whose \"Geoje yaho!\" made so many people smile.",
+    "zh": "來自日本的成員，曾進入2021年MBC選秀節目《放學後心動》決賽，也是用一句「巨濟 야호!」逗笑無數人的主角。"
+   },
+   "sources": [
+    "https://sports.khan.co.kr/article/202402292225003",
+    "https://v.daum.net/v/20240222183439798",
+    "https://www.mt.co.kr/entertainment/2026/06/10/2026061013417238076",
+    "https://www.khan.co.kr/article/202607240600031/"
+   ]
+  },
+  "may": {
+   "birthday": "08-19",
+   "position": null,
+   "intro": {
+    "ko": "8월 19일 생일에 고양시가 축하 영상과 음악분수로 함께 축하해 준 멤버로, 고양시 홍보대사로도 활동해요.",
+    "ja": "8月19日の誕生日に、高陽市がお祝い映像と音楽噴水で一緒に祝ってくれたメンバー。高陽市の広報大使としても活動しています。",
+    "en": "On her August 19 birthday, the city of Goyang celebrated with a video and a musical fountain; she's also one of Goyang's ambassadors.",
+    "zh": "8月19日生日時，高陽市以祝賀影片和音樂噴泉一起慶祝；她也擔任高陽市宣傳大使。"
+   },
+   "sources": [
+    "https://sports.khan.co.kr/article/202402292225003",
+    "https://www.wikitree.co.kr/articles/1153682",
+    "https://www.hankyung.com/article/2026070335037"
+   ]
+  },
+  "zena": {
+   "birthday": null,
+   "position": null,
+   "intro": {
+    "ko": "2022년 채널A 「청춘스타」에 출연했고, 지금은 경주시의 관광 홍보대사로 천년고도를 알리고 있어요.",
+    "ja": "2022年にチャンネルA『青春スター』に出演し、今は慶州(キョンジュ)市の観光広報大使として千年の古都をPRしています。",
+    "en": "She appeared on Channel A's Stars Awakening in 2022, and now promotes the ancient capital as a tourism ambassador for the city of Gyeongju.",
+    "zh": "2022年曾參加Channel A《青春明星》，現在擔任慶州市觀光宣傳大使，介紹這座千年古都。"
+   },
+   "sources": [
+    "https://sports.khan.co.kr/article/202402292225003",
+    "https://v.daum.net/v/20240222183439798",
+    "https://www.hankyung.com/article/2026070335037"
+   ]
+  }
+ }
+};
+/* 퀴즈 12개(방별). source = 정답을 확인한 기사(정답을 맞히면 작은 「출처」 링크로 보여 줌). slot = 방 안 퀴즈 받침대 순서 */
+const CONTENT_QUIZZES = [
+ {
+  "id": "q01-members",
+  "hall": "rescene",
+  "room": "stage",
+  "type": "quiz",
+  "slot": 0,
+  "hint": {
+   "ko": "무대 방 퀴즈 1",
+   "ja": "ステージ部屋クイズ1",
+   "en": "Stage room quiz 1",
+   "zh": "舞台房間猜謎 1"
+  },
+  "question": {
+   "ko": "리센느 멤버는 모두 몇 명일까요?",
+   "ja": "RESCENEのメンバーは全部で何人?",
+   "en": "How many members are in RESCENE?",
+   "zh": "RESCENE共有幾位成員?"
+  },
+  "choices": [
+   "4",
+   "5",
+   "6",
+   "7"
+  ],
+  "answer": 1,
+  "source": "https://sports.khan.co.kr/article/202402292225003",
+  "checked_at": "2026-11-11",
+  "reward": {
+   "video_id": "",
+   "title": ""
+  }
+ },
+ {
+  "id": "q02-debut-date",
+  "hall": "rescene",
+  "room": "stage",
+  "type": "quiz",
+  "slot": 1,
+  "hint": {
+   "ko": "무대 방 퀴즈 2",
+   "ja": "ステージ部屋クイズ2",
+   "en": "Stage room quiz 2",
+   "zh": "舞台房間猜謎 2"
+  },
+  "question": {
+   "ko": "리센느의 데뷔일은 언제일까요?",
+   "ja": "RESCENEのデビュー日はいつ?",
+   "en": "When did RESCENE debut?",
+   "zh": "RESCENE的出道日是哪一天?"
+  },
+  "choices": [
+   {
+    "ko": "2023년 11월 2일",
+    "ja": "2023年11月2日",
+    "en": "November 2, 2023",
+    "zh": "2023年11月2日"
+   },
+   {
+    "ko": "2024년 3월 26일",
+    "ja": "2024年3月26日",
+    "en": "March 26, 2024",
+    "zh": "2024年3月26日"
+   },
+   {
+    "ko": "2024년 8월 27일",
+    "ja": "2024年8月27日",
+    "en": "August 27, 2024",
+    "zh": "2024年8月27日"
+   },
+   {
+    "ko": "2025년 2월 5일",
+    "ja": "2025年2月5日",
+    "en": "February 5, 2025",
+    "zh": "2025年2月5日"
+   }
+  ],
+  "answer": 1,
+  "source": "https://isplus.com/article/view/isp202403260139",
+  "checked_at": "2026-11-11",
+  "reward": {
+   "video_id": "",
+   "title": ""
+  }
+ },
+ {
+  "id": "q03-debut-album",
+  "hall": "rescene",
+  "room": "stage",
+  "type": "quiz",
+  "slot": 2,
+  "hint": {
+   "ko": "무대 방 퀴즈 3",
+   "ja": "ステージ部屋クイズ3",
+   "en": "Stage room quiz 3",
+   "zh": "舞台房間猜謎 3"
+  },
+  "question": {
+   "ko": "리센느의 데뷔 싱글 앨범 이름은?",
+   "ja": "RESCENEのデビューシングルアルバムの名前は?",
+   "en": "What is the name of RESCENE's debut single album?",
+   "zh": "RESCENE出道單曲專輯名稱是?"
+  },
+  "choices": [
+   "Re:Scene",
+   "SCENEDROME",
+   "PULSE",
+   "Dearest"
+  ],
+  "answer": 0,
+  "source": "https://isplus.com/article/view/isp202403260139",
+  "checked_at": "2026-11-11",
+  "reward": {
+   "video_id": "",
+   "title": ""
+  }
+ },
+ {
+  "id": "q04-debut-song",
+  "hall": "rescene",
+  "room": "anwonjalbu",
+  "type": "quiz",
+  "slot": 0,
+  "hint": {
+   "ko": "안원잘부 방 퀴즈 1",
+   "ja": "アンウォンジャルブ部屋クイズ1",
+   "en": "Anwonjalbu room quiz 1",
+   "zh": "Anwonjalbu房間猜謎 1"
+  },
+  "question": {
+   "ko": "리센느의 데뷔 타이틀곡은?",
+   "ja": "RESCENEのデビュー曲(タイトル曲)は?",
+   "en": "What was RESCENE's debut title track?",
+   "zh": "RESCENE的出道主打歌是?"
+  },
+  "choices": [
+   "UhUh",
+   "LOVE ATTACK",
+   "Pretty Girl",
+   "Pinball"
+  ],
+  "answer": 0,
+  "source": "https://www.wikitree.co.kr/articles/1158586",
+  "checked_at": "2026-11-11",
+  "reward": {
+   "video_id": "",
+   "title": ""
+  }
+ },
+ {
+  "id": "q05-prerelease",
+  "hall": "rescene",
+  "room": "anwonjalbu",
+  "type": "quiz",
+  "slot": 1,
+  "hint": {
+   "ko": "안원잘부 방 퀴즈 2",
+   "ja": "アンウォンジャルブ部屋クイズ2",
+   "en": "Anwonjalbu room quiz 2",
+   "zh": "Anwonjalbu房間猜謎 2"
+  },
+  "question": {
+   "ko": "데뷔 전 2024년 2월 29일에 먼저 공개된 선공개곡은?",
+   "ja": "デビュー前の2024年2月29日に先行公開された曲は?",
+   "en": "Which pre-release song came out on February 29, 2024, before their debut?",
+   "zh": "出道前於2024年2月29日先行公開的歌曲是?"
+  },
+  "choices": [
+   "YoYo",
+   "UhUh",
+   "Lucky you",
+   "New World"
+  ],
+  "answer": 0,
+  "source": "https://sports.khan.co.kr/article/202402292225003",
+  "checked_at": "2026-11-11",
+  "reward": {
+   "video_id": "",
+   "title": ""
+  }
+ },
+ {
+  "id": "q06-agency",
+  "hall": "rescene",
+  "room": "tv",
+  "type": "quiz",
+  "slot": 0,
+  "hint": {
+   "ko": "TV 예능 방 퀴즈 1",
+   "ja": "バラエティ部屋クイズ1",
+   "en": "TV room quiz 1",
+   "zh": "綜藝房間猜謎 1"
+  },
+  "question": {
+   "ko": "리센느의 소속사는?",
+   "ja": "RESCENEの所属事務所は?",
+   "en": "Which agency is RESCENE with?",
+   "zh": "RESCENE所屬的經紀公司是?"
+  },
+  "choices": [
+   {
+    "ko": "더뮤즈엔터테인먼트",
+    "ja": "The Muze Entertainment",
+    "en": "The Muze Entertainment",
+    "zh": "The Muze Entertainment"
+   },
+   {
+    "ko": "하이브",
+    "ja": "HYBE",
+    "en": "HYBE",
+    "zh": "HYBE"
+   },
+   {
+    "ko": "JYP엔터테인먼트",
+    "ja": "JYPエンターテインメント",
+    "en": "JYP Entertainment",
+    "zh": "JYP Entertainment"
+   },
+   {
+    "ko": "SM엔터테인먼트",
+    "ja": "SMエンターテインメント",
+    "en": "SM Entertainment",
+    "zh": "SM Entertainment"
+   }
+  ],
+  "answer": 0,
+  "source": "https://isplus.com/article/view/isp202403260139",
+  "checked_at": "2026-11-11",
+  "reward": {
+   "video_id": "",
+   "title": ""
+  }
+ },
+ {
+  "id": "q07-fandom",
+  "hall": "rescene",
+  "room": "tv",
+  "type": "quiz",
+  "slot": 1,
+  "hint": {
+   "ko": "TV 예능 방 퀴즈 2",
+   "ja": "バラエティ部屋クイズ2",
+   "en": "TV room quiz 2",
+   "zh": "綜藝房間猜謎 2"
+  },
+  "question": {
+   "ko": "리센느의 공식 팬덤 이름은?",
+   "ja": "RESCENEの公式ファンダム名は?",
+   "en": "What is RESCENE's official fandom name?",
+   "zh": "RESCENE的官方粉絲名是?"
+  },
+  "choices": [
+   {
+    "ko": "리마인(REMINE)",
+    "ja": "REMINE(リマイン)",
+    "en": "REMINE",
+    "zh": "REMINE"
+   },
+   {
+    "ko": "리센터(RECENTER)",
+    "ja": "RECENTER(リセンター)",
+    "en": "RECENTER",
+    "zh": "RECENTER"
+   },
+   {
+    "ko": "씬즈(SCENES)",
+    "ja": "SCENES(シーンズ)",
+    "en": "SCENES",
+    "zh": "SCENES"
+   },
+   {
+    "ko": "러버(LOVER)",
+    "ja": "LOVER(ラバー)",
+    "en": "LOVER",
+    "zh": "LOVER"
+   }
+  ],
+  "answer": 0,
+  "source": "https://soompi.com/article/1674005wpp/rescene-announces-official-fandom-name",
+  "checked_at": "2026-11-11",
+  "reward": {
+   "video_id": "",
+   "title": ""
+  }
+ },
+ {
+  "id": "q08-love-attack-album",
+  "hall": "rescene",
+  "room": "youtube_guest",
+  "type": "quiz",
+  "slot": 0,
+  "hint": {
+   "ko": "유튜브 출연 방 퀴즈 1",
+   "ja": "YouTube出演部屋クイズ1",
+   "en": "YouTube room quiz 1",
+   "zh": "YouTube房間猜謎 1"
+  },
+  "question": {
+   "ko": "「LOVE ATTACK」이 실린 미니 1집의 이름은?",
+   "ja": "「LOVE ATTACK」が収録されたミニ1集の名前は?",
+   "en": "Which first mini album includes \"LOVE ATTACK\"?",
+   "zh": "收錄〈LOVE ATTACK〉的首張迷你專輯是?"
+  },
+  "choices": [
+   "SCENEDROME",
+   "Re:Scene",
+   "Glow Up",
+   "Lip Bomb"
+  ],
+  "answer": 0,
+  "source": "https://news.tf.co.kr/read/ogmeta/2339259.htm",
+  "checked_at": "2026-11-11",
+  "reward": {
+   "video_id": "",
+   "title": ""
+  }
+ },
+ {
+  "id": "q09-leader",
+  "hall": "rescene",
+  "room": "youtube_guest",
+  "type": "quiz",
+  "slot": 1,
+  "hint": {
+   "ko": "유튜브 출연 방 퀴즈 2",
+   "ja": "YouTube出演部屋クイズ2",
+   "en": "YouTube room quiz 2",
+   "zh": "YouTube房間猜謎 2"
+  },
+  "question": {
+   "ko": "리센느의 리더는 누구일까요?",
+   "ja": "RESCENEのリーダーは誰?",
+   "en": "Who is RESCENE's leader?",
+   "zh": "RESCENE的隊長是誰?"
+  },
+  "choices": [
+   {
+    "ko": "원이",
+    "ja": "ウォニ",
+    "en": "WONI",
+    "zh": "WONI"
+   },
+   {
+    "ko": "리브",
+    "ja": "リブ",
+    "en": "LIV",
+    "zh": "LIV"
+   },
+   {
+    "ko": "미나미",
+    "ja": "ミナミ",
+    "en": "MINAMI",
+    "zh": "MINAMI"
+   },
+   {
+    "ko": "메이",
+    "ja": "メイ",
+    "en": "MAY",
+    "zh": "MAY"
+   }
+  ],
+  "answer": 0,
+  "source": "https://www.khan.co.kr/article/202607240600031/",
+  "checked_at": "2026-11-11",
+  "reward": {
+   "video_id": "",
+   "title": ""
+  }
+ },
+ {
+  "id": "q10-first-win",
+  "hall": "rescene",
+  "room": "daily",
+  "type": "quiz",
+  "slot": 0,
+  "hint": {
+   "ko": "일상 방 퀴즈 1",
+   "ja": "日常部屋クイズ1",
+   "en": "Daily room quiz 1",
+   "zh": "日常房間猜謎 1"
+  },
+  "question": {
+   "ko": "리센느에게 데뷔 후 첫 음악방송 1위를 안겨 준 곡은?",
+   "ja": "RESCENEにデビュー後初の音楽番組1位をもたらした曲は?",
+   "en": "Which song gave RESCENE their first music-show win?",
+   "zh": "讓RESCENE拿下出道後首座音樂節目一位的歌是?"
+  },
+  "choices": [
+   "Pretty Girl",
+   "UhUh",
+   "YoYo",
+   "Pinball"
+  ],
+  "answer": 0,
+  "source": "https://www.khan.co.kr/article/202607240600031/",
+  "checked_at": "2026-11-11",
+  "reward": {
+   "video_id": "",
+   "title": ""
+  }
+ },
+ {
+  "id": "q11-pulse",
+  "hall": "rescene",
+  "room": "daily",
+  "type": "quiz",
+  "slot": 1,
+  "hint": {
+   "ko": "일상 방 퀴즈 2",
+   "ja": "日常部屋クイズ2",
+   "en": "Daily room quiz 2",
+   "zh": "日常房間猜謎 2"
+  },
+  "question": {
+   "ko": "2026년 11월 3일 발매된 리센느의 미니 4집 이름은?",
+   "ja": "2026年11月3日発売のRESCENEミニ4集の名前は?",
+   "en": "What is the name of RESCENE's 4th mini album, released November 3, 2026?",
+   "zh": "RESCENE於2026年11月3日發行的第四張迷你專輯名稱是?"
+  },
+  "choices": [
+   "PULSE",
+   "SCENEDROME",
+   "Glow Up",
+   "Re:Scene"
+  ],
+  "answer": 0,
+  "source": "https://isplus.com/article/view/isp202611010090",
+  "checked_at": "2026-11-11",
+  "reward": {
+   "video_id": "",
+   "title": ""
+  }
+ },
+ {
+  "id": "q12-may-bday",
+  "hall": "rescene",
+  "room": "birthday",
+  "type": "quiz",
+  "slot": 0,
+  "hint": {
+   "ko": "생일 방 퀴즈 1",
+   "ja": "誕生日部屋クイズ1",
+   "en": "Birthday room quiz 1",
+   "zh": "生日房間猜謎 1"
+  },
+  "question": {
+   "ko": "메이의 생일은 언제일까요?",
+   "ja": "メイの誕生日はいつ?",
+   "en": "When is MAY's birthday?",
+   "zh": "MAY的生日是哪一天?"
+  },
+  "choices": [
+   {
+    "ko": "5월 25일",
+    "ja": "5月25日",
+    "en": "May 25",
+    "zh": "5月25日"
+   },
+   {
+    "ko": "8월 19일",
+    "ja": "8月19日",
+    "en": "August 19",
+    "zh": "8月19日"
+   },
+   {
+    "ko": "10월 11일",
+    "ja": "10月11日",
+    "en": "October 11",
+    "zh": "10月11日"
+   },
+   {
+    "ko": "11월 27일",
+    "ja": "11月27日",
+    "en": "November 27",
+    "zh": "11月27日"
+   }
+  ],
+  "answer": 1,
+  "source": "https://www.wikitree.co.kr/articles/1153682",
+  "checked_at": "2026-11-11",
+  "reward": {
+   "video_id": "",
+   "title": ""
+  }
+ }
+];
 const MISSIONS = [
   { id:"bday-letter", hall:"rescene", room:"birthday", type:"find", shape:"letter", pos:[4.3, 0.06, -4.2],
     hint:{ko:"생일카페 풍선 아래 어딘가에 편지 한 통이 숨어 있어요", ja:"誕生日カフェの風船の下に手紙が隠れています",
           en:"A letter is hidden somewhere under the balloons", zh:"生日咖啡廳的氣球下藏著一封信"},
     reward:{ video_id:"", title:"" } },   // ← 대표가 고를 보상 영상(공식 공개 영상 ID)
-  { id:"quiz-members", hall:"rescene", room:"stage", type:"quiz",
-    hint:{ko:"무대 방 퀴즈", ja:"ステージ部屋のクイズ", en:"Stage room quiz", zh:"舞台房間猜謎"},
-    question:{ko:"리센느 멤버는 모두 몇 명일까요?", ja:"RESCENEのメンバーは全部で何人?", en:"How many members are in RESCENE?", zh:"RESCENE 共有幾位成員?"},
-    choices:["4","5","6","7"], answer:1,
-    source:"",       // ← 공식 출처 링크(소속사 공식 프로필 등)를 직접 열어 확인한 뒤 넣는다. 비어 있으면 이 문제는 숨김
-    checked_at:"",   // ← 확인한 날짜(예: 2026-11-11)
-    reward:{ video_id:"", title:"" } },
 ];
+MISSIONS.push(...CONTENT_QUIZZES);   // 리센느관 퀴즈 12개(방별)
+/* 방 이야기·한 줄 설명: HALLS 에 비어 있으면 CONTENT 로 채움(curation.json themes[].story·desc 가 있으면 그쪽이 우선) */
+{ const h=HALLS.find(x=>x.id===CONTENT.hall); h?.rooms.forEach(r=>{ const c=CONTENT.rooms[r.id]; if(!c) return; if(!r.desc) r.desc=c.desc; if(!r.story) r.story=c.story; }); }
 
 /* 추천·열람 집계 어댑터. 지금은 "local"(이 기기 안에서만 셈 — 시험용).
    TODO: 대표 계정 Firebase(무료 등급)를 만들면 FIREBASE_CONFIG에 {apiKey, authDomain, projectId, appId}를 넣고
@@ -232,15 +1071,16 @@ const ENDORSEMENTS = {
 /* 건물 정면 조각상: 얼굴 없는 양식화된 대리석 상(도형만). 실존 인물 사진·얼굴 닮게 만들기·사진 텍스처 금지.
    그룹별로 추가: {group, enabled, pediment(박공 새김 글자), members:[{id, name, name_en, color, symbol, story}]}
    - symbol: star | flower | note | moon | heart (우리가 고른 일반 장식 도형 — 공식 상징이 아님)
-   - color: 포인트 색. 공식 멤버 색이 확인되지 않아 모두 '확인 필요'
+   - color: 장식용 포인트 색 — 공식 멤버 색 아님(공식 출처 없음)
+   - 소개 패널은 CONTENT.statues[id](포지션·확인된 생일·소개 1문장)를 쓴다. story 를 직접 넣으면 그쪽이 우선
    - story: 공식 공개 정보만(문자열 또는 {ko,ja,en,zh}). 비어 있으면 패널에 이름만 */
 const STATUES = [
   {group:"rescene", enabled:true, pediment:"RESCENE", members:[
-    {id:"woni",   name:"원이",   name_en:"WONI",   color:"#f4a9b8", symbol:"star",   story:""},   // color 확인 필요
-    {id:"liv",    name:"리브",   name_en:"LIV",    color:"#a8c8ec", symbol:"flower", story:""},   // color 확인 필요(생일 방 theme.color와 같게 둠)
-    {id:"minami", name:"미나미", name_en:"MINAMI", color:"#c9b8f0", symbol:"note",   story:""},   // color 확인 필요
-    {id:"may",    name:"메이",   name_en:"MAY",    color:"#9fdcc0", symbol:"moon",   story:""},   // color 확인 필요
-    {id:"zena",   name:"제나",   name_en:"ZENA",   color:"#ffd27a", symbol:"heart",  story:""},   // color 확인 필요
+    {id:"woni",   name:"원이",   name_en:"WONI",   color:"#f4a9b8", symbol:"star",   story:""},   // 장식색 — 공식 아님
+    {id:"liv",    name:"리브",   name_en:"LIV",    color:"#a8c8ec", symbol:"flower", story:""},   // 장식색 — 공식 아님(생일 방 theme.color와 같게 둠)
+    {id:"minami", name:"미나미", name_en:"MINAMI", color:"#c9b8f0", symbol:"note",   story:""},   // 장식색 — 공식 아님
+    {id:"may",    name:"메이",   name_en:"MAY",    color:"#9fdcc0", symbol:"moon",   story:""},   // 장식색 — 공식 아님
+    {id:"zena",   name:"제나",   name_en:"ZENA",   color:"#ffd27a", symbol:"heart",  story:""},   // 장식색 — 공식 아님
   ]},
 ];
 /* 공통 안내 링크(같은 폴더 상대 경로, site/src 의 페이지). 현재 언어를 ?lang=ko|ja|en|zh-Hant 로 붙인다. 영상 패널 안에는 넣지 않는다 */
@@ -349,6 +1189,11 @@ body.walk:not(.flat) .joy{display:block}
 .petIntro{margin:8px 2px 0;font-size:12px;color:var(--sub);line-height:1.5;min-height:18px}
 .contactBtn{display:block;width:100%;margin-top:14px;border:0;background:var(--ink);color:#fff;font-weight:700;font-size:15px;padding:13px;border-radius:999px}
 .contactNote{margin:8px 0 0;font-size:11px;color:var(--sub);text-align:center}
+.sfacts{margin:10px 0 0;font-size:13px;font-weight:700;color:var(--ink)}
+.qok{margin:12px 0 0;font-weight:800;color:#2f6b45}
+.choices button.ok{background:#e9f3ec;border-color:#8cc5a0}
+a.srcmini{font-size:11px;color:var(--sub);text-decoration:underline}
+.hallIntro{white-space:pre-wrap;line-height:1.6}
 .siteLinks{display:flex;flex-wrap:wrap;justify-content:center;gap:4px 12px;margin:12px 0 0;font-size:11px}
 .siteLinks a{color:var(--sub);text-decoration:underline;text-underline-offset:2px;padding:4px 0}
 .contactBtn.sub{background:#fff;color:var(--ink);border:1px solid var(--line);margin-top:8px}
@@ -554,7 +1399,7 @@ body.flat #stage,body.flat .turn,body.flat .hint,body.flat .joy{display:none}
 <script>
 /* ---------- 화면 문구 4개 언어 (영상 제목·설명은 한국어 그대로) ---------- */
 const I18N = {
-  ko:{affNote:"이 링크로 구매하면 덕심저장소가 일정액의 수수료를 받을 수 있어요.", stageAria:"3D 미술관", adBadge:"광고 · AD", adLabel:"광고", lkAbout:"소개", lkPrivacy:"개인정보", lkTerms:"약관", lkAds:"광고 문의", lkTakedown:"권리 신고", info:"정보", adsPage:"광고 문의 페이지 열기", enTitle:"리센느 공식 광고 모델", enNotAd:"유료 광고 아님 · 정보", enDesc:"리센느가 지금 모델로 활동 중인 공식 광고예요. 덕심저장소가 돈을 받은 광고가 아니고, 제휴 링크도 아니에요.", enSrc:"출처 기사", enChecked:"확인한 날: {d}", enCorner:"광고관 코너", enCornerSub:"광고 영상 · 누르면 재생", enCount:"공식 광고 모델 {n}곳", bEndorse:"공식 광고 모델 보기", agTitle:"안원잘부 굿즈", agSoon:"공식 굿즈 링크 준비 중", agGo:"공식 스토어 보러 가기", agDesc:"원이 개인 채널 「안원잘부」의 공식 굿즈 자리예요.", notAff:"제휴 링크가 아니에요. 덕심저장소는 수수료를 받지 않아요.", notAffB:"제휴 아님", bAg:"안원잘부 굿즈 보기", stTitle:"{g} 조각상", stNote:"얼굴 없이 도형으로 만든 장식 조각이에요. 실제 모습을 본뜨지 않았어요.", bStatue:"조각상 보기", gallery:"덕심저장소 갤러리", shop:"굿즈 샵", shopOf:"{g} 굿즈 샵", shopSub:"구역을 둘러보고 상품을 눌러 보세요", pickIdol:"아이돌을 골라 주세요", zoneSoon:"곧 들어와요", itemsN:"상품 {n}개", sellerSlot:"입점 자리 · 판매자 모집", sellerBtn:"입점 문의하기", sellerTitle:"입점 문의", sellerDesc:"덕심저장소 굿즈 샵에 상품을 입점해 보세요. 아래 버튼으로 문의를 남겨 주시면 연락드릴게요.", sellerResp:"입점 판매자 상품이에요. 판매·배송·교환은 판매자가 책임져요.", sellerBadge:"입점", goBuy:"보러 가기", noLink:"링크 준비 중", bProduct:"상품 보기", bSeller:"입점 문의하기", hintShop:"끌어서 둘러보고, 진열대를 누르면 상품이 나와요", imgCredit:"이미지 출처", progLabel:"클리어 {a}/{b}", roomProg:"이 방 {s} ({a}/{b})", lockedLeft:"🔒 {n}편 더", lockedRoom:"「{room}」 방에서 영상 {n}편 더 보면 열려요", watchedOk:"시청 완료! {s}", roomClear:"방 클리어! 다음 방이 열렸어요!", roomClearLast:"방 클리어!", nextOpened:"다음 방이 열렸어요!", hallClear:"🎉 {hall} 클리어! 비밀의 방이 열렸어요", clearReward:"클리어 보상: 먼저 열림", colClear:"{hall} 클리어 {a}/{b}", adSpace:"광고 자리", adSoon:"이 자리에 광고가 들어갈 예정이에요", contactTitle:"광고 문의", contactBtn:"광고 문의하기", contactSoon:"문의 창 준비 중이에요", contactNote:"남겨 주신 정보는 광고 상담에만 쓰여요", contactDesc:"덕심저장소 미술관의 전광판·광고판 자리에 광고를 걸어 보세요. 아래 버튼으로 문의를 남겨 주시면 연락드릴게요.", bContact:"광고 문의하기", bs1:"이 자리에 광고를 걸어 보세요", bs1b:"광고 문의 환영 · 누르면 「광고 문의하기」", bs2:"덕심저장소", bs2b:"구독하고 다음 전시를 먼저 만나요", bs3:"이번 주 새 전시", bs3b:"새로 걸린 날: {d}", culture:"한국 문화 코너", cultureSoon:"곧 열려요", bCulture:"한국 문화 코너 · 곧 열려요", lobbySub:"Deoksim Archive Gallery · 推し心アーカイブ・ギャラリー · 追星心意典藏館", subOut:"3D 미술관 시험판", subLobby:"로비 · 관을 골라 주세요", subHub:"관 홀 · 방을 골라 주세요",
+  ko:{stPos:"포지션: {p}", stBday:"생일: {d}", qOk:"정답이에요!", introT:"안내", bIntro:"관 안내 읽기", affNote:"이 링크로 구매하면 덕심저장소가 일정액의 수수료를 받을 수 있어요.", stageAria:"3D 미술관", adBadge:"광고 · AD", adLabel:"광고", lkAbout:"소개", lkPrivacy:"개인정보", lkTerms:"약관", lkAds:"광고 문의", lkTakedown:"권리 신고", info:"정보", adsPage:"광고 문의 페이지 열기", enTitle:"리센느 공식 광고 모델", enNotAd:"유료 광고 아님 · 정보", enDesc:"리센느가 지금 모델로 활동 중인 공식 광고예요. 덕심저장소가 돈을 받은 광고가 아니고, 제휴 링크도 아니에요.", enSrc:"출처 기사", enChecked:"확인한 날: {d}", enCorner:"광고관 코너", enCornerSub:"광고 영상 · 누르면 재생", enCount:"공식 광고 모델 {n}곳", bEndorse:"공식 광고 모델 보기", agTitle:"안원잘부 굿즈", agSoon:"공식 굿즈 링크 준비 중", agGo:"공식 스토어 보러 가기", agDesc:"원이 개인 채널 「안원잘부」의 공식 굿즈 자리예요.", notAff:"제휴 링크가 아니에요. 덕심저장소는 수수료를 받지 않아요.", notAffB:"제휴 아님", bAg:"안원잘부 굿즈 보기", stTitle:"{g} 조각상", stNote:"얼굴 없이 도형으로 만든 장식 조각이에요. 실제 모습을 본뜨지 않았어요.", bStatue:"조각상 보기", gallery:"덕심저장소 갤러리", shop:"굿즈 샵", shopOf:"{g} 굿즈 샵", shopSub:"구역을 둘러보고 상품을 눌러 보세요", pickIdol:"아이돌을 골라 주세요", zoneSoon:"곧 들어와요", itemsN:"상품 {n}개", sellerSlot:"입점 자리 · 판매자 모집", sellerBtn:"입점 문의하기", sellerTitle:"입점 문의", sellerDesc:"덕심저장소 굿즈 샵에 상품을 입점해 보세요. 아래 버튼으로 문의를 남겨 주시면 연락드릴게요.", sellerResp:"입점 판매자 상품이에요. 판매·배송·교환은 판매자가 책임져요.", sellerBadge:"입점", goBuy:"보러 가기", noLink:"링크 준비 중", bProduct:"상품 보기", bSeller:"입점 문의하기", hintShop:"끌어서 둘러보고, 진열대를 누르면 상품이 나와요", imgCredit:"이미지 출처", progLabel:"클리어 {a}/{b}", roomProg:"이 방 {s} ({a}/{b})", lockedLeft:"🔒 {n}편 더", lockedRoom:"「{room}」 방에서 영상 {n}편 더 보면 열려요", watchedOk:"시청 완료! {s}", roomClear:"방 클리어! 다음 방이 열렸어요!", roomClearLast:"방 클리어!", nextOpened:"다음 방이 열렸어요!", hallClear:"🎉 {hall} 클리어! 비밀의 방이 열렸어요", clearReward:"클리어 보상: 먼저 열림", colClear:"{hall} 클리어 {a}/{b}", adSpace:"광고 자리", adSoon:"이 자리에 광고가 들어갈 예정이에요", contactTitle:"광고 문의", contactBtn:"광고 문의하기", contactSoon:"문의 창 준비 중이에요", contactNote:"남겨 주신 정보는 광고 상담에만 쓰여요", contactDesc:"덕심저장소 미술관의 전광판·광고판 자리에 광고를 걸어 보세요. 아래 버튼으로 문의를 남겨 주시면 연락드릴게요.", bContact:"광고 문의하기", bs1:"이 자리에 광고를 걸어 보세요", bs1b:"광고 문의 환영 · 누르면 「광고 문의하기」", bs2:"덕심저장소", bs2b:"구독하고 다음 전시를 먼저 만나요", bs3:"이번 주 새 전시", bs3b:"새로 걸린 날: {d}", culture:"한국 문화 코너", cultureSoon:"곧 열려요", bCulture:"한국 문화 코너 · 곧 열려요", lobbySub:"Deoksim Archive Gallery · 推し心アーカイブ・ギャラリー · 追星心意典藏館", subOut:"3D 미술관 시험판", subLobby:"로비 · 관을 골라 주세요", subHub:"관 홀 · 방을 골라 주세요",
       loading:"미술관 문을 여는 중…", enter:"들어가기", toLobby:"로비로", toHub:"관 홀로", exit:"밖으로",
       hintOut:"「들어가기」를 누르면 계단을 올라 안으로 들어가요", hintOutWalk:"조이스틱으로 걸어서 입구까지 가 보세요",
       hintLobby:"끌어서 둘러보고, 문을 누르면 관으로 들어가요", hintHub:"문을 누르면 방으로 들어가요",
@@ -579,7 +1424,7 @@ const I18N = {
       rewardSoon:"보상 영상은 곧 채워져요", secret:"비밀 액자", quizWrong:"아쉬워요, 다시 골라 볼까요?",
       like:"♡ 좋아요", liked:"❤ 좋아요", likesN:"좋아요 {n} · 열람 {v}", localOnly:"(지금은 이 기기 기준)", cTabG:"갤러리 댓글", cTabY:"유튜브 댓글", cNote:"갤러리 방문자끼리 나누는 댓글이에요 · 유튜브 원본 댓글은 「유튜브에서 보기」", cName:"닉네임(선택)", cText:"댓글을 남겨 주세요 (200자까지)", cPost:"올리기", cEmpty:"첫 댓글을 남겨 주세요", cAnon:"방문자", cReport:"신고", cReported:"신고했어요. 이 댓글은 숨겨져요", cBad:"올릴 수 없는 말이 있어요", cLink:"링크는 올릴 수 없어요", cTooLong:"200자까지 쓸 수 있어요", cOk:"댓글을 올렸어요", cLocal:"지금은 이 기기에만 저장돼요", ytWrite:"유튜브에서 댓글 달기", ytNote:"유튜브 인기 댓글 5개 · 원문 그대로 · 출처: YouTube", ytStats:"유튜브: 조회수 {v} · 좋아요 {l}", ytErr:"유튜브 댓글을 불러오지 못했어요", ytNone:"유튜브 댓글이 없어요", anaNote:"익명 방문 통계를 모아요(개인정보 없음)", newTag:"새로 걸림",
       slowSuggest:"화면이 조금 느려요. 빠른 모드로 바꿀까요?", switchQuick:"빠른 모드로", modeWalk:"🚶 걷기", modeQuick:"⚡ 빠른"},
-  ja:{affNote:"このリンクから購入すると、当ギャラリーが一定の手数料を受け取る場合があります。", stageAria:"3Dミュージアム", adBadge:"広告 · AD", adLabel:"広告", lkAbout:"紹介", lkPrivacy:"プライバシー", lkTerms:"利用規約", lkAds:"広告のお問い合わせ", lkTakedown:"権利侵害の申告", info:"情報", adsPage:"広告のお問い合わせページを開く", enTitle:"RESCENE 公式広告モデル", enNotAd:"有料広告ではありません · 情報", enDesc:"RESCENEが現在モデルを務める公式広告です。当ギャラリーが報酬を受けた広告ではなく、アフィリエイトリンクでもありません。", enSrc:"出典記事", enChecked:"確認日: {d}", enCorner:"広告館コーナー", enCornerSub:"広告映像 · タップで再生", enCount:"公式広告モデル {n}社", bEndorse:"公式広告モデルを見る", agTitle:"アンウォンジャルブ グッズ", agSoon:"公式グッズのリンク準備中", agGo:"公式ストアを見る", agDesc:"ウォニの個人チャンネル「アンウォンジャルブ」の公式グッズコーナーです。", notAff:"アフィリエイトリンクではありません。当ギャラリーは手数料を受け取りません。", notAffB:"提携なし", bAg:"グッズを見る", stTitle:"{g} の彫像", stNote:"顔のない、図形で作った装飾彫刻です。実際の姿を模していません。", bStatue:"彫像を見る", gallery:"推し心アーカイブ・ギャラリー", shop:"グッズショップ", shopOf:"{g} グッズショップ", shopSub:"コーナーを見て回り、商品をタップしてください", pickIdol:"アイドルを選んでください", zoneSoon:"まもなく入荷", itemsN:"商品{n}点", sellerSlot:"出店スペース・出店者募集", sellerBtn:"出店について問い合わせる", sellerTitle:"出店のお問い合わせ", sellerDesc:"推し心アーカイブグッズショップに出店しませんか。下のボタンからお問い合わせください。", sellerResp:"出店者の商品です。販売・配送・交換は出店者の責任で行われます。", sellerBadge:"出店", goBuy:"見に行く", noLink:"リンク準備中", bProduct:"商品を見る", bSeller:"出店のお問い合わせ", hintShop:"ドラッグで見回し、棚をタップすると商品が見られます", imgCredit:"画像提供", progLabel:"クリア {a}/{b}", roomProg:"この部屋 {s} ({a}/{b})", lockedLeft:"🔒 あと{n}本", lockedRoom:"「{room}」で動画をあと{n}本見ると開きます", watchedOk:"視聴完了!{s}", roomClear:"部屋クリア!次の部屋が開きました!", roomClearLast:"部屋クリア!", nextOpened:"次の部屋が開きました!", hallClear:"🎉 {hall}クリア!秘密の部屋が開きました", clearReward:"クリア特典:先行オープン", colClear:"{hall} クリア {a}/{b}", adSpace:"広告スペース", adSoon:"ここに広告が入る予定です", contactTitle:"広告のお問い合わせ", contactBtn:"広告について問い合わせる", contactSoon:"お問い合わせ窓口は準備中です", contactNote:"いただいた情報は広告のご相談にのみ使用します", contactDesc:"推し心アーカイブミュージアムの電光掲示板・広告スペースに広告を掲載できます。下のボタンからお問い合わせください。", bContact:"広告のお問い合わせ", bs1:"ここに広告を出してみませんか", bs1b:"広告のお問い合わせ歓迎 · タップでお問い合わせ", bs2:"推し心アーカイブ", bs2b:"登録して次の展示をいち早くチェック", bs3:"今週の新しい展示", bs3b:"展示日: {d}", culture:"韓国文化コーナー", cultureSoon:"まもなくオープン", bCulture:"韓国文化コーナー · まもなくオープン", lobbySub:"推し心アーカイブ・ギャラリー · Deoksim Archive Gallery · 追星心意典藏館", subOut:"3Dミュージアム(テスト版)", subLobby:"ロビー・館を選んでください", subHub:"館ホール・部屋を選んでください",
+  ja:{stPos:"ポジション: {p}", stBday:"誕生日: {d}", qOk:"正解です!", introT:"ご案内", bIntro:"館の案内を読む", affNote:"このリンクから購入すると、当ギャラリーが一定の手数料を受け取る場合があります。", stageAria:"3Dミュージアム", adBadge:"広告 · AD", adLabel:"広告", lkAbout:"紹介", lkPrivacy:"プライバシー", lkTerms:"利用規約", lkAds:"広告のお問い合わせ", lkTakedown:"権利侵害の申告", info:"情報", adsPage:"広告のお問い合わせページを開く", enTitle:"RESCENE 公式広告モデル", enNotAd:"有料広告ではありません · 情報", enDesc:"RESCENEが現在モデルを務める公式広告です。当ギャラリーが報酬を受けた広告ではなく、アフィリエイトリンクでもありません。", enSrc:"出典記事", enChecked:"確認日: {d}", enCorner:"広告館コーナー", enCornerSub:"広告映像 · タップで再生", enCount:"公式広告モデル {n}社", bEndorse:"公式広告モデルを見る", agTitle:"アンウォンジャルブ グッズ", agSoon:"公式グッズのリンク準備中", agGo:"公式ストアを見る", agDesc:"ウォニの個人チャンネル「アンウォンジャルブ」の公式グッズコーナーです。", notAff:"アフィリエイトリンクではありません。当ギャラリーは手数料を受け取りません。", notAffB:"提携なし", bAg:"グッズを見る", stTitle:"{g} の彫像", stNote:"顔のない、図形で作った装飾彫刻です。実際の姿を模していません。", bStatue:"彫像を見る", gallery:"推し心アーカイブ・ギャラリー", shop:"グッズショップ", shopOf:"{g} グッズショップ", shopSub:"コーナーを見て回り、商品をタップしてください", pickIdol:"アイドルを選んでください", zoneSoon:"まもなく入荷", itemsN:"商品{n}点", sellerSlot:"出店スペース・出店者募集", sellerBtn:"出店について問い合わせる", sellerTitle:"出店のお問い合わせ", sellerDesc:"推し心アーカイブグッズショップに出店しませんか。下のボタンからお問い合わせください。", sellerResp:"出店者の商品です。販売・配送・交換は出店者の責任で行われます。", sellerBadge:"出店", goBuy:"見に行く", noLink:"リンク準備中", bProduct:"商品を見る", bSeller:"出店のお問い合わせ", hintShop:"ドラッグで見回し、棚をタップすると商品が見られます", imgCredit:"画像提供", progLabel:"クリア {a}/{b}", roomProg:"この部屋 {s} ({a}/{b})", lockedLeft:"🔒 あと{n}本", lockedRoom:"「{room}」で動画をあと{n}本見ると開きます", watchedOk:"視聴完了!{s}", roomClear:"部屋クリア!次の部屋が開きました!", roomClearLast:"部屋クリア!", nextOpened:"次の部屋が開きました!", hallClear:"🎉 {hall}クリア!秘密の部屋が開きました", clearReward:"クリア特典:先行オープン", colClear:"{hall} クリア {a}/{b}", adSpace:"広告スペース", adSoon:"ここに広告が入る予定です", contactTitle:"広告のお問い合わせ", contactBtn:"広告について問い合わせる", contactSoon:"お問い合わせ窓口は準備中です", contactNote:"いただいた情報は広告のご相談にのみ使用します", contactDesc:"推し心アーカイブミュージアムの電光掲示板・広告スペースに広告を掲載できます。下のボタンからお問い合わせください。", bContact:"広告のお問い合わせ", bs1:"ここに広告を出してみませんか", bs1b:"広告のお問い合わせ歓迎 · タップでお問い合わせ", bs2:"推し心アーカイブ", bs2b:"登録して次の展示をいち早くチェック", bs3:"今週の新しい展示", bs3b:"展示日: {d}", culture:"韓国文化コーナー", cultureSoon:"まもなくオープン", bCulture:"韓国文化コーナー · まもなくオープン", lobbySub:"推し心アーカイブ・ギャラリー · Deoksim Archive Gallery · 追星心意典藏館", subOut:"3Dミュージアム(テスト版)", subLobby:"ロビー・館を選んでください", subHub:"館ホール・部屋を選んでください",
       loading:"ミュージアムを開いています…", enter:"入る", toLobby:"ロビーへ", toHub:"館ホールへ", exit:"外へ",
       hintOut:"「入る」を押すと階段を上って館内へ", hintOutWalk:"スティックで入口まで歩いてみましょう",
       hintLobby:"ドラッグで見回し、扉をタップで館へ", hintHub:"扉をタップすると部屋へ",
@@ -604,7 +1449,7 @@ const I18N = {
       rewardSoon:"ごほうび動画はまもなく公開", secret:"秘密の額縁", quizWrong:"残念!もう一度選んでみましょう",
       like:"♡ いいね", liked:"❤ いいね", likesN:"いいね {n}・閲覧 {v}", localOnly:"(現在はこの端末のみ)", cTabG:"ギャラリーのコメント", cTabY:"YouTubeのコメント", cNote:"ギャラリー来場者どうしのコメントです・YouTube元動画のコメントは「YouTubeで見る」から", cName:"ニックネーム(任意)", cText:"コメントを書いてください(200字まで)", cPost:"投稿", cEmpty:"最初のコメントをどうぞ", cAnon:"来場者", cReport:"通報", cReported:"通報しました。このコメントは非表示になります", cBad:"投稿できない言葉が含まれています", cLink:"リンクは投稿できません", cTooLong:"200字まで書けます", cOk:"コメントを投稿しました", cLocal:"現在はこの端末にのみ保存されます", ytWrite:"YouTubeでコメントする", ytNote:"YouTubeの人気コメント5件・原文のまま・出典: YouTube", ytStats:"YouTube: 再生回数 {v}・高評価 {l}", ytErr:"YouTubeのコメントを読み込めませんでした", ytNone:"YouTubeのコメントはありません", anaNote:"匿名の訪問統計を集めています(個人情報なし)", newTag:"NEW",
       slowSuggest:"動作が少し重いようです。クイックモードにしますか?", switchQuick:"クイックモードへ", modeWalk:"🚶 歩き", modeQuick:"⚡ クイック"},
-  en:{affNote:"If you buy through this link, we may earn a commission.", stageAria:"3D museum", adBadge:"AD", adLabel:"AD", lkAbout:"About", lkPrivacy:"Privacy", lkTerms:"Terms", lkAds:"Advertising", lkTakedown:"Rights report", info:"Info", adsPage:"Open the advertising page", enTitle:"RESCENE official ad models", enNotAd:"Not a paid ad · info", enDesc:"Official ads RESCENE currently models for. We are not paid for this, and these are not affiliate links.", enSrc:"Source article", enChecked:"Checked: {d}", enCorner:"Ad Hall corner", enCornerSub:"Ad video · tap to play", enCount:"{n} official ad brands", bEndorse:"View official ad models", agTitle:"Anwonjalbu goods", agSoon:"Official goods link coming soon", agGo:"Visit the official store", agDesc:"A spot for official goods from Woni's personal channel, Anwonjalbu.", notAff:"Not an affiliate link. We earn no commission.", notAffB:"Not affiliate", bAg:"View Anwonjalbu goods", stTitle:"{g} statues", stNote:"A faceless decorative statue made of simple shapes. It does not depict anyone's real appearance.", bStatue:"View statue", gallery:"Deoksim Archive Gallery", shop:"Goods Shop", shopOf:"{g} Goods Shop", shopSub:"Browse the corners and tap an item", pickIdol:"Choose an idol", zoneSoon:"Coming soon", itemsN:"{n} items", sellerSlot:"Seller spot · now recruiting", sellerBtn:"Apply to sell here", sellerTitle:"Seller inquiry", sellerDesc:"Sell your products in the Deoksim Archive Goods Shop. Leave an inquiry with the button below and we will get back to you.", sellerResp:"This item is from a partner seller. The seller is responsible for sales, shipping and exchanges.", sellerBadge:"Seller", goBuy:"View item", noLink:"Link coming soon", bProduct:"View items", bSeller:"Apply to sell", hintShop:"Drag to look around. Tap a shelf to see items.", imgCredit:"Image", progLabel:"Cleared {a}/{b}", roomProg:"This room {s} ({a}/{b})", lockedLeft:"🔒 {n} more", lockedRoom:"Watch {n} more videos in \"{room}\" to open this", watchedOk:"Watched! {s}", roomClear:"Room cleared! The next room is open!", roomClearLast:"Room cleared!", nextOpened:"The next room is open!", hallClear:"🎉 {hall} cleared! The Secret Room is open", clearReward:"Clear reward: opens first", colClear:"{hall} cleared {a}/{b}", adSpace:"AD SPACE", adSoon:"An ad will be placed here", contactTitle:"Advertising inquiry", contactBtn:"Ask about advertising", contactSoon:"The inquiry form is coming soon", contactNote:"Your details are used only to discuss advertising", contactDesc:"Place your ad on the billboards and ad panels of the Deoksim Archive museum. Leave an inquiry with the button below and we will get back to you.", bContact:"Advertising inquiry", bs1:"Advertise here", bs1b:"Inquiries welcome · tap to ask about advertising", bs2:"Deoksim Archive", bs2b:"Subscribe to see the next exhibition first", bs3:"New this week", bs3b:"Hung on: {d}", culture:"Korean Culture Corner", cultureSoon:"Opening soon", bCulture:"Korean Culture Corner · opening soon", lobbySub:"Deoksim Archive Gallery · 推し心アーカイブ・ギャラリー · 追星心意典藏館", subOut:"3D museum · preview", subLobby:"Lobby · pick a hall", subHub:"Hall · pick a room",
+  en:{stPos:"Position: {p}", stBday:"Birthday: {d}", qOk:"Correct!", introT:"Welcome", bIntro:"Read the hall guide", affNote:"If you buy through this link, we may earn a commission.", stageAria:"3D museum", adBadge:"AD", adLabel:"AD", lkAbout:"About", lkPrivacy:"Privacy", lkTerms:"Terms", lkAds:"Advertising", lkTakedown:"Rights report", info:"Info", adsPage:"Open the advertising page", enTitle:"RESCENE official ad models", enNotAd:"Not a paid ad · info", enDesc:"Official ads RESCENE currently models for. We are not paid for this, and these are not affiliate links.", enSrc:"Source article", enChecked:"Checked: {d}", enCorner:"Ad Hall corner", enCornerSub:"Ad video · tap to play", enCount:"{n} official ad brands", bEndorse:"View official ad models", agTitle:"Anwonjalbu goods", agSoon:"Official goods link coming soon", agGo:"Visit the official store", agDesc:"A spot for official goods from Woni's personal channel, Anwonjalbu.", notAff:"Not an affiliate link. We earn no commission.", notAffB:"Not affiliate", bAg:"View Anwonjalbu goods", stTitle:"{g} statues", stNote:"A faceless decorative statue made of simple shapes. It does not depict anyone's real appearance.", bStatue:"View statue", gallery:"Deoksim Archive Gallery", shop:"Goods Shop", shopOf:"{g} Goods Shop", shopSub:"Browse the corners and tap an item", pickIdol:"Choose an idol", zoneSoon:"Coming soon", itemsN:"{n} items", sellerSlot:"Seller spot · now recruiting", sellerBtn:"Apply to sell here", sellerTitle:"Seller inquiry", sellerDesc:"Sell your products in the Deoksim Archive Goods Shop. Leave an inquiry with the button below and we will get back to you.", sellerResp:"This item is from a partner seller. The seller is responsible for sales, shipping and exchanges.", sellerBadge:"Seller", goBuy:"View item", noLink:"Link coming soon", bProduct:"View items", bSeller:"Apply to sell", hintShop:"Drag to look around. Tap a shelf to see items.", imgCredit:"Image", progLabel:"Cleared {a}/{b}", roomProg:"This room {s} ({a}/{b})", lockedLeft:"🔒 {n} more", lockedRoom:"Watch {n} more videos in \"{room}\" to open this", watchedOk:"Watched! {s}", roomClear:"Room cleared! The next room is open!", roomClearLast:"Room cleared!", nextOpened:"The next room is open!", hallClear:"🎉 {hall} cleared! The Secret Room is open", clearReward:"Clear reward: opens first", colClear:"{hall} cleared {a}/{b}", adSpace:"AD SPACE", adSoon:"An ad will be placed here", contactTitle:"Advertising inquiry", contactBtn:"Ask about advertising", contactSoon:"The inquiry form is coming soon", contactNote:"Your details are used only to discuss advertising", contactDesc:"Place your ad on the billboards and ad panels of the Deoksim Archive museum. Leave an inquiry with the button below and we will get back to you.", bContact:"Advertising inquiry", bs1:"Advertise here", bs1b:"Inquiries welcome · tap to ask about advertising", bs2:"Deoksim Archive", bs2b:"Subscribe to see the next exhibition first", bs3:"New this week", bs3b:"Hung on: {d}", culture:"Korean Culture Corner", cultureSoon:"Opening soon", bCulture:"Korean Culture Corner · opening soon", lobbySub:"Deoksim Archive Gallery · 推し心アーカイブ・ギャラリー · 追星心意典藏館", subOut:"3D museum · preview", subLobby:"Lobby · pick a hall", subHub:"Hall · pick a room",
       loading:"Opening the museum…", enter:"Enter", toLobby:"Lobby", toHub:"Hall", exit:"Exit",
       hintOut:"Tap Enter to climb the steps and go inside", hintOutWalk:"Use the joystick to walk to the entrance",
       hintLobby:"Drag to look around. Tap a door to enter a hall.", hintHub:"Tap a door to enter a room",
@@ -629,7 +1474,7 @@ const I18N = {
       rewardSoon:"The reward video is coming soon", secret:"Secret frame", quizWrong:"Not quite — try again?",
       like:"♡ Like", liked:"❤ Liked", likesN:"{n} likes · {v} views", localOnly:"(this device only for now)", cTabG:"Gallery comments", cTabY:"YouTube comments", cNote:"Comments shared among gallery visitors · for the original YouTube comments, use “Open on YouTube”", cName:"Nickname (optional)", cText:"Leave a comment (up to 200 characters)", cPost:"Post", cEmpty:"Be the first to comment", cAnon:"Visitor", cReport:"Report", cReported:"Reported. This comment is now hidden", cBad:"Your comment contains words we can't post", cLink:"Links can't be posted", cTooLong:"Up to 200 characters", cOk:"Comment posted", cLocal:"Saved on this device only for now", ytWrite:"Comment on YouTube", ytNote:"Top 5 YouTube comments · shown as written · Source: YouTube", ytStats:"YouTube: {v} views · {l} likes", ytErr:"Couldn't load YouTube comments", ytNone:"No YouTube comments", anaNote:"We collect anonymous visit statistics (no personal data)", newTag:"NEW",
       slowSuggest:"Things look a bit slow. Switch to quick mode?", switchQuick:"Quick mode", modeWalk:"🚶 Walk", modeQuick:"⚡ Quick"},
-  zh:{affNote:"透過此連結購買,本館可能會獲得一定比例的佣金。", stageAria:"3D 美術館", adBadge:"廣告 · AD", adLabel:"廣告", lkAbout:"關於", lkPrivacy:"隱私權", lkTerms:"使用條款", lkAds:"廣告洽詢", lkTakedown:"權利申訴", info:"資訊", adsPage:"開啟廣告洽詢頁面", enTitle:"RESCENE 官方代言", enNotAd:"非付費廣告 · 資訊", enDesc:"RESCENE 目前擔任模特兒的官方廣告。這不是本館收費的廣告,也不是聯盟連結。", enSrc:"出處報導", enChecked:"確認日期:{d}", enCorner:"廣告館專區", enCornerSub:"廣告影片 · 點一下播放", enCount:"官方代言 {n} 家", bEndorse:"看官方代言", agTitle:"Anwonjalbu 周邊", agSoon:"官方周邊連結準備中", agGo:"前往官方商店", agDesc:"Woni 個人頻道「Anwonjalbu」的官方周邊專區。", notAff:"這不是聯盟連結,本館不收取佣金。", notAffB:"非聯盟", bAg:"看 Anwonjalbu 周邊", stTitle:"{g} 雕像", stNote:"沒有臉孔、以簡單形狀做成的裝飾雕像,並未模仿真實樣貌。", bStatue:"看雕像", gallery:"追星心意典藏館", shop:"周邊商店", shopOf:"{g} 周邊商店", shopSub:"逛逛各區,點商品看看", pickIdol:"請選擇偶像", zoneSoon:"即將上架", itemsN:"商品 {n} 件", sellerSlot:"進駐位置・招募賣家", sellerBtn:"洽詢進駐", sellerTitle:"進駐洽詢", sellerDesc:"歡迎在追星心意典藏館周邊商店上架商品。請透過下方按鈕留下洽詢,我們會與您聯繫。", sellerResp:"這是進駐賣家的商品。銷售、配送與退換貨由賣家負責。", sellerBadge:"進駐", goBuy:"前往查看", noLink:"連結準備中", bProduct:"看商品", bSeller:"洽詢進駐", hintShop:"拖曳環顧,點貨架即可看商品", imgCredit:"圖片來源", progLabel:"已過關 {a}/{b}", roomProg:"這個房間 {s} ({a}/{b})", lockedLeft:"🔒 再看{n}部", lockedRoom:"在「{room}」再看 {n} 部影片就會打開", watchedOk:"觀看完成!{s}", roomClear:"房間過關!下一個房間打開了!", roomClearLast:"房間過關!", nextOpened:"下一個房間打開了!", hallClear:"🎉 {hall} 過關!秘密房間打開了", clearReward:"過關獎勵:搶先開放", colClear:"{hall} 過關 {a}/{b}", adSpace:"廣告位", adSoon:"這裡將放置廣告", contactTitle:"廣告洽詢", contactBtn:"洽詢廣告", contactSoon:"洽詢表單準備中", contactNote:"您留下的資料只會用於廣告洽談", contactDesc:"歡迎在追星心意典藏館的電子看板與廣告位刊登廣告。請透過下方按鈕留下洽詢,我們會與您聯繫。", bContact:"廣告洽詢", bs1:"在這裡刊登廣告吧", bs1b:"歡迎洽詢廣告 · 點一下即可洽詢", bs2:"追星心意典藏館", bs2b:"訂閱就能搶先看下一場展覽", bs3:"本週新展出", bs3b:"展出日期:{d}", culture:"韓國文化角", cultureSoon:"即將開放", bCulture:"韓國文化角 · 即將開放", lobbySub:"追星心意典藏館 · Deoksim Archive Gallery · 推し心アーカイブ・ギャラリー", subOut:"3D 美術館(試用版)", subLobby:"大廳・請選擇展館", subHub:"展館大廳・請選擇房間",
+  zh:{stPos:"定位:{p}", stBday:"生日:{d}", qOk:"答對了!", introT:"導覽", bIntro:"閱讀展館導覽", affNote:"透過此連結購買,本館可能會獲得一定比例的佣金。", stageAria:"3D 美術館", adBadge:"廣告 · AD", adLabel:"廣告", lkAbout:"關於", lkPrivacy:"隱私權", lkTerms:"使用條款", lkAds:"廣告洽詢", lkTakedown:"權利申訴", info:"資訊", adsPage:"開啟廣告洽詢頁面", enTitle:"RESCENE 官方代言", enNotAd:"非付費廣告 · 資訊", enDesc:"RESCENE 目前擔任模特兒的官方廣告。這不是本館收費的廣告,也不是聯盟連結。", enSrc:"出處報導", enChecked:"確認日期:{d}", enCorner:"廣告館專區", enCornerSub:"廣告影片 · 點一下播放", enCount:"官方代言 {n} 家", bEndorse:"看官方代言", agTitle:"Anwonjalbu 周邊", agSoon:"官方周邊連結準備中", agGo:"前往官方商店", agDesc:"Woni 個人頻道「Anwonjalbu」的官方周邊專區。", notAff:"這不是聯盟連結,本館不收取佣金。", notAffB:"非聯盟", bAg:"看 Anwonjalbu 周邊", stTitle:"{g} 雕像", stNote:"沒有臉孔、以簡單形狀做成的裝飾雕像,並未模仿真實樣貌。", bStatue:"看雕像", gallery:"追星心意典藏館", shop:"周邊商店", shopOf:"{g} 周邊商店", shopSub:"逛逛各區,點商品看看", pickIdol:"請選擇偶像", zoneSoon:"即將上架", itemsN:"商品 {n} 件", sellerSlot:"進駐位置・招募賣家", sellerBtn:"洽詢進駐", sellerTitle:"進駐洽詢", sellerDesc:"歡迎在追星心意典藏館周邊商店上架商品。請透過下方按鈕留下洽詢,我們會與您聯繫。", sellerResp:"這是進駐賣家的商品。銷售、配送與退換貨由賣家負責。", sellerBadge:"進駐", goBuy:"前往查看", noLink:"連結準備中", bProduct:"看商品", bSeller:"洽詢進駐", hintShop:"拖曳環顧,點貨架即可看商品", imgCredit:"圖片來源", progLabel:"已過關 {a}/{b}", roomProg:"這個房間 {s} ({a}/{b})", lockedLeft:"🔒 再看{n}部", lockedRoom:"在「{room}」再看 {n} 部影片就會打開", watchedOk:"觀看完成!{s}", roomClear:"房間過關!下一個房間打開了!", roomClearLast:"房間過關!", nextOpened:"下一個房間打開了!", hallClear:"🎉 {hall} 過關!秘密房間打開了", clearReward:"過關獎勵:搶先開放", colClear:"{hall} 過關 {a}/{b}", adSpace:"廣告位", adSoon:"這裡將放置廣告", contactTitle:"廣告洽詢", contactBtn:"洽詢廣告", contactSoon:"洽詢表單準備中", contactNote:"您留下的資料只會用於廣告洽談", contactDesc:"歡迎在追星心意典藏館的電子看板與廣告位刊登廣告。請透過下方按鈕留下洽詢,我們會與您聯繫。", bContact:"廣告洽詢", bs1:"在這裡刊登廣告吧", bs1b:"歡迎洽詢廣告 · 點一下即可洽詢", bs2:"追星心意典藏館", bs2b:"訂閱就能搶先看下一場展覽", bs3:"本週新展出", bs3b:"展出日期:{d}", culture:"韓國文化角", cultureSoon:"即將開放", bCulture:"韓國文化角 · 即將開放", lobbySub:"追星心意典藏館 · Deoksim Archive Gallery · 推し心アーカイブ・ギャラリー", subOut:"3D 美術館(試用版)", subLobby:"大廳・請選擇展館", subHub:"展館大廳・請選擇房間",
       loading:"美術館開門中…", enter:"進入", toLobby:"回大廳", toHub:"回展館大廳", exit:"離開",
       hintOut:"按「進入」就會走上階梯進入館內", hintOutWalk:"用搖桿走到入口看看",
       hintLobby:"拖曳環顧四周,點門即可進入展館", hintHub:"點門即可進入房間",
@@ -1114,8 +1959,17 @@ G.openAg = () => {
 };
 /* ---------- 건물 정면 조각상 소개(공식 공개 정보만. 비어 있으면 이름만) ---------- */
 G.statueGroup = () => STATUES.find(g=>g.enabled!==false && g.members?.length) || null;
-G.openStatue = m => { const st = !m.story ? "" : typeof m.story==="object" ? G.nm(m.story) : String(m.story);
-  openItem({type:"text", title: G.lang==="ko" ? `${m.name} · ${m.name_en}` : m.name_en, desc:st, html:`<p class="contactNote">${esc(G.t("stNote"))}</p>`}); };
+/* ---------- 관 입구 안내(CONTENT.intro) — 관 홀 첫 안내판·평면 화면 맨 위 ---------- */
+G.hallIntro = h => h && h.id===CONTENT.hall && CONTENT.intro ? G.nm(CONTENT.intro) : "";
+G.openHallIntro = h => { const src=(CONTENT.intro_sources||[]).filter(u=>safeUrl(u));
+  openItem({type:"text", title:`${G.nm(h.name)} · ${G.t("introT")}`, desc:G.hallIntro(h),
+    html:`<p class="src">${esc(G.t("src"))}: ${src.map(u=>`<a class="srcmini" href="${esc(safeUrl(u).href)}" target="_blank" rel="noopener">${esc(hostOf(u))}</a>`).join(" ")} · ${esc(CONTENT.checked_at)}</p>`}); };
+G.openStatue = m => { const ci=CONTENT.statues?.[m.id]||{}, st = m.story ? (typeof m.story==="object" ? G.nm(m.story) : String(m.story)) : ci.intro ? G.nm(ci.intro) : "";
+  const loc=G.lang==="zh"?"zh-TW":G.lang, bd=/^\d\d-\d\d$/.test(ci.birthday||"") ? new Date(2000,+ci.birthday.slice(0,2)-1,+ci.birthday.slice(3)).toLocaleDateString(loc,{month:"long",day:"numeric"}) : "";
+  const facts=[ci.position ? G.t("stPos",{p:G.nm(ci.position)}) : "", bd ? G.t("stBday",{d:bd}) : ""].filter(Boolean).join(" · ");
+  const src=(ci.sources||[]).filter(u=>safeUrl(u)).slice(0,3);
+  openItem({type:"text", title: G.lang==="ko" ? `${m.name} · ${m.name_en}` : m.name_en, desc:st,
+    html:`${facts ? `<p class="sfacts">${esc(facts)}</p>` : ""}${st && src.length ? `<p class="src">${esc(G.t("src"))}: ${src.map(u=>`<a class="srcmini" href="${esc(safeUrl(u).href)}" target="_blank" rel="noopener">${esc(hostOf(u))}</a>`).join(" ")}</p>` : ""}<p class="contactNote">${esc(G.t("stNote"))}</p>`}); };
 
 /* ---------- 미션 ---------- */
 function completeMission(m){
@@ -1129,11 +1983,16 @@ function playReward(m){
 }
 G.hasMission = id => !!store.json("duksim-collection-v1",{})[id];
 G.startMission = m => {
-  if(G.hasMission(m.id)){ playReward(m); return; }
+  if(G.hasMission(m.id) && (m.type!=="quiz" || /^[\w-]{11}$/.test(m.reward?.video_id||""))){ playReward(m); return; }
   if(m.type==="find"){ completeMission(m); return; }
   openItem({type:"text", title:G.nm(m.question), html:`<div class="choices">${m.choices.map((c,i)=>`<button data-a="${i}">${esc(typeof c==="object"?G.nm(c):c)}</button>`).join("")}</div>
-    <p class="src">${esc(G.t("src"))}: <a href="${esc(m.source)}" target="_blank" rel="noopener">${esc(new URL(m.source).hostname)}</a> · ${esc(m.checked_at)}</p>`});
-  document.querySelectorAll("[data-a]").forEach(b=>b.onclick=()=>{ if(+b.dataset.a===m.answer){ closeItem(); completeMission(m); } else toast(G.t("quizWrong")); });
+    <div id="qDone"></div>`});
+  /* 정답을 맞히면 그 자리에 「정답」과 작은 「출처」 링크(정답을 확인한 기사) */
+  document.querySelectorAll("[data-a]").forEach(b=>b.onclick=()=>{ if(+b.dataset.a!==m.answer){ toast(G.t("quizWrong")); return; }
+    const c=m.choices[m.answer], u=safeUrl(m.source);
+    document.querySelectorAll("[data-a]").forEach(x=>{ x.disabled=true; x.classList.toggle("ok", +x.dataset.a===m.answer); });
+    $("#qDone").innerHTML=`<p class="qok">✅ ${esc(G.t("qOk"))} ${esc(typeof c==="object"?G.nm(c):c)}</p>${u ? `<p class="src">${esc(G.t("src"))}: <a class="srcmini" href="${esc(u.href)}" target="_blank" rel="noopener">${esc(hostOf(m.source))}</a> · ${esc(m.checked_at)}</p>` : ""}`;
+    if(!G.hasMission(m.id)) completeMission(m); });
 };
 G.talkNpc = () => {
   const open=HALLS.filter(h=>h.open).map(h=>G.nm(h.name)).join(", "), soon=HALLS.filter(h=>!h.open).map(h=>G.nm(h.name)).join(", ");
@@ -1177,7 +2036,7 @@ function openItem(it, ctx={}){
     p.innerHTML = `<iframe id="ytFrame" src="https://www.youtube-nocookie.com/embed/${encodeURIComponent(it.id)}?rel=0&playsinline=1&enablejsapi=1${og}" title="${esc(it.title)}"
       allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin"></iframe>`;
     /* 유튜브 정책 III.G: 영상 패널 안·바로 아래에는 광고·추천 상점을 두지 않는다(picks는 방의 추천 상점 진열대에서만) */
-    title=it.title||""; desc=it.desc||""; note=it.note ? (typeof it.note==="object" ? G.nm(it.note) : String(it.note)) : ""; showPicks=false; playing=true; vid=it.id; if(isNew(it.added_at)) tag=G.t("newTag");
+    title=it.title||""; desc=it.desc||""; note=it.note ? (typeof it.note==="object" ? G.nm(it.note) : String(it.note)) : CONTENT.notes?.[it.id] ? G.nm(CONTENT.notes[it.id]) : "";   // 영상 note: 직접 넣은 것 → content_rescene 순 showPicks=false; playing=true; vid=it.id; if(isNew(it.added_at)) tag=G.t("newTag");
     srcUrl = kind==="short" ? `https://www.youtube.com/shorts/${encodeURIComponent(it.id)}` : `https://www.youtube.com/watch?v=${encodeURIComponent(it.id)}`;
     srcName = it.channel || (it.official && hall?.official ? hall.official.name : "YouTube"); srcBtn=G.t("openYT");
     STATS.record(it.id, "view"); ANALYTICS.video(it.id, "open"); startWatch(it);
@@ -1318,7 +2177,8 @@ function drawFlat(){
         + `<button class="card" data-seller="1" style="border:1px dashed var(--line)"><div class="tt">🏪 ${esc(G.t("sellerSlot"))}</div></button></div>`; }).join("")
       + `<p class="contactNote">${esc(G.t("freeNote"))}</p>`;
   } else if(v==="hub"){
-    html = `<div class="sec">${esc(G.t("roomsH"))}</div><div class="grid">` + G.visibleRooms(h).map(x=>{ const op=G.roomOpen(h,x), nd=G.roomNeed(x);
+    html = (G.hallIntro(h) ? `<div class="warn hallIntro" style="color:var(--ink)"><b>${esc(G.nm(h.name))} · ${esc(G.t("introT"))}</b><br>${esc(G.hallIntro(h))}<br><button class="card" data-intro="1" style="margin-top:8px;padding:8px 12px">${esc(G.t("src"))}</button></div>` : "")
+      + `<div class="sec">${esc(G.t("roomsH"))}</div><div class="grid">` + G.visibleRooms(h).map(x=>{ const op=G.roomOpen(h,x), nd=G.roomNeed(x);
       return `<button class="card door ${op?'':'lock'}" data-room="${esc(x.id)}"><div class="th" style="background:${esc(G.roomColor(x))}">${op?'':'🔒 '}${esc(G.nm(x.name))}</div>
        <div class="tt">${esc(G.roomTitle(x))}<small>${G.inProgress(h)&&nd ? G.stars(G.roomCount(h,x),nd)+" · " : ""}${op ? (x.videos?.length ? esc(G.t("videosN",{n:x.videos.length})) : esc(G.t("soon"))) : esc(G.lockedText(h,x))}</small>
        ${op ? "" : `<small>${(x.videos||[]).slice(0,3).map(v=>"· "+esc(v.title)).join("<br>")}</small>`}</div></button>`; }).join("") + `</div>`;
@@ -1344,6 +2204,7 @@ function drawFlat(){
   b.querySelectorAll("[data-i]").forEach(x=>x.onclick=()=>openItem(items[+x.dataset.i]));
   b.querySelectorAll("[data-goods]").forEach(x=>x.onclick=()=>G.openGoods(r));
   b.querySelectorAll("[data-ag]").forEach(x=>x.onclick=G.openAg);
+  b.querySelectorAll("[data-intro]").forEach(x=>x.onclick=()=>G.openHallIntro(h));
   b.querySelectorAll("[data-cv]").forEach(x=>x.onclick=()=>openItem({...G.endorseCorner()[+x.dataset.cv].video, desc:""}));
   b.querySelectorAll("[data-culture]").forEach(x=>x.onclick=G.openCulture);
   b.querySelectorAll("[data-contact]").forEach(x=>x.onclick=G.openContact);
@@ -1710,7 +2571,7 @@ function start(THREE){
     u.tail.rotation.y = moving ? Math.sin(u.t*16)*0.7 : 0;
     poseCompute(g); return Math.abs(target-u.sit)>0.01;
   }
-  function buildRotunda({color, doors, backLabel, onBack, outdoorBack, npc, adPlace, after}){
+  function buildRotunda({color, doors, backLabel, onBack, outdoorBack, npc, adPlace, after, intro}){
     const s=new THREE.Scene(); s.background=new THREE.Color(0xf6efe3); hemi(s);
     const R=7, H=4.6, clickables=[], relabel=[], spots=[]; let culturePos=null;
     add(s, new THREE.CylinderGeometry(R,R,H,36,1,true), new THREE.MeshLambertMaterial({color:0xf5eee2, side:THREE.BackSide}), 0, H/2, 0);
@@ -1750,7 +2611,7 @@ function start(THREE){
     if(npc){   // 로비 간판(한글 크게 + 작은 외국어) · 중형 전광판 · 한국 문화 코너
       const sg=new THREE.Group(); sg.position.set(0,0,-(R-0.12)); sg.lookAt(0,0,0); s.add(sg);
       const sign=textPlane(sg, 3.0, 0.62, 640, (g,W,H)=>{ g.fillStyle="#1e143c"; g.fillRect(0,0,W,H); g.strokeStyle="#c9a45c"; g.lineWidth=5; g.strokeRect(5,5,W-10,H-10);
-        g.fillStyle="#ffd640"; g.textAlign="center"; g.textBaseline="middle"; g.font=`800 58px ${FONT}`; g.fillText("덕심저장소 갤러리",W/2,H*0.42);
+        g.fillStyle="#ffd640"; g.textAlign="center"; g.textBaseline="middle"; { const nm=G.t("gallery"); let fs=58; do{ g.font=`800 ${fs}px ${FONT}`; fs-=2; } while(g.measureText(nm).width>W-40 && fs>20); g.fillText(nm,W/2,H*0.42); }
         g.fillStyle="#e8e0ff"; g.font=`500 17px ${FONT}`; g.fillText(G.t("lobbySub"),W/2,H*0.8); });
       sign.position.set(0,3.72,0); relabel.push(sign.userData.redraw);
       const fn=textPlane(sg, 3.6, 0.2, 720, (g,W,H)=>{ g.fillStyle="#fffaf2"; g.fillRect(0,0,W,H); g.fillStyle="#6b6280"; g.font=`500 19px ${FONT}`; g.textAlign="center"; g.textBaseline="middle"; wrapText(g,G.t("freeNote"),W/2,H/2+1,W-20,22,1); });
@@ -1764,6 +2625,16 @@ function start(THREE){
       [cs].forEach(m=>{ m.userData.act=G.openCulture; clickables.push(m); });
       spots.push({p:new THREE.Vector3(Math.sin(ca)*(R-2.0),1.2,-Math.cos(ca)*(R-2.0)), r:1.4, label:()=>G.t("bCulture"), act:G.openCulture});
       culturePos=[cx,cz];
+    }
+    if(intro){   // 관 입구 안내판: 정면(문 사이 빈 벽). 정면에 문이 있으면 뒤 문 왼쪽 벽
+      const ia = angles.some(x=>Math.abs(x)<0.32) ? Math.PI-0.75 : 0;
+      const ig=new THREE.Group(); ig.position.set(Math.sin(ia)*(R-0.15),0,-Math.cos(ia)*(R-0.15)); ig.lookAt(0,0,0); s.add(ig);
+      const ib=textPlane(ig, 2.5, 1.5, 640, (g,W,H)=>{ g.fillStyle="#fffdf8"; g.fillRect(0,0,W,H); g.fillStyle=color; g.fillRect(0,0,W,12); g.strokeStyle="#e4d8c4"; g.lineWidth=4; g.strokeRect(2,2,W-4,H-4);
+        g.fillStyle="#1e143c"; g.textAlign="center"; g.textBaseline="middle"; g.font=`800 34px ${FONT}`; wrapText(g, intro.title(), W/2, 48, W-40, 36, 1);
+        g.fillStyle="#4a4060"; g.font=`500 19px ${FONT}`; wrapText(g, intro.text(), W/2, H*0.56, W-56, 26, 10);
+        g.fillStyle="#9650e6"; g.font=`700 17px ${FONT}`; g.fillText("▶ "+G.t("bIntro"), W/2, H-26); });
+      ib.position.set(0,2.05,0); relabel.push(ib.userData.redraw); ib.userData.act=intro.act; clickables.push(ib);
+      spots.push({p:new THREE.Vector3(Math.sin(ia)*(R-1.3),1.7,-Math.cos(ia)*(R-1.3)), r:1.6, label:()=>G.t("bIntro"), act:intro.act});
     }
     const back=new THREE.Group(); back.position.set(0,0,R-0.2); back.lookAt(0,0,0); s.add(back);
     const bf=lam(0x7a5a3a); box(back,0.14,2.9,0.14,bf,-1.15,1.45,0); box(back,0.14,2.9,0.14,bf,1.15,1.45,0); box(back,2.44,0.16,0.14,bf,0,2.92,0);
@@ -1792,6 +2663,7 @@ function start(THREE){
   }
   function buildHub(hall){
     return buildRotunda({ color:hall.color, adPlace:"hall_top", backLabel:()=>G.t("toLobby"), onBack:()=>G.go("lobby"),
+      intro: G.hallIntro(hall) ? { title:()=>`${G.nm(hall.name)} · ${G.t("introT")}`, text:()=>G.hallIntro(hall), act:()=>G.openHallIntro(hall) } : null,
       doors: G.visibleRooms(hall).map(r=>{ const op=G.roomOpen(hall,r), nd=G.roomNeed(r), jo=G.justUnlocked===r.id;
         return { color:G.roomColor(r), open:op, justOpened:jo, title:()=>G.nm(r.name),
           sub:()=> !op ? (()=>{ const pr=G.prevRoom(hall,r); return G.t("lockedLeft",{n:pr?G.roomNeed(pr)-G.roomCount(hall,pr):0}); })()
@@ -1844,7 +2716,8 @@ function start(THREE){
         g.strokeStyle="#e4d8c4"; g.lineWidth=3; g.strokeRect(1.5,1.5,w-3,h-3);
         g.fillStyle="#1e143c"; g.textAlign="center"; g.textBaseline="middle"; g.font=`800 30px ${FONT}`; g.fillText(G.nm(room.name), w/2, s0.text ? 36 : h*0.4);
         g.fillStyle="#4a4060"; g.font=`500 ${s0.text?17:20}px ${FONT}`;
-        if(s0.text){ const lines=s0.text.split(/\n/).slice(0,4); let y=68; lines.forEach(l=>{ wrapText(g, l, w/2, y, w-44, 22, 2); y+= g.measureText(l).width>w-44 ? 44 : 23; }); }
+        if(s0.text && !/\n/.test(s0.text)) wrapText(g, s0.text, w/2, 104, w-44, 22, 4);   // 한 문단이면 4줄까지(나머지는 누르면 전체)
+        else if(s0.text){ const lines=s0.text.split(/\n/).slice(0,4); let y=68; lines.forEach(l=>{ wrapText(g, l, w/2, y, w-44, 22, 2); y+= g.measureText(l).width>w-44 ? 44 : 23; }); }
         else wrapText(g, s0.line, w/2, h*0.68, w-44, 24, 1); });
       board.position.set(0,3.36,-W+0.05); relabel.push(board.userData.redraw);
       board.userData.act=()=>{ const s0=G.roomStory(room); G.openItem({type:"text", title:G.nm(room.name), desc:s0.text||s0.line}); }; clickables.push(board); }
@@ -2046,7 +2919,7 @@ function start(THREE){
         [env,spark].forEach(o=>{ o.userData.act=act; clickables.push(o); });
         spots.push({p:new THREE.Vector3(x,0.6,z), r:1.0, label:()=>G.t("bPick")+" ✉", act, once:true});
       } else if(m.type==="quiz"){
-        const qx=4.6, qz=-1.2;
+        const qx=4.6, qz=-1.2+(m.slot||0)*1.4;   // 방에 퀴즈가 여러 개면 받침대를 나란히
         add(s, new THREE.CylinderGeometry(0.25,0.3,0.9,12), lam(0xfffaf2), qx,0.45,qz);
         const q=textPlane(s, 0.5, 0.5, 128, (g,w,h)=>{ g.fillStyle="#ffd640"; g.beginPath(); g.arc(w/2,h/2,w/2-4,0,7); g.fill(); g.fillStyle="#1e143c"; g.font=`800 72px ${FONT}`; g.textAlign="center"; g.textBaseline="middle"; g.fillText("?",w/2,h/2+4); });
         q.position.set(qx,1.25,qz); q.rotation.y=-Math.PI/2+0.3;
