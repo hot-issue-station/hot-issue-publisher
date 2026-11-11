@@ -491,6 +491,7 @@ def build(spec, base):
         sg["S"] = t
     total = segs[-1]["S"] + segs[-1]["dur"]
     E = next(s["S"] for s in segs if s["kind"] == "end")   # E = 끝 화면 시작
+    PE = next((s["S"] for s in segs if s["kind"] == "resolve"), E)   # 진행 막대 끝(결심 화면부터 숨김)
     # 오프닝 질문: 25초 근처(노란 강조, 위쪽) — 영상 전체 위에 얹음
     gov = []
     if op.get("question"):
@@ -564,7 +565,7 @@ def build(spec, base):
         bounds = []
         for sg in segs:
             if sg["ch"] and (not bounds or bounds[-1][0] != sg["ch"]): bounds.append((sg["ch"], sg["S"]))
-        trk, tik = progress_pngs([b for _, b in bounds], E, tmp)
+        trk, tik = progress_pngs([b for _, b in bounds], PE, tmp)
         extra = ["-i", trk, "-i", tik]
     final = os.path.join(out, spec["out"] + ".mp4")
     groups = [list(range(i, min(i + BATCH, len(segs)))) for i in range(0, len(segs), BATCH)]
@@ -577,8 +578,8 @@ def build(spec, base):
             files.append(bf); joins.append(segs[gr[0]]["join"]); starts.append(s0)
     n = len(files); parts = ["null[g0]"]; cur = "g0"; idx = n
     if spec.get("progress"):   # 바탕 막대 → 노란 채움(시간 따라 늘어남) → 챕터 눈금, 끝 화면에선 숨김
-        parts += [f"[{cur}][{idx}:v]overlay=0:0:enable='lt(t,{E:.3f})'[p1]", f"color=c=0xFFD640:s={W}x6:r={FPS}[pf]",
-                  f"[p1][pf]overlay=x='-w+w*min(t/{E:.3f},1)':y=1:shortest=1:enable='lt(t,{E:.3f})'[p2]", f"[p2][{idx + 1}:v]overlay=0:0:enable='lt(t,{E:.3f})'[p3]"]
+        parts += [f"[{cur}][{idx}:v]overlay=0:0:enable='lt(t,{PE:.3f})'[p1]", f"color=c=0xFFD640:s={W}x6:r={FPS}[pf]",
+                  f"[p1][pf]overlay=x='-w+w*min(t/{PE:.3f},1)':y=1:shortest=1:enable='lt(t,{PE:.3f})'[p2]", f"[p2][{idx + 1}:v]overlay=0:0:enable='lt(t,{PE:.3f})'[p3]"]
         cur = "p3"; idx += 2
     for j, (png, a, b, _) in enumerate(gov):   # 영상 전체 시각 기준 자막(오프닝 질문)
         extra += ["-i", png]; parts.append(f"[{cur}][{idx}:v]overlay=0:0:enable='between(t,{a:.3f},{b:.3f})'[q{j}]"); cur = f"q{j}"; idx += 1
