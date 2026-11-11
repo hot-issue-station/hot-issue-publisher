@@ -1,0 +1,89 @@
+{
+ "slot": "AM",
+ "candidates": [
+  {
+   "title": "1년 약값 4만 원대, HIV 예방주사 복제약 승인",
+   "summary": "FDA, 연 2회 주사 제네릭 승인 · 연 약 40달러 · 120개국",
+   "facts": [
+    "2026-11-02 인도 닥터레디스 연구소의 연 2회 HIV 예방 주사(레나카파비르) 제네릭을 FDA가 승인(특허 때문에 잠정 승인)",
+    "원 제품(길리어드 예츠구)의 미국 정가는 연 28,218달러",
+    "저·중소득 120개국에서 연 약 40달러 예상(하루 한 알 예방약과 비슷한 값)",
+    "연말까지 공급 예정, 잠비아 등이 먼저 받을 전망",
+    "전 세계 PrEP 필요 인구 약 2천만 명"
+   ],
+   "sources": [
+    {
+     "outlet": "ITV News",
+     "title": "Approval of a cheap version of HIV-prevention shot lenacapavir raises hopes in low-income countries",
+     "date": "2026-11-02",
+     "url": "https://www.itv.com/news/2026-11-02/us-regulators-approve-generic-version-of-hiv-prevention-drug-to-be-sold-in-low-income-countries"
+    },
+    {
+     "outlet": "Health Policy Watch",
+     "title": "FDA Approves First Generic of HIV Prevention Drug, Lenacapavir",
+     "date": "2026-11-02",
+     "url": "https://healthpolicy-watch.news/fda-approves-first-generic-of-hiv-prevention-drug-lenacapavir/"
+    }
+   ],
+   "photoQuery": "WHO·유니테이드 공식 이미지 또는 주사·의료 일러스트(인물 얼굴 제외)",
+   "score": 15,
+   "why": "해외 이슈 · 화제도 15점 · 발표 9일 전이라 신선도 낮음, 숫자 반전(2.8만→40달러)이 강점"
+  },
+  {
+   "title": "바베이도스, 엄마에서 아기로 HIV 감염 ‘0’ 인증",
+   "summary": "WHO 인증, 2022~24년 신생아 감염 0명 · 검진율 98%",
+   "facts": [
+    "2026-10-30 WHO가 바베이도스를 HIV 모자 감염 퇴치 국가로 인증",
+    "2022~2024년 출생아 중 모자 감염 신규 0명",
+    "임신부 산전 진료·HIV 검사·치료 모두 98%",
+    "퀸엘리자베스 병원이 출생의 약 93% 담당, 외국인 임산부도 무료 검사·치료",
+    "HIV·매독·B형간염 퇴치 인증 또는 달성 근접 국가는 전 세계 26곳(미주 15곳)"
+   ],
+   "sources": [
+    {
+     "outlet": "PAHO(WHO 미주지역사무소)",
+     "title": "Barbados eliminates mother-to-child transmission of HIV",
+     "date": "2026-10-30",
+     "url": "https://www.paho.org/en/news/30-10-2026-barbados-eliminates-mother-child-transmission-hiv"
+    },
+    {
+     "outlet": "The Gleaner(자메이카)",
+     "title": "Barbados eliminates mother-to-child transmission of HIV",
+     "date": "2026-11-02",
+     "url": "https://jamaica-gleaner.com/article/news/20261102/barbados-eliminates-mother-child-transmission-hiv"
+    }
+   ],
+   "photoQuery": "WHO·PAHO 공식 발표 이미지, 바베이도스 풍경(관광청 공식)",
+   "score": 9,
+   "why": "해외 이슈 · 화제도 9점 · 보건 소재, 발표 12일 전"
+  },
+  {
+   "title": "250명 사는 그리스 섬, 전기를 바람·햇빛으로",
+   "summary": "아기오스 에프스트라티오스 재생에너지 91%, 연 CO₂ 1,000톤 감축",
+   "facts": [
+    "에게해 북동부 화산섬, 주민 약 250명",
+    "풍력 900kW·태양광 225kW·배터리·온수 저장탱크(500㎥) 결합",
+    "재생에너지 비중 91%, 연 약 1,000톤 CO₂ 감축",
+    "총사업비 723만 유로(EU 85%·그리스 정부 15%)",
+    "육지 전력망과 연결되지 않은 섬, 비상용 발전기는 유지"
+   ],
+   "sources": [
+    {
+     "outlet": "Euronews",
+     "title": "Agios Efstratios: the first Greek island to get all its electricity from renewables",
+     "date": "2026-10-12(10-26 갱신)",
+     "url": "https://www.euronews.com/2026/10/12/agios-efstratios-the-first-greek-island-to-get-all-its-electricity-from-renewables"
+    },
+    {
+     "outlet": "Balkan Green Energy News",
+     "title": "Agios Efstratios becomes Greece's first energy-autonomous island",
+     "date": "2025-08-22",
+     "url": "https://balkangreenenergynews.com/agios-efstratios-becomes-greeces-first-energy-autonomous-island"
+    }
+   ],
+   "photoQuery": "그리스 섬 풍력 발전 공식 홍보 영상(테르나에너지·EU 지역정책 공식 채널)",
+   "score": 9,
+   "why": "해외 이슈 · 화제도 9점 · 91%(Euronews)와 100%(2025 기사) 표현 차이, 91% 기준 · 출처 한 곳은 2025년 기사"
+  }
+ ]
+}
