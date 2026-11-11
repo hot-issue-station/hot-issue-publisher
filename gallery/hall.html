@@ -178,11 +178,12 @@ body.walk:not(.flat) .joy{display:block}
 .langs{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .langs button,.modes button{border:1px solid var(--line);background:#fff;border-radius:14px;padding:14px 10px;font-size:16px;font-weight:700;min-height:52px}
 .langs button.on,.chars button.on,.modes button.on{border-color:var(--ink);box-shadow:0 0 0 2px var(--ink) inset}
-.chars{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
-.chars button{border:1px solid var(--line);background:#fff;border-radius:14px;padding:12px 4px 8px;font-size:11px;display:flex;flex-direction:column;align-items:center;gap:8px;min-height:96px}
-.chars i{display:block;width:34px;height:50px}
-.chars .capsule{border-radius:18px}.chars .cube{height:38px;width:38px;border-radius:8px;margin-top:6px}
-.chars .cone{clip-path:polygon(50% 0,100% 100%,0 100%)}.chars .orb{width:40px;height:40px;border-radius:50%;margin-top:5px}
+.petTabs{display:flex;gap:6px;margin-bottom:8px}
+.petTabs button{flex:1;border:1px solid var(--line);background:#fff;border-radius:999px;padding:8px;font-size:14px;font-weight:700;min-height:38px}
+.petTabs button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.chars{display:grid;grid-template-columns:repeat(auto-fit,minmax(60px,1fr));gap:6px}
+.chars button{border:1px solid var(--line);background:#fff;border-radius:14px;padding:8px 2px 6px;font-size:11px;line-height:1.25;display:flex;flex-direction:column;align-items:center;gap:4px;min-height:92px;word-break:keep-all}
+.chars canvas{width:48px;height:48px}
 .modes{display:grid;gap:8px}
 .modes button{text-align:left;font-size:15px}.modes small{display:block;font-weight:400;color:var(--sub);font-size:12px;margin-top:3px}
 .sub{margin:18px 0 8px;font-size:13px;color:var(--sub);font-weight:700}
@@ -332,9 +333,9 @@ const I18N = {
       flatMsg:"이 기기에서는 3D 미술관을 불러오지 못해 목록으로 보여 드려요.", retry:"3D 다시 시도",
       hallsH:"관 목록", roomsH:"방 목록", videosH:"영상", photosH:"사진 벽",
       left:"왼쪽으로 돌기", right:"오른쪽으로 돌기", bday:"{t}",
-      pickLang:"언어를 골라 주세요", pickChar:"함께 둘러볼 친구를 골라 주세요", pickMode:"둘러보는 방법", start:"시작하기",
+      pickLang:"언어를 골라 주세요", pickChar:"나와 함께 걸을 친구를 골라 주세요", tabDog:"강아지", tabCat:"고양이", pickMode:"둘러보는 방법", start:"시작하기",
       walkMode:"걷기 모드", walkDesc:"엄지로 걸어 다니며, 문·액자 앞에서 버튼을 눌러요", quickMode:"빠른 모드", quickDesc:"화면을 끌어 둘러보고, 눌러서 바로 봐요",
-      c_capsule:"말랑이", c_cube:"네모", c_cone:"고깔", c_orb:"동글",
+      p_jindo:"진돗개", p_shiba:"시바", p_maltese:"말티즈", p_corgi:"웰시코기", p_golden:"골든 리트리버", p_cheese:"치즈 코숏", p_russian:"러시안블루", p_calico:"삼색이", p_tuxedo:"턱시도",
       bEnter:"들어가기", bWatch:"영상 보기", bPhoto:"사진 보기", bTalk:"말 걸기", bGoods:"굿즈 보기", bPick:"줍기", bQuiz:"퀴즈 풀기",
       npc:"안내원 반짝이", npcHello:"어서 오세요! 덕심저장소 갤러리예요.\n열린 관: {open}\n준비 중인 관: {soon}\n\n관 안의 방을 모두 둘러보면 완주 배지를 드려요. 곳곳에 숨은 미션도 찾아보세요!",
       collection:"수집함", colEmpty:"아직 모은 것이 없어요. 방을 둘러보고 미션을 찾아보세요!", visits:"{hall} 방문 {a}/{b}",
@@ -357,9 +358,9 @@ const I18N = {
       flatMsg:"この端末では3Dミュージアムを読み込めなかったため、一覧で表示しています。", retry:"3Dを再試行",
       hallsH:"館一覧", roomsH:"部屋一覧", videosH:"動画", photosH:"フォトウォール",
       left:"左へ回る", right:"右へ回る", bday:"{m} バースデーカフェ",
-      pickLang:"言語を選んでください", pickChar:"一緒に回る仲間を選んでください", pickMode:"見て回る方法", start:"はじめる",
+      pickLang:"言語を選んでください", pickChar:"一緒に歩く仲間を選んでください", tabDog:"犬", tabCat:"猫", pickMode:"見て回る方法", start:"はじめる",
       walkMode:"歩きモード", walkDesc:"親指で歩き、扉や額縁の前でボタンを押します", quickMode:"クイックモード", quickDesc:"ドラッグで見回し、タップですぐ見られます",
-      c_capsule:"もちもち", c_cube:"しかく", c_cone:"とんがり", c_orb:"まんまる",
+      p_jindo:"珍島犬", p_shiba:"柴犬", p_maltese:"マルチーズ", p_corgi:"コーギー", p_golden:"ゴールデン・レトリバー", p_cheese:"茶トラ", p_russian:"ロシアンブルー", p_calico:"三毛猫", p_tuxedo:"タキシード猫",
       bEnter:"入る", bWatch:"動画を見る", bPhoto:"写真を見る", bTalk:"話しかける", bGoods:"グッズを見る", bPick:"拾う", bQuiz:"クイズに挑戦",
       npc:"案内係キラリ", npcHello:"ようこそ!トクシム保管庫ギャラリーです。\n開いている館: {open}\n準備中の館: {soon}\n\n館内の部屋をすべて回ると完走バッジがもらえます。隠れたミッションも探してみてください!",
       collection:"コレクション", colEmpty:"まだ何もありません。部屋を回ってミッションを探しましょう!", visits:"{hall} 訪問 {a}/{b}",
@@ -382,9 +383,9 @@ const I18N = {
       flatMsg:"The 3D museum couldn't load on this device, so here is a simple list.", retry:"Try 3D again",
       hallsH:"Halls", roomsH:"Rooms", videosH:"Videos", photosH:"Photo wall",
       left:"Turn left", right:"Turn right", bday:"{m} Birthday Café",
-      pickLang:"Choose your language", pickChar:"Pick a buddy to explore with", pickMode:"How to explore", start:"Start",
+      pickLang:"Choose your language", pickChar:"Pick a friend to walk with you", tabDog:"Dogs", tabCat:"Cats", pickMode:"How to explore", start:"Start",
       walkMode:"Walk mode", walkDesc:"Walk with your thumb and tap buttons near doors and frames", quickMode:"Quick mode", quickDesc:"Drag to look around and tap to watch right away",
-      c_capsule:"Mochi", c_cube:"Cubby", c_cone:"Pointy", c_orb:"Roundy",
+      p_jindo:"Jindo", p_shiba:"Shiba", p_maltese:"Maltese", p_corgi:"Welsh Corgi", p_golden:"Golden Retriever", p_cheese:"Orange Tabby", p_russian:"Russian Blue", p_calico:"Calico", p_tuxedo:"Tuxedo Cat",
       bEnter:"Enter", bWatch:"Watch", bPhoto:"View photo", bTalk:"Talk", bGoods:"View goods", bPick:"Pick up", bQuiz:"Take quiz",
       npc:"Guide Sparkle", npcHello:"Welcome to the Duksim Archive Gallery!\nOpen halls: {open}\nComing soon: {soon}\n\nVisit every room in a hall to earn a completion badge. Look for hidden missions too!",
       collection:"Collection", colEmpty:"Nothing collected yet. Explore the rooms and find missions!", visits:"{hall} visited {a}/{b}",
@@ -407,9 +408,9 @@ const I18N = {
       flatMsg:"此裝置無法載入 3D 美術館,改以清單顯示。", retry:"重試 3D",
       hallsH:"展館列表", roomsH:"房間列表", videosH:"影片", photosH:"照片牆",
       left:"向左轉", right:"向右轉", bday:"{m} 生日咖啡廳",
-      pickLang:"請選擇語言", pickChar:"選一位一起逛的夥伴", pickMode:"參觀方式", start:"開始",
+      pickLang:"請選擇語言", pickChar:"選一位陪你散步的朋友", tabDog:"狗狗", tabCat:"貓咪", pickMode:"參觀方式", start:"開始",
       walkMode:"散步模式", walkDesc:"用拇指走動,在門或畫框前按按鈕", quickMode:"快速模式", quickDesc:"拖曳環顧,點一下立即觀看",
-      c_capsule:"軟軟", c_cube:"方方", c_cone:"尖尖", c_orb:"圓圓",
+      p_jindo:"珍島犬", p_shiba:"柴犬", p_maltese:"瑪爾濟斯", p_corgi:"柯基", p_golden:"黃金獵犬", p_cheese:"橘貓", p_russian:"俄羅斯藍貓", p_calico:"三花貓", p_tuxedo:"賓士貓",
       bEnter:"進入", bWatch:"看影片", bPhoto:"看照片", bTalk:"交談", bGoods:"看周邊", bPick:"撿起", bQuiz:"挑戰猜謎",
       npc:"導覽員閃閃", npcHello:"歡迎來到 Duksim 典藏藝廊!\n開放中的展館:{open}\n準備中的展館:{soon}\n\n逛完展館內所有房間就能獲得完走徽章。也找找藏起來的任務吧!",
       collection:"收藏冊", colEmpty:"還沒有收集到東西。逛逛房間、找找任務吧!", visits:"{hall} 參觀 {a}/{b}",
@@ -421,7 +422,38 @@ const I18N = {
 const FRAMES_PER_ROOM = 7;
 const AFFILIATE_RE = /(^|\.)coupang\.com$|(^|\.)coupa\.ng$/i;
 const IG_RE = /^https:\/\/(www\.)?instagram\.com\/(p|reel)\/[\w-]+\/?$/;
-const CHARS = [ {id:"capsule", color:"#9db8e8"}, {id:"cube", color:"#f2a86e"}, {id:"cone", color:"#ee7d7d"}, {id:"orb", color:"#7fc796"} ];
+/* 방문자 캐릭터: 강아지 5종(진돗개가 맨 앞) + 고양이 4종. 실제 마스코트·유명 캐릭터를 닮지 않은 단순 도형 조합.
+   ear: pointy(쫑긋 삼각) | big(코기 큰 귀) | floppy(처진 귀) | fur(처진 털귀) | cat(고양이 삼각 귀)
+   tail: curl(말린 꼬리) | fluffy | stub | long | cat,  legs: 다리 길이,  patches: [[색, x, y, z, 크기]] 무늬 조각 */
+const CHARS = [
+  {id:"jindo",   kind:"dog", body:"#f6f1e6", belly:"#fffdf8", ear:"pointy", tail:"curl", earIn:"#f0c9b8"},   // 기본 흰색 진돗개
+  {id:"shiba",   kind:"dog", body:"#d98f4b", belly:"#fbf1e2", ear:"pointy", tail:"curl"},
+  {id:"maltese", kind:"dog", body:"#fbf9f4", ear:"fur", tail:"fluffy"},
+  {id:"corgi",   kind:"dog", body:"#e3964f", belly:"#fff6ea", ear:"big", tail:"stub", legs:0.08},
+  {id:"golden",  kind:"dog", body:"#e4b86c", ear:"floppy", earColor:"#cf984d", tail:"long"},
+  {id:"cheese",  kind:"cat", body:"#f3b866", ear:"cat", tail:"cat", patches:[["#df8a3a",0,0.47,0.05,0.11],["#df8a3a",0,0.45,0.22,0.1]]},
+  {id:"russian", kind:"cat", body:"#8f9bae", ear:"cat", tail:"cat"},
+  {id:"calico",  kind:"cat", body:"#fbf6ee", ear:"cat", tail:"cat", earColor:"#e8963e", patches:[["#e8963e",0.1,0.45,0.0,0.13],["#3a3330",-0.1,0.44,0.18,0.12]]},
+  {id:"tuxedo",  kind:"cat", body:"#2f2b35", belly:"#fbf8f2", ear:"cat", tail:"cat"},
+];
+const NPC_PET = {id:"npc", kind:"cat", body:"#fffaf2", ear:"cat", tail:"cat", earColor:"#f6c7da", ribbon:"#ff7fb0"};   // 안내원 반짝이: 리본 단 흰 고양이
+/* 입장 화면 미리보기: 같은 모양을 2D로 */
+function drawPetIcon(g, sp, S=56){
+  const c=S/2, k=S/56; g.clearRect(0,0,S,S); g.save(); g.scale(k,k);
+  const ear=sp.earColor||sp.body, tri=(x1,y1,x2,y2,x3,y3,f)=>{ g.fillStyle=f; g.beginPath(); g.moveTo(x1,y1); g.lineTo(x2,y2); g.lineTo(x3,y3); g.fill(); };
+  if(sp.ear==="pointy"||sp.ear==="cat"){ tri(13,24,17,7,26,15,ear); tri(43,24,39,7,30,15,ear); if(sp.earIn){ tri(16,19,18,11,23,15,sp.earIn); tri(40,19,38,11,33,15,sp.earIn); } }
+  if(sp.ear==="big"){ tri(11,26,14,3,27,14,ear); tri(45,26,42,3,29,14,ear); }
+  g.fillStyle=sp.body; g.beginPath(); g.arc(28,31,17,0,7); g.fill();
+  g.strokeStyle="rgba(40,30,20,.18)"; g.lineWidth=1.5; g.stroke();
+  if(sp.ear==="floppy"||sp.ear==="fur"){ g.fillStyle=ear; for(const x of [12,44]){ g.beginPath(); g.ellipse(x,32,sp.ear==="fur"?7:6,sp.ear==="fur"?13:11,x<28?0.25:-0.25,0,7); g.fill(); g.stroke(); } }
+  (sp.patches||[]).forEach(([col,x],i)=>{ g.fillStyle=col; g.beginPath(); g.arc(28+(x>0?7:x<0?-7:0)+(i?0:0), 19+i*2, 7, Math.PI*1.05, Math.PI*1.95); g.fill(); });
+  if(sp.id==="cheese"){ g.strokeStyle="#df8a3a"; g.lineWidth=2; [[24,16],[28,15],[32,16]].forEach(([x,y])=>{ g.beginPath(); g.moveTo(x,y); g.lineTo(x,y+5); g.stroke(); }); }
+  if(sp.belly){ g.fillStyle=sp.belly; g.beginPath(); g.ellipse(28,39,sp.kind==="cat"?9:10,7,0,0,7); g.fill(); }
+  g.fillStyle=sp.body==="#2f2b35"?"#f6f1e6":"#2a2230"; g.beginPath(); g.arc(22,29,2.3,0,7); g.arc(34,29,2.3,0,7); g.fill();
+  if(sp.kind==="dog"){ g.fillStyle="#2a2230"; g.beginPath(); g.ellipse(28,35,3,2.2,0,0,7); g.fill(); }
+  else { g.fillStyle="#f29bb5"; tri(25.5,34,30.5,34,28,37,"#f29bb5"); g.strokeStyle="rgba(60,50,60,.35)"; g.lineWidth=1; [[18,36,10,35],[18,38,10,40],[38,36,46,35],[38,38,46,40]].forEach(([a,b,cx,d])=>{ g.beginPath(); g.moveTo(a,b); g.lineTo(cx,d); g.stroke(); }); }
+  g.restore();
+}
 
 const $ = s => document.querySelector(s);
 const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
@@ -495,7 +527,8 @@ G.curationReady = (async () => {
 
 /* ---------- 언어 ---------- */
 { const q=qs.get("lang"), s=store.get("hall-lang"); G.lang = I18N[q]?q : I18N[s]?s : "ko"; }
-G.char = CHARS.some(c=>c.id===store.get("hall-char")) ? store.get("hall-char") : "capsule";
+G.char = CHARS.some(c=>c.id===store.get("hall-char")) ? store.get("hall-char") : "jindo";
+G.petTab = CHARS.find(c=>c.id===G.char).kind;
 G.walk = store.get("hall-mode") ? store.get("hall-mode")==="walk" : !((navigator.hardwareConcurrency||4)<=2);
 function applyLang(){
   document.documentElement.lang = G.lang==="zh" ? "zh-Hant" : G.lang;
@@ -515,12 +548,15 @@ function drawIntro(){
   box.innerHTML = `<h2>${esc(G.t("gallery"))}</h2><p>${esc(G.t("pickLang"))}</p>
     <div class="langs">${[["ko","한국어"],["ja","日本語"],["en","English"],["zh","繁體中文"]].map(([k,n])=>`<button data-l="${k}" class="${G.lang===k?'on':''}">${n}</button>`).join("")}</div>
     <div class="sub">${esc(G.t("pickChar"))}</div>
-    <div class="chars">${CHARS.map(c=>`<button data-c="${c.id}" class="${G.char===c.id?'on':''}"><i class="${c.id}" style="background:${c.color}"></i>${esc(G.t("c_"+c.id))}</button>`).join("")}</div>
+    <div class="petTabs"><button data-k="dog" class="${G.petTab==='dog'?'on':''}">🐶 ${esc(G.t("tabDog"))}</button><button data-k="cat" class="${G.petTab==='cat'?'on':''}">🐱 ${esc(G.t("tabCat"))}</button></div>
+    <div class="chars">${CHARS.filter(c=>c.kind===G.petTab).map(c=>`<button data-c="${c.id}" class="${G.char===c.id?'on':''}"><canvas width="96" height="96" data-icon="${c.id}"></canvas>${esc(G.t("p_"+c.id))}</button>`).join("")}</div>
     <div class="sub">${esc(G.t("pickMode"))}</div>
     <div class="modes"><button data-m="walk" class="${G.walk?'on':''}">${esc(G.t("walkMode"))}<small>${esc(G.t("walkDesc"))}</small></button>
       <button data-m="quick" class="${G.walk?'':'on'}">${esc(G.t("quickMode"))}<small>${esc(G.t("quickDesc"))}</small></button></div>
     <button class="go" id="introGo">${esc(G.t("start"))}</button>`;
   box.querySelectorAll("[data-l]").forEach(b=>b.onclick=()=>setLang(b.dataset.l));
+  box.querySelectorAll("[data-icon]").forEach(cv=>drawPetIcon(cv.getContext("2d"), CHARS.find(c=>c.id===cv.dataset.icon), 96));
+  box.querySelectorAll("[data-k]").forEach(b=>b.onclick=()=>{ G.petTab=b.dataset.k; drawIntro(); });
   box.querySelectorAll("[data-c]").forEach(b=>b.onclick=()=>{ G.char=b.dataset.c; store.set("hall-char",G.char); drawIntro(); G.onCharChange?.(); });
   box.querySelectorAll("[data-m]").forEach(b=>b.onclick=()=>{ setWalk(b.dataset.m==="walk"); drawIntro(); });
   $("#introGo").onclick=()=>{ $("#intro").hidden=true; showHint(); };
@@ -880,15 +916,44 @@ function start(THREE){
   /* ==========================================================
      2) 둥근 홀 — 로비(관 문들) / 관 홀(방 문들) 공용
      ========================================================== */
-  function charMesh(id, color, scale=1){   // 사람 얼굴 없는 도형 캐릭터
-    const g=new THREE.Group(), m=lam(new THREE.Color(color));
-    if(id==="cube") box(g, 0.56,0.56,0.56, m, 0,0.36,0).rotation.y=0.3;
-    else if(id==="cone") add(g, new THREE.ConeGeometry(0.34,0.9,14), m, 0,0.45,0);
-    else if(id==="orb"){ add(g, new THREE.SphereGeometry(0.32,16,12), m, 0,0.48,0); add(g, new THREE.CylinderGeometry(0.16,0.22,0.18,12), lam(0xfffaf2), 0,0.09,0); }
-    else add(g, new THREE.CapsuleGeometry(0.26,0.42,4,12), m, 0,0.52,0);
-    add(g, new THREE.TorusGeometry(id==="cone"?0.2:0.27,0.045,6,18), lam(0xfffaf2), 0, id==="cone"?0.5:id==="cube"?0.66:0.6, 0).rotation.x=Math.PI/2;   // 목도리
-    add(g, new THREE.SphereGeometry(0.05,6,5), lam(0xffd640), 0, id==="cone"?0.95:id==="cube"?0.72:id==="orb"?0.84:0.98, 0);  // 머리 위 방울
+  /* 강아지·고양이(낮은 다각형). 앞쪽이 -z. 도형 15개 안쪽(다리·눈·귀는 인스턴스 하나씩) */
+  function petMesh(sp, scale=1){
+    const g=new THREE.Group(), torso=new THREE.Group(); g.add(torso);
+    const C=c=>lam(new THREE.Color(c)), bodyM=C(sp.body), dark=lam(0x2a2230);
+    const legH=sp.legs||0.16, by=legH+0.2, cat=sp.kind==="cat";
+    instanced(g, new THREE.CylinderGeometry(0.055,0.05,legH+0.06,6), bodyM, [[-0.11,-0.18],[0.11,-0.18],[-0.11,0.2],[0.11,0.2]].map(([x,z])=>({x,y:(legH+0.06)/2,z})));
+    add(torso, new THREE.SphereGeometry(0.26,10,8), bodyM, 0,by,0.02).scale.set(0.95,0.85,1.3);
+    if(sp.belly) add(torso, new THREE.SphereGeometry(0.17,8,6), C(sp.belly), 0,by-0.03,-0.2).scale.set(0.9,1,0.8);
+    (sp.patches||[]).forEach(([c,x,y,z,r])=>add(torso, new THREE.SphereGeometry(r,8,6), C(c), x,by+(y-0.45)+0.17,z).scale.set(1.1,0.45,1.3));
+    const hy=by+0.2, hz=-0.36;
+    add(torso, new THREE.SphereGeometry(0.21,10,8), bodyM, 0,hy,hz);
+    if(!cat){ add(torso, new THREE.SphereGeometry(0.1,8,6), C(sp.belly||sp.body), 0,hy-0.06,hz-0.18).scale.set(1,0.8,1.1);
+      add(torso, new THREE.SphereGeometry(0.035,6,5), dark, 0,hy-0.03,hz-0.29); }
+    else { add(torso, new THREE.SphereGeometry(0.075,8,6), C(sp.belly||sp.body), 0,hy-0.06,hz-0.15).scale.set(1.3,0.8,0.8);
+      add(torso, new THREE.SphereGeometry(0.022,5,4), C("#f29bb5"), 0,hy-0.03,hz-0.21); }
+    instanced(torso, new THREE.SphereGeometry(0.028,6,5), sp.body==="#2f2b35"?C("#f6f1e6"):dark, [-0.08,0.08].map(x=>({x,y:hy+0.05,z:hz-0.18})));
+    const em=C(sp.earColor||sp.body), e=sp.ear;
+    if(e==="floppy"||e==="fur") instanced(torso, new THREE.SphereGeometry(e==="fur"?0.1:0.085,7,5), em, [-1,1].map(s=>({x:s*0.19,y:hy-0.03,z:hz,sx:0.55,sy:1.35,sz:0.9,rz:s*0.3})));
+    else { const big=e==="big", r=big?0.1:cat?0.085:0.07, h=big?0.24:0.15;
+      instanced(torso, new THREE.ConeGeometry(r,h,4), em, [-1,1].map(s=>({x:s*(big?0.13:0.11),y:hy+0.17+(big?0.04:0),z:hz+0.02,rz:-s*(big?0.35:0.22),ry:Math.PI/4}))); }
+    const tail=new THREE.Group(); tail.position.set(0,by+0.08,0.33); torso.add(tail);
+    const tm=sp.tail;
+    if(tm==="curl") add(tail, new THREE.TorusGeometry(0.075,0.032,5,10,Math.PI*1.6), C(sp.belly&&sp.id==="jindo"?sp.body:sp.body), 0,0.1,0.02).rotation.y=Math.PI/2;
+    else if(tm==="fluffy") add(tail, new THREE.SphereGeometry(0.11,7,5), bodyM, 0,0.06,0.06);
+    else if(tm==="stub") add(tail, new THREE.SphereGeometry(0.055,6,5), bodyM, 0,0,0.03);
+    else if(tm==="long") add(tail, new THREE.CylinderGeometry(0.03,0.055,0.34,6), em, 0,0.06,0.13).rotation.x=1.1;
+    else add(tail, new THREE.CylinderGeometry(0.022,0.03,0.42,6), bodyM, 0,0.17,0.08).rotation.x=0.45;
+    if(sp.ribbon) instanced(torso, new THREE.ConeGeometry(0.06,0.12,4), C(sp.ribbon), [-1,1].map(s=>({x:0.1+s*0.07,y:hy+0.2,z:hz+0.05,rz:s*Math.PI/2})));
+    g.userData={torso, tail, t:Math.random()*5, sit:1}; poseCompute(g);
     g.scale.setScalar(scale); return g;
+  }
+  /* 걸을 때 통통 튀고 꼬리 흔들기, 멈추면 앉기. 앉는 중이면 true(계속 그려야 함) */
+  function poseCompute(g){ const u=g.userData; u.torso.rotation.x=0.3*u.sit; u.torso.position.y=-0.05*u.sit+(u.bounce||0); }
+  function animatePet(g, dt, moving){
+    const u=g.userData; u.t+=dt; const target=moving?0:1; u.sit+=(target-u.sit)*Math.min(1,dt*8);
+    u.bounce = moving ? Math.abs(Math.sin(u.t*11))*0.05 : 0;
+    u.tail.rotation.y = moving ? Math.sin(u.t*16)*0.7 : 0;
+    poseCompute(g); return Math.abs(target-u.sit)>0.01;
   }
   function buildRotunda({color, doors, backLabel, onBack, outdoorBack, npc}){
     const s=new THREE.Scene(); s.background=new THREE.Color(0xf6efe3); hemi(s);
@@ -925,9 +990,8 @@ function start(THREE){
     [bp,bs].forEach(m=>{ m.userData.act=onBack; clickables.push(m); });
     spots.push({p:new THREE.Vector3(0,1.9,R-0.9), r:1.2, label:()=>"← "+backLabel(), act:onBack});
     const blockers=[];
-    if(npc){   // 안내 NPC(로비): 반짝이 — 별 모자를 쓴 고깔
-      const g=charMesh("cone","#ffd640",1.25); g.position.set(2.2,0,2.4); g.rotation.y=Math.PI*0.8; s.add(g);
-      const star=add(g, new THREE.OctahedronGeometry(0.12,0), bas(0xff9ad5), 0,1.3,0);
+    if(npc){   // 안내 NPC(로비): 반짝이 — 리본 단 흰 고양이
+      const g=petMesh(NPC_PET,1.7); g.position.set(2.2,0,2.4); g.rotation.y=Math.PI*0.8; s.add(g);
       g.traverse(o=>{ if(o.isMesh){ o.userData.act=G.talkNpc; clickables.push(o); } });
       spots.push({p:new THREE.Vector3(2.2,1.6,2.4), r:1.8, label:()=>G.t("bTalk")+" · "+G.t("npc"), act:G.talkNpc});
       blockers.push({c:[2.2,2.4,0.55]});
@@ -1164,11 +1228,9 @@ function start(THREE){
   function placePlayer(){
     if(player.g){ player.g.parent?.remove(player.g); player.g.traverse(o=>{ o.geometry?.dispose(); o.material?.dispose(); }); player.g=null; }
     if(!G.walk || !cur?.walk) return;
-    const c=CHARS_COLOR[G.char]||"#9db8e8";
-    player.g=charMesh(G.char, c, 1); cur.scene.add(player.g);
+    player.g=petMesh(CHARS.find(c=>c.id===G.char)||CHARS[0], 1.45); cur.scene.add(player.g);
     const [x,z,yw]=cur.walk.spawn; player.x=x; player.z=z; player.face=yw; yaw=yw; pitch=0; syncPlayer();
   }
-  const CHARS_COLOR={capsule:"#9db8e8", cube:"#f2a86e", cone:"#ee7d7d", orb:"#7fc796"};
   function setScene(view, hallId, roomId){
     const key=[view,hallId,roomId].join("/"); if(key===curKey) return;
     if(cur){ if(player.g) cur.scene.remove(player.g); if(!(curKey.startsWith("outside")||curKey.startsWith("lobby"))){ cur.dispose?.(); disposeScene(cur.scene); } }
@@ -1301,7 +1363,7 @@ function start(THREE){
     const fov=fovBase*zoom; if(Math.abs(camera.fov-fov)>0.01){ camera.fov=fov; dirty=true; }
     if(document.hidden || !cur) return;
     let moving=false;
-    if(G.walk && cur.walk && player.g && !busy && !G.sheetOpen()){ if(walkStep(dt)) { moving=true; dirty=true; } else if(dirty) walkStep(0); }
+    if(G.walk && cur.walk && player.g && !busy && !G.sheetOpen()){ if(walkStep(dt)) { moving=true; dirty=true; } else if(dirty) walkStep(0); if(animatePet(player.g, dt, moving)) dirty=true; }
     if(!dirty) return;
     renderNow(); drawBubble();
     /* 저사양 감지: 걷는 중 프레임이 계속 느리면 빠른 모드 제안(한 번만) */
