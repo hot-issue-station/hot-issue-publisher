@@ -140,6 +140,8 @@ const SHOPS = [
   {id:"oliveyoung", name:"올리브영",  hosts:["oliveyoung.co.kr"], note:"이 링크로 구매하면 덕심저장소가 올리브영 제휴 활동에 따른 일정액의 수수료를 받을 수 있어요."},   // TODO: 제휴 승인 시 공식 문구로
   {id:"musinsa",    name:"무신사",    hosts:["musinsa.com"],      note:"이 링크로 구매하면 덕심저장소가 무신사 제휴 활동에 따른 일정액의 수수료를 받을 수 있어요."},     // TODO
   {id:"ohou",       name:"오늘의집",  hosts:["ohou.se"],          note:"이 링크로 구매하면 덕심저장소가 오늘의집 제휴 활동에 따른 일정액의 수수료를 받을 수 있어요."},   // TODO
+  /* 안원잘부 공식 굿즈(원이 개인 채널). 제휴 링크가 아님 → 수수료 문구 대신 「제휴 링크 아님」 표시. store_url 은 대표가 확인한 공식 스토어 주소(https). 비어 있으면 「공식 굿즈 링크 준비 중」 */
+  {id:"anwonjalbu_store", name:"안원잘부 공식 굿즈", hosts:[], room:"anwonjalbu", affiliate:false, store_url:null, note:""},
 ];
 /* 상품. 링크는 직접 열어 확인한 것만.
    {name, price, url, shop, hall?, room?, group?, category?, color?, image:null, image_alt?, image_credit?, seller?, badge?}
@@ -164,6 +166,83 @@ const SHOP_CATEGORIES = [
 ];
 /* 입점 문의: form_url = 대표가 만든 구글 설문지 주소. 메일 주소는 화면·코드 어디에도 넣지 않는다 */
 const SELLER_CONTACT = { text:"입점 문의하기", form_url:null };
+/* ---------- 리센느 공식 광고 모델 진열(정보 진열 · 유료 광고 아님) ----------
+   근거: gallery/endorsements.json 의 status:"current" 11곳(2026-11-11 확인). 브랜드 로고·실존 인물 사진은 쓰지 않고 글자 판으로만.
+   - 모든 방 뒤 벽(입구 쪽, 문 오른쪽)의 「리센느 공식 광고 모델」 판 + 굿즈 샵 「광고 제품」 구역(goods_ad)에 나온다.
+   - 영상 패널(유튜브 임베드) 안에는 절대 넣지 않는다(YouTube API 개발자 정책 III.G).
+   - 넣지 않는 것: 주류(KGB), 과거·불명확(unclear)·근거 부족 항목. enabled:false 는 진열하지 않음(대표 결정 대기).
+   - item: {id, enabled, tag, brand:{ko,ja,en,zh}, line:{ko,ja,en,zh}, sources:[직접 연 기사 주소]}
+   - order: 방마다 앞에 둘 브랜드 id(테마 연계). 적지 않은 브랜드는 default 순서로 뒤에 붙는다. goods_ad = 굿즈 샵 구역 순서
+   - corner: 「광고관 코너」 카드(광고 영상). 누르면 일반 영상 패널로 재생(패널 안에는 광고 칸 없음) */
+const ENDORSEMENTS = {
+  hall:"rescene", checked_at:"2026-11-11",
+  items:[
+    {id:"dominos", enabled:true, tag:"food", brand:{ko:"도미노피자", ja:"ドミノ・ピザ", en:"Domino's Pizza", zh:"達美樂披薩"},
+     line:{ko:"여름 신제품 TV 광고 전속 모델 (2026년 7월~)", ja:"夏の新メニューTV CMの専属モデル(2026年7月〜)", en:"Exclusive models for the summer TV ad (since Jul 2026)", zh:"夏季新品電視廣告專屬代言(2026年7月起)"},
+     sources:["https://www.fnnews.com/news/202607131110048695","https://mobile.newsis.com/view/NISX20260716_0003712528","https://isplus.com/article/view/isp202611020085"]},
+    {id:"cu", enabled:true, tag:"store", brand:{ko:"CU", ja:"CU", en:"CU", zh:"CU"},
+     line:{ko:"편의점 브랜드 모델 · 협업 상품 (2026년 7월~)", ja:"コンビニのブランドモデル・コラボ商品(2026年7月〜)", en:"Convenience store brand models with collab items (since Jul 2026)", zh:"便利商店品牌代言・聯名商品(2026年7月起)"},
+     sources:["https://www.segye.com/newsView/20260713511796","https://www.newsis.com/view/NISX20260728_0003726736","https://isplus.com/article/view/isp202611020085"]},
+    {id:"narangd", enabled:true, tag:"drink", brand:{ko:"나랑드사이다", ja:"ナランドサイダー", en:"Narangd Cider", zh:"Narangd 汽水"},
+     line:{ko:"제로 사이다 전속 모델 · 한정판 패키지 (2026년 7월~)", ja:"ゼロサイダーの専属モデル・限定パッケージ(2026年7月〜)", en:"Exclusive models for the zero cider, limited cans (since Jul 2026)", zh:"零糖汽水專屬代言・限定包裝(2026年7月起)"},
+     sources:["https://www.wikitree.co.kr/articles/1155301","https://www.news1.kr/industry/distribution/6270836","https://economist.co.kr/article/view/ecn202610300057"]},
+    {id:"hollys", enabled:true, tag:"cafe", brand:{ko:"할리스", ja:"ハリス", en:"HOLLYS", zh:"HOLLYS"},
+     line:{ko:"창사 첫 브랜드 모델 · 전래동화 광고 3편 (2026년 8월~)", ja:"創業以来初のブランドモデル・昔話CM3本(2026年8月〜)", en:"The cafe's first-ever brand models, three folktale ads (since Aug 2026)", zh:"品牌首位代言・童話廣告3支(2026年8月起)"},
+     sources:["https://m.ddaily.co.kr/page/view/2026081817050568051","https://isplus.com/article/view/isp202608260031","https://isplus.com/article/view/isp202611020085"]},
+    {id:"casaverdi", enabled:true, tag:"food", brand:{ko:"카사베르디", ja:"カサベルディ", en:"Casa Verdi", zh:"Casa Verdi"},
+     line:{ko:"레드와인 비니거(식초) 모델 · 나랑드사이다 공동 프로젝트", ja:"赤ワインビネガー(お酢)のモデル・ナランドサイダーと共同企画", en:"Models for a red wine vinegar, joint project with Narangd Cider", zh:"紅酒醋代言・與 Narangd 汽水聯合企劃"},
+     sources:["https://www.twig24.com/news/2026/07/29/20260729500169","https://isplus.com/article/view/isp202607290114","https://economist.co.kr/article/view/ecn202610300057"]},
+    {id:"elite", enabled:true, tag:"fashion", brand:{ko:"엘리트학생복", ja:"エリート学生服", en:"Elite school uniforms", zh:"Elite 學生制服"},
+     line:{ko:"교복 전속 모델 (2025년~, 2026년 재계약)", ja:"制服の専属モデル(2025年〜、2026年再契約)", en:"Exclusive school uniform models (since 2025, renewed 2026)", zh:"學生制服專屬代言(2025年起,2026年續約)"},
+     sources:["https://www.newsis.com/view/NISX20260728_0003726736","https://economist.co.kr/article/view/ecn202608140004","https://isplus.com/article/view/isp202611020085"]},
+    {id:"woori", enabled:true, tag:"finance", brand:{ko:"우리은행", ja:"ウリィ銀行", en:"Woori Bank", zh:"友利銀行"},
+     line:{ko:"'우리는 해' CM송 광고 (2026년 10월)", ja:"CMソング「ウリヌン・ヘ」広告(2026年10月)", en:"'Woorineun Hae' jingle ad (Oct 2026)", zh:"「Woorineun Hae」廣告歌(2026年10月)"},
+     sources:["https://economist.co.kr/article/view/ecn202610300005","https://economist.co.kr/article/view/ecn202610300057"]},
+    {id:"mlb", enabled:true, tag:"fashion", brand:{ko:"MLB", ja:"MLB", en:"MLB", zh:"MLB"},
+     line:{ko:"스니커즈·비니 캠페인 · 리브·미나미·메이·제나 (2026년 9월~)", ja:"スニーカー・ビーニーのキャンペーン(リブ・ミナミ・メイ・ジェナ、2026年9月〜)", en:"Sneaker and beanie campaigns with Liv, Minami, May and Zena (since Sep 2026)", zh:"球鞋・毛帽廣告(Liv、Minami、May、Zena,2026年9月起)"},
+     sources:["https://supple.kr/news/cmtm7qcg0005th4hgvyjdm9aw","https://www.wikitree.co.kr/articles/1165467","https://economist.co.kr/article/view/ecn202610300057"]},
+    {id:"epais", enabled:true, tag:"beauty", brand:{ko:"에이페", ja:"エイペ(epais)", en:"epais", zh:"epais"},
+     line:{ko:"헤어케어 브랜드 모델 (2026년 8월~)", ja:"ヘアケアブランドのモデル(2026年8月〜)", en:"Hair care brand models (since Aug 2026)", zh:"護髮品牌代言(2026年8月起)"},
+     sources:["https://cosmorning.com/mobile/article.html?no=53319","https://economist.co.kr/article/view/ecn202608140004","https://economist.co.kr/article/view/ecn202610300057"]},
+    {id:"hanskin", enabled:true, tag:"beauty", brand:{ko:"한스킨", ja:"ハンスキン", en:"Hanskin", zh:"Hanskin"},
+     line:{ko:"리브랜딩 캠페인 · 미나미·제나 (2026년 8월~)", ja:"リブランディングキャンペーン(ミナミ・ジェナ、2026年8月〜)", en:"Rebranding campaign with Minami and Zena (since Aug 2026)", zh:"品牌重塑廣告(Minami、Zena,2026年8月起)"},
+     sources:["https://www.hankyung.com/article/202609043388g","https://economist.co.kr/article/view/ecn202610300057"]},
+    {id:"torder", enabled:true, tag:"it", brand:{ko:"티오더", ja:"ティーオーダー", en:"T'order", zh:"T'order"},
+     line:{ko:"테이블오더 브랜드 파트너 · 첫 IT 협업 (2026년 7월~)", ja:"テーブルオーダーのブランドパートナー(2026年7月〜)", en:"Brand partners for a table-order service (since Jul 2026)", zh:"桌邊點餐服務品牌夥伴(2026年7月起)"},
+     sources:["https://sports.khan.co.kr/article/202607072318003/amp","https://economist.co.kr/article/view/ecn202610300057"]},
+    /* 대표 결정 대기 — 계약 형태(모델/협업) 불명확, 확률형 아이템 게임. 넣기로 하면 enabled:true */
+    {id:"fcmobile", enabled:false, tag:"game", brand:{ko:"FC 모바일", ja:"FC モバイル", en:"EA SPORTS FC Mobile", zh:"FC Mobile"},
+     line:{ko:"게임 업데이트 협업 (2026년 6월)", ja:"ゲームアップデートのコラボ(2026年6月)", en:"Game update collaboration (Jun 2026)", zh:"遊戲更新合作(2026年6月)"},
+     sources:["https://www.invenglobal.com/articles/22734/its-rescene-not-le-cene-an-fc-mobile-update-guide","https://economist.co.kr/article/view/ecn202610300057"]},
+  ],
+  order:{
+    default:["dominos","hollys","cu","narangd","mlb","elite","epais","hanskin","woori","casaverdi","torder"],
+    stage:["mlb","elite","epais","hanskin"],                         // 무대 — 패션·뷰티
+    anwonjalbu:["woori","hollys"],                                   // 안원잘부 — 원이의 '은행 광고' 이야기
+    tv:["dominos","narangd","hollys","woori"],                       // TV 예능 — TV 광고
+    youtube_guest:["mlb","casaverdi"],                               // 유튜브 — 리센느 공식 채널 광고 비하인드가 있는 브랜드
+    daily:["hollys","cu","narangd","dominos","torder","casaverdi"],  // 일상 — 카페·편의점·먹거리
+    birthday:["hollys","dominos","cu","narangd"],                    // 생일카페 — 카페·간식
+    goods_ad:["narangd","hollys","cu","dominos","mlb","epais","hanskin","casaverdi","elite"],   // 굿즈 샵 「광고 제품」 구역
+  },
+  corner:[
+    {brand:"woori", video:{id:"spN_ZVoONdg", kind:"long", official:true, channel:"우리은행", title:"우리은행 X RESCENE (리센느) | '우리는 해' Making Film"}},
+  ],
+};
+/* 건물 정면 조각상: 얼굴 없는 양식화된 대리석 상(도형만). 실존 인물 사진·얼굴 닮게 만들기·사진 텍스처 금지.
+   그룹별로 추가: {group, enabled, pediment(박공 새김 글자), members:[{id, name, name_en, color, symbol, story}]}
+   - symbol: star | flower | note | moon | heart (우리가 고른 일반 장식 도형 — 공식 상징이 아님)
+   - color: 포인트 색. 공식 멤버 색이 확인되지 않아 모두 '확인 필요'
+   - story: 공식 공개 정보만(문자열 또는 {ko,ja,en,zh}). 비어 있으면 패널에 이름만 */
+const STATUES = [
+  {group:"rescene", enabled:true, pediment:"RESCENE", members:[
+    {id:"woni",   name:"원이",   name_en:"WONI",   color:"#f4a9b8", symbol:"star",   story:""},   // color 확인 필요
+    {id:"liv",    name:"리브",   name_en:"LIV",    color:"#a8c8ec", symbol:"flower", story:""},   // color 확인 필요(생일 방 theme.color와 같게 둠)
+    {id:"minami", name:"미나미", name_en:"MINAMI", color:"#c9b8f0", symbol:"note",   story:""},   // color 확인 필요
+    {id:"may",    name:"메이",   name_en:"MAY",    color:"#9fdcc0", symbol:"moon",   story:""},   // color 확인 필요
+    {id:"zena",   name:"제나",   name_en:"ZENA",   color:"#ffd27a", symbol:"heart",  story:""},   // color 확인 필요
+  ]},
+];
 const THREE_VERSION = "0.186.1"; // importmap 주소와 같이 바꿀 것
 </script>
 <script type="importmap">
@@ -268,6 +347,18 @@ body.walk:not(.flat) .joy{display:block}
 .petIntro{margin:8px 2px 0;font-size:12px;color:var(--sub);line-height:1.5;min-height:18px}
 .contactBtn{display:block;width:100%;margin-top:14px;border:0;background:var(--ink);color:#fff;font-weight:700;font-size:15px;padding:13px;border-radius:999px}
 .contactNote{margin:8px 0 0;font-size:11px;color:var(--sub);text-align:center}
+/* 리센느 공식 광고 모델 진열(글자 판만 · 로고·사진 없음) */
+.badges b.info{background:#e9f3ec;color:#2f6b45;border:1px solid #b9dcc4}
+.sec2{margin:14px 0 6px;font-size:13px;font-weight:800;color:var(--ink)}
+.elist{display:grid;gap:8px;margin-top:10px}
+.ecard{border:1px solid var(--line);border-radius:12px;padding:10px 12px;background:#fff}
+.ecard.th{border-left:5px solid var(--theme)}
+.ecard.hi{box-shadow:0 0 0 2px var(--y)}
+.ecard .eb{font-weight:800;font-size:15px}
+.ecard p{margin:4px 0 0;font-size:13px;color:var(--sub);line-height:1.45;word-break:keep-all}
+.esrc{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.esrc a{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:5px 10px;font-size:11px;font-weight:700;color:var(--ink);text-decoration:none;background:var(--paper);max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ecorner{width:100%;text-align:left}
 .badges{display:flex;gap:6px;margin-top:8px}.badges b{background:var(--ink);color:#fff;border-radius:4px;padding:2px 6px;font-size:11px}.badges b.sel{background:var(--r)}
 a.contactBtn{text-align:center;text-decoration:none}a.contactBtn[aria-disabled=true]{opacity:.45;pointer-events:none}
 .prodImg{width:100%;max-height:46vh;object-fit:contain;background:#fff;border-radius:12px}
@@ -458,7 +549,7 @@ body.flat #stage,body.flat .turn,body.flat .hint,body.flat .joy{display:none}
 <script>
 /* ---------- 화면 문구 4개 언어 (영상 제목·설명은 한국어 그대로) ---------- */
 const I18N = {
-  ko:{gallery:"덕심저장소 갤러리", shop:"굿즈 샵", shopOf:"{g} 굿즈 샵", shopSub:"구역을 둘러보고 상품을 눌러 보세요", pickIdol:"아이돌을 골라 주세요", zoneSoon:"곧 들어와요", itemsN:"상품 {n}개", sellerSlot:"입점 자리 · 판매자 모집", sellerBtn:"입점 문의하기", sellerTitle:"입점 문의", sellerDesc:"덕심저장소 굿즈 샵에 상품을 입점해 보세요. 아래 버튼으로 문의를 남겨 주시면 연락드릴게요.", sellerResp:"입점 판매자 상품이에요. 판매·배송·교환은 판매자가 책임져요.", sellerBadge:"입점", goBuy:"보러 가기", noLink:"링크 준비 중", bProduct:"상품 보기", bSeller:"입점 문의하기", hintShop:"끌어서 둘러보고, 진열대를 누르면 상품이 나와요", imgCredit:"이미지 출처", progLabel:"클리어 {a}/{b}", roomProg:"이 방 {s} ({a}/{b})", lockedLeft:"🔒 {n}편 더", lockedRoom:"「{room}」 방에서 영상 {n}편 더 보면 열려요", watchedOk:"시청 완료! {s}", roomClear:"방 클리어! 다음 방이 열렸어요!", roomClearLast:"방 클리어!", nextOpened:"다음 방이 열렸어요!", hallClear:"🎉 {hall} 클리어! 비밀의 방이 열렸어요", clearReward:"클리어 보상: 먼저 열림", colClear:"{hall} 클리어 {a}/{b}", adSpace:"광고 자리", adSoon:"이 자리에 광고가 들어갈 예정이에요", contactTitle:"광고 문의", contactBtn:"광고 문의하기", contactSoon:"문의 창 준비 중이에요", contactNote:"남겨 주신 정보는 광고 상담에만 쓰여요", contactDesc:"덕심저장소 미술관의 전광판·광고판 자리에 광고를 걸어 보세요. 아래 버튼으로 문의를 남겨 주시면 연락드릴게요.", bContact:"광고 문의하기", bs1:"이 자리에 광고를 걸어 보세요", bs1b:"광고 문의 환영 · 누르면 「광고 문의하기」", bs2:"덕심저장소", bs2b:"구독하고 다음 전시를 먼저 만나요", bs3:"이번 주 새 전시", bs3b:"새로 걸린 날: {d}", culture:"한국 문화 코너", cultureSoon:"곧 열려요", bCulture:"한국 문화 코너 · 곧 열려요", lobbySub:"Duksim Archive Gallery · トクシム保管庫ギャラリー · Duksim 典藏藝廊", subOut:"3D 미술관 시험판", subLobby:"로비 · 관을 골라 주세요", subHub:"관 홀 · 방을 골라 주세요",
+  ko:{enTitle:"리센느 공식 광고 모델", enNotAd:"유료 광고 아님 · 정보", enDesc:"리센느가 지금 모델로 활동 중인 공식 광고예요. 덕심저장소가 돈을 받은 광고가 아니고, 제휴 링크도 아니에요.", enSrc:"출처 기사", enChecked:"확인한 날: {d}", enCorner:"광고관 코너", enCornerSub:"광고 영상 · 누르면 재생", enCount:"공식 광고 모델 {n}곳", bEndorse:"공식 광고 모델 보기", agTitle:"안원잘부 굿즈", agSoon:"공식 굿즈 링크 준비 중", agGo:"공식 스토어 보러 가기", agDesc:"원이 개인 채널 「안원잘부」의 공식 굿즈 자리예요.", notAff:"제휴 링크가 아니에요. 덕심저장소는 수수료를 받지 않아요.", notAffB:"제휴 아님", bAg:"안원잘부 굿즈 보기", stTitle:"{g} 조각상", stNote:"얼굴 없이 도형으로 만든 장식 조각이에요. 실제 모습을 본뜨지 않았어요.", bStatue:"조각상 보기", gallery:"덕심저장소 갤러리", shop:"굿즈 샵", shopOf:"{g} 굿즈 샵", shopSub:"구역을 둘러보고 상품을 눌러 보세요", pickIdol:"아이돌을 골라 주세요", zoneSoon:"곧 들어와요", itemsN:"상품 {n}개", sellerSlot:"입점 자리 · 판매자 모집", sellerBtn:"입점 문의하기", sellerTitle:"입점 문의", sellerDesc:"덕심저장소 굿즈 샵에 상품을 입점해 보세요. 아래 버튼으로 문의를 남겨 주시면 연락드릴게요.", sellerResp:"입점 판매자 상품이에요. 판매·배송·교환은 판매자가 책임져요.", sellerBadge:"입점", goBuy:"보러 가기", noLink:"링크 준비 중", bProduct:"상품 보기", bSeller:"입점 문의하기", hintShop:"끌어서 둘러보고, 진열대를 누르면 상품이 나와요", imgCredit:"이미지 출처", progLabel:"클리어 {a}/{b}", roomProg:"이 방 {s} ({a}/{b})", lockedLeft:"🔒 {n}편 더", lockedRoom:"「{room}」 방에서 영상 {n}편 더 보면 열려요", watchedOk:"시청 완료! {s}", roomClear:"방 클리어! 다음 방이 열렸어요!", roomClearLast:"방 클리어!", nextOpened:"다음 방이 열렸어요!", hallClear:"🎉 {hall} 클리어! 비밀의 방이 열렸어요", clearReward:"클리어 보상: 먼저 열림", colClear:"{hall} 클리어 {a}/{b}", adSpace:"광고 자리", adSoon:"이 자리에 광고가 들어갈 예정이에요", contactTitle:"광고 문의", contactBtn:"광고 문의하기", contactSoon:"문의 창 준비 중이에요", contactNote:"남겨 주신 정보는 광고 상담에만 쓰여요", contactDesc:"덕심저장소 미술관의 전광판·광고판 자리에 광고를 걸어 보세요. 아래 버튼으로 문의를 남겨 주시면 연락드릴게요.", bContact:"광고 문의하기", bs1:"이 자리에 광고를 걸어 보세요", bs1b:"광고 문의 환영 · 누르면 「광고 문의하기」", bs2:"덕심저장소", bs2b:"구독하고 다음 전시를 먼저 만나요", bs3:"이번 주 새 전시", bs3b:"새로 걸린 날: {d}", culture:"한국 문화 코너", cultureSoon:"곧 열려요", bCulture:"한국 문화 코너 · 곧 열려요", lobbySub:"Duksim Archive Gallery · トクシム保管庫ギャラリー · Duksim 典藏藝廊", subOut:"3D 미술관 시험판", subLobby:"로비 · 관을 골라 주세요", subHub:"관 홀 · 방을 골라 주세요",
       loading:"미술관 문을 여는 중…", enter:"들어가기", toLobby:"로비로", toHub:"관 홀로", exit:"밖으로",
       hintOut:"「들어가기」를 누르면 계단을 올라 안으로 들어가요", hintOutWalk:"조이스틱으로 걸어서 입구까지 가 보세요",
       hintLobby:"끌어서 둘러보고, 문을 누르면 관으로 들어가요", hintHub:"문을 누르면 방으로 들어가요",
@@ -483,7 +574,7 @@ const I18N = {
       rewardSoon:"보상 영상은 곧 채워져요", secret:"비밀 액자", quizWrong:"아쉬워요, 다시 골라 볼까요?",
       like:"♡ 좋아요", liked:"❤ 좋아요", likesN:"좋아요 {n} · 열람 {v}", localOnly:"(지금은 이 기기 기준)", cTabG:"갤러리 댓글", cTabY:"유튜브 댓글", cNote:"갤러리 방문자끼리 나누는 댓글이에요 · 유튜브 원본 댓글은 「유튜브에서 보기」", cName:"닉네임(선택)", cText:"댓글을 남겨 주세요 (200자까지)", cPost:"올리기", cEmpty:"첫 댓글을 남겨 주세요", cAnon:"방문자", cReport:"신고", cReported:"신고했어요. 이 댓글은 숨겨져요", cBad:"올릴 수 없는 말이 있어요", cLink:"링크는 올릴 수 없어요", cTooLong:"200자까지 쓸 수 있어요", cOk:"댓글을 올렸어요", cLocal:"지금은 이 기기에만 저장돼요", ytWrite:"유튜브에서 댓글 달기", ytNote:"유튜브 인기 댓글 5개 · 원문 그대로 · 출처: YouTube", ytStats:"유튜브: 조회수 {v} · 좋아요 {l}", ytErr:"유튜브 댓글을 불러오지 못했어요", ytNone:"유튜브 댓글이 없어요", anaNote:"익명 방문 통계를 모아요(개인정보 없음)", newTag:"새로 걸림",
       slowSuggest:"화면이 조금 느려요. 빠른 모드로 바꿀까요?", switchQuick:"빠른 모드로", modeWalk:"🚶 걷기", modeQuick:"⚡ 빠른"},
-  ja:{gallery:"トクシム保管庫ギャラリー", shop:"グッズショップ", shopOf:"{g} グッズショップ", shopSub:"コーナーを見て回り、商品をタップしてください", pickIdol:"アイドルを選んでください", zoneSoon:"まもなく入荷", itemsN:"商品{n}点", sellerSlot:"出店スペース・出店者募集", sellerBtn:"出店について問い合わせる", sellerTitle:"出店のお問い合わせ", sellerDesc:"トクシム保管庫グッズショップに出店しませんか。下のボタンからお問い合わせください。", sellerResp:"出店者の商品です。販売・配送・交換は出店者の責任で行われます。", sellerBadge:"出店", goBuy:"見に行く", noLink:"リンク準備中", bProduct:"商品を見る", bSeller:"出店のお問い合わせ", hintShop:"ドラッグで見回し、棚をタップすると商品が見られます", imgCredit:"画像提供", progLabel:"クリア {a}/{b}", roomProg:"この部屋 {s} ({a}/{b})", lockedLeft:"🔒 あと{n}本", lockedRoom:"「{room}」で動画をあと{n}本見ると開きます", watchedOk:"視聴完了!{s}", roomClear:"部屋クリア!次の部屋が開きました!", roomClearLast:"部屋クリア!", nextOpened:"次の部屋が開きました!", hallClear:"🎉 {hall}クリア!秘密の部屋が開きました", clearReward:"クリア特典:先行オープン", colClear:"{hall} クリア {a}/{b}", adSpace:"広告スペース", adSoon:"ここに広告が入る予定です", contactTitle:"広告のお問い合わせ", contactBtn:"広告について問い合わせる", contactSoon:"お問い合わせ窓口は準備中です", contactNote:"いただいた情報は広告のご相談にのみ使用します", contactDesc:"トクシム保管庫ミュージアムの電光掲示板・広告スペースに広告を掲載できます。下のボタンからお問い合わせください。", bContact:"広告のお問い合わせ", bs1:"ここに広告を出してみませんか", bs1b:"広告のお問い合わせ歓迎 · タップでお問い合わせ", bs2:"トクシム保管庫", bs2b:"登録して次の展示をいち早くチェック", bs3:"今週の新しい展示", bs3b:"展示日: {d}", culture:"韓国文化コーナー", cultureSoon:"まもなくオープン", bCulture:"韓国文化コーナー · まもなくオープン", lobbySub:"トクシム保管庫ギャラリー · Duksim Archive Gallery · Duksim 典藏藝廊", subOut:"3Dミュージアム(テスト版)", subLobby:"ロビー・館を選んでください", subHub:"館ホール・部屋を選んでください",
+  ja:{enTitle:"RESCENE 公式広告モデル", enNotAd:"有料広告ではありません · 情報", enDesc:"RESCENEが現在モデルを務める公式広告です。当ギャラリーが報酬を受けた広告ではなく、アフィリエイトリンクでもありません。", enSrc:"出典記事", enChecked:"確認日: {d}", enCorner:"広告館コーナー", enCornerSub:"広告映像 · タップで再生", enCount:"公式広告モデル {n}社", bEndorse:"公式広告モデルを見る", agTitle:"アンウォンジャルブ グッズ", agSoon:"公式グッズのリンク準備中", agGo:"公式ストアを見る", agDesc:"ウォニの個人チャンネル「アンウォンジャルブ」の公式グッズコーナーです。", notAff:"アフィリエイトリンクではありません。当ギャラリーは手数料を受け取りません。", notAffB:"提携なし", bAg:"グッズを見る", stTitle:"{g} の彫像", stNote:"顔のない、図形で作った装飾彫刻です。実際の姿を模していません。", bStatue:"彫像を見る", gallery:"トクシム保管庫ギャラリー", shop:"グッズショップ", shopOf:"{g} グッズショップ", shopSub:"コーナーを見て回り、商品をタップしてください", pickIdol:"アイドルを選んでください", zoneSoon:"まもなく入荷", itemsN:"商品{n}点", sellerSlot:"出店スペース・出店者募集", sellerBtn:"出店について問い合わせる", sellerTitle:"出店のお問い合わせ", sellerDesc:"トクシム保管庫グッズショップに出店しませんか。下のボタンからお問い合わせください。", sellerResp:"出店者の商品です。販売・配送・交換は出店者の責任で行われます。", sellerBadge:"出店", goBuy:"見に行く", noLink:"リンク準備中", bProduct:"商品を見る", bSeller:"出店のお問い合わせ", hintShop:"ドラッグで見回し、棚をタップすると商品が見られます", imgCredit:"画像提供", progLabel:"クリア {a}/{b}", roomProg:"この部屋 {s} ({a}/{b})", lockedLeft:"🔒 あと{n}本", lockedRoom:"「{room}」で動画をあと{n}本見ると開きます", watchedOk:"視聴完了!{s}", roomClear:"部屋クリア!次の部屋が開きました!", roomClearLast:"部屋クリア!", nextOpened:"次の部屋が開きました!", hallClear:"🎉 {hall}クリア!秘密の部屋が開きました", clearReward:"クリア特典:先行オープン", colClear:"{hall} クリア {a}/{b}", adSpace:"広告スペース", adSoon:"ここに広告が入る予定です", contactTitle:"広告のお問い合わせ", contactBtn:"広告について問い合わせる", contactSoon:"お問い合わせ窓口は準備中です", contactNote:"いただいた情報は広告のご相談にのみ使用します", contactDesc:"トクシム保管庫ミュージアムの電光掲示板・広告スペースに広告を掲載できます。下のボタンからお問い合わせください。", bContact:"広告のお問い合わせ", bs1:"ここに広告を出してみませんか", bs1b:"広告のお問い合わせ歓迎 · タップでお問い合わせ", bs2:"トクシム保管庫", bs2b:"登録して次の展示をいち早くチェック", bs3:"今週の新しい展示", bs3b:"展示日: {d}", culture:"韓国文化コーナー", cultureSoon:"まもなくオープン", bCulture:"韓国文化コーナー · まもなくオープン", lobbySub:"トクシム保管庫ギャラリー · Duksim Archive Gallery · Duksim 典藏藝廊", subOut:"3Dミュージアム(テスト版)", subLobby:"ロビー・館を選んでください", subHub:"館ホール・部屋を選んでください",
       loading:"ミュージアムを開いています…", enter:"入る", toLobby:"ロビーへ", toHub:"館ホールへ", exit:"外へ",
       hintOut:"「入る」を押すと階段を上って館内へ", hintOutWalk:"スティックで入口まで歩いてみましょう",
       hintLobby:"ドラッグで見回し、扉をタップで館へ", hintHub:"扉をタップすると部屋へ",
@@ -508,7 +599,7 @@ const I18N = {
       rewardSoon:"ごほうび動画はまもなく公開", secret:"秘密の額縁", quizWrong:"残念!もう一度選んでみましょう",
       like:"♡ いいね", liked:"❤ いいね", likesN:"いいね {n}・閲覧 {v}", localOnly:"(現在はこの端末のみ)", cTabG:"ギャラリーのコメント", cTabY:"YouTubeのコメント", cNote:"ギャラリー来場者どうしのコメントです・YouTube元動画のコメントは「YouTubeで見る」から", cName:"ニックネーム(任意)", cText:"コメントを書いてください(200字まで)", cPost:"投稿", cEmpty:"最初のコメントをどうぞ", cAnon:"来場者", cReport:"通報", cReported:"通報しました。このコメントは非表示になります", cBad:"投稿できない言葉が含まれています", cLink:"リンクは投稿できません", cTooLong:"200字まで書けます", cOk:"コメントを投稿しました", cLocal:"現在はこの端末にのみ保存されます", ytWrite:"YouTubeでコメントする", ytNote:"YouTubeの人気コメント5件・原文のまま・出典: YouTube", ytStats:"YouTube: 再生回数 {v}・高評価 {l}", ytErr:"YouTubeのコメントを読み込めませんでした", ytNone:"YouTubeのコメントはありません", anaNote:"匿名の訪問統計を集めています(個人情報なし)", newTag:"NEW",
       slowSuggest:"動作が少し重いようです。クイックモードにしますか?", switchQuick:"クイックモードへ", modeWalk:"🚶 歩き", modeQuick:"⚡ クイック"},
-  en:{gallery:"Duksim Archive Gallery", shop:"Goods Shop", shopOf:"{g} Goods Shop", shopSub:"Browse the corners and tap an item", pickIdol:"Choose an idol", zoneSoon:"Coming soon", itemsN:"{n} items", sellerSlot:"Seller spot · now recruiting", sellerBtn:"Apply to sell here", sellerTitle:"Seller inquiry", sellerDesc:"Sell your products in the Duksim Archive Goods Shop. Leave an inquiry with the button below and we will get back to you.", sellerResp:"This item is from a partner seller. The seller is responsible for sales, shipping and exchanges.", sellerBadge:"Seller", goBuy:"View item", noLink:"Link coming soon", bProduct:"View items", bSeller:"Apply to sell", hintShop:"Drag to look around. Tap a shelf to see items.", imgCredit:"Image", progLabel:"Cleared {a}/{b}", roomProg:"This room {s} ({a}/{b})", lockedLeft:"🔒 {n} more", lockedRoom:"Watch {n} more videos in \"{room}\" to open this", watchedOk:"Watched! {s}", roomClear:"Room cleared! The next room is open!", roomClearLast:"Room cleared!", nextOpened:"The next room is open!", hallClear:"🎉 {hall} cleared! The Secret Room is open", clearReward:"Clear reward: opens first", colClear:"{hall} cleared {a}/{b}", adSpace:"AD SPACE", adSoon:"An ad will be placed here", contactTitle:"Advertising inquiry", contactBtn:"Ask about advertising", contactSoon:"The inquiry form is coming soon", contactNote:"Your details are used only to discuss advertising", contactDesc:"Place your ad on the billboards and ad panels of the Duksim Archive museum. Leave an inquiry with the button below and we will get back to you.", bContact:"Advertising inquiry", bs1:"Advertise here", bs1b:"Inquiries welcome · tap to ask about advertising", bs2:"Duksim Archive", bs2b:"Subscribe to see the next exhibition first", bs3:"New this week", bs3b:"Hung on: {d}", culture:"Korean Culture Corner", cultureSoon:"Opening soon", bCulture:"Korean Culture Corner · opening soon", lobbySub:"Duksim Archive Gallery · トクシム保管庫ギャラリー · Duksim 典藏藝廊", subOut:"3D museum · preview", subLobby:"Lobby · pick a hall", subHub:"Hall · pick a room",
+  en:{enTitle:"RESCENE official ad models", enNotAd:"Not a paid ad · info", enDesc:"Official ads RESCENE currently models for. We are not paid for this, and these are not affiliate links.", enSrc:"Source article", enChecked:"Checked: {d}", enCorner:"Ad Hall corner", enCornerSub:"Ad video · tap to play", enCount:"{n} official ad brands", bEndorse:"View official ad models", agTitle:"Anwonjalbu goods", agSoon:"Official goods link coming soon", agGo:"Visit the official store", agDesc:"A spot for official goods from Woni's personal channel, Anwonjalbu.", notAff:"Not an affiliate link. We earn no commission.", notAffB:"Not affiliate", bAg:"View Anwonjalbu goods", stTitle:"{g} statues", stNote:"A faceless decorative statue made of simple shapes. It does not depict anyone's real appearance.", bStatue:"View statue", gallery:"Duksim Archive Gallery", shop:"Goods Shop", shopOf:"{g} Goods Shop", shopSub:"Browse the corners and tap an item", pickIdol:"Choose an idol", zoneSoon:"Coming soon", itemsN:"{n} items", sellerSlot:"Seller spot · now recruiting", sellerBtn:"Apply to sell here", sellerTitle:"Seller inquiry", sellerDesc:"Sell your products in the Duksim Archive Goods Shop. Leave an inquiry with the button below and we will get back to you.", sellerResp:"This item is from a partner seller. The seller is responsible for sales, shipping and exchanges.", sellerBadge:"Seller", goBuy:"View item", noLink:"Link coming soon", bProduct:"View items", bSeller:"Apply to sell", hintShop:"Drag to look around. Tap a shelf to see items.", imgCredit:"Image", progLabel:"Cleared {a}/{b}", roomProg:"This room {s} ({a}/{b})", lockedLeft:"🔒 {n} more", lockedRoom:"Watch {n} more videos in \"{room}\" to open this", watchedOk:"Watched! {s}", roomClear:"Room cleared! The next room is open!", roomClearLast:"Room cleared!", nextOpened:"The next room is open!", hallClear:"🎉 {hall} cleared! The Secret Room is open", clearReward:"Clear reward: opens first", colClear:"{hall} cleared {a}/{b}", adSpace:"AD SPACE", adSoon:"An ad will be placed here", contactTitle:"Advertising inquiry", contactBtn:"Ask about advertising", contactSoon:"The inquiry form is coming soon", contactNote:"Your details are used only to discuss advertising", contactDesc:"Place your ad on the billboards and ad panels of the Duksim Archive museum. Leave an inquiry with the button below and we will get back to you.", bContact:"Advertising inquiry", bs1:"Advertise here", bs1b:"Inquiries welcome · tap to ask about advertising", bs2:"Duksim Archive", bs2b:"Subscribe to see the next exhibition first", bs3:"New this week", bs3b:"Hung on: {d}", culture:"Korean Culture Corner", cultureSoon:"Opening soon", bCulture:"Korean Culture Corner · opening soon", lobbySub:"Duksim Archive Gallery · トクシム保管庫ギャラリー · Duksim 典藏藝廊", subOut:"3D museum · preview", subLobby:"Lobby · pick a hall", subHub:"Hall · pick a room",
       loading:"Opening the museum…", enter:"Enter", toLobby:"Lobby", toHub:"Hall", exit:"Exit",
       hintOut:"Tap Enter to climb the steps and go inside", hintOutWalk:"Use the joystick to walk to the entrance",
       hintLobby:"Drag to look around. Tap a door to enter a hall.", hintHub:"Tap a door to enter a room",
@@ -533,7 +624,7 @@ const I18N = {
       rewardSoon:"The reward video is coming soon", secret:"Secret frame", quizWrong:"Not quite — try again?",
       like:"♡ Like", liked:"❤ Liked", likesN:"{n} likes · {v} views", localOnly:"(this device only for now)", cTabG:"Gallery comments", cTabY:"YouTube comments", cNote:"Comments shared among gallery visitors · for the original YouTube comments, use “Open on YouTube”", cName:"Nickname (optional)", cText:"Leave a comment (up to 200 characters)", cPost:"Post", cEmpty:"Be the first to comment", cAnon:"Visitor", cReport:"Report", cReported:"Reported. This comment is now hidden", cBad:"Your comment contains words we can't post", cLink:"Links can't be posted", cTooLong:"Up to 200 characters", cOk:"Comment posted", cLocal:"Saved on this device only for now", ytWrite:"Comment on YouTube", ytNote:"Top 5 YouTube comments · shown as written · Source: YouTube", ytStats:"YouTube: {v} views · {l} likes", ytErr:"Couldn't load YouTube comments", ytNone:"No YouTube comments", anaNote:"We collect anonymous visit statistics (no personal data)", newTag:"NEW",
       slowSuggest:"Things look a bit slow. Switch to quick mode?", switchQuick:"Quick mode", modeWalk:"🚶 Walk", modeQuick:"⚡ Quick"},
-  zh:{gallery:"Duksim 典藏藝廊", shop:"周邊商店", shopOf:"{g} 周邊商店", shopSub:"逛逛各區,點商品看看", pickIdol:"請選擇偶像", zoneSoon:"即將上架", itemsN:"商品 {n} 件", sellerSlot:"進駐位置・招募賣家", sellerBtn:"洽詢進駐", sellerTitle:"進駐洽詢", sellerDesc:"歡迎在 Duksim 典藏周邊商店上架商品。請透過下方按鈕留下洽詢,我們會與您聯繫。", sellerResp:"這是進駐賣家的商品。銷售、配送與退換貨由賣家負責。", sellerBadge:"進駐", goBuy:"前往查看", noLink:"連結準備中", bProduct:"看商品", bSeller:"洽詢進駐", hintShop:"拖曳環顧,點貨架即可看商品", imgCredit:"圖片來源", progLabel:"已過關 {a}/{b}", roomProg:"這個房間 {s} ({a}/{b})", lockedLeft:"🔒 再看{n}部", lockedRoom:"在「{room}」再看 {n} 部影片就會打開", watchedOk:"觀看完成!{s}", roomClear:"房間過關!下一個房間打開了!", roomClearLast:"房間過關!", nextOpened:"下一個房間打開了!", hallClear:"🎉 {hall} 過關!秘密房間打開了", clearReward:"過關獎勵:搶先開放", colClear:"{hall} 過關 {a}/{b}", adSpace:"廣告位", adSoon:"這裡將放置廣告", contactTitle:"廣告洽詢", contactBtn:"洽詢廣告", contactSoon:"洽詢表單準備中", contactNote:"您留下的資料只會用於廣告洽談", contactDesc:"歡迎在 Duksim 典藏美術館的電子看板與廣告位刊登廣告。請透過下方按鈕留下洽詢,我們會與您聯繫。", bContact:"廣告洽詢", bs1:"在這裡刊登廣告吧", bs1b:"歡迎洽詢廣告 · 點一下即可洽詢", bs2:"Duksim 典藏", bs2b:"訂閱就能搶先看下一場展覽", bs3:"本週新展出", bs3b:"展出日期:{d}", culture:"韓國文化角", cultureSoon:"即將開放", bCulture:"韓國文化角 · 即將開放", lobbySub:"Duksim 典藏藝廊 · Duksim Archive Gallery · トクシム保管庫ギャラリー", subOut:"3D 美術館(試用版)", subLobby:"大廳・請選擇展館", subHub:"展館大廳・請選擇房間",
+  zh:{enTitle:"RESCENE 官方代言", enNotAd:"非付費廣告 · 資訊", enDesc:"RESCENE 目前擔任模特兒的官方廣告。這不是本館收費的廣告,也不是聯盟連結。", enSrc:"出處報導", enChecked:"確認日期:{d}", enCorner:"廣告館專區", enCornerSub:"廣告影片 · 點一下播放", enCount:"官方代言 {n} 家", bEndorse:"看官方代言", agTitle:"Anwonjalbu 周邊", agSoon:"官方周邊連結準備中", agGo:"前往官方商店", agDesc:"Woni 個人頻道「Anwonjalbu」的官方周邊專區。", notAff:"這不是聯盟連結,本館不收取佣金。", notAffB:"非聯盟", bAg:"看 Anwonjalbu 周邊", stTitle:"{g} 雕像", stNote:"沒有臉孔、以簡單形狀做成的裝飾雕像,並未模仿真實樣貌。", bStatue:"看雕像", gallery:"Duksim 典藏藝廊", shop:"周邊商店", shopOf:"{g} 周邊商店", shopSub:"逛逛各區,點商品看看", pickIdol:"請選擇偶像", zoneSoon:"即將上架", itemsN:"商品 {n} 件", sellerSlot:"進駐位置・招募賣家", sellerBtn:"洽詢進駐", sellerTitle:"進駐洽詢", sellerDesc:"歡迎在 Duksim 典藏周邊商店上架商品。請透過下方按鈕留下洽詢,我們會與您聯繫。", sellerResp:"這是進駐賣家的商品。銷售、配送與退換貨由賣家負責。", sellerBadge:"進駐", goBuy:"前往查看", noLink:"連結準備中", bProduct:"看商品", bSeller:"洽詢進駐", hintShop:"拖曳環顧,點貨架即可看商品", imgCredit:"圖片來源", progLabel:"已過關 {a}/{b}", roomProg:"這個房間 {s} ({a}/{b})", lockedLeft:"🔒 再看{n}部", lockedRoom:"在「{room}」再看 {n} 部影片就會打開", watchedOk:"觀看完成!{s}", roomClear:"房間過關!下一個房間打開了!", roomClearLast:"房間過關!", nextOpened:"下一個房間打開了!", hallClear:"🎉 {hall} 過關!秘密房間打開了", clearReward:"過關獎勵:搶先開放", colClear:"{hall} 過關 {a}/{b}", adSpace:"廣告位", adSoon:"這裡將放置廣告", contactTitle:"廣告洽詢", contactBtn:"洽詢廣告", contactSoon:"洽詢表單準備中", contactNote:"您留下的資料只會用於廣告洽談", contactDesc:"歡迎在 Duksim 典藏美術館的電子看板與廣告位刊登廣告。請透過下方按鈕留下洽詢,我們會與您聯繫。", bContact:"廣告洽詢", bs1:"在這裡刊登廣告吧", bs1b:"歡迎洽詢廣告 · 點一下即可洽詢", bs2:"Duksim 典藏", bs2b:"訂閱就能搶先看下一場展覽", bs3:"本週新展出", bs3b:"展出日期:{d}", culture:"韓國文化角", cultureSoon:"即將開放", bCulture:"韓國文化角 · 即將開放", lobbySub:"Duksim 典藏藝廊 · Duksim Archive Gallery · トクシム保管庫ギャラリー", subOut:"3D 美術館(試用版)", subLobby:"大廳・請選擇展館", subHub:"展館大廳・請選擇房間",
       loading:"美術館開門中…", enter:"進入", toLobby:"回大廳", toHub:"回展館大廳", exit:"離開",
       hintOut:"按「進入」就會走上階梯進入館內", hintOutWalk:"用搖桿走到入口看看",
       hintLobby:"拖曳環顧四周,點門即可進入展館", hintHub:"點門即可進入房間",
@@ -959,15 +1050,16 @@ G.openSeller = () => {
 };
 G.openZone = (gid, cat) => {
   const items=G.shopItems(gid, cat.id);
-  openItem({type:"text", title:G.nm(cat.name), desc: items.length ? G.t("itemsN",{n:items.length}) : G.t("zoneSoon"),
-    html:`<div class="badges"><b>광고 · AD</b></div><div class="grid" style="margin-top:12px">${items.map((x,i)=>`<button class="card" data-pi="${i}"><div class="tt">${esc(x.name)}<small>${esc(x.price||"")}${x.seller?" · "+esc(G.t("sellerBadge")):""}</small></div></button>`).join("")}
+  const en = cat.id==="endorse" && G.endorseOn(gid) ? G.endorseList("goods_ad") : [];
+  openItem({type:"text", title:G.nm(cat.name), desc: items.length ? G.t("itemsN",{n:items.length}) : en.length ? G.t("enCount",{n:en.length}) : G.t("zoneSoon"),
+    html:`${en.length ? `<div class="sec2">${esc(G.t("enTitle"))}</div><div class="badges"><b class="info">${esc(G.t("enNotAd"))}</b></div><div class="elist">${G.endorseCards("goods_ad")}</div><div class="sec2">${esc(G.nm(cat.name))}</div>` : ""}<div class="badges"><b>광고 · AD</b></div><div class="grid" style="margin-top:12px">${items.map((x,i)=>`<button class="card" data-pi="${i}"><div class="tt">${esc(x.name)}<small>${esc(x.price||"")}${x.seller?" · "+esc(G.t("sellerBadge")):""}</small></div></button>`).join("")}
       <button class="card" data-sell="1" style="border:1px dashed var(--line)"><div class="tt">🏪 ${esc(G.t("sellerSlot"))}<small>${esc(G.t("sellerBtn"))}</small></div></button></div>`});
   document.querySelectorAll("[data-pi]").forEach(b=>b.onclick=()=>G.openProduct(items[+b.dataset.pi]));
   document.querySelector("[data-sell]").onclick=()=>G.openSeller();
 };
 G.openProduct = x => {
   const u=safeUrl(x.url), img=safeUrl(x.image), sh=u ? shopOf({...x,u}) : SHOPS.find(z=>z.id===x.shop);
-  const note = sh?.note || (u && !x.seller ? "이 링크로 구매하면 덕심저장소가 일정액의 수수료를 받을 수 있어요." : "");
+  const note = sh?.affiliate===false ? G.t("notAff") : (sh?.note || (u && !x.seller ? "이 링크로 구매하면 덕심저장소가 일정액의 수수료를 받을 수 있어요." : ""));
   openItem({type:"text", title:x.name, desc:[x.price, sh?.name].filter(Boolean).join(" · "),
     html:`${img ? `<img class="prodImg" src="${esc(img.href)}" alt="${esc(x.image_alt||x.name)}" loading="lazy"><p class="contactNote">${esc(G.t("imgCredit"))}: ${esc(x.image_credit||"")}</p>` : ""}
       <div class="badges"><b>광고 · AD</b>${x.seller ? `<b class="sel">${esc(x.badge||G.t("sellerBadge"))}</b>` : ""}</div>
@@ -976,6 +1068,42 @@ G.openProduct = x => {
 };
 
 G.openCulture = () => { if(CULTURE_CORNER.open && CULTURE_CORNER.items.length) openItem({type:"text", title:G.t("culture"), html:`<ul class="list">${CULTURE_CORNER.items.map(i=>`<li>${esc(G.nm(i.title))}</li>`).join("")}</ul>`}); else toast(G.t("bCulture")); };
+
+/* ---------- 리센느 공식 광고 모델(정보 진열 · 유료 광고 아님). 영상 패널 안에는 넣지 않는다(유튜브 정책 III.G) ---------- */
+G.endorseOn = hallId => !!hallId && hallId===ENDORSEMENTS.hall;
+G.endorseList = key => { const on=ENDORSEMENTS.items.filter(x=>x.enabled===true), O=ENDORSEMENTS.order||{}, pre=[...(O[key]||[]), ...(O.default||[])];
+  const rank=id=>{ const i=pre.indexOf(id); return i<0 ? 999 : i; };
+  return on.map((x,i)=>({x,i})).sort((a,b)=>rank(a.x.id)-rank(b.x.id) || a.i-b.i).map(o=>o.x); };
+G.endorseThemed = (key, id) => (ENDORSEMENTS.order?.[key]||[]).includes(id);
+G.endorseCorner = () => (ENDORSEMENTS.corner||[]).filter(c=>/^[\w-]{11}$/.test(c.video?.id||"") && ENDORSEMENTS.items.some(x=>x.id===c.brand && x.enabled===true));
+const hostOf = u => { const x=safeUrl(u); return x ? x.hostname.replace(/^(www|m|mobile)\./,"") : ""; };
+G.endorseCards = key => G.endorseList(key).map(x=>`<div class="ecard${G.endorseThemed(key,x.id)?" th":""}" id="en-${esc(x.id)}"><div class="eb">${esc(G.nm(x.brand))}</div><p>${esc(G.nm(x.line))}</p>
+  <div class="esrc">${(x.sources||[]).filter(u=>safeUrl(u)).map((u,k)=>`<a href="${esc(safeUrl(u).href)}" target="_blank" rel="noopener">${esc(G.t("enSrc"))} ${k+1} · ${esc(hostOf(u))}</a>`).join("")}</div></div>`).join("");
+G.openEndorse = (key, focus) => {
+  const cs=G.endorseCorner();
+  openItem({type:"text", title:G.t("enTitle"), desc:G.t("enDesc"),
+    html:`<div class="badges"><b class="info">${esc(G.t("enNotAd"))}</b></div><div class="elist">${G.endorseCards(key)}</div>
+      ${cs.length ? `<div class="sec2">▶ ${esc(G.t("enCorner"))}</div>${cs.map((c,i)=>`<button class="card ecorner" data-cv="${i}"><div class="tt">▶ ${esc(c.video.title)}<small>${esc(G.nm(ENDORSEMENTS.items.find(x=>x.id===c.brand)?.brand))} · ${esc(G.t("enCornerSub"))}</small></div></button>`).join("")}` : ""}
+      <p class="contactNote">${esc(G.t("enChecked",{d:ENDORSEMENTS.checked_at}))}</p>`});
+  /* 광고관 코너 영상: 일반 영상 패널로 연다(패널 안에는 광고·상점 칸이 없다) */
+  document.querySelectorAll("#extra [data-cv]").forEach(b=>b.onclick=()=>{ const c=cs[+b.dataset.cv]; openItem({...c.video, desc:""}); });
+  if(focus){ const el=document.getElementById("en-"+focus); if(el){ el.classList.add("hi"); setTimeout(()=>el.scrollIntoView({block:"center"}),60); } }
+};
+/* ---------- 안원잘부 굿즈(공식 굿즈 · 제휴 링크 아님) ---------- */
+G.agShop = () => SHOPS.find(x=>x.id==="anwonjalbu_store");
+G.openAg = () => {
+  const sh=G.agShop(), u=safeUrl(sh?.store_url), items=PRODUCTS.filter(x=>x.shop==="anwonjalbu_store");
+  openItem({type:"text", title:G.t("agTitle"), desc:G.t("agDesc"),
+    html:`<div class="badges"><b class="info">${esc(G.t("notAffB"))}</b></div>
+      ${items.length ? `<div class="grid" style="margin-top:12px">${items.map((x,i)=>`<button class="card" data-ag="${i}"><div class="tt">${esc(x.name)}<small>${esc(x.price||"")}</small></div></button>`).join("")}</div>` : ""}
+      <a class="contactBtn" ${u ? `href="${esc(u.href)}"` : 'aria-disabled="true"'} target="_blank" rel="noopener">${esc(u ? G.t("agGo") : G.t("agSoon"))}</a>
+      <p class="disc">${esc(G.t("notAff"))}</p>`});
+  document.querySelectorAll("#extra [data-ag]").forEach(b=>b.onclick=()=>G.openProduct(items[+b.dataset.ag]));
+};
+/* ---------- 건물 정면 조각상 소개(공식 공개 정보만. 비어 있으면 이름만) ---------- */
+G.statueGroup = () => STATUES.find(g=>g.enabled!==false && g.members?.length) || null;
+G.openStatue = m => { const st = !m.story ? "" : typeof m.story==="object" ? G.nm(m.story) : String(m.story);
+  openItem({type:"text", title:`${m.name} · ${m.name_en}`, desc:st, html:`<p class="contactNote">${esc(G.t("stNote"))}</p>`}); };
 
 /* ---------- 미션 ---------- */
 function completeMission(m){
@@ -1171,7 +1299,8 @@ function drawFlat(){
   } else if(v==="shop"){
     const gid=G.shopGroup;
     html = SHOP_CATEGORIES.map(c=>{ const it=G.shopItems(gid,c.id);
-      return `<div class="sec">${esc(G.nm(c.name))} <b style="background:var(--ink);color:#fff;border-radius:4px;padding:1px 5px;font-size:10px">광고 · AD</b></div><div class="grid">`
+      const en = c.id==="endorse" && G.endorseOn(gid) ? `<div class="sec2">${esc(G.t("enTitle"))}</div><div class="badges"><b class="info">${esc(G.t("enNotAd"))}</b></div><div class="elist" style="margin-bottom:10px">${G.endorseCards("goods_ad")}</div>` : "";
+      return `<div class="sec">${esc(G.nm(c.name))} <b style="background:var(--ink);color:#fff;border-radius:4px;padding:1px 5px;font-size:10px">광고 · AD</b></div>${en}<div class="grid">`
         + it.map((x,i)=>`<button class="card" data-prod="${esc(c.id)}:${i}"><div class="tt">${esc(x.name)}<small>${esc(x.price||"")}${x.seller?" · "+esc(G.t("sellerBadge")):""}</small></div></button>`).join("")
         + (it.length ? "" : `<div class="card blank"><div class="tt">${esc(G.t("zoneSoon"))}</div></div>`)
         + `<button class="card" data-seller="1" style="border:1px dashed var(--line)"><div class="tt">🏪 ${esc(G.t("sellerSlot"))}</div></button></div>`; }).join("")
@@ -1195,10 +1324,15 @@ function drawFlat(){
     const ms=G.missions(h.id, r.id);
     if(ms.length) html += `<div class="sec">🔎 ${esc(G.t("secret"))}</div><div class="grid">` + ms.map(m=>`<button class="card" data-m="${esc(m.id)}"><div class="tt">${esc(G.nm(m.hint))}</div></button>`).join("") + `</div>`;
     html += `<div class="sec">${esc(G.t("goodsTitle"))} <b style="background:var(--ink);color:#fff;border-radius:4px;padding:1px 5px;font-size:10px">광고 · AD</b></div><button class="card" data-goods="1" style="width:100%"><div class="tt">${esc(G.products(h.id,r.id).length||r.goods?.length||G.roomPicks(r).length ? G.t("goodsTitle") : G.t("goodsSign"))}</div></button>`;
+    if(r.id==="anwonjalbu") html += `<div class="sec">🎁 ${esc(G.t("agTitle"))}</div><button class="card" data-ag="1" style="width:100%"><div class="tt">${esc(G.t("agTitle"))}<small>${esc(safeUrl(G.agShop()?.store_url) ? G.t("agGo") : G.t("agSoon"))} · ${esc(G.t("notAffB"))}</small></div></button>`;
+    if(G.endorseOn(h.id)) html += `<div class="sec">${esc(G.t("enTitle"))}</div><div class="badges"><b class="info">${esc(G.t("enNotAd"))}</b></div><div class="elist">${G.endorseCards(r.id)}</div>`
+      + G.endorseCorner().map((c,i)=>`<button class="card ecorner" data-cv="${i}" style="margin-top:8px"><div class="tt">▶ ${esc(G.t("enCorner"))} · ${esc(c.video.title)}<small>${esc(G.t("enCornerSub"))}</small></div></button>`).join("");
   }
   const b=$("#fBody"); b.innerHTML=html; wireNav(b);
   b.querySelectorAll("[data-i]").forEach(x=>x.onclick=()=>openItem(items[+x.dataset.i]));
   b.querySelectorAll("[data-goods]").forEach(x=>x.onclick=()=>G.openGoods(r));
+  b.querySelectorAll("[data-ag]").forEach(x=>x.onclick=G.openAg);
+  b.querySelectorAll("[data-cv]").forEach(x=>x.onclick=()=>openItem({...G.endorseCorner()[+x.dataset.cv].video, desc:""}));
   b.querySelectorAll("[data-culture]").forEach(x=>x.onclick=G.openCulture);
   b.querySelectorAll("[data-contact]").forEach(x=>x.onclick=G.openContact);
   b.querySelectorAll("[data-prod]").forEach(x=>x.onclick=()=>{ const [c,i]=x.dataset.prod.split(":"); G.openProduct(G.shopItems(G.shopGroup,c)[+i]); });
@@ -1764,7 +1898,7 @@ function start(THREE){
       const PSLOTS=[[0,-5.15,2.05,.10],[0,-5.0,1.2,-.08],[0,5.15,1.95,-.09],[0,5.05,1.15,.07],
                     [1,0,2.2,.06],[1,0,1.3,-.07],[1,4.5,1.85,-.1],
                     [3,0,2.15,-.06],[3,0,1.25,.08],[3,-4.5,1.8,.09],
-                    [2,-2.7,1.9,.07],[2,3.3,2.15,-.06]];
+                    [2,-2.05,1.9,.07],[2,3.3,2.15,-.06]];   // 뒤 벽 왼쪽 1장은 광고 모델 판 자리 때문에 문 쪽으로 옮김
       const photos=(room.photos||[]).slice(0,PSLOTS.length), handle=hall.official?.igHandle||"instagram";
       PSLOTS.forEach((ps,i)=>{
         const it=photos[i]||null, igOk = it?.type==="instagram" && /^https:\/\/(www\.)?instagram\.com\/(p|reel)\/[\w-]+\/?$/.test(it.url||"");
@@ -1798,6 +1932,44 @@ function start(THREE){
       [table,gs].forEach(m=>{ m.userData.act=act; clickables.push(m); });
       spots.push({p:new THREE.Vector3(gx,1.2,gz-0.9), r:1.3, label:()=>G.t("bGoods"), act});
       boxes.push([gx-0.85,gx+0.85,gz-0.4,gz+0.4]); }
+
+    /* ---------- 리센느 공식 광고 모델 판(뒤 벽, 문 오른쪽). 글자 판만 — 로고·실존 인물 사진 없음. 「유료 광고 아님」 표시 ----------
+       방 테마와 맞는 브랜드(ENDORSEMENTS.order[방id])가 앞줄에 오고 방 색 띠가 붙는다. 마지막 칸은 「광고관 코너」(광고 영상 카드) */
+    if(G.endorseOn(hall.id)){
+      const p=pivots[2], bx=-3.7, by=2.12, bw=2.6, bh=1.72, list=G.endorseList(room.id), corner=G.endorseCorner();
+      const bg=textPlane(p, bw, bh, 640, (g,w,h)=>{ g.fillStyle="#fffdf8"; g.fillRect(0,0,w,h); g.strokeStyle="#c9b48f"; g.lineWidth=5; g.strokeRect(2.5,2.5,w-5,h-5);
+        g.fillStyle="#1e143c"; g.fillRect(0,0,w,64); g.fillStyle="#ffd640"; g.textAlign="center"; g.textBaseline="middle"; g.font=`800 28px ${FONT}`; wrapText(g, G.t("enTitle"), w/2-60, 33, w-170, 30, 1);
+        g.fillStyle="#e9f3ec"; g.fillRect(w-150,16,138,32); g.fillStyle="#2f6b45"; g.font=`700 14px ${FONT}`; wrapText(g, G.t("enNotAd"), w-81, 33, 130, 16, 1); });
+      bg.position.set(bx,by,-W+0.045); relabel.push(bg.userData.redraw);
+      const open=id=>()=>G.openEndorse(room.id, id); bg.userData.act=open(null); clickables.push(bg);
+      const cells=[...list.map(x=>({x})), ...corner.slice(0,1).map(c=>({c}))].slice(0,12);
+      const cols=3, cw=(bw-0.16)/cols, ch=0.31, top=by+bh/2-0.21-ch/2-0.03;
+      cells.forEach((cell,i)=>{ const cx=bx-bw/2+0.08+cw*(i%cols)+cw/2, cy=top-Math.floor(i/cols)*(ch+0.05), x=cell.x, th=x && G.endorseThemed(room.id, x.id);
+        const pl=textPlane(p, cw-0.05, ch, 256, (g,w,h)=>{
+          if(x){ g.fillStyle="#ffffff"; g.fillRect(0,0,w,h); g.strokeStyle="#e4d8c4"; g.lineWidth=3; g.strokeRect(1.5,1.5,w-3,h-3); if(th){ g.fillStyle=color; g.fillRect(0,0,10,h); }
+            g.fillStyle="#1e143c"; g.textAlign="center"; g.textBaseline="middle"; g.font=`800 ${G.nm(x.brand).length>12?20:26}px ${FONT}`; wrapText(g, G.nm(x.brand), w/2+4, h*0.36, w-26, 26, 1);
+            g.fillStyle="#6b6280"; g.font=`500 13px ${FONT}`; wrapText(g, G.nm(x.line), w/2+4, h*0.75, w-24, 14, 1); }
+          else { g.fillStyle="#1e143c"; g.fillRect(0,0,w,h); g.fillStyle="#ffd640"; g.textAlign="center"; g.textBaseline="middle"; g.font=`800 22px ${FONT}`; wrapText(g, "▶ "+G.t("enCorner"), w/2, h*0.38, w-20, 22, 1);
+            g.fillStyle="#ffffff"; g.font=`500 13px ${FONT}`; wrapText(g, G.t("enCornerSub"), w/2, h*0.75, w-20, 14, 1); } });
+        pl.position.set(cx, cy, -W+0.055); relabel.push(pl.userData.redraw);
+        /* 광고관 코너 칸: 이 판의 목록 패널을 열고, 거기서 영상 카드를 누르면 일반 영상 패널로 재생 */
+        pl.userData.act = x ? open(x.id) : open(null); clickables.push(pl); });
+      spots.push({p:onWall(2,bx,1.8,1.3), r:1.5, label:()=>G.t("bEndorse"), act:open(null)});
+    }
+
+    /* ---------- 안원잘부 굿즈 진열대(안원잘부 방만, 광고 모델 판 아래). 제휴 링크 아님 ---------- */
+    if(room.id==="anwonjalbu"){
+      const gx=3.7, gz=5.2, act=()=>G.openAg(), sh=G.agShop();
+      const table=box(s, 1.4,0.8,0.55, lam(new THREE.Color(mix(color,"#fff4e4",.35))), gx,0.4,gz);
+      instanced(s, new THREE.BoxGeometry(0.26,0.22,0.26), lam(0xffffff), [-0.42,0,0.42].map((dx,i)=>({x:gx+dx,y:0.91,z:gz,ry:i*0.4,c:["#fff4e4",color,"#ffe0c2"][i]})));
+      const sg=textPlane(s, 1.32, 0.34, 320, (g,w,h)=>{ g.fillStyle="#fffdf8"; g.fillRect(0,0,w,h); g.fillStyle="#1e143c"; g.textAlign="center"; g.textBaseline="middle";
+        g.font=`800 24px ${FONT}`; wrapText(g, "🎁 "+G.t("agTitle"), w/2, h*0.36, w-20, 24, 1);
+        g.fillStyle="#6b6280"; g.font=`500 14px ${FONT}`; wrapText(g, (safeUrl(sh?.store_url) ? G.t("agGo") : G.t("agSoon"))+" · "+G.t("notAffB"), w/2, h*0.76, w-20, 15, 1); });
+      sg.position.set(gx,0.45,gz-0.28); sg.rotation.y=Math.PI; relabel.push(sg.userData.redraw);
+      [table,sg].forEach(m=>{ m.userData.act=act; clickables.push(m); });
+      spots.push({p:new THREE.Vector3(gx,1.2,gz-0.9), r:1.2, label:()=>G.t("bAg"), act});
+      boxes.push([gx-0.8,gx+0.8,gz-0.4,gz+0.4]);
+    }
 
     /* ---------- 미션: find(숨은 반짝이 물건) / quiz(퀴즈 받침대) ---------- */
     G.missions(hall.id, room.id).forEach(m=>{
@@ -1858,9 +2030,9 @@ function start(THREE){
     fn.position.set(0,2.36,-W+0.04); relabel.push(fn.userData.redraw);
     /* 양쪽 벽: 구역 6개 진열대(상품 최대 3개 + 끝에 「입점 자리」) */
     SHOP_CATEGORIES.forEach((cat,i)=>{
-      const wi = i<3 ? 3 : 1, x=[-4.2,0,4.2][i%3], pv=pivots[wi], items=G.shopItems(gid, cat.id), zoneAct=()=>G.openZone(gid, cat);
+      const wi = i<3 ? 3 : 1, x=[-4.2,0,4.2][i%3], pv=pivots[wi], items=G.shopItems(gid, cat.id), zoneAct=()=>G.openZone(gid, cat); const nEn = cat.id==="endorse" && G.endorseOn(gid) ? G.endorseList("goods_ad").length : 0;
       const shelf=box(pv, 3.0,0.9,0.6, lam(0xf1e4d2), x,0.45,-W+0.35);
-      const zs=textPlane(pv, 3.0, 0.62, 448, (g,w,h)=>{ label(g,w,h,"#1e143c","#ffffff",G.nm(cat.name), items.length ? G.t("itemsN",{n:items.length}) : G.t("zoneSoon"), 38);
+      const zs=textPlane(pv, 3.0, 0.62, 448, (g,w,h)=>{ label(g,w,h,"#1e143c","#ffffff",G.nm(cat.name), items.length ? G.t("itemsN",{n:items.length}) : nEn ? G.t("enCount",{n:nEn}) : G.t("zoneSoon"), 38);
         g.fillStyle="#ffd640"; g.fillRect(8,8,84,24); g.fillStyle="#1e143c"; g.font=`800 15px ${FONT}`; g.textAlign="center"; g.textBaseline="middle"; g.fillText("광고 · AD",50,21); });
       zs.position.set(x,2.0,-W+0.04); relabel.push(zs.userData.redraw);
       [shelf,zs].forEach(m=>{ m.userData.act=zoneAct; clickables.push(m); });

@@ -206,6 +206,8 @@ def render(spec, outdir):
         spec["bg"] = fr
     th = sf.thumbnail(spec, outdir); pt = sf.post_text(spec, outdir)
     lines, ok = precheck(spec)
+    n_src = len({p[0] for p in spec["clips"].values()})   # stagemix_factory 점검표와 같은 기준
+    lines.append(("✅ " if n_src >= 8 else "❌ 확인: ") + f"무대 소스 {n_src}개 (8개 이상 권장)"); ok = ok and n_src >= 8
     print(f"썸네일: {th}\n게시 문구: {pt}")
     print("\n".join(lines)); print("→ 올려도 됨" if ok else "→ 빠진 것부터 채우기")
     return ok
