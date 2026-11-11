@@ -71,6 +71,12 @@ details summary{cursor:pointer;color:var(--muted);font-size:14px}
 .rep button{align-self:flex-end;background:transparent;border:1px solid var(--line);border-radius:999px;padding:4px 12px;font:inherit;font-size:13px;color:var(--muted);cursor:pointer}
 .turn{display:block;background:var(--warn);color:var(--bg);border-radius:14px;padding:13px 14px;font-weight:900;font-size:16px;text-decoration:none}
 .turn[hidden],#repWrap[hidden]{display:none}
+.deep{background:var(--panel);border:1px dashed var(--accent);border-radius:12px;padding:10px 12px;font-size:14px}
+.deep summary{font-weight:700;color:var(--accent)}
+.deep .dh{font-weight:700;margin-top:8px;font-size:13px;color:var(--muted)}
+.deep ul{margin:4px 0 0;padding-left:18px}
+.deep a{color:var(--accent);overflow-wrap:anywhere}
+.deep p{margin:8px 0 0}
 .turn small{display:block;font-weight:400;font-size:13px;opacity:.95}
 ol.flow{margin:6px 0 0;padding-left:20px;font-size:13px;color:var(--muted)}
 </style>
@@ -202,8 +208,23 @@ function drawTopics(){
     b.append(tg,h,sm);
     const wrap=document.createElement("div");wrap.style.cssText="display:flex;flex-direction:column;gap:4px";
     b.onclick=()=>{S.topic=S.topic===t.id?null:t.id;draw();if(S.topic)$("fmt").scrollIntoView({behavior:"smooth",block:"start"})};
-    const rc=mk("chip","🔄 지금 다시 확인");rc.style.alignSelf="flex-end";rc.style.fontSize="13px";rc.onclick=()=>askRefresh({scope:"topic",topicId:t.id,title:t.title||""});
-    wrap.append(b,rc);W.append(wrap)});
+    const bar2=document.createElement("div");bar2.style.cssText="display:flex;gap:6px;justify-content:flex-end;flex-wrap:wrap";
+    const rc=mk("chip","🔄 지금 다시 확인");rc.style.fontSize="13px";rc.onclick=()=>askRefresh({scope:"topic",topicId:t.id,title:t.title||""});
+    const dp=mk("chip",t.deep?"🔍 다시 깊게 조사":"🔍 깊게 조사");dp.style.fontSize="13px";dp.onclick=()=>askRefresh({scope:"deep",topicId:t.id,title:t.title||""});
+    bar2.append(rc,dp);wrap.append(b,bar2);
+    if(t.deep){const D=t.deep,dt=document.createElement("details");dt.className="deep";
+      const su=document.createElement("summary");const bad=(D.facts||[]).filter(f=>f.check==="불일치").length;
+      su.textContent=`깊게 조사 결과 · 사실 ${(D.facts||[]).length}개`+(bad?` (불일치 ${bad})`:"")+` · 출처 ${(D.sources||[]).length}곳`;dt.append(su);
+      const add=(h,arr,fn)=>{if(!arr||!arr.length)return;const hh=document.createElement("div");hh.className="dh";hh.textContent=h;dt.append(hh);const ul=document.createElement("ul");arr.forEach(x=>{const li=document.createElement("li");fn(li,x);ul.append(li)});dt.append(ul)};
+      if(D.summary){const p0=document.createElement("p");p0.textContent=D.summary;dt.append(p0)}
+      add("확인한 사실",D.facts,(li,f)=>{li.textContent=(f.check==="일치"?"✅ ":f.check==="불일치"?"⚠️ ":"• ")+f.text+(f.sources&&f.sources.length?` (${f.sources.join(", ")})`:"")});
+      add("흐름",D.timeline,(li,x)=>li.textContent=x);
+      add("만들 각도",D.angles,(li,x)=>li.textContent=x);
+      add("실제 발언",D.quotes,(li,x)=>li.textContent=x);
+      add("주의",D.cautions,(li,x)=>li.textContent=x);
+      add("출처",D.sources,(li,x)=>{const a=document.createElement("a");a.href=x.url;a.target="_blank";a.rel="noopener";a.textContent=(x.name||"기사")+(x.date?" · "+x.date:"");li.append(a)});
+      wrap.append(dt)}
+    W.append(wrap)});
 }
 const FINDER="trig_016gjKp4gw6Vmad8nDaPkWRY";
 let DB=null,MCP=null;
@@ -212,10 +233,10 @@ async function askRefresh(req){
   if(!DB){m.textContent="이 화면에서는 요청을 저장할 수 없어요.";return}
   const id="r"+Date.now();
   try{await DB.collection("refreshq").doc(id).set({...req,at:nowStr(),status:"queued"});}catch(e){m.textContent="요청을 저장하지 못했어요. 다시 눌러 주세요.";return}
-  m.textContent=req.scope==="all"?"지금 기준으로 찾으라고 Claude를 깨우는 중…":"이 소재를 지금 기준으로 다시 확인하라고 깨우는 중…";
+  m.textContent=req.scope==="all"?"지금 기준으로 찾으라고 Claude를 깨우는 중…":req.scope==="deep"?"이 소재를 깊게 조사하라고 깨우는 중…":"이 소재를 지금 기준으로 다시 확인하라고 깨우는 중…";
   let ok=false;
   if(MCP){try{await MCP.callTool("Claude Code Remote","fire_trigger",{trigger_id:FINDER,text:"제작기 버튼: refreshq/"+id});ok=true}catch(e){}}
-  m.textContent=ok?(req.scope==="all"?"찾는 중이에요. 5분쯤 뒤 여기에 새 소재가 올라오고 휴대폰 알림이 가요.":"확인 중이에요. 몇 분 뒤 이 칸 내용이 새로 바뀌어요."):"요청은 남겼어요. 바로 깨우려면 허용이 필요해요 — 다시 눌러 「허용」을 골라 주세요.";
+  m.textContent=ok?(req.scope==="all"?"찾는 중이에요. 5분쯤 뒤 여기에 새 소재가 올라오고 휴대폰 알림이 가요.":req.scope==="deep"?"깊게 조사 중이에요(10~15분). 끝나면 소재 칸 아래에 「깊게 조사 결과」가 생기고 알림이 가요.":"확인 중이에요. 몇 분 뒤 이 칸 내용이 새로 바뀌어요."):"요청은 남겼어요. 바로 깨우려면 허용이 필요해요 — 다시 눌러 「허용」을 골라 주세요.";
   try{DB.collection("refreshq").doc(id).onSnapshot(d=>{const x=d.data?.()||{};if(x.status==="done")m.textContent="✓ "+(x.message||"다 찾았어요");else if(x.status==="failed")m.textContent="찾지 못했어요: "+(x.message||"");else if(x.status==="working")m.textContent="찾는 중… "+(x.message||"")},()=>{})}catch(e){}
 }
 const nowStr=()=>{const n=new Date(),p=x=>String(x).padStart(2,"0");return `${n.getFullYear()}-${p(n.getMonth()+1)}-${p(n.getDate())}T${p(n.getHours())}:${p(n.getMinutes())}:${p(n.getSeconds())}`};
@@ -299,7 +320,7 @@ async function upd(r,patch){
     if($("go").disabled)return;$("go").disabled=true;$("msg").textContent="주문 넣는 중…";
     const area=CAT.areas.find(a=>a.id===S.area);
     const tp=TOPICS.find(t=>t.id===S.topic);
-    try{await col.doc("o"+Date.now()).set({topicId:tp?tp.id:"",topicTitle:tp?tp.title:"",topicSources:tp?(tp.sources||[]):[],sensitive:!!((area&&area.sensitive)||(tp&&tp.sensitive)),format:S.fmt,narr:S.narr,narrLangs:S.nlangs,area:area?area.name:"",subs:S.subs,moods:S.moods,free:$("free").value.trim().slice(0,500),len:S.len,at:nowStr(),stage:4,waiting:false,status:"open"});
+    try{await col.doc("o"+Date.now()).set({topicId:tp?tp.id:"",topicTitle:tp?tp.title:"",topicSources:tp?(tp.sources||[]):[],topicDeep:tp&&tp.deep?tp.deep:null,sensitive:!!((area&&area.sensitive)||(tp&&tp.sensitive)),format:S.fmt,narr:S.narr,narrLangs:S.nlangs,area:area?area.name:"",subs:S.subs,moods:S.moods,free:$("free").value.trim().slice(0,500),len:S.len,at:nowStr(),stage:4,waiting:false,status:"open"});
       $("msg").textContent="주문을 넣었어요. 아래 진행판에서 단계가 넘어가는 걸 볼 수 있어요.";$("free").value="";S.topic=null;}
     catch(e){$("msg").textContent="주문을 저장하지 못했어요. 이 화면을 연 계정에 편집 권한이 있는지 확인해 주세요.";}
     draw();
