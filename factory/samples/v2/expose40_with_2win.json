@@ -208,13 +208,18 @@
   },
   "thumb": {
     "hook": "이틀 연속 1위\n그날 밤 첫 단독 콘서트",
-    "emph": "이틀 연속",
+    "emph": [
+      "이틀 연속",
+      "첫",
+      "콘서트"
+    ],
     "quote": "",
     "tag": "리센느 「With」",
     "frame": {
       "file": "/mnt/user-data/uploads/with2win/C_showchamp_encore_261111.mp4",
       "t": 19.0
-    }
+    },
+    "text_top": true
   },
   "post": {
     "title": "걱정 많았던 컴백, 이틀 동안 생긴 일 | 리센느 「With」 2관왕 #shorts",
@@ -244,12 +249,17 @@
   },
   "thumb_B": {
     "hook": "이틀 연속 1위\n그날 밤 첫 단독 콘서트",
-    "emph": "이틀 연속",
+    "emph": [
+      "이틀 연속",
+      "첫",
+      "콘서트"
+    ],
     "quote": "",
     "tag": "리센느 「With」",
     "frame": {
       "file": "/mnt/user-data/uploads/with2win/C_showchamp_encore_261111.mp4",
       "t": 19.0
-    }
+    },
+    "text_top": true
   }
 }

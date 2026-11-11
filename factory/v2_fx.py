@@ -251,12 +251,53 @@ def outro_layers(W, H, end_frame_bgr, cfg):
     return bg, fr, sub, like, ban, tops
 
 # ---------------- v2 썸네일 ----------------
+def _fit_lines(text, size, maxw, **kw):
+    """줄바꿈(\n)으로 나눈 줄 수 그대로 들어가도록 글자를 줄인다(대표 11/12: 두 줄 줄맞춤)."""
+    want = str(text).count("\n") + 1; d0 = ImageDraw.Draw(Image.new("RGBA", (1, 1)))
+    while size > 30:
+        fo = F(kw.get("font") or FK, size)
+        if len(_wrap(d0, text, fo, maxw)) <= want: break
+        size -= 4
+    return text_img(text, size, maxw, **kw)
+
+def _thumb_top(photo_rgb, cfg, W, H, k, out):
+    top = int(H * 0.30)
+    bg = Image.new("RGBA", (W, H), (8, 6, 20, 255))
+    ph = ImageOps.fit(photo_rgb.convert("RGB"), (W, H - top + int(60 * k)), Image.LANCZOS, centering=(0.5, 0.3)).convert("RGBA")
+    bg.alpha_composite(ph, (0, top - int(60 * k)))
+    ov = Image.new("RGBA", (W, H), (0, 0, 0, 0)); o = ImageDraw.Draw(ov)
+    for y in range(top - int(60 * k), top + int(140 * k)):   # 사진 윗부분을 위 띠와 부드럽게 잇기
+        a = int(255 * max(0, 1 - (y - (top - 60 * k)) / (200 * k))); o.line([(0, y), (W, y)], fill=(8, 6, 20, a))
+    for y in range(int(H * 0.86), H):
+        o.line([(0, y), (W, y)], fill=(8, 6, 20, int(170 * (y - H * 0.86) / (H * 0.14))))
+    img = Image.alpha_composite(bg, ov)
+    em = cfg.get("emph"); em = [em] if isinstance(em, str) else em
+    y = int(120 * k)
+    if cfg.get("quote"):
+        qi = _fit_lines("“" + cfg["quote"] + "”", 108 * k, W * 0.92, base=WH, hi=Y, emph=em)
+        img.alpha_composite(qi, ((W - qi.width) // 2, y)); y += qi.height
+        if cfg.get("hook"):
+            hk = _fit_lines(cfg["hook"], 72 * k, W * 0.92, base=Y, hi=WH); img.alpha_composite(hk, ((W - hk.width) // 2, y))
+    else:
+        qi = _fit_lines(cfg.get("hook", ""), 118 * k, W * 0.94, base=WH, hi=Y, emph=em)
+        img.alpha_composite(qi, ((W - qi.width) // 2, y + max(0, (top - y - qi.height) // 2)))
+    if cfg.get("tag"):
+        t = text_img(cfg["tag"], 40 * k, W, base=WH, stroke=0, font=FB, box=(230, 30, 40, 240), shadow=False); img.alpha_composite(t, (int(30 * k), int(30 * k)))
+    if cfg.get("source"):
+        fo = F(FM, 26 * k); d = ImageDraw.Draw(img); tw = d.textlength(cfg["source"], font=fo)
+        d.text((W - tw - 20 * k, H - 44 * k), cfg["source"], font=fo, fill=GR, stroke_width=2, stroke_fill=BK)
+    if cfg.get("test"):
+        t = text_img(cfg["test"], 44 * k, W, base=WH, stroke=0, font=FB, box=(200, 0, 0, 230), shadow=False); img.alpha_composite(t, (W - t.width - int(30 * k), int(30 * k)))
+    img.convert("RGB").save(out); return out
+
 def thumb_v2(photo_rgb, cfg, size, out):
     """v2 썸네일(docs 표 근거): 실제 장면 한 장(밝게) + 실제로 한 말 한 줄을 큰따옴표로(① 자료09 제목 “천막 치울 수 있을까요?”)
     + 대비·반전 한 줄(② 이유1 갸루×시골 대비, ① 자료03 '1위보다 놀라운') + 시리즈 꼬리표 + 아래 작은 출처(① 자료15).
     cfg: {"quote": 실제 대사(따옴표 없이), "emph": 대사 안 강조할 말(노랑), "hook": 대비 한 줄, "tag": 시리즈, "source": 출처, "test": 시험 표시}"""
-    W, H = size; img = ImageOps.fit(photo_rgb.convert("RGB"), (W, H), Image.LANCZOS, centering=(0.5, 0.4)).convert("RGBA")
-    k = min(W, H) / 1080 if W < H else H / 720 * 0.72
+    W, H = size; k = min(W, H) / 1080 if W < H else H / 720 * 0.72
+    if cfg.get("text_top") and W < H:   # 대표 11/12 02:00: 큰 글은 위(눈에 확), 사진은 아래로 — 위 띠 + 아래 사진
+        return _thumb_top(photo_rgb, cfg, W, H, k, out)
+    img = ImageOps.fit(photo_rgb.convert("RGB"), (W, H), Image.LANCZOS, centering=(0.5, 0.4)).convert("RGBA")
     ov = Image.new("RGBA", (W, H), (0, 0, 0, 0)); o = ImageDraw.Draw(ov)
     for y in range(H):
         a = int(200 * max(0, (y - H * .55) / (H * .45)) ** 1.1) + int(150 * max(0, 1 - y / (H * .22)) ** 1.5)
