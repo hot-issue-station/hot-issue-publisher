@@ -172,7 +172,14 @@ def product_card_png(c, path):
     pad, gap, tw, sh = 18, 18, 290, 14                                                       # sh = 그림자 여백
     fa, fn, fp, fl = F(FB, 22), F(FB, 30), F(FB, 32), F(FM, 22)
     dm = ImageDraw.Draw(Image.new("RGBA", (1, 1)))
-    name = wrap(dm, c["name"], fn, tw)
+    name, line = [], ""                                       # 띄어쓰기 단위로 줄바꿈(한 단어가 너무 길면 글자 단위)
+    for wd in str(c["name"]).split():
+        t = (line + " " + wd).strip()
+        if dm.textlength(t, font=fn) <= tw: line = t
+        else:
+            if line: name.append(line)
+            parts_ = wrap(dm, wd, fn, tw); name += parts_[:-1]; line = parts_[-1]
+    name.append(line)
     if len(name) > 2: name = name[:2]; name[1] = name[1][:-1] + "…"
     rows_h = 40 + 40 * len(name) + (44 if c.get("price") else 0) + 34
     bw = pad + q.width + gap + tw + pad; bh = pad + max(q.height, rows_h) + pad

@@ -199,7 +199,7 @@ def sources_md(spec, made_at):
 def checklist_txt(spec, base_lines, cnt, warns, notes, plan, plan_problems):
     sc = plan["schedule"]; src = spec.get("source") or []
     L = [f"■ 게시 꾸러미 점검표 — {spec['out']}", f"예약: {sc['date']} {sc['time']} ({sc['slot']}, 서울) · 다섯 곳 같은 시각", "",
-         "■ 5줄 점검표(공장과 같은 항목)"] + ["  " + x for x in base_lines]
+         "■ 공장 점검표(5줄 + 틀별 항목)"] + ["  " + x for x in base_lines]
     L += ["", "■ 글자 수"] + [f"  {'✅' if n <= m else '❌'} {k}: {n} / {m}" for k, n, m in cnt]
     L += ["", "■ 운영 규칙", f"  {'✅' if len(src) >= 2 else '⚠️'} 출처·기준 {len(src)}줄 (2곳 미만이면 자동 게시 안 함 — 대표 판단)",
           "  [ ] 민감 이슈 아님(사건·사고·정치면 표시만 하고 대표가 제외 여부 결정)", "  [ ] 실존 인물·뉴스 사진 안 씀"]
@@ -223,7 +223,7 @@ def uploader_post_txt(T):
             f"[인스타그램·페이스북 릴스 (비즈니스 스위트 예약)]\n{T['instagram'].strip()}\n\n[틱톡]\n{T['tiktok'].strip()}\n\n[X]\n{T['x'].strip()}\n")
 
 
-def build_plan(pkg, spec, sites, slot, date, now=None):
+def build_plan(pkg, spec, sites, slot, date, now=None, base_lines=()):
     """업로더의 build_plan 을 그대로 돌려 같은 형식·같은 점검을 받는다(임시 폴더에 업로더가 찾는 이름으로 연결)."""
     T = read_texts(pkg); y = parse_youtube(T["youtube"])
     s = json.loads(json.dumps(spec)); name = s["out"]
@@ -245,6 +245,9 @@ def build_plan(pkg, spec, sites, slot, date, now=None):
                 mode="confirm", final_click=False, package=pkg)
     for it in plan["sites"].values():
         if "thumb" in it: it["thumb"] = plan["thumb"]
+    bad = [x for x in base_lines if x.startswith("❌")]   # 공장 점검표 ❌ 는 계획도 통과 못 함
+    if bad and not any("5줄 점검표" in q for q in plan["problems"]):
+        plan["problems"].append("공장 점검표 ❌: " + " / ".join(bad)); plan["ok"] = False
     if spec.get("template") == "stagemix" and not spec.get("copyright_checked"):
         plan["problems"].append("저작권·팬캠 양해 확인 안 됨"); plan["ok"] = False
     if (plan["schedule"]["slot"], plan["schedule"]["time"]) != (SLOT_UP[slot], SLOT_TIME[slot]):
@@ -297,7 +300,7 @@ def thumb_jpg(src, dst):
 
 
 def finish(pkg, spec, T, warns, notes, base_lines, sites, slot, date, now=None):
-    plan = build_plan(pkg, spec, sites, slot, date.isoformat(), now)
+    plan = build_plan(pkg, spec, sites, slot, date.isoformat(), now, base_lines)
     pp = os.path.join(pkg, "upload_plan.json")
     json.dump(plan, open(pp, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
     _, problems = check_plan(pp, now)
@@ -340,7 +343,9 @@ def base_check(spec, video):
         return sf.checklist(spec, video, info["dur"] if info else dur, t_end)[0]
     import make_today as mt
     lines, _ = mt.precheck(spec); info = up.probe(video) or {}
-    return lines + [("✅ " if info.get("audio") else "❌ 빠짐: ") + "배경음악(노래) 들어감"]
+    n_src = len({v[0] for v in (spec.get("clips") or {}).values()})   # make_today.render 와 같은 기준
+    return lines + [("✅ " if info.get("audio") else "❌ 빠짐: ") + "배경음악(노래) 들어감",
+                    ("✅ " if n_src >= 8 else "❌ 확인: ") + f"무대 소스 {n_src}개 (8개 이상 권장)"]
 
 
 def replan(pkg, date=None, sites=None, now=None):
