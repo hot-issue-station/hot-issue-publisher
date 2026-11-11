@@ -2,64 +2,247 @@
   "_설명": "덕심저장소 제작 표준 v2 (대표 확정 11/11 20:28). 공장(expose_factory·stagemix pulse58·longform 몰아보기·make_today·check_standard)이 이 파일의 수치를 읽는다. 사람이 읽는 설명은 docs/제작표준_v2_제미나이프로토콜.md",
   "version": "2.0",
   "priority": [
-    {"rank": 1, "key": "U", "name": "언더독스토리 2편 분석 = 롱폼 기준서 v1 (+ 공장 v2.1 기능)", "file": "/home/claude/bench_underdog/all.md"},
-    {"rank": 2, "key": "A", "name": "안원잘부 거제 1편 분석", "file": "/home/claude/bench_anwon/all.md"},
-    {"rank": 3, "key": "G", "name": "제미나이 기획(58초 쇼츠 A/B·몰아보기 대본·편성)", "file": "프로젝트 「20261111_제미나이 브레인스토밍 1·3」"}
+    {
+      "rank": 1,
+      "key": "U",
+      "name": "언더독스토리 2편 분석 = 롱폼 기준서 v1 (+ 공장 v2.1 기능)",
+      "file": "/home/claude/bench_underdog/all.md"
+    },
+    {
+      "rank": 2,
+      "key": "A",
+      "name": "안원잘부 거제 1편 분석",
+      "file": "/home/claude/bench_anwon/all.md"
+    },
+    {
+      "rank": 3,
+      "key": "G",
+      "name": "제미나이 기획(58초 쇼츠 A/B·몰아보기 대본·편성)",
+      "file": "프로젝트 「20261111_제미나이 브레인스토밍 1·3」"
+    }
   ],
   "schedule": {
     "time": "19:00",
     "slot": "저녁",
     "uploader_slot": "저녁7시",
-    "days": {"월": "shorts_A", "화": "molabogi", "수": "shorts_B", "목": null, "금": "shorts_A", "토": "molabogi", "일": "shorts_B"},
+    "days": {
+      "월": "shorts_A",
+      "화": "molabogi",
+      "수": "shorts_B",
+      "목": null,
+      "금": "shorts_A",
+      "토": "molabogi",
+      "일": "shorts_B"
+    },
     "banner": "월·수·금·일 저녁 7시 쇼츠  /  화·토 저녁 7시 몰아보기",
     "_근거": "G 편성표 + 대표 지시(월A·수B·금A·일B 초안)"
   },
   "shorts": {
     "total_sec": 58.0,
     "tolerance_sec": 0.05,
-    "size": [1080, 1920],
+    "size": [
+      1080,
+      1920
+    ],
     "fps": 30,
     "audio_hz": 48000,
     "outro_sec": 5.0,
-    "_근거": "G 58초·9:16 / 아웃트로 5초 G"
+    "_근거": "G 58초·9:16 / 아웃트로 5초 G",
+    "platforms": {
+      "youtube": 58.0,
+      "instagram": 58.0,
+      "facebook": 58.0,
+      "x": 58.0,
+      "tiktok": 62.0
+    },
+    "versions": {
+      "58": {
+        "sec": 58.0,
+        "suffix": "_58",
+        "for": [
+          "youtube",
+          "instagram",
+          "facebook",
+          "x"
+        ]
+      },
+      "tiktok62": {
+        "sec": 62.0,
+        "suffix": "_tiktok62",
+        "for": [
+          "tiktok"
+        ]
+      }
+    },
+    "_플랫폼_근거": "대표 지시 11/11 20:34: 틱톡은 1분 2초(62.0초) 별도 버전. 본문 구간을 비례로 4초 늘리고 아웃트로 5초는 그대로"
   },
   "style_A": {
     "template": "expose",
-    "sections": [["hook", 0, 3], ["twist", 3, 5], ["expose1", 5, 25], ["expose2", 25, 45], ["brand", 45, 53], ["outro", 53, 58]],
-    "crash_zoom": {"ramp_sec": 0.15, "hold_sec": 1.2, "scale": 1.8},
+    "sections": [
+      [
+        "hook",
+        0,
+        3
+      ],
+      [
+        "twist",
+        3,
+        5
+      ],
+      [
+        "expose1",
+        5,
+        25
+      ],
+      [
+        "expose2",
+        25,
+        45
+      ],
+      [
+        "brand",
+        45,
+        53
+      ],
+      [
+        "outro",
+        53,
+        58
+      ]
+    ],
+    "crash_zoom": {
+      "ramp_sec": 0.15,
+      "hold_sec": 1.2,
+      "scale": 1.8
+    },
     "audio_lead_sec": 0.5,
     "bleep_hz": 1000,
     "layout_default": "fit",
-    "_근거": "구간·크래시 줌·삐-·까마귀 G / 오디오 오버랩 U 자료05 오디오 브리지 / fit(원본 자막 보존) U 자료04·15 세로 인용 방식"
+    "_근거": "구간·크래시 줌·삐-·까마귀 G / 오디오 오버랩 U 자료05 오디오 브리지 / fit(원본 자막 보존) U 자료04·15 세로 인용 방식",
+    "stretch_roles": [
+      "expose1",
+      "expose2"
+    ]
   },
   "style_B": {
     "template": "pulse58",
     "min_sources": 8,
-    "sections": [["change8", 0, 6], ["split", 6, 26], ["jump", 26, 46], ["pump", 46, 53], ["outro", 53, 58]],
+    "sections": [
+      [
+        "change8",
+        0,
+        6
+      ],
+      [
+        "split",
+        6,
+        26
+      ],
+      [
+        "jump",
+        26,
+        46
+      ],
+      [
+        "pump",
+        46,
+        53
+      ],
+      [
+        "outro",
+        53,
+        58
+      ]
+    ],
     "change_sec": 0.75,
     "jump_sec": 0.3,
     "roll_deg": 15,
-    "_근거": "G 8단 교차편집 프로토콜"
+    "_근거": "G 8단 교차편집 프로토콜",
+    "stretch_sections": [
+      "split",
+      "jump"
+    ]
   },
   "molabogi": {
     "template": "molabogi",
-    "size": [1920, 1080],
+    "size": [
+      1920,
+      1080
+    ],
     "target_sec": 480,
-    "sections": [["opening", 0, 30], ["origin", 30, 90], ["expose", 90, 180], ["more", 180, null], ["next_and_sub", null, null]],
-    "test_sections": [["opening", 0, 30], ["origin", 30, 78], ["next_and_sub", 78, 90]],
+    "sections": [
+      [
+        "opening",
+        0,
+        30
+      ],
+      [
+        "origin",
+        30,
+        90
+      ],
+      [
+        "expose",
+        90,
+        180
+      ],
+      [
+        "more",
+        180,
+        null
+      ],
+      [
+        "next_and_sub",
+        null,
+        null
+      ]
+    ],
+    "test_sections": [
+      [
+        "opening",
+        0,
+        30
+      ],
+      [
+        "origin",
+        30,
+        78
+      ],
+      [
+        "next_and_sub",
+        78,
+        90
+      ]
+    ],
     "_근거": "구조 G 몰아보기 대본 / 하이라이트·질문·J컷·덕킹·출처 화면 U(기준서 v1)"
   },
   "longform_v1": {
     "highlight_sec": 3.0,
     "question_at_sec": 25,
-    "question_window": [20, 32],
+    "question_window": [
+      20,
+      32
+    ],
     "j_cut_sec": 0.5,
     "duck_db": -14,
     "max_still_sec": 8.0,
-    "cut_avg_sec": [2, 5],
+    "cut_avg_sec": [
+      2,
+      5
+    ],
     "credit_end_card_sec": 4.0,
-    "required": ["opening.highlight", "opening.question", "credit", "ending"],
-    "optional": ["music_cut", "ending.resolve", "product_cards", "rewind"],
+    "required": [
+      "opening.highlight",
+      "opening.question",
+      "credit",
+      "ending"
+    ],
+    "optional": [
+      "music_cut",
+      "ending.resolve",
+      "product_cards",
+      "rewind"
+    ],
     "_근거": "U 자료03·13(하이라이트 선제시, 25~30초 질문) / U 자료05 오디오 브리지·컷 2~4초 / A 컷 3~5초·1~2초 / U 자료07·15 출처 화면·구석 출처 / U 자료07 엔딩 댓글·다음 영상"
   },
   "captions": {
@@ -67,22 +250,62 @@
     "base_color": "#FFFFFF",
     "stroke_color": "#000000",
     "paren_color": "#FFDE28",
-    "styles": ["bracket", "situation", "big", "sfx", "narr", "emotion"],
-    "speaker_colors": {"_설명": "A 안원잘부: 인물별 자막 색(실제 영상 확인: 미나미 분홍 상자, PD 질문 노랑). 우리 자막은 기본 흰색, 인물 반응을 짚을 때만 color 로"},
+    "styles": [
+      "bracket",
+      "situation",
+      "big",
+      "sfx",
+      "narr",
+      "emotion"
+    ],
+    "speaker_colors": {
+      "_설명": "A 안원잘부: 인물별 자막 색(실제 영상 확인: 미나미 분홍 상자, PD 질문 노랑). 우리 자막은 기본 흰색, 인물 반응을 짚을 때만 color 로"
+    },
     "default_source": "A",
     "_근거": "굵은 고딕 흰색+강조 노랑 U 자료06·16 / 괄호 반응 U 자료06 + G / 인물 색·강조 크게 얼굴 주변 A / 투박한 단색 G(보조)"
   },
   "thumbnail_v2": {
-    "elements": ["실제 장면 한 장", "실제로 한 말 한 줄(큰따옴표)", "대비·반전 한 줄", "시리즈 꼬리표", "작은 출처"],
+    "elements": [
+      "실제 장면 한 장",
+      "실제로 한 말 한 줄(큰따옴표)",
+      "대비·반전 한 줄",
+      "시리즈 꼬리표",
+      "작은 출처"
+    ],
     "max_text_blocks": 3,
     "quote_must_be_real": true,
     "_근거": "U 자료09 제목 “천막 치울 수 있을까요?”(실제 대사 따옴표) / U 자료03 '1위보다 놀라운 장면' 반전 / A 이유1 갸루×시골 대비 / U 자료15 출처 / 썸네일 자체 분석은 자료에 없음 → 대표 확인"
   },
-  "banned_words": ["뭐하노"],
-  "banned_where": ["title", "thumb", "big_caption", "our_caption", "post"],
-  "ad_exclude_words": ["술", "주류", "소주", "맥주", "담배", "전자담배", "도박", "카지노", "토토", "성인", "19금"],
+  "banned_words": [
+    "뭐하노"
+  ],
+  "banned_where": [
+    "title",
+    "thumb",
+    "big_caption",
+    "our_caption",
+    "post"
+  ],
+  "ad_exclude_words": [
+    "술",
+    "주류",
+    "소주",
+    "맥주",
+    "담배",
+    "전자담배",
+    "도박",
+    "카지노",
+    "토토",
+    "성인",
+    "19금"
+  ],
   "ad_exclude_note": "술·담배·도박·성인 광고 구간은 쓰지 않는다(예: A 자료 KGB 건배 장면 23:55). 클립 note/광고 표시 단어 검사 + clean_ranges 밖 사용 금지",
   "source_required": true,
   "no_fake_quotes": "우리 자막에 멤버가 하지 않은 말을 큰따옴표 대사로 쓰지 않는다(드립은 괄호)",
-  "retired_rules": ["노래 무대 54.5초+3.5초", "썸네일 빨간 띠→보라 띠(11/10 표준)", "댓글 캡처 자막 기본", "기존 make_today 07:30·12:00·18:30 편성"]
+  "retired_rules": [
+    "노래 무대 54.5초+3.5초",
+    "썸네일 빨간 띠→보라 띠(11/10 표준)",
+    "댓글 캡처 자막 기본",
+    "기존 make_today 07:30·12:00·18:30 편성"
+  ]
 }
