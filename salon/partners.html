@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>파트너 장부</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#c2410c">
+<style>
+:root{--bg:#fff8f3;--card:#fff;--tx:#2b2220;--sub:#7a6a64;--main:#c2410c;--line:#ead9cf;--soft:#fdeee4;--ok:#16a34a;--deep:#7c2d12}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:"Noto Sans KR",system-ui,sans-serif;font-size:19px}
+header{background:var(--main);color:#fff;padding:16px;position:sticky;top:0;z-index:3}
+header h1{margin:0;font-size:24px}
+header p{margin:4px 0 0;font-size:15px;opacity:.9}
+nav{display:flex;gap:6px;padding:10px 16px 0;max-width:640px;margin:0 auto;flex-wrap:wrap}
+nav button{flex:1;min-width:30%;font-size:18px;padding:12px 6px;border:2px solid var(--line);border-radius:14px;background:#fff;color:var(--tx);font-family:inherit;cursor:pointer}
+nav button.on{border-color:var(--main);color:var(--main);font-weight:700;background:var(--soft)}
+main{max-width:640px;margin:0 auto;padding:16px}
+h2{font-size:22px;margin:22px 0 8px;color:var(--deep)}
+label{display:block;margin:14px 0 6px;font-weight:700}
+input,select{width:100%;font-size:20px;padding:12px;border:2px solid var(--line);border-radius:14px;background:#fff;color:var(--tx);font-family:inherit}
+.code{text-transform:uppercase;letter-spacing:2px;font-weight:800}
+.d{color:var(--sub);font-size:15px}
+.note{color:var(--sub);font-size:16px;line-height:1.55}
+.big{display:block;width:100%;font-size:20px;font-weight:700;padding:14px;border:0;border-radius:14px;background:var(--main);color:#fff;margin-top:12px;font-family:inherit;cursor:pointer}
+.ghost{background:var(--soft);color:var(--main)}
+.sm{display:inline-block;width:auto;font-size:16px;padding:8px 12px;margin:6px 6px 0 0}
+.row{display:flex;gap:8px}.row>*{flex:1;min-width:0}
+.card{background:var(--card);border:2px solid var(--line);border-radius:18px;padding:14px;margin-top:10px}
+.card b{font-size:21px}
+.tot{background:var(--soft);border-color:var(--main)}
+.tot .n{font-size:30px;font-weight:800;color:var(--deep)}
+.warn{background:#fff7ed;border:2px dashed #f59e0b;border-radius:14px;padding:10px 12px;font-size:16px;line-height:1.5;margin-top:10px}
+table{width:100%;border-collapse:collapse;font-size:16px;margin-top:8px}
+th,td{border-bottom:1px solid var(--line);padding:8px 4px;text-align:left;vertical-align:top}
+td.r,th.r{text-align:right;white-space:nowrap}
+.hide{display:none!important}
+#toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:#2b2220;color:#fff;padding:12px 18px;border-radius:14px;font-size:17px;z-index:9;max-width:90vw}
+</style>
+</head>
+<body>
+<header><h1>파트너 장부</h1><p>대표용 · 소개 파트너와 몫 계산 · 이 휴대폰(브라우저)에만 저장돼요</p></header>
+<nav id="tabs">
+  <button data-v="pt" class="on">파트너</button>
+  <button data-v="calc">몫 계산</button>
+  <button data-v="set">설정·백업</button>
+</nav>
+<main>
+
+<!-- 파트너 목록 -->
+<section id="pt">
+  <div class="warn" id="rateWarn"></div>
+  <div id="ptList"></div>
+  <h2>파트너 추가</h2>
+  <label for="pCode">소개 코드 <span class="d">(영어·숫자 4~12자, 앱의 '소개해 준 분 코드'와 같음)</span></label>
+  <input id="pCode" class="code" placeholder="예: JEJU01" maxlength="14" autocomplete="off" autocapitalize="characters">
+  <label for="pName">이름</label>
+  <input id="pName" placeholder="예: 김OO (제주 납품)" autocomplete="off">
+  <label for="pTel">연락처 <span class="d">(선택)</span></label>
+  <input id="pTel" inputmode="tel" placeholder="010-0000-0000" autocomplete="off">
+  <label for="pRate">이 파트너만 다른 비율 <span class="d">(선택 · 비우면 설정의 기본 비율)</span></label>
+  <input id="pRate" inputmode="decimal" placeholder="예: 20 (%)" autocomplete="off">
+  <button class="big" id="pAdd">파트너 저장</button>
+  <p class="note">파트너가 다른 파트너를 데려와도 <b>위·아래 관계는 만들지 않아요.</b> 새 분은 따로 등록하고, 각자 직접 소개한 미용실 몫만 받아요(1단계만, 다단계 아님).</p>
+</section>
+
+<!-- 파트너 상세 (소개한 미용실) -->
+<section id="detail" class="hide">
+  <button class="big ghost" id="dBack">‹ 파트너 목록</button>
+  <div id="dHead"></div>
+  <h2>소개한 미용실</h2>
+  <div id="dShops"></div>
+  <label for="sName">미용실 이름</label>
+  <input id="sName" placeholder="예: 별빛헤어" autocomplete="off">
+  <div class="row">
+    <div><label for="sArea">지역 <span class="d">(선택)</span></label><input id="sArea" placeholder="예: 제주 노형" autocomplete="off"></div>
+    <div><label for="sDate">등록한 날</label><input id="sDate" type="date"></div>
+  </div>
+  <button class="big" id="sAdd">미용실 추가</button>
+  <p class="note">원장님 앱 설정 → '소개해 준 분'에 이 코드가 보이는지 원장님과 같이 확인한 뒤 적어 주세요. 원장님 손님 기록·매출은 적지 않아요.</p>
+  <button class="big ghost" id="dEdit">비율·연락처 고치기</button>
+  <button class="big ghost" id="dDel" style="color:#b91c1c">이 파트너 지우기</button>
+</section>
+
+<!-- 몫 계산 -->
+<section id="calc" class="hide">
+  <label for="cPer">기간 <span class="d">(정산 달)</span></label>
+  <input id="cPer" type="month">
+  <p class="note">제휴처 보고서(예: 쿠팡 파트너스 실적의 구분값 <b>dangol_코드</b>)에서 파트너별로 확인한 <b>우리 수수료</b>를 적어 주세요. 유료 기능 매출이 생기면 '기타 수수료'에 적어요. 파트너 몫 = (제휴 + 기타) × 비율.</p>
+  <div id="cRows"></div>
+  <div class="card tot" id="cTot"></div>
+  <button class="big" id="cCsv">이 기간 정산 표 CSV 내보내기</button>
+  <button class="big ghost" id="cCsvAll">전체 기간 CSV 내보내기</button>
+  <p class="note">이 화면은 계산과 기록만 해요. 실제 송금·세금 처리(원천징수 등)는 사업자(종훈 명의) 쪽에서 따로 해요. 원장님·구매자에게는 수수료를 나눠 드리지 않아요.</p>
+</section>
+
+<!-- 설정·백업 -->
+<section id="set" class="hide">
+  <h2>기본 비율</h2>
+  <label for="rate">파트너 몫 기본 비율 (%) <span class="d">(대표가 정함 · 비워 두면 계산 안 함)</span></label>
+  <input id="rate" inputmode="decimal" placeholder="예시: 20" autocomplete="off">
+  <label for="cycle">정산 주기 메모 <span class="d">(표시용)</span></label>
+  <input id="cycle" placeholder="예시: 매달 말일 마감, 다음 달 15일 지급" autocomplete="off">
+  <button class="big" id="rSave">저장</button>
+  <h2>백업</h2>
+  <p class="note">장부는 이 브라우저에만 있어요. 정산할 때마다 백업 파일을 내려받아 두세요.</p>
+  <button class="big ghost" id="bOut">백업 파일 내보내기</button>
+  <button class="big ghost" id="bIn">백업 파일 가져오기</button>
+  <input type="file" id="bFile" accept=".json,application/json" class="hide">
+  <h2>소개 QR</h2>
+  <p class="note">파트너에게는 <a href="partner.html">소개 QR 만들기</a> 화면 주소와 코드만 알려 주면 돼요.</p>
+</section>
+</main>
+<div id="toast" class="hide" role="status"></div>
+<script>
+"use strict";
+/* 파트너 장부 — 대표 전용. 저장 키 "dangol_partners_v1" (원장님 앱 "dangol_v1"과 따로)
+   형식: {rate:"" 또는 숫자(%), cycle:"", p:[{code,name,tel,rate,at,shops:[{n,area,d}]}], led:{ "YYYY-MM": { 코드:{aff,etc} } }}
+   - 다단계 금지: 파트너끼리 상하 관계 칸이 없음(1단계만)
+   - 서버 전송·결제·자동 정산 없음 */
+const KEY = "dangol_partners_v1";
+const $ = id => document.getElementById(id);
+const RE = /^[A-Z0-9]{4,12}$/;
+const norm = s => String(s || "").trim().toUpperCase().replace(/[\s-]/g, "");
+const won = n => Math.round(Number(n || 0)).toLocaleString("ko-KR") + "원";
+const num = s => { const v = Number(String(s ?? "").replace(/[,\s원%]/g, "")); return isFinite(v) ? v : 0; };
+const rateOk = s => String(s ?? "").trim() !== "" && isFinite(Number(s)) && Number(s) >= 0 && Number(s) <= 100;
+const z = n => String(n).padStart(2, "0");
+const today = () => { const d = new Date(); return d.getFullYear() + "-" + z(d.getMonth() + 1) + "-" + z(d.getDate()); };
+const thisMonth = () => today().slice(0, 7);
+function esc(s) { return String(s ?? "").replace(/[&<>"']/g, m => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[m])); }
+function toast(t) { const el = $("toast"); el.textContent = t; el.classList.remove("hide"); clearTimeout(toast.h); toast.h = setTimeout(() => el.classList.add("hide"), 2800); }
+
+let db = { rate: "", cycle: "", p: [], led: {} }, cur = null, view = "pt";
+function normDb() {
+  if (!db || typeof db !== "object") db = {};
+  if (!Array.isArray(db.p)) db.p = [];
+  if (!db.led || typeof db.led !== "object") db.led = {};
+  db.rate = db.rate ?? ""; db.cycle = db.cycle ?? "";
+  db.p.forEach(p => { if (!Array.isArray(p.shops)) p.shops = []; p.rate = p.rate ?? ""; });
+}
+function load() { try { db = JSON.parse(localStorage.getItem(KEY)) || db; } catch (e) {} normDb(); }
+function save() { try { localStorage.setItem(KEY, JSON.stringify(db)); } catch (e) { alert("저장하지 못했어요. 백업 파일을 내려받아 두세요."); } }
+load();
+
+const rateOf = p => rateOk(p.rate) ? Number(p.rate) : rateOk(db.rate) ? Number(db.rate) : null;
+const findP = c => db.p.find(p => p.code === c);
+
+function go(v) {
+  view = v;
+  ["pt", "detail", "calc", "set"].forEach(s => $(s).classList.toggle("hide", s !== v));
+  document.querySelectorAll("#tabs button").forEach(b => b.classList.toggle("on", b.dataset.v === v || (v === "detail" && b.dataset.v === "pt")));
+  ({ pt: drawList, detail: drawDetail, calc: drawCalc, set: drawSet })[v]();
+  scrollTo(0, 0);
+}
+document.querySelectorAll("#tabs button").forEach(b => b.onclick = () => go(b.dataset.v));
+
+/* ── 파트너 목록 ── */
+function drawList() {
+  $("rateWarn").innerHTML = rateOk(db.rate)
+    ? `기본 비율 <b>${esc(db.rate)}%</b>${db.cycle ? " · " + esc(db.cycle) : ""}`
+    : `기본 비율이 아직 비어 있어요(대표가 정함). '설정·백업'에서 정하면 몫이 계산돼요.`;
+  $("ptList").innerHTML = db.p.length ? db.p.map(p => {
+    const r = rateOf(p);
+    return `<div class="card" style="cursor:pointer" onclick="openP('${esc(p.code)}')"><b>${esc(p.name || "(이름 없음)")}</b> <span class="code d">${esc(p.code)}</span>
+      <div class="d">소개한 미용실 <b style="font-size:18px;color:var(--tx)">${p.shops.length}곳</b> · 비율 ${r == null ? "미정" : r + "%" + (rateOk(p.rate) ? " (개별)" : "")}${p.tel ? " · " + esc(p.tel) : ""}</div></div>`;
+  }).join("") : `<p class="note">아직 등록한 파트너가 없어요.</p>`;
+}
+$("pAdd").onclick = () => {
+  const code = norm($("pCode").value), name = $("pName").value.trim(), tel = $("pTel").value.trim(), rate = $("pRate").value.trim().replace(/%/g, "");
+  if (!RE.test(code)) return alert("코드는 영어와 숫자 4~12자예요.");
+  if (findP(code)) return alert("이미 있는 코드예요.");
+  if (rate && !rateOk(rate)) return alert("비율은 0~100 사이 숫자로 적어 주세요. 비워 두면 기본 비율을 써요.");
+  db.p.push({ code, name, tel, rate, at: today(), shops: [] }); save();
+  ["pCode", "pName", "pTel", "pRate"].forEach(i => $(i).value = "");
+  toast(`${code} 파트너를 저장했어요`); drawList();
+};
+function openP(code) { cur = findP(code); if (cur) go("detail"); }
+
+/* ── 파트너 상세 ── */
+function drawDetail() {
+  if (!cur) return go("pt");
+  const r = rateOf(cur);
+  $("dHead").innerHTML = `<div class="card"><b>${esc(cur.name || "(이름 없음)")}</b><div class="code" style="font-size:24px;margin-top:4px">${esc(cur.code)}</div>
+    <div class="d">${esc(cur.tel || "연락처 없음")} · 비율 ${r == null ? "미정" : r + "%"} · ${esc(cur.at || "")} 등록</div>
+    <a class="big ghost sm" href="partner.html?code=${encodeURIComponent(cur.code)}" style="text-decoration:none">이 코드로 소개 QR</a></div>`;
+  $("dShops").innerHTML = cur.shops.length ? cur.shops.map((s, i) => `<div class="card"><b>${esc(s.n)}</b><div class="d">${esc(s.area || "")}${s.area ? " · " : ""}${esc(s.d || "")}</div>
+    <button class="big ghost sm" onclick="delShop(${i})">지우기</button></div>`).join("") : `<p class="note">아직 적은 미용실이 없어요.</p>`;
+  $("sDate").value = today();
+}
+$("dBack").onclick = () => go("pt");
+$("sAdd").onclick = () => {
+  const n = $("sName").value.trim(); if (!n) return alert("미용실 이름을 적어 주세요.");
+  cur.shops.push({ n, area: $("sArea").value.trim(), d: $("sDate").value || today() }); save();
+  $("sName").value = ""; $("sArea").value = ""; toast("미용실을 추가했어요"); drawDetail();
+};
+function delShop(i) { if (!confirm(`'${cur.shops[i].n}'을(를) 지울까요?`)) return; cur.shops.splice(i, 1); save(); drawDetail(); }
+$("dEdit").onclick = () => {
+  const r = prompt("이 파트너만 다른 비율(%) — 비우면 기본 비율", cur.rate || ""); if (r === null) return;
+  const rv = r.trim().replace(/%/g, ""); if (rv && !rateOk(rv)) return alert("0~100 사이 숫자로 적어 주세요.");
+  const t = prompt("연락처", cur.tel || ""); if (t !== null) cur.tel = t.trim();
+  cur.rate = rv; save(); drawDetail();
+};
+$("dDel").onclick = () => {
+  if (!confirm(`${cur.code} 파트너를 지울까요?\n정산 기록의 금액은 남지만 목록에서 사라져요.`)) return;
+  db.p = db.p.filter(p => p !== cur); cur = null; save(); go("pt");
+};
+
+/* ── 몫 계산 ── */
+function rowsFor(per) {
+  const L = db.led[per] || {};
+  return db.p.map(p => { const e = L[p.code] || {}, aff = num(e.aff), etc = num(e.etc), r = rateOf(p);
+    return { p, aff, etc, sum: aff + etc, r, share: r == null ? null : Math.round((aff + etc) * r / 100) }; });
+}
+function drawCalc() {
+  if (!$("cPer").value) $("cPer").value = thisMonth();
+  const per = $("cPer").value;
+  if (!db.p.length) { $("cRows").innerHTML = `<p class="note">먼저 '파트너' 탭에서 파트너를 등록해 주세요.</p>`; $("cTot").classList.add("hide"); return; }
+  $("cTot").classList.remove("hide");
+  const L = db.led[per] || {};
+  $("cRows").innerHTML = db.p.map(p => { const e = L[p.code] || {};
+    return `<div class="card"><b>${esc(p.name || p.code)}</b> <span class="code d">${esc(p.code)}</span> <span class="d">· 미용실 ${p.shops.length}곳</span>
+      <div class="row"><div><label>제휴 수수료</label><input inputmode="numeric" data-c="${esc(p.code)}" data-k="aff" value="${esc(e.aff ?? "")}" placeholder="0"></div>
+      <div><label>기타 수수료</label><input inputmode="numeric" data-c="${esc(p.code)}" data-k="etc" value="${esc(e.etc ?? "")}" placeholder="0"></div></div>
+      <div class="d" style="margin-top:8px" id="sh_${esc(p.code)}"></div></div>`; }).join("");
+  $("cRows").querySelectorAll("input").forEach(i => i.oninput = () => {
+    const per = $("cPer").value, L = db.led[per] = db.led[per] || {}, e = L[i.dataset.c] = L[i.dataset.c] || {};
+    e[i.dataset.k] = i.value.replace(/[^\d.]/g, ""); save(); drawTot();
+  });
+  drawTot();
+}
+function drawTot() {
+  const per = $("cPer").value, rs = rowsFor(per);
+  let our = 0, give = 0, undec = 0;
+  rs.forEach(x => { our += x.sum; if (x.share == null) { if (x.sum) undec++; } else give += x.share;
+    const el = $("sh_" + x.p.code); if (el) el.innerHTML = x.r == null ? "비율 미정 → 몫 계산 안 함" : `${won(x.sum)} × ${x.r}% = <b style="font-size:20px;color:var(--deep)">${won(x.share)}</b>`; });
+  $("cTot").innerHTML = `<div class="d">${esc(per)} 합계</div><div>우리 수수료 <b>${won(our)}</b></div>
+    <div>파트너 몫 합계 <span class="n">${won(give)}</span></div><div>남는 몫(사업자) <b>${won(our - give)}</b></div>
+    ${undec ? `<div class="warn">비율이 정해지지 않은 파트너 ${undec}명은 몫에 넣지 않았어요.</div>` : ""}`;
+}
+$("cPer").onchange = drawCalc;
+
+function csvCell(v) { v = String(v ?? ""); return /[",\n]/.test(v) ? '"' + v.replace(/"/g, '""') + '"' : v; }
+function download(name, text, type) {
+  const b = new Blob([text], { type }), a = Object.assign(document.createElement("a"), { href: URL.createObjectURL(b), download: name });
+  document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(a.href), 4000);
+}
+function csvFor(pers) {
+  const head = ["기간", "파트너 코드", "이름", "연락처", "소개 미용실 수", "제휴 수수료", "기타 수수료", "우리 수수료 합계", "비율(%)", "파트너 몫"];
+  const lines = [head];
+  pers.forEach(per => rowsFor(per).forEach(x => { if (!x.sum && pers.length > 1) return;
+    lines.push([per, x.p.code, x.p.name, x.p.tel, x.p.shops.length, x.aff, x.etc, x.sum, x.r ?? "미정", x.share ?? "미정"]); }));
+  return "﻿" + lines.map(r => r.map(csvCell).join(",")).join("\r\n");
+}
+$("cCsv").onclick = () => { const per = $("cPer").value; if (!db.p.length) return alert("파트너가 없어요."); download(`파트너정산_${per}.csv`, csvFor([per]), "text/csv;charset=utf-8"); };
+$("cCsvAll").onclick = () => { const pers = Object.keys(db.led).sort(); if (!pers.length) return alert("아직 입력한 기간이 없어요."); download(`파트너정산_전체_${today()}.csv`, csvFor(pers), "text/csv;charset=utf-8"); };
+
+/* ── 설정·백업 ── */
+function drawSet() { $("rate").value = db.rate; $("cycle").value = db.cycle; }
+$("rSave").onclick = () => {
+  const r = $("rate").value.trim().replace(/%/g, "");
+  if (r && !rateOk(r)) return alert("비율은 0~100 사이 숫자로 적어 주세요. 아직 안 정했으면 비워 두세요.");
+  db.rate = r; db.cycle = $("cycle").value.trim(); save(); toast("저장했어요");
+};
+$("bOut").onclick = () => download(`파트너장부_백업_${today()}.json`, JSON.stringify({ kind: "dangol-partners", v: 1, at: new Date().toISOString(), db }, null, 1), "application/json");
+$("bIn").onclick = () => $("bFile").click();
+$("bFile").onchange = e => {
+  const f = e.target.files[0]; e.target.value = ""; if (!f) return;
+  f.text().then(t => { const j = JSON.parse(t); if (!j || j.kind !== "dangol-partners" || !j.db) throw 0;
+    if (!confirm(`백업의 파트너 ${(j.db.p || []).length}명으로 바꿀까요?\n지금 장부는 덮어써져요.`)) return;
+    db = j.db; normDb(); save(); cur = null; go("pt"); toast("백업을 불러왔어요"); }).catch(() => alert("파트너 장부 백업 파일이 아니에요."));
+};
+
+go("pt");
+</script>
+</body>
+</html>
