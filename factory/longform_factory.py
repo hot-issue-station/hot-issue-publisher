@@ -379,7 +379,8 @@ def _STD():
     import v2_fx; return v2_fx.STD
 
 # ---- v2.3 (대표 11/11 21:21): 위 자막은 얼굴을 피하고, 반응 말풍선은 원본 자막(화면 아래)을 피한다 ----
-ORIG_SUB_BAND = (0, int(H * 0.78), W, H - int(H * 0.78))   # 원본 영상 자막이 오는 아래 띠
+_PL = _STD()["captions"]["placement"]
+ORIG_SUB_BAND = (0, int(H * _PL["orig_sub_band_top_ratio"]), W, H - int(H * _PL["orig_sub_band_top_ratio"]))   # 원본 영상 자막이 오는 아래 띠(standard_v2 captions.placement)
 _FACE_CACHE = {}
 def faces_in(src, t0, t1):
     """원본 src 의 t0~t1초 프레임 3장에서 얼굴(머리카락 포함 넓힘) 상자 목록, 출력 화면(W×H) 좌표."""

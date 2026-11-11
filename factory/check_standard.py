@@ -180,8 +180,27 @@ def long_conf(spec):
     k = spec.get("long_template")
     return (k, STD["long_templates"][k]) if k in STD.get("long_templates", {}) else (None, None)
 
+def check_caption_places(spec):
+    """대표 11/11 21:40: 자막 자리 규칙(standard_v2 captions.placement) — 위쪽 자막(narr·situation)에 직접 위치(pos)를 주어 아래로 내리면 위반."""
+    PL = STD["captions"]["placement"]; bad = []
+    for ch in spec.get("chapters", []):
+        for sc in ch.get("scenes", []):
+            for s in sc.get("subs", []):
+                if len(s) > 4 and s[3] in ("narr", "situation") and s[4] and s[4][1] > PL["top_max_y_ratio"]: bad.append(f"{s[2]} (pos y={s[4][1]})")
+    return bad
+
+def check_thumb_emph(spec):
+    th = spec.get("thumb") or spec.get("thumb_v2") or {}
+    if not th.get("quote"): return True, "썸네일 대사 없음"
+    em = th.get("emph"); ok = bool(em) and all(e in th["quote"] for e in ([em] if isinstance(em, str) else em))
+    return ok, f"썸네일 강조 말 {em or '없음'}"
+
 def run(spec, videos):
     items = []; tol = STD["shorts"]["tolerance_sec"]; kind = spec.get("template")
+    bp = check_caption_places(spec)
+    items.append(("자막 자리: 위쪽 자막은 화면 맨 위에 붙임(직접 위치로 내린 것 없음)" + (f" — {bp}" if bp else ""), not bp))
+    if STD["thumbnail_v2"].get("emph", {}).get("required"):
+        ok_e, msg_e = check_thumb_emph(spec); items.append((msg_e + " (따옴표 대사 속 핵심 말 노란색)", ok_e))
     for v in videos:
         if not os.path.exists(v): items.append((f"결과 파일 있음: {v}", False)); continue
         P = probe(v); tag = os.path.basename(v)

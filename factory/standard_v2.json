@@ -1,749 +1,765 @@
 {
-  "_설명": "덕심저장소 제작 표준 v2 (대표 확정 11/11 20:28). 공장(expose_factory·stagemix pulse58·longform 몰아보기·make_today·check_standard)이 이 파일의 수치를 읽는다. 사람이 읽는 설명은 docs/제작표준_v2_제미나이프로토콜.md",
-  "version": "2.0",
-  "priority": [
-    {
-      "rank": 1,
-      "key": "U",
-      "name": "언더독스토리 2편 분석 = 롱폼 기준서 v1 (+ 공장 v2.1 기능)",
-      "file": "/home/claude/bench_underdog/all.md"
-    },
-    {
-      "rank": 2,
-      "key": "A",
-      "name": "안원잘부 거제 1편 분석",
-      "file": "/home/claude/bench_anwon/all.md"
-    },
-    {
-      "rank": 3,
-      "key": "G",
-      "name": "제미나이 기획(58초 쇼츠 A/B·몰아보기 대본·편성)",
-      "file": "프로젝트 「20261111_제미나이 브레인스토밍 1·3」"
-    }
-  ],
-  "schedule": {
-    "time": "19:00",
-    "slot": "저녁",
-    "uploader_slot": "저녁7시",
-    "days": {
-      "월": "shorts_A",
-      "화": "molabogi",
-      "수": "shorts_B",
-      "목": null,
-      "금": "shorts_A",
-      "토": "molabogi",
-      "일": "shorts_B"
-    },
-    "banner": "월·수·금·일 저녁 7시 쇼츠  /  화·토 저녁 7시 몰아보기",
-    "_근거": "G 편성표 + 대표 지시(월A·수B·금A·일B 초안)"
+ "_설명": "덕심저장소 제작 표준 v2 (대표 확정 11/11 20:28). 공장(expose_factory·stagemix pulse58·longform 몰아보기·make_today·check_standard)이 이 파일의 수치를 읽는다. 사람이 읽는 설명은 docs/제작표준_v2_제미나이프로토콜.md",
+ "version": "2.0",
+ "priority": [
+  {
+   "rank": 1,
+   "key": "U",
+   "name": "언더독스토리 2편 분석 = 롱폼 기준서 v1 (+ 공장 v2.1 기능)",
+   "file": "/home/claude/bench_underdog/all.md"
   },
-  "shorts": {
-    "total_sec": 58.0,
-    "tolerance_sec": 0.05,
-    "size": [
-      1080,
-      1920
-    ],
-    "fps": 30,
-    "audio_hz": 48000,
-    "outro_sec": 5.0,
-    "_근거": "G 58초·9:16 / 아웃트로 5초 G",
-    "_플랫폼_근거": "모든 쇼츠 모든 플랫폼 같은 파일 하나(대표 20:40). 길이는 템플릿별(58.0/40.0, 대표 20:43). 62초 버전 폐기",
-    "_유튜브_한도_근거": "대표 20:36: 유튜브 칸에 58.0초 초과 파일이 들어가면 package.py 가 멈춘다(1분 넘는 쇼츠 Content ID 시 전 세계 차단)",
-    "max_sec": 58.0,
-    "_한도_근거": "대표 20:36·20:40: 58.0초 초과 파일이면 package.py 가 멈춘다(1분 넘는 쇼츠 Content ID 시 전 세계 차단)",
-    "_설명": "쇼츠 공통. 템플릿별 길이·구간은 shorts_templates. 모든 플랫폼 같은 파일(대표 20:40·20:43)"
+  {
+   "rank": 2,
+   "key": "A",
+   "name": "안원잘부 거제 1편 분석",
+   "file": "/home/claude/bench_anwon/all.md"
   },
-  "style_A": {
-    "template": "expose",
-    "sections": [
-      [
-        "hook",
-        0,
-        3
-      ],
-      [
-        "twist",
-        3,
-        5
-      ],
-      [
-        "expose1",
-        5,
-        25
-      ],
-      [
-        "expose2",
-        25,
-        45
-      ],
-      [
-        "brand",
-        45,
-        53
-      ],
-      [
-        "outro",
-        53,
-        58
-      ]
-    ],
-    "crash_zoom": {
-      "ramp_sec": 0.15,
-      "hold_sec": 1.2,
-      "scale": 1.8
-    },
-    "audio_lead_sec": 0.5,
-    "bleep_hz": 1000,
-    "layout_default": "fit",
-    "_근거": "구간·크래시 줌·삐-·까마귀 G / 오디오 오버랩 U 자료05 오디오 브리지 / fit(원본 자막 보존) U 자료04·15 세로 인용 방식",
-    "stretch_roles": [
-      "expose1",
-      "expose2"
-    ],
-    "_stretch_설명": "길이가 58.0이 아닌 버전을 만들 때만 쓰는 비례 늘이기 대상(지금은 58.0 하나라 쓰이지 않음)"
-  },
-  "style_B": {
-    "template": "pulse58",
-    "min_sources": 8,
-    "sections": [
-      [
-        "change8",
-        0,
-        6
-      ],
-      [
-        "split",
-        6,
-        26
-      ],
-      [
-        "jump",
-        26,
-        46
-      ],
-      [
-        "pump",
-        46,
-        53
-      ],
-      [
-        "outro",
-        53,
-        58
-      ]
-    ],
-    "change_sec": 0.75,
-    "jump_sec": 0.3,
-    "roll_deg": 15,
-    "_근거": "G 8단 교차편집 프로토콜"
-  },
-  "molabogi": {
-    "template": "molabogi",
-    "size": [
-      1920,
-      1080
-    ],
-    "target_sec": 480,
-    "sections": [
-      [
-        "opening",
-        0,
-        30
-      ],
-      [
-        "origin",
-        30,
-        90
-      ],
-      [
-        "expose",
-        90,
-        180
-      ],
-      [
-        "more",
-        180,
-        null
-      ],
-      [
-        "next_and_sub",
-        null,
-        null
-      ]
-    ],
-    "test_sections": [
-      [
-        "opening",
-        0,
-        30
-      ],
-      [
-        "origin",
-        30,
-        78
-      ],
-      [
-        "next_and_sub",
-        78,
-        90
-      ]
-    ],
-    "_근거": "구조 G 몰아보기 대본 / 하이라이트·질문·J컷·덕킹·출처 화면 U(기준서 v1)"
-  },
-  "longform_v1": {
-    "highlight_sec": 3.0,
-    "question_at_sec": 25,
-    "question_window": [
-      20,
-      32
-    ],
-    "j_cut_sec": 0.5,
-    "duck_db": -14,
-    "max_still_sec": 8.0,
-    "cut_avg_sec": [
-      2,
-      5
-    ],
-    "credit_end_card_sec": 4.0,
-    "required": [
-      "opening.highlight",
-      "opening.question",
-      "credit",
-      "ending"
-    ],
-    "optional": [
-      "music_cut",
-      "ending.resolve",
-      "product_cards",
-      "rewind"
-    ],
-    "_근거": "U 자료03·13(하이라이트 선제시, 25~30초 질문) / U 자료05 오디오 브리지·컷 2~4초 / A 컷 3~5초·1~2초 / U 자료07·15 출처 화면·구석 출처 / U 자료07 엔딩 댓글·다음 영상"
-  },
-  "captions": {
-    "font": "NotoSansCJK Black/Bold (굵은 고딕)",
-    "base_color": "#FFFFFF",
-    "stroke_color": "#000000",
-    "paren_color": "#FFDE28",
-    "styles": [
-      "bracket",
-      "situation",
-      "big",
-      "sfx",
-      "narr",
-      "emotion"
-    ],
-    "speaker_colors": {
-      "_설명": "A 안원잘부: 인물별 자막 색(실제 영상 확인: 미나미 분홍 상자, PD 질문 노랑). 우리 자막은 기본 흰색, 인물 반응을 짚을 때만 color 로"
-    },
-    "default_source": "A",
-    "_근거": "굵은 고딕 흰색+강조 노랑 U 자료06·16 / 괄호 반응 U 자료06 + G / 인물 색·강조 크게 얼굴 주변 A / 투박한 단색 G(보조)"
-  },
-  "thumbnail_v2": {
-    "elements": [
-      "실제 장면 한 장",
-      "실제로 한 말 한 줄(큰따옴표)",
-      "대비·반전 한 줄",
-      "시리즈 꼬리표",
-      "작은 출처"
-    ],
-    "max_text_blocks": 3,
-    "quote_must_be_real": true,
-    "_근거": "U 자료09 제목 “천막 치울 수 있을까요?”(실제 대사 따옴표) / U 자료03 '1위보다 놀라운 장면' 반전 / A 이유1 갸루×시골 대비 / U 자료15 출처 / 썸네일 자체 분석은 자료에 없음 → 대표 확인"
-  },
-  "banned_words": [
-    "뭐하노"
-  ],
-  "banned_where": [
-    "title",
-    "thumb",
-    "big_caption",
-    "our_caption",
-    "post"
-  ],
-  "ad_exclude_words": [
-    "술",
-    "주류",
-    "소주",
-    "맥주",
-    "담배",
-    "전자담배",
-    "도박",
-    "카지노",
-    "토토",
-    "성인",
-    "19금"
-  ],
-  "ad_exclude_note": "술·담배·도박·성인 광고 구간은 쓰지 않는다(예: A 자료 KGB 건배 장면 23:55). 클립 note/광고 표시 단어 검사 + clean_ranges 밖 사용 금지",
-  "source_required": true,
-  "no_fake_quotes": "우리 자막에 멤버가 하지 않은 말을 큰따옴표 대사로 쓰지 않는다(드립은 괄호)",
-  "retired_rules": [
-    "노래 무대 54.5초+3.5초",
-    "썸네일 빨간 띠→보라 띠(11/10 표준)",
-    "댓글 캡처 자막 기본",
-    "기존 make_today 07:30·12:00·18:30 편성"
-  ],
-  "shorts_templates": {
-    "_설명": "대표 20:43 확정: 쇼츠 4종. N=내레이션(Veda)+자막, M=내레이션 없이 무대·음악(현장음 loudnorm). 모든 플랫폼 같은 파일.",
-    "58-N": {
-      "engine": "expose",
-      "total_sec": 58.0,
-      "outro_sec": 5.0,
-      "narration": true,
-      "narrator": "Veda",
-      "sections": [
-        [
-          "hook",
-          0,
-          3
-        ],
-        [
-          "twist",
-          3,
-          5
-        ],
-        [
-          "expose1",
-          5,
-          25
-        ],
-        [
-          "expose2",
-          25,
-          45
-        ],
-        [
-          "brand",
-          45,
-          53
-        ],
-        [
-          "outro",
-          53,
-          58
-        ]
-      ],
-      "_근거": "스타일 A 계열(G 예능 폭로형) + 내레이션(U 자료06 존댓말 내레이션)"
-    },
-    "58-M": {
-      "engine": "pulse58",
-      "total_sec": 58.0,
-      "outro_sec": 5.0,
-      "narration": false,
-      "loudnorm": true,
-      "min_sources": 8,
-      "sections": [
-        [
-          "change8",
-          0,
-          6
-        ],
-        [
-          "split",
-          6,
-          26
-        ],
-        [
-          "jump",
-          26,
-          46
-        ],
-        [
-          "pump",
-          46,
-          53
-        ],
-        [
-          "outro",
-          53,
-          58
-        ]
-      ],
-      "_근거": "스타일 B 계열(G 8단 교차편집)"
-    },
-    "40-N": {
-      "engine": "expose",
-      "total_sec": 40.0,
-      "outro_sec": 5.0,
-      "narration": true,
-      "narrator": "Veda",
-      "sections": [
-        [
-          "hook",
-          0,
-          3
-        ],
-        [
-          "body",
-          3,
-          35
-        ],
-        [
-          "outro",
-          35,
-          40
-        ]
-      ],
-      "_근거": "대표 20:43 — 이야기 1개, 짧은 내레이션+자막"
-    },
-    "40-M": {
-      "engine": "pulse58",
-      "total_sec": 40.0,
-      "outro_sec": 5.0,
-      "narration": false,
-      "loudnorm": true,
-      "min_sources": 4,
-      "max_sources": 6,
-      "sections": [
-        [
-          "hook",
-          0,
-          3
-        ],
-        [
-          "mix",
-          3,
-          35
-        ],
-        [
-          "outro",
-          35,
-          40
-        ]
-      ],
-      "_근거": "대표 20:43 — 한 곡 하이라이트, 교차편집 4~6단"
-    }
-  },
-  "shorts_templates_default": {
-    "expose": "58-N",
-    "pulse58": "58-M"
-  },
-  "loudnorm": {
-    "I": -14,
-    "TP": -1.5,
-    "LRA": 11,
-    "_근거": "내레이션 없는 판은 현장음 loudnorm(대표 20:43). 쇼츠 전 템플릿 마지막 단계에 적용"
-  },
-  "narration": {
-    "duck_db": -14,
-    "fallback": "파일이 없으면 글을 narr 자막으로(Veda 파일이 생기면 그대로 소리로)"
-  },
-  "long_templates": {
-    "_설명": "대표 20:5x: 롱폼도 4종(주문판 factory/order 의 type). 엔진은 longform_factory(v2.2 몰아보기 칸). N=내레이션(Veda)+자막, M=무대·음악(내레이션 없음).",
-    "L8-N": {
-      "engine": "molabogi",
-      "target_sec": 480,
-      "range_sec": [
-        420,
-        600
-      ],
-      "narration": true,
-      "name": "약 8분 내레이션 몰아보기",
-      "sections": [
-        [
-          "opening",
-          0,
-          30
-        ],
-        [
-          "origin",
-          30,
-          90
-        ],
-        [
-          "expose",
-          90,
-          180
-        ],
-        [
-          "more",
-          180,
-          450
-        ],
-        [
-          "next_and_sub",
-          450,
-          480
-        ]
-      ]
-    },
-    "L8-M": {
-      "engine": "molabogi",
-      "target_sec": 480,
-      "range_sec": [
-        420,
-        600
-      ],
-      "narration": false,
-      "name": "8분 무대·음악 모음",
-      "sections": [
-        [
-          "opening",
-          0,
-          15
-        ],
-        [
-          "stages",
-          15,
-          460
-        ],
-        [
-          "next_and_sub",
-          460,
-          480
-        ]
-      ]
-    },
-    "L4-N": {
-      "engine": "molabogi",
-      "target_sec": 240,
-      "range_sec": [
-        200,
-        300
-      ],
-      "narration": true,
-      "name": "약 4분 가벼운 내레이션",
-      "sections": [
-        [
-          "opening",
-          0,
-          30
-        ],
-        [
-          "main",
-          30,
-          210
-        ],
-        [
-          "next_and_sub",
-          210,
-          240
-        ]
-      ]
-    },
-    "L4-M": {
-      "engine": "molabogi",
-      "target_sec": 240,
-      "range_sec": [
-        200,
-        300
-      ],
-      "narration": false,
-      "name": "4분 가벼운 무대 모음",
-      "sections": [
-        [
-          "opening",
-          0,
-          15
-        ],
-        [
-          "stages",
-          15,
-          225
-        ],
-        [
-          "next_and_sub",
-          225,
-          240
-        ]
-      ]
-    }
-  },
-  "mood_presets": {
-    "_설명": "주문판 moods(최대 3) → 연출 프리셋. 공장은 spec 의 mood_preset 을 기록하고, 점검기는 기획에 그 요소가 들어갔는지 ⚠️ 로 알려 준다(강제 아님).",
-    "웃음": {
-      "items": [
-        "레전드",
-        "웃참",
-        "킹받는",
-        "대환장",
-        "폭로",
-        "드립 자막"
-      ],
-      "use": [
-        "bracket",
-        "sfx",
-        "crash_zoom"
-      ],
-      "note": "괄호 자막·효과음·크래시 줌"
-    },
-    "감동": {
-      "items": [
-        "눈물",
-        "감동 실화",
-        "뭉클",
-        "역주행",
-        "언더독",
-        "수상소감"
-      ],
-      "use": [
-        "music_cut",
-        "slow_cut",
-        "emotion"
-      ],
-      "cut_sec": [
-        4,
-        6
-      ],
-      "note": "음악 끊기·느린 컷·감정 자막"
-    },
-    "짜릿": {
-      "items": [
-        "사이다",
-        "참교육",
-        "반전",
-        "역대급",
-        "미친 무대",
-        "소름"
-      ],
-      "use": [
-        "fast_cut",
-        "shake"
-      ],
-      "cut_sec": [
-        0.5,
-        2
-      ],
-      "note": "빠른 컷·셰이크"
-    },
-    "설렘": {
-      "items": [
-        "케미",
-        "로맨스",
-        "청순",
-        "비주얼",
-        "힐링"
-      ],
-      "use": [
-        "emotion",
-        "dissolve"
-      ],
-      "cut_sec": [
-        3,
-        5
-      ],
-      "note": "감정 자막·디졸브(Claude 제안 — 대표 확인)"
-    },
-    "몰입": {
-      "items": [
-        "몰아보기",
-        "결말 포함",
-        "비하인드",
-        "최초 공개",
-        "직캠 4K"
-      ],
-      "use": [
-        "chapters",
-        "j_cut"
-      ],
-      "note": "챕터·J컷"
-    },
-    "정보": {
-      "items": [
-        "정리",
-        "TOP 순위",
-        "숫자로 보기",
-        "상식",
-        "근황"
-      ],
-      "use": [
-        "rank_cards",
-        "number_captions"
-      ],
-      "note": "순위 카드·숫자 자막"
-    }
-  },
-  "order": {
-    "_설명": "주문판 주문 1건 → make_today.py --order. sensitive=true 면 렌더 전 멈춤(대표 확인). status 가 'approved'(대표 확인 완료)일 때만 통과",
-    "type_to_base": {
-      "58-N": "월_저녁",
-      "40-N": "월_저녁",
-      "58-M": "수_저녁",
-      "40-M": "수_저녁",
-      "L8-N": "화_저녁",
-      "L8-M": "화_저녁",
-      "L4-N": "화_저녁",
-      "L4-M": "화_저녁"
-    },
-    "max_moods": 3,
-    "approved_status": "approved"
-  },
-  "length_presets": {
-    "_설명": "대표 21:0x: 프리셋 + 직접 입력. 공장은 length_sec(숫자)를 받아 구간을 비례 배분(훅 3초·아웃트로 5초 고정, 쇼츠 상한 58.0초). 40초 이하는 40-x 구간표, 넘으면 58-x 구간표를 늘이고 줄임",
-    "shorts_sec": [
-      58,
-      40,
-      25
-    ],
-    "shorts_max_sec": 58.0,
-    "shorts_min_sec": 15.0,
-    "long_min": [
-      8,
-      4,
-      6,
-      20,
-      30
-    ],
-    "long_range_ratio": [
-      0.85,
-      1.25
-    ],
-    "cards": [
-      7,
-      10,
-      12,
-      20
-    ],
-    "cards_max": 20,
-    "fixed_sections": {
-      "hook": 3.0,
-      "outro": 5.0
-    }
-  },
-  "languages": {
-    "_설명": "대표 21:05·21:06: 한국어 기본 + 더빙(narrLangs)·자막(langs) 같은 10개. 더빙 목소리는 무료 Gemini TTS로 대표가 생성, 언어별 원고는 Claude",
-    "base": "ko",
-    "list": [
-      [
-        "en",
-        "영어"
-      ],
-      [
-        "ja",
-        "일본어"
-      ],
-      [
-        "zh-Hans",
-        "중국어(간체)"
-      ],
-      [
-        "zh-Hant",
-        "대만(번체 중국어)"
-      ],
-      [
-        "es",
-        "스페인어"
-      ],
-      [
-        "pt",
-        "포르투갈어"
-      ],
-      [
-        "id",
-        "인도네시아어"
-      ],
-      [
-        "th",
-        "태국어"
-      ],
-      [
-        "vi",
-        "베트남어"
-      ],
-      [
-        "fr",
-        "프랑스어"
-      ]
-    ]
+  {
+   "rank": 3,
+   "key": "G",
+   "name": "제미나이 기획(58초 쇼츠 A/B·몰아보기 대본·편성)",
+   "file": "프로젝트 「20261111_제미나이 브레인스토밍 1·3」"
   }
+ ],
+ "schedule": {
+  "time": "19:00",
+  "slot": "저녁",
+  "uploader_slot": "저녁7시",
+  "days": {
+   "월": "shorts_A",
+   "화": "molabogi",
+   "수": "shorts_B",
+   "목": null,
+   "금": "shorts_A",
+   "토": "molabogi",
+   "일": "shorts_B"
+  },
+  "banner": "월·수·금·일 저녁 7시 쇼츠  /  화·토 저녁 7시 몰아보기",
+  "_근거": "G 편성표 + 대표 지시(월A·수B·금A·일B 초안)"
+ },
+ "shorts": {
+  "total_sec": 58.0,
+  "tolerance_sec": 0.05,
+  "size": [
+   1080,
+   1920
+  ],
+  "fps": 30,
+  "audio_hz": 48000,
+  "outro_sec": 5.0,
+  "_근거": "G 58초·9:16 / 아웃트로 5초 G",
+  "_플랫폼_근거": "모든 쇼츠 모든 플랫폼 같은 파일 하나(대표 20:40). 길이는 템플릿별(58.0/40.0, 대표 20:43). 62초 버전 폐기",
+  "_유튜브_한도_근거": "대표 20:36: 유튜브 칸에 58.0초 초과 파일이 들어가면 package.py 가 멈춘다(1분 넘는 쇼츠 Content ID 시 전 세계 차단)",
+  "max_sec": 58.0,
+  "_한도_근거": "대표 20:36·20:40: 58.0초 초과 파일이면 package.py 가 멈춘다(1분 넘는 쇼츠 Content ID 시 전 세계 차단)",
+  "_설명": "쇼츠 공통. 템플릿별 길이·구간은 shorts_templates. 모든 플랫폼 같은 파일(대표 20:40·20:43)"
+ },
+ "style_A": {
+  "template": "expose",
+  "sections": [
+   [
+    "hook",
+    0,
+    3
+   ],
+   [
+    "twist",
+    3,
+    5
+   ],
+   [
+    "expose1",
+    5,
+    25
+   ],
+   [
+    "expose2",
+    25,
+    45
+   ],
+   [
+    "brand",
+    45,
+    53
+   ],
+   [
+    "outro",
+    53,
+    58
+   ]
+  ],
+  "crash_zoom": {
+   "ramp_sec": 0.15,
+   "hold_sec": 1.2,
+   "scale": 1.8
+  },
+  "audio_lead_sec": 0.5,
+  "bleep_hz": 1000,
+  "layout_default": "fit",
+  "_근거": "구간·크래시 줌·삐-·까마귀 G / 오디오 오버랩 U 자료05 오디오 브리지 / fit(원본 자막 보존) U 자료04·15 세로 인용 방식",
+  "stretch_roles": [
+   "expose1",
+   "expose2"
+  ],
+  "_stretch_설명": "길이가 58.0이 아닌 버전을 만들 때만 쓰는 비례 늘이기 대상(지금은 58.0 하나라 쓰이지 않음)"
+ },
+ "style_B": {
+  "template": "pulse58",
+  "min_sources": 8,
+  "sections": [
+   [
+    "change8",
+    0,
+    6
+   ],
+   [
+    "split",
+    6,
+    26
+   ],
+   [
+    "jump",
+    26,
+    46
+   ],
+   [
+    "pump",
+    46,
+    53
+   ],
+   [
+    "outro",
+    53,
+    58
+   ]
+  ],
+  "change_sec": 0.75,
+  "jump_sec": 0.3,
+  "roll_deg": 15,
+  "_근거": "G 8단 교차편집 프로토콜"
+ },
+ "molabogi": {
+  "template": "molabogi",
+  "size": [
+   1920,
+   1080
+  ],
+  "target_sec": 480,
+  "sections": [
+   [
+    "opening",
+    0,
+    30
+   ],
+   [
+    "origin",
+    30,
+    90
+   ],
+   [
+    "expose",
+    90,
+    180
+   ],
+   [
+    "more",
+    180,
+    null
+   ],
+   [
+    "next_and_sub",
+    null,
+    null
+   ]
+  ],
+  "test_sections": [
+   [
+    "opening",
+    0,
+    30
+   ],
+   [
+    "origin",
+    30,
+    78
+   ],
+   [
+    "next_and_sub",
+    78,
+    90
+   ]
+  ],
+  "_근거": "구조 G 몰아보기 대본 / 하이라이트·질문·J컷·덕킹·출처 화면 U(기준서 v1)"
+ },
+ "longform_v1": {
+  "highlight_sec": 3.0,
+  "question_at_sec": 25,
+  "question_window": [
+   20,
+   32
+  ],
+  "j_cut_sec": 0.5,
+  "duck_db": -14,
+  "max_still_sec": 8.0,
+  "cut_avg_sec": [
+   2,
+   5
+  ],
+  "credit_end_card_sec": 4.0,
+  "required": [
+   "opening.highlight",
+   "opening.question",
+   "credit",
+   "ending"
+  ],
+  "optional": [
+   "music_cut",
+   "ending.resolve",
+   "product_cards",
+   "rewind"
+  ],
+  "_근거": "U 자료03·13(하이라이트 선제시, 25~30초 질문) / U 자료05 오디오 브리지·컷 2~4초 / A 컷 3~5초·1~2초 / U 자료07·15 출처 화면·구석 출처 / U 자료07 엔딩 댓글·다음 영상"
+ },
+ "captions": {
+  "font": "NotoSansCJK Black/Bold (굵은 고딕)",
+  "base_color": "#FFFFFF",
+  "stroke_color": "#000000",
+  "paren_color": "#FFDE28",
+  "styles": [
+   "bracket",
+   "situation",
+   "big",
+   "sfx",
+   "narr",
+   "emotion"
+  ],
+  "speaker_colors": {
+   "_설명": "A 안원잘부: 인물별 자막 색(실제 영상 확인: 미나미 분홍 상자, PD 질문 노랑). 우리 자막은 기본 흰색, 인물 반응을 짚을 때만 color 로"
+  },
+  "default_source": "A",
+  "_근거": "굵은 고딕 흰색+강조 노랑 U 자료06·16 / 괄호 반응 U 자료06 + G / 인물 색·강조 크게 얼굴 주변 A / 투박한 단색 G(보조)",
+  "placement": {
+   "_설명": "대표 11/11 21:21~21:40 확정 — 자막 자리 규칙. 공장(longform_factory)이 이 값을 읽고, 점검기(check_standard)가 어긋나면 ❌",
+   "top_flush": true,
+   "narr": "화면 맨 위 가운데, 위 여백 0(y=0) — 위쪽 자막을 띄우면 얼굴·머리와 겹침",
+   "situation": "내레이션 자막 바로 아래에 붙여서(맨 위 띠 안). 아래로 내리지 않음",
+   "top_max_y_ratio": 0.12,
+   "orig_sub_band_top_ratio": 0.78,
+   "react_bubble": "동네 형 말풍선은 원본 영상 자막 띠(화면 아래 78%~) 위로. 얼굴이 있으면 반대쪽",
+   "bracket": "괄호 드립은 가운데 아래(0.56H), 원본 자막 띠 위",
+   "no_pos_override_for_top": "narr·situation 자막에 pos(직접 위치)를 주지 않는다"
+  }
+ },
+ "thumbnail_v2": {
+  "elements": [
+   "실제 장면 한 장",
+   "실제로 한 말 한 줄(큰따옴표)",
+   "대비·반전 한 줄",
+   "시리즈 꼬리표",
+   "작은 출처"
+  ],
+  "max_text_blocks": 3,
+  "quote_must_be_real": true,
+  "_근거": "U 자료09 제목 “천막 치울 수 있을까요?”(실제 대사 따옴표) / U 자료03 '1위보다 놀라운 장면' 반전 / A 이유1 갸루×시골 대비 / U 자료15 출처 / 썸네일 자체 분석은 자료에 없음 → 대표 확인",
+  "emph": {
+   "_설명": "대표 11/11 21:22 — 썸네일 큰 따옴표 대사 안에서 핵심 말(예: 「용인도 서울」)만 노란색(#FFDE28)으로 강조. 썸네일 설정 thumb.emph 필수",
+   "required": true,
+   "color": "#FFDE28"
+  }
+ },
+ "banned_words": [
+  "뭐하노"
+ ],
+ "banned_where": [
+  "title",
+  "thumb",
+  "big_caption",
+  "our_caption",
+  "post"
+ ],
+ "ad_exclude_words": [
+  "술",
+  "주류",
+  "소주",
+  "맥주",
+  "담배",
+  "전자담배",
+  "도박",
+  "카지노",
+  "토토",
+  "성인",
+  "19금"
+ ],
+ "ad_exclude_note": "술·담배·도박·성인 광고 구간은 쓰지 않는다(예: A 자료 KGB 건배 장면 23:55). 클립 note/광고 표시 단어 검사 + clean_ranges 밖 사용 금지",
+ "source_required": true,
+ "no_fake_quotes": "우리 자막에 멤버가 하지 않은 말을 큰따옴표 대사로 쓰지 않는다(드립은 괄호)",
+ "retired_rules": [
+  "노래 무대 54.5초+3.5초",
+  "썸네일 빨간 띠→보라 띠(11/10 표준)",
+  "댓글 캡처 자막 기본",
+  "기존 make_today 07:30·12:00·18:30 편성"
+ ],
+ "shorts_templates": {
+  "_설명": "대표 20:43 확정: 쇼츠 4종. N=내레이션(Veda)+자막, M=내레이션 없이 무대·음악(현장음 loudnorm). 모든 플랫폼 같은 파일.",
+  "58-N": {
+   "engine": "expose",
+   "total_sec": 58.0,
+   "outro_sec": 5.0,
+   "narration": true,
+   "narrator": "Veda",
+   "sections": [
+    [
+     "hook",
+     0,
+     3
+    ],
+    [
+     "twist",
+     3,
+     5
+    ],
+    [
+     "expose1",
+     5,
+     25
+    ],
+    [
+     "expose2",
+     25,
+     45
+    ],
+    [
+     "brand",
+     45,
+     53
+    ],
+    [
+     "outro",
+     53,
+     58
+    ]
+   ],
+   "_근거": "스타일 A 계열(G 예능 폭로형) + 내레이션(U 자료06 존댓말 내레이션)"
+  },
+  "58-M": {
+   "engine": "pulse58",
+   "total_sec": 58.0,
+   "outro_sec": 5.0,
+   "narration": false,
+   "loudnorm": true,
+   "min_sources": 8,
+   "sections": [
+    [
+     "change8",
+     0,
+     6
+    ],
+    [
+     "split",
+     6,
+     26
+    ],
+    [
+     "jump",
+     26,
+     46
+    ],
+    [
+     "pump",
+     46,
+     53
+    ],
+    [
+     "outro",
+     53,
+     58
+    ]
+   ],
+   "_근거": "스타일 B 계열(G 8단 교차편집)"
+  },
+  "40-N": {
+   "engine": "expose",
+   "total_sec": 40.0,
+   "outro_sec": 5.0,
+   "narration": true,
+   "narrator": "Veda",
+   "sections": [
+    [
+     "hook",
+     0,
+     3
+    ],
+    [
+     "body",
+     3,
+     35
+    ],
+    [
+     "outro",
+     35,
+     40
+    ]
+   ],
+   "_근거": "대표 20:43 — 이야기 1개, 짧은 내레이션+자막"
+  },
+  "40-M": {
+   "engine": "pulse58",
+   "total_sec": 40.0,
+   "outro_sec": 5.0,
+   "narration": false,
+   "loudnorm": true,
+   "min_sources": 4,
+   "max_sources": 6,
+   "sections": [
+    [
+     "hook",
+     0,
+     3
+    ],
+    [
+     "mix",
+     3,
+     35
+    ],
+    [
+     "outro",
+     35,
+     40
+    ]
+   ],
+   "_근거": "대표 20:43 — 한 곡 하이라이트, 교차편집 4~6단"
+  }
+ },
+ "shorts_templates_default": {
+  "expose": "58-N",
+  "pulse58": "58-M"
+ },
+ "loudnorm": {
+  "I": -14,
+  "TP": -1.5,
+  "LRA": 11,
+  "_근거": "내레이션 없는 판은 현장음 loudnorm(대표 20:43). 쇼츠 전 템플릿 마지막 단계에 적용"
+ },
+ "narration": {
+  "duck_db": -14,
+  "fallback": "파일이 없으면 글을 narr 자막으로(Veda 파일이 생기면 그대로 소리로)"
+ },
+ "long_templates": {
+  "_설명": "대표 20:5x: 롱폼도 4종(주문판 factory/order 의 type). 엔진은 longform_factory(v2.2 몰아보기 칸). N=내레이션(Veda)+자막, M=무대·음악(내레이션 없음).",
+  "L8-N": {
+   "engine": "molabogi",
+   "target_sec": 480,
+   "range_sec": [
+    420,
+    600
+   ],
+   "narration": true,
+   "name": "약 8분 내레이션 몰아보기",
+   "sections": [
+    [
+     "opening",
+     0,
+     30
+    ],
+    [
+     "origin",
+     30,
+     90
+    ],
+    [
+     "expose",
+     90,
+     180
+    ],
+    [
+     "more",
+     180,
+     450
+    ],
+    [
+     "next_and_sub",
+     450,
+     480
+    ]
+   ]
+  },
+  "L8-M": {
+   "engine": "molabogi",
+   "target_sec": 480,
+   "range_sec": [
+    420,
+    600
+   ],
+   "narration": false,
+   "name": "8분 무대·음악 모음",
+   "sections": [
+    [
+     "opening",
+     0,
+     15
+    ],
+    [
+     "stages",
+     15,
+     460
+    ],
+    [
+     "next_and_sub",
+     460,
+     480
+    ]
+   ]
+  },
+  "L4-N": {
+   "engine": "molabogi",
+   "target_sec": 240,
+   "range_sec": [
+    200,
+    300
+   ],
+   "narration": true,
+   "name": "약 4분 가벼운 내레이션",
+   "sections": [
+    [
+     "opening",
+     0,
+     30
+    ],
+    [
+     "main",
+     30,
+     210
+    ],
+    [
+     "next_and_sub",
+     210,
+     240
+    ]
+   ]
+  },
+  "L4-M": {
+   "engine": "molabogi",
+   "target_sec": 240,
+   "range_sec": [
+    200,
+    300
+   ],
+   "narration": false,
+   "name": "4분 가벼운 무대 모음",
+   "sections": [
+    [
+     "opening",
+     0,
+     15
+    ],
+    [
+     "stages",
+     15,
+     225
+    ],
+    [
+     "next_and_sub",
+     225,
+     240
+    ]
+   ]
+  }
+ },
+ "mood_presets": {
+  "_설명": "주문판 moods(최대 3) → 연출 프리셋. 공장은 spec 의 mood_preset 을 기록하고, 점검기는 기획에 그 요소가 들어갔는지 ⚠️ 로 알려 준다(강제 아님).",
+  "웃음": {
+   "items": [
+    "레전드",
+    "웃참",
+    "킹받는",
+    "대환장",
+    "폭로",
+    "드립 자막"
+   ],
+   "use": [
+    "bracket",
+    "sfx",
+    "crash_zoom"
+   ],
+   "note": "괄호 자막·효과음·크래시 줌"
+  },
+  "감동": {
+   "items": [
+    "눈물",
+    "감동 실화",
+    "뭉클",
+    "역주행",
+    "언더독",
+    "수상소감"
+   ],
+   "use": [
+    "music_cut",
+    "slow_cut",
+    "emotion"
+   ],
+   "cut_sec": [
+    4,
+    6
+   ],
+   "note": "음악 끊기·느린 컷·감정 자막"
+  },
+  "짜릿": {
+   "items": [
+    "사이다",
+    "참교육",
+    "반전",
+    "역대급",
+    "미친 무대",
+    "소름"
+   ],
+   "use": [
+    "fast_cut",
+    "shake"
+   ],
+   "cut_sec": [
+    0.5,
+    2
+   ],
+   "note": "빠른 컷·셰이크"
+  },
+  "설렘": {
+   "items": [
+    "케미",
+    "로맨스",
+    "청순",
+    "비주얼",
+    "힐링"
+   ],
+   "use": [
+    "emotion",
+    "dissolve"
+   ],
+   "cut_sec": [
+    3,
+    5
+   ],
+   "note": "감정 자막·디졸브(Claude 제안 — 대표 확인)"
+  },
+  "몰입": {
+   "items": [
+    "몰아보기",
+    "결말 포함",
+    "비하인드",
+    "최초 공개",
+    "직캠 4K"
+   ],
+   "use": [
+    "chapters",
+    "j_cut"
+   ],
+   "note": "챕터·J컷"
+  },
+  "정보": {
+   "items": [
+    "정리",
+    "TOP 순위",
+    "숫자로 보기",
+    "상식",
+    "근황"
+   ],
+   "use": [
+    "rank_cards",
+    "number_captions"
+   ],
+   "note": "순위 카드·숫자 자막"
+  }
+ },
+ "order": {
+  "_설명": "주문판 주문 1건 → make_today.py --order. sensitive=true 면 렌더 전 멈춤(대표 확인). status 가 'approved'(대표 확인 완료)일 때만 통과",
+  "type_to_base": {
+   "58-N": "월_저녁",
+   "40-N": "월_저녁",
+   "58-M": "수_저녁",
+   "40-M": "수_저녁",
+   "L8-N": "화_저녁",
+   "L8-M": "화_저녁",
+   "L4-N": "화_저녁",
+   "L4-M": "화_저녁"
+  },
+  "max_moods": 3,
+  "approved_status": "approved"
+ },
+ "length_presets": {
+  "_설명": "대표 21:0x: 프리셋 + 직접 입력. 공장은 length_sec(숫자)를 받아 구간을 비례 배분(훅 3초·아웃트로 5초 고정, 쇼츠 상한 58.0초). 40초 이하는 40-x 구간표, 넘으면 58-x 구간표를 늘이고 줄임",
+  "shorts_sec": [
+   58,
+   40,
+   25
+  ],
+  "shorts_max_sec": 58.0,
+  "shorts_min_sec": 15.0,
+  "long_min": [
+   8,
+   4,
+   6,
+   20,
+   30
+  ],
+  "long_range_ratio": [
+   0.85,
+   1.25
+  ],
+  "cards": [
+   7,
+   10,
+   12,
+   20
+  ],
+  "cards_max": 20,
+  "fixed_sections": {
+   "hook": 3.0,
+   "outro": 5.0
+  }
+ },
+ "languages": {
+  "_설명": "대표 21:05·21:06: 한국어 기본 + 더빙(narrLangs)·자막(langs) 같은 10개. 더빙 목소리는 무료 Gemini TTS로 대표가 생성, 언어별 원고는 Claude",
+  "base": "ko",
+  "list": [
+   [
+    "en",
+    "영어"
+   ],
+   [
+    "ja",
+    "일본어"
+   ],
+   [
+    "zh-Hans",
+    "중국어(간체)"
+   ],
+   [
+    "zh-Hant",
+    "대만(번체 중국어)"
+   ],
+   [
+    "es",
+    "스페인어"
+   ],
+   [
+    "pt",
+    "포르투갈어"
+   ],
+   [
+    "id",
+    "인도네시아어"
+   ],
+   [
+    "th",
+    "태국어"
+   ],
+   [
+    "vi",
+    "베트남어"
+   ],
+   [
+    "fr",
+    "프랑스어"
+   ]
+  ]
+ }
 }
