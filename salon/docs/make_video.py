@@ -344,7 +344,7 @@ def make_teaser(raw, steps, tmp, out):
     join(parts, out, tmp)
 
 # ── 쇼츠 공장 「기능 30초 소개」 재료 ───────────────────
-FACTORY_KEYS = ["setup", "today", "newcust", "record", "search", "sms", "sales", "backup", "color", "voice", "booking", "group"]
+FACTORY_KEYS = ["record", "voice", "newcust", "sms", "booking", "group", "sales", "backup", "color", "search", "today", "setup"]  # 앞쪽일수록 먼저 고름
 CLIP_SEC, BPM = 2.5, 120          # 클립 8개 × 2.5초 = 본문 20초 (배경음악 21.4초 안쪽)
 
 def factory_clips(howto, chapters, dst):
@@ -352,7 +352,7 @@ def factory_clips(howto, chapters, dst):
     stagemix 는 노래 시각 t 에 클립의 (sync + t) 장면을 쓰므로, 클립 k 파일을 (기능 시작 - 그 클립이 나올 시각)부터 잘라 sync=0 으로 맞춘다."""
     os.makedirs(dst, exist_ok=True)
     by = {c["key"]: c for c in chapters}
-    keys = [k for k in FACTORY_KEYS if k in by][:8]
+    keys = sorted([k for k in FACTORY_KEYS if k in by][:8], key=lambda k: by[k]["start"])   # 영상 순서대로
     if len(keys) < 8: print(f"  ⚠️ 공장 클립이 {len(keys)}개뿐이에요(8개 권장)")
     body = len(keys) * CLIP_SEC; total = dur_of(howto); clips, plan, labels = {}, [], []
     for i, k in enumerate(keys):
