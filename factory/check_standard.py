@@ -25,10 +25,30 @@ def freezes(path, limit):
     return [(a, en[i] if i < len(en) else None) for i, a in enumerate(st)]
 
 def tkey(spec):
-    """쇼츠 템플릿 이름(58-N·58-M·40-N·40-M). spec "shorts_template" 이 없으면 엔진 기본값."""
-    return spec.get("shorts_template") or STD["shorts_templates_default"].get(spec.get("template"), "58-N")
+    """쇼츠 템플릿 이름(58-N·58-M·40-N·40-M). spec "shorts_template" 이 없으면 엔진 기본값. length_sec 가 40 이하면 40-x 구간표를 씀."""
+    k = spec.get("shorts_template") or STD["shorts_templates_default"].get(spec.get("template"), "58-N")
+    L = spec.get("length_sec")
+    if L: k = ("40-" if float(L) <= 40 else "58-") + k.split("-")[1]
+    return k
 
-def tconf(spec): return STD["shorts_templates"][tkey(spec)]
+def scale_sections(sections, total):
+    """구간표를 total 초로 비례 배분: 훅 3초·아웃트로 5초 고정, 나머지 구간을 비율대로(프레임 단위 반올림)."""
+    fx_ = STD["length_presets"]["fixed_sections"]; base = sections[-1][2]
+    fixed = {n: fx_[n] for n, _, _ in sections if n in fx_}
+    free_base = sum(b - a for n, a, b in sections if n not in fixed); free_new = total - sum(fixed.values())
+    out = []; t = 0.0
+    for i, (n, a, b) in enumerate(sections):
+        d = fixed[n] if n in fixed else (b - a) * free_new / free_base
+        d = round(d * 30) / 30 if i < len(sections) - 1 else round(total - t, 4)
+        out.append([n, round(t, 4), round(t + d, 4)]); t += d
+    return out
+
+def tconf(spec):
+    """쇼츠 템플릿 설정. spec "length_sec"(직접 입력, 예 25)가 있으면 구간을 비례 배분한 설정을 돌려줌(상한 58.0)."""
+    T = dict(STD["shorts_templates"][tkey(spec)]); L = spec.get("length_sec")
+    if L and abs(float(L) - T["total_sec"]) > 1e-6:
+        L = min(float(L), STD["length_presets"]["shorts_max_sec"]); T["sections"] = scale_sections(T["sections"], L); T["total_sec"] = L
+    return T
 
 def stretched_sections(sections, roles, total):
     """플랫폼 길이에 맞게 늘릴 구간(roles)만 비례로 늘린 구간표."""
@@ -166,7 +186,9 @@ def run(spec, videos):
         if not os.path.exists(v): items.append((f"결과 파일 있음: {v}", False)); continue
         P = probe(v); tag = os.path.basename(v)
         if kind in ("expose", "pulse58"):
-            T = tconf(spec); sec = T["total_sec"]   # 템플릿별 길이(58.0 / 40.0), 모든 플랫폼 같은 파일
+            T = tconf(spec); sec = T["total_sec"]   # 템플릿별 길이(58.0 / 40.0 / 직접 입력), 모든 플랫폼 같은 파일
+            if spec.get("length_sec") and float(spec["length_sec"]) > STD["length_presets"]["shorts_max_sec"]:
+                items.append((f"[{tag}] 쇼츠 길이 직접 입력 {spec['length_sec']}초 — 상한 {STD['length_presets']['shorts_max_sec']}초", False))
             items.append((f"[{tag}] 쇼츠 템플릿 {tkey(spec)} ({'내레이션+자막' if T['narration'] else '무대·음악, 내레이션 없음'})", True))
             items.append((f"[{tag}] 길이 {sec:.1f}초 ±{tol} (지금 {P['dur']:.2f} · 영상 {P['vdur']:.2f} · 소리 {P['adur']:.2f})",
                           abs(P["dur"] - sec) <= tol and abs(P["vdur"] - sec) <= tol))
@@ -200,7 +222,9 @@ def run(spec, videos):
             items.append((f"[{tag}] 정지 화면 {STD['longform_v1']['max_still_sec']:g}초 초과 없음" + (f" — {fz}" if fz else ""), not fz))
             lk, LT = long_conf(spec)
             if LT and not spec.get("test_sections_check"):
-                lo, hi = LT["range_sec"]; items.append((f"[{tag}] 롱폼 {lk}({LT['name']}) 길이 {lo}~{hi}초 (지금 {P['dur']:.1f})", lo <= P["dur"] <= hi))
+                lo, hi = LT["range_sec"]
+                if spec.get("length_sec"):   # 직접 입력 길이(예 20분 = 1200)
+                    r = STD["length_presets"]["long_range_ratio"]; lo, hi = spec["length_sec"] * r[0], spec["length_sec"] * r[1]; items.append((f"[{tag}] 롱폼 {lk}({LT['name']}) 길이 {lo}~{hi}초 (지금 {P['dur']:.1f})", lo <= P["dur"] <= hi))
             if LT and not LT["narration"]:
                 nn = [n for ch in spec.get("chapters", []) for sc in ch.get("scenes", []) for n in (sc.get("narration") or [])]
                 items.append((f"[{tag}] {lk}: 내레이션 없음(무대·음악)", not nn and not spec.get("narration")))

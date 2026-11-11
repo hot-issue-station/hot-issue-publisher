@@ -575,8 +575,8 @@ def narration_fallback(spec, base):
     return n_sub
 
 def build(spec, base):
-    tmp = os.path.join(base, "_tmp"); out = os.path.join(base, "out"); os.makedirs(tmp, exist_ok=True); os.makedirs(out, exist_ok=True)
-    tmp = spec.get("_tmp_dir", tmp); out = spec.get("_out_dir", out); os.makedirs(tmp, exist_ok=True); os.makedirs(out, exist_ok=True)
+    tmp = spec.get("_tmp_dir") or os.path.join(base, "_tmp"); out = spec.get("_out_dir") or os.path.join(base, "out")   # v2.2: 결과 폴더 지정 가능
+    os.makedirs(tmp, exist_ok=True); os.makedirs(out, exist_ok=True)
     n_narr_sub = narration_fallback(spec, base)
     if n_narr_sub: print(f"내레이션 파일 없음 → 자막으로 대신: {n_narr_sub}개")
     series = spec.get("series", "덕심저장소"); xd = spec.get("xfade_sec", 0.3); fd = spec.get("fold_sec", 0.5)

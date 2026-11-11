@@ -76,7 +76,7 @@ def build_v2(preset, fill, fill_dir, name):
     """표준 v2 틀 → 공장 spec. 대표가 정하는 칸: 쇼츠 A(클립·제목·출처·썸네일), 쇼츠 B(소스·노래·제목·출처·저작권확인), 몰아보기(기획 파일)."""
     import check_standard as cs
     STD = cs.STD; vals = dict(preset.get("defaults", {})); vals.update({k: v for k, v in fill.items() if v not in ("", None)})
-    kind = preset["template"]; problems = []
+    kind = preset["template"]; problems = []; Lsec = None
     for k in preset["need"]:
         if k not in vals or vals[k] in ("", None, [], {}, False): problems.append(f"{k}: {LABEL.get(k, k)}")
     missing = {}
@@ -86,12 +86,19 @@ def build_v2(preset, fill, fill_dir, name):
     tk = preset.get("shorts_template")
     if kind in ("expose", "pulse58"):      # fill "길이": 40 → 같은 계열 40초 판(58-N→40-N, 58-M→40-M)
         tk = tk or STD["shorts_templates_default"][kind]
-        if str(vals.get("길이", "")).startswith("40"): tk = "40-" + tk.split("-")[1]
-        if str(vals.get("길이", "")).startswith("58"): tk = "58-" + tk.split("-")[1]
+        try: Lsec = float(str(vals.get("길이", "")).rstrip("초 ")) if vals.get("길이") not in (None, "") else None
+        except ValueError: Lsec = None
+        if Lsec:   # 프리셋 58/40/25 또는 직접 입력(상한 58.0) → 40 이하는 40-x 구간표를 비례 배분
+            if Lsec > STD["length_presets"]["shorts_max_sec"]: problems.append(f"길이: 쇼츠는 {STD['length_presets']['shorts_max_sec']:g}초까지(지금 {Lsec:g})")
+            tk = ("40-" if Lsec <= 40 else "58-") + tk.split("-")[1]
     common = {"out": name, "template": kind, "shorts_template": tk, "_preset": f"{preset['day']}_{preset['slot']}", "_time": preset.get("time", STD["schedule"]["time"]),
               "_slot_up": STD["schedule"]["uploader_slot"], "post": dict(post, tags=tags), "checked": vals.get("확인", ""),
               "source": [vals["출처"]] if isinstance(vals.get("출처"), str) else (vals.get("출처") or []),
               "_vals": {"가수": vals.get("가수", ""), "곡": vals.get("곡", vals.get("제목", ""))}, "series": preset["series"]}
+    if kind in ("expose", "pulse58") and Lsec and tk and abs(Lsec - STD["shorts_templates"][tk]["total_sec"]) > 1e-6: common["length_sec"] = Lsec
+    if kind == "molabogi" and vals.get("길이"):   # 롱폼 길이(분) 직접 입력
+        try: common["length_sec"] = float(str(vals["길이"]).rstrip("분 ")) * 60
+        except ValueError: pass
     def absf(p_):
         q = resolve(p_, fill_dir) if p_ else None
         if not q: problems.append(f"파일을 찾을 수 없어요 → {p_}")
@@ -110,11 +117,11 @@ def build_v2(preset, fill, fill_dir, name):
             fr_ = spec[k_].get("frame")
             if fr_: fr_["file"] = absf(fr_["file"])
         if clips and not problems:   # 렌더 전에 구간 시간 미리 확인(점검기와 같은 계산)
-            S, got, body = cs.actual_A(spec)
+            S, got, body = cs.actual_A(spec)   # length_sec 가 있으면 비례 배분 구간표
             for n, a, b in S[:-1]:
                 g = got.get(n)
                 if not g or abs(g[0] - a) > 0.05 or abs(g[1] - b) > 0.05: problems.append(f"구간 {n}: {a:g}~{b:g}초여야 해요" + (f" (지금 {g[0]:.2f}~{g[1]:.2f})" if g else " (없음)"))
-        spec["_est_sec"] = STD["shorts_templates"][tk]["total_sec"]
+        spec["_est_sec"] = cs.tconf(spec)["total_sec"]
         if vals.get("내레이션"): spec["narration"] = vals["내레이션"]
     elif kind == "pulse58":
         srcs = [dict(x) for x in (vals.get("소스") or [])]
@@ -125,7 +132,7 @@ def build_v2(preset, fill, fill_dir, name):
         song = dict(vals.get("노래") or {}); 
         if song: song["file"] = absf(song.get("file", ""))
         spec = dict(common, preset="pulse58", song=song, sources=srcs, title=vals.get("제목", ""), source_line=common["source"][0] if common["source"] else "",
-                    outro=dict(fill_text(preset.get("outro", {}), vals, missing, "outro"), **vals.get("아웃트로", {})), copyright_checked=bool(vals.get("저작권확인")), _est_sec=STD["shorts_templates"][tk]["total_sec"])
+                    outro=dict(fill_text(preset.get("outro", {}), vals, missing, "outro"), **vals.get("아웃트로", {})), copyright_checked=bool(vals.get("저작권확인")), _est_sec=cs.tconf(common)["total_sec"])
         if vals.get("bpm"): spec["bpm"] = vals["bpm"]
         if vals.get("썸네일"): spec["thumb"] = dict(preset.get("thumb", {}), **vals["썸네일"])
     else:   # molabogi: 롱폼 기획 파일(longform_factory 형식 + v2.2 몰아보기 칸)
@@ -380,7 +387,8 @@ def order_prep(a):
         fp = os.path.join(od, "재료_빈칸.json"); json.dump(sk, open(fp, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
         stop([f"주문 {typ}({'·'.join(moods) or '분위기 없음'}) — 재료 빈칸 파일을 채워 --fill 로 다시: {fp}"] + [f"{k}: {LABEL.get(k, k)}" for k in preset["need"]])
     fill = json.load(open(a.fill, encoding="utf-8")); fill.setdefault("이름", name)
-    if typ.startswith("40"): fill["길이"] = 40
+    if order.get("len") not in (None, ""): fill.setdefault("길이", order["len"])   # 주문 길이(프리셋·직접 입력)
+    elif typ.startswith("40"): fill["길이"] = 40
     return preset, fill, mp, typ, order
 
 def main():

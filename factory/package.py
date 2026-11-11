@@ -334,7 +334,7 @@ def make_package(result_dir, outbox=None, date=None, sites=None, use_ai=False, n
         raise SystemExit("❌ 롱폼 몰아보기는 쇼츠 꾸러미(package.py) 대상이 아니에요 → 롱폼 업로드 순서(dukssim-longform)로")
     info = up.probe(video) or {}
     if spec.get("template") in V2:        # 템플릿 길이(58-N·58-M 58.0 / 40-N·40-M 40.0)
-        tk = spec.get("shorts_template") or STD2["shorts_templates_default"][spec["template"]]; lim = STD2["shorts_templates"][tk]["total_sec"]
+        import check_standard as cs; tk = cs.tkey(spec); lim = cs.tconf(spec)["total_sec"]   # 직접 입력 길이(length_sec)도
     else: tk, lim = "옛 틀", STD2["shorts"]["max_sec"]
     if info.get("dur", 0) > lim + STD2["shorts"]["tolerance_sec"]:   # 대표 20:36·20:40·20:43: 길이 넘으면 어느 칸에도 넣지 않고 멈춤(1분 넘는 쇼츠 Content ID 전 세계 차단 위험)
         raise SystemExit(f"❌ 영상이 {info['dur']:.2f}초 — {tk} 템플릿은 {lim:.1f}초 이하만(꾸러미 만들지 않고 멈춤). 모든 칸 같은 파일")

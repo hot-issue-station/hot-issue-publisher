@@ -9,7 +9,8 @@
   verify   (10) 자막·오디오 싱크(무음 구간 vs 자막 시각), 길이, 금지어
   package  (11) 플랫폼별 묶음(제목·설명·해시태그·첫 댓글 + 파일). 업로드는 하지 않는다
   status        지금 단계·남은 문제 보기
-주문 형식(주문판): {id, format: shorts|long|cardreels|cardnews, narr, area, subs[], moods[], free, len, stage, langMode: ko|subs|dub, langs[], plats[],
+주문 형식(주문판): {id, format: shorts|long|cardreels|cardnews, narr, area, subs[], moods[], free, len(프리셋 또는 숫자), stage,
+                  langMode: ko|subs|dub, langs[](자막), narrLangs[](더빙), plats[],  — 언어 10개: en ja zh-Hans zh-Hant es pt id th vi fr
                   spec(선택: 이미 있는 공장 기획 json 경로 — 시나리오 초안을 여기서 채움), sensitive, status}
 각 단계는 out/<주문id>/state.json 에 stage·issues·files 를 남기고, 다음 단계는 이전 결과를 읽어 이어간다(처음부터 다시 안 함).
 카드릴스는 shorts_factory 의 cards 틀로 연결, 카드뉴스는 저장소에 카드 만들기 스크립트가 없어 TODO.
@@ -20,16 +21,30 @@ HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE)
 STD = json.load(open(os.path.join(HERE, "standard_v2.json"), encoding="utf-8"))
 STAGES = {"scenario": 4, "plan": 5, "draft": 6, "check": 7, "confirm": 8, "final": 9, "verify": 10, "package": 11}
 CHUNK = 500   # 내레이션 원고 한 파일 글자 수(Veda 생성 단위)
-LANG_KO = {"ko": "한국어", "en": "영어", "ja": "일본어", "zh-TW": "중국어(번체)", "es": "스페인어", "id": "인도네시아어", "vi": "베트남어", "th": "태국어"}
+LANG_KO = dict([("ko", "한국어")] + [tuple(x) for x in STD["languages"]["list"]])   # 10개 언어(standard_v2.json languages)
 PLAT_LIM = {"youtube": {"title": 100, "desc": 5000}, "instagram": {"desc": 2200}, "tiktok": {"desc": 2200}, "x": {"desc": 280}, "threads": {"desc": 500}, "facebook": {"desc": 2200}}
 
 # ---------------- 주문 → 틀 ----------------
+def num(x):
+    try: return float(str(x).rstrip("초분장 "))
+    except (TypeError, ValueError): return None
+
 def type_of(o):
+    """주문 → 템플릿. len 은 프리셋(쇼츠 58/40/25초, 롱폼 8/4/6/20/30분, 카드 7/10/12/20장) 또는 직접 입력 숫자."""
     if o.get("type"): return o["type"]
-    n = "N" if o.get("narr", True) else "M"; ln = str(o.get("len", "")).rstrip("초분장 ")
-    if o.get("format") == "long": return ("L4-" if ln.startswith("4") else "L8-") + n
-    if o.get("format") == "shorts": return ("40-" if ln.startswith("40") else "58-") + n
+    n = "N" if o.get("narr", True) else "M"; L = num(o.get("len"))
+    if o.get("format") == "long": return ("L4-" if L and L <= 5 else "L8-") + n
+    if o.get("format") == "shorts": return ("40-" if L and L <= 40 else "58-") + n
     return o.get("format")
+
+def length_sec(o):
+    """주문 길이 → 초(쇼츠 상한 58.0). 템플릿 기본 길이와 같으면 None."""
+    L = num(o.get("len")); typ = type_of(o)
+    if not L: return None
+    if o.get("format") == "shorts":
+        L = min(L, STD["length_presets"]["shorts_max_sec"]); return None if abs(L - STD["shorts_templates"][typ]["total_sec"]) < 1e-6 else L
+    if o.get("format") == "long": return L * 60
+    return None
 
 def tconf(typ):
     if typ in STD["shorts_templates"]: return "shorts", STD["shorts_templates"][typ]
@@ -83,7 +98,10 @@ def scenario(o, d):
         for n, a, b in T.get("sections", []):
             if n != "outro": scenes.append({"section": n, "file": "", "in": None, "out": None, "real_line": "(화면 속 실제 대사·자막)", "our_captions": [], "source": ""})
     narr = base.get("narration", []) if T.get("narration") else []
-    sc = {"order": o, "type": typ, "kind": kind, "sections": T.get("sections"), "title": base.get("title", o.get("free", "")),
+    Ls = length_sec(o)
+    if Ls and kind == "shorts":
+        import check_standard as cs_; T = cs_.tconf({"template": T["engine"], "shorts_template": typ, "length_sec": Ls})
+    sc = {"order": o, "type": typ, "kind": kind, "length_sec": Ls, "sections": T.get("sections"), "title": base.get("title", o.get("free", "")),
           "scenes": scenes, "narration": narr, "spec_base": base, "rules": ["실제 장면·실제 대사만(멤버가 하지 않은 말을 따옴표로 쓰지 않음, 드립은 괄호)",
           "출처 표기(장면마다)", "금지어: " + ", ".join(STD["banned_words"]), "광고·술·담배·도박·성인 구간 제외"]}
     jp = os.path.join(d, "scenario.json"); json.dump(sc, open(jp, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
@@ -132,6 +150,7 @@ def build_spec(o, d, sc, pl):
     spec = json.loads(json.dumps(base)); spec["out"] = "draft"; spec["mood_preset"] = pl["mood_preset"]; spec["order"] = o
     kind, T = tconf(sc["type"])
     if kind == "shorts": spec["shorts_template"] = sc["type"]
+    if sc.get("length_sec"): spec["length_sec"] = sc["length_sec"]
     if kind == "long": spec["long_template"] = sc["type"]
     return spec
 
@@ -247,7 +266,9 @@ def final(o, d, st):
     json.dump(spec, open(os.path.join(d, "final_spec.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     cues = cues_of(spec); files["자막 ko.srt"] = write_srt(os.path.join(d, "final.ko.srt"), cues)
     mode = o.get("langMode", "ko"); langs = [l for l in o.get("langs", []) if l != "ko"]
-    for lg in langs if mode in ("subs", "dub") else []:
+    dubs = [l for l in o.get("narrLangs", []) if l != "ko"] or (langs if mode == "dub" else [])
+    for lg in [l for l in langs + dubs if l not in LANG_KO]: issues.append(f"모르는 언어 코드: {lg} (standard_v2.json languages 10개)")
+    for lg in sorted(set(langs + dubs), key=(langs + dubs).index):
         tp = os.path.join(d, f"번역원고_{lg}.txt")
         open(tp, "w", encoding="utf-8").write(f"# {LANG_KO.get(lg, lg)} 번역 원고 — 줄 번호를 지키고 오른쪽 칸만 채우기\n" +
                                               "".join(f"{i}\t{t}\t\n" for i, (_, _, t, _) in enumerate(cues, 1)))
@@ -256,7 +277,7 @@ def final(o, d, st):
             m = {int(x.split("\t")[0]): x.split("\t")[2].strip() for x in open(tr_p, encoding="utf-8") if re.match(r"\d+\t", x) and len(x.split("\t")) > 2}
             files[f"자막 {lg}.srt"] = write_srt(os.path.join(d, f"final.{lg}.srt"), [(a, b, m.get(i, t), k) for i, (a, b, t, k) in enumerate(cues, 1)])
         else: files[f"번역 원고 {lg}"] = tp; issues.append(f"번역 필요: {LANG_KO.get(lg, lg)} — 번역원고_{lg}.txt 오른쪽 칸을 채워 번역_{lg}.txt 로 저장")
-        if mode == "dub":
+        if lg in dubs:   # 더빙(narrLangs): 언어별 TTS 원고 + 오디오 자리
             dd = os.path.join(d, "dub", lg); os.makedirs(dd, exist_ok=True)
             open(os.path.join(dd, "TTS_원고.txt"), "w", encoding="utf-8").write("".join(f"[{a:.2f}초] {t}\n" for a, b, t, k in cues if k == "narration"))
             au = next((os.path.join(dd, f) for f in sorted(os.listdir(dd)) if f.endswith((".wav", ".mp3", ".m4a"))), None)
@@ -289,7 +310,9 @@ def verify(o, d):
     issues += bad
     for lg in o.get("langs", []):
         p = os.path.join(d, f"final.{lg}.srt")
-        if lg != "ko" and o.get("langMode") in ("subs", "dub") and not os.path.exists(p): issues.append(f"{lg} 자막 없음(번역 대기)")
+        if lg != "ko" and not os.path.exists(p): issues.append(f"{LANG_KO.get(lg, lg)}({lg}) 자막 없음(번역 대기)")
+    for lg in o.get("narrLangs", []):
+        if lg != "ko" and not os.path.exists(os.path.join(d, f"final_{lg}_dub.mp4")): issues.append(f"{LANG_KO.get(lg, lg)}({lg}) 더빙 오디오 대기(dub/{lg}/)")
     rp = os.path.join(d, "verify.txt"); open(rp, "w", encoding="utf-8").write("\n".join(lines + ["", "■ 싱크"] + (bad or ["✅ 자막·소리 어긋남 없음"])) + "\n")
     return {"최종 검토": rp}, issues
 
