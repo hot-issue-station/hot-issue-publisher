@@ -515,6 +515,103 @@ function fill(t,v){ return String(t).replace(/\{(이름|가게|시술|주|날짜
 function varsOf(c,extra){ const l=last(c); return Object.assign({이름:c.n,가게:shopIs()||"저희 가게",시술:l?l.t:"시술",주:l?Math.max(1,Math.round(days(l.d)/7)):""},extra||{}) }
 function smsLink(tel,body){ tel=digits(tel); return tel?`sms:${tel}?body=${encodeURIComponent(body)}`:"" }
 
+/* ── QR 코드 만들기 (factory/qr.py를 그대로 옮김, 외부 라이브러리 없음) ──
+   바이트 모드(UTF-8), 오류정정 M, 버전 1~15 자동, 마스크 8개 중 벌점 가장 낮은 것 */
+const QR=(()=>{
+  const M={1:[26,10,[[1,16]]],2:[44,16,[[1,28]]],3:[70,26,[[1,44]]],4:[100,18,[[2,32]]],5:[134,24,[[2,43]]],6:[172,16,[[4,27]]],7:[196,18,[[4,31]]],8:[242,22,[[2,38],[2,39]]],9:[292,22,[[3,36],[2,37]]],10:[346,26,[[4,43],[1,44]]],
+    11:[404,30,[[1,50],[4,51]]],12:[466,22,[[6,36],[2,37]]],13:[532,22,[[8,37],[1,38]]],14:[581,24,[[4,40],[5,41]]],15:[655,24,[[5,41],[5,42]]]};
+  const AL={1:[],2:[6,18],3:[6,22],4:[6,26],5:[6,30],6:[6,34],7:[6,22,38],8:[6,24,42],9:[6,26,46],10:[6,28,50],11:[6,30,54],12:[6,32,58],13:[6,34,62],14:[6,26,46,66],15:[6,26,48,70]};
+  const EXP=new Array(512), LOG=new Array(256); let x=1; for(let i=0;i<255;i++){ EXP[i]=x; LOG[x]=i; x<<=1; if(x&256) x^=0x11D } for(let i=255;i<512;i++) EXP[i]=EXP[i-255];
+  const mul=(a,b)=>a&&b?EXP[LOG[a]+LOG[b]]:0;
+  function gen(n){ let g=[1]; for(let i=0;i<n;i++){ const ng=new Array(g.length+1).fill(0); g.forEach((c,j)=>{ ng[j]^=c; ng[j+1]^=mul(c,EXP[i]) }); g=ng } return g }
+  function ecc(d,n){ const g=gen(n), r=[...d,...new Array(n).fill(0)]; for(let i=0;i<d.length;i++){ const c=r[i]; if(c) for(let j=1;j<=n;j++) r[i+j]^=mul(g[j],c) } return r.slice(d.length) }
+  const cap=v=>M[v][2].reduce((a,[b,d])=>a+b*d,0);
+  function words(p,v){ const bits=[], put=(val,n)=>{ for(let i=n-1;i>=0;i--) bits.push((val>>i)&1) };
+    put(4,4); put(p.length,v<=9?8:16); p.forEach(b=>put(b,8)); const C=cap(v)*8; put(0,Math.min(4,C-bits.length)); while(bits.length%8) bits.push(0);
+    const data=[]; for(let i=0;i<bits.length;i+=8) data.push(parseInt(bits.slice(i,i+8).join(""),2)); let pad=0xEC; while(data.length<cap(v)){ data.push(pad); pad^=0xEC^0x11 }
+    const [tot,en,gr]=M[v], bl=[]; let k=0; gr.forEach(([nb,nd])=>{ for(let i=0;i<nb;i++){ bl.push(data.slice(k,k+nd)); k+=nd } });
+    const ec=bl.map(b=>ecc(b,en)), out=[], mx=Math.max(...bl.map(b=>b.length));
+    for(let i=0;i<mx;i++) bl.forEach(b=>{ if(i<b.length) out.push(b[i]) }); for(let i=0;i<en;i++) ec.forEach(e=>out.push(e[i]));
+    if(out.length!==tot) throw new Error("QR 코드워드 수가 맞지 않아요"); return out }
+  function grid(v){ const n=v*4+17, m=[], f=[]; for(let i=0;i<n;i++){ m.push(new Array(n).fill(false)); f.push(new Array(n).fill(false)) } return {v,n,m,f,set:(x,y,d)=>{ m[y][x]=d; f[y][x]=true }} }
+  function fmt(g,mask){ const {n,set}=g, data=mask; let rem=data; for(let i=0;i<10;i++) rem=(rem<<1)^((rem>>9)*0x537);   /* 오류정정 M = 00 */
+    const bits=((data<<10)|rem)^0x5412, b=i=>((bits>>i)&1)===1;
+    for(let i=0;i<6;i++) set(8,i,b(i)); set(8,7,b(6)); set(8,8,b(7)); set(7,8,b(8)); for(let i=9;i<15;i++) set(14-i,8,b(i));
+    for(let i=0;i<8;i++) set(n-1-i,8,b(i)); for(let i=8;i<15;i++) set(8,n-15+i,b(i)); set(8,n-8,true) }
+  function funcs(g){ const {n,set}=g;
+    for(let i=0;i<n;i++){ set(6,i,i%2===0); set(i,6,i%2===0) }
+    [[3,3],[n-4,3],[3,n-4]].forEach(([cx,cy])=>{ for(let dy=-4;dy<=4;dy++) for(let dx=-4;dx<=4;dx++){ const X=cx+dx, Y=cy+dy, d=Math.max(Math.abs(dx),Math.abs(dy)); if(X>=0&&X<n&&Y>=0&&Y<n) set(X,Y,d!==2&&d!==4) } });
+    const al=AL[g.v], L=al.length;
+    for(let i=0;i<L;i++) for(let j=0;j<L;j++){ if((i===0&&j===0)||(i===0&&j===L-1)||(i===L-1&&j===0)) continue;
+      for(let dy=-2;dy<=2;dy++) for(let dx=-2;dx<=2;dx++) set(al[i]+dx,al[j]+dy,Math.max(Math.abs(dx),Math.abs(dy))!==1) }
+    fmt(g,0);
+    if(g.v>=7){ let rem=g.v; for(let i=0;i<12;i++) rem=(rem<<1)^((rem>>11)*0x1F25); const bits=(g.v<<12)|rem;
+      for(let i=0;i<18;i++){ const b=((bits>>i)&1)===1, a=n-11+i%3, c=Math.floor(i/3); set(a,c,b); set(c,a,b) } } }
+  function place(g,cw){ const {n,m,f}=g, total=cw.length*8; let i=0, right=n-1;
+    while(right>=1){ if(right===6) right=5;
+      for(let vert=0;vert<n;vert++) for(let j=0;j<2;j++){ const X=right-j, up=((right+1)&2)===0, Y=up?n-1-vert:vert;
+        if(!f[Y][X]){ m[Y][X]=i<total&&((cw[i>>3]>>(7-(i&7)))&1)===1; i++ } }
+      right-=2 } }
+  const MK=[(x,y)=>(x+y)%2===0,(x,y)=>y%2===0,(x,y)=>x%3===0,(x,y)=>(x+y)%3===0,(x,y)=>(Math.floor(x/3)+Math.floor(y/2))%2===0,(x,y)=>x*y%2+x*y%3===0,(x,y)=>(x*y%2+x*y%3)%2===0,(x,y)=>((x+y)%2+x*y%3)%2===0];
+  function mask(g,k){ const f=MK[k]; for(let y=0;y<g.n;y++) for(let x=0;x<g.n;x++) if(!g.f[y][x]&&f(x,y)) g.m[y][x]=!g.m[y][x] }
+  function pen(m){ const n=m.length; let p=0; const cols=[]; for(let x=0;x<n;x++){ const c=[]; for(let y=0;y<n;y++) c.push(m[y][x]); cols.push(c) }
+    const pat=[1,0,1,1,1,0,1];
+    [...m,...cols].forEach(line=>{ let run=0, prev=null; for(const c of line){ if(c===prev) run++; else { if(run>=5) p+=3+run-5; run=1; prev=c } } if(run>=5) p+=3+run-5;
+      const e=[0,0,0,0,...line.map(Number),0,0,0,0];
+      for(let i=0;i<e.length-6;i++){ let hit=true; for(let k=0;k<7;k++) if(e[i+k]!==pat[k]){ hit=false; break } if(!hit) continue;
+        if((i>=4&&!e.slice(Math.max(0,i-4),i).some(Boolean))||(i+11<=e.length&&!e.slice(i+7,i+11).some(Boolean))) p+=40 } });
+    for(let y=0;y<n-1;y++) for(let x=0;x<n-1;x++){ const c=m[y][x]; if(c===m[y][x+1]&&c===m[y+1][x]&&c===m[y+1][x+1]) p+=3 }
+    let dark=0; m.forEach(r=>r.forEach(c=>{ if(c) dark++ })); p+=Math.floor(Math.abs(dark*100/(n*n)-50)/5)*10; return p }
+  function matrix(text,mk){ const p=[...new TextEncoder().encode(String(text))]; let v=0;
+    for(let k=1;k<=15;k++) if(4+(k<=9?8:16)+8*p.length<=cap(k)*8){ v=k; break }
+    if(!v) throw new Error("QR에 담기엔 글이 너무 길어요");
+    const cw=words(p,v); let best=null;
+    for(const k of (mk!=null?[mk]:[0,1,2,3,4,5,6,7])){ const g=grid(v); funcs(g); place(g,cw); mask(g,k); fmt(g,k); const s=pen(g.m); if(!best||s<best[0]) best=[s,g] }
+    return best[1].m }
+  function draw(cv,text,scale,border){ const m=matrix(text), n=m.length; scale=scale||8; border=border==null?4:border; const s=(n+border*2)*scale;
+    cv.width=cv.height=s; const g=cv.getContext("2d"); g.fillStyle="#fff"; g.fillRect(0,0,s,s); g.fillStyle="#000";
+    for(let y=0;y<n;y++) for(let x=0;x<n;x++) if(m[y][x]) g.fillRect((x+border)*scale,(y+border)*scale,scale,scale); return n }
+  return {matrix,draw};
+})();
+
+/* ── 손님 셀프 등록 QR: 손님이 자기 휴대폰으로 원장님께 문자를 보냄 → 서버 없이 동의가 문자로 남음 ── */
+const selfBody=()=>`[${shopIs()||"단골 수첩"}] 다음 방문 알림 받을게요 · 이름: `;
+const selfQrText=()=>`sms:${digits(db.tel)}?body=${encodeURIComponent(selfBody())}`;
+function qrOpen(cid){
+  if(!digits(db.tel)){ const t=prompt("손님이 문자를 보낼 원장님 휴대폰 번호를 적어 주세요 (QR에 들어가요)",""); if(!t||digits(t).length<9) return; db.tel=fmtPhone(t)||t.trim(); save() }
+  const c=cid&&db.c.find(x=>x.id===cid);
+  $("actBox").innerHTML=`<h3>📱 번호 남기기 QR</h3><p class="note" style="margin-top:0">손님께 화면을 보여 드리세요. <b>손님 휴대폰 카메라</b>로 비추면 문자 앱이 열리고, 이름만 적어 보내시면 돼요. 원장님이 번호를 여쭙지 않아도 돼요.</p>
+   <div class="qrbox"><canvas id="qrCv" aria-label="번호 남기기 QR 코드"></canvas><div style="font-size:22px;font-weight:800;margin-top:6px">카메라로 비춰 주세요</div><div class="d">받는 번호: ${esc(fmtPhone(db.tel)||db.tel)} · 문자 요금은 손님 요금제대로</div></div>
+   <div class="lock" style="font-size:16px">손님 휴대폰에 열리는 문자: <b>"${esc(selfBody())}"</b><br>손님이 직접 보낸 문자가 <b>'알림 받겠다'는 동의 기록</b>이 돼요. 받은 문자는 지우지 말고 두세요.</div>
+   <button class="big" onclick="atOpen(${c?`'${c.id}'`:""})">📩 문자 받았어요 → 번호 붙이기</button>
+   <button class="big ghost" onclick="$('actSheet').classList.add('hide')">닫기</button>`;
+  $("actSheet").classList.remove("hide");
+  try{ QR.draw($("qrCv"),selfQrText(),8,4) }catch(e){ $("qrCv").replaceWith(Object.assign(document.createElement("p"),{textContent:"가게 이름이 너무 길어 QR을 못 만들었어요. 설정에서 가게 이름을 줄여 주세요."})) } }
+/* 받은 문자 붙이기: 보낸 번호(+문자 내용)를 붙여 넣으면 번호·이름을 찾아 손님에게 붙임 */
+let atCid=null;
+function atOpen(cid){ atCid=cid||null; const c=atCid&&db.c.find(x=>x.id===atCid);
+  $("actBox").innerHTML=`<h3>📩 받은 번호 붙이기</h3><p class="note" style="margin-top:0">손님이 보낸 문자를 열어 <b>보낸 번호를 길게 눌러 복사</b>한 뒤 아래에 붙여 넣으세요. 문자 내용도 같이 붙여 넣으면 이름을 찾아 드려요.</p>
+   <textarea id="atTxt" placeholder="예: 010-1234-5678&#10;[하나 헤어] 다음 방문 알림 받을게요 · 이름: 김영희" oninput="atParse()"></textarea>
+   <label>보낸 번호</label><input id="atTel" type="tel" placeholder="010-">
+   <label>이름 (문자에 적힌 이름)</label><input id="atName">
+   <label>누구에게 붙일까요?</label><div id="atWho">${c?`<div class="card cust"><div><b>${esc(c.n)}</b>${clue(c)?`<small>${esc(clue(c))}</small>`:""}</div><span class="tag np">이 손님</span></div>`:""}</div>
+   <button class="big" onclick="atSave()">번호 붙이기</button><button class="big ghost" onclick="$('actSheet').classList.add('hide')">닫기</button>`;
+  $("actSheet").classList.remove("hide"); if(!c) atWho() }
+function parseSelfSms(t){ t=String(t||""); const m=t.match(/(\+?82[\s-]?1[016789]|01[016789])[\s-]?\d{3,4}[\s-]?\d{4}/), nm=t.match(/이름\s*[:：]\s*([^\n\r·,]{1,20})/);
+  return {tel:m?fmtPhone(normPhone(m[0])):"",name:nm?nm[1].trim():""} }
+function atParse(){ const r=parseSelfSms($("atTxt").value); if(r.tel) $("atTel").value=r.tel; if(r.name) $("atName").value=r.name; if(!atCid) atWho() }
+let atPick=null;
+function atWho(){ const nm=$("atName").value.trim(), list=db.c.filter(c=>!c.p).sort((a,b)=>{ const s=c=>nm&&(c.n.includes(nm)||nm.includes(c.n))?0:1; return s(a)-s(b)||lastD(b).localeCompare(lastD(a)) }).slice(0,8);
+  $("atWho").innerHTML=list.map(c=>`<label class="pick"><input type="radio" name="atP" value="${c.id}" ${atPick===c.id?"checked":""} onchange="atPick=this.value"><div><b>${esc(c.n)}</b><small>${esc(clue(c)||"")}${lastD(c)?` · ${lastD(c)}`:""}</small></div></label>`).join("")+`<label class="pick"><input type="radio" name="atP" value="" ${!atPick?"checked":""} onchange="atPick=null"><div><b>새 손님으로 저장</b><small>번호 없는 손님 목록에 없으면</small></div></label>` }
+function atSave(){ const tel=$("atTel").value.trim(), nm=$("atName").value.trim();
+  if(digits(tel).length<10) return alert("보낸 번호를 붙여 넣어 주세요");
+  const same=db.c.find(x=>x.p&&digits(x.p)===digits(tel)); if(same){ alert(`이 번호는 이미 '${same.n}' 님 번호예요`); return }
+  let c=db.c.find(x=>x.id===(atCid||atPick));
+  if(!c){ c={id:newCustId(),n:nm||"새 손님",p:"",m:"",r:[]}; db.c.push(c) }
+  else if(nm&&(c.n===c.nk||c.n===c.ft||c.n==="새 손님")) c.n=nm;
+  c.p=fmtPhone(tel)||tel; c.ag={d:today(),by:"sms"}; save(); $("actSheet").classList.add("hide"); atPick=null;
+  toast(`✓ ${c.n} 님 번호를 붙였어요 (손님이 문자로 남김)`); cur=c; go("detail") }
+
 /* ── 오늘 ─────────────────────────────────────── */
 /* 예약 중심 배치: 같은 칸을 CSS order로 순서만 바꿈 (헤어는 원래 순서 그대로) */
 const RES_ORDER={bkToday:1,bkFree:2,rvBox:3,bkTmr:4,tSumBox:5,tRecBtn:5,signal:5,dayEnd:6,tRec:6,tLong:7,tShop:8,tPicks:9};
@@ -629,26 +726,49 @@ function drawList(){
 function drawPick(){ const q=$("pq").value.trim(); $("pickList").innerHTML=db.c.filter(c=>match(c,q)).sort((a,b)=>lastD(b).localeCompare(lastD(a))).slice(0,30).map(c=>custRow(c,"pickC")).join("") }
 function pickC(id){ cur=db.c.find(c=>c.id===id); go("newRec") }
 function openC(id){ cur=db.c.find(c=>c.id===id); go("detail") }
-function resetCust(){ ["cn","cp","cm"].forEach(i=>$(i).value=""); $("agree").checked=false }
-function saveCust(){
-  const n=$("cn").value.trim(), p=$("cp").value.trim();
-  if(!n) return alert("이름을 적어 주세요");
-  if(!$("agree").checked) return alert("손님 동의를 받은 뒤 체크해 주세요");
-  const c={id:newCustId(),n,p,m:$("cm").value.trim(),r:[]}; db.c.push(c); save(); cur=c;
+const FT_HAIR=["안경","짧은 투블럭","단발","긴 생머리","곱슬","흰머리","앞머리","모자","아이와 같이"], FT_RES=["안경","렌즈","눈 예민","긴 손톱","짧은 손톱","민감 피부","아이와 같이"];
+function drawFtChips(){ $("ftChips").innerHTML=(isRes()?FT_RES:FT_HAIR).map(t=>`<button class="chip" onclick="ftAdd('${t}')">+ ${t}</button>`).join("") }
+function ftAdd(t){ const el=$("cft"), v=el.value.trim(); if(v.split("·").map(s=>s.trim()).includes(t)) return; el.value=v?v+"·"+t:t }
+function resetCust(){ ["cn","cnk","cft","cp","cm","cph"].forEach(i=>$(i).value=""); $("agree").checked=false; drawFtChips() }
+async function saveCust(){
+  const nm=$("cn").value.trim(), nk=$("cnk").value.trim(), ft=$("cft").value.trim(), p=$("cp").value.trim(), f=$("cph").files&&$("cph").files[0];
+  if(!nm&&!nk&&!ft) return alert("이름·별명·특징 중 하나는 적어 주세요");
+  if((p||f)&&!$("agree").checked) return alert("번호나 사진을 적으셨어요. 손님 동의를 받은 뒤 체크해 주세요");
+  if(p){ const same=db.c.find(x=>x.p&&digits(x.p)===digits(p)); if(same&&!confirm(`이 번호는 이미 '${same.n}' 님 번호예요. 그래도 따로 저장할까요?`)) return }
+  const c={id:newCustId(),n:nm||nk||ft,p,m:$("cm").value.trim(),r:[]};
+  if(nk) c.nk=nk; if(ft) c.ft=ft; if(f) c.ph=await shrinkTo(f,360,.7); if(p) c.ag={d:today(),by:"원장님 확인"};
+  db.c.push(c); save(); cur=c;
   if(pickNew){ pickNew=false; stack=["today"]; go("newRec",true) } else go("detail");
 }
 function smsHref(c){ const l=last(c);
   return smsLink(c.p,`${c.n} 님, 안녕하세요. ${shopIs()?shopIs()+"입니다. ":""}지난번 ${l?l.t:"시술"} 받으신 지 시간이 좀 지났네요. 편하실 때 연락 주세요 :)`) }
 function drawDetail(){
   const l=last(cur), ld=lastD(cur), fb=futureBk(cur);
-  $("info").innerHTML=`<div class="rec"><div class="t">${esc(cur.n)}</div><div class="d">${esc(cur.p||"전화번호 없음")}</div>${cur.m?`<p style="white-space:pre-line">${esc(cur.m)}</p>`:""}${ld?`<p class="d">마지막 방문 ${ld} (${days(ld)}일 전) · 방문 ${cur.r.length}번${l&&l.d===ld?"":" · 옮겨 온 기록"}</p>`:""}${fb&&F("bk")?`<p class="d" style="color:var(--main);font-weight:700">다음 예약 ${fmtD(fb.d)} ${fmtT(fb.tm)}</p>`:""}</div>`;
+  $("lastCard").innerHTML=l?lastCardHtml(l):"";
+  const cl=clue(cur);
+  $("info").innerHTML=`<div class="rec"><div style="display:flex;gap:12px;align-items:center">${cur.ph?`<img src="${cur.ph}" alt="손님 사진" style="width:88px;height:88px;object-fit:cover;border-radius:12px;margin:0;flex:none">`:""}<div><div class="t">${esc(cur.n)}</div>${cl?`<div style="font-size:19px">${esc(cl)}</div>`:""}<div class="d">${cur.p?esc(cur.p)+(cur.ag&&cur.ag.by==="sms"?` · 손님이 문자로 남김(${esc(cur.ag.d)})`:""):`전화번호 없음`}</div></div></div>${cur.m?`<p style="white-space:pre-line">${esc(cur.m)}</p>`:""}${ld?`<p class="d">마지막 방문 ${ld} (${days(ld)}일 전) · 방문 ${cur.r.length}번${l&&l.d===ld?"":" · 옮겨 온 기록"}</p>`:""}${fb&&F("bk")?`<p class="d" style="color:var(--main);font-weight:700">다음 예약 ${fmtD(fb.d)} ${fmtT(fb.tm)}</p>`:""}<button class="chip" style="margin-top:8px" onclick="editClue()">별명·특징 고치기</button></div>`;
   const tel=digits(cur.p);
+  $("telBtns").classList.toggle("hide",!tel);
+  $("noTel").innerHTML=tel?"":`<div class="soft"><b>📱 번호 없는 손님이에요</b><div class="d">번호를 여쭙지 않아도 돼요. 손님이 원하시면 QR을 보여 드리세요. 손님이 직접 문자를 보내면 그 번호를 여기에 붙이면 돼요.</div><div class="row"><button class="y" onclick="qrOpen('${cur.id}')">번호 남기기 QR</button><button class="n" onclick="atOpen('${cur.id}')">받은 번호 붙이기</button></div></div>`;
   $("smsBtn").href=tel?smsHref(cur):"javascript:void(0)"; $("callBtn").href=tel?`tel:${tel}`:"javascript:void(0)";
-  $("smsBtn").style.opacity=$("callBtn").style.opacity=tel?1:.4;
+  /* 염색 미리보기: 가로 화면·큰 화면이면 바로 전체 화면 비교로 */
+  const wide=matchMedia("(orientation: landscape)").matches||innerWidth>=900;
+  $("colorLink").href=wide?"color.html?big=1":"color.html";
+  $("colorBox").classList.toggle("hide",isRes());
   $("dBkBtn").classList.toggle("hide",!F("bk"));
   $("ptInfo").innerHTML=F("pt")?`<div class="card"><div class="cust"><div><b style="font-size:20px">포인트 ${Number(cur.pt||0).toLocaleString()}점</b><small>회원권 잔액 ${won(cur.mb)}</small></div><button class="chip" onclick="mbCharge()">회원권 충전</button></div></div>`:"";
-  $("recs").innerHTML=cur.r.slice().reverse().map(r=>`<div class="rec"><div class="d">${r.d}${r.price?` · ${won(r.price)}`:""}${r.mu?` · 회원권 ${won(r.mu)}`:""}${r.pu?` · 포인트 ${r.pu}점 사용`:""}${r.pa?` · ${r.pa}점 적립`:""}</div><div class="t">${esc(r.t)}</div>${r.m?`<div>${esc(r.m)}</div>`:""}${r.img?`<img src="${r.img}" alt="시술 사진">`:""}${snsCard(r)}</div>`).join("");
+  $("recs").innerHTML=cur.r.slice().reverse().map(r=>`<div class="rec"><div class="d">${r.d}${r.price?` · ${won(r.price)}`:""}${r.mu?` · 회원권 ${won(r.mu)}`:""}${r.pu?` · 포인트 ${r.pu}점 사용`:""}${r.pa?` · ${r.pa}점 적립`:""}</div><div class="t">${esc(r.t)}</div>${r.m?`<div>${esc(r.m)}</div>`:""}${rxLines(r.x).map(s=>`<div class="d" style="color:var(--tx)">${esc(s)}</div>`).join("")}${r.img?`<img src="${r.img}" alt="시술 사진">`:""}${snsCard(r)}</div>`).join("");
 }
+/* 시술 상세 메모 r.x {rod 롯드 호수, chem 약제, pmin 펌 방치 분, lv 염색 호수, ratio 비율, ox 산화제 %, dmin 염색 방치 분, len 기장 cm, tg [취향], nx 다음엔} */
+function rxLines(x){ if(!x) return []; const o=[], j=a=>a.filter(Boolean).join(" · ");
+  const pm=j([x.rod&&`롯드 ${x.rod}호`,x.chem&&`약제 ${x.chem}`,x.pmin&&`방치 ${x.pmin}분`]); if(pm) o.push("펌: "+pm);
+  const dy=j([x.lv&&`${x.lv}호(레벨)`,x.ratio&&`비율 ${x.ratio}`,x.ox&&`산화제 ${x.ox}%`,x.dmin&&`방치 ${x.dmin}분`]); if(dy) o.push("염색: "+dy);
+  if(x.len) o.push(`기장 ${x.len}cm`); if(x.tg&&x.tg.length) o.push("취향: "+x.tg.join(", ")); if(x.nx) o.push("다음엔: "+x.nx);
+  return o }
+function lastCardHtml(l){ const x=l.x||{}, ls=rxLines(x).filter(s=>!/^다음엔/.test(s));
+  return `<div class="lastc" id="lastC"><div class="lh">지난번 · ${fmtD(l.d)} · ${days(l.d)}일 전</div><div class="lt">${esc(l.t)}</div>${ls.map(s=>`<div class="lx">${esc(s)}</div>`).join("")}${l.m?`<div class="lm">${esc(l.m)}</div>`:""}${x.nx?`<div class="ln">다음엔 ▶ ${esc(x.nx)}</div>`:""}</div>` }
+function editClue(){ const nk=prompt("별명·부르는 이름",cur.nk||""); if(nk===null) return; const ft=prompt("특징 (예: 안경·짧은 투블럭)",cur.ft||""); if(ft===null) return;
+  const was=cur.n===cur.nk||cur.n===cur.ft; cur.nk=nk.trim()||undefined; cur.ft=ft.trim()||undefined; if(was&&(cur.nk||cur.ft)) cur.n=cur.nk||cur.ft; save(); go("detail",true) }
 function mbCharge(){ const v=prompt("회원권에 얼마를 충전할까요? (원)",""); const a=Number(String(v||"").replace(/\D/g,"")); if(!a) return;
   cur.mb=Number(cur.mb||0)+a; (cur.mbl=cur.mbl||[]).push({d:today(),a}); save(); drawDetail(); toast(`회원권 ${won(a)} 충전했어요`) }
 function editMemo(){ const m=prompt("메모",cur.m||""); if(m!==null){ cur.m=m; save(); drawDetail() } }
@@ -656,9 +776,26 @@ function delCust(){ if(confirm(cur.n+" 님 기록을 모두 지울까요?")){ db
 
 /* ── 시술 기록 ─────────────────────────────────── */
 let sel=[];
-function resetRec(){ sel=recPreset||[]; recPreset=null; $("rd").value=today(); $("rm").value=""; $("rp").value=sel.reduce((a,j)=>a+Number(db.menu[j].p||0),0)||""; $("rf").value=""; snsPh={b:null,a:null}; snsDesc=""; snsOk=false; drawMenuChips(); drawPtBox(); drawSnsRec() }
+function resetRec(){ sel=recPreset||[]; recPreset=null; $("rd").value=today(); $("rm").value=""; $("rp").value=sel.reduce((a,j)=>a+Number(db.menu[j].p||0),0)||""; $("rf").value=""; snsPh={b:null,a:null}; snsDesc=""; snsOk=false; rx={tg:[]}; rxOpen=false; drawMenuChips(); drawPtBox(); drawSnsRec(); drawRx() }
 function drawMenuChips(){ $("menuChips").innerHTML=(db.menu||[]).map((m,i)=>`<button class="chip ${sel.includes(i)?'on':''}" onclick="toggleM(${i})">${esc(m.n)}</button>`).join("") }
-function toggleM(i){ sel=sel.includes(i)?sel.filter(x=>x!==i):[...sel,i]; drawMenuChips(); $("rp").value=sel.reduce((a,j)=>a+Number(db.menu[j].p||0),0)||""; drawPtBox() }
+function toggleM(i){ sel=sel.includes(i)?sel.filter(x=>x!==i):[...sel,i]; drawMenuChips(); $("rp").value=sel.reduce((a,j)=>a+Number(db.menu[j].p||0),0)||""; drawPtBox(); drawRx() }
+/* ── 시술 상세 메모 (선택 칸) ── */
+let rx={tg:[]}, rxOpen=false, rxTags=[];
+const TG_HAIR=["자연스럽게","볼륨 있게","가볍게","짧게","길이 유지","손질 쉽게","앞머리 중요","차분한 색","밝은 색","두피 예민","조용히 쉬고 싶어 함"], TG_RES=["자연스럽게","풍성하게","길게","가볍게","눈 예민","피부 예민","누드톤","화사하게","조용히 쉬고 싶어 함"];
+function rxIn(k,lab,unit,ph,mode){ return `<span>${lab}</span><input data-rx="${k}" value="${esc(rx[k]||"")}" placeholder="${ph||""}" ${mode?`inputmode="${mode}"`:""} oninput="rx['${k}']=this.value.trim()" aria-label="${lab}">${unit?`<span>${unit}</span>`:""}` }
+function drawRx(){ const el=$("rxBox"); if(!el) return; const res=isRes(), names=sel.map(i=>(db.menu[i]||{}).n||"").join(" "),
+  perm=!res&&(/펌|매직/.test(names)||rx.rod||rx.chem||rx.pmin), dye=!res&&(/염색|탈색|컬러/.test(names)||rx.lv||rx.ratio||rx.ox||rx.dmin), lx=cur&&last(cur)&&last(cur).x;
+  const open=rxOpen||perm||dye||Object.keys(rx).some(k=>k!=="tg"&&rx[k])||rx.tg.length, tags=rxTags=[...new Set([...(res?TG_RES:TG_HAIR),...rx.tg])];
+  el.innerHTML=`<details class="card" ${open?"open":""} ontoggle="rxOpen=this.open"><summary><b style="font-size:20px">📝 시술 상세 메모 (선택)</b><div class="d">${res?"취향·다음엔 이렇게":"롯드·약제·염색 호수·방치 시간·기장"} — 다음에 똑같이 해 드리려면</div></summary>
+   ${lx?`<button class="chip" style="margin-top:10px" onclick="rx=JSON.parse(JSON.stringify(last(cur).x));rx.tg=rx.tg||[];rxOpen=true;drawRx()">↺ 지난번 그대로 불러오기</button>`:""}
+   ${res?"":`<div class="rxg"${perm?"":` style="opacity:.75"`}><b>펌</b><div class="rxr">${rxIn("rod","롯드","호","6","decimal")}${rxIn("pmin","방치","분","15","numeric")}</div><div class="rxr">${rxIn("chem","약제","","예: 시스테인")}</div></div>
+   <div class="rxg"${dye?"":` style="opacity:.75"`}><b>염색</b><div class="rxr">${rxIn("lv","호수","호","7","decimal")}${rxIn("ratio","비율","","1:1")}</div><div class="rxr">${rxIn("ox","산화제","%","6","decimal")}${rxIn("dmin","방치","분","30","numeric")}</div></div>
+   <div class="rxg"><div class="rxr">${rxIn("len","기장","cm","예: 20","decimal")}</div></div>`}
+   <div class="rxg"><b>손님 취향</b><div class="chips" style="margin-top:6px">${tags.map((t,i)=>`<button class="chip ${rx.tg.includes(t)?'on':''}" onclick="rxTag(rxTags[${i}])">${esc(t)}</button>`).join("")}<button class="chip" onclick="const t=prompt('취향 태그 (짧게)');if(t&&t.trim()){rx.tg.push(t.trim());drawRx()}">+ 직접</button></div></div>
+   <div class="rxg"><b>다음엔 이렇게</b><div class="mw" style="margin-top:6px"><input id="rxNx" value="${esc(rx.nx||"")}" placeholder="예: 한 톤 밝게, 옆은 더 짧게" oninput="rx.nx=this.value.trim()"><button class="mic" onclick="dictate('rxNx')" aria-label="말로 다음엔">🎤</button></div></div></details>` }
+function rxTag(t){ rx.tg=rx.tg.includes(t)?rx.tg.filter(x=>x!==t):[...rx.tg,t]; rxOpen=true; drawRx() }
+/* 빈 칸은 빼고 저장 (아무것도 없으면 저장 안 함 → 예전 기록 형식 그대로) */
+function rxClean(x){ if(!x) return null; const o={}; ["rod","chem","pmin","lv","ratio","ox","dmin","len","nx"].forEach(k=>{ const v=String(x[k]??"").trim(); if(v) o[k]=v }); if(x.tg&&x.tg.length) o.tg=[...x.tg]; return Object.keys(o).length?o:null }
 const ptRate=()=>db.ptRate!=null?Number(db.ptRate):5;
 function drawPtBox(){ const el=$("ptBox"); if(!F("pt")||!cur){ el.innerHTML=""; return }
   const price=Number($("rp").value||0), pu=Number(($("pu")||{}).value||0), mu=($("mu")||{}).checked;
@@ -684,6 +821,7 @@ function applyPt(c,r,pu,useMb){ if(!F("pt")) return true; const price=Number(r.p
 async function saveRec(){
   if(!sel.length) return alert("시술을 골라 주세요");
   const r={d:$("rd").value,t:sel.map(i=>db.menu[i].n).join(" + "),m:$("rm").value.trim(),price:$("rp").value,img:await shrink($("rf").files[0])};
+  const x=rxClean(rx); if(x) r.x=x;
   if(!applyPt(cur,r,($("pu")||{}).value,($("mu")||{}).checked)) return;
   if(F("sns")&&(snsPh.b||snsPh.a)){ if(snsPh.b) r.ib=snsPh.b; if(snsPh.a) r.ia=snsPh.a; if(snsDesc.trim()) r.sd=snsDesc.trim(); if(snsOk) r.sc=today() }
   cur.r.push(r); cur.r.sort((a,b)=>a.d.localeCompare(b.d));
@@ -860,14 +998,22 @@ function drawSales(){
 }
 
 /* ── 설정 ─────────────────────────────────────── */
-const FEATS=[["bk","예약","오늘·내일 예약, 주간 달력, 전날 알림 문자"],["rv","다시 오실 때 알림","시술 주기가 된 손님 알려 주기"],["grp","단체 문자","여러 손님께 한 분씩 문자 앱 열기"],["pt","포인트·회원권","시술 때 포인트 적립·사용, 회원권 충전"],["voice","🎤 말로 기록","말로 시술·예약·메모 적기 (말소리는 구글·애플 음성 인식을 거칠 수 있어요)"],["sns","📷 SNS 올리기","시술 전·후 사진, 게시 문구 초안, 인스타·블로그·카톡으로 넘기기"]];
+const FEATS=[["bk","예약","오늘·내일 예약, 주간 달력, 전날 알림 문자"],["rv","다시 오실 때 알림","시술 주기가 된 손님 알려 주기"],["grp","단체 문자","여러 손님께 한 분씩 문자 앱 열기"],["pt","포인트·회원권","시술 때 포인트 적립·사용, 회원권 충전"],["voice","🎤 말로 기록","말로 시술·예약·메모 적기 (말소리는 구글·애플 음성 인식을 거칠 수 있어요)"],["sns","📷 SNS 올리기","시술 전·후 사진, 게시 문구 초안, 인스타·틱톡·스레드로 넘기기, 오늘 하루 마무리 글"]];
 function setFeat(k){ db.feat=Object.assign({},FEAT_DEF,db.feat||{}); db.feat[k]=db.feat[k]?0:1; save(); drawSettings() }
 function drawSettings(){ const at=Number(ls.get(BK_AT)); $("bkLast").textContent=at?`마지막 백업: ${stamp(new Date(at)).replace("_"," ").replace(/(\d\d)(\d\d)$/,"$1:$2")}`:"아직 백업한 적이 없어요."; drawInstallState(); $("goal").value=db.goal||"";
+  $("trustSet").innerHTML=TRUST; $("shopTel").value=db.tel||"";
+  $("layChips").innerHTML=[["hair","방문 중심 (헤어·바버)"],["res","예약 중심 (속눈썹·네일·피부)"]].map(([k,l])=>`<button class="chip ${(isRes()?"res":"hair")===k?'on':''}" onclick="db.lay='${k}';save();drawSettings()">${l}</button>`).join("");
+  $("hrsBox").innerHTML=isRes()?`<label>영업 시간 <span class="d">(빈 시간 계산용)</span></label><div class="rxr"><input type="time" step="1800" value="${hrs().o}" onchange="db.hrs=Object.assign(hrs(),{o:this.value});save()" aria-label="여는 시각"><span>~</span><input type="time" step="1800" value="${hrs().c}" onchange="db.hrs=Object.assign(hrs(),{c:this.value});save()" aria-label="닫는 시각"></div>`:"";
   $("featBox").innerHTML=FEATS.map(([k,l,d])=>`<div class="card tg"><div><b style="font-size:21px">${l}</b><div class="d">${d}</div></div><button class="sw ${F(k)?'on':''}" onclick="setFeat('${k}')" aria-pressed="${F(k)}">${F(k)?"켜짐":"꺼짐"}</button></div>`).join("");
   $("ptSet").innerHTML=F("pt")?`<h2>포인트 적립률</h2><div class="mw"><input type="number" inputmode="numeric" value="${ptRate()}" onchange="db.ptRate=Math.max(0,Number(this.value)||0);save()"><span style="align-self:center;font-size:22px">%</span></div><p class="note" style="margin-top:4px">시술 금액의 몇 %를 포인트로 쌓을지예요. 1점 = 1원으로 써요.</p>`:"";
-  $("tplSet").innerHTML=F("rv")?`<h2>'다시 오실 때' 문자 문구 틀</h2><p class="note" style="margin-top:0">{이름} {가게} {시술} {주} 자리에 알아서 들어가요. 보낼 때마다 또 고칠 수 있어요.</p>`+tpls().map((t,i)=>`<label>문구 ${i+1}</label><textarea onchange="db.tpl=tpls();db.tpl[${i}]=this.value||TPL_DEF[${i}];save()">${esc(t)}</textarea>`).join("")+`<button class="chip" style="margin-top:8px" onclick="delete db.tpl;save();drawSettings()">처음 문구로 되돌리기</button>`:"";
+  $("tplSet").innerHTML=F("rv")?`<h2>'다시 오실 때' 문자 문구 틀</h2><p class="note" style="margin-top:0">{이름} {가게} {시술} {주} 자리에 알아서 들어가요. 보낼 때마다 또 고칠 수 있어요.</p>`+tpls().map((t,i)=>`<label>문구 ${i+1}</label><textarea onchange="db.tpl=tpls();db.tpl[${i}]=this.value||tplDef()[${i}];save()">${esc(t)}</textarea>`).join("")+`<button class="chip" style="margin-top:8px" onclick="delete db.tpl;save();drawSettings()">처음 문구로 되돌리기</button>`:"";
   drawSnsSet();
   $("menuEdit").innerHTML=(db.menu||[]).map((m,i)=>`<div class="mrow"><input value="${esc(m.n)}" data-i="${i}" data-k="n" aria-label="시술 이름"><div class="r2"><input type="number" value="${m.p}" data-i="${i}" data-k="p" aria-label="가격" style="flex:1.4"><span>원</span><input type="number" value="${cycW(m)}" data-i="${i}" data-k="w" aria-label="다시 오실 때(주)" style="flex:.8"><span>주</span><button class="chip" onclick="db.menu.splice(${i},1);drawSettings()">빼기</button></div></div>`).join("") }
+/* 손님 목록 내보내기: 엑셀에서 바로 열리는 CSV (불러오기 화면에서 다시 읽을 수 있는 칸 이름) */
+function exportCSV(){ const q=v=>{ v=String(v??""); return /[",\r\n]/.test(v)?'"'+v.replace(/"/g,'""')+'"':v };
+  const rows=[["이름","전화","메모","마지막 방문","별명","특징","방문 수","마지막 시술","다음엔"]];
+  db.c.forEach(c=>{ const l=last(c); rows.push([c.n,c.p,c.m||"",lastD(c),c.nk||"",c.ft||"",c.r.length,l?l.t:"",l&&l.x&&l.x.nx||""]) });
+  saveBlob(new Blob(["\ufeff"+rows.map(r=>r.map(q).join(",")).join("\r\n")],{type:"text/csv;charset=utf-8"}),`단골수첩_손님목록_${stamp()}.csv`); toast(`손님 ${db.c.length}명을 CSV로 내보냈어요`) }
 function addMenu(){ syncMenu(); (db.menu=db.menu||[]).push({n:"새 시술",p:0,w:4}); drawSettings() }
 function syncMenu(){ document.querySelectorAll("#menuEdit input").forEach(el=>{ const m=db.menu[el.dataset.i], k=el.dataset.k; if(k==="w"){ if(Number(el.value)!==cycW(m)||m.w!=null) m.w=Math.max(0,Number(el.value)||0) } else m[k]=k==="p"?Number(el.value):el.value }) }
 function saveMenu(){ syncMenu(); save(); alert("메뉴를 저장했어요") }
@@ -956,7 +1102,8 @@ async function installApp(){
    r.ib 시술 전 / r.ia 시술 후 사진 / r.sd 스타일 설명 / r.sc 게시 동의 날짜 (없으면 올리기 버튼 막힘)
    db.sns {tags 해시태그, tel 가게 전화, links{ig,blog,dg,kk}, tail 문자 끝에 주소 붙이기} */
 let snsPh={b:null,a:null}, snsDesc="", snsOk=false;
-const SNSL=[["ig","인스타그램"],["blog","블로그"],["dg","당근"],["kk","카카오톡 채널"]];
+/* 손님들이 많이 보는 곳부터: 인스타·틱톡·스레드 → 당근·카톡 → 블로그 */
+const SNSL=[["ig","인스타그램"],["tt","틱톡"],["th","스레드"],["dg","당근"],["kk","카카오톡 채널"],["blog","블로그"]];
 const snsCfg=()=>Object.assign({tags:"",tel:"",links:{},tail:0},db.sns||{});
 function snsSetV(k,v){ db.sns=snsCfg(); if(k.startsWith("l.")) db.sns.links=Object.assign({},db.sns.links,{[k.slice(2)]:v.trim()}); else db.sns[k]=v; save() }
 function snsLinks(){ const L=snsCfg().links||{}; return SNSL.filter(([k])=>L[k]).map(([k,l])=>`${l}: ${L[k]}`) }
@@ -1009,9 +1156,10 @@ function snsOpen(i){ const r=cur.r[i]; if(!r.sc) return snsNoOk(i); sn={r,tone:0
   $("actBox").innerHTML=`<h3>📷 SNS에 올리기</h3><canvas id="snCv" style="width:100%;border-radius:10px;background:#eee"></canvas>
    <label>말투</label><div class="chips" id="snTones"></div>
    <label>게시 문구 (고치셔도 돼요)</label><textarea id="snText" style="min-height:170px;font-size:19px"></textarea>
-   <button class="big" style="background:#9333ea" onclick="snsShare()">공유하기 (인스타·블로그·카톡)</button>
-   <div class="row2"><button class="big ghost" onclick="copyText($('snText').value,'문구를 복사했어요')">문구만 복사</button><button class="big ghost" onclick="copyText(blogText(),'블로그 글 틀을 복사했어요')">블로그용 긴 글 복사</button></div>
-   <p class="note">휴대폰 '공유' 창이 열리면 인스타그램·블로그·카카오톡을 고르세요. 인스타는 문구가 자동으로 안 들어갈 수 있어, 문구를 미리 복사해 둬요. 붙여 넣기만 하시면 돼요. 손님 이름은 문구에 넣지 않았어요.</p>
+   <button class="big" style="background:#9333ea" onclick="snsShare()">공유하기 (인스타·틱톡·스레드)</button>
+   <button class="big ghost" onclick="copyText($('snText').value,'문구를 복사했어요')">문구만 복사</button>
+   <p class="note">휴대폰 '공유' 창이 열리면 <b>인스타그램·틱톡·스레드</b> 중에서 고르세요(카톡·당근도 돼요). 앱에 따라 문구가 자동으로 안 들어갈 수 있어, 문구를 미리 복사해 둬요. 붙여 넣기만 하시면 돼요. 손님 이름은 문구에 넣지 않았어요.</p>
+   <button class="chip" style="margin-top:10px" onclick="copyText(blogText(),'블로그 글 틀을 복사했어요')">블로그도 하시면: 긴 글 틀 복사</button>
    <button class="big ghost" onclick="$('actSheet').classList.add('hide')">닫기</button>`;
   $("actSheet").classList.remove("hide"); snTone(0); snsCompose() }
 function snTone(k){ sn.tone=k; $("snTones").innerHTML=SNS_T.map(([l],j)=>`<button class="chip ${j===k?'on':''}" onclick="snTone(${j})">${l}</button>`).join(""); $("snText").value=snsText() }
@@ -1025,11 +1173,38 @@ async function snsCompose(){ const [b,a]=await Promise.all([loadImg(sn.r.ib),loa
 async function copyText(t,ok){ try{ await navigator.clipboard.writeText(t); toast(ok); return true }catch(e){ const ta=document.createElement("textarea"); ta.value=t; document.body.appendChild(ta); ta.select(); let r=false; try{ r=document.execCommand("copy") }catch(_){} ta.remove(); toast(r?ok:"복사가 안 됐어요. 글을 길게 눌러 복사해 주세요"); return r } }
 function blogText(){ const r=sn.r, c=snsCfg(), s=shopIs()||"저희 가게";
   return `${s} | ${r.t} 시술 이야기\n\n안녕하세요, ${s}입니다.\n오늘은 ${r.t} 시술을 소개해 드릴게요.\n\n[사진: 시술 전]\n\n1. 상담\n손님의 모발 상태와 원하시는 스타일을 먼저 여쭤봤어요. (원장님 말로 채워 주세요)\n\n2. 시술\n${r.sd||"(어떻게 했는지 적어 주세요)"}\n\n3. 마무리\n집에서도 손질하기 쉽게 마무리하고, 관리 방법을 알려 드렸어요.\n\n[사진: 시술 후]\n\n────────\n📍 ${s}\n${c.tel?`📞 예약 문의: ${c.tel}\n`:""}${snsLinks().join("\n")}${snsLinks().length?"\n":""}\n${snsTags(r)}` }
-async function snsShare(){ const text=$("snText").value; await copyText(text,"문구를 복사해 뒀어요. 올릴 때 붙여 넣으세요");
-  const blob=await new Promise(ok=>$("snCv").toBlob(ok,"image/jpeg",.9)); const file=new File([blob],`시술사진_${today()}.jpg`,{type:"image/jpeg"});
+function snsShare(){ return shareCv("snCv",$("snText").value,`시술사진_${today()}.jpg`) }
+async function shareCv(cvId,text,fname){ await copyText(text,"문구를 복사해 뒀어요. 올릴 때 붙여 넣으세요");
+  const blob=await new Promise(ok=>$(cvId).toBlob(ok,"image/jpeg",.9)); const file=new File([blob],fname,{type:"image/jpeg"});
   if(navigator.canShare&&navigator.canShare({files:[file]})){ try{ await navigator.share({files:[file],text}) }catch(e){ if(e.name!=="AbortError") toast("공유가 안 됐어요. 다시 눌러 주세요") } return }
   await saveBlob(blob,file.name);
   toast("이 휴대폰은 바로 공유가 안 돼서 사진을 저장하고 문구를 복사했어요") }
+/* ── 오늘 하루 마무리 글: 오늘 게시 동의(r.sc)를 받은 시술 사진 최대 4장을 한 장으로 + 문구 초안 ── */
+function dayEndItems(){ const t=today(), out=[]; db.c.forEach(c=>c.r.forEach(r=>{ if(r.d===t&&r.sc&&(r.ia||r.ib)) out.push(r) })); return out.slice(0,4) }
+function drawDayEnd(){ const el=$("dayEnd"); if(!F("sns")){ el.innerHTML=""; return } const n=dayEndItems().length;
+  el.innerHTML=n?`<button class="big" style="background:#9333ea" onclick="dayEndOpen()">📷 오늘 하루 마무리 글 만들기 (사진 ${n}장)</button>`:"" }
+const DAY_T=[["다정하게","오늘 하루도 고마웠어요 💛\n오늘은 {목록} 손님들과 함께했어요.\n편하게 맡겨 주셔서 저도 즐거운 하루였어요.\n{가게}에서 내일도 기다릴게요 :)"],
+  ["깔끔하게","[오늘의 시술 · {날짜}]\n{목록}\n예약·문의는 프로필 링크로 부탁드립니다.\n{가게}"],
+  ["발랄하게","오늘의 작품들 모아 봤어요 ✨\n{목록}\n내일은 누가 주인공일까요? 💕\n{가게}"]];
+let de=null;
+function dayEndText(){ const it=de.items, names=[...new Set(it.flatMap(r=>r.t.split(" + ")))], tags=[...new Set(["#오늘의시술",...names.map(n=>"#"+n.replace(/\s/g,"")),shopIs()?"#"+shopIs().replace(/\s/g,""):"",...String(snsCfg().tags||"").split(/[\s,]+/).filter(Boolean).map(x=>x.startsWith("#")?x:"#"+x)].filter(Boolean))];
+  return DAY_T[de.tone][1].replace(/\{목록\}/g,names.join(" · ")).replace(/\{날짜\}/g,fmtD(today())).replace(/\{가게\}/g,shopIs()||"저희 가게")+"\n\n"+tags.join(" ") }
+function deTone(k){ de.tone=k; $("deTones").innerHTML=DAY_T.map(([l],j)=>`<button class="chip ${j===k?'on':''}" onclick="deTone(${j})">${l}</button>`).join(""); $("deText").value=dayEndText() }
+function dayEndOpen(){ de={items:dayEndItems(),tone:0}; if(!de.items.length) return;
+  $("actBox").innerHTML=`<h3>📷 오늘 하루 마무리 글</h3><p class="note" style="margin-top:0">오늘 <b>게시 동의를 받은</b> 시술 사진 ${de.items.length}장을 한 장으로 모았어요. 손님 이름은 넣지 않아요.</p><canvas id="deCv" style="width:100%;border-radius:10px;background:#eee"></canvas>
+   <label>말투</label><div class="chips" id="deTones"></div>
+   <label>게시 문구 (고치셔도 돼요)</label><textarea id="deText" style="min-height:170px;font-size:19px"></textarea>
+   <button class="big" style="background:#9333ea" onclick="shareCv('deCv',$('deText').value,'오늘의시술_'+today()+'.jpg')">공유하기 (인스타·틱톡·스레드)</button>
+   <button class="big ghost" onclick="copyText($('deText').value,'문구를 복사했어요')">문구만 복사</button>
+   <button class="big ghost" onclick="$('actSheet').classList.add('hide')">닫기</button>`;
+  $("actSheet").classList.remove("hide"); deTone(0); return dayEndCompose() }
+async function dayEndCompose(){ const ims=(await Promise.all(de.items.map(r=>loadImg(r.ia||r.ib)))).filter(Boolean), n=ims.length;
+  const cv=$("deCv"), g=cv.getContext("2d"), W=1080, H=1080, top=120, gap=8; cv.width=W; cv.height=H; g.fillStyle="#fff8f3"; g.fillRect(0,0,W,H);
+  g.fillStyle="#c2410c"; g.fillRect(0,0,W,top); g.fillStyle="#fff"; g.font="bold 48px sans-serif"; g.textAlign="left"; g.textBaseline="middle"; g.fillText("오늘의 시술",40,top/2); g.font="34px sans-serif"; g.textAlign="right"; g.fillText(fmtD(today()),W-40,top/2);
+  const A=[0,top,W,H-top], cells=n===1?[A]:n===2?[[0,top,W/2,H-top],[W/2,top,W/2,H-top]]:n===3?[[0,top,W/2,H-top],[W/2,top,W/2,(H-top)/2],[W/2,top+(H-top)/2,W/2,(H-top)/2]]:[[0,top,W/2,(H-top)/2],[W/2,top,W/2,(H-top)/2],[0,top+(H-top)/2,W/2,(H-top)/2],[W/2,top+(H-top)/2,W/2,(H-top)/2]];
+  ims.forEach((im,k)=>{ let [x,y,w,h]=cells[k]; x+=gap/2; y+=gap/2; w-=gap; h-=gap; const s=Math.max(w/im.width,h/im.height); g.save(); g.beginPath(); g.rect(x,y,w,h); g.clip(); g.drawImage(im,x+(w-im.width*s)/2,y+(h-im.height*s)/2,im.width*s,im.height*s); g.restore() });
+  if(shopIs()){ g.font="bold 34px sans-serif"; g.textAlign="right"; g.textBaseline="bottom"; g.fillStyle="#0009"; g.fillText(shopIs(),W-22,H-18); g.fillStyle="#fff"; g.fillText(shopIs(),W-24,H-20) }
+  cv.dataset.n=n }
 
 /* ── 🎤 말로 기록 ─────────────────────────────────
    브라우저에 들어 있는 음성 인식(Web Speech API, 무료)만 씀. 지원 안 되면 휴대폰 키보드 마이크로 대신.
@@ -1082,6 +1257,19 @@ function parseVoice(text,base){
     let h=/^\d+$/.test(m[2])?+m[2]:HN[m[2]], mm=m[3]?(m[3]==="반"?30:korNum(m[4])||0):0, ap=m[1];
     if(/오후|저녁|밤/.test(ap||"")){ if(h<12) h+=12 } else if(ap==="낮"){ if(h<6) h+=12 } else if(/오전|아침/.test(ap||"")){ if(h===12) h=0 } else if(h>=1&&h<=7) h+=12;
     if(h>=0&&h<24) out.tm=`${p2(h)}:${p2(mm)}`; if(!out.kind||out.kind==="rec") out.kind="bk" }
+  /* 시술 상세: "6호 롯드", "롯드 6호", "7레벨 30분", "산화제 6프로", "1대1", "기장 20센치", "약제 ○○", "다음엔 …" */
+  const X={}, NU="(\\d+(?:\\.\\d+)?)", kn=v=>{ const n=korNum(v); return isNaN(n)?v:String(n) };
+  if(m=S.match(/\s(?:다음(?:에는|엔|번엔|번에는|번에)|담엔)\s+(.+?)\s*$/)){ X.nx=m[1].replace(/\s*(해\s*줘|해\s*주세요|으로|로)\s*$/,"").trim(); S=S.slice(0,m.index)+" " }
+  const mins=[]; let mm2; const MRE=/(?:방치\s*)?(\d{1,3}|[이삼사오육]?십[일이삼사오육칠팔구]?)\s*분(?!\s*(?:뒤|후|전))/;
+  while(mm2=S.match(MRE)){ mins.push({v:kn(mm2[1]),at:mm2.index,before:S.slice(0,mm2.index)}); S=S.slice(0,mm2.index)+" "+S.slice(mm2.index+mm2[0].length) }
+  if(m=cut(new RegExp(NU+"\\s*호\\s*롯드"))) X.rod=m[1]; else if(m=cut(new RegExp("롯드\\s*"+NU+"\\s*(?:호|번)?"))) X.rod=m[1];
+  if(m=cut(new RegExp(NU+"\\s*(?:레벨|lv)","i"))) X.lv=m[1];
+  if(m=cut(new RegExp("(?:산화제\\s*)?"+NU+"\\s*(?:%|퍼센트|프로)"))) X.ox=m[1]; else if(m=cut(new RegExp("산화제\\s*"+NU))) X.ox=m[1];
+  if(m=cut(/\s(\d)\s*(?:대|:)\s*(\d)\s/)) X.ratio=`${m[1]}:${m[2]}`;
+  if(m=cut(new RegExp("(?:기장\\s*)?"+NU+"\\s*(?:cm|센치|센티(?:미터)?|㎝)","i"))) X.len=m[1];
+  if(m=cut(/약제\s*([가-힣a-zA-Z0-9]+)/)) X.chem=m[1];
+  const hos=[]; while(mm2=S.match(new RegExp(NU+"\\s*호(?:으로|로)?(?![가-힣])"))){ hos.push(mm2[1]); S=S.slice(0,mm2.index)+" "+S.slice(mm2.index+mm2[0].length) }
+  S=S.replace(/\s(방치|롯드|레벨|산화제|약제|기장)\s/g," ");
   /* 금액 */
   S=S.replace(/(\d)\s+(만|천)/g,"$1$2").replace(/(만)\s+(\d|[일이삼사오육칠팔구])/g,"$1$2");
   const toks=S.trim().split(" "), keep=[]; let amt=null;
@@ -1106,10 +1294,16 @@ function parseVoice(text,base){
   nameFrom(S.trim().split(" "),out);
   (out._w||[]).forEach(([w,has])=>{ const hist=out.cust?out.cust.r.slice().reverse().flatMap(r=>r.t.split(" + ")):[]; const pick=has.find(([i,x])=>hist.includes(x.n))||has.find(([i,x])=>x.n===w)||has[0]; if(!out.sel.includes(pick[0])) out.sel.push(pick[0]) });
   delete out._w;
+  /* "N호"·"N분"이 펌인지 염색인지: 고른 시술과 말한 순서로 정함 */
+  const nm=out.sel.map(i=>menu[i].n).join(" "), hasP=/펌|매직/.test(nm)||!!X.rod, hasD=/염색|탈색|컬러/.test(nm)||!!X.lv||!!X.ox;
+  hos.forEach(v=>{ if(hasD&&!X.lv) X.lv=v; else if(hasP&&!X.rod) X.rod=v; else if(!X.lv) X.lv=v });
+  mins.forEach(({v,before})=>{ const pi=Math.max(before.lastIndexOf("롯드"),before.lastIndexOf("펌"),before.lastIndexOf("파마")), di=Math.max(before.lastIndexOf("레벨"),before.lastIndexOf("염색"),before.lastIndexOf("산화제"),before.lastIndexOf("%"),before.lastIndexOf("프로"));
+    let k=hasP&&!hasD?"pmin":hasD&&!hasP?"dmin":pi>di?"pmin":di>=0?"dmin":hasP?"pmin":"dmin"; if(X[k]) k=k==="pmin"?"dmin":"pmin"; if(!X[k]) X[k]=v });
+  if(Object.keys(X).length) out.x=X;
   if(out.price==null&&out.kind==="rec"&&out.sel.length) out.price=out.sel.reduce((a,i)=>a+Number(menu[i].p||0),0);
   if(out.kind==="bk"&&!out.tm) out.tm="";
   return out }
-const STOP=/^(예약|기록|저장|손님|고객|님|씨|시술|추가|해줘|해|줘|주세요|해주세요|했어요|했고|했어|받았어요|받으셨어요|하셨어요|잡아줘|잡아|넣어줘|으로|로|에|하고|이랑|랑|그리고|및|요|원장님|좀|네|응|어|음|오늘|내일|해요|할게요|부탁해|부탁해요|다시|등록|등록해줘|입니다|이요|이에요|예요)$/;
+const STOP=/^(예약|기록|저장|손님|고객|님|씨|시술|추가|해줘|해|줘|주세요|해주세요|했어요|했고|했어|받았어요|받으셨어요|하셨어요|잡아줘|잡아|넣어줘|으로|로|에|하고|이랑|랑|그리고|및|요|원장님|좀|네|응|어|음|오늘|내일|해요|할게요|부탁해|부탁해요|다시|등록|등록해줘|입니다|이요|이에요|예요|롯드|레벨|방치|산화제|약제|기장|호|분)$/;
 function nameFrom(toks,out){
   const cand=[];
   toks.map(t=>t.trim()).filter(Boolean).forEach(t=>{ if(STOP.test(t)) return;
@@ -1158,7 +1352,7 @@ function vDraw(){ const p=vSt, menu=db.menu||[]; if(!p) return;
   const who=p.cust?esc(p.cust.n):p.newName?`${esc(p.newName)} <span class="tag n" style="font-size:16px">새 손님</span>`:`<span style="color:#dc2626">손님을 골라 주세요</span>`;
   const sv=p.sel.length?p.sel.map(i=>esc(menu[i].n)).join(" + "):(p.kind==="memo"?"":`<span style="color:var(--sub)">${p.kind==="bk"?"시술 미정":"시술을 골라 주세요"}</span>`);
   let rows=vField("who","손님",who), q="";
-  if(p.kind==="rec"){ rows+=vField("sel","시술",sv)+vField("price","금액",p.price!=null?won(p.price):"<span style='color:#dc2626'>금액?</span>")+(p.d!==today()?vField("d","날짜",fmtD(p.d)):"");
+  if(p.kind==="rec"){ rows+=vField("sel","시술",sv)+vField("price","금액",p.price!=null?won(p.price):"<span style='color:#dc2626'>금액?</span>")+(p.d!==today()?vField("d","날짜",fmtD(p.d)):"")+(p.x?`<div class="vf" style="border-style:solid;font-size:21px"><small>상세 메모 (알아들은 것)</small>${rxLines(p.x).map(esc).join("<br>")}</div>`:"");
     q=`${p.cust?p.cust.n:p.newName||"?"} · ${p.sel.map(i=>menu[i].n).join(" + ")||"?"} · ${p.price!=null?won(p.price):"?"}<br>저장할까요?` }
   if(p.kind==="bk"){ rows+=vField("d","날짜",fmtD(p.d))+vField("tm","시각",p.tm?fmtT(p.tm):"<span style='color:#dc2626'>시각?</span>")+vField("sel","시술",sv);
     q=`${fmtD(p.d)} ${p.tm?fmtT(p.tm):"?"}<br>${p.cust?p.cust.n:p.newName||"?"} 님 예약할까요?` }
@@ -1171,7 +1365,7 @@ function vDraw(){ const p=vSt, menu=db.menu||[]; if(!p) return;
   if(p.edit==="tm") ed=`<div class="card"><input type="time" step="600" value="${p.tm}" onchange="vSt.tm=this.value;vDraw()"></div>`;
   if(p.edit==="memo") ed=`<div class="card"><textarea id="vMemo" onchange="vSt.memo=this.value.trim();vDraw()">${esc(p.memo)}</textarea></div>`;
   const cands=p.cands&&p.cands.length>1?`<p class="note">같은 이름 손님이 ${p.cands.length}명이에요: ${p.cands.map((c,k)=>`<button class="chip ${c===p.cust?'on':''}" onclick="vSt.cust=vSt.cands[${k}];vDraw()">${esc(c.n)} ${esc(c.p.slice(-4))}</button>`).join(" ")}</p>`:"";
-  const agree=!p.cust&&p.newName?`<label style="font-weight:400"><input type="checkbox" id="vAgree" style="width:auto"> 손님이 기록 보관에 동의했어요</label>`:"";
+  const agree=!p.cust&&p.newName?`<p class="note">새 손님으로 저장해요 (전화번호 없이). 번호는 나중에 '번호 남기기 QR'로 받으실 수 있어요.</p>`:"";
   vBox(`${said}${rows}${ed}${cands}<p class="vq" style="margin-top:14px">${q}</p>${agree}<div class="two"><button style="background:var(--main);font-size:26px" onclick="vSave()">저장</button><button style="background:var(--deep);font-size:22px" onclick="voiceStart()">🎤 다시 말하기</button></div><button class="big ghost" onclick="vCancel()">닫기</button>`);
   if(p.edit==="who") vWhoList() }
 function vWhoList(){ const q=$("vWho").value.trim(); const f=q?db.c.filter(c=>match(c,q)).slice(0,5):[];
@@ -1183,9 +1377,9 @@ function vSave(){ const p=vSt, menu=db.menu||[];
   if(p.kind==="bk"&&!p.tm){ p.edit="tm"; return vDraw() }
   if(p.kind==="memo"&&!p.memo){ p.edit="memo"; return vDraw() }
   let c=p.cust;
-  if(!c){ if(!$("vAgree").checked) return alert("새 손님이에요. 손님 동의를 받은 뒤 체크해 주세요"); c={id:newCustId(),n:p.newName,p:"",m:"",r:[]}; db.c.push(c) }
+  if(!c){ c={id:newCustId(),n:p.newName,p:"",m:"",r:[]}; db.c.push(c) }
   let msg;
-  if(p.kind==="rec"){ const r={d:p.d,t:p.sel.map(i=>menu[i].n).join(" + "),m:"",price:String(p.price??""),img:null}; if(!applyPt(c,r,0,false)) return; c.r.push(r); c.r.sort((a,b)=>a.d.localeCompare(b.d)); msg=`${c.n} 님 ${r.t} ${won(r.price)} 저장했어요` }
+  if(p.kind==="rec"){ const r={d:p.d,t:p.sel.map(i=>menu[i].n).join(" + "),m:"",price:String(p.price??""),img:null}; const x=rxClean(p.x); if(x) r.x=x; if(!applyPt(c,r,0,false)) return; c.r.push(r); c.r.sort((a,b)=>a.d.localeCompare(b.d)); msg=`${c.n} 님 ${r.t} ${won(r.price)} 저장했어요` }
   if(p.kind==="bk"){ db.bk.push({id:"b"+Date.now().toString(36)+Math.random().toString(36).slice(2,5),cid:c.id,d:p.d,tm:p.tm,t:p.sel.map(i=>menu[i].n).join(" + "),m:""}); msg=`${c.n} 님 ${fmtD(p.d)} ${fmtT(p.tm)} 예약했어요` }
   if(p.kind==="memo"){ c.m=c.m?c.m+"\n"+p.memo:p.memo; msg=`${c.n} 님 메모에 더했어요` }
   save(); vCancel(); toast("✓ "+msg); go(view,true) }
@@ -1209,8 +1403,8 @@ function wipeAll(){
 }
 /* ── 저장 안 된 입력 보호 ─────────────────────── */
 function dirty(){
-  if(view==="newCust") return ["cn","cp","cm"].some(i=>$(i).value.trim());
-  if(view==="newRec") return !!(snsPh.a||snsPh.b)||sel.length>0||!!$("rm").value.trim()||!!($("rf").files&&$("rf").files.length);
+  if(view==="newCust") return ["cn","cnk","cft","cp","cm"].some(i=>$(i).value.trim())||!!($("cph").files&&$("cph").files.length);
+  if(view==="newRec") return !!(snsPh.a||snsPh.b)||sel.length>0||!!$("rm").value.trim()||!!($("rf").files&&$("rf").files.length)||!!rxClean(rx);
   if(view==="newBk") return !!($("bkN").value.trim()||$("bkM").value.trim()||$("bkT").value&&!(bkDraft&&bkDraft.id));
   if(view==="settings") return [...document.querySelectorAll("#menuEdit input")].some(el=>{ const m=(db.menu||[])[el.dataset.i]; if(!m) return true; const k=el.dataset.k; const v=k==="w"?cycW(m):m[k]; return String(v)!==String(k==="n"?el.value:Number(el.value)) });
   return false;

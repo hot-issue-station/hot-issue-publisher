@@ -713,7 +713,11 @@ function renderWork(){
   drawCmp($("cmpCv"),src,st.cmpRight==="dye"?dye:sty,f.w,f.h);
   $("cmpTag").textContent=st.cmpRight==="dye"?"염색만":"모양+염색";
   if(st.fsOpen)drawFs();
+  /* 단골 수첩에서 '큰 화면으로'(?big=1)로 열었으면: 첫 결과가 나오면 바로 전체 화면 '밀어서 비교' */
+  else if(BIG&&!bigShown){bigShown=true;st.fsView="cmp";[...$("fsTabs").children].forEach(x=>x.classList.toggle("on",x.dataset.v==="cmp"));openFs();}
 }
+const BIG=new URLSearchParams(location.search).get("big")==="1";let bigShown=false;
+if(BIG){const n=document.createElement("div");n.className="privacy";n.setAttribute("role","note");n.innerHTML='<span aria-hidden="true">📺</span><div>큰 화면 모드 · 사진을 고르면 바로 <b>전체 화면 비교</b>로 열려요</div>';document.querySelector("main").prepend(n);}
 function drawCmp(cv,left,right,w,h){
   if(cv.width!==w||cv.height!==h){cv.width=w;cv.height=h;}
   const x=cv.getContext("2d"),px=Math.round(w*st.cmpPos);
