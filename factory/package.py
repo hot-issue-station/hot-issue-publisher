@@ -104,7 +104,12 @@ def safe(s): return re.sub(r"[\\/:*?\"<>|\s]+", "", s)[:30] or "곡"
 # ---------- 글 만들기 ----------
 def make_texts(spec, post_override, use_ai=False):
     po = spec["post"]; warns, notes = [], []
-    yo = post_override.get("youtube", {})   # 대표가 _게시문구.txt 를 고쳤으면 그 글 우선
+    # 대표가 _게시문구.txt 를 고쳤으면 고친 칸만 우선(공장이 만든 그대로면 무시 — 태그 겹침 방지)
+    base = up.parse_post_txt(up.post_txt_from_spec(spec)).get("youtube", {})
+    yo = {k: v for k, v in post_override.get("youtube", {}).items() if v and v != base.get(k)}
+    if yo.get("desc"):   # 설명 끝의 해시태그 줄은 빼고 본문만(태그는 아래에서 다시 붙임)
+        yo["desc"] = re.sub(r"(\n\s*(#[^\s#]+\s*)+)+\s*$", "", "\n" + yo["desc"]).strip()
+    if yo: notes.append("대표가 고친 _게시문구.txt 의 유튜브 " + "·".join({"title": "제목", "desc": "설명", "first_comment": "첫 댓글"}[k] for k in yo) + " 을(를) 씀")
     title = yo.get("title") or po["title"]; desc = yo.get("desc") or po["desc"]
     first = yo.get("first_comment") or po.get("first_comment", "")
     tags = [t.lstrip("#").replace(" ", "") for t in po.get("tags", []) if t.strip("# ")]
