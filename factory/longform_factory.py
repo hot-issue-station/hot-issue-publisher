@@ -359,7 +359,8 @@ def render_scene(sg, sc, base, tmp, tag, comp):
         p = os.path.join(tmp, f"{tag}_c{j}.png"); comment_png(c, p, j % 3, cx, cw); ov.append((add(["-i", p]), c["at"], c["at"] + c.get("sec", 4)))
     last = "v0"
     for n, (idx, s0, s1) in enumerate(ov):
-        fl.append(f"[{last}][{idx}:v]overlay=0:0:enable='between(t,{s0},{s1})'[o{n}]"); last = f"o{n}"
+        src = f"[{idx}]" if isinstance(idx, str) else f"[{idx}:v]"
+        fl.append(f"[{last}]{src}overlay=0:0:enable='between(t,{s0},{s1})'[o{n}]"); last = f"o{n}"
     if sg.get("card_overlay"):                         # 반투명 챕터 카드(영상은 계속 흐름)
         cs = sg["card_sec"]; ci = loopimg(sg["card_overlay"], cs)
         fl.append(f"[{ci}:v]format=rgba,fade=t=in:st=0:d=0.3:alpha=1,fade=t=out:st={cs - 0.35:.2f}:d=0.35:alpha=1[ck]")
