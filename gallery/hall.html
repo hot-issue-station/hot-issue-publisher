@@ -2229,6 +2229,7 @@ function openItem(it, ctx={}){
     title=it.title||""; desc=it.desc||""; note=it.note ? (typeof it.note==="object" ? G.nm(it.note) : String(it.note)) : CONTENT.notes?.[it.id] ? G.nm(CONTENT.notes[it.id]) : "";   // 영상 note: 직접 넣은 것 → content_rescene 순 showPicks=false; playing=true; vid=it.id; if(isNew(it.added_at)) tag=G.t("newTag");
     srcUrl = kind==="short" ? `https://www.youtube.com/shorts/${encodeURIComponent(it.id)}` : `https://www.youtube.com/watch?v=${encodeURIComponent(it.id)}`;
     srcName = it.channel || (it.official && hall?.official ? hall.official.name : "YouTube"); srcBtn=G.t("openYT");
+    vid = it.id;   // 11/12: 영상 창에 좋아요·댓글이 안 뜨던 원인(vid 빠짐)
     STATS.record(it.id, "view"); ANALYTICS.video(it.id, "open"); startWatch(it);
   }
   $("#vTitle").innerHTML = esc(title) + (tag ? ` <span class="tag">${esc(tag)}</span>` : ""); $("#vDesc").textContent=desc; $("#vNote").textContent=note; $("#extra").innerHTML=extra;
