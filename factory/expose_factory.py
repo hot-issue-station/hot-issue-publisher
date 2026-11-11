@@ -14,6 +14,7 @@ import numpy as np, cv2
 from PIL import Image
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import v2_fx as fx
+import check_standard as cs
 
 STD = fx.STD   # standard_v2.json
 FPS = STD["shorts"]["fps"]; SR = STD["shorts"]["audio_hz"]
@@ -40,7 +41,7 @@ class Reader:
     def __init__(self, file, t0, dur):
         self.w, self.h = ffprobe_wh(file); self.n = round(dur * FPS); self.last = None
         self.p = subprocess.Popen(["ffmpeg", "-loglevel", "error", "-ss", f"{max(0, t0):.3f}", "-i", file, "-t", f"{dur + 0.2:.3f}", "-an",
-                                   "-vf", f"fps={FPS}", "-f", "rawvideo", "-pix_fmt", "bgr24", "-"], stdout=subprocess.PIPE)
+                                   "-vf", f"fps={FPS}", "-f", "rawvideo", "-pix_fmt", "bgr24", "-"], stdout=subprocess.PIPE, stderr=subprocess.DEVNULL)
     def read(self):
         b = self.p.stdout.read(self.w * self.h * 3)
         if len(b) == self.w * self.h * 3: self.last = np.frombuffer(b, np.uint8).reshape(self.h, self.w, 3)
@@ -190,27 +191,16 @@ def outro_render(write, W, H, t0, dur, frame_bgr, cfg, extra_ovs=()):
     return n
 
 # ---------------- 스타일 A ----------------
-def check_sections(clips):
-    """역할별 실제 시간(누적) → 표준 구간과 비교."""
-    t = 0.0; got = {}
-    for c in clips:
-        d = c["out"] - c["in"]; r = c.get("role", "")
-        a, b = got.get(r, (t, t)); got[r] = (min(a, t), t + d); t += d
-    res = []
-    for name, a, b in SECTIONS_A[:-1]:
-        g = got.get(name); ok = bool(g) and abs(g[0] - a) <= TOL and abs(g[1] - b) <= TOL
-        res.append((f"구간 {name} {a:g}~{b:g}초" + (f" (지금 {g[0]:.2f}~{g[1]:.2f})" if g else " (없음)"), ok))
-    return res, t
-
-def render_expose(spec, outdir):
-    base = spec.get("_base", os.getcwd()); W, H = 1080, 1920
-    name = spec["out"]; os.makedirs(outdir, exist_ok=True); tmp = os.path.join(outdir, "_tmp_" + name); os.makedirs(tmp, exist_ok=True)
-    clips = spec["clips"]
-    for c in clips:
+def render_expose(spec, outdir, total=None, suffix=""):
+    """total 초 버전 하나 렌더(유튜브 58.0 / 그 밖 62.0 — standard_v2.json shorts.versions). 늘리는 구간은 check_standard.stretch_clips 와 같은 계산."""
+    base = spec.get("_base", os.getcwd()); W, H = STD["shorts"]["size"]
+    total = total or TOTAL_A
+    name = spec["out"] + suffix; os.makedirs(outdir, exist_ok=True); tmp = os.path.join(outdir, "_tmp_" + name); os.makedirs(tmp, exist_ok=True)
+    for c in spec["clips"]:
         if not os.path.isabs(c["file"]): c["file"] = os.path.join(base, c["file"])
-    sec_lines, body = check_sections(clips)
-    END = TOTAL_A - body
-    total = TOTAL_A
+    clips = cs.stretch_clips(spec, total)
+    body = sum(round((c["out"] - c["in"]) * FPS) for c in clips) / FPS
+    END = total - body
     # 위 고정 줄(시리즈·제목) + 출처 줄 + 시험 표시
     fixed = []
     if spec.get("title"):
@@ -220,27 +210,30 @@ def render_expose(spec, outdir):
     if spec.get("test_label"):
         im = fx.text_img(spec["test_label"], 34, W, base=fx.WH, stroke=0, font=fx.FB, box=(200, 0, 0, 220), shadow=False); fixed.append(Ov(im, 20, 20, 0, total + 1, fade=0))
     ovs = list(fixed); aud, bleeps, extra = [], [], []
-    t = 0.0; lay_cache = {}
+    t = 0.0
     vpath = os.path.join(tmp, "v.mp4"); wr = open_writer(vpath, W, H)
     def write(fr): wr.stdin.write(fr.tobytes())
+    brand_done = False
     for ci, c in enumerate(clips):
-        d = c["out"] - c["in"]; n = round(d * FPS)
+        n = round((c["out"] - c["in"]) * FPS); d = n / FPS
         sw, sh = ffprobe_wh(c["file"]); mode = c.get("layout", spec.get("layout", STD["style_A"]["layout_default"]))
         first = grab(c["file"], c["in"]); L = Layout(W, H, mode, sw, sh, c.get("x_center", spec.get("x_center", 0.5)), first)
         cap_y = (L.y0 + L.fh + 24) if mode != "crop" else int(H * 0.70)
-        # 출처(오른쪽 아래 작게, ① 자료15) — 클립마다 credit 있으면 그것
+        # 출처(오른쪽 아래 작게, ① 언더독 자료15) — 클립마다 credit 있으면 그것
         cr = c.get("credit") or spec.get("source_line", "")
         if cr:
-            im = fx.text_img(cr, 28, W - 60, base=fx.GR, stroke=2, font=fx.FM, shadow=False); ovs.append(Ov(im, W - im.width - 16, H - im.height - 150, t, t + d, fade=0))
+            im = fx.text_img(cr, 28, W - 60, base=fx.GR, hi=fx.GR, stroke=2, font=fx.FM, shadow=False); ovs.append(Ov(im, W - im.width - 16, H - im.height - 150, t, t + d, fade=0))
         for cap in c.get("captions", []): ovs.append(caption_ov(cap, W, H, t, cap_y))
-        if c.get("role") == "brand" and spec.get("brand") and not any(o is getattr(spec, "_b", None) for o in ovs):   # 시리즈 브랜딩 띠(구간 내내)
+        if c.get("role") == "brand" and spec.get("brand") and not brand_done:   # 시리즈 브랜딩 띠(브랜딩 구간 내내)
+            bdur = sum(round((x["out"] - x["in"]) * FPS) for x in clips if x.get("role") == "brand") / FPS
             b = spec["brand"]; bt = fx.text_img(b.get("title", ""), 64, W - 100, base=fx.Y, hi=fx.WH, box=(150, 80, 230, 235), stroke=0, font=fx.FK, shadow=False)
             bs = fx.text_img(b.get("sub", ""), 36, W - 100, base=fx.WH, stroke=3, font=fx.FB) if b.get("sub") else None
-            ovs.append(Ov(bt, (W - bt.width) // 2, int(H * 0.215), t, t + d, slide=(-W, 0, 0.3), fade=0))
-            if bs: ovs.append(Ov(bs, (W - bs.width) // 2, int(H * 0.215) + bt.height + 8, t + 0.2, t + d, slide=(W, 0, 0.3), fade=0))
+            ovs.append(Ov(bt, (W - bt.width) // 2, int(H * 0.215), t, t + bdur, slide=(-W, 0, 0.3), fade=0))
+            if bs: ovs.append(Ov(bs, (W - bs.width) // 2, int(H * 0.215) + bt.height + 8, t + 0.2, t + bdur, slide=(W, 0, 0.3), fade=0))
+            brand_done = True
         for b in c.get("bleeps", []): bleeps.append((t + b["at"], b.get("dur", 0.5)))
         for s in c.get("sfx", []): extra.append((fx.sfx_path(s, base), t + s["at"], s.get("volume", 0.9)))
-        lead = c.get("audio_lead", 0.0 if ci == 0 else LEAD)                  # 오디오 오버랩(J컷): 다음 장면 소리 먼저
+        lead = c.get("audio_lead", 0.0 if ci == 0 else LEAD)                  # 오디오 오버랩(J컷 = ① 오디오 브리지): 다음 장면 소리 먼저
         aud.append((c["file"], c["in"] - lead, d + lead, t - lead, c.get("volume", 1.0), 0.06 if ci == 0 else lead, 0.5 if ci < len(clips) - 1 else 0.3))
         rd = Reader(c["file"], c["in"], d); zooms = c.get("zooms", [])
         for i in range(n):
@@ -249,73 +242,45 @@ def render_expose(spec, outdir):
             fr = L.place(img)
             for o in ovs: o.draw(fr, t + tl)
             write(fr)
-        rd.close(); t += n / FPS
+        rd.close(); t += d
     # 아웃트로
-    oc = spec.get("outro", {}); of = oc.get("frame") or {"file": clips[-1]["file"], "t": clips[-1]["out"] - 0.5}
+    oc = dict(spec.get("outro", {})); of = oc.get("frame") or {"file": clips[-1]["file"], "t": clips[-1]["out"] - 0.5}
     ofile = of["file"] if os.path.isabs(of["file"]) else os.path.join(base, of["file"])
-    n_end = outro_render(write, W, H, t, END, grab(ofile, of["t"]), oc, [o for o in fixed if o.t1 > total])
+    outro_render(write, W, H, t, END, grab(ofile, of["t"]), oc, [o for o in fixed if o.t1 > total])
     wr.stdin.close(); wr.wait()
-    # 소리: 원음(J컷) + 삐- + 효과음 + 아웃트로 배경(마지막 클립 소리 이어 줄이며)
     if spec.get("bgm"):
         bg = spec["bgm"] if os.path.isabs(spec["bgm"]) else os.path.join(base, spec["bgm"])
         aud.append((bg, 0, END + 0.3, t - 0.3, spec.get("bgm_volume", 0.45), 0.3, 1.2))
     apath = os.path.join(tmp, "a.wav"); build_audio(aud, total, apath, bleeps, extra)
     out = os.path.join(outdir, name + ".mp4"); mux(vpath, apath, out, total)
-    return out, body, END, sec_lines
+    return out
 
 def thumbnail(spec, outdir):
+    """v2 썸네일(standard_v2.json thumbnail_v2). thumb.zoom=[x,y,배율] 이면 인물 쪽으로 확대."""
     th = spec.get("thumb") or {}; base = spec.get("_base", os.getcwd())
     fr = th.get("frame") or {"file": spec["clips"][0]["file"], "t": spec["clips"][0]["in"] + 1}
     f = fr["file"] if os.path.isabs(fr["file"]) else os.path.join(base, fr["file"])
-    img = Image.fromarray(cv2.cvtColor(grab(f, fr["t"]), cv2.COLOR_BGR2RGB))
-    if spec.get("thumb_layout", "crop") == "crop" and img.width > img.height:   # 세로 썸네일: 인물 쪽으로 자르기
+    bgr = grab(f, fr["t"])
+    if th.get("zoom"): bgr = zoom_at(bgr, *th["zoom"])
+    img = Image.fromarray(cv2.cvtColor(bgr, cv2.COLOR_BGR2RGB))
+    if img.width > img.height:   # 세로 썸네일: 인물 쪽으로 자르기
         xc = th.get("x_center", 0.5); cw = int(img.height * 9 / 16); x0 = int(max(0, min(img.width - cw, xc * img.width - cw / 2)))
         img = img.crop((x0, 0, x0 + cw, img.height))
     out = os.path.join(outdir, spec["out"] + "_thumb.png")
-    return fx.thumb_v2(img, dict(th, source=th.get("source", spec.get("source_line", "")), test=spec.get("test_label")), (1080, 1920), out)
+    return fx.thumb_v2(img, dict(th, source=th.get("source", spec.get("source_line", "")), test=spec.get("test_label")), tuple(STD["shorts"]["size"]), out)
 
-def probe_len(path):
-    r = subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration:stream=codec_type,duration,width,height", "-of", "json", path], capture_output=True, text=True)
-    j = json.loads(r.stdout); st = j["streams"]
-    v = next(s for s in st if s["codec_type"] == "video"); a = next((s for s in st if s["codec_type"] == "audio"), None)
-    return float(j["format"]["duration"]), float(v.get("duration", 0)), float(a.get("duration", 0)) if a else 0, (v["width"], v["height"])
-
-def overlaps(a, b, x, y): return max(a, x) < min(b, y)
-
-def checklist(spec, video, body, end, sec_lines):
-    dur, vd, ad, wh = probe_len(video)
-    items = [(f"길이 정확히 58.0초 (지금 {dur:.2f}초, 영상 {vd:.2f} · 소리 {ad:.2f})", abs(dur - TOTAL_A) <= TOL and abs(vd - TOTAL_A) <= TOL),
-             (f"화면 9:16 1080x1920 (지금 {wh[0]}x{wh[1]})", wh == (1080, 1920))]
-    items += sec_lines
-    items.append((f"아웃트로 {STD['shorts']['outro_sec']:g}초 (지금 {end:.2f}초)", abs(end - STD["shorts"]["outro_sec"]) <= TOL))
-    items.append(("출처 표시(화면 출처 줄)", bool(spec.get("source_line")) or all(c.get("credit") for c in spec["clips"])))
-    texts = [("제목", spec.get("title", "")), ("시리즈", spec.get("series_name", ""))]
-    texts += [(f"썸네일 {k}", v) for k, v in (spec.get("thumb") or {}).items() if isinstance(v, str)]
-    texts += [(f"게시 {k}", v) for k, v in (spec.get("post") or {}).items() if isinstance(v, str)]
-    for i, c in enumerate(spec["clips"]):
-        texts += [(f"{i + 1}번 클립 자막", cap["text"]) for cap in c.get("captions", [])]
-    for k in ("ask", "next"): texts.append((f"아웃트로 {k}", (spec.get("outro") or {}).get(k, "")))
-    hits = fx.check_banned(texts, spec.get("banned_words", []))
-    items.append(("금지어 없음(제목·자막·썸네일·게시 문구)" + (" — " + ", ".join(hits) if hits else ""), not hits))
-    bad = []
-    for i, c in enumerate(spec["clips"]):
-        lead = c.get("audio_lead", 0.0 if i == 0 else LEAD); a, b = c["in"] - lead, c["out"]
-        for x, y in spec.get("forbidden_ranges", []):
-            if overlaps(a, b, x, y): bad.append(f"{i + 1}번 클립이 금지 구간 {x}~{y}초와 겹침")
-        if spec.get("clean_ranges") and not any(x - 1e-6 <= a and b <= y + 1e-6 for x, y in spec["clean_ranges"]):
-            bad.append(f"{i + 1}번 클립({a:.1f}~{b:.1f}, 소리 먼저 포함)이 본편 구간 밖(광고 의심)")
-    items.append(("금지 구간·광고 구간 안 씀" + (" — " + "; ".join(bad) if bad else ""), not bad))
-    quotes = [cap["text"] for c in spec["clips"] for cap in c.get("captions", []) if any(q in cap["text"] for q in "\"“”")]
-    items.append(("우리 자막에 따옴표 대사 없음(드립은 괄호로)" + (" — " + " / ".join(quotes) if quotes else ""), not quotes))
-    return [("✅ " if ok else "❌ ") + n for n, ok in items], all(ok for _, ok in items)
-
-def main(path, outdir=None):
+def main(path, outdir=None, versions=None):
+    """두 버전(유튜브 _yt58 · 그 밖 _62) + 썸네일 → check_standard 자동 점검."""
     spec = json.load(open(path, encoding="utf-8")); spec["_base"] = os.path.dirname(os.path.abspath(path))
     outdir = os.path.abspath(outdir or os.path.join(spec["_base"], "out"))
-    v, body, end, sec = render_expose(spec, outdir); th = thumbnail(spec, outdir)
-    lines, ok = checklist(spec, v, body, end, sec)
-    print(f"영상: {v}\n썸네일: {th}"); print("\n".join(lines)); print("→ 점검 통과" if ok else "→ ❌ 부터 고치기")
-    return v, th, lines, ok
+    vids = []
+    for key, v in STD["shorts"]["versions"].items():
+        if versions and key not in versions: continue
+        vids.append(render_expose(spec, outdir, v["sec"], v["suffix"]))
+    th = thumbnail(spec, outdir)
+    lines, ok = cs.run(spec, vids)
+    print("영상: " + " / ".join(vids) + f"\n썸네일: {th}"); print("\n".join(lines)); print("→ 표준 v2 점검 통과" if ok else "→ ❌ 부터 고치기")
+    return vids, th, lines, ok
 
 if __name__ == "__main__":
     main(sys.argv[1], sys.argv[2] if len(sys.argv) > 2 else None)

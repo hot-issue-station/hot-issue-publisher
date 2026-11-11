@@ -81,5 +81,139 @@ def main(path):
     print(f"영상: {final} ({total:.1f}초)")
     for nme, ok in chk: print(("✅ " if ok else "❌ 확인: ") + nme)
 
+def _entry(path, outdir=None):
+    spec = json.load(open(path, encoding="utf-8"))
+    if spec.get("preset") == "pulse58": return pulse58(spec, os.path.dirname(os.path.abspath(path)), outdir)
+    return main(path)
+
+
+# ======================================================================
+# 프리셋 "pulse58" — 쇼츠 스타일 B 「8단 교차편집」 (제작 표준 v2, 11/11)
+# 사용법: python stagemix_factory.py 기획.json   (기획에 "preset":"pulse58" 이 있으면 이쪽)
+# 구간(standard_v2.json style_B.sections): [0~6] 0.75초 간격 8단 체인지 + 크래시 줌 / [6~26] 상하 2분할 엇박 교차 + 수평 패닝 슬라이드
+#   / [26~46] 후렴 0.3초 점프컷 + 15도 롤링 셰이크 / [46~53] 카메라 펌핑·진동 / [53~58] 엔딩 5초 고정 레이아웃
+# 기획 예:
+# {"preset":"pulse58","out":"with_mix","song":{"file":"song.m4a","start":42.0},"bpm":124,
+#  "sources":[{"file":"쇼케이스.mp4","sync":30.0,"label":"쇼케이스"}, ... 8개 이상],   # sync = 노래 start 와 맞는 그 영상의 시각
+#  "title":"…","source_line":"출처 · …","outro":{"ask":"…","next":"…","frame":{"file":…,"t":…}},"test_label":"형식 시험 · 공개용 아님"}
+# bpm 이 없으면 v2_fx.estimate_beat(ffmpeg 소리 → numpy 온셋)로 추정해 컷을 박자에 맞춘다(추정값·신뢰도는 결과에 출력).
+# 62초 버전: 노래 한 마디(약 4초)를 더 쓰는 방식으로 설계만(standard_v2 style_B.plan_62) — 대표 결정 전까지 58초 하나만.
+# ======================================================================
+def pulse58(spec, base, outdir=None):
+    import numpy as np, math, cv2
+    import v2_fx as fx, expose_factory as ef, check_standard as cs
+    STD = fx.STD; SB = STD["style_B"]; W2, H2 = STD["shorts"]["size"]; FPS2 = STD["shorts"]["fps"]
+    total = STD["shorts"]["versions"]["yt58"]["sec"]; suffix = spec.get("suffix", "")
+    outdir = os.path.abspath(outdir or os.path.join(base, "out")); os.makedirs(outdir, exist_ok=True)
+    tmp = os.path.join(outdir, "_tmp_" + spec["out"]); os.makedirs(tmp, exist_ok=True)
+    srcs = spec["sources"]
+    for s in srcs:
+        if not os.path.isabs(s["file"]): s["file"] = os.path.join(base, s["file"])
+    song = spec["song"]; sf = song["file"] if os.path.isabs(song["file"]) else os.path.join(base, song["file"])
+    if spec.get("bpm"): bpm, phase, conf = float(spec["bpm"]), float(spec.get("beat_phase", 0.0)), 1.0
+    else: bpm, phase, conf = fx.estimate_beat(sf, song["start"], total)
+    beat = 60 / bpm
+    sec = {n: (a, b) for n, a, b in SB["sections"]}
+    def grid(a, b, step):
+        """a~b 사이 컷 시각(박자 격자에 맞춤)."""
+        pts = [a]; k = math.ceil((a - phase) / step + 1e-6); 
+        while True:
+            x = phase + k * step; k += 1
+            if x >= b - step * 0.5: break
+            if x > a + step * 0.5: pts.append(x)
+        return pts + [b]
+    def snap(target):   # 목표 간격에 가장 가까운 박자 배수(반 박 단위)
+        return beat * max(0.25, round(target / beat * 4) / 4)
+    shots = []   # (t0, t1, kind, 소스번호들, 추가)
+    a, b = sec["change8"]; cuts = grid(a, b, snap(SB["change_sec"])); n8 = 0
+    for i in range(len(cuts) - 1): shots.append((cuts[i], cuts[i + 1], "change", [i % len(srcs)], {})); n8 += 1
+    a, b = sec["split"]; step = snap(1.0); cuts = grid(a, b, step)
+    half_cuts = {"top": [], "bot": []}; k = 0
+    for i in range(len(cuts) - 1):   # 엇박: 위는 짝수 칸, 아래는 홀수 칸에서 바뀜
+        half_cuts["top" if i % 2 == 0 else "bot"].append(cuts[i])
+    shots.append((a, b, "split", [], {"cuts": half_cuts}))
+    a, b = sec["jump"]; cuts = grid(a, b, snap(SB["jump_sec"]))
+    for i in range(len(cuts) - 1): shots.append((cuts[i], cuts[i + 1], "jump", [(i * 3) % len(srcs)], {"sign": 1 if i % 2 == 0 else -1}))
+    a, b = sec["pump"]; cuts = grid(a, b, beat * 2)
+    for i in range(len(cuts) - 1): shots.append((cuts[i], cuts[i + 1], "pump", [(i + 5) % len(srcs)], {}))
+    body = sec["outro"][0]
+    # 고정 얹기
+    fixed = []
+    if spec.get("test_label"):
+        im = fx.text_img(spec["test_label"], 38, W2, base=fx.WH, stroke=0, font=fx.FB, box=(200, 0, 0, 225), shadow=False); fixed.append(ef.Ov(im, 20, 20, 0, total + 1, fade=0))
+    if spec.get("title"):
+        im = fx.caption_img(spec["title"], "big", W2); fixed.append(ef.Ov(im, (W2 - im.width) // 2, int(H2 * 0.40), 0.0, 2.2, pop=0.15, fade=0.3))
+    if spec.get("source_line"):
+        im = fx.text_img(spec["source_line"], 28, W2 - 60, base=fx.GR, hi=fx.GR, stroke=2, font=fx.FM, shadow=False); fixed.append(ef.Ov(im, W2 - im.width - 16, H2 - im.height - 150, 0, body, fade=0))
+    labels = {}
+    for i, s in enumerate(srcs):
+        if s.get("label"): labels[i] = fx.text_img(s["label"], 30, W2, base=fx.WH, stroke=0, font=fx.FB, box=(0, 0, 0, 150), shadow=False, pad=(16, 6))
+    def fill(img, w, h, xc=0.5):
+        s = max(w / img.shape[1], h / img.shape[0]); r = cv2.resize(img, (int(img.shape[1] * s) + 1, int(img.shape[0] * s) + 1), interpolation=cv2.INTER_AREA)
+        x0 = int(max(0, min(r.shape[1] - w, xc * r.shape[1] - w / 2))); y0 = (r.shape[0] - h) // 2; return np.ascontiguousarray(r[y0:y0 + h, x0:x0 + w])
+    vpath = os.path.join(tmp, "v.mp4"); wr = ef.open_writer(vpath, W2, H2)
+    def write(fr): wr.stdin.write(fr.tobytes())
+    frame_i = 0; lab_ovs = []
+    def emit(fr, t, si=None):
+        for o in fixed: o.draw(fr, t)
+        if si is not None and si in labels: ef.blend(fr, *(lambda a: (a[:, :, 2::-1].astype(np.float32), a[:, :, 3:4].astype(np.float32) / 255))(np.array(labels[si])), 20, H2 - 260)
+        write(fr)
+    for (t0, t1, kind, sis, ex) in shots:
+        f0, f1 = round(t0 * FPS2), round(t1 * FPS2)
+        if kind == "split":
+            hh = H2 // 2; tops = ex["cuts"]["top"]; bots = ex["cuts"]["bot"]
+            def half_seq(cs_, off): return [(c, (cs_[j + 1] if j + 1 < len(cs_) else t1), (j * 2 + off) % len(srcs)) for j, c in enumerate(cs_)]
+            seqs = {"top": half_seq(tops, 1), "bot": [(t0, bots[0], 2 % len(srcs))] + half_seq(bots, 4) if bots else [(t0, t1, 2)]}
+            rd = {}
+            for fi in range(f0, f1):
+                t = fi / FPS2; fr = np.zeros((H2, W2, 3), np.uint8)
+                for hk, yy, dirn in (("top", 0, -1), ("bot", hh, 1)):
+                    seg = next(sg for sg in seqs[hk] if sg[0] - 1e-6 <= t < sg[1] + 1e-6)
+                    key = (hk, seg[0])
+                    if key not in rd:
+                        for kk in [k_ for k_ in rd if k_[0] == hk]: rd[kk].close(); del rd[kk]
+                        rd[key] = ef.Reader(srcs[seg[2]]["file"], srcs[seg[2]]["sync"] + seg[0], seg[1] - seg[0] + 0.2)
+                    img = rd[key].read(); part = fill(img, W2, hh, srcs[seg[2]].get("x_center", 0.5))
+                    u = min(1, (t - seg[0]) / 0.25); e = 1 - (1 - u) ** 3; dx = int(dirn * W2 * (1 - e))   # 수평 패닝 슬라이드
+                    if dx:
+                        prev = fr[yy:yy + hh].copy(); M = np.float32([[1, 0, dx], [0, 1, 0]]); part = cv2.warpAffine(part, M, (W2, hh), borderMode=cv2.BORDER_REPLICATE)
+                    fr[yy:yy + hh] = part
+                fr[hh - 3:hh + 3] = 255
+                emit(fr, t); frame_i += 1
+            for r in rd.values(): r.close()
+            continue
+        si = sis[0]; S = srcs[si]; rd = ef.Reader(S["file"], S["sync"] + t0, t1 - t0 + 0.2)
+        for fi in range(f0, f1):
+            t = fi / FPS2; u = t - t0; img = rd.read(); fr = fill(img, W2, H2, S.get("x_center", 0.5))
+            if kind == "change":     # 크래시 줌: 0.15초 급확대 후 유지
+                e = 1 - (1 - min(1, u / 0.15)) ** 3; fr = ef.zoom_at(fr, 0.5, 0.38, 1 + 0.3 * e)
+            elif kind == "jump":     # 15도 롤링 셰이크
+                p = u / max(1e-6, t1 - t0); deg = ex["sign"] * SB["roll_deg"] * math.sin(math.pi * p)
+                fr = ef.rotate_shake(fr, deg, 1.18)
+            elif kind == "pump":     # 박자마다 펌핑 + 진동
+                s_ = 1 + 0.08 * abs(math.cos(math.pi * (t - phase) / beat)); fr = ef.rotate_shake(fr, 0.6 * math.sin(t * 50), s_, 7 * math.sin(2 * math.pi * 23 * t), 5 * math.sin(2 * math.pi * 29 * t))
+            emit(fr, t, si); frame_i += 1
+        rd.close()
+    # 엔딩 5초 고정 레이아웃
+    oc = dict(spec.get("outro", {})); of = oc.get("frame") or {"file": srcs[0]["file"], "t": srcs[0]["sync"] + 10}
+    end = total - frame_i / FPS2
+    ef.outro_render(write, W2, H2, frame_i / FPS2, end, ef.grab(of["file"], of["t"]), oc, [o for o in fixed if o.t1 > total])
+    wr.stdin.close(); wr.wait()
+    apath = os.path.join(tmp, "a.wav")
+    ef.build_audio([(sf, song["start"], total, 0.0, spec.get("song_volume", 1.0), 0.05, 1.5)], total, apath)
+    out = os.path.join(outdir, spec["out"] + suffix + ".mp4"); ef.mux(vpath, apath, out, total)
+    # 썸네일: 2분할 장면 한 장 대신 v2 썸네일(첫 소스)
+    th = spec.get("thumb") or {}
+    tf = th.get("frame") or {"file": srcs[0]["file"], "t": srcs[0]["sync"] + 3}
+    from PIL import Image
+    img = Image.fromarray(cv2.cvtColor(fill(ef.grab(tf["file"], tf["t"]), W2, H2), cv2.COLOR_BGR2RGB))
+    thp = os.path.join(outdir, spec["out"] + "_thumb.png")
+    fx.thumb_v2(img, dict(th, quote=th.get("quote", ""), source=spec.get("source_line", ""), test=spec.get("test_label")), (W2, H2), thp) if th.get("quote") else img.save(thp)
+    spec["_beat"] = {"bpm": bpm, "phase": phase, "confidence": conf, "change8_shots": n8}
+    lines, ok = cs.run(spec, [out])
+    print(f"영상: {out}\n썸네일: {thp}\n박자: {bpm} bpm (첫 박 {phase}s, 신뢰도 {conf}) · 8단 체인지 {n8}컷")
+    print("\n".join(lines)); print("→ 표준 v2 점검 통과" if ok else "→ ❌ 확인")
+    return out, thp, lines, ok
+
 if __name__ == "__main__":
-    main(sys.argv[1])
+    _entry(sys.argv[1], sys.argv[2] if len(sys.argv) > 2 else None)

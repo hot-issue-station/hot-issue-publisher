@@ -1,0 +1,22 @@
+{
+ "_설명": "스타일 B 형식 시험(공개용 아님): 소스가 2개뿐이라 엠카 6/18 LOVE ATTACK 한 영상을 8구간으로 나눠 '가상 소스 8개'로 흉내. 립싱크·같은 곡 교차는 안 맞음 — 구간·효과·길이 형식만 확인.",
+ "preset": "pulse58",
+ "template": "pulse58",
+ "out": "v2_styleB_formtest",
+ "song": {"file": "/mnt/user-data/uploads/녹화/2026-11-11 19-55-24.mp4", "start": 60.0},
+ "test_label": "형식 시험 · 공개용 아님",
+ "title": "[형식 시험] 8단 교차편집",
+ "source_line": "출처 · Mnet 엠카운트다운 (6/18 LOVE ATTACK)",
+ "sources": [
+  {"file": "/mnt/user-data/uploads/녹화/2026-11-11 19-55-24.mp4", "sync": 8.0, "label": "가상 소스 1"},
+  {"file": "/mnt/user-data/uploads/녹화/2026-11-11 19-55-24.mp4", "sync": 28.0, "label": "가상 소스 2"},
+  {"file": "/mnt/user-data/uploads/녹화/2026-11-11 19-55-24.mp4", "sync": 48.0, "label": "가상 소스 3"},
+  {"file": "/mnt/user-data/uploads/녹화/2026-11-11 19-55-24.mp4", "sync": 68.0, "label": "가상 소스 4"},
+  {"file": "/mnt/user-data/uploads/녹화/2026-11-11 19-55-24.mp4", "sync": 88.0, "label": "가상 소스 5"},
+  {"file": "/mnt/user-data/uploads/녹화/2026-11-11 19-55-24.mp4", "sync": 108.0, "label": "가상 소스 6"},
+  {"file": "/mnt/user-data/uploads/녹화/2026-11-11 19-55-24.mp4", "sync": 128.0, "label": "가상 소스 7"},
+  {"file": "/mnt/user-data/uploads/녹화/2026-11-11 19-55-24.mp4", "sync": 150.0, "label": "가상 소스 8"}
+ ],
+ "outro": {"ask": "(가장 좋았던 무대는?)", "next": "[형식 시험 — 실제 편은 8개 무대로]",
+           "frame": {"file": "/mnt/user-data/uploads/녹화/2026-11-11 19-55-24.mp4", "t": 222.0}}
+}

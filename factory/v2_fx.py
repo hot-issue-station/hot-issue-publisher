@@ -27,12 +27,17 @@ BANNED = STD["banned_words"]   # 대표 11/11 20:17 — 제목·썸네일·큰 �
 CROW = os.path.join(HERE, "assets", "sfx_crow.wav")
 
 # ---------------- 글자 ----------------
+NOSTART = set(")）]」』.,!?~…·:")
 def _wrap(d, text, fo, maxw):
+    """글자 단위 줄바꿈. 닫는 괄호·문장부호가 줄 맨 앞에 혼자 오지 않게 앞 줄로 붙인다. 빈칸이 있으면 빈칸에서 끊기."""
     out = []
     for para in str(text).split("\n"):
         line = ""
         for ch in para:
-            if d.textlength(line + ch, font=fo) > maxw and line: out.append(line); line = ch
+            if d.textlength(line + ch, font=fo) > maxw and line and ch not in NOSTART:
+                sp = line.rfind(" ")
+                if sp > len(line) * 0.4: out.append(line[:sp]); line = line[sp + 1:] + ch
+                else: out.append(line); line = ch
             else: line += ch
         out.append(line)
     return out

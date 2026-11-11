@@ -103,14 +103,25 @@ def shorts_sections(spec, total):
     else: S, roles = STD["style_B"]["sections"], STD["style_B"]["stretch_sections"]
     return stretched_sections(S, roles, total)
 
+def stretch_clips(spec, total, fps=None):
+    """스타일 A 플랫폼 버전: 늘릴 역할(standard_v2 style_A.stretch_roles) 클립의 out 을 비례로 늘린 클립 목록(프레임 단위, 합이 정확히 맞게).
+    공장(expose_factory)과 점검기가 같은 함수를 쓴다."""
+    fps = fps or STD["shorts"]["fps"]; roles = STD["style_A"]["stretch_roles"]; clips = [dict(c) for c in spec["clips"]]
+    S = shorts_sections(spec, total)
+    idx = [i for i, c in enumerate(clips) if c.get("role") in roles]
+    base = sum(clips[i]["out"] - clips[i]["in"] for i in idx); target = sum(b - a for n, a, b in S if n in roles)
+    if not idx or abs(target - base) < 1e-6: return clips
+    f = target / base; tf = round(target * fps); acc = 0
+    for k, i in enumerate(idx):
+        c = clips[i]; n = round((c["out"] - c["in"]) * f * fps) if k < len(idx) - 1 else tf - acc
+        acc += n; c["out"] = c["in"] + n / fps
+    return clips
+
 def actual_A(spec, total):
-    """스타일 A: 클립 역할별 실제 시각(늘린 버전은 공장과 같은 비례로)."""
-    S = shorts_sections(spec, total); roles = STD["style_A"]["stretch_roles"]
-    clips = spec["clips"]; base = sum(c["out"] - c["in"] for c in clips if c.get("role") in roles)
-    target = sum(b - a for n, a, b in S if n in roles); f = target / base if base else 1
-    t = 0.0; got = {}
-    for c in clips:
-        d = (c["out"] - c["in"]) * (f if c.get("role") in roles else 1); d = round(d * 30) / 30
+    """스타일 A: 클립 역할별 실제 시각."""
+    S = shorts_sections(spec, total); t = 0.0; got = {}
+    for c in stretch_clips(spec, total):
+        d = round((c["out"] - c["in"]) * 30) / 30
         r = c.get("role", ""); a, b = got.get(r, (t, t)); got[r] = (min(a, t), t + d); t += d
     return S, got, t
 
@@ -156,7 +167,10 @@ def run(spec, videos, platform=None):
     has_src = bool(spec.get("source_line")) or bool(spec.get("sources")) or (isinstance(spec.get("clips"), list) and spec["clips"] and all(c.get("credit") for c in spec["clips"])) \
         or any(sc.get("credit") for ch in spec.get("chapters", []) for sc in ch.get("scenes", []))
     items.append(("출처 표시(화면 출처 줄/credit)", has_src))
-    bad = check_ranges(spec); items.append(("금지 구간·광고 구간 안 씀" + (" — " + "; ".join(bad) if bad else ""), not bad))
+    rspecs = [spec]
+    if kind == "expose":
+        for v in STD["shorts"]["versions"].values(): rspecs.append(dict(spec, clips=stretch_clips(spec, v["sec"])))
+    bad = sorted({b for sp in rspecs for b in check_ranges(sp)}); items.append(("금지 구간·광고 구간 안 씀" + (" — " + "; ".join(bad) if bad else ""), not bad))
     ad = check_ad_words(spec); items.append(("술·담배·도박·성인 광고 구간 없음" + (" — " + "; ".join(ad) if ad else ""), not ad))
     q = check_quotes(spec); items.append(("우리 자막에 따옴표 대사 없음(드립은 괄호)" + (" — " + " / ".join(q) if q else ""), not q))
     if kind not in ("expose", "pulse58"):   # 기준서 v1 필수 요소
