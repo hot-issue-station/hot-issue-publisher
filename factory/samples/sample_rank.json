@@ -1,0 +1,23 @@
+{
+  "template": "rank",
+  "out": "sample_top5",
+  "bg": "../assets/bg_rescene.png",
+  "bgm": "../assets/bgm_morning.m4a",
+  "series": "숫자로 본 TOP · 2편",
+  "title": "역대 걸그룹 초동 TOP 5",
+  "question": "리센느는 어디까지 왔을까?",
+  "unit": "장",
+  "rows": [
+    ["1", "BLACKPINK", "DEADLINE", 1774577],
+    ["2", "aespa", "MY WORLD", 1698784],
+    ["3", "NewJeans", "Get Up", 1650181],
+    ["4", "IVE", "I've MINE", 1605948],
+    ["5", "(여자)아이들", "2", 1537083]
+  ],
+  "highlight": {"name": "리센느 RESCENE", "sub": "「PULSE」 · 11월 3일~9일 초동", "value": 555104, "note": "역대 걸그룹 초동 약 13위권 · 전작의 5.3배"},
+  "source": ["11월 9일 20시 집계 기준 · 공식 최종 발표 전", "그룹별 최고 기록 기준 · 한터차트"],
+  "checked": "한터차트 직접 확인 11/10 21:00",
+  "end": {"lines": ["최종 초동이 나오면 바로 알려 드릴게요!", "여러분은 최종 몇 장 예상하세요?"]},
+  "thumb": {"tag": "역대 걸그룹 초동", "title": "TOP 5 vs 리센느", "question": "어디까지 왔을까?", "small": "첫 주", "big": "55만 장", "summary": "전작의 5배 ↑"},
+  "post": {"title": "역대 걸그룹 초동 TOP 5 vs 리센느 #shorts", "desc": "리센느 「PULSE」 첫 주 55만 장, 역대 걸그룹 TOP 5와 나란히 놓아 봤어요.", "tags": ["리센느", "RESCENE", "PULSE", "초동"], "first_comment": "최종 초동이 나오면 바로 알려 드릴게요!"}
+}

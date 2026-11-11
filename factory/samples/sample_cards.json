@@ -1,0 +1,20 @@
+{
+  "template": "cards",
+  "out": "sample_cards",
+  "bg": "../assets/bg_rescene.png",
+  "bgm": "../assets/bgm_morning.m4a",
+  "series": "덕심 편지",
+  "title": "리센느에게 쓰는 편지",
+  "question": "리마인이 꼭 하고 싶던 말",
+  "card_sec": 3.0,
+  "cards": [
+    {"label": "하나", "big": "처음 무대를 본 날을 기억해요", "small": "작은 무대였지만 눈빛은 누구보다 컸어요"},
+    {"label": "둘", "big": "기다림은 길었지만", "small": "그 시간마저 함께여서 좋았어요"},
+    {"label": "셋", "big": "이번엔 우리가 응원할 차례", "small": "늘 지금처럼만 걸어가 주세요"}
+  ],
+  "source": ["리마인 댓글을 모아 만든 편지입니다"],
+  "checked": "예시",
+  "end": {"lines": ["다음 편지는 여러분 댓글로 채워요!", "하고 싶은 말을 남겨 주세요"]},
+  "thumb": {"tag": "덕심 편지", "title": "리센느에게", "question": "꼭 하고 싶던 말", "big": "고마워", "summary": "리마인이 쓴 편지"},
+  "post": {"title": "리센느에게 쓰는 편지 #shorts", "desc": "리마인이 꼭 하고 싶던 말을 모았어요.", "tags": ["리센느", "리마인"], "first_comment": "여러분의 한 줄을 다음 편지에 담을게요!"}
+}

@@ -1,0 +1,10 @@
+{"out":"sample_long","series":"거꾸로 걷는 리센느","bgm":"../assets/bgm_morning.m4a",
+ "chapters":[
+  {"title":"2026년 11월, 55만 장","sub":"지금의 리센느","scenes":[
+    {"file":"../assets/test_clip.mp4","in":0,"out":6,"subs":[[0.5,3,"첫 주 55만 장"],[3,5.8,"1년 전엔 상상도 못 한 숫자"]],
+     "comments":[{"at":1,"sec":4,"name":"리마인","text":"이 날 진짜 울었어요"}]}]},
+  {"title":"2025년, 기다림","sub":"한 걸음 뒤로","scenes":[
+    {"file":"../assets/test_clip.mp4","in":8,"out":14,"subs":[[0.5,5,"그때 우리는\n무엇을 기다렸을까"]]}]}],
+ "end":{"next":"A-3 데뷔 전야","next_date":"11월 17일 (화) 저녁 7시"},
+ "sources":["테스트"],"consent_checked":true,
+ "thumb":{"photo":"../assets/bg_rescene.png","tag":"거꾸로 걷는 리센느","title":"55만 장의 시작","question":"1년 전엔 몇 장?","big":"5.3배","summary":"A-2 기다림 편"}}
