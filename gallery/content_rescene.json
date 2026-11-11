@@ -1,0 +1,1010 @@
+{
+  "hall": "rescene",
+  "created_at": "2026-11-11T17:30+09:00",
+  "lang_keys": [
+    "ko",
+    "ja",
+    "en",
+    "zh-Hant"
+  ],
+  "lang_note": "hall.html은 중국어 번체 키를 'zh'로 씀 → 반영 시 'zh-Hant'를 'zh'로 매핑",
+  "policy": "그룹·멤버 정보는 직접 열어 본 주요 언론 기사로만 확인. 영상 note는 curation.json의 제목·채널·조회수·reason과 확인한 보도만 사용, 영상 속 대사·장면은 지어내지 않음.",
+  "hall_intro": {
+    "text": {
+      "ko": "리센느관에 오신 것을 환영해요. 리센느(RESCENE)는 더뮤즈엔터테인먼트의 5인조 걸그룹으로, 원이·리브·미나미·메이·제나가 2024년 3월 26일 싱글 「Re:Scene」으로 데뷔했어요. 2024년 8월 미니 1집 「SCENEDROME」에 실린 「LOVE ATTACK」은 2026년 여름 멜론 TOP100 1위에 오르며 다시 사랑받았고, 같은 여름 「Pretty Girl」로 데뷔 후 첫 음악방송 1위도 안았어요. 팬덤 이름은 '향기로 장면을 떠올리게 한다'는 뜻을 담은 리마인(REMINE). 여섯 개의 방을 천천히 걸으며, 그 장면들을 함께 떠올려 보세요.",
+      "ja": "RESCENE館へようこそ。RESCENE(リセンヌ)はThe Muze Entertainment所属の5人組ガールズグループで、ウォニ・リブ・ミナミ・メイ・ジェナの5人が2024年3月26日、シングル『Re:Scene』でデビューしました。2024年8月のミニ1集『SCENEDROME』に収録された「LOVE ATTACK」は2026年夏にMelon TOP100で1位となって再び愛され、同じ夏には「Pretty Girl」でデビュー後初の音楽番組1位も手にしました。ファンダム名は「香りで場面を思い出させる」という意味を込めたREMINE(リマイン)。6つの部屋をゆっくり歩きながら、その場面を一緒に思い出してみてください。",
+      "en": "Welcome to the RESCENE Hall. RESCENE is a five-member girl group from The Muze Entertainment — WONI, LIV, MINAMI, MAY and ZENA — who debuted on March 26, 2024 with the single album Re:Scene. \"LOVE ATTACK,\" from their August 2024 first mini album SCENEDROME, found new love in summer 2026 when it reached No. 1 on the Melon TOP100, and that same summer \"Pretty Girl\" gave them their first music-show win. Their fandom is called REMINE, a name about being reminded of a scene through a scent. Take your time walking through the six rooms and relive those scenes with us.",
+      "zh-Hant": "歡迎來到RESCENE館。RESCENE是The Muze Entertainment旗下的五人女子團體，WONI、LIV、MINAMI、MAY、ZENA於2024年3月26日以單曲專輯《Re:Scene》出道。收錄於2024年8月首張迷你專輯《SCENEDROME》的〈LOVE ATTACK〉在2026年夏天登上Melon TOP100冠軍，再次被大家愛上；同一個夏天，她們也以〈Pretty Girl〉拿下出道後第一座音樂節目一位。粉絲名REMINE，意思是「讓香氣喚起某個場景」。請慢慢走過六個房間，和我們一起重溫那些場景。"
+    },
+    "sources": [
+      "https://isplus.com/article/view/isp202403260139",
+      "https://sports.khan.co.kr/article/202402292225003",
+      "https://v.daum.net/v/20240222183439798",
+      "https://news.tf.co.kr/read/ogmeta/2339259.htm",
+      "https://v.daum.net/v/20260711060326717",
+      "https://www.khan.co.kr/article/202607240600031/",
+      "https://soompi.com/article/1674005wpp/rescene-announces-official-fandom-name"
+    ],
+    "checked_at": "2026-11-11"
+  },
+  "rooms": {
+    "stage": {
+      "desc": {
+        "ko": "엠카운트다운부터 인기가요 1위 앵콜, 밴드 라이브까지 — 리센느의 무대를 한자리에.",
+        "ja": "M COUNTDOWNから人気歌謡1位アンコール、バンドライブまで――RESCENEのステージを一堂に。",
+        "en": "From M COUNTDOWN to an Inkigayo winner's encore and a band live — RESCENE's stages in one room.",
+        "zh-Hant": "從M COUNTDOWN、人氣歌謠一位安可到樂團現場——RESCENE的舞台齊聚一堂。"
+      },
+      "story": {
+        "ko": "이 방의 주인공은 단연 「LOVE ATTACK」이에요. 2024년 여름에 나온 노래가 2026년 여름 다시 차트 꼭대기에 오르기까지, 무대는 늘 그 자리에 있었어요. 같은 노래도 스페셜 무대, 1위 앵콜, 밴드 라이브에서 저마다 다른 얼굴을 보여 줘요. 「Pretty Girl」 컴백 무대는 이 곡으로 첫 음악방송 1위를 안기 바로 전의 장면이에요. 오래 기다려 준 노래가 끝내 빛을 보는 이야기, 그 시작을 여기서 만나 보세요.",
+        "ja": "この部屋の主役は、やはり「LOVE ATTACK」。2024年夏に出た曲が2026年夏に再びチャートの頂点に立つまで、ステージはいつもそこにありました。同じ曲でも、スペシャルステージ、1位アンコール、バンドライブでそれぞれ違う表情を見せてくれます。「Pretty Girl」のカムバックステージは、この曲で初の音楽番組1位をつかむ直前の場面です。長く待っていた歌がついに光を浴びる物語、その始まりをここで。",
+        "en": "The star of this room is, without question, \"LOVE ATTACK.\" A song released in summer 2024 climbed back to the top of the charts in summer 2026, and the stage was there all along. The same song shows a different face at a special stage, a winner's encore and a band live. The \"Pretty Girl\" comeback stage captures the moment just before that song brought their first music-show win. This is the story of a song that waited patiently for its light — start it here.",
+        "zh-Hant": "這個房間的主角，當然是〈LOVE ATTACK〉。一首2024年夏天發行的歌，在2026年夏天重新登上排行榜頂端，而舞台一直都在。同一首歌，在特別舞台、一位安可和樂團現場裡各有不同的表情。〈Pretty Girl〉回歸舞台，則是她們憑這首歌拿下首座音樂節目一位前夕的畫面。一首耐心等待的歌終於發光的故事，就從這裡開始。"
+      },
+      "sources": [
+        "https://news.tf.co.kr/read/ogmeta/2339259.htm",
+        "https://www.khan.co.kr/article/202607240600031/",
+        "https://v.daum.net/v/20260711060326717",
+        "/home/claude/hot-issue-publisher/gallery/curation.json (영상 제목·채널)"
+      ]
+    },
+    "anwonjalbu": {
+      "desc": {
+        "ko": "리더 원이의 개인 채널 「안녕하세요원이입니다잘부탁드립니다」, 줄여서 안원잘부.",
+        "ja": "リーダー・ウォニの個人チャンネル「アンニョンハセヨウォニイムニダチャルプタッカムニダ」、略してアンウォンジャルブ。",
+        "en": "Leader WONI's own channel, \"Hello, I'm Woni, Nice to Meet You\" — Anwonjalbu for short.",
+        "zh-Hant": "隊長WONI的個人頻道「안녕하세요원이입니다잘부탁드립니다」，簡稱「安元賈部」(Anwonjalbu)。"
+      },
+      "story": {
+        "ko": "리더 원이가 연 작은 채널에서 큰 이야기가 시작됐어요. 미나미의 '거제 야호!' 한마디가 짧은 영상으로 퍼져 나가면서, 리센느의 노래를 다시 찾아 듣는 사람들이 늘어났어요. 원이의 고향 거제는 2026년 5월 리센느를 홍보대사로 맞았고, 9월에는 시의회가 멤버 모두를 명예시민으로 정했어요. 사투리로 하루를 보내고, 성수를 걷고, 멤버들이 하나둘 찾아오는 동안 채널은 다섯 사람의 놀이터가 되었어요. 웃다 보면 어느새 이 그룹이 좋아져 있는 방이에요.",
+        "ja": "リーダーのウォニが開いた小さなチャンネルから、大きな物語が始まりました。ミナミの「巨済ヤッホー!」のひと言がショート動画で広がり、RESCENEの曲を改めて聴く人が増えていきました。ウォニの故郷・巨済(コジェ)は2026年5月にRESCENEを広報大使に迎え、9月には市議会がメンバー全員を名誉市民に決めました。方言で一日を過ごし、聖水(ソンス)を歩き、メンバーが一人また一人と訪ねてくるうちに、チャンネルは5人の遊び場になりました。笑っているうちに、いつの間にかこのグループが好きになっている部屋です。",
+        "en": "A big story began on a small channel started by leader WONI. MINAMI's single line, \"Geoje yaho!\", spread through short-form video, and more and more people went back to listen to RESCENE's songs. WONI's hometown of Geoje named RESCENE its ambassadors in May 2026, and in September the city council made every member an honorary citizen. Through a day spent speaking only in dialect, a walk around Seongsu, and members dropping in one by one, the channel became a playground for all five. Laugh along here, and before you know it you'll be fond of this group.",
+        "zh-Hant": "一個大故事，從隊長WONI開的小頻道開始。MINAMI一句「巨濟 야호(呀呼)!」透過短影音傳開，越來越多人回頭去聽RESCENE的歌。WONI的家鄉巨濟在2026年5月邀請RESCENE擔任宣傳大使，9月市議會更將全體成員選為榮譽市民。用方言過一整天、逛聖水洞、成員一個個來串門子，這個頻道成了五個人的遊樂場。笑著笑著，不知不覺就喜歡上這個團體了。"
+      },
+      "sources": [
+        "https://www.mt.co.kr/entertainment/2026/06/10/2026061013417238076",
+        "https://www.wikitree.co.kr/articles/1158586",
+        "https://www.hankyung.com/article/2026070335037",
+        "/home/claude/hot-issue-publisher/gallery/curation.json (영상 제목·채널)"
+      ]
+    },
+    "tv": {
+      "desc": {
+        "ko": "전참시·놀라운 토요일·아는 형님 — 방송사 예능 속 리센느.",
+        "ja": "『全知的おせっかい視点』『驚きの土曜日』『知ってるお兄さん』――バラエティの中のRESCENE。",
+        "en": "Omniscient Interfering View, Amazing Saturday, Knowing Bros — RESCENE on TV variety.",
+        "zh-Hant": "《全知干預視角》《驚人的星期六》《認識的哥哥》——綜藝節目裡的RESCENE。"
+      },
+      "story": {
+        "ko": "노래가 사랑받자 텔레비전도 리센느를 찾아왔어요. 2026년, 리센느는 「아는 형님」과 「전지적 참견 시점」, 「놀라운 토요일」에 얼굴을 비췄어요. 무대에서는 볼 수 없던 대기실의 긴장, 함께 밥을 먹는 시간, 숙소에서의 모습이 이 방에 모여 있어요. 무대 위 다섯 사람과 무대 아래 다섯 사람을 나란히 놓고 보면, 왜 이렇게 응원하고 싶어지는지 조금 알 것 같아요. 편하게 앉아 웃으며 보셔도 좋아요.",
+        "ja": "曲が愛されると、テレビもRESCENEを訪ねてきました。2026年、RESCENEは『知ってるお兄さん』『全知的おせっかい視点』『驚きの土曜日』に出演。ステージでは見られなかった控室の緊張感、みんなで食事をする時間、宿舎での姿がこの部屋に集まっています。ステージの上の5人とステージを降りた5人を並べてみると、なぜこんなに応援したくなるのか少し分かる気がします。気楽に座って、笑いながらご覧ください。",
+        "en": "Once the songs were loved, television came looking for RESCENE too. In 2026 they appeared on Knowing Bros, Omniscient Interfering View and Amazing Saturday. This room gathers what the stage never shows: the nerves in the waiting room, meals shared together, life at the dorm. Put the five on stage beside the five off stage, and you start to see why people want to cheer for them. Sit back and enjoy a laugh.",
+        "zh-Hant": "歌曲受到喜愛後，電視節目也找上了RESCENE。2026年，她們登上了《認識的哥哥》《全知干預視角》《驚人的星期六》。舞台上看不到的待機室緊張感、一起吃飯的時光、宿舍裡的模樣，都收在這個房間。把台上的五個人和台下的五個人放在一起看，好像就能明白為什麼會這麼想替她們加油。請放輕鬆，笑著看吧。"
+      },
+      "sources": [
+        "https://isplus.com/article/view/isp202606180066",
+        "/home/claude/hot-issue-publisher/gallery/curation.json (영상 제목·채널)"
+      ]
+    },
+    "youtube_guest": {
+      "desc": {
+        "ko": "리무진서비스·문명특급 등 다른 유튜브 채널에 찾아간 리센느.",
+        "ja": "『リムジンサービス』『文明特急』など、ほかのYouTubeチャンネルを訪ねたRESCENE。",
+        "en": "RESCENE as guests on other YouTube channels, from Limousine Service to MMTG.",
+        "zh-Hant": "RESCENE到其他YouTube頻道作客，從Limousine Service到《文明特急》。"
+      },
+      "story": {
+        "ko": "이번엔 리센느가 손님이 되어 다른 채널을 찾아갔어요. KBS 「리무진서비스」에서는 미나미와 리브가 각자 혼자 앉아 좋아하는 노래들을 불렀어요. 「문명특급」에는 원이·미나미·제나가 '거제 야호'를 들고 찾아갔고요. 낯선 무대에서도 자기 목소리로 인사하는 모습이 이 방의 매력이에요. 멤버 한 사람 한 사람의 목소리를 조용히 들어 보고 싶을 때 들러 주세요.",
+        "ja": "今度はRESCENEがゲストとして、ほかのチャンネルを訪ねました。KBS『リムジンサービス』では、ミナミとリブがそれぞれ一人で座り、好きな歌を歌いました。『文明特急』にはウォニ・ミナミ・ジェナが「巨済ヤッホー」を携えて登場。慣れない場所でも自分の声であいさつする姿が、この部屋の魅力です。メンバー一人ひとりの声を静かに聴きたいときに立ち寄ってください。",
+        "en": "This time RESCENE are the guests, visiting other channels. On KBS's Limousine Service, MINAMI and LIV each sat down alone to sing songs they love. On MMTG, WONI, MINAMI and ZENA showed up with \"Geoje yaho\" in hand. Greeting an unfamiliar stage in their own voices is what makes this room special. Drop by when you want to quietly listen to each member's voice.",
+        "zh-Hant": "這次換RESCENE當客人，去拜訪別的頻道。在KBS的Limousine Service裡，MINAMI和LIV各自獨自坐下，唱自己喜歡的歌。到了《文明特急》，WONI、MINAMI、ZENA帶著「巨濟 야호」登場。在陌生的地方也用自己的聲音打招呼，正是這個房間的魅力。想靜靜聽每位成員的聲音時，歡迎進來坐坐。"
+      },
+      "sources": [
+        "/home/claude/hot-issue-publisher/gallery/curation.json (영상 제목·채널)"
+      ]
+    },
+    "daily": {
+      "desc": {
+        "ko": "공식 채널 브이로그 「Re-log」 — 대만, 일본, LA에서의 하루.",
+        "ja": "公式チャンネルのVlog「Re-log」――台湾、日本、LAでの一日。",
+        "en": "Re-log, the official channel's vlogs — days in Taiwan, Japan and LA.",
+        "zh-Hant": "官方頻道Vlog「Re-log」——在台灣、日本、LA的日子。"
+      },
+      "story": {
+        "ko": "무대 의상을 벗은 다섯 사람의 하루가 궁금하다면 이 방으로 오세요. 리센느 공식 채널의 브이로그 「Re-log」에는 대만에서 맛있는 것을 찾아다니는 날, 일본에서 쉬어 가는 날, LA에서의 날이 담겨 있어요. 미나미의 메이크업 교실에 메이가 함께한 날처럼, 멤버 둘이 나란히 보내는 시간도 있어요. 큰일이 일어나지 않아도 괜히 마음이 놓이는 영상들이에요. 하루를 마무리하며 천천히 보기 좋은 방이에요.",
+        "ja": "ステージ衣装を脱いだ5人の一日が気になるなら、この部屋へ。RESCENE公式チャンネルのVlog「Re-log」には、台湾でおいしいものを探し歩く日、日本でひと休みする日、LAでの日が収められています。ミナミのメイク教室にメイが加わった日のように、メンバー2人で並んで過ごす時間も。大きな出来事がなくても、なぜかほっとする映像ばかり。一日の終わりにゆっくり見るのにぴったりの部屋です。",
+        "en": "If you're curious about the five once the stage outfits come off, this is your room. Re-log, the vlog series on RESCENE's official channel, holds a day hunting for good food in Taiwan, a restful break in Japan, and days in LA. There are quiet two-member days too, like the day MAY joined MINAMI's makeup class. Nothing big has to happen for these videos to put you at ease. It's a lovely room to wind down in at the end of the day.",
+        "zh-Hant": "想知道脫下舞台服的五個人過著怎樣的一天，就來這個房間吧。RESCENE官方頻道的Vlog「Re-log」裡，有在台灣到處找美食的日子、在日本放鬆休息的日子，還有在LA的日子。也有像MAY參加MINAMI化妝教室那天一樣，兩位成員並肩度過的時光。就算沒發生什麼大事，看著也會莫名安心。很適合在一天結束時慢慢看。"
+      },
+      "sources": [
+        "/home/claude/hot-issue-publisher/gallery/curation.json (영상 제목·채널)"
+      ]
+    },
+    "birthday": {
+      "desc": {
+        "ko": "리브·원이·메이의 생일, 공식 채널이 함께 축하한 날들.",
+        "ja": "リブ・ウォニ・メイの誕生日――公式チャンネルが一緒にお祝いした日。",
+        "en": "Birthdays of LIV, WONI and MAY, celebrated on the official channel.",
+        "zh-Hant": "LIV、WONI、MAY的生日——官方頻道一起慶祝的日子。"
+      },
+      "story": {
+        "ko": "1년에 한 번, 멤버가 주인공이 되는 날이 있어요. 이 방에는 리센느 공식 채널에 올라온 리브·원이·메이의 생일 영상이 모여 있어요. 메이의 생일에는 고향 고양시가 축하 영상을 공개하고 호수공원 음악분수를 밝혀 주기도 했어요. 팬들과 동네와 멤버들이 한마음으로 '축하해'를 건네는 장면이라, 보고 나면 마음이 따뜻해져요. 아직 이 방에 없는 멤버들의 생일도 차근차근 채워 갈게요.",
+        "ja": "年に一度、メンバーが主役になる日があります。この部屋には、RESCENE公式チャンネルに公開されたリブ・ウォニ・メイの誕生日映像が集まっています。メイの誕生日には、故郷の高陽(コヤン)市がお祝い映像を公開し、湖水公園の音楽噴水を灯してくれました。ファンも街もメンバーも心をひとつに「おめでとう」を届ける場面なので、見終わると心が温かくなります。まだこの部屋にいないメンバーの誕生日も、少しずつ加えていきます。",
+        "en": "Once a year, a member gets to be the star of the day. This room collects the birthday videos for LIV, WONI and MAY posted on RESCENE's official channel. For MAY's birthday, her hometown of Goyang even released a celebration video and lit up the musical fountain at Lake Park. Fans, hometowns and members all saying \"happy birthday\" together — it warms your heart. We'll keep adding the birthdays of the members not yet in this room.",
+        "zh-Hant": "一年一次，總有一天是成員的主場。這個房間收集了RESCENE官方頻道上LIV、WONI、MAY的生日影片。MAY生日那天，家鄉高陽市還公開了祝賀影片，點亮湖水公園的音樂噴泉。粉絲、家鄉和成員們同心說出「生日快樂」，看完心裡暖暖的。還沒出現在這個房間的成員生日，我們也會慢慢補上。"
+      },
+      "sources": [
+        "https://www.wikitree.co.kr/articles/1153682",
+        "/home/claude/hot-issue-publisher/gallery/curation.json (영상 제목·채널)"
+      ]
+    }
+  },
+  "notes": {
+    "ajhEFz1zNMQ": {
+      "room": "stage",
+      "note": {
+        "ko": "2026년 6월 18일 방송된 엠카운트다운 EP.933의 「LOVE ATTACK」 스페셜 무대예요. 노래가 다시 사랑받던 시기의 무대로, 이 방에서 조회수가 가장 높아요(11/11 확인 기준 약 590만 회). 다섯 멤버가 함께 만드는 동선을 따라가며 보세요.",
+        "ja": "2026年6月18日放送『M COUNTDOWN』EP.933の「LOVE ATTACK」スペシャルステージ。曲が再び愛され始めた頃のステージで、この部屋で再生回数がいちばん多い映像です(11/11確認時点で約590万回)。5人で作るフォーメーションを追いながらご覧ください。",
+        "en": "A special stage of \"LOVE ATTACK\" from M COUNTDOWN EP.933, aired June 18, 2026. Filmed as the song was finding new love, it's the most-viewed video in this room (about 5.9 million views as of Nov 11). Follow the formations the five build together.",
+        "zh-Hant": "2026年6月18日播出的M COUNTDOWN EP.933〈LOVE ATTACK〉特別舞台。這是歌曲重新受到喜愛時期的舞台，也是本房間觀看次數最高的影片(11/11確認時約590萬次)。請跟著五人一起完成的走位來欣賞。"
+      },
+      "sources": [
+        "curation.json (제목·채널·조회수·reason)"
+      ],
+      "title": "'SPECIAL STAGE' RESCENE(리센느) - LOVE ATTACK #엠카운트다운 EP.933 | Mnet 260618 방송"
+    },
+    "Esd-KkxROxA": {
+      "room": "stage",
+      "note": {
+        "ko": "2026년 7월 9일 엠카운트다운의 「Pretty Girl」 컴백 무대예요. 리센느는 이 곡으로 7월 14일 데뷔 후 첫 음악방송 1위를 차지했어요. 좋아요 비율도 무대 영상 가운데 높은 편이라, 첫 1위 직전의 설렘을 함께 느껴 보세요.",
+        "ja": "2026年7月9日『M COUNTDOWN』での「Pretty Girl」カムバックステージ。RESCENEはこの曲で7月14日、デビュー後初の音楽番組1位を獲得しました。いいねの割合もステージ映像の中で高めです。初1位直前のときめきを一緒に。",
+        "en": "The \"Pretty Girl\" comeback stage on M COUNTDOWN, July 9, 2026. With this song RESCENE won their first-ever music show on July 14. Its like ratio is among the highest of the stage videos — share the excitement just before that first win.",
+        "zh-Hant": "2026年7月9日M COUNTDOWN的〈Pretty Girl〉回歸舞台。RESCENE憑這首歌在7月14日拿下出道後首座音樂節目一位。按讚比例在舞台影片中也偏高，一起感受首次一位前夕的心動吧。"
+      },
+      "sources": [
+        "curation.json (제목·채널·조회수·reason)",
+        "https://www.khan.co.kr/article/202607240600031/"
+      ],
+      "title": "'COMEBACK' RESCENE (리센느) - Pretty Girl #엠카운트다운 EP.936 | Mnet 260709 방송"
+    },
+    "rzfjou7vPP0": {
+      "room": "stage",
+      "note": {
+        "ko": "2026년 7월 26일 SBS 인기가요에서 「LOVE ATTACK」으로 1위를 한 날의 앵콜 직캠(4K)이에요. 이 방에서 조회수 대비 좋아요 비율이 가장 높은 영상이에요. 1위를 받은 바로 그 순간의 무대라는 것만으로도 특별해요.",
+        "ja": "2026年7月26日、SBS『人気歌謡』で「LOVE ATTACK」が1位を取った日のアンコール直撮り(4K)。この部屋で再生回数に対するいいねの割合が最も高い映像です。1位を受け取ったその瞬間のステージ、というだけで特別です。",
+        "en": "A 4K encore fancam from the day \"LOVE ATTACK\" took No. 1 on SBS Inkigayo, July 26, 2026. It has the highest like-to-view ratio in this room. Simply being the stage right after a win makes it special.",
+        "zh-Hant": "2026年7月26日SBS《人氣歌謠》〈LOVE ATTACK〉拿下一位當天的安可直拍(4K)。這是本房間按讚與觀看比例最高的影片。光是「剛拿到一位那一刻的舞台」就已經很特別。"
+      },
+      "sources": [
+        "curation.json (제목·채널·조회수·reason)"
+      ],
+      "title": "[앵콜캠4K] 리센느 'LOVE ATTACK' 인기가요 1위 앵콜 직캠 (RESCENE Encore Fancam) @SBS Inkigayo 260726"
+    },
+    "KRpt7OF4zso": {
+      "room": "stage",
+      "note": {
+        "ko": "음악 라이브 채널 it's Live에서 밴드와 함께 부른 「LOVE ATTACK」이에요. 음원과 다른 밴드 편곡 위에서 다섯 사람의 라이브 목소리를 또렷하게 들을 수 있어요. 리센느의 라이브가 궁금할 때 먼저 권하고 싶은 영상이에요.",
+        "ja": "音楽ライブチャンネル『it's Live』でバンドと一緒に歌った「LOVE ATTACK」。音源とは違うバンドアレンジの上で、5人の生歌をはっきり聴くことができます。RESCENEのライブが気になったら、まずおすすめしたい映像です。",
+        "en": "\"LOVE ATTACK\" performed with a band on the music-live channel it's Live. Over a band arrangement different from the record, you can hear the five's live vocals clearly. It's the first video we'd recommend if you're curious about RESCENE live.",
+        "zh-Hant": "在音樂現場頻道it's Live與樂團一起演唱的〈LOVE ATTACK〉。在和音源不同的樂團編曲上，可以清楚聽到五人的現場歌聲。想了解RESCENE現場實力時，最先推薦這支。"
+      },
+      "sources": [
+        "curation.json (제목·채널·조회수·reason)"
+      ],
+      "title": "[4K] RESCENE(리센느) \"LOVE ATTACK\" Band LIVE Concert 리센느와 잇라는 완벽하게 어울려💘 [it's KPOP LIVE 잇츠라이브]"
+    },
+    "QJeH6cRtdJA": {
+      "room": "stage",
+      "note": {
+        "ko": "2026년 10월 28일 엠카운트다운 「PLAY FESTA」에서 다시 선 「LOVE ATTACK」 무대예요. 공개된 지 얼마 되지 않았는데 벌써 100만 회를 넘었어요. 6월 스페셜 무대와 나란히 놓고, 넉 달 사이 달라진 분위기를 비교해 보세요.",
+        "ja": "2026年10月28日『M COUNTDOWN』「PLAY FESTA」で再び披露された「LOVE ATTACK」。公開から間もないのに、すでに100万回を突破しました。6月のスペシャルステージと並べて、4か月の間に変わった雰囲気を比べてみてください。",
+        "en": "\"LOVE ATTACK\" once more, at M COUNTDOWN's PLAY FESTA on October 28, 2026. Though it's recent, it has already passed one million views. Watch it next to the June special stage and compare how the mood has changed in four months.",
+        "zh-Hant": "2026年10月28日M COUNTDOWN「PLAY FESTA」再次登場的〈LOVE ATTACK〉。公開沒多久就已突破100萬次。和6月的特別舞台並排看，比較四個月間氛圍的變化吧。"
+      },
+      "sources": [
+        "curation.json (제목·채널·조회수·reason)"
+      ],
+      "title": "RESCENE(리센느) - LOVE ATTACK | M COUNTDOWN : PLAY FESTA #엠카운트다운 EP.951 | Mnet 261028 방송"
+    },
+    "OrCOflk2QmQ": {
+      "room": "anwonjalbu",
+      "note": {
+        "ko": "원이 채널에서 조회수가 가장 높은 영상이에요(11/11 기준 약 1,640만 회). 미나미의 갸루 분장과 '거제 야호!'가 퍼져 나간 출발점으로 알려진 거제 1편으로, 리센느와 거제의 인연이 여기서 시작됐어요. ※ 영상 설명란에 따르면 주류 유료 광고가 포함된 19세 이상 대상 콘텐츠예요.",
+        "ja": "ウォニのチャンネルで最も再生された映像です(11/11時点で約1,640万回)。ミナミのギャルメイクと「巨済ヤッホー!」が広がるきっかけになったとされる巨済編第1話で、RESCENEと巨済の縁はここから始まりました。※概要欄によると、酒類の有料広告を含む19歳以上向けのコンテンツです。",
+        "en": "The most-viewed video on WONI's channel (about 16.4 million views as of Nov 11). This first Geoje episode is known as the starting point where MINAMI's gyaru look and \"Geoje yaho!\" spread, and where RESCENE's bond with Geoje began. Note: per its description, it includes paid alcohol advertising and is intended for viewers 19 and over.",
+        "zh-Hant": "WONI頻道觀看次數最高的影片(11/11約1,640萬次)。這支巨濟第1集被認為是MINAMI辣妹造型和「巨濟 야호!」開始擴散的起點，RESCENE與巨濟的緣分也從這裡開始。※依影片說明欄，內含酒類付費廣告，為19歲以上觀眾內容。"
+      },
+      "sources": [
+        "curation.json (제목·채널·조회수·reason)",
+        "https://www.mt.co.kr/entertainment/2026/06/10/2026061013417238076",
+        "https://www.wikitree.co.kr/articles/1158586",
+        "/home/claude/bench_anwon/all.md (설명란 원문: 유료 광고·19세 이상 문구)"
+      ],
+      "title": "갸루와 거제에 왔습니다 (거제 1편)"
+    },
+    "5JZ5biQ_hMI": {
+      "room": "anwonjalbu",
+      "note": {
+        "ko": "원이·미나미·제나에 이어 리브와 메이가 원이 채널에 처음 함께 나온 영상이에요. 공개 사흘 만에 446만 회를 넘었다고 보도됐고, 지금은 약 1,380만 회예요. 두 사람의 입담이 매력 포인트예요.",
+        "ja": "ウォニ・ミナミ・ジェナに続き、リブとメイが初めてウォニのチャンネルにそろって登場した映像。公開3日で446万回を超えたと報じられ、今では約1,380万回です。2人のトークが見どころ。",
+        "en": "After WONI, MINAMI and ZENA, this is where LIV and MAY first appeared together on WONI's channel. It was reported to pass 4.46 million views within three days, and now stands at about 13.8 million. The pair's banter is the highlight.",
+        "zh-Hant": "繼WONI、MINAMI、ZENA之後，LIV和MAY首次一起登上WONI頻道的影片。據報導公開三天即突破446萬次，現在約1,380萬次。兩人的口才是最大看點。"
+      },
+      "sources": [
+        "curation.json (제목·채널·조회수·reason)",
+        "https://www.mydaily.co.kr/page/view/2026061510080751545"
+      ],
+      "title": "저희도 리센느입니다..."
+    },
+    "FcMaC8akSU8": {
+      "room": "anwonjalbu",
+      "note": {
+        "ko": "미나미의 '갸루' 캐릭터를 대표하는 영상으로, 조회수 약 1,120만 회예요. 제목 그대로 미나미가 갸루 모습으로 노래를 이어 부르는 라이브 메들리예요. 웃음과 노래 실력이 한 영상에서 만나는 지점을 즐겨 보세요.",
+        "ja": "ミナミの「ギャル」キャラを代表する映像で、再生回数は約1,120万回。タイトルどおり、ミナミがギャル姿で歌をつないでいくライブメドレーです。笑いと歌唱力がひとつの映像で出会うところを楽しんでください。",
+        "en": "The signature video of MINAMI's \"gyaru\" character, with about 11.2 million views. As the title says, it's a live medley MINAMI sings in her gyaru look. Enjoy the spot where laughs and vocal skill meet.",
+        "zh-Hant": "代表MINAMI「辣妹」角色的影片，觀看約1,120萬次。如標題所示，是MINAMI以辣妹造型接連演唱的現場組曲。來享受笑點和唱功在同一支影片相遇的時刻吧。"
+      },
+      "sources": [
+        "curation.json (제목·채널·조회수·reason)"
+      ],
+      "title": "미나미의 갸루라이브 메들리!"
+    },
+    "JJBf0jCcfrQ": {
+      "room": "anwonjalbu",
+      "note": {
+        "ko": "사투리 시리즈 2편으로, 2026년 5월 29일 공개돼 1,000만 회를 넘었어요. 성수에서 보내는 하루를 담았어요. 1편과 이어 보면 채널이 커져 가던 5월의 분위기를 느낄 수 있어요.",
+        "ja": "方言シリーズ第2話で、2026年5月29日に公開され1,000万回を超えました。聖水(ソンス)で過ごす一日を収めています。第1話と続けて見ると、チャンネルが大きくなっていった5月の空気を感じられます。",
+        "en": "Part 2 of the dialect series, released May 29, 2026, now past 10 million views. It follows a day out in Seongsu. Watch it right after Part 1 to feel the May buzz as the channel grew.",
+        "zh-Hant": "方言系列第2集，2026年5月29日公開，已突破1,000萬次。記錄了在聖水洞度過的一天。和第1集接著看，能感受到頻道逐漸壯大的5月氛圍。"
+      },
+      "sources": [
+        "curation.json (제목·채널·조회수·reason)"
+      ],
+      "title": "A day out in Seongsu before the blowout (사투리 2편, 페이지에 영어 제목으로 표시됨)"
+    },
+    "NS7tSrMrWsc": {
+      "room": "anwonjalbu",
+      "note": {
+        "ko": "2026년 5월 1일 공개된 사투리 시리즈 1편으로, 채널 초기의 대표작이에요(약 1,350만 회). 하루 종일 사투리로만 말해 보는 도전이에요. 거제 편보다 먼저 나온 영상이라, 안원잘부가 어떻게 시작됐는지 보기 좋아요.",
+        "ja": "2026年5月1日公開の方言シリーズ第1話で、チャンネル初期の代表作です(約1,350万回)。一日中、方言だけで話してみるチャレンジ。巨済編より先に出た映像なので、アンウォンジャルブの始まりを知るのにぴったりです。",
+        "en": "Part 1 of the dialect series, released May 1, 2026, and an early signature of the channel (about 13.5 million views). The challenge: speak only in dialect all day long. It came out before the Geoje episodes, so it's a great look at how Anwonjalbu began.",
+        "zh-Hant": "2026年5月1日公開的方言系列第1集，是頻道初期代表作(約1,350萬次)。挑戰一整天只用方言說話。比巨濟篇更早推出，很適合了解「安元賈部」是怎麼開始的。"
+      },
+      "sources": [
+        "curation.json (제목·채널·조회수·reason)"
+      ],
+      "title": "I tried speaking only in dialect all day long. (사투리 1편, 페이지에 영어 제목으로 표시됨)"
+    },
+    "3fRTHjtYAes": {
+      "room": "tv",
+      "note": {
+        "ko": "2026년 8월 8일 방송된 MBC 「전지적 참견 시점」 리센느 편을 2시간으로 모은 영상이에요. 이 방에서 좋아요가 가장 많아요. 본방을 놓쳤다면 여기서 처음부터 끝까지 이어 보세요. (게시 채널의 공식 여부는 확인 중이에요.)",
+        "ja": "2026年8月8日放送のMBC『全知的おせっかい視点』RESCENE編を2時間にまとめた映像。この部屋でいいねが最も多い作品です。本放送を見逃したら、ここで最初から最後まで通しでどうぞ。(投稿チャンネルが公式かどうかは確認中です)",
+        "en": "Two hours of RESCENE's episodes of MBC's Omniscient Interfering View, aired August 8, 2026. It has the most likes in this room. If you missed the broadcast, watch it start to finish here. (Whether the uploading channel is official is still being checked.)",
+        "zh-Hant": "2026年8月8日播出的MBC《全知干預視角》RESCENE篇兩小時合輯。本房間按讚數最多。錯過正片的話，就在這裡從頭看到尾吧。(上傳頻道是否為官方仍在確認中)"
+      },
+      "sources": [
+        "curation.json (제목·채널·조회수·reason)"
+      ],
+      "title": "[전참시] ★본방 놓친 리마인 주목★ 리센느 전참시 2시간 정주행 모음.zip MBC260808방송 #전지적참견시점 #리센느"
+    },
+    "v-6sJD4COF8": {
+      "room": "tv",
+      "note": {
+        "ko": "「전지적 참견 시점」에서 음악방송 1위 후보에 오른 날의 대기실 비하인드를 모은 영상이에요. 이 방에서 조회수가 가장 높아요(약 308만 회). 무대에 오르기 전의 긴장과 기다림을 들여다볼 수 있어요.",
+        "ja": "『全知的おせっかい視点』で、音楽番組の1位候補になった日の控室ビハインドを集めた映像。この部屋で再生回数がいちばん多い作品です(約308万回)。ステージに上がる前の緊張と待ち時間をのぞいてみてください。",
+        "en": "Behind-the-scenes from the waiting room on the day RESCENE were up for a music-show win, from Omniscient Interfering View. It's the most-viewed video in this room (about 3.08 million). A look at the nerves and waiting before they go on stage.",
+        "zh-Hant": "收錄《全知干預視角》中，入圍音樂節目一位候補那天的待機室幕後。本房間觀看次數最高(約308萬次)。可以看見上台前的緊張與等待。"
+      },
+      "sources": [
+        "curation.json (제목·채널·조회수·reason)"
+      ],
+      "title": "【#TVPP】 음악방송 1위 후보 리센느의 대기실 비하인드 대방출✨| 전지적참견시점 | MBC 260808 방송"
+    },
+    "QI_aX8GPRvY": {
+      "room": "tv",
+      "note": {
+        "ko": "MBC 공식 종합 채널에 올라온 「전지적 참견 시점」 리센느 편 회식 장면 모음이에요. 「With」 컴백을 기념해 다 함께 밥을 먹는 시간을 담았어요. 무대 밖에서 편안한 다섯 사람을 보고 싶을 때 추천해요.",
+        "ja": "MBC公式総合チャンネルに公開された『全知的おせっかい視点』RESCENE編の会食シーン集。「With」カムバックを記念して、みんなで食事をする時間を収めています。ステージの外でくつろぐ5人を見たいときにおすすめ。",
+        "en": "A compilation of the team-dinner scenes from RESCENE's Omniscient Interfering View episode, on MBC's official channel. It captures a meal together celebrating their \"With\" comeback. Recommended when you want to see the five relaxed, off stage.",
+        "zh-Hant": "MBC官方綜合頻道上傳的《全知干預視角》RESCENE篇聚餐片段合輯。記錄為慶祝〈With〉回歸而一起吃飯的時光。想看五個人在舞台外放鬆的樣子時推薦。"
+      },
+      "sources": [
+        "curation.json (제목·채널·조회수·reason)"
+      ],
+      "title": "[전참시] 오늘도 밥은 줍니꺼? 먹는 것에 진심인 리센느✨ ＜With＞ 컴백 기념 회식 영상 모음집ㅣ#리센느 MBC260808방송"
+    },
+    "1h4v7pLBwm0": {
+      "room": "tv",
+      "note": {
+        "ko": "tvN 「놀라운 토요일」 EP.430 리센느 편의 간식 게임 하이라이트예요. 케이블 예능 영상 가운데 조회수가 가장 높아요. 게임 앞에서 드러나는 멤버들의 승부욕과 리액션을 즐겨 보세요.",
+        "ja": "tvN『驚きの土曜日』EP.430 RESCENE編、おやつゲームのハイライト。ケーブル局バラエティの映像の中で最も再生されています。ゲームを前にしたメンバーの負けず嫌いぶりとリアクションをお楽しみください。",
+        "en": "The snack-game highlights from RESCENE's episode of tvN's Amazing Saturday, EP.430. It's the most-viewed of the cable variety clips. Enjoy the members' competitive streak and reactions when the game is on.",
+        "zh-Hant": "tvN《驚人的星期六》EP.430 RESCENE篇的點心遊戲精華。有線台綜藝影片中觀看次數最高。來看看成員們在遊戲前的好勝心和反應吧。"
+      },
+      "sources": [
+        "curation.json (제목·채널·조회수·reason)"
+      ],
+      "title": "[#간식게임] 눈이 부신 리센느를 숨김없이 보여줘✨ 대세 리센느와 함께한 여름 방학🏖️ #highlight#놀라운토요일 | amazingsaturday EP.430"
+    },
+    "KZKQS4hjIYs": {
+      "room": "tv",
+      "note": {
+        "ko": "2026년 7월 11일 「전지적 참견 시점」에 나온 아이돌 숙소 장면을 모은 영상으로, 올데이프로젝트·아일릿과 함께 리센느의 숙소가 담겨 있어요. 여러 그룹이 함께 나오는 합본이라 리센느 장면을 찾아 보는 재미가 있어요. (게시 채널의 공식 여부는 확인 중이에요.)",
+        "ja": "2026年7月11日の『全知的おせっかい視点』に登場したアイドルの宿舎シーンをまとめた映像で、ALLDAY PROJECT・ILLITとともにRESCENEの宿舎も映っています。複数グループの合本なので、RESCENEの場面を探す楽しみがあります。(投稿チャンネルが公式かどうかは確認中です)",
+        "en": "A compilation of idol dorm scenes from Omniscient Interfering View on July 11, 2026, featuring RESCENE's dorm alongside ALLDAY PROJECT and ILLIT. Since several groups share the video, part of the fun is spotting the RESCENE scenes. (Whether the uploading channel is official is still being checked.)",
+        "zh-Hant": "2026年7月11日《全知干預視角》偶像宿舍片段合輯，與ALLDAY PROJECT、ILLIT一起收錄了RESCENE的宿舍。因為是多團合輯，找RESCENE片段也是一種樂趣。(上傳頻道是否為官方仍在確認中)"
+      },
+      "sources": [
+        "curation.json (제목·채널·조회수·reason)"
+      ],
+      "title": "[전참시] 집에서도 에너지 넘치는 요즘 아이돌의 숙소 몰아보기 MBC260711방송 #전지적참견시점 #리센느 #올데이프로젝트 #아일릿"
+    },
+    "P0LNFoDtf74": {
+      "room": "tv",
+      "note": {
+        "ko": "2026년 6월 20일 방송된 JTBC 「아는 형님」에서 원이 장면만 모은 영상이에요. 제목부터 원이 채널 이름을 닮아, 안원잘부 방과 자연스럽게 이어져요. 원이를 처음 알게 된 분께 권하고 싶어요.",
+        "ja": "2026年6月20日放送のJTBC『知ってるお兄さん』から、ウォニの場面だけを集めた映像。タイトルからしてウォニのチャンネル名に似ていて、アンウォンジャルブの部屋と自然につながります。ウォニを初めて知った方におすすめ。",
+        "en": "WONI's moments from JTBC's Knowing Bros, aired June 20, 2026. Even the title echoes the name of WONI's channel, linking naturally to the Anwonjalbu room. A good pick if you've just discovered WONI.",
+        "zh-Hant": "2026年6月20日播出的JTBC《認識的哥哥》中WONI片段合輯。連標題都模仿WONI頻道名，自然地和「安元賈部」房間串在一起。推薦給剛認識WONI的人。"
+      },
+      "sources": [
+        "curation.json (제목·채널·조회수·reason)"
+      ],
+      "title": "💚안녕하세요원이입니다아형나왔습니다잘부탁드립니다💚 리센느(RESCENE) 원이 모아보기｜아는 형님｜JTBC 260620 방송"
+    },
+    "SW7M6MdlrlU": {
+      "room": "youtube_guest",
+      "note": {
+        "ko": "KBS 「리무진서비스」 EP.211에 미나미가 혼자 출연해 「Runaway」, 「나였으면」, 「My Gospel」, 「Timeless」를 불렀어요. 이 방에서 조회수와 좋아요 비율이 모두 가장 높아요. 갸루 캐릭터와는 또 다른 미나미의 목소리를 들어 보세요.",
+        "ja": "KBS『リムジンサービス』EP.211にミナミが単独出演し、「Runaway」「ナヨッスミョン(私だったら)」「My Gospel」「Timeless」を歌いました。この部屋で再生回数・いいねの割合ともにトップ。ギャルキャラとはまた違うミナミの声を聴いてみてください。",
+        "en": "MINAMI appears solo on KBS's Limousine Service EP.211, singing \"Runaway,\" \"If It Were Me (나였으면),\" \"My Gospel\" and \"Timeless.\" It tops this room in both views and like ratio. Hear a side of MINAMI's voice far from her gyaru character.",
+        "zh-Hant": "MINAMI獨自登上KBS Limousine Service EP.211，演唱〈Runaway〉〈나였으면(如果是我)〉〈My Gospel〉〈Timeless〉。本房間觀看次數與按讚比例都是第一。來聽聽和辣妹角色截然不同的MINAMI歌聲。"
+      },
+      "sources": [
+        "curation.json (제목·채널·조회수·reason)"
+      ],
+      "title": "[리무진서비스] EP.211 리센느 미나미 | RESCENE MINAMI | Runaway, 나였으면, My Gospel, Timeless"
+    },
+    "17t9izNAYVE": {
+      "room": "youtube_guest",
+      "note": {
+        "ko": "'거제 야호' 화제를 들고 원이·미나미·제나가 「문명특급」을 찾아간 영상이에요. 안원잘부에서 시작된 이야기가 다른 채널로 이어지는 장면이라 의미가 있어요. 안원잘부 방을 보고 왔다면 더 즐겁게 볼 수 있어요.",
+        "ja": "「巨済ヤッホー」の話題を携えて、ウォニ・ミナミ・ジェナが『文明特急』を訪ねた映像。アンウォンジャルブで始まった物語がほかのチャンネルへつながる場面として意味があります。アンウォンジャルブの部屋を見てから来ると、もっと楽しめます。",
+        "en": "WONI, MINAMI and ZENA bring the \"Geoje yaho\" buzz to MMTG. It matters as the moment a story born on Anwonjalbu carried over to another channel. It's even more fun if you've just come from the Anwonjalbu room.",
+        "zh-Hant": "WONI、MINAMI、ZENA帶著「巨濟 야호」的話題拜訪《文明特急》。這是從「安元賈部」開始的故事延伸到其他頻道的一幕，很有意義。先看過「安元賈部」房間再來，會更有趣。"
+      },
+      "sources": [
+        "curation.json (제목·채널·조회수·reason)"
+      ],
+      "title": "거제 야호가 문특에 왔습니다 (w. 리센느 원이, 미나미, 제나)"
+    },
+    "a_c2mBMKuBE": {
+      "room": "youtube_guest",
+      "note": {
+        "ko": "KBS 「리무진서비스」 EP.240에 리브가 혼자 출연해 「With」, 「그댄 달라요」, 「내 생에 아름다운」, 「왜 그래」를 불렀어요. 조회수 대비 좋아요 비율이 2.8%로 높은 영상이에요. 리브의 목소리에 오롯이 집중해 보세요.",
+        "ja": "KBS『リムジンサービス』EP.240にリブが単独出演し、「With」「クデン タルラヨ(君は違う)」「ネ センエ アルムダウン(我が人生で美しい)」「ウェ グレ(どうして)」を歌いました。再生回数に対するいいねの割合が2.8%と高い映像。リブの声だけに耳を傾けてみてください。",
+        "en": "LIV appears solo on KBS's Limousine Service EP.240, singing \"With,\" \"You're Different (그댄 달라요),\" \"The Most Beautiful in My Life (내 생에 아름다운)\" and \"Why (왜 그래).\" Its like ratio is a high 2.8%. Let yourself focus on LIV's voice alone.",
+        "zh-Hant": "LIV獨自登上KBS Limousine Service EP.240，演唱〈With〉〈그댄 달라요(你不一樣)〉〈내 생에 아름다운(我生命中最美的)〉〈왜 그래(為什麼)〉。按讚比例高達2.8%。請專心聆聽LIV的歌聲。"
+      },
+      "sources": [
+        "curation.json (제목·채널·조회수·reason)"
+      ],
+      "title": "[리무진서비스] EP.240 리센느 리브 | RESCENE LIV | With, 그댄 달라요, 내 생에 아름다운, 왜 그래"
+    },
+    "4gqBmjnfJDc": {
+      "room": "youtube_guest",
+      "note": {
+        "ko": "배우 김광규의 채널 「김광규의 싱글이 좋아」가 구독자 10만 명을 넘은 것을 기념한 영상에 리센느가 함께했어요. 다른 유튜버의 기념일을 축하하러 간 자리라 분위기가 훈훈해요. 규모는 작지만 다정한 출연이에요. (채널의 공식 여부는 확인 중이에요.)",
+        "ja": "俳優キム・グァンギュのチャンネル『キム・グァンギュのシングルがいい』の登録者10万人突破記念映像に、RESCENEが一緒に出演しました。ほかのYouTuberの記念日をお祝いしに行った場なので、雰囲気がほのぼの。規模は小さくても温かい出演です。(チャンネルが公式かどうかは確認中です)",
+        "en": "RESCENE joined the video celebrating 100,000 subscribers on actor Kim Kwang-kyu's channel. They went to celebrate another YouTuber's milestone, so the mood is warm. A small but kind appearance. (Whether the channel is official is still being checked.)",
+        "zh-Hant": "RESCENE參與了演員金光圭頻道「金光圭的單身真好」訂閱突破10萬的紀念影片。是去祝賀其他YouTuber的紀念日，氣氛很溫馨。規模不大，卻是很暖心的出演。(頻道是否為官方仍在確認中)"
+      },
+      "sources": [
+        "curation.json (제목·채널·조회수·reason)"
+      ],
+      "title": "🎉구독자 10만 돌파!🎉(feat. 리센느RESCENE)"
+    },
+    "xclVi9zCFdY": {
+      "room": "daily",
+      "note": {
+        "ko": "리센느 공식 브이로그 「Re-log」에서 원이가 대만으로 떠난 편이에요. 조회수 대비 좋아요 비율이 3.9%로 이 갤러리 영상 중 가장 높은 편이에요. 제목처럼 맛있는 것을 찾아다니는 원이를 따라가 보세요.",
+        "ja": "RESCENE公式Vlog「Re-log」で、ウォニが台湾へ旅立った回。再生回数に対するいいねの割合が3.9%と、このギャラリーの映像の中で最も高い水準です。タイトルどおり、おいしいものを探し歩くウォニについていってみてください。",
+        "en": "WONI heads to Taiwan in this episode of RESCENE's official vlog, Re-log. Its like ratio of 3.9% is among the highest of any video in this gallery. As the title promises, follow WONI on a hunt for good food.",
+        "zh-Hant": "RESCENE官方Vlog「Re-log」中WONI前往台灣的一集。按讚比例3.9%，在本藝廊影片中屬最高水準。就像標題說的，跟著WONI一起找美食吧。"
+      },
+      "sources": [
+        "curation.json (제목·채널·조회수·reason)"
+      ],
+      "title": "[Re-log] 먹짱 원짱, 대만에 가다 🍴 | RESCENE (리센느) vlog"
+    },
+    "97YE7zPrON8": {
+      "room": "daily",
+      "note": {
+        "ko": "「Re-log」에서 미나미가 일본에서 보낸 휴가를 담은 편이에요. 조회수 대비 좋아요 비율 2.8%로 반응이 따뜻했어요. 바쁜 활동 사이 쉬어 가는 미나미의 하루를 편하게 지켜봐 주세요.",
+        "ja": "「Re-log」で、ミナミが日本で過ごした休暇を収めた回。いいねの割合2.8%と、温かい反応が寄せられました。忙しい活動の合間にひと息つくミナミの一日を、気楽に見守ってください。",
+        "en": "In this Re-log episode, MINAMI spends a holiday in Japan. With a 2.8% like ratio, the response was warm. Relax and keep MINAMI company on a day of rest between busy schedules.",
+        "zh-Hant": "「Re-log」中MINAMI在日本度假的一集。按讚比例2.8%，反應很溫暖。請輕鬆陪著MINAMI度過忙碌行程間的休息日。"
+      },
+      "sources": [
+        "curation.json (제목·채널·조회수·reason)"
+      ],
+      "title": "[Re-log] 미나미의 휴가 브이로그 in JAPAN 🏠 | RESCENE (리센느) vlog"
+    },
+    "faDPwuKSOM4": {
+      "room": "daily",
+      "note": {
+        "ko": "미국 LA에서 찍은 「Re-log」로, 공식 브이로그 가운데 조회수가 가장 높아요(약 125만 회). 낯선 도시에서의 하루가 담겨 있어요. 「Re-log」를 처음 본다면 이 편부터 시작해도 좋아요.",
+        "ja": "アメリカ・LAで撮影された「Re-log」で、公式Vlogの中で最も再生されています(約125万回)。見知らぬ街での一日が収められています。「Re-log」が初めてなら、この回から始めるのもおすすめ。",
+        "en": "A Re-log filmed in LA, and the most-viewed of the official vlogs (about 1.25 million views). It captures a day in an unfamiliar city. If you're new to Re-log, this is a great place to start.",
+        "zh-Hant": "在美國LA拍攝的「Re-log」，是官方Vlog中觀看次數最高的一集(約125萬次)。記錄了在陌生城市的一天。第一次看「Re-log」的話，從這集開始也很好。"
+      },
+      "sources": [
+        "curation.json (제목·채널·조회수·reason)"
+      ],
+      "title": "[Re-log] 까엉티비🐹 in LA US | RESCENE (리센느) vlog"
+    },
+    "V-Tz0gvDiG4": {
+      "room": "daily",
+      "note": {
+        "ko": "미나미의 메이크업 교실에 메이가 함께한 「Re-log」예요. 두 멤버가 나란히 앉아 보내는 시간이라 둘의 케미를 보기 좋아요(좋아요 비율 2.6%). 소소하지만 보고 나면 기분이 좋아지는 편이에요.",
+        "ja": "ミナミのメイク教室にメイが加わった「Re-log」。2人が並んで座って過ごす時間なので、ふたりの相性がよく分かります(いいねの割合2.6%)。ささやかだけど、見終わると気分が明るくなる回です。",
+        "en": "A Re-log of MINAMI's makeup class, with MAY joining in. Two members side by side make it a great look at their chemistry (2.6% like ratio). Small and simple, yet it leaves you in a good mood.",
+        "zh-Hant": "MAY一起參加MINAMI化妝教室的「Re-log」。兩位成員並肩而坐，很能看出兩人的默契(按讚比例2.6%)。雖然平凡，看完卻會心情變好。"
+      },
+      "sources": [
+        "curation.json (제목·채널·조회수·reason)"
+      ],
+      "title": "[Re-log] 미나미의 메이크업 교실🪞💄 with 메이 | RESCENE (리센느) vlog"
+    },
+    "fCrQXP_2u3U": {
+      "room": "birthday",
+      "note": {
+        "ko": "리센느 공식 채널에 올라온 리브의 생일 라이브예요. 이 방의 생일 영상 가운데 조회수가 압도적으로 높아요(약 137만 회). 생일을 맞은 리브와 함께하는 시간을 즐겨 보세요.",
+        "ja": "RESCENE公式チャンネルで公開されたリブの誕生日ライブ。この部屋の誕生日映像の中で、再生回数が圧倒的に多い作品です(約137万回)。誕生日を迎えたリブと一緒の時間をお楽しみください。",
+        "en": "LIV's birthday live on RESCENE's official channel. It has by far the most views of the birthday videos in this room (about 1.37 million). Enjoy spending the time with the birthday girl.",
+        "zh-Hant": "RESCENE官方頻道上的LIV生日直播。在本房間的生日影片中觀看次數遙遙領先(約137萬次)。一起享受和壽星LIV相處的時光吧。"
+      },
+      "sources": [
+        "curation.json (제목·채널·조회수·reason)"
+      ],
+      "title": "리뿌 생일 라이브에 오신 걸 환영합니다💝"
+    },
+    "i3BCs-IcIl4": {
+      "room": "birthday",
+      "note": {
+        "ko": "원이의 생일을 맞아 리센느 공식 채널에 올라온 영상이에요. 조회수 대비 좋아요 비율이 3.3%로 높아, 팬들의 축하가 고스란히 느껴져요. 리더 원이에게 마음속으로 축하 한마디 건네 보세요.",
+        "ja": "ウォニの誕生日に合わせてRESCENE公式チャンネルで公開された映像。いいねの割合が3.3%と高く、ファンのお祝いの気持ちがそのまま伝わってきます。リーダーのウォニに、心の中でお祝いのひと言を。",
+        "en": "A video posted on RESCENE's official channel for WONI's birthday. Its like ratio is a high 3.3%, and you can feel the fans' good wishes. Send leader WONI a quiet \"happy birthday\" of your own.",
+        "zh-Hant": "為WONI生日在RESCENE官方頻道上傳的影片。按讚比例高達3.3%，粉絲的祝福滿滿傳遞。也在心裡對隊長WONI說聲生日快樂吧。"
+      },
+      "sources": [
+        "curation.json (제목·채널·조회수·reason)"
+      ],
+      "title": "HAPPY WONI DAY 🎂💚"
+    },
+    "zO7ndCNpJfs": {
+      "room": "birthday",
+      "note": {
+        "ko": "메이의 생일을 맞아 리센느 공식 채널에 올라온 영상이에요(좋아요 비율 3.1%). 8월 19일 메이의 생일에는 고향 고양시도 축하 영상과 음악분수로 함께했어요. 온 동네가 축하한 생일의 주인공을 만나 보세요.",
+        "ja": "メイの誕生日に合わせてRESCENE公式チャンネルで公開された映像です(いいねの割合3.1%)。8月19日のメイの誕生日には、故郷の高陽市もお祝い映像と音楽噴水で祝福しました。街じゅうがお祝いした誕生日の主役に会いに行きましょう。",
+        "en": "A video posted on RESCENE's official channel for MAY's birthday (3.1% like ratio). On her birthday, August 19, her hometown of Goyang joined in too, with a celebration video and a musical fountain. Meet the birthday girl a whole city celebrated.",
+        "zh-Hant": "為MAY生日在RESCENE官方頻道上傳的影片(按讚比例3.1%)。8月19日MAY生日當天，家鄉高陽市也以祝賀影片和音樂噴泉一起慶祝。來見見全城一起慶祝的壽星吧。"
+      },
+      "sources": [
+        "curation.json (제목·채널·조회수·reason)",
+        "https://www.wikitree.co.kr/articles/1153682"
+      ],
+      "title": "메이 생일축하해줄사람!💗🥳🎉🎂"
+    }
+  },
+  "statues": [
+    {
+      "id": "woni",
+      "name": "원이",
+      "name_en": "WONI",
+      "birthday": null,
+      "position": "리더",
+      "position_l": {
+        "ko": "리더",
+        "ja": "リーダー",
+        "en": "Leader",
+        "zh-Hant": "隊長"
+      },
+      "intro": {
+        "ko": "리센느의 리더로, 개인 유튜브 채널 「안녕하세요원이입니다잘부탁드립니다」를 운영하며 고향 거제와 리센느의 인연을 이어 주었어요.",
+        "ja": "RESCENEのリーダー。個人YouTubeチャンネル「アンニョンハセヨウォニイムニダチャルプタッカムニダ」を運営し、故郷・巨済とRESCENEの縁をつないでくれました。",
+        "en": "RESCENE's leader, who runs her own YouTube channel, \"Hello, I'm Woni, Nice to Meet You,\" and helped tie the group to her hometown of Geoje.",
+        "zh-Hant": "RESCENE的隊長，經營個人YouTube頻道「안녕하세요원이입니다잘부탁드립니다」，把家鄉巨濟和RESCENE連在一起。"
+      },
+      "color": null,
+      "sources": [
+        "https://sports.khan.co.kr/article/202402292225003",
+        "https://www.khan.co.kr/article/202607240600031/",
+        "https://v.daum.net/v/20260711060326717",
+        "https://www.mt.co.kr/entertainment/2026/06/10/2026061013417238076",
+        "https://www.hankyung.com/article/2026070335037"
+      ]
+    },
+    {
+      "id": "liv",
+      "name": "리브",
+      "name_en": "LIV",
+      "birthday": null,
+      "position": null,
+      "position_l": null,
+      "intro": {
+        "ko": "고향 수원시의 홍보대사로 '수원 방문의 해'를 알리고 있고, KBS 「리무진서비스」에서 홀로 노래를 들려준 멤버예요.",
+        "ja": "故郷・水原(スウォン)市の広報大使として「水原訪問の年」をPRし、KBS『リムジンサービス』で一人で歌声を届けたメンバーです。",
+        "en": "An ambassador for her hometown of Suwon, promoting its Visit Suwon Years, and a member who sang solo on KBS's Limousine Service.",
+        "zh-Hant": "擔任家鄉水原市宣傳大使，宣傳「水原訪問年」，也曾獨自登上KBS Limousine Service獻唱。"
+      },
+      "color": null,
+      "sources": [
+        "https://sports.khan.co.kr/article/202402292225003",
+        "https://www.hankyung.com/article/2026070335037",
+        "https://www.youtube.com/watch?v=a_c2mBMKuBE"
+      ]
+    },
+    {
+      "id": "minami",
+      "name": "미나미",
+      "name_en": "MINAMI",
+      "birthday": null,
+      "position": null,
+      "position_l": null,
+      "intro": {
+        "ko": "일본 출신 멤버로 2021년 MBC 오디션 「방과후 설렘」 결선에 올랐고, '거제 야호!'로 많은 사람에게 웃음을 준 주인공이에요.",
+        "ja": "日本出身のメンバー。2021年MBCのオーディション『放課後のときめき』でファイナリストとなり、「巨済ヤッホー!」で多くの人を笑顔にした主人公です。",
+        "en": "The member from Japan, a finalist on MBC's 2021 audition show My Teenage Girl, and the one whose \"Geoje yaho!\" made so many people smile.",
+        "zh-Hant": "來自日本的成員，曾進入2021年MBC選秀節目《放學後心動》決賽，也是用一句「巨濟 야호!」逗笑無數人的主角。"
+      },
+      "color": null,
+      "sources": [
+        "https://sports.khan.co.kr/article/202402292225003",
+        "https://v.daum.net/v/20240222183439798",
+        "https://www.mt.co.kr/entertainment/2026/06/10/2026061013417238076",
+        "https://www.khan.co.kr/article/202607240600031/"
+      ]
+    },
+    {
+      "id": "may",
+      "name": "메이",
+      "name_en": "MAY",
+      "birthday": "08-19",
+      "position": null,
+      "position_l": null,
+      "intro": {
+        "ko": "8월 19일 생일에 고향 고양시가 축하 영상과 음악분수로 함께 축하해 준 멤버로, 고양시 홍보대사로도 활동해요.",
+        "ja": "8月19日の誕生日に、故郷の高陽市がお祝い映像と音楽噴水で一緒に祝ってくれたメンバー。高陽市の広報大使としても活動しています。",
+        "en": "On her August 19 birthday, her hometown of Goyang celebrated with a video and a musical fountain; she's also one of Goyang's ambassadors.",
+        "zh-Hant": "8月19日生日時，家鄉高陽市以祝賀影片和音樂噴泉一起慶祝；她也擔任高陽市宣傳大使。"
+      },
+      "color": null,
+      "sources": [
+        "https://sports.khan.co.kr/article/202402292225003",
+        "https://www.wikitree.co.kr/articles/1153682",
+        "https://www.hankyung.com/article/2026070335037"
+      ]
+    },
+    {
+      "id": "zena",
+      "name": "제나",
+      "name_en": "ZENA",
+      "birthday": null,
+      "position": null,
+      "position_l": null,
+      "intro": {
+        "ko": "2022년 채널A 「청춘스타」에 출연했고, 지금은 고향 경주시의 관광 홍보대사로 천년고도를 알리고 있어요.",
+        "ja": "2022年にチャンネルA『青春スター』に出演し、今は故郷・慶州(キョンジュ)市の観光広報大使として千年の古都をPRしています。",
+        "en": "She appeared on Channel A's Stars Awakening in 2022, and now promotes the ancient capital as a tourism ambassador for her hometown, Gyeongju.",
+        "zh-Hant": "2022年曾參加Channel A《青春明星》，現在擔任家鄉慶州市觀光宣傳大使，介紹這座千年古都。"
+      },
+      "color": null,
+      "sources": [
+        "https://sports.khan.co.kr/article/202402292225003",
+        "https://v.daum.net/v/20240222183439798",
+        "https://www.hankyung.com/article/2026070335037"
+      ]
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "q01-members",
+      "room": "stage",
+      "q": {
+        "ko": "리센느 멤버는 모두 몇 명일까요?",
+        "ja": "RESCENEのメンバーは全部で何人?",
+        "en": "How many members are in RESCENE?",
+        "zh-Hant": "RESCENE共有幾位成員?"
+      },
+      "choices": [
+        "4",
+        "5",
+        "6",
+        "7"
+      ],
+      "answer": 1,
+      "source_url": "https://sports.khan.co.kr/article/202402292225003",
+      "checked_at": "2026-11-11"
+    },
+    {
+      "id": "q02-debut-date",
+      "room": "stage",
+      "q": {
+        "ko": "리센느의 데뷔일은 언제일까요?",
+        "ja": "RESCENEのデビュー日はいつ?",
+        "en": "When did RESCENE debut?",
+        "zh-Hant": "RESCENE的出道日是哪一天?"
+      },
+      "choices": [
+        {
+          "ko": "2023년 11월 2일",
+          "ja": "2023年11月2日",
+          "en": "November 2, 2023",
+          "zh-Hant": "2023年11月2日"
+        },
+        {
+          "ko": "2024년 3월 26일",
+          "ja": "2024年3月26日",
+          "en": "March 26, 2024",
+          "zh-Hant": "2024年3月26日"
+        },
+        {
+          "ko": "2024년 8월 27일",
+          "ja": "2024年8月27日",
+          "en": "August 27, 2024",
+          "zh-Hant": "2024年8月27日"
+        },
+        {
+          "ko": "2025년 2월 5일",
+          "ja": "2025年2月5日",
+          "en": "February 5, 2025",
+          "zh-Hant": "2025年2月5日"
+        }
+      ],
+      "answer": 1,
+      "source_url": "https://isplus.com/article/view/isp202403260139",
+      "checked_at": "2026-11-11"
+    },
+    {
+      "id": "q03-debut-album",
+      "room": "stage",
+      "q": {
+        "ko": "리센느의 데뷔 싱글 앨범 이름은?",
+        "ja": "RESCENEのデビューシングルアルバムの名前は?",
+        "en": "What is the name of RESCENE's debut single album?",
+        "zh-Hant": "RESCENE出道單曲專輯名稱是?"
+      },
+      "choices": [
+        "Re:Scene",
+        "SCENEDROME",
+        "PULSE",
+        "Dearest"
+      ],
+      "answer": 0,
+      "source_url": "https://isplus.com/article/view/isp202403260139",
+      "checked_at": "2026-11-11"
+    },
+    {
+      "id": "q04-debut-song",
+      "room": "anwonjalbu",
+      "q": {
+        "ko": "리센느의 데뷔 타이틀곡은?",
+        "ja": "RESCENEのデビュー曲(タイトル曲)は?",
+        "en": "What was RESCENE's debut title track?",
+        "zh-Hant": "RESCENE的出道主打歌是?"
+      },
+      "choices": [
+        "UhUh",
+        "LOVE ATTACK",
+        "Pretty Girl",
+        "Pinball"
+      ],
+      "answer": 0,
+      "source_url": "https://www.wikitree.co.kr/articles/1158586",
+      "checked_at": "2026-11-11"
+    },
+    {
+      "id": "q05-prerelease",
+      "room": "anwonjalbu",
+      "q": {
+        "ko": "데뷔 전 2024년 2월 29일에 먼저 공개된 선공개곡은?",
+        "ja": "デビュー前の2024年2月29日に先行公開された曲は?",
+        "en": "Which pre-release song came out on February 29, 2024, before their debut?",
+        "zh-Hant": "出道前於2024年2月29日先行公開的歌曲是?"
+      },
+      "choices": [
+        "YoYo",
+        "UhUh",
+        "Lucky you",
+        "New World"
+      ],
+      "answer": 0,
+      "source_url": "https://sports.khan.co.kr/article/202402292225003",
+      "checked_at": "2026-11-11"
+    },
+    {
+      "id": "q06-agency",
+      "room": "tv",
+      "q": {
+        "ko": "리센느의 소속사는?",
+        "ja": "RESCENEの所属事務所は?",
+        "en": "Which agency is RESCENE with?",
+        "zh-Hant": "RESCENE所屬的經紀公司是?"
+      },
+      "choices": [
+        {
+          "ko": "더뮤즈엔터테인먼트",
+          "ja": "The Muze Entertainment",
+          "en": "The Muze Entertainment",
+          "zh-Hant": "The Muze Entertainment"
+        },
+        {
+          "ko": "하이브",
+          "ja": "HYBE",
+          "en": "HYBE",
+          "zh-Hant": "HYBE"
+        },
+        {
+          "ko": "JYP엔터테인먼트",
+          "ja": "JYPエンターテインメント",
+          "en": "JYP Entertainment",
+          "zh-Hant": "JYP Entertainment"
+        },
+        {
+          "ko": "SM엔터테인먼트",
+          "ja": "SMエンターテインメント",
+          "en": "SM Entertainment",
+          "zh-Hant": "SM Entertainment"
+        }
+      ],
+      "answer": 0,
+      "source_url": "https://isplus.com/article/view/isp202403260139",
+      "checked_at": "2026-11-11"
+    },
+    {
+      "id": "q07-fandom",
+      "room": "tv",
+      "q": {
+        "ko": "리센느의 공식 팬덤 이름은?",
+        "ja": "RESCENEの公式ファンダム名は?",
+        "en": "What is RESCENE's official fandom name?",
+        "zh-Hant": "RESCENE的官方粉絲名是?"
+      },
+      "choices": [
+        {
+          "ko": "리마인(REMINE)",
+          "ja": "REMINE(リマイン)",
+          "en": "REMINE",
+          "zh-Hant": "REMINE"
+        },
+        {
+          "ko": "리센터(RECENTER)",
+          "ja": "RECENTER(リセンター)",
+          "en": "RECENTER",
+          "zh-Hant": "RECENTER"
+        },
+        {
+          "ko": "씬즈(SCENES)",
+          "ja": "SCENES(シーンズ)",
+          "en": "SCENES",
+          "zh-Hant": "SCENES"
+        },
+        {
+          "ko": "러버(LOVER)",
+          "ja": "LOVER(ラバー)",
+          "en": "LOVER",
+          "zh-Hant": "LOVER"
+        }
+      ],
+      "answer": 0,
+      "source_url": "https://soompi.com/article/1674005wpp/rescene-announces-official-fandom-name",
+      "checked_at": "2026-11-11"
+    },
+    {
+      "id": "q08-love-attack-album",
+      "room": "youtube_guest",
+      "q": {
+        "ko": "「LOVE ATTACK」이 실린 미니 1집의 이름은?",
+        "ja": "「LOVE ATTACK」が収録されたミニ1集の名前は?",
+        "en": "Which first mini album includes \"LOVE ATTACK\"?",
+        "zh-Hant": "收錄〈LOVE ATTACK〉的首張迷你專輯是?"
+      },
+      "choices": [
+        "SCENEDROME",
+        "Re:Scene",
+        "Glow Up",
+        "Lip Bomb"
+      ],
+      "answer": 0,
+      "source_url": "https://news.tf.co.kr/read/ogmeta/2339259.htm",
+      "checked_at": "2026-11-11"
+    },
+    {
+      "id": "q09-leader",
+      "room": "youtube_guest",
+      "q": {
+        "ko": "리센느의 리더는 누구일까요?",
+        "ja": "RESCENEのリーダーは誰?",
+        "en": "Who is RESCENE's leader?",
+        "zh-Hant": "RESCENE的隊長是誰?"
+      },
+      "choices": [
+        {
+          "ko": "원이",
+          "ja": "ウォニ",
+          "en": "WONI",
+          "zh-Hant": "WONI"
+        },
+        {
+          "ko": "리브",
+          "ja": "リブ",
+          "en": "LIV",
+          "zh-Hant": "LIV"
+        },
+        {
+          "ko": "미나미",
+          "ja": "ミナミ",
+          "en": "MINAMI",
+          "zh-Hant": "MINAMI"
+        },
+        {
+          "ko": "메이",
+          "ja": "メイ",
+          "en": "MAY",
+          "zh-Hant": "MAY"
+        }
+      ],
+      "answer": 0,
+      "source_url": "https://www.khan.co.kr/article/202607240600031/",
+      "checked_at": "2026-11-11"
+    },
+    {
+      "id": "q10-first-win",
+      "room": "daily",
+      "q": {
+        "ko": "리센느에게 데뷔 후 첫 음악방송 1위를 안겨 준 곡은?",
+        "ja": "RESCENEにデビュー後初の音楽番組1位をもたらした曲は?",
+        "en": "Which song gave RESCENE their first music-show win?",
+        "zh-Hant": "讓RESCENE拿下出道後首座音樂節目一位的歌是?"
+      },
+      "choices": [
+        "Pretty Girl",
+        "UhUh",
+        "YoYo",
+        "Pinball"
+      ],
+      "answer": 0,
+      "source_url": "https://www.khan.co.kr/article/202607240600031/",
+      "checked_at": "2026-11-11"
+    },
+    {
+      "id": "q11-pulse",
+      "room": "daily",
+      "q": {
+        "ko": "2026년 11월 3일 발매된 리센느의 미니 4집 이름은?",
+        "ja": "2026年11月3日発売のRESCENEミニ4集の名前は?",
+        "en": "What is the name of RESCENE's 4th mini album, released November 3, 2026?",
+        "zh-Hant": "RESCENE於2026年11月3日發行的第四張迷你專輯名稱是?"
+      },
+      "choices": [
+        "PULSE",
+        "SCENEDROME",
+        "Glow Up",
+        "Re:Scene"
+      ],
+      "answer": 0,
+      "source_url": "https://isplus.com/article/view/isp202611010090",
+      "checked_at": "2026-11-11"
+    },
+    {
+      "id": "q12-may-bday",
+      "room": "birthday",
+      "q": {
+        "ko": "메이의 생일은 언제일까요?",
+        "ja": "メイの誕生日はいつ?",
+        "en": "When is MAY's birthday?",
+        "zh-Hant": "MAY的生日是哪一天?"
+      },
+      "choices": [
+        {
+          "ko": "5월 25일",
+          "ja": "5月25日",
+          "en": "May 25",
+          "zh-Hant": "5月25日"
+        },
+        {
+          "ko": "8월 19일",
+          "ja": "8月19日",
+          "en": "August 19",
+          "zh-Hant": "8月19日"
+        },
+        {
+          "ko": "10월 11일",
+          "ja": "10月11日",
+          "en": "October 11",
+          "zh-Hant": "10月11日"
+        },
+        {
+          "ko": "11월 27일",
+          "ja": "11月27日",
+          "en": "November 27",
+          "zh-Hant": "11月27日"
+        }
+      ],
+      "answer": 1,
+      "source_url": "https://www.wikitree.co.kr/articles/1153682",
+      "checked_at": "2026-11-11"
+    }
+  ],
+  "unverified": [
+    {
+      "item": "statues.birthday (원이·리브·미나미·제나)",
+      "detail": "공식 프로필·주요 언론에서 날짜를 확인하지 못해 null. 팬 프로필 사이트(kprofiles.com)에는 원이 5/25, 리브 10/11, 미나미 11/29, 제나 11/27로 나오지만 출처 표기가 없어 쓰지 않음. 메이(8/19)만 위키트리 기사(고양시 생일 축하)로 확인."
+    },
+    {
+      "item": "statues.position (리브·미나미·메이·제나)",
+      "detail": "원이의 '리더'만 경향신문·스타뉴스 기사로 확인. 나머지 포지션은 공식 프로필을 열지 못해 null(팬 사이트에 제나 '비주얼 센터·막내'가 있으나 공식 확인 안 됨)."
+    },
+    {
+      "item": "statues.color (5명 전원)",
+      "detail": "공식 멤버 컬러를 확인할 수 있는 출처를 찾지 못해 null. hall.html STATUES의 현재 색은 장식용 임의 색."
+    },
+    {
+      "item": "소속사 공식 사이트·공식 SNS 프로필",
+      "detail": "소속사 공식 프로필 페이지를 직접 열지 못함. 모든 그룹 정보는 주요 언론 기사(일간스포츠·스포츠경향·경향신문·스타뉴스·코리아중앙데일리·한국경제 등)로 확인."
+    },
+    {
+      "item": "팬덤명 뜻",
+      "detail": "Soompi 기사(2024-07-10)의 발표 인용(REMIND의 변형 + RESCENE과 MINE)으로 확인. 소속사 원문 공지는 직접 열지 못함."
+    },
+    {
+      "item": "곡명 한국어 표기·의미 번역",
+      "detail": "리무진서비스 영상의 커버곡(나였으면·그댄 달라요·내 생에 아름다운·왜 그래)의 영어·일본어·중국어 번역 제목은 우리가 붙인 의역(공식 번역명 아님)."
+    },
+    {
+      "item": "채널 공식 여부",
+      "detail": "픽잇(3fRTHjtYAes, KZKQS4hjIYs), 김광규의 싱글이 좋아(4gqBmjnfJDc), TV-People(v-6sJD4COF8)의 공식 여부는 curation.json에도 '확인 필요' — note에 '확인 중' 표기함(TV-People은 표기 생략, 필요 시 추가)."
+    },
+    {
+      "item": "faDPwuKSOM4 「까엉티비 in LA」",
+      "detail": "'까엉티비'가 어느 멤버(또는 멤버들)의 코너인지 확인 못 함 — note에서 멤버를 특정하지 않음."
+    },
+    {
+      "item": "QI_aX8GPRvY 「With」",
+      "detail": "제목의 ＜With＞ 컴백이 리센느의 앨범/곡명인지 공식 출처로 확인하지 못함(제목 그대로 인용만)."
+    },
+    {
+      "item": "조회수 숫자",
+      "detail": "note 속 조회수는 curation.json(RYD API 캐시, 11/11 15:55 확인) 기준 반올림 값 — 실제 유튜브 화면과 다를 수 있음."
+    },
+    {
+      "item": "OrCOflk2QmQ 유료 광고",
+      "detail": "설명란(대표 전달 원문)에 KGB 주류 유료 광고·19세 이상 문구가 있음. note에 고지 문장을 넣었음 — 전시 여부·문구는 대표 판단 필요."
+    },
+    {
+      "item": "언어 키",
+      "detail": "이 파일은 ko/ja/en/zh-Hant 키를 씀. hall.html은 내부적으로 'zh' 키를 쓰므로 붙일 때 zh-Hant → zh 로 바꿔야 함."
+    }
+  ],
+  "sources_all": [
+    "https://isplus.com/article/view/isp202403260139",
+    "https://isplus.com/article/view/isp202606180066",
+    "https://isplus.com/article/view/isp202608190149",
+    "https://isplus.com/article/view/isp202611010090",
+    "https://news.tf.co.kr/read/ogmeta/2339259.htm",
+    "https://soompi.com/article/1674005wpp/rescene-announces-official-fandom-name",
+    "https://sports.khan.co.kr/article/202402292225003",
+    "https://v.daum.net/v/20240222183439798",
+    "https://v.daum.net/v/20260711060326717",
+    "https://www.hankyung.com/article/2026070335037",
+    "https://www.khan.co.kr/article/202607240600031/",
+    "https://www.mt.co.kr/entertainment/2026/06/10/2026061013417238076",
+    "https://www.mydaily.co.kr/page/view/2026061510080751545",
+    "https://www.tenasia.co.kr/article/2026100811494",
+    "https://www.wikitree.co.kr/articles/1153682",
+    "https://www.wikitree.co.kr/articles/1158586",
+    "https://www.youtube.com/watch?v=a_c2mBMKuBE"
+  ]
+}
