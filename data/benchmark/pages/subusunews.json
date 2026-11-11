@@ -1,60 +1,86 @@
 {
  "name": "스브스뉴스 (SBS)",
  "channel": "https://www.youtube.com/@subusunews",
- "checkedAt": "2026-11-11T19:36+09:00",
+ "checkedAt": "2026-11-11T22:50+09:00",
  "subscribers": "144만",
  "videos": [
   {
-   "id": "phk3JBktfX8",
-   "title": "[선공개] 인간관계 정리되는 요즘 경조사",
-   "views": 518,
-   "viewsText": "조회수 518회",
+   "id": "QSXv2yiIveI",
+   "title": "귀신 훈육 놀이에 터져버린 아동 학대 논란 #한국민속촌 #shorts #스브스뉴스",
+   "views": 1000,
+   "viewsText": "조회수 1천회",
    "published": "",
    "kind": "short"
+  },
+  {
+   "id": "7UWF0GGYftg",
+   "title": "[선공개] 신혼여행 따라갔던 부부에게 연락이 안 온다",
+   "views": 1700,
+   "viewsText": "조회수 1.7천회",
+   "published": "",
+   "kind": "short"
+  },
+  {
+   "id": "vS6l_n2uJzs",
+   "title": "젠슨 황 내연녀 앨리스 황, 10조 원어치 ‘엔비디아 AI칩’ 중국으로 유출? #엔비디아 #shorts #스브스뉴스",
+   "views": 2000,
+   "viewsText": "조회수 2천회",
+   "published": "",
+   "kind": "short"
+  },
+  {
+   "id": "phk3JBktfX8",
+   "title": "[선공개] 인간관계 정리되는 요즘 경조사",
+   "views": 2200,
+   "viewsText": "조회수 2.2천회",
+   "published": "",
+   "kind": "short",
+   "gain": 1682
   },
   {
    "id": "80Prr9snsIk",
    "title": "[선공개] 죽여달라는 거지?",
-   "views": 1100,
-   "viewsText": "조회수 1.1천회",
+   "views": 2300,
+   "viewsText": "조회수 2.3천회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 1200
   },
   {
    "id": "h8iBMhQ3b-Q",
    "title": "추워질수록 위험하다는 굴운자로 #굴 #shorts #스브스뉴스",
-   "views": 4500,
-   "viewsText": "조회수 4.5천회",
+   "views": 5100,
+   "viewsText": "조회수 5.1천회",
    "published": "",
    "kind": "short",
-   "gain": 700
+   "gain": 600
   },
   {
    "id": "uO5xviR9-aM",
    "title": "유독 정치판에서 사이비 종교 논란이 자주 터지는 이유 #사이비 #shorts #스브스뉴스",
-   "views": 4000,
-   "viewsText": "조회수 4천회",
+   "views": 4100,
+   "viewsText": "조회수 4.1천회",
    "published": "",
    "kind": "short",
-   "gain": 300
+   "gain": 100
   },
   {
    "id": "Y0Y6eq3a6PE",
    "title": "서울시가 남산에 곤돌라를 만들려는 이유 #shorts / 스브스뉴스",
-   "views": 3900,
-   "viewsText": "조회수 3.9천회",
+   "views": 4100,
+   "viewsText": "조회수 4.1천회",
    "published": "",
    "kind": "short",
-   "gain": 300
+   "gain": 200
   },
   {
    "id": "DqL_SWFWkD8",
    "title": "침착맨 방송 중 사교육 문제 직격타 날린 정승제 #입시 #shorts #스브스뉴스",
-   "views": 450000,
-   "viewsText": "조회수 45만회",
+   "views": 460000,
+   "viewsText": "조회수 46만회",
    "published": "",
    "kind": "short",
-   "gain": 20000
+   "gain": 10000
   },
   {
    "id": "lnryKqOozWk",
@@ -81,16 +107,16 @@
    "viewsText": "조회수 6.1천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "qZaeu4PJUps",
    "title": "롯데홈쇼핑이 직접 교육하는 커머스 인재 학교? #shorts #스브스뉴스",
-   "views": 23000,
-   "viewsText": "조회수 2.3만회",
+   "views": 26000,
+   "viewsText": "조회수 2.6만회",
    "published": "",
    "kind": "short",
-   "gain": 2000
+   "gain": 3000
   },
   {
    "id": "bvbHkNEO3t8",
@@ -331,33 +357,6 @@
    "title": "도넛계 1티어 크리스피크림 글레이즈드 #오리지널글레이즈드 #shorts #스브스뉴스",
    "views": 17000,
    "viewsText": "조회수 1.7만회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "_4_l01_sGrA",
-   "title": "프로야구 암표, 잡고 싶어도 못 잡는 이유 #야구암표 #shorts #스브스뉴스",
-   "views": 17000,
-   "viewsText": "조회수 1.7만회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "H6h8ra11H5U",
-   "title": "지진 경보 울리고 8분 뒤 벌어진 일 #shorts #스브스뉴스",
-   "views": 38000,
-   "viewsText": "조회수 3.8만회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "E07k_Tu50w0",
-   "title": "안세영, 6점 차 뒤집고 기적의 역전승 #shorts #스브스뉴스",
-   "views": 95000,
-   "viewsText": "조회수 9.5만회",
    "published": "",
    "kind": "short",
    "gain": 0

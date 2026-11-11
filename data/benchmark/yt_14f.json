@@ -3,7 +3,7 @@
  "name": "14F 일사에프 (MBC)",
  "channel": "https://www.youtube.com/@14FMBC",
  "channelId": "UCLKuglhGlMmDteQKoniENIQ",
- "checkedAt": "2026-11-11T19:36+09:00",
+ "checkedAt": "2026-11-11T22:50+09:00",
  "videos": [
   {
    "id": "Dy-NgSHc7cs",
@@ -11,12 +11,12 @@
    "published": "2026-11-11T09:30:36+00:00",
    "url": "https://www.youtube.com/watch?v=Dy-NgSHc7cs",
    "shorts": false,
-   "views": 3227,
-   "likes": 87,
-   "viewsGain": null,
-   "isNew": true,
-   "median": 69762.5,
-   "multiple": 0.0
+   "views": 25102,
+   "likes": 203,
+   "viewsGain": 21875,
+   "isNew": false,
+   "median": 70475.0,
+   "multiple": 0.4
   },
   {
    "id": "rwdiyA_GxIY",
@@ -24,12 +24,12 @@
    "published": "2026-11-11T08:30:36+00:00",
    "url": "https://www.youtube.com/watch?v=rwdiyA_GxIY",
    "shorts": false,
-   "views": 7314,
-   "likes": 243,
-   "viewsGain": null,
-   "isNew": true,
-   "median": 69762.5,
-   "multiple": 0.1
+   "views": 39825,
+   "likes": 436,
+   "viewsGain": 32511,
+   "isNew": false,
+   "median": 70475.0,
+   "multiple": 0.6
   },
   {
    "id": "yJ40uku5fg0",
@@ -37,11 +37,11 @@
    "published": "2026-11-11T03:00:26+00:00",
    "url": "https://www.youtube.com/shorts/yJ40uku5fg0",
    "shorts": true,
-   "views": 7144,
-   "likes": 69,
-   "viewsGain": null,
-   "isNew": true,
-   "median": 7374,
+   "views": 9308,
+   "likes": 80,
+   "viewsGain": 2164,
+   "isNew": false,
+   "median": 9308,
    "multiple": 1.0
   },
   {
@@ -50,11 +50,11 @@
    "published": "2026-11-10T09:45:05+00:00",
    "url": "https://www.youtube.com/watch?v=zPC08gXKTag",
    "shorts": false,
-   "views": 28074,
-   "likes": 168,
-   "viewsGain": 6500,
+   "views": 30452,
+   "likes": 175,
+   "viewsGain": 2378,
    "isNew": false,
-   "median": 69762.5,
+   "median": 70475.0,
    "multiple": 0.4
   },
   {
@@ -63,12 +63,12 @@
    "published": "2026-11-10T08:30:35+00:00",
    "url": "https://www.youtube.com/watch?v=H7Mr65NjD7g",
    "shorts": false,
-   "views": 411423,
-   "likes": 2169,
-   "viewsGain": 119679,
+   "views": 448875,
+   "likes": 2265,
+   "viewsGain": 37452,
    "isNew": false,
-   "median": 69762.5,
-   "multiple": 5.9
+   "median": 70475.0,
+   "multiple": 6.4
   },
   {
    "id": "NlFjqf5_TH4",
@@ -76,11 +76,11 @@
    "published": "2026-11-09T09:30:21+00:00",
    "url": "https://www.youtube.com/watch?v=NlFjqf5_TH4",
    "shorts": false,
-   "views": 63009,
-   "likes": 369,
-   "viewsGain": 5356,
+   "views": 64274,
+   "likes": 374,
+   "viewsGain": 1265,
    "isNew": false,
-   "median": 69762.5,
+   "median": 70475.0,
    "multiple": 0.9
   },
   {
@@ -89,11 +89,11 @@
    "published": "2026-11-09T09:00:25+00:00",
    "url": "https://www.youtube.com/watch?v=RpOT3aIsli8",
    "shorts": false,
-   "views": 271166,
-   "likes": 1114,
-   "viewsGain": 23209,
+   "views": 276801,
+   "likes": 1123,
+   "viewsGain": 5635,
    "isNew": false,
-   "median": 69762.5,
+   "median": 70475.0,
    "multiple": 3.9
   },
   {
@@ -102,12 +102,12 @@
    "published": "2026-11-09T03:00:18+00:00",
    "url": "https://www.youtube.com/shorts/OTeGIZUhKjo",
    "shorts": true,
-   "views": 7374,
-   "likes": 89,
-   "viewsGain": 847,
+   "views": 7579,
+   "likes": 95,
+   "viewsGain": 205,
    "isNew": false,
-   "median": 7374,
-   "multiple": 1.0
+   "median": 9308,
+   "multiple": 0.8
   },
   {
    "id": "eJAtWi5dWco",
@@ -115,12 +115,12 @@
    "published": "2026-11-08T04:00:37+00:00",
    "url": "https://www.youtube.com/shorts/eJAtWi5dWco",
    "shorts": true,
-   "views": 27420,
+   "views": 27527,
    "likes": 128,
-   "viewsGain": 755,
+   "viewsGain": 107,
    "isNew": false,
-   "median": 7374,
-   "multiple": 3.7
+   "median": 9308,
+   "multiple": 3.0
   },
   {
    "id": "-5SuOuqeZ90",
@@ -128,11 +128,11 @@
    "published": "2026-11-08T04:00:12+00:00",
    "url": "https://www.youtube.com/watch?v=-5SuOuqeZ90",
    "shorts": false,
-   "views": 365326,
-   "likes": 872,
-   "viewsGain": 26024,
+   "views": 366622,
+   "likes": 879,
+   "viewsGain": 1296,
    "isNew": false,
-   "median": 69762.5,
+   "median": 70475.0,
    "multiple": 5.2
   },
   {
@@ -141,11 +141,11 @@
    "published": "2026-11-07T04:00:36+00:00",
    "url": "https://www.youtube.com/watch?v=KT1XfcUxmw0",
    "shorts": false,
-   "views": 181296,
-   "likes": 766,
-   "viewsGain": 3200,
+   "views": 182243,
+   "likes": 768,
+   "viewsGain": 947,
    "isNew": false,
-   "median": 69762.5,
+   "median": 70475.0,
    "multiple": 2.6
   },
   {
@@ -154,11 +154,11 @@
    "published": "2026-11-06T09:11:16+00:00",
    "url": "https://www.youtube.com/watch?v=BYhL-fwDxcg",
    "shorts": false,
-   "views": 30632,
+   "views": 30637,
    "likes": 150,
-   "viewsGain": 160,
+   "viewsGain": 5,
    "isNew": false,
-   "median": 69762.5,
+   "median": 70475.0,
    "multiple": 0.4
   },
   {
@@ -167,11 +167,11 @@
    "published": "2026-11-06T08:30:29+00:00",
    "url": "https://www.youtube.com/watch?v=kycuo7xf6zk",
    "shorts": false,
-   "views": 76516,
-   "likes": 325,
-   "viewsGain": 1190,
+   "views": 76676,
+   "likes": 326,
+   "viewsGain": 160,
    "isNew": false,
-   "median": 69762.5,
+   "median": 70475.0,
    "multiple": 1.1
   },
   {
@@ -180,12 +180,12 @@
    "published": "2026-11-06T03:00:05+00:00",
    "url": "https://www.youtube.com/shorts/raKKyS-VS5k",
    "shorts": true,
-   "views": 7330,
+   "views": 7345,
    "likes": 35,
-   "viewsGain": 63,
+   "viewsGain": 15,
    "isNew": false,
-   "median": 7374,
-   "multiple": 1.0
+   "median": 9308,
+   "multiple": 0.8
   },
   {
    "id": "UjJznEbPKrw",
@@ -193,56 +193,49 @@
    "published": "2026-11-05T23:00:28+00:00",
    "url": "https://www.youtube.com/shorts/UjJznEbPKrw",
    "shorts": true,
-   "views": 14697,
+   "views": 14716,
    "likes": 171,
-   "viewsGain": 52,
+   "viewsGain": 19,
    "isNew": false,
-   "median": 7374,
-   "multiple": 2.0
+   "median": 9308,
+   "multiple": 1.6
   }
  ],
  "viral": [
   {
    "title": "국방비 112조 사우디는 왜 후티 반군에 쩔쩔맬까? (박현도X알파고) ㅣ10분 토론 / 14F",
    "url": "https://www.youtube.com/watch?v=H7Mr65NjD7g",
-   "views": 411423,
-   "multiple": 5.9,
+   "views": 448875,
+   "multiple": 6.4,
    "shorts": false
   },
   {
    "title": "미국 증시 폭락 이유ㅣ테슬라, 스페이스X 양도세 논란ㅣ주식 결제주기 단축 등 4가지 🥬경제 이슈🥬",
    "url": "https://www.youtube.com/watch?v=-5SuOuqeZ90",
-   "views": 365326,
+   "views": 366622,
    "multiple": 5.2,
    "shorts": false
   },
   {
    "title": "???: 한국 프랜차이즈 많이 예뻐해 주고 싶어요 :) 🥄ㅣ돈슐랭 / 14F",
    "url": "https://www.youtube.com/watch?v=RpOT3aIsli8",
-   "views": 271166,
+   "views": 276801,
    "multiple": 3.9,
    "shorts": false
   },
   {
    "title": "3시간 웨이팅해서 사는 라면 백팩 ㄷㄷ #shorts",
    "url": "https://www.youtube.com/shorts/eJAtWi5dWco",
-   "views": 27420,
-   "multiple": 3.7,
+   "views": 27527,
+   "multiple": 3.0,
    "shorts": true
   },
   {
    "title": "웨이팅만 3시간! 구미라면축제에서 난리 난 라면의 정체는? | 선발대 / 14F",
    "url": "https://www.youtube.com/watch?v=KT1XfcUxmw0",
-   "views": 181296,
+   "views": 182243,
    "multiple": 2.6,
    "shorts": false
-  },
-  {
-   "title": "북극항로에 베팅한 한국의 큰 그림? #shorts",
-   "url": "https://www.youtube.com/shorts/UjJznEbPKrw",
-   "views": 14697,
-   "multiple": 2.0,
-   "shorts": true
   }
  ]
 }

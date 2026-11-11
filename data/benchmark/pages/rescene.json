@@ -1,55 +1,59 @@
 {
  "name": "RESCENE 공식",
  "channel": "https://www.youtube.com/@RESCENE_official",
- "checkedAt": "2026-11-11T19:36+09:00",
+ "checkedAt": "2026-11-11T22:50+09:00",
  "subscribers": "137만",
  "videos": [
   {
    "id": "85TuH4Jqu4s",
    "title": "인사이드 아웃 ✨",
-   "views": 16000,
-   "viewsText": "조회수 1.6만회",
+   "views": 69000,
+   "viewsText": "조회수 6.9만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 53000
   },
   {
    "id": "9sVO6OY1_84",
    "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #박건욱 선배님@ZB1_official",
-   "views": 29000,
-   "viewsText": "조회수 2.9만회",
+   "views": 74000,
+   "viewsText": "조회수 7.4만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 45000
   },
   {
    "id": "b-9smM2N5sk",
    "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #서희 님@TUIDE_official",
-   "views": 76000,
-   "viewsText": "조회수 7.6만회",
+   "views": 130000,
+   "viewsText": "조회수 13만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 54000
   },
   {
    "id": "ZZJHE7xBDJQ",
    "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #은석 선배님@RIIZE_official",
-   "views": 91000,
-   "viewsText": "조회수 9.1만회",
+   "views": 130000,
+   "viewsText": "조회수 13만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 39000
   },
   {
    "id": "kOmL4DDTEYw",
    "title": "얍",
-   "views": 530000,
-   "viewsText": "조회수 53만회",
+   "views": 570000,
+   "viewsText": "조회수 57만회",
    "published": "",
    "kind": "short",
-   "gain": 80000
+   "gain": 40000
   },
   {
    "id": "TL5LSvvgjDw",
    "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #리리 님@heartofwoman_officl",
-   "views": 220000,
-   "viewsText": "조회수 22만회",
+   "views": 230000,
+   "viewsText": "조회수 23만회",
    "published": "",
    "kind": "short",
    "gain": 10000
@@ -57,8 +61,8 @@
   {
    "id": "eDinqteZYUM",
    "title": "Dancing Queen 👑",
-   "views": 290000,
-   "viewsText": "조회수 29만회",
+   "views": 300000,
+   "viewsText": "조회수 30만회",
    "published": "",
    "kind": "short",
    "gain": 10000
@@ -102,11 +106,11 @@
   {
    "id": "3XMFZbIkVqw",
    "title": "Stop",
-   "views": 98000,
-   "viewsText": "조회수 9.8만회",
+   "views": 99000,
+   "viewsText": "조회수 9.9만회",
    "published": "",
    "kind": "short",
-   "gain": 2000
+   "gain": 1000
   },
   {
    "id": "IrcrSlCCkGo",
@@ -129,11 +133,11 @@
   {
    "id": "Vo9WrMtd0bY",
    "title": "함께해줘",
-   "views": 440000,
-   "viewsText": "조회수 44만회",
+   "views": 450000,
+   "viewsText": "조회수 45만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "A5PB2NXHkzY",
@@ -259,7 +263,7 @@
    "viewsText": "조회수 83만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "Es3qasE2w7w",
@@ -313,7 +317,7 @@
    "viewsText": "조회수 123만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "HN7La9KN2MY",
@@ -327,11 +331,11 @@
   {
    "id": "k7y2yvkFJ1k",
    "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #애니 님",
-   "views": 1400000,
-   "viewsText": "조회수 140만회",
+   "views": 1410000,
+   "viewsText": "조회수 141만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "zHwTN5Yu-mI",
