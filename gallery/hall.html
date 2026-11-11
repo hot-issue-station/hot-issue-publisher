@@ -2134,7 +2134,7 @@ G.openStatue = m => { const ci=CONTENT.statues?.[m.id]||{}, st = m.story ? (type
   const loc=G.lang==="zh"?"zh-TW":G.lang, bd=/^\d\d-\d\d$/.test(ci.birthday||"") ? new Date(2000,+ci.birthday.slice(0,2)-1,+ci.birthday.slice(3)).toLocaleDateString(loc,{month:"long",day:"numeric"}) : "";
   const facts=[ci.position ? G.t("stPos",{p:G.nm(ci.position)}) : "", bd ? G.t("stBday",{d:bd}) : ""].filter(Boolean).join(" · ");
   const src=(ci.sources||[]).filter(u=>safeUrl(u)).slice(0,3);
-  openItem({type:"text", title: G.lang==="ko" ? `${m.name} · ${m.name_en}` : m.name_en, desc:st,
+  openItem({type:"text", key:"m_"+m.id, title: G.lang==="ko" ? `${m.name} · ${m.name_en}` : m.name_en, desc:st,
     html:`${m.photo ? `<img class="prodImg" src="https://i.ytimg.com/vi/${encodeURIComponent(m.photo.id)}/hqdefault.jpg" alt="${esc(m.photo.title)}" loading="lazy"><p class="src">YouTube · ${esc(m.photo.channel||"")}</p>` : ""}${facts ? `<p class="sfacts">${esc(facts)}</p>` : ""}${m.catch ? `<p class="sfacts">💬 ${esc(G.t("stCatch"))}: ${esc(G.nm(m.catch))}</p>` : ""}${m.photo ? `<button class="contactBtn" data-statue-yt="1">▶ ${esc(G.t("stWatch"))}</button>` : ""}${st && src.length ? `<p class="src">${esc(G.t("src"))}: ${src.map(u=>`<a class="srcmini" href="${esc(safeUrl(u).href)}" target="_blank" rel="noopener">${esc(hostOf(u))}</a>`).join(" ")}</p>` : ""}<p class="contactNote">${esc(G.t(m.photo ? "stNoteP" : "stNote"))}</p>`});
   const yb=document.querySelector('#sheet [data-statue-yt]'); if(yb) yb.onclick=()=>G.openItem({id:m.photo.id, kind:"long", title:m.photo.title, channel:m.photo.channel}); };
 
@@ -2193,10 +2193,12 @@ function openItem(it, ctx={}){
     loadInstagram(); playing=true; showPicks=false;
     title = it.caption || it.date || "Instagram";
     srcName = "@" + (it.account || hall?.official?.igHandle || "instagram"); srcUrl=url; srcBtn=G.t("openIG");
+    vid = "ig_" + (url.match(/\/(?:p|reel)\/([\w-]+)/)?.[1] || "x");   // 사진에도 좋아요·갤러리 댓글(대표 11/12 03:42)
   } else if(it.type==="goods"){
     p.className="player"; p.innerHTML=""; title=G.t("goodsTitle"); picks=it.goods||[];
   } else if(it.type==="text"){
     p.className="player"; p.innerHTML=""; title=it.title||""; desc=it.desc||""; extra=it.html||""; showPicks=false;
+    if(it.key) vid = it.key;   // 멤버 정보 카드 등에도 좋아요·댓글
   } else {
     const kind = it.kind==="short" ? "short" : "long";
     p.className="player "+kind;
@@ -2266,7 +2268,7 @@ const fmtD = t => { try{ return new Date(t).toLocaleDateString(G.lang==="zh"?"zh
 function drawComments(vid, srcUrl){
   cmtVid=vid; $("#cmt").hidden=!vid; $("#ytStats").hidden=true; if(!vid) return;
   $("#ytWrite").href=srcUrl||"#"; $("#cLocal").hidden = COMMENTS.mode!=="local";
-  const hasKey=!!(YT_API.key && /^[\w-]{20,60}$/.test(YT_API.key)); $("#ytTab").hidden=!hasKey; setCTab("g");
+  const hasKey=!!(YT_API.key && /^[\w-]{20,60}$/.test(YT_API.key)) && /^[\w-]{11}$/.test(vid) && !/^(ig|m)_/.test(vid); $("#ytTab").hidden=!hasKey; setCTab("g");
   $("#cText").value=""; $("#cCount").textContent="0/"+COMMENT_MAX;
   $("#cName").value=store.get("duksim-cname")||"";
   listComments(vid);
