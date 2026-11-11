@@ -516,8 +516,11 @@ function varsOf(c,extra){ const l=last(c); return Object.assign({이름:c.n,가�
 function smsLink(tel,body){ tel=digits(tel); return tel?`sms:${tel}?body=${encodeURIComponent(body)}`:"" }
 
 /* ── 오늘 ─────────────────────────────────────── */
+/* 예약 중심 배치: 같은 칸을 CSS order로 순서만 바꿈 (헤어는 원래 순서 그대로) */
+const RES_ORDER={bkToday:1,bkFree:2,rvBox:3,bkTmr:4,tSumBox:5,tRecBtn:5,signal:5,dayEnd:6,tRec:6,tLong:7,tShop:8,tPicks:9};
+function layToday(){ const res=isRes(); $("today").classList.toggle("res",res); Object.keys(RES_ORDER).forEach(id=>{ $(id).style.order=res?RES_ORDER[id]:"" }) }
 function drawToday(){
-  drawBackupNote(); drawInstallNote(); drawBkBox();
+  layToday(); drawBackupNote(); drawInstallNote(); drawBkBox(); drawDayEnd();
   /* 신호등: 이번 달 목표 대비, 달의 지난 날짜만큼 따라왔는지 */
   const now=new Date(), dim=new Date(now.getFullYear(),now.getMonth()+1,0).getDate(), pace=now.getDate()/dim;
   let month=0; db.c.forEach(c=>c.r.forEach(r=>{ if(r.d.slice(0,7)===today().slice(0,7)) month+=Number(r.price||0) }));
@@ -530,8 +533,9 @@ function drawToday(){
   drawPicks();
   $("tList").innerHTML=rows.map(([c,r])=>`<div class="rec" onclick="openC('${c.id}')"><div class="t">${esc(c.n)}</div><div class="d">${esc(r.t)} · ${won(r.price)}</div></div>`).join("")||`<p class="note">아직 오늘 기록이 없어요.</p>`;
   const rv=revisitDue(), rvIds=new Set(rv.map(x=>x.c.id));
-  $("rvBox").innerHTML=F("rv")?`<h2>다시 오실 때 된 손님</h2><p class="note" style="margin-top:0">시술마다 정해 둔 주기가 된 분이에요. 문자 문구는 고르고 고치실 수 있어요.</p>`+
-    (rv.slice(0,15).map(x=>`<div class="card cust"><div onclick="openC('${x.c.id}')"><b>${esc(x.c.n)}</b><small>${esc(x.l.t)} · ${x.dd}일 전 (보통 ${x.w}주)</small></div><div style="display:flex;gap:6px;flex:none"><button class="chip go" onclick="rvSms('${x.c.id}')">문자</button><button class="chip" onclick="rvSkip('${x.c.id}')" aria-label="이번엔 넘기기">넘기기</button></div></div>`).join("")||`<p class="note">지금은 없어요.</p>`):"";
+  const res=isRes();
+  $("rvBox").innerHTML=F("rv")?`<h2>${res?"리터치 때 된 손님":"다시 오실 때 된 손님"}</h2><p class="note" style="margin-top:0">${res?"시술마다 정해 둔 리터치 주기(보통 3~4주)가 된 분이에요.":"시술마다 정해 둔 주기가 된 분이에요."} 문자 문구는 고르고 고치실 수 있어요.</p>`+
+    (rv.slice(0,15).map(x=>`<div class="card cust"><div onclick="openC('${x.c.id}')"><b>${esc(x.c.n)}</b><small>${esc(x.l.t)} · ${x.dd}일 전 (보통 ${x.w}주)</small></div><div style="display:flex;gap:6px;flex:none">${x.c.p?`<button class="chip go" onclick="rvSms('${x.c.id}')">문자</button>`:`<button class="chip" onclick="qrOpen('${x.c.id}')" aria-label="번호 남기기 QR">번호 QR</button>`}<button class="chip" onclick="rvSkip('${x.c.id}')" aria-label="이번엔 넘기기">넘기기</button></div></div>`).join("")||`<p class="note">지금은 없어요.</p>`):"";
   const longs=db.c.filter(c=>lastD(c)&&days(lastD(c))>=60&&!rvIds.has(c.id)).sort((a,b)=>lastD(a).localeCompare(lastD(b))).slice(0,10);
   $("longList").innerHTML=longs.map(c=>`<div class="card cust"><div onclick="openC('${c.id}')"><b>${esc(c.n)}</b><small>${days(lastD(c))}일 전${last(c)?` · ${esc(last(c).t)}`:""}</small></div>${c.p?`<a class="chip go" href="${smsHref(c)}">문자</a>`:""}</div>`).join("")||`<p class="note">모두 잘 오고 계세요!</p>`;
 }
