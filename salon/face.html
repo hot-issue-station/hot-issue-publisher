@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>얼굴형·스타일 추천</title>
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#c2410c">
+<link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="description" content="손님 정면 사진으로 얼굴형을 재고 어울리는 머리 모양·염색 조합을 알려 주는 단골 수첩 도구 (사진은 휴대폰 안에서만 쓰여요)">
+<style>
+:root{--bg:#fff8f3;--card:#fff;--tx:#2b2220;--sub:#7a6a64;--main:#c2410c;--line:#ead9cf;--soft:#fdeee4;--ok:#16a34a}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:"Noto Sans KR",system-ui,sans-serif;font-size:20px;line-height:1.45}
+header{background:var(--main);color:#fff;padding:16px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:3}
+header h1{margin:0;font-size:25px}
+header a{background:#fff2;color:#fff;border:1px solid #fff8;border-radius:10px;padding:8px 12px;font-size:17px;text-decoration:none}
+main{max-width:560px;margin:0 auto;padding:16px 16px 40px}
+.card{background:var(--card);border:2px solid var(--line);border-radius:16px;padding:14px 16px;margin-top:12px}
+.privacy{background:var(--soft);border:2px solid #f3c9ad;border-radius:16px;padding:14px 16px;font-weight:700;color:var(--main);display:flex;gap:10px;align-items:flex-start}
+.privacy span{font-size:26px;line-height:1}
+.agree{display:flex;gap:14px;align-items:center;font-size:22px;font-weight:700;cursor:pointer;margin:0}
+.agree input{width:32px;height:32px;accent-color:var(--main);flex:none;margin:0}
+.big{display:block;width:100%;font-size:22px;font-weight:700;padding:16px;border:0;border-radius:14px;background:var(--main);color:#fff;margin-top:12px;text-align:center;cursor:pointer;font-family:inherit;text-decoration:none}
+.ghost{background:var(--soft);color:var(--main)}
+.hide{display:none!important}
+.note{color:var(--sub);font-size:17px;line-height:1.5;margin-top:10px}
+h2{font-size:21px;margin:22px 0 6px}
+h2 small{font-weight:400;color:var(--sub);font-size:17px}
+.msg{border-radius:14px;padding:14px 16px;margin-top:12px;font-size:20px;line-height:1.5}
+.msg.info{background:#fff;border:2px solid var(--line)}
+.msg.warn{background:#fffaf2;border:2px solid #f5c48a;color:#7c2d12}
+.msg.err{background:#fff4e5;border:2px solid #f5c48a;color:#7c2d12}
+.spin{display:inline-block;width:20px;height:20px;border:3px solid var(--line);border-top-color:var(--main);border-radius:50%;animation:sp 1s linear infinite;vertical-align:-4px;margin-right:6px}
+@keyframes sp{to{transform:rotate(360deg)}}
+.seg{display:flex;background:#fff;border:2px solid var(--line);border-radius:14px;overflow:hidden;margin-top:8px}
+.seg button{flex:1;border:0;background:none;padding:12px 2px;font-size:18px;color:var(--sub);font-family:inherit;cursor:pointer;word-break:keep-all;line-height:1.25}
+.seg button.on{background:var(--main);color:#fff;font-weight:700}
+.btns{display:flex;gap:8px;margin-top:10px}
+.btns label{flex:1;text-align:center;font-size:21px;font-weight:700;padding:16px 2px;border-radius:14px;background:var(--main);color:#fff;cursor:pointer}
+.btns label.g{background:var(--soft);color:var(--main)}
+.btns.locked label{background:#d9c9c0;color:#fff;cursor:not-allowed}
+.stage{position:relative;margin-top:12px;border-radius:14px;overflow:hidden;background:var(--soft);border:2px solid var(--line)}
+.stage canvas{display:block;width:100%;height:auto}
+.shape{text-align:center;border:3px solid var(--main);background:#fff;border-radius:18px;padding:16px;margin-top:16px}
+.shape small{display:block;color:var(--sub);font-size:18px}
+.shape b{display:block;font-size:36px;color:var(--main);margin:4px 0}
+.shape p{margin:6px 0 0;font-size:19px;line-height:1.5;word-break:keep-all}
+.combos{display:flex;flex-direction:column;gap:10px;margin-top:8px}
+.combo{display:flex;align-items:center;gap:12px;background:#fff;border:2px solid var(--line);border-radius:16px;padding:12px 14px;text-decoration:none;color:var(--tx)}
+.combo .no{flex:none;width:36px;height:36px;border-radius:50%;background:var(--main);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center}
+.combo .tx{flex:1;min-width:0;line-height:1.35}
+.combo .tx b{display:block;font-size:21px}
+.combo .tx span{font-size:17px;color:var(--sub)}
+.combo i{flex:none;width:40px;height:40px;border-radius:50%;border:2px solid #0002}
+.combo .go{flex:none;color:var(--main);font-weight:700;font-size:17px}
+details{margin-top:12px;background:#fff;border:2px solid var(--line);border-radius:14px;padding:10px 14px}
+details summary{cursor:pointer;font-size:18px;color:var(--sub)}
+details table{width:100%;border-collapse:collapse;margin-top:8px;font-size:17px}
+details td{padding:4px 0;border-top:1px solid var(--line)}
+details td:last-child{text-align:right;font-variant-numeric:tabular-nums}
+</style>
+</head>
+<body>
+<header><h1>얼굴형 · 스타일 추천</h1><a href="index.html">← 수첩</a></header>
+<main>
+  <div class="privacy"><span>🔒</span><div>사진은 이 휴대폰 안에서만 쓰여요. 저장하거나 어디로 보내지 않아요.</div></div>
+  <div class="card">
+    <label class="agree"><input type="checkbox" id="agree"> 손님이 사진 촬영에 동의했어요</label>
+  </div>
+
+  <h2>1. 어떤 스타일을 볼까요?</h2>
+  <div class="seg" id="gender" role="radiogroup" aria-label="추천 방향">
+    <button data-g="fem" class="on">여성 스타일 중심</button><button data-g="masc">남성 스타일 중심</button>
+  </div>
+
+  <h2>2. 정면 사진 <small>얼굴·이마·턱이 다 보이게</small></h2>
+  <div class="btns locked" id="btns">
+    <label for="cam">📷 찍기</label><label class="g" for="gal">고르기</label>
+  </div>
+  <input type="file" id="cam" class="hide" accept="image/*" capture="user" disabled>
+  <input type="file" id="gal" class="hide" accept="image/*" disabled>
+  <p class="note">밝은 곳에서, 머리를 뒤로 넘기거나 이마가 보이면 더 정확해요. 고개는 똑바로, 표정은 편하게 해 주세요.</p>
+
+  <div id="msg" class="msg info hide" role="status" aria-live="polite"></div>
+
+  <section id="res" class="hide">
+    <div class="stage"><canvas id="cv" aria-label="얼굴 윤곽과 잰 부분 표시"></canvas></div>
+    <div class="shape">
+      <small>손님 얼굴형</small>
+      <b id="shName"></b>
+      <p id="shDesc"></p>
+    </div>
+    <details>
+      <summary>잰 값 자세히 보기 (원장님 확인용)</summary>
+      <table id="nums"></table>
+    </details>
+
+    <h2>어울리는 조합 <small>눌러서 사진 위에 미리 보기</small></h2>
+    <div class="combos" id="combos"></div>
+    <p class="note" id="avoidTx"></p>
+    <p class="note">얼굴형은 사진으로 자동 계산한 참고 값이에요. 최종 판단은 원장님이 하세요. 피부 밝기는 조명에 따라 달라질 수 있어요.</p>
+    <button class="big ghost" id="againBtn">↺ 다른 손님 사진으로 다시</button>
+  </section>
+</main>
+
+<script>
+(function(){
+"use strict";
+const $=id=>document.getElementById(id);
+
+/* ── 설정 ── */
+const MP_VER="0.10.21";
+const MP_BASE="https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@"+MP_VER;
+const MODEL_URL="https://storage.googleapis.com/mediapipe-models/face_landmarker/face_landmarker/float16/latest/face_landmarker.task";
+const MAX_SIDE=960, MODEL_TIMEOUT=30000;
+/* 얼굴 윤곽 랜드마크 번호 (MediaPipe 얼굴 메시, 478점) */
+const IDX={top:10,chin:152,cheekL:234,cheekR:454,jawL:172,jawR:397,foreL:103,foreR:332,eyeL:33,eyeR:263,nose:1,skinL:205,skinR:425};
+const OVAL=[10,338,297,332,284,251,389,356,454,323,361,288,397,365,379,378,400,377,152,148,176,149,150,136,172,58,132,93,234,127,162,21,54,103,67,109];
+
+/* ── 얼굴형 기준값 (사진으로 실제 손님 얼굴을 여러 명 재 보고 다듬어야 하는 시작값) ── */
+const TH={longLen:1.38, wideLen:1.20, squareJaw:0.82, heartFore:0.12, heartJaw:0.74, diaFore:0.80, diaJaw:0.75, frontalTol:0.12};
+
+/* ── 머리 모양·색 이름 (color.html의 틀·색 id와 같음) ── */
+const STYLE={short:"숏컷",twoblock:"투블럭 남성 커트",bob:"단발 보브",layered:"레이어드 중단발",longstraight:"긴 생머리",longwave:"긴 웨이브",hippie:"히피펌",bangs:"앞머리 있음",nobangs:"앞머리 없음 (옆 가르마)",pony:"포니테일"};
+const COLOR={natural:["자연 흑갈색","#3b2a22"],choco:["초코 브라운","#5a3420"],ashbrown:["애쉬 브라운","#6e5e55"],ashgray:["애쉬 그레이","#8b8b8e"],milktea:["밀크티 베이지","#b59c82"],wine:["레드 와인","#6e1f2e"],pinkbrown:["핑크 브라운","#9c5c62"],blonde:["블론드","#caa66c"]};
+
+/* 얼굴형별 추천 (여성/남성 중심 각 3개, 염색 3개, 설명, 피하면 좋은 것) */
+const SHAPES={
+  oval:{name:"계란형",desc:"이마·광대·턱선이 고르게 이어진 균형 잡힌 얼굴이에요. 대부분의 스타일이 잘 어울려요.",
+    fem:["bangs","layered","bob"],masc:["short","twoblock","nobangs"],col:["milktea","ashbrown","wine"],
+    avoid:"크게 피할 스타일은 없어요. 얼굴선을 그대로 보여 주는 스타일이 가장 좋아요."},
+  round:{name:"둥근형",desc:"얼굴 길이와 너비가 비슷하고 턱선이 부드러워요. 세로선을 살리면 갸름해 보여요.",
+    fem:["longstraight","layered","nobangs"],masc:["short","twoblock","nobangs"],col:["ashbrown","choco","wine"],
+    avoid:"볼 옆으로 부풀리는 볼륨과 턱선 길이의 일자 단발은 얼굴이 더 둥글어 보일 수 있어요."},
+  long:{name:"긴형",desc:"얼굴이 세로로 긴 편이에요. 앞머리나 옆 볼륨으로 가로 폭을 더해 주면 균형이 좋아져요.",
+    fem:["bangs","bob","longwave"],masc:["bangs","twoblock","short"],col:["milktea","pinkbrown","ashbrown"],
+    avoid:"가운데 가르마의 긴 생머리처럼 세로선을 더 길게 하는 스타일은 얼굴이 더 길어 보여요."},
+  square:{name:"각진형",desc:"턱선과 광대가 또렷하고 이마 폭도 넓은 편이에요. 부드러운 웨이브나 층으로 각을 풀어 주면 좋아요.",
+    fem:["longwave","layered","hippie"],masc:["nobangs","short","bangs"],col:["ashbrown","wine","choco"],
+    avoid:"턱선 길이에서 딱 끊기는 일자 단발은 각이 더 강조될 수 있어요."},
+  heart:{name:"하트형(역삼각)",desc:"이마·광대가 넓고 턱이 갸름해요. 턱선 쪽에 볼륨을 주면 균형이 맞아요.",
+    fem:["bob","longwave","bangs"],masc:["nobangs","short","twoblock"],col:["pinkbrown","milktea","ashbrown"],
+    avoid:"이마를 완전히 드러내는 짧은 윗머리와 정수리 볼륨은 이마가 더 넓어 보여요."},
+  diamond:{name:"광대형(마름모)",desc:"광대가 가장 넓고 이마·턱은 상대적으로 좁아요. 이마와 턱선을 채워 주는 스타일이 어울려요.",
+    fem:["bangs","bob","layered"],masc:["bangs","nobangs","twoblock"],col:["choco","wine","milktea"],
+    avoid:"광대 높이에서 볼륨이 끝나는 스타일은 광대가 더 도드라져 보여요."}
+};
+
+/* ── 계산 ── */
+function measure(lm,w,h){
+  const P=i=>({x:lm[i].x*w,y:lm[i].y*h});
+  const a=P(IDX.eyeL),b=P(IDX.eyeR),ang=Math.atan2(b.y-a.y,b.x-a.x),c=Math.cos(-ang),s=Math.sin(-ang);
+  const R=i=>{const p=P(i);return{x:p.x*c-p.y*s,y:p.x*s+p.y*c};}; /* 고개 기울기 보정 */
+  const cheek=Math.abs(R(IDX.cheekR).x-R(IDX.cheekL).x);
+  const len=Math.abs(R(IDX.chin).y-R(IDX.top).y);
+  const jaw=Math.abs(R(IDX.jawR).x-R(IDX.jawL).x);
+  const fore=Math.abs(R(IDX.foreR).x-R(IDX.foreL).x);
+  const t=(R(IDX.nose).x-R(IDX.cheekL).x)/(cheek||1); /* 정면이면 0.5 근처 */
+  return {cheek,len,jaw,fore,r1:len/cheek,r2:jaw/cheek,r3:fore/cheek,yaw:Math.abs(t-0.5),tiltDeg:ang*180/Math.PI};
+}
+function classify(m){
+  const {r1,r2,r3}=m;
+  if(r1>=TH.longLen)return "long";
+  if(r1<TH.wideLen)return r2>=TH.squareJaw?"square":"round";
+  if(r3-r2>=TH.heartFore&&r2<=TH.heartJaw)return "heart";
+  if(r2>=TH.squareJaw)return "square";
+  if(r3<=TH.diaFore&&r2<=TH.diaJaw)return "diamond";
+  return "oval";
+}
+function pickColors(shape,bright){
+  let cols=SHAPES[shape].col.slice();
+  if(bright==="dark"){cols=cols.filter(x=>!["ashgray","blonde","milktea"].includes(x));["choco","wine","natural"].forEach(x=>{if(!cols.includes(x))cols.push(x);});}
+  return cols.slice(0,3);
+}
+function brightness(ctx,lm,w,h){
+  const vals=[];
+  for(const i of [IDX.skinL,IDX.skinR]){
+    const x=Math.round(lm[i].x*w),y=Math.round(lm[i].y*h),r=5;
+    if(x<r||y<r||x>w-r||y>h-r)continue;
+    const d=ctx.getImageData(x-r,y-r,2*r+1,2*r+1).data;let sum=0,n=0;
+    for(let k=0;k<d.length;k+=4){sum+=0.3*d[k]+0.59*d[k+1]+0.11*d[k+2];n++;}
+    vals.push(sum/n);
+  }
+  if(!vals.length)return {level:"mid",v:null};
+  const v=vals.reduce((p,q)=>p+q,0)/vals.length;
+  return {level:v>=175?"bright":v<=115?"dark":"mid",v};
+}
+
+/* ── MediaPipe 얼굴 랜드마크 ── */
+let visionP=null,lmCache=null;
+function loadVision(){
+  if(visionP)return visionP;
+  visionP=(async()=>{
+    const mod=await import(MP_BASE+"/vision_bundle.mjs");
+    const fs=await mod.FilesetResolver.forVisionTasks(MP_BASE+"/wasm");
+    return {mod,fs};
+  })();
+  visionP.catch(()=>{visionP=null;});
+  return visionP;
+}
+async function detect(canvas){
+  const v=await loadVision();let lastErr=null;
+  const order=lmCache?[lmCache.d]:["GPU","CPU"];
+  for(const d of order){
+    try{
+      if(!lmCache||lmCache.d!==d){
+        lmCache={d,lm:await v.mod.FaceLandmarker.createFromOptions(v.fs,{baseOptions:{modelAssetPath:MODEL_URL,delegate:d},runningMode:"IMAGE",numFaces:2})};
+      }
+      return lmCache.lm.detect(canvas);
+    }catch(e){lastErr=e;console.warn("얼굴 인식 시도 실패",d,e&&e.message);if(lmCache){try{lmCache.lm.close();}catch(_){}lmCache=null;}}
+  }
+  const err=new Error("model-failed");err.cause=lastErr;throw err;
+}
+const withTimeout=p=>Promise.race([p,new Promise((_,no)=>setTimeout(()=>no(new Error("model-timeout")),MODEL_TIMEOUT))]);
+
+/* ── 화면 ── */
+const st={g:"fem",last:null};
+const msg=(html,kind)=>{const m=$("msg");m.className="msg "+(kind||"info");m.innerHTML=html;};
+const hideMsg=()=>$("msg").classList.add("hide");
+function setAgree(){
+  const on=$("agree").checked;
+  $("cam").disabled=$("gal").disabled=!on;
+  $("btns").classList.toggle("locked",!on);
+}
+$("agree").addEventListener("change",setAgree);
+$("btns").addEventListener("click",e=>{if(!$("agree").checked&&e.target.closest("label")){e.preventDefault();msg("먼저 위의 <b>손님이 사진 촬영에 동의했어요</b>를 눌러 주세요.","warn");}});
+$("gender").addEventListener("click",e=>{
+  const b=e.target.closest("button");if(!b)return;st.g=b.dataset.g;
+  [...$("gender").children].forEach(x=>x.classList.toggle("on",x===b));
+  if(st.last)showResult(st.last);
+});
+
+async function loadBitmap(file){
+  try{return await createImageBitmap(file,{imageOrientation:"from-image"});}
+  catch(_){
+    return await new Promise((ok,no)=>{const u=URL.createObjectURL(file),im=new Image();im.onload=()=>{URL.revokeObjectURL(u);ok(im);};im.onerror=()=>{URL.revokeObjectURL(u);no(new Error("bad-image"));};im.src=u;});
+  }
+}
+function toCanvas(img){
+  const iw=img.width||img.naturalWidth,ih=img.height||img.naturalHeight,k=Math.min(1,MAX_SIDE/Math.max(iw,ih));
+  const c=document.createElement("canvas");c.width=Math.max(1,Math.round(iw*k));c.height=Math.max(1,Math.round(ih*k));
+  c.getContext("2d",{willReadFrequently:true}).drawImage(img,0,0,c.width,c.height);return c;
+}
+
+async function onFile(file){
+  if(!file)return;
+  if(!$("agree").checked){msg("먼저 손님 동의를 눌러 주세요.","warn");return;}
+  $("res").classList.add("hide");
+  msg('<span class="spin"></span>얼굴을 찾고 있어요. 처음에는 프로그램을 받느라 조금 걸려요.');
+  let cv;
+  try{const img=await loadBitmap(file);cv=toCanvas(img);if(img.close)img.close();}
+  catch(_){msg("사진을 열지 못했어요. 다른 사진으로 해 주세요.","err");return;}
+  let res;
+  try{res=await withTimeout(detect(cv));}
+  catch(e){
+    console.warn(e);
+    msg(e&&e.message==="model-timeout"
+      ?"얼굴 인식 프로그램을 받는 데 오래 걸려요. 인터넷이 되는 곳에서 한 번 열어 두면 다음부터는 바로 돼요."
+      :"얼굴 인식을 시작하지 못했어요. 인터넷이 되는 곳에서 한 번 열어 두면 다음부터는 바로 돼요.","err");
+    return;
+  }
+  const faces=res.faceLandmarks||[];
+  if(!faces.length){msg("얼굴을 찾지 못했어요. 밝은 곳에서 얼굴 전체가 보이게 다시 찍어 주세요.","err");return;}
+  const lm=faces[0],m=measure(lm,cv.width,cv.height);
+  const warn=[];
+  if(faces.length>1)warn.push("사진에 얼굴이 여러 명 보여요. 가장 크게 찾은 한 명으로 계산했어요.");
+  if(m.yaw>TH.frontalTol)warn.push("얼굴이 옆으로 돌아가 있어 값이 달라질 수 있어요. 정면으로 다시 찍으면 더 정확해요.");
+  if(Math.abs(m.tiltDeg)>20)warn.push("고개가 많이 기울어 있어요. 똑바로 세우고 찍어 주세요.");
+  const shape=classify(m),b=brightness(cv.getContext("2d"),lm,cv.width,cv.height);
+  st.last={cv,lm,m,shape,bright:b,warn};
+  showResult(st.last);
+}
+
+function drawOverlay(L){
+  const {cv,lm}=L,out=$("cv"),w=cv.width,h=cv.height;out.width=w;out.height=h;
+  const x=out.getContext("2d");x.drawImage(cv,0,0);
+  const P=i=>[lm[i].x*w,lm[i].y*h];
+  x.lineJoin="round";x.lineCap="round";
+  x.strokeStyle="rgba(255,255,255,.9)";x.lineWidth=Math.max(3,w/200);x.beginPath();
+  OVAL.forEach((i,k)=>{const p=P(i);k?x.lineTo(p[0],p[1]):x.moveTo(p[0],p[1]);});x.closePath();x.stroke();
+  x.strokeStyle="#c2410c";x.lineWidth=Math.max(2,w/260);
+  for(const [a,b] of [[IDX.cheekL,IDX.cheekR],[IDX.jawL,IDX.jawR],[IDX.foreL,IDX.foreR],[IDX.top,IDX.chin]]){
+    const p=P(a),q=P(b);x.beginPath();x.moveTo(p[0],p[1]);x.lineTo(q[0],q[1]);x.stroke();
+    for(const r of [p,q]){x.fillStyle="#c2410c";x.beginPath();x.arc(r[0],r[1],Math.max(3,w/190),0,7);x.fill();}
+  }
+}
+
+function showResult(L){
+  const S=SHAPES[L.shape],styles=S[st.g],cols=pickColors(L.shape,L.bright.level);
+  drawOverlay(L);
+  $("shName").textContent=S.name;$("shDesc").textContent=S.desc;
+  const {m}=L,f=v=>v.toFixed(2);
+  $("nums").innerHTML=
+    `<tr><td>얼굴 길이 ÷ 광대 너비</td><td>${f(m.r1)}</td></tr>`+
+    `<tr><td>턱 너비 ÷ 광대 너비</td><td>${f(m.r2)}</td></tr>`+
+    `<tr><td>이마 너비 ÷ 광대 너비</td><td>${f(m.r3)}</td></tr>`+
+    `<tr><td>정면 정도 (0에 가까울수록 정면)</td><td>${f(m.yaw)}</td></tr>`+
+    `<tr><td>고개 기울기</td><td>${m.tiltDeg.toFixed(1)}°</td></tr>`+
+    `<tr><td>볼 밝기 (0~255)</td><td>${L.bright.v==null?"-":Math.round(L.bright.v)}</td></tr>`;
+  $("combos").innerHTML=styles.map((sid,i)=>{
+    const cid=cols[i%cols.length],c=COLOR[cid];
+    return `<a class="combo" href="color.html?tpl=${sid}&sw=${cid}">
+      <span class="no">${i+1}</span>
+      <span class="tx"><b>${STYLE[sid]}</b><span>+ ${c[0]}</span></span>
+      <i style="background:${c[1]}"></i><span class="go">보기 ›</span></a>`;}).join("");
+  $("avoidTx").textContent="참고: "+S.avoid+(L.bright.level==="dark"?" 피부 톤이 어두운 편으로 보여서 너무 밝은 색은 뺐어요.":"");
+  if(L.warn.length)msg(L.warn.join("<br>"),"warn");else hideMsg();
+  $("res").classList.remove("hide");
+  if(!showResult.once){showResult.once=1;$("res").scrollIntoView({behavior:"smooth",block:"start"});}
+}
+
+$("cam").addEventListener("change",e=>{onFile(e.target.files[0]);e.target.value="";});
+$("gal").addEventListener("change",e=>{onFile(e.target.files[0]);e.target.value="";});
+$("againBtn").addEventListener("click",()=>{st.last=null;showResult.once=0;$("res").classList.add("hide");hideMsg();window.scrollTo(0,0);});
+
+/* 시험용 연결 (화면 동작과 무관) */
+window.FaceLab={measure,classify,pickColors,SHAPES,STYLE,COLOR,TH,IDX,OVAL,st,showResult,drawOverlay};
+setAgree();
+})();
+if("serviceWorker" in navigator&&location.protocol!=="file:")navigator.serviceWorker.register("sw.js").catch(e=>console.warn("서비스워커 등록 실패",e));
+</script>
+</body>
+</html>

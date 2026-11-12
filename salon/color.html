@@ -768,6 +768,12 @@ $("tpls").addEventListener("click",e=>{
 });
 $("hideOrig").addEventListener("change",e=>{st.hide=e.target.checked;requestWork();});
 $("tplDye").addEventListener("change",e=>{st.tplDye=e.target.checked;requestWork();});
+/* 얼굴형 추천(face.html)에서 넘어온 경우: ?sw=색id&tpl=틀id 로 미리 골라 둠 (사진은 넘기지 않음) */
+(function(){
+  const q=new URLSearchParams(location.search),sw=SWATCHES.find(x=>x.id===q.get("sw")),tp=tplOf(q.get("tpl"));
+  if(sw){st.swId=sw.id;st.name=sw.name;st.hex=sw.hex;markSw();}
+  if(tp){st.tpl=tp.id;const b=[...$("tpls").children].find(x=>x.dataset.tpl===tp.id);[...$("tpls").children].forEach(x=>x.classList.toggle("on",x===b));}
+})();
 $("tplTools").addEventListener("click",e=>{
   const b=e.target.closest("button"),s=workSlot();if(!b||!s||st.tpl==="none")return;
   const p=poseOf(s);
