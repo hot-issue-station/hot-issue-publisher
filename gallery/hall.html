@@ -3061,12 +3061,12 @@ function start(THREE){
     const up=()=>G.go("lobby");
     const bs=textPlane(back, 2.2, 0.44, 384, (g,w,h)=>label(g,w,h,"#1e143c","#ffd640", G.t("toLobbyUp"), "", 34)); bs.position.set(0,4.05,0.05); relabel.push(bs.userData.redraw);
     bs.userData.act=up; clickables.push(bs); back.children.forEach(o=>{ if(o.isMesh && !o.userData.act){ o.userData.act=up; clickables.push(o); } });
-    spots.push({p:new THREE.Vector3(0,1.9,R-1.6), r:1.3, label:()=>G.t("toLobbyUp"), act:up});
+    spots.push({p:new THREE.Vector3(0,1.9,R-2.2), r:1.0, label:()=>G.t("toLobbyUp"), act:up});
     let t=0;
     return {scene:s, clickables, relabel, spots, cam:{pos:[0,1.7,3.8], yaw:0, pitch:0.06, zoom:1.1},
       animate: dt=>{ t+=dt; crystal.rotation.y+=dt*0.9; crystal.position.y=4.1+Math.sin(t*1.5)*0.08; ring.material.opacity=0.3+0.15*Math.sin(t*2); stars.material.opacity=0.7+0.25*Math.sin(t*0.8);
         orbs.forEach((o,i)=>{ o.position.y=3.3+Math.sin(t*1.8+i)*0.12; }); return true; },
-      walk:{spawn:[0,R-2.0,0], free:(x,z)=>{ const d=Math.hypot(x,z); return d<R-0.85 && !(z>R-2.3 && Math.abs(x)<1.1); }, camDist:2.8, camH:1.9, clampR:R-0.3}};
+      walk:{spawn:[0,R-3.0,0], free:(x,z)=>{ const d=Math.hypot(x,z); return d<R-0.85 && !(z>R-1.9 && Math.abs(x)<1.1); }, camDist:2.8, camH:1.9, clampR:R-0.3}};
   }
   function buildHub(hall){
     return buildRotunda({ color:hall.color, adPlace:"hall_top", backLabel:()=>G.t("toLobby"), onBack:()=>G.go("lobby"), photoKey:"hub", photoAngle:-(Math.PI-0.62),
