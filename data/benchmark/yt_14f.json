@@ -3,20 +3,46 @@
  "name": "14F 일사에프 (MBC)",
  "channel": "https://www.youtube.com/@14FMBC",
  "channelId": "UCLKuglhGlMmDteQKoniENIQ",
- "checkedAt": "2026-11-12T08:41+09:00",
+ "checkedAt": "2026-11-12T19:37+09:00",
  "videos": [
+  {
+   "id": "ilCY2YYGUkk",
+   "title": "마운자로 한번에 3개월치 사서 입국 가능…해외 ‘비만 치료제’ 반입 규정 변경 / 14F",
+   "published": "2026-11-12T09:26:28+00:00",
+   "url": "https://www.youtube.com/watch?v=ilCY2YYGUkk",
+   "shorts": false,
+   "views": 4664,
+   "likes": 150,
+   "viewsGain": null,
+   "isNew": true,
+   "median": 68198,
+   "multiple": 0.1
+  },
+  {
+   "id": "4fQ9fg9ooko",
+   "title": "스카프 아저씨 하나로 끝이 아니다?! 요즘 남대문시장에서 뜨는 것들  | 선발대 / 14F",
+   "published": "2026-11-12T08:00:03+00:00",
+   "url": "https://www.youtube.com/watch?v=4fQ9fg9ooko",
+   "shorts": false,
+   "views": 3721,
+   "likes": 215,
+   "viewsGain": null,
+   "isNew": true,
+   "median": 68198,
+   "multiple": 0.1
+  },
   {
    "id": "yzQjanfzMkg",
    "title": "예멘 무장 단체 후티 반군의 탄생 #shorts",
    "published": "2026-11-11T23:00:13+00:00",
    "url": "https://www.youtube.com/shorts/yzQjanfzMkg",
    "shorts": true,
-   "views": 353,
-   "likes": 5,
-   "viewsGain": null,
-   "isNew": true,
-   "median": 8004,
-   "multiple": 0.0
+   "views": 2474,
+   "likes": 15,
+   "viewsGain": 2121,
+   "isNew": false,
+   "median": 10980.0,
+   "multiple": 0.2
   },
   {
    "id": "Dy-NgSHc7cs",
@@ -24,12 +50,12 @@
    "published": "2026-11-11T09:30:36+00:00",
    "url": "https://www.youtube.com/watch?v=Dy-NgSHc7cs",
    "shorts": false,
-   "views": 56273,
-   "likes": 267,
-   "viewsGain": 31171,
+   "views": 65322,
+   "likes": 312,
+   "viewsGain": 9049,
    "isNew": false,
-   "median": 80239.0,
-   "multiple": 0.7
+   "median": 68198,
+   "multiple": 1.0
   },
   {
    "id": "rwdiyA_GxIY",
@@ -37,12 +63,12 @@
    "published": "2026-11-11T08:30:36+00:00",
    "url": "https://www.youtube.com/watch?v=rwdiyA_GxIY",
    "shorts": false,
-   "views": 83388,
-   "likes": 625,
-   "viewsGain": 43563,
+   "views": 109430,
+   "likes": 778,
+   "viewsGain": 26042,
    "isNew": false,
-   "median": 80239.0,
-   "multiple": 1.0
+   "median": 68198,
+   "multiple": 1.6
   },
   {
    "id": "yJ40uku5fg0",
@@ -50,12 +76,12 @@
    "published": "2026-11-11T03:00:26+00:00",
    "url": "https://www.youtube.com/shorts/yJ40uku5fg0",
    "shorts": true,
-   "views": 12640,
-   "likes": 100,
-   "viewsGain": 3332,
+   "views": 13570,
+   "likes": 102,
+   "viewsGain": 930,
    "isNew": false,
-   "median": 8004,
-   "multiple": 1.6
+   "median": 10980.0,
+   "multiple": 1.2
   },
   {
    "id": "zPC08gXKTag",
@@ -63,12 +89,12 @@
    "published": "2026-11-10T09:45:05+00:00",
    "url": "https://www.youtube.com/watch?v=zPC08gXKTag",
    "shorts": false,
-   "views": 32866,
-   "likes": 182,
-   "viewsGain": 2414,
+   "views": 34521,
+   "likes": 193,
+   "viewsGain": 1655,
    "isNew": false,
-   "median": 80239.0,
-   "multiple": 0.4
+   "median": 68198,
+   "multiple": 0.5
   },
   {
    "id": "H7Mr65NjD7g",
@@ -76,12 +102,12 @@
    "published": "2026-11-10T08:30:35+00:00",
    "url": "https://www.youtube.com/watch?v=H7Mr65NjD7g",
    "shorts": false,
-   "views": 510622,
-   "likes": 2454,
-   "viewsGain": 61747,
+   "views": 561024,
+   "likes": 2675,
+   "viewsGain": 50402,
    "isNew": false,
-   "median": 80239.0,
-   "multiple": 6.4
+   "median": 68198,
+   "multiple": 8.2
   },
   {
    "id": "NlFjqf5_TH4",
@@ -89,12 +115,12 @@
    "published": "2026-11-09T09:30:21+00:00",
    "url": "https://www.youtube.com/watch?v=NlFjqf5_TH4",
    "shorts": false,
-   "views": 66082,
-   "likes": 385,
-   "viewsGain": 1808,
+   "views": 68198,
+   "likes": 395,
+   "viewsGain": 2116,
    "isNew": false,
-   "median": 80239.0,
-   "multiple": 0.8
+   "median": 68198,
+   "multiple": 1.0
   },
   {
    "id": "RpOT3aIsli8",
@@ -102,12 +128,12 @@
    "published": "2026-11-09T09:00:25+00:00",
    "url": "https://www.youtube.com/watch?v=RpOT3aIsli8",
    "shorts": false,
-   "views": 282913,
-   "likes": 1144,
-   "viewsGain": 6112,
+   "views": 292241,
+   "likes": 1176,
+   "viewsGain": 9328,
    "isNew": false,
-   "median": 80239.0,
-   "multiple": 3.5
+   "median": 68198,
+   "multiple": 4.3
   },
   {
    "id": "OTeGIZUhKjo",
@@ -115,12 +141,12 @@
    "published": "2026-11-09T03:00:18+00:00",
    "url": "https://www.youtube.com/shorts/OTeGIZUhKjo",
    "shorts": true,
-   "views": 8004,
-   "likes": 99,
-   "viewsGain": 425,
+   "views": 8390,
+   "likes": 106,
+   "viewsGain": 386,
    "isNew": false,
-   "median": 8004,
-   "multiple": 1.0
+   "median": 10980.0,
+   "multiple": 0.8
   },
   {
    "id": "eJAtWi5dWco",
@@ -128,12 +154,12 @@
    "published": "2026-11-08T04:00:37+00:00",
    "url": "https://www.youtube.com/shorts/eJAtWi5dWco",
    "shorts": true,
-   "views": 27735,
-   "likes": 129,
-   "viewsGain": 208,
+   "views": 27830,
+   "likes": 127,
+   "viewsGain": 95,
    "isNew": false,
-   "median": 8004,
-   "multiple": 3.5
+   "median": 10980.0,
+   "multiple": 2.5
   },
   {
    "id": "-5SuOuqeZ90",
@@ -141,12 +167,12 @@
    "published": "2026-11-08T04:00:12+00:00",
    "url": "https://www.youtube.com/watch?v=-5SuOuqeZ90",
    "shorts": false,
-   "views": 371580,
-   "likes": 907,
-   "viewsGain": 4958,
+   "views": 385863,
+   "likes": 930,
+   "viewsGain": 14283,
    "isNew": false,
-   "median": 80239.0,
-   "multiple": 4.6
+   "median": 68198,
+   "multiple": 5.7
   },
   {
    "id": "KT1XfcUxmw0",
@@ -154,12 +180,12 @@
    "published": "2026-11-07T04:00:36+00:00",
    "url": "https://www.youtube.com/watch?v=KT1XfcUxmw0",
    "shorts": false,
-   "views": 182949,
-   "likes": 771,
-   "viewsGain": 706,
+   "views": 184026,
+   "likes": 775,
+   "viewsGain": 1077,
    "isNew": false,
-   "median": 80239.0,
-   "multiple": 2.3
+   "median": 68198,
+   "multiple": 2.7
   },
   {
    "id": "BYhL-fwDxcg",
@@ -167,75 +193,49 @@
    "published": "2026-11-06T09:11:16+00:00",
    "url": "https://www.youtube.com/watch?v=BYhL-fwDxcg",
    "shorts": false,
-   "views": 30864,
-   "likes": 151,
-   "viewsGain": 227,
+   "views": 30959,
+   "likes": 152,
+   "viewsGain": 95,
    "isNew": false,
-   "median": 80239.0,
-   "multiple": 0.4
-  },
-  {
-   "id": "kycuo7xf6zk",
-   "title": "“여행 어디로 가지…” 이왕 간다면 인구소멸 지역 돕는 '이 곳' 주목! / 14F",
-   "published": "2026-11-06T08:30:29+00:00",
-   "url": "https://www.youtube.com/watch?v=kycuo7xf6zk",
-   "shorts": false,
-   "views": 77090,
-   "likes": 329,
-   "viewsGain": 414,
-   "isNew": false,
-   "median": 80239.0,
-   "multiple": 1.0
-  },
-  {
-   "id": "raKKyS-VS5k",
-   "title": "샤인머스캣 가격 폭락 막기 힘든 이유 #shorts",
-   "published": "2026-11-06T03:00:05+00:00",
-   "url": "https://www.youtube.com/shorts/raKKyS-VS5k",
-   "shorts": true,
-   "views": 7374,
-   "likes": 35,
-   "viewsGain": 29,
-   "isNew": false,
-   "median": 8004,
-   "multiple": 0.9
+   "median": 68198,
+   "multiple": 0.5
   }
  ],
  "viral": [
   {
    "title": "국방비 112조 사우디는 왜 후티 반군에 쩔쩔맬까? (박현도X알파고) ㅣ10분 토론 / 14F",
    "url": "https://www.youtube.com/watch?v=H7Mr65NjD7g",
-   "views": 510622,
-   "multiple": 6.4,
+   "views": 561024,
+   "multiple": 8.2,
    "shorts": false
   },
   {
    "title": "미국 증시 폭락 이유ㅣ테슬라, 스페이스X 양도세 논란ㅣ주식 결제주기 단축 등 4가지 🥬경제 이슈🥬",
    "url": "https://www.youtube.com/watch?v=-5SuOuqeZ90",
-   "views": 371580,
-   "multiple": 4.6,
+   "views": 385863,
+   "multiple": 5.7,
    "shorts": false
   },
   {
    "title": "???: 한국 프랜차이즈 많이 예뻐해 주고 싶어요 :) 🥄ㅣ돈슐랭 / 14F",
    "url": "https://www.youtube.com/watch?v=RpOT3aIsli8",
-   "views": 282913,
-   "multiple": 3.5,
+   "views": 292241,
+   "multiple": 4.3,
+   "shorts": false
+  },
+  {
+   "title": "웨이팅만 3시간! 구미라면축제에서 난리 난 라면의 정체는? | 선발대 / 14F",
+   "url": "https://www.youtube.com/watch?v=KT1XfcUxmw0",
+   "views": 184026,
+   "multiple": 2.7,
    "shorts": false
   },
   {
    "title": "3시간 웨이팅해서 사는 라면 백팩 ㄷㄷ #shorts",
    "url": "https://www.youtube.com/shorts/eJAtWi5dWco",
-   "views": 27735,
-   "multiple": 3.5,
+   "views": 27830,
+   "multiple": 2.5,
    "shorts": true
-  },
-  {
-   "title": "웨이팅만 3시간! 구미라면축제에서 난리 난 라면의 정체는? | 선발대 / 14F",
-   "url": "https://www.youtube.com/watch?v=KT1XfcUxmw0",
-   "views": 182949,
-   "multiple": 2.3,
-   "shorts": false
   }
  ]
 }

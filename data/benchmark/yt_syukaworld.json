@@ -3,20 +3,85 @@
  "name": "슈카월드",
  "channel": "https://www.youtube.com/@syukaworld",
  "channelId": "UCJo6G1u0e_-wS-JQn3T-zEw",
- "checkedAt": "2026-11-12T08:41+09:00",
+ "checkedAt": "2026-11-12T19:37+09:00",
  "videos": [
+  {
+   "id": "FSqGVxQKEMc",
+   "title": "변압기 사라면서요 살려주세요",
+   "published": "2026-11-12T09:00:19+00:00",
+   "url": "https://www.youtube.com/watch?v=FSqGVxQKEMc",
+   "shorts": false,
+   "views": 13847,
+   "likes": 705,
+   "viewsGain": null,
+   "isNew": true,
+   "median": 144555,
+   "multiple": 0.1
+  },
+  {
+   "id": "sTeqHqi-w74",
+   "title": "경력직 젠슨황",
+   "published": "2026-11-12T07:35:07+00:00",
+   "url": "https://www.youtube.com/shorts/sTeqHqi-w74",
+   "shorts": true,
+   "views": 22555,
+   "likes": 607,
+   "viewsGain": null,
+   "isNew": true,
+   "median": 75305.5,
+   "multiple": 0.3
+  },
+  {
+   "id": "PdRYlMmMhJQ",
+   "title": "못하면 하지마세요",
+   "published": "2026-11-12T07:13:26+00:00",
+   "url": "https://www.youtube.com/shorts/PdRYlMmMhJQ",
+   "shorts": true,
+   "views": 23545,
+   "likes": 454,
+   "viewsGain": null,
+   "isNew": true,
+   "median": 75305.5,
+   "multiple": 0.3
+  },
+  {
+   "id": "UEU5eZG5fxk",
+   "title": "[슈카의 시황방송] 11월12일ㅣ젠슨 황 해임설에도 버틴 코스피, 5400선 줄다리기",
+   "published": "2026-11-12T06:41:52+00:00",
+   "url": "https://www.youtube.com/watch?v=UEU5eZG5fxk",
+   "shorts": false,
+   "views": 88514,
+   "likes": 882,
+   "viewsGain": null,
+   "isNew": true,
+   "median": 144555,
+   "multiple": 0.6
+  },
+  {
+   "id": "OqKFqg75Tuk",
+   "title": "꺼드럭 니니 참교육",
+   "published": "2026-11-12T03:00:51+00:00",
+   "url": "https://www.youtube.com/shorts/OqKFqg75Tuk",
+   "shorts": true,
+   "views": 52406,
+   "likes": 679,
+   "viewsGain": null,
+   "isNew": true,
+   "median": 75305.5,
+   "multiple": 0.7
+  },
   {
    "id": "pP0j-VEICls",
    "title": "[슈카의 시황방송] 11월11일ㅣ코어위브 적자에도 급등, 국장도 출발하나요?",
    "published": "2026-11-11T06:45:25+00:00",
    "url": "https://www.youtube.com/watch?v=pP0j-VEICls",
    "shorts": false,
-   "views": 119407,
-   "likes": 845,
-   "viewsGain": 8572,
+   "views": 123602,
+   "likes": 854,
+   "viewsGain": 4195,
    "isNew": false,
-   "median": 161291,
-   "multiple": 0.7
+   "median": 144555,
+   "multiple": 0.9
   },
   {
    "id": "Ge6BHHlGUmk",
@@ -24,12 +89,12 @@
    "published": "2026-11-10T10:42:29+00:00",
    "url": "https://www.youtube.com/watch?v=Ge6BHHlGUmk",
    "shorts": false,
-   "views": 92366,
-   "likes": 321,
-   "viewsGain": 4747,
+   "views": 96656,
+   "likes": 332,
+   "viewsGain": 4290,
    "isNew": false,
-   "median": 161291,
-   "multiple": 0.6
+   "median": 144555,
+   "multiple": 0.7
   },
   {
    "id": "gOGolt7zsN8",
@@ -37,12 +102,12 @@
    "published": "2026-11-10T08:00:26+00:00",
    "url": "https://www.youtube.com/shorts/gOGolt7zsN8",
    "shorts": true,
-   "views": 155960,
-   "likes": 1601,
-   "viewsGain": 6187,
+   "views": 159247,
+   "likes": 1645,
+   "viewsGain": 3287,
    "isNew": false,
-   "median": 146402.5,
-   "multiple": 1.1
+   "median": 75305.5,
+   "multiple": 2.1
   },
   {
    "id": "aGpktOSGdm0",
@@ -50,12 +115,12 @@
    "published": "2026-11-10T06:30:55+00:00",
    "url": "https://www.youtube.com/watch?v=aGpktOSGdm0",
    "shorts": false,
-   "views": 161291,
-   "likes": 1079,
-   "viewsGain": 3062,
+   "views": 163043,
+   "likes": 1083,
+   "viewsGain": 1752,
    "isNew": false,
-   "median": 161291,
-   "multiple": 1.0
+   "median": 144555,
+   "multiple": 1.1
   },
   {
    "id": "xCP7MhJdnXM",
@@ -63,12 +128,12 @@
    "published": "2026-11-09T12:28:06+00:00",
    "url": "https://www.youtube.com/watch?v=xCP7MhJdnXM",
    "shorts": false,
-   "views": 144071,
-   "likes": 743,
-   "viewsGain": 729,
+   "views": 144555,
+   "likes": 742,
+   "viewsGain": 484,
    "isNew": false,
-   "median": 161291,
-   "multiple": 0.9
+   "median": 144555,
+   "multiple": 1.0
   },
   {
    "id": "O2S8hCse54k",
@@ -76,12 +141,12 @@
    "published": "2026-11-09T03:43:40+00:00",
    "url": "https://www.youtube.com/shorts/O2S8hCse54k",
    "shorts": true,
-   "views": 179849,
-   "likes": 1623,
-   "viewsGain": 4658,
+   "views": 186345,
+   "likes": 1672,
+   "viewsGain": 6496,
    "isNew": false,
-   "median": 146402.5,
-   "multiple": 1.2
+   "median": 75305.5,
+   "multiple": 2.5
   },
   {
    "id": "hvjeDlMlPSE",
@@ -89,12 +154,12 @@
    "published": "2026-11-08T09:00:10+00:00",
    "url": "https://www.youtube.com/watch?v=hvjeDlMlPSE",
    "shorts": false,
-   "views": 147295,
-   "likes": 955,
-   "viewsGain": 1166,
+   "views": 149553,
+   "likes": 965,
+   "viewsGain": 2258,
    "isNew": false,
-   "median": 161291,
-   "multiple": 0.9
+   "median": 144555,
+   "multiple": 1.0
   },
   {
    "id": "8DeKtLlHPdI",
@@ -102,12 +167,12 @@
    "published": "2026-11-08T02:08:27+00:00",
    "url": "https://www.youtube.com/watch?v=8DeKtLlHPdI",
    "shorts": false,
-   "views": 434713,
-   "likes": 2567,
-   "viewsGain": 11746,
+   "views": 451220,
+   "likes": 2621,
+   "viewsGain": 16507,
    "isNew": false,
-   "median": 161291,
-   "multiple": 2.7
+   "median": 144555,
+   "multiple": 3.1
   },
   {
    "id": "h9yF44sFEvc",
@@ -115,12 +180,12 @@
    "published": "2026-11-07T09:00:11+00:00",
    "url": "https://www.youtube.com/watch?v=h9yF44sFEvc",
    "shorts": false,
-   "views": 330817,
-   "likes": 1895,
-   "viewsGain": 1342,
+   "views": 335774,
+   "likes": 1905,
+   "viewsGain": 4957,
    "isNew": false,
-   "median": 161291,
-   "multiple": 2.1
+   "median": 144555,
+   "multiple": 2.3
   },
   {
    "id": "OeJ-JKlNv_s",
@@ -128,93 +193,42 @@
    "published": "2026-11-06T12:43:23+00:00",
    "url": "https://www.youtube.com/shorts/OeJ-JKlNv_s",
    "shorts": true,
-   "views": 97205,
-   "likes": 533,
-   "viewsGain": 789,
+   "views": 98205,
+   "likes": 538,
+   "viewsGain": 1000,
    "isNew": false,
-   "median": 146402.5,
-   "multiple": 0.7
-  },
-  {
-   "id": "ay3FXHM03T8",
-   "title": "주식이 떨어지면 뭘 해야할까",
-   "published": "2026-11-06T12:31:37+00:00",
-   "url": "https://www.youtube.com/shorts/ay3FXHM03T8",
-   "shorts": true,
-   "views": 90729,
-   "likes": 770,
-   "viewsGain": 1086,
-   "isNew": false,
-   "median": 146402.5,
-   "multiple": 0.6
-  },
-  {
-   "id": "ri2GLNjEM_s",
-   "title": "불안한 주식시장에 내 노후를 맡겨도 될까요",
-   "published": "2026-11-06T09:23:54+00:00",
-   "url": "https://www.youtube.com/watch?v=ri2GLNjEM_s",
-   "shorts": false,
-   "views": 197952,
-   "likes": 968,
-   "viewsGain": 369,
-   "isNew": false,
-   "median": 161291,
-   "multiple": 1.2
-  },
-  {
-   "id": "sYr_AxQcpik",
-   "title": "하락장 유머",
-   "published": "2026-11-06T08:13:05+00:00",
-   "url": "https://www.youtube.com/shorts/sYr_AxQcpik",
-   "shorts": true,
-   "views": 219551,
-   "likes": 2578,
-   "viewsGain": 871,
-   "isNew": false,
-   "median": 146402.5,
-   "multiple": 1.5
-  },
-  {
-   "id": "tK3p2DelS-c",
-   "title": "[니니의 시황방송] 11월6일ㅣ코스피에 체포당했어",
-   "published": "2026-11-06T06:44:00+00:00",
-   "url": "https://www.youtube.com/watch?v=tK3p2DelS-c",
-   "shorts": false,
-   "views": 185630,
-   "likes": 1026,
-   "viewsGain": 201,
-   "isNew": false,
-   "median": 161291,
-   "multiple": 1.2
-  },
-  {
-   "id": "SmbFOtTIot0",
-   "title": "하보노님 살려주세요",
-   "published": "2026-11-06T03:49:57+00:00",
-   "url": "https://www.youtube.com/shorts/SmbFOtTIot0",
-   "shorts": true,
-   "views": 136845,
-   "likes": 1121,
-   "viewsGain": 1676,
-   "isNew": false,
-   "median": 146402.5,
-   "multiple": 0.9
+   "median": 75305.5,
+   "multiple": 1.3
   }
  ],
  "viral": [
   {
    "title": "블룸버그 애널리스트가 본 현재 국장",
    "url": "https://www.youtube.com/watch?v=8DeKtLlHPdI",
-   "views": 434713,
-   "multiple": 2.7,
+   "views": 451220,
+   "multiple": 3.1,
    "shorts": false
+  },
+  {
+   "title": "좋소식 순환금융",
+   "url": "https://www.youtube.com/shorts/O2S8hCse54k",
+   "views": 186345,
+   "multiple": 2.5,
+   "shorts": true
   },
   {
    "title": "우리 요즘 잘하고 있지 않아요?",
    "url": "https://www.youtube.com/watch?v=h9yF44sFEvc",
-   "views": 330817,
-   "multiple": 2.1,
+   "views": 335774,
+   "multiple": 2.3,
    "shorts": false
+  },
+  {
+   "title": "세상에서 누가 제일 예쁘니?",
+   "url": "https://www.youtube.com/shorts/gOGolt7zsN8",
+   "views": 159247,
+   "multiple": 2.1,
+   "shorts": true
   }
  ]
 }

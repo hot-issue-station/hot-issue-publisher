@@ -187,5 +187,173 @@
   "key": "storyk",
   "ok": false,
   "error": "HTTPError: HTTP Error 404: Not Found"
+ },
+ {
+  "at": "2026-11-12T19:37+09:00",
+  "key": "14f",
+  "ok": true,
+  "new": [
+   "ilCY2YYGUkk",
+   "4fQ9fg9ooko"
+  ],
+  "top": [
+   {
+    "id": "H7Mr65NjD7g",
+    "title": "국방비 112조 사우디는 왜 후티 반군에 쩔쩔맬까? (박현도X알파고) ㅣ10분 토론 / 14F",
+    "views": 561024,
+    "gain": 50402
+   },
+   {
+    "id": "rwdiyA_GxIY",
+    "title": "사우디의 위기가 곧 이집트의 위기? 군사 지원에 나선 이집트의 속사정 / 14F",
+    "views": 109430,
+    "gain": 26042
+   },
+   {
+    "id": "-5SuOuqeZ90",
+    "title": "미국 증시 폭락 이유ㅣ테슬라, 스페이스X 양도세 논란ㅣ주식 결제주기 단축 등 4가지 🥬경제 이슈🥬",
+    "views": 385863,
+    "gain": 14283
+   }
+  ]
+ },
+ {
+  "at": "2026-11-12T19:37+09:00",
+  "key": "subusunews",
+  "ok": true,
+  "new": [
+   "gdHO75hZEEY",
+   "JyG0ws-5OkA",
+   "KL0_g5W4oxs"
+  ],
+  "top": [
+   {
+    "id": "R6snzVYjYF8",
+    "title": "한수아 카리나 이 정도로 사랑하고 있는지 알았던 사람?ㅣ우리 사이엔 편지가 있다2 EP.11 배우 한수아",
+    "views": 306741,
+    "gain": 16755
+   },
+   {
+    "id": "fPk1Jmnz5sU",
+    "title": "어쩌면 사랑은 다 우정 안에 있는지도 모르겠다",
+    "views": 170887,
+    "gain": 9611
+   },
+   {
+    "id": "mZoYzTu6ZyY",
+    "title": "나보다 못해주는 남자 만나지 마",
+    "views": 66811,
+    "gain": 5596
+   }
+  ]
+ },
+ {
+  "at": "2026-11-12T19:37+09:00",
+  "key": "vstudio",
+  "ok": true,
+  "new": [],
+  "top": []
+ },
+ {
+  "at": "2026-11-12T19:37+09:00",
+  "key": "syukaworld",
+  "ok": true,
+  "new": [
+   "FSqGVxQKEMc",
+   "sTeqHqi-w74",
+   "PdRYlMmMhJQ",
+   "UEU5eZG5fxk",
+   "OqKFqg75Tuk"
+  ],
+  "top": [
+   {
+    "id": "8DeKtLlHPdI",
+    "title": "블룸버그 애널리스트가 본 현재 국장",
+    "views": 451220,
+    "gain": 16507
+   },
+   {
+    "id": "O2S8hCse54k",
+    "title": "좋소식 순환금융",
+    "views": 186345,
+    "gain": 6496
+   },
+   {
+    "id": "h9yF44sFEvc",
+    "title": "우리 요즘 잘하고 있지 않아요?",
+    "views": 335774,
+    "gain": 4957
+   }
+  ]
+ },
+ {
+  "at": "2026-11-12T19:37+09:00",
+  "key": "ytn",
+  "ok": true,
+  "new": [
+   "94XcHWfQQ38",
+   "geaHTmdOcNM",
+   "IVGE1ueOcs4",
+   "5EfhE3gR9mA",
+   "bV4mIL4UIss",
+   "VFz-42ZJxZ0",
+   "6zUWsy7xzUc",
+   "i2sGiYib-Vc",
+   "RRsoqDt4dBE",
+   "q4LnFVi2arE",
+   "onfCAJpgnvQ",
+   "q6DvkwiY2dc",
+   "j-ivS5vyVpE",
+   "eSnWFv8AqZg",
+   "TbKr0TNT0Q4"
+  ],
+  "top": [
+   {
+    "id": "VFz-42ZJxZ0",
+    "title": "러시아 오랜 숙원 꺼내 든 트럼프…뒤통수 맞은 유럽 '발칵' [에디터픽] / YTN",
+    "views": 12693,
+    "gain": null
+   },
+   {
+    "id": "geaHTmdOcNM",
+    "title": "이스라엘 새 의회 고성·퇴장 '난장판'…네타냐후 정권 '끝장 위기' 직전 [에디터픽] / YTN",
+    "views": 2785,
+    "gain": null
+   },
+   {
+    "id": "bV4mIL4UIss",
+    "title": "'미인계' 간첩 알고 있었나…'성지글' 된 머스크 과거 SNS [지금이뉴스] / YTN",
+    "views": 1545,
+    "gain": null
+   }
+  ]
+ },
+ {
+  "at": "2026-11-12T19:37+09:00",
+  "key": "storyk",
+  "ok": true,
+  "new": [
+   "s5USat3YPTk"
+  ],
+  "top": [
+   {
+    "id": "EvW6ldmE06o",
+    "title": "손흥민 보고 자란 축구 소년 기적의 FA컵 - 영국이 놀란 148년 새 역사의 주인공 양승우",
+    "views": 169308,
+    "gain": 35521
+   },
+   {
+    "id": "aGdX-njap_8",
+    "title": "김예건 한국 역대 최연소 2위 유럽대항전 출전 - 명문팀 거절하고 1군 노린 18살유망주",
+    "views": 110018,
+    "gain": 11516
+   },
+   {
+    "id": "Q5muilZ33Xc",
+    "title": "손흥민 시대에 대표팀 중계권이 계륵이라니? - 한국 축구 A매치 관련 근황이 황당한 이유",
+    "views": 39027,
+    "gain": 6835
+   }
+  ]
  }
 ]

@@ -1,17 +1,17 @@
 {
  "name": "14F 일사에프 (MBC)",
  "channel": "https://www.youtube.com/@14FMBC",
- "checkedAt": "2026-11-12T14:55+09:00",
+ "checkedAt": "2026-11-12T19:37+09:00",
  "subscribers": "239만",
  "videos": [
   {
    "id": "yzQjanfzMkg",
    "title": "예멘 무장 단체 후티 반군의 탄생 #shorts",
-   "views": 2000,
-   "viewsText": "조회수 2천회",
+   "views": 2400,
+   "viewsText": "조회수 2.4천회",
    "published": "",
    "kind": "short",
-   "gain": 1647
+   "gain": 400
   },
   {
    "id": "yJ40uku5fg0",
@@ -20,16 +20,16 @@
    "viewsText": "조회수 1.3만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "OTeGIZUhKjo",
    "title": "이게 진짜 라면이라고? 구미 라면 축제 이색 라면 모음 #shorts",
-   "views": 8200,
-   "viewsText": "조회수 8.2천회",
+   "views": 8300,
+   "viewsText": "조회수 8.3천회",
    "published": "",
    "kind": "short",
-   "gain": 200
+   "gain": 100
   },
   {
    "id": "eJAtWi5dWco",
@@ -43,11 +43,11 @@
   {
    "id": "raKKyS-VS5k",
    "title": "샤인머스캣 가격 폭락 막기 힘든 이유 #shorts",
-   "views": 7300,
-   "viewsText": "조회수 7.3천회",
+   "views": 7400,
+   "viewsText": "조회수 7.4천회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 100
   },
   {
    "id": "UjJznEbPKrw",
@@ -65,7 +65,7 @@
    "viewsText": "조회수 18만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "G63QFaqloJQ",
@@ -110,7 +110,7 @@
    "viewsText": "조회수 6.8천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "Icvrlx6HV-Q",

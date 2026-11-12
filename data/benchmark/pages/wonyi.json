@@ -1,7 +1,7 @@
 {
  "name": "안원잘부",
  "channel": "https://www.youtube.com/@helloiamwoninicetomeetyou",
- "checkedAt": "2026-11-12T14:55+09:00",
+ "checkedAt": "2026-11-12T19:37+09:00",
  "subscribers": "243만",
  "videos": [
   {
@@ -34,11 +34,11 @@
   {
    "id": "mFM2hP5LEhM",
    "title": "스팸 원이 에디션(?)",
-   "views": 3200000,
-   "viewsText": "조회수 320만회",
+   "views": 3210000,
+   "viewsText": "조회수 321만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "xCvbDeMKm3E",
@@ -47,16 +47,16 @@
    "viewsText": "조회수 618만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "GsYq_ouLAMQ",
    "title": "[B컷] 시그니엘 망고 빙수",
-   "views": 5490000,
-   "viewsText": "조회수 549만회",
+   "views": 5500000,
+   "viewsText": "조회수 550만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "BUeZskDCMpU",
@@ -209,7 +209,7 @@
    "viewsText": "조회수 230만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "YDCgJIvro-4",
@@ -304,11 +304,11 @@
   {
    "id": "nHY4EK0kVH0",
    "title": "저한테 왜 그러시는 거예요",
-   "views": 6930000,
-   "viewsText": "조회수 693만회",
+   "views": 6940000,
+   "viewsText": "조회수 694만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "hrFWuCyHXpY",

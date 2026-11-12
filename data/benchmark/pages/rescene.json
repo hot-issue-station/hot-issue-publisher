@@ -1,32 +1,56 @@
 {
  "name": "RESCENE 공식",
  "channel": "https://www.youtube.com/@RESCENE_official",
- "checkedAt": "2026-11-12T14:55+09:00",
+ "checkedAt": "2026-11-12T19:37+09:00",
  "subscribers": "137만",
  "videos": [
   {
-   "id": "85TuH4Jqu4s",
-   "title": "인사이드 아웃 ✨",
-   "views": 150000,
-   "viewsText": "조회수 15만회",
+   "id": "Swo1MWFnK1c",
+   "title": "Yeah I'm blooming like a flower, flower",
+   "views": 60000,
+   "viewsText": "조회수 6만회",
    "published": "",
-   "kind": "short",
-   "gain": 20000
+   "kind": "short"
   },
   {
-   "id": "9sVO6OY1_84",
-   "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #박건욱 선배님@ZB1_official",
+   "id": "ZZqAlMwMPMg",
+   "title": "백화요란 그 파트",
    "views": 140000,
    "viewsText": "조회수 14만회",
+   "published": "",
+   "kind": "short"
+  },
+  {
+   "id": "9wSxuOLpGXc",
+   "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #YoungK 선배님@DAY6Official",
+   "views": 75000,
+   "viewsText": "조회수 7.5만회",
+   "published": "",
+   "kind": "short"
+  },
+  {
+   "id": "85TuH4Jqu4s",
+   "title": "인사이드 아웃 ✨",
+   "views": 160000,
+   "viewsText": "조회수 16만회",
    "published": "",
    "kind": "short",
    "gain": 10000
   },
   {
+   "id": "9sVO6OY1_84",
+   "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #박건욱 선배님@ZB1_official",
+   "views": 160000,
+   "viewsText": "조회수 16만회",
+   "published": "",
+   "kind": "short",
+   "gain": 20000
+  },
+  {
    "id": "b-9smM2N5sk",
    "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #서희 님@TUIDE_official",
-   "views": 240000,
-   "viewsText": "조회수 24만회",
+   "views": 260000,
+   "viewsText": "조회수 26만회",
    "published": "",
    "kind": "short",
    "gain": 20000
@@ -34,17 +58,17 @@
   {
    "id": "ZZJHE7xBDJQ",
    "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #은석 선배님@RIIZE_official",
-   "views": 220000,
-   "viewsText": "조회수 22만회",
+   "views": 240000,
+   "viewsText": "조회수 24만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 20000
   },
   {
    "id": "kOmL4DDTEYw",
    "title": "얍",
-   "views": 640000,
-   "viewsText": "조회수 64만회",
+   "views": 650000,
+   "viewsText": "조회수 65만회",
    "published": "",
    "kind": "short",
    "gain": 10000
@@ -119,7 +143,7 @@
    "viewsText": "조회수 52만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "nf0cE5ByIiY",
@@ -129,15 +153,6 @@
    "published": "",
    "kind": "short",
    "gain": 0
-  },
-  {
-   "id": "Vo9WrMtd0bY",
-   "title": "함께해줘",
-   "views": 470000,
-   "viewsText": "조회수 47만회",
-   "published": "",
-   "kind": "short",
-   "gain": 10000
   },
   {
    "id": "A5PB2NXHkzY",
@@ -151,11 +166,11 @@
   {
    "id": "WDGxa5Vez5U",
    "title": "리마인 🫵💖",
-   "views": 410000,
-   "viewsText": "조회수 41만회",
+   "views": 420000,
+   "viewsText": "조회수 42만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "ydZG-_FdrxI",
@@ -169,11 +184,11 @@
   {
    "id": "GG1QgSloUkU",
    "title": "손댄스 막내즈 ver. 🤍🖤",
-   "views": 350000,
-   "viewsText": "조회수 35만회",
+   "views": 360000,
+   "viewsText": "조회수 36만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "xpaOFvA4K1g",
@@ -295,11 +310,11 @@
   {
    "id": "pekjAyOrBk4",
    "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #의주 선배님",
-   "views": 510000,
-   "viewsText": "조회수 51만회",
+   "views": 520000,
+   "viewsText": "조회수 52만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "QEeCIDjleC8",
@@ -317,7 +332,7 @@
    "viewsText": "조회수 124만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "HN7La9KN2MY",
@@ -335,34 +350,16 @@
    "viewsText": "조회수 142만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "zHwTN5Yu-mI",
    "title": "Runnin’ on, runnin’ on, runnin’ on you",
-   "views": 1010000,
-   "viewsText": "조회수 101만회",
+   "views": 1020000,
+   "viewsText": "조회수 102만회",
    "published": "",
    "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "BRL7ag8oEO0",
-   "title": "RESCENE [PULSE] Highlight Medley - With",
-   "views": 310000,
-   "viewsText": "조회수 31만회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "mrfisPt2wOk",
-   "title": "RESCENE [PULSE] Highlight Medley - MEME",
-   "views": 250000,
-   "viewsText": "조회수 25만회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
+   "gain": 10000
   }
  ]
 }
