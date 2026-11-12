@@ -972,6 +972,22 @@ const YT_API = { key:null };
 const PROGRESS = { enabled:true, hall:"rescene", order:["stage","anwonjalbu","tv","youtube_guest","daily","birthday"],
   openAtStart:2, need:{ default:3 }, watchSeconds:30, fallbackSeconds:20, nextHall:"hall2", secretRoom:"secret" };
 
+/* 히든 지하관 (대표 11/12 09:53): 방마다 퀴즈를 다 풀면 그 방의 「빛 조각」이 생기고, 로비 바닥에 조각이 하나씩 빛난다.
+   조각이 다 모이면 로비 가운데 바닥에 마법진이 열리고, 밟으면 아래로 내려가 「히든 지하관」 — 멤버별 숨은 덕질의 방.
+   방 안 = 팬들이 오래 쌓아 온 공개 기록(직캠 채널·교차편집·생일카페 기록·데뷔 전 모습 정리 등)으로 가는 링크.
+   ★ 원래 채널 링크·유튜브 퍼가기만. 만든 사람(채널) 이름을 꼭 표시. 비공개·사생활·유출·불법 촬영 금지. 내려 달라는 요청은 바로 뺀다(takedown.html).
+   ★ 항목 형식: {type:"youtube", id, title, channel, fan:true|false, added_at, checked_at} 또는 {type:"link", url, title, channel, fan:true, added_at, checked_at}
+     checked_at 이 빈 항목은 화면에 안 나온다(우리가 직접 열어 공개 여부를 확인한 것만). 팬 추천은 각 방 「숨은 명장면 추천하기」 댓글로 받는다.
+   ?demo=hidden 을 주소에 붙이면 조각이 다 모인 것처럼 열려 시연할 수 있다(이 기기에만 적용). */
+const HIDDEN_HALL = { enabled:true, hall:"rescene", shardRooms:["stage","anwonjalbu","tv","youtube_guest","daily"], perRoom:3 };
+const HIDDEN_ITEMS = {   // 멤버 id → 항목. 첫 칸은 방송사 공식 직캠(공식), 나머지는 팬 추천을 확인해서 채운다
+  woni:  [{type:"youtube", id:"wrcbwFpwVa4", title:"[안방1열 직캠4K] 리센느 원이 'With' @SBS Inkigayo 261108", channel:"SBSKPOP ZOOM", fan:false, added_at:"2026-11-12", checked_at:"2026-11-12"}],
+  liv:   [{type:"youtube", id:"XWa7xVNV2_Q", title:"[안방1열 직캠4K] 리센느 리브 'With' @SBS Inkigayo 261108", channel:"SBSKPOP ZOOM", fan:false, added_at:"2026-11-12", checked_at:"2026-11-12"}],
+  minami:[{type:"youtube", id:"dJoyoWIKyzs", title:"[페이스캠4K] 리센느 미나미 'With' @SBS Inkigayo 261108", channel:"SBSKPOP ZOOM", fan:false, added_at:"2026-11-12", checked_at:"2026-11-12"}],
+  may:   [{type:"youtube", id:"erC6qm-SEGE", title:"[안방1열 직캠4K] 리센느 메이 'With' @SBS Inkigayo 261108", channel:"SBSKPOP ZOOM", fan:false, added_at:"2026-11-12", checked_at:"2026-11-12"}],
+  zena:  [{type:"youtube", id:"GxU2HvTzw5w", title:"[페이스캠4K] 리센느 제나 'With' @SBS Inkigayo 261108", channel:"SBSKPOP ZOOM", fan:false, added_at:"2026-11-12", checked_at:"2026-11-12"}],
+};
+
 /* 광고 자리. 이미지(https)와 링크만 넣으면 그 칸에 걸린다(누르면 새 탭, rel="sponsored noopener"). 광고에는 항상 「광고」 표시.
    place: screen_top(화면 맨 위 띠 — 영상 패널이 열려 있는 동안은 숨김) | lobby_billboard(로비 전광판)
           ※ 건물 밖 땅에 세운 거리 전광판(street_billboard)은 없앴다(대표 11/11). 건물 밖 광고는 하늘 비행선·홀로그램 판만
@@ -1608,6 +1624,30 @@ const I18N = {
       like:"♡ 喜歡", liked:"❤ 喜歡", likesN:"喜歡 {n}・觀看 {v}", localOnly:"(目前僅限本裝置)", cTabG:"藝廊留言", cTabY:"YouTube 留言", cNote:"這是藝廊訪客之間的留言・YouTube 原片留言請點「在 YouTube 觀看」", cName:"暱稱(選填)", cText:"留下你的留言(最多 200 字)", cPost:"送出", cEmpty:"來留下第一則留言吧", cAnon:"訪客", cReport:"檢舉", cReported:"已檢舉,這則留言將被隱藏", cBad:"留言含有無法發布的字詞", cLink:"無法發布連結", cTooLong:"最多 200 字", cOk:"留言已送出", cLocal:"目前只儲存在本裝置", ytWrite:"到 YouTube 留言", ytNote:"YouTube 熱門留言 5 則・原文呈現・來源:YouTube", ytStats:"YouTube:觀看 {v}・喜歡 {l}", ytErr:"無法載入 YouTube 留言", ytNone:"沒有 YouTube 留言", anaNote:"我們會收集匿名參訪統計(不含個人資料)", newTag:"新展出",
       slowSuggest:"畫面有點慢,要切換成快速模式嗎?", switchQuick:"快速模式", modeWalk:"🚶 散步", modeQuick:"⚡ 快速"},
 };
+Object.assign(I18N.ko,{hidHall:"히든 지하관", hidSub:"퀴즈를 끝까지 푼 리마인만 들어오는 곳", hidRoom:"{m}의 숨은 덕질 방", hidSoon:"팬 추천 받는 중", hidRec:"숨은 명장면 추천하기",
+  hidRecDesc:"팬들만 아는 숨은 명장면을 알려 주세요. 원래 채널 주소와 만든 분 이름을 같이 적어 주시면, 공개 영상인지 확인한 뒤 이 방에 걸어 드려요.",
+  hidRules:"공개된 영상·글만, 원래 링크로만 걸어요. 만든 분 이름을 꼭 표시하고, 비공개·사생활·유출 영상은 받지 않아요. 내려 달라고 하시면 바로 뺄게요.",
+  hidByFan:"팬이 만든 기록이에요 · 만든 분: {c}", hidByOfficial:"공식 영상 · {c}", shardGot:"✨ 빛 조각 {a}/{b}개! 로비 바닥을 확인해 보세요", shardAll:"✨ 빛 조각을 다 모았어요! 로비 가운데 바닥에 마법진이 열렸어요",
+  hidLocked:"빛 조각 {a}/{b} — 방마다 퀴즈를 다 풀면 조각이 생겨요", bDescend:"아래로 내려가기", toLobbyUp:"↑ 로비로 올라가기", hintUnder:"끌어서 둘러보고, 멤버 방의 액자를 누르면 숨은 기록이 열려요",
+  shardRoom:"{r} 퀴즈 {a}/{b}", hidCount:"숨은 기록 {n}개", hidFlat:"빛 조각 {a}/{b}"});
+Object.assign(I18N.ja,{hidHall:"ヒドゥン地下館", hidSub:"クイズを全部解いたREMINEだけの場所", hidRoom:"{m}の隠れ推し活ルーム", hidSoon:"ファンのおすすめ募集中", hidRec:"隠れ名場面をおすすめする",
+  hidRecDesc:"ファンだけが知る隠れ名場面を教えてください。元のチャンネルURLと作った方の名前を書いてくだされば、公開動画か確認してこの部屋に飾ります。",
+  hidRules:"公開された動画・投稿だけを元のリンクで紹介します。作者名を必ず表示し、非公開・私生活・流出動画は受け付けません。削除依頼はすぐ対応します。",
+  hidByFan:"ファンが作った記録です · 作者: {c}", hidByOfficial:"公式動画 · {c}", shardGot:"✨ 光のかけら {a}/{b}!ロビーの床を見てみて", shardAll:"✨ 光のかけらが全部そろった!ロビー中央の床に魔法陣が開きました",
+  hidLocked:"光のかけら {a}/{b} — 部屋ごとのクイズを全部解くと集まります", bDescend:"下へ降りる", toLobbyUp:"↑ ロビーへ戻る", hintUnder:"ドラッグで見回し、額縁をタップすると隠れた記録が開きます",
+  shardRoom:"{r} クイズ {a}/{b}", hidCount:"隠れた記録 {n}件", hidFlat:"光のかけら {a}/{b}"});
+Object.assign(I18N.en,{hidHall:"Hidden Underground Hall", hidSub:"Only for REMINE who finished every quiz", hidRoom:"{m}'s Hidden Fan Room", hidSoon:"Taking fan picks", hidRec:"Recommend a hidden moment",
+  hidRecDesc:"Tell us a hidden moment only fans know. Add the original channel link and the creator's name — we check it is public, then hang it in this room.",
+  hidRules:"Public videos and posts only, linked to the original. Creator names are always shown. No private, personal-life or leaked videos. Removed on request right away.",
+  hidByFan:"Made by a fan · Creator: {c}", hidByOfficial:"Official video · {c}", shardGot:"✨ Light shard {a}/{b}! Check the lobby floor", shardAll:"✨ All light shards collected! A magic circle opened in the middle of the lobby floor",
+  hidLocked:"Light shards {a}/{b} — solve every quiz in a room to get its shard", bDescend:"Go down", toLobbyUp:"↑ Back up to the lobby", hintUnder:"Drag to look around. Tap a frame in a member room to open hidden records",
+  shardRoom:"{r} quiz {a}/{b}", hidCount:"{n} hidden records", hidFlat:"Light shards {a}/{b}"});
+Object.assign(I18N.zh,{hidHall:"隱藏地下館", hidSub:"只給解完所有謎題的REMINE", hidRoom:"{m}的隱藏追星房", hidSoon:"徵求粉絲推薦中", hidRec:"推薦隱藏名場面",
+  hidRecDesc:"告訴我們只有粉絲才知道的隱藏名場面。附上原頻道網址和作者名稱,確認是公開影片後就會掛在這個房間。",
+  hidRules:"只介紹公開的影片與貼文,連到原始連結。一定標示作者,不收非公開、私生活、外流影片。要求下架會立刻處理。",
+  hidByFan:"粉絲製作的紀錄 · 作者:{c}", hidByOfficial:"官方影片 · {c}", shardGot:"✨ 光之碎片 {a}/{b}!看看大廳地板", shardAll:"✨ 光之碎片收集完成!大廳中央地板打開了魔法陣",
+  hidLocked:"光之碎片 {a}/{b} — 解完每個房間的謎題就能得到碎片", bDescend:"往下走", toLobbyUp:"↑ 回到大廳", hintUnder:"拖曳環顧四周,點成員房間的畫框就能打開隱藏紀錄",
+  shardRoom:"{r} 謎題 {a}/{b}", hidCount:"隱藏紀錄 {n} 筆", hidFlat:"光之碎片 {a}/{b}"});
 const FRAMES_PER_ROOM = 7;
 const AFFILIATE_RE = /(^|\.)coupang\.com$|(^|\.)coupa\.ng$/i;
 const IG_RE = /^https:\/\/(www\.)?instagram\.com\/(p|reel)\/[\w-]+\/?$/;
@@ -1868,6 +1908,26 @@ G.curationReady = (async () => {
 G.curationReady.then(()=>{ const h=HALLS.find(x=>x.id===PROGRESS.hall), sr=h?.rooms.find(r=>r.id===PROGRESS.secretRoom); if(!sr) return;
   MISSIONS.filter(m=>m.hall===h.id && /^[\w-]{11}$/.test(m.reward?.video_id||"")).forEach(m=>{ if(!sr.videos.some(v=>v.id===m.reward.video_id)) sr.videos.push({id:m.reward.video_id, title:m.reward.title||"", kind:m.reward.kind||"long", official:true, desc:""}); }); });
 
+/* ---------- 히든 지하관: 빛 조각 ---------- */
+G.hidDemo = qs.get("demo")==="hidden";
+G.shards = () => { const h=G.hall(HIDDEN_HALL.hall); if(!HIDDEN_HALL.enabled || !h) return [];
+  return HIDDEN_HALL.shardRooms.map(rid=>{ const r=G.room(h.id, rid), qs_=G.missions(h.id, rid).filter(m=>m.type==="quiz");
+    return { rid, room:r, color:G.roomColor(r), total:qs_.length, solved:qs_.filter(m=>G.hasMission(m.id)).length, done: G.hidDemo || (qs_.length>0 && qs_.every(m=>G.hasMission(m.id))) }; }).filter(x=>x.room && x.total>0); };
+G.shardCount = () => G.shards().filter(x=>x.done).length;
+G.hiddenOpen = () => { const l=G.shards(); return l.length>0 && l.every(x=>x.done); };
+G.hidMembers = () => (STATUES.find(s=>s.group===HIDDEN_HALL.hall)?.members||[]);
+G.hidItems = mid => (HIDDEN_ITEMS[mid]||[]).filter(x=>x.checked_at && (x.type==="youtube" ? /^[\w-]{11}$/.test(x.id||"") : !!safeUrl(x.url)));
+G.openHidItem = (m, x) => { if(x.type==="youtube") return openItem({id:x.id, kind:"long", title:x.title, channel:x.channel, official:!x.fan,
+    desc: (x.fan ? G.t("hidByFan",{c:x.channel}) : G.t("hidByOfficial",{c:x.channel}))});
+  const u=safeUrl(x.url); openItem({type:"text", title:x.title, desc:G.t("hidByFan",{c:x.channel}), html:u?`<a class="contactBtn" href="${esc(u.href)}" target="_blank" rel="noopener">↗ ${esc(G.t("openSrc"))}</a>`:""}); };
+G.openHidRec = m => openItem({type:"text", key:"hid_"+m.id, title:G.t("hidRoom",{m:G.lang==="ko"?m.name:m.name_en}), desc:G.t("hidRecDesc"),
+  html:`<p class="contactNote">${esc(G.t("hidRules"))}</p>`});
+G.hidLockedToast = () => toast(G.t("hidLocked",{a:G.shardCount(), b:G.shards().length}), 2600);
+G.onMission = m => { const l=G.shards(), s_=l.find(x=>x.rid===m.room && x.room && G.room(m.hall,m.room)===x.room);
+  if(m.type==="quiz" && s_?.done && !store.json("duksim-shards-v1",{})[s_.rid]){ const d=store.json("duksim-shards-v1",{}); d[s_.rid]=new Date().toISOString().slice(0,10); store.put("duksim-shards-v1",d);
+    setTimeout(()=>toast(G.hiddenOpen() ? G.t("shardAll") : G.t("shardGot",{a:G.shardCount(), b:l.length}), 3200), 2400); }
+  G.onProgress?.(); };
+
 /* ---------- 언어 ---------- */
 { const q0=qs.get("lang"), q=/^zh/i.test(q0||"") ? "zh" : q0, s=store.get("hall-lang"); G.lang = I18N[q]?q : I18N[s]?s : "ko"; }
 G.char = CHARS.some(c=>c.id===store.get("hall-char")) ? store.get("hall-char") : "jindo";
@@ -1915,15 +1975,16 @@ function drawIntro(){
 /* ---------- 화면 이동 ---------- */
 G.go = (view, hallId=G.hallId, roomId=null) => {
   if(view==="shop"){ const sg=SHOP_GROUPS.find(x=>x.id===hallId); if(!sg?.open){ toast(G.t("locked")); return; } }
+  if(view==="under" && !G.hiddenOpen()){ G.hidLockedToast(); return; }
   if(view==="hub" || view==="room"){ const h=G.hall(hallId); if(!h || !h.open){ toast(G.t("lockedToast")); return; } }
   if(view==="room"){ const h=G.hall(hallId), r=G.room(hallId, roomId); if(!r || !G.visibleRooms(h).includes(r)) return; if(!G.roomOpen(h, r)){ toast(G.lockedText(h, r), 2400); return; } }
   if(G.mode==="3d" && G.go3d) G.go3d(view, hallId, roomId); else G.applyView(view, hallId, roomId);
 };
 G.applyView = (view, hallId=null, roomId=null) => {
-  G.view=view; G.shopGroup = view==="shop" ? hallId : null; G.hallId = view==="outside"||view==="lobby"||view==="shop" ? null : hallId; G.roomId = view==="room" ? roomId : null;
+  G.view=view; G.shopGroup = view==="shop" ? hallId : null; G.hallId = view==="outside"||view==="lobby"||view==="shop"||view==="under" ? null : hallId; G.roomId = view==="room" ? roomId : null;
   document.body.dataset.view = view;
   document.documentElement.style.setProperty("--theme", view==="room" ? G.roomColor(G.room()) : view==="shop" ? (G.shopG()?.color||"#ff9ad5") : (G.hall()?.color || "#9db8e8"));
-  try{ history.replaceState(null, "", location.pathname + location.search + (view==="shop" ? "#/shop/"+G.shopGroup : G.hallId ? "#/"+G.hallId+(G.roomId?"/"+G.roomId:"") : view==="lobby" ? "#/lobby" : "")); }catch(e){}
+  try{ history.replaceState(null, "", location.pathname + location.search + (view==="shop" ? "#/shop/"+G.shopGroup : G.hallId ? "#/"+G.hallId+(G.roomId?"/"+G.roomId:"") : view==="lobby" ? "#/lobby" : view==="under" ? "#/under" : "")); }catch(e){}
   if(view==="room") markVisit(G.hallId, G.roomId);
   ANALYTICS.enter(view==="room" ? G.hallId+"/"+G.roomId : view==="shop" ? "shop/"+G.shopGroup : view==="hub" ? G.hallId+"/(hub)" : view);
   drawChrome(); drawFlat(); showHint();
@@ -1931,14 +1992,16 @@ G.applyView = (view, hallId=null, roomId=null) => {
 };
 function drawChrome(){
   const h=G.hall(), r=G.room(), v=G.view;
-  $("#hTitle").textContent = v==="room" ? G.roomTitle(r) : v==="hub" ? G.nm(h.name) : v==="shop" ? G.t("shopOf",{g:G.nm(G.shopG()?.name)}) : G.t("gallery");
-  $("#hSub").textContent = v==="room" ? G.nm(h.name)+" · "+G.nm(r.name) : v==="hub" ? G.t("subHub") : v==="shop" ? G.t("shopSub") : v==="lobby" ? G.t("subLobby") : G.t("subOut");
+  $("#hTitle").textContent = v==="under" ? G.t("hidHall") : v==="room" ? G.roomTitle(r) : v==="hub" ? G.nm(h.name) : v==="shop" ? G.t("shopOf",{g:G.nm(G.shopG()?.name)}) : G.t("gallery");
+  $("#hSub").textContent = v==="under" ? G.t("hidSub") : v==="room" ? G.nm(h.name)+" · "+G.nm(r.name) : v==="hub" ? G.t("subHub") : v==="shop" ? G.t("shopSub") : v==="lobby" ? G.t("subLobby") : G.t("subOut");
   document.title = $("#hTitle").textContent + (v==="outside"||v==="lobby" ? "" : " · " + G.t("gallery"));
   let html="";
   if(v==="shop") html = `<button class="back" data-go="lobby">← ${esc(G.t("toLobby"))}</button>` + SHOP_GROUPS.map(x=>`<button data-shop="${esc(x.id)}" class="${x.id===G.shopGroup?'on':''} ${x.open?'':'lock'}">${esc(G.nm(x.name))}${x.open?'':' · '+esc(G.t("locked"))}</button>`).join("") + `<button data-seller="1">🏪 ${esc(G.t("bSeller"))}</button>`;
   if(v==="lobby") html = HALLS.map(x=>`<button data-hall="${esc(x.id)}" class="${x.open?'':'lock'}">${esc(G.nm(x.name))}${x.open?'':' · '+esc(G.t("locked"))}</button>`).join("") + `<button data-shoppick="1">🛍 ${esc(G.t("shop"))}</button>`;
   const rb = x => `<button data-room="${esc(x.id)}" class="${x.id===G.roomId?'on':''} ${G.roomOpen(h,x)?'':'lockr'}">${G.roomOpen(h,x)?'':'🔒 '}${esc(G.nm(x.name))}</button>`;
   if(v==="hub") html = `<button class="back" data-go="lobby">← ${esc(G.t("toLobby"))}</button>` + G.visibleRooms(h).map(rb).join("");
+  if(v==="under") html = `<button class="back" data-go="lobby">${esc(G.t("toLobbyUp"))}</button>`;
+  if(v==="lobby" && G.shards().length) html += `<button data-under="1" class="${G.hiddenOpen()?'':'lock'}">✨ ${esc(G.hiddenOpen() ? G.t("hidHall") : G.t("hidFlat",{a:G.shardCount(), b:G.shards().length}))}</button>`;
   if(v==="room") html = `<button class="back" data-go="hub">← ${esc(G.t("toHub"))}</button>` + G.visibleRooms(h).map(rb).join("");
   const c=$("#crumbs"); c.innerHTML=html; wireNav(c); drawProgress();
   $("#modeBtn").textContent = G.walk ? G.t("modeWalk") : G.t("modeQuick");
@@ -1950,6 +2013,7 @@ function wireNav(box){
   box.querySelectorAll("[data-shoppick]").forEach(b=>b.onclick=()=>G.openShopPicker());
   box.querySelectorAll("[data-seller]").forEach(b=>b.onclick=()=>G.openSeller());
   box.querySelectorAll("[data-room]").forEach(b=>b.onclick=()=>{ if(b.dataset.room!==G.roomId) G.go("room", G.hallId, b.dataset.room); });
+  box.querySelectorAll("[data-under]").forEach(b=>b.onclick=()=>G.go("under"));
 }
 $("#enter").onclick = () => G.go("lobby");
 $("#modeBtn").onclick = () => setWalk(!G.walk);
@@ -1968,7 +2032,7 @@ function drawProgress(){
 
 /* ---------- 안내 말풍선·알림 ---------- */
 let hintTimer;
-function hintText(){ return G.t(G.walk && G.mode!=="flat" ? (G.view==="outside" ? (G.ctl==="joy"?"hintOutWalk":"hintOutWalkD") : (G.ctl==="joy"?"hintWalk":"hintWalkD")) : {outside:"hintOut",lobby:"hintLobby",hub:"hintHub",room:"hintRoom",shop:"hintShop"}[G.view]); }
+function hintText(){ return G.t(G.walk && G.mode!=="flat" ? (G.view==="outside" ? (G.ctl==="joy"?"hintOutWalk":"hintOutWalkD") : (G.ctl==="joy"?"hintWalk":"hintWalkD")) : {outside:"hintOut",lobby:"hintLobby",hub:"hintHub",room:"hintRoom",shop:"hintShop",under:"hintUnder"}[G.view]); }
 function showHint(){ const el=$("#hint");
   el.textContent=hintText(); el.classList.remove("off"); clearTimeout(hintTimer); hintTimer=setTimeout(hideHint, 6000); }
 function hideHint(){ clearTimeout(hintTimer); $("#hint").classList.add("off"); }
@@ -2357,7 +2421,14 @@ function drawFlat(){
        <div class="tt">${esc(G.nm(x.name))}<small>${x.open ? esc(G.t("videosN",{n:x.rooms.reduce((a,b)=>a+(b.videos?.length||0),0)})) : esc(G.t("locked"))}</small></div></button>`).join("") + `</div>
       <div class="grid" style="margin-top:12px"><button class="card door" data-shoppick="1"><div class="th" style="background:#ff9ad5">🛍 ${esc(G.t("shop"))}</div><div class="tt">${esc(G.t("shop"))}<small>${esc(G.t("pickIdol"))}</small></div></button><button class="card" data-culture="1"><div class="tt">🇰🇷 ${esc(G.t("culture"))}<small>${esc(G.t("cultureSoon"))}</small></div></button>
       <button class="card" data-contact="1"><div class="tt">📣 ${esc(G.t("contactTitle"))}<small>${esc(G.t("bs1"))}</small></div></button></div>
-      <p class="contactNote">${esc(G.t("freeNote"))}</p>` + G.flatPhotos("lobby");
+      <p class="contactNote">${esc(G.t("freeNote"))}</p>` + G.flatPhotos("lobby")
+      + (G.shards().length ? `<div class="sec">✨ ${esc(G.t("hidHall"))}</div><button class="card door ${G.hiddenOpen()?'':'lock'}" data-under="1" style="width:100%"><div class="tt">${esc(G.hiddenOpen() ? G.t("bDescend") : G.t("hidFlat",{a:G.shardCount(), b:G.shards().length}))}<small>${G.shards().map(x=>(x.done?"✨ ":"· ")+esc(G.t("shardRoom",{r:G.nm(x.room.name), a:x.solved, b:x.total}))).join("<br>")}</small></div></button>` : "");
+  } else if(v==="under"){
+    html = `<div class="warn" style="color:var(--ink)"><b>${esc(G.t("hidHall"))}</b><br>${esc(G.t("hidSub"))}<br><small>${esc(G.t("hidRules"))}</small></div>`
+      + G.hidMembers().map(m=>{ const l=G.hidItems(m.id);
+        return `<div class="sec" style="color:${esc(m.color)}">✨ ${esc(G.t("hidRoom",{m:G.lang==="ko"?m.name:m.name_en}))}</div><div class="grid">`
+          + l.map((x,i)=>`<button class="card" data-hid="${esc(m.id)}|${i}"><div class="th" style="${x.type==="youtube"?`background-image:url('https://i.ytimg.com/vi/${esc(x.id)}/hqdefault.jpg')`:`background:${esc(m.color)}`}"></div><div class="tt">${esc(x.title)}<small>${esc(x.channel)}</small></div></button>`).join("")
+          + `<button class="card" data-hidrec="${esc(m.id)}" style="border:1px dashed var(--line)"><div class="tt">💌 ${esc(G.t("hidRec"))}<small>${esc(G.t("hidSoon"))}</small></div></button></div>`; }).join("");
   } else if(v==="shop"){
     const gid=G.shopGroup;
     html = SHOP_CATEGORIES.map(c=>{ const it=G.shopItems(gid,c.id);
@@ -2406,6 +2477,8 @@ function drawFlat(){
   b.querySelectorAll("[data-contact]").forEach(x=>x.onclick=G.openContact);
   b.querySelectorAll("[data-prod]").forEach(x=>x.onclick=()=>{ const [c,i]=x.dataset.prod.split(":"); G.openProduct(G.shopItems(G.shopGroup,c)[+i]); });
   b.querySelectorAll("[data-m]").forEach(x=>x.onclick=()=>G.startMission(MISSIONS.find(m=>m.id===x.dataset.m)));
+  b.querySelectorAll("[data-hid]").forEach(x=>x.onclick=()=>{ const [mid,i]=x.dataset.hid.split("|"), m=G.hidMembers().find(y=>y.id===mid); G.openHidItem(m, G.hidItems(mid)[+i]); });
+  b.querySelectorAll("[data-hidrec]").forEach(x=>x.onclick=()=>G.openHidRec(G.hidMembers().find(y=>y.id===x.dataset.hidrec)));
 }
 function showFallback(reason){
   if(G.mode==="3d") return;
@@ -2419,6 +2492,7 @@ $("#retry").onclick=()=>location.reload();
 document.body.classList.toggle("walk", G.walk);
 { const m=location.hash.match(/^#\/([\w-]+)(?:\/([\w-]+))?/);
   if(m && m[1]==="lobby") G.applyView("lobby");
+  else if(m && m[1]==="under" && G.hiddenOpen()) G.applyView("under");
   else if(m && m[1]==="shop" && SHOP_GROUPS.find(x=>x.id===m[2])?.open) G.applyView("shop", m[2]);
   else if(m && G.hall(m[1])?.open) G.curationReady.then(()=>{ if(G.view==="outside") G.go(m[2] && G.room(m[1],m[2]) ? "room" : "hub", m[1], m[2]); });
   else { G.applyView("outside"); if(!qs.has("nointro")) $("#intro").hidden=false; } }
@@ -2904,10 +2978,95 @@ function start(THREE){
       walk:{spawn:[0,R-1.8,0], free:(x,z)=>Math.hypot(x,z)<R-0.75 && !inCircles(x,z,blockers), camDist:2.8, camH:1.9, clampR:R-0.25}};
   }
   function buildLobby(){
-    return buildRotunda({ color:"#c9a45c", outdoorBack:true, npc:true, adPlace:"lobby_top", backLabel:()=>G.t("exit"), onBack:()=>G.go("outside"), photoKey:"lobby", photoAngle:2.72,
+    const L = buildRotunda({ color:"#c9a45c", outdoorBack:true, npc:true, adPlace:"lobby_top", backLabel:()=>G.t("exit"), onBack:()=>G.go("outside"), photoKey:"lobby", photoAngle:2.72,
       doors: HALLS.map(h=>({ color:h.color, open:h.open, title:()=>G.nm(h.name),
         sub:()=> h.open ? G.t("videosN",{n:h.rooms.reduce((a,r)=>a+(r.videos?.length||0),0)}) : (h.id===PROGRESS.nextHall && HALLS.some(x=>x.id===PROGRESS.hall && G.hallCleared(x)) ? "🏆 "+G.t("clearReward") : G.t("locked")),
         act:()=> h.open ? G.go("hub",h.id) : G.toast(G.t("lockedToast")) })).concat([{ color:"#ff9ad5", open:true, title:()=>"🛍 "+G.t("shop"), sub:()=>G.t("pickIdol"), act:()=>G.openShopPicker() }]) });
+    try{ hiddenFloor(L); }catch(e){ console.warn("[미술관] 히든 지하관 입구 만들기 실패:", e); }
+    return L;
+  }
+  /* 히든 지하관 입구: 로비 바닥의 빛 조각(방 퀴즈를 다 풀면 하나씩 빛남) + 다 모이면 가운데 마법진 */
+  function hiddenFloor(L){
+    const list=G.shards(); if(!list.length) return;
+    const s=L.scene, n=list.length, R0=2.6, gems=[];
+    list.forEach((x,i)=>{ const a=i*Math.PI*2/n+Math.PI/n, px=Math.sin(a)*R0, pz=-Math.cos(a)*R0, col=new THREE.Color(x.color);
+      const mark=add(s, new THREE.CircleGeometry(0.34,24), new THREE.MeshBasicMaterial({color:col, transparent:true, opacity:0.18, depthWrite:false}), px,0.012,pz); mark.rotation.x=-Math.PI/2;
+      const halo=add(s, new THREE.RingGeometry(0.24,0.44,24), new THREE.MeshBasicMaterial({color:new THREE.Color(mix(x.color,"#ffffff",.45)), transparent:true, opacity:0.5, depthWrite:false, side:THREE.DoubleSide}), px,0.02,pz); halo.rotation.x=-Math.PI/2;
+      const gem=add(s, new THREE.OctahedronGeometry(0.17,0), new THREE.MeshBasicMaterial({color:col}), px,0.55,pz);
+      const act=()=>{ const st=G.shards()[i]||x; G.toast((st.done?"✨ ":"🔎 ")+G.t("shardRoom",{r:G.nm(st.room.name), a:st.solved, b:st.total}), 2200); };
+      [mark,gem].forEach(m=>{ m.userData.act=act; L.clickables.push(m); });
+      gems.push({gem, halo, mark, ph:i*1.3}); });
+    const circTex=canvasTex(512,512,(g,w,h)=>{ const c=w/2; g.clearRect(0,0,w,h);
+      const gr=g.createRadialGradient(c,c,20,c,c,c); gr.addColorStop(0,"rgba(255,246,210,.95)"); gr.addColorStop(.6,"rgba(255,214,64,.35)"); gr.addColorStop(1,"rgba(255,214,64,0)"); g.fillStyle=gr; g.fillRect(0,0,w,h);
+      g.strokeStyle="#ffd640"; g.lineWidth=6; [235,200,120].forEach(r=>{ g.beginPath(); g.arc(c,c,r,0,7); g.stroke(); });
+      g.lineWidth=4; g.beginPath(); for(let k=0;k<=5;k++){ const a=-Math.PI/2+k*Math.PI*4/5; g.lineTo(c+Math.cos(a)*195,c+Math.sin(a)*195); } g.stroke();
+      list.forEach((x,k)=>{ const a=-Math.PI/2+k*Math.PI*2/n; g.fillStyle=x.color; g.beginPath(); g.arc(c+Math.cos(a)*218,c+Math.sin(a)*218,16,0,7); g.fill(); });
+      g.fillStyle="#fff7dc"; g.font=`700 22px ${FONT}`; g.textAlign="center"; for(let k=0;k<24;k++){ const a=k*Math.PI/12; g.save(); g.translate(c+Math.cos(a)*160,c+Math.sin(a)*160); g.rotate(a+Math.PI/2); g.fillText("✦◇✧◆"[k%4],0,0); g.restore(); } });
+    const circ=add(s, new THREE.CircleGeometry(1.5,48), new THREE.MeshBasicMaterial({map:circTex, transparent:true, opacity:0, depthWrite:false}), 0,0.016,0); circ.rotation.x=-Math.PI/2;
+    const beam=add(s, new THREE.CylinderGeometry(1.15,1.45,3.4,32,1,true), new THREE.MeshBasicMaterial({color:0xffe9a8, transparent:true, opacity:0, side:THREE.DoubleSide, depthWrite:false}), 0,1.7,0);
+    const actC=()=> G.hiddenOpen() ? G.go("under") : G.hidLockedToast();
+    circ.userData.act=actC; L.clickables.push(circ);
+    L.spots.push({p:new THREE.Vector3(0,1.2,0), r:1.5, label:()=> G.hiddenOpen() ? "✨ "+G.t("bDescend") : "✨ "+G.t("hidFlat",{a:G.shardCount(), b:G.shards().length}), act:actC});
+    const update=()=>{ const st=G.shards(); gems.forEach((g,i)=>{ const d=!!st[i]?.done; g.gem.visible=d; g.halo.visible=d; g.mark.material.opacity=d?0.6:0.18; });
+      L.hidOpen=G.hiddenOpen(); circ.material.opacity=L.hidOpen?0.95:0; beam.material.opacity=L.hidOpen?0.12:0; beam.visible=L.hidOpen; };
+    update(); L.relabel.push(update);
+    const base=L.animate; let t=0;
+    L.animate = dt => { const a=base?base(dt):false; if(!gems.some(g=>g.gem.visible)) return a; t+=dt;
+      gems.forEach(g=>{ if(!g.gem.visible) return; g.gem.rotation.y+=dt*1.6; g.gem.position.y=0.55+Math.sin(t*2+g.ph)*0.08; g.halo.material.opacity=0.35+0.25*Math.sin(t*3+g.ph); });
+      if(L.hidOpen){ circ.rotation.z+=dt*0.25; beam.material.opacity=0.08+0.06*Math.sin(t*2); }
+      return true; };
+  }
+  /* 히든 지하관: 별빛 동굴 + 멤버별 「숨은 덕질의 방」 벽감(액자 = 확인된 공개 기록, 빈 칸 = 팬 추천 받기) */
+  function buildUnder(){
+    const s=new THREE.Scene(); s.background=new THREE.Color(0x120d26); s.fog=new THREE.Fog(0x120d26, 10, 24);
+    s.add(new THREE.HemisphereLight(0xc9b8ff,0x1a1230,1.8)); { const d=new THREE.DirectionalLight(0xffe2b0,0.6); d.position.set(0,8,2); s.add(d); }
+    const R=8, H=5.2, clickables=[], relabel=[], spots=[];
+    const wallTex=canvasTex(256,128,(g,w,h)=>{ g.fillStyle="#2a2150"; g.fillRect(0,0,w,h); g.strokeStyle="rgba(255,255,255,.07)"; g.lineWidth=2;
+      for(let y=0;y<h;y+=16){ g.beginPath(); g.moveTo(0,y); g.lineTo(w,y); g.stroke(); for(let x=(y/16%2)*16;x<w;x+=32){ g.beginPath(); g.moveTo(x,y); g.lineTo(x,y+16); g.stroke(); } } });
+    wallTex.wrapS=wallTex.wrapT=THREE.RepeatWrapping; wallTex.repeat.set(6,2);
+    add(s, new THREE.CylinderGeometry(R,R,H,40,1,true), new THREE.MeshLambertMaterial({map:wallTex, side:THREE.BackSide}), 0,H/2,0);
+    const floorTex=canvasTex(512,512,(g,w,h)=>{ g.fillStyle="#1c1638"; g.fillRect(0,0,w,h); const c=w/2;
+      for(let r=240;r>20;r-=30){ g.strokeStyle=`rgba(255,214,64,${r%60?0.08:0.2})`; g.lineWidth=3; g.beginPath(); g.arc(c,c,r,0,7); g.stroke(); } });
+    add(s, new THREE.CircleGeometry(R,40), new THREE.MeshLambertMaterial({map:floorTex})).rotation.x=-Math.PI/2;
+    add(s, new THREE.CircleGeometry(R,40), bas(0x0d0a1e), 0,H,0).rotation.x=Math.PI/2;
+    const pts=[]; for(let i=0;i<240;i++){ const a=Math.random()*7, r=Math.random()*(R-0.4); pts.push(Math.sin(a)*r, H-0.05-Math.random()*0.3, Math.cos(a)*r); }
+    const starG=new THREE.BufferGeometry(); starG.setAttribute("position", new THREE.Float32BufferAttribute(pts,3));
+    const stars=new THREE.Points(starG, new THREE.PointsMaterial({color:0xfff2c0, size:0.07, transparent:true, opacity:0.9})); s.add(stars);
+    const crystal=add(s, new THREE.OctahedronGeometry(0.45,0), new THREE.MeshBasicMaterial({color:0xffd640}), 0,1.6,0);
+    const ring=add(s, new THREE.RingGeometry(0.7,0.9,40), new THREE.MeshBasicMaterial({color:0xffd640, transparent:true, opacity:0.4, side:THREE.DoubleSide, depthWrite:false}), 0,0.02,0); ring.rotation.x=-Math.PI/2;
+    const title=textPlane(s, 2.6, 0.5, 512, (g,w,h)=>{ g.clearRect(0,0,w,h); g.fillStyle="#ffd640"; g.textAlign="center"; g.textBaseline="middle"; g.font=`800 52px ${FONT}`; g.fillText("✨ "+G.t("hidHall"), w/2, h/2); });
+    title.position.set(0,2.6,0); relabel.push(title.userData.redraw);
+    const members=G.hidMembers(), n=members.length, spread=Math.PI*1.4, orbs=[];
+    members.forEach((m,i)=>{ const a = n===1 ? 0 : -spread/2 + i*spread/(n-1), c=new THREE.Color(m.color), nm=()=>G.lang==="ko"?m.name:m.name_en;
+      const grp=new THREE.Group(); grp.position.set(Math.sin(a)*(R-0.25),0,-Math.cos(a)*(R-0.25)); grp.lookAt(0,0,0); s.add(grp);
+      add(grp, new THREE.PlaneGeometry(3.3,3.7), new THREE.MeshBasicMaterial({color:new THREE.Color(mix(m.color,"#120d26",.72))}), 0,1.85,0.01);
+      const fm=new THREE.MeshBasicMaterial({color:c}); box(grp,0.12,3.5,0.12,fm,-1.65,1.75,0.05); box(grp,0.12,3.5,0.12,fm,1.65,1.75,0.05); box(grp,3.42,0.12,0.12,fm,0,3.52,0.05);
+      const sign=textPlane(grp, 3.1, 0.5, 512, (g,w,h)=>label(g,w,h,m.color,"#1e143c", G.t("hidRoom",{m:nm()}), "", 34)); sign.position.set(0,3.95,0.06); relabel.push(sign.userData.redraw);
+      const items=G.hidItems(m.id), N=HIDDEN_HALL.perRoom, fw=0.88, fh=0.64;
+      for(let k=0;k<N;k++){ const fx=(k-(N-1)/2)*1.02, fy=2.2, it=items[k];
+        box(grp, fw+0.08, fh+0.08, 0.04, fm, fx, fy, 0.04);
+        const pm=new THREE.MeshBasicMaterial({color:0xffffff}), pl=add(grp, new THREE.PlaneGeometry(fw,fh), pm, fx, fy, 0.07);
+        if(it?.type==="youtube"){ pm.color.set(0x444444); loadThumb(it.id, t=>{ pm.map=t; pm.color.set(0xffffff); pm.needsUpdate=true; }); }
+        else pm.map=canvasTex(256,186,(g,w,h)=>{ g.fillStyle=mix(m.color,"#ffffff",.78); g.fillRect(0,0,w,h); g.fillStyle="#1e143c"; g.textAlign="center"; g.textBaseline="middle"; g.font=`700 22px ${FONT}`; wrapText(g, it ? it.title : "💌 "+G.t("hidSoon"), w/2, h/2, w-24, 26, 4); });
+        pl.userData.act = it ? ()=>G.openHidItem(m,it) : ()=>G.openHidRec(m); clickables.push(pl);
+        const cap=textPlane(grp, fw+0.12, 0.17, 256, (g,w,h)=>{ g.clearRect(0,0,w,h); g.fillStyle="#f3ecff"; g.textAlign="center"; g.textBaseline="middle"; g.font=`600 17px ${FONT}`; wrapText(g, it ? (it.fan?"🎥 ":"📺 ")+it.channel : G.t("hidSoon"), w/2, h/2, w-8, 20, 1); });
+        cap.position.set(fx, fy-fh/2-0.15, 0.07); relabel.push(cap.userData.redraw); }
+      const rec=textPlane(grp, 2.0, 0.36, 384, (g,w,h)=>label(g,w,h,"#fffdf8","#1e143c","💌 "+G.t("hidRec"),"",30)); rec.position.set(0,1.1,0.07); relabel.push(rec.userData.redraw);
+      rec.userData.act=()=>G.openHidRec(m); clickables.push(rec);
+      orbs.push(add(s, new THREE.SphereGeometry(0.11,12,8), new THREE.MeshBasicMaterial({color:c}), Math.sin(a)*(R-1.7), 3.3, -Math.cos(a)*(R-1.7)));
+      spots.push({p:new THREE.Vector3(Math.sin(a)*(R-1.5),1.6,-Math.cos(a)*(R-1.5)), r:1.5, label:()=> items[0] ? "▶ "+G.t("hidRoom",{m:nm()}) : "💌 "+G.t("hidRec"), act:()=> items[0] ? G.openHidItem(m, items[0]) : G.openHidRec(m)}); });
+    const back=new THREE.Group(); back.position.set(0,0,R-0.25); back.lookAt(0,0,0); s.add(back);
+    add(back, new THREE.PlaneGeometry(2.2,3.8), new THREE.MeshBasicMaterial({transparent:true, depthWrite:false, map:canvasTex(64,128,(g,w,h)=>{ const gr=g.createLinearGradient(0,0,0,h); gr.addColorStop(0,"rgba(255,246,220,.95)"); gr.addColorStop(1,"rgba(255,214,64,.15)"); g.fillStyle=gr; g.fillRect(0,0,w,h); })}), 0,1.9,0.01);
+    for(let i=0;i<6;i++) box(back, 2.0, 0.16, 0.34, lam(0x5b4a8a), 0, 0.08+i*0.16, 1.85-i*0.3);
+    const up=()=>G.go("lobby");
+    const bs=textPlane(back, 2.2, 0.44, 384, (g,w,h)=>label(g,w,h,"#1e143c","#ffd640", G.t("toLobbyUp"), "", 34)); bs.position.set(0,4.05,0.05); relabel.push(bs.userData.redraw);
+    bs.userData.act=up; clickables.push(bs); back.children.forEach(o=>{ if(o.isMesh && !o.userData.act){ o.userData.act=up; clickables.push(o); } });
+    spots.push({p:new THREE.Vector3(0,1.9,R-1.6), r:1.3, label:()=>G.t("toLobbyUp"), act:up});
+    let t=0;
+    return {scene:s, clickables, relabel, spots, cam:{pos:[0,1.7,3.8], yaw:0, pitch:0.06, zoom:1.1},
+      animate: dt=>{ t+=dt; crystal.rotation.y+=dt*0.9; crystal.position.y=1.6+Math.sin(t*1.5)*0.08; ring.material.opacity=0.3+0.15*Math.sin(t*2); stars.material.opacity=0.7+0.25*Math.sin(t*0.8);
+        orbs.forEach((o,i)=>{ o.position.y=3.3+Math.sin(t*1.8+i)*0.12; }); return true; },
+      walk:{spawn:[0,R-2.0,0], free:(x,z)=>{ const d=Math.hypot(x,z); return d<R-0.85 && d>0.75 && !(z>R-2.3 && Math.abs(x)<1.1); }, camDist:2.8, camH:1.9, clampR:R-0.3}};
   }
   function buildHub(hall){
     return buildRotunda({ color:hall.color, adPlace:"hall_top", backLabel:()=>G.t("toLobby"), onBack:()=>G.go("lobby"), photoKey:"hub", photoAngle:-(Math.PI-0.62),
@@ -3405,6 +3564,7 @@ function start(THREE){
     if(view==="lobby") return cache.lobby ||= buildLobby();
     if(view==="hub") return buildHub(G.hall(hallId));
     if(view==="shop") return buildShop(hallId);
+    if(view==="under") return buildUnder();
     return buildRoom(G.hall(hallId), G.room(hallId, roomId));
   }
   function placePlayer(){
@@ -3438,6 +3598,11 @@ function start(THREE){
         const curve=new THREE.CatmullRomCurve3(cur.path.map(p=>new THREE.Vector3(...p))), y0=yaw, p0=pitch; let fading=false;
         await tween(2600, t=>{ const e=t<.5?2*t*t:1-Math.pow(-2*t+2,2)/2; camera.position.copy(curve.getPoint(e));
           yaw=y0+((cur.endYaw||0)-y0)*Math.min(1,e*1.4); pitch=p0*(1-e); if(t>0.82 && !fading){ fading=true; fadeEl.classList.add("on"); } });
+        await sleep(200);
+      } else if(G.view==="lobby" && view==="under" && !G.walk){   // 마법진 위로 걸어가 내려다보고 → 아래로 쑥
+        const p0=camera.position.clone(), y0=yaw, pi0=pitch; let fading=false;
+        await tween(1100, t=>{ const e=t<.5?2*t*t:1-Math.pow(-2*t+2,2)/2; camera.position.set(p0.x*(1-e), p0.y+(2.6-p0.y)*e, p0.z+(1.4-p0.z)*e); yaw=y0*(1-e); pitch=pi0+(-1.15-pi0)*e; });
+        await tween(1000, t=>{ const e=t*t; camera.position.y=2.6-3.4*e; if(t>0.45 && !fading){ fading=true; fadeEl.classList.add("on"); } });
         await sleep(200);
       } else await fade(true);
       setScene(view, hallId, roomId); G.applyView(view, hallId, roomId); renderNow();
