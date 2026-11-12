@@ -1,62 +1,62 @@
 {
  "name": "스브스뉴스 (SBS)",
  "channel": "https://www.youtube.com/@subusunews",
- "checkedAt": "2026-11-12T08:41+09:00",
+ "checkedAt": "2026-11-12T14:55+09:00",
  "subscribers": "144만",
  "videos": [
   {
    "id": "QSXv2yiIveI",
    "title": "귀신 훈육 놀이에 터져버린 아동 학대 논란 #한국민속촌 #shorts #스브스뉴스",
-   "views": 4800,
-   "viewsText": "조회수 4.8천회",
+   "views": 6300,
+   "viewsText": "조회수 6.3천회",
    "published": "",
    "kind": "short",
-   "gain": 3800
+   "gain": 1500
   },
   {
    "id": "7UWF0GGYftg",
    "title": "[선공개] 신혼여행 따라갔던 부부에게 연락이 안 온다",
-   "views": 3800,
-   "viewsText": "조회수 3.8천회",
-   "published": "",
-   "kind": "short",
-   "gain": 2100
-  },
-  {
-   "id": "vS6l_n2uJzs",
-   "title": "젠슨 황 내연녀 앨리스 황, 10조 원어치 ‘엔비디아 AI칩’ 중국으로 유출? #엔비디아 #shorts #스브스뉴스",
    "views": 4500,
    "viewsText": "조회수 4.5천회",
    "published": "",
    "kind": "short",
-   "gain": 2500
+   "gain": 700
+  },
+  {
+   "id": "vS6l_n2uJzs",
+   "title": "젠슨 황 내연녀 앨리스 황, 10조 원어치 ‘엔비디아 AI칩’ 중국으로 유출? #엔비디아 #shorts #스브스뉴스",
+   "views": 5100,
+   "viewsText": "조회수 5.1천회",
+   "published": "",
+   "kind": "short",
+   "gain": 600
   },
   {
    "id": "phk3JBktfX8",
    "title": "[선공개] 인간관계 정리되는 요즘 경조사",
-   "views": 4800,
-   "viewsText": "조회수 4.8천회",
+   "views": 5500,
+   "viewsText": "조회수 5.5천회",
    "published": "",
    "kind": "short",
-   "gain": 2600
+   "gain": 700
   },
   {
    "id": "80Prr9snsIk",
    "title": "[선공개] 죽여달라는 거지?",
-   "views": 4800,
-   "viewsText": "조회수 4.8천회",
+   "views": 5800,
+   "viewsText": "조회수 5.8천회",
    "published": "",
    "kind": "short",
-   "gain": 2500
+   "gain": 1000
   },
   {
    "id": "h8iBMhQ3b-Q",
    "title": "추워질수록 위험하다는 굴운자로 #굴 #shorts #스브스뉴스",
-   "views": 5700,
-   "viewsText": "조회수 5.7천회",
+   "views": 5800,
+   "viewsText": "조회수 5.8천회",
    "published": "",
    "kind": "short",
-   "gain": 600
+   "gain": 100
   },
   {
    "id": "uO5xviR9-aM",
@@ -65,22 +65,22 @@
    "viewsText": "조회수 4.3천회",
    "published": "",
    "kind": "short",
-   "gain": 200
+   "gain": 0
   },
   {
    "id": "Y0Y6eq3a6PE",
    "title": "서울시가 남산에 곤돌라를 만들려는 이유 #shorts / 스브스뉴스",
-   "views": 4300,
-   "viewsText": "조회수 4.3천회",
+   "views": 4400,
+   "viewsText": "조회수 4.4천회",
    "published": "",
    "kind": "short",
-   "gain": 200
+   "gain": 100
   },
   {
    "id": "DqL_SWFWkD8",
    "title": "침착맨 방송 중 사교육 문제 직격타 날린 정승제 #입시 #shorts #스브스뉴스",
-   "views": 480000,
-   "viewsText": "조회수 48만회",
+   "views": 500000,
+   "viewsText": "조회수 50만회",
    "published": "",
    "kind": "short",
    "gain": 20000
@@ -92,7 +92,7 @@
    "viewsText": "조회수 1.7만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "pmpb5ZMw3Sw",
@@ -101,7 +101,7 @@
    "viewsText": "조회수 2.9천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "STWniX3sH0g",
@@ -110,16 +110,16 @@
    "viewsText": "조회수 6.2천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "qZaeu4PJUps",
    "title": "롯데홈쇼핑이 직접 교육하는 커머스 인재 학교? #shorts #스브스뉴스",
-   "views": 27000,
-   "viewsText": "조회수 2.7만회",
+   "views": 29000,
+   "viewsText": "조회수 2.9만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 2000
   },
   {
    "id": "bvbHkNEO3t8",
@@ -146,7 +146,7 @@
    "viewsText": "조회수 1.5만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "Hi8hop0wrf0",

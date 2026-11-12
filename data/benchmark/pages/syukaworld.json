@@ -1,35 +1,35 @@
 {
  "name": "슈카월드",
  "channel": "https://www.youtube.com/@syukaworld",
- "checkedAt": "2026-11-12T08:41+09:00",
+ "checkedAt": "2026-11-12T14:55+09:00",
  "subscribers": "374만",
  "videos": [
   {
    "id": "5mSF8npmm9A",
    "title": "이거 진짜에요?",
-   "views": 92000,
-   "viewsText": "조회수 9.2만회",
+   "views": 100000,
+   "viewsText": "조회수 10만회",
    "published": "",
    "kind": "short",
-   "gain": 28000
+   "gain": 8000
   },
   {
    "id": "5LEMniVcweU",
    "title": "걱정 노노",
-   "views": 43000,
-   "viewsText": "조회수 4.3만회",
+   "views": 48000,
+   "viewsText": "조회수 4.8만회",
    "published": "",
    "kind": "short",
-   "gain": 16000
+   "gain": 5000
   },
   {
    "id": "xmLFwy-UdNU",
    "title": "노안의 라식",
-   "views": 210000,
-   "viewsText": "조회수 21만회",
+   "views": 220000,
+   "viewsText": "조회수 22만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "xVKY3CWUoSE",
@@ -38,7 +38,7 @@
    "viewsText": "조회수 5.2만회",
    "published": "",
    "kind": "short",
-   "gain": 2000
+   "gain": 0
   },
   {
    "id": "lioIrGMoIbs",
@@ -47,7 +47,7 @@
    "viewsText": "조회수 8.9만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "D32h_sPWp0g",
@@ -65,7 +65,7 @@
    "viewsText": "조회수 22만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "prQUpQh_gko",
@@ -290,7 +290,7 @@
    "viewsText": "조회수 66만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "Kkwfabj2Dq0",
