@@ -23,6 +23,25 @@ FPS = STD["shorts"]["fps"]; SR = STD["shorts"]["audio_hz"]
 TOL = STD["shorts"]["tolerance_sec"]   # 템플릿별 길이·구간은 standard_v2.json shorts_templates(58-N / 40-N), check_standard.tconf
 CZ = STD["style_A"]["crash_zoom"]; LEAD = STD["style_A"]["audio_lead_sec"]
 
+
+def narr_pitch(path):
+    """내레이션 한 줄의 목소리 높이(Hz, 중앙값) — 줄마다 다른 목소리로 만들어졌는지 찾는 데 씀."""
+    import wave
+    w = wave.open(path); sr = w.getframerate(); ch = w.getnchannels()
+    x = np.frombuffer(w.readframes(w.getnframes()), dtype=np.int16).astype(float)[::ch]; ps = []
+    for i in range(0, len(x) - 1024, 512):
+        fr = x[i:i + 1024]
+        if np.sqrt(np.mean(fr ** 2)) < 500: continue
+        fr = fr - fr.mean(); ac = np.correlate(fr, fr, "full")[1023:]; lo, hi = sr // 400, sr // 80; k = lo + int(np.argmax(ac[lo:hi]))
+        if ac[k] > 0.3 * ac[0]: ps.append(sr / k)
+    return float(np.median(ps)) if ps else 0.0
+
+def narr_even(path, tmp):
+    """줄마다 따로 만든 내레이션의 크기를 -16 LUFS로 맞춘 사본(wav)."""
+    out = os.path.join(tmp, "narr_" + os.path.basename(path).rsplit(".", 1)[0] + ".wav")
+    subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-i", path, "-af", "loudnorm=I=-16:TP=-1.5:LRA=7", "-ar", "48000", "-ac", "1", out], check=True)
+    return out
+
 def ffprobe_wh(f):
     r = subprocess.run(["ffprobe", "-v", "error", "-select_streams", "v:0", "-show_entries", "stream=width,height", "-of", "csv=p=0", f], capture_output=True, text=True).stdout
     return tuple(int(x) for x in r.strip().split(",")[:2])
@@ -266,7 +285,9 @@ def render_expose(spec, outdir, total=None, suffix=""):
     # 내레이션(58-N·40-N, Veda): 영상 전체 시각 기준 [{at, file?, text}] — 파일이 있으면 소리(원음 덕킹), 없으면 narr 자막
     for n_ in spec.get("narration", []) if T["narration"] else []:
         f_ = n_.get("file"); f_ = (f_ if not f_ or os.path.isabs(f_) else os.path.join(base, f_))
-        if f_ and os.path.exists(f_): narr.append((f_, n_["at"], ffprobe_dur(f_), n_.get("volume", 1.0)))
+        if f_ and os.path.exists(f_):
+            f_ = narr_even(f_, tmp)   # 대표 11/12 13:44 "앞뒤 목소리가 다르게 느껴진다" → 줄마다 크기를 같게 맞춤
+            narr.append((f_, n_["at"], ffprobe_dur(f_), n_.get("volume", 1.0)))
         if n_.get("text") and (not (f_ and os.path.exists(f_)) or spec.get("narration_subs", True)):
             im = fx.caption_img(n_["text"], "narr", W); d_ = n_.get("sec") or round(0.8 + len(n_["text"]) * 0.14, 2)
             ovs.append(Ov(im, (W - im.width) // 2, int(H * 0.80), n_["at"], n_["at"] + d_, fade=0.15, fadein=0.12))
@@ -376,6 +397,13 @@ def main(path, outdir=None):
     vids = [render_expose(spec, outdir)]
     th = thumbnail(spec, outdir)
     lines, ok = cs.run(spec, vids)
+    nf = [n.get("file") for n in spec.get("narration", []) if n.get("file")]
+    nf = [f if os.path.isabs(f) else os.path.join(spec["_base"], f) for f in nf]; nf = [f for f in nf if os.path.exists(f)]
+    if len(nf) >= 2:   # 대표 11/12: 앞뒤 목소리가 다르게 들리면 안 됨 — 줄마다 목소리 높이 비교
+        ps = [narr_pitch(f) for f in nf]; lo, hi = min(p for p in ps if p) if any(ps) else 0, max(ps)
+        same = lo and hi / lo < 1.18
+        lines.append(("✅" if same else "❌") + f" 내레이션 목소리 높이 {', '.join(str(round(p)) for p in ps)}Hz" + ("" if same else " — 줄마다 목소리가 달라요. 모든 줄을 한 번에 같은 목소리로 다시 만들기"))
+        ok = ok and bool(same)
     print("영상: " + " / ".join(vids) + f"\n썸네일: {th}"); print("\n".join(lines)); print("→ 표준 v2 점검 통과" if ok else "→ ❌ 부터 고치기")
     return vids, th, lines, ok
 
