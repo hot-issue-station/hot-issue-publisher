@@ -1037,8 +1037,8 @@ const SHOPS = [
             입점 판매자가 권리를 가진 이미지를 주면 사용 가능 — 그때 image_alt와 image_credit(출처) 필수
    - seller:true, badge:"입점" → 입점 판매자 상품(「입점」 꼬리표 + 판매자 책임 안내) */
 const PRODUCTS = [   // 11/12 쿠팡 파트너스 링크(대표 계정 AF5205583) — 파트너스 화면에서 직접 생성. 가격은 11/12 14:1x 기준이라 바뀔 수 있어 「쿠팡에서 확인」으로 표시
-  {name:"리센느 미니 4집 「PULSE」 Standard Ver.", price:"20,800원(11/12 기준)", url:"https://link.coupang.com/a/iBXqizFDga", shop:"coupang", group:"rescene", category:"album", hall:"rescene", room:"album_pulse", note_id:"pulse"},
-  {name:"리센느 미니 4집 「PULSE」 Pulse Ver.", price:"25,500원(11/12 기준)", url:"https://link.coupang.com/a/iBXskajTpY", shop:"coupang", group:"rescene", category:"album", hall:"rescene", room:"album_pulse", note_id:"pulse"},
+  {name:"리센느 미니 4집 「PULSE」 Standard Ver.", price:"20,800원(11/12 기준)", url:"https://link.coupang.com/a/iBXqizFDga", image:"https://t5a.coupangcdn.com/thumbnails/remote/212x212ex/image/retail/images/2026/10/21/15/5/4be7b919-a1bb-4683-97c7-c02773d12474.jpg", image_credit:"쿠팡 파트너스 제공 상품 이미지", shop:"coupang", group:"rescene", category:"album", hall:"rescene", room:"album_pulse", note_id:"pulse"},
+  {name:"리센느 미니 4집 「PULSE」 Pulse Ver.", price:"25,500원(11/12 기준)", url:"https://link.coupang.com/a/iBXskajTpY", image:"https://thumbnail7.coupangcdn.com/thumbnails/remote/212x212ex/image/vendor_inventory/c3ed/309ff1cbfd95ee42b8f8152f22d3c45d1655134d463bb3c5e09c0ef14de8.jpg", image_credit:"쿠팡 파트너스 제공 상품 이미지", shop:"coupang", group:"rescene", category:"album", hall:"rescene", room:"album_pulse", note_id:"pulse"},
 ];
 /* 🛍️ 굿즈관 테마 전시실(대표 11/12 14:39 "아이돌 테마관처럼 테마 굿즈를 전시하듯이"). 한 줄 추가하면 굿즈관 홀에 문이 생긴다.
    kind: products(상품 진열장, match로 고름) / endorse(공식 광고 모델 정보 전시) / concert(콘서트 준비) / shelves(예전 구역 진열대) */
@@ -1472,6 +1472,7 @@ body.flat #stage,body.flat .turn,body.flat .hint,body.flat .joy{display:none}
 .schRow{display:grid;grid-template-columns:auto auto 1fr;gap:8px;align-items:start;padding:9px 4px;border-bottom:1px dashed #e2d8f7;font-size:14px}
 .schRow.past{opacity:.6}.schD{font-weight:800;color:#5b2fc2;white-space:nowrap}.schTx small{display:block;color:#8a7fa8;font-size:11.5px;margin-top:2px}
 .schSec{margin:14px 0 4px;font-weight:800;color:#c0457a;font-size:13px}.schNone{color:#6b6086;font-size:14px;padding:8px 2px}.schChk{color:#9a90b5;font-size:11.5px;margin-top:10px}
+.gimg{display:block;width:100%;aspect-ratio:1/1;object-fit:contain;background:#fff;border-radius:10px 10px 0 0}
 .notesLink{display:block;margin-top:10px;padding:10px 12px;border-radius:12px;background:#f3ecff;color:#5b2fc2;font-weight:700;text-decoration:none;text-align:center}
 </style>
 </head>
@@ -2180,7 +2181,7 @@ G.gExFlat = () => { const th=G.gTheme(), gid=G.shopGroup; if(!th) return "";
       <button class="card" data-gsched="1" style="width:100%;margin-bottom:10px"><div class="tt">${esc(G.t("schT"))}</div></button>
       <div class="card blank"><div class="tt">${esc(G.t("gPrepSoon"))}</div></div>`; }
   const it=G.gThemeItems(gid, th);
-  return (th.note ? G.notesCard(th.note) : "") + `<div class="grid">` + (it.length ? it.map((x,i)=>`<button class="card" data-gprod="${i}"><div class="tt">${esc(x.name)}<small>${esc(x.price||"")}</small></div></button>`).join("") : `<div class="card blank"><div class="tt">${esc(G.t("zoneSoon"))}</div></div>`) + `</div><p class="disc">${esc(SHOPS[0].note)}</p>`; };
+  return (th.note ? G.notesCard(th.note) : "") + `<div class="grid">` + (it.length ? it.map((x,i)=>`<button class="card" data-gprod="${i}">${safeUrl(x.image) ? `<img class="gimg" src="${esc(x.image)}" alt="${esc(x.name)}" loading="lazy" referrerpolicy="no-referrer">` : ""}<div class="tt">${esc(x.name)}<small>${esc(x.price||"")}</small></div></button>`).join("") : `<div class="card blank"><div class="tt">${esc(G.t("zoneSoon"))}</div></div>`) + `</div><p class="disc">${esc(SHOPS[0].note)}</p>`; };
 G.openCulture = () => { if(CULTURE_CORNER.open && CULTURE_CORNER.items.length) openItem({type:"text", title:G.t("culture"), html:`<ul class="list">${CULTURE_CORNER.items.map(i=>`<li>${esc(G.nm(i.title))}</li>`).join("")}</ul>`}); else toast(G.t("bCulture")); };
 
 /* ---------- 리센느 공식 광고 모델(정보 진열 · 유료 광고 아님). 영상 패널 안에는 넣지 않는다(유튜브 정책 III.G) ---------- */
@@ -3638,7 +3639,7 @@ function start(THREE){
     sign.position.set(0,3.2,-W+0.05); relabel.push(sign.userData.redraw);
     /* 진열할 것 모으기: {shape, col, title, sub, act} */
     let pieces=[], L=G.lang||"ko";
-    if(th.kind==="products"){ G.gThemeItems(gid, th).forEach((it,k)=>pieces.push({shape:"album", col:mix(color,["#ff7fb0","#7fb0ff","#ffd166"][k%3],.45), title:it.name, sub:it.price||"", act:()=>G.openProduct(it)}));
+    if(th.kind==="products"){ G.gThemeItems(gid, th).forEach((it,k)=>pieces.push({shape:"album", img:safeUrl(it.image)?.href, col:mix(color,["#ff7fb0","#7fb0ff","#ffd166"][k%3],.45), title:it.name, sub:it.price||"", act:()=>G.openProduct(it)}));
       if(th.note) pieces.push({shape:"note", col:"#fffdf8", title:"📖 "+G.t("lkNotes").replace(/^🛍️ /,""), sub:G.t("notesOpen"), act:()=>window.open("notes.html?lang="+encodeURIComponent(G.langParam())+"#"+th.note,"_blank","noopener")}); }
     else if(th.kind==="endorse") G.endorseList("goods_ad").forEach((x,k)=>pieces.push({shape:"bottle", col:["#ffb36b","#7fd1ff","#ff8fc4","#9be37a","#c9a2ff"][k%5], title:G.nm(x.brand), sub:G.t("enNotAd"), act:()=>G.openEndorse("goods_ad", x.id)}));
     else if(th.kind==="concert"){ const c=RESCENE_SCHEDULE.items.find(x=>x.type==="concert");
@@ -3660,6 +3661,11 @@ function start(THREE){
         let shape=null;
         if(pc.shape==="note"){ shape=textPlane(s, 0.42, 0.52, 256, (g,w,h)=>{ g.fillStyle="#fffdf8"; g.fillRect(0,0,w,h); g.fillStyle=color; g.fillRect(0,0,w,18); g.fillStyle="#1e143c"; g.font=`800 80px ${FONT}`; g.textAlign="center"; g.textBaseline="middle"; g.fillText("📖",w/2,h/2); }); shape.position.set(x,1.3,z); }
         else if(pc.shape!=="empty") shape=goodsShape(s, pc.shape, pc.col, x,1.0,z);
+        if(pc.img){   // 쿠팡 파트너스 제공 상품 사진: /img 워커로 CORS를 붙여 받아 진열장 안에 세움(못 받으면 도형 그대로)
+          const ph=add(s, new THREE.PlaneGeometry(0.5,0.5), new THREE.MeshBasicMaterial({color:0xffffff, transparent:true, opacity:0}), x,1.32,z+0.02);
+          const ld=new THREE.TextureLoader(); ld.setCrossOrigin("anonymous");
+          ld.load("img?u="+encodeURIComponent(pc.img), tx=>{ tx.colorSpace=THREE.SRGBColorSpace; ph.material.map=tx; ph.material.opacity=1; ph.material.needsUpdate=true; if(shape) shape.visible=false; ask(); }, undefined, ()=>{});
+          ph.userData.act=pc.act; clickables.push(ph); }
         add(s, new THREE.CylinderGeometry(0.12,0.5,H-1.62,16,1,true), beamM, x,1.62+(H-1.62)/2,z);
         add(s, new THREE.CylinderGeometry(0.1,0.12,0.06,12), bas(0xfff2c4), x,H-0.03,z);
         const plate=textPlane(s, 0.62, 0.26, 256, (g,w,h)=>{ g.fillStyle="#fffdf8"; g.fillRect(0,0,w,h); g.strokeStyle=color; g.lineWidth=4; g.strokeRect(2,2,w-4,h-4);

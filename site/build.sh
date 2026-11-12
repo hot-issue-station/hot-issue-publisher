@@ -22,7 +22,7 @@ mkdir -p "$DIST/assets"
 cp "$GAL/hall.html"         "$DIST/index.html"
 cp "$GAL/curation.json"     "$DIST/curation.json"
 cp "$GAL/endorsements.json" "$DIST/endorsements.json"
-cp "$SRC"/notes.html "$SRC"/stats.html "$SRC"/guide.html "$SRC"/about.html "$SRC"/privacy.html "$SRC"/terms.html "$SRC"/ads.html "$SRC"/takedown.html "$DIST/"
+cp "$SRC"/_worker.js "$SRC"/notes.html "$SRC"/stats.html "$SRC"/guide.html "$SRC"/about.html "$SRC"/privacy.html "$SRC"/terms.html "$SRC"/ads.html "$SRC"/takedown.html "$DIST/"
 cp "$SRC"/assets/* "$DIST/assets/"
 
 # JSON 깨짐 확인(파이썬이 있으면)
