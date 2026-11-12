@@ -1,7 +1,7 @@
 {
  "name": "안원잘부",
  "channel": "https://www.youtube.com/@helloiamwoninicetomeetyou",
- "checkedAt": "2026-11-12T22:52+09:00",
+ "checkedAt": "2026-11-13T08:33+09:00",
  "subscribers": "243만",
  "videos": [
   {
@@ -11,7 +11,7 @@
    "viewsText": "조회수 163만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "DKDmFgXzxs8",
@@ -20,7 +20,7 @@
    "viewsText": "조회수 267만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "zxNoW_LtVLE",
@@ -79,11 +79,11 @@
   {
    "id": "COnZ3rYrAXc",
    "title": "리마인이 된 리센느",
-   "views": 1640000,
-   "viewsText": "조회수 164만회",
+   "views": 1650000,
+   "viewsText": "조회수 165만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "8aZYgM9GeL0",
@@ -97,11 +97,11 @@
   {
    "id": "o-B0F16GwL0",
    "title": "[B컷] 의자 안 돌아가요",
-   "views": 13540000,
-   "viewsText": "조회수 1354만회",
+   "views": 13550000,
+   "viewsText": "조회수 1355만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "gNJrbCSN2TM",
@@ -115,11 +115,11 @@
   {
    "id": "F5CbMShscuk",
    "title": "Endless Rain",
-   "views": 1610000,
-   "viewsText": "조회수 161만회",
+   "views": 1620000,
+   "viewsText": "조회수 162만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "VUufd3Hd_2Q",
@@ -349,11 +349,11 @@
   {
    "id": "IQ4MGDgdr5I",
    "title": "뒤올",
-   "views": 2490000,
-   "viewsText": "조회수 249만회",
+   "views": 2500000,
+   "viewsText": "조회수 250만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "PiKBQ65QE1g",

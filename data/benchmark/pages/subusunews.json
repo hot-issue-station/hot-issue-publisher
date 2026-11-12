@@ -1,49 +1,50 @@
 {
  "name": "스브스뉴스 (SBS)",
  "channel": "https://www.youtube.com/@subusunews",
- "checkedAt": "2026-11-12T22:52+09:00",
+ "checkedAt": "2026-11-13T08:33+09:00",
  "subscribers": "144만",
  "videos": [
   {
    "id": "LEWIMLiirq0",
    "title": "성분 따졌다가 고소당한 사람? 그게 나예요. #딸기우유 #shorts #스브스뉴스",
-   "views": 1400,
-   "viewsText": "조회수 1.4천회",
+   "views": 4800,
+   "viewsText": "조회수 4.8천회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 3400
   },
   {
    "id": "QSXv2yiIveI",
    "title": "귀신 훈육 놀이에 터져버린 아동 학대 논란 #한국민속촌 #shorts #스브스뉴스",
-   "views": 8800,
-   "viewsText": "조회수 8.8천회",
+   "views": 10000,
+   "viewsText": "조회수 1만회",
    "published": "",
    "kind": "short",
-   "gain": 1400
+   "gain": 1200
   },
   {
    "id": "7UWF0GGYftg",
    "title": "[선공개] 신혼여행 따라갔던 부부에게 연락이 안 온다",
-   "views": 5300,
-   "viewsText": "조회수 5.3천회",
+   "views": 6600,
+   "viewsText": "조회수 6.6천회",
    "published": "",
    "kind": "short",
-   "gain": 400
+   "gain": 1300
   },
   {
    "id": "vS6l_n2uJzs",
    "title": "젠슨 황 내연녀 앨리스 황, 10조 원어치 ‘엔비디아 AI칩’ 중국으로 유출? #엔비디아 #shorts #스브스뉴스",
-   "views": 5900,
-   "viewsText": "조회수 5.9천회",
+   "views": 6100,
+   "viewsText": "조회수 6.1천회",
    "published": "",
    "kind": "short",
-   "gain": 400
+   "gain": 200
   },
   {
    "id": "phk3JBktfX8",
    "title": "[선공개] 인간관계 정리되는 요즘 경조사",
-   "views": 6600,
-   "viewsText": "조회수 6.6천회",
+   "views": 7300,
+   "viewsText": "조회수 7.3천회",
    "published": "",
    "kind": "short",
    "gain": 700
@@ -51,29 +52,29 @@
   {
    "id": "80Prr9snsIk",
    "title": "[선공개] 죽여달라는 거지?",
-   "views": 7300,
-   "viewsText": "조회수 7.3천회",
+   "views": 7700,
+   "viewsText": "조회수 7.7천회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 400
   },
   {
    "id": "h8iBMhQ3b-Q",
    "title": "추워질수록 위험하다는 굴운자로 #굴 #shorts #스브스뉴스",
-   "views": 6000,
-   "viewsText": "조회수 6천회",
+   "views": 6300,
+   "viewsText": "조회수 6.3천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 300
   },
   {
    "id": "uO5xviR9-aM",
    "title": "유독 정치판에서 사이비 종교 논란이 자주 터지는 이유 #사이비 #shorts #스브스뉴스",
-   "views": 4400,
-   "viewsText": "조회수 4.4천회",
+   "views": 4500,
+   "viewsText": "조회수 4.5천회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 100
   },
   {
    "id": "Y0Y6eq3a6PE",
@@ -87,11 +88,11 @@
   {
    "id": "DqL_SWFWkD8",
    "title": "침착맨 방송 중 사교육 문제 직격타 날린 정승제 #입시 #shorts #스브스뉴스",
-   "views": 520000,
-   "viewsText": "조회수 52만회",
+   "views": 540000,
+   "viewsText": "조회수 54만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 20000
   },
   {
    "id": "lnryKqOozWk",
@@ -100,16 +101,16 @@
    "viewsText": "조회수 1.8만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "pmpb5ZMw3Sw",
    "title": "매번 달라지는 게 없다는 자살예방계획의 민낯 #청소년자살 #shorts #스브스뉴스",
-   "views": 2900,
-   "viewsText": "조회수 2.9천회",
+   "views": 3000,
+   "viewsText": "조회수 3천회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 100
   },
   {
    "id": "STWniX3sH0g",
@@ -118,16 +119,16 @@
    "viewsText": "조회수 6.3천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "qZaeu4PJUps",
    "title": "롯데홈쇼핑이 직접 교육하는 커머스 인재 학교? #shorts #스브스뉴스",
-   "views": 32000,
-   "viewsText": "조회수 3.2만회",
+   "views": 35000,
+   "viewsText": "조회수 3.5만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 3000
   },
   {
    "id": "bvbHkNEO3t8",
@@ -267,11 +268,11 @@
   {
    "id": "-fLcCSNSD34",
    "title": "1인 1음료 진짜 필수인지 카페 사장님들한테 직접 물어봤습니다. #카페 #shorts #스브스뉴스",
-   "views": 350000,
-   "viewsText": "조회수 35만회",
+   "views": 360000,
+   "viewsText": "조회수 36만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "4oWBAsVpDDw",
@@ -321,11 +322,11 @@
   {
    "id": "WjReTH6jzlk",
    "title": "마운자로 대신 맞아도 될까? #shorts / 스브스뉴스",
-   "views": 15000,
-   "viewsText": "조회수 1.5만회",
+   "views": 16000,
+   "viewsText": "조회수 1.6만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 1000
   },
   {
    "id": "hRyKzZwyI3g",

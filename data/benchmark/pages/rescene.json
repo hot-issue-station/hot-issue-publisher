@@ -1,22 +1,23 @@
 {
  "name": "RESCENE 공식",
  "channel": "https://www.youtube.com/@RESCENE_official",
- "checkedAt": "2026-11-12T22:52+09:00",
- "subscribers": "137만",
+ "checkedAt": "2026-11-13T08:33+09:00",
+ "subscribers": "138만",
  "videos": [
   {
    "id": "T_gjoo1qKBU",
    "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #최현석 선배님@TREASURE",
-   "views": 85000,
-   "viewsText": "조회수 8.5만회",
+   "views": 240000,
+   "viewsText": "조회수 24만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 155000
   },
   {
    "id": "Swo1MWFnK1c",
    "title": "Yeah I'm blooming like a flower, flower",
-   "views": 170000,
-   "viewsText": "조회수 17만회",
+   "views": 280000,
+   "viewsText": "조회수 28만회",
    "published": "",
    "kind": "short",
    "gain": 110000
@@ -24,8 +25,8 @@
   {
    "id": "ZZqAlMwMPMg",
    "title": "백화요란 그 파트",
-   "views": 400000,
-   "viewsText": "조회수 40만회",
+   "views": 660000,
+   "viewsText": "조회수 66만회",
    "published": "",
    "kind": "short",
    "gain": 260000
@@ -33,20 +34,20 @@
   {
    "id": "9wSxuOLpGXc",
    "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #YoungK 선배님@DAY6Official",
-   "views": 190000,
-   "viewsText": "조회수 19만회",
+   "views": 270000,
+   "viewsText": "조회수 27만회",
    "published": "",
    "kind": "short",
-   "gain": 115000
+   "gain": 80000
   },
   {
    "id": "85TuH4Jqu4s",
    "title": "인사이드 아웃 ✨",
-   "views": 180000,
-   "viewsText": "조회수 18만회",
+   "views": 190000,
+   "viewsText": "조회수 19만회",
    "published": "",
    "kind": "short",
-   "gain": 20000
+   "gain": 10000
   },
   {
    "id": "9sVO6OY1_84",
@@ -55,13 +56,13 @@
    "viewsText": "조회수 17만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "b-9smM2N5sk",
    "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #서희 님@TUIDE_official",
-   "views": 280000,
-   "viewsText": "조회수 28만회",
+   "views": 300000,
+   "viewsText": "조회수 30만회",
    "published": "",
    "kind": "short",
    "gain": 20000
@@ -69,17 +70,17 @@
   {
    "id": "ZZJHE7xBDJQ",
    "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #은석 선배님@RIIZE_official",
-   "views": 260000,
-   "viewsText": "조회수 26만회",
+   "views": 270000,
+   "viewsText": "조회수 27만회",
    "published": "",
    "kind": "short",
-   "gain": 20000
+   "gain": 10000
   },
   {
    "id": "kOmL4DDTEYw",
    "title": "얍",
-   "views": 670000,
-   "viewsText": "조회수 67만회",
+   "views": 690000,
+   "viewsText": "조회수 69만회",
    "published": "",
    "kind": "short",
    "gain": 20000
@@ -87,11 +88,11 @@
   {
    "id": "TL5LSvvgjDw",
    "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #리리 님@heartofwoman_officl",
-   "views": 240000,
-   "viewsText": "조회수 24만회",
+   "views": 250000,
+   "viewsText": "조회수 25만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "eDinqteZYUM",
@@ -100,7 +101,7 @@
    "viewsText": "조회수 32만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "aTfIJqiYBiI",
@@ -109,25 +110,25 @@
    "viewsText": "조회수 20만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "NNsr12BBiE0",
    "title": "😘😘",
-   "views": 130000,
-   "viewsText": "조회수 13만회",
+   "views": 140000,
+   "viewsText": "조회수 14만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "_eji6lKLAu0",
    "title": "🩶",
-   "views": 190000,
-   "viewsText": "조회수 19만회",
+   "views": 200000,
+   "viewsText": "조회수 20만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "vwyG-5iVXaw",
@@ -163,16 +164,16 @@
    "viewsText": "조회수 26만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "A5PB2NXHkzY",
    "title": "볼링장 미나미 🎳💙",
-   "views": 490000,
-   "viewsText": "조회수 49만회",
+   "views": 500000,
+   "viewsText": "조회수 50만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "WDGxa5Vez5U",
@@ -186,8 +187,8 @@
   {
    "id": "ydZG-_FdrxI",
    "title": "With 까엉 🤎",
-   "views": 520000,
-   "viewsText": "조회수 52만회",
+   "views": 530000,
+   "viewsText": "조회수 53만회",
    "published": "",
    "kind": "short",
    "gain": 10000
@@ -231,11 +232,11 @@
   {
    "id": "kRY9NYgnXLM",
    "title": "With 🤍",
-   "views": 500000,
-   "viewsText": "조회수 50만회",
+   "views": 510000,
+   "viewsText": "조회수 51만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "KcTEkBTAP3I",
@@ -249,11 +250,11 @@
   {
    "id": "sgZms-ImEx0",
    "title": "but you 🫵",
-   "views": 720000,
-   "viewsText": "조회수 72만회",
+   "views": 730000,
+   "viewsText": "조회수 73만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "EYrU4Zphz8s",
@@ -280,7 +281,7 @@
    "viewsText": "조회수 86만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "A5vmiFpG1yg",
@@ -303,20 +304,20 @@
   {
    "id": "_KseVSTX0KU",
    "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #니나 선배님",
-   "views": 840000,
-   "viewsText": "조회수 84만회",
+   "views": 850000,
+   "viewsText": "조회수 85만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "blswe0wDt8o",
    "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #YENA 선배님",
-   "views": 1080000,
-   "viewsText": "조회수 108만회",
+   "views": 1090000,
+   "viewsText": "조회수 109만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "pekjAyOrBk4",
@@ -343,7 +344,7 @@
    "viewsText": "조회수 125만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "HN7La9KN2MY",
@@ -357,11 +358,11 @@
   {
    "id": "k7y2yvkFJ1k",
    "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #애니 님",
-   "views": 1420000,
-   "viewsText": "조회수 142만회",
+   "views": 1430000,
+   "viewsText": "조회수 143만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   }
  ]
 }
