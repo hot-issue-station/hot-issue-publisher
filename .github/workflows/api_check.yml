@@ -48,6 +48,8 @@ jobs:
               names = [m["name"] for m in js.get("models", []) if "generateContent" in m.get("supportedGenerationMethods", [])]
               flash = [n for n in names if "flash" in n and "lite" not in n and "image" not in n and "tts" not in n]
               print("Gemini 모델 목록:", "성공" if st == 200 else f"실패 (HTTP {st})", "| flash 후보:", ", ".join(flash[:5]))
+              pref=[n for n in ["models/gemini-flash-latest","models/gemini-3.5-flash"] if n in names]
+              flash = pref + flash
               if flash:
                   st2, js2 = post(f"https://generativelanguage.googleapis.com/v1beta/{flash[0]}:generateContent",
                       {"x-goog-api-key": gk, "content-type": "application/json"},
