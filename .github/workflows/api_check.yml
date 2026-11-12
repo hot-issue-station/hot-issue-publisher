@@ -50,11 +50,12 @@ jobs:
               print("Gemini 모델 목록:", "성공" if st == 200 else f"실패 (HTTP {st})", "| flash 후보:", ", ".join(flash[:5]))
               pref=[n for n in ["models/gemini-flash-latest","models/gemini-3.5-flash"] if n in names]
               flash = pref + flash
-              if flash:
-                  st2, js2 = post(f"https://generativelanguage.googleapis.com/v1beta/{flash[0]}:generateContent",
+              for mdl in list(dict.fromkeys(flash))[:4]:
+                  st2, js2 = post(f"https://generativelanguage.googleapis.com/v1beta/{mdl}:generateContent",
                       {"x-goog-api-key": gk, "content-type": "application/json"},
                       {"contents": [{"parts": [{"text": "일본어 한 문장으로만 번역: 리센느가 이틀 연속 1위를 했어요."}]}]})
                   t2 = ""
                   try: t2 = js2["candidates"][0]["content"]["parts"][0]["text"]
                   except Exception: pass
-                  print("Gemini 번역:", flash[0], "성공" if st2 == 200 else f"실패 (HTTP {st2})", "|", t2.strip()[:80])
+                  print("Gemini 번역:", mdl, "성공" if st2 == 200 else f"실패 (HTTP {st2})", "|", t2.strip()[:80])
+                  if st2 == 200: break
