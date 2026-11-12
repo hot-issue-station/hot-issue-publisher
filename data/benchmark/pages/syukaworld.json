@@ -1,31 +1,32 @@
 {
  "name": "슈카월드",
  "channel": "https://www.youtube.com/@syukaworld",
- "checkedAt": "2026-11-12T19:37+09:00",
+ "checkedAt": "2026-11-12T22:52+09:00",
  "subscribers": "374만",
  "videos": [
   {
    "id": "PPIMOKvuSDY",
    "title": "교황님 말씀 \"젊은이들이여, 돈과 SNS에 사로잡히지 말라\"",
-   "views": 14000,
-   "viewsText": "조회수 1.4만회",
+   "views": 48000,
+   "viewsText": "조회수 4.8만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 34000
   },
   {
    "id": "5mSF8npmm9A",
    "title": "이거 진짜에요?",
-   "views": 100000,
-   "viewsText": "조회수 10만회",
+   "views": 110000,
+   "viewsText": "조회수 11만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "5LEMniVcweU",
    "title": "걱정 노노",
-   "views": 51000,
-   "viewsText": "조회수 5.1만회",
+   "views": 54000,
+   "viewsText": "조회수 5.4만회",
    "published": "",
    "kind": "short",
    "gain": 3000
@@ -42,8 +43,8 @@
   {
    "id": "xVKY3CWUoSE",
    "title": "딸깍으로 떠먹여주는 서비스",
-   "views": 53000,
-   "viewsText": "조회수 5.3만회",
+   "views": 54000,
+   "viewsText": "조회수 5.4만회",
    "published": "",
    "kind": "short",
    "gain": 1000
@@ -55,7 +56,7 @@
    "viewsText": "조회수 9만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "D32h_sPWp0g",

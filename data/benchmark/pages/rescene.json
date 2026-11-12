@@ -1,56 +1,67 @@
 {
  "name": "RESCENE 공식",
  "channel": "https://www.youtube.com/@RESCENE_official",
- "checkedAt": "2026-11-12T19:37+09:00",
+ "checkedAt": "2026-11-12T22:52+09:00",
  "subscribers": "137만",
  "videos": [
   {
-   "id": "Swo1MWFnK1c",
-   "title": "Yeah I'm blooming like a flower, flower",
-   "views": 60000,
-   "viewsText": "조회수 6만회",
+   "id": "T_gjoo1qKBU",
+   "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #최현석 선배님@TREASURE",
+   "views": 85000,
+   "viewsText": "조회수 8.5만회",
    "published": "",
    "kind": "short"
+  },
+  {
+   "id": "Swo1MWFnK1c",
+   "title": "Yeah I'm blooming like a flower, flower",
+   "views": 170000,
+   "viewsText": "조회수 17만회",
+   "published": "",
+   "kind": "short",
+   "gain": 110000
   },
   {
    "id": "ZZqAlMwMPMg",
    "title": "백화요란 그 파트",
-   "views": 140000,
-   "viewsText": "조회수 14만회",
+   "views": 400000,
+   "viewsText": "조회수 40만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 260000
   },
   {
    "id": "9wSxuOLpGXc",
    "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #YoungK 선배님@DAY6Official",
-   "views": 75000,
-   "viewsText": "조회수 7.5만회",
+   "views": 190000,
+   "viewsText": "조회수 19만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 115000
   },
   {
    "id": "85TuH4Jqu4s",
    "title": "인사이드 아웃 ✨",
-   "views": 160000,
-   "viewsText": "조회수 16만회",
-   "published": "",
-   "kind": "short",
-   "gain": 10000
-  },
-  {
-   "id": "9sVO6OY1_84",
-   "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #박건욱 선배님@ZB1_official",
-   "views": 160000,
-   "viewsText": "조회수 16만회",
+   "views": 180000,
+   "viewsText": "조회수 18만회",
    "published": "",
    "kind": "short",
    "gain": 20000
   },
   {
+   "id": "9sVO6OY1_84",
+   "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #박건욱 선배님@ZB1_official",
+   "views": 170000,
+   "viewsText": "조회수 17만회",
+   "published": "",
+   "kind": "short",
+   "gain": 10000
+  },
+  {
    "id": "b-9smM2N5sk",
    "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #서희 님@TUIDE_official",
-   "views": 260000,
-   "viewsText": "조회수 26만회",
+   "views": 280000,
+   "viewsText": "조회수 28만회",
    "published": "",
    "kind": "short",
    "gain": 20000
@@ -58,8 +69,8 @@
   {
    "id": "ZZJHE7xBDJQ",
    "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #은석 선배님@RIIZE_official",
-   "views": 240000,
-   "viewsText": "조회수 24만회",
+   "views": 260000,
+   "viewsText": "조회수 26만회",
    "published": "",
    "kind": "short",
    "gain": 20000
@@ -67,11 +78,11 @@
   {
    "id": "kOmL4DDTEYw",
    "title": "얍",
-   "views": 650000,
-   "viewsText": "조회수 65만회",
+   "views": 670000,
+   "viewsText": "조회수 67만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 20000
   },
   {
    "id": "TL5LSvvgjDw",
@@ -85,20 +96,20 @@
   {
    "id": "eDinqteZYUM",
    "title": "Dancing Queen 👑",
-   "views": 310000,
-   "viewsText": "조회수 31만회",
+   "views": 320000,
+   "viewsText": "조회수 32만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "aTfIJqiYBiI",
    "title": "Pretty",
-   "views": 190000,
-   "viewsText": "조회수 19만회",
+   "views": 200000,
+   "viewsText": "조회수 20만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "NNsr12BBiE0",
@@ -148,11 +159,11 @@
   {
    "id": "nf0cE5ByIiY",
    "title": "˚｡⋆୨୧˚.˚",
-   "views": 250000,
-   "viewsText": "조회수 25만회",
+   "views": 260000,
+   "viewsText": "조회수 26만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "A5PB2NXHkzY",
@@ -170,16 +181,16 @@
    "viewsText": "조회수 42만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "ydZG-_FdrxI",
    "title": "With 까엉 🤎",
-   "views": 510000,
-   "viewsText": "조회수 51만회",
+   "views": 520000,
+   "viewsText": "조회수 52만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "GG1QgSloUkU",
@@ -188,7 +199,7 @@
    "viewsText": "조회수 36만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "xpaOFvA4K1g",
@@ -265,11 +276,11 @@
   {
    "id": "ygE3V5CbllU",
    "title": "너라는 꿈 ✨",
-   "views": 850000,
-   "viewsText": "조회수 85만회",
+   "views": 860000,
+   "viewsText": "조회수 86만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "A5vmiFpG1yg",
@@ -314,7 +325,7 @@
    "viewsText": "조회수 52만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "QEeCIDjleC8",
@@ -328,11 +339,11 @@
   {
    "id": "UfaJ4mbAiWc",
    "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #운학 선배님",
-   "views": 1240000,
-   "viewsText": "조회수 124만회",
+   "views": 1250000,
+   "viewsText": "조회수 125만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "HN7La9KN2MY",
@@ -351,15 +362,6 @@
    "published": "",
    "kind": "short",
    "gain": 0
-  },
-  {
-   "id": "zHwTN5Yu-mI",
-   "title": "Runnin’ on, runnin’ on, runnin’ on you",
-   "views": 1020000,
-   "viewsText": "조회수 102만회",
-   "published": "",
-   "kind": "short",
-   "gain": 10000
   }
  ]
 }
