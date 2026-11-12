@@ -13,7 +13,7 @@ DIST="$SITE/dist"
 for f in hall.html curation.json endorsements.json; do
   [ -f "$GAL/$f" ] || { echo "없음: gallery/$f" >&2; exit 1; }
 done
-for p in about privacy terms ads takedown; do
+for p in guide about privacy terms ads takedown; do
   [ -f "$SRC/$p.html" ] || { echo "없음: site/src/$p.html" >&2; exit 1; }
 done
 
@@ -22,7 +22,7 @@ mkdir -p "$DIST/assets"
 cp "$GAL/hall.html"         "$DIST/index.html"
 cp "$GAL/curation.json"     "$DIST/curation.json"
 cp "$GAL/endorsements.json" "$DIST/endorsements.json"
-cp "$SRC"/about.html "$SRC"/privacy.html "$SRC"/terms.html "$SRC"/ads.html "$SRC"/takedown.html "$DIST/"
+cp "$SRC"/guide.html "$SRC"/about.html "$SRC"/privacy.html "$SRC"/terms.html "$SRC"/ads.html "$SRC"/takedown.html "$DIST/"
 cp "$SRC"/assets/* "$DIST/assets/"
 
 # JSON 깨짐 확인(파이썬이 있으면)
