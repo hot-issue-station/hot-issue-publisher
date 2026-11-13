@@ -1,26 +1,26 @@
 {
  "name": "스브스뉴스 (SBS)",
  "channel": "https://www.youtube.com/@subusunews",
- "checkedAt": "2026-11-13T22:49+09:00",
+ "checkedAt": "2026-11-14T08:32+09:00",
  "subscribers": "144만",
  "videos": [
   {
    "id": "wHp_zWCqzxw",
    "title": "의무 사항 아니면 안 해도 되는 거냐고..ㅠ #딸기우유 #shorts #스브스뉴스",
-   "views": 1500,
-   "viewsText": "조회수 1.5천회",
+   "views": 2000,
+   "viewsText": "조회수 2천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 500
   },
   {
    "id": "LEWIMLiirq0",
    "title": "성분 따졌다가 고소당한 사람? 그게 나예요. #딸기우유 #shorts #스브스뉴스",
-   "views": 6800,
-   "viewsText": "조회수 6.8천회",
+   "views": 7200,
+   "viewsText": "조회수 7.2천회",
    "published": "",
    "kind": "short",
-   "gain": 200
+   "gain": 400
   },
   {
    "id": "QSXv2yiIveI",
@@ -34,47 +34,47 @@
   {
    "id": "7UWF0GGYftg",
    "title": "[선공개] 신혼여행 따라갔던 부부에게 연락이 안 온다",
-   "views": 9400,
-   "viewsText": "조회수 9.4천회",
+   "views": 10000,
+   "viewsText": "조회수 1만회",
    "published": "",
    "kind": "short",
-   "gain": 300
+   "gain": 600
   },
   {
    "id": "vS6l_n2uJzs",
    "title": "젠슨 황 내연녀 앨리스 황, 10조 원어치 ‘엔비디아 AI칩’ 중국으로 유출? #엔비디아 #shorts #스브스뉴스",
-   "views": 6400,
-   "viewsText": "조회수 6.4천회",
+   "views": 6600,
+   "viewsText": "조회수 6.6천회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 200
   },
   {
    "id": "phk3JBktfX8",
    "title": "[선공개] 인간관계 정리되는 요즘 경조사",
-   "views": 8900,
-   "viewsText": "조회수 8.9천회",
+   "views": 9400,
+   "viewsText": "조회수 9.4천회",
+   "published": "",
+   "kind": "short",
+   "gain": 500
+  },
+  {
+   "id": "80Prr9snsIk",
+   "title": "[선공개] 죽여달라는 거지?",
+   "views": 8800,
+   "viewsText": "조회수 8.8천회",
    "published": "",
    "kind": "short",
    "gain": 300
   },
   {
-   "id": "80Prr9snsIk",
-   "title": "[선공개] 죽여달라는 거지?",
-   "views": 8500,
-   "viewsText": "조회수 8.5천회",
-   "published": "",
-   "kind": "short",
-   "gain": 100
-  },
-  {
    "id": "h8iBMhQ3b-Q",
    "title": "추워질수록 위험하다는 굴운자로 #굴 #shorts #스브스뉴스",
-   "views": 7200,
-   "viewsText": "조회수 7.2천회",
+   "views": 7400,
+   "viewsText": "조회수 7.4천회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 200
   },
   {
    "id": "uO5xviR9-aM",
@@ -83,7 +83,7 @@
    "viewsText": "조회수 4.6천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "Y0Y6eq3a6PE",
@@ -97,8 +97,8 @@
   {
    "id": "DqL_SWFWkD8",
    "title": "침착맨 방송 중 사교육 문제 직격타 날린 정승제 #입시 #shorts #스브스뉴스",
-   "views": 590000,
-   "viewsText": "조회수 59만회",
+   "views": 600000,
+   "viewsText": "조회수 60만회",
    "published": "",
    "kind": "short",
    "gain": 10000
@@ -106,11 +106,11 @@
   {
    "id": "lnryKqOozWk",
    "title": "갑작스러운 사고로 세상 떠난 여행 유튜버 #추모 #shorts #스브스뉴스",
-   "views": 18000,
-   "viewsText": "조회수 1.8만회",
+   "views": 19000,
+   "viewsText": "조회수 1.9만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 1000
   },
   {
    "id": "pmpb5ZMw3Sw",
@@ -133,11 +133,11 @@
   {
    "id": "qZaeu4PJUps",
    "title": "롯데홈쇼핑이 직접 교육하는 커머스 인재 학교? #shorts #스브스뉴스",
-   "views": 44000,
-   "viewsText": "조회수 4.4만회",
+   "views": 46000,
+   "viewsText": "조회수 4.6만회",
    "published": "",
    "kind": "short",
-   "gain": 4000
+   "gain": 2000
   },
   {
    "id": "bvbHkNEO3t8",
@@ -232,11 +232,11 @@
   {
    "id": "fMk1x_SAtmI",
    "title": "업데이트된 시리 진짜 쓸 만한 거임? #시리 #shorts #스브스뉴스",
-   "views": 5200,
-   "viewsText": "조회수 5.2천회",
+   "views": 5300,
+   "viewsText": "조회수 5.3천회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 100
   },
   {
    "id": "X9iSvXsLJuY",
