@@ -3,20 +3,46 @@
  "name": "스브스뉴스 (SBS)",
  "channel": "https://www.youtube.com/@subusunews",
  "channelId": "UCxPClUl0bh7BgJajD5k483g",
- "checkedAt": "2026-11-13T08:34+09:00",
+ "checkedAt": "2026-11-13T19:35+09:00",
  "videos": [
+  {
+   "id": "f5Ht9HLkwzs",
+   "title": "소수한테 창피한 게 나아요",
+   "published": "2026-11-13T09:00:38+00:00",
+   "url": "https://www.youtube.com/shorts/f5Ht9HLkwzs",
+   "shorts": true,
+   "views": 981,
+   "likes": 19,
+   "viewsGain": null,
+   "isNew": true,
+   "median": 17077.5,
+   "multiple": 0.1
+  },
+  {
+   "id": "0cDVwBmj7Ow",
+   "title": "이슬아 작가가 말하는 작가들의 싸움 방법",
+   "published": "2026-11-13T09:00:30+00:00",
+   "url": "https://www.youtube.com/shorts/0cDVwBmj7Ow",
+   "shorts": true,
+   "views": 973,
+   "likes": 16,
+   "viewsGain": null,
+   "isNew": true,
+   "median": 17077.5,
+   "multiple": 0.1
+  },
   {
    "id": "gdHO75hZEEY",
    "title": "슈퍼스타를 친구로 두는 것도 피곤합니다",
    "published": "2026-11-12T09:00:38+00:00",
    "url": "https://www.youtube.com/shorts/gdHO75hZEEY",
    "shorts": true,
-   "views": 12678,
-   "likes": 92,
-   "viewsGain": 6929,
+   "views": 17891,
+   "likes": 133,
+   "viewsGain": 5213,
    "isNew": false,
-   "median": 22437.0,
-   "multiple": 0.6
+   "median": 17077.5,
+   "multiple": 1.0
   },
   {
    "id": "JyG0ws-5OkA",
@@ -24,12 +50,12 @@
    "published": "2026-11-12T09:00:21+00:00",
    "url": "https://www.youtube.com/shorts/JyG0ws-5OkA",
    "shorts": true,
-   "views": 74554,
-   "likes": 1487,
-   "viewsGain": 67110,
+   "views": 150045,
+   "likes": 3232,
+   "viewsGain": 75491,
    "isNew": false,
-   "median": 22437.0,
-   "multiple": 3.3
+   "median": 17077.5,
+   "multiple": 8.8
   },
   {
    "id": "KL0_g5W4oxs",
@@ -37,12 +63,12 @@
    "published": "2026-11-12T09:00:11+00:00",
    "url": "https://www.youtube.com/shorts/KL0_g5W4oxs",
    "shorts": true,
-   "views": 9968,
-   "likes": 103,
-   "viewsGain": 6307,
+   "views": 16264,
+   "likes": 158,
+   "viewsGain": 6296,
    "isNew": false,
-   "median": 22437.0,
-   "multiple": 0.4
+   "median": 17077.5,
+   "multiple": 1.0
   },
   {
    "id": "TEE7OYw0omU",
@@ -50,12 +76,12 @@
    "published": "2026-11-11T09:00:35+00:00",
    "url": "https://www.youtube.com/shorts/TEE7OYw0omU",
    "shorts": true,
-   "views": 7509,
-   "likes": 93,
-   "viewsGain": 750,
+   "views": 7802,
+   "likes": 102,
+   "viewsGain": 293,
    "isNew": false,
-   "median": 22437.0,
-   "multiple": 0.3
+   "median": 17077.5,
+   "multiple": 0.5
   },
   {
    "id": "SsgQRa2QH0U",
@@ -63,12 +89,12 @@
    "published": "2026-11-11T09:00:32+00:00",
    "url": "https://www.youtube.com/shorts/SsgQRa2QH0U",
    "shorts": true,
-   "views": 12720,
-   "likes": 92,
-   "viewsGain": 324,
+   "views": 13135,
+   "likes": 98,
+   "viewsGain": 415,
    "isNew": false,
-   "median": 22437.0,
-   "multiple": 0.6
+   "median": 17077.5,
+   "multiple": 0.8
   },
   {
    "id": "8ZxqxRnlAhg",
@@ -76,12 +102,12 @@
    "published": "2026-11-11T09:00:31+00:00",
    "url": "https://www.youtube.com/shorts/8ZxqxRnlAhg",
    "shorts": true,
-   "views": 10955,
-   "likes": 128,
-   "viewsGain": 1045,
+   "views": 12259,
+   "likes": 144,
+   "viewsGain": 1304,
    "isNew": false,
-   "median": 22437.0,
-   "multiple": 0.5
+   "median": 17077.5,
+   "multiple": 0.7
   },
   {
    "id": "fPk1Jmnz5sU",
@@ -89,12 +115,12 @@
    "published": "2026-11-10T10:16:49+00:00",
    "url": "https://www.youtube.com/shorts/fPk1Jmnz5sU",
    "shorts": true,
-   "views": 181382,
-   "likes": 3815,
-   "viewsGain": 5888,
+   "views": 185104,
+   "likes": 3902,
+   "viewsGain": 3722,
    "isNew": false,
-   "median": 22437.0,
-   "multiple": 8.1
+   "median": 17077.5,
+   "multiple": 10.8
   },
   {
    "id": "_i4szpS2iWE",
@@ -102,12 +128,12 @@
    "published": "2026-11-10T09:33:26+00:00",
    "url": "https://www.youtube.com/shorts/_i4szpS2iWE",
    "shorts": true,
-   "views": 42685,
-   "likes": 647,
-   "viewsGain": 2528,
+   "views": 45543,
+   "likes": 692,
+   "viewsGain": 2858,
    "isNew": false,
-   "median": 22437.0,
-   "multiple": 1.9
+   "median": 17077.5,
+   "multiple": 2.7
   },
   {
    "id": "mZoYzTu6ZyY",
@@ -115,12 +141,12 @@
    "published": "2026-11-10T09:31:05+00:00",
    "url": "https://www.youtube.com/shorts/mZoYzTu6ZyY",
    "shorts": true,
-   "views": 76088,
-   "likes": 743,
-   "viewsGain": 5903,
+   "views": 79792,
+   "likes": 776,
+   "viewsGain": 3704,
    "isNew": false,
-   "median": 22437.0,
-   "multiple": 3.4
+   "median": 17077.5,
+   "multiple": 4.7
   },
   {
    "id": "1HzIABBs_lo",
@@ -128,12 +154,12 @@
    "published": "2026-11-10T09:28:45+00:00",
    "url": "https://www.youtube.com/shorts/1HzIABBs_lo",
    "shorts": true,
-   "views": 24501,
-   "likes": 236,
-   "viewsGain": 716,
+   "views": 26092,
+   "likes": 243,
+   "viewsGain": 1591,
    "isNew": false,
-   "median": 22437.0,
-   "multiple": 1.1
+   "median": 17077.5,
+   "multiple": 1.5
   },
   {
    "id": "R6snzVYjYF8",
@@ -141,9 +167,9 @@
    "published": "2026-11-10T09:00:29+00:00",
    "url": "https://www.youtube.com/watch?v=R6snzVYjYF8",
    "shorts": false,
-   "views": 331518,
-   "likes": 4322,
-   "viewsGain": 14436,
+   "views": 342775,
+   "likes": 4486,
+   "viewsGain": 11257,
    "isNew": false,
    "median": null,
    "multiple": null
@@ -154,12 +180,12 @@
    "published": "2026-11-05T09:00:33+00:00",
    "url": "https://www.youtube.com/shorts/ZS5sPQuxWks",
    "shorts": true,
-   "views": 28125,
-   "likes": 434,
-   "viewsGain": 221,
+   "views": 28244,
+   "likes": 436,
+   "viewsGain": 119,
    "isNew": false,
-   "median": 22437.0,
-   "multiple": 1.3
+   "median": 17077.5,
+   "multiple": 1.7
   },
   {
    "id": "Ptp13j-jG8o",
@@ -167,37 +193,11 @@
    "published": "2026-11-05T09:00:12+00:00",
    "url": "https://www.youtube.com/shorts/Ptp13j-jG8o",
    "shorts": true,
-   "views": 15981,
+   "views": 16030,
    "likes": 448,
-   "viewsGain": 100,
+   "viewsGain": 49,
    "isNew": false,
-   "median": 22437.0,
-   "multiple": 0.7
-  },
-  {
-   "id": "Zq1d5ckccFQ",
-   "title": "극단적이었던 재민 입맛",
-   "published": "2026-11-05T09:00:05+00:00",
-   "url": "https://www.youtube.com/shorts/Zq1d5ckccFQ",
-   "shorts": true,
-   "views": 50543,
-   "likes": 666,
-   "viewsGain": 233,
-   "isNew": false,
-   "median": 22437.0,
-   "multiple": 2.3
-  },
-  {
-   "id": "peMHRTigrOo",
-   "title": "김치찜 먹는 지성이만 봐도 배가 불렀던 재민",
-   "published": "2026-11-04T22:00:29+00:00",
-   "url": "https://www.youtube.com/shorts/peMHRTigrOo",
-   "shorts": true,
-   "views": 20373,
-   "likes": 472,
-   "viewsGain": 73,
-   "isNew": false,
-   "median": 22437.0,
+   "median": 17077.5,
    "multiple": 0.9
   }
  ],
@@ -205,29 +205,29 @@
   {
    "title": "어쩌면 사랑은 다 우정 안에 있는지도 모르겠다",
    "url": "https://www.youtube.com/shorts/fPk1Jmnz5sU",
-   "views": 181382,
-   "multiple": 8.1,
-   "shorts": true
-  },
-  {
-   "title": "나보다 못해주는 남자 만나지 마",
-   "url": "https://www.youtube.com/shorts/mZoYzTu6ZyY",
-   "views": 76088,
-   "multiple": 3.4,
+   "views": 185104,
+   "multiple": 10.8,
    "shorts": true
   },
   {
    "title": "수아씨 왜 입이 벌어지면 눈이 감기는 거예요?",
    "url": "https://www.youtube.com/shorts/JyG0ws-5OkA",
-   "views": 74554,
-   "multiple": 3.3,
+   "views": 150045,
+   "multiple": 8.8,
    "shorts": true
   },
   {
-   "title": "극단적이었던 재민 입맛",
-   "url": "https://www.youtube.com/shorts/Zq1d5ckccFQ",
-   "views": 50543,
-   "multiple": 2.3,
+   "title": "나보다 못해주는 남자 만나지 마",
+   "url": "https://www.youtube.com/shorts/mZoYzTu6ZyY",
+   "views": 79792,
+   "multiple": 4.7,
+   "shorts": true
+  },
+  {
+   "title": "누구든 그 상황이었으면 벗어주지 않았을까요?",
+   "url": "https://www.youtube.com/shorts/_i4szpS2iWE",
+   "views": 45543,
+   "multiple": 2.7,
    "shorts": true
   }
  ]

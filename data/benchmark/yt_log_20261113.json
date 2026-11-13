@@ -189,5 +189,170 @@
   "key": "storyk",
   "ok": false,
   "error": "HTTPError: HTTP Error 404: Not Found"
+ },
+ {
+  "at": "2026-11-13T19:35+09:00",
+  "key": "14f",
+  "ok": true,
+  "new": [
+   "lhkYVuxd_dY",
+   "Aj_trkh0zaM"
+  ],
+  "top": [
+   {
+    "id": "H7Mr65NjD7g",
+    "title": "국방비 112조 사우디는 왜 후티 반군에 쩔쩔맬까? (박현도X알파고) ㅣ10분 토론 / 14F",
+    "views": 640458,
+    "gain": 27005
+   },
+   {
+    "id": "4fQ9fg9ooko",
+    "title": "스카프 아저씨 하나로 끝이 아니다?! 요즘 남대문시장에서 뜨는 것들  | 선발대 / 14F",
+    "views": 73003,
+    "gain": 26397
+   },
+   {
+    "id": "ilCY2YYGUkk",
+    "title": "마운자로 한번에 3개월치 사서 입국 가능…해외 ‘비만 치료제’ 반입 규정 변경 / 14F",
+    "views": 93135,
+    "gain": 16446
+   }
+  ]
+ },
+ {
+  "at": "2026-11-13T19:35+09:00",
+  "key": "subusunews",
+  "ok": true,
+  "new": [
+   "f5Ht9HLkwzs",
+   "0cDVwBmj7Ow"
+  ],
+  "top": [
+   {
+    "id": "JyG0ws-5OkA",
+    "title": "수아씨 왜 입이 벌어지면 눈이 감기는 거예요?",
+    "views": 150045,
+    "gain": 75491
+   },
+   {
+    "id": "R6snzVYjYF8",
+    "title": "한수아 카리나 이 정도로 사랑하고 있는지 알았던 사람?ㅣ우리 사이엔 편지가 있다2 EP.11 배우 한수아",
+    "views": 342775,
+    "gain": 11257
+   },
+   {
+    "id": "KL0_g5W4oxs",
+    "title": "지금 이거 카리나 이야기 맞아요?",
+    "views": 16264,
+    "gain": 6296
+   }
+  ]
+ },
+ {
+  "at": "2026-11-13T19:35+09:00",
+  "key": "vstudio",
+  "ok": true,
+  "new": [],
+  "top": []
+ },
+ {
+  "at": "2026-11-13T19:35+09:00",
+  "key": "syukaworld",
+  "ok": true,
+  "new": [
+   "ZFq74IdTuR8",
+   "GXAL5zTk_Sg",
+   "B6DqFmvxiWw"
+  ],
+  "top": [
+   {
+    "id": "FSqGVxQKEMc",
+    "title": "변압기 사라면서요 살려주세요",
+    "views": 214699,
+    "gain": 48583
+   },
+   {
+    "id": "PdRYlMmMhJQ",
+    "title": "못하면 하지마세요",
+    "views": 177715,
+    "gain": 30492
+   },
+   {
+    "id": "sTeqHqi-w74",
+    "title": "경력직 젠슨황",
+    "views": 261960,
+    "gain": 24957
+   }
+  ]
+ },
+ {
+  "at": "2026-11-13T19:35+09:00",
+  "key": "ytn",
+  "ok": true,
+  "new": [
+   "7i5Me1qGfGE",
+   "xDGkEkc0MRw",
+   "_wtNJKQtPTw",
+   "tfKWVvV4QAs",
+   "VX_LBsB_R7k",
+   "qdMPAk83KWM",
+   "WroTERJsTis",
+   "VNEtBe6bDbY",
+   "3dP3UNjIhy0",
+   "eITlJn2vtRI",
+   "bWY8R1GFO1Q",
+   "ZRjFlw9jayU",
+   "_94TAvbee08",
+   "FWVV7iNhKiE",
+   "0sTaKwW0TKE"
+  ],
+  "top": [
+   {
+    "id": "VNEtBe6bDbY",
+    "title": "프랑스 이어 이탈리아까지 '비상'…유럽 '대혼돈' [에디터픽] / YTN",
+    "views": 28149,
+    "gain": null
+   },
+   {
+    "id": "xDGkEkc0MRw",
+    "title": "미국 수도 한복판서 벌어진 '대참사'...학교 봉쇄·주민 대피령까지 [에디터픽] / YTN",
+    "views": 26173,
+    "gain": null
+   },
+   {
+    "id": "7i5Me1qGfGE",
+    "title": "심상찮은 트럼프 행보…젠슨 황에 깜짝 발언 '발칵' [에디터픽] / YTN",
+    "views": 24379,
+    "gain": null
+   }
+  ]
+ },
+ {
+  "at": "2026-11-13T19:35+09:00",
+  "key": "storyk",
+  "ok": true,
+  "new": [
+   "GBpaslkBI_c"
+  ],
+  "top": [
+   {
+    "id": "aGdX-njap_8",
+    "title": "김예건 한국 역대 최연소 2위 유럽대항전 출전 - 명문팀 거절하고 1군 노린 18살유망주",
+    "views": 135616,
+    "gain": 18008
+   },
+   {
+    "id": "EvW6ldmE06o",
+    "title": "손흥민 보고 자란 축구 소년 기적의 FA컵 - 영국이 놀란 148년 새 역사의 주인공 양승우",
+    "views": 199195,
+    "gain": 13058
+   },
+   {
+    "id": "s5USat3YPTk",
+    "title": "손흥민 PL 공식 계정 샤라웃에 영국 감동 반응 - 이미 떠난 스타가 아니라 영원한 레전드 예우",
+    "views": 26192,
+    "gain": 4729
+   }
+  ]
  }
 ]

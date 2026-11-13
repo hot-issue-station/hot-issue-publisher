@@ -1,17 +1,17 @@
 {
  "name": "슈카월드",
  "channel": "https://www.youtube.com/@syukaworld",
- "checkedAt": "2026-11-13T14:55+09:00",
+ "checkedAt": "2026-11-13T19:35+09:00",
  "subscribers": "374만",
  "videos": [
   {
    "id": "PPIMOKvuSDY",
    "title": "교황님 말씀 \"젊은이들이여, 돈과 SNS에 사로잡히지 말라\"",
-   "views": 73000,
-   "viewsText": "조회수 7.3만회",
+   "views": 76000,
+   "viewsText": "조회수 7.6만회",
    "published": "",
    "kind": "short",
-   "gain": 6000
+   "gain": 3000
   },
   {
    "id": "5mSF8npmm9A",
@@ -20,13 +20,13 @@
    "viewsText": "조회수 12만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "5LEMniVcweU",
    "title": "걱정 노노",
-   "views": 58000,
-   "viewsText": "조회수 5.8만회",
+   "views": 59000,
+   "viewsText": "조회수 5.9만회",
    "published": "",
    "kind": "short",
    "gain": 1000
@@ -43,8 +43,8 @@
   {
    "id": "xVKY3CWUoSE",
    "title": "딸깍으로 떠먹여주는 서비스",
-   "views": 56000,
-   "viewsText": "조회수 5.6만회",
+   "views": 57000,
+   "viewsText": "조회수 5.7만회",
    "published": "",
    "kind": "short",
    "gain": 1000
@@ -52,11 +52,11 @@
   {
    "id": "lioIrGMoIbs",
    "title": "좋은 사람 있으면 소개시켜줘",
-   "views": 91000,
-   "viewsText": "조회수 9.1만회",
+   "views": 92000,
+   "viewsText": "조회수 9.2만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 1000
   },
   {
    "id": "D32h_sPWp0g",

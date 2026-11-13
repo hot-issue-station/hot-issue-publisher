@@ -1,41 +1,65 @@
 {
  "name": "RESCENE 공식",
  "channel": "https://www.youtube.com/@RESCENE_official",
- "checkedAt": "2026-11-13T14:55+09:00",
+ "checkedAt": "2026-11-13T19:35+09:00",
  "subscribers": "138만",
  "videos": [
   {
-   "id": "T_gjoo1qKBU",
-   "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #최현석 선배님@TREASURE",
-   "views": 300000,
-   "viewsText": "조회수 30만회",
+   "id": "R6FaDmyBCK8",
+   "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #한유진 님@AND2BLE",
+   "views": 10000,
+   "viewsText": "조회수 1만회",
    "published": "",
-   "kind": "short",
-   "gain": 60000
+   "kind": "short"
   },
   {
-   "id": "Swo1MWFnK1c",
-   "title": "Yeah I'm blooming like a flower, flower",
-   "views": 320000,
-   "viewsText": "조회수 32만회",
+   "id": "zgX-au56vcA",
+   "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #RENKI #AKITO 님 @Official_VIBY",
+   "views": 64000,
+   "viewsText": "조회수 6.4만회",
+   "published": "",
+   "kind": "short"
+  },
+  {
+   "id": "Wjs0JtTnlHY",
+   "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #안태규 님@DragonPony_official",
+   "views": 39000,
+   "viewsText": "조회수 3.9만회",
+   "published": "",
+   "kind": "short"
+  },
+  {
+   "id": "T_gjoo1qKBU",
+   "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #최현석 선배님@TREASURE",
+   "views": 340000,
+   "viewsText": "조회수 34만회",
    "published": "",
    "kind": "short",
    "gain": 40000
   },
   {
-   "id": "ZZqAlMwMPMg",
-   "title": "백화요란 그 파트",
-   "views": 750000,
-   "viewsText": "조회수 75만회",
+   "id": "Swo1MWFnK1c",
+   "title": "Yeah I'm blooming like a flower, flower",
+   "views": 350000,
+   "viewsText": "조회수 35만회",
    "published": "",
    "kind": "short",
-   "gain": 90000
+   "gain": 30000
+  },
+  {
+   "id": "ZZqAlMwMPMg",
+   "title": "백화요란 그 파트",
+   "views": 820000,
+   "viewsText": "조회수 82만회",
+   "published": "",
+   "kind": "short",
+   "gain": 70000
   },
   {
    "id": "9wSxuOLpGXc",
    "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #YoungK 선배님@DAY6Official",
-   "views": 300000,
-   "viewsText": "조회수 30만회",
+   "views": 330000,
+   "viewsText": "조회수 33만회",
    "published": "",
    "kind": "short",
    "gain": 30000
@@ -56,16 +80,16 @@
    "viewsText": "조회수 18만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "b-9smM2N5sk",
    "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #서희 님@TUIDE_official",
-   "views": 300000,
-   "viewsText": "조회수 30만회",
+   "views": 310000,
+   "viewsText": "조회수 31만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "ZZJHE7xBDJQ",
@@ -74,13 +98,13 @@
    "viewsText": "조회수 28만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "kOmL4DDTEYw",
    "title": "얍",
-   "views": 700000,
-   "viewsText": "조회수 70만회",
+   "views": 710000,
+   "viewsText": "조회수 71만회",
    "published": "",
    "kind": "short",
    "gain": 10000
@@ -101,16 +125,16 @@
    "viewsText": "조회수 33만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "aTfIJqiYBiI",
    "title": "Pretty",
-   "views": 200000,
-   "viewsText": "조회수 20만회",
+   "views": 210000,
+   "viewsText": "조회수 21만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "NNsr12BBiE0",
@@ -146,7 +170,7 @@
    "viewsText": "조회수 11만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "IrcrSlCCkGo",
@@ -187,11 +211,11 @@
   {
    "id": "ydZG-_FdrxI",
    "title": "With 까엉 🤎",
-   "views": 530000,
-   "viewsText": "조회수 53만회",
+   "views": 540000,
+   "viewsText": "조회수 54만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "GG1QgSloUkU",
@@ -209,7 +233,7 @@
    "viewsText": "조회수 39만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "_ldpW3AQWWA",
@@ -286,20 +310,20 @@
   {
    "id": "A5vmiFpG1yg",
    "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #수이 님",
-   "views": 830000,
-   "viewsText": "조회수 83만회",
+   "views": 840000,
+   "viewsText": "조회수 84만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "Es3qasE2w7w",
    "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #지훈 선배님",
-   "views": 1020000,
-   "viewsText": "조회수 102만회",
+   "views": 1030000,
+   "viewsText": "조회수 103만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "_KseVSTX0KU",
@@ -333,33 +357,6 @@
    "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #나띠 #하늘 선배님",
    "views": 930000,
    "viewsText": "조회수 93만회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "UfaJ4mbAiWc",
-   "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #운학 선배님",
-   "views": 1250000,
-   "viewsText": "조회수 125만회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "HN7La9KN2MY",
-   "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #크러쉬 선배님",
-   "views": 600000,
-   "viewsText": "조회수 60만회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "k7y2yvkFJ1k",
-   "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #애니 님",
-   "views": 1430000,
-   "viewsText": "조회수 143만회",
    "published": "",
    "kind": "short",
    "gain": 0

@@ -1,34 +1,35 @@
 {
  "name": "14F 일사에프 (MBC)",
  "channel": "https://www.youtube.com/@14FMBC",
- "checkedAt": "2026-11-13T14:55+09:00",
+ "checkedAt": "2026-11-13T19:35+09:00",
  "subscribers": "239만",
  "videos": [
   {
    "id": "Aj_trkh0zaM",
    "title": "남대문 스카프 아저씨 입담 모음zip. #shorts",
-   "views": 3000,
-   "viewsText": "조회수 3천회",
+   "views": 14000,
+   "viewsText": "조회수 1.4만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 11000
   },
   {
    "id": "WgWmSXeb_YA",
    "title": "후티 VS 사우디 공항 보복전 #shorts",
-   "views": 3000,
-   "viewsText": "조회수 3천회",
+   "views": 3800,
+   "viewsText": "조회수 3.8천회",
    "published": "",
    "kind": "short",
-   "gain": 2463
+   "gain": 800
   },
   {
    "id": "yzQjanfzMkg",
    "title": "예멘 무장 단체 후티 반군의 탄생 #shorts",
-   "views": 3300,
-   "viewsText": "조회수 3.3천회",
+   "views": 3500,
+   "viewsText": "조회수 3.5천회",
    "published": "",
    "kind": "short",
-   "gain": 300
+   "gain": 200
   },
   {
    "id": "yJ40uku5fg0",
@@ -42,8 +43,8 @@
   {
    "id": "OTeGIZUhKjo",
    "title": "이게 진짜 라면이라고? 구미 라면 축제 이색 라면 모음 #shorts",
-   "views": 8800,
-   "viewsText": "조회수 8.8천회",
+   "views": 8900,
+   "viewsText": "조회수 8.9천회",
    "published": "",
    "kind": "short",
    "gain": 100

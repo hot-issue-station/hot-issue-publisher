@@ -1,22 +1,31 @@
 {
  "name": "스브스뉴스 (SBS)",
  "channel": "https://www.youtube.com/@subusunews",
- "checkedAt": "2026-11-13T14:55+09:00",
+ "checkedAt": "2026-11-13T19:35+09:00",
  "subscribers": "144만",
  "videos": [
   {
    "id": "wHp_zWCqzxw",
    "title": "의무 사항 아니면 안 해도 되는 거냐고..ㅠ #딸기우유 #shorts #스브스뉴스",
-   "views": 1000,
-   "viewsText": "조회수 1천회",
+   "views": 1400,
+   "viewsText": "조회수 1.4천회",
+   "published": "",
+   "kind": "short",
+   "gain": 400
+  },
+  {
+   "id": "LEWIMLiirq0",
+   "title": "성분 따졌다가 고소당한 사람? 그게 나예요. #딸기우유 #shorts #스브스뉴스",
+   "views": 6600,
+   "viewsText": "조회수 6.6천회",
    "published": "",
    "kind": "short"
   },
   {
    "id": "QSXv2yiIveI",
    "title": "귀신 훈육 놀이에 터져버린 아동 학대 논란 #한국민속촌 #shorts #스브스뉴스",
-   "views": 11000,
-   "viewsText": "조회수 1.1만회",
+   "views": 12000,
+   "viewsText": "조회수 1.2만회",
    "published": "",
    "kind": "short",
    "gain": 1000
@@ -24,47 +33,47 @@
   {
    "id": "7UWF0GGYftg",
    "title": "[선공개] 신혼여행 따라갔던 부부에게 연락이 안 온다",
-   "views": 8200,
-   "viewsText": "조회수 8.2천회",
+   "views": 9100,
+   "viewsText": "조회수 9.1천회",
    "published": "",
    "kind": "short",
-   "gain": 1600
+   "gain": 900
   },
   {
    "id": "vS6l_n2uJzs",
    "title": "젠슨 황 내연녀 앨리스 황, 10조 원어치 ‘엔비디아 AI칩’ 중국으로 유출? #엔비디아 #shorts #스브스뉴스",
-   "views": 6300,
-   "viewsText": "조회수 6.3천회",
+   "views": 6400,
+   "viewsText": "조회수 6.4천회",
    "published": "",
    "kind": "short",
-   "gain": 200
+   "gain": 100
   },
   {
    "id": "phk3JBktfX8",
    "title": "[선공개] 인간관계 정리되는 요즘 경조사",
-   "views": 8100,
-   "viewsText": "조회수 8.1천회",
+   "views": 8600,
+   "viewsText": "조회수 8.6천회",
    "published": "",
    "kind": "short",
-   "gain": 800
+   "gain": 500
   },
   {
    "id": "80Prr9snsIk",
    "title": "[선공개] 죽여달라는 거지?",
-   "views": 8100,
-   "viewsText": "조회수 8.1천회",
+   "views": 8400,
+   "viewsText": "조회수 8.4천회",
    "published": "",
    "kind": "short",
-   "gain": 400
+   "gain": 300
   },
   {
    "id": "h8iBMhQ3b-Q",
    "title": "추워질수록 위험하다는 굴운자로 #굴 #shorts #스브스뉴스",
-   "views": 7000,
-   "viewsText": "조회수 7천회",
+   "views": 7200,
+   "viewsText": "조회수 7.2천회",
    "published": "",
    "kind": "short",
-   "gain": 700
+   "gain": 200
   },
   {
    "id": "uO5xviR9-aM",
@@ -82,7 +91,7 @@
    "viewsText": "조회수 4.5천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "DqL_SWFWkD8",
@@ -91,7 +100,7 @@
    "viewsText": "조회수 58만회",
    "published": "",
    "kind": "short",
-   "gain": 40000
+   "gain": 0
   },
   {
    "id": "lnryKqOozWk",
@@ -114,20 +123,20 @@
   {
    "id": "STWniX3sH0g",
    "title": "상반기에만 2배 폭증한 초등학생 자살률 #자살 #shorts #스브스뉴스",
-   "views": 6300,
-   "viewsText": "조회수 6.3천회",
+   "views": 6400,
+   "viewsText": "조회수 6.4천회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 100
   },
   {
    "id": "qZaeu4PJUps",
    "title": "롯데홈쇼핑이 직접 교육하는 커머스 인재 학교? #shorts #스브스뉴스",
-   "views": 37000,
-   "viewsText": "조회수 3.7만회",
+   "views": 40000,
+   "viewsText": "조회수 4만회",
    "published": "",
    "kind": "short",
-   "gain": 2000
+   "gain": 3000
   },
   {
    "id": "bvbHkNEO3t8",
@@ -350,15 +359,6 @@
    "title": "매장을 없앴는데 더 잘나갈 수가 있는 거임? #크리스피크림 #shorts #스브스뉴스",
    "views": 5200,
    "viewsText": "조회수 5.2천회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "Wu7xk-C29MI",
-   "title": "잠을 자도 개운하지 않은 이유? 2030 수면 문제 #수면문제 #shorts #스브스뉴스",
-   "views": 23000,
-   "viewsText": "조회수 2.3만회",
    "published": "",
    "kind": "short",
    "gain": 0

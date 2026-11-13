@@ -3,19 +3,32 @@
  "name": "스토리K (손흥민 레전드 비교 특집 벤치마킹, 10/31)",
  "channel": "https://www.youtube.com/@story_k",
  "channelId": "UCqzNZeBt0546jG-vDlAQlZg",
- "checkedAt": "2026-11-13T08:34+09:00",
+ "checkedAt": "2026-11-13T19:35+09:00",
  "videos": [
+  {
+   "id": "GBpaslkBI_c",
+   "title": "손흥민 입장문 사과 로이터 통신도 주목 - 유럽에선 캡틴 레전드 한국에선 리더십 희생양",
+   "published": "2026-11-13T09:27:06+00:00",
+   "url": "https://www.youtube.com/watch?v=GBpaslkBI_c",
+   "shorts": false,
+   "views": 1175,
+   "likes": 266,
+   "viewsGain": null,
+   "isNew": true,
+   "median": 60124,
+   "multiple": 0.0
+  },
   {
    "id": "s5USat3YPTk",
    "title": "손흥민 PL 공식 계정 샤라웃에 영국 감동 반응 - 이미 떠난 스타가 아니라 영원한 레전드 예우",
    "published": "2026-11-12T10:12:35+00:00",
    "url": "https://www.youtube.com/watch?v=s5USat3YPTk",
    "shorts": false,
-   "views": 21463,
-   "likes": 951,
-   "viewsGain": 12582,
+   "views": 26192,
+   "likes": 1089,
+   "viewsGain": 4729,
    "isNew": false,
-   "median": 60031,
+   "median": 60124,
    "multiple": 0.4
   },
   {
@@ -24,11 +37,11 @@
    "published": "2026-11-11T10:19:02+00:00",
    "url": "https://www.youtube.com/watch?v=Q5muilZ33Xc",
    "shorts": false,
-   "views": 41805,
-   "likes": 956,
-   "viewsGain": 697,
+   "views": 42297,
+   "likes": 965,
+   "viewsGain": 492,
    "isNew": false,
-   "median": 60031,
+   "median": 60124,
    "multiple": 0.7
   },
   {
@@ -37,12 +50,12 @@
    "published": "2026-11-10T09:49:05+00:00",
    "url": "https://www.youtube.com/watch?v=EvW6ldmE06o",
    "shorts": false,
-   "views": 186137,
-   "likes": 1972,
-   "viewsGain": 7455,
+   "views": 199195,
+   "likes": 2045,
+   "viewsGain": 13058,
    "isNew": false,
-   "median": 60031,
-   "multiple": 3.1
+   "median": 60124,
+   "multiple": 3.3
   },
   {
    "id": "Jo4q1DY_adM",
@@ -50,11 +63,11 @@
    "published": "2026-11-09T10:29:55+00:00",
    "url": "https://www.youtube.com/watch?v=Jo4q1DY_adM",
    "shorts": false,
-   "views": 38021,
-   "likes": 994,
-   "viewsGain": 121,
+   "views": 38153,
+   "likes": 998,
+   "viewsGain": 132,
    "isNew": false,
-   "median": 60031,
+   "median": 60124,
    "multiple": 0.6
   },
   {
@@ -63,11 +76,11 @@
    "published": "2026-11-08T10:15:12+00:00",
    "url": "https://www.youtube.com/watch?v=pzqdpN2RPCc",
    "shorts": false,
-   "views": 27443,
-   "likes": 655,
-   "viewsGain": 77,
+   "views": 27611,
+   "likes": 656,
+   "viewsGain": 168,
    "isNew": false,
-   "median": 60031,
+   "median": 60124,
    "multiple": 0.5
   },
   {
@@ -76,11 +89,11 @@
    "published": "2026-11-07T10:26:57+00:00",
    "url": "https://www.youtube.com/watch?v=FhUO1_ZU1Dw",
    "shorts": false,
-   "views": 91413,
-   "likes": 1558,
-   "viewsGain": 231,
+   "views": 91720,
+   "likes": 1566,
+   "viewsGain": 307,
    "isNew": false,
-   "median": 60031,
+   "median": 60124,
    "multiple": 1.5
   },
   {
@@ -89,12 +102,12 @@
    "published": "2026-11-06T10:20:26+00:00",
    "url": "https://www.youtube.com/watch?v=aGdX-njap_8",
    "shorts": false,
-   "views": 117608,
-   "likes": 888,
-   "viewsGain": 3488,
+   "views": 135616,
+   "likes": 918,
+   "viewsGain": 18008,
    "isNew": false,
-   "median": 60031,
-   "multiple": 2.0
+   "median": 60124,
+   "multiple": 2.3
   },
   {
    "id": "XnpYo8kDzQo",
@@ -102,11 +115,11 @@
    "published": "2026-11-05T10:03:23+00:00",
    "url": "https://www.youtube.com/watch?v=XnpYo8kDzQo",
    "shorts": false,
-   "views": 28913,
+   "views": 28958,
    "likes": 996,
-   "viewsGain": 103,
+   "viewsGain": 45,
    "isNew": false,
-   "median": 60031,
+   "median": 60124,
    "multiple": 0.5
   },
   {
@@ -115,11 +128,11 @@
    "published": "2026-11-04T10:03:23+00:00",
    "url": "https://www.youtube.com/watch?v=eMHW9EPF5_g",
    "shorts": false,
-   "views": 60031,
-   "likes": 1561,
-   "viewsGain": 66,
+   "views": 60124,
+   "likes": 1562,
+   "viewsGain": 93,
    "isNew": false,
-   "median": 60031,
+   "median": 60124,
    "multiple": 1.0
   },
   {
@@ -128,11 +141,11 @@
    "published": "2026-11-03T10:03:50+00:00",
    "url": "https://www.youtube.com/watch?v=6WdpcGFmFgQ",
    "shorts": false,
-   "views": 104694,
-   "likes": 1684,
-   "viewsGain": 22,
+   "views": 104718,
+   "likes": 1685,
+   "viewsGain": 24,
    "isNew": false,
-   "median": 60031,
+   "median": 60124,
    "multiple": 1.7
   },
   {
@@ -141,11 +154,11 @@
    "published": "2026-11-02T10:18:24+00:00",
    "url": "https://www.youtube.com/watch?v=nrw8lqAulz8",
    "shorts": false,
-   "views": 50865,
-   "likes": 1401,
-   "viewsGain": 32,
+   "views": 50900,
+   "likes": 1403,
+   "viewsGain": 35,
    "isNew": false,
-   "median": 60031,
+   "median": 60124,
    "multiple": 0.8
   },
   {
@@ -154,11 +167,11 @@
    "published": "2026-11-01T10:10:44+00:00",
    "url": "https://www.youtube.com/watch?v=hW2vyayJmLc",
    "shorts": false,
-   "views": 119083,
+   "views": 119155,
    "likes": 1882,
    "viewsGain": 72,
    "isNew": false,
-   "median": 60031,
+   "median": 60124,
    "multiple": 2.0
   },
   {
@@ -169,9 +182,9 @@
    "shorts": false,
    "views": 67949,
    "likes": 1660,
-   "viewsGain": 3,
+   "viewsGain": 0,
    "isNew": false,
-   "median": 60031,
+   "median": 60124,
    "multiple": 1.1
   },
   {
@@ -180,53 +193,40 @@
    "published": "2026-10-29T10:21:36+00:00",
    "url": "https://www.youtube.com/watch?v=T8LOjY7uM8A",
    "shorts": false,
-   "views": 274050,
+   "views": 274064,
    "likes": 3447,
-   "viewsGain": 21,
+   "viewsGain": 14,
    "isNew": false,
-   "median": 60031,
+   "median": 60124,
    "multiple": 4.6
-  },
-  {
-   "id": "VCrDlYW4s98",
-   "title": "모레노 96라인 재소집 vs 칼바람 - 한국 축구 승리보다 중요한 대표팀 팬들의 귀환",
-   "published": "2026-10-28T09:38:38+00:00",
-   "url": "https://www.youtube.com/watch?v=VCrDlYW4s98",
-   "shorts": false,
-   "views": 42288,
-   "likes": 887,
-   "viewsGain": 2,
-   "isNew": false,
-   "median": 60031,
-   "multiple": 0.7
   }
  ],
  "viral": [
   {
    "title": "손흥민 존중은 베테랑을 향한 마땅한 기본 - 황희찬의 하이파이브 무시와 엄지성 대표팀 발탁",
    "url": "https://www.youtube.com/watch?v=T8LOjY7uM8A",
-   "views": 274050,
+   "views": 274064,
    "multiple": 4.6,
    "shorts": false
   },
   {
    "title": "손흥민 보고 자란 축구 소년 기적의 FA컵 - 영국이 놀란 148년 새 역사의 주인공 양승우",
    "url": "https://www.youtube.com/watch?v=EvW6ldmE06o",
-   "views": 186137,
-   "multiple": 3.1,
+   "views": 199195,
+   "multiple": 3.3,
    "shorts": false
   },
   {
    "title": "김예건 한국 역대 최연소 2위 유럽대항전 출전 - 명문팀 거절하고 1군 노린 18살유망주",
    "url": "https://www.youtube.com/watch?v=aGdX-njap_8",
-   "views": 117608,
-   "multiple": 2.0,
+   "views": 135616,
+   "multiple": 2.3,
    "shorts": false
   },
   {
    "title": "손흥민 호위무사들과 캡틴 패싱 황희찬 극과극 - 엄지성 미친 도움 대표팀 서사는 폭발 직전",
    "url": "https://www.youtube.com/watch?v=hW2vyayJmLc",
-   "views": 119083,
+   "views": 119155,
    "multiple": 2.0,
    "shorts": false
   }
