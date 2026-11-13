@@ -682,6 +682,39 @@
           "start_note": "처음부터 재생",
           "kind": "long",
           "kind_note": "형식 이름(무대·브이로그·라이브 등)으로 판단, 길이 미확인"
+        },
+        {
+          "video_id": "7C9PRXBWWEM",
+          "url": "https://www.youtube.com/watch?v=7C9PRXBWWEM",
+          "title": "리센느의 하루",
+          "channel": "인생84",
+          "official": "출연 채널 공식",
+          "kind": "long",
+          "added_at": "2026-11-14",
+          "views": 6340000,
+          "views_note": "11/14 00시 유튜브 화면값(만 단위)"
+        },
+        {
+          "video_id": "yq_nZPUBHuU",
+          "url": "https://www.youtube.com/watch?v=yq_nZPUBHuU",
+          "title": "[SUB] 원이짱 미나미짱 상담하러 교무실로 오이데-★ | EP. 150 리센느 원이 미나미 | 살롱드립",
+          "channel": "TEO 테오",
+          "official": "출연 채널 공식",
+          "kind": "long",
+          "added_at": "2026-11-14",
+          "views": 4150000,
+          "views_note": "11/14 00시 유튜브 화면값(만 단위)"
+        },
+        {
+          "video_id": "wbfy9Tm0UjA",
+          "url": "https://www.youtube.com/watch?v=wbfy9Tm0UjA",
+          "title": "리센느 원이 & 미나미 초대석",
+          "channel": "침착맨",
+          "official": "출연 채널 공식",
+          "kind": "long",
+          "added_at": "2026-11-14",
+          "views": 3850000,
+          "views_note": "11/14 00시 유튜브 화면값(만 단위)"
         }
       ]
     },
@@ -792,6 +825,39 @@
           "start_note": "처음부터 재생",
           "kind": "long",
           "kind_note": "형식 이름(무대·브이로그·라이브 등)으로 판단, 길이 미확인"
+        },
+        {
+          "video_id": "RiBPfWXPS9Y",
+          "url": "https://www.youtube.com/watch?v=RiBPfWXPS9Y",
+          "title": "[Re-log] 까엉티비 🐹 | RESCENE (리센느) vlog",
+          "channel": "RESCENE",
+          "official": "소속사 공식",
+          "kind": "long",
+          "added_at": "2026-11-14",
+          "views": 440000,
+          "views_note": "11/14 00시 유튜브 화면값(만 단위)"
+        },
+        {
+          "video_id": "3JHcXOBYERA",
+          "url": "https://www.youtube.com/watch?v=3JHcXOBYERA",
+          "title": "[Re-log] 까엉티비 🐹 | 우리 막내가 벌써 성인 준비를?! | RESCENE (리센느) vlog",
+          "channel": "RESCENE",
+          "official": "소속사 공식",
+          "kind": "long",
+          "added_at": "2026-11-14",
+          "views": 410000,
+          "views_note": "11/14 00시 유튜브 화면값(만 단위)"
+        },
+        {
+          "video_id": "qDUkVfrcWJs",
+          "url": "https://www.youtube.com/watch?v=qDUkVfrcWJs",
+          "title": "[Re-log] in LA📸 #1 | RESCENE (리센느) vlog",
+          "channel": "RESCENE",
+          "official": "소속사 공식",
+          "kind": "long",
+          "added_at": "2026-11-14",
+          "views": 380000,
+          "views_note": "11/14 00시 유튜브 화면값(만 단위)"
         }
       ]
     },
@@ -869,7 +935,9 @@
           "added_at": "2026-11-14",
           "views": 1250000,
           "views_note": "11/14 00시 유튜브 화면값(만 단위)",
-          "note": "공식 라이브 다시 보기 · 약 63분"
+          "note": "공식 라이브 다시 보기 · 약 63분",
+          "rot": 90,
+          "rot_note": "세로로 찍은 라이브 — 유튜브 표지가 옆으로 누워 있어 액자에서 돌려 세움(대표 11/14 00:12)"
         },
         {
           "video_id": "4Xn-oG52pYM",
@@ -965,7 +1033,53 @@
           "start": null,
           "start_note": "처음부터 재생",
           "kind": "long",
-          "kind_note": "형식 이름(무대·브이로그·라이브 등)으로 판단, 길이 미확인"
+          "kind_note": "형식 이름(무대·브이로그·라이브 등)으로 판단, 길이 미확인",
+          "rot": 90,
+          "rot_note": "세로로 찍은 라이브 — 표지가 옆으로 누워 있어 액자에서 돌려 세움(대표 11/14 00:14)"
+        },
+        {
+          "video_id": "ccnNVyPu2Gw",
+          "url": "https://www.youtube.com/watch?v=ccnNVyPu2Gw",
+          "title": "MAY☀️ Birthday!!!!!!!🎉🎂",
+          "channel": "RESCENE",
+          "official": "소속사 공식",
+          "kind": "long",
+          "added_at": "2026-11-14",
+          "views": 830000,
+          "views_note": "11/14 00시 유튜브 화면값(만 단위)"
+        },
+        {
+          "video_id": "W6F7n8DDgnk",
+          "url": "https://www.youtube.com/watch?v=W6F7n8DDgnk",
+          "title": "제나의 생일 어드벤처🎡ㅣ ZENA HBD TO MEㅣZENA’s B-Day Vlog",
+          "channel": "RESCENE",
+          "official": "소속사 공식",
+          "kind": "long",
+          "added_at": "2026-11-14",
+          "views": 340000,
+          "views_note": "11/14 00시 유튜브 화면값(만 단위)"
+        },
+        {
+          "video_id": "N1WckPLsJ3k",
+          "url": "https://www.youtube.com/watch?v=N1WckPLsJ3k",
+          "title": "생각이 많을 땐💡 미나미 브이로그지🎁 ㅣ MINAMI HBD TO MEㅣMINAMI’s B-Day Vlog",
+          "channel": "RESCENE",
+          "official": "소속사 공식",
+          "kind": "long",
+          "added_at": "2026-11-14",
+          "views": 250000,
+          "views_note": "11/14 00시 유튜브 화면값(만 단위)"
+        },
+        {
+          "video_id": "O623FzKis10",
+          "url": "https://www.youtube.com/watch?v=O623FzKis10",
+          "title": "🎀오늘은 리브 하고 싶은 거 다 해ㅣ LIV HBD TO MEㅣLIV B-Day Vlog",
+          "channel": "RESCENE",
+          "official": "소속사 공식",
+          "kind": "long",
+          "added_at": "2026-11-14",
+          "views": 150000,
+          "views_note": "11/14 00시 유튜브 화면값(만 단위)"
         }
       ]
     }
