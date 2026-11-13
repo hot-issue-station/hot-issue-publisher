@@ -785,6 +785,96 @@
       ]
     },
     {
+      "id": "live",
+      "name": "라이브 방송",
+      "videos": [
+        {
+          "video_id": "10xhraj4ex0",
+          "url": "https://www.youtube.com/watch?v=10xhraj4ex0",
+          "title": "오랜만에 와쪄..다 드루왕🩶",
+          "channel": "RESCENE",
+          "official": "소속사 공식",
+          "kind": "long",
+          "added_at": "2026-11-14",
+          "views": 2610000,
+          "views_note": "11/14 00시 유튜브 화면값(만 단위)",
+          "note": "공식 라이브 다시 보기 · 약 77분"
+        },
+        {
+          "video_id": "WAO9dDGcCsA",
+          "url": "https://www.youtube.com/watch?v=WAO9dDGcCsA",
+          "title": "까엉이와 애봉이의 치트키 먹방🍽",
+          "channel": "RESCENE",
+          "official": "소속사 공식",
+          "kind": "long",
+          "added_at": "2026-11-14",
+          "views": 2600000,
+          "views_note": "11/14 00시 유튜브 화면값(만 단위)",
+          "note": "공식 라이브 다시 보기 · 약 117분"
+        },
+        {
+          "video_id": "mt1YOrDqKHw",
+          "url": "https://www.youtube.com/watch?v=mt1YOrDqKHw",
+          "title": "까엉TV 🤍🩷📺",
+          "channel": "RESCENE",
+          "official": "소속사 공식",
+          "kind": "long",
+          "added_at": "2026-11-14",
+          "views": 2220000,
+          "views_note": "11/14 00시 유튜브 화면값(만 단위)",
+          "note": "공식 라이브 다시 보기 · 약 77분"
+        },
+        {
+          "video_id": "uvnpuCAz-FE",
+          "url": "https://www.youtube.com/watch?v=uvnpuCAz-FE",
+          "title": "드로와 드로와 나랑드로와~😙",
+          "channel": "RESCENE",
+          "official": "소속사 공식",
+          "kind": "long",
+          "added_at": "2026-11-14",
+          "views": 1700000,
+          "views_note": "11/14 00시 유튜브 화면값(만 단위)",
+          "note": "공식 라이브 다시 보기 · 약 63분"
+        },
+        {
+          "video_id": "1BC-953eVP4",
+          "url": "https://www.youtube.com/watch?v=1BC-953eVP4",
+          "title": "RESCENE 4th Mini Album [PULSE] SHOWCASE LIVE",
+          "channel": "RESCENE",
+          "official": "소속사 공식",
+          "kind": "long",
+          "added_at": "2026-11-14",
+          "views": 1460000,
+          "views_note": "11/14 00시 유튜브 화면값(만 단위)",
+          "note": "공식 라이브 다시 보기 · 약 86분"
+        },
+        {
+          "video_id": "lkHYRzXyGnk",
+          "url": "https://www.youtube.com/watch?v=lkHYRzXyGnk",
+          "title": "메이의 심야 라이브😚",
+          "channel": "RESCENE",
+          "official": "소속사 공식",
+          "kind": "long",
+          "added_at": "2026-11-14",
+          "views": 1250000,
+          "views_note": "11/14 00시 유튜브 화면값(만 단위)",
+          "note": "공식 라이브 다시 보기 · 약 63분"
+        },
+        {
+          "video_id": "4Xn-oG52pYM",
+          "url": "https://www.youtube.com/watch?v=4Xn-oG52pYM",
+          "title": "숨은 그림 찾기",
+          "channel": "RESCENE",
+          "official": "소속사 공식",
+          "kind": "long",
+          "added_at": "2026-11-14",
+          "views": 1240000,
+          "views_note": "11/14 00시 유튜브 화면값(만 단위)",
+          "note": "공식 라이브 다시 보기 · 약 46분"
+        }
+      ]
+    },
+    {
       "id": "birthday",
       "name": "생일 이벤트",
       "videos": [

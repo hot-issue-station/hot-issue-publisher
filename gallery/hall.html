@@ -54,6 +54,9 @@ const HALLS = [
       { id:"tv", name:{ko:"TV 예능", ja:"地上波バラエティ", en:"TV Shows", zh:"電視綜藝"}, decor:"studio", color:"#5bb6e6", videos:[] },
       { id:"youtube_guest", name:{ko:"유튜브 출연", ja:"YouTube出演", en:"YouTube Guest", zh:"YouTube 客串"}, decor:"youtube", color:"#ee7d7d", videos:[] },
       { id:"daily", name:{ko:"멤버들의 일상", ja:"メンバーの日常", en:"Daily Life", zh:"成員日常"}, decor:"daily", color:"#7fc796", videos:[] },
+      /* 11/14 대표 지시: 멤버 라이브 방송관 — 리센느 공식 유튜브 라이브(@RESCENE_official/streams 218개) 중 조회수 상위. 영상은 curation.json themes[id=live] */
+      { id:"live", name:{ko:"라이브 방송", ja:"ライブ配信", en:"Live Streams", zh:"直播"}, decor:"daily", color:"#ff8fb1",
+        desc:{ko:"멤버들이 공식 유튜브에서 직접 켠 라이브", ja:"メンバーが公式YouTubeで行ったライブ配信", en:"Live streams the members hosted on the official channel", zh:"成員在官方YouTube親自開的直播"}, videos:[] },
       { id:"secret", name:{ko:"비밀의 방", ja:"秘密の部屋", en:"Secret Room", zh:"秘密房間"}, decor:"stage", color:"#ffd640", hidden:true, videos:[] },
       { id:"birthday", name:{ko:"생일 이벤트", ja:"誕生日イベント", en:"Birthday", zh:"生日活動"}, decor:"birthday", color:"#a8c8ec",
         theme:{ member:"리브", memberEn:"LIV", color:"#a8c8ec", accent:"#c9b8f0", title:"리브 생일카페", date:"" },
