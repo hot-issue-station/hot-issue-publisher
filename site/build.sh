@@ -25,6 +25,9 @@ cp "$GAL/endorsements.json" "$DIST/endorsements.json"
 cp "$SRC"/_worker.js "$SRC"/notes.html "$SRC"/stats.html "$SRC"/guide.html "$SRC"/about.html "$SRC"/privacy.html "$SRC"/terms.html "$SRC"/ads.html "$SRC"/takedown.html "$DIST/"
 cp "$SRC"/assets/* "$DIST/assets/"
 
+# 통계판 이름표(titles.json)
+python3 "$SITE/gen_titles.py" "$GAL/hall.html" "$DIST/titles.json" >/dev/null
+
 # JSON 깨짐 확인(파이썬이 있으면)
 if command -v python3 >/dev/null 2>&1; then
   for j in curation.json endorsements.json; do python3 -c 'import json,sys; json.load(open(sys.argv[1]))' "$DIST/$j"; done

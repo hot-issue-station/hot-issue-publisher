@@ -958,117 +958,16 @@
       "name": "생일 이벤트",
       "videos": [
         {
-          "video_id": "fCrQXP_2u3U",
-          "url": "https://www.youtube.com/watch?v=fCrQXP_2u3U",
-          "title": "리뿌 생일 라이브에 오신 걸 환영합니다💝",
-          "channel": "RESCENE",
-          "official": "리센느 공식",
-          "published": null,
-          "published_note": "확인 필요(제목의 6자리 숫자는 방송일이며 게시일 아님)",
-          "views": 1372790,
-          "likes": 35317,
-          "comments": null,
-          "comments_note": "확인 필요",
-          "engagement_rate": 0.0257,
-          "engagement_basis": "좋아요/조회수(댓글 미포함, 임시)",
-          "score": 0.563,
-          "checked_at": "2026-11-11T15:55+09:00",
-          "sources": {
-            "stats": "https://returnyoutubedislikeapi.com/votes?videoId=fCrQXP_2u3U",
-            "title_channel": "https://noembed.com/embed?url=https://www.youtube.com/watch?v=fCrQXP_2u3U"
-          },
-          "reason": "리브 생일 라이브, 생일 콘텐츠 중 압도적 조회수",
-          "start": null,
-          "start_note": "처음부터 재생",
-          "kind": "long",
-          "kind_note": "형식 이름(무대·브이로그·라이브 등)으로 판단, 길이 미확인"
-        },
-        {
-          "video_id": "i3BCs-IcIl4",
-          "url": "https://www.youtube.com/watch?v=i3BCs-IcIl4",
-          "title": "HAPPY WONI DAY 🎂💚",
-          "channel": "RESCENE",
-          "official": "리센느 공식",
-          "published": null,
-          "published_note": "확인 필요(제목의 6자리 숫자는 방송일이며 게시일 아님)",
-          "views": 195400,
-          "likes": 6418,
-          "comments": null,
-          "comments_note": "확인 필요",
-          "engagement_rate": 0.0328,
-          "engagement_basis": "좋아요/조회수(댓글 미포함, 임시)",
-          "score": 0.415,
-          "checked_at": "2026-11-11T15:55+09:00",
-          "sources": {
-            "stats": "https://returnyoutubedislikeapi.com/votes?videoId=i3BCs-IcIl4",
-            "title_channel": "https://noembed.com/embed?url=https://www.youtube.com/watch?v=i3BCs-IcIl4"
-          },
-          "reason": "원이 생일 공식 콘텐츠, 반응률 3.3%",
-          "start": null,
-          "start_note": "처음부터 재생",
-          "kind": "long",
-          "kind_note": "형식 이름(무대·브이로그·라이브 등)으로 판단, 길이 미확인"
-        },
-        {
-          "video_id": "zO7ndCNpJfs",
-          "url": "https://www.youtube.com/watch?v=zO7ndCNpJfs",
-          "title": "메이 생일축하해줄사람!💗🥳🎉🎂",
-          "channel": "RESCENE",
-          "official": "리센느 공식",
-          "published": null,
-          "published_note": "확인 필요(제목의 6자리 숫자는 방송일이며 게시일 아님)",
-          "views": 95819,
-          "likes": 2997,
-          "comments": null,
-          "comments_note": "확인 필요",
-          "engagement_rate": 0.0313,
-          "engagement_basis": "좋아요/조회수(댓글 미포함, 임시)",
-          "score": 0.315,
-          "checked_at": "2026-11-11T15:55+09:00",
-          "sources": {
-            "stats": "https://returnyoutubedislikeapi.com/votes?videoId=zO7ndCNpJfs",
-            "title_channel": "https://noembed.com/embed?url=https://www.youtube.com/watch?v=zO7ndCNpJfs"
-          },
-          "reason": "메이 생일 공식 콘텐츠, 반응률 3.1%",
-          "start": null,
-          "start_note": "처음부터 재생",
-          "kind": "long",
-          "kind_note": "형식 이름(무대·브이로그·라이브 등)으로 판단, 길이 미확인",
-          "rot": 90,
-          "rot_note": "세로로 찍은 라이브 — 표지가 옆으로 누워 있어 액자에서 돌려 세움(대표 11/14 00:14)"
-        },
-        {
-          "video_id": "ccnNVyPu2Gw",
-          "url": "https://www.youtube.com/watch?v=ccnNVyPu2Gw",
-          "title": "MAY☀️ Birthday!!!!!!!🎉🎂",
+          "video_id": "yPRYmyMw4g0",
+          "url": "https://www.youtube.com/watch?v=yPRYmyMw4g0",
+          "title": "오늘만큼은, 나를 위한 시간 🎁ㅣWONI HBD TO MEㅣW:One Day Vlog",
           "channel": "RESCENE",
           "official": "소속사 공식",
           "kind": "long",
           "added_at": "2026-11-14",
-          "views": 830000,
-          "views_note": "11/14 00시 유튜브 화면값(만 단위)"
-        },
-        {
-          "video_id": "W6F7n8DDgnk",
-          "url": "https://www.youtube.com/watch?v=W6F7n8DDgnk",
-          "title": "제나의 생일 어드벤처🎡ㅣ ZENA HBD TO MEㅣZENA’s B-Day Vlog",
-          "channel": "RESCENE",
-          "official": "소속사 공식",
-          "kind": "long",
-          "added_at": "2026-11-14",
-          "views": 340000,
-          "views_note": "11/14 00시 유튜브 화면값(만 단위)"
-        },
-        {
-          "video_id": "N1WckPLsJ3k",
-          "url": "https://www.youtube.com/watch?v=N1WckPLsJ3k",
-          "title": "생각이 많을 땐💡 미나미 브이로그지🎁 ㅣ MINAMI HBD TO MEㅣMINAMI’s B-Day Vlog",
-          "channel": "RESCENE",
-          "official": "소속사 공식",
-          "kind": "long",
-          "added_at": "2026-11-14",
-          "views": 250000,
-          "views_note": "11/14 00시 유튜브 화면값(만 단위)"
+          "views": 94000,
+          "views_note": "11/14 00시 유튜브 화면값",
+          "member": "원이"
         },
         {
           "video_id": "O623FzKis10",
@@ -1079,7 +978,107 @@
           "kind": "long",
           "added_at": "2026-11-14",
           "views": 150000,
-          "views_note": "11/14 00시 유튜브 화면값(만 단위)"
+          "views_note": "11/14 00시 유튜브 화면값",
+          "member": "리브"
+        },
+        {
+          "video_id": "N1WckPLsJ3k",
+          "url": "https://www.youtube.com/watch?v=N1WckPLsJ3k",
+          "title": "생각이 많을 땐💡 미나미 브이로그지🎁 ㅣ MINAMI HBD TO MEㅣMINAMI’s B-Day Vlog",
+          "channel": "RESCENE",
+          "official": "소속사 공식",
+          "kind": "long",
+          "added_at": "2026-11-14",
+          "views": 250000,
+          "views_note": "11/14 00시 유튜브 화면값",
+          "member": "미나미"
+        },
+        {
+          "video_id": "G2QpiBYo7Pc",
+          "url": "https://www.youtube.com/watch?v=G2QpiBYo7Pc",
+          "title": "오늘은 메이를 위한 하루 ✨ㅣMAY HBD TO MEㅣMAY's B-Day Vlog",
+          "channel": "RESCENE",
+          "official": "소속사 공식",
+          "kind": "long",
+          "added_at": "2026-11-14",
+          "views": 110000,
+          "views_note": "11/14 00시 유튜브 화면값",
+          "member": "메이"
+        },
+        {
+          "video_id": "W6F7n8DDgnk",
+          "url": "https://www.youtube.com/watch?v=W6F7n8DDgnk",
+          "title": "제나의 생일 어드벤처🎡ㅣ ZENA HBD TO MEㅣZENA’s B-Day Vlog",
+          "channel": "RESCENE",
+          "official": "소속사 공식",
+          "kind": "long",
+          "added_at": "2026-11-14",
+          "views": 340000,
+          "views_note": "11/14 00시 유튜브 화면값",
+          "member": "제나"
+        }
+      ],
+      "videos_note": "대표 11/14: 멤버별로 똑같이 1개씩(같은 「HBD TO ME」 시리즈), 공식 멤버 순서. 팬 영상 2칸은 fan_pool에서 6시간마다 돌아감",
+      "fan_pool": [
+        {
+          "video_id": "bYFbj7xPl0s",
+          "url": "https://www.youtube.com/watch?v=bYFbj7xPl0s",
+          "title": "[4K][실물영접]슈퍼스타 정원이 | 2026년 리센느 원이 생일카페 제2편",
+          "channel": "소가트 Sogat",
+          "official": "팬 채널",
+          "kind": "long",
+          "added_at": "2026-11-14",
+          "views": 28000,
+          "views_note": "11/14 00시 유튜브 화면값",
+          "member": "원이"
+        },
+        {
+          "video_id": "Z5bjhFBSf0k",
+          "url": "https://www.youtube.com/watch?v=Z5bjhFBSf0k",
+          "title": "리센느 리브 생일 카페ㅣ인생 처음 생일카페 방문 후기",
+          "channel": "우리보다WOORIBODA",
+          "official": "팬 채널",
+          "kind": "long",
+          "added_at": "2026-11-14",
+          "views": 86000,
+          "views_note": "11/14 00시 유튜브 화면값",
+          "member": "리브"
+        },
+        {
+          "video_id": "M0C40-VBvUQ",
+          "url": "https://www.youtube.com/watch?v=M0C40-VBvUQ",
+          "title": "[4K][실물영접]미나미다[미남이다] 2025년 리센느 미나미 생일카페",
+          "channel": "소가트 Sogat",
+          "official": "팬 채널",
+          "kind": "long",
+          "added_at": "2026-11-14",
+          "views": 17000,
+          "views_note": "11/14 00시 유튜브 화면값",
+          "member": "미나미"
+        },
+        {
+          "video_id": "fNP4qMyOXZo",
+          "url": "https://www.youtube.com/watch?v=fNP4qMyOXZo",
+          "title": "[4K][실물영접]인간 고양고양이 | 2026년 리센느 메이 생일카페 제1편",
+          "channel": "소가트 Sogat",
+          "official": "팬 채널",
+          "kind": "long",
+          "added_at": "2026-11-14",
+          "views": 58000,
+          "views_note": "11/14 00시 유튜브 화면값",
+          "member": "메이"
+        },
+        {
+          "video_id": "SP7KiACSN58",
+          "url": "https://www.youtube.com/watch?v=SP7KiACSN58",
+          "title": "[4K][실물영접]제나가 제나[쟤냐]?🐿️ 2025년 리센느 제나 생일카페",
+          "channel": "소가트 Sogat",
+          "official": "팬 채널",
+          "kind": "long",
+          "added_at": "2026-11-14",
+          "views": 2900,
+          "views_note": "11/14 00시 유튜브 화면값",
+          "member": "제나"
         }
       ]
     }

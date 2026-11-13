@@ -31,17 +31,24 @@ h2{font-size:15px;margin:18px 0 8px}
 <div class="sub" id="when">불러오는 중…</div>
 
 <div class="kpis">
+  <div class="kpi"><b id="kToday">–</b><span>오늘 방문</span></div>
+  <div class="kpi"><b id="kVisit">–</b><span>누적 방문</span></div>
+  <div class="kpi"><b id="kRoom">–</b><span>방 입장</span></div>
+</div>
+<div class="kpis">
   <div class="kpi"><b id="kView">–</b><span>영상 열람</span></div>
   <div class="kpi"><b id="kLike">–</b><span>추천 👍</span></div>
   <div class="kpi"><b id="kVid">–</b><span>본 영상 수</span></div>
 </div>
 
 <a class="btn" href="https://dash.cloudflare.com/1d2064bd65264be424fa7ef8f9d9a5cc/web-analytics" target="_blank" rel="noopener">👥 방문자 수·나라·기기 보기 (Cloudflare)</a>
-<p class="note">방문자 숫자는 Cloudflare 로그인(reaymi.music 계정) 뒤에 보여요. 아래 숫자는 갤러리 안에서 영상을 열고 추천한 횟수예요(모든 방문자 합계).</p>
+<p class="note">방문·방 입장은 11/14부터 셉니다(한 사람이 한 번 열면 방문 1, 방에 들어갈 때마다 입장 1). 대표 보기(덕심저장소 홈 아이콘)로 들어간 기기는 방문·입장에 세지 않아요. 영상 열람은 액자를 눌러 영상을 열었을 때만 올라가요. 나라·기기는 위 Cloudflare 버튼에서.</p>
 
 <h2>🔥 많이 본 영상</h2>
 <div id="list"></div>
-<h2>💜 방(테마)별 열람</h2>
+<h2>🚪 방별 입장 (11/14부터)</h2>
+<div id="rooms"></div>
+<h2>💜 방(테마)별 영상 열람</h2>
 <div id="themes"></div>
 <a class="btn ghost" href="./">← 갤러리로</a>
 
@@ -51,16 +58,33 @@ const num = f => f ? Number(f.integerValue ?? f.doubleValue ?? 0) : 0;
 const el = (t, c, txt) => { const e = document.createElement(t); if (c) e.className = c; if (txt != null) e.textContent = txt; return e; };
 async function load() {
   try {
-    const [st, cur] = await Promise.all([
+    const [st, cur, names] = await Promise.all([
       fetch(FS, {cache: "no-store"}).then(r => { if (!r.ok) throw new Error("통계 " + r.status); return r.json(); }),
-      fetch("curation.json", {cache: "no-store"}).then(r => r.ok ? r.json() : {themes: []}).catch(() => ({themes: []}))
+      fetch("curation.json", {cache: "no-store"}).then(r => r.ok ? r.json() : {themes: []}).catch(() => ({themes: []})),
+      fetch("titles.json", {cache: "no-store"}).then(r => r.ok ? r.json() : {}).catch(() => ({}))
     ]);
     const info = {}; const themeOf = {};
-    (cur.themes || []).forEach(t => (t.videos || []).forEach(v => { info[v.video_id] = v; themeOf[v.video_id] = t.name; }));
-    const rows = (st.documents || []).map(d => {
+    (cur.themes || []).forEach(t => (t.videos || []).concat(t.fan_pool || []).forEach(v => { info[v.video_id] = v; themeOf[v.video_id] = t.name; }));
+    Object.entries(names || {}).forEach(([k, v]) => { if (!info[k]) { info[k] = {title: v.title, channel: v.where}; themeOf[k] = k.startsWith("m_") ? "멤버 카드" : "광고관·포토 월·조각상"; } });
+    const all = (st.documents || []).map(d => {
       const id = decodeURIComponent(d.name.split("/").pop());
       return {id, view: num(d.fields?.view), like: num(d.fields?.like)};
-    }).sort((a, b) => (b.view + b.like * 2) - (a.view + a.like * 2));
+    });
+    const today = new Date(Date.now() + 9 * 3600e3).toISOString().slice(0, 10);
+    const visits = all.filter(r => r.id.startsWith("_visit_")), roomsN = all.filter(r => r.id.startsWith("_room_"));
+    kToday.textContent = (visits.find(r => r.id === "_visit_" + today)?.view || 0).toLocaleString();
+    kVisit.textContent = visits.reduce((s, r) => s + r.view, 0).toLocaleString();
+    kRoom.textContent = roomsN.reduce((s, r) => s + r.view, 0).toLocaleString();
+    const RN = {stage:"무대 영상", album_pulse:"이번 앨범 · PULSE", anwonjalbu:"안원잘부", tv:"TV 예능", youtube_guest:"유튜브 출연", daily:"멤버들의 일상", live:"라이브 방송", birthday:"생일 이벤트", secret:"비밀의 방"};
+    const rname = k => { const p = k.replace(/^_room_/, "").split("_"); const x = k.replace(/^_room_/, "");
+      if (x === "outside") return "건물 앞"; if (x === "lobby") return "로비"; if (x === "under") return "지하관";
+      if (x.startsWith("shop_")) return "굿즈관 " + x.slice(5).replace(/_/g, " · ");
+      const m = x.match(/^([a-z0-9]+)_(.+)$/); if (m && RN[m[2]]) return RN[m[2]]; if (m && m[2] === "(hub)") return "관 홀"; return x; };
+    rooms.textContent = "";
+    if (!roomsN.length) rooms.appendChild(el("p", "note", "아직 기록이 없어요."));
+    const rmax = Math.max(1, ...roomsN.map(r => r.view));
+    roomsN.sort((a, b) => b.view - a.view).forEach(r => { const row = el("div", "row"); const t = el("div", "t", rname(r.id)); const b = el("div", "bar"); b.style.width = Math.max(4, Math.round(r.view / rmax * 100)) + "%"; t.appendChild(b); row.append(t, el("div", "n", "🚪 " + r.view), el("div", "n", "")); rooms.appendChild(row); });
+    const rows = all.filter(r => !r.id.startsWith("_") && r.id !== "selftest").sort((a, b) => (b.view + b.like * 2) - (a.view + a.like * 2));
     const tv = rows.reduce((s, r) => s + r.view, 0), tl = rows.reduce((s, r) => s + r.like, 0);
     kView.textContent = tv.toLocaleString(); kLike.textContent = tl.toLocaleString(); kVid.textContent = rows.length;
     when.textContent = "지금 숫자 · " + new Date().toLocaleString("ko-KR", {timeZone: "Asia/Seoul"});

@@ -59,7 +59,7 @@ const HALLS = [
         desc:{ko:"멤버들이 공식 유튜브에서 직접 켠 라이브", ja:"メンバーが公式YouTubeで行ったライブ配信", en:"Live streams the members hosted on the official channel", zh:"成員在官方YouTube親自開的直播"}, videos:[] },
       { id:"secret", name:{ko:"비밀의 방", ja:"秘密の部屋", en:"Secret Room", zh:"秘密房間"}, decor:"stage", color:"#ffd640", hidden:true, videos:[] },
       { id:"birthday", name:{ko:"생일 이벤트", ja:"誕生日イベント", en:"Birthday", zh:"生日活動"}, decor:"birthday", color:"#a8c8ec",
-        theme:{ member:"리브", memberEn:"LIV", color:"#a8c8ec", accent:"#c9b8f0", title:"리브 생일카페", date:"" },
+        theme:{ member:"리센느", memberEn:"RESCENE", color:"#a8c8ec", accent:"#c9b8f0", title:"리센느 생일카페", date:"", rotate:true },   // 11/14 대표: 다섯 멤버 생일 영상이 다 들어가 「리브 생일카페」 → 「리센느 생일카페」
         videos:[],
         photos:[
           {type:"youtube", id:"9XttLI0oH0I", kind:"long", official:true, title:"‘LOVE ATTACK’ Official MV"},
@@ -991,6 +991,13 @@ const HIDDEN_ITEMS = {   // 멤버 id → 항목. 첫 칸은 방송사 공식 �
   zena:  [{type:"youtube", id:"GxU2HvTzw5w", title:"[페이스캠4K] 리센느 제나 'With' @SBS Inkigayo 261108", channel:"SBSKPOP ZOOM", fan:false, added_at:"2026-11-12", checked_at:"2026-11-12"}],
 };
 /* 📅 리센느 일정(대표 11/12 13:23 "관 안에서 오늘·주간·월간 일정을 홀로그램/NPC로"). 공식 발표·공식 영상·기사 2곳으로 확인된 것만. Claude가 주 1회 확인해 갱신 */
+/* 11/14 대표: 생일카페 간판 「HAPPY ○○ DAY」는 다음 생일이 다가오는 멤버로 자동으로 바뀐다(1년에 다섯 명이 한 번씩 주인공).
+   생일: 원이 5/25 · 리브 10/11 · 메이 8/19 · 제나 11/27 (한국어 위키백과 기반 프로필 정리 k-calc.com, 11/14 확인) · 미나미 11/29 (공식 유튜브 「#1129」 태그). 생일 지나고 이틀까지는 그 멤버 유지 */
+const MEMBER_BDAYS = [{m:"원이",en:"WONI",md:"05-25"},{m:"리브",en:"LIV",md:"10-11"},{m:"메이",en:"MAY",md:"08-19"},{m:"제나",en:"ZENA",md:"11-27"},{m:"미나미",en:"MINAMI",md:"11-29"}];
+(()=>{ try{ const th=HALLS.flatMap(h=>h.rooms||[]).find(r=>r.theme?.rotate)?.theme; if(!th) return;
+  const now=new Date(Date.now()+9*3600e3), y=now.getUTCFullYear(), t0=Date.UTC(y,now.getUTCMonth(),now.getUTCDate());
+  const nx=MEMBER_BDAYS.map(b=>{ const [mm,dd]=b.md.split("-").map(Number); let d=Date.UTC(y,mm-1,dd); if(d<t0-2*864e5) d=Date.UTC(y+1,mm-1,dd); return {...b,d}; }).sort((a,b)=>a.d-b.d)[0];
+  th.member=nx.m; th.memberEn=nx.en; th.date=nx.md.replace("-","."); }catch(e){} })();
 const RESCENE_SCHEDULE = { hall:"rescene", checked_at:"2026-11-14", items:[
   {date:"2026-11-06", type:"show", t:{ko:"뮤직뱅크 「With」 첫 무대", ja:"ミュージックバンク「With」初ステージ", en:"Music Bank — first 「With」 stage", zh:"音樂銀行「With」首次舞台"}, src:"iMBC 연예 11/7"},
   {date:"2026-11-07", type:"show", t:{ko:"쇼! 음악중심 「With」 무대", ja:"ショー！K-POPの中心「With」", en:"Show! Music Core — 「With」", zh:"Show! 音樂中心「With」"}, src:"MBCkpop 공식 영상"},
@@ -1915,9 +1922,12 @@ const ANALYTICS = {
   save(d){ store.put(this.KEY, d); },
   edit(fn){ const d=this.load(); fn(d); this.save(d); },
   visit(){ let first=true; try{ if(sessionStorage.getItem("duksim-visit")) first=false; else sessionStorage.setItem("duksim-visit","1"); }catch(e){}
-    if(!first) return; const day=new Date().toISOString().slice(0,10); this.edit(d=>{ d.visits++; d.days[day]=(d.days[day]||0)+1; }); },
+    if(!first) return; const day=new Date().toISOString().slice(0,10); this.edit(d=>{ d.visits++; d.days[day]=(d.days[day]||0)+1; });
+    /* 11/14 대표 「통계 숫자가 안 바뀜」: 방문·방 입장도 모두가 보는 통계(Firestore stats/_visit_<한국날짜>, _room_<방>)에 +1 */
+    if(!IS_OWNER) try{ STATS.record("_visit_"+new Date(Date.now()+9*3600e3).toISOString().slice(0,10), "view"); }catch(e){} },
   _room:null, _t0:0,
-  enter(key){ this.leave(); if(!key) return; this._room=key; this._t0=Date.now(); this.edit(d=>{ (d.rooms[key] ||= {ms:0,n:0}).n++; }); },
+  enter(key){ this.leave(); if(!key) return; this._room=key; this._t0=Date.now(); this.edit(d=>{ (d.rooms[key] ||= {ms:0,n:0}).n++; });
+    if(!IS_OWNER) try{ STATS.record("_room_"+key, "view"); }catch(e){} },
   leave(){ if(!this._room) return; const k=this._room, ms=Math.min(Date.now()-this._t0, 30*60e3); this._room=null; this.edit(d=>{ (d.rooms[k] ||= {ms:0,n:0}).ms+=ms; }); },
   pause(){ const k=this._room; this.leave(); this._resume=k; }, resume(){ if(this._resume && !this._room){ this._room=this._resume; this._t0=Date.now(); } this._resume=null; },
   video(id, kind){ this.edit(d=>{ const v=(d.videos[id] ||= {open:0,credit:0}); v[kind]=(v[kind]||0)+1; }); },
@@ -1999,6 +2009,9 @@ G.curationReady = (async () => {
         added_at: String(v.added_at||""), rot: Number(v.rot)===90 ? 90 : 0, picks: Array.isArray(v.picks)?v.picks:[] })).filter(v => /^[\w-]{11}$/.test(v.id));
       let room = hall.rooms.find(r => r.id===t.id);
       if(!room){ room = {id:String(t.id), name:{ko:String(t.name||t.id)}, decor: DECORS.includes(t.decor)?t.decor:"plain", color:"#c8b6e8", videos:[]}; hall.rooms.push(room); }
+      /* 11/14 대표: 생일카페 = 공식 5칸 + 팬 영상 2칸(fan_pool에서 6시간마다 차례로 2개, 멤버별 1개씩이라 고르게 돌아감) */
+      if(Array.isArray(t.fan_pool) && t.fan_pool.length){ const fp=t.fan_pool.filter(v=>/^[\w-]{11}$/.test(String(v.video_id||""))), k=Math.floor((Date.now()/36e5+9)/6);
+        for(let j=0;j<Math.min(2,fp.length);j++){ const v=fp[(k+j)%fp.length]; vids.push({ id:String(v.video_id), title:String(v.title||""), desc:String(v.desc||""), note:"팬이 찍은 영상 · 원작자 "+String(v.channel||""), kind:"long", official:false, fan:true, channel:String(v.channel||""), added_at:String(v.added_at||""), rot:0, picks:[] }); } }
       if(vids.length) room.videos = vids;
       if(t.story) room.story = t.story; if(t.desc) room.desc = t.desc;
     }
