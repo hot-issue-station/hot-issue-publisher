@@ -1815,6 +1815,10 @@ const store = {
   put(k, v){ try{ localStorage.setItem(k, JSON.stringify(v)); }catch(e){} },
 };
 const qs = new URLSearchParams(location.search);
+/* 대표 보기(11/14 대표 지시): 「덕심저장소 홈」 갤러리 아이콘은 ?owner=<열쇠> 로 들어온다 → 이 기기에 기억하고 모든 방(잠긴 방·비밀의 방·지하관)을 바로 연다.
+   방문자 화면은 그대로. 끄기: ?owner=off */
+const OWNER_KEY = "dk3559640dba";
+const IS_OWNER = (()=>{ try{ const o=qs.get("owner"); if(o===OWNER_KEY) localStorage.setItem("duksim_owner","1"); if(o==="off") localStorage.removeItem("duksim_owner"); return localStorage.getItem("duksim_owner")==="1"; }catch(e){ return qs.get("owner")===OWNER_KEY; } })();
 
 /* ---------- 추천·열람 집계 어댑터 ----------
    STATS.record(videoId, "view"|"like")  → 한 번 세기
@@ -1952,7 +1956,7 @@ const G = window.Gallery = {
     return { text:f(room?.story).trim(), line:f(room?.desc).trim() || (room?.videos?.length ? this.t("videosN",{n:room.videos.length}) : this.t("soon")) }; },
   roomColor(room){ return room?.theme?.color || room?.color || "#9db8e8"; },
   PROG,
-  inProgress(h){ return PROGRESS.enabled && h?.id===PROGRESS.hall; },
+  inProgress(h){ return !IS_OWNER && PROGRESS.enabled && h?.id===PROGRESS.hall; },
   roomNeed(r){ const n=r?.need ?? PROGRESS.need[r?.id] ?? PROGRESS.need.default ?? 3; return Math.min(n, r?.videos?.length||0); },
   roomCount(h, r){ const ids=new Set((r.videos||[]).map(v=>v.id)); return PROG.list(h.id, r.id).filter(id=>ids.has(id)).length; },
   roomCleared(h, r){ return this.roomCount(h, r) >= this.roomNeed(r); },
@@ -1963,7 +1967,7 @@ const G = window.Gallery = {
   lockedText(h, r){ const pr=this.prevRoom(h, r); if(!pr) return this.t("locked"); return this.t("lockedRoom",{room:this.nm(pr.name), n:this.roomNeed(pr)-this.roomCount(h, pr)}); },
   orderRooms(h){ return PROGRESS.order.map(id=>h.rooms.find(r=>r.id===id)).filter(Boolean); },
   hallCleared(h){ if(!this.inProgress(h)) return false; return PROG.hallCleared(h.id) || this.orderRooms(h).every(r=>this.roomCleared(h, r)); },
-  visibleRooms(h){ return (h?.rooms||[]).filter(r=>!r.hidden || (this.inProgress(h) ? this.hallCleared(h) : false)).sort((a,b)=>(!!a.hidden)-(!!b.hidden)); },
+  visibleRooms(h){ return (h?.rooms||[]).filter(r=>!r.hidden || IS_OWNER || (this.inProgress(h) ? this.hallCleared(h) : false)).sort((a,b)=>(!!a.hidden)-(!!b.hidden)); },
   stars(a, b){ return "★".repeat(Math.min(a,b))+"☆".repeat(Math.max(0,b-a)); },
   /* 퀴즈 안전장치: 출처·확인 날짜가 없으면 숨김 */
   missions(hid, rid){ return MISSIONS.filter(m => m.hall===hid && m.room===rid && (m.type!=="quiz" || (safeUrl(m.source) && m.checked_at))); },
@@ -2001,7 +2005,7 @@ G.shards = () => { const h=G.hall(HIDDEN_HALL.hall); if(!HIDDEN_HALL.enabled || 
   return HIDDEN_HALL.shardRooms.map(rid=>{ const r=G.room(h.id, rid), qs_=G.missions(h.id, rid).filter(m=>m.type==="quiz");
     return { rid, room:r, color:G.roomColor(r), total:qs_.length, solved:qs_.filter(m=>G.hasMission(m.id)).length, done: G.hidDemo || (qs_.length>0 && qs_.every(m=>G.hasMission(m.id))) }; }).filter(x=>x.room && x.total>0); };
 G.shardCount = () => G.shards().filter(x=>x.done).length;
-G.hiddenOpen = () => { const l=G.shards(); return l.length>0 && l.every(x=>x.done); };
+G.hiddenOpen = () => { if(IS_OWNER) return true; const l=G.shards(); return l.length>0 && l.every(x=>x.done); };
 G.hidMembers = () => (STATUES.find(s=>s.group===HIDDEN_HALL.hall)?.members||[]);
 G.hidItems = mid => (HIDDEN_ITEMS[mid]||[]).filter(x=>x.checked_at && (x.type==="youtube" ? /^[\w-]{11}$/.test(x.id||"") : !!safeUrl(x.url)));
 G.openHidItem = (m, x) => { if(x.type==="youtube") return openItem({id:x.id, kind:"long", title:x.title, channel:x.channel, official:!x.fan,
