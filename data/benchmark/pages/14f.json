@@ -1,25 +1,34 @@
 {
  "name": "14F 일사에프 (MBC)",
  "channel": "https://www.youtube.com/@14FMBC",
- "checkedAt": "2026-11-13T08:33+09:00",
+ "checkedAt": "2026-11-13T14:55+09:00",
  "subscribers": "239만",
  "videos": [
   {
-   "id": "WgWmSXeb_YA",
-   "title": "후티 VS 사우디 공항 보복전 #shorts",
-   "views": 537,
-   "viewsText": "조회수 537회",
+   "id": "Aj_trkh0zaM",
+   "title": "남대문 스카프 아저씨 입담 모음zip. #shorts",
+   "views": 3000,
+   "viewsText": "조회수 3천회",
    "published": "",
    "kind": "short"
   },
   {
-   "id": "yzQjanfzMkg",
-   "title": "예멘 무장 단체 후티 반군의 탄생 #shorts",
+   "id": "WgWmSXeb_YA",
+   "title": "후티 VS 사우디 공항 보복전 #shorts",
    "views": 3000,
    "viewsText": "조회수 3천회",
    "published": "",
    "kind": "short",
-   "gain": 200
+   "gain": 2463
+  },
+  {
+   "id": "yzQjanfzMkg",
+   "title": "예멘 무장 단체 후티 반군의 탄생 #shorts",
+   "views": 3300,
+   "viewsText": "조회수 3.3천회",
+   "published": "",
+   "kind": "short",
+   "gain": 300
   },
   {
    "id": "yJ40uku5fg0",
@@ -28,16 +37,16 @@
    "viewsText": "조회수 1.4만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "OTeGIZUhKjo",
    "title": "이게 진짜 라면이라고? 구미 라면 축제 이색 라면 모음 #shorts",
-   "views": 8700,
-   "viewsText": "조회수 8.7천회",
+   "views": 8800,
+   "viewsText": "조회수 8.8천회",
    "published": "",
    "kind": "short",
-   "gain": 200
+   "gain": 100
   },
   {
    "id": "eJAtWi5dWco",
@@ -46,7 +55,7 @@
    "viewsText": "조회수 2.8만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "raKKyS-VS5k",
@@ -73,7 +82,7 @@
    "viewsText": "조회수 20만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "G63QFaqloJQ",
@@ -350,15 +359,6 @@
    "title": "설탕을 너무 많이 쓰는 한국 #shorts",
    "views": 23000,
    "viewsText": "조회수 2.3만회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "-Yh_XjCvrSI",
-   "title": "삼천궁녀 의자왕 바꿔야 하는 이유 #shorts",
-   "views": 18000,
-   "viewsText": "조회수 1.8만회",
    "published": "",
    "kind": "short",
    "gain": 0

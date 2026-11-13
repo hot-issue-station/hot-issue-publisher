@@ -1,9 +1,81 @@
 {
  "name": "YTN",
  "channel": "https://www.youtube.com/@ytnnews24",
- "checkedAt": "2026-11-13T08:33+09:00",
+ "checkedAt": "2026-11-13T14:55+09:00",
  "subscribers": "543만",
  "videos": [
+  {
+   "id": "6KGf2nZk6VA",
+   "title": "브레이크인 줄 알았는데 #shorts / YTN",
+   "views": 1100,
+   "viewsText": "조회수 1.1천회",
+   "published": "",
+   "kind": "short"
+  },
+  {
+   "id": "Wg1PTQf4MCo",
+   "title": "말했지 보이스피싱은 범죄야 #shorts / YTN",
+   "views": 413,
+   "viewsText": "조회수 413회",
+   "published": "",
+   "kind": "short"
+  },
+  {
+   "id": "N2D-rW3xpJs",
+   "title": "지금 일본 가는 이유 #shorts / YTN",
+   "views": 1000,
+   "viewsText": "조회수 1천회",
+   "published": "",
+   "kind": "short"
+  },
+  {
+   "id": "oD_-DYvckd0",
+   "title": "조롱도 '가지각색' #shorts / YTN",
+   "views": 7200,
+   "viewsText": "조회수 7.2천회",
+   "published": "",
+   "kind": "short"
+  },
+  {
+   "id": "aB9-L24Zy3M",
+   "title": "내 눈은 제미나이 #shorts / YTN",
+   "views": 20000,
+   "viewsText": "조회수 2만회",
+   "published": "",
+   "kind": "short"
+  },
+  {
+   "id": "T2_g8m4H8Rg",
+   "title": "장관 성을 바꿔 버린 국회의원 #shorts / YTN",
+   "views": 19000,
+   "viewsText": "조회수 1.9만회",
+   "published": "",
+   "kind": "short"
+  },
+  {
+   "id": "J6zZNUDugRE",
+   "title": "순식간에 '와르르' #shorts / YTN",
+   "views": 5700,
+   "viewsText": "조회수 5.7천회",
+   "published": "",
+   "kind": "short"
+  },
+  {
+   "id": "7lYzf12K37k",
+   "title": "머스크, 어디까지 내다봤나 #shorts / YTN",
+   "views": 28000,
+   "viewsText": "조회수 2.8만회",
+   "published": "",
+   "kind": "short"
+  },
+  {
+   "id": "PS8XbXPv7KI",
+   "title": "70대 버스기사의 역주행 #shorts / YTN",
+   "views": 86000,
+   "viewsText": "조회수 8.6만회",
+   "published": "",
+   "kind": "short"
+  },
   {
    "id": "h2TxBUTNIE4",
    "title": "언니라고 부를게 #shorts / YTN",
@@ -11,133 +83,133 @@
    "viewsText": "조회수 11만회",
    "published": "",
    "kind": "short",
-   "gain": 56000
+   "gain": 0
   },
   {
    "id": "TO9Ha1Jz_oE",
    "title": "젠슨 황 이직 준비? #shorts / YTN",
-   "views": 22000,
-   "viewsText": "조회수 2.2만회",
+   "views": 27000,
+   "viewsText": "조회수 2.7만회",
+   "published": "",
+   "kind": "short",
+   "gain": 5000
+  },
+  {
+   "id": "4Q7iwx2fxCg",
+   "title": "실적 좋은데 왜? #shorts / YTN",
+   "views": 110000,
+   "viewsText": "조회수 11만회",
    "published": "",
    "kind": "short",
    "gain": 10000
   },
   {
-   "id": "4Q7iwx2fxCg",
-   "title": "실적 좋은데 왜? #shorts / YTN",
-   "views": 100000,
-   "viewsText": "조회수 10만회",
-   "published": "",
-   "kind": "short",
-   "gain": 64000
-  },
-  {
    "id": "ziyXycW0wco",
    "title": "신유가 전하는 수능 날씨 #shorts / YTN",
-   "views": 9300,
-   "viewsText": "조회수 9.3천회",
+   "views": 10000,
+   "viewsText": "조회수 1만회",
    "published": "",
    "kind": "short",
-   "gain": 4400
+   "gain": 700
   },
   {
    "id": "eLe96rwX9Bc",
    "title": "딸의 마지막 편지, 눈물로 읽은 어머니 #shorts / YTN",
-   "views": 6100,
-   "viewsText": "조회수 6.1천회",
-   "published": "",
-   "kind": "short",
-   "gain": 1500
-  },
-  {
-   "id": "pEeWg9ZzaFg",
-   "title": "운전자의 바뀐 진술은? #shorts / YTN",
-   "views": 37000,
-   "viewsText": "조회수 3.7만회",
-   "published": "",
-   "kind": "short",
-   "gain": 16000
-  },
-  {
-   "id": "j_LdQYWAUN0",
-   "title": "\"신디야, 내 심장 책임져\" #shorts / YTN",
-   "views": 1900,
-   "viewsText": "조회수 1.9천회",
+   "views": 6400,
+   "viewsText": "조회수 6.4천회",
    "published": "",
    "kind": "short",
    "gain": 300
   },
   {
-   "id": "gS4gor6BkJE",
-   "title": "모의고사 배틀을 신청합니다 #shorts / YTN",
-   "views": 120000,
-   "viewsText": "조회수 12만회",
+   "id": "pEeWg9ZzaFg",
+   "title": "운전자의 바뀐 진술은? #shorts / YTN",
+   "views": 40000,
+   "viewsText": "조회수 4만회",
    "published": "",
    "kind": "short",
-   "gain": 83000
+   "gain": 3000
+  },
+  {
+   "id": "j_LdQYWAUN0",
+   "title": "\"신디야, 내 심장 책임져\" #shorts / YTN",
+   "views": 2000,
+   "viewsText": "조회수 2천회",
+   "published": "",
+   "kind": "short",
+   "gain": 100
+  },
+  {
+   "id": "gS4gor6BkJE",
+   "title": "모의고사 배틀을 신청합니다 #shorts / YTN",
+   "views": 160000,
+   "viewsText": "조회수 16만회",
+   "published": "",
+   "kind": "short",
+   "gain": 40000
   },
   {
    "id": "4E388dSfLf8",
    "title": "쉬는 날 생명 살렸다 #shorts / YTN",
-   "views": 27000,
-   "viewsText": "조회수 2.7만회",
-   "published": "",
-   "kind": "short",
-   "gain": 9000
-  },
-  {
-   "id": "CmD8jE63ocE",
-   "title": "웃고 있다고 만만하나 #shorts / YTN",
-   "views": 4900,
-   "viewsText": "조회수 4.9천회",
+   "views": 28000,
+   "viewsText": "조회수 2.8만회",
    "published": "",
    "kind": "short",
    "gain": 1000
   },
   {
-   "id": "5zJLocJejgw",
-   "title": "카페 사장님의 엄청난 취미 #shorts / YTN",
-   "views": 210000,
-   "viewsText": "조회수 21만회",
+   "id": "CmD8jE63ocE",
+   "title": "웃고 있다고 만만하나 #shorts / YTN",
+   "views": 5000,
+   "viewsText": "조회수 5천회",
    "published": "",
    "kind": "short",
-   "gain": 70000
+   "gain": 100
+  },
+  {
+   "id": "5zJLocJejgw",
+   "title": "카페 사장님의 엄청난 취미 #shorts / YTN",
+   "views": 250000,
+   "viewsText": "조회수 25만회",
+   "published": "",
+   "kind": "short",
+   "gain": 40000
   },
   {
    "id": "J7WPDjZn6wE",
    "title": "'이것'에 걸려버림 #shorts / YTN",
-   "views": 470000,
-   "viewsText": "조회수 47만회",
+   "views": 480000,
+   "viewsText": "조회수 48만회",
    "published": "",
    "kind": "short",
-   "gain": 160000
+   "gain": 10000
   },
   {
    "id": "58mj-TKIO7s",
    "title": "암이 사라진다고? #shorts / YTN",
-   "views": 110000,
-   "viewsText": "조회수 11만회",
+   "views": 130000,
+   "viewsText": "조회수 13만회",
    "published": "",
    "kind": "short",
-   "gain": 44000
+   "gain": 20000
   },
   {
    "id": "pfIl6IrISCs",
    "title": "경력 단절 여성들의 '빛' #shorts / YTN",
-   "views": 1800,
-   "viewsText": "조회수 1.8천회",
+   "views": 1900,
+   "viewsText": "조회수 1.9천회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 100
   },
   {
    "id": "ZZWjh3CO-4w",
    "title": "그렇게 탐났어? #shorts / YTN",
-   "views": 68000,
-   "viewsText": "조회수 6.8만회",
+   "views": 70000,
+   "viewsText": "조회수 7만회",
    "published": "",
    "kind": "short",
-   "gain": 15000
+   "gain": 2000
   },
   {
    "id": "F-WQs8U0muw",
@@ -146,16 +218,16 @@
    "viewsText": "조회수 2.3만회",
    "published": "",
    "kind": "short",
-   "gain": 3000
+   "gain": 0
   },
   {
    "id": "J4E7xKujHjo",
    "title": "직구는 언제쯤? #shorts / YTN",
-   "views": 110000,
-   "viewsText": "조회수 11만회",
+   "views": 120000,
+   "viewsText": "조회수 12만회",
    "published": "",
    "kind": "short",
-   "gain": 42000
+   "gain": 10000
   },
   {
    "id": "00ZBHT0GPNs",
@@ -164,43 +236,43 @@
    "viewsText": "조회수 12만회",
    "published": "",
    "kind": "short",
-   "gain": 22000
+   "gain": 0
   },
   {
    "id": "eUO8iLZH4qw",
    "title": "해운대 따블~ #shorts / YTN",
-   "views": 52000,
-   "viewsText": "조회수 5.2만회",
+   "views": 54000,
+   "viewsText": "조회수 5.4만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 2000
   },
   {
    "id": "zRPtuyd3CQQ",
    "title": "젠슨 황 이대로 끝? #shorts / YTN",
-   "views": 35000,
-   "viewsText": "조회수 3.5만회",
+   "views": 36000,
+   "viewsText": "조회수 3.6만회",
    "published": "",
    "kind": "short",
-   "gain": 4000
+   "gain": 1000
   },
   {
    "id": "20EqC70wZAs",
    "title": "스파이 접근할라  #shorts / YTN",
-   "views": 33000,
-   "viewsText": "조회수 3.3만회",
+   "views": 34000,
+   "viewsText": "조회수 3.4만회",
    "published": "",
    "kind": "short",
-   "gain": 3000
+   "gain": 1000
   },
   {
    "id": "5CJCqrGtRys",
    "title": "이란의 믿는 구석 #shorts / YTN",
-   "views": 9400,
-   "viewsText": "조회수 9.4천회",
+   "views": 9600,
+   "viewsText": "조회수 9.6천회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 200
   },
   {
    "id": "Gp_bDEi4O1s",
@@ -209,7 +281,7 @@
    "viewsText": "조회수 7.7만회",
    "published": "",
    "kind": "short",
-   "gain": 2000
+   "gain": 0
   },
   {
    "id": "FWnoL1kXVIo",
@@ -218,7 +290,7 @@
    "viewsText": "조회수 1.9만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "YlaZVxb-OFg",
@@ -227,7 +299,7 @@
    "viewsText": "조회수 16만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "YNgKUjppr6I",
@@ -241,125 +313,44 @@
   {
    "id": "16oWzyWnGeU",
    "title": "\"브레이크 고장\" CCTV 보니 #shorts / YTN",
-   "views": 1520000,
-   "viewsText": "조회수 152만회",
+   "views": 1540000,
+   "viewsText": "조회수 154만회",
    "published": "",
    "kind": "short",
-   "gain": 30000
+   "gain": 20000
   },
   {
    "id": "uuh5CWqLggc",
    "title": "너에게 닿기를 #shorts / YTN",
-   "views": 3900,
-   "viewsText": "조회수 3.9천회",
+   "views": 4000,
+   "viewsText": "조회수 4천회",
    "published": "",
    "kind": "short",
-   "gain": 300
+   "gain": 100
   },
   {
    "id": "b89ErrAMaGY",
    "title": "진정한 프로 정신 #shorts / YTN",
-   "views": 7600,
-   "viewsText": "조회수 7.6천회",
+   "views": 7700,
+   "viewsText": "조회수 7.7천회",
    "published": "",
    "kind": "short",
-   "gain": 500
+   "gain": 100
   },
   {
    "id": "04sfPqld4Bw",
    "title": "새끼 코알라 '구사일생' #shorts / YTN",
-   "views": 930000,
-   "viewsText": "조회수 93만회",
+   "views": 950000,
+   "viewsText": "조회수 95만회",
    "published": "",
    "kind": "short",
-   "gain": 30000
+   "gain": 20000
   },
   {
    "id": "psudeLrZ6Wg",
    "title": "안녕~ 나 로제 #shorts / YTN",
    "views": 12000,
    "viewsText": "조회수 1.2만회",
-   "published": "",
-   "kind": "short",
-   "gain": 1000
-  },
-  {
-   "id": "QjhapnUT-mw",
-   "title": "믿을 건 나뿐 #shorts / YTN",
-   "views": 23000,
-   "viewsText": "조회수 2.3만회",
-   "published": "",
-   "kind": "short",
-   "gain": 1000
-  },
-  {
-   "id": "WeShlfTVqV8",
-   "title": "내 친구 뽀삐 #shorts / YTN",
-   "views": 11000,
-   "viewsText": "조회수 1.1만회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "1L3wsnf3w_I",
-   "title": "우리가 어떤 민족입니까 #shorts / YTN",
-   "views": 150000,
-   "viewsText": "조회수 15만회",
-   "published": "",
-   "kind": "short",
-   "gain": 10000
-  },
-  {
-   "id": "ciYTcDpU5Hk",
-   "title": "결국 무너진 미국 #shorts / YTN",
-   "views": 8800,
-   "viewsText": "조회수 8.8천회",
-   "published": "",
-   "kind": "short",
-   "gain": 700
-  },
-  {
-   "id": "CPRZc7wE454",
-   "title": "잘못 밟으면 대참사 #shorts / YTN",
-   "views": 60000,
-   "viewsText": "조회수 6만회",
-   "published": "",
-   "kind": "short",
-   "gain": 2000
-  },
-  {
-   "id": "3SpIRyGwiIk",
-   "title": "입만 열면 긴장... #shorts / YTN",
-   "views": 19000,
-   "viewsText": "조회수 1.9만회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "yKp2POzDF08",
-   "title": "사채 손 댄 기자 #shorts / YTN",
-   "views": 660000,
-   "viewsText": "조회수 66만회",
-   "published": "",
-   "kind": "short",
-   "gain": 10000
-  },
-  {
-   "id": "dPl44ey-gY4",
-   "title": "\"많이 놀랐죠?\" #shorts / YTN",
-   "views": 48000,
-   "viewsText": "조회수 4.8만회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "WVXHvibUHlY",
-   "title": "나 이러려고 만나? #shorts / YTN",
-   "views": 180000,
-   "viewsText": "조회수 18만회",
    "published": "",
    "kind": "short",
    "gain": 0
