@@ -72,6 +72,10 @@ def run(cmd):
 def probe(path):
     r = subprocess.run(["ffprobe", "-v", "error", "-show_entries", "stream=codec_type:format=duration", "-of", "json", path], capture_output=True, text=True)
     j = json.loads(r.stdout or "{}")
+    na = sum(1 for s in j.get("streams", []) if s.get("codec_type") == "audio")
+    if na > 1:   # 유튜브 자동 더빙(영어 등)이 함께 받아진 원본 — 어느 소리를 쓸지 모르므로 멈춘다 (11-13 A-2 라방 영어 더빙 사고)
+        sys.exit(f"멈춤: {path} 에 소리가 {na}개 있어요. 원래 목소리 하나만 남긴 파일로 바꿔 주세요 "
+                 f"(예: ffmpeg -i 원본 -map 0:v:0 -map 0:a:N -c copy 새파일).")
     return any(s.get("codec_type") == "audio" for s in j.get("streams", [])), float(j.get("format", {}).get("duration", 0) or 0)
 
 def fr(x): return max(1, round(x * FPS)) / FPS   # 프레임 단위로 맞춤
