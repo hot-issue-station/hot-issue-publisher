@@ -1,25 +1,26 @@
 {
  "name": "스브스뉴스 (SBS)",
  "channel": "https://www.youtube.com/@subusunews",
- "checkedAt": "2026-11-13T19:35+09:00",
+ "checkedAt": "2026-11-13T22:49+09:00",
  "subscribers": "144만",
  "videos": [
   {
    "id": "wHp_zWCqzxw",
    "title": "의무 사항 아니면 안 해도 되는 거냐고..ㅠ #딸기우유 #shorts #스브스뉴스",
-   "views": 1400,
-   "viewsText": "조회수 1.4천회",
+   "views": 1500,
+   "viewsText": "조회수 1.5천회",
    "published": "",
    "kind": "short",
-   "gain": 400
+   "gain": 100
   },
   {
    "id": "LEWIMLiirq0",
    "title": "성분 따졌다가 고소당한 사람? 그게 나예요. #딸기우유 #shorts #스브스뉴스",
-   "views": 6600,
-   "viewsText": "조회수 6.6천회",
+   "views": 6800,
+   "viewsText": "조회수 6.8천회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 200
   },
   {
    "id": "QSXv2yiIveI",
@@ -28,16 +29,16 @@
    "viewsText": "조회수 1.2만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "7UWF0GGYftg",
    "title": "[선공개] 신혼여행 따라갔던 부부에게 연락이 안 온다",
-   "views": 9100,
-   "viewsText": "조회수 9.1천회",
+   "views": 9400,
+   "viewsText": "조회수 9.4천회",
    "published": "",
    "kind": "short",
-   "gain": 900
+   "gain": 300
   },
   {
    "id": "vS6l_n2uJzs",
@@ -46,25 +47,25 @@
    "viewsText": "조회수 6.4천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "phk3JBktfX8",
    "title": "[선공개] 인간관계 정리되는 요즘 경조사",
-   "views": 8600,
-   "viewsText": "조회수 8.6천회",
+   "views": 8900,
+   "viewsText": "조회수 8.9천회",
    "published": "",
    "kind": "short",
-   "gain": 500
+   "gain": 300
   },
   {
    "id": "80Prr9snsIk",
    "title": "[선공개] 죽여달라는 거지?",
-   "views": 8400,
-   "viewsText": "조회수 8.4천회",
+   "views": 8500,
+   "viewsText": "조회수 8.5천회",
    "published": "",
    "kind": "short",
-   "gain": 300
+   "gain": 100
   },
   {
    "id": "h8iBMhQ3b-Q",
@@ -73,16 +74,16 @@
    "viewsText": "조회수 7.2천회",
    "published": "",
    "kind": "short",
-   "gain": 200
+   "gain": 0
   },
   {
    "id": "uO5xviR9-aM",
    "title": "유독 정치판에서 사이비 종교 논란이 자주 터지는 이유 #사이비 #shorts #스브스뉴스",
-   "views": 4500,
-   "viewsText": "조회수 4.5천회",
+   "views": 4600,
+   "viewsText": "조회수 4.6천회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 100
   },
   {
    "id": "Y0Y6eq3a6PE",
@@ -96,11 +97,11 @@
   {
    "id": "DqL_SWFWkD8",
    "title": "침착맨 방송 중 사교육 문제 직격타 날린 정승제 #입시 #shorts #스브스뉴스",
-   "views": 580000,
-   "viewsText": "조회수 58만회",
+   "views": 590000,
+   "viewsText": "조회수 59만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "lnryKqOozWk",
@@ -127,16 +128,16 @@
    "viewsText": "조회수 6.4천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "qZaeu4PJUps",
    "title": "롯데홈쇼핑이 직접 교육하는 커머스 인재 학교? #shorts #스브스뉴스",
-   "views": 40000,
-   "viewsText": "조회수 4만회",
+   "views": 44000,
+   "viewsText": "조회수 4.4만회",
    "published": "",
    "kind": "short",
-   "gain": 3000
+   "gain": 4000
   },
   {
    "id": "bvbHkNEO3t8",

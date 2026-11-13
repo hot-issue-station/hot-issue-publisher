@@ -1,14 +1,14 @@
 {
  "name": "슈카월드",
  "channel": "https://www.youtube.com/@syukaworld",
- "checkedAt": "2026-11-13T19:35+09:00",
+ "checkedAt": "2026-11-13T22:49+09:00",
  "subscribers": "374만",
  "videos": [
   {
    "id": "PPIMOKvuSDY",
    "title": "교황님 말씀 \"젊은이들이여, 돈과 SNS에 사로잡히지 말라\"",
-   "views": 76000,
-   "viewsText": "조회수 7.6만회",
+   "views": 79000,
+   "viewsText": "조회수 7.9만회",
    "published": "",
    "kind": "short",
    "gain": 3000
@@ -25,8 +25,8 @@
   {
    "id": "5LEMniVcweU",
    "title": "걱정 노노",
-   "views": 59000,
-   "viewsText": "조회수 5.9만회",
+   "views": 60000,
+   "viewsText": "조회수 6만회",
    "published": "",
    "kind": "short",
    "gain": 1000
@@ -47,7 +47,7 @@
    "viewsText": "조회수 5.7만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "lioIrGMoIbs",
@@ -56,7 +56,7 @@
    "viewsText": "조회수 9.2만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "D32h_sPWp0g",
@@ -142,11 +142,11 @@
   {
    "id": "hmPXcxP9Wyk",
    "title": "조..조졌는데?",
-   "views": 620000,
-   "viewsText": "조회수 62만회",
+   "views": 630000,
+   "viewsText": "조회수 63만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "PmFxX8Ka3ag",
