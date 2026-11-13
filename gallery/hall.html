@@ -1924,7 +1924,7 @@ const ANALYTICS = {
   visit(){ let first=true; try{ if(sessionStorage.getItem("duksim-visit")) first=false; else sessionStorage.setItem("duksim-visit","1"); }catch(e){}
     if(!first) return; const day=new Date().toISOString().slice(0,10); this.edit(d=>{ d.visits++; d.days[day]=(d.days[day]||0)+1; });
     /* 11/14 대표 「통계 숫자가 안 바뀜」: 방문·방 입장도 모두가 보는 통계(Firestore stats/_visit_<한국날짜>, _room_<방>)에 +1 */
-    if(!IS_OWNER) try{ STATS.record("_visit_"+new Date(Date.now()+9*3600e3).toISOString().slice(0,10), "view"); }catch(e){} },
+    if(!IS_OWNER) try{ const k=new Date(Date.now()+9*3600e3).toISOString(); STATS.record("_visit_"+k.slice(0,10), "view"); STATS.record("_visith_"+k.slice(0,10)+"_"+k.slice(11,13), "view"); }catch(e){} },   // 11/14 대표 01:39: 1시간 단위 방문(통계판 시간대 막대)
   _room:null, _t0:0,
   enter(key){ this.leave(); if(!key) return; this._room=key; this._t0=Date.now(); this.edit(d=>{ (d.rooms[key] ||= {ms:0,n:0}).n++; });
     if(!IS_OWNER) try{ STATS.record("_room_"+key, "view"); }catch(e){} },

@@ -44,6 +44,16 @@ h2{font-size:15px;margin:18px 0 8px}
 <a class="btn" href="https://dash.cloudflare.com/1d2064bd65264be424fa7ef8f9d9a5cc/web-analytics" target="_blank" rel="noopener">👥 방문자 수·나라·기기 보기 (Cloudflare)</a>
 <p class="note">방문·방 입장은 11/14부터 셉니다(한 사람이 한 번 열면 방문 1, 방에 들어갈 때마다 입장 1). 대표 보기(덕심저장소 홈 아이콘)로 들어간 기기는 방문·입장에 세지 않아요. 영상 열람은 액자를 눌러 영상을 열었을 때만 올라가요. 나라·기기는 위 Cloudflare 버튼에서.</p>
 
+<h2>⏰ 시간대별 방문 <small id="hDay" style="font-weight:400;color:var(--mut)"></small></h2>
+<div class="kpis" style="grid-template-columns:repeat(3,1fr)">
+  <button class="kpi" id="dPrev" style="color:var(--tx);font:inherit;cursor:pointer">◀ 전날</button>
+  <div class="kpi"><b id="hSum">–</b><span>이날 방문</span></div>
+  <button class="kpi" id="dNext" style="color:var(--tx);font:inherit;cursor:pointer">다음 날 ▶</button>
+</div>
+<div id="hours" style="display:grid;grid-template-columns:repeat(24,1fr);gap:2px;align-items:end;height:120px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 8px 4px"></div>
+<div style="display:grid;grid-template-columns:repeat(4,1fr);font-size:11px;color:var(--mut);padding:2px 8px 0"><span>0시</span><span>6시</span><span>12시</span><span>18시</span></div>
+<p class="note">한국 시간 기준, 1시간마다 새 칸. 막대를 누르면 그 시간 방문 수가 보여요. 11/14 새벽부터 셉니다(그 전은 위 Cloudflare 버튼).</p>
+
 <h2>🔥 많이 본 영상</h2>
 <div id="list"></div>
 <h2>🚪 방별 입장 (11/14부터)</h2>
@@ -75,6 +85,19 @@ async function load() {
     kToday.textContent = (visits.find(r => r.id === "_visit_" + today)?.view || 0).toLocaleString();
     kVisit.textContent = visits.reduce((s, r) => s + r.view, 0).toLocaleString();
     kRoom.textContent = roomsN.reduce((s, r) => s + r.view, 0).toLocaleString();
+    const hourly = {}; all.filter(r => r.id.startsWith("_visith_")).forEach(r => { hourly[r.id.slice(8)] = r.view; });
+    const days = Object.keys(hourly).map(k => k.slice(0, 10)); let day = today;
+    const drawH = () => {
+      hDay.textContent = "· " + day.slice(5).replace("-", "/") + (day === today ? " (오늘)" : "");
+      const v = [...Array(24)].map((_, h) => hourly[day + "_" + String(h).padStart(2, "0")] || 0), m = Math.max(1, ...v);
+      hSum.textContent = v.reduce((a, b) => a + b, 0).toLocaleString(); hours.textContent = "";
+      const nowH = Number(new Date(Date.now() + 9 * 3600e3).toISOString().slice(11, 13));
+      v.forEach((n, h) => { const b = el("div"); b.title = h + "시 · " + n + "명";
+        b.style.cssText = "height:" + Math.max(2, Math.round(n / m * 100)) + "%;border-radius:3px 3px 0 0;background:" + (day === today && h === nowH ? "var(--y)" : n ? "var(--p)" : "var(--line)");
+        b.onclick = () => { hDay.textContent = "· " + day.slice(5).replace("-", "/") + " " + h + "시 → " + n + "명"; }; hours.appendChild(b); });
+    };
+    const shift = d => { const t = new Date(day + "T00:00:00Z"); t.setUTCDate(t.getUTCDate() + d); const nd = t.toISOString().slice(0, 10); if (nd > today) return; day = nd; drawH(); };
+    dPrev.onclick = () => shift(-1); dNext.onclick = () => shift(1); drawH();
     const RN = {stage:"무대 영상", album_pulse:"이번 앨범 · PULSE", anwonjalbu:"안원잘부", tv:"TV 예능", youtube_guest:"유튜브 출연", daily:"멤버들의 일상", live:"라이브 방송", birthday:"생일 이벤트", secret:"비밀의 방"};
     const rname = k => { const p = k.replace(/^_room_/, "").split("_"); const x = k.replace(/^_room_/, "");
       if (x === "outside") return "건물 앞"; if (x === "lobby") return "로비"; if (x === "under") return "지하관";
@@ -87,7 +110,7 @@ async function load() {
     const rows = all.filter(r => !r.id.startsWith("_") && r.id !== "selftest").sort((a, b) => (b.view + b.like * 2) - (a.view + a.like * 2));
     const tv = rows.reduce((s, r) => s + r.view, 0), tl = rows.reduce((s, r) => s + r.like, 0);
     kView.textContent = tv.toLocaleString(); kLike.textContent = tl.toLocaleString(); kVid.textContent = rows.length;
-    when.textContent = "지금 숫자 · " + new Date().toLocaleString("ko-KR", {timeZone: "Asia/Seoul"});
+    document.getElementById("when").textContent = "지금 숫자 · " + new Date().toLocaleString("ko-KR", {timeZone: "Asia/Seoul"});
     const max = Math.max(1, ...rows.map(r => r.view));
     list.textContent = "";
     if (!rows.length) list.appendChild(el("p", "note", "아직 기록이 없어요."));
@@ -110,6 +133,7 @@ async function load() {
   }
 }
 load();
+setInterval(load, 10 * 60e3);   // 열어 두면 10분마다 새 숫자
 </script>
 </body>
 </html>
