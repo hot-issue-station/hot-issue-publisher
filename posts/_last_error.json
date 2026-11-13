@@ -1,5 +1,5 @@
 {
   "stage": "token",
-  "error": "Instagram API 오류 400: {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthException\",\"code\":190,\"error_subcode\":460,\"fbtrace_id\":\"AtIP3SSE1jbnHDCG_--SGdQ\"}}",
-  "at": "2026-11-13T14:27:06.811775+09:00"
+  "error": "Instagram API 오류 400: {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthException\",\"code\":190,\"error_subcode\":460,\"fbtrace_id\":\"AAIm7wEI1S--WoCHTZNJoS3\"}}",
+  "at": "2026-11-13T19:23:48.462316+09:00"
 }
