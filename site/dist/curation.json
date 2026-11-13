@@ -136,6 +136,111 @@
           "start_note": "처음부터 재생",
           "kind": "long",
           "kind_note": "형식 이름(무대·브이로그·라이브 등)으로 판단, 길이 미확인"
+        },
+        {
+          "video_id": "mafe6aEH16k",
+          "url": "https://www.youtube.com/watch?v=mafe6aEH16k",
+          "title": "RESCENE (리센느) - Pretty Girl | Show! MusicCore | MBC260718방송",
+          "channel": "MBCkpop",
+          "official": "방송사 공식",
+          "kind": "long",
+          "added_at": "2026-11-14",
+          "views": 2490000,
+          "views_note": "11/14 00시 유튜브 화면값(만 단위 반올림)"
+        },
+        {
+          "video_id": "-qz6wmx67FU",
+          "url": "https://www.youtube.com/watch?v=-qz6wmx67FU",
+          "title": "[KCON LA 2026] RESCENE(리센느) - Pretty Girl | Mnet 260906 방송",
+          "channel": "KCON official",
+          "official": "방송사 공식",
+          "kind": "long",
+          "added_at": "2026-11-14",
+          "views": 1460000,
+          "views_note": "11/14 00시 유튜브 화면값(만 단위 반올림)"
+        }
+      ]
+    },
+    {
+      "id": "album_pulse",
+      "name": "이번 앨범 · PULSE",
+      "videos": [
+        {
+          "video_id": "pey3E47eSc8",
+          "url": "https://www.youtube.com/watch?v=pey3E47eSc8",
+          "title": "RESCENE (리센느) 'With' Official MV",
+          "channel": "RESCENE",
+          "official": "소속사 공식",
+          "kind": "long",
+          "added_at": "2026-11-14",
+          "views": 28650000,
+          "views_note": "11/14 00시 유튜브 화면값(만 단위 반올림)"
+        },
+        {
+          "video_id": "_XhBc88qS_E",
+          "url": "https://www.youtube.com/watch?v=_XhBc88qS_E",
+          "title": "RESCENE (리센느) - With | Show! MusicCore | MBC261107방송",
+          "channel": "MBCkpop",
+          "official": "방송사 공식",
+          "kind": "long",
+          "added_at": "2026-11-14",
+          "views": 1270000,
+          "views_note": "11/14 00시 유튜브 화면값(만 단위 반올림)"
+        },
+        {
+          "video_id": "tedmGWPmZAI",
+          "url": "https://www.youtube.com/watch?v=tedmGWPmZAI",
+          "title": "[THE SHOW CHOICE] With - RESCENEㅣ261110 방송",
+          "channel": "THE K-POP",
+          "official": "방송사 공식",
+          "kind": "long",
+          "added_at": "2026-11-14",
+          "views": 910000,
+          "views_note": "11/14 00시 유튜브 화면값(만 단위 반올림)"
+        },
+        {
+          "video_id": "fZlFWII-JIg",
+          "url": "https://www.youtube.com/watch?v=fZlFWII-JIg",
+          "title": "[뮤뱅 원테이크 4K HDR] 리센느 (RESCENE) 'With' 4K Bonus Ver. @뮤직뱅크 261106",
+          "channel": "KBS Kpop",
+          "official": "방송사 공식",
+          "kind": "long",
+          "added_at": "2026-11-14",
+          "views": 890000,
+          "views_note": "11/14 00시 유튜브 화면값(만 단위 반올림)"
+        },
+        {
+          "video_id": "EEMdvAl21pQ",
+          "url": "https://www.youtube.com/watch?v=EEMdvAl21pQ",
+          "title": "[COMEBACK] RESCENE (리센느) - With l Show Champion l EP.618 l 261111",
+          "channel": "ALL THE K-POP",
+          "official": "방송사 공식",
+          "kind": "long",
+          "added_at": "2026-11-14",
+          "views": 320000,
+          "views_note": "11/14 00시 유튜브 화면값(만 단위 반올림)"
+        },
+        {
+          "video_id": "jmlBMoCn0Ec",
+          "url": "https://www.youtube.com/watch?v=jmlBMoCn0Ec",
+          "title": "With - RESCENE (리센느) [뮤직뱅크/Music Bank] | KBS 261113 방송",
+          "channel": "KBS Kpop",
+          "official": "방송사 공식",
+          "kind": "long",
+          "added_at": "2026-11-14",
+          "views": 270000,
+          "views_note": "11/14 00시 유튜브 화면값(만 단위 반올림)"
+        },
+        {
+          "video_id": "jQxzOURZsao",
+          "url": "https://www.youtube.com/watch?v=jQxzOURZsao",
+          "title": "(Full Focused) RESCENE(리센느) 'With' (4K) | STUDIO CHOOM ORIGINAL",
+          "channel": "STUDIO CHOOM [스튜디오 춤]",
+          "official": "공식 퍼포먼스 채널",
+          "kind": "long",
+          "added_at": "2026-11-14",
+          "views": 180000,
+          "views_note": "11/14 00시 유튜브 화면값(만 단위 반올림)"
         }
       ]
     },
@@ -272,6 +377,28 @@
           "start_note": "처음부터 재생",
           "kind": "long",
           "kind_note": "형식 이름(무대·브이로그·라이브 등)으로 판단, 길이 미확인"
+        },
+        {
+          "video_id": "JYUilbw34Z0",
+          "url": "https://www.youtube.com/watch?v=JYUilbw34Z0",
+          "title": "[추석 특집] 제나의 트로트 메들리",
+          "channel": "안녕하세요원이입니다잘부탁드립니다",
+          "official": "멤버 공식 채널",
+          "kind": "long",
+          "added_at": "2026-11-14",
+          "views": 21130000,
+          "views_note": "11/14 00시 유튜브 화면값(만 단위 반올림)"
+        },
+        {
+          "video_id": "EsKmhBMmqIM",
+          "url": "https://www.youtube.com/watch?v=EsKmhBMmqIM",
+          "title": "원이 근황",
+          "channel": "안녕하세요원이입니다잘부탁드립니다",
+          "official": "멤버 공식 채널",
+          "kind": "long",
+          "added_at": "2026-11-14",
+          "views": 14040000,
+          "views_note": "11/14 00시 유튜브 화면값(만 단위 반올림)"
         }
       ]
     },
