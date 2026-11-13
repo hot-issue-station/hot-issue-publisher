@@ -1028,7 +1028,7 @@ const SHOPS = [
   /* 해외 제휴(11/13 가입). 해외 팬용 — 대가성 문구는 한국어 화면에서만 이 note, 다른 언어는 affNote 번역 */
   {id:"buybeautykorea", name:"BuyBeautyKorea", hosts:["buybeautykorea.com"], note:"이 링크로 구매하면 덕심저장소가 BuyBeautyKorea 제휴 활동에 따른 수수료(판매액의 일정 비율)를 받을 수 있어요. 쿠폰 DUKSIM10도 같은 제휴예요."},
   {id:"ebay",       name:"eBay",      hosts:["ebay.com","ebay.us"], note:"이 링크로 구매하면 덕심저장소가 eBay 파트너 네트워크 활동에 따른 수수료를 받을 수 있어요(제휴 링크)."},
-  {id:"klook",      name:"Klook",     hosts:["klook.com","tpk.lu","tp.media","tp.st"], note:"이 링크로 예약하면 덕심저장소가 Klook 제휴(Travelpayouts) 활동에 따른 수수료를 받을 수 있어요."},
+  {id:"klook",      name:"Klook",     hosts:["klook.com","klook.tpo.mx","tpk.lu","tp.media","tp.st"], note:"이 링크로 예약하면 덕심저장소가 Klook 제휴(Travelpayouts) 활동에 따른 수수료를 받을 수 있어요."},
   {id:"ohou",       name:"오늘의집",  hosts:["ohou.se"],          note:"이 링크로 구매하면 덕심저장소가 오늘의집 제휴 활동에 따른 일정액의 수수료를 받을 수 있어요."},   // TODO
   /* 안원잘부 공식 굿즈(원이 개인 채널). 제휴 링크가 아님 → 수수료 문구 대신 「제휴 링크 아님」 표시. store_url 은 대표가 확인한 공식 스토어 주소(https). 비어 있으면 「공식 굿즈 링크 준비 중」 */
   {id:"anwonjalbu_store", name:"안원잘부 공식 굿즈", hosts:[], room:"anwonjalbu", affiliate:false, store_url:null, note:""},
@@ -1068,10 +1068,10 @@ const PRODUCTS = [   // 11/12 쿠팡 파트너스 링크(대표 계정 AF5205583
   {name:"포토카드 슬리브 하드 50매 (팝콘게임즈)", price:"1,000원(11/13 기준)", url:"https://link.coupang.com/a/iEdAB6t0VM", image:"https://thumbnail7.coupangcdn.com/thumbnails/remote/212x212ex/image/vendor_inventory/a670/623334d363b5b5c23970f307afe3a3828b0fa2059730c12c8c500e40a2b4.jpg", image_credit:"쿠팡 파트너스 제공 상품 이미지", shop:"coupang", group:"rescene", theme:"collect"},
   /* 11/13 해외 제휴. url:null 은 화면에 안 나온다(대표가 만든 제휴 링크를 받으면 채움) */
   {name:"K-뷰티 전체 보기 · K-beauty store (쿠폰 DUKSIM10)", price:"해외 배송 · Worldwide shipping", url:"https://buybeautykorea.com/duksim", shop:"buybeautykorea", group:"rescene", theme:"kbeauty"},
-  {name:"리센느 앨범·포토카드 (eBay · 해외 배송)", price:"가격은 eBay에서 확인", url:null, shop:"ebay", group:"rescene", category:"album", theme:"overseas"},
-  {name:"한국 eSIM · Korea eSIM (Klook)", price:"Klook에서 확인", url:null, shop:"klook", group:"rescene", theme:"concert"},
-  {name:"공항철도 AREX · Airport train (Klook)", price:"Klook에서 확인", url:null, shop:"klook", group:"rescene", theme:"concert"},
-  {name:"서울 투어 · Seoul tours (Klook)", price:"Klook에서 확인", url:null, shop:"klook", group:"rescene", theme:"concert"},
+  {name:"리센느 앨범·포토카드 (eBay · 해외 배송)", price:"가격은 eBay에서 확인", url:"https://ebay.us/4hYPa7", shop:"ebay", group:"rescene", category:"album", theme:"overseas"},
+  {name:"한국 eSIM · Korea eSIM (Klook)", price:"Klook에서 확인", url:"https://klook.tpo.mx/zJ3NZ6TN", shop:"klook", group:"rescene", theme:"concert"},
+  {name:"공항철도 AREX · Airport train (Klook)", price:"Klook에서 확인", url:"https://klook.tpo.mx/Ds3bYKGv", shop:"klook", group:"rescene", theme:"concert"},
+  {name:"서울 투어 · Seoul tours (Klook)", price:"Klook에서 확인", url:"https://klook.tpo.mx/7rzUtrrF", shop:"klook", group:"rescene", theme:"concert"},
 ].filter(x=>x.url!==null && (!x.todo || /[?&]preview=1/.test(location.search)));
 /* 🛍️ 굿즈관 테마 전시실(대표 11/12 14:39 "아이돌 테마관처럼 테마 굿즈를 전시하듯이"). 한 줄 추가하면 굿즈관 홀에 문이 생긴다.
    kind: products(상품 진열장, match로 고름) / endorse(공식 광고 모델 정보 전시) / concert(콘서트 준비) / shelves(예전 구역 진열대) */
@@ -1735,7 +1735,7 @@ Object.assign(I18N.zh,{hidHall:"隱藏地下館", hidSub:"只給解完所有謎�
   hidLocked:"光之碎片 {a}/{b} — 解完每個房間的謎題就能得到碎片", bDescend:"往下走", toLobbyUp:"↑ 回到大廳", hintUnder:"拖曳環顧四周,點成員房間的畫框就能打開隱藏紀錄",
   shardRoom:"{r} 謎題 {a}/{b}", hidCount:"隱藏紀錄 {n} 筆", hidFlat:"光之碎片 {a}/{b}"});
 const FRAMES_PER_ROOM = 7;
-const AFFILIATE_RE = /(^|\.)(coupang\.com|coupa\.ng|buybeautykorea\.com|ebay\.com|ebay\.us|klook\.com|tpk\.lu|tp\.media|tp\.st)$/i;
+const AFFILIATE_RE = /(^|\.)(coupang\.com|coupa\.ng|buybeautykorea\.com|ebay\.com|ebay\.us|klook\.com|tpo\.mx|tpk\.lu|tp\.media|tp\.st)$/i;
 const IG_RE = /^https:\/\/(www\.)?instagram\.com\/(p|reel)\/[\w-]+\/?$/;
 /* 방문자 캐릭터: 나라별 대표 동물 친구들(나라 비교·서열 없이 모두 '친구'). 출신 나라는 확실한 것만, 애매하면 '세계' 묶음.
    모양은 공통 몸통 + 귀·털·꼬리·색만 바꾼다. 실제 마스코트·유명 캐릭터를 닮지 않은 단순 도형 조합.
