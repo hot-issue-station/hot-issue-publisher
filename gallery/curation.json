@@ -561,6 +561,17 @@
           "start_note": "처음부터 재생",
           "kind": "long",
           "kind_note": "형식 이름(무대·브이로그·라이브 등)으로 판단, 길이 미확인"
+        },
+        {
+          "video_id": "bFObiM72vMU",
+          "url": "https://www.youtube.com/watch?v=bFObiM72vMU",
+          "title": "RESCENE (리센느) - LOVE ATTACK I [해피투게더🍀혼자가 아니어서 좋아] I KBS 261009 방송",
+          "channel": "KBS 해피투게더",
+          "official": "방송사 공식",
+          "kind": "long",
+          "added_at": "2026-11-14",
+          "views": 3720000,
+          "views_note": "11/14 00시 유튜브 화면값(만 단위)"
         }
       ]
     },
