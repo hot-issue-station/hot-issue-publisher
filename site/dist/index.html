@@ -991,7 +991,11 @@ const HIDDEN_ITEMS = {   // 멤버 id → 항목. 첫 칸은 방송사 공식 �
   zena:  [{type:"youtube", id:"GxU2HvTzw5w", title:"[페이스캠4K] 리센느 제나 'With' @SBS Inkigayo 261108", channel:"SBSKPOP ZOOM", fan:false, added_at:"2026-11-12", checked_at:"2026-11-12"}],
 };
 /* 📅 리센느 일정(대표 11/12 13:23 "관 안에서 오늘·주간·월간 일정을 홀로그램/NPC로"). 공식 발표·공식 영상·기사 2곳으로 확인된 것만. Claude가 주 1회 확인해 갱신 */
-const RESCENE_SCHEDULE = { hall:"rescene", checked_at:"2026-11-12", items:[
+const RESCENE_SCHEDULE = { hall:"rescene", checked_at:"2026-11-14", items:[
+  {date:"2026-11-06", type:"show", t:{ko:"뮤직뱅크 「With」 첫 무대", ja:"ミュージックバンク「With」初ステージ", en:"Music Bank — first 「With」 stage", zh:"音樂銀行「With」首次舞台"}, src:"iMBC 연예 11/7"},
+  {date:"2026-11-07", type:"show", t:{ko:"쇼! 음악중심 「With」 무대", ja:"ショー！K-POPの中心「With」", en:"Show! Music Core — 「With」", zh:"Show! 音樂中心「With」"}, src:"MBCkpop 공식 영상"},
+  {date:"2026-11-07", type:"win", t:{ko:"2026 KGMA 4관왕 (원이 첫날 MC)", ja:"2026 KGMA 4冠(ウォニ初日MC)", en:"2026 KGMA — 4 awards (WONI hosted day 1)", zh:"2026 KGMA 四冠(元伊擔任首日MC)"}, src:"iMBC 연예 11/7"},
+  {date:"2026-11-13", type:"show", t:{ko:"뮤직뱅크 「With」 무대", ja:"ミュージックバンク「With」", en:"Music Bank — 「With」", zh:"音樂銀行「With」"}, src:"KBS Kpop 공식 영상"},
   {date:"2026-11-10", type:"win", t:{ko:"THE SHOW 「With」 1위", ja:"THE SHOW「With」1位", en:"THE SHOW — 「With」 #1", zh:"THE SHOW「With」一位"}, src:"THE K-POP 공식 영상"},
   {date:"2026-11-11", type:"win", t:{ko:"쇼챔피언 「With」 1위", ja:"SHOW CHAMPION「With」1位", en:"Show Champion — 「With」 #1", zh:"Show Champion「With」一位"}, src:"ALL THE K-POP 공식 영상"},
   {date:"2026-11-11", type:"news", t:{ko:"첫 단독 콘서트 개최 발표", ja:"初単独コンサート開催発表", en:"First solo concert announced", zh:"宣布首場單獨演唱會"}, src:"MK스포츠 11/11"},
@@ -1237,6 +1241,10 @@ const PHOTOS = [
   {room:"hub", src_type:"yt_thumb", url:"https://www.youtube.com/watch?v=97YE7zPrON8", caption:"[Re-log] 미나미의 휴가 브이로그 in JAPAN 🏠 | RESCENE (리센느) vlog", credit:"YouTube · RESCENE"},
   {room:"hub", src_type:"yt_thumb", url:"https://www.youtube.com/watch?v=i3BCs-IcIl4", caption:"HAPPY WONI DAY 🎂💚", credit:"YouTube · RESCENE"},
   {room:"hub", src_type:"instagram", url:"", caption:"", credit:"@rescene_official", pool:[{url:"https://www.instagram.com/p/DfcXWF7S1ck/", caption:"#RE_MEMBER 📸 11/7 KGMA 4관왕 ✨"},{url:"https://www.instagram.com/p/Dfgo5lrEh9B/", caption:"2027 시즌 그리팅 [PAGES OF YOUTH] ✨"},{url:"https://www.instagram.com/p/DfkEkRSkoPI/", caption:"고마워 리마인 🪽"}]},   // 6시간마다 자동 교체(대표 11/12 03:24), 11/12 Claude가 공식 계정에서 고름
+  /* 11/14 대표: 이번 앨범 방 포토 월이 3D에서 비어 보임(인스타 칸은 3D 벽에 그림을 못 그림) → 공식 「With」 영상 표지 3장을 앞에 */
+  {room:"album_pulse", src_type:"yt_thumb", url:"https://www.youtube.com/watch?v=pey3E47eSc8", caption:"RESCENE (리센느) 'With' Official MV", credit:"YouTube · RESCENE"},
+  {room:"album_pulse", src_type:"yt_thumb", url:"https://www.youtube.com/watch?v=fZlFWII-JIg", caption:"[뮤뱅 원테이크 4K HDR] 리센느 (RESCENE) 'With' 4K Bonus Ver. @뮤직뱅크 261106", credit:"YouTube · KBS Kpop"},
+  {room:"album_pulse", src_type:"yt_thumb", url:"https://www.youtube.com/watch?v=_XhBc88qS_E", caption:"RESCENE (리센느) - With | Show! MusicCore | MBC261107방송", credit:"YouTube · MBCkpop"},
   {room:"album_pulse", src_type:"instagram", url:"", caption:"", credit:"@rescene_official", pool:[{url:"https://www.instagram.com/p/DfYrjjOEmCL/", caption:"With you · PULSE"},{url:"https://www.instagram.com/p/DfYriF9Eh0b/", caption:"한없이 꿈꿔온 나를 위한 계절 · PULSE"},{url:"https://www.instagram.com/p/DfYqeTQkklK/", caption:"I’m lovin’ myself · PULSE"},{url:"https://www.instagram.com/p/DfSEQDskkI6/", caption:"리센느와 With 할 준비 됐어?"}]},   // 6시간마다 자동 교체(대표 11/12 03:24), 11/12 Claude가 공식 계정에서 고름
   {room:"album_pulse", src_type:"instagram", url:"", caption:"", credit:"@rescene_official", pool:[{url:"https://www.instagram.com/p/DfYrjjOEmCL/", caption:"With you · PULSE"},{url:"https://www.instagram.com/p/DfYriF9Eh0b/", caption:"한없이 꿈꿔온 나를 위한 계절 · PULSE"},{url:"https://www.instagram.com/p/DfYqeTQkklK/", caption:"I’m lovin’ myself · PULSE"},{url:"https://www.instagram.com/p/DfSEQDskkI6/", caption:"리센느와 With 할 준비 됐어?"}]},   // 6시간마다 자동 교체(대표 11/12 03:24), 11/12 Claude가 공식 계정에서 고름
   {room:"album_pulse", src_type:"instagram", url:"", caption:"", credit:"@rescene_official", pool:[{url:"https://www.instagram.com/p/DfYrjjOEmCL/", caption:"With you · PULSE"},{url:"https://www.instagram.com/p/DfYriF9Eh0b/", caption:"한없이 꿈꿔온 나를 위한 계절 · PULSE"},{url:"https://www.instagram.com/p/DfYqeTQkklK/", caption:"I’m lovin’ myself · PULSE"},{url:"https://www.instagram.com/p/DfSEQDskkI6/", caption:"리센느와 With 할 준비 됐어?"}]},   // 6시간마다 자동 교체(대표 11/12 03:24), 11/12 Claude가 공식 계정에서 고름
@@ -2517,8 +2525,10 @@ function closeItem(){
 G.openItem=openItem; G.openVideo=v=>openItem(v); G.closeItem=closeItem;
 /* 📅 일정 창: 오늘 / 이번 주 / 이번 달 + 다가오는 큰 일정 (한국 시간 기준) */
 G.kstDay = (d=new Date()) => new Date(d.getTime()+9*3600e3).toISOString().slice(0,10);
-G.openSchedule = (tab="today") => {
+G.openSchedule = (tab) => {
   const L=G.lang||"ko", tx=o=>o?.[L]||o?.ko||"", today=G.kstDay(), td=new Date(today+"T00:00:00Z");
+  /* 11/14 대표: 처음 열 때 오늘 일정이 없으면 「이번 주」를 먼저 보여 준다(콘서트만 보이던 문제) */
+  if(!tab) tab = RESCENE_SCHEDULE.items.some(x=>!((x.end||x.date)<today || x.date>today)) ? "today" : "week";
   const dow=(td.getUTCDay()+6)%7, wk0=new Date(td.getTime()-dow*864e5).toISOString().slice(0,10), wk1=new Date(td.getTime()+(6-dow)*864e5).toISOString().slice(0,10);
   const m0=today.slice(0,8)+"01", m1=today.slice(0,8)+"31";
   const rng={today:[today,today], week:[wk0,wk1], month:[m0,m1]}[tab];
