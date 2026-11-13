@@ -1485,6 +1485,7 @@ body.playing .adtop{display:none}
 .picks .row{display:flex;gap:8px;overflow-x:auto}
 .pick{flex:none;width:136px;background:var(--bg);border-radius:12px;padding:10px;color:var(--ink);text-decoration:none;font-size:13px;line-height:1.4}
 .pick b{display:block;margin-top:4px;color:var(--r)}
+.pickImg{display:block;width:100%;aspect-ratio:1/1;object-fit:contain;background:#fff;border-radius:8px;margin-bottom:6px}
 .picks .empty{margin:0;font-size:12px;color:var(--sub);border:1px dashed var(--line);border-radius:12px;padding:14px;text-align:center}
 .disc{color:var(--sub);font-size:11px;margin:8px 0 0;line-height:1.45}
 .sheet .yt{margin:10px 0 0;font-size:11px;color:var(--sub);line-height:1.45}
@@ -2211,7 +2212,7 @@ G.openProduct = x => {
   const u=safeUrl(x.url), img=safeUrl(x.image), sh=u ? shopOf({...x,u}) : SHOPS.find(z=>z.id===x.shop);
   const note = sh?.affiliate===false ? G.t("notAff") : (u && !x.seller) || sh ? (G.lang==="ko" && sh?.note ? sh.note : G.t("affNote")) : "";   // 상점 공식 문구는 한국어 화면에서, 다른 언어는 번역 문구
   openItem({type:"text", title:x.name, desc:[x.price, sh?.name].filter(Boolean).join(" · "),
-    html:`${img ? `<img class="prodImg" src="${esc(img.href)}" alt="${esc(x.image_alt||x.name)}" loading="lazy"><p class="contactNote">${esc(G.t("imgCredit"))}: ${esc(x.image_credit||"")}</p>` : ""}
+    html:`${img ? `<img class="prodImg" src="${esc(img.href)}" alt="${esc(x.image_alt||x.name)}" loading="lazy" referrerpolicy="no-referrer"><p class="contactNote">${esc(G.t("imgCredit"))}: ${esc(x.image_credit||"")}</p>` : ""}
       <div class="badges"><b>${esc(G.t("adBadge"))}</b>${x.seller ? `<b class="sel">${esc(x.badge||G.t("sellerBadge"))}</b>` : ""}</div>
       <a class="contactBtn" ${u ? `href="${esc(u.href)}"` : 'aria-disabled="true"'} target="_blank" rel="sponsored noopener">${esc(u ? G.t("goBuy") : G.t("noLink"))}</a>
       ${x.seller ? `<p class="contactNote">${esc(G.t("sellerResp"))}</p>` : ""}${note ? `<p class="disc">${esc(note)}</p>` : ""}
@@ -2415,7 +2416,7 @@ function openItem(it, ctx={}){
   $("#src").hidden = !srcUrl; $("#srcName").textContent = srcName ? G.t("src")+": "+srcName : ""; $("#srcLink").href=srcUrl||"#"; $("#srcLink").textContent=srcBtn;
   $("#picks").hidden = !showPicks;
   picks = picks.map(x=>({...x,u:safeUrl(x.url)})).filter(x=>x.u);
-  $("#picksRow").innerHTML = picks.map(x=>`<a class="pick" href="${esc(x.u.href)}" target="_blank" rel="sponsored noopener">${esc(x.name)}<b>${esc(x.price||"")}</b><small>${esc(shopOf(x)?.name||x.u.hostname)}</small></a>`).join("");
+  $("#picksRow").innerHTML = picks.map(x=>`<a class="pick" href="${esc(x.u.href)}" target="_blank" rel="sponsored noopener">${safeUrl(x.image) ? `<img class="pickImg" src="${esc(safeUrl(x.image).href)}" alt="" loading="lazy" referrerpolicy="no-referrer">` : ""}${esc(x.name)}<b>${esc(x.price||"")}</b><small>${esc(shopOf(x)?.name||x.u.hostname)}</small></a>`).join("");
   $("#picksEmpty").hidden = picks.length>0;
   const notes=[...new Set(picks.map(x=>G.lang==="ko" && shopOf(x)?.note ? shopOf(x).note : G.t("affNote")))];
   $("#disc").textContent = notes.join(" "); $("#disc").hidden = !notes.length;
@@ -2534,6 +2535,11 @@ G.products = (hid=G.hallId, rid=G.roomId) => PRODUCTS.filter(x=>(!x.hall||x.hall
 const ROOM_GOODS = { stage:["concert","collect"], album_pulse:["pulse","album"], anwonjalbu:["endorse","collect"], tv:["endorse","album"], youtube_guest:["endorse","album"], daily:["kbeauty","collect"], birthday:["season","collect"], secret:["album","season"] };
 G.goodsLinks = (rid, gid="rescene") => { const ts=(ROOM_GOODS[rid]||["all"]).map(id=>GOODS_THEMES.find(x=>x.id===id)).filter(x=>x && x.open);
   return ts.length ? `<div class="sec">${esc(G.t("gRelated"))}</div><div class="grid">` + ts.map(x=>`<button class="card door" data-glink="${esc(x.id)}" data-gg="${esc(gid)}"><div class="th" style="background:${esc(x.color)}">${esc(x.icon+" "+G.nm(x.name))}</div><div class="tt">${esc(G.nm(x.desc))}</div></button>`).join("") + `</div>` : ""; };
+/* 11/13 23:2x: 휴대폰 앱 안 브라우저(인스타·카톡·맞춤 탭)에서 새 창(target=_blank) 링크가 안 열리는 경우 대비 —
+   상점 링크를 누르면 새 창을 열어 보고, 막히면 지금 창에서 연다 */
+document.addEventListener("click", e=>{ const a=e.target.closest?.('a[target="_blank"][rel~="sponsored"]'); if(!a || !safeUrl(a.href)) return;
+  e.preventDefault(); let w=null; try{ w=window.open(a.href, "_blank"); }catch(_){}
+  if(w){ try{ w.opener=null; }catch(_){} } else location.href=a.href; }, true);
 document.addEventListener("click", e=>{ const b=e.target.closest?.("[data-glink]"); if(!b) return; e.preventDefault(); if(G.sheetOpen()) closeItem(); G.go("gex", b.dataset.gg||"rescene", b.dataset.glink); });
 G.roomPicks = room => (room?.videos||[]).flatMap(v=>Array.isArray(v.picks)?v.picks:[]);   // 영상별 picks는 방 진열대로 모은다
 G.openGoods = room => openItem({type:"goods", html:G.goodsLinks(room?.id), goods:[...(room?.goods||[]), ...G.roomPicks(room), ...G.products(G.hallId, room?.id)]});
@@ -3710,7 +3716,8 @@ function start(THREE){
       for(let k=ci.length;k<3;k++) pieces.push({shape:"empty", col:"#888", title:G.t("gPrepSoon").replace(/ — .*/,""), sub:G.t("zoneSoon"), act:()=>G.toast(G.t("gPrepSoon"))}); }
     if(!pieces.length) pieces.push({shape:"empty", col:"#888", title:G.t("zoneSoon"), sub:"", act:()=>G.toast(G.t("zoneSoon"))});
     /* 받침대 배치: 앞줄·뒷줄, 한 줄 최대 6 */
-    const rows=[[],[],[]]; pieces.slice(0,18).forEach((pc,i)=>rows[Math.floor(i/6)].push(pc));   // 꽉 찬 진열(대표 11/13): 한 줄 6개, 최대 3줄 const glassM=new THREE.MeshBasicMaterial({color:0xcfe6ff, transparent:true, opacity:0.13, depthWrite:false});
+    const rows=[[],[],[]]; pieces.slice(0,18).forEach((pc,i)=>rows[Math.floor(i/6)].push(pc));   // 꽉 찬 진열(대표 11/13): 한 줄 6개, 최대 3줄
+    const glassM=new THREE.MeshBasicMaterial({color:0xcfe6ff, transparent:true, opacity:0.13, depthWrite:false});
     const beamM=new THREE.MeshBasicMaterial({color:0xfff2c4, transparent:true, opacity:0.07, side:THREE.DoubleSide, depthWrite:false});
     rows.forEach((row,ri)=>{ if(!row.length) return; const z = th.kind==="concert" ? [1.2,-0.6,-2.4][ri] : [-1.0,-3.4,1.4][ri], n=row.length, gap=Math.min(1.6, (W*2-2)/Math.max(1,n));
       row.forEach((pc,k)=>{ const x=(k-(n-1)/2)*gap;
