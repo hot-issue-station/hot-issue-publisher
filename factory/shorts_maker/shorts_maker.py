@@ -152,6 +152,7 @@ def check(S, quiet=False):
             warns.append(f"[{n}] 바로 앞 편과 배경색이 같음(번갈아 쓰는 규칙)")
         if "yt_title" not in c or "desc" not in c: errs.append(f"[{n}] 제목 또는 설명 없음")
         if not c.get("publish_at"): warns.append(f"[{n}] 공개 시각(publish_at) 없음")
+    ce, cw = check_copy(S, quiet=True); errs += ce; warns += cw
     if not quiet:
         for e in errs: print("✗", e)
         for w in warns: print("△", w)
@@ -211,6 +212,52 @@ def sheet(S, cid):
     im.save(f"{out}/확인모음.jpg", quality=85); print("확인모음:", f"{out}/확인모음.jpg")
 
 # ---------------------------------------------------------------- 문구
+
+# ---------------------------------------------------------------- 플랫폼별 문구
+import re
+LIMITS = {"ig": 2200, "tt": 2200, "x": 280, "th": 500}   # 글자 수 한도(X는 한글·이모지 2칸, 주소 23칸으로 계산)
+TT_SOFT = 150                                              # 틱톡은 짧게(권장)
+NAMES = {"yt": "유튜브", "ig": "인스타 릴스", "tt": "틱톡", "x": "X", "th": "스레드"}
+
+def wlen(t):
+    """X 가중 길이: 주소 23, 한글·한자·가나·이모지 2, 나머지 1"""
+    n = 0
+    for u in re.findall(r"https?://\S+", t): n += 23
+    t = re.sub(r"https?://\S+", "", t)
+    for ch in t: n += 2 if ord(ch) >= 0x1100 else 1
+    return n
+
+def plain_title(c): return re.sub(r"\s*#\S+", "", c["yt_title"]).strip()
+
+def platform_copy(S, c):
+    s = S["source"]; tags = c.get("hashtags", []); title = plain_title(c); g = S["gallery_text"]
+    ov = c.get("copy", {})
+    d = {}
+    # 인스타: 링크가 눌리지 않으므로 주소는 글자로만, 해시태그는 뒤에 모아서(최대 8개)
+    d["ig"] = ov.get("ig") or (f"{title}\n\n{c['desc']}\n\n원본 전체는 {s['channel']} 공식 채널에서 ♥\n3D 덕심 갤러리 {g}\n\n" + " ".join(tags[:8]))
+    # 틱톡: 짧게 — 제목 + 해시태그 5개
+    d["tt"] = ov.get("tt") or (f"{title} " + " ".join(tags[:5]))
+    # X: 280칸 — 제목 + 원본 주소 + 해시태그 3개, 남으면 설명 한 줄
+    x = f"{title}\n\n원본: {s['url']}\n" + " ".join(tags[:3])
+    d["x"] = ov.get("x") or x
+    # 스레드: 대화체 — 설명 + 원본 주소 + 해시태그 1~2개(스레드는 주제 태그 1개가 기본)
+    d["th"] = ov.get("th") or (f"{title}\n\n{c['desc']}\n\n원본 전체는 공식 채널에서 → {s['url']}\n3D 덕심 갤러리 {S['gallery_url']}\n" + " ".join(tags[:2]))
+    return d
+
+def check_copy(S, quiet=False):
+    errs, warns = [], []
+    for c in S["clips"]:
+        d = platform_copy(S, c)
+        for k, t in d.items():
+            n = wlen(t) if k == "x" else len(t)
+            if n > LIMITS[k]: errs.append(f"[{c['id']}] {NAMES[k]} 문구가 한도 초과: {n}/{LIMITS[k]}")
+        if len(d["tt"]) > TT_SOFT: warns.append(f"[{c['id']}] 틱톡 문구가 {len(d['tt'])}자로 길다(권장 {TT_SOFT}자 이하)")
+        if d["ig"].count("#") > 30: errs.append(f"[{c['id']}] 인스타 해시태그 30개 초과")
+    if not quiet:
+        for e in errs: print("✗", e)
+        for w in warns: print("△", w)
+    return errs, warns
+
 def comments(S):
     s = S["source"]; u = s["url"]; g = S["gallery_url"]; who = S.get("cheer_name", "")
     cheer = f"{who}에게 " if who else ""
@@ -229,6 +276,11 @@ def write_copy(S):
               f"- 유튜브 제목: {c['yt_title']}", f"- 설명: {c['desc']}",
               f"  원본 전체: {s['channel']} 공식 채널 {s['url']}", f"  3D 덕심 갤러리 {S['gallery_url']}", f"  {tags}",
               f"- 일본어 한 줄: {c.get('ja_line','')}", f"- 파일: {c['id']}/영상_업로드본.mp4 · {c['id']}/썸네일.jpg", ""]
+        pc = platform_copy(S, c)
+        for k in ("ig", "tt", "x", "th"):
+            n = wlen(pc[k]) if k == "x" else len(pc[k])
+            L += [f"### {NAMES[k]} 문구 ({n}/{LIMITS[k]})", "```", pc[k], "```"]
+        L += [""]
     L += ["## 첫 댓글", f"- 유튜브(고정): {yt}", f"- 인스타 1개: {ig}", f"- 스레드(반말): {th}", "",
           "## 「올려」 뒤 할 일 (클릭만, 편마다 반복)",
           "1. 유튜브: 예약 공개 · 재생목록 「덕심저장소」 · 아동용 아님 · 썸네일 등록",
@@ -249,7 +301,8 @@ TEMPLATE = {
               [20, 40, "「핵심 대사 윗줄", "핵심 대사 아랫줄」", "「日本語", "日本語」", True]],
    "end": {"ko": "끝 화면 한 줄", "ko2": "응원 댓글 유도 한 줄", "ja": "日本語 한 줄 ♥"},
    "thumb": {"t": 30.0, "x": 420, "ko": ["「대사 윗줄", "대사 아랫줄」"], "sub": "썸네일 아래 한 줄 설명"},
-   "yt_title": "유튜브 제목 #해시태그", "desc": "설명 한두 문장 ♥", "hashtags": ["#덕심저장소"], "ja_line": "일본어 한 줄"}]}
+   "yt_title": "유튜브 제목 #해시태그", "desc": "설명 한두 문장 ♥", "hashtags": ["#덕심저장소"], "ja_line": "일본어 한 줄",
+   "copy": {"ig": "", "tt": "", "x": "", "th": ""}}]}  # copy: 플랫폼별 문구를 직접 쓰면 그것을 우선(비우면 자동)
 
 def main():
     if len(sys.argv) < 3: print(__doc__); return
