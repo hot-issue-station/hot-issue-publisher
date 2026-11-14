@@ -1,39 +1,41 @@
 {
  "name": "스브스뉴스 (SBS)",
  "channel": "https://www.youtube.com/@subusunews",
- "checkedAt": "2026-11-14T22:30+09:00",
+ "checkedAt": "2026-11-15T08:26+09:00",
  "subscribers": "144만",
  "videos": [
   {
    "id": "omd178ailwI",
    "title": "블프 전에 꼭 확인하세요 #블랙프라이데이 #shorts #스브스뉴스",
-   "views": 420,
-   "viewsText": "조회수 420회",
+   "views": 3800,
+   "viewsText": "조회수 3.8천회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 3380
   },
   {
    "id": "T3rXxLcDD-g",
    "title": "홈플러스가 이겨냈으면 좋겠어 #홈플러스 #shorts #스브스뉴스",
-   "views": 1200,
-   "viewsText": "조회수 1.2천회",
+   "views": 2600,
+   "viewsText": "조회수 2.6천회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 1400
   },
   {
    "id": "wHp_zWCqzxw",
    "title": "의무 사항 아니면 안 해도 되는 거냐고..ㅠ #딸기우유 #shorts #스브스뉴스",
-   "views": 2200,
-   "viewsText": "조회수 2.2천회",
+   "views": 2300,
+   "viewsText": "조회수 2.3천회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 100
   },
   {
    "id": "LEWIMLiirq0",
    "title": "성분 따졌다가 고소당한 사람? 그게 나예요. #딸기우유 #shorts #스브스뉴스",
-   "views": 7700,
-   "viewsText": "조회수 7.7천회",
+   "views": 7900,
+   "viewsText": "조회수 7.9천회",
    "published": "",
    "kind": "short",
    "gain": 200
@@ -41,11 +43,11 @@
   {
    "id": "QSXv2yiIveI",
    "title": "귀신 훈육 놀이에 터져버린 아동 학대 논란 #한국민속촌 #shorts #스브스뉴스",
-   "views": 13000,
-   "viewsText": "조회수 1.3만회",
+   "views": 14000,
+   "viewsText": "조회수 1.4만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 1000
   },
   {
    "id": "7UWF0GGYftg",
@@ -59,20 +61,20 @@
   {
    "id": "vS6l_n2uJzs",
    "title": "젠슨 황 내연녀 앨리스 황, 10조 원어치 ‘엔비디아 AI칩’ 중국으로 유출? #엔비디아 #shorts #스브스뉴스",
-   "views": 6800,
-   "viewsText": "조회수 6.8천회",
+   "views": 6900,
+   "viewsText": "조회수 6.9천회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 100
   },
   {
    "id": "phk3JBktfX8",
    "title": "[선공개] 인간관계 정리되는 요즘 경조사",
-   "views": 9600,
-   "viewsText": "조회수 9.6천회",
+   "views": 9800,
+   "viewsText": "조회수 9.8천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 200
   },
   {
    "id": "80Prr9snsIk",
@@ -81,16 +83,16 @@
    "viewsText": "조회수 9.2천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "h8iBMhQ3b-Q",
    "title": "추워질수록 위험하다는 굴운자로 #굴 #shorts #스브스뉴스",
-   "views": 7400,
-   "viewsText": "조회수 7.4천회",
+   "views": 7500,
+   "viewsText": "조회수 7.5천회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 100
   },
   {
    "id": "uO5xviR9-aM",
@@ -99,7 +101,7 @@
    "viewsText": "조회수 4.7천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "Y0Y6eq3a6PE",
@@ -113,11 +115,11 @@
   {
    "id": "DqL_SWFWkD8",
    "title": "침착맨 방송 중 사교육 문제 직격타 날린 정승제 #입시 #shorts #스브스뉴스",
-   "views": 610000,
-   "viewsText": "조회수 61만회",
+   "views": 620000,
+   "viewsText": "조회수 62만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "lnryKqOozWk",
@@ -149,8 +151,8 @@
   {
    "id": "qZaeu4PJUps",
    "title": "롯데홈쇼핑이 직접 교육하는 커머스 인재 학교? #shorts #스브스뉴스",
-   "views": 50000,
-   "viewsText": "조회수 5만회",
+   "views": 51000,
+   "viewsText": "조회수 5.1만회",
    "published": "",
    "kind": "short",
    "gain": 1000
@@ -266,11 +268,11 @@
   {
    "id": "ernsQIVrBi4",
    "title": "노로바이러스 소문 팩트체크 #굴 #shorts #스브스뉴스",
-   "views": 7000,
-   "viewsText": "조회수 7천회",
+   "views": 7100,
+   "viewsText": "조회수 7.1천회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 100
   },
   {
    "id": "cIV-athgSaM",
