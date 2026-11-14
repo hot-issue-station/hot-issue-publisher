@@ -1,51 +1,53 @@
 {
  "name": "YTN",
  "channel": "https://www.youtube.com/@ytnnews24",
- "checkedAt": "2026-11-14T19:20+09:00",
+ "checkedAt": "2026-11-14T22:30+09:00",
  "subscribers": "543만",
  "videos": [
   {
    "id": "ElPMfSok2Qk",
    "title": "'세기의 로맨티스트' 젠슨 황 #shorts / YTN",
-   "views": 17000,
-   "viewsText": "조회수 1.7만회",
+   "views": 43000,
+   "viewsText": "조회수 4.3만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 26000
   },
   {
    "id": "YuOKPf4jzsU",
    "title": "할 🐴이 없네 #shorts / YTN",
-   "views": 28000,
-   "viewsText": "조회수 2.8만회",
+   "views": 44000,
+   "viewsText": "조회수 4.4만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 16000
   },
   {
    "id": "HqiD3rEtcOs",
    "title": "고경표 만취 사고 입건 #shorts / YTN",
-   "views": 31000,
-   "viewsText": "조회수 3.1만회",
+   "views": 39000,
+   "viewsText": "조회수 3.9만회",
    "published": "",
    "kind": "short",
-   "gain": 19000
+   "gain": 8000
   },
   {
    "id": "anwr8x9R65s",
    "title": "미국 하늘길 멈췄다 #shorts / YTN",
-   "views": 18000,
-   "viewsText": "조회수 1.8만회",
-   "published": "",
-   "kind": "short",
-   "gain": 7000
-  },
-  {
-   "id": "lbi-WRTgIRk",
-   "title": "\"간첩 혐의 때문 아냐\" #shorts / YTN",
    "views": 21000,
    "viewsText": "조회수 2.1만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 3000
+  },
+  {
+   "id": "lbi-WRTgIRk",
+   "title": "\"간첩 혐의 때문 아냐\" #shorts / YTN",
+   "views": 25000,
+   "viewsText": "조회수 2.5만회",
+   "published": "",
+   "kind": "short",
+   "gain": 4000
   },
   {
    "id": "n_1VHCAJKsw",
@@ -54,7 +56,7 @@
    "viewsText": "조회수 6.6만회",
    "published": "",
    "kind": "short",
-   "gain": 2000
+   "gain": 0
   },
   {
    "id": "rdYOkVom1-A",
@@ -63,40 +65,40 @@
    "viewsText": "조회수 9.3천회",
    "published": "",
    "kind": "short",
-   "gain": 500
+   "gain": 0
   },
   {
    "id": "3BDwucUMZUs",
    "title": "우기, '하나의 중국' 공개 지지 #shorts / YTN",
-   "views": 73000,
-   "viewsText": "조회수 7.3만회",
+   "views": 74000,
+   "viewsText": "조회수 7.4만회",
    "published": "",
    "kind": "short",
-   "gain": 2000
+   "gain": 1000
   },
   {
    "id": "ojiMG3eIHgk",
    "title": "'유죄'는 맞는데... #shorts / YTN",
-   "views": 36000,
-   "viewsText": "조회수 3.6만회",
+   "views": 37000,
+   "viewsText": "조회수 3.7만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 1000
   },
   {
    "id": "xWD2Xit5GT0",
    "title": "이제 주사 말고 먹습니다 #shorts / YTN",
-   "views": 10000,
-   "viewsText": "조회수 1만회",
+   "views": 11000,
+   "viewsText": "조회수 1.1만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 1000
   },
   {
    "id": "ApIVmpRHYF0",
    "title": "역시 피는 못 속여 #shorts / YTN",
-   "views": 180000,
-   "viewsText": "조회수 18만회",
+   "views": 190000,
+   "viewsText": "조회수 19만회",
    "published": "",
    "kind": "short",
    "gain": 10000
@@ -108,7 +110,7 @@
    "viewsText": "조회수 25만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "4tPCCWsG4CU",
@@ -144,7 +146,7 @@
    "viewsText": "조회수 1.4만회",
    "published": "",
    "kind": "short",
-   "gain": 3000
+   "gain": 0
   },
   {
    "id": "N2D-rW3xpJs",
@@ -153,7 +155,7 @@
    "viewsText": "조회수 1.2만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "oD_-DYvckd0",
@@ -162,16 +164,16 @@
    "viewsText": "조회수 2.5만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "aB9-L24Zy3M",
    "title": "내 눈은 제미나이 #shorts / YTN",
-   "views": 73000,
-   "viewsText": "조회수 7.3만회",
+   "views": 75000,
+   "viewsText": "조회수 7.5만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 2000
   },
   {
    "id": "T2_g8m4H8Rg",
@@ -180,7 +182,7 @@
    "viewsText": "조회수 6.7만회",
    "published": "",
    "kind": "short",
-   "gain": 2000
+   "gain": 0
   },
   {
    "id": "J6zZNUDugRE",
@@ -189,7 +191,7 @@
    "viewsText": "조회수 1.3만회",
    "published": "",
    "kind": "short",
-   "gain": 3000
+   "gain": 0
   },
   {
    "id": "7lYzf12K37k",
@@ -198,7 +200,7 @@
    "viewsText": "조회수 5.5만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "PS8XbXPv7KI",
@@ -207,7 +209,7 @@
    "viewsText": "조회수 18만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "h2TxBUTNIE4",
@@ -248,20 +250,20 @@
   {
    "id": "eLe96rwX9Bc",
    "title": "딸의 마지막 편지, 눈물로 읽은 어머니 #shorts / YTN",
-   "views": 7300,
-   "viewsText": "조회수 7.3천회",
+   "views": 7400,
+   "viewsText": "조회수 7.4천회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 100
   },
   {
    "id": "pEeWg9ZzaFg",
    "title": "운전자의 바뀐 진술은? #shorts / YTN",
-   "views": 43000,
-   "viewsText": "조회수 4.3만회",
+   "views": 44000,
+   "viewsText": "조회수 4.4만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 1000
   },
   {
    "id": "j_LdQYWAUN0",
@@ -270,7 +272,7 @@
    "viewsText": "조회수 2.3천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "gS4gor6BkJE",
@@ -297,7 +299,7 @@
    "viewsText": "조회수 5.4천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "5zJLocJejgw",

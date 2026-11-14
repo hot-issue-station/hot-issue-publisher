@@ -3,7 +3,7 @@
  "name": "슈카월드",
  "channel": "https://www.youtube.com/@syukaworld",
  "channelId": "UCJo6G1u0e_-wS-JQn3T-zEw",
- "checkedAt": "2026-11-14T19:20+09:00",
+ "checkedAt": "2026-11-14T22:30+09:00",
  "videos": [
   {
    "id": "S_S0dX87aPY",
@@ -11,12 +11,12 @@
    "published": "2026-11-14T09:00:24+00:00",
    "url": "https://www.youtube.com/watch?v=S_S0dX87aPY",
    "shorts": false,
-   "views": 11254,
-   "likes": 542,
-   "viewsGain": null,
-   "isNew": true,
-   "median": 127622,
-   "multiple": 0.1
+   "views": 72188,
+   "likes": 944,
+   "viewsGain": 60934,
+   "isNew": false,
+   "median": 125671,
+   "multiple": 0.6
   },
   {
    "id": "eXUFUT2_RpQ",
@@ -24,12 +24,12 @@
    "published": "2026-11-14T07:26:18+00:00",
    "url": "https://www.youtube.com/shorts/eXUFUT2_RpQ",
    "shorts": true,
-   "views": 29265,
-   "likes": 481,
-   "viewsGain": null,
-   "isNew": true,
-   "median": 143264.5,
-   "multiple": 0.2
+   "views": 63528,
+   "likes": 648,
+   "viewsGain": 34263,
+   "isNew": false,
+   "median": 143798.5,
+   "multiple": 0.4
   },
   {
    "id": "ZFq74IdTuR8",
@@ -37,11 +37,11 @@
    "published": "2026-11-13T08:00:22+00:00",
    "url": "https://www.youtube.com/shorts/ZFq74IdTuR8",
    "shorts": true,
-   "views": 312199,
-   "likes": 4281,
-   "viewsGain": 52386,
+   "views": 317623,
+   "likes": 4350,
+   "viewsGain": 5424,
    "isNew": false,
-   "median": 143264.5,
+   "median": 143798.5,
    "multiple": 2.2
   },
   {
@@ -50,11 +50,11 @@
    "published": "2026-11-13T06:27:17+00:00",
    "url": "https://www.youtube.com/watch?v=GXAL5zTk_Sg",
    "shorts": false,
-   "views": 109963,
-   "likes": 496,
-   "viewsGain": 5003,
+   "views": 110985,
+   "likes": 500,
+   "viewsGain": 1022,
    "isNew": false,
-   "median": 127622,
+   "median": 125671,
    "multiple": 0.9
   },
   {
@@ -63,11 +63,11 @@
    "published": "2026-11-13T03:21:49+00:00",
    "url": "https://www.youtube.com/shorts/B6DqFmvxiWw",
    "shorts": true,
-   "views": 72722,
-   "likes": 482,
-   "viewsGain": 13512,
+   "views": 74994,
+   "likes": 496,
+   "viewsGain": 2272,
    "isNew": false,
-   "median": 143264.5,
+   "median": 143798.5,
    "multiple": 0.5
   },
   {
@@ -76,11 +76,11 @@
    "published": "2026-11-12T11:00:11+00:00",
    "url": "https://www.youtube.com/shorts/yog9Nwxqtto",
    "shorts": true,
-   "views": 88680,
-   "likes": 736,
-   "viewsGain": 3448,
+   "views": 89390,
+   "likes": 745,
+   "viewsGain": 710,
    "isNew": false,
-   "median": 143264.5,
+   "median": 143798.5,
    "multiple": 0.6
   },
   {
@@ -89,12 +89,12 @@
    "published": "2026-11-12T09:00:19+00:00",
    "url": "https://www.youtube.com/watch?v=FSqGVxQKEMc",
    "shorts": false,
-   "views": 266551,
-   "likes": 1927,
-   "viewsGain": 19162,
+   "views": 271227,
+   "likes": 1947,
+   "viewsGain": 4676,
    "isNew": false,
-   "median": 127622,
-   "multiple": 2.1
+   "median": 125671,
+   "multiple": 2.2
   },
   {
    "id": "sTeqHqi-w74",
@@ -102,11 +102,11 @@
    "published": "2026-11-12T07:35:07+00:00",
    "url": "https://www.youtube.com/shorts/sTeqHqi-w74",
    "shorts": true,
-   "views": 273194,
-   "likes": 1450,
-   "viewsGain": 3025,
+   "views": 273861,
+   "likes": 1453,
+   "viewsGain": 667,
    "isNew": false,
-   "median": 143264.5,
+   "median": 143798.5,
    "multiple": 1.9
   },
   {
@@ -115,11 +115,11 @@
    "published": "2026-11-12T07:13:26+00:00",
    "url": "https://www.youtube.com/shorts/PdRYlMmMhJQ",
    "shorts": true,
-   "views": 195688,
-   "likes": 1197,
-   "viewsGain": 4557,
+   "views": 196621,
+   "likes": 1209,
+   "viewsGain": 933,
    "isNew": false,
-   "median": 143264.5,
+   "median": 143798.5,
    "multiple": 1.4
   },
   {
@@ -128,12 +128,12 @@
    "published": "2026-11-12T06:41:52+00:00",
    "url": "https://www.youtube.com/watch?v=UEU5eZG5fxk",
    "shorts": false,
-   "views": 170611,
+   "views": 171062,
    "likes": 975,
-   "viewsGain": 1481,
+   "viewsGain": 451,
    "isNew": false,
-   "median": 127622,
-   "multiple": 1.3
+   "median": 125671,
+   "multiple": 1.4
   },
   {
    "id": "OqKFqg75Tuk",
@@ -141,11 +141,11 @@
    "published": "2026-11-12T03:00:51+00:00",
    "url": "https://www.youtube.com/shorts/OqKFqg75Tuk",
    "shorts": true,
-   "views": 115754,
-   "likes": 893,
-   "viewsGain": 3656,
+   "views": 116470,
+   "likes": 901,
+   "viewsGain": 716,
    "isNew": false,
-   "median": 143264.5,
+   "median": 143798.5,
    "multiple": 0.8
   },
   {
@@ -154,11 +154,11 @@
    "published": "2026-11-11T06:45:25+00:00",
    "url": "https://www.youtube.com/watch?v=pP0j-VEICls",
    "shorts": false,
-   "views": 127622,
+   "views": 125671,
    "likes": 853,
-   "viewsGain": 260,
+   "viewsGain": -1951,
    "isNew": false,
-   "median": 127622,
+   "median": 125671,
    "multiple": 1.0
   },
   {
@@ -167,11 +167,11 @@
    "published": "2026-11-10T10:42:29+00:00",
    "url": "https://www.youtube.com/watch?v=Ge6BHHlGUmk",
    "shorts": false,
-   "views": 110392,
-   "likes": 363,
-   "viewsGain": 4876,
+   "views": 111822,
+   "likes": 367,
+   "viewsGain": 1430,
    "isNew": false,
-   "median": 127622,
+   "median": 125671,
    "multiple": 0.9
   },
   {
@@ -180,11 +180,11 @@
    "published": "2026-11-10T08:00:26+00:00",
    "url": "https://www.youtube.com/shorts/gOGolt7zsN8",
    "shorts": true,
-   "views": 170775,
-   "likes": 1755,
-   "viewsGain": 909,
+   "views": 171127,
+   "likes": 1760,
+   "viewsGain": 352,
    "isNew": false,
-   "median": 143264.5,
+   "median": 143798.5,
    "multiple": 1.2
   },
   {
@@ -193,11 +193,11 @@
    "published": "2026-11-10T06:30:55+00:00",
    "url": "https://www.youtube.com/watch?v=aGpktOSGdm0",
    "shorts": false,
-   "views": 166111,
+   "views": 166267,
    "likes": 1091,
-   "viewsGain": 316,
+   "viewsGain": 156,
    "isNew": false,
-   "median": 127622,
+   "median": 125671,
    "multiple": 1.3
   }
  ],
@@ -205,15 +205,15 @@
   {
    "title": "누가 회사에서 주식 보래?",
    "url": "https://www.youtube.com/shorts/ZFq74IdTuR8",
-   "views": 312199,
+   "views": 317623,
    "multiple": 2.2,
    "shorts": true
   },
   {
    "title": "변압기 사라면서요 살려주세요",
    "url": "https://www.youtube.com/watch?v=FSqGVxQKEMc",
-   "views": 266551,
-   "multiple": 2.1,
+   "views": 271227,
+   "multiple": 2.2,
    "shorts": false
   }
  ]

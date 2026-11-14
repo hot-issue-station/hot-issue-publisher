@@ -1,14 +1,14 @@
 {
  "name": "슈카월드",
  "channel": "https://www.youtube.com/@syukaworld",
- "checkedAt": "2026-11-14T19:20+09:00",
+ "checkedAt": "2026-11-14T22:30+09:00",
  "subscribers": "374만",
  "videos": [
   {
    "id": "PPIMOKvuSDY",
    "title": "교황님 말씀 \"젊은이들이여, 돈과 SNS에 사로잡히지 말라\"",
-   "views": 87000,
-   "viewsText": "조회수 8.7만회",
+   "views": 89000,
+   "viewsText": "조회수 8.9만회",
    "published": "",
    "kind": "short",
    "gain": 2000
@@ -29,16 +29,16 @@
    "viewsText": "조회수 6.4만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "xmLFwy-UdNU",
    "title": "노안의 라식",
-   "views": 230000,
-   "viewsText": "조회수 23만회",
+   "views": 240000,
+   "viewsText": "조회수 24만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "xVKY3CWUoSE",
@@ -56,7 +56,7 @@
    "viewsText": "조회수 9.3만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "D32h_sPWp0g",

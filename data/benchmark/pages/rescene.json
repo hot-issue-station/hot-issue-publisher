@@ -1,50 +1,53 @@
 {
  "name": "RESCENE 공식",
  "channel": "https://www.youtube.com/@RESCENE_official",
- "checkedAt": "2026-11-14T19:20+09:00",
+ "checkedAt": "2026-11-14T22:30+09:00",
  "subscribers": "138만",
  "videos": [
   {
    "id": "CdWdWBFaIqs",
    "title": "베스트프렌드 이름 대기 🤭💗",
-   "views": 39000,
-   "viewsText": "조회수 3.9만회",
+   "views": 270000,
+   "viewsText": "조회수 27만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 231000
   },
   {
    "id": "WgFMNPr9-C4",
    "title": "빠져들지 Do you?",
-   "views": 90000,
-   "viewsText": "조회수 9만회",
+   "views": 220000,
+   "viewsText": "조회수 22만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 130000
   },
   {
    "id": "o5FFjSTVXtE",
    "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #전소영 님",
-   "views": 72000,
-   "viewsText": "조회수 7.2만회",
+   "views": 130000,
+   "viewsText": "조회수 13만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 58000
   },
   {
    "id": "R6FaDmyBCK8",
    "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #한유진 님@AND2BLE",
-   "views": 160000,
-   "viewsText": "조회수 16만회",
+   "views": 170000,
+   "viewsText": "조회수 17만회",
    "published": "",
    "kind": "short",
-   "gain": 20000
+   "gain": 10000
   },
   {
    "id": "zgX-au56vcA",
    "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #RENKI #AKITO 님 @Official_VIBY",
-   "views": 230000,
-   "viewsText": "조회수 23만회",
+   "views": 240000,
+   "viewsText": "조회수 24만회",
    "published": "",
    "kind": "short",
-   "gain": 20000
+   "gain": 10000
   },
   {
    "id": "Wjs0JtTnlHY",
@@ -53,7 +56,7 @@
    "viewsText": "조회수 11만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "T_gjoo1qKBU",
@@ -62,22 +65,22 @@
    "viewsText": "조회수 42만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "Swo1MWFnK1c",
    "title": "Yeah I'm blooming like a flower, flower",
-   "views": 390000,
-   "viewsText": "조회수 39만회",
+   "views": 400000,
+   "viewsText": "조회수 40만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "ZZqAlMwMPMg",
    "title": "백화요란 그 파트",
-   "views": 940000,
-   "viewsText": "조회수 94만회",
+   "views": 970000,
+   "viewsText": "조회수 97만회",
    "published": "",
    "kind": "short",
    "gain": 30000
@@ -85,8 +88,8 @@
   {
    "id": "9wSxuOLpGXc",
    "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #YoungK 선배님@DAY6Official",
-   "views": 390000,
-   "viewsText": "조회수 39만회",
+   "views": 400000,
+   "viewsText": "조회수 40만회",
    "published": "",
    "kind": "short",
    "gain": 10000
@@ -94,11 +97,11 @@
   {
    "id": "85TuH4Jqu4s",
    "title": "인사이드 아웃 ✨",
-   "views": 200000,
-   "viewsText": "조회수 20만회",
+   "views": 210000,
+   "viewsText": "조회수 21만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "9sVO6OY1_84",
@@ -112,11 +115,11 @@
   {
    "id": "b-9smM2N5sk",
    "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #서희 님@TUIDE_official",
-   "views": 320000,
-   "viewsText": "조회수 32만회",
+   "views": 330000,
+   "viewsText": "조회수 33만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "ZZJHE7xBDJQ",
@@ -130,11 +133,11 @@
   {
    "id": "kOmL4DDTEYw",
    "title": "얍",
-   "views": 730000,
-   "viewsText": "조회수 73만회",
+   "views": 740000,
+   "viewsText": "조회수 74만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "TL5LSvvgjDw",
@@ -179,7 +182,7 @@
    "viewsText": "조회수 21만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "vwyG-5iVXaw",
