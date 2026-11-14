@@ -1,14 +1,14 @@
 {
  "name": "스브스뉴스 (SBS)",
  "channel": "https://www.youtube.com/@subusunews",
- "checkedAt": "2026-11-14T14:44+09:00",
+ "checkedAt": "2026-11-14T19:20+09:00",
  "subscribers": "144만",
  "videos": [
   {
    "id": "wHp_zWCqzxw",
    "title": "의무 사항 아니면 안 해도 되는 거냐고..ㅠ #딸기우유 #shorts #스브스뉴스",
-   "views": 2100,
-   "viewsText": "조회수 2.1천회",
+   "views": 2200,
+   "viewsText": "조회수 2.2천회",
    "published": "",
    "kind": "short",
    "gain": 100
@@ -16,11 +16,11 @@
   {
    "id": "LEWIMLiirq0",
    "title": "성분 따졌다가 고소당한 사람? 그게 나예요. #딸기우유 #shorts #스브스뉴스",
-   "views": 7400,
-   "viewsText": "조회수 7.4천회",
+   "views": 7500,
+   "viewsText": "조회수 7.5천회",
    "published": "",
    "kind": "short",
-   "gain": 200
+   "gain": 100
   },
   {
    "id": "QSXv2yiIveI",
@@ -29,22 +29,22 @@
    "viewsText": "조회수 1.3만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "7UWF0GGYftg",
    "title": "[선공개] 신혼여행 따라갔던 부부에게 연락이 안 온다",
-   "views": 10000,
-   "viewsText": "조회수 1만회",
+   "views": 11000,
+   "viewsText": "조회수 1.1만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 1000
   },
   {
    "id": "vS6l_n2uJzs",
    "title": "젠슨 황 내연녀 앨리스 황, 10조 원어치 ‘엔비디아 AI칩’ 중국으로 유출? #엔비디아 #shorts #스브스뉴스",
-   "views": 6700,
-   "viewsText": "조회수 6.7천회",
+   "views": 6800,
+   "viewsText": "조회수 6.8천회",
    "published": "",
    "kind": "short",
    "gain": 100
@@ -56,16 +56,16 @@
    "viewsText": "조회수 9.5천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "80Prr9snsIk",
    "title": "[선공개] 죽여달라는 거지?",
-   "views": 9000,
-   "viewsText": "조회수 9천회",
+   "views": 9100,
+   "viewsText": "조회수 9.1천회",
    "published": "",
    "kind": "short",
-   "gain": 200
+   "gain": 100
   },
   {
    "id": "h8iBMhQ3b-Q",
@@ -97,11 +97,11 @@
   {
    "id": "DqL_SWFWkD8",
    "title": "침착맨 방송 중 사교육 문제 직격타 날린 정승제 #입시 #shorts #스브스뉴스",
-   "views": 600000,
-   "viewsText": "조회수 60만회",
+   "views": 610000,
+   "viewsText": "조회수 61만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "lnryKqOozWk",
@@ -128,16 +128,16 @@
    "viewsText": "조회수 6.5천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "qZaeu4PJUps",
    "title": "롯데홈쇼핑이 직접 교육하는 커머스 인재 학교? #shorts #스브스뉴스",
-   "views": 47000,
-   "viewsText": "조회수 4.7만회",
+   "views": 49000,
+   "viewsText": "조회수 4.9만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 2000
   },
   {
    "id": "bvbHkNEO3t8",

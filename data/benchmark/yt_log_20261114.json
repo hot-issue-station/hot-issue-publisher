@@ -189,5 +189,170 @@
   "key": "storyk",
   "ok": false,
   "error": "HTTPError: HTTP Error 404: Not Found"
+ },
+ {
+  "at": "2026-11-14T19:20+09:00",
+  "key": "14f",
+  "ok": true,
+  "new": [
+   "gRThiyajPxQ",
+   "t0Zs4V5j-uA"
+  ],
+  "top": [
+   {
+    "id": "lhkYVuxd_dY",
+    "title": "‘삼성 AI 안경’ 실물 공개… 젠틀몬스터 입고 OO까지 장착? / 14F",
+    "views": 80894,
+    "gain": 24682
+   },
+   {
+    "id": "H7Mr65NjD7g",
+    "title": "국방비 112조 사우디는 왜 후티 반군에 쩔쩔맬까? (박현도X알파고) ㅣ10분 토론 / 14F",
+    "views": 683176,
+    "gain": 14251
+   },
+   {
+    "id": "4fQ9fg9ooko",
+    "title": "스카프 아저씨 하나로 끝이 아니다?! 요즘 남대문시장에서 뜨는 것들  | 선발대 / 14F",
+    "views": 104187,
+    "gain": 13144
+   }
+  ]
+ },
+ {
+  "at": "2026-11-14T19:20+09:00",
+  "key": "subusunews",
+  "ok": true,
+  "new": [
+   "lnlJ2G8CryU",
+   "vxPnYMZwBxM",
+   "LIqJYoJWLxU"
+  ],
+  "top": [
+   {
+    "id": "JyG0ws-5OkA",
+    "title": "수아씨 왜 입이 벌어지면 눈이 감기는 거예요?",
+    "views": 202439,
+    "gain": 11808
+   },
+   {
+    "id": "fPk1Jmnz5sU",
+    "title": "어쩌면 사랑은 다 우정 안에 있는지도 모르겠다",
+    "views": 198901,
+    "gain": 5659
+   },
+   {
+    "id": "KL0_g5W4oxs",
+    "title": "지금 이거 카리나 이야기 맞아요?",
+    "views": 26010,
+    "gain": 4803
+   }
+  ]
+ },
+ {
+  "at": "2026-11-14T19:20+09:00",
+  "key": "vstudio",
+  "ok": true,
+  "new": [],
+  "top": []
+ },
+ {
+  "at": "2026-11-14T19:20+09:00",
+  "key": "syukaworld",
+  "ok": true,
+  "new": [
+   "S_S0dX87aPY",
+   "eXUFUT2_RpQ"
+  ],
+  "top": [
+   {
+    "id": "ZFq74IdTuR8",
+    "title": "누가 회사에서 주식 보래?",
+    "views": 312199,
+    "gain": 52386
+   },
+   {
+    "id": "FSqGVxQKEMc",
+    "title": "변압기 사라면서요 살려주세요",
+    "views": 266551,
+    "gain": 19162
+   },
+   {
+    "id": "B6DqFmvxiWw",
+    "title": "돌아온 원자력 아저씨",
+    "views": 72722,
+    "gain": 13512
+   }
+  ]
+ },
+ {
+  "at": "2026-11-14T19:20+09:00",
+  "key": "ytn",
+  "ok": true,
+  "new": [
+   "7QtAbPbLA3c",
+   "nd_vfq-t260",
+   "YWwYuYtqVXc",
+   "D2K4aCqe38g",
+   "Vy7QEstWEv4",
+   "na1bvxPO5Sc",
+   "eV5V9is1Bz8",
+   "d9e9555nazU",
+   "SoGU0dIlupY",
+   "JcRtp75Rnsw",
+   "TnwIsRYLF6Y",
+   "9qLeBYTyNAg",
+   "WEtJQc-Z4xo",
+   "DfvhfoBghGY",
+   "zPwvaLL8hWk"
+  ],
+  "top": [
+   {
+    "id": "na1bvxPO5Sc",
+    "title": "세무사 '수석 합격' 일파만파...'AI 만점' 시연 등장 / YTN",
+    "views": 24551,
+    "gain": null
+   },
+   {
+    "id": "9qLeBYTyNAg",
+    "title": "청소차 들이받고 황급히 뛰어나와...교통안전 홍보하던 배우의 추락 [자막뉴스] / YTN",
+    "views": 17971,
+    "gain": null
+   },
+   {
+    "id": "7QtAbPbLA3c",
+    "title": "트럼프 \"주저하지 않겠다\"...이란 공격 재개 경고에 중동 '일촉즉발' [이슈픽] / YTN",
+    "views": 11650,
+    "gain": null
+   }
+  ]
+ },
+ {
+  "at": "2026-11-14T19:20+09:00",
+  "key": "storyk",
+  "ok": true,
+  "new": [
+   "m8-01TBggvQ"
+  ],
+  "top": [
+   {
+    "id": "aGdX-njap_8",
+    "title": "김예건 한국 역대 최연소 2위 유럽대항전 출전 - 명문팀 거절하고 1군 노린 18살유망주",
+    "views": 147522,
+    "gain": 6926
+   },
+   {
+    "id": "GBpaslkBI_c",
+    "title": "손흥민 입장문 사과 로이터 통신도 주목 - 유럽에선 캡틴 레전드 한국에선 리더십 희생양",
+    "views": 22916,
+    "gain": 2702
+   },
+   {
+    "id": "EvW6ldmE06o",
+    "title": "손흥민 보고 자란 축구 소년 기적의 FA컵 - 영국이 놀란 148년 새 역사의 주인공 양승우",
+    "views": 206164,
+    "gain": 2345
+   }
+  ]
  }
 ]

@@ -1,7 +1,7 @@
 {
  "name": "안원잘부",
  "channel": "https://www.youtube.com/@helloiamwoninicetomeetyou",
- "checkedAt": "2026-11-14T14:44+09:00",
+ "checkedAt": "2026-11-14T19:20+09:00",
  "subscribers": "243만",
  "videos": [
   {
@@ -16,11 +16,11 @@
   {
    "id": "DKDmFgXzxs8",
    "title": "안원잘부 명장면 이모티콘2 출시!",
-   "views": 2670000,
-   "viewsText": "조회수 267만회",
+   "views": 2680000,
+   "viewsText": "조회수 268만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "zxNoW_LtVLE",
@@ -101,7 +101,7 @@
    "viewsText": "조회수 1356만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "gNJrbCSN2TM",
@@ -110,7 +110,7 @@
    "viewsText": "조회수 469만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "F5CbMShscuk",
@@ -286,11 +286,11 @@
   {
    "id": "XJQMnwcMvcw",
    "title": "백룸에 갇힌 미나미",
-   "views": 2360000,
-   "viewsText": "조회수 236만회",
+   "views": 2370000,
+   "viewsText": "조회수 237만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "510hBsWhh0A",

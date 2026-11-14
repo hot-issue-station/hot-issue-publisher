@@ -1,48 +1,50 @@
 {
  "name": "14F 일사에프 (MBC)",
  "channel": "https://www.youtube.com/@14FMBC",
- "checkedAt": "2026-11-14T14:44+09:00",
+ "checkedAt": "2026-11-14T19:20+09:00",
  "subscribers": "239만",
  "videos": [
   {
    "id": "gRThiyajPxQ",
    "title": "남대문 사장님들 입담이 왜 이리 좋아 #shorts",
-   "views": 1500,
-   "viewsText": "조회수 1.5천회",
+   "views": 3600,
+   "viewsText": "조회수 3.6천회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 2100
   },
   {
    "id": "t0Zs4V5j-uA",
    "title": "한국 프랜차이즈가 매력적인 이유 #shorts",
-   "views": 1500,
-   "viewsText": "조회수 1.5천회",
+   "views": 3100,
+   "viewsText": "조회수 3.1천회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 1600
   },
   {
    "id": "CTJ-rsjJdyU",
    "title": "후티 반군이 무서운 진짜 이유 #shorts",
-   "views": 6200,
-   "viewsText": "조회수 6.2천회",
+   "views": 10000,
+   "viewsText": "조회수 1만회",
    "published": "",
    "kind": "short",
-   "gain": 5236
+   "gain": 3800
   },
   {
    "id": "Aj_trkh0zaM",
    "title": "남대문 스카프 아저씨 입담 모음zip. #shorts",
-   "views": 39000,
-   "viewsText": "조회수 3.9만회",
+   "views": 42000,
+   "viewsText": "조회수 4.2만회",
    "published": "",
    "kind": "short",
-   "gain": 5000
+   "gain": 3000
   },
   {
    "id": "WgWmSXeb_YA",
    "title": "후티 VS 사우디 공항 보복전 #shorts",
-   "views": 5400,
-   "viewsText": "조회수 5.4천회",
+   "views": 5700,
+   "viewsText": "조회수 5.7천회",
    "published": "",
    "kind": "short",
    "gain": 300
@@ -50,11 +52,11 @@
   {
    "id": "yzQjanfzMkg",
    "title": "예멘 무장 단체 후티 반군의 탄생 #shorts",
-   "views": 3900,
-   "viewsText": "조회수 3.9천회",
+   "views": 4000,
+   "viewsText": "조회수 4천회",
    "published": "",
    "kind": "short",
-   "gain": 200
+   "gain": 100
   },
   {
    "id": "yJ40uku5fg0",
@@ -68,11 +70,11 @@
   {
    "id": "OTeGIZUhKjo",
    "title": "이게 진짜 라면이라고? 구미 라면 축제 이색 라면 모음 #shorts",
-   "views": 9000,
-   "viewsText": "조회수 9천회",
+   "views": 8900,
+   "viewsText": "조회수 8.9천회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": -100
   },
   {
    "id": "eJAtWi5dWco",
