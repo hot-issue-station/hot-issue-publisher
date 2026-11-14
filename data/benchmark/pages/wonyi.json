@@ -1,7 +1,7 @@
 {
  "name": "안원잘부",
  "channel": "https://www.youtube.com/@helloiamwoninicetomeetyou",
- "checkedAt": "2026-11-14T08:32+09:00",
+ "checkedAt": "2026-11-14T14:44+09:00",
  "subscribers": "243만",
  "videos": [
   {
@@ -47,7 +47,7 @@
    "viewsText": "조회수 619만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "GsYq_ouLAMQ",
@@ -97,20 +97,20 @@
   {
    "id": "o-B0F16GwL0",
    "title": "[B컷] 의자 안 돌아가요",
-   "views": 13550000,
-   "viewsText": "조회수 1355만회",
+   "views": 13560000,
+   "viewsText": "조회수 1356만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "gNJrbCSN2TM",
    "title": "백제자객과 프리티걸",
-   "views": 4680000,
-   "viewsText": "조회수 468만회",
+   "views": 4690000,
+   "viewsText": "조회수 469만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "F5CbMShscuk",

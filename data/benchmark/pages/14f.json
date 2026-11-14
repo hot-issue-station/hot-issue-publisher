@@ -1,40 +1,57 @@
 {
  "name": "14F 일사에프 (MBC)",
  "channel": "https://www.youtube.com/@14FMBC",
- "checkedAt": "2026-11-14T08:32+09:00",
+ "checkedAt": "2026-11-14T14:44+09:00",
  "subscribers": "239만",
  "videos": [
   {
-   "id": "CTJ-rsjJdyU",
-   "title": "후티 반군이 무서운 진짜 이유 #shorts",
-   "views": 964,
-   "viewsText": "조회수 964회",
+   "id": "gRThiyajPxQ",
+   "title": "남대문 사장님들 입담이 왜 이리 좋아 #shorts",
+   "views": 1500,
+   "viewsText": "조회수 1.5천회",
    "published": "",
    "kind": "short"
   },
   {
-   "id": "Aj_trkh0zaM",
-   "title": "남대문 스카프 아저씨 입담 모음zip. #shorts",
-   "views": 34000,
-   "viewsText": "조회수 3.4만회",
+   "id": "t0Zs4V5j-uA",
+   "title": "한국 프랜차이즈가 매력적인 이유 #shorts",
+   "views": 1500,
+   "viewsText": "조회수 1.5천회",
+   "published": "",
+   "kind": "short"
+  },
+  {
+   "id": "CTJ-rsjJdyU",
+   "title": "후티 반군이 무서운 진짜 이유 #shorts",
+   "views": 6200,
+   "viewsText": "조회수 6.2천회",
    "published": "",
    "kind": "short",
-   "gain": 11000
+   "gain": 5236
+  },
+  {
+   "id": "Aj_trkh0zaM",
+   "title": "남대문 스카프 아저씨 입담 모음zip. #shorts",
+   "views": 39000,
+   "viewsText": "조회수 3.9만회",
+   "published": "",
+   "kind": "short",
+   "gain": 5000
   },
   {
    "id": "WgWmSXeb_YA",
    "title": "후티 VS 사우디 공항 보복전 #shorts",
-   "views": 5100,
-   "viewsText": "조회수 5.1천회",
+   "views": 5400,
+   "viewsText": "조회수 5.4천회",
    "published": "",
    "kind": "short",
-   "gain": 900
+   "gain": 300
   },
   {
    "id": "yzQjanfzMkg",
    "title": "예멘 무장 단체 후티 반군의 탄생 #shorts",
-   "views": 3700,
-   "viewsText": "조회수 3.7천회",
+   "views": 3900,
+   "viewsText": "조회수 3.9천회",
    "published": "",
    "kind": "short",
    "gain": 200
@@ -55,7 +72,7 @@
    "viewsText": "조회수 9천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "eJAtWi5dWco",
@@ -73,7 +90,7 @@
    "viewsText": "조회수 7.5천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "UjJznEbPKrw",
@@ -91,7 +108,7 @@
    "viewsText": "조회수 21만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "G63QFaqloJQ",
@@ -118,7 +135,7 @@
    "viewsText": "조회수 6천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "FV2VNAPmk-o",
@@ -154,7 +171,7 @@
    "viewsText": "조회수 1.3만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "PLPCwDtdmG8",
@@ -341,24 +358,6 @@
    "title": "나치 vs 폴란드 5주 만에 끝난 이유 #shorts",
    "views": 30000,
    "viewsText": "조회수 3만회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "JoLeHi0lLgw",
-   "title": "평소엔 몰랐던 정전기의 위험ㄷㄷ #shorts",
-   "views": 8700,
-   "viewsText": "조회수 8.7천회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "fUM81_EcAvo",
-   "title": "히틀러는 무슨 돈으로 전쟁을 일으킨 걸까? #shorts",
-   "views": 84000,
-   "viewsText": "조회수 8.4만회",
    "published": "",
    "kind": "short",
    "gain": 0
