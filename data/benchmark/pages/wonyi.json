@@ -1,7 +1,7 @@
 {
  "name": "안원잘부",
  "channel": "https://www.youtube.com/@helloiamwoninicetomeetyou",
- "checkedAt": "2026-11-15T22:32+09:00",
+ "checkedAt": "2026-11-16T08:37+09:00",
  "subscribers": "244만",
  "videos": [
   {
@@ -11,7 +11,7 @@
    "viewsText": "조회수 166만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "DKDmFgXzxs8",
@@ -65,7 +65,7 @@
    "viewsText": "조회수 293만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "7Q_myxhlcwE",
@@ -196,11 +196,11 @@
   {
    "id": "beKjAiS8n44",
    "title": "쪽팔려게임",
-   "views": 2570000,
-   "viewsText": "조회수 257만회",
+   "views": 2580000,
+   "viewsText": "조회수 258만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "Gnf3QzdopbM",
@@ -340,11 +340,11 @@
   {
    "id": "yFyk6KPsGuA",
    "title": "SNS를 해야 알지",
-   "views": 1370000,
-   "viewsText": "조회수 137만회",
+   "views": 1380000,
+   "viewsText": "조회수 138만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "IQ4MGDgdr5I",
