@@ -1,14 +1,14 @@
 {
  "name": "슈카월드",
  "channel": "https://www.youtube.com/@syukaworld",
- "checkedAt": "2026-11-15T08:26+09:00",
+ "checkedAt": "2026-11-15T14:48+09:00",
  "subscribers": "374만",
  "videos": [
   {
    "id": "PPIMOKvuSDY",
    "title": "교황님 말씀 \"젊은이들이여, 돈과 SNS에 사로잡히지 말라\"",
-   "views": 91000,
-   "viewsText": "조회수 9.1만회",
+   "views": 93000,
+   "viewsText": "조회수 9.3만회",
    "published": "",
    "kind": "short",
    "gain": 2000
@@ -20,7 +20,7 @@
    "viewsText": "조회수 14만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "5LEMniVcweU",
@@ -29,7 +29,7 @@
    "viewsText": "조회수 6.5만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "xmLFwy-UdNU",
@@ -47,7 +47,7 @@
    "viewsText": "조회수 5.9만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "lioIrGMoIbs",
@@ -74,7 +74,7 @@
    "viewsText": "조회수 23만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "prQUpQh_gko",
@@ -124,11 +124,11 @@
   {
    "id": "Lf89bw8zlXM",
    "title": "삼성 회장님이 1조9천억 원 긁었다는 소문",
-   "views": 410000,
-   "viewsText": "조회수 41만회",
+   "views": 420000,
+   "viewsText": "조회수 42만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "_Th8Z0aTNmk",

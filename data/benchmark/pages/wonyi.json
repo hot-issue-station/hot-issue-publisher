@@ -1,7 +1,7 @@
 {
  "name": "안원잘부",
  "channel": "https://www.youtube.com/@helloiamwoninicetomeetyou",
- "checkedAt": "2026-11-15T08:26+09:00",
+ "checkedAt": "2026-11-15T14:48+09:00",
  "subscribers": "243만",
  "videos": [
   {
@@ -29,7 +29,7 @@
    "viewsText": "조회수 278만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "mFM2hP5LEhM",
@@ -43,11 +43,11 @@
   {
    "id": "xCvbDeMKm3E",
    "title": "두 번째 급습",
-   "views": 6190000,
-   "viewsText": "조회수 619만회",
+   "views": 6200000,
+   "viewsText": "조회수 620만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "GsYq_ouLAMQ",
@@ -254,7 +254,7 @@
    "viewsText": "조회수 642만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "ORksT1QDf3k",
@@ -313,11 +313,11 @@
   {
    "id": "hrFWuCyHXpY",
    "title": "내리온나!!!",
-   "views": 1640000,
-   "viewsText": "조회수 164만회",
+   "views": 1650000,
+   "viewsText": "조회수 165만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "gRESmZMqlFA",
