@@ -70,5 +70,158 @@
   "key": "storyk",
   "ok": false,
   "error": "HTTPError: HTTP Error 404: Not Found"
+ },
+ {
+  "at": "2026-11-15T19:23+09:00",
+  "key": "14f",
+  "ok": true,
+  "new": [],
+  "top": [
+   {
+    "id": "H7Mr65NjD7g",
+    "title": "국방비 112조 사우디는 왜 후티 반군에 쩔쩔맬까? (박현도X알파고) ㅣ10분 토론 / 14F",
+    "views": 725005,
+    "gain": 36616
+   },
+   {
+    "id": "lhkYVuxd_dY",
+    "title": "‘삼성 AI 안경’ 실물 공개… 젠틀몬스터 입고 OO까지 장착? / 14F",
+    "views": 124827,
+    "gain": 31799
+   },
+   {
+    "id": "4fQ9fg9ooko",
+    "title": "스카프 아저씨 하나로 끝이 아니다?! 요즘 남대문시장에서 뜨는 것들  | 선발대 / 14F",
+    "views": 123056,
+    "gain": 14837
+   }
+  ]
+ },
+ {
+  "at": "2026-11-15T19:23+09:00",
+  "key": "subusunews",
+  "ok": true,
+  "new": [],
+  "top": [
+   {
+    "id": "JyG0ws-5OkA",
+    "title": "수아씨 왜 입이 벌어지면 눈이 감기는 거예요?",
+    "views": 221582,
+    "gain": 16306
+   },
+   {
+    "id": "0cDVwBmj7Ow",
+    "title": "이슬아 작가가 말하는 작가들의 싸움 방법",
+    "views": 17615,
+    "gain": 7558
+   },
+   {
+    "id": "LIqJYoJWLxU",
+    "title": "약간 진짜 빛을 본 느낌이었어요",
+    "views": 10690,
+    "gain": 6617
+   }
+  ]
+ },
+ {
+  "at": "2026-11-15T19:23+09:00",
+  "key": "vstudio",
+  "ok": true,
+  "new": [],
+  "top": []
+ },
+ {
+  "at": "2026-11-15T19:23+09:00",
+  "key": "syukaworld",
+  "ok": true,
+  "new": [],
+  "top": [
+   {
+    "id": "S_S0dX87aPY",
+    "title": "회사 내 빌런? 혹시 나야? | 무두절 EP.0",
+    "views": 171109,
+    "gain": 98921
+   },
+   {
+    "id": "eXUFUT2_RpQ",
+    "title": "좋좋슈의 비밀을 폭로합니다",
+    "views": 125105,
+    "gain": 61577
+   },
+   {
+    "id": "ZFq74IdTuR8",
+    "title": "누가 회사에서 주식 보래?",
+    "views": 339029,
+    "gain": 21406
+   }
+  ]
+ },
+ {
+  "at": "2026-11-15T19:23+09:00",
+  "key": "ytn",
+  "ok": true,
+  "new": [
+   "zCwYai8u1fg",
+   "7kg6-fxeWjE",
+   "L1l1LLluoEE",
+   "Bxcy1Fe93y4",
+   "-6wU0ZRKaOM",
+   "YRyn-chcEjc",
+   "ETqls76HC54",
+   "rTz_lmp4ki8",
+   "MF1sleHLvnw",
+   "8kUBUtUVszQ",
+   "NMVR_UEtGAg",
+   "unN8RIepHvY",
+   "1zWsnhd2L7Q",
+   "dRE_lsydiII",
+   "syF7AnxbYgk"
+  ],
+  "top": [
+   {
+    "id": "YRyn-chcEjc",
+    "title": "\"시험장에서 어떻게 부정행위 한거냐?\" 말에…세무사 수석 합격자의 대답 '경악' [에디터픽] / YTN",
+    "views": 34985,
+    "gain": null
+   },
+   {
+    "id": "syF7AnxbYgk",
+    "title": "\"세무사 시험 AI 부정행위 인정\"...공단 \"고소할 것\" / YTN",
+    "views": 6830,
+    "gain": null
+   },
+   {
+    "id": "unN8RIepHvY",
+    "title": "이틀째 수천 편 차질...완전 정상화까진 '아직' / YTN",
+    "views": 2377,
+    "gain": null
+   }
+  ]
+ },
+ {
+  "at": "2026-11-15T19:23+09:00",
+  "key": "storyk",
+  "ok": true,
+  "new": [],
+  "top": [
+   {
+    "id": "m8-01TBggvQ",
+    "title": "한국 약점 피지컬이란 사우디 감독 충격인 이유 - 아시아의 호랑이 시절 대표팀의 특장점",
+    "views": 16664,
+    "gain": 11437
+   },
+   {
+    "id": "aGdX-njap_8",
+    "title": "김예건 한국 역대 최연소 2위 유럽대항전 출전 - 명문팀 거절하고 1군 노린 18살유망주",
+    "views": 150729,
+    "gain": 2407
+   },
+   {
+    "id": "EvW6ldmE06o",
+    "title": "손흥민 보고 자란 축구 소년 기적의 FA컵 - 영국이 놀란 148년 새 역사의 주인공 양승우",
+    "views": 208831,
+    "gain": 2036
+   }
+  ]
  }
 ]

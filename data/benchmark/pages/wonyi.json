@@ -1,7 +1,7 @@
 {
  "name": "안원잘부",
  "channel": "https://www.youtube.com/@helloiamwoninicetomeetyou",
- "checkedAt": "2026-11-15T14:48+09:00",
+ "checkedAt": "2026-11-15T19:23+09:00",
  "subscribers": "243만",
  "videos": [
   {
@@ -47,16 +47,16 @@
    "viewsText": "조회수 620만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "GsYq_ouLAMQ",
    "title": "[B컷] 시그니엘 망고 빙수",
-   "views": 5510000,
-   "viewsText": "조회수 551만회",
+   "views": 5520000,
+   "viewsText": "조회수 552만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "BUeZskDCMpU",
@@ -97,11 +97,11 @@
   {
    "id": "o-B0F16GwL0",
    "title": "[B컷] 의자 안 돌아가요",
-   "views": 13560000,
-   "viewsText": "조회수 1356만회",
+   "views": 13570000,
+   "viewsText": "조회수 1357만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "gNJrbCSN2TM",
@@ -151,11 +151,11 @@
   {
    "id": "FxbR-V8GOjE",
    "title": "새로운 등교 친구",
-   "views": 5770000,
-   "viewsText": "조회수 577만회",
+   "views": 5780000,
+   "viewsText": "조회수 578만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "tDs3mcabrFM",
@@ -317,7 +317,7 @@
    "viewsText": "조회수 165만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "gRESmZMqlFA",
