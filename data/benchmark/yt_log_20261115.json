@@ -223,5 +223,160 @@
     "gain": 2036
    }
   ]
+ },
+ {
+  "at": "2026-11-15T22:32+09:00",
+  "key": "14f",
+  "ok": true,
+  "new": [],
+  "top": [
+   {
+    "id": "H7Mr65NjD7g",
+    "title": "국방비 112조 사우디는 왜 후티 반군에 쩔쩔맬까? (박현도X알파고) ㅣ10분 토론 / 14F",
+    "views": 730893,
+    "gain": 5888
+   },
+   {
+    "id": "lhkYVuxd_dY",
+    "title": "‘삼성 AI 안경’ 실물 공개… 젠틀몬스터 입고 OO까지 장착? / 14F",
+    "views": 129211,
+    "gain": 4384
+   },
+   {
+    "id": "rwdiyA_GxIY",
+    "title": "사우디의 위기가 곧 이집트의 위기? 군사 지원에 나선 이집트의 속사정 / 14F",
+    "views": 171054,
+    "gain": 2499
+   }
+  ]
+ },
+ {
+  "at": "2026-11-15T22:32+09:00",
+  "key": "subusunews",
+  "ok": true,
+  "new": [],
+  "top": [
+   {
+    "id": "JyG0ws-5OkA",
+    "title": "수아씨 왜 입이 벌어지면 눈이 감기는 거예요?",
+    "views": 225348,
+    "gain": 3766
+   },
+   {
+    "id": "fPk1Jmnz5sU",
+    "title": "어쩌면 사랑은 다 우정 안에 있는지도 모르겠다",
+    "views": 208442,
+    "gain": 1338
+   },
+   {
+    "id": "mZoYzTu6ZyY",
+    "title": "나보다 못해주는 남자 만나지 마",
+    "views": 93287,
+    "gain": 737
+   }
+  ]
+ },
+ {
+  "at": "2026-11-15T22:32+09:00",
+  "key": "vstudio",
+  "ok": true,
+  "new": [],
+  "top": []
+ },
+ {
+  "at": "2026-11-15T22:32+09:00",
+  "key": "syukaworld",
+  "ok": true,
+  "new": [],
+  "top": [
+   {
+    "id": "S_S0dX87aPY",
+    "title": "회사 내 빌런? 혹시 나야? | 무두절 EP.0",
+    "views": 181694,
+    "gain": 10585
+   },
+   {
+    "id": "eXUFUT2_RpQ",
+    "title": "좋좋슈의 비밀을 폭로합니다",
+    "views": 129875,
+    "gain": 4770
+   },
+   {
+    "id": "ZFq74IdTuR8",
+    "title": "누가 회사에서 주식 보래?",
+    "views": 341727,
+    "gain": 2698
+   }
+  ]
+ },
+ {
+  "at": "2026-11-15T22:32+09:00",
+  "key": "ytn",
+  "ok": true,
+  "new": [
+   "e48h_Xs2m9Y",
+   "p8GCUZnBPxo",
+   "zJTAXcBzQT4",
+   "lqJAdzC3CiM",
+   "hiIHkLLHAto",
+   "MiV5EqP8tnM",
+   "5025m7qzXs8",
+   "ZqVe-PUrFHc",
+   "Ba2TlXK4pdw",
+   "EhCvER30lWI",
+   "1hY3gkqpY7Y",
+   "zD_fbaoB2pE",
+   "8LaoOrMDXd4",
+   "u6hreBBniRw",
+   "F5IafhA6odA"
+  ],
+  "top": [
+   {
+    "id": "zJTAXcBzQT4",
+    "title": "\"중국 베이징서 행적 확인\"…젠슨 황 이어 앨리스 황도 '청천벽력' [에디터픽] / YTN",
+    "views": 776152,
+    "gain": null
+   },
+   {
+    "id": "p8GCUZnBPxo",
+    "title": "'젠슨 황 사태' 배후로 지목되더니 돌연 K-반도체?…중국 매체, 한국 향한 '폭탄 발언' [이슈픽] / YTN",
+    "views": 4093,
+    "gain": null
+   },
+   {
+    "id": "Ba2TlXK4pdw",
+    "title": "방송가 줄줄이 '고경표 손절'...과거 술버릇도 소환 / YTN",
+    "views": 3016,
+    "gain": null
+   }
+  ]
+ },
+ {
+  "at": "2026-11-15T22:32+09:00",
+  "key": "storyk",
+  "ok": true,
+  "new": [
+   "vVJGieEysjE"
+  ],
+  "top": [
+   {
+    "id": "m8-01TBggvQ",
+    "title": "한국 약점 피지컬이란 사우디 감독 충격인 이유 - 아시아의 호랑이 시절 대표팀의 특장점",
+    "views": 17579,
+    "gain": 915
+   },
+   {
+    "id": "aGdX-njap_8",
+    "title": "김예건 한국 역대 최연소 2위 유럽대항전 출전 - 명문팀 거절하고 1군 노린 18살유망주",
+    "views": 151067,
+    "gain": 338
+   },
+   {
+    "id": "EvW6ldmE06o",
+    "title": "손흥민 보고 자란 축구 소년 기적의 FA컵 - 영국이 놀란 148년 새 역사의 주인공 양승우",
+    "views": 209044,
+    "gain": 213
+   }
+  ]
  }
 ]

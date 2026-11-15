@@ -3,7 +3,7 @@
  "name": "스브스뉴스 (SBS)",
  "channel": "https://www.youtube.com/@subusunews",
  "channelId": "UCxPClUl0bh7BgJajD5k483g",
- "checkedAt": "2026-11-15T19:23+09:00",
+ "checkedAt": "2026-11-15T22:32+09:00",
  "videos": [
   {
    "id": "lnlJ2G8CryU",
@@ -11,11 +11,11 @@
    "published": "2026-11-14T09:00:14+00:00",
    "url": "https://www.youtube.com/shorts/lnlJ2G8CryU",
    "shorts": true,
-   "views": 3477,
-   "likes": 37,
-   "viewsGain": 1823,
+   "views": 3764,
+   "likes": 41,
+   "viewsGain": 287,
    "isNew": false,
-   "median": 17615,
+   "median": 17933,
    "multiple": 0.2
   },
   {
@@ -24,11 +24,11 @@
    "published": "2026-11-14T09:00:09+00:00",
    "url": "https://www.youtube.com/shorts/vxPnYMZwBxM",
    "shorts": true,
-   "views": 3429,
-   "likes": 19,
-   "viewsGain": 1271,
+   "views": 3473,
+   "likes": 20,
+   "viewsGain": 44,
    "isNew": false,
-   "median": 17615,
+   "median": 17933,
    "multiple": 0.2
   },
   {
@@ -37,11 +37,11 @@
    "published": "2026-11-14T09:00:08+00:00",
    "url": "https://www.youtube.com/shorts/LIqJYoJWLxU",
    "shorts": true,
-   "views": 10690,
-   "likes": 67,
-   "viewsGain": 6617,
+   "views": 11425,
+   "likes": 78,
+   "viewsGain": 735,
    "isNew": false,
-   "median": 17615,
+   "median": 17933,
    "multiple": 0.6
   },
   {
@@ -50,11 +50,11 @@
    "published": "2026-11-13T09:00:38+00:00",
    "url": "https://www.youtube.com/shorts/f5Ht9HLkwzs",
    "shorts": true,
-   "views": 13466,
-   "likes": 119,
-   "viewsGain": 530,
+   "views": 13557,
+   "likes": 121,
+   "viewsGain": 91,
    "isNew": false,
-   "median": 17615,
+   "median": 17933,
    "multiple": 0.8
   },
   {
@@ -63,11 +63,11 @@
    "published": "2026-11-13T09:00:30+00:00",
    "url": "https://www.youtube.com/shorts/0cDVwBmj7Ow",
    "shorts": true,
-   "views": 17615,
-   "likes": 227,
-   "viewsGain": 7558,
+   "views": 17933,
+   "likes": 236,
+   "viewsGain": 318,
    "isNew": false,
-   "median": 17615,
+   "median": 17933,
    "multiple": 1.0
   },
   {
@@ -76,11 +76,11 @@
    "published": "2026-11-12T09:00:38+00:00",
    "url": "https://www.youtube.com/shorts/gdHO75hZEEY",
    "shorts": true,
-   "views": 28608,
-   "likes": 183,
-   "viewsGain": 3764,
+   "views": 28982,
+   "likes": 189,
+   "viewsGain": 374,
    "isNew": false,
-   "median": 17615,
+   "median": 17933,
    "multiple": 1.6
   },
   {
@@ -89,11 +89,11 @@
    "published": "2026-11-12T09:00:21+00:00",
    "url": "https://www.youtube.com/shorts/JyG0ws-5OkA",
    "shorts": true,
-   "views": 221582,
-   "likes": 4584,
-   "viewsGain": 16306,
+   "views": 225348,
+   "likes": 4682,
+   "viewsGain": 3766,
    "isNew": false,
-   "median": 17615,
+   "median": 17933,
    "multiple": 12.6
   },
   {
@@ -102,11 +102,11 @@
    "published": "2026-11-12T09:00:11+00:00",
    "url": "https://www.youtube.com/shorts/KL0_g5W4oxs",
    "shorts": true,
-   "views": 31968,
-   "likes": 264,
-   "viewsGain": 5054,
+   "views": 32192,
+   "likes": 266,
+   "viewsGain": 224,
    "isNew": false,
-   "median": 17615,
+   "median": 17933,
    "multiple": 1.8
   },
   {
@@ -115,11 +115,11 @@
    "published": "2026-11-11T09:00:35+00:00",
    "url": "https://www.youtube.com/shorts/TEE7OYw0omU",
    "shorts": true,
-   "views": 8547,
-   "likes": 107,
-   "viewsGain": 316,
+   "views": 8560,
+   "likes": 108,
+   "viewsGain": 13,
    "isNew": false,
-   "median": 17615,
+   "median": 17933,
    "multiple": 0.5
   },
   {
@@ -128,11 +128,11 @@
    "published": "2026-11-11T09:00:32+00:00",
    "url": "https://www.youtube.com/shorts/SsgQRa2QH0U",
    "shorts": true,
-   "views": 15392,
-   "likes": 106,
-   "viewsGain": 541,
+   "views": 15484,
+   "likes": 107,
+   "viewsGain": 92,
    "isNew": false,
-   "median": 17615,
+   "median": 17933,
    "multiple": 0.9
   },
   {
@@ -141,11 +141,11 @@
    "published": "2026-11-11T09:00:31+00:00",
    "url": "https://www.youtube.com/shorts/8ZxqxRnlAhg",
    "shorts": true,
-   "views": 16425,
-   "likes": 225,
-   "viewsGain": 1497,
+   "views": 16471,
+   "likes": 226,
+   "viewsGain": 46,
    "isNew": false,
-   "median": 17615,
+   "median": 17933,
    "multiple": 0.9
   },
   {
@@ -154,12 +154,12 @@
    "published": "2026-11-10T10:16:49+00:00",
    "url": "https://www.youtube.com/shorts/fPk1Jmnz5sU",
    "shorts": true,
-   "views": 207104,
-   "likes": 4317,
-   "viewsGain": 6607,
+   "views": 208442,
+   "likes": 4338,
+   "viewsGain": 1338,
    "isNew": false,
-   "median": 17615,
-   "multiple": 11.8
+   "median": 17933,
+   "multiple": 11.6
   },
   {
    "id": "_i4szpS2iWE",
@@ -167,12 +167,12 @@
    "published": "2026-11-10T09:33:26+00:00",
    "url": "https://www.youtube.com/shorts/_i4szpS2iWE",
    "shorts": true,
-   "views": 53848,
-   "likes": 791,
-   "viewsGain": 1984,
+   "views": 54328,
+   "likes": 795,
+   "viewsGain": 480,
    "isNew": false,
-   "median": 17615,
-   "multiple": 3.1
+   "median": 17933,
+   "multiple": 3.0
   },
   {
    "id": "mZoYzTu6ZyY",
@@ -180,12 +180,12 @@
    "published": "2026-11-10T09:31:05+00:00",
    "url": "https://www.youtube.com/shorts/mZoYzTu6ZyY",
    "shorts": true,
-   "views": 92550,
-   "likes": 854,
-   "viewsGain": 3663,
+   "views": 93287,
+   "likes": 855,
+   "viewsGain": 737,
    "isNew": false,
-   "median": 17615,
-   "multiple": 5.3
+   "median": 17933,
+   "multiple": 5.2
   },
   {
    "id": "1HzIABBs_lo",
@@ -193,11 +193,11 @@
    "published": "2026-11-10T09:28:45+00:00",
    "url": "https://www.youtube.com/shorts/1HzIABBs_lo",
    "shorts": true,
-   "views": 30809,
-   "likes": 259,
-   "viewsGain": 1041,
+   "views": 30946,
+   "likes": 261,
+   "viewsGain": 137,
    "isNew": false,
-   "median": 17615,
+   "median": 17933,
    "multiple": 1.7
   }
  ],
@@ -205,29 +205,29 @@
   {
    "title": "수아씨 왜 입이 벌어지면 눈이 감기는 거예요?",
    "url": "https://www.youtube.com/shorts/JyG0ws-5OkA",
-   "views": 221582,
+   "views": 225348,
    "multiple": 12.6,
    "shorts": true
   },
   {
    "title": "어쩌면 사랑은 다 우정 안에 있는지도 모르겠다",
    "url": "https://www.youtube.com/shorts/fPk1Jmnz5sU",
-   "views": 207104,
-   "multiple": 11.8,
+   "views": 208442,
+   "multiple": 11.6,
    "shorts": true
   },
   {
    "title": "나보다 못해주는 남자 만나지 마",
    "url": "https://www.youtube.com/shorts/mZoYzTu6ZyY",
-   "views": 92550,
-   "multiple": 5.3,
+   "views": 93287,
+   "multiple": 5.2,
    "shorts": true
   },
   {
    "title": "누구든 그 상황이었으면 벗어주지 않았을까요?",
    "url": "https://www.youtube.com/shorts/_i4szpS2iWE",
-   "views": 53848,
-   "multiple": 3.1,
+   "views": 54328,
+   "multiple": 3.0,
    "shorts": true
   }
  ]

@@ -1,23 +1,23 @@
 {
  "name": "14F 일사에프 (MBC)",
  "channel": "https://www.youtube.com/@14FMBC",
- "checkedAt": "2026-11-15T19:23+09:00",
+ "checkedAt": "2026-11-15T22:32+09:00",
  "subscribers": "239만",
  "videos": [
   {
    "id": "gRThiyajPxQ",
    "title": "남대문 사장님들 입담이 왜 이리 좋아 #shorts",
-   "views": 7800,
-   "viewsText": "조회수 7.8천회",
+   "views": 7900,
+   "viewsText": "조회수 7.9천회",
    "published": "",
    "kind": "short",
-   "gain": 400
+   "gain": 100
   },
   {
    "id": "t0Zs4V5j-uA",
    "title": "한국 프랜차이즈가 매력적인 이유 #shorts",
-   "views": 5500,
-   "viewsText": "조회수 5.5천회",
+   "views": 5700,
+   "viewsText": "조회수 5.7천회",
    "published": "",
    "kind": "short",
    "gain": 200
@@ -25,26 +25,26 @@
   {
    "id": "CTJ-rsjJdyU",
    "title": "후티 반군이 무서운 진짜 이유 #shorts",
-   "views": 24000,
-   "viewsText": "조회수 2.4만회",
+   "views": 25000,
+   "viewsText": "조회수 2.5만회",
+   "published": "",
+   "kind": "short",
+   "gain": 1000
+  },
+  {
+   "id": "Aj_trkh0zaM",
+   "title": "남대문 스카프 아저씨 입담 모음zip. #shorts",
+   "views": 59000,
+   "viewsText": "조회수 5.9만회",
    "published": "",
    "kind": "short",
    "gain": 2000
   },
   {
-   "id": "Aj_trkh0zaM",
-   "title": "남대문 스카프 아저씨 입담 모음zip. #shorts",
-   "views": 57000,
-   "viewsText": "조회수 5.7만회",
-   "published": "",
-   "kind": "short",
-   "gain": 3000
-  },
-  {
    "id": "WgWmSXeb_YA",
    "title": "후티 VS 사우디 공항 보복전 #shorts",
-   "views": 6300,
-   "viewsText": "조회수 6.3천회",
+   "views": 6400,
+   "viewsText": "조회수 6.4천회",
    "published": "",
    "kind": "short",
    "gain": 100
@@ -52,8 +52,8 @@
   {
    "id": "yzQjanfzMkg",
    "title": "예멘 무장 단체 후티 반군의 탄생 #shorts",
-   "views": 4500,
-   "viewsText": "조회수 4.5천회",
+   "views": 4600,
+   "viewsText": "조회수 4.6천회",
    "published": "",
    "kind": "short",
    "gain": 100
@@ -110,7 +110,7 @@
    "viewsText": "조회수 23만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "G63QFaqloJQ",
@@ -119,7 +119,7 @@
    "viewsText": "조회수 9.1천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "peSpC5kd2t0",

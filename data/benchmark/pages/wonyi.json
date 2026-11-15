@@ -1,17 +1,17 @@
 {
  "name": "안원잘부",
  "channel": "https://www.youtube.com/@helloiamwoninicetomeetyou",
- "checkedAt": "2026-11-15T19:23+09:00",
- "subscribers": "243만",
+ "checkedAt": "2026-11-15T22:32+09:00",
+ "subscribers": "244만",
  "videos": [
   {
    "id": "kfK-LENbEUo",
    "title": "정작가의 컴백을 축하합니다",
-   "views": 1650000,
-   "viewsText": "조회수 165만회",
+   "views": 1660000,
+   "viewsText": "조회수 166만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "DKDmFgXzxs8",
@@ -56,16 +56,16 @@
    "viewsText": "조회수 552만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "BUeZskDCMpU",
    "title": "[B컷] 와인 처음 따는 원이",
-   "views": 2920000,
-   "viewsText": "조회수 292만회",
+   "views": 2930000,
+   "viewsText": "조회수 293만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "7Q_myxhlcwE",
@@ -101,7 +101,7 @@
    "viewsText": "조회수 1357만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "gNJrbCSN2TM",
@@ -155,7 +155,7 @@
    "viewsText": "조회수 578만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "tDs3mcabrFM",

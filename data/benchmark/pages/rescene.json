@@ -1,59 +1,60 @@
 {
  "name": "RESCENE 공식",
  "channel": "https://www.youtube.com/@RESCENE_official",
- "checkedAt": "2026-11-15T19:23+09:00",
+ "checkedAt": "2026-11-15T22:32+09:00",
  "subscribers": "138만",
  "videos": [
   {
-   "id": "mHGsC6tFG_4",
-   "title": "#샤오쥔 선배님에게 빠져들지 Do you? @WayV",
-   "views": 24000,
-   "viewsText": "조회수 2.4만회",
+   "id": "1BtPuLvMxz4",
+   "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #전소영 님",
+   "views": 47000,
+   "viewsText": "조회수 4.7만회",
    "published": "",
    "kind": "short"
+  },
+  {
+   "id": "WVYtWUGGZBU",
+   "title": "베스트프렌드 이름 대기 🤭💗",
+   "views": 89000,
+   "viewsText": "조회수 8.9만회",
+   "published": "",
+   "kind": "short"
+  },
+  {
+   "id": "mHGsC6tFG_4",
+   "title": "#샤오쥔 선배님에게 빠져들지 Do you? @WayV",
+   "views": 62000,
+   "viewsText": "조회수 6.2만회",
+   "published": "",
+   "kind": "short",
+   "gain": 38000
   },
   {
    "id": "kJaEoI-5nfE",
    "title": "👯‍♀️",
-   "views": 65000,
-   "viewsText": "조회수 6.5만회",
+   "views": 130000,
+   "viewsText": "조회수 13만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 65000
   },
   {
    "id": "aKGrpYghEY4",
    "title": "❤️💙🤍✨",
-   "views": 87000,
-   "viewsText": "조회수 8.7만회",
-   "published": "",
-   "kind": "short"
-  },
-  {
-   "id": "CdWdWBFaIqs",
-   "title": "베스트프렌드 이름 대기 🤭💗",
-   "views": 1100000,
-   "viewsText": "조회수 110만회",
+   "views": 120000,
+   "viewsText": "조회수 12만회",
    "published": "",
    "kind": "short",
-   "gain": 210000
+   "gain": 33000
   },
   {
    "id": "WgFMNPr9-C4",
    "title": "빠져들지 Do you?",
-   "views": 600000,
-   "viewsText": "조회수 60만회",
+   "views": 630000,
+   "viewsText": "조회수 63만회",
    "published": "",
    "kind": "short",
-   "gain": 60000
-  },
-  {
-   "id": "o5FFjSTVXtE",
-   "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #전소영 님",
-   "views": 350000,
-   "viewsText": "조회수 35만회",
-   "published": "",
-   "kind": "short",
-   "gain": 40000
+   "gain": 30000
   },
   {
    "id": "R6FaDmyBCK8",
@@ -62,16 +63,16 @@
    "viewsText": "조회수 20만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "zgX-au56vcA",
    "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #RENKI #AKITO 님 @Official_VIBY",
-   "views": 260000,
-   "viewsText": "조회수 26만회",
+   "views": 270000,
+   "viewsText": "조회수 27만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "Wjs0JtTnlHY",
@@ -89,22 +90,22 @@
    "viewsText": "조회수 47만회",
    "published": "",
    "kind": "short",
-   "gain": 20000
+   "gain": 0
   },
   {
    "id": "Swo1MWFnK1c",
    "title": "Yeah I'm blooming like a flower, flower",
-   "views": 410000,
-   "viewsText": "조회수 41만회",
+   "views": 420000,
+   "viewsText": "조회수 42만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "ZZqAlMwMPMg",
    "title": "백화요란 그 파트",
-   "views": 1070000,
-   "viewsText": "조회수 107만회",
+   "views": 1090000,
+   "viewsText": "조회수 109만회",
    "published": "",
    "kind": "short",
    "gain": 20000
@@ -112,8 +113,8 @@
   {
    "id": "9wSxuOLpGXc",
    "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #YoungK 선배님@DAY6Official",
-   "views": 440000,
-   "viewsText": "조회수 44만회",
+   "views": 450000,
+   "viewsText": "조회수 45만회",
    "published": "",
    "kind": "short",
    "gain": 10000
@@ -143,16 +144,16 @@
    "viewsText": "조회수 35만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "ZZJHE7xBDJQ",
    "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #은석 선배님@RIIZE_official",
-   "views": 300000,
-   "viewsText": "조회수 30만회",
+   "views": 310000,
+   "viewsText": "조회수 31만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "kOmL4DDTEYw",
@@ -161,16 +162,16 @@
    "viewsText": "조회수 77만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "TL5LSvvgjDw",
    "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #리리 님@heartofwoman_officl",
-   "views": 270000,
-   "viewsText": "조회수 27만회",
+   "views": 280000,
+   "viewsText": "조회수 28만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "eDinqteZYUM",
@@ -179,7 +180,7 @@
    "viewsText": "조회수 35만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "aTfIJqiYBiI",
@@ -202,11 +203,11 @@
   {
    "id": "_eji6lKLAu0",
    "title": "🩶",
-   "views": 210000,
-   "viewsText": "조회수 21만회",
+   "views": 220000,
+   "viewsText": "조회수 22만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "vwyG-5iVXaw",
@@ -233,7 +234,7 @@
    "viewsText": "조회수 54만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "nf0cE5ByIiY",

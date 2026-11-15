@@ -1,35 +1,35 @@
 {
  "name": "스브스뉴스 (SBS)",
  "channel": "https://www.youtube.com/@subusunews",
- "checkedAt": "2026-11-15T19:23+09:00",
+ "checkedAt": "2026-11-15T22:32+09:00",
  "subscribers": "144만",
  "videos": [
   {
    "id": "a1XAX1FAHu0",
    "title": "공연 볼 곳 없는 파주 시민 구원하러 국립극장 등판? #shorts / 스브스뉴스",
-   "views": 2700,
-   "viewsText": "조회수 2.7천회",
+   "views": 3500,
+   "viewsText": "조회수 3.5천회",
    "published": "",
    "kind": "short",
-   "gain": 1200
+   "gain": 800
   },
   {
    "id": "omd178ailwI",
    "title": "블프 전에 꼭 확인하세요 #블랙프라이데이 #shorts #스브스뉴스",
-   "views": 6000,
-   "viewsText": "조회수 6천회",
+   "views": 6500,
+   "viewsText": "조회수 6.5천회",
    "published": "",
    "kind": "short",
-   "gain": 900
+   "gain": 500
   },
   {
    "id": "T3rXxLcDD-g",
    "title": "홈플러스가 이겨냈으면 좋겠어 #홈플러스 #shorts #스브스뉴스",
-   "views": 3800,
-   "viewsText": "조회수 3.8천회",
+   "views": 4200,
+   "viewsText": "조회수 4.2천회",
    "published": "",
    "kind": "short",
-   "gain": 600
+   "gain": 400
   },
   {
    "id": "wHp_zWCqzxw",
@@ -47,7 +47,7 @@
    "viewsText": "조회수 8.3천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "QSXv2yiIveI",
@@ -83,7 +83,7 @@
    "viewsText": "조회수 9.9천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "80Prr9snsIk",
@@ -92,7 +92,7 @@
    "viewsText": "조회수 9.4천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "h8iBMhQ3b-Q",
@@ -124,8 +124,8 @@
   {
    "id": "DqL_SWFWkD8",
    "title": "침착맨 방송 중 사교육 문제 직격타 날린 정승제 #입시 #shorts #스브스뉴스",
-   "views": 640000,
-   "viewsText": "조회수 64만회",
+   "views": 650000,
+   "viewsText": "조회수 65만회",
    "published": "",
    "kind": "short",
    "gain": 10000
@@ -160,11 +160,11 @@
   {
    "id": "qZaeu4PJUps",
    "title": "롯데홈쇼핑이 직접 교육하는 커머스 인재 학교? #shorts #스브스뉴스",
-   "views": 57000,
-   "viewsText": "조회수 5.7만회",
+   "views": 59000,
+   "viewsText": "조회수 5.9만회",
    "published": "",
    "kind": "short",
-   "gain": 4000
+   "gain": 2000
   },
   {
    "id": "bvbHkNEO3t8",
