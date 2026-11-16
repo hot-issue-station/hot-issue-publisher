@@ -3,7 +3,7 @@
  "name": "14F 일사에프 (MBC)",
  "channel": "https://www.youtube.com/@14FMBC",
  "channelId": "UCLKuglhGlMmDteQKoniENIQ",
- "checkedAt": "2026-11-17T00:39+09:00",
+ "checkedAt": "2026-11-17T08:34+09:00",
  "videos": [
   {
    "id": "qY9ByfK70cw",
@@ -11,12 +11,12 @@
    "published": "2026-11-16T09:30:04+00:00",
    "url": "https://www.youtube.com/watch?v=qY9ByfK70cw",
    "shorts": false,
-   "views": 35555,
-   "likes": 307,
-   "viewsGain": 32340,
+   "views": 51488,
+   "likes": 395,
+   "viewsGain": 15933,
    "isNew": false,
-   "median": 110981,
-   "multiple": 0.3
+   "median": 128402,
+   "multiple": 0.4
   },
   {
    "id": "fkyakwxfN0g",
@@ -24,12 +24,12 @@
    "published": "2026-11-16T09:00:29+00:00",
    "url": "https://www.youtube.com/watch?v=fkyakwxfN0g",
    "shorts": false,
-   "views": 110981,
-   "likes": 911,
-   "viewsGain": 100082,
+   "views": 191716,
+   "likes": 1222,
+   "viewsGain": 80735,
    "isNew": false,
-   "median": 110981,
-   "multiple": 1.0
+   "median": 128402,
+   "multiple": 1.5
   },
   {
    "id": "q2VxkeYVhv0",
@@ -37,12 +37,12 @@
    "published": "2026-11-16T08:34:47+00:00",
    "url": "https://www.youtube.com/watch?v=q2VxkeYVhv0",
    "shorts": false,
-   "views": 36786,
-   "likes": 264,
-   "viewsGain": 28407,
+   "views": 49545,
+   "likes": 308,
+   "viewsGain": 12759,
    "isNew": false,
-   "median": 110981,
-   "multiple": 0.3
+   "median": 128402,
+   "multiple": 0.4
   },
   {
    "id": "gRThiyajPxQ",
@@ -50,11 +50,11 @@
    "published": "2026-11-14T04:00:38+00:00",
    "url": "https://www.youtube.com/shorts/gRThiyajPxQ",
    "shorts": true,
-   "views": 9093,
+   "views": 9274,
    "likes": 42,
-   "viewsGain": 248,
+   "viewsGain": 181,
    "isNew": false,
-   "median": 8219.5,
+   "median": 8415.0,
    "multiple": 1.1
   },
   {
@@ -63,11 +63,11 @@
    "published": "2026-11-14T03:00:22+00:00",
    "url": "https://www.youtube.com/shorts/t0Zs4V5j-uA",
    "shorts": true,
-   "views": 6666,
-   "likes": 40,
-   "viewsGain": 312,
+   "views": 7001,
+   "likes": 44,
+   "viewsGain": 335,
    "isNew": false,
-   "median": 8219.5,
+   "median": 8415.0,
    "multiple": 0.8
   },
   {
@@ -76,11 +76,11 @@
    "published": "2026-11-13T23:00:17+00:00",
    "url": "https://www.youtube.com/shorts/CTJ-rsjJdyU",
    "shorts": true,
-   "views": 30775,
-   "likes": 332,
-   "viewsGain": 550,
+   "views": 31187,
+   "likes": 335,
+   "viewsGain": 412,
    "isNew": false,
-   "median": 8219.5,
+   "median": 8415.0,
    "multiple": 3.7
   },
   {
@@ -89,11 +89,11 @@
    "published": "2026-11-13T11:56:44+00:00",
    "url": "https://www.youtube.com/watch?v=NzyY32tICRk",
    "shorts": false,
-   "views": 44870,
-   "likes": 385,
-   "viewsGain": 1071,
+   "views": 45632,
+   "likes": 391,
+   "viewsGain": 762,
    "isNew": false,
-   "median": 110981,
+   "median": 128402,
    "multiple": 0.4
   },
   {
@@ -102,12 +102,12 @@
    "published": "2026-11-13T10:00:05+00:00",
    "url": "https://www.youtube.com/watch?v=lhkYVuxd_dY",
    "shorts": false,
-   "views": 148452,
-   "likes": 455,
-   "viewsGain": 2909,
+   "views": 150194,
+   "likes": 461,
+   "viewsGain": 1742,
    "isNew": false,
-   "median": 110981,
-   "multiple": 1.3
+   "median": 128402,
+   "multiple": 1.2
   },
   {
    "id": "Aj_trkh0zaM",
@@ -115,12 +115,12 @@
    "published": "2026-11-13T04:00:11+00:00",
    "url": "https://www.youtube.com/shorts/Aj_trkh0zaM",
    "shorts": true,
-   "views": 73654,
-   "likes": 1011,
-   "viewsGain": 2983,
+   "views": 75126,
+   "likes": 1016,
+   "viewsGain": 1472,
    "isNew": false,
-   "median": 8219.5,
-   "multiple": 9.0
+   "median": 8415.0,
+   "multiple": 8.9
   },
   {
    "id": "WgWmSXeb_YA",
@@ -128,11 +128,11 @@
    "published": "2026-11-12T23:00:32+00:00",
    "url": "https://www.youtube.com/shorts/WgWmSXeb_YA",
    "shorts": true,
-   "views": 7346,
-   "likes": 65,
-   "viewsGain": 156,
+   "views": 7556,
+   "likes": 68,
+   "viewsGain": 210,
    "isNew": false,
-   "median": 8219.5,
+   "median": 8415.0,
    "multiple": 0.9
   },
   {
@@ -141,12 +141,12 @@
    "published": "2026-11-12T09:26:28+00:00",
    "url": "https://www.youtube.com/watch?v=ilCY2YYGUkk",
    "shorts": false,
-   "views": 127789,
-   "likes": 594,
-   "viewsGain": 723,
+   "views": 128402,
+   "likes": 596,
+   "viewsGain": 613,
    "isNew": false,
-   "median": 110981,
-   "multiple": 1.2
+   "median": 128402,
+   "multiple": 1.0
   },
   {
    "id": "4fQ9fg9ooko",
@@ -154,12 +154,12 @@
    "published": "2026-11-12T08:00:03+00:00",
    "url": "https://www.youtube.com/watch?v=4fQ9fg9ooko",
    "shorts": false,
-   "views": 132407,
-   "likes": 681,
-   "viewsGain": 1048,
+   "views": 133041,
+   "likes": 686,
+   "viewsGain": 634,
    "isNew": false,
-   "median": 110981,
-   "multiple": 1.2
+   "median": 128402,
+   "multiple": 1.0
   },
   {
    "id": "yzQjanfzMkg",
@@ -167,11 +167,11 @@
    "published": "2026-11-11T23:00:13+00:00",
    "url": "https://www.youtube.com/shorts/yzQjanfzMkg",
    "shorts": true,
-   "views": 5046,
+   "views": 5061,
    "likes": 55,
-   "viewsGain": 25,
+   "viewsGain": 15,
    "isNew": false,
-   "median": 8219.5,
+   "median": 8415.0,
    "multiple": 0.6
   },
   {
@@ -180,12 +180,12 @@
    "published": "2026-11-11T09:30:36+00:00",
    "url": "https://www.youtube.com/watch?v=Dy-NgSHc7cs",
    "shorts": false,
-   "views": 86576,
+   "views": 86742,
    "likes": 367,
-   "viewsGain": 201,
+   "viewsGain": 166,
    "isNew": false,
-   "median": 110981,
-   "multiple": 0.8
+   "median": 128402,
+   "multiple": 0.7
   },
   {
    "id": "rwdiyA_GxIY",
@@ -193,26 +193,26 @@
    "published": "2026-11-11T08:30:36+00:00",
    "url": "https://www.youtube.com/watch?v=rwdiyA_GxIY",
    "shorts": false,
-   "views": 189665,
-   "likes": 1400,
-   "viewsGain": 4097,
+   "views": 194135,
+   "likes": 1417,
+   "viewsGain": 4470,
    "isNew": false,
-   "median": 110981,
-   "multiple": 1.7
+   "median": 128402,
+   "multiple": 1.5
   }
  ],
  "viral": [
   {
    "title": "남대문 스카프 아저씨 입담 모음zip. #shorts",
    "url": "https://www.youtube.com/shorts/Aj_trkh0zaM",
-   "views": 73654,
-   "multiple": 9.0,
+   "views": 75126,
+   "multiple": 8.9,
    "shorts": true
   },
   {
    "title": "후티 반군이 무서운 진짜 이유 #shorts",
    "url": "https://www.youtube.com/shorts/CTJ-rsjJdyU",
-   "views": 30775,
+   "views": 31187,
    "multiple": 3.7,
    "shorts": true
   }

@@ -1,66 +1,68 @@
 {
  "name": "스브스뉴스 (SBS)",
  "channel": "https://www.youtube.com/@subusunews",
- "checkedAt": "2026-11-17T00:39+09:00",
+ "checkedAt": "2026-11-17T08:34+09:00",
  "subscribers": "144만",
  "videos": [
   {
    "id": "0LtMpN02Csc",
    "title": "관세사도 합격 10배 폭증? 결국 전수조사 나선다 #국가자격시험 #shorts #스브스뉴스",
-   "views": 1500,
-   "viewsText": "조회수 1.5천회",
+   "views": 3100,
+   "viewsText": "조회수 3.1천회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 1600
   },
   {
    "id": "2qGKxq8pdII",
    "title": "부정행위 인정한 세무사 수석 합격자 #AI #shorts #스브스뉴스",
-   "views": 4300,
-   "viewsText": "조회수 4.3천회",
+   "views": 8600,
+   "viewsText": "조회수 8.6천회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 4300
   },
   {
    "id": "a1XAX1FAHu0",
    "title": "공연 볼 곳 없는 파주 시민 구원하러 국립극장 등판? #shorts / 스브스뉴스",
-   "views": 5200,
-   "viewsText": "조회수 5.2천회",
+   "views": 5300,
+   "viewsText": "조회수 5.3천회",
    "published": "",
    "kind": "short",
-   "gain": 200
+   "gain": 100
   },
   {
    "id": "omd178ailwI",
    "title": "블프 전에 꼭 확인하세요 #블랙프라이데이 #shorts #스브스뉴스",
-   "views": 7200,
-   "viewsText": "조회수 7.2천회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "T3rXxLcDD-g",
-   "title": "홈플러스가 이겨냈으면 좋겠어 #홈플러스 #shorts #스브스뉴스",
-   "views": 5600,
-   "viewsText": "조회수 5.6천회",
+   "views": 7400,
+   "viewsText": "조회수 7.4천회",
    "published": "",
    "kind": "short",
    "gain": 200
   },
   {
-   "id": "wHp_zWCqzxw",
-   "title": "의무 사항 아니면 안 해도 되는 거냐고..ㅠ #딸기우유 #shorts #스브스뉴스",
-   "views": 2400,
-   "viewsText": "조회수 2.4천회",
+   "id": "T3rXxLcDD-g",
+   "title": "홈플러스가 이겨냈으면 좋겠어 #홈플러스 #shorts #스브스뉴스",
+   "views": 5700,
+   "viewsText": "조회수 5.7천회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 100
+  },
+  {
+   "id": "wHp_zWCqzxw",
+   "title": "의무 사항 아니면 안 해도 되는 거냐고..ㅠ #딸기우유 #shorts #스브스뉴스",
+   "views": 2500,
+   "viewsText": "조회수 2.5천회",
+   "published": "",
+   "kind": "short",
+   "gain": 100
   },
   {
    "id": "LEWIMLiirq0",
    "title": "성분 따졌다가 고소당한 사람? 그게 나예요. #딸기우유 #shorts #스브스뉴스",
-   "views": 9000,
-   "viewsText": "조회수 9천회",
+   "views": 9100,
+   "viewsText": "조회수 9.1천회",
    "published": "",
    "kind": "short",
    "gain": 100
@@ -108,16 +110,16 @@
    "viewsText": "조회수 9.6천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "h8iBMhQ3b-Q",
    "title": "추워질수록 위험하다는 굴운자로 #굴 #shorts #스브스뉴스",
-   "views": 7500,
-   "viewsText": "조회수 7.5천회",
+   "views": 7600,
+   "viewsText": "조회수 7.6천회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 100
   },
   {
    "id": "uO5xviR9-aM",
@@ -131,20 +133,20 @@
   {
    "id": "Y0Y6eq3a6PE",
    "title": "서울시가 남산에 곤돌라를 만들려는 이유 #shorts / 스브스뉴스",
-   "views": 4500,
-   "viewsText": "조회수 4.5천회",
+   "views": 4600,
+   "viewsText": "조회수 4.6천회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 100
   },
   {
    "id": "DqL_SWFWkD8",
    "title": "침착맨 방송 중 사교육 문제 직격타 날린 정승제 #입시 #shorts #스브스뉴스",
-   "views": 710000,
-   "viewsText": "조회수 71만회",
+   "views": 720000,
+   "viewsText": "조회수 72만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "lnryKqOozWk",
@@ -176,11 +178,11 @@
   {
    "id": "qZaeu4PJUps",
    "title": "롯데홈쇼핑이 직접 교육하는 커머스 인재 학교? #shorts #스브스뉴스",
-   "views": 68000,
-   "viewsText": "조회수 6.8만회",
+   "views": 71000,
+   "viewsText": "조회수 7.1만회",
    "published": "",
    "kind": "short",
-   "gain": 2000
+   "gain": 3000
   },
   {
    "id": "bvbHkNEO3t8",
@@ -351,7 +353,7 @@
    "viewsText": "조회수 1.9만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "fg0BZ5a1Vhs",

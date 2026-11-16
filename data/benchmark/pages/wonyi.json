@@ -1,7 +1,7 @@
 {
  "name": "안원잘부",
  "channel": "https://www.youtube.com/@helloiamwoninicetomeetyou",
- "checkedAt": "2026-11-17T00:39+09:00",
+ "checkedAt": "2026-11-17T08:34+09:00",
  "subscribers": "244만",
  "videos": [
   {
@@ -20,7 +20,7 @@
    "viewsText": "조회수 269만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "zxNoW_LtVLE",
@@ -38,16 +38,16 @@
    "viewsText": "조회수 322만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "xCvbDeMKm3E",
    "title": "두 번째 급습",
-   "views": 6200000,
-   "viewsText": "조회수 620만회",
+   "views": 6210000,
+   "viewsText": "조회수 621만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "GsYq_ouLAMQ",
@@ -92,7 +92,7 @@
    "viewsText": "조회수 333만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "o-B0F16GwL0",
@@ -101,7 +101,7 @@
    "viewsText": "조회수 1358만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "gNJrbCSN2TM",
@@ -304,11 +304,11 @@
   {
    "id": "nHY4EK0kVH0",
    "title": "저한테 왜 그러시는 거예요",
-   "views": 6940000,
-   "viewsText": "조회수 694만회",
+   "views": 6950000,
+   "viewsText": "조회수 695만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "hrFWuCyHXpY",

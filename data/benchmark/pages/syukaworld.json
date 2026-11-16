@@ -1,7 +1,7 @@
 {
  "name": "슈카월드",
  "channel": "https://www.youtube.com/@syukaworld",
- "checkedAt": "2026-11-17T00:39+09:00",
+ "checkedAt": "2026-11-17T08:34+09:00",
  "subscribers": "374만",
  "videos": [
   {
@@ -11,16 +11,16 @@
    "viewsText": "조회수 10만회",
    "published": "",
    "kind": "short",
-   "gain": 2000
+   "gain": 0
   },
   {
    "id": "5mSF8npmm9A",
    "title": "이거 진짜에요?",
-   "views": 140000,
-   "viewsText": "조회수 14만회",
+   "views": 150000,
+   "viewsText": "조회수 15만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "5LEMniVcweU",
@@ -52,11 +52,11 @@
   {
    "id": "lioIrGMoIbs",
    "title": "좋은 사람 있으면 소개시켜줘",
-   "views": 94000,
-   "viewsText": "조회수 9.4만회",
+   "views": 95000,
+   "viewsText": "조회수 9.5만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 1000
   },
   {
    "id": "D32h_sPWp0g",
