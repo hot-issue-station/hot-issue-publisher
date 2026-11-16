@@ -1,17 +1,17 @@
 {
  "name": "안원잘부",
  "channel": "https://www.youtube.com/@helloiamwoninicetomeetyou",
- "checkedAt": "2026-11-16T15:02+09:00",
+ "checkedAt": "2026-11-16T19:59+09:00",
  "subscribers": "244만",
  "videos": [
   {
    "id": "kfK-LENbEUo",
    "title": "정작가의 컴백을 축하합니다",
-   "views": 1660000,
-   "viewsText": "조회수 166만회",
+   "views": 1670000,
+   "viewsText": "조회수 167만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "DKDmFgXzxs8",
@@ -178,11 +178,11 @@
   {
    "id": "GUHzPMtxAqY",
    "title": "고멘네!",
-   "views": 2560000,
-   "viewsText": "조회수 256만회",
+   "views": 2570000,
+   "viewsText": "조회수 257만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "y2TOOxHF35E",
@@ -322,11 +322,11 @@
   {
    "id": "gRESmZMqlFA",
    "title": "고윤정이 2명",
-   "views": 5480000,
-   "viewsText": "조회수 548만회",
+   "views": 5490000,
+   "viewsText": "조회수 549만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "xsNWeKpL5IQ",

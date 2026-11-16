@@ -1,35 +1,35 @@
 {
  "name": "스브스뉴스 (SBS)",
  "channel": "https://www.youtube.com/@subusunews",
- "checkedAt": "2026-11-16T15:02+09:00",
+ "checkedAt": "2026-11-16T19:59+09:00",
  "subscribers": "144만",
  "videos": [
   {
    "id": "a1XAX1FAHu0",
    "title": "공연 볼 곳 없는 파주 시민 구원하러 국립극장 등판? #shorts / 스브스뉴스",
-   "views": 4800,
-   "viewsText": "조회수 4.8천회",
+   "views": 5000,
+   "viewsText": "조회수 5천회",
    "published": "",
    "kind": "short",
-   "gain": 400
+   "gain": 200
   },
   {
    "id": "omd178ailwI",
    "title": "블프 전에 꼭 확인하세요 #블랙프라이데이 #shorts #스브스뉴스",
-   "views": 7100,
-   "viewsText": "조회수 7.1천회",
+   "views": 7200,
+   "viewsText": "조회수 7.2천회",
    "published": "",
    "kind": "short",
-   "gain": 200
+   "gain": 100
   },
   {
    "id": "T3rXxLcDD-g",
    "title": "홈플러스가 이겨냈으면 좋겠어 #홈플러스 #shorts #스브스뉴스",
-   "views": 5100,
-   "viewsText": "조회수 5.1천회",
+   "views": 5400,
+   "viewsText": "조회수 5.4천회",
    "published": "",
    "kind": "short",
-   "gain": 200
+   "gain": 300
   },
   {
    "id": "wHp_zWCqzxw",
@@ -47,7 +47,7 @@
    "viewsText": "조회수 8.9천회",
    "published": "",
    "kind": "short",
-   "gain": 300
+   "gain": 0
   },
   {
    "id": "QSXv2yiIveI",
@@ -92,7 +92,7 @@
    "viewsText": "조회수 9.5천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "h8iBMhQ3b-Q",
@@ -124,11 +124,11 @@
   {
    "id": "DqL_SWFWkD8",
    "title": "침착맨 방송 중 사교육 문제 직격타 날린 정승제 #입시 #shorts #스브스뉴스",
-   "views": 700000,
-   "viewsText": "조회수 70만회",
+   "views": 710000,
+   "viewsText": "조회수 71만회",
    "published": "",
    "kind": "short",
-   "gain": 20000
+   "gain": 10000
   },
   {
    "id": "lnryKqOozWk",
@@ -155,16 +155,16 @@
    "viewsText": "조회수 6.7천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "qZaeu4PJUps",
    "title": "롯데홈쇼핑이 직접 교육하는 커머스 인재 학교? #shorts #스브스뉴스",
-   "views": 64000,
-   "viewsText": "조회수 6.4만회",
+   "views": 66000,
+   "viewsText": "조회수 6.6만회",
    "published": "",
    "kind": "short",
-   "gain": 3000
+   "gain": 2000
   },
   {
    "id": "bvbHkNEO3t8",
@@ -299,7 +299,7 @@
    "viewsText": "조회수 2.9만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "-fLcCSNSD34",

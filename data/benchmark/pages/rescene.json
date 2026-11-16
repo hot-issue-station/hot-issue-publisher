@@ -1,49 +1,66 @@
 {
  "name": "RESCENE 공식",
  "channel": "https://www.youtube.com/@RESCENE_official",
- "checkedAt": "2026-11-16T15:02+09:00",
+ "checkedAt": "2026-11-16T19:59+09:00",
  "subscribers": "138만",
  "videos": [
   {
-   "id": "SHkvZbsZiN8",
-   "title": "MMA 2026 🏆💚",
-   "views": 180,
-   "viewsText": "조회수 180회",
+   "id": "wT-7We1qmaQ",
+   "title": "Kiss you 🤭👉👈",
+   "views": 60000,
+   "viewsText": "조회수 6만회",
    "published": "",
    "kind": "short"
   },
   {
-   "id": "1BtPuLvMxz4",
-   "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #전소영 님",
-   "views": 250000,
-   "viewsText": "조회수 25만회",
+   "id": "vIP7mUzD-wU",
+   "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #도희 님@sa2m2nam3",
+   "views": 65000,
+   "viewsText": "조회수 6.5만회",
+   "published": "",
+   "kind": "short"
+  },
+  {
+   "id": "SHkvZbsZiN8",
+   "title": "MMA 2026 🏆💚",
+   "views": 110000,
+   "viewsText": "조회수 11만회",
    "published": "",
    "kind": "short",
-   "gain": 50000
+   "gain": 109820
+  },
+  {
+   "id": "1BtPuLvMxz4",
+   "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #전소영 님",
+   "views": 310000,
+   "viewsText": "조회수 31만회",
+   "published": "",
+   "kind": "short",
+   "gain": 60000
   },
   {
    "id": "WVYtWUGGZBU",
    "title": "베스트프렌드 이름 대기 🤭💗",
-   "views": 530000,
-   "viewsText": "조회수 53만회",
+   "views": 680000,
+   "viewsText": "조회수 68만회",
    "published": "",
    "kind": "short",
-   "gain": 140000
+   "gain": 150000
   },
   {
    "id": "mHGsC6tFG_4",
    "title": "#샤오쥔 선배님에게 빠져들지 Do you? @WayV",
-   "views": 130000,
-   "viewsText": "조회수 13만회",
+   "views": 140000,
+   "viewsText": "조회수 14만회",
    "published": "",
    "kind": "short",
-   "gain": 20000
+   "gain": 10000
   },
   {
    "id": "kJaEoI-5nfE",
    "title": "👯‍♀️",
-   "views": 200000,
-   "viewsText": "조회수 20만회",
+   "views": 210000,
+   "viewsText": "조회수 21만회",
    "published": "",
    "kind": "short",
    "gain": 10000
@@ -51,17 +68,17 @@
   {
    "id": "aKGrpYghEY4",
    "title": "❤️💙🤍✨",
-   "views": 160000,
-   "viewsText": "조회수 16만회",
+   "views": 170000,
+   "viewsText": "조회수 17만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "WgFMNPr9-C4",
    "title": "빠져들지 Do you?",
-   "views": 700000,
-   "viewsText": "조회수 70만회",
+   "views": 730000,
+   "viewsText": "조회수 73만회",
    "published": "",
    "kind": "short",
    "gain": 30000
@@ -73,7 +90,7 @@
    "viewsText": "조회수 22만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "zgX-au56vcA",
@@ -100,31 +117,31 @@
    "viewsText": "조회수 50만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "Swo1MWFnK1c",
    "title": "Yeah I'm blooming like a flower, flower",
-   "views": 420000,
-   "viewsText": "조회수 42만회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "ZZqAlMwMPMg",
-   "title": "백화요란 그 파트",
-   "views": 1140000,
-   "viewsText": "조회수 114만회",
+   "views": 430000,
+   "viewsText": "조회수 43만회",
    "published": "",
    "kind": "short",
    "gain": 10000
   },
   {
+   "id": "ZZqAlMwMPMg",
+   "title": "백화요란 그 파트",
+   "views": 1160000,
+   "viewsText": "조회수 116만회",
+   "published": "",
+   "kind": "short",
+   "gain": 20000
+  },
+  {
    "id": "9wSxuOLpGXc",
    "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #YoungK 선배님@DAY6Official",
-   "views": 470000,
-   "viewsText": "조회수 47만회",
+   "views": 480000,
+   "viewsText": "조회수 48만회",
    "published": "",
    "kind": "short",
    "gain": 10000
@@ -132,20 +149,20 @@
   {
    "id": "85TuH4Jqu4s",
    "title": "인사이드 아웃 ✨",
-   "views": 220000,
-   "viewsText": "조회수 22만회",
+   "views": 230000,
+   "viewsText": "조회수 23만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "9sVO6OY1_84",
    "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #박건욱 선배님@ZB1_official",
-   "views": 200000,
-   "viewsText": "조회수 20만회",
+   "views": 210000,
+   "viewsText": "조회수 21만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "b-9smM2N5sk",
@@ -168,11 +185,11 @@
   {
    "id": "kOmL4DDTEYw",
    "title": "얍",
-   "views": 790000,
-   "viewsText": "조회수 79만회",
+   "views": 810000,
+   "viewsText": "조회수 81만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 20000
   },
   {
    "id": "TL5LSvvgjDw",
@@ -186,20 +203,20 @@
   {
    "id": "eDinqteZYUM",
    "title": "Dancing Queen 👑",
-   "views": 350000,
-   "viewsText": "조회수 35만회",
+   "views": 360000,
+   "viewsText": "조회수 36만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "aTfIJqiYBiI",
    "title": "Pretty",
-   "views": 220000,
-   "viewsText": "조회수 22만회",
+   "views": 230000,
+   "viewsText": "조회수 23만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "NNsr12BBiE0",
@@ -213,11 +230,11 @@
   {
    "id": "_eji6lKLAu0",
    "title": "🩶",
-   "views": 220000,
-   "viewsText": "조회수 22만회",
+   "views": 230000,
+   "viewsText": "조회수 23만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "vwyG-5iVXaw",
@@ -249,11 +266,11 @@
   {
    "id": "nf0cE5ByIiY",
    "title": "˚｡⋆୨୧˚.˚",
-   "views": 270000,
-   "viewsText": "조회수 27만회",
+   "views": 280000,
+   "viewsText": "조회수 28만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "A5PB2NXHkzY",
@@ -321,11 +338,11 @@
   {
    "id": "kRY9NYgnXLM",
    "title": "With 🤍",
-   "views": 510000,
-   "viewsText": "조회수 51만회",
+   "views": 520000,
+   "viewsText": "조회수 52만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "KcTEkBTAP3I",
@@ -341,24 +358,6 @@
    "title": "but you 🫵",
    "views": 740000,
    "viewsText": "조회수 74만회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "EYrU4Zphz8s",
-   "title": ". ݁⋆ ꫂ᭪ ݁˖ . ݁ ˖ ݁♬⋆.˚𝄞⋆ ⋆",
-   "views": 740000,
-   "viewsText": "조회수 74만회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "VeZXkwf9esM",
-   "title": "날 부르는 메아리 🔊",
-   "views": 860000,
-   "viewsText": "조회수 86만회",
    "published": "",
    "kind": "short",
    "gain": 0

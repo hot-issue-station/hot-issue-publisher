@@ -1,144 +1,201 @@
 {
  "name": "YTN",
  "channel": "https://www.youtube.com/@ytnnews24",
- "checkedAt": "2026-11-16T15:02+09:00",
+ "checkedAt": "2026-11-16T19:59+09:00",
  "subscribers": "543만",
  "videos": [
   {
-   "id": "i20Ho-MhoJg",
-   "title": "BTS 콘서트가 남긴 결과 #shorts / YTN",
-   "views": 837,
-   "viewsText": "조회수 837회",
+   "id": "UH0Sp40RTA4",
+   "title": "싹 다 없습니다~ #shorts / YTN",
+   "views": 3300,
+   "viewsText": "조회수 3.3천회",
    "published": "",
    "kind": "short"
+  },
+  {
+   "id": "ZDkzwRzfebo",
+   "title": "김광진은 대체 어떤 사랑을 했길래 / YTN",
+   "views": 320,
+   "viewsText": "조회수 320회",
+   "published": "",
+   "kind": "short"
+  },
+  {
+   "id": "woEl1gILTXE",
+   "title": "완충해놨더니 펑! #shorts / YTN",
+   "views": 19000,
+   "viewsText": "조회수 1.9만회",
+   "published": "",
+   "kind": "short"
+  },
+  {
+   "id": "VANkXl-gjKI",
+   "title": "앵커는 말문이 막혔습니다 #shorts / YTN",
+   "views": 1400,
+   "viewsText": "조회수 1.4천회",
+   "published": "",
+   "kind": "short"
+  },
+  {
+   "id": "rFXmdMnXphE",
+   "title": "시험지 분석해 보니... #shorts / YTN",
+   "views": 8200,
+   "viewsText": "조회수 8.2천회",
+   "published": "",
+   "kind": "short"
+  },
+  {
+   "id": "i20Ho-MhoJg",
+   "title": "BTS 콘서트가 남긴 결과 #shorts / YTN",
+   "views": 7700,
+   "viewsText": "조회수 7.7천회",
+   "published": "",
+   "kind": "short",
+   "gain": 6863
   },
   {
    "id": "NMlf917tcoQ",
    "title": "\"이미 합격한 사람 있다\" #shorts / YTN",
-   "views": 2200,
-   "viewsText": "조회수 2.2천회",
+   "views": 16000,
+   "viewsText": "조회수 1.6만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 13800
   },
   {
    "id": "Mm-LsI-KUUw",
    "title": "문 좀 열어주세요 #shorts / YTN",
-   "views": 6800,
-   "viewsText": "조회수 6.8천회",
+   "views": 50000,
+   "viewsText": "조회수 5만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 43200
   },
   {
    "id": "mYWPGbzx4w8",
    "title": "'수포자 감스트' AI 안경 착용했더니 #shorts / YTN",
-   "views": 4800,
-   "viewsText": "조회수 4.8천회",
+   "views": 35000,
+   "viewsText": "조회수 3.5만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 30200
   },
   {
    "id": "bvU09M_t1do",
    "title": "\"수능 연기해야 한다\" #shorts / YTN",
-   "views": 5600,
-   "viewsText": "조회수 5.6천회",
+   "views": 17000,
+   "viewsText": "조회수 1.7만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 11400
   },
   {
    "id": "0qif0P_jHFI",
    "title": "감기약 먹고 운전해서... #shorts / YTN",
-   "views": 2200,
-   "viewsText": "조회수 2.2천회",
+   "views": 4100,
+   "viewsText": "조회수 4.1천회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 1900
   },
   {
    "id": "Is-67dlp9ZM",
    "title": "식당에서 줄 안 서는 법 #shorts / YTN",
-   "views": 73000,
-   "viewsText": "조회수 7.3만회",
+   "views": 180000,
+   "viewsText": "조회수 18만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 107000
   },
   {
    "id": "3Vzo26cugzU",
    "title": "앨리스 황 작년에... #shorts / YTN",
-   "views": 17000,
-   "viewsText": "조회수 1.7만회",
+   "views": 26000,
+   "viewsText": "조회수 2.6만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 9000
   },
   {
    "id": "AHUzvek1cLI",
    "title": "\"당신의 성기 때문이냐\" #shorts / YTN",
-   "views": 5600,
-   "viewsText": "조회수 5.6천회",
+   "views": 9600,
+   "viewsText": "조회수 9.6천회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 4000
   },
   {
    "id": "O24RdiFGw6U",
    "title": "평범한 안경인 줄 알았지? #shorts / YTN",
-   "views": 30000,
-   "viewsText": "조회수 3만회",
+   "views": 91000,
+   "viewsText": "조회수 9.1만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 61000
   },
   {
    "id": "ADklXYcVzBQ",
    "title": "북한이 전쟁 안 하는 이유 #shorts / YTN",
-   "views": 15000,
-   "viewsText": "조회수 1.5만회",
+   "views": 29000,
+   "viewsText": "조회수 2.9만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 14000
   },
   {
    "id": "TzvgjG9PUSQ",
    "title": "'공포의 CEO' 젠슨 황 #shorts / YTN",
-   "views": 7000,
-   "viewsText": "조회수 7천회",
+   "views": 13000,
+   "viewsText": "조회수 1.3만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 6000
   },
   {
    "id": "aYmjEPMtIus",
    "title": "\"어떤 시험이든 정복\" #shorts / YTN",
-   "views": 5700,
-   "viewsText": "조회수 5.7천회",
+   "views": 7000,
+   "viewsText": "조회수 7천회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 1300
   },
   {
    "id": "aqzcHuCs9EM",
    "title": "황급히 주머니에 넣은 '이것' #shorts / YTN",
-   "views": 13000,
-   "viewsText": "조회수 1.3만회",
+   "views": 17000,
+   "viewsText": "조회수 1.7만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 4000
   },
   {
    "id": "Ay9rRIk9FNg",
    "title": "스페이스X 또 사상 최초 #shorts / YTN",
-   "views": 13000,
-   "viewsText": "조회수 1.3만회",
+   "views": 22000,
+   "viewsText": "조회수 2.2만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 9000
   },
   {
    "id": "imPnCBEYvSE",
    "title": "들통난 술타기 #shorts / YTN",
-   "views": 10000,
-   "viewsText": "조회수 1만회",
+   "views": 15000,
+   "viewsText": "조회수 1.5만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 5000
   },
   {
    "id": "w5eSRDDyHCI",
    "title": "안경 두 개 챙기면 끝? #shorts / YTN",
-   "views": 13000,
-   "viewsText": "조회수 1.3만회",
+   "views": 15000,
+   "viewsText": "조회수 1.5만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 2000
   },
   {
    "id": "ElPMfSok2Qk",
@@ -156,7 +213,7 @@
    "viewsText": "조회수 8.5만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "HqiD3rEtcOs",
@@ -165,7 +222,7 @@
    "viewsText": "조회수 5.7만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "anwr8x9R65s",
@@ -179,11 +236,11 @@
   {
    "id": "lbi-WRTgIRk",
    "title": "\"간첩 혐의 때문 아냐\" #shorts / YTN",
-   "views": 36000,
-   "viewsText": "조회수 3.6만회",
+   "views": 37000,
+   "viewsText": "조회수 3.7만회",
    "published": "",
    "kind": "short",
-   "gain": 2000
+   "gain": 1000
   },
   {
    "id": "n_1VHCAJKsw",
@@ -201,13 +258,13 @@
    "viewsText": "조회수 1.1만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "3BDwucUMZUs",
    "title": "우기, '하나의 중국' 공개 지지 #shorts / YTN",
-   "views": 80000,
-   "viewsText": "조회수 8만회",
+   "views": 81000,
+   "viewsText": "조회수 8.1만회",
    "published": "",
    "kind": "short",
    "gain": 1000
@@ -237,7 +294,7 @@
    "viewsText": "조회수 22만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "rLrz1QhVEdM",
@@ -251,11 +308,11 @@
   {
    "id": "4tPCCWsG4CU",
    "title": "용인데용 #shorts / YTN",
-   "views": 25000,
-   "viewsText": "조회수 2.5만회",
+   "views": 26000,
+   "viewsText": "조회수 2.6만회",
    "published": "",
    "kind": "short",
-   "gain": 2000
+   "gain": 1000
   },
   {
    "id": "F9R2c47MYeU",
@@ -298,51 +355,6 @@
    "title": "조롱도 '가지각색' #shorts / YTN",
    "views": 26000,
    "viewsText": "조회수 2.6만회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "aB9-L24Zy3M",
-   "title": "내 눈은 제미나이 #shorts / YTN",
-   "views": 85000,
-   "viewsText": "조회수 8.5만회",
-   "published": "",
-   "kind": "short",
-   "gain": 1000
-  },
-  {
-   "id": "T2_g8m4H8Rg",
-   "title": "장관 성을 바꿔 버린 국회의원 #shorts / YTN",
-   "views": 68000,
-   "viewsText": "조회수 6.8만회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "J6zZNUDugRE",
-   "title": "순식간에 '와르르' #shorts / YTN",
-   "views": 14000,
-   "viewsText": "조회수 1.4만회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "7lYzf12K37k",
-   "title": "머스크, 어디까지 내다봤나 #shorts / YTN",
-   "views": 56000,
-   "viewsText": "조회수 5.6만회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "PS8XbXPv7KI",
-   "title": "70대 버스기사의 역주행 #shorts / YTN",
-   "views": 190000,
-   "viewsText": "조회수 19만회",
    "published": "",
    "kind": "short",
    "gain": 0
