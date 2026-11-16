@@ -1,48 +1,50 @@
 {
  "name": "RESCENE 공식",
  "channel": "https://www.youtube.com/@RESCENE_official",
- "checkedAt": "2026-11-16T19:59+09:00",
+ "checkedAt": "2026-11-17T00:39+09:00",
  "subscribers": "138만",
  "videos": [
   {
    "id": "wT-7We1qmaQ",
    "title": "Kiss you 🤭👉👈",
-   "views": 60000,
-   "viewsText": "조회수 6만회",
-   "published": "",
-   "kind": "short"
-  },
-  {
-   "id": "vIP7mUzD-wU",
-   "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #도희 님@sa2m2nam3",
-   "views": 65000,
-   "viewsText": "조회수 6.5만회",
-   "published": "",
-   "kind": "short"
-  },
-  {
-   "id": "SHkvZbsZiN8",
-   "title": "MMA 2026 🏆💚",
-   "views": 110000,
-   "viewsText": "조회수 11만회",
-   "published": "",
-   "kind": "short",
-   "gain": 109820
-  },
-  {
-   "id": "1BtPuLvMxz4",
-   "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #전소영 님",
-   "views": 310000,
-   "viewsText": "조회수 31만회",
+   "views": 120000,
+   "viewsText": "조회수 12만회",
    "published": "",
    "kind": "short",
    "gain": 60000
   },
   {
+   "id": "vIP7mUzD-wU",
+   "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #도희 님@sa2m2nam3",
+   "views": 120000,
+   "viewsText": "조회수 12만회",
+   "published": "",
+   "kind": "short",
+   "gain": 55000
+  },
+  {
+   "id": "SHkvZbsZiN8",
+   "title": "MMA 2026 🏆💚",
+   "views": 180000,
+   "viewsText": "조회수 18만회",
+   "published": "",
+   "kind": "short",
+   "gain": 70000
+  },
+  {
+   "id": "1BtPuLvMxz4",
+   "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #전소영 님",
+   "views": 360000,
+   "viewsText": "조회수 36만회",
+   "published": "",
+   "kind": "short",
+   "gain": 50000
+  },
+  {
    "id": "WVYtWUGGZBU",
    "title": "베스트프렌드 이름 대기 🤭💗",
-   "views": 680000,
-   "viewsText": "조회수 68만회",
+   "views": 830000,
+   "viewsText": "조회수 83만회",
    "published": "",
    "kind": "short",
    "gain": 150000
@@ -54,7 +56,7 @@
    "viewsText": "조회수 14만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "kJaEoI-5nfE",
@@ -63,13 +65,13 @@
    "viewsText": "조회수 21만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "aKGrpYghEY4",
    "title": "❤️💙🤍✨",
-   "views": 170000,
-   "viewsText": "조회수 17만회",
+   "views": 180000,
+   "viewsText": "조회수 18만회",
    "published": "",
    "kind": "short",
    "gain": 10000
@@ -77,11 +79,11 @@
   {
    "id": "WgFMNPr9-C4",
    "title": "빠져들지 Do you?",
-   "views": 730000,
-   "viewsText": "조회수 73만회",
+   "views": 780000,
+   "viewsText": "조회수 78만회",
    "published": "",
    "kind": "short",
-   "gain": 30000
+   "gain": 50000
   },
   {
    "id": "R6FaDmyBCK8",
@@ -95,11 +97,11 @@
   {
    "id": "zgX-au56vcA",
    "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #RENKI #AKITO 님 @Official_VIBY",
-   "views": 280000,
-   "viewsText": "조회수 28만회",
+   "views": 290000,
+   "viewsText": "조회수 29만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "Wjs0JtTnlHY",
@@ -113,17 +115,17 @@
   {
    "id": "T_gjoo1qKBU",
    "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #최현석 선배님@TREASURE",
-   "views": 500000,
-   "viewsText": "조회수 50만회",
+   "views": 510000,
+   "viewsText": "조회수 51만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "Swo1MWFnK1c",
    "title": "Yeah I'm blooming like a flower, flower",
-   "views": 430000,
-   "viewsText": "조회수 43만회",
+   "views": 440000,
+   "viewsText": "조회수 44만회",
    "published": "",
    "kind": "short",
    "gain": 10000
@@ -131,17 +133,17 @@
   {
    "id": "ZZqAlMwMPMg",
    "title": "백화요란 그 파트",
-   "views": 1160000,
-   "viewsText": "조회수 116만회",
+   "views": 1190000,
+   "viewsText": "조회수 119만회",
    "published": "",
    "kind": "short",
-   "gain": 20000
+   "gain": 30000
   },
   {
    "id": "9wSxuOLpGXc",
    "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #YoungK 선배님@DAY6Official",
-   "views": 480000,
-   "viewsText": "조회수 48만회",
+   "views": 490000,
+   "viewsText": "조회수 49만회",
    "published": "",
    "kind": "short",
    "gain": 10000
@@ -153,7 +155,7 @@
    "viewsText": "조회수 23만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "9sVO6OY1_84",
@@ -162,16 +164,16 @@
    "viewsText": "조회수 21만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "b-9smM2N5sk",
    "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #서희 님@TUIDE_official",
-   "views": 360000,
-   "viewsText": "조회수 36만회",
+   "views": 370000,
+   "viewsText": "조회수 37만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "ZZJHE7xBDJQ",
@@ -185,20 +187,20 @@
   {
    "id": "kOmL4DDTEYw",
    "title": "얍",
-   "views": 810000,
-   "viewsText": "조회수 81만회",
+   "views": 820000,
+   "viewsText": "조회수 82만회",
    "published": "",
    "kind": "short",
-   "gain": 20000
+   "gain": 10000
   },
   {
    "id": "TL5LSvvgjDw",
    "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #리리 님@heartofwoman_officl",
-   "views": 280000,
-   "viewsText": "조회수 28만회",
+   "views": 290000,
+   "viewsText": "조회수 29만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "eDinqteZYUM",
@@ -207,7 +209,7 @@
    "viewsText": "조회수 36만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "aTfIJqiYBiI",
@@ -216,7 +218,7 @@
    "viewsText": "조회수 23만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "NNsr12BBiE0",
@@ -234,7 +236,7 @@
    "viewsText": "조회수 23만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "vwyG-5iVXaw",
@@ -270,7 +272,7 @@
    "viewsText": "조회수 28만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "A5PB2NXHkzY",
@@ -293,11 +295,11 @@
   {
    "id": "ydZG-_FdrxI",
    "title": "With 까엉 🤎",
-   "views": 550000,
-   "viewsText": "조회수 55만회",
+   "views": 560000,
+   "viewsText": "조회수 56만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "GG1QgSloUkU",
@@ -342,7 +344,7 @@
    "viewsText": "조회수 52만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "KcTEkBTAP3I",

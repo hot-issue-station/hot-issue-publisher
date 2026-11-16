@@ -1,7 +1,7 @@
 {
  "name": "안원잘부",
  "channel": "https://www.youtube.com/@helloiamwoninicetomeetyou",
- "checkedAt": "2026-11-16T19:59+09:00",
+ "checkedAt": "2026-11-17T00:39+09:00",
  "subscribers": "244만",
  "videos": [
   {
@@ -11,16 +11,16 @@
    "viewsText": "조회수 167만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "DKDmFgXzxs8",
    "title": "안원잘부 명장면 이모티콘2 출시!",
-   "views": 2680000,
-   "viewsText": "조회수 268만회",
+   "views": 2690000,
+   "viewsText": "조회수 269만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "zxNoW_LtVLE",
@@ -34,11 +34,11 @@
   {
    "id": "mFM2hP5LEhM",
    "title": "스팸 원이 에디션(?)",
-   "views": 3210000,
-   "viewsText": "조회수 321만회",
+   "views": 3220000,
+   "viewsText": "조회수 322만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "xCvbDeMKm3E",
@@ -88,20 +88,20 @@
   {
    "id": "8aZYgM9GeL0",
    "title": "드라켄의 진실",
-   "views": 3320000,
-   "viewsText": "조회수 332만회",
+   "views": 3330000,
+   "viewsText": "조회수 333만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "o-B0F16GwL0",
    "title": "[B컷] 의자 안 돌아가요",
-   "views": 13570000,
-   "viewsText": "조회수 1357만회",
+   "views": 13580000,
+   "viewsText": "조회수 1358만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "gNJrbCSN2TM",
@@ -182,7 +182,7 @@
    "viewsText": "조회수 257만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "y2TOOxHF35E",
@@ -326,7 +326,7 @@
    "viewsText": "조회수 549만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "xsNWeKpL5IQ",
