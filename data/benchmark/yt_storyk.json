@@ -3,20 +3,33 @@
  "name": "스토리K (손흥민 레전드 비교 특집 벤치마킹, 10/31)",
  "channel": "https://www.youtube.com/@story_k",
  "channelId": "UCqzNZeBt0546jG-vDlAQlZg",
- "checkedAt": "2026-11-17T14:55+09:00",
+ "checkedAt": "2026-11-17T19:36+09:00",
  "videos": [
+  {
+   "id": "EgWaw2Fcd_c",
+   "title": "손정범 한국 미드필더로 역대급 엘리트코스 - 10대 데뷔 국가대표 발탁 리버풀 이적설",
+   "published": "2026-11-17T08:09:58+00:00",
+   "url": "https://www.youtube.com/watch?v=EgWaw2Fcd_c",
+   "shorts": false,
+   "views": 1947,
+   "likes": 178,
+   "viewsGain": null,
+   "isNew": true,
+   "median": 31713,
+   "multiple": 0.1
+  },
   {
    "id": "vRbR5Ik_z6E",
    "title": "손흥민 평점 1위 다음경기 부진 심각한 인격모욕 - 레전드 향한 최소한의 존중은 사회의품격",
    "published": "2026-11-16T10:02:16+00:00",
    "url": "https://www.youtube.com/watch?v=vRbR5Ik_z6E",
    "shorts": false,
-   "views": 21376,
-   "likes": 730,
-   "viewsGain": 2114,
+   "views": 22217,
+   "likes": 745,
+   "viewsGain": 841,
    "isNew": false,
-   "median": 38539,
-   "multiple": 0.6
+   "median": 31713,
+   "multiple": 0.7
   },
   {
    "id": "vVJGieEysjE",
@@ -24,12 +37,12 @@
    "published": "2026-11-15T10:22:10+00:00",
    "url": "https://www.youtube.com/watch?v=vVJGieEysjE",
    "shorts": false,
-   "views": 15215,
-   "likes": 433,
-   "viewsGain": 353,
+   "views": 15434,
+   "likes": 435,
+   "viewsGain": 219,
    "isNew": false,
-   "median": 38539,
-   "multiple": 0.4
+   "median": 31713,
+   "multiple": 0.5
   },
   {
    "id": "m8-01TBggvQ",
@@ -37,12 +50,12 @@
    "published": "2026-11-14T10:04:54+00:00",
    "url": "https://www.youtube.com/watch?v=m8-01TBggvQ",
    "shorts": false,
-   "views": 18942,
-   "likes": 347,
-   "viewsGain": 55,
+   "views": 18993,
+   "likes": 348,
+   "viewsGain": 51,
    "isNew": false,
-   "median": 38539,
-   "multiple": 0.5
+   "median": 31713,
+   "multiple": 0.6
   },
   {
    "id": "GBpaslkBI_c",
@@ -50,12 +63,12 @@
    "published": "2026-11-13T09:27:06+00:00",
    "url": "https://www.youtube.com/watch?v=GBpaslkBI_c",
    "shorts": false,
-   "views": 25537,
-   "likes": 897,
-   "viewsGain": 62,
+   "views": 25603,
+   "likes": 898,
+   "viewsGain": 66,
    "isNew": false,
-   "median": 38539,
-   "multiple": 0.7
+   "median": 31713,
+   "multiple": 0.8
   },
   {
    "id": "s5USat3YPTk",
@@ -63,12 +76,12 @@
    "published": "2026-11-12T10:12:35+00:00",
    "url": "https://www.youtube.com/watch?v=s5USat3YPTk",
    "shorts": false,
-   "views": 31665,
-   "likes": 1146,
-   "viewsGain": 63,
+   "views": 31713,
+   "likes": 1147,
+   "viewsGain": 48,
    "isNew": false,
-   "median": 38539,
-   "multiple": 0.8
+   "median": 31713,
+   "multiple": 1.0
   },
   {
    "id": "Q5muilZ33Xc",
@@ -76,12 +89,12 @@
    "published": "2026-11-11T10:19:02+00:00",
    "url": "https://www.youtube.com/watch?v=Q5muilZ33Xc",
    "shorts": false,
-   "views": 42521,
+   "views": 42530,
    "likes": 973,
-   "viewsGain": 18,
+   "viewsGain": 9,
    "isNew": false,
-   "median": 38539,
-   "multiple": 1.1
+   "median": 31713,
+   "multiple": 1.3
   },
   {
    "id": "EvW6ldmE06o",
@@ -89,12 +102,12 @@
    "published": "2026-11-10T09:49:05+00:00",
    "url": "https://www.youtube.com/watch?v=EvW6ldmE06o",
    "shorts": false,
-   "views": 210397,
+   "views": 210486,
    "likes": 2128,
-   "viewsGain": 206,
+   "viewsGain": 89,
    "isNew": false,
-   "median": 38539,
-   "multiple": 5.5
+   "median": 31713,
+   "multiple": 6.6
   },
   {
    "id": "Jo4q1DY_adM",
@@ -102,12 +115,12 @@
    "published": "2026-11-09T10:29:55+00:00",
    "url": "https://www.youtube.com/watch?v=Jo4q1DY_adM",
    "shorts": false,
-   "views": 38539,
+   "views": 38551,
    "likes": 1000,
-   "viewsGain": 6,
+   "viewsGain": 12,
    "isNew": false,
-   "median": 38539,
-   "multiple": 1.0
+   "median": 31713,
+   "multiple": 1.2
   },
   {
    "id": "pzqdpN2RPCc",
@@ -115,12 +128,12 @@
    "published": "2026-11-08T10:15:12+00:00",
    "url": "https://www.youtube.com/watch?v=pzqdpN2RPCc",
    "shorts": false,
-   "views": 28056,
+   "views": 28066,
    "likes": 656,
    "viewsGain": 10,
    "isNew": false,
-   "median": 38539,
-   "multiple": 0.7
+   "median": 31713,
+   "multiple": 0.9
   },
   {
    "id": "FhUO1_ZU1Dw",
@@ -128,12 +141,12 @@
    "published": "2026-11-07T10:26:57+00:00",
    "url": "https://www.youtube.com/watch?v=FhUO1_ZU1Dw",
    "shorts": false,
-   "views": 92342,
+   "views": 92348,
    "likes": 1572,
-   "viewsGain": 4,
+   "viewsGain": 6,
    "isNew": false,
-   "median": 38539,
-   "multiple": 2.4
+   "median": 31713,
+   "multiple": 2.9
   },
   {
    "id": "aGdX-njap_8",
@@ -141,12 +154,12 @@
    "published": "2026-11-06T10:20:26+00:00",
    "url": "https://www.youtube.com/watch?v=aGdX-njap_8",
    "shorts": false,
-   "views": 152883,
-   "likes": 946,
-   "viewsGain": 162,
+   "views": 153039,
+   "likes": 947,
+   "viewsGain": 156,
    "isNew": false,
-   "median": 38539,
-   "multiple": 4.0
+   "median": 31713,
+   "multiple": 4.8
   },
   {
    "id": "XnpYo8kDzQo",
@@ -154,12 +167,12 @@
    "published": "2026-11-05T10:03:23+00:00",
    "url": "https://www.youtube.com/watch?v=XnpYo8kDzQo",
    "shorts": false,
-   "views": 29107,
+   "views": 29110,
    "likes": 999,
-   "viewsGain": 5,
+   "viewsGain": 3,
    "isNew": false,
-   "median": 38539,
-   "multiple": 0.8
+   "median": 31713,
+   "multiple": 0.9
   },
   {
    "id": "eMHW9EPF5_g",
@@ -167,12 +180,12 @@
    "published": "2026-11-04T10:03:23+00:00",
    "url": "https://www.youtube.com/watch?v=eMHW9EPF5_g",
    "shorts": false,
-   "views": 60396,
+   "views": 60406,
    "likes": 1565,
    "viewsGain": 10,
    "isNew": false,
-   "median": 38539,
-   "multiple": 1.6
+   "median": 31713,
+   "multiple": 1.9
   },
   {
    "id": "6WdpcGFmFgQ",
@@ -180,54 +193,41 @@
    "published": "2026-11-03T10:03:50+00:00",
    "url": "https://www.youtube.com/watch?v=6WdpcGFmFgQ",
    "shorts": false,
-   "views": 104833,
+   "views": 104835,
    "likes": 1685,
-   "viewsGain": 3,
+   "viewsGain": 2,
    "isNew": false,
-   "median": 38539,
-   "multiple": 2.7
-  },
-  {
-   "id": "nrw8lqAulz8",
-   "title": "손흥민 모든 것 배우겠단 김민수 - 맹활약한 20살 괴물 대신 대표팀 레프트에 황희찬",
-   "published": "2026-11-02T10:18:24+00:00",
-   "url": "https://www.youtube.com/watch?v=nrw8lqAulz8",
-   "shorts": false,
-   "views": 51060,
-   "likes": 1404,
-   "viewsGain": 10,
-   "isNew": false,
-   "median": 38539,
-   "multiple": 1.3
+   "median": 31713,
+   "multiple": 3.3
   }
  ],
  "viral": [
   {
    "title": "손흥민 보고 자란 축구 소년 기적의 FA컵 - 영국이 놀란 148년 새 역사의 주인공 양승우",
    "url": "https://www.youtube.com/watch?v=EvW6ldmE06o",
-   "views": 210397,
-   "multiple": 5.5,
+   "views": 210486,
+   "multiple": 6.6,
    "shorts": false
   },
   {
    "title": "김예건 한국 역대 최연소 2위 유럽대항전 출전 - 명문팀 거절하고 1군 노린 18살유망주",
    "url": "https://www.youtube.com/watch?v=aGdX-njap_8",
-   "views": 152883,
-   "multiple": 4.0,
+   "views": 153039,
+   "multiple": 4.8,
    "shorts": false
   },
   {
    "title": "손흥민 세계적 명장과 함께 뛸 마지막 기회? - 아시안컵 연기로 한국 대표팀 정식감독 새판",
    "url": "https://www.youtube.com/watch?v=6WdpcGFmFgQ",
-   "views": 104833,
-   "multiple": 2.7,
+   "views": 104835,
+   "multiple": 3.3,
    "shorts": false
   },
   {
    "title": "손흥민 존경 포로의 고백이 감동인 이유 - 월드컵 챔피언이 보증한 축구계의 존중받는 캡틴",
    "url": "https://www.youtube.com/watch?v=FhUO1_ZU1Dw",
-   "views": 92342,
-   "multiple": 2.4,
+   "views": 92348,
+   "multiple": 2.9,
    "shorts": false
   }
  ]

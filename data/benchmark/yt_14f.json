@@ -3,20 +3,46 @@
  "name": "14F 일사에프 (MBC)",
  "channel": "https://www.youtube.com/@14FMBC",
  "channelId": "UCLKuglhGlMmDteQKoniENIQ",
- "checkedAt": "2026-11-17T14:55+09:00",
+ "checkedAt": "2026-11-17T19:36+09:00",
  "videos": [
+  {
+   "id": "lEpjsxSLfB8",
+   "title": "샤인머스캣 이을 존재의 등장… 한 송이 4만 원 ‘로얄바인’ 뭐길래? / 14F",
+   "published": "2026-11-17T09:48:41+00:00",
+   "url": "https://www.youtube.com/watch?v=lEpjsxSLfB8",
+   "shorts": false,
+   "views": 1891,
+   "likes": 68,
+   "viewsGain": null,
+   "isNew": true,
+   "median": 107855,
+   "multiple": 0.0
+  },
+  {
+   "id": "hvRGI76Jd8E",
+   "title": "중국 정사에 기록된 거대 백제 대륙? 백제 요서경략설 미스터리 (강인욱X조법종) ㅣ10분 토론 / 14F",
+   "published": "2026-11-17T08:30:04+00:00",
+   "url": "https://www.youtube.com/watch?v=hvRGI76Jd8E",
+   "shorts": false,
+   "views": 10795,
+   "likes": 394,
+   "viewsGain": null,
+   "isNew": true,
+   "median": 107855,
+   "multiple": 0.1
+  },
   {
    "id": "qY9ByfK70cw",
    "title": "한국 구석구석 안내 하는 ‘구글 지도’… 내년에 만나볼 수 있다고? / 14F",
    "published": "2026-11-16T09:30:04+00:00",
    "url": "https://www.youtube.com/watch?v=qY9ByfK70cw",
    "shorts": false,
-   "views": 90617,
-   "likes": 540,
-   "viewsGain": 39129,
+   "views": 107855,
+   "likes": 616,
+   "viewsGain": 17238,
    "isNew": false,
-   "median": 129063,
-   "multiple": 0.7
+   "median": 107855,
+   "multiple": 1.0
   },
   {
    "id": "fkyakwxfN0g",
@@ -24,12 +50,12 @@
    "published": "2026-11-16T09:00:29+00:00",
    "url": "https://www.youtube.com/watch?v=fkyakwxfN0g",
    "shorts": false,
-   "views": 315867,
-   "likes": 1522,
-   "viewsGain": 124151,
+   "views": 351751,
+   "likes": 1703,
+   "viewsGain": 35884,
    "isNew": false,
-   "median": 129063,
-   "multiple": 2.4
+   "median": 107855,
+   "multiple": 3.3
   },
   {
    "id": "q2VxkeYVhv0",
@@ -37,12 +63,12 @@
    "published": "2026-11-16T08:34:47+00:00",
    "url": "https://www.youtube.com/watch?v=q2VxkeYVhv0",
    "shorts": false,
-   "views": 60580,
-   "likes": 333,
-   "viewsGain": 11035,
+   "views": 65219,
+   "likes": 369,
+   "viewsGain": 4639,
    "isNew": false,
-   "median": 129063,
-   "multiple": 0.5
+   "median": 107855,
+   "multiple": 0.6
   },
   {
    "id": "gRThiyajPxQ",
@@ -50,11 +76,11 @@
    "published": "2026-11-14T04:00:38+00:00",
    "url": "https://www.youtube.com/shorts/gRThiyajPxQ",
    "shorts": true,
-   "views": 9428,
+   "views": 9489,
    "likes": 42,
-   "viewsGain": 154,
+   "viewsGain": 61,
    "isNew": false,
-   "median": 8580.0,
+   "median": 8617.5,
    "multiple": 1.1
   },
   {
@@ -63,11 +89,11 @@
    "published": "2026-11-14T03:00:22+00:00",
    "url": "https://www.youtube.com/shorts/t0Zs4V5j-uA",
    "shorts": true,
-   "views": 7357,
-   "likes": 46,
-   "viewsGain": 356,
+   "views": 7477,
+   "likes": 48,
+   "viewsGain": 120,
    "isNew": false,
-   "median": 8580.0,
+   "median": 8617.5,
    "multiple": 0.9
   },
   {
@@ -76,11 +102,11 @@
    "published": "2026-11-13T23:00:17+00:00",
    "url": "https://www.youtube.com/shorts/CTJ-rsjJdyU",
    "shorts": true,
-   "views": 31539,
-   "likes": 338,
-   "viewsGain": 352,
+   "views": 31873,
+   "likes": 344,
+   "viewsGain": 334,
    "isNew": false,
-   "median": 8580.0,
+   "median": 8617.5,
    "multiple": 3.7
   },
   {
@@ -89,11 +115,11 @@
    "published": "2026-11-13T11:56:44+00:00",
    "url": "https://www.youtube.com/watch?v=NzyY32tICRk",
    "shorts": false,
-   "views": 46437,
-   "likes": 402,
-   "viewsGain": 805,
+   "views": 47233,
+   "likes": 409,
+   "viewsGain": 796,
    "isNew": false,
-   "median": 129063,
+   "median": 107855,
    "multiple": 0.4
   },
   {
@@ -102,12 +128,12 @@
    "published": "2026-11-13T10:00:05+00:00",
    "url": "https://www.youtube.com/watch?v=lhkYVuxd_dY",
    "shorts": false,
-   "views": 152278,
-   "likes": 464,
-   "viewsGain": 2084,
+   "views": 154009,
+   "likes": 472,
+   "viewsGain": 1731,
    "isNew": false,
-   "median": 129063,
-   "multiple": 1.2
+   "median": 107855,
+   "multiple": 1.4
   },
   {
    "id": "Aj_trkh0zaM",
@@ -115,12 +141,12 @@
    "published": "2026-11-13T04:00:11+00:00",
    "url": "https://www.youtube.com/shorts/Aj_trkh0zaM",
    "shorts": true,
-   "views": 76350,
-   "likes": 1033,
-   "viewsGain": 1224,
+   "views": 77771,
+   "likes": 1051,
+   "viewsGain": 1421,
    "isNew": false,
-   "median": 8580.0,
-   "multiple": 8.9
+   "median": 8617.5,
+   "multiple": 9.0
   },
   {
    "id": "WgWmSXeb_YA",
@@ -128,11 +154,11 @@
    "published": "2026-11-12T23:00:32+00:00",
    "url": "https://www.youtube.com/shorts/WgWmSXeb_YA",
    "shorts": true,
-   "views": 7732,
+   "views": 7746,
    "likes": 68,
-   "viewsGain": 176,
+   "viewsGain": 14,
    "isNew": false,
-   "median": 8580.0,
+   "median": 8617.5,
    "multiple": 0.9
   },
   {
@@ -141,12 +167,12 @@
    "published": "2026-11-12T09:26:28+00:00",
    "url": "https://www.youtube.com/watch?v=ilCY2YYGUkk",
    "shorts": false,
-   "views": 129063,
-   "likes": 598,
-   "viewsGain": 661,
+   "views": 129629,
+   "likes": 599,
+   "viewsGain": 566,
    "isNew": false,
-   "median": 129063,
-   "multiple": 1.0
+   "median": 107855,
+   "multiple": 1.2
   },
   {
    "id": "4fQ9fg9ooko",
@@ -154,12 +180,12 @@
    "published": "2026-11-12T08:00:03+00:00",
    "url": "https://www.youtube.com/watch?v=4fQ9fg9ooko",
    "shorts": false,
-   "views": 133819,
-   "likes": 688,
-   "viewsGain": 778,
+   "views": 134309,
+   "likes": 694,
+   "viewsGain": 490,
    "isNew": false,
-   "median": 129063,
-   "multiple": 1.0
+   "median": 107855,
+   "multiple": 1.2
   },
   {
    "id": "yzQjanfzMkg",
@@ -167,60 +193,34 @@
    "published": "2026-11-11T23:00:13+00:00",
    "url": "https://www.youtube.com/shorts/yzQjanfzMkg",
    "shorts": true,
-   "views": 5084,
+   "views": 5096,
    "likes": 54,
-   "viewsGain": 23,
+   "viewsGain": 12,
    "isNew": false,
-   "median": 8580.0,
+   "median": 8617.5,
    "multiple": 0.6
-  },
-  {
-   "id": "Dy-NgSHc7cs",
-   "title": "매운맛 라면 3대장에 못 든 ‘불닭볶음면’… 그럼 1위는 누가했을까? / 14F",
-   "published": "2026-11-11T09:30:36+00:00",
-   "url": "https://www.youtube.com/watch?v=Dy-NgSHc7cs",
-   "shorts": false,
-   "views": 86885,
-   "likes": 367,
-   "viewsGain": 143,
-   "isNew": false,
-   "median": 129063,
-   "multiple": 0.7
-  },
-  {
-   "id": "rwdiyA_GxIY",
-   "title": "사우디의 위기가 곧 이집트의 위기? 군사 지원에 나선 이집트의 속사정 / 14F",
-   "published": "2026-11-11T08:30:36+00:00",
-   "url": "https://www.youtube.com/watch?v=rwdiyA_GxIY",
-   "shorts": false,
-   "views": 196834,
-   "likes": 1431,
-   "viewsGain": 2699,
-   "isNew": false,
-   "median": 129063,
-   "multiple": 1.5
   }
  ],
  "viral": [
   {
    "title": "남대문 스카프 아저씨 입담 모음zip. #shorts",
    "url": "https://www.youtube.com/shorts/Aj_trkh0zaM",
-   "views": 76350,
-   "multiple": 8.9,
+   "views": 77771,
+   "multiple": 9.0,
    "shorts": true
   },
   {
    "title": "후티 반군이 무서운 진짜 이유 #shorts",
    "url": "https://www.youtube.com/shorts/CTJ-rsjJdyU",
-   "views": 31539,
+   "views": 31873,
    "multiple": 3.7,
    "shorts": true
   },
   {
    "title": "의료보험 있는 것처럼 먹더니…🥄ㅣ돈슐랭 / 14F",
    "url": "https://www.youtube.com/watch?v=fkyakwxfN0g",
-   "views": 315867,
-   "multiple": 2.4,
+   "views": 351751,
+   "multiple": 3.3,
    "shorts": false
   }
  ]

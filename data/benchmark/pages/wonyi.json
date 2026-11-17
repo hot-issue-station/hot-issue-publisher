@@ -1,17 +1,25 @@
 {
  "name": "안원잘부",
  "channel": "https://www.youtube.com/@helloiamwoninicetomeetyou",
- "checkedAt": "2026-11-17T14:55+09:00",
+ "checkedAt": "2026-11-17T19:36+09:00",
  "subscribers": "244만",
  "videos": [
   {
+   "id": "N3MX2W5_Zfs",
+   "title": "디즈니 영화 OST가 된 이유",
+   "views": 120000,
+   "viewsText": "조회수 12만회",
+   "published": "",
+   "kind": "short"
+  },
+  {
    "id": "kfK-LENbEUo",
    "title": "정작가의 컴백을 축하합니다",
-   "views": 1670000,
-   "viewsText": "조회수 167만회",
+   "views": 1680000,
+   "viewsText": "조회수 168만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "DKDmFgXzxs8",
@@ -236,7 +244,7 @@
    "viewsText": "조회수 461만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "5zg26mxu4_w",
@@ -351,15 +359,6 @@
    "title": "뒤올",
    "views": 2500000,
    "viewsText": "조회수 250만회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "PiKBQ65QE1g",
-   "title": "선크림 발랐는지 모릅니데이",
-   "views": 3950000,
-   "viewsText": "조회수 395만회",
    "published": "",
    "kind": "short",
    "gain": 0

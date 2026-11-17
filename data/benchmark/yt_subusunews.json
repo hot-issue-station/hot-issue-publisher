@@ -3,20 +3,72 @@
  "name": "스브스뉴스 (SBS)",
  "channel": "https://www.youtube.com/@subusunews",
  "channelId": "UCxPClUl0bh7BgJajD5k483g",
- "checkedAt": "2026-11-17T14:55+09:00",
+ "checkedAt": "2026-11-17T19:36+09:00",
  "videos": [
+  {
+   "id": "jpVc9sPoKvs",
+   "title": "노빠꾸 중남의 애정 표현법",
+   "published": "2026-11-17T09:54:49+00:00",
+   "url": "https://www.youtube.com/shorts/jpVc9sPoKvs",
+   "shorts": true,
+   "views": 1038,
+   "likes": 10,
+   "viewsGain": null,
+   "isNew": true,
+   "median": 15339.5,
+   "multiple": 0.1
+  },
+  {
+   "id": "QebaUlVRMH4",
+   "title": "꽃다발 선물도 차원이 다른 중국 스케일",
+   "published": "2026-11-17T09:48:09+00:00",
+   "url": "https://www.youtube.com/shorts/QebaUlVRMH4",
+   "shorts": true,
+   "views": 668,
+   "likes": 12,
+   "viewsGain": null,
+   "isNew": true,
+   "median": 15339.5,
+   "multiple": 0.0
+  },
+  {
+   "id": "uJp05ZMpBes",
+   "title": "엄마가 유튜브에서 욕 그만하래요",
+   "published": "2026-11-17T09:46:50+00:00",
+   "url": "https://www.youtube.com/shorts/uJp05ZMpBes",
+   "shorts": true,
+   "views": 821,
+   "likes": 10,
+   "viewsGain": null,
+   "isNew": true,
+   "median": 15339.5,
+   "multiple": 0.1
+  },
+  {
+   "id": "TWLm9dFAQAg",
+   "title": "오미나 내 선녀 우사편 나왔네 츠츠츠 선남선녀 첫 만남 썰 들으니까 힘이 난다예~😍❤️ㅣ우리 사이엔 편지가 있다2 EP.12 여단오",
+   "published": "2026-11-17T09:00:24+00:00",
+   "url": "https://www.youtube.com/watch?v=TWLm9dFAQAg",
+   "shorts": false,
+   "views": 5022,
+   "likes": 700,
+   "viewsGain": null,
+   "isNew": true,
+   "median": null,
+   "multiple": null
+  },
   {
    "id": "lnlJ2G8CryU",
    "title": "작가님의 찰스엔터 편 비하인드",
    "published": "2026-11-14T09:00:14+00:00",
    "url": "https://www.youtube.com/shorts/lnlJ2G8CryU",
    "shorts": true,
-   "views": 5663,
-   "likes": 82,
-   "viewsGain": 196,
+   "views": 5828,
+   "likes": 88,
+   "viewsGain": 165,
    "isNew": false,
-   "median": 19817,
-   "multiple": 0.3
+   "median": 15339.5,
+   "multiple": 0.4
   },
   {
    "id": "vxPnYMZwBxM",
@@ -24,12 +76,12 @@
    "published": "2026-11-14T09:00:09+00:00",
    "url": "https://www.youtube.com/shorts/vxPnYMZwBxM",
    "shorts": true,
-   "views": 4470,
-   "likes": 26,
-   "viewsGain": 44,
+   "views": 4541,
+   "likes": 27,
+   "viewsGain": 71,
    "isNew": false,
-   "median": 19817,
-   "multiple": 0.2
+   "median": 15339.5,
+   "multiple": 0.3
   },
   {
    "id": "LIqJYoJWLxU",
@@ -37,12 +89,12 @@
    "published": "2026-11-14T09:00:08+00:00",
    "url": "https://www.youtube.com/shorts/LIqJYoJWLxU",
    "shorts": true,
-   "views": 18652,
-   "likes": 156,
-   "viewsGain": 784,
+   "views": 19079,
+   "likes": 164,
+   "viewsGain": 427,
    "isNew": false,
-   "median": 19817,
-   "multiple": 0.9
+   "median": 15339.5,
+   "multiple": 1.2
   },
   {
    "id": "f5Ht9HLkwzs",
@@ -50,12 +102,12 @@
    "published": "2026-11-13T09:00:38+00:00",
    "url": "https://www.youtube.com/shorts/f5Ht9HLkwzs",
    "shorts": true,
-   "views": 14268,
-   "likes": 129,
-   "viewsGain": 59,
+   "views": 14340,
+   "likes": 130,
+   "viewsGain": 72,
    "isNew": false,
-   "median": 19817,
-   "multiple": 0.7
+   "median": 15339.5,
+   "multiple": 0.9
   },
   {
    "id": "0cDVwBmj7Ow",
@@ -63,12 +115,12 @@
    "published": "2026-11-13T09:00:30+00:00",
    "url": "https://www.youtube.com/shorts/0cDVwBmj7Ow",
    "shorts": true,
-   "views": 19817,
-   "likes": 261,
-   "viewsGain": 206,
+   "views": 19979,
+   "likes": 262,
+   "viewsGain": 162,
    "isNew": false,
-   "median": 19817,
-   "multiple": 1.0
+   "median": 15339.5,
+   "multiple": 1.3
   },
   {
    "id": "gdHO75hZEEY",
@@ -76,12 +128,12 @@
    "published": "2026-11-12T09:00:38+00:00",
    "url": "https://www.youtube.com/shorts/gdHO75hZEEY",
    "shorts": true,
-   "views": 34672,
-   "likes": 201,
-   "viewsGain": 661,
+   "views": 35335,
+   "likes": 203,
+   "viewsGain": 663,
    "isNew": false,
-   "median": 19817,
-   "multiple": 1.7
+   "median": 15339.5,
+   "multiple": 2.3
   },
   {
    "id": "JyG0ws-5OkA",
@@ -89,12 +141,12 @@
    "published": "2026-11-12T09:00:21+00:00",
    "url": "https://www.youtube.com/shorts/JyG0ws-5OkA",
    "shorts": true,
-   "views": 251050,
-   "likes": 5075,
-   "viewsGain": 1617,
+   "views": 252413,
+   "likes": 5090,
+   "viewsGain": 1363,
    "isNew": false,
-   "median": 19817,
-   "multiple": 12.7
+   "median": 15339.5,
+   "multiple": 16.5
   },
   {
    "id": "KL0_g5W4oxs",
@@ -102,12 +154,12 @@
    "published": "2026-11-12T09:00:11+00:00",
    "url": "https://www.youtube.com/shorts/KL0_g5W4oxs",
    "shorts": true,
-   "views": 34592,
+   "views": 34686,
    "likes": 277,
-   "viewsGain": 209,
+   "viewsGain": 94,
    "isNew": false,
-   "median": 19817,
-   "multiple": 1.7
+   "median": 15339.5,
+   "multiple": 2.3
   },
   {
    "id": "TEE7OYw0omU",
@@ -115,12 +167,12 @@
    "published": "2026-11-11T09:00:35+00:00",
    "url": "https://www.youtube.com/shorts/TEE7OYw0omU",
    "shorts": true,
-   "views": 8825,
-   "likes": 108,
-   "viewsGain": 15,
+   "views": 8841,
+   "likes": 109,
+   "viewsGain": 16,
    "isNew": false,
-   "median": 19817,
-   "multiple": 0.4
+   "median": 15339.5,
+   "multiple": 0.6
   },
   {
    "id": "SsgQRa2QH0U",
@@ -128,12 +180,12 @@
    "published": "2026-11-11T09:00:32+00:00",
    "url": "https://www.youtube.com/shorts/SsgQRa2QH0U",
    "shorts": true,
-   "views": 16312,
-   "likes": 107,
-   "viewsGain": 70,
+   "views": 16339,
+   "likes": 108,
+   "viewsGain": 27,
    "isNew": false,
-   "median": 19817,
-   "multiple": 0.8
+   "median": 15339.5,
+   "multiple": 1.1
   },
   {
    "id": "8ZxqxRnlAhg",
@@ -141,93 +193,34 @@
    "published": "2026-11-11T09:00:31+00:00",
    "url": "https://www.youtube.com/shorts/8ZxqxRnlAhg",
    "shorts": true,
-   "views": 16779,
+   "views": 16778,
    "likes": 231,
-   "viewsGain": 10,
+   "viewsGain": -1,
    "isNew": false,
-   "median": 19817,
-   "multiple": 0.8
-  },
-  {
-   "id": "fPk1Jmnz5sU",
-   "title": "어쩌면 사랑은 다 우정 안에 있는지도 모르겠다",
-   "published": "2026-11-10T10:16:49+00:00",
-   "url": "https://www.youtube.com/shorts/fPk1Jmnz5sU",
-   "shorts": true,
-   "views": 216990,
-   "likes": 4461,
-   "viewsGain": 652,
-   "isNew": false,
-   "median": 19817,
-   "multiple": 10.9
-  },
-  {
-   "id": "_i4szpS2iWE",
-   "title": "누구든 그 상황이었으면 벗어주지 않았을까요?",
-   "published": "2026-11-10T09:33:26+00:00",
-   "url": "https://www.youtube.com/shorts/_i4szpS2iWE",
-   "shorts": true,
-   "views": 56326,
-   "likes": 809,
-   "viewsGain": 162,
-   "isNew": false,
-   "median": 19817,
-   "multiple": 2.8
-  },
-  {
-   "id": "mZoYzTu6ZyY",
-   "title": "나보다 못해주는 남자 만나지 마",
-   "published": "2026-11-10T09:31:05+00:00",
-   "url": "https://www.youtube.com/shorts/mZoYzTu6ZyY",
-   "shorts": true,
-   "views": 97667,
-   "likes": 884,
-   "viewsGain": 274,
-   "isNew": false,
-   "median": 19817,
-   "multiple": 4.9
-  },
-  {
-   "id": "1HzIABBs_lo",
-   "title": "고도로 발달한 우정은사랑과 구별할 수 없다",
-   "published": "2026-11-10T09:28:45+00:00",
-   "url": "https://www.youtube.com/shorts/1HzIABBs_lo",
-   "shorts": true,
-   "views": 32140,
-   "likes": 268,
-   "viewsGain": 47,
-   "isNew": false,
-   "median": 19817,
-   "multiple": 1.6
+   "median": 15339.5,
+   "multiple": 1.1
   }
  ],
  "viral": [
   {
    "title": "수아씨 왜 입이 벌어지면 눈이 감기는 거예요?",
    "url": "https://www.youtube.com/shorts/JyG0ws-5OkA",
-   "views": 251050,
-   "multiple": 12.7,
+   "views": 252413,
+   "multiple": 16.5,
    "shorts": true
   },
   {
-   "title": "어쩌면 사랑은 다 우정 안에 있는지도 모르겠다",
-   "url": "https://www.youtube.com/shorts/fPk1Jmnz5sU",
-   "views": 216990,
-   "multiple": 10.9,
+   "title": "슈퍼스타를 친구로 두는 것도 피곤합니다",
+   "url": "https://www.youtube.com/shorts/gdHO75hZEEY",
+   "views": 35335,
+   "multiple": 2.3,
    "shorts": true
   },
   {
-   "title": "나보다 못해주는 남자 만나지 마",
-   "url": "https://www.youtube.com/shorts/mZoYzTu6ZyY",
-   "views": 97667,
-   "multiple": 4.9,
-   "shorts": true
-  },
-  {
-   "title": "누구든 그 상황이었으면 벗어주지 않았을까요?",
-   "url": "https://www.youtube.com/shorts/_i4szpS2iWE",
-   "views": 56326,
-   "multiple": 2.8,
+   "title": "지금 이거 카리나 이야기 맞아요?",
+   "url": "https://www.youtube.com/shorts/KL0_g5W4oxs",
+   "views": 34686,
+   "multiple": 2.3,
    "shorts": true
   }
  ]

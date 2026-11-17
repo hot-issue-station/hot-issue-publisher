@@ -3,19 +3,32 @@
  "name": "슈카월드",
  "channel": "https://www.youtube.com/@syukaworld",
  "channelId": "UCJo6G1u0e_-wS-JQn3T-zEw",
- "checkedAt": "2026-11-17T14:55+09:00",
+ "checkedAt": "2026-11-17T19:36+09:00",
  "videos": [
+  {
+   "id": "XKmD-M7rWO0",
+   "title": "데이터센터, 부동산 PF문제와 비슷합니다",
+   "published": "2026-11-17T09:29:46+00:00",
+   "url": "https://www.youtube.com/watch?v=XKmD-M7rWO0",
+   "shorts": false,
+   "views": 6256,
+   "likes": 207,
+   "viewsGain": null,
+   "isNew": true,
+   "median": 152812,
+   "multiple": 0.0
+  },
   {
    "id": "yT1Rei0xDVc",
    "title": "황동현 '외국인들과 기관은 오늘도 떠난다'ㅣ니니 'AI가 주식과 시험판을 모두 흔들고 있다'ㅣ김열매 'AI&데이터센터, 사모펀드들은 어떻게 볼까'",
    "published": "2026-11-16T12:11:16+00:00",
    "url": "https://www.youtube.com/watch?v=yT1Rei0xDVc",
    "shorts": false,
-   "views": 136864,
-   "likes": 922,
-   "viewsGain": 8871,
+   "views": 143691,
+   "likes": 944,
+   "viewsGain": 6827,
    "isNew": false,
-   "median": 148985,
+   "median": 152812,
    "multiple": 0.9
   },
   {
@@ -24,11 +37,11 @@
    "published": "2026-11-16T06:36:19+00:00",
    "url": "https://www.youtube.com/watch?v=lGfmyzMMof0",
    "shorts": false,
-   "views": 148985,
-   "likes": 1134,
-   "viewsGain": 3350,
+   "views": 152812,
+   "likes": 1140,
+   "viewsGain": 3827,
    "isNew": false,
-   "median": 148985,
+   "median": 152812,
    "multiple": 1.0
   },
   {
@@ -37,11 +50,11 @@
    "published": "2026-11-16T02:54:18+00:00",
    "url": "https://www.youtube.com/shorts/BcH1D15dzsw",
    "shorts": true,
-   "views": 93623,
-   "likes": 743,
-   "viewsGain": 13220,
+   "views": 101436,
+   "likes": 823,
+   "viewsGain": 7813,
    "isNew": false,
-   "median": 138530.5,
+   "median": 139731.5,
    "multiple": 0.7
   },
   {
@@ -50,12 +63,12 @@
    "published": "2026-11-14T09:00:24+00:00",
    "url": "https://www.youtube.com/watch?v=S_S0dX87aPY",
    "shorts": false,
-   "views": 216092,
-   "likes": 1530,
-   "viewsGain": 3747,
+   "views": 218832,
+   "likes": 1548,
+   "viewsGain": 2740,
    "isNew": false,
-   "median": 148985,
-   "multiple": 1.5
+   "median": 152812,
+   "multiple": 1.4
   },
   {
    "id": "eXUFUT2_RpQ",
@@ -63,11 +76,11 @@
    "published": "2026-11-14T07:26:18+00:00",
    "url": "https://www.youtube.com/shorts/eXUFUT2_RpQ",
    "shorts": true,
-   "views": 155744,
-   "likes": 1260,
-   "viewsGain": 4909,
+   "views": 157933,
+   "likes": 1272,
+   "viewsGain": 2189,
    "isNew": false,
-   "median": 138530.5,
+   "median": 139731.5,
    "multiple": 1.1
   },
   {
@@ -76,11 +89,11 @@
    "published": "2026-11-13T08:00:22+00:00",
    "url": "https://www.youtube.com/shorts/ZFq74IdTuR8",
    "shorts": true,
-   "views": 374569,
-   "likes": 4955,
-   "viewsGain": 8893,
+   "views": 379031,
+   "likes": 4994,
+   "viewsGain": 4462,
    "isNew": false,
-   "median": 138530.5,
+   "median": 139731.5,
    "multiple": 2.7
   },
   {
@@ -89,11 +102,11 @@
    "published": "2026-11-13T06:27:17+00:00",
    "url": "https://www.youtube.com/watch?v=GXAL5zTk_Sg",
    "shorts": false,
-   "views": 115359,
+   "views": 115570,
    "likes": 508,
-   "viewsGain": 103,
+   "viewsGain": 211,
    "isNew": false,
-   "median": 148985,
+   "median": 152812,
    "multiple": 0.8
   },
   {
@@ -102,11 +115,11 @@
    "published": "2026-11-13T03:21:49+00:00",
    "url": "https://www.youtube.com/shorts/B6DqFmvxiWw",
    "shorts": true,
-   "views": 90757,
-   "likes": 568,
-   "viewsGain": 616,
+   "views": 91177,
+   "likes": 569,
+   "viewsGain": 420,
    "isNew": false,
-   "median": 138530.5,
+   "median": 139731.5,
    "multiple": 0.7
   },
   {
@@ -115,11 +128,11 @@
    "published": "2026-11-12T11:00:11+00:00",
    "url": "https://www.youtube.com/shorts/yog9Nwxqtto",
    "shorts": true,
-   "views": 97708,
-   "likes": 805,
-   "viewsGain": 511,
+   "views": 98246,
+   "likes": 807,
+   "viewsGain": 538,
    "isNew": false,
-   "median": 138530.5,
+   "median": 139731.5,
    "multiple": 0.7
   },
   {
@@ -128,11 +141,11 @@
    "published": "2026-11-12T09:00:19+00:00",
    "url": "https://www.youtube.com/watch?v=FSqGVxQKEMc",
    "shorts": false,
-   "views": 299997,
-   "likes": 2041,
-   "viewsGain": 1824,
+   "views": 302134,
+   "likes": 2045,
+   "viewsGain": 2137,
    "isNew": false,
-   "median": 148985,
+   "median": 152812,
    "multiple": 2.0
   },
   {
@@ -141,11 +154,11 @@
    "published": "2026-11-12T07:35:07+00:00",
    "url": "https://www.youtube.com/shorts/sTeqHqi-w74",
    "shorts": true,
-   "views": 277514,
-   "likes": 1475,
-   "viewsGain": 249,
+   "views": 277744,
+   "likes": 1477,
+   "viewsGain": 230,
    "isNew": false,
-   "median": 138530.5,
+   "median": 139731.5,
    "multiple": 2.0
   },
   {
@@ -154,11 +167,11 @@
    "published": "2026-11-12T07:13:26+00:00",
    "url": "https://www.youtube.com/shorts/PdRYlMmMhJQ",
    "shorts": true,
-   "views": 215650,
-   "likes": 1301,
-   "viewsGain": 2658,
+   "views": 217077,
+   "likes": 1309,
+   "viewsGain": 1427,
    "isNew": false,
-   "median": 138530.5,
+   "median": 139731.5,
    "multiple": 1.6
   },
   {
@@ -167,11 +180,11 @@
    "published": "2026-11-12T06:41:52+00:00",
    "url": "https://www.youtube.com/watch?v=UEU5eZG5fxk",
    "shorts": false,
-   "views": 171280,
+   "views": 171526,
    "likes": 975,
-   "viewsGain": 93,
+   "viewsGain": 246,
    "isNew": false,
-   "median": 148985,
+   "median": 152812,
    "multiple": 1.1
   },
   {
@@ -180,24 +193,11 @@
    "published": "2026-11-12T03:00:51+00:00",
    "url": "https://www.youtube.com/shorts/OqKFqg75Tuk",
    "shorts": true,
-   "views": 121317,
+   "views": 121530,
    "likes": 919,
-   "viewsGain": 405,
+   "viewsGain": 213,
    "isNew": false,
-   "median": 138530.5,
-   "multiple": 0.9
-  },
-  {
-   "id": "pP0j-VEICls",
-   "title": "[슈카의 시황방송] 11월11일ㅣ코어위브 적자에도 급등, 국장도 출발하나요?",
-   "published": "2026-11-11T06:45:25+00:00",
-   "url": "https://www.youtube.com/watch?v=pP0j-VEICls",
-   "shorts": false,
-   "views": 126767,
-   "likes": 853,
-   "viewsGain": 66,
-   "isNew": false,
-   "median": 148985,
+   "median": 139731.5,
    "multiple": 0.9
   }
  ],
@@ -205,21 +205,21 @@
   {
    "title": "누가 회사에서 주식 보래?",
    "url": "https://www.youtube.com/shorts/ZFq74IdTuR8",
-   "views": 374569,
+   "views": 379031,
    "multiple": 2.7,
    "shorts": true
   },
   {
    "title": "변압기 사라면서요 살려주세요 [여의도엿듣기]",
    "url": "https://www.youtube.com/watch?v=FSqGVxQKEMc",
-   "views": 299997,
+   "views": 302134,
    "multiple": 2.0,
    "shorts": false
   },
   {
    "title": "경력직 젠슨황",
    "url": "https://www.youtube.com/shorts/sTeqHqi-w74",
-   "views": 277514,
+   "views": 277744,
    "multiple": 2.0,
    "shorts": true
   }

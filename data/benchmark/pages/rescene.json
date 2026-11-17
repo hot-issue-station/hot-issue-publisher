@@ -1,53 +1,77 @@
 {
  "name": "RESCENE 공식",
  "channel": "https://www.youtube.com/@RESCENE_official",
- "checkedAt": "2026-11-17T14:55+09:00",
+ "checkedAt": "2026-11-17T19:36+09:00",
  "subscribers": "138만",
  "videos": [
   {
+   "id": "qdksE7qutqg",
+   "title": "#규현 님에게 빠져들지 Do you? @AEN_offcl",
+   "views": 42000,
+   "viewsText": "조회수 4.2만회",
+   "published": "",
+   "kind": "short"
+  },
+  {
+   "id": "w9WpX-ZCG4I",
+   "title": "#우영 선배님에게 빠져들지 Do you? @ATEEZofficial",
+   "views": 120000,
+   "viewsText": "조회수 12만회",
+   "published": "",
+   "kind": "short"
+  },
+  {
+   "id": "9ZncqjlOTZY",
+   "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #혜연 선배님",
+   "views": 110000,
+   "viewsText": "조회수 11만회",
+   "published": "",
+   "kind": "short"
+  },
+  {
    "id": "wT-7We1qmaQ",
    "title": "Kiss you 🤭👉👈",
-   "views": 170000,
-   "viewsText": "조회수 17만회",
+   "views": 190000,
+   "viewsText": "조회수 19만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 20000
   },
   {
    "id": "vIP7mUzD-wU",
    "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #도희 님@sa2m2nam3",
-   "views": 170000,
-   "viewsText": "조회수 17만회",
+   "views": 190000,
+   "viewsText": "조회수 19만회",
+   "published": "",
+   "kind": "short",
+   "gain": 20000
+  },
+  {
+   "id": "SHkvZbsZiN8",
+   "title": "MMA 2026 🏆💚",
+   "views": 250000,
+   "viewsText": "조회수 25만회",
    "published": "",
    "kind": "short",
    "gain": 10000
   },
   {
-   "id": "SHkvZbsZiN8",
-   "title": "MMA 2026 🏆💚",
-   "views": 240000,
-   "viewsText": "조회수 24만회",
-   "published": "",
-   "kind": "short",
-   "gain": 30000
-  },
-  {
    "id": "1BtPuLvMxz4",
    "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #전소영 님",
-   "views": 430000,
-   "viewsText": "조회수 43만회",
+   "views": 440000,
+   "viewsText": "조회수 44만회",
    "published": "",
    "kind": "short",
-   "gain": 30000
+   "gain": 10000
   },
   {
    "id": "WVYtWUGGZBU",
    "title": "베스트프렌드 이름 대기 🤭💗",
-   "views": 950000,
-   "viewsText": "조회수 95만회",
+   "views": 990000,
+   "viewsText": "조회수 99만회",
    "published": "",
    "kind": "short",
-   "gain": 50000
+   "gain": 40000
   },
   {
    "id": "mHGsC6tFG_4",
@@ -79,11 +103,11 @@
   {
    "id": "WgFMNPr9-C4",
    "title": "빠져들지 Do you?",
-   "views": 850000,
-   "viewsText": "조회수 85만회",
+   "views": 870000,
+   "viewsText": "조회수 87만회",
    "published": "",
    "kind": "short",
-   "gain": 40000
+   "gain": 20000
   },
   {
    "id": "R6FaDmyBCK8",
@@ -101,7 +125,7 @@
    "viewsText": "조회수 30만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "Wjs0JtTnlHY",
@@ -115,8 +139,8 @@
   {
    "id": "T_gjoo1qKBU",
    "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #최현석 선배님@TREASURE",
-   "views": 530000,
-   "viewsText": "조회수 53만회",
+   "views": 540000,
+   "viewsText": "조회수 54만회",
    "published": "",
    "kind": "short",
    "gain": 10000
@@ -128,25 +152,25 @@
    "viewsText": "조회수 46만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "ZZqAlMwMPMg",
    "title": "백화요란 그 파트",
-   "views": 1240000,
-   "viewsText": "조회수 124만회",
+   "views": 1270000,
+   "viewsText": "조회수 127만회",
    "published": "",
    "kind": "short",
-   "gain": 20000
+   "gain": 30000
   },
   {
    "id": "9wSxuOLpGXc",
    "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #YoungK 선배님@DAY6Official",
-   "views": 510000,
-   "viewsText": "조회수 51만회",
+   "views": 520000,
+   "viewsText": "조회수 52만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "85TuH4Jqu4s",
@@ -169,11 +193,11 @@
   {
    "id": "b-9smM2N5sk",
    "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #서희 님@TUIDE_official",
-   "views": 370000,
-   "viewsText": "조회수 37만회",
+   "views": 380000,
+   "viewsText": "조회수 38만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "ZZJHE7xBDJQ",
@@ -187,8 +211,8 @@
   {
    "id": "kOmL4DDTEYw",
    "title": "얍",
-   "views": 850000,
-   "viewsText": "조회수 85만회",
+   "views": 860000,
+   "viewsText": "조회수 86만회",
    "published": "",
    "kind": "short",
    "gain": 10000
@@ -205,11 +229,11 @@
   {
    "id": "eDinqteZYUM",
    "title": "Dancing Queen 👑",
-   "views": 360000,
-   "viewsText": "조회수 36만회",
+   "views": 370000,
+   "viewsText": "조회수 37만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "aTfIJqiYBiI",
@@ -304,11 +328,11 @@
   {
    "id": "GG1QgSloUkU",
    "title": "손댄스 막내즈 ver. 🤍🖤",
-   "views": 360000,
-   "viewsText": "조회수 36만회",
+   "views": 370000,
+   "viewsText": "조회수 37만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "xpaOFvA4K1g",
@@ -333,33 +357,6 @@
    "title": "RESCENE 'With' Official MV #1",
    "views": 230000,
    "viewsText": "조회수 23만회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "kRY9NYgnXLM",
-   "title": "With 🤍",
-   "views": 520000,
-   "viewsText": "조회수 52만회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "KcTEkBTAP3I",
-   "title": "D-1 🪽",
-   "views": 620000,
-   "viewsText": "조회수 62만회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "sgZms-ImEx0",
-   "title": "but you 🫵",
-   "views": 740000,
-   "viewsText": "조회수 74만회",
    "published": "",
    "kind": "short",
    "gain": 0
