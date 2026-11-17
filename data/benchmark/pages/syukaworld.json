@@ -1,7 +1,7 @@
 {
  "name": "슈카월드",
  "channel": "https://www.youtube.com/@syukaworld",
- "checkedAt": "2026-11-17T22:50+09:00",
+ "checkedAt": "2026-11-18T08:41+09:00",
  "subscribers": "374만",
  "videos": [
   {
@@ -29,16 +29,16 @@
    "viewsText": "조회수 7만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "xmLFwy-UdNU",
    "title": "노안의 라식",
-   "views": 270000,
-   "viewsText": "조회수 27만회",
+   "views": 280000,
+   "viewsText": "조회수 28만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "xVKY3CWUoSE",
