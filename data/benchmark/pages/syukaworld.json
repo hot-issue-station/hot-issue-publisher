@@ -1,7 +1,7 @@
 {
  "name": "슈카월드",
  "channel": "https://www.youtube.com/@syukaworld",
- "checkedAt": "2026-11-17T08:34+09:00",
+ "checkedAt": "2026-11-17T14:55+09:00",
  "subscribers": "374만",
  "videos": [
   {
@@ -20,16 +20,16 @@
    "viewsText": "조회수 15만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "5LEMniVcweU",
    "title": "걱정 노노",
-   "views": 68000,
-   "viewsText": "조회수 6.8만회",
+   "views": 69000,
+   "viewsText": "조회수 6.9만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 1000
   },
   {
    "id": "xmLFwy-UdNU",
@@ -43,11 +43,11 @@
   {
    "id": "xVKY3CWUoSE",
    "title": "딸깍으로 떠먹여주는 서비스",
-   "views": 62000,
-   "viewsText": "조회수 6.2만회",
+   "views": 63000,
+   "viewsText": "조회수 6.3만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 1000
   },
   {
    "id": "lioIrGMoIbs",
@@ -56,7 +56,7 @@
    "viewsText": "조회수 9.5만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "D32h_sPWp0g",

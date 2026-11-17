@@ -1,7 +1,7 @@
 {
  "name": "안원잘부",
  "channel": "https://www.youtube.com/@helloiamwoninicetomeetyou",
- "checkedAt": "2026-11-17T08:34+09:00",
+ "checkedAt": "2026-11-17T14:55+09:00",
  "subscribers": "244만",
  "videos": [
   {
@@ -47,7 +47,7 @@
    "viewsText": "조회수 621만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "GsYq_ouLAMQ",
@@ -232,11 +232,11 @@
   {
    "id": "cDDORzB-2Q0",
    "title": "일본에서 먹히는 발음",
-   "views": 4600000,
-   "viewsText": "조회수 460만회",
+   "views": 4610000,
+   "viewsText": "조회수 461만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "5zg26mxu4_w",
@@ -308,7 +308,7 @@
    "viewsText": "조회수 695만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "hrFWuCyHXpY",
