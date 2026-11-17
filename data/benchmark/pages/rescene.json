@@ -1,41 +1,44 @@
 {
  "name": "RESCENE 공식",
  "channel": "https://www.youtube.com/@RESCENE_official",
- "checkedAt": "2026-11-17T19:36+09:00",
+ "checkedAt": "2026-11-17T22:50+09:00",
  "subscribers": "138만",
  "videos": [
   {
    "id": "qdksE7qutqg",
    "title": "#규현 님에게 빠져들지 Do you? @AEN_offcl",
-   "views": 42000,
-   "viewsText": "조회수 4.2만회",
+   "views": 87000,
+   "viewsText": "조회수 8.7만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 45000
   },
   {
    "id": "w9WpX-ZCG4I",
    "title": "#우영 선배님에게 빠져들지 Do you? @ATEEZofficial",
-   "views": 120000,
-   "viewsText": "조회수 12만회",
+   "views": 250000,
+   "viewsText": "조회수 25만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 130000
   },
   {
    "id": "9ZncqjlOTZY",
    "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #혜연 선배님",
-   "views": 110000,
-   "viewsText": "조회수 11만회",
+   "views": 180000,
+   "viewsText": "조회수 18만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 70000
   },
   {
    "id": "wT-7We1qmaQ",
    "title": "Kiss you 🤭👉👈",
-   "views": 190000,
-   "viewsText": "조회수 19만회",
+   "views": 200000,
+   "viewsText": "조회수 20만회",
    "published": "",
    "kind": "short",
-   "gain": 20000
+   "gain": 10000
   },
   {
    "id": "vIP7mUzD-wU",
@@ -44,13 +47,13 @@
    "viewsText": "조회수 19만회",
    "published": "",
    "kind": "short",
-   "gain": 20000
+   "gain": 0
   },
   {
    "id": "SHkvZbsZiN8",
    "title": "MMA 2026 🏆💚",
-   "views": 250000,
-   "viewsText": "조회수 25만회",
+   "views": 260000,
+   "viewsText": "조회수 26만회",
    "published": "",
    "kind": "short",
    "gain": 10000
@@ -58,17 +61,17 @@
   {
    "id": "1BtPuLvMxz4",
    "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #전소영 님",
-   "views": 440000,
-   "viewsText": "조회수 44만회",
+   "views": 460000,
+   "viewsText": "조회수 46만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 20000
   },
   {
    "id": "WVYtWUGGZBU",
    "title": "베스트프렌드 이름 대기 🤭💗",
-   "views": 990000,
-   "viewsText": "조회수 99만회",
+   "views": 1030000,
+   "viewsText": "조회수 103만회",
    "published": "",
    "kind": "short",
    "gain": 40000
@@ -103,8 +106,8 @@
   {
    "id": "WgFMNPr9-C4",
    "title": "빠져들지 Do you?",
-   "views": 870000,
-   "viewsText": "조회수 87만회",
+   "views": 890000,
+   "viewsText": "조회수 89만회",
    "published": "",
    "kind": "short",
    "gain": 20000
@@ -143,22 +146,22 @@
    "viewsText": "조회수 54만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "Swo1MWFnK1c",
    "title": "Yeah I'm blooming like a flower, flower",
-   "views": 460000,
-   "viewsText": "조회수 46만회",
+   "views": 480000,
+   "viewsText": "조회수 48만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 20000
   },
   {
    "id": "ZZqAlMwMPMg",
    "title": "백화요란 그 파트",
-   "views": 1270000,
-   "viewsText": "조회수 127만회",
+   "views": 1300000,
+   "viewsText": "조회수 130만회",
    "published": "",
    "kind": "short",
    "gain": 30000
@@ -166,8 +169,8 @@
   {
    "id": "9wSxuOLpGXc",
    "title": "나를 부르는 echo🔊 ꒰ 𝐖𝐢𝐭𝐡 ꒱ #YoungK 선배님@DAY6Official",
-   "views": 520000,
-   "viewsText": "조회수 52만회",
+   "views": 530000,
+   "viewsText": "조회수 53만회",
    "published": "",
    "kind": "short",
    "gain": 10000
@@ -197,7 +200,7 @@
    "viewsText": "조회수 38만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "ZZJHE7xBDJQ",
@@ -215,7 +218,7 @@
    "viewsText": "조회수 86만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "TL5LSvvgjDw",
@@ -233,7 +236,7 @@
    "viewsText": "조회수 37만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "aTfIJqiYBiI",
@@ -332,7 +335,7 @@
    "viewsText": "조회수 37만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "xpaOFvA4K1g",

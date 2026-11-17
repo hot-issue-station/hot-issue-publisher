@@ -3,20 +3,33 @@
  "name": "슈카월드",
  "channel": "https://www.youtube.com/@syukaworld",
  "channelId": "UCJo6G1u0e_-wS-JQn3T-zEw",
- "checkedAt": "2026-11-17T19:36+09:00",
+ "checkedAt": "2026-11-17T22:50+09:00",
  "videos": [
   {
+   "id": "kJeO9iXUse4",
+   "title": "네오클라우드는 빙산의 일각",
+   "published": "2026-11-17T11:16:19+00:00",
+   "url": "https://www.youtube.com/shorts/kJeO9iXUse4",
+   "shorts": true,
+   "views": 22539,
+   "likes": 248,
+   "viewsGain": null,
+   "isNew": true,
+   "median": 135368.5,
+   "multiple": 0.2
+  },
+  {
    "id": "XKmD-M7rWO0",
-   "title": "데이터센터, 부동산 PF문제와 비슷합니다",
+   "title": "엔비디아는 왜 갑자기 위기를 맞이했을까(음모론)",
    "published": "2026-11-17T09:29:46+00:00",
    "url": "https://www.youtube.com/watch?v=XKmD-M7rWO0",
    "shorts": false,
-   "views": 6256,
-   "likes": 207,
-   "viewsGain": null,
-   "isNew": true,
-   "median": 152812,
-   "multiple": 0.0
+   "views": 43899,
+   "likes": 571,
+   "viewsGain": 37643,
+   "isNew": false,
+   "median": 154555,
+   "multiple": 0.3
   },
   {
    "id": "yT1Rei0xDVc",
@@ -24,11 +37,11 @@
    "published": "2026-11-16T12:11:16+00:00",
    "url": "https://www.youtube.com/watch?v=yT1Rei0xDVc",
    "shorts": false,
-   "views": 143691,
+   "views": 146556,
    "likes": 944,
-   "viewsGain": 6827,
+   "viewsGain": 2865,
    "isNew": false,
-   "median": 152812,
+   "median": 154555,
    "multiple": 0.9
   },
   {
@@ -37,11 +50,11 @@
    "published": "2026-11-16T06:36:19+00:00",
    "url": "https://www.youtube.com/watch?v=lGfmyzMMof0",
    "shorts": false,
-   "views": 152812,
-   "likes": 1140,
-   "viewsGain": 3827,
+   "views": 154555,
+   "likes": 1136,
+   "viewsGain": 1743,
    "isNew": false,
-   "median": 152812,
+   "median": 154555,
    "multiple": 1.0
   },
   {
@@ -50,12 +63,12 @@
    "published": "2026-11-16T02:54:18+00:00",
    "url": "https://www.youtube.com/shorts/BcH1D15dzsw",
    "shorts": true,
-   "views": 101436,
-   "likes": 823,
-   "viewsGain": 7813,
+   "views": 110914,
+   "likes": 907,
+   "viewsGain": 9478,
    "isNew": false,
-   "median": 139731.5,
-   "multiple": 0.7
+   "median": 135368.5,
+   "multiple": 0.8
   },
   {
    "id": "S_S0dX87aPY",
@@ -63,11 +76,11 @@
    "published": "2026-11-14T09:00:24+00:00",
    "url": "https://www.youtube.com/watch?v=S_S0dX87aPY",
    "shorts": false,
-   "views": 218832,
-   "likes": 1548,
-   "viewsGain": 2740,
+   "views": 220538,
+   "likes": 1553,
+   "viewsGain": 1706,
    "isNew": false,
-   "median": 152812,
+   "median": 154555,
    "multiple": 1.4
   },
   {
@@ -76,12 +89,12 @@
    "published": "2026-11-14T07:26:18+00:00",
    "url": "https://www.youtube.com/shorts/eXUFUT2_RpQ",
    "shorts": true,
-   "views": 157933,
-   "likes": 1272,
-   "viewsGain": 2189,
+   "views": 159823,
+   "likes": 1287,
+   "viewsGain": 1890,
    "isNew": false,
-   "median": 139731.5,
-   "multiple": 1.1
+   "median": 135368.5,
+   "multiple": 1.2
   },
   {
    "id": "ZFq74IdTuR8",
@@ -89,12 +102,12 @@
    "published": "2026-11-13T08:00:22+00:00",
    "url": "https://www.youtube.com/shorts/ZFq74IdTuR8",
    "shorts": true,
-   "views": 379031,
-   "likes": 4994,
-   "viewsGain": 4462,
+   "views": 383412,
+   "likes": 5028,
+   "viewsGain": 4381,
    "isNew": false,
-   "median": 139731.5,
-   "multiple": 2.7
+   "median": 135368.5,
+   "multiple": 2.8
   },
   {
    "id": "GXAL5zTk_Sg",
@@ -102,12 +115,12 @@
    "published": "2026-11-13T06:27:17+00:00",
    "url": "https://www.youtube.com/watch?v=GXAL5zTk_Sg",
    "shorts": false,
-   "views": 115570,
+   "views": 115549,
    "likes": 508,
-   "viewsGain": 211,
+   "viewsGain": -21,
    "isNew": false,
-   "median": 152812,
-   "multiple": 0.8
+   "median": 154555,
+   "multiple": 0.7
   },
   {
    "id": "B6DqFmvxiWw",
@@ -115,11 +128,11 @@
    "published": "2026-11-13T03:21:49+00:00",
    "url": "https://www.youtube.com/shorts/B6DqFmvxiWw",
    "shorts": true,
-   "views": 91177,
-   "likes": 569,
-   "viewsGain": 420,
+   "views": 91568,
+   "likes": 570,
+   "viewsGain": 391,
    "isNew": false,
-   "median": 139731.5,
+   "median": 135368.5,
    "multiple": 0.7
   },
   {
@@ -128,11 +141,11 @@
    "published": "2026-11-12T11:00:11+00:00",
    "url": "https://www.youtube.com/shorts/yog9Nwxqtto",
    "shorts": true,
-   "views": 98246,
-   "likes": 807,
-   "viewsGain": 538,
+   "views": 98502,
+   "likes": 808,
+   "viewsGain": 256,
    "isNew": false,
-   "median": 139731.5,
+   "median": 135368.5,
    "multiple": 0.7
   },
   {
@@ -141,11 +154,11 @@
    "published": "2026-11-12T09:00:19+00:00",
    "url": "https://www.youtube.com/watch?v=FSqGVxQKEMc",
    "shorts": false,
-   "views": 302134,
-   "likes": 2045,
-   "viewsGain": 2137,
+   "views": 302709,
+   "likes": 2046,
+   "viewsGain": 575,
    "isNew": false,
-   "median": 152812,
+   "median": 154555,
    "multiple": 2.0
   },
   {
@@ -154,12 +167,12 @@
    "published": "2026-11-12T07:35:07+00:00",
    "url": "https://www.youtube.com/shorts/sTeqHqi-w74",
    "shorts": true,
-   "views": 277744,
+   "views": 277842,
    "likes": 1477,
-   "viewsGain": 230,
+   "viewsGain": 98,
    "isNew": false,
-   "median": 139731.5,
-   "multiple": 2.0
+   "median": 135368.5,
+   "multiple": 2.1
   },
   {
    "id": "PdRYlMmMhJQ",
@@ -167,11 +180,11 @@
    "published": "2026-11-12T07:13:26+00:00",
    "url": "https://www.youtube.com/shorts/PdRYlMmMhJQ",
    "shorts": true,
-   "views": 217077,
-   "likes": 1309,
-   "viewsGain": 1427,
+   "views": 218058,
+   "likes": 1315,
+   "viewsGain": 981,
    "isNew": false,
-   "median": 139731.5,
+   "median": 135368.5,
    "multiple": 1.6
   },
   {
@@ -180,48 +193,35 @@
    "published": "2026-11-12T06:41:52+00:00",
    "url": "https://www.youtube.com/watch?v=UEU5eZG5fxk",
    "shorts": false,
-   "views": 171526,
+   "views": 171630,
    "likes": 975,
-   "viewsGain": 246,
+   "viewsGain": 104,
    "isNew": false,
-   "median": 152812,
+   "median": 154555,
    "multiple": 1.1
-  },
-  {
-   "id": "OqKFqg75Tuk",
-   "title": "꺼드럭 니니 참교육",
-   "published": "2026-11-12T03:00:51+00:00",
-   "url": "https://www.youtube.com/shorts/OqKFqg75Tuk",
-   "shorts": true,
-   "views": 121530,
-   "likes": 919,
-   "viewsGain": 213,
-   "isNew": false,
-   "median": 139731.5,
-   "multiple": 0.9
   }
  ],
  "viral": [
   {
    "title": "누가 회사에서 주식 보래?",
    "url": "https://www.youtube.com/shorts/ZFq74IdTuR8",
-   "views": 379031,
-   "multiple": 2.7,
+   "views": 383412,
+   "multiple": 2.8,
+   "shorts": true
+  },
+  {
+   "title": "경력직 젠슨황",
+   "url": "https://www.youtube.com/shorts/sTeqHqi-w74",
+   "views": 277842,
+   "multiple": 2.1,
    "shorts": true
   },
   {
    "title": "변압기 사라면서요 살려주세요 [여의도엿듣기]",
    "url": "https://www.youtube.com/watch?v=FSqGVxQKEMc",
-   "views": 302134,
+   "views": 302709,
    "multiple": 2.0,
    "shorts": false
-  },
-  {
-   "title": "경력직 젠슨황",
-   "url": "https://www.youtube.com/shorts/sTeqHqi-w74",
-   "views": 277744,
-   "multiple": 2.0,
-   "shorts": true
   }
  ]
 }

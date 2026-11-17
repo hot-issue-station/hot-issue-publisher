@@ -1,23 +1,23 @@
 {
  "name": "14F 일사에프 (MBC)",
  "channel": "https://www.youtube.com/@14FMBC",
- "checkedAt": "2026-11-17T19:36+09:00",
+ "checkedAt": "2026-11-17T22:50+09:00",
  "subscribers": "239만",
  "videos": [
   {
    "id": "gRThiyajPxQ",
    "title": "남대문 사장님들 입담이 왜 이리 좋아 #shorts",
-   "views": 9400,
-   "viewsText": "조회수 9.4천회",
+   "views": 9500,
+   "viewsText": "조회수 9.5천회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 100
   },
   {
    "id": "t0Zs4V5j-uA",
    "title": "한국 프랜차이즈가 매력적인 이유 #shorts",
-   "views": 7400,
-   "viewsText": "조회수 7.4천회",
+   "views": 7500,
+   "viewsText": "조회수 7.5천회",
    "published": "",
    "kind": "short",
    "gain": 100
@@ -34,11 +34,11 @@
   {
    "id": "Aj_trkh0zaM",
    "title": "남대문 스카프 아저씨 입담 모음zip. #shorts",
-   "views": 77000,
-   "viewsText": "조회수 7.7만회",
+   "views": 79000,
+   "viewsText": "조회수 7.9만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 2000
   },
   {
    "id": "WgWmSXeb_YA",
@@ -110,7 +110,7 @@
    "viewsText": "조회수 28만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "G63QFaqloJQ",

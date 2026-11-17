@@ -1,14 +1,38 @@
 {
  "name": "스브스뉴스 (SBS)",
  "channel": "https://www.youtube.com/@subusunews",
- "checkedAt": "2026-11-17T19:36+09:00",
+ "checkedAt": "2026-11-17T22:50+09:00",
  "subscribers": "144만",
  "videos": [
   {
+   "id": "d_V3w3jWVpQ",
+   "title": "출근도 잘하고, 친구도 잘 만나는데... 우울증이래요 #우울증 #shorts #스브스뉴스",
+   "views": 1100,
+   "viewsText": "조회수 1.1천회",
+   "published": "",
+   "kind": "short"
+  },
+  {
+   "id": "gwowgI6Hdt0",
+   "title": "AI 이용해서 세무사 시험 수석 합격한 세무냥이의 컨닝 방법 #세무냥이 #shorts #스브스뉴스",
+   "views": 5500,
+   "viewsText": "조회수 5.5천회",
+   "published": "",
+   "kind": "short"
+  },
+  {
+   "id": "zPaJv7lADWY",
+   "title": "이제 겨울인데 모기는 왜 안 사라짐? #가을 #shorts #스브스뉴스",
+   "views": 1400,
+   "viewsText": "조회수 1.4천회",
+   "published": "",
+   "kind": "short"
+  },
+  {
    "id": "0LtMpN02Csc",
    "title": "관세사도 합격 10배 폭증? 결국 전수조사 나선다 #국가자격시험 #shorts #스브스뉴스",
-   "views": 4100,
-   "viewsText": "조회수 4.1천회",
+   "views": 4500,
+   "viewsText": "조회수 4.5천회",
    "published": "",
    "kind": "short",
    "gain": 400
@@ -20,7 +44,7 @@
    "viewsText": "조회수 1.4만회",
    "published": "",
    "kind": "short",
-   "gain": 2000
+   "gain": 0
   },
   {
    "id": "a1XAX1FAHu0",
@@ -29,7 +53,7 @@
    "viewsText": "조회수 5.4천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "omd178ailwI",
@@ -43,11 +67,11 @@
   {
    "id": "T3rXxLcDD-g",
    "title": "홈플러스가 이겨냈으면 좋겠어 #홈플러스 #shorts #스브스뉴스",
-   "views": 6000,
-   "viewsText": "조회수 6천회",
+   "views": 6100,
+   "viewsText": "조회수 6.1천회",
    "published": "",
    "kind": "short",
-   "gain": 200
+   "gain": 100
   },
   {
    "id": "wHp_zWCqzxw",
@@ -106,11 +130,11 @@
   {
    "id": "80Prr9snsIk",
    "title": "[선공개] 죽여달라는 거지?",
-   "views": 9600,
-   "viewsText": "조회수 9.6천회",
+   "views": 9700,
+   "viewsText": "조회수 9.7천회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 100
   },
   {
    "id": "h8iBMhQ3b-Q",
@@ -178,11 +202,11 @@
   {
    "id": "qZaeu4PJUps",
    "title": "롯데홈쇼핑이 직접 교육하는 커머스 인재 학교? #shorts #스브스뉴스",
-   "views": 75000,
-   "viewsText": "조회수 7.5만회",
+   "views": 80000,
+   "viewsText": "조회수 8만회",
    "published": "",
    "kind": "short",
-   "gain": 2000
+   "gain": 5000
   },
   {
    "id": "bvbHkNEO3t8",
@@ -333,33 +357,6 @@
    "title": "인문학은 죽지 않는다. #인문학 #shorts #스브스뉴스",
    "views": 10000,
    "viewsText": "조회수 1만회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "m2wH6PkX4Qo",
-   "title": "호흡 곤란 보였는데도 환자 방치한 한의사 #한의사 #shorts #스브스뉴스",
-   "views": 13000,
-   "viewsText": "조회수 1.3만회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "1K8fCzEX7Go",
-   "title": "깜짝 방중하며 건재 과시한 김정은 #북한 #shorts #스브스뉴스",
-   "views": 19000,
-   "viewsText": "조회수 1.9만회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "fg0BZ5a1Vhs",
-   "title": "K-고구마가 요즘 뉴요커들 점심 메뉴라고? #고구마 #shorts #스브스뉴스",
-   "views": 26000,
-   "viewsText": "조회수 2.6만회",
    "published": "",
    "kind": "short",
    "gain": 0
