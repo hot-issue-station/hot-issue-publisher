@@ -1,33 +1,67 @@
 {
  "name": "스브스뉴스 (SBS)",
  "channel": "https://www.youtube.com/@subusunews",
- "checkedAt": "2026-11-18T19:35+09:00",
+ "checkedAt": "2026-11-18T22:52+09:00",
  "subscribers": "144만",
  "videos": [
   {
-   "id": "_DCDzT693C0",
-   "title": "유병권 발작 일으킨 청모 도둑",
-   "views": 383,
-   "viewsText": "조회수 383회",
+   "id": "DFiDu4HS9I4",
+   "title": "실제 JMS 2세가 말하는 사이비 종교의 충격적인 실체 #사이비 #shorts #스브스뉴스",
+   "views": 872,
+   "viewsText": "조회수 872회",
    "published": "",
    "kind": "short"
+  },
+  {
+   "id": "SIFB9hhhj-8",
+   "title": "입사 한 달 차 결혼식, 간다 vs 안 간다",
+   "views": 1000,
+   "viewsText": "조회수 1천회",
+   "published": "",
+   "kind": "short"
+  },
+  {
+   "id": "USTfN6dsPZA",
+   "title": "“그렇게 살지 마라” 역대급 빡친 위원들",
+   "views": 1800,
+   "viewsText": "조회수 1.8천회",
+   "published": "",
+   "kind": "short"
+  },
+  {
+   "id": "n4IuqG0n5Eg",
+   "title": "뉴진스 vs 어도어에서 어도어가 승소한 진짜 이유 #뉴진스 #shorts #스브스뉴스",
+   "views": 2700,
+   "viewsText": "조회수 2.7천회",
+   "published": "",
+   "kind": "short"
+  },
+  {
+   "id": "_DCDzT693C0",
+   "title": "유병권 발작 일으킨 청모 도둑",
+   "views": 1300,
+   "viewsText": "조회수 1.3천회",
+   "published": "",
+   "kind": "short",
+   "gain": 917
   },
   {
    "id": "mmChYuV8uLA",
    "title": "결혼식에서 사진 찍지 말라는 신혼부부",
-   "views": 1500,
-   "viewsText": "조회수 1.5천회",
+   "views": 3600,
+   "viewsText": "조회수 3.6천회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 2100
   },
   {
    "id": "0EGz1y1LXFQ",
    "title": "이렇게 심각한데 진짜 연기 안 한다고? #수능 #shorts #스브스뉴스",
-   "views": 2000,
-   "viewsText": "조회수 2천회",
+   "views": 2400,
+   "viewsText": "조회수 2.4천회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 400
   },
   {
    "id": "d_V3w3jWVpQ",
@@ -36,22 +70,22 @@
    "viewsText": "조회수 1.2만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "gwowgI6Hdt0",
    "title": "AI 이용해서 세무사 시험 수석 합격한 세무냥이의 컨닝 방법 #세무냥이 #shorts #스브스뉴스",
-   "views": 48000,
-   "viewsText": "조회수 4.8만회",
+   "views": 56000,
+   "viewsText": "조회수 5.6만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 8000
   },
   {
    "id": "zPaJv7lADWY",
    "title": "이제 겨울인데 모기는 왜 안 사라짐? #가을 #shorts #스브스뉴스",
-   "views": 4900,
-   "viewsText": "조회수 4.9천회",
+   "views": 5600,
+   "viewsText": "조회수 5.6천회",
    "published": "",
    "kind": "short",
    "gain": 700
@@ -63,7 +97,7 @@
    "viewsText": "조회수 4.9천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "2qGKxq8pdII",
@@ -81,7 +115,7 @@
    "viewsText": "조회수 5.3천회",
    "published": "",
    "kind": "short",
-   "gain": -100
+   "gain": 0
   },
   {
    "id": "omd178ailwI",
@@ -99,7 +133,7 @@
    "viewsText": "조회수 6.1천회",
    "published": "",
    "kind": "short",
-   "gain": -100
+   "gain": 0
   },
   {
    "id": "wHp_zWCqzxw",
@@ -162,7 +196,7 @@
    "viewsText": "조회수 9.8천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "h8iBMhQ3b-Q",
@@ -180,7 +214,7 @@
    "viewsText": "조회수 4.8천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "Y0Y6eq3a6PE",
@@ -230,11 +264,11 @@
   {
    "id": "qZaeu4PJUps",
    "title": "롯데홈쇼핑이 직접 교육하는 커머스 인재 학교? #shorts #스브스뉴스",
-   "views": 93000,
-   "viewsText": "조회수 9.3만회",
+   "views": 94000,
+   "viewsText": "조회수 9.4만회",
    "published": "",
    "kind": "short",
-   "gain": 4000
+   "gain": 1000
   },
   {
    "id": "bvbHkNEO3t8",
@@ -322,42 +356,6 @@
    "title": "이제 '이거'까지 된다는 시리 근황 #애플 #shorts #스브스뉴스",
    "views": 12000,
    "viewsText": "조회수 1.2만회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "fMk1x_SAtmI",
-   "title": "업데이트된 시리 진짜 쓸 만한 거임? #시리 #shorts #스브스뉴스",
-   "views": 5300,
-   "viewsText": "조회수 5.3천회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "X9iSvXsLJuY",
-   "title": "\"나 촉법이라 괜찮아\" 이제 안 통한다? #촉법소년 #shorts #스브스뉴스",
-   "views": 4700,
-   "viewsText": "조회수 4.7천회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "ernsQIVrBi4",
-   "title": "노로바이러스 소문 팩트체크 #굴 #shorts #스브스뉴스",
-   "views": 7100,
-   "viewsText": "조회수 7.1천회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "cIV-athgSaM",
-   "title": "마약 운반하고 아프리카로 도피한 한국 남성, 22년 만에 백발노인으로 강제 송환 #마약 #shorts #스브스뉴스",
-   "views": 11000,
-   "viewsText": "조회수 1.1만회",
    "published": "",
    "kind": "short",
    "gain": 0

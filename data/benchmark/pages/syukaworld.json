@@ -1,16 +1,25 @@
 {
  "name": "슈카월드",
  "channel": "https://www.youtube.com/@syukaworld",
- "checkedAt": "2026-11-18T19:35+09:00",
+ "checkedAt": "2026-11-18T22:52+09:00",
  "subscribers": "374만",
  "videos": [
   {
-   "id": "NINJ94H2s04",
-   "title": "수능 비상! AI 부정행위를 막아라!",
-   "views": 32000,
-   "viewsText": "조회수 3.2만회",
+   "id": "xhzS_pawX9Y",
+   "title": "슈카 서울대 입학 해명",
+   "views": 20000,
+   "viewsText": "조회수 2만회",
    "published": "",
    "kind": "short"
+  },
+  {
+   "id": "NINJ94H2s04",
+   "title": "수능 비상! AI 부정행위를 막아라!",
+   "views": 60000,
+   "viewsText": "조회수 6만회",
+   "published": "",
+   "kind": "short",
+   "gain": 28000
   },
   {
    "id": "PPIMOKvuSDY",
@@ -33,11 +42,11 @@
   {
    "id": "5LEMniVcweU",
    "title": "걱정 노노",
-   "views": 70000,
-   "viewsText": "조회수 7만회",
+   "views": 71000,
+   "viewsText": "조회수 7.1만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 1000
   },
   {
    "id": "xmLFwy-UdNU",
@@ -60,11 +69,11 @@
   {
    "id": "lioIrGMoIbs",
    "title": "좋은 사람 있으면 소개시켜줘",
-   "views": 95000,
-   "viewsText": "조회수 9.5만회",
+   "views": 96000,
+   "viewsText": "조회수 9.6만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 1000
   },
   {
    "id": "D32h_sPWp0g",
@@ -350,15 +359,6 @@
    "title": "속보) 트황상 휴휴전 (휴전을 멈춤) 선언",
    "views": 200000,
    "viewsText": "조회수 20만회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "TaBCFSlTp_M",
-   "title": "SK하이닉스 ADR 상장이 무슨말이야?",
-   "views": 350000,
-   "viewsText": "조회수 35만회",
    "published": "",
    "kind": "short",
    "gain": 0

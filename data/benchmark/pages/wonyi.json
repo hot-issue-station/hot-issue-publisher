@@ -1,23 +1,23 @@
 {
  "name": "안원잘부",
  "channel": "https://www.youtube.com/@helloiamwoninicetomeetyou",
- "checkedAt": "2026-11-18T19:35+09:00",
+ "checkedAt": "2026-11-18T22:52+09:00",
  "subscribers": "244만",
  "videos": [
   {
    "id": "N3MX2W5_Zfs",
    "title": "디즈니 영화 OST가 된 이유",
-   "views": 980000,
-   "viewsText": "조회수 98만회",
+   "views": 1030000,
+   "viewsText": "조회수 103만회",
    "published": "",
    "kind": "short",
-   "gain": 70000
+   "gain": 50000
   },
   {
    "id": "kfK-LENbEUo",
    "title": "정작가의 컴백을 축하합니다",
-   "views": 1780000,
-   "viewsText": "조회수 178만회",
+   "views": 1790000,
+   "viewsText": "조회수 179만회",
    "published": "",
    "kind": "short",
    "gain": 10000
@@ -29,7 +29,7 @@
    "viewsText": "조회수 273만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "zxNoW_LtVLE",
@@ -43,11 +43,11 @@
   {
    "id": "mFM2hP5LEhM",
    "title": "스팸 원이 에디션(?)",
-   "views": 3230000,
-   "viewsText": "조회수 323만회",
+   "views": 3240000,
+   "viewsText": "조회수 324만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "xCvbDeMKm3E",
@@ -56,16 +56,16 @@
    "viewsText": "조회수 623만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "GsYq_ouLAMQ",
    "title": "[B컷] 시그니엘 망고 빙수",
-   "views": 5530000,
-   "viewsText": "조회수 553만회",
+   "views": 5540000,
+   "viewsText": "조회수 554만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "BUeZskDCMpU",
@@ -101,7 +101,7 @@
    "viewsText": "조회수 334만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "o-B0F16GwL0",
@@ -110,7 +110,7 @@
    "viewsText": "조회수 1360만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "gNJrbCSN2TM",
@@ -142,11 +142,11 @@
   {
    "id": "qzhjmlxNl8s",
    "title": "거제 불주먹 양키",
-   "views": 1630000,
-   "viewsText": "조회수 163만회",
+   "views": 1640000,
+   "viewsText": "조회수 164만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "jilQNKreZBM",
