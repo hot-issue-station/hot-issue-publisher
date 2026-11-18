@@ -3,20 +3,33 @@
  "name": "스토리K (손흥민 레전드 비교 특집 벤치마킹, 10/31)",
  "channel": "https://www.youtube.com/@story_k",
  "channelId": "UCqzNZeBt0546jG-vDlAQlZg",
- "checkedAt": "2026-11-18T14:57+09:00",
+ "checkedAt": "2026-11-18T19:35+09:00",
  "videos": [
+  {
+   "id": "-UhT8up9Kg4",
+   "title": "손흥민 6경기 통계 감독에게 절대적인 이유 - 대체자가 없는 세대 교체론은 허황된 소설",
+   "published": "2026-11-18T08:50:04+00:00",
+   "url": "https://www.youtube.com/watch?v=-UhT8up9Kg4",
+   "shorts": false,
+   "views": 1068,
+   "likes": 288,
+   "viewsGain": null,
+   "isNew": true,
+   "median": 29991,
+   "multiple": 0.0
+  },
   {
    "id": "91hhEPdL0LM",
    "title": "손흥민 기회 창출 1위 한국 대표팀 승리 - 공도 제대로 잡지 못한 카타르 일방적 경기",
    "published": "2026-11-17T17:34:57+00:00",
    "url": "https://www.youtube.com/watch?v=91hhEPdL0LM",
    "shorts": false,
-   "views": 26664,
-   "likes": 698,
-   "viewsGain": 16149,
+   "views": 29991,
+   "likes": 766,
+   "viewsGain": 3327,
    "isNew": false,
-   "median": 30289,
-   "multiple": 0.9
+   "median": 29991,
+   "multiple": 1.0
   },
   {
    "id": "EgWaw2Fcd_c",
@@ -24,12 +37,12 @@
    "published": "2026-11-17T08:09:58+00:00",
    "url": "https://www.youtube.com/watch?v=EgWaw2Fcd_c",
    "shorts": false,
-   "views": 30289,
-   "likes": 455,
-   "viewsGain": 10437,
+   "views": 35986,
+   "likes": 491,
+   "viewsGain": 5697,
    "isNew": false,
-   "median": 30289,
-   "multiple": 1.0
+   "median": 29991,
+   "multiple": 1.2
   },
   {
    "id": "vRbR5Ik_z6E",
@@ -37,11 +50,11 @@
    "published": "2026-11-16T10:02:16+00:00",
    "url": "https://www.youtube.com/watch?v=vRbR5Ik_z6E",
    "shorts": false,
-   "views": 23402,
-   "likes": 758,
-   "viewsGain": 175,
+   "views": 23573,
+   "likes": 759,
+   "viewsGain": 171,
    "isNew": false,
-   "median": 30289,
+   "median": 29991,
    "multiple": 0.8
   },
   {
@@ -50,11 +63,11 @@
    "published": "2026-11-15T10:22:10+00:00",
    "url": "https://www.youtube.com/watch?v=vVJGieEysjE",
    "shorts": false,
-   "views": 15805,
-   "likes": 437,
-   "viewsGain": 77,
+   "views": 15925,
+   "likes": 439,
+   "viewsGain": 120,
    "isNew": false,
-   "median": 30289,
+   "median": 29991,
    "multiple": 0.5
   },
   {
@@ -63,11 +76,11 @@
    "published": "2026-11-14T10:04:54+00:00",
    "url": "https://www.youtube.com/watch?v=m8-01TBggvQ",
    "shorts": false,
-   "views": 19244,
-   "likes": 348,
-   "viewsGain": 109,
+   "views": 19093,
+   "likes": 349,
+   "viewsGain": -151,
    "isNew": false,
-   "median": 30289,
+   "median": 29991,
    "multiple": 0.6
   },
   {
@@ -76,12 +89,12 @@
    "published": "2026-11-13T09:27:06+00:00",
    "url": "https://www.youtube.com/watch?v=GBpaslkBI_c",
    "shorts": false,
-   "views": 25584,
+   "views": 25595,
    "likes": 901,
-   "viewsGain": 31,
+   "viewsGain": 11,
    "isNew": false,
-   "median": 30289,
-   "multiple": 0.8
+   "median": 29991,
+   "multiple": 0.9
   },
   {
    "id": "s5USat3YPTk",
@@ -89,11 +102,11 @@
    "published": "2026-11-12T10:12:35+00:00",
    "url": "https://www.youtube.com/watch?v=s5USat3YPTk",
    "shorts": false,
-   "views": 31916,
-   "likes": 1151,
-   "viewsGain": 56,
+   "views": 31948,
+   "likes": 1153,
+   "viewsGain": 32,
    "isNew": false,
-   "median": 30289,
+   "median": 29991,
    "multiple": 1.1
   },
   {
@@ -102,11 +115,11 @@
    "published": "2026-11-11T10:19:02+00:00",
    "url": "https://www.youtube.com/watch?v=Q5muilZ33Xc",
    "shorts": false,
-   "views": 42599,
+   "views": 42610,
    "likes": 973,
-   "viewsGain": 20,
+   "viewsGain": 11,
    "isNew": false,
-   "median": 30289,
+   "median": 29991,
    "multiple": 1.4
   },
   {
@@ -115,11 +128,11 @@
    "published": "2026-11-10T09:49:05+00:00",
    "url": "https://www.youtube.com/watch?v=EvW6ldmE06o",
    "shorts": false,
-   "views": 210565,
-   "likes": 2129,
-   "viewsGain": 27,
+   "views": 210561,
+   "likes": 2128,
+   "viewsGain": -4,
    "isNew": false,
-   "median": 30289,
+   "median": 29991,
    "multiple": 7.0
   },
   {
@@ -128,11 +141,11 @@
    "published": "2026-11-09T10:29:55+00:00",
    "url": "https://www.youtube.com/watch?v=Jo4q1DY_adM",
    "shorts": false,
-   "views": 38612,
-   "likes": 1000,
-   "viewsGain": 32,
+   "views": 38631,
+   "likes": 1001,
+   "viewsGain": 19,
    "isNew": false,
-   "median": 30289,
+   "median": 29991,
    "multiple": 1.3
   },
   {
@@ -141,11 +154,11 @@
    "published": "2026-11-08T10:15:12+00:00",
    "url": "https://www.youtube.com/watch?v=pzqdpN2RPCc",
    "shorts": false,
-   "views": 28131,
-   "likes": 656,
-   "viewsGain": 10,
+   "views": 28142,
+   "likes": 657,
+   "viewsGain": 11,
    "isNew": false,
-   "median": 30289,
+   "median": 29991,
    "multiple": 0.9
   },
   {
@@ -154,11 +167,11 @@
    "published": "2026-11-07T10:26:57+00:00",
    "url": "https://www.youtube.com/watch?v=FhUO1_ZU1Dw",
    "shorts": false,
-   "views": 92399,
-   "likes": 1572,
-   "viewsGain": 9,
+   "views": 92409,
+   "likes": 1573,
+   "viewsGain": 10,
    "isNew": false,
-   "median": 30289,
+   "median": 29991,
    "multiple": 3.1
   },
   {
@@ -167,11 +180,11 @@
    "published": "2026-11-06T10:20:26+00:00",
    "url": "https://www.youtube.com/watch?v=aGdX-njap_8",
    "shorts": false,
-   "views": 153333,
+   "views": 153372,
    "likes": 947,
-   "viewsGain": 68,
+   "viewsGain": 39,
    "isNew": false,
-   "median": 30289,
+   "median": 29991,
    "multiple": 5.1
   },
   {
@@ -180,54 +193,34 @@
    "published": "2026-11-05T10:03:23+00:00",
    "url": "https://www.youtube.com/watch?v=XnpYo8kDzQo",
    "shorts": false,
-   "views": 29126,
+   "views": 29136,
    "likes": 1001,
-   "viewsGain": 6,
+   "viewsGain": 10,
    "isNew": false,
-   "median": 30289,
+   "median": 29991,
    "multiple": 1.0
-  },
-  {
-   "id": "eMHW9EPF5_g",
-   "title": "손흥민 또 PL 공식 계정이 샤라웃 - 이적 후에도 계속되는 유럽 축구계의 압도적인 존중",
-   "published": "2026-11-04T10:03:23+00:00",
-   "url": "https://www.youtube.com/watch?v=eMHW9EPF5_g",
-   "shorts": false,
-   "views": 60427,
-   "likes": 1566,
-   "viewsGain": 8,
-   "isNew": false,
-   "median": 30289,
-   "multiple": 2.0
   }
  ],
  "viral": [
   {
    "title": "손흥민 보고 자란 축구 소년 기적의 FA컵 - 영국이 놀란 148년 새 역사의 주인공 양승우",
    "url": "https://www.youtube.com/watch?v=EvW6ldmE06o",
-   "views": 210565,
+   "views": 210561,
    "multiple": 7.0,
    "shorts": false
   },
   {
    "title": "김예건 한국 역대 최연소 2위 유럽대항전 출전 - 명문팀 거절하고 1군 노린 18살유망주",
    "url": "https://www.youtube.com/watch?v=aGdX-njap_8",
-   "views": 153333,
+   "views": 153372,
    "multiple": 5.1,
    "shorts": false
   },
   {
    "title": "손흥민 존경 포로의 고백이 감동인 이유 - 월드컵 챔피언이 보증한 축구계의 존중받는 캡틴",
    "url": "https://www.youtube.com/watch?v=FhUO1_ZU1Dw",
-   "views": 92399,
+   "views": 92409,
    "multiple": 3.1,
-   "shorts": false
-  },
-  {
-   "title": "손흥민 또 PL 공식 계정이 샤라웃 - 이적 후에도 계속되는 유럽 축구계의 압도적인 존중",
-   "url": "https://www.youtube.com/watch?v=eMHW9EPF5_g",
-   "views": 60427,
-   "multiple": 2.0,
    "shorts": false
   }
  ]

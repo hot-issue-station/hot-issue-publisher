@@ -1,16 +1,17 @@
 {
  "name": "14F 일사에프 (MBC)",
  "channel": "https://www.youtube.com/@14FMBC",
- "checkedAt": "2026-11-18T14:57+09:00",
+ "checkedAt": "2026-11-18T19:35+09:00",
  "subscribers": "239만",
  "videos": [
   {
    "id": "abobZ7JfTek",
    "title": "초가공식품 정확히 아는 사람? #shorts",
-   "views": 1200,
-   "viewsText": "조회수 1.2천회",
+   "views": 2200,
+   "viewsText": "조회수 2.2천회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 1000
   },
   {
    "id": "gRThiyajPxQ",
@@ -19,13 +20,13 @@
    "viewsText": "조회수 9.6천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "t0Zs4V5j-uA",
    "title": "한국 프랜차이즈가 매력적인 이유 #shorts",
-   "views": 7800,
-   "viewsText": "조회수 7.8천회",
+   "views": 7900,
+   "viewsText": "조회수 7.9천회",
    "published": "",
    "kind": "short",
    "gain": 100
@@ -42,11 +43,11 @@
   {
    "id": "Aj_trkh0zaM",
    "title": "남대문 스카프 아저씨 입담 모음zip. #shorts",
-   "views": 85000,
-   "viewsText": "조회수 8.5만회",
+   "views": 86000,
+   "viewsText": "조회수 8.6만회",
    "published": "",
    "kind": "short",
-   "gain": 2000
+   "gain": 1000
   },
   {
    "id": "WgWmSXeb_YA",
@@ -114,11 +115,11 @@
   {
    "id": "uq0xvYN3L9I",
    "title": "일본 화물이 부산항에 몰리는 이유 #shorts",
-   "views": 280000,
-   "viewsText": "조회수 28만회",
+   "views": 290000,
+   "viewsText": "조회수 29만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "G63QFaqloJQ",

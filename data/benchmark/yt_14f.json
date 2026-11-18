@@ -3,20 +3,46 @@
  "name": "14F 일사에프 (MBC)",
  "channel": "https://www.youtube.com/@14FMBC",
  "channelId": "UCLKuglhGlMmDteQKoniENIQ",
- "checkedAt": "2026-11-18T14:57+09:00",
+ "checkedAt": "2026-11-18T19:35+09:00",
  "videos": [
+  {
+   "id": "WbzEeAb50UY",
+   "title": "몽골에 이어 카자흐스탄에도… 현지에서 핫플된 ‘CU 편의점’ / 14F",
+   "published": "2026-11-18T09:59:07+00:00",
+   "url": "https://www.youtube.com/watch?v=WbzEeAb50UY",
+   "shorts": false,
+   "views": 1706,
+   "likes": 70,
+   "viewsGain": null,
+   "isNew": true,
+   "median": 83146,
+   "multiple": 0.0
+  },
+  {
+   "id": "Mv1Y2_lA-pQ",
+   "title": "세계가 원조를 줄이는 지금, 한국은 왜 위기의 현장에 돈을 쓸까? / 14F",
+   "published": "2026-11-18T08:30:29+00:00",
+   "url": "https://www.youtube.com/watch?v=Mv1Y2_lA-pQ",
+   "shorts": false,
+   "views": 5886,
+   "likes": 188,
+   "viewsGain": null,
+   "isNew": true,
+   "median": 83146,
+   "multiple": 0.1
+  },
   {
    "id": "abobZ7JfTek",
    "title": "초가공식품 정확히 아는 사람? #shorts",
    "published": "2026-11-18T03:00:40+00:00",
    "url": "https://www.youtube.com/shorts/abobZ7JfTek",
    "shorts": true,
-   "views": 1264,
-   "likes": 13,
-   "viewsGain": null,
-   "isNew": true,
-   "median": 8753.0,
-   "multiple": 0.1
+   "views": 2239,
+   "likes": 18,
+   "viewsGain": 975,
+   "isNew": false,
+   "median": 8780.5,
+   "multiple": 0.3
   },
   {
    "id": "lEpjsxSLfB8",
@@ -24,12 +50,12 @@
    "published": "2026-11-17T09:48:41+00:00",
    "url": "https://www.youtube.com/watch?v=lEpjsxSLfB8",
    "shorts": false,
-   "views": 71720,
-   "likes": 311,
-   "viewsGain": 22540,
+   "views": 82030,
+   "likes": 346,
+   "viewsGain": 10310,
    "isNew": false,
-   "median": 136625,
-   "multiple": 0.5
+   "median": 83146,
+   "multiple": 1.0
   },
   {
    "id": "hvRGI76Jd8E",
@@ -37,12 +63,12 @@
    "published": "2026-11-17T08:30:04+00:00",
    "url": "https://www.youtube.com/watch?v=hvRGI76Jd8E",
    "shorts": false,
-   "views": 248382,
-   "likes": 1370,
-   "viewsGain": 45203,
+   "views": 273202,
+   "likes": 1506,
+   "viewsGain": 24820,
    "isNew": false,
-   "median": 136625,
-   "multiple": 1.8
+   "median": 83146,
+   "multiple": 3.3
   },
   {
    "id": "qY9ByfK70cw",
@@ -50,12 +76,12 @@
    "published": "2026-11-16T09:30:04+00:00",
    "url": "https://www.youtube.com/watch?v=qY9ByfK70cw",
    "shorts": false,
-   "views": 165961,
-   "likes": 794,
-   "viewsGain": 25374,
+   "views": 176609,
+   "likes": 828,
+   "viewsGain": 10648,
    "isNew": false,
-   "median": 136625,
-   "multiple": 1.2
+   "median": 83146,
+   "multiple": 2.1
   },
   {
    "id": "fkyakwxfN0g",
@@ -63,12 +89,12 @@
    "published": "2026-11-16T09:00:29+00:00",
    "url": "https://www.youtube.com/watch?v=fkyakwxfN0g",
    "shorts": false,
-   "views": 473871,
-   "likes": 2075,
-   "viewsGain": 44147,
+   "views": 489756,
+   "likes": 2131,
+   "viewsGain": 15885,
    "isNew": false,
-   "median": 136625,
-   "multiple": 3.5
+   "median": 83146,
+   "multiple": 5.9
   },
   {
    "id": "q2VxkeYVhv0",
@@ -76,12 +102,12 @@
    "published": "2026-11-16T08:34:47+00:00",
    "url": "https://www.youtube.com/watch?v=q2VxkeYVhv0",
    "shorts": false,
-   "views": 80670,
-   "likes": 411,
-   "viewsGain": 5260,
+   "views": 83146,
+   "likes": 416,
+   "viewsGain": 2476,
    "isNew": false,
-   "median": 136625,
-   "multiple": 0.6
+   "median": 83146,
+   "multiple": 1.0
   },
   {
    "id": "gRThiyajPxQ",
@@ -89,11 +115,11 @@
    "published": "2026-11-14T04:00:38+00:00",
    "url": "https://www.youtube.com/shorts/gRThiyajPxQ",
    "shorts": true,
-   "views": 9629,
+   "views": 9650,
    "likes": 42,
-   "viewsGain": 39,
+   "viewsGain": 21,
    "isNew": false,
-   "median": 8753.0,
+   "median": 8780.5,
    "multiple": 1.1
   },
   {
@@ -102,11 +128,11 @@
    "published": "2026-11-14T03:00:22+00:00",
    "url": "https://www.youtube.com/shorts/t0Zs4V5j-uA",
    "shorts": true,
-   "views": 7877,
-   "likes": 48,
-   "viewsGain": 122,
+   "views": 7911,
+   "likes": 50,
+   "viewsGain": 34,
    "isNew": false,
-   "median": 8753.0,
+   "median": 8780.5,
    "multiple": 0.9
   },
   {
@@ -115,11 +141,11 @@
    "published": "2026-11-13T23:00:17+00:00",
    "url": "https://www.youtube.com/shorts/CTJ-rsjJdyU",
    "shorts": true,
-   "views": 32646,
+   "views": 32810,
    "likes": 353,
-   "viewsGain": 305,
+   "viewsGain": 164,
    "isNew": false,
-   "median": 8753.0,
+   "median": 8780.5,
    "multiple": 3.7
   },
   {
@@ -128,12 +154,12 @@
    "published": "2026-11-13T11:56:44+00:00",
    "url": "https://www.youtube.com/watch?v=NzyY32tICRk",
    "shorts": false,
-   "views": 49658,
-   "likes": 442,
-   "viewsGain": 914,
+   "views": 50179,
+   "likes": 448,
+   "viewsGain": 521,
    "isNew": false,
-   "median": 136625,
-   "multiple": 0.4
+   "median": 83146,
+   "multiple": 0.6
   },
   {
    "id": "lhkYVuxd_dY",
@@ -141,12 +167,12 @@
    "published": "2026-11-13T10:00:05+00:00",
    "url": "https://www.youtube.com/watch?v=lhkYVuxd_dY",
    "shorts": false,
-   "views": 157008,
+   "views": 157649,
    "likes": 479,
-   "viewsGain": 1280,
+   "viewsGain": 641,
    "isNew": false,
-   "median": 136625,
-   "multiple": 1.1
+   "median": 83146,
+   "multiple": 1.9
   },
   {
    "id": "Aj_trkh0zaM",
@@ -154,11 +180,11 @@
    "published": "2026-11-13T04:00:11+00:00",
    "url": "https://www.youtube.com/shorts/Aj_trkh0zaM",
    "shorts": true,
-   "views": 85797,
-   "likes": 1129,
-   "viewsGain": 2306,
+   "views": 86459,
+   "likes": 1144,
+   "viewsGain": 662,
    "isNew": false,
-   "median": 8753.0,
+   "median": 8780.5,
    "multiple": 9.8
   },
   {
@@ -167,60 +193,48 @@
    "published": "2026-11-12T23:00:32+00:00",
    "url": "https://www.youtube.com/shorts/WgWmSXeb_YA",
    "shorts": true,
-   "views": 7855,
+   "views": 7871,
    "likes": 70,
-   "viewsGain": 21,
+   "viewsGain": 16,
    "isNew": false,
-   "median": 8753.0,
+   "median": 8780.5,
    "multiple": 0.9
-  },
-  {
-   "id": "ilCY2YYGUkk",
-   "title": "마운자로 한번에 3개월치 사서 입국 가능…해외 ‘비만 치료제’ 반입 규정 변경 / 14F",
-   "published": "2026-11-12T09:26:28+00:00",
-   "url": "https://www.youtube.com/watch?v=ilCY2YYGUkk",
-   "shorts": false,
-   "views": 130607,
-   "likes": 605,
-   "viewsGain": 295,
-   "isNew": false,
-   "median": 136625,
-   "multiple": 1.0
-  },
-  {
-   "id": "4fQ9fg9ooko",
-   "title": "스카프 아저씨 하나로 끝이 아니다?! 요즘 남대문시장에서 뜨는 것들  | 선발대 / 14F",
-   "published": "2026-11-12T08:00:03+00:00",
-   "url": "https://www.youtube.com/watch?v=4fQ9fg9ooko",
-   "shorts": false,
-   "views": 136625,
-   "likes": 709,
-   "viewsGain": 879,
-   "isNew": false,
-   "median": 136625,
-   "multiple": 1.0
   }
  ],
  "viral": [
   {
    "title": "남대문 스카프 아저씨 입담 모음zip. #shorts",
    "url": "https://www.youtube.com/shorts/Aj_trkh0zaM",
-   "views": 85797,
+   "views": 86459,
    "multiple": 9.8,
-   "shorts": true
-  },
-  {
-   "title": "후티 반군이 무서운 진짜 이유 #shorts",
-   "url": "https://www.youtube.com/shorts/CTJ-rsjJdyU",
-   "views": 32646,
-   "multiple": 3.7,
    "shorts": true
   },
   {
    "title": "의료보험 있는 것처럼 먹더니…🥄ㅣ돈슐랭 / 14F",
    "url": "https://www.youtube.com/watch?v=fkyakwxfN0g",
-   "views": 473871,
-   "multiple": 3.5,
+   "views": 489756,
+   "multiple": 5.9,
+   "shorts": false
+  },
+  {
+   "title": "후티 반군이 무서운 진짜 이유 #shorts",
+   "url": "https://www.youtube.com/shorts/CTJ-rsjJdyU",
+   "views": 32810,
+   "multiple": 3.7,
+   "shorts": true
+  },
+  {
+   "title": "중국 정사에 기록된 거대 백제 대륙? 백제 요서경략설 미스터리 (강인욱X조법종) ㅣ10분 토론 / 14F",
+   "url": "https://www.youtube.com/watch?v=hvRGI76Jd8E",
+   "views": 273202,
+   "multiple": 3.3,
+   "shorts": false
+  },
+  {
+   "title": "한국 구석구석 안내 하는 ‘구글 지도’… 내년에 만나볼 수 있다고? / 14F",
+   "url": "https://www.youtube.com/watch?v=qY9ByfK70cw",
+   "views": 176609,
+   "multiple": 2.1,
    "shorts": false
   }
  ]

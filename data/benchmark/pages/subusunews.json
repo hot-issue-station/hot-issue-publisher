@@ -1,49 +1,66 @@
 {
  "name": "스브스뉴스 (SBS)",
  "channel": "https://www.youtube.com/@subusunews",
- "checkedAt": "2026-11-18T14:57+09:00",
+ "checkedAt": "2026-11-18T19:35+09:00",
  "subscribers": "144만",
  "videos": [
   {
-   "id": "0EGz1y1LXFQ",
-   "title": "이렇게 심각한데 진짜 연기 안 한다고? #수능 #shorts #스브스뉴스",
-   "views": 1000,
-   "viewsText": "조회수 1천회",
+   "id": "_DCDzT693C0",
+   "title": "유병권 발작 일으킨 청모 도둑",
+   "views": 383,
+   "viewsText": "조회수 383회",
    "published": "",
    "kind": "short"
   },
   {
-   "id": "d_V3w3jWVpQ",
-   "title": "출근도 잘하고, 친구도 잘 만나는데... 우울증이래요 #우울증 #shorts #스브스뉴스",
-   "views": 11000,
-   "viewsText": "조회수 1.1만회",
+   "id": "mmChYuV8uLA",
+   "title": "결혼식에서 사진 찍지 말라는 신혼부부",
+   "views": 1500,
+   "viewsText": "조회수 1.5천회",
+   "published": "",
+   "kind": "short"
+  },
+  {
+   "id": "0EGz1y1LXFQ",
+   "title": "이렇게 심각한데 진짜 연기 안 한다고? #수능 #shorts #스브스뉴스",
+   "views": 2000,
+   "viewsText": "조회수 2천회",
    "published": "",
    "kind": "short",
-   "gain": 4300
+   "gain": 1000
+  },
+  {
+   "id": "d_V3w3jWVpQ",
+   "title": "출근도 잘하고, 친구도 잘 만나는데... 우울증이래요 #우울증 #shorts #스브스뉴스",
+   "views": 12000,
+   "viewsText": "조회수 1.2만회",
+   "published": "",
+   "kind": "short",
+   "gain": 1000
   },
   {
    "id": "gwowgI6Hdt0",
    "title": "AI 이용해서 세무사 시험 수석 합격한 세무냥이의 컨닝 방법 #세무냥이 #shorts #스브스뉴스",
-   "views": 38000,
-   "viewsText": "조회수 3.8만회",
+   "views": 48000,
+   "viewsText": "조회수 4.8만회",
    "published": "",
    "kind": "short",
-   "gain": 12000
+   "gain": 10000
   },
   {
    "id": "zPaJv7lADWY",
    "title": "이제 겨울인데 모기는 왜 안 사라짐? #가을 #shorts #스브스뉴스",
-   "views": 4200,
-   "viewsText": "조회수 4.2천회",
+   "views": 4900,
+   "viewsText": "조회수 4.9천회",
    "published": "",
    "kind": "short",
-   "gain": 900
+   "gain": 700
   },
   {
    "id": "0LtMpN02Csc",
    "title": "관세사도 합격 10배 폭증? 결국 전수조사 나선다 #국가자격시험 #shorts #스브스뉴스",
-   "views": 4800,
-   "viewsText": "조회수 4.8천회",
+   "views": 4900,
+   "viewsText": "조회수 4.9천회",
    "published": "",
    "kind": "short",
    "gain": 100
@@ -55,16 +72,16 @@
    "viewsText": "조회수 1.6만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "a1XAX1FAHu0",
    "title": "공연 볼 곳 없는 파주 시민 구원하러 국립극장 등판? #shorts / 스브스뉴스",
-   "views": 5400,
-   "viewsText": "조회수 5.4천회",
+   "views": 5300,
+   "viewsText": "조회수 5.3천회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": -100
   },
   {
    "id": "omd178ailwI",
@@ -78,11 +95,11 @@
   {
    "id": "T3rXxLcDD-g",
    "title": "홈플러스가 이겨냈으면 좋겠어 #홈플러스 #shorts #스브스뉴스",
-   "views": 6200,
-   "viewsText": "조회수 6.2천회",
+   "views": 6100,
+   "viewsText": "조회수 6.1천회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": -100
   },
   {
    "id": "wHp_zWCqzxw",
@@ -127,7 +144,7 @@
    "viewsText": "조회수 7.2천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "phk3JBktfX8",
@@ -141,11 +158,11 @@
   {
    "id": "80Prr9snsIk",
    "title": "[선공개] 죽여달라는 거지?",
-   "views": 9700,
-   "viewsText": "조회수 9.7천회",
+   "views": 9800,
+   "viewsText": "조회수 9.8천회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 100
   },
   {
    "id": "h8iBMhQ3b-Q",
@@ -159,11 +176,11 @@
   {
    "id": "uO5xviR9-aM",
    "title": "유독 정치판에서 사이비 종교 논란이 자주 터지는 이유 #사이비 #shorts #스브스뉴스",
-   "views": 4700,
-   "viewsText": "조회수 4.7천회",
+   "views": 4800,
+   "viewsText": "조회수 4.8천회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 100
   },
   {
    "id": "Y0Y6eq3a6PE",
@@ -213,11 +230,11 @@
   {
    "id": "qZaeu4PJUps",
    "title": "롯데홈쇼핑이 직접 교육하는 커머스 인재 학교? #shorts #스브스뉴스",
-   "views": 89000,
-   "viewsText": "조회수 8.9만회",
+   "views": 93000,
+   "viewsText": "조회수 9.3만회",
    "published": "",
    "kind": "short",
-   "gain": 3000
+   "gain": 4000
   },
   {
    "id": "bvbHkNEO3t8",
@@ -341,24 +358,6 @@
    "title": "마약 운반하고 아프리카로 도피한 한국 남성, 22년 만에 백발노인으로 강제 송환 #마약 #shorts #스브스뉴스",
    "views": 11000,
    "viewsText": "조회수 1.1만회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "A6pfGRrFOzE",
-   "title": "아이폰 듀오 화면 결함 인정한 애플, 무상 교체 발표했지만 재고 부족 #아이폰듀오 #shorts #스브스뉴스",
-   "views": 29000,
-   "viewsText": "조회수 2.9만회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "-fLcCSNSD34",
-   "title": "1인 1음료 진짜 필수인지 카페 사장님들한테 직접 물어봤습니다. #카페 #shorts #스브스뉴스",
-   "views": 360000,
-   "viewsText": "조회수 36만회",
    "published": "",
    "kind": "short",
    "gain": 0

@@ -3,20 +3,72 @@
  "name": "스브스뉴스 (SBS)",
  "channel": "https://www.youtube.com/@subusunews",
  "channelId": "UCxPClUl0bh7BgJajD5k483g",
- "checkedAt": "2026-11-18T14:57+09:00",
+ "checkedAt": "2026-11-18T19:35+09:00",
  "videos": [
+  {
+   "id": "3YsU2ZxLA0Y",
+   "title": "갤탭도 요약하면서 놀랐을 것 같네요..",
+   "published": "2026-11-18T09:19:20+00:00",
+   "url": "https://www.youtube.com/shorts/3YsU2ZxLA0Y",
+   "shorts": true,
+   "views": 717,
+   "likes": 4,
+   "viewsGain": null,
+   "isNew": true,
+   "median": 10879.5,
+   "multiple": 0.1
+  },
+  {
+   "id": "UvvmykR4X1Y",
+   "title": "단오가 평생 잊지 못하는 여루의 손편지",
+   "published": "2026-11-18T09:00:37+00:00",
+   "url": "https://www.youtube.com/shorts/UvvmykR4X1Y",
+   "shorts": true,
+   "views": 751,
+   "likes": 13,
+   "viewsGain": null,
+   "isNew": true,
+   "median": 10879.5,
+   "multiple": 0.1
+  },
+  {
+   "id": "p2vgoVpjigI",
+   "title": "사실 저도 알아듣기 힘들었어요",
+   "published": "2026-11-18T09:00:19+00:00",
+   "url": "https://www.youtube.com/shorts/p2vgoVpjigI",
+   "shorts": true,
+   "views": 1471,
+   "likes": 13,
+   "viewsGain": null,
+   "isNew": true,
+   "median": 10879.5,
+   "multiple": 0.1
+  },
+  {
+   "id": "pkpBqfEFmV0",
+   "title": "나도 모르게 내 버릇이 된 여루",
+   "published": "2026-11-18T09:00:15+00:00",
+   "url": "https://www.youtube.com/shorts/pkpBqfEFmV0",
+   "shorts": true,
+   "views": 889,
+   "likes": 10,
+   "viewsGain": null,
+   "isNew": true,
+   "median": 10879.5,
+   "multiple": 0.1
+  },
   {
    "id": "h_1QEshJHt0",
    "title": "8년 만에 처음 전하는 편지",
    "published": "2026-11-17T10:52:23+00:00",
    "url": "https://www.youtube.com/shorts/h_1QEshJHt0",
    "shorts": true,
-   "views": 13228,
-   "likes": 382,
-   "viewsGain": 4048,
+   "views": 15750,
+   "likes": 420,
+   "viewsGain": 2522,
    "isNew": false,
-   "median": 14934.0,
-   "multiple": 0.9
+   "median": 10879.5,
+   "multiple": 1.4
   },
   {
    "id": "jpVc9sPoKvs",
@@ -24,12 +76,12 @@
    "published": "2026-11-17T09:54:49+00:00",
    "url": "https://www.youtube.com/shorts/jpVc9sPoKvs",
    "shorts": true,
-   "views": 12630,
-   "likes": 152,
-   "viewsGain": 2689,
+   "views": 15454,
+   "likes": 183,
+   "viewsGain": 2824,
    "isNew": false,
-   "median": 14934.0,
-   "multiple": 0.8
+   "median": 10879.5,
+   "multiple": 1.4
   },
   {
    "id": "QebaUlVRMH4",
@@ -37,12 +89,12 @@
    "published": "2026-11-17T09:48:09+00:00",
    "url": "https://www.youtube.com/shorts/QebaUlVRMH4",
    "shorts": true,
-   "views": 15349,
-   "likes": 382,
-   "viewsGain": 6125,
+   "views": 21426,
+   "likes": 473,
+   "viewsGain": 6077,
    "isNew": false,
-   "median": 14934.0,
-   "multiple": 1.0
+   "median": 10879.5,
+   "multiple": 2.0
   },
   {
    "id": "uJp05ZMpBes",
@@ -50,12 +102,12 @@
    "published": "2026-11-17T09:46:50+00:00",
    "url": "https://www.youtube.com/shorts/uJp05ZMpBes",
    "shorts": true,
-   "views": 6379,
-   "likes": 57,
-   "viewsGain": 1225,
+   "views": 7213,
+   "likes": 67,
+   "viewsGain": 834,
    "isNew": false,
-   "median": 14934.0,
-   "multiple": 0.4
+   "median": 10879.5,
+   "multiple": 0.7
   },
   {
    "id": "TWLm9dFAQAg",
@@ -63,9 +115,9 @@
    "published": "2026-11-17T09:00:24+00:00",
    "url": "https://www.youtube.com/watch?v=TWLm9dFAQAg",
    "shorts": false,
-   "views": 203450,
-   "likes": 4532,
-   "viewsGain": 46009,
+   "views": 247274,
+   "likes": 5190,
+   "viewsGain": 43824,
    "isNew": false,
    "median": null,
    "multiple": null
@@ -76,12 +128,12 @@
    "published": "2026-11-14T09:00:14+00:00",
    "url": "https://www.youtube.com/shorts/lnlJ2G8CryU",
    "shorts": true,
-   "views": 6807,
-   "likes": 107,
-   "viewsGain": 352,
+   "views": 7007,
+   "likes": 109,
+   "viewsGain": 200,
    "isNew": false,
-   "median": 14934.0,
-   "multiple": 0.5
+   "median": 10879.5,
+   "multiple": 0.6
   },
   {
    "id": "vxPnYMZwBxM",
@@ -89,12 +141,12 @@
    "published": "2026-11-14T09:00:09+00:00",
    "url": "https://www.youtube.com/shorts/vxPnYMZwBxM",
    "shorts": true,
-   "views": 4730,
+   "views": 4760,
    "likes": 28,
-   "viewsGain": 40,
+   "viewsGain": 30,
    "isNew": false,
-   "median": 14934.0,
-   "multiple": 0.3
+   "median": 10879.5,
+   "multiple": 0.4
   },
   {
    "id": "LIqJYoJWLxU",
@@ -102,12 +154,12 @@
    "published": "2026-11-14T09:00:08+00:00",
    "url": "https://www.youtube.com/shorts/LIqJYoJWLxU",
    "shorts": true,
-   "views": 20553,
-   "likes": 181,
-   "viewsGain": 482,
+   "views": 20746,
+   "likes": 182,
+   "viewsGain": 193,
    "isNew": false,
-   "median": 14934.0,
-   "multiple": 1.4
+   "median": 10879.5,
+   "multiple": 1.9
   },
   {
    "id": "f5Ht9HLkwzs",
@@ -115,12 +167,12 @@
    "published": "2026-11-13T09:00:38+00:00",
    "url": "https://www.youtube.com/shorts/f5Ht9HLkwzs",
    "shorts": true,
-   "views": 14519,
+   "views": 14546,
    "likes": 131,
-   "viewsGain": 56,
+   "viewsGain": 27,
    "isNew": false,
-   "median": 14934.0,
-   "multiple": 1.0
+   "median": 10879.5,
+   "multiple": 1.3
   },
   {
    "id": "0cDVwBmj7Ow",
@@ -128,12 +180,12 @@
    "published": "2026-11-13T09:00:30+00:00",
    "url": "https://www.youtube.com/shorts/0cDVwBmj7Ow",
    "shorts": true,
-   "views": 20237,
-   "likes": 262,
-   "viewsGain": 45,
+   "views": 20290,
+   "likes": 263,
+   "viewsGain": 53,
    "isNew": false,
-   "median": 14934.0,
-   "multiple": 1.4
+   "median": 10879.5,
+   "multiple": 1.9
   },
   {
    "id": "gdHO75hZEEY",
@@ -141,86 +193,27 @@
    "published": "2026-11-12T09:00:38+00:00",
    "url": "https://www.youtube.com/shorts/gdHO75hZEEY",
    "shorts": true,
-   "views": 37026,
-   "likes": 210,
-   "viewsGain": 452,
+   "views": 37416,
+   "likes": 213,
+   "viewsGain": 390,
    "isNew": false,
-   "median": 14934.0,
-   "multiple": 2.5
-  },
-  {
-   "id": "JyG0ws-5OkA",
-   "title": "수아씨 왜 입이 벌어지면 눈이 감기는 거예요?",
-   "published": "2026-11-12T09:00:21+00:00",
-   "url": "https://www.youtube.com/shorts/JyG0ws-5OkA",
-   "shorts": true,
-   "views": 261300,
-   "likes": 5205,
-   "viewsGain": 2222,
-   "isNew": false,
-   "median": 14934.0,
-   "multiple": 17.5
-  },
-  {
-   "id": "KL0_g5W4oxs",
-   "title": "지금 이거 카리나 이야기 맞아요?",
-   "published": "2026-11-12T09:00:11+00:00",
-   "url": "https://www.youtube.com/shorts/KL0_g5W4oxs",
-   "shorts": true,
-   "views": 35362,
-   "likes": 278,
-   "viewsGain": 141,
-   "isNew": false,
-   "median": 14934.0,
-   "multiple": 2.4
-  },
-  {
-   "id": "TEE7OYw0omU",
-   "title": "우린 늘 질릴 만큼 즐겁잖아",
-   "published": "2026-11-11T09:00:35+00:00",
-   "url": "https://www.youtube.com/shorts/TEE7OYw0omU",
-   "shorts": true,
-   "views": 8914,
-   "likes": 110,
-   "viewsGain": 20,
-   "isNew": false,
-   "median": 14934.0,
-   "multiple": 0.6
-  },
-  {
-   "id": "SsgQRa2QH0U",
-   "title": "슈퍼스타를 친구로 두면 생기는 일",
-   "published": "2026-11-11T09:00:32+00:00",
-   "url": "https://www.youtube.com/shorts/SsgQRa2QH0U",
-   "shorts": true,
-   "views": 16507,
-   "likes": 108,
-   "viewsGain": 17,
-   "isNew": false,
-   "median": 14934.0,
-   "multiple": 1.1
+   "median": 10879.5,
+   "multiple": 3.4
   }
  ],
  "viral": [
   {
-   "title": "수아씨 왜 입이 벌어지면 눈이 감기는 거예요?",
-   "url": "https://www.youtube.com/shorts/JyG0ws-5OkA",
-   "views": 261300,
-   "multiple": 17.5,
-   "shorts": true
-  },
-  {
    "title": "슈퍼스타를 친구로 두는 것도 피곤합니다",
    "url": "https://www.youtube.com/shorts/gdHO75hZEEY",
-   "views": 37026,
-   "multiple": 2.5,
+   "views": 37416,
+   "multiple": 3.4,
    "shorts": true
   },
   {
-   "title": "지금 이거 카리나 이야기 맞아요?",
-   "url": "https://www.youtube.com/shorts/KL0_g5W4oxs",
-   "views": 35362,
-   "multiple": 2.4,
+   "title": "꽃다발 선물도 차원이 다른 중국 스케일",
+   "url": "https://www.youtube.com/shorts/QebaUlVRMH4",
+   "views": 21426,
+   "multiple": 2.0,
    "shorts": true
   }
  ]
