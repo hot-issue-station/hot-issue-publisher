@@ -3,20 +3,33 @@
  "name": "14F 일사에프 (MBC)",
  "channel": "https://www.youtube.com/@14FMBC",
  "channelId": "UCLKuglhGlMmDteQKoniENIQ",
- "checkedAt": "2026-11-18T08:41+09:00",
+ "checkedAt": "2026-11-18T14:57+09:00",
  "videos": [
+  {
+   "id": "abobZ7JfTek",
+   "title": "초가공식품 정확히 아는 사람? #shorts",
+   "published": "2026-11-18T03:00:40+00:00",
+   "url": "https://www.youtube.com/shorts/abobZ7JfTek",
+   "shorts": true,
+   "views": 1264,
+   "likes": 13,
+   "viewsGain": null,
+   "isNew": true,
+   "median": 8753.0,
+   "multiple": 0.1
+  },
   {
    "id": "lEpjsxSLfB8",
    "title": "샤인머스캣 이을 존재의 등장… 한 송이 4만 원 ‘로얄바인’ 뭐길래? / 14F",
    "published": "2026-11-17T09:48:41+00:00",
    "url": "https://www.youtube.com/watch?v=lEpjsxSLfB8",
    "shorts": false,
-   "views": 49180,
-   "likes": 253,
-   "viewsGain": 31446,
+   "views": 71720,
+   "likes": 311,
+   "viewsGain": 22540,
    "isNew": false,
-   "median": 135746,
-   "multiple": 0.4
+   "median": 136625,
+   "multiple": 0.5
   },
   {
    "id": "hvRGI76Jd8E",
@@ -24,12 +37,12 @@
    "published": "2026-11-17T08:30:04+00:00",
    "url": "https://www.youtube.com/watch?v=hvRGI76Jd8E",
    "shorts": false,
-   "views": 203179,
-   "likes": 1196,
-   "viewsGain": 127323,
+   "views": 248382,
+   "likes": 1370,
+   "viewsGain": 45203,
    "isNew": false,
-   "median": 135746,
-   "multiple": 1.5
+   "median": 136625,
+   "multiple": 1.8
   },
   {
    "id": "qY9ByfK70cw",
@@ -37,12 +50,12 @@
    "published": "2026-11-16T09:30:04+00:00",
    "url": "https://www.youtube.com/watch?v=qY9ByfK70cw",
    "shorts": false,
-   "views": 140587,
-   "likes": 743,
-   "viewsGain": 15533,
+   "views": 165961,
+   "likes": 794,
+   "viewsGain": 25374,
    "isNew": false,
-   "median": 135746,
-   "multiple": 1.0
+   "median": 136625,
+   "multiple": 1.2
   },
   {
    "id": "fkyakwxfN0g",
@@ -50,12 +63,12 @@
    "published": "2026-11-16T09:00:29+00:00",
    "url": "https://www.youtube.com/watch?v=fkyakwxfN0g",
    "shorts": false,
-   "views": 429724,
-   "likes": 1935,
-   "viewsGain": 37831,
+   "views": 473871,
+   "likes": 2075,
+   "viewsGain": 44147,
    "isNew": false,
-   "median": 135746,
-   "multiple": 3.2
+   "median": 136625,
+   "multiple": 3.5
   },
   {
    "id": "q2VxkeYVhv0",
@@ -63,11 +76,11 @@
    "published": "2026-11-16T08:34:47+00:00",
    "url": "https://www.youtube.com/watch?v=q2VxkeYVhv0",
    "shorts": false,
-   "views": 75410,
-   "likes": 397,
-   "viewsGain": 5461,
+   "views": 80670,
+   "likes": 411,
+   "viewsGain": 5260,
    "isNew": false,
-   "median": 135746,
+   "median": 136625,
    "multiple": 0.6
   },
   {
@@ -76,11 +89,11 @@
    "published": "2026-11-14T04:00:38+00:00",
    "url": "https://www.youtube.com/shorts/gRThiyajPxQ",
    "shorts": true,
-   "views": 9590,
+   "views": 9629,
    "likes": 42,
-   "viewsGain": 52,
+   "viewsGain": 39,
    "isNew": false,
-   "median": 8712.0,
+   "median": 8753.0,
    "multiple": 1.1
   },
   {
@@ -89,11 +102,11 @@
    "published": "2026-11-14T03:00:22+00:00",
    "url": "https://www.youtube.com/shorts/t0Zs4V5j-uA",
    "shorts": true,
-   "views": 7755,
+   "views": 7877,
    "likes": 48,
-   "viewsGain": 240,
+   "viewsGain": 122,
    "isNew": false,
-   "median": 8712.0,
+   "median": 8753.0,
    "multiple": 0.9
   },
   {
@@ -102,11 +115,11 @@
    "published": "2026-11-13T23:00:17+00:00",
    "url": "https://www.youtube.com/shorts/CTJ-rsjJdyU",
    "shorts": true,
-   "views": 32341,
-   "likes": 352,
-   "viewsGain": 486,
+   "views": 32646,
+   "likes": 353,
+   "viewsGain": 305,
    "isNew": false,
-   "median": 8712.0,
+   "median": 8753.0,
    "multiple": 3.7
   },
   {
@@ -115,11 +128,11 @@
    "published": "2026-11-13T11:56:44+00:00",
    "url": "https://www.youtube.com/watch?v=NzyY32tICRk",
    "shorts": false,
-   "views": 48744,
-   "likes": 432,
-   "viewsGain": 1093,
+   "views": 49658,
+   "likes": 442,
+   "viewsGain": 914,
    "isNew": false,
-   "median": 135746,
+   "median": 136625,
    "multiple": 0.4
   },
   {
@@ -128,11 +141,11 @@
    "published": "2026-11-13T10:00:05+00:00",
    "url": "https://www.youtube.com/watch?v=lhkYVuxd_dY",
    "shorts": false,
-   "views": 155728,
-   "likes": 475,
-   "viewsGain": 1414,
+   "views": 157008,
+   "likes": 479,
+   "viewsGain": 1280,
    "isNew": false,
-   "median": 135746,
+   "median": 136625,
    "multiple": 1.1
   },
   {
@@ -141,12 +154,12 @@
    "published": "2026-11-13T04:00:11+00:00",
    "url": "https://www.youtube.com/shorts/Aj_trkh0zaM",
    "shorts": true,
-   "views": 83491,
-   "likes": 1098,
-   "viewsGain": 3544,
+   "views": 85797,
+   "likes": 1129,
+   "viewsGain": 2306,
    "isNew": false,
-   "median": 8712.0,
-   "multiple": 9.6
+   "median": 8753.0,
+   "multiple": 9.8
   },
   {
    "id": "WgWmSXeb_YA",
@@ -154,11 +167,11 @@
    "published": "2026-11-12T23:00:32+00:00",
    "url": "https://www.youtube.com/shorts/WgWmSXeb_YA",
    "shorts": true,
-   "views": 7834,
+   "views": 7855,
    "likes": 70,
-   "viewsGain": 62,
+   "viewsGain": 21,
    "isNew": false,
-   "median": 8712.0,
+   "median": 8753.0,
    "multiple": 0.9
   },
   {
@@ -167,11 +180,11 @@
    "published": "2026-11-12T09:26:28+00:00",
    "url": "https://www.youtube.com/watch?v=ilCY2YYGUkk",
    "shorts": false,
-   "views": 130312,
-   "likes": 602,
-   "viewsGain": 506,
+   "views": 130607,
+   "likes": 605,
+   "viewsGain": 295,
    "isNew": false,
-   "median": 135746,
+   "median": 136625,
    "multiple": 1.0
   },
   {
@@ -180,47 +193,34 @@
    "published": "2026-11-12T08:00:03+00:00",
    "url": "https://www.youtube.com/watch?v=4fQ9fg9ooko",
    "shorts": false,
-   "views": 135746,
-   "likes": 702,
-   "viewsGain": 985,
+   "views": 136625,
+   "likes": 709,
+   "viewsGain": 879,
    "isNew": false,
-   "median": 135746,
+   "median": 136625,
    "multiple": 1.0
-  },
-  {
-   "id": "yzQjanfzMkg",
-   "title": "예멘 무장 단체 후티 반군의 탄생 #shorts",
-   "published": "2026-11-11T23:00:13+00:00",
-   "url": "https://www.youtube.com/shorts/yzQjanfzMkg",
-   "shorts": true,
-   "views": 5121,
-   "likes": 55,
-   "viewsGain": 28,
-   "isNew": false,
-   "median": 8712.0,
-   "multiple": 0.6
   }
  ],
  "viral": [
   {
    "title": "남대문 스카프 아저씨 입담 모음zip. #shorts",
    "url": "https://www.youtube.com/shorts/Aj_trkh0zaM",
-   "views": 83491,
-   "multiple": 9.6,
+   "views": 85797,
+   "multiple": 9.8,
    "shorts": true
   },
   {
    "title": "후티 반군이 무서운 진짜 이유 #shorts",
    "url": "https://www.youtube.com/shorts/CTJ-rsjJdyU",
-   "views": 32341,
+   "views": 32646,
    "multiple": 3.7,
    "shorts": true
   },
   {
    "title": "의료보험 있는 것처럼 먹더니…🥄ㅣ돈슐랭 / 14F",
    "url": "https://www.youtube.com/watch?v=fkyakwxfN0g",
-   "views": 429724,
-   "multiple": 3.2,
+   "views": 473871,
+   "multiple": 3.5,
    "shorts": false
   }
  ]

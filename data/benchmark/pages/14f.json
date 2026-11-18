@@ -1,26 +1,34 @@
 {
  "name": "14F 일사에프 (MBC)",
  "channel": "https://www.youtube.com/@14FMBC",
- "checkedAt": "2026-11-18T08:41+09:00",
+ "checkedAt": "2026-11-18T14:57+09:00",
  "subscribers": "239만",
  "videos": [
   {
+   "id": "abobZ7JfTek",
+   "title": "초가공식품 정확히 아는 사람? #shorts",
+   "views": 1200,
+   "viewsText": "조회수 1.2천회",
+   "published": "",
+   "kind": "short"
+  },
+  {
    "id": "gRThiyajPxQ",
    "title": "남대문 사장님들 입담이 왜 이리 좋아 #shorts",
-   "views": 9500,
-   "viewsText": "조회수 9.5천회",
+   "views": 9600,
+   "viewsText": "조회수 9.6천회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 100
   },
   {
    "id": "t0Zs4V5j-uA",
    "title": "한국 프랜차이즈가 매력적인 이유 #shorts",
-   "views": 7700,
-   "viewsText": "조회수 7.7천회",
+   "views": 7800,
+   "viewsText": "조회수 7.8천회",
    "published": "",
    "kind": "short",
-   "gain": 200
+   "gain": 100
   },
   {
    "id": "CTJ-rsjJdyU",
@@ -29,16 +37,16 @@
    "viewsText": "조회수 3.2만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "Aj_trkh0zaM",
    "title": "남대문 스카프 아저씨 입담 모음zip. #shorts",
-   "views": 83000,
-   "viewsText": "조회수 8.3만회",
+   "views": 85000,
+   "viewsText": "조회수 8.5만회",
    "published": "",
    "kind": "short",
-   "gain": 4000
+   "gain": 2000
   },
   {
    "id": "WgWmSXeb_YA",
@@ -47,7 +55,7 @@
    "viewsText": "조회수 7.8천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "yzQjanfzMkg",
@@ -56,7 +64,7 @@
    "viewsText": "조회수 5.1천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "yJ40uku5fg0",
@@ -227,7 +235,7 @@
    "viewsText": "조회수 1.3만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "h5T5lYIa5l8",
@@ -351,15 +359,6 @@
    "title": "시뮬레이션이 중요한 이유 #shorts",
    "views": 7200,
    "viewsText": "조회수 7.2천회",
-   "published": "",
-   "kind": "short",
-   "gain": 100
-  },
-  {
-   "id": "ihrb1WAOojc",
-   "title": "나치 vs 폴란드 5주 만에 끝난 이유 #shorts",
-   "views": 30000,
-   "viewsText": "조회수 3만회",
    "published": "",
    "kind": "short",
    "gain": 0

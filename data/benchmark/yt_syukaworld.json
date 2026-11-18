@@ -3,20 +3,46 @@
  "name": "슈카월드",
  "channel": "https://www.youtube.com/@syukaworld",
  "channelId": "UCJo6G1u0e_-wS-JQn3T-zEw",
- "checkedAt": "2026-11-18T08:41+09:00",
+ "checkedAt": "2026-11-18T14:57+09:00",
  "videos": [
+  {
+   "id": "tZdVu8G-104",
+   "title": "🔴 LIVE [슈카의 시황방송] 11월18일ㅣ젠슨형이 복귀하면 받아주나?",
+   "published": "2026-11-18T03:15:05+00:00",
+   "url": "https://www.youtube.com/watch?v=tZdVu8G-104",
+   "shorts": false,
+   "views": 11904,
+   "likes": 271,
+   "viewsGain": null,
+   "isNew": true,
+   "median": 157140,
+   "multiple": 0.1
+  },
+  {
+   "id": "jsV0Gp3PyZM",
+   "title": "엔비디아 스캔들의 비밀",
+   "published": "2026-11-18T02:18:09+00:00",
+   "url": "https://www.youtube.com/shorts/jsV0Gp3PyZM",
+   "shorts": true,
+   "views": 26152,
+   "likes": 320,
+   "viewsGain": null,
+   "isNew": true,
+   "median": 116934.5,
+   "multiple": 0.2
+  },
   {
    "id": "kJeO9iXUse4",
    "title": "네오클라우드는 빙산의 일각",
    "published": "2026-11-17T11:16:19+00:00",
    "url": "https://www.youtube.com/shorts/kJeO9iXUse4",
    "shorts": true,
-   "views": 67250,
-   "likes": 436,
-   "viewsGain": 44711,
+   "views": 83928,
+   "likes": 510,
+   "viewsGain": 16678,
    "isNew": false,
-   "median": 144773.5,
-   "multiple": 0.5
+   "median": 116934.5,
+   "multiple": 0.7
   },
   {
    "id": "XKmD-M7rWO0",
@@ -24,12 +50,12 @@
    "published": "2026-11-17T09:29:46+00:00",
    "url": "https://www.youtube.com/watch?v=XKmD-M7rWO0",
    "shorts": false,
-   "views": 133504,
-   "likes": 960,
-   "viewsGain": 89605,
+   "views": 182053,
+   "likes": 1242,
+   "viewsGain": 48549,
    "isNew": false,
-   "median": 156359,
-   "multiple": 0.9
+   "median": 157140,
+   "multiple": 1.2
   },
   {
    "id": "yT1Rei0xDVc",
@@ -37,11 +63,11 @@
    "published": "2026-11-16T12:11:16+00:00",
    "url": "https://www.youtube.com/watch?v=yT1Rei0xDVc",
    "shorts": false,
-   "views": 149230,
-   "likes": 952,
-   "viewsGain": 2674,
+   "views": 150503,
+   "likes": 959,
+   "viewsGain": 1273,
    "isNew": false,
-   "median": 156359,
+   "median": 157140,
    "multiple": 1.0
   },
   {
@@ -50,11 +76,11 @@
    "published": "2026-11-16T06:36:19+00:00",
    "url": "https://www.youtube.com/watch?v=lGfmyzMMof0",
    "shorts": false,
-   "views": 156359,
-   "likes": 1139,
-   "viewsGain": 1804,
+   "views": 157140,
+   "likes": 1140,
+   "viewsGain": 781,
    "isNew": false,
-   "median": 156359,
+   "median": 157140,
    "multiple": 1.0
   },
   {
@@ -63,12 +89,12 @@
    "published": "2026-11-16T02:54:18+00:00",
    "url": "https://www.youtube.com/shorts/BcH1D15dzsw",
    "shorts": true,
-   "views": 126383,
-   "likes": 1002,
-   "viewsGain": 15469,
+   "views": 134596,
+   "likes": 1057,
+   "viewsGain": 8213,
    "isNew": false,
-   "median": 144773.5,
-   "multiple": 0.9
+   "median": 116934.5,
+   "multiple": 1.2
   },
   {
    "id": "S_S0dX87aPY",
@@ -76,11 +102,11 @@
    "published": "2026-11-14T09:00:24+00:00",
    "url": "https://www.youtube.com/watch?v=S_S0dX87aPY",
    "shorts": false,
-   "views": 222372,
-   "likes": 1563,
-   "viewsGain": 1834,
+   "views": 224616,
+   "likes": 1574,
+   "viewsGain": 2244,
    "isNew": false,
-   "median": 156359,
+   "median": 157140,
    "multiple": 1.4
   },
   {
@@ -89,12 +115,12 @@
    "published": "2026-11-14T07:26:18+00:00",
    "url": "https://www.youtube.com/shorts/eXUFUT2_RpQ",
    "shorts": true,
-   "views": 163164,
-   "likes": 1305,
-   "viewsGain": 3341,
+   "views": 165541,
+   "likes": 1319,
+   "viewsGain": 2377,
    "isNew": false,
-   "median": 144773.5,
-   "multiple": 1.1
+   "median": 116934.5,
+   "multiple": 1.4
   },
   {
    "id": "ZFq74IdTuR8",
@@ -102,12 +128,12 @@
    "published": "2026-11-13T08:00:22+00:00",
    "url": "https://www.youtube.com/shorts/ZFq74IdTuR8",
    "shorts": true,
-   "views": 390043,
-   "likes": 5099,
-   "viewsGain": 6631,
+   "views": 398890,
+   "likes": 5180,
+   "viewsGain": 8847,
    "isNew": false,
-   "median": 144773.5,
-   "multiple": 2.7
+   "median": 116934.5,
+   "multiple": 3.4
   },
   {
    "id": "GXAL5zTk_Sg",
@@ -115,11 +141,11 @@
    "published": "2026-11-13T06:27:17+00:00",
    "url": "https://www.youtube.com/watch?v=GXAL5zTk_Sg",
    "shorts": false,
-   "views": 115766,
-   "likes": 508,
-   "viewsGain": 217,
+   "views": 115857,
+   "likes": 509,
+   "viewsGain": 91,
    "isNew": false,
-   "median": 156359,
+   "median": 157140,
    "multiple": 0.7
   },
   {
@@ -128,12 +154,12 @@
    "published": "2026-11-13T03:21:49+00:00",
    "url": "https://www.youtube.com/shorts/B6DqFmvxiWw",
    "shorts": true,
-   "views": 92365,
-   "likes": 577,
-   "viewsGain": 797,
+   "views": 92797,
+   "likes": 579,
+   "viewsGain": 432,
    "isNew": false,
-   "median": 144773.5,
-   "multiple": 0.6
+   "median": 116934.5,
+   "multiple": 0.8
   },
   {
    "id": "yog9Nwxqtto",
@@ -141,12 +167,12 @@
    "published": "2026-11-12T11:00:11+00:00",
    "url": "https://www.youtube.com/shorts/yog9Nwxqtto",
    "shorts": true,
-   "views": 98982,
-   "likes": 815,
-   "viewsGain": 480,
+   "views": 99273,
+   "likes": 816,
+   "viewsGain": 291,
    "isNew": false,
-   "median": 144773.5,
-   "multiple": 0.7
+   "median": 116934.5,
+   "multiple": 0.8
   },
   {
    "id": "FSqGVxQKEMc",
@@ -154,11 +180,11 @@
    "published": "2026-11-12T09:00:19+00:00",
    "url": "https://www.youtube.com/watch?v=FSqGVxQKEMc",
    "shorts": false,
-   "views": 303762,
-   "likes": 2054,
-   "viewsGain": 1053,
+   "views": 305113,
+   "likes": 2058,
+   "viewsGain": 1351,
    "isNew": false,
-   "median": 156359,
+   "median": 157140,
    "multiple": 1.9
   },
   {
@@ -167,46 +193,27 @@
    "published": "2026-11-12T07:35:07+00:00",
    "url": "https://www.youtube.com/shorts/sTeqHqi-w74",
    "shorts": true,
-   "views": 278156,
-   "likes": 1478,
-   "viewsGain": 314,
+   "views": 278393,
+   "likes": 1480,
+   "viewsGain": 237,
    "isNew": false,
-   "median": 144773.5,
-   "multiple": 1.9
-  },
-  {
-   "id": "PdRYlMmMhJQ",
-   "title": "못하면 하지마세요",
-   "published": "2026-11-12T07:13:26+00:00",
-   "url": "https://www.youtube.com/shorts/PdRYlMmMhJQ",
-   "shorts": true,
-   "views": 220221,
-   "likes": 1326,
-   "viewsGain": 2163,
-   "isNew": false,
-   "median": 144773.5,
-   "multiple": 1.5
-  },
-  {
-   "id": "UEU5eZG5fxk",
-   "title": "[슈카의 시황방송] 11월12일ㅣ젠슨 황 해임설에도 버틴 코스피, 5400선 줄다리기",
-   "published": "2026-11-12T06:41:52+00:00",
-   "url": "https://www.youtube.com/watch?v=UEU5eZG5fxk",
-   "shorts": false,
-   "views": 171785,
-   "likes": 974,
-   "viewsGain": 155,
-   "isNew": false,
-   "median": 156359,
-   "multiple": 1.1
+   "median": 116934.5,
+   "multiple": 2.4
   }
  ],
  "viral": [
   {
    "title": "누가 회사에서 주식 보래?",
    "url": "https://www.youtube.com/shorts/ZFq74IdTuR8",
-   "views": 390043,
-   "multiple": 2.7,
+   "views": 398890,
+   "multiple": 3.4,
+   "shorts": true
+  },
+  {
+   "title": "경력직 젠슨황",
+   "url": "https://www.youtube.com/shorts/sTeqHqi-w74",
+   "views": 278393,
+   "multiple": 2.4,
    "shorts": true
   }
  ]

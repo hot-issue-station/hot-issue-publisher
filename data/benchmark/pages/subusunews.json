@@ -1,50 +1,58 @@
 {
  "name": "스브스뉴스 (SBS)",
  "channel": "https://www.youtube.com/@subusunews",
- "checkedAt": "2026-11-18T08:41+09:00",
+ "checkedAt": "2026-11-18T14:57+09:00",
  "subscribers": "144만",
  "videos": [
   {
+   "id": "0EGz1y1LXFQ",
+   "title": "이렇게 심각한데 진짜 연기 안 한다고? #수능 #shorts #스브스뉴스",
+   "views": 1000,
+   "viewsText": "조회수 1천회",
+   "published": "",
+   "kind": "short"
+  },
+  {
    "id": "d_V3w3jWVpQ",
    "title": "출근도 잘하고, 친구도 잘 만나는데... 우울증이래요 #우울증 #shorts #스브스뉴스",
-   "views": 6700,
-   "viewsText": "조회수 6.7천회",
+   "views": 11000,
+   "viewsText": "조회수 1.1만회",
    "published": "",
    "kind": "short",
-   "gain": 5600
+   "gain": 4300
   },
   {
    "id": "gwowgI6Hdt0",
    "title": "AI 이용해서 세무사 시험 수석 합격한 세무냥이의 컨닝 방법 #세무냥이 #shorts #스브스뉴스",
-   "views": 26000,
-   "viewsText": "조회수 2.6만회",
+   "views": 38000,
+   "viewsText": "조회수 3.8만회",
    "published": "",
    "kind": "short",
-   "gain": 20500
+   "gain": 12000
   },
   {
    "id": "zPaJv7lADWY",
    "title": "이제 겨울인데 모기는 왜 안 사라짐? #가을 #shorts #스브스뉴스",
-   "views": 3300,
-   "viewsText": "조회수 3.3천회",
+   "views": 4200,
+   "viewsText": "조회수 4.2천회",
    "published": "",
    "kind": "short",
-   "gain": 1900
+   "gain": 900
   },
   {
    "id": "0LtMpN02Csc",
    "title": "관세사도 합격 10배 폭증? 결국 전수조사 나선다 #국가자격시험 #shorts #스브스뉴스",
-   "views": 4700,
-   "viewsText": "조회수 4.7천회",
+   "views": 4800,
+   "viewsText": "조회수 4.8천회",
    "published": "",
    "kind": "short",
-   "gain": 200
+   "gain": 100
   },
   {
    "id": "2qGKxq8pdII",
    "title": "부정행위 인정한 세무사 수석 합격자 #AI #shorts #스브스뉴스",
-   "views": 15000,
-   "viewsText": "조회수 1.5만회",
+   "views": 16000,
+   "viewsText": "조회수 1.6만회",
    "published": "",
    "kind": "short",
    "gain": 1000
@@ -74,7 +82,7 @@
    "viewsText": "조회수 6.2천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "wHp_zWCqzxw",
@@ -115,11 +123,11 @@
   {
    "id": "vS6l_n2uJzs",
    "title": "젠슨 황 내연녀 앨리스 황, 10조 원어치 ‘엔비디아 AI칩’ 중국으로 유출? #엔비디아 #shorts #스브스뉴스",
-   "views": 7100,
-   "viewsText": "조회수 7.1천회",
+   "views": 7200,
+   "viewsText": "조회수 7.2천회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 100
   },
   {
    "id": "phk3JBktfX8",
@@ -173,7 +181,7 @@
    "viewsText": "조회수 73만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "lnryKqOozWk",
@@ -200,16 +208,16 @@
    "viewsText": "조회수 6.8천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "qZaeu4PJUps",
    "title": "롯데홈쇼핑이 직접 교육하는 커머스 인재 학교? #shorts #스브스뉴스",
-   "views": 86000,
-   "viewsText": "조회수 8.6만회",
+   "views": 89000,
+   "viewsText": "조회수 8.9만회",
    "published": "",
    "kind": "short",
-   "gain": 6000
+   "gain": 3000
   },
   {
    "id": "bvbHkNEO3t8",
@@ -351,15 +359,6 @@
    "title": "1인 1음료 진짜 필수인지 카페 사장님들한테 직접 물어봤습니다. #카페 #shorts #스브스뉴스",
    "views": 360000,
    "viewsText": "조회수 36만회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "4oWBAsVpDDw",
-   "title": "인문학은 죽지 않는다. #인문학 #shorts #스브스뉴스",
-   "views": 10000,
-   "viewsText": "조회수 1만회",
    "published": "",
    "kind": "short",
    "gain": 0
