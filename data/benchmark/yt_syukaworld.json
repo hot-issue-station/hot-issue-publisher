@@ -3,7 +3,7 @@
  "name": "슈카월드",
  "channel": "https://www.youtube.com/@syukaworld",
  "channelId": "UCJo6G1u0e_-wS-JQn3T-zEw",
- "checkedAt": "2026-11-18T22:52+09:00",
+ "checkedAt": "2026-11-19T08:42+09:00",
  "videos": [
   {
    "id": "s4u1HCrqMJE",
@@ -11,12 +11,12 @@
    "published": "2026-11-18T08:45:11+00:00",
    "url": "https://www.youtube.com/shorts/s4u1HCrqMJE",
    "shorts": true,
-   "views": 75122,
-   "likes": 875,
-   "viewsGain": 55673,
+   "views": 136022,
+   "likes": 1172,
+   "viewsGain": 60900,
    "isNew": false,
-   "median": 93487,
-   "multiple": 0.8
+   "median": 101842,
+   "multiple": 1.3
   },
   {
    "id": "Sva8MRMYh-4",
@@ -24,12 +24,12 @@
    "published": "2026-11-18T08:33:24+00:00",
    "url": "https://www.youtube.com/shorts/Sva8MRMYh-4",
    "shorts": true,
-   "views": 32314,
-   "likes": 333,
-   "viewsGain": 20860,
+   "views": 64013,
+   "likes": 453,
+   "viewsGain": 31699,
    "isNew": false,
-   "median": 93487,
-   "multiple": 0.3
+   "median": 101842,
+   "multiple": 0.6
   },
   {
    "id": "2mh-i_Cf_Gg",
@@ -37,12 +37,12 @@
    "published": "2026-11-18T08:15:41+00:00",
    "url": "https://www.youtube.com/shorts/2mh-i_Cf_Gg",
    "shorts": true,
-   "views": 13683,
-   "likes": 90,
-   "viewsGain": 7811,
+   "views": 23194,
+   "likes": 129,
+   "viewsGain": 9511,
    "isNew": false,
-   "median": 93487,
-   "multiple": 0.1
+   "median": 101842,
+   "multiple": 0.2
   },
   {
    "id": "tZdVu8G-104",
@@ -50,11 +50,11 @@
    "published": "2026-11-18T06:40:05+00:00",
    "url": "https://www.youtube.com/watch?v=tZdVu8G-104",
    "shorts": false,
-   "views": 135843,
-   "likes": 866,
-   "viewsGain": 18927,
+   "views": 147995,
+   "likes": 891,
+   "viewsGain": 12152,
    "isNew": false,
-   "median": 155100.5,
+   "median": 155880.0,
    "multiple": 0.9
   },
   {
@@ -63,12 +63,12 @@
    "published": "2026-11-18T02:18:09+00:00",
    "url": "https://www.youtube.com/shorts/jsV0Gp3PyZM",
    "shorts": true,
-   "views": 69886,
-   "likes": 633,
-   "viewsGain": 18124,
+   "views": 99988,
+   "likes": 826,
+   "viewsGain": 30102,
    "isNew": false,
-   "median": 93487,
-   "multiple": 0.7
+   "median": 101842,
+   "multiple": 1.0
   },
   {
    "id": "kJeO9iXUse4",
@@ -76,11 +76,11 @@
    "published": "2026-11-17T11:16:19+00:00",
    "url": "https://www.youtube.com/shorts/kJeO9iXUse4",
    "shorts": true,
-   "views": 95721,
-   "likes": 566,
-   "viewsGain": 5417,
+   "views": 101842,
+   "likes": 596,
+   "viewsGain": 6121,
    "isNew": false,
-   "median": 93487,
+   "median": 101842,
    "multiple": 1.0
   },
   {
@@ -89,12 +89,12 @@
    "published": "2026-11-17T09:29:46+00:00",
    "url": "https://www.youtube.com/watch?v=XKmD-M7rWO0",
    "shorts": false,
-   "views": 230390,
-   "likes": 1446,
-   "viewsGain": 19470,
+   "views": 256689,
+   "likes": 1550,
+   "viewsGain": 26299,
    "isNew": false,
-   "median": 155100.5,
-   "multiple": 1.5
+   "median": 155880.0,
+   "multiple": 1.6
   },
   {
    "id": "yT1Rei0xDVc",
@@ -102,11 +102,11 @@
    "published": "2026-11-16T12:11:16+00:00",
    "url": "https://www.youtube.com/watch?v=yT1Rei0xDVc",
    "shorts": false,
-   "views": 151912,
-   "likes": 967,
-   "viewsGain": 575,
+   "views": 152698,
+   "likes": 969,
+   "viewsGain": 786,
    "isNew": false,
-   "median": 155100.5,
+   "median": 155880.0,
    "multiple": 1.0
   },
   {
@@ -115,11 +115,11 @@
    "published": "2026-11-16T06:36:19+00:00",
    "url": "https://www.youtube.com/watch?v=lGfmyzMMof0",
    "shorts": false,
-   "views": 158289,
+   "views": 159062,
    "likes": 1139,
-   "viewsGain": 493,
+   "viewsGain": 773,
    "isNew": false,
-   "median": 155100.5,
+   "median": 155880.0,
    "multiple": 1.0
   },
   {
@@ -128,11 +128,11 @@
    "published": "2026-11-16T02:54:18+00:00",
    "url": "https://www.youtube.com/shorts/BcH1D15dzsw",
    "shorts": true,
-   "views": 142948,
-   "likes": 1122,
-   "viewsGain": 4242,
+   "views": 148448,
+   "likes": 1153,
+   "viewsGain": 5500,
    "isNew": false,
-   "median": 93487,
+   "median": 101842,
    "multiple": 1.5
   },
   {
@@ -141,11 +141,11 @@
    "published": "2026-11-14T09:00:24+00:00",
    "url": "https://www.youtube.com/watch?v=S_S0dX87aPY",
    "shorts": false,
-   "views": 226213,
-   "likes": 1585,
-   "viewsGain": 1225,
+   "views": 227622,
+   "likes": 1590,
+   "viewsGain": 1409,
    "isNew": false,
-   "median": 155100.5,
+   "median": 155880.0,
    "multiple": 1.5
   },
   {
@@ -154,12 +154,12 @@
    "published": "2026-11-14T07:26:18+00:00",
    "url": "https://www.youtube.com/shorts/eXUFUT2_RpQ",
    "shorts": true,
-   "views": 167544,
-   "likes": 1348,
-   "viewsGain": 1074,
+   "views": 169448,
+   "likes": 1362,
+   "viewsGain": 1904,
    "isNew": false,
-   "median": 93487,
-   "multiple": 1.8
+   "median": 101842,
+   "multiple": 1.7
   },
   {
    "id": "ZFq74IdTuR8",
@@ -167,12 +167,12 @@
    "published": "2026-11-13T08:00:22+00:00",
    "url": "https://www.youtube.com/shorts/ZFq74IdTuR8",
    "shorts": true,
-   "views": 408633,
-   "likes": 5258,
-   "viewsGain": 4191,
+   "views": 414591,
+   "likes": 5320,
+   "viewsGain": 5958,
    "isNew": false,
-   "median": 93487,
-   "multiple": 4.4
+   "median": 101842,
+   "multiple": 4.1
   },
   {
    "id": "GXAL5zTk_Sg",
@@ -180,11 +180,11 @@
    "published": "2026-11-13T06:27:17+00:00",
    "url": "https://www.youtube.com/watch?v=GXAL5zTk_Sg",
    "shorts": false,
-   "views": 115973,
+   "views": 116077,
    "likes": 510,
-   "viewsGain": 47,
+   "viewsGain": 104,
    "isNew": false,
-   "median": 155100.5,
+   "median": 155880.0,
    "multiple": 0.7
   },
   {
@@ -193,20 +193,20 @@
    "published": "2026-11-13T03:21:49+00:00",
    "url": "https://www.youtube.com/shorts/B6DqFmvxiWw",
    "shorts": true,
-   "views": 93487,
-   "likes": 584,
-   "viewsGain": 322,
+   "views": 94331,
+   "likes": 587,
+   "viewsGain": 844,
    "isNew": false,
-   "median": 93487,
-   "multiple": 1.0
+   "median": 101842,
+   "multiple": 0.9
   }
  ],
  "viral": [
   {
    "title": "누가 회사에서 주식 보래?",
    "url": "https://www.youtube.com/shorts/ZFq74IdTuR8",
-   "views": 408633,
-   "multiple": 4.4,
+   "views": 414591,
+   "multiple": 4.1,
    "shorts": true
   }
  ]

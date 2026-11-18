@@ -1,112 +1,116 @@
 {
  "name": "스브스뉴스 (SBS)",
  "channel": "https://www.youtube.com/@subusunews",
- "checkedAt": "2026-11-18T22:52+09:00",
+ "checkedAt": "2026-11-19T08:42+09:00",
  "subscribers": "144만",
  "videos": [
   {
    "id": "DFiDu4HS9I4",
    "title": "실제 JMS 2세가 말하는 사이비 종교의 충격적인 실체 #사이비 #shorts #스브스뉴스",
-   "views": 872,
-   "viewsText": "조회수 872회",
+   "views": 4300,
+   "viewsText": "조회수 4.3천회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 3428
   },
   {
    "id": "SIFB9hhhj-8",
    "title": "입사 한 달 차 결혼식, 간다 vs 안 간다",
-   "views": 1000,
-   "viewsText": "조회수 1천회",
+   "views": 2500,
+   "viewsText": "조회수 2.5천회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 1500
   },
   {
    "id": "USTfN6dsPZA",
    "title": "“그렇게 살지 마라” 역대급 빡친 위원들",
-   "views": 1800,
-   "viewsText": "조회수 1.8천회",
+   "views": 3500,
+   "viewsText": "조회수 3.5천회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 1700
   },
   {
    "id": "n4IuqG0n5Eg",
    "title": "뉴진스 vs 어도어에서 어도어가 승소한 진짜 이유 #뉴진스 #shorts #스브스뉴스",
-   "views": 2700,
-   "viewsText": "조회수 2.7천회",
+   "views": 10000,
+   "viewsText": "조회수 1만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 7300
   },
   {
    "id": "_DCDzT693C0",
    "title": "유병권 발작 일으킨 청모 도둑",
-   "views": 1300,
-   "viewsText": "조회수 1.3천회",
+   "views": 2100,
+   "viewsText": "조회수 2.1천회",
    "published": "",
    "kind": "short",
-   "gain": 917
+   "gain": 800
   },
   {
    "id": "mmChYuV8uLA",
    "title": "결혼식에서 사진 찍지 말라는 신혼부부",
-   "views": 3600,
-   "viewsText": "조회수 3.6천회",
+   "views": 6000,
+   "viewsText": "조회수 6천회",
    "published": "",
    "kind": "short",
-   "gain": 2100
+   "gain": 2400
   },
   {
    "id": "0EGz1y1LXFQ",
    "title": "이렇게 심각한데 진짜 연기 안 한다고? #수능 #shorts #스브스뉴스",
-   "views": 2400,
-   "viewsText": "조회수 2.4천회",
+   "views": 2600,
+   "viewsText": "조회수 2.6천회",
    "published": "",
    "kind": "short",
-   "gain": 400
+   "gain": 200
   },
   {
    "id": "d_V3w3jWVpQ",
    "title": "출근도 잘하고, 친구도 잘 만나는데... 우울증이래요 #우울증 #shorts #스브스뉴스",
-   "views": 12000,
-   "viewsText": "조회수 1.2만회",
+   "views": 14000,
+   "viewsText": "조회수 1.4만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 2000
   },
   {
    "id": "gwowgI6Hdt0",
    "title": "AI 이용해서 세무사 시험 수석 합격한 세무냥이의 컨닝 방법 #세무냥이 #shorts #스브스뉴스",
-   "views": 56000,
-   "viewsText": "조회수 5.6만회",
+   "views": 67000,
+   "viewsText": "조회수 6.7만회",
    "published": "",
    "kind": "short",
-   "gain": 8000
+   "gain": 11000
   },
   {
    "id": "zPaJv7lADWY",
    "title": "이제 겨울인데 모기는 왜 안 사라짐? #가을 #shorts #스브스뉴스",
-   "views": 5600,
-   "viewsText": "조회수 5.6천회",
+   "views": 6600,
+   "viewsText": "조회수 6.6천회",
    "published": "",
    "kind": "short",
-   "gain": 700
+   "gain": 1000
   },
   {
    "id": "0LtMpN02Csc",
    "title": "관세사도 합격 10배 폭증? 결국 전수조사 나선다 #국가자격시험 #shorts #스브스뉴스",
-   "views": 4900,
-   "viewsText": "조회수 4.9천회",
+   "views": 5100,
+   "viewsText": "조회수 5.1천회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 200
   },
   {
    "id": "2qGKxq8pdII",
    "title": "부정행위 인정한 세무사 수석 합격자 #AI #shorts #스브스뉴스",
-   "views": 16000,
-   "viewsText": "조회수 1.6만회",
+   "views": 17000,
+   "viewsText": "조회수 1.7만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 1000
   },
   {
    "id": "a1XAX1FAHu0",
@@ -129,11 +133,11 @@
   {
    "id": "T3rXxLcDD-g",
    "title": "홈플러스가 이겨냈으면 좋겠어 #홈플러스 #shorts #스브스뉴스",
-   "views": 6100,
-   "viewsText": "조회수 6.1천회",
+   "views": 6200,
+   "viewsText": "조회수 6.2천회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 100
   },
   {
    "id": "wHp_zWCqzxw",
@@ -147,11 +151,11 @@
   {
    "id": "LEWIMLiirq0",
    "title": "성분 따졌다가 고소당한 사람? 그게 나예요. #딸기우유 #shorts #스브스뉴스",
-   "views": 9100,
-   "viewsText": "조회수 9.1천회",
+   "views": 9200,
+   "viewsText": "조회수 9.2천회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 100
   },
   {
    "id": "QSXv2yiIveI",
@@ -174,11 +178,11 @@
   {
    "id": "vS6l_n2uJzs",
    "title": "젠슨 황 내연녀 앨리스 황, 10조 원어치 ‘엔비디아 AI칩’ 중국으로 유출? #엔비디아 #shorts #스브스뉴스",
-   "views": 7200,
-   "viewsText": "조회수 7.2천회",
+   "views": 7300,
+   "viewsText": "조회수 7.3천회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 100
   },
   {
    "id": "phk3JBktfX8",
@@ -246,11 +250,11 @@
   {
    "id": "pmpb5ZMw3Sw",
    "title": "매번 달라지는 게 없다는 자살예방계획의 민낯 #청소년자살 #shorts #스브스뉴스",
-   "views": 3000,
-   "viewsText": "조회수 3천회",
+   "views": 3100,
+   "viewsText": "조회수 3.1천회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 100
   },
   {
    "id": "STWniX3sH0g",
@@ -264,11 +268,11 @@
   {
    "id": "qZaeu4PJUps",
    "title": "롯데홈쇼핑이 직접 교육하는 커머스 인재 학교? #shorts #스브스뉴스",
-   "views": 94000,
-   "viewsText": "조회수 9.4만회",
+   "views": 96000,
+   "viewsText": "조회수 9.6만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 2000
   },
   {
    "id": "bvbHkNEO3t8",
