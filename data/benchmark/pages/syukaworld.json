@@ -1,26 +1,26 @@
 {
  "name": "슈카월드",
  "channel": "https://www.youtube.com/@syukaworld",
- "checkedAt": "2026-11-19T08:42+09:00",
+ "checkedAt": "2026-11-19T14:57+09:00",
  "subscribers": "374만",
  "videos": [
   {
    "id": "xhzS_pawX9Y",
    "title": "슈카 서울대 입학 해명",
-   "views": 150000,
-   "viewsText": "조회수 15만회",
+   "views": 190000,
+   "viewsText": "조회수 19만회",
    "published": "",
    "kind": "short",
-   "gain": 130000
+   "gain": 40000
   },
   {
    "id": "NINJ94H2s04",
    "title": "수능 비상! AI 부정행위를 막아라!",
-   "views": 81000,
-   "viewsText": "조회수 8.1만회",
+   "views": 91000,
+   "viewsText": "조회수 9.1만회",
    "published": "",
    "kind": "short",
-   "gain": 21000
+   "gain": 10000
   },
   {
    "id": "PPIMOKvuSDY",
@@ -61,11 +61,11 @@
   {
    "id": "xVKY3CWUoSE",
    "title": "딸깍으로 떠먹여주는 서비스",
-   "views": 63000,
-   "viewsText": "조회수 6.3만회",
+   "views": 64000,
+   "viewsText": "조회수 6.4만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 1000
   },
   {
    "id": "lioIrGMoIbs",
@@ -187,11 +187,11 @@
   {
    "id": "Gy9zZfrYwUo",
    "title": "그들이 사는 세상 (주식 버전)",
-   "views": 1920000,
-   "viewsText": "조회수 192만회",
+   "views": 1930000,
+   "viewsText": "조회수 193만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "TqwwF2cJJgA",

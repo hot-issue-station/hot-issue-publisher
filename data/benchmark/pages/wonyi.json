@@ -1,23 +1,23 @@
 {
  "name": "안원잘부",
  "channel": "https://www.youtube.com/@helloiamwoninicetomeetyou",
- "checkedAt": "2026-11-19T08:42+09:00",
+ "checkedAt": "2026-11-19T14:57+09:00",
  "subscribers": "244만",
  "videos": [
   {
    "id": "N3MX2W5_Zfs",
    "title": "디즈니 영화 OST가 된 이유",
-   "views": 1120000,
-   "viewsText": "조회수 112만회",
+   "views": 1160000,
+   "viewsText": "조회수 116만회",
    "published": "",
    "kind": "short",
-   "gain": 90000
+   "gain": 40000
   },
   {
    "id": "kfK-LENbEUo",
    "title": "정작가의 컴백을 축하합니다",
-   "views": 1800000,
-   "viewsText": "조회수 180만회",
+   "views": 1810000,
+   "viewsText": "조회수 181만회",
    "published": "",
    "kind": "short",
    "gain": 10000
@@ -29,7 +29,7 @@
    "viewsText": "조회수 274만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "zxNoW_LtVLE",
@@ -38,7 +38,7 @@
    "viewsText": "조회수 282만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "mFM2hP5LEhM",
@@ -56,7 +56,7 @@
    "viewsText": "조회수 624만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "GsYq_ouLAMQ",
@@ -106,11 +106,11 @@
   {
    "id": "o-B0F16GwL0",
    "title": "[B컷] 의자 안 돌아가요",
-   "views": 13600000,
-   "viewsText": "조회수 1360만회",
+   "views": 13610000,
+   "viewsText": "조회수 1361만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "gNJrbCSN2TM",
@@ -124,11 +124,11 @@
   {
    "id": "F5CbMShscuk",
    "title": "Endless Rain",
-   "views": 1620000,
-   "viewsText": "조회수 162만회",
+   "views": 1630000,
+   "viewsText": "조회수 163만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "VUufd3Hd_2Q",
@@ -236,7 +236,7 @@
    "viewsText": "조회수 531만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "cDDORzB-2Q0",
@@ -263,7 +263,7 @@
    "viewsText": "조회수 643만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "ORksT1QDf3k",
