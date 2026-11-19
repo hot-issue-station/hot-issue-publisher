@@ -3,7 +3,7 @@
  "name": "스브스뉴스 (SBS)",
  "channel": "https://www.youtube.com/@subusunews",
  "channelId": "UCxPClUl0bh7BgJajD5k483g",
- "checkedAt": "2026-11-19T19:32+09:00",
+ "checkedAt": "2026-11-19T22:53+09:00",
  "videos": [
   {
    "id": "0ZiRmpIs0Eo",
@@ -11,12 +11,12 @@
    "published": "2026-11-19T09:00:18+00:00",
    "url": "https://www.youtube.com/shorts/0ZiRmpIs0Eo",
    "shorts": true,
-   "views": 1077,
-   "likes": 32,
-   "viewsGain": null,
-   "isNew": true,
-   "median": 8213.5,
-   "multiple": 0.1
+   "views": 3885,
+   "likes": 99,
+   "viewsGain": 2808,
+   "isNew": false,
+   "median": 8462.5,
+   "multiple": 0.5
   },
   {
    "id": "2EHFXAZ5tqY",
@@ -24,12 +24,12 @@
    "published": "2026-11-19T09:00:15+00:00",
    "url": "https://www.youtube.com/shorts/2EHFXAZ5tqY",
    "shorts": true,
-   "views": 1699,
-   "likes": 29,
-   "viewsGain": null,
-   "isNew": true,
-   "median": 8213.5,
-   "multiple": 0.2
+   "views": 6184,
+   "likes": 90,
+   "viewsGain": 4485,
+   "isNew": false,
+   "median": 8462.5,
+   "multiple": 0.7
   },
   {
    "id": "3YsU2ZxLA0Y",
@@ -37,11 +37,11 @@
    "published": "2026-11-18T09:19:20+00:00",
    "url": "https://www.youtube.com/shorts/3YsU2ZxLA0Y",
    "shorts": true,
-   "views": 2434,
+   "views": 2528,
    "likes": 11,
-   "viewsGain": 135,
+   "viewsGain": 94,
    "isNew": false,
-   "median": 8213.5,
+   "median": 8462.5,
    "multiple": 0.3
   },
   {
@@ -50,12 +50,12 @@
    "published": "2026-11-18T09:00:37+00:00",
    "url": "https://www.youtube.com/shorts/UvvmykR4X1Y",
    "shorts": true,
-   "views": 5984,
-   "likes": 122,
-   "viewsGain": 650,
+   "views": 6717,
+   "likes": 163,
+   "viewsGain": 733,
    "isNew": false,
-   "median": 8213.5,
-   "multiple": 0.7
+   "median": 8462.5,
+   "multiple": 0.8
   },
   {
    "id": "p2vgoVpjigI",
@@ -63,11 +63,11 @@
    "published": "2026-11-18T09:00:19+00:00",
    "url": "https://www.youtube.com/shorts/p2vgoVpjigI",
    "shorts": true,
-   "views": 9155,
-   "likes": 115,
-   "viewsGain": 1171,
+   "views": 9638,
+   "likes": 118,
+   "viewsGain": 483,
    "isNew": false,
-   "median": 8213.5,
+   "median": 8462.5,
    "multiple": 1.1
   },
   {
@@ -76,11 +76,11 @@
    "published": "2026-11-18T09:00:15+00:00",
    "url": "https://www.youtube.com/shorts/pkpBqfEFmV0",
    "shorts": true,
-   "views": 6869,
-   "likes": 74,
-   "viewsGain": 314,
+   "views": 7010,
+   "likes": 75,
+   "viewsGain": 141,
    "isNew": false,
-   "median": 8213.5,
+   "median": 8462.5,
    "multiple": 0.8
   },
   {
@@ -89,12 +89,12 @@
    "published": "2026-11-17T10:52:23+00:00",
    "url": "https://www.youtube.com/shorts/h_1QEshJHt0",
    "shorts": true,
-   "views": 18023,
-   "likes": 450,
-   "viewsGain": 168,
+   "views": 18164,
+   "likes": 453,
+   "viewsGain": 141,
    "isNew": false,
-   "median": 8213.5,
-   "multiple": 2.2
+   "median": 8462.5,
+   "multiple": 2.1
   },
   {
    "id": "jpVc9sPoKvs",
@@ -102,12 +102,12 @@
    "published": "2026-11-17T09:54:49+00:00",
    "url": "https://www.youtube.com/shorts/jpVc9sPoKvs",
    "shorts": true,
-   "views": 18940,
+   "views": 19005,
    "likes": 194,
-   "viewsGain": 148,
+   "viewsGain": 65,
    "isNew": false,
-   "median": 8213.5,
-   "multiple": 2.3
+   "median": 8462.5,
+   "multiple": 2.2
   },
   {
    "id": "QebaUlVRMH4",
@@ -115,12 +115,12 @@
    "published": "2026-11-17T09:48:09+00:00",
    "url": "https://www.youtube.com/shorts/QebaUlVRMH4",
    "shorts": true,
-   "views": 33395,
-   "likes": 608,
-   "viewsGain": 961,
+   "views": 34174,
+   "likes": 624,
+   "viewsGain": 779,
    "isNew": false,
-   "median": 8213.5,
-   "multiple": 4.1
+   "median": 8462.5,
+   "multiple": 4.0
   },
   {
    "id": "uJp05ZMpBes",
@@ -128,11 +128,11 @@
    "published": "2026-11-17T09:46:50+00:00",
    "url": "https://www.youtube.com/shorts/uJp05ZMpBes",
    "shorts": true,
-   "views": 9433,
+   "views": 9654,
    "likes": 86,
-   "viewsGain": 249,
+   "viewsGain": 221,
    "isNew": false,
-   "median": 8213.5,
+   "median": 8462.5,
    "multiple": 1.1
   },
   {
@@ -141,9 +141,9 @@
    "published": "2026-11-17T09:00:24+00:00",
    "url": "https://www.youtube.com/watch?v=TWLm9dFAQAg",
    "shorts": false,
-   "views": 403687,
-   "likes": 6778,
-   "viewsGain": 22429,
+   "views": 422486,
+   "likes": 7027,
+   "viewsGain": 18799,
    "isNew": false,
    "median": null,
    "multiple": null
@@ -154,11 +154,11 @@
    "published": "2026-11-14T09:00:14+00:00",
    "url": "https://www.youtube.com/shorts/lnlJ2G8CryU",
    "shorts": true,
-   "views": 7272,
-   "likes": 113,
-   "viewsGain": 20,
+   "views": 7287,
+   "likes": 112,
+   "viewsGain": 15,
    "isNew": false,
-   "median": 8213.5,
+   "median": 8462.5,
    "multiple": 0.9
   },
   {
@@ -167,11 +167,11 @@
    "published": "2026-11-14T09:00:09+00:00",
    "url": "https://www.youtube.com/shorts/vxPnYMZwBxM",
    "shorts": true,
-   "views": 4871,
-   "likes": 30,
-   "viewsGain": 22,
+   "views": 4876,
+   "likes": 29,
+   "viewsGain": 5,
    "isNew": false,
-   "median": 8213.5,
+   "median": 8462.5,
    "multiple": 0.6
   },
   {
@@ -180,12 +180,12 @@
    "published": "2026-11-14T09:00:08+00:00",
    "url": "https://www.youtube.com/shorts/LIqJYoJWLxU",
    "shorts": true,
-   "views": 21315,
-   "likes": 185,
-   "viewsGain": 62,
+   "views": 21345,
+   "likes": 184,
+   "viewsGain": 30,
    "isNew": false,
-   "median": 8213.5,
-   "multiple": 2.6
+   "median": 8462.5,
+   "multiple": 2.5
   },
   {
    "id": "f5Ht9HLkwzs",
@@ -193,41 +193,41 @@
    "published": "2026-11-13T09:00:38+00:00",
    "url": "https://www.youtube.com/shorts/f5Ht9HLkwzs",
    "shorts": true,
-   "views": 14707,
-   "likes": 132,
-   "viewsGain": 16,
+   "views": 14710,
+   "likes": 131,
+   "viewsGain": 3,
    "isNew": false,
-   "median": 8213.5,
-   "multiple": 1.8
+   "median": 8462.5,
+   "multiple": 1.7
   }
  ],
  "viral": [
   {
    "title": "꽃다발 선물도 차원이 다른 중국 스케일",
    "url": "https://www.youtube.com/shorts/QebaUlVRMH4",
-   "views": 33395,
-   "multiple": 4.1,
+   "views": 34174,
+   "multiple": 4.0,
    "shorts": true
   },
   {
    "title": "약간 진짜 빛을 본 느낌이었어요",
    "url": "https://www.youtube.com/shorts/LIqJYoJWLxU",
-   "views": 21315,
-   "multiple": 2.6,
+   "views": 21345,
+   "multiple": 2.5,
    "shorts": true
   },
   {
    "title": "노빠꾸 중남의 애정 표현법",
    "url": "https://www.youtube.com/shorts/jpVc9sPoKvs",
-   "views": 18940,
-   "multiple": 2.3,
+   "views": 19005,
+   "multiple": 2.2,
    "shorts": true
   },
   {
    "title": "8년 만에 처음 전하는 편지",
    "url": "https://www.youtube.com/shorts/h_1QEshJHt0",
-   "views": 18023,
-   "multiple": 2.2,
+   "views": 18164,
+   "multiple": 2.1,
    "shorts": true
   }
  ]

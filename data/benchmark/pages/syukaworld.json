@@ -1,26 +1,26 @@
 {
  "name": "슈카월드",
  "channel": "https://www.youtube.com/@syukaworld",
- "checkedAt": "2026-11-19T19:32+09:00",
+ "checkedAt": "2026-11-19T22:53+09:00",
  "subscribers": "374만",
  "videos": [
   {
    "id": "xhzS_pawX9Y",
    "title": "슈카 서울대 입학 해명",
-   "views": 210000,
-   "viewsText": "조회수 21만회",
+   "views": 240000,
+   "viewsText": "조회수 24만회",
    "published": "",
    "kind": "short",
-   "gain": 20000
+   "gain": 30000
   },
   {
    "id": "NINJ94H2s04",
    "title": "수능 비상! AI 부정행위를 막아라!",
-   "views": 96000,
-   "viewsText": "조회수 9.6만회",
+   "views": 99000,
+   "viewsText": "조회수 9.9만회",
    "published": "",
    "kind": "short",
-   "gain": 5000
+   "gain": 3000
   },
   {
    "id": "PPIMOKvuSDY",
@@ -29,7 +29,7 @@
    "viewsText": "조회수 11만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "5mSF8npmm9A",

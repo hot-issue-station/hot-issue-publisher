@@ -1,14 +1,14 @@
 {
  "name": "안원잘부",
  "channel": "https://www.youtube.com/@helloiamwoninicetomeetyou",
- "checkedAt": "2026-11-19T19:32+09:00",
+ "checkedAt": "2026-11-19T22:53+09:00",
  "subscribers": "244만",
  "videos": [
   {
    "id": "N3MX2W5_Zfs",
    "title": "디즈니 영화 OST가 된 이유",
-   "views": 1180000,
-   "viewsText": "조회수 118만회",
+   "views": 1200000,
+   "viewsText": "조회수 120만회",
    "published": "",
    "kind": "short",
    "gain": 20000
@@ -20,7 +20,7 @@
    "viewsText": "조회수 182만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "DKDmFgXzxs8",
@@ -70,11 +70,11 @@
   {
    "id": "BUeZskDCMpU",
    "title": "[B컷] 와인 처음 따는 원이",
-   "views": 2940000,
-   "viewsText": "조회수 294만회",
+   "views": 2950000,
+   "viewsText": "조회수 295만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "7Q_myxhlcwE",
@@ -317,7 +317,7 @@
    "viewsText": "조회수 696만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "hrFWuCyHXpY",

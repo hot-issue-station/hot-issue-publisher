@@ -3,7 +3,7 @@
  "name": "슈카월드",
  "channel": "https://www.youtube.com/@syukaworld",
  "channelId": "UCJo6G1u0e_-wS-JQn3T-zEw",
- "checkedAt": "2026-11-19T19:32+09:00",
+ "checkedAt": "2026-11-19T22:53+09:00",
  "videos": [
   {
    "id": "JiKUxWsF5Ww",
@@ -11,12 +11,12 @@
    "published": "2026-11-19T09:52:15+00:00",
    "url": "https://www.youtube.com/shorts/JiKUxWsF5Ww",
    "shorts": true,
-   "views": 13741,
-   "likes": 188,
-   "viewsGain": null,
-   "isNew": true,
-   "median": 131236,
-   "multiple": 0.1
+   "views": 79540,
+   "likes": 871,
+   "viewsGain": 65799,
+   "isNew": false,
+   "median": 136139,
+   "multiple": 0.6
   },
   {
    "id": "vai2XXhUsCk",
@@ -24,12 +24,12 @@
    "published": "2026-11-19T06:42:35+00:00",
    "url": "https://www.youtube.com/watch?v=vai2XXhUsCk",
    "shorts": false,
-   "views": 122592,
-   "likes": 838,
-   "viewsGain": 110256,
+   "views": 136709,
+   "likes": 888,
+   "viewsGain": 14117,
    "isNew": false,
-   "median": 155429.5,
-   "multiple": 0.8
+   "median": 155692.5,
+   "multiple": 0.9
   },
   {
    "id": "s4u1HCrqMJE",
@@ -37,11 +37,11 @@
    "published": "2026-11-18T08:45:11+00:00",
    "url": "https://www.youtube.com/shorts/s4u1HCrqMJE",
    "shorts": true,
-   "views": 166199,
-   "likes": 1413,
-   "viewsGain": 9730,
+   "views": 171892,
+   "likes": 1476,
+   "viewsGain": 5693,
    "isNew": false,
-   "median": 131236,
+   "median": 136139,
    "multiple": 1.3
   },
   {
@@ -50,11 +50,11 @@
    "published": "2026-11-18T08:33:24+00:00",
    "url": "https://www.youtube.com/shorts/Sva8MRMYh-4",
    "shorts": true,
-   "views": 78488,
-   "likes": 552,
-   "viewsGain": 5013,
+   "views": 81786,
+   "likes": 581,
+   "viewsGain": 3298,
    "isNew": false,
-   "median": 131236,
+   "median": 136139,
    "multiple": 0.6
   },
   {
@@ -63,11 +63,11 @@
    "published": "2026-11-18T08:15:41+00:00",
    "url": "https://www.youtube.com/shorts/2mh-i_Cf_Gg",
    "shorts": true,
-   "views": 31095,
-   "likes": 175,
-   "viewsGain": 2337,
+   "views": 32502,
+   "likes": 180,
+   "viewsGain": 1407,
    "isNew": false,
-   "median": 131236,
+   "median": 136139,
    "multiple": 0.2
   },
   {
@@ -76,11 +76,11 @@
    "published": "2026-11-18T06:40:05+00:00",
    "url": "https://www.youtube.com/watch?v=tZdVu8G-104",
    "shorts": false,
-   "views": 152636,
+   "views": 153522,
    "likes": 896,
-   "viewsGain": 1783,
+   "viewsGain": 886,
    "isNew": false,
-   "median": 155429.5,
+   "median": 155692.5,
    "multiple": 1.0
   },
   {
@@ -89,11 +89,11 @@
    "published": "2026-11-18T02:18:09+00:00",
    "url": "https://www.youtube.com/shorts/jsV0Gp3PyZM",
    "shorts": true,
-   "views": 131236,
-   "likes": 1006,
-   "viewsGain": 6233,
+   "views": 136139,
+   "likes": 1053,
+   "viewsGain": 4903,
    "isNew": false,
-   "median": 131236,
+   "median": 136139,
    "multiple": 1.0
   },
   {
@@ -102,11 +102,11 @@
    "published": "2026-11-17T11:16:19+00:00",
    "url": "https://www.youtube.com/shorts/kJeO9iXUse4",
    "shorts": true,
-   "views": 105651,
-   "likes": 615,
-   "viewsGain": 1339,
+   "views": 106698,
+   "likes": 617,
+   "viewsGain": 1047,
    "isNew": false,
-   "median": 131236,
+   "median": 136139,
    "multiple": 0.8
   },
   {
@@ -115,12 +115,12 @@
    "published": "2026-11-17T09:29:46+00:00",
    "url": "https://www.youtube.com/watch?v=XKmD-M7rWO0",
    "shorts": false,
-   "views": 286772,
-   "likes": 1677,
-   "viewsGain": 12940,
+   "views": 294373,
+   "likes": 1695,
+   "viewsGain": 7601,
    "isNew": false,
-   "median": 155429.5,
-   "multiple": 1.8
+   "median": 155692.5,
+   "multiple": 1.9
   },
   {
    "id": "yT1Rei0xDVc",
@@ -128,11 +128,11 @@
    "published": "2026-11-16T12:11:16+00:00",
    "url": "https://www.youtube.com/watch?v=yT1Rei0xDVc",
    "shorts": false,
-   "views": 153330,
-   "likes": 969,
-   "viewsGain": 304,
+   "views": 153606,
+   "likes": 970,
+   "viewsGain": 276,
    "isNew": false,
-   "median": 155429.5,
+   "median": 155692.5,
    "multiple": 1.0
   },
   {
@@ -141,11 +141,11 @@
    "published": "2026-11-16T06:36:19+00:00",
    "url": "https://www.youtube.com/watch?v=lGfmyzMMof0",
    "shorts": false,
-   "views": 157529,
-   "likes": 1140,
-   "viewsGain": 102,
+   "views": 157779,
+   "likes": 1141,
+   "viewsGain": 250,
    "isNew": false,
-   "median": 155429.5,
+   "median": 155692.5,
    "multiple": 1.0
   },
   {
@@ -154,12 +154,12 @@
    "published": "2026-11-16T02:54:18+00:00",
    "url": "https://www.youtube.com/shorts/BcH1D15dzsw",
    "shorts": true,
-   "views": 151714,
-   "likes": 1170,
-   "viewsGain": 892,
+   "views": 152763,
+   "likes": 1183,
+   "viewsGain": 1049,
    "isNew": false,
-   "median": 131236,
-   "multiple": 1.2
+   "median": 136139,
+   "multiple": 1.1
   },
   {
    "id": "S_S0dX87aPY",
@@ -167,11 +167,11 @@
    "published": "2026-11-14T09:00:24+00:00",
    "url": "https://www.youtube.com/watch?v=S_S0dX87aPY",
    "shorts": false,
-   "views": 230274,
-   "likes": 1594,
-   "viewsGain": 973,
+   "views": 231144,
+   "likes": 1598,
+   "viewsGain": 870,
    "isNew": false,
-   "median": 155429.5,
+   "median": 155692.5,
    "multiple": 1.5
   },
   {
@@ -180,11 +180,11 @@
    "published": "2026-11-14T07:26:18+00:00",
    "url": "https://www.youtube.com/shorts/eXUFUT2_RpQ",
    "shorts": true,
-   "views": 172150,
-   "likes": 1384,
-   "viewsGain": 940,
+   "views": 173039,
+   "likes": 1393,
+   "viewsGain": 889,
    "isNew": false,
-   "median": 131236,
+   "median": 136139,
    "multiple": 1.3
   },
   {
@@ -193,20 +193,20 @@
    "published": "2026-11-13T08:00:22+00:00",
    "url": "https://www.youtube.com/shorts/ZFq74IdTuR8",
    "shorts": true,
-   "views": 424823,
-   "likes": 5398,
-   "viewsGain": 3858,
+   "views": 427755,
+   "likes": 5416,
+   "viewsGain": 2932,
    "isNew": false,
-   "median": 131236,
-   "multiple": 3.2
+   "median": 136139,
+   "multiple": 3.1
   }
  ],
  "viral": [
   {
    "title": "누가 회사에서 주식 보래?",
    "url": "https://www.youtube.com/shorts/ZFq74IdTuR8",
-   "views": 424823,
-   "multiple": 3.2,
+   "views": 427755,
+   "multiple": 3.1,
    "shorts": true
   }
  ]
