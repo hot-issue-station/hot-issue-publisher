@@ -1,23 +1,23 @@
 {
  "name": "안원잘부",
  "channel": "https://www.youtube.com/@helloiamwoninicetomeetyou",
- "checkedAt": "2026-11-19T14:57+09:00",
+ "checkedAt": "2026-11-19T19:32+09:00",
  "subscribers": "244만",
  "videos": [
   {
    "id": "N3MX2W5_Zfs",
    "title": "디즈니 영화 OST가 된 이유",
-   "views": 1160000,
-   "viewsText": "조회수 116만회",
+   "views": 1180000,
+   "viewsText": "조회수 118만회",
    "published": "",
    "kind": "short",
-   "gain": 40000
+   "gain": 20000
   },
   {
    "id": "kfK-LENbEUo",
    "title": "정작가의 컴백을 축하합니다",
-   "views": 1810000,
-   "viewsText": "조회수 181만회",
+   "views": 1820000,
+   "viewsText": "조회수 182만회",
    "published": "",
    "kind": "short",
    "gain": 10000
@@ -110,7 +110,7 @@
    "viewsText": "조회수 1361만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "gNJrbCSN2TM",
@@ -128,7 +128,7 @@
    "viewsText": "조회수 163만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "VUufd3Hd_2Q",
@@ -313,11 +313,11 @@
   {
    "id": "nHY4EK0kVH0",
    "title": "저한테 왜 그러시는 거예요",
-   "views": 6950000,
-   "viewsText": "조회수 695만회",
+   "views": 6960000,
+   "viewsText": "조회수 696만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "hrFWuCyHXpY",

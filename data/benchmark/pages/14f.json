@@ -1,17 +1,17 @@
 {
  "name": "14F 일사에프 (MBC)",
  "channel": "https://www.youtube.com/@14FMBC",
- "checkedAt": "2026-11-19T14:57+09:00",
+ "checkedAt": "2026-11-19T19:32+09:00",
  "subscribers": "239만",
  "videos": [
   {
    "id": "abobZ7JfTek",
    "title": "초가공식품 정확히 아는 사람? #shorts",
-   "views": 3300,
-   "viewsText": "조회수 3.3천회",
+   "views": 3400,
+   "viewsText": "조회수 3.4천회",
    "published": "",
    "kind": "short",
-   "gain": 300
+   "gain": 100
   },
   {
    "id": "gRThiyajPxQ",
@@ -47,7 +47,7 @@
    "viewsText": "조회수 9만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "WgWmSXeb_YA",

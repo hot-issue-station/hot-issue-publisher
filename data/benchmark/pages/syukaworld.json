@@ -1,35 +1,35 @@
 {
  "name": "슈카월드",
  "channel": "https://www.youtube.com/@syukaworld",
- "checkedAt": "2026-11-19T14:57+09:00",
+ "checkedAt": "2026-11-19T19:32+09:00",
  "subscribers": "374만",
  "videos": [
   {
    "id": "xhzS_pawX9Y",
    "title": "슈카 서울대 입학 해명",
-   "views": 190000,
-   "viewsText": "조회수 19만회",
+   "views": 210000,
+   "viewsText": "조회수 21만회",
    "published": "",
    "kind": "short",
-   "gain": 40000
+   "gain": 20000
   },
   {
    "id": "NINJ94H2s04",
    "title": "수능 비상! AI 부정행위를 막아라!",
-   "views": 91000,
-   "viewsText": "조회수 9.1만회",
+   "views": 96000,
+   "viewsText": "조회수 9.6만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 5000
   },
   {
    "id": "PPIMOKvuSDY",
    "title": "교황님 말씀 \"젊은이들이여, 돈과 SNS에 사로잡히지 말라\"",
-   "views": 100000,
-   "viewsText": "조회수 10만회",
+   "views": 110000,
+   "viewsText": "조회수 11만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "5mSF8npmm9A",
@@ -65,7 +65,7 @@
    "viewsText": "조회수 6.4만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "lioIrGMoIbs",
@@ -191,7 +191,7 @@
    "viewsText": "조회수 193만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "TqwwF2cJJgA",

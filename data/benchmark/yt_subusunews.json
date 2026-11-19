@@ -3,20 +3,46 @@
  "name": "스브스뉴스 (SBS)",
  "channel": "https://www.youtube.com/@subusunews",
  "channelId": "UCxPClUl0bh7BgJajD5k483g",
- "checkedAt": "2026-11-19T14:57+09:00",
+ "checkedAt": "2026-11-19T19:32+09:00",
  "videos": [
+  {
+   "id": "0ZiRmpIs0Eo",
+   "title": "제가 할 거를 알려주세요",
+   "published": "2026-11-19T09:00:18+00:00",
+   "url": "https://www.youtube.com/shorts/0ZiRmpIs0Eo",
+   "shorts": true,
+   "views": 1077,
+   "likes": 32,
+   "viewsGain": null,
+   "isNew": true,
+   "median": 8213.5,
+   "multiple": 0.1
+  },
+  {
+   "id": "2EHFXAZ5tqY",
+   "title": "여단오 커플이 사귀게 된 썰",
+   "published": "2026-11-19T09:00:15+00:00",
+   "url": "https://www.youtube.com/shorts/2EHFXAZ5tqY",
+   "shorts": true,
+   "views": 1699,
+   "likes": 29,
+   "viewsGain": null,
+   "isNew": true,
+   "median": 8213.5,
+   "multiple": 0.2
+  },
   {
    "id": "3YsU2ZxLA0Y",
    "title": "갤탭도 요약하면서 놀랐을 것 같네요..",
    "published": "2026-11-18T09:19:20+00:00",
    "url": "https://www.youtube.com/shorts/3YsU2ZxLA0Y",
    "shorts": true,
-   "views": 2299,
-   "likes": 10,
-   "viewsGain": 217,
+   "views": 2434,
+   "likes": 11,
+   "viewsGain": 135,
    "isNew": false,
-   "median": 11937.5,
-   "multiple": 0.2
+   "median": 8213.5,
+   "multiple": 0.3
   },
   {
    "id": "UvvmykR4X1Y",
@@ -24,12 +50,12 @@
    "published": "2026-11-18T09:00:37+00:00",
    "url": "https://www.youtube.com/shorts/UvvmykR4X1Y",
    "shorts": true,
-   "views": 5334,
-   "likes": 95,
-   "viewsGain": 822,
+   "views": 5984,
+   "likes": 122,
+   "viewsGain": 650,
    "isNew": false,
-   "median": 11937.5,
-   "multiple": 0.4
+   "median": 8213.5,
+   "multiple": 0.7
   },
   {
    "id": "p2vgoVpjigI",
@@ -37,12 +63,12 @@
    "published": "2026-11-18T09:00:19+00:00",
    "url": "https://www.youtube.com/shorts/p2vgoVpjigI",
    "shorts": true,
-   "views": 7984,
-   "likes": 95,
-   "viewsGain": 1623,
+   "views": 9155,
+   "likes": 115,
+   "viewsGain": 1171,
    "isNew": false,
-   "median": 11937.5,
-   "multiple": 0.7
+   "median": 8213.5,
+   "multiple": 1.1
   },
   {
    "id": "pkpBqfEFmV0",
@@ -50,12 +76,12 @@
    "published": "2026-11-18T09:00:15+00:00",
    "url": "https://www.youtube.com/shorts/pkpBqfEFmV0",
    "shorts": true,
-   "views": 6555,
-   "likes": 72,
-   "viewsGain": 450,
+   "views": 6869,
+   "likes": 74,
+   "viewsGain": 314,
    "isNew": false,
-   "median": 11937.5,
-   "multiple": 0.5
+   "median": 8213.5,
+   "multiple": 0.8
   },
   {
    "id": "h_1QEshJHt0",
@@ -63,12 +89,12 @@
    "published": "2026-11-17T10:52:23+00:00",
    "url": "https://www.youtube.com/shorts/h_1QEshJHt0",
    "shorts": true,
-   "views": 17855,
-   "likes": 445,
-   "viewsGain": 187,
+   "views": 18023,
+   "likes": 450,
+   "viewsGain": 168,
    "isNew": false,
-   "median": 11937.5,
-   "multiple": 1.5
+   "median": 8213.5,
+   "multiple": 2.2
   },
   {
    "id": "jpVc9sPoKvs",
@@ -76,12 +102,12 @@
    "published": "2026-11-17T09:54:49+00:00",
    "url": "https://www.youtube.com/shorts/jpVc9sPoKvs",
    "shorts": true,
-   "views": 18792,
-   "likes": 193,
-   "viewsGain": 333,
+   "views": 18940,
+   "likes": 194,
+   "viewsGain": 148,
    "isNew": false,
-   "median": 11937.5,
-   "multiple": 1.6
+   "median": 8213.5,
+   "multiple": 2.3
   },
   {
    "id": "QebaUlVRMH4",
@@ -89,12 +115,12 @@
    "published": "2026-11-17T09:48:09+00:00",
    "url": "https://www.youtube.com/shorts/QebaUlVRMH4",
    "shorts": true,
-   "views": 32434,
-   "likes": 601,
-   "viewsGain": 1514,
+   "views": 33395,
+   "likes": 608,
+   "viewsGain": 961,
    "isNew": false,
-   "median": 11937.5,
-   "multiple": 2.7
+   "median": 8213.5,
+   "multiple": 4.1
   },
   {
    "id": "uJp05ZMpBes",
@@ -102,12 +128,12 @@
    "published": "2026-11-17T09:46:50+00:00",
    "url": "https://www.youtube.com/shorts/uJp05ZMpBes",
    "shorts": true,
-   "views": 9184,
-   "likes": 85,
-   "viewsGain": 543,
+   "views": 9433,
+   "likes": 86,
+   "viewsGain": 249,
    "isNew": false,
-   "median": 11937.5,
-   "multiple": 0.8
+   "median": 8213.5,
+   "multiple": 1.1
   },
   {
    "id": "TWLm9dFAQAg",
@@ -115,9 +141,9 @@
    "published": "2026-11-17T09:00:24+00:00",
    "url": "https://www.youtube.com/watch?v=TWLm9dFAQAg",
    "shorts": false,
-   "views": 381258,
-   "likes": 6536,
-   "viewsGain": 28450,
+   "views": 403687,
+   "likes": 6778,
+   "viewsGain": 22429,
    "isNew": false,
    "median": null,
    "multiple": null
@@ -128,12 +154,12 @@
    "published": "2026-11-14T09:00:14+00:00",
    "url": "https://www.youtube.com/shorts/lnlJ2G8CryU",
    "shorts": true,
-   "views": 7252,
-   "likes": 112,
-   "viewsGain": 47,
+   "views": 7272,
+   "likes": 113,
+   "viewsGain": 20,
    "isNew": false,
-   "median": 11937.5,
-   "multiple": 0.6
+   "median": 8213.5,
+   "multiple": 0.9
   },
   {
    "id": "vxPnYMZwBxM",
@@ -141,12 +167,12 @@
    "published": "2026-11-14T09:00:09+00:00",
    "url": "https://www.youtube.com/shorts/vxPnYMZwBxM",
    "shorts": true,
-   "views": 4849,
-   "likes": 29,
-   "viewsGain": 9,
+   "views": 4871,
+   "likes": 30,
+   "viewsGain": 22,
    "isNew": false,
-   "median": 11937.5,
-   "multiple": 0.4
+   "median": 8213.5,
+   "multiple": 0.6
   },
   {
    "id": "LIqJYoJWLxU",
@@ -154,12 +180,12 @@
    "published": "2026-11-14T09:00:08+00:00",
    "url": "https://www.youtube.com/shorts/LIqJYoJWLxU",
    "shorts": true,
-   "views": 21253,
-   "likes": 184,
-   "viewsGain": 125,
+   "views": 21315,
+   "likes": 185,
+   "viewsGain": 62,
    "isNew": false,
-   "median": 11937.5,
-   "multiple": 1.8
+   "median": 8213.5,
+   "multiple": 2.6
   },
   {
    "id": "f5Ht9HLkwzs",
@@ -167,53 +193,41 @@
    "published": "2026-11-13T09:00:38+00:00",
    "url": "https://www.youtube.com/shorts/f5Ht9HLkwzs",
    "shorts": true,
-   "views": 14691,
-   "likes": 131,
-   "viewsGain": 18,
+   "views": 14707,
+   "likes": 132,
+   "viewsGain": 16,
    "isNew": false,
-   "median": 11937.5,
-   "multiple": 1.2
-  },
-  {
-   "id": "0cDVwBmj7Ow",
-   "title": "이슬아 작가가 말하는 작가들의 싸움 방법",
-   "published": "2026-11-13T09:00:30+00:00",
-   "url": "https://www.youtube.com/shorts/0cDVwBmj7Ow",
-   "shorts": true,
-   "views": 20474,
-   "likes": 263,
-   "viewsGain": 49,
-   "isNew": false,
-   "median": 11937.5,
-   "multiple": 1.7
-  },
-  {
-   "id": "gdHO75hZEEY",
-   "title": "슈퍼스타를 친구로 두는 것도 피곤합니다",
-   "published": "2026-11-12T09:00:38+00:00",
-   "url": "https://www.youtube.com/shorts/gdHO75hZEEY",
-   "shorts": true,
-   "views": 38870,
-   "likes": 219,
-   "viewsGain": 152,
-   "isNew": false,
-   "median": 11937.5,
-   "multiple": 3.3
+   "median": 8213.5,
+   "multiple": 1.8
   }
  ],
  "viral": [
   {
-   "title": "슈퍼스타를 친구로 두는 것도 피곤합니다",
-   "url": "https://www.youtube.com/shorts/gdHO75hZEEY",
-   "views": 38870,
-   "multiple": 3.3,
+   "title": "꽃다발 선물도 차원이 다른 중국 스케일",
+   "url": "https://www.youtube.com/shorts/QebaUlVRMH4",
+   "views": 33395,
+   "multiple": 4.1,
    "shorts": true
   },
   {
-   "title": "꽃다발 선물도 차원이 다른 중국 스케일",
-   "url": "https://www.youtube.com/shorts/QebaUlVRMH4",
-   "views": 32434,
-   "multiple": 2.7,
+   "title": "약간 진짜 빛을 본 느낌이었어요",
+   "url": "https://www.youtube.com/shorts/LIqJYoJWLxU",
+   "views": 21315,
+   "multiple": 2.6,
+   "shorts": true
+  },
+  {
+   "title": "노빠꾸 중남의 애정 표현법",
+   "url": "https://www.youtube.com/shorts/jpVc9sPoKvs",
+   "views": 18940,
+   "multiple": 2.3,
+   "shorts": true
+  },
+  {
+   "title": "8년 만에 처음 전하는 편지",
+   "url": "https://www.youtube.com/shorts/h_1QEshJHt0",
+   "views": 18023,
+   "multiple": 2.2,
    "shorts": true
   }
  ]

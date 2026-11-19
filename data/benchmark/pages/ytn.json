@@ -1,155 +1,231 @@
 {
  "name": "YTN",
  "channel": "https://www.youtube.com/@ytnnews24",
- "checkedAt": "2026-11-19T14:57+09:00",
+ "checkedAt": "2026-11-19T19:32+09:00",
  "subscribers": "543만",
  "videos": [
   {
-   "id": "YtOp0iEjuqs",
-   "title": "\"이건 폭행 아닌가요?\" #shorts / YTN",
-   "views": 1700,
-   "viewsText": "조회수 1.7천회",
+   "id": "ftN7KMmm-G4",
+   "title": "그들이 숲 밖으로 나온 이유 #shorts / YTN",
+   "views": 519,
+   "viewsText": "조회수 519회",
    "published": "",
    "kind": "short"
+  },
+  {
+   "id": "nMePeknVmVc",
+   "title": "머스크도 결국 손절? #shorts / YTN",
+   "views": 3300,
+   "viewsText": "조회수 3.3천회",
+   "published": "",
+   "kind": "short"
+  },
+  {
+   "id": "Jt2S8-QCFjw",
+   "title": "'외톨이야' #shorts / YTN",
+   "views": 3400,
+   "viewsText": "조회수 3.4천회",
+   "published": "",
+   "kind": "short"
+  },
+  {
+   "id": "2MedoHNXD8Q",
+   "title": "결국 시험 중 '발각' #shorts / YTN",
+   "views": 60000,
+   "viewsText": "조회수 6만회",
+   "published": "",
+   "kind": "short"
+  },
+  {
+   "id": "0TpwChWBow0",
+   "title": "돈키호테만 씨익... #shorts / YTN",
+   "views": 6500,
+   "viewsText": "조회수 6.5천회",
+   "published": "",
+   "kind": "short"
+  },
+  {
+   "id": "Cd_WqtZyIcw",
+   "title": "앨리스 황의 새 무대? #shorts / YTN",
+   "views": 2500,
+   "viewsText": "조회수 2.5천회",
+   "published": "",
+   "kind": "short"
+  },
+  {
+   "id": "VPDjWiil7MQ",
+   "title": "이진우 유서 발견 #shorts / YTN",
+   "views": 64000,
+   "viewsText": "조회수 6.4만회",
+   "published": "",
+   "kind": "short"
+  },
+  {
+   "id": "6L6iz6sQ73o",
+   "title": "폐기 카운트다운 멈췄다 #shorts / YTN",
+   "views": 6700,
+   "viewsText": "조회수 6.7천회",
+   "published": "",
+   "kind": "short"
+  },
+  {
+   "id": "YtOp0iEjuqs",
+   "title": "\"이건 폭행 아닌가요?\" #shorts / YTN",
+   "views": 5900,
+   "viewsText": "조회수 5.9천회",
+   "published": "",
+   "kind": "short",
+   "gain": 4200
   },
   {
    "id": "uJmxmLEyB5w",
    "title": "'연락두절' 리트냥이 결국... #shorts / YTN",
-   "views": 38000,
-   "viewsText": "조회수 3.8만회",
+   "views": 190000,
+   "viewsText": "조회수 19만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 152000
   },
   {
    "id": "Xvdb4hIKZbs",
    "title": "당장 한 달 살기 하러 갑니다 #shorts / YTN",
-   "views": 975,
-   "viewsText": "조회수 975회",
+   "views": 3000,
+   "viewsText": "조회수 3천회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 2025
   },
   {
    "id": "EUb-VfclK-o",
    "title": "\"과거와 다르다\" #shorts / YTN",
-   "views": 2900,
-   "viewsText": "조회수 2.9천회",
+   "views": 5900,
+   "viewsText": "조회수 5.9천회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 3000
   },
   {
    "id": "UBttIgOTz4k",
    "title": "범행 계획을 술술 ... #shorts / YTN",
-   "views": 9000,
-   "viewsText": "조회수 9천회",
+   "views": 20000,
+   "viewsText": "조회수 2만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 11000
   },
   {
    "id": "5JX_Ar46tak",
    "title": "\"뒤늦게 와도 인정 못해\" #shorts / YTN",
-   "views": 28000,
-   "viewsText": "조회수 2.8만회",
+   "views": 49000,
+   "viewsText": "조회수 4.9만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 21000
   },
   {
    "id": "5ADdvmA9MDs",
    "title": "어디까지 '거짓'일까 #shorts / YTN",
-   "views": 6200,
-   "viewsText": "조회수 6.2천회",
+   "views": 11000,
+   "viewsText": "조회수 1.1만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 4800
   },
   {
    "id": "9Ho6J4UcW9E",
    "title": "복대에 '이걸' 숨기고 #shorts / YTN",
-   "views": 36000,
-   "viewsText": "조회수 3.6만회",
+   "views": 64000,
+   "viewsText": "조회수 6.4만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 28000
   },
   {
    "id": "DY6Y38j6iII",
    "title": "망신살 껴버린 미국 #shorts / YTN",
-   "views": 17000,
-   "viewsText": "조회수 1.7만회",
+   "views": 34000,
+   "viewsText": "조회수 3.4만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 17000
   },
   {
    "id": "cJV7c2VXLGo",
    "title": "수능 시험지 오늘 지나면 폐기? #shorts / YTN",
-   "views": 12000,
-   "viewsText": "조회수 1.2만회",
+   "views": 26000,
+   "viewsText": "조회수 2.6만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 14000
   },
   {
    "id": "aoNWoF4j3Jg",
    "title": "\"어제부터 연락두절 됐다\" #shorts / YTN",
-   "views": 40000,
-   "viewsText": "조회수 4만회",
+   "views": 59000,
+   "viewsText": "조회수 5.9만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 19000
   },
   {
    "id": "rf7ovgg4Q9E",
    "title": "버려진 헌옷 사이 '아기 시신' #shorts / YTN",
-   "views": 6600,
-   "viewsText": "조회수 6.6천회",
+   "views": 10000,
+   "viewsText": "조회수 1만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 3400
   },
   {
    "id": "wptyosfzycs",
    "title": "[팩트추적] \"물건 거래 아니라 생명 책임\" 입양 전 상담과 임시 보호 필요  #shrots / YTN",
-   "views": 1700,
-   "viewsText": "조회수 1.7천회",
+   "views": 1800,
+   "viewsText": "조회수 1.8천회",
    "published": "",
    "kind": "short",
-   "gain": 500
+   "gain": 100
   },
   {
    "id": "M6XicILHWEM",
    "title": "[팩트추적] 몸무게 줄이려 제한 급식까지 악성재고 취급 받는 강아지들  #shrots / YTN",
-   "views": 3700,
-   "viewsText": "조회수 3.7천회",
+   "views": 3800,
+   "viewsText": "조회수 3.8천회",
    "published": "",
    "kind": "short",
-   "gain": 600
+   "gain": 100
   },
   {
    "id": "X1eDQ9X_py0",
    "title": "[팩트추적] 강아지 경매장의 실태 \"수백 마리가 물건처럼 거래\"  #shrots / YTN",
-   "views": 4600,
-   "viewsText": "조회수 4.6천회",
-   "published": "",
-   "kind": "short",
-   "gain": 700
-  },
-  {
-   "id": "uNFeyUoRm1E",
-   "title": "압수하겠어 #shorts / YTN",
    "views": 4800,
    "viewsText": "조회수 4.8천회",
    "published": "",
    "kind": "short",
-   "gain": 300
+   "gain": 200
+  },
+  {
+   "id": "uNFeyUoRm1E",
+   "title": "압수하겠어 #shorts / YTN",
+   "views": 4900,
+   "viewsText": "조회수 4.9천회",
+   "published": "",
+   "kind": "short",
+   "gain": 100
   },
   {
    "id": "JlVHzvCLHBo",
    "title": "점점 커지는 판 #shorts / YTN",
-   "views": 53000,
-   "viewsText": "조회수 5.3만회",
+   "views": 60000,
+   "viewsText": "조회수 6만회",
    "published": "",
    "kind": "short",
-   "gain": 5000
+   "gain": 7000
   },
   {
    "id": "iiuGcgPLoTA",
    "title": "차가 왜 하늘에? #shorts / YTN",
-   "views": 4100,
-   "viewsText": "조회수 4.1천회",
+   "views": 4300,
+   "viewsText": "조회수 4.3천회",
    "published": "",
    "kind": "short",
    "gain": 200
@@ -157,26 +233,26 @@
   {
    "id": "hagy0nHYeo0",
    "title": "하필 노량진에서? #shorts / YTN",
-   "views": 13000,
-   "viewsText": "조회수 1.3만회",
+   "views": 14000,
+   "viewsText": "조회수 1.4만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 1000
   },
   {
    "id": "lPePEVB0hSs",
    "title": "스티커 1만 장이 웬 말 #shorts / YTN",
-   "views": 35000,
-   "viewsText": "조회수 3.5만회",
+   "views": 37000,
+   "viewsText": "조회수 3.7만회",
    "published": "",
    "kind": "short",
-   "gain": 3000
+   "gain": 2000
   },
   {
    "id": "erdTKeLNeVs",
    "title": "이거 가짜임당... #shorts / YTN",
-   "views": 5300,
-   "viewsText": "조회수 5.3천회",
+   "views": 5500,
+   "viewsText": "조회수 5.5천회",
    "published": "",
    "kind": "short",
    "gain": 200
@@ -184,17 +260,17 @@
   {
    "id": "G4EWdv4uqDI",
    "title": "팔수록 나오는 괴담 #shorts / YTN",
-   "views": 44000,
-   "viewsText": "조회수 4.4만회",
+   "views": 60000,
+   "viewsText": "조회수 6만회",
    "published": "",
    "kind": "short",
-   "gain": 15000
+   "gain": 16000
   },
   {
    "id": "C_Br7F8hI6Y",
    "title": "이럴 시간에 공부해라 #shorts / YTN",
-   "views": 64000,
-   "viewsText": "조회수 6.4만회",
+   "views": 82000,
+   "viewsText": "조회수 8.2만회",
    "published": "",
    "kind": "short",
    "gain": 18000
@@ -206,7 +282,7 @@
    "viewsText": "조회수 4.2천회",
    "published": "",
    "kind": "short",
-   "gain": 200
+   "gain": 0
   },
   {
    "id": "agD1Km89AjU",
@@ -215,13 +291,13 @@
    "viewsText": "조회수 1.4만회",
    "published": "",
    "kind": "short",
-   "gain": 2000
+   "gain": 0
   },
   {
    "id": "FtRIPqHK0c4",
    "title": "간만에 해피엔딩 #shorts / YTN",
-   "views": 3500,
-   "viewsText": "조회수 3.5천회",
+   "views": 3600,
+   "viewsText": "조회수 3.6천회",
    "published": "",
    "kind": "short",
    "gain": 100
@@ -229,38 +305,38 @@
   {
    "id": "v8WDKoIs404",
    "title": "내 집 마련은 '그림의 떡' #shorts / YTN",
-   "views": 2600,
-   "viewsText": "조회수 2.6천회",
-   "published": "",
-   "kind": "short",
-   "gain": 500
-  },
-  {
-   "id": "r5aXbXdble4",
-   "title": "만점자 책에 쏠린 의혹의 눈초리 #shorts / YTN",
-   "views": 6600,
-   "viewsText": "조회수 6.6천회",
+   "views": 3200,
+   "viewsText": "조회수 3.2천회",
    "published": "",
    "kind": "short",
    "gain": 600
   },
   {
-   "id": "VXQGs_Ui4UA",
-   "title": "수능 6등급이 서울대 치대 거쳐 리트 만점? #shorts / YTN",
-   "views": 13000,
-   "viewsText": "조회수 1.3만회",
+   "id": "r5aXbXdble4",
+   "title": "만점자 책에 쏠린 의혹의 눈초리 #shorts / YTN",
+   "views": 7000,
+   "viewsText": "조회수 7천회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 400
+  },
+  {
+   "id": "VXQGs_Ui4UA",
+   "title": "수능 6등급이 서울대 치대 거쳐 리트 만점? #shorts / YTN",
+   "views": 15000,
+   "viewsText": "조회수 1.5만회",
+   "published": "",
+   "kind": "short",
+   "gain": 2000
   },
   {
    "id": "ntZLp-vwGpc",
    "title": "수험장 가기 전 꼭 확인! #shorts / YTN",
-   "views": 11000,
-   "viewsText": "조회수 1.1만회",
+   "views": 12000,
+   "viewsText": "조회수 1.2만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 1000
   },
   {
    "id": "dhBRYCNIxHs",
@@ -274,83 +350,11 @@
   {
    "id": "HgRdMl0pbaM",
    "title": "본인에겐 관대한 편 #shorts / YTN",
-   "views": 2200,
-   "viewsText": "조회수 2.2천회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "PInrVNu0XN8",
-   "title": "20대 여성 '김 씨' 누구길래 #shorts / YTN",
-   "views": 4000,
-   "viewsText": "조회수 4천회",
+   "views": 2300,
+   "viewsText": "조회수 2.3천회",
    "published": "",
    "kind": "short",
    "gain": 100
-  },
-  {
-   "id": "IIjiqB6mgQg",
-   "title": "\"수능 강행은 위헌\" #shorts / YTN",
-   "views": 10000,
-   "viewsText": "조회수 1만회",
-   "published": "",
-   "kind": "short",
-   "gain": 100
-  },
-  {
-   "id": "_ZPCkL78AOM",
-   "title": "선거 이후 처음 꺼낸 말 #shorts / YTN",
-   "views": 65000,
-   "viewsText": "조회수 6.5만회",
-   "published": "",
-   "kind": "short",
-   "gain": 1000
-  },
-  {
-   "id": "DioQGBH2SO8",
-   "title": "왕좌는 누구에게? #shorts / YTN",
-   "views": 49000,
-   "viewsText": "조회수 4.9만회",
-   "published": "",
-   "kind": "short",
-   "gain": 4000
-  },
-  {
-   "id": "FULu4J-SGOk",
-   "title": "정부 수능 대책에 '한숨' #shorts / YTN",
-   "views": 8200,
-   "viewsText": "조회수 8.2천회",
-   "published": "",
-   "kind": "short",
-   "gain": 200
-  },
-  {
-   "id": "g6B8uBShoiE",
-   "title": "젊을 땐 몰랐던 음악의 힘 / YTN",
-   "views": 2700,
-   "viewsText": "조회수 2.7천회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "tZcySHbyByk",
-   "title": "만점이지만 모릅니다 #shorts / YTN",
-   "views": 290000,
-   "viewsText": "조회수 29만회",
-   "published": "",
-   "kind": "short",
-   "gain": 10000
-  },
-  {
-   "id": "BDkwTYwUWJE",
-   "title": "목숨보다 우선된 조회수 #shorts / YTN",
-   "views": 35000,
-   "viewsText": "조회수 3.5만회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
   }
  ]
 }
