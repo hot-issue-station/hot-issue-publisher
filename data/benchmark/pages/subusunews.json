@@ -1,86 +1,89 @@
 {
  "name": "스브스뉴스 (SBS)",
  "channel": "https://www.youtube.com/@subusunews",
- "checkedAt": "2026-11-19T22:53+09:00",
+ "checkedAt": "2026-11-20T08:35+09:00",
  "subscribers": "144만",
  "videos": [
   {
    "id": "W263pE8GnA4",
    "title": "한 버스 정류장에서 말 두 마리가 버스를 탄 이유 #말 #shorts #스브스뉴스",
-   "views": 484,
-   "viewsText": "조회수 484회",
+   "views": 4100,
+   "viewsText": "조회수 4.1천회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 3616
   },
   {
    "id": "5lzXatXvULg",
    "title": "살아남기 위한 요즘 편의점의 생존 전략 #맛피아감자스틱 #shorts #스브스뉴스",
-   "views": 2200,
-   "viewsText": "조회수 2.2천회",
+   "views": 6400,
+   "viewsText": "조회수 6.4천회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 4200
   },
   {
    "id": "-QNTMLDSi9I",
    "title": "위급 재난 문자로 AI 커닝 막겠다는 정부… 온라인상에선 우회법 공유? #수능 #shorts #스브스뉴스",
-   "views": 3200,
-   "viewsText": "조회수 3.2천회",
+   "views": 10000,
+   "viewsText": "조회수 1만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 6800
   },
   {
    "id": "EwtrEyOz_oo",
    "title": "이걸 깨서 세상에 없애야겠구나",
-   "views": 520,
-   "viewsText": "조회수 520회",
+   "views": 997,
+   "viewsText": "조회수 997회",
    "published": "",
    "kind": "short",
-   "gain": 381
+   "gain": 477
   },
   {
    "id": "ARw4xkmuhAE",
    "title": "빌런 퇴치법 알려드립니다",
-   "views": 1200,
-   "viewsText": "조회수 1.2천회",
+   "views": 1900,
+   "viewsText": "조회수 1.9천회",
    "published": "",
    "kind": "short",
-   "gain": 596
+   "gain": 700
   },
   {
    "id": "mLULNEXcwAk",
    "title": "기본 축의금 + 10만 원? 어른 여자 통천이 축의금 내는 방법",
-   "views": 2100,
-   "viewsText": "조회수 2.1천회",
+   "views": 4400,
+   "viewsText": "조회수 4.4천회",
    "published": "",
    "kind": "short",
-   "gain": 1212
+   "gain": 2300
   },
   {
    "id": "DFiDu4HS9I4",
    "title": "실제 JMS 2세가 말하는 사이비 종교의 충격적인 실체 #사이비 #shorts #스브스뉴스",
-   "views": 9500,
-   "viewsText": "조회수 9.5천회",
+   "views": 13000,
+   "viewsText": "조회수 1.3만회",
    "published": "",
    "kind": "short",
-   "gain": 1200
+   "gain": 3500
   },
   {
    "id": "SIFB9hhhj-8",
    "title": "입사 한 달 차 결혼식, 간다 vs 안 간다",
-   "views": 3600,
-   "viewsText": "조회수 3.6천회",
+   "views": 3900,
+   "viewsText": "조회수 3.9천회",
    "published": "",
    "kind": "short",
-   "gain": 200
+   "gain": 300
   },
   {
    "id": "USTfN6dsPZA",
    "title": "“그렇게 살지 마라” 역대급 빡친 위원들",
-   "views": 5000,
-   "viewsText": "조회수 5천회",
+   "views": 6000,
+   "viewsText": "조회수 6천회",
    "published": "",
    "kind": "short",
-   "gain": 300
+   "gain": 1000
   },
   {
    "id": "n4IuqG0n5Eg",
@@ -94,29 +97,29 @@
   {
    "id": "_DCDzT693C0",
    "title": "유병권 발작 일으킨 청모 도둑",
-   "views": 2800,
-   "viewsText": "조회수 2.8천회",
-   "published": "",
-   "kind": "short",
-   "gain": 100
-  },
-  {
-   "id": "mmChYuV8uLA",
-   "title": "결혼식에서 사진 찍지 말라는 신혼부부",
-   "views": 8000,
-   "viewsText": "조회수 8천회",
+   "views": 3200,
+   "viewsText": "조회수 3.2천회",
    "published": "",
    "kind": "short",
    "gain": 400
   },
   {
-   "id": "0EGz1y1LXFQ",
-   "title": "이렇게 심각한데 진짜 연기 안 한다고? #수능 #shorts #스브스뉴스",
-   "views": 2800,
-   "viewsText": "조회수 2.8천회",
+   "id": "mmChYuV8uLA",
+   "title": "결혼식에서 사진 찍지 말라는 신혼부부",
+   "views": 9400,
+   "viewsText": "조회수 9.4천회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 1400
+  },
+  {
+   "id": "0EGz1y1LXFQ",
+   "title": "이렇게 심각한데 진짜 연기 안 한다고? #수능 #shorts #스브스뉴스",
+   "views": 2900,
+   "viewsText": "조회수 2.9천회",
+   "published": "",
+   "kind": "short",
+   "gain": 100
   },
   {
    "id": "d_V3w3jWVpQ",
@@ -130,20 +133,20 @@
   {
    "id": "gwowgI6Hdt0",
    "title": "AI 이용해서 세무사 시험 수석 합격한 세무냥이의 컨닝 방법 #세무냥이 #shorts #스브스뉴스",
-   "views": 87000,
-   "viewsText": "조회수 8.7만회",
+   "views": 94000,
+   "viewsText": "조회수 9.4만회",
    "published": "",
    "kind": "short",
-   "gain": 3000
+   "gain": 7000
   },
   {
    "id": "zPaJv7lADWY",
    "title": "이제 겨울인데 모기는 왜 안 사라짐? #가을 #shorts #스브스뉴스",
-   "views": 8100,
-   "viewsText": "조회수 8.1천회",
+   "views": 8200,
+   "viewsText": "조회수 8.2천회",
    "published": "",
    "kind": "short",
-   "gain": 200
+   "gain": 100
   },
   {
    "id": "0LtMpN02Csc",
@@ -184,29 +187,29 @@
   {
    "id": "T3rXxLcDD-g",
    "title": "홈플러스가 이겨냈으면 좋겠어 #홈플러스 #shorts #스브스뉴스",
-   "views": 6200,
-   "viewsText": "조회수 6.2천회",
+   "views": 6300,
+   "viewsText": "조회수 6.3천회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 100
   },
   {
    "id": "wHp_zWCqzxw",
    "title": "의무 사항 아니면 안 해도 되는 거냐고..ㅠ #딸기우유 #shorts #스브스뉴스",
-   "views": 2500,
-   "viewsText": "조회수 2.5천회",
+   "views": 2600,
+   "viewsText": "조회수 2.6천회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 100
   },
   {
    "id": "LEWIMLiirq0",
    "title": "성분 따졌다가 고소당한 사람? 그게 나예요. #딸기우유 #shorts #스브스뉴스",
-   "views": 9200,
-   "viewsText": "조회수 9.2천회",
+   "views": 9300,
+   "viewsText": "조회수 9.3천회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 100
   },
   {
    "id": "QSXv2yiIveI",
@@ -229,11 +232,11 @@
   {
    "id": "vS6l_n2uJzs",
    "title": "젠슨 황 내연녀 앨리스 황, 10조 원어치 ‘엔비디아 AI칩’ 중국으로 유출? #엔비디아 #shorts #스브스뉴스",
-   "views": 7300,
-   "viewsText": "조회수 7.3천회",
+   "views": 7400,
+   "viewsText": "조회수 7.4천회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 100
   },
   {
    "id": "phk3JBktfX8",
@@ -247,11 +250,11 @@
   {
    "id": "80Prr9snsIk",
    "title": "[선공개] 죽여달라는 거지?",
-   "views": 9800,
-   "viewsText": "조회수 9.8천회",
+   "views": 9900,
+   "viewsText": "조회수 9.9천회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 100
   },
   {
    "id": "h8iBMhQ3b-Q",
@@ -283,11 +286,11 @@
   {
    "id": "DqL_SWFWkD8",
    "title": "침착맨 방송 중 사교육 문제 직격타 날린 정승제 #입시 #shorts #스브스뉴스",
-   "views": 730000,
-   "viewsText": "조회수 73만회",
+   "views": 740000,
+   "viewsText": "조회수 74만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "lnryKqOozWk",

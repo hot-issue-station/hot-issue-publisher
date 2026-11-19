@@ -1,35 +1,43 @@
 {
  "name": "14F 일사에프 (MBC)",
  "channel": "https://www.youtube.com/@14FMBC",
- "checkedAt": "2026-11-19T22:53+09:00",
+ "checkedAt": "2026-11-20T08:35+09:00",
  "subscribers": "239만",
  "videos": [
   {
+   "id": "Tr0LbpRFtFk",
+   "title": "백제는 삼국 통일을 할 필요가 없었다? #shorts",
+   "views": 562,
+   "viewsText": "조회수 562회",
+   "published": "",
+   "kind": "short"
+  },
+  {
    "id": "abobZ7JfTek",
    "title": "초가공식품 정확히 아는 사람? #shorts",
-   "views": 3500,
-   "viewsText": "조회수 3.5천회",
+   "views": 3700,
+   "viewsText": "조회수 3.7천회",
+   "published": "",
+   "kind": "short",
+   "gain": 200
+  },
+  {
+   "id": "gRThiyajPxQ",
+   "title": "남대문 사장님들 입담이 왜 이리 좋아 #shorts",
+   "views": 9600,
+   "viewsText": "조회수 9.6천회",
    "published": "",
    "kind": "short",
    "gain": 100
   },
   {
-   "id": "gRThiyajPxQ",
-   "title": "남대문 사장님들 입담이 왜 이리 좋아 #shorts",
-   "views": 9500,
-   "viewsText": "조회수 9.5천회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
    "id": "t0Zs4V5j-uA",
    "title": "한국 프랜차이즈가 매력적인 이유 #shorts",
-   "views": 8000,
-   "viewsText": "조회수 8천회",
+   "views": 8100,
+   "viewsText": "조회수 8.1천회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 100
   },
   {
    "id": "CTJ-rsjJdyU",
@@ -47,7 +55,7 @@
    "viewsText": "조회수 9.1만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "WgWmSXeb_YA",
@@ -115,11 +123,11 @@
   {
    "id": "uq0xvYN3L9I",
    "title": "일본 화물이 부산항에 몰리는 이유 #shorts",
-   "views": 290000,
-   "viewsText": "조회수 29만회",
+   "views": 300000,
+   "viewsText": "조회수 30만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "G63QFaqloJQ",
@@ -351,15 +359,6 @@
    "title": "독일군 대령이 히틀러 죽이려 한 이유 #shorts",
    "views": 27000,
    "viewsText": "조회수 2.7만회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "GhsJcRysRc0",
-   "title": "시뮬레이션이 중요한 이유 #shorts",
-   "views": 7200,
-   "viewsText": "조회수 7.2천회",
    "published": "",
    "kind": "short",
    "gain": 0
