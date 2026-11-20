@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>리센느가 파우치에 넣고 다니는 것들 · 덕심저장소</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@500;700&family=Cormorant+Garamond:wght@600&display=swap" rel="stylesheet">
+<style>
+  :root{--ink:#111;--sub:#6b6b6b;--line:#111;--soft:#f6f6f6;--accent:#7b5ea7}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Noto Sans KR',sans-serif;color:var(--ink);background:#fff;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:640px;margin:0 auto;padding:0 24px}
+  header.top{display:flex;align-items:center;justify-content:space-between;padding:22px 24px;max-width:640px;margin:0 auto}
+  .logo{font-family:'Cormorant Garamond',serif;font-size:30px;letter-spacing:.5px;line-height:1}
+  .logo small{display:block;font-family:'Noto Sans KR';font-size:10px;letter-spacing:3px;color:var(--sub);margin-top:4px}
+  .hero{background:linear-gradient(160deg,#efe8f7 0%,#f7eef3 55%,#fff 100%);padding:64px 24px 56px;text-align:center}
+  .hero .kicker{font-size:11px;letter-spacing:4px;color:var(--accent);font-weight:700}
+  .hero .big{font-family:'Cormorant Garamond',serif;font-size:56px;line-height:1;margin:14px 0 10px;letter-spacing:1px}
+  .hero .big em{font-style:normal;color:var(--accent)}
+  .hero p{font-size:14px;color:var(--sub)}
+  .meta{display:flex;justify-content:space-between;border-top:2px solid var(--line);padding-top:14px;margin-top:40px;font-size:13px;letter-spacing:1px}
+  h1{font-family:'Noto Serif KR',serif;font-weight:500;font-size:34px;line-height:1.35;margin:28px 0 18px;letter-spacing:-.5px}
+  .by{font-weight:700;font-size:16px;margin-bottom:36px}
+  .lead h2{font-size:19px;font-weight:700;margin:8px 0 18px}
+  .lead p,.item p.body{font-size:16.5px;line-height:1.95;color:#222}
+  .item{margin-top:72px}
+  .item h3{font-size:24px;font-weight:700;margin-bottom:18px}
+  .scene{border-left:3px solid var(--accent);background:#faf8fd;padding:20px 20px 18px;margin-bottom:10px}
+  .scene q{display:block;font-family:'Noto Serif KR',serif;font-size:19px;line-height:1.6;quotes:"“" "”"}
+  .scene .who{margin-top:10px;font-size:13px;color:var(--sub)}
+  .src{font-size:14px;color:var(--sub);margin-bottom:26px}
+  .src a{color:var(--sub)}
+  .product{text-align:center;margin-top:34px}
+  .shot{background:var(--soft);margin:0 24px;padding:28px;display:flex;justify-content:center}
+  .shot img{width:100%;max-width:300px;height:auto;mix-blend-mode:multiply}
+  .brand{font-size:22px;font-weight:700;margin-top:22px}
+  .pname{font-size:16px;color:var(--sub);margin-top:6px}
+  .price{font-size:13px;color:var(--sub);margin-top:4px}
+  .buy{display:inline-block;margin-top:22px;border:2px solid var(--ink);padding:12px 40px;font-size:16px;color:var(--ink);text-decoration:none;font-weight:500}
+  .buy:active{background:var(--ink);color:#fff}
+  .soon{margin-top:72px;border:1.5px dashed #c9b8e3;padding:26px 22px;text-align:center}
+  .soon .tag{display:inline-block;font-size:11px;letter-spacing:2px;color:var(--accent);font-weight:700;margin-bottom:10px}
+  .soon h3{font-size:20px;margin-bottom:10px}
+  .soon p{font-size:15px;color:#444;line-height:1.8}
+  .item p.body b{font-weight:700}
+  .cap{text-align:left;margin:10px 24px 0;font-size:13px;color:#9a9a9a}
+  .tags{margin-top:64px;display:flex;flex-wrap:wrap;gap:8px}
+  .tags span{border:1px solid #cfcfcf;border-radius:999px;padding:7px 16px;font-size:14px;font-weight:500}
+  .credit{margin-top:26px;border-top:2px solid var(--line);padding-top:18px;font-size:14px;line-height:1.9}
+  .credit div{display:flex;gap:14px}.credit b{min-width:64px}
+  .more{margin-top:56px}
+  .more h4{font-size:20px;font-weight:700;margin-bottom:6px}
+  .row{display:flex;gap:16px;align-items:center;padding:18px 0;border-bottom:1px solid #e5e5e5;text-decoration:none;color:var(--ink)}
+  .row .th{flex:0 0 88px;height:88px;border-radius:10px;background:linear-gradient(150deg,#e9def7,#f8e9f1);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--accent)}
+  .row .cat{font-size:12px;letter-spacing:1px}
+  .row .tt{font-size:16px;font-weight:700;line-height:1.45;margin:4px 0}
+  .row .dt{font-size:13px;color:var(--sub)}
+  footer{margin:80px 0 0;padding:28px 24px 48px;background:var(--soft);font-size:12.5px;line-height:1.8;color:var(--sub)}
+  footer .wrap{padding:0}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="logo">Duksim<small>덕심저장소</small></div>
+</header>
+
+<section class="hero">
+  <div class="kicker">RESCENE · WHAT'S IN MY POUCH</div>
+  <div class="big">Rescene's <em>Pick</em></div>
+  <p>멤버가 직접 「이거 써요」라고 말한 것만</p>
+</section>
+
+<main class="wrap">
+  <div class="meta"><span>DUKSIM BEAUTY</span><span>2026.11.20</span></div>
+  <h1>연습실 가방 속까지 공개,<br>리센느가 파우치에 넣고 다니는 것들</h1>
+  <div class="by">by 덕심저장소</div>
+
+  <section class="lead">
+    <h2>안무 연습이 취소된 날, 가방을 열었다</h2>
+    <p>11월 19일 공개된 「PULSE」 연습 비하인드에서 제나와 미나미가 각자의 파우치를 하나씩 꺼내 보였어요. 음악방송 대기실부터 연습실까지 늘 들고 다닌다는 물건들. 화면 속 대사와 라벨로 이름까지 확인한 것만 골라, 바로 살 수 있는 곳까지 모았습니다.</p>
+  </section>
+
+  <article class="item">
+    <h3>리센느 제나</h3>
+    <div class="scene">
+      <q>블랙헤드 여기 이런 데 이렇게 같이 녹여 주는 그 밀크야.</q>
+      <div class="who">— 제나, PULSE 연습 비하인드 中</div>
+    </div>
+    <div class="src">▶ <a href="https://youtu.be/uimf1XEv_Ow?t=1024">RESCENE 공식 유튜브 · 17:04 장면 보기</a></div>
+    <p class="body">원래 클렌징 오일을 쓰다가 이걸로 바꿨다는 제나. 피부 컨디션이 안 좋을 때 블랙헤드를 같이 녹여 준다고 소개했어요. 옆에서 「바나나 밀크 맛있겠다」는 말이 나올 만큼 달콤한 바나나 향이 특징인 <b>한스킨</b>의 <b>클렌징 바나나 밀크 &amp; 블랙헤드 PHA</b>예요.</p>
+    <div class="product">
+      <div class="shot"><img src="img/hanskin.jpg" alt="한스킨 클렌징 바나나 밀크 & 블랙헤드 PHA"></div>
+      <div class="cap">coupang.com</div>
+      <div class="brand">한스킨</div>
+      <div class="pname">클렌징 바나나 밀크 &amp; 블랙헤드 PHA</div>
+      <div class="price">200ml · 1만 5천 원대</div>
+      <a class="buy" href="https://link.coupang.com/a/iPcrNfF7jU">구매하러 가기</a>
+    </div>
+  </article>
+
+  <article class="item">
+    <h3>리센느 미나미</h3>
+    <div class="scene">
+      <q>이게 파우치에 들고 다니는 이유가 있어요.</q>
+      <div class="who">— 미나미, PULSE 연습 비하인드 中</div>
+    </div>
+    <div class="src">▶ <a href="https://youtu.be/uimf1XEv_Ow?t=1075">RESCENE 공식 유튜브 · 17:55 장면 보기</a></div>
+    <p class="body">음악방송 날 맛있는 걸 먹고 나면 입안이 느끼해서, 노래하기 전에 한 포 마시면 깨끗해지는 느낌이라고. 「한번 나눠 줄게」 하며 그 자리에서 멤버에게 나눠 준 미나미의 필수템, <b>카사베르디</b>의 <b>유기농 레드와인 비니거 스틱</b>이에요.</p>
+    <div class="product">
+      <div class="shot"><img src="img/verdi.jpg" alt="카사베르디 유기농 레드와인 비니거 스틱"></div>
+      <div class="cap">coupang.com</div>
+      <div class="brand">카사베르디</div>
+      <div class="pname">유기농 레드와인 비니거 스틱</div>
+      <div class="price">20ml × 14포 · 1만 2천 원대</div>
+      <a class="buy" href="https://link.coupang.com/a/iPcvfAcEwe">구매하러 가기</a>
+    </div>
+  </article>
+
+  <section class="soon">
+    <div class="tag">COMING SOON</div>
+    <h3>제나의 분홍 병, 정체는?</h3>
+    <p>「속건조가 잡히고 얼굴에 빛이 생기는 느낌」이라며 제나가 꺼낸 분홍 병. 미나미도 같은 걸 쓴대요. 이름을 확인하는 대로 이 페이지에 추가할게요.</p>
+  </section>
+  <div class="tags"><span>#리센느</span><span>#제나</span><span>#미나미</span><span>#왓츠인마이파우치</span><span>#아이돌템</span></div>
+  <div class="credit">
+    <div><b>에디터</b><span>덕심저장소</span></div>
+    <div><b>출처</b><span>RESCENE 공식 YouTube, coupang.com</span></div>
+  </div>
+  <section class="more">
+    <h4>다음 이야기</h4>
+    <div class="row"><div class="th">Soon</div><div><div class="cat">BEAUTY</div><div class="tt">제나의 분홍 병, 속건조템의 정체</div><div class="dt">준비 중 | by 덕심저장소</div></div></div>
+    <div class="row"><div class="th">Soon</div><div><div class="cat">BEAUTY</div><div class="tt">원이·리브·메이의 파우치도 열어 볼게요</div><div class="dt">준비 중 | by 덕심저장소</div></div></div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    이 게시물은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다. 멤버 협찬·광고가 아니며, 영상에서 멤버가 직접 언급한 제품만 소개합니다. 인용한 대사와 장면의 권리는 RESCENE 공식 채널에 있어요. 제품 사진 출처: 쿠팡 상품 페이지.<br>© 덕심저장소
+  </div>
+</footer>
+</body>
+</html>
