@@ -1,35 +1,35 @@
 {
  "name": "안원잘부",
  "channel": "https://www.youtube.com/@helloiamwoninicetomeetyou",
- "checkedAt": "2026-11-20T22:51+09:00",
+ "checkedAt": "2026-11-21T08:38+09:00",
  "subscribers": "244만",
  "videos": [
   {
    "id": "N3MX2W5_Zfs",
    "title": "디즈니 영화 OST가 된 이유",
-   "views": 1260000,
-   "viewsText": "조회수 126만회",
+   "views": 1280000,
+   "viewsText": "조회수 128만회",
+   "published": "",
+   "kind": "short",
+   "gain": 20000
+  },
+  {
+   "id": "kfK-LENbEUo",
+   "title": "정작가의 컴백을 축하합니다",
+   "views": 1850000,
+   "viewsText": "조회수 185만회",
    "published": "",
    "kind": "short",
    "gain": 10000
   },
   {
-   "id": "kfK-LENbEUo",
-   "title": "정작가의 컴백을 축하합니다",
-   "views": 1840000,
-   "viewsText": "조회수 184만회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
    "id": "DKDmFgXzxs8",
    "title": "안원잘부 명장면 이모티콘2 출시!",
-   "views": 2750000,
-   "viewsText": "조회수 275만회",
+   "views": 2760000,
+   "viewsText": "조회수 276만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "zxNoW_LtVLE",
@@ -52,20 +52,20 @@
   {
    "id": "xCvbDeMKm3E",
    "title": "두 번째 급습",
-   "views": 6250000,
-   "viewsText": "조회수 625만회",
+   "views": 6260000,
+   "viewsText": "조회수 626만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "GsYq_ouLAMQ",
    "title": "[B컷] 시그니엘 망고 빙수",
-   "views": 5540000,
-   "viewsText": "조회수 554만회",
+   "views": 5550000,
+   "viewsText": "조회수 555만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "BUeZskDCMpU",
@@ -83,7 +83,7 @@
    "viewsText": "조회수 181만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "COnZ3rYrAXc",
@@ -92,7 +92,7 @@
    "viewsText": "조회수 167만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "8aZYgM9GeL0",
@@ -110,7 +110,7 @@
    "viewsText": "조회수 1363만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "gNJrbCSN2TM",
@@ -299,7 +299,7 @@
    "viewsText": "조회수 238만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "510hBsWhh0A",

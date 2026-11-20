@@ -1,85 +1,94 @@
 {
  "name": "YTN",
  "channel": "https://www.youtube.com/@ytnnews24",
- "checkedAt": "2026-11-20T22:51+09:00",
+ "checkedAt": "2026-11-21T08:38+09:00",
  "subscribers": "543만",
  "videos": [
   {
-   "id": "zgWVG-Dxs7s",
-   "title": "일론 머스크의 '우월주의'? #shorts / 이슈의 서재",
-   "views": 2200,
-   "viewsText": "조회수 2.2천회",
+   "id": "galuz_tB7to",
+   "title": "계산기와 AI 머가 다를까? #shorts/ YTN",
+   "views": 554,
+   "viewsText": "조회수 554회",
    "published": "",
    "kind": "short"
   },
   {
-   "id": "SE5HHt3G248",
-   "title": "이유가 뭘까? #shorts / 이슈의 서재",
-   "views": 1100,
-   "viewsText": "조회수 1.1천회",
+   "id": "zgWVG-Dxs7s",
+   "title": "일론 머스크의 '우월주의'? #shorts / 이슈의 서재",
+   "views": 5100,
+   "viewsText": "조회수 5.1천회",
    "published": "",
    "kind": "short",
-   "gain": 852
+   "gain": 2900
+  },
+  {
+   "id": "SE5HHt3G248",
+   "title": "이유가 뭘까? #shorts / 이슈의 서재",
+   "views": 2500,
+   "viewsText": "조회수 2.5천회",
+   "published": "",
+   "kind": "short",
+   "gain": 1400
   },
   {
    "id": "wRzPfQ64gME",
    "title": "'그런 목소리로 어떻게 배우를 해?' / YTN",
-   "views": 3100,
-   "viewsText": "조회수 3.1천회",
+   "views": 6200,
+   "viewsText": "조회수 6.2천회",
    "published": "",
    "kind": "short",
-   "gain": 2100
+   "gain": 3100
   },
   {
    "id": "9z8tJCAFDro",
    "title": "\"우리에겐 좋은 형\" #shorts / YTN",
-   "views": 110000,
-   "viewsText": "조회수 11만회",
+   "views": 220000,
+   "viewsText": "조회수 22만회",
    "published": "",
    "kind": "short",
-   "gain": 68000
+   "gain": 110000
   },
   {
    "id": "9GmKVCy4f6U",
    "title": "예비 1번 탈락 후 서울대까지 #shorts / YTN",
-   "views": 69000,
-   "viewsText": "조회수 6.9만회",
+   "views": 130000,
+   "viewsText": "조회수 13만회",
    "published": "",
    "kind": "short",
-   "gain": 39000
+   "gain": 61000
   },
   {
    "id": "JGorXzotaYA",
    "title": "아이돌 '과잉 경호' 논란 #shorts / YTN",
-   "views": 6000,
-   "viewsText": "조회수 6천회",
+   "views": 6600,
+   "viewsText": "조회수 6.6천회",
    "published": "",
    "kind": "short",
-   "gain": 1800
+   "gain": 600
   },
   {
    "id": "hOiVt31bTy8",
    "title": "전용기 대신 '이코노미' #shorts / YTN",
-   "views": 160000,
-   "viewsText": "조회수 16만회",
+   "views": 410000,
+   "viewsText": "조회수 41만회",
    "published": "",
    "kind": "short",
-   "gain": 90000
+   "gain": 250000
   },
   {
    "id": "UT_BwOBhf5E",
    "title": "컴포즈커피 본사 사과한 영상 #shorts / YTN",
-   "views": 34000,
-   "viewsText": "조회수 3.4만회",
+   "views": 86000,
+   "viewsText": "조회수 8.6만회",
    "published": "",
    "kind": "short",
-   "gain": 14000
+   "gain": 52000
   },
   {
    "id": "4glwoHohdJs",
    "title": "수식 없이 정답만? #shorts / YTN",
-   "views": 6400,
-   "viewsText": "조회수 6.4천회",
+   "views": 7200,
+   "viewsText": "조회수 7.2천회",
    "published": "",
    "kind": "short",
    "gain": 800
@@ -87,44 +96,44 @@
   {
    "id": "-lx99xErjDw",
    "title": "암산 천재인 줄 알았더니 #shorts / YTN",
-   "views": 7200,
-   "viewsText": "조회수 7.2천회",
+   "views": 8000,
+   "viewsText": "조회수 8천회",
    "published": "",
    "kind": "short",
-   "gain": 1100
+   "gain": 800
   },
   {
    "id": "-0ibeJECFx8",
    "title": "\"네가 있어서 든든했다\" #shorts / YTN",
-   "views": 11000,
-   "viewsText": "조회수 1.1만회",
+   "views": 13000,
+   "viewsText": "조회수 1.3만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 2000
   },
   {
    "id": "R4LPsvTyyBw",
    "title": "길 걷다 '봉변' #shorts / YTN",
-   "views": 140000,
-   "viewsText": "조회수 14만회",
+   "views": 270000,
+   "viewsText": "조회수 27만회",
    "published": "",
    "kind": "short",
-   "gain": 70000
+   "gain": 130000
   },
   {
    "id": "oAnx0xA_s1I",
    "title": "서울대의 기운을 받아! #shorts / YTN",
-   "views": 28000,
-   "viewsText": "조회수 2.8만회",
+   "views": 33000,
+   "viewsText": "조회수 3.3만회",
    "published": "",
    "kind": "short",
-   "gain": 8000
+   "gain": 5000
   },
   {
    "id": "RY3yEbibutw",
    "title": "거위의 꿈 #shorts / YTN",
-   "views": 19000,
-   "viewsText": "조회수 1.9만회",
+   "views": 21000,
+   "viewsText": "조회수 2.1만회",
    "published": "",
    "kind": "short",
    "gain": 2000
@@ -132,8 +141,8 @@
   {
    "id": "ofZUqOuXHKY",
    "title": "막내 on top #shorts / YTN",
-   "views": 18000,
-   "viewsText": "조회수 1.8만회",
+   "views": 21000,
+   "viewsText": "조회수 2.1만회",
    "published": "",
    "kind": "short",
    "gain": 3000
@@ -141,74 +150,74 @@
   {
    "id": "nLk5HeiqKfg",
    "title": "호랑이 밖으로 꺼내다가... #shorts / YTN",
-   "views": 33000,
-   "viewsText": "조회수 3.3만회",
+   "views": 51000,
+   "viewsText": "조회수 5.1만회",
    "published": "",
    "kind": "short",
-   "gain": 7000
+   "gain": 18000
   },
   {
    "id": "veSA_VI-OLo",
    "title": "엄마 나 수능 끝났어  #shorts / YTN",
-   "views": 26000,
-   "viewsText": "조회수 2.6만회",
+   "views": 31000,
+   "viewsText": "조회수 3.1만회",
    "published": "",
    "kind": "short",
-   "gain": 6000
+   "gain": 5000
   },
   {
    "id": "hTng2I3FGWE",
    "title": "\"엄마가 행복했으면 좋겠어요\" #shorts / YTN",
-   "views": 42000,
-   "viewsText": "조회수 4.2만회",
+   "views": 64000,
+   "viewsText": "조회수 6.4만회",
    "published": "",
    "kind": "short",
-   "gain": 13000
+   "gain": 22000
   },
   {
    "id": "lM77z4pZaQI",
    "title": "'친구야 미안하다' #shorts / YTN",
-   "views": 220000,
-   "viewsText": "조회수 22만회",
+   "views": 320000,
+   "viewsText": "조회수 32만회",
+   "published": "",
+   "kind": "short",
+   "gain": 100000
+  },
+  {
+   "id": "pkdoslzStvA",
+   "title": "친구인 듯 친구 아닌 친구 같은 너 #shorts / YTN",
+   "views": 260000,
+   "viewsText": "조회수 26만회",
    "published": "",
    "kind": "short",
    "gain": 50000
   },
   {
-   "id": "pkdoslzStvA",
-   "title": "친구인 듯 친구 아닌 친구 같은 너 #shorts / YTN",
-   "views": 210000,
-   "viewsText": "조회수 21만회",
-   "published": "",
-   "kind": "short",
-   "gain": 70000
-  },
-  {
    "id": "lkckPI32O3c",
    "title": "푸틴 : 나 건들기만 해 #shorts / YTN",
-   "views": 84000,
-   "viewsText": "조회수 8.4만회",
+   "views": 110000,
+   "viewsText": "조회수 11만회",
    "published": "",
    "kind": "short",
-   "gain": 16000
+   "gain": 26000
   },
   {
    "id": "UI3EWRgjFoE",
    "title": "AI 없이 혼자 해보니 '반전' 결과 #shorts/ YTN",
-   "views": 7300,
-   "viewsText": "조회수 7.3천회",
+   "views": 7500,
+   "viewsText": "조회수 7.5천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 200
   },
   {
    "id": "ftN7KMmm-G4",
    "title": "그들이 숲 밖으로 나온 이유 #shorts / YTN",
-   "views": 57000,
-   "viewsText": "조회수 5.7만회",
+   "views": 60000,
+   "viewsText": "조회수 6만회",
    "published": "",
    "kind": "short",
-   "gain": 2000
+   "gain": 3000
   },
   {
    "id": "nMePeknVmVc",
@@ -240,11 +249,11 @@
   {
    "id": "0TpwChWBow0",
    "title": "돈키호테만 씨익... #shorts / YTN",
-   "views": 10000,
-   "viewsText": "조회수 1만회",
+   "views": 9900,
+   "viewsText": "조회수 9.9천회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": -100
   },
   {
    "id": "Cd_WqtZyIcw",
@@ -271,49 +280,49 @@
    "viewsText": "조회수 9.5천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "YtOp0iEjuqs",
    "title": "\"이건 폭행 아닌가요?\" #shorts / YTN",
-   "views": 6700,
-   "viewsText": "조회수 6.7천회",
+   "views": 6400,
+   "viewsText": "조회수 6.4천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": -300
   },
   {
    "id": "uJmxmLEyB5w",
    "title": "'연락두절' 리트냥이 결국... #shorts / YTN",
-   "views": 280000,
-   "viewsText": "조회수 28만회",
+   "views": 270000,
+   "viewsText": "조회수 27만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": -10000
   },
   {
    "id": "Xvdb4hIKZbs",
    "title": "당장 한 달 살기 하러 갑니다 #shorts / YTN",
-   "views": 18000,
-   "viewsText": "조회수 1.8만회",
+   "views": 19000,
+   "viewsText": "조회수 1.9만회",
    "published": "",
    "kind": "short",
-   "gain": 2000
+   "gain": 1000
   },
   {
    "id": "EUb-VfclK-o",
    "title": "\"과거와 다르다\" #shorts / YTN",
-   "views": 9200,
-   "viewsText": "조회수 9.2천회",
+   "views": 9100,
+   "viewsText": "조회수 9.1천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": -100
   },
   {
    "id": "UBttIgOTz4k",
    "title": "범행 계획을 술술 ... #shorts / YTN",
-   "views": 51000,
-   "viewsText": "조회수 5.1만회",
+   "views": 53000,
+   "viewsText": "조회수 5.3만회",
    "published": "",
    "kind": "short",
    "gain": 2000
@@ -343,25 +352,16 @@
    "viewsText": "조회수 10만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "DY6Y38j6iII",
    "title": "망신살 껴버린 미국 #shorts / YTN",
-   "views": 63000,
-   "viewsText": "조회수 6.3만회",
+   "views": 74000,
+   "viewsText": "조회수 7.4만회",
    "published": "",
    "kind": "short",
-   "gain": 2000
-  },
-  {
-   "id": "cJV7c2VXLGo",
-   "title": "수능 시험지 오늘 지나면 폐기? #shorts / YTN",
-   "views": 36000,
-   "viewsText": "조회수 3.6만회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
+   "gain": 11000
   }
  ]
 }

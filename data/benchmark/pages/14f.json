@@ -1,44 +1,52 @@
 {
  "name": "14F 일사에프 (MBC)",
  "channel": "https://www.youtube.com/@14FMBC",
- "checkedAt": "2026-11-20T22:51+09:00",
+ "checkedAt": "2026-11-21T08:38+09:00",
  "subscribers": "239만",
  "videos": [
   {
+   "id": "VKzh4gQvEIU",
+   "title": "일본이 천황 무덤 발굴을 막는 이유 #shorts",
+   "views": 912,
+   "viewsText": "조회수 912회",
+   "published": "",
+   "kind": "short"
+  },
+  {
    "id": "1SOf5BtCrok",
    "title": "한국은 왜 구호 현장에 일자리를 만들까? #shorts",
-   "views": 1900,
-   "viewsText": "조회수 1.9천회",
+   "views": 2700,
+   "viewsText": "조회수 2.7천회",
    "published": "",
    "kind": "short",
-   "gain": 986
+   "gain": 800
   },
   {
    "id": "wlN76TIzAEM",
    "title": "천만 조회수의 남자, 소시지 아저씨의 포포몬쓰★ #shorts",
-   "views": 2400,
-   "viewsText": "조회수 2.4천회",
+   "views": 3100,
+   "viewsText": "조회수 3.1천회",
    "published": "",
    "kind": "short",
-   "gain": 500
+   "gain": 700
   },
   {
    "id": "n13XS1CuP3Q",
    "title": "미국에서 불거지는 초가공식품 소송전 #shorts",
-   "views": 3000,
-   "viewsText": "조회수 3천회",
+   "views": 3900,
+   "viewsText": "조회수 3.9천회",
    "published": "",
    "kind": "short",
-   "gain": 500
+   "gain": 900
   },
   {
    "id": "Tr0LbpRFtFk",
    "title": "백제는 삼국 통일을 할 필요가 없었다? #shorts",
-   "views": 9000,
-   "viewsText": "조회수 9천회",
+   "views": 11000,
+   "viewsText": "조회수 1.1만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 2000
   },
   {
    "id": "abobZ7JfTek",
@@ -47,16 +55,16 @@
    "viewsText": "조회수 3.9천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "gRThiyajPxQ",
    "title": "남대문 사장님들 입담이 왜 이리 좋아 #shorts",
-   "views": 9600,
-   "viewsText": "조회수 9.6천회",
+   "views": 9700,
+   "viewsText": "조회수 9.7천회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 100
   },
   {
    "id": "t0Zs4V5j-uA",
@@ -70,11 +78,11 @@
   {
    "id": "CTJ-rsjJdyU",
    "title": "후티 반군이 무서운 진짜 이유 #shorts",
-   "views": 33000,
-   "viewsText": "조회수 3.3만회",
+   "views": 34000,
+   "viewsText": "조회수 3.4만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 1000
   },
   {
    "id": "Aj_trkh0zaM",
@@ -83,7 +91,7 @@
    "viewsText": "조회수 9.3만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "WgWmSXeb_YA",
@@ -106,20 +114,20 @@
   {
    "id": "yJ40uku5fg0",
    "title": "대기업이 프랜차이즈를 안 하는 이유 #shorts",
-   "views": 15000,
-   "viewsText": "조회수 1.5만회",
+   "views": 16000,
+   "viewsText": "조회수 1.6만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 1000
   },
   {
    "id": "OTeGIZUhKjo",
    "title": "이게 진짜 라면이라고? 구미 라면 축제 이색 라면 모음 #shorts",
-   "views": 9100,
-   "viewsText": "조회수 9.1천회",
+   "views": 9200,
+   "viewsText": "조회수 9.2천회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 100
   },
   {
    "id": "eJAtWi5dWco",
@@ -142,11 +150,11 @@
   {
    "id": "UjJznEbPKrw",
    "title": "북극항로에 베팅한 한국의 큰 그림? #shorts",
-   "views": 14000,
-   "viewsText": "조회수 1.4만회",
+   "views": 15000,
+   "viewsText": "조회수 1.5만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 1000
   },
   {
    "id": "uq0xvYN3L9I",
@@ -351,15 +359,6 @@
    "title": "자동화 항만의 일등공신 AGV도 출퇴근을 한다? #shorts",
    "views": 14000,
    "viewsText": "조회수 1.4만회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "ReftlRuROv8",
-   "title": "톰 크루즈 관상 #shorts",
-   "views": 10000,
-   "viewsText": "조회수 1만회",
    "published": "",
    "kind": "short",
    "gain": 0
