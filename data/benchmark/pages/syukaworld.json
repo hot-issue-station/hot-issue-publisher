@@ -1,17 +1,17 @@
 {
  "name": "슈카월드",
  "channel": "https://www.youtube.com/@syukaworld",
- "checkedAt": "2026-11-20T19:34+09:00",
+ "checkedAt": "2026-11-20T22:51+09:00",
  "subscribers": "374만",
  "videos": [
   {
    "id": "xhzS_pawX9Y",
    "title": "슈카 서울대 입학 해명",
-   "views": 370000,
-   "viewsText": "조회수 37만회",
+   "views": 400000,
+   "viewsText": "조회수 40만회",
    "published": "",
    "kind": "short",
-   "gain": 40000
+   "gain": 30000
   },
   {
    "id": "NINJ94H2s04",
@@ -20,7 +20,7 @@
    "viewsText": "조회수 11만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "PPIMOKvuSDY",

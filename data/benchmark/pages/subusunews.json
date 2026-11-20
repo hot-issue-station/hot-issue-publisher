@@ -1,56 +1,59 @@
 {
  "name": "스브스뉴스 (SBS)",
  "channel": "https://www.youtube.com/@subusunews",
- "checkedAt": "2026-11-20T19:34+09:00",
+ "checkedAt": "2026-11-20T22:51+09:00",
  "subscribers": "144만",
  "videos": [
   {
    "id": "RBwdP8IKkeU",
    "title": "역대급 빌런에 빡친 통천이 내린 벌",
-   "views": 342,
-   "viewsText": "조회수 342회",
+   "views": 1100,
+   "viewsText": "조회수 1.1천회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 758
   },
   {
    "id": "0Q8V13eqAkU",
    "title": "돈까스클럽 정도는 가줘야 되나?",
-   "views": 1000,
-   "viewsText": "조회수 1천회",
+   "views": 2100,
+   "viewsText": "조회수 2.1천회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 1100
   },
   {
    "id": "EMLjBnedDMw",
    "title": "요즘 모바일 청첩장 특",
-   "views": 989,
-   "viewsText": "조회수 989회",
+   "views": 1900,
+   "viewsText": "조회수 1.9천회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 911
   },
   {
    "id": "W263pE8GnA4",
    "title": "한 버스 정류장에서 말 두 마리가 버스를 탄 이유 #말 #shorts #스브스뉴스",
-   "views": 11000,
-   "viewsText": "조회수 1.1만회",
+   "views": 13000,
+   "viewsText": "조회수 1.3만회",
    "published": "",
    "kind": "short",
-   "gain": 3600
+   "gain": 2000
   },
   {
    "id": "5lzXatXvULg",
    "title": "살아남기 위한 요즘 편의점의 생존 전략 #맛피아감자스틱 #shorts #스브스뉴스",
-   "views": 9900,
-   "viewsText": "조회수 9.9천회",
+   "views": 10000,
+   "viewsText": "조회수 1만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 100
   },
   {
    "id": "-QNTMLDSi9I",
    "title": "위급 재난 문자로 AI 커닝 막겠다는 정부… 온라인상에선 우회법 공유? #수능 #shorts #스브스뉴스",
-   "views": 17000,
-   "viewsText": "조회수 1.7만회",
+   "views": 18000,
+   "viewsText": "조회수 1.8만회",
    "published": "",
    "kind": "short",
    "gain": 1000
@@ -62,7 +65,7 @@
    "viewsText": "조회수 1.2천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "ARw4xkmuhAE",
@@ -71,16 +74,16 @@
    "viewsText": "조회수 2.5천회",
    "published": "",
    "kind": "short",
-   "gain": 200
+   "gain": 0
   },
   {
    "id": "mLULNEXcwAk",
    "title": "기본 축의금 + 10만 원? 어른 여자 통천이 축의금 내는 방법",
-   "views": 8000,
-   "viewsText": "조회수 8천회",
+   "views": 9600,
+   "viewsText": "조회수 9.6천회",
    "published": "",
    "kind": "short",
-   "gain": 1800
+   "gain": 1600
   },
   {
    "id": "DFiDu4HS9I4",
@@ -94,20 +97,20 @@
   {
    "id": "SIFB9hhhj-8",
    "title": "입사 한 달 차 결혼식, 간다 vs 안 간다",
-   "views": 4400,
-   "viewsText": "조회수 4.4천회",
+   "views": 4500,
+   "viewsText": "조회수 4.5천회",
    "published": "",
    "kind": "short",
-   "gain": 200
+   "gain": 100
   },
   {
    "id": "USTfN6dsPZA",
    "title": "“그렇게 살지 마라” 역대급 빡친 위원들",
-   "views": 7600,
-   "viewsText": "조회수 7.6천회",
+   "views": 7900,
+   "viewsText": "조회수 7.9천회",
    "published": "",
    "kind": "short",
-   "gain": 800
+   "gain": 300
   },
   {
    "id": "n4IuqG0n5Eg",
@@ -121,8 +124,8 @@
   {
    "id": "_DCDzT693C0",
    "title": "유병권 발작 일으킨 청모 도둑",
-   "views": 3700,
-   "viewsText": "조회수 3.7천회",
+   "views": 4000,
+   "viewsText": "조회수 4천회",
    "published": "",
    "kind": "short",
    "gain": 300
@@ -134,7 +137,7 @@
    "viewsText": "조회수 1.2만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "0EGz1y1LXFQ",
@@ -152,13 +155,13 @@
    "viewsText": "조회수 1.5만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "gwowgI6Hdt0",
    "title": "AI 이용해서 세무사 시험 수석 합격한 세무냥이의 컨닝 방법 #세무냥이 #shorts #스브스뉴스",
-   "views": 97000,
-   "viewsText": "조회수 9.7만회",
+   "views": 98000,
+   "viewsText": "조회수 9.8만회",
    "published": "",
    "kind": "short",
    "gain": 1000
@@ -170,16 +173,16 @@
    "viewsText": "조회수 8.2천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "0LtMpN02Csc",
    "title": "관세사도 합격 10배 폭증? 결국 전수조사 나선다 #국가자격시험 #shorts #스브스뉴스",
-   "views": 5300,
-   "viewsText": "조회수 5.3천회",
+   "views": 5400,
+   "viewsText": "조회수 5.4천회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 100
   },
   {
    "id": "2qGKxq8pdII",
@@ -251,7 +254,7 @@
    "viewsText": "조회수 1.2만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "vS6l_n2uJzs",
@@ -341,7 +344,7 @@
    "viewsText": "조회수 6.9천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "qZaeu4PJUps",

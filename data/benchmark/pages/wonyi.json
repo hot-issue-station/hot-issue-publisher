@@ -1,14 +1,14 @@
 {
  "name": "안원잘부",
  "channel": "https://www.youtube.com/@helloiamwoninicetomeetyou",
- "checkedAt": "2026-11-20T19:34+09:00",
+ "checkedAt": "2026-11-20T22:51+09:00",
  "subscribers": "244만",
  "videos": [
   {
    "id": "N3MX2W5_Zfs",
    "title": "디즈니 영화 OST가 된 이유",
-   "views": 1250000,
-   "viewsText": "조회수 125만회",
+   "views": 1260000,
+   "viewsText": "조회수 126만회",
    "published": "",
    "kind": "short",
    "gain": 10000
@@ -20,7 +20,7 @@
    "viewsText": "조회수 184만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "DKDmFgXzxs8",
@@ -38,7 +38,7 @@
    "viewsText": "조회수 283만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "mFM2hP5LEhM",
@@ -79,20 +79,20 @@
   {
    "id": "7Q_myxhlcwE",
    "title": "안원잘부 명장면 이모티콘 출시!",
-   "views": 1800000,
-   "viewsText": "조회수 180만회",
+   "views": 1810000,
+   "viewsText": "조회수 181만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "COnZ3rYrAXc",
    "title": "리마인이 된 리센느",
-   "views": 1660000,
-   "viewsText": "조회수 166만회",
+   "views": 1670000,
+   "viewsText": "조회수 167만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "8aZYgM9GeL0",
@@ -106,11 +106,11 @@
   {
    "id": "o-B0F16GwL0",
    "title": "[B컷] 의자 안 돌아가요",
-   "views": 13620000,
-   "viewsText": "조회수 1362만회",
+   "views": 13630000,
+   "viewsText": "조회수 1363만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "gNJrbCSN2TM",
@@ -164,7 +164,7 @@
    "viewsText": "조회수 579만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "tDs3mcabrFM",
@@ -295,11 +295,11 @@
   {
    "id": "XJQMnwcMvcw",
    "title": "백룸에 갇힌 미나미",
-   "views": 2370000,
-   "viewsText": "조회수 237만회",
+   "views": 2380000,
+   "viewsText": "조회수 238만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "510hBsWhh0A",

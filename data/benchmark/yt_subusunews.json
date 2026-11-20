@@ -3,7 +3,7 @@
  "name": "스브스뉴스 (SBS)",
  "channel": "https://www.youtube.com/@subusunews",
  "channelId": "UCxPClUl0bh7BgJajD5k483g",
- "checkedAt": "2026-11-20T19:34+09:00",
+ "checkedAt": "2026-11-20T22:51+09:00",
  "videos": [
   {
    "id": "yjBIZCfeUHo",
@@ -11,12 +11,12 @@
    "published": "2026-11-20T09:00:22+00:00",
    "url": "https://www.youtube.com/shorts/yjBIZCfeUHo",
    "shorts": true,
-   "views": 1041,
-   "likes": 11,
-   "viewsGain": null,
-   "isNew": true,
-   "median": 10816.0,
-   "multiple": 0.1
+   "views": 2455,
+   "likes": 44,
+   "viewsGain": 1414,
+   "isNew": false,
+   "median": 11176.0,
+   "multiple": 0.2
   },
   {
    "id": "XePaN4Pjpmw",
@@ -24,12 +24,12 @@
    "published": "2026-11-20T09:00:10+00:00",
    "url": "https://www.youtube.com/shorts/XePaN4Pjpmw",
    "shorts": true,
-   "views": 1051,
-   "likes": 8,
-   "viewsGain": null,
-   "isNew": true,
-   "median": 10816.0,
-   "multiple": 0.1
+   "views": 2336,
+   "likes": 26,
+   "viewsGain": 1285,
+   "isNew": false,
+   "median": 11176.0,
+   "multiple": 0.2
   },
   {
    "id": "0ZiRmpIs0Eo",
@@ -37,12 +37,12 @@
    "published": "2026-11-19T09:00:18+00:00",
    "url": "https://www.youtube.com/shorts/0ZiRmpIs0Eo",
    "shorts": true,
-   "views": 19739,
-   "likes": 353,
-   "viewsGain": 3360,
+   "views": 21956,
+   "likes": 396,
+   "viewsGain": 2217,
    "isNew": false,
-   "median": 10816.0,
-   "multiple": 1.8
+   "median": 11176.0,
+   "multiple": 2.0
   },
   {
    "id": "2EHFXAZ5tqY",
@@ -50,11 +50,11 @@
    "published": "2026-11-19T09:00:15+00:00",
    "url": "https://www.youtube.com/shorts/2EHFXAZ5tqY",
    "shorts": true,
-   "views": 18505,
-   "likes": 152,
-   "viewsGain": 1253,
+   "views": 19088,
+   "likes": 157,
+   "viewsGain": 583,
    "isNew": false,
-   "median": 10816.0,
+   "median": 11176.0,
    "multiple": 1.7
   },
   {
@@ -63,11 +63,11 @@
    "published": "2026-11-18T09:19:20+00:00",
    "url": "https://www.youtube.com/shorts/3YsU2ZxLA0Y",
    "shorts": true,
-   "views": 3598,
-   "likes": 49,
-   "viewsGain": 511,
+   "views": 3879,
+   "likes": 60,
+   "viewsGain": 281,
    "isNew": false,
-   "median": 10816.0,
+   "median": 11176.0,
    "multiple": 0.3
   },
   {
@@ -76,11 +76,11 @@
    "published": "2026-11-18T09:00:37+00:00",
    "url": "https://www.youtube.com/shorts/UvvmykR4X1Y",
    "shorts": true,
-   "views": 10609,
-   "likes": 290,
-   "viewsGain": 1082,
+   "views": 11168,
+   "likes": 315,
+   "viewsGain": 559,
    "isNew": false,
-   "median": 10816.0,
+   "median": 11176.0,
    "multiple": 1.0
   },
   {
@@ -89,11 +89,11 @@
    "published": "2026-11-18T09:00:19+00:00",
    "url": "https://www.youtube.com/shorts/p2vgoVpjigI",
    "shorts": true,
-   "views": 11062,
-   "likes": 131,
-   "viewsGain": 90,
+   "views": 11328,
+   "likes": 135,
+   "viewsGain": 266,
    "isNew": false,
-   "median": 10816.0,
+   "median": 11176.0,
    "multiple": 1.0
   },
   {
@@ -102,11 +102,11 @@
    "published": "2026-11-18T09:00:15+00:00",
    "url": "https://www.youtube.com/shorts/pkpBqfEFmV0",
    "shorts": true,
-   "views": 7478,
-   "likes": 85,
-   "viewsGain": 92,
+   "views": 7545,
+   "likes": 86,
+   "viewsGain": 67,
    "isNew": false,
-   "median": 10816.0,
+   "median": 11176.0,
    "multiple": 0.7
   },
   {
@@ -115,11 +115,11 @@
    "published": "2026-11-17T10:52:23+00:00",
    "url": "https://www.youtube.com/shorts/h_1QEshJHt0",
    "shorts": true,
-   "views": 24478,
-   "likes": 652,
-   "viewsGain": 2728,
+   "views": 25900,
+   "likes": 684,
+   "viewsGain": 1422,
    "isNew": false,
-   "median": 10816.0,
+   "median": 11176.0,
    "multiple": 2.3
   },
   {
@@ -128,11 +128,11 @@
    "published": "2026-11-17T09:54:49+00:00",
    "url": "https://www.youtube.com/shorts/jpVc9sPoKvs",
    "shorts": true,
-   "views": 19620,
-   "likes": 202,
-   "viewsGain": 128,
+   "views": 19703,
+   "likes": 204,
+   "viewsGain": 83,
    "isNew": false,
-   "median": 10816.0,
+   "median": 11176.0,
    "multiple": 1.8
   },
   {
@@ -141,12 +141,12 @@
    "published": "2026-11-17T09:48:09+00:00",
    "url": "https://www.youtube.com/shorts/QebaUlVRMH4",
    "shorts": true,
-   "views": 37556,
-   "likes": 671,
-   "viewsGain": 754,
+   "views": 37911,
+   "likes": 677,
+   "viewsGain": 355,
    "isNew": false,
-   "median": 10816.0,
-   "multiple": 3.5
+   "median": 11176.0,
+   "multiple": 3.4
   },
   {
    "id": "uJp05ZMpBes",
@@ -154,11 +154,11 @@
    "published": "2026-11-17T09:46:50+00:00",
    "url": "https://www.youtube.com/shorts/uJp05ZMpBes",
    "shorts": true,
-   "views": 11023,
-   "likes": 108,
-   "viewsGain": 426,
+   "views": 11184,
+   "likes": 114,
+   "viewsGain": 161,
    "isNew": false,
-   "median": 10816.0,
+   "median": 11176.0,
    "multiple": 1.0
   },
   {
@@ -167,9 +167,9 @@
    "published": "2026-11-17T09:00:24+00:00",
    "url": "https://www.youtube.com/watch?v=TWLm9dFAQAg",
    "shorts": false,
-   "views": 493742,
-   "likes": 7686,
-   "viewsGain": 14965,
+   "views": 502812,
+   "likes": 7796,
+   "viewsGain": 9070,
    "isNew": false,
    "median": null,
    "multiple": null
@@ -180,11 +180,11 @@
    "published": "2026-11-14T09:00:14+00:00",
    "url": "https://www.youtube.com/shorts/lnlJ2G8CryU",
    "shorts": true,
-   "views": 7415,
-   "likes": 113,
-   "viewsGain": 23,
+   "views": 7432,
+   "likes": 115,
+   "viewsGain": 17,
    "isNew": false,
-   "median": 10816.0,
+   "median": 11176.0,
    "multiple": 0.7
   },
   {
@@ -193,27 +193,34 @@
    "published": "2026-11-14T09:00:09+00:00",
    "url": "https://www.youtube.com/shorts/vxPnYMZwBxM",
    "shorts": true,
-   "views": 4920,
+   "views": 4929,
    "likes": 30,
    "viewsGain": 9,
    "isNew": false,
-   "median": 10816.0,
-   "multiple": 0.5
+   "median": 11176.0,
+   "multiple": 0.4
   }
  ],
  "viral": [
   {
    "title": "꽃다발 선물도 차원이 다른 중국 스케일",
    "url": "https://www.youtube.com/shorts/QebaUlVRMH4",
-   "views": 37556,
-   "multiple": 3.5,
+   "views": 37911,
+   "multiple": 3.4,
    "shorts": true
   },
   {
    "title": "8년 만에 처음 전하는 편지",
    "url": "https://www.youtube.com/shorts/h_1QEshJHt0",
-   "views": 24478,
+   "views": 25900,
    "multiple": 2.3,
+   "shorts": true
+  },
+  {
+   "title": "제가 할 거를 알려주세요",
+   "url": "https://www.youtube.com/shorts/0ZiRmpIs0Eo",
+   "views": 21956,
+   "multiple": 2.0,
    "shorts": true
   }
  ]
