@@ -3,20 +3,33 @@
  "name": "슈카월드",
  "channel": "https://www.youtube.com/@syukaworld",
  "channelId": "UCJo6G1u0e_-wS-JQn3T-zEw",
- "checkedAt": "2026-11-20T08:35+09:00",
+ "checkedAt": "2026-11-20T14:58+09:00",
  "videos": [
+  {
+   "id": "oiS9MY0zpFI",
+   "title": "보안 하나는 철저한 여의도 증권사",
+   "published": "2026-11-20T03:14:13+00:00",
+   "url": "https://www.youtube.com/shorts/oiS9MY0zpFI",
+   "shorts": true,
+   "views": 21857,
+   "likes": 358,
+   "viewsGain": null,
+   "isNew": true,
+   "median": 144744,
+   "multiple": 0.2
+  },
   {
    "id": "JiKUxWsF5Ww",
    "title": "번호 4로 서울대의대 간 사람",
    "published": "2026-11-19T09:52:15+00:00",
    "url": "https://www.youtube.com/shorts/JiKUxWsF5Ww",
    "shorts": true,
-   "views": 192951,
-   "likes": 1266,
-   "viewsGain": 113411,
+   "views": 225425,
+   "likes": 1490,
+   "viewsGain": 32474,
    "isNew": false,
-   "median": 155163,
-   "multiple": 1.2
+   "median": 144744,
+   "multiple": 1.6
   },
   {
    "id": "vai2XXhUsCk",
@@ -24,12 +37,12 @@
    "published": "2026-11-19T06:42:35+00:00",
    "url": "https://www.youtube.com/watch?v=vai2XXhUsCk",
    "shorts": false,
-   "views": 146744,
-   "likes": 911,
-   "viewsGain": 10035,
+   "views": 150192,
+   "likes": 918,
+   "viewsGain": 3448,
    "isNew": false,
-   "median": 156310.0,
-   "multiple": 0.9
+   "median": 155500.5,
+   "multiple": 1.0
   },
   {
    "id": "s4u1HCrqMJE",
@@ -37,12 +50,12 @@
    "published": "2026-11-18T08:45:11+00:00",
    "url": "https://www.youtube.com/shorts/s4u1HCrqMJE",
    "shorts": true,
-   "views": 179990,
-   "likes": 1530,
-   "viewsGain": 8098,
+   "views": 185754,
+   "likes": 1623,
+   "viewsGain": 5764,
    "isNew": false,
-   "median": 155163,
-   "multiple": 1.2
+   "median": 144744,
+   "multiple": 1.3
   },
   {
    "id": "Sva8MRMYh-4",
@@ -50,11 +63,11 @@
    "published": "2026-11-18T08:33:24+00:00",
    "url": "https://www.youtube.com/shorts/Sva8MRMYh-4",
    "shorts": true,
-   "views": 86550,
-   "likes": 599,
-   "viewsGain": 4764,
+   "views": 88931,
+   "likes": 624,
+   "viewsGain": 2381,
    "isNew": false,
-   "median": 155163,
+   "median": 144744,
    "multiple": 0.6
   },
   {
@@ -63,11 +76,11 @@
    "published": "2026-11-18T08:15:41+00:00",
    "url": "https://www.youtube.com/shorts/2mh-i_Cf_Gg",
    "shorts": true,
-   "views": 34290,
-   "likes": 193,
-   "viewsGain": 1788,
+   "views": 35503,
+   "likes": 202,
+   "viewsGain": 1213,
    "isNew": false,
-   "median": 155163,
+   "median": 144744,
    "multiple": 0.2
   },
   {
@@ -76,11 +89,11 @@
    "published": "2026-11-18T06:40:05+00:00",
    "url": "https://www.youtube.com/watch?v=tZdVu8G-104",
    "shorts": false,
-   "views": 154809,
+   "views": 152998,
    "likes": 897,
-   "viewsGain": 1287,
+   "viewsGain": -1811,
    "isNew": false,
-   "median": 156310.0,
+   "median": 155500.5,
    "multiple": 1.0
   },
   {
@@ -89,12 +102,12 @@
    "published": "2026-11-18T02:18:09+00:00",
    "url": "https://www.youtube.com/shorts/jsV0Gp3PyZM",
    "shorts": true,
-   "views": 142377,
-   "likes": 1086,
-   "viewsGain": 6238,
+   "views": 144744,
+   "likes": 1111,
+   "viewsGain": 2367,
    "isNew": false,
-   "median": 155163,
-   "multiple": 0.9
+   "median": 144744,
+   "multiple": 1.0
   },
   {
    "id": "kJeO9iXUse4",
@@ -102,12 +115,12 @@
    "published": "2026-11-17T11:16:19+00:00",
    "url": "https://www.youtube.com/shorts/kJeO9iXUse4",
    "shorts": true,
-   "views": 108325,
-   "likes": 623,
-   "viewsGain": 1627,
+   "views": 108649,
+   "likes": 630,
+   "viewsGain": 324,
    "isNew": false,
-   "median": 155163,
-   "multiple": 0.7
+   "median": 144744,
+   "multiple": 0.8
   },
   {
    "id": "XKmD-M7rWO0",
@@ -115,11 +128,11 @@
    "published": "2026-11-17T09:29:46+00:00",
    "url": "https://www.youtube.com/watch?v=XKmD-M7rWO0",
    "shorts": false,
-   "views": 307392,
-   "likes": 1732,
-   "viewsGain": 13019,
+   "views": 314494,
+   "likes": 1758,
+   "viewsGain": 7102,
    "isNew": false,
-   "median": 156310.0,
+   "median": 155500.5,
    "multiple": 2.0
   },
   {
@@ -128,11 +141,11 @@
    "published": "2026-11-16T12:11:16+00:00",
    "url": "https://www.youtube.com/watch?v=yT1Rei0xDVc",
    "shorts": false,
-   "views": 152656,
+   "views": 152964,
    "likes": 970,
-   "viewsGain": -950,
+   "viewsGain": 308,
    "isNew": false,
-   "median": 156310.0,
+   "median": 155500.5,
    "multiple": 1.0
   },
   {
@@ -141,11 +154,11 @@
    "published": "2026-11-16T06:36:19+00:00",
    "url": "https://www.youtube.com/watch?v=lGfmyzMMof0",
    "shorts": false,
-   "views": 157811,
+   "views": 158003,
    "likes": 1140,
-   "viewsGain": 32,
+   "viewsGain": 192,
    "isNew": false,
-   "median": 156310.0,
+   "median": 155500.5,
    "multiple": 1.0
   },
   {
@@ -154,12 +167,12 @@
    "published": "2026-11-16T02:54:18+00:00",
    "url": "https://www.youtube.com/shorts/BcH1D15dzsw",
    "shorts": true,
-   "views": 155163,
-   "likes": 1200,
-   "viewsGain": 2400,
+   "views": 158343,
+   "likes": 1230,
+   "viewsGain": 3180,
    "isNew": false,
-   "median": 155163,
-   "multiple": 1.0
+   "median": 144744,
+   "multiple": 1.1
   },
   {
    "id": "S_S0dX87aPY",
@@ -167,11 +180,11 @@
    "published": "2026-11-14T09:00:24+00:00",
    "url": "https://www.youtube.com/watch?v=S_S0dX87aPY",
    "shorts": false,
-   "views": 232356,
-   "likes": 1601,
-   "viewsGain": 1212,
+   "views": 234564,
+   "likes": 1611,
+   "viewsGain": 2208,
    "isNew": false,
-   "median": 156310.0,
+   "median": 155500.5,
    "multiple": 1.5
   },
   {
@@ -180,39 +193,19 @@
    "published": "2026-11-14T07:26:18+00:00",
    "url": "https://www.youtube.com/shorts/eXUFUT2_RpQ",
    "shorts": true,
-   "views": 174218,
-   "likes": 1404,
-   "viewsGain": 1179,
+   "views": 175047,
+   "likes": 1410,
+   "viewsGain": 829,
    "isNew": false,
-   "median": 155163,
-   "multiple": 1.1
-  },
-  {
-   "id": "ZFq74IdTuR8",
-   "title": "누가 회사에서 주식 보래?",
-   "published": "2026-11-13T08:00:22+00:00",
-   "url": "https://www.youtube.com/shorts/ZFq74IdTuR8",
-   "shorts": true,
-   "views": 431379,
-   "likes": 5435,
-   "viewsGain": 3624,
-   "isNew": false,
-   "median": 155163,
-   "multiple": 2.8
+   "median": 144744,
+   "multiple": 1.2
   }
  ],
  "viral": [
   {
-   "title": "누가 회사에서 주식 보래?",
-   "url": "https://www.youtube.com/shorts/ZFq74IdTuR8",
-   "views": 431379,
-   "multiple": 2.8,
-   "shorts": true
-  },
-  {
    "title": "엔비디아는 왜 갑자기 위기를 맞이했을까(음모론)",
    "url": "https://www.youtube.com/watch?v=XKmD-M7rWO0",
-   "views": 307392,
+   "views": 314494,
    "multiple": 2.0,
    "shorts": false
   }

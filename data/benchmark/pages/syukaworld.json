@@ -1,17 +1,17 @@
 {
  "name": "슈카월드",
  "channel": "https://www.youtube.com/@syukaworld",
- "checkedAt": "2026-11-20T08:35+09:00",
+ "checkedAt": "2026-11-20T14:58+09:00",
  "subscribers": "374만",
  "videos": [
   {
    "id": "xhzS_pawX9Y",
    "title": "슈카 서울대 입학 해명",
-   "views": 290000,
-   "viewsText": "조회수 29만회",
+   "views": 330000,
+   "viewsText": "조회수 33만회",
    "published": "",
    "kind": "short",
-   "gain": 50000
+   "gain": 40000
   },
   {
    "id": "NINJ94H2s04",
@@ -20,7 +20,7 @@
    "viewsText": "조회수 10만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "PPIMOKvuSDY",
@@ -34,11 +34,11 @@
   {
    "id": "5mSF8npmm9A",
    "title": "이거 진짜에요?",
-   "views": 150000,
-   "viewsText": "조회수 15만회",
+   "views": 160000,
+   "viewsText": "조회수 16만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "5LEMniVcweU",
@@ -47,7 +47,7 @@
    "viewsText": "조회수 7.2만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "xmLFwy-UdNU",
@@ -70,11 +70,11 @@
   {
    "id": "lioIrGMoIbs",
    "title": "좋은 사람 있으면 소개시켜줘",
-   "views": 96000,
-   "viewsText": "조회수 9.6만회",
+   "views": 97000,
+   "viewsText": "조회수 9.7만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 1000
   },
   {
    "id": "D32h_sPWp0g",
@@ -277,11 +277,11 @@
   {
    "id": "RciVevkUhXc",
    "title": "저는 물리지 않았습니다.",
-   "views": 620000,
-   "viewsText": "조회수 62만회",
+   "views": 630000,
+   "viewsText": "조회수 63만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "KW_b_oO43E8",
