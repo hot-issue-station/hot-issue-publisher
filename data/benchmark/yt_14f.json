@@ -3,20 +3,46 @@
  "name": "14F 일사에프 (MBC)",
  "channel": "https://www.youtube.com/@14FMBC",
  "channelId": "UCLKuglhGlMmDteQKoniENIQ",
- "checkedAt": "2026-11-20T14:58+09:00",
+ "checkedAt": "2026-11-20T19:34+09:00",
  "videos": [
+  {
+   "id": "_pBAM8GDWo8",
+   "title": "무심코 튼 브금에 소송까지?… 저작권 걱정 없이 콘텐츠 이용하는 방법 / 14F",
+   "published": "2026-11-20T08:30:37+00:00",
+   "url": "https://www.youtube.com/watch?v=_pBAM8GDWo8",
+   "shorts": false,
+   "views": 2664,
+   "likes": 67,
+   "viewsGain": null,
+   "isNew": true,
+   "median": 151996.5,
+   "multiple": 0.0
+  },
+  {
+   "id": "1SOf5BtCrok",
+   "title": "한국은 왜 구호 현장에 일자리를 만들까? #shorts",
+   "published": "2026-11-20T08:30:15+00:00",
+   "url": "https://www.youtube.com/shorts/1SOf5BtCrok",
+   "shorts": true,
+   "views": 914,
+   "likes": 16,
+   "viewsGain": null,
+   "isNew": true,
+   "median": 2551,
+   "multiple": 0.4
+  },
   {
    "id": "wlN76TIzAEM",
    "title": "천만 조회수의 남자, 소시지 아저씨의 포포몬쓰★ #shorts",
    "published": "2026-11-20T04:00:30+00:00",
    "url": "https://www.youtube.com/shorts/wlN76TIzAEM",
    "shorts": true,
-   "views": 889,
-   "likes": 7,
-   "viewsGain": null,
-   "isNew": true,
-   "median": 4538.0,
-   "multiple": 0.2
+   "views": 1920,
+   "likes": 13,
+   "viewsGain": 1031,
+   "isNew": false,
+   "median": 2551,
+   "multiple": 0.8
   },
   {
    "id": "n13XS1CuP3Q",
@@ -24,12 +50,12 @@
    "published": "2026-11-20T03:00:19+00:00",
    "url": "https://www.youtube.com/shorts/n13XS1CuP3Q",
    "shorts": true,
-   "views": 1335,
-   "likes": 13,
-   "viewsGain": null,
-   "isNew": true,
-   "median": 4538.0,
-   "multiple": 0.3
+   "views": 2551,
+   "likes": 20,
+   "viewsGain": 1216,
+   "isNew": false,
+   "median": 2551,
+   "multiple": 1.0
   },
   {
    "id": "Tr0LbpRFtFk",
@@ -37,12 +63,12 @@
    "published": "2026-11-19T23:00:03+00:00",
    "url": "https://www.youtube.com/shorts/Tr0LbpRFtFk",
    "shorts": true,
-   "views": 5234,
-   "likes": 68,
-   "viewsGain": 4755,
+   "views": 8017,
+   "likes": 87,
+   "viewsGain": 2783,
    "isNew": false,
-   "median": 4538.0,
-   "multiple": 1.2
+   "median": 2551,
+   "multiple": 3.1
   },
   {
    "id": "XtDXa41EHTw",
@@ -50,12 +76,12 @@
    "published": "2026-11-19T10:16:53+00:00",
    "url": "https://www.youtube.com/watch?v=XtDXa41EHTw",
    "shorts": false,
-   "views": 143060,
-   "likes": 616,
-   "viewsGain": 36613,
+   "views": 173000,
+   "likes": 731,
+   "viewsGain": 29940,
    "isNew": false,
-   "median": 143060,
-   "multiple": 1.0
+   "median": 151996.5,
+   "multiple": 1.1
   },
   {
    "id": "UVXV3vZmzsQ",
@@ -63,11 +89,11 @@
    "published": "2026-11-19T09:00:28+00:00",
    "url": "https://www.youtube.com/watch?v=UVXV3vZmzsQ",
    "shorts": false,
-   "views": 51076,
-   "likes": 483,
-   "viewsGain": 8724,
+   "views": 58557,
+   "likes": 576,
+   "viewsGain": 7481,
    "isNew": false,
-   "median": 143060,
+   "median": 151996.5,
    "multiple": 0.4
   },
   {
@@ -76,12 +102,12 @@
    "published": "2026-11-18T09:59:07+00:00",
    "url": "https://www.youtube.com/watch?v=WbzEeAb50UY",
    "shorts": false,
-   "views": 240125,
-   "likes": 1057,
-   "viewsGain": 15198,
+   "views": 248315,
+   "likes": 1084,
+   "viewsGain": 8190,
    "isNew": false,
-   "median": 143060,
-   "multiple": 1.7
+   "median": 151996.5,
+   "multiple": 1.6
   },
   {
    "id": "Mv1Y2_lA-pQ",
@@ -89,11 +115,11 @@
    "published": "2026-11-18T08:30:29+00:00",
    "url": "https://www.youtube.com/watch?v=Mv1Y2_lA-pQ",
    "shorts": false,
-   "views": 90984,
-   "likes": 692,
-   "viewsGain": 8691,
+   "views": 96838,
+   "likes": 746,
+   "viewsGain": 5854,
    "isNew": false,
-   "median": 143060,
+   "median": 151996.5,
    "multiple": 0.6
   },
   {
@@ -102,12 +128,12 @@
    "published": "2026-11-18T03:00:40+00:00",
    "url": "https://www.youtube.com/shorts/abobZ7JfTek",
    "shorts": true,
-   "views": 3842,
+   "views": 3888,
    "likes": 33,
-   "viewsGain": 71,
+   "viewsGain": 46,
    "isNew": false,
-   "median": 4538.0,
-   "multiple": 0.8
+   "median": 2551,
+   "multiple": 1.5
   },
   {
    "id": "lEpjsxSLfB8",
@@ -115,11 +141,11 @@
    "published": "2026-11-17T09:48:41+00:00",
    "url": "https://www.youtube.com/watch?v=lEpjsxSLfB8",
    "shorts": false,
-   "views": 129722,
-   "likes": 469,
-   "viewsGain": 2011,
+   "views": 130993,
+   "likes": 480,
+   "viewsGain": 1271,
    "isNew": false,
-   "median": 143060,
+   "median": 151996.5,
    "multiple": 0.9
   },
   {
@@ -128,11 +154,11 @@
    "published": "2026-11-17T08:30:04+00:00",
    "url": "https://www.youtube.com/watch?v=hvRGI76Jd8E",
    "shorts": false,
-   "views": 436305,
-   "likes": 2144,
-   "viewsGain": 14792,
+   "views": 448404,
+   "likes": 2192,
+   "viewsGain": 12099,
    "isNew": false,
-   "median": 143060,
+   "median": 151996.5,
    "multiple": 3.0
   },
   {
@@ -141,12 +167,12 @@
    "published": "2026-11-16T09:30:04+00:00",
    "url": "https://www.youtube.com/watch?v=qY9ByfK70cw",
    "shorts": false,
-   "views": 225742,
-   "likes": 955,
-   "viewsGain": 3403,
+   "views": 227468,
+   "likes": 960,
+   "viewsGain": 1726,
    "isNew": false,
-   "median": 143060,
-   "multiple": 1.6
+   "median": 151996.5,
+   "multiple": 1.5
   },
   {
    "id": "fkyakwxfN0g",
@@ -154,12 +180,12 @@
    "published": "2026-11-16T09:00:29+00:00",
    "url": "https://www.youtube.com/watch?v=fkyakwxfN0g",
    "shorts": false,
-   "views": 585436,
-   "likes": 2401,
-   "viewsGain": 13343,
+   "views": 593016,
+   "likes": 2427,
+   "viewsGain": 7580,
    "isNew": false,
-   "median": 143060,
-   "multiple": 4.1
+   "median": 151996.5,
+   "multiple": 3.9
   },
   {
    "id": "q2VxkeYVhv0",
@@ -167,61 +193,35 @@
    "published": "2026-11-16T08:34:47+00:00",
    "url": "https://www.youtube.com/watch?v=q2VxkeYVhv0",
    "shorts": false,
-   "views": 90359,
-   "likes": 440,
-   "viewsGain": 272,
+   "views": 90777,
+   "likes": 439,
+   "viewsGain": 418,
    "isNew": false,
-   "median": 143060,
+   "median": 151996.5,
    "multiple": 0.6
-  },
-  {
-   "id": "gRThiyajPxQ",
-   "title": "남대문 사장님들 입담이 왜 이리 좋아 #shorts",
-   "published": "2026-11-14T04:00:38+00:00",
-   "url": "https://www.youtube.com/shorts/gRThiyajPxQ",
-   "shorts": true,
-   "views": 9638,
-   "likes": 42,
-   "viewsGain": 18,
-   "isNew": false,
-   "median": 4538.0,
-   "multiple": 2.1
-  },
-  {
-   "id": "t0Zs4V5j-uA",
-   "title": "한국 프랜차이즈가 매력적인 이유 #shorts",
-   "published": "2026-11-14T03:00:22+00:00",
-   "url": "https://www.youtube.com/shorts/t0Zs4V5j-uA",
-   "shorts": true,
-   "views": 8193,
-   "likes": 49,
-   "viewsGain": 52,
-   "isNew": false,
-   "median": 4538.0,
-   "multiple": 1.8
   }
  ],
  "viral": [
   {
    "title": "의료보험 있는 것처럼 먹더니…🥄ㅣ돈슐랭 / 14F",
    "url": "https://www.youtube.com/watch?v=fkyakwxfN0g",
-   "views": 585436,
-   "multiple": 4.1,
+   "views": 593016,
+   "multiple": 3.9,
    "shorts": false
+  },
+  {
+   "title": "백제는 삼국 통일을 할 필요가 없었다? #shorts",
+   "url": "https://www.youtube.com/shorts/Tr0LbpRFtFk",
+   "views": 8017,
+   "multiple": 3.1,
+   "shorts": true
   },
   {
    "title": "중국 정사에 기록된 거대 백제 대륙? 백제 요서경략설 미스터리 (강인욱X조법종) ㅣ10분 토론 / 14F",
    "url": "https://www.youtube.com/watch?v=hvRGI76Jd8E",
-   "views": 436305,
+   "views": 448404,
    "multiple": 3.0,
    "shorts": false
-  },
-  {
-   "title": "남대문 사장님들 입담이 왜 이리 좋아 #shorts",
-   "url": "https://www.youtube.com/shorts/gRThiyajPxQ",
-   "views": 9638,
-   "multiple": 2.1,
-   "shorts": true
   }
  ]
 }

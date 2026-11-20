@@ -1,59 +1,83 @@
 {
  "name": "스브스뉴스 (SBS)",
  "channel": "https://www.youtube.com/@subusunews",
- "checkedAt": "2026-11-20T14:58+09:00",
+ "checkedAt": "2026-11-20T19:34+09:00",
  "subscribers": "144만",
  "videos": [
   {
+   "id": "RBwdP8IKkeU",
+   "title": "역대급 빌런에 빡친 통천이 내린 벌",
+   "views": 342,
+   "viewsText": "조회수 342회",
+   "published": "",
+   "kind": "short"
+  },
+  {
+   "id": "0Q8V13eqAkU",
+   "title": "돈까스클럽 정도는 가줘야 되나?",
+   "views": 1000,
+   "viewsText": "조회수 1천회",
+   "published": "",
+   "kind": "short"
+  },
+  {
+   "id": "EMLjBnedDMw",
+   "title": "요즘 모바일 청첩장 특",
+   "views": 989,
+   "viewsText": "조회수 989회",
+   "published": "",
+   "kind": "short"
+  },
+  {
    "id": "W263pE8GnA4",
    "title": "한 버스 정류장에서 말 두 마리가 버스를 탄 이유 #말 #shorts #스브스뉴스",
-   "views": 7400,
-   "viewsText": "조회수 7.4천회",
+   "views": 11000,
+   "viewsText": "조회수 1.1만회",
    "published": "",
    "kind": "short",
-   "gain": 3300
+   "gain": 3600
   },
   {
    "id": "5lzXatXvULg",
    "title": "살아남기 위한 요즘 편의점의 생존 전략 #맛피아감자스틱 #shorts #스브스뉴스",
-   "views": 8900,
-   "viewsText": "조회수 8.9천회",
+   "views": 9900,
+   "viewsText": "조회수 9.9천회",
    "published": "",
    "kind": "short",
-   "gain": 2500
+   "gain": 1000
   },
   {
    "id": "-QNTMLDSi9I",
    "title": "위급 재난 문자로 AI 커닝 막겠다는 정부… 온라인상에선 우회법 공유? #수능 #shorts #스브스뉴스",
-   "views": 16000,
-   "viewsText": "조회수 1.6만회",
+   "views": 17000,
+   "viewsText": "조회수 1.7만회",
    "published": "",
    "kind": "short",
-   "gain": 6000
+   "gain": 1000
   },
   {
    "id": "EwtrEyOz_oo",
    "title": "이걸 깨서 세상에 없애야겠구나",
-   "views": 1100,
-   "viewsText": "조회수 1.1천회",
+   "views": 1200,
+   "viewsText": "조회수 1.2천회",
    "published": "",
    "kind": "short",
-   "gain": 103
+   "gain": 100
   },
   {
    "id": "ARw4xkmuhAE",
    "title": "빌런 퇴치법 알려드립니다",
-   "views": 2300,
-   "viewsText": "조회수 2.3천회",
+   "views": 2500,
+   "viewsText": "조회수 2.5천회",
    "published": "",
    "kind": "short",
-   "gain": 400
+   "gain": 200
   },
   {
    "id": "mLULNEXcwAk",
    "title": "기본 축의금 + 10만 원? 어른 여자 통천이 축의금 내는 방법",
-   "views": 6200,
-   "viewsText": "조회수 6.2천회",
+   "views": 8000,
+   "viewsText": "조회수 8천회",
    "published": "",
    "kind": "short",
    "gain": 1800
@@ -65,22 +89,22 @@
    "viewsText": "조회수 1.5만회",
    "published": "",
    "kind": "short",
-   "gain": 2000
+   "gain": 0
   },
   {
    "id": "SIFB9hhhj-8",
    "title": "입사 한 달 차 결혼식, 간다 vs 안 간다",
-   "views": 4200,
-   "viewsText": "조회수 4.2천회",
+   "views": 4400,
+   "viewsText": "조회수 4.4천회",
    "published": "",
    "kind": "short",
-   "gain": 300
+   "gain": 200
   },
   {
    "id": "USTfN6dsPZA",
    "title": "“그렇게 살지 마라” 역대급 빡친 위원들",
-   "views": 6800,
-   "viewsText": "조회수 6.8천회",
+   "views": 7600,
+   "viewsText": "조회수 7.6천회",
    "published": "",
    "kind": "short",
    "gain": 800
@@ -97,20 +121,20 @@
   {
    "id": "_DCDzT693C0",
    "title": "유병권 발작 일으킨 청모 도둑",
-   "views": 3400,
-   "viewsText": "조회수 3.4천회",
+   "views": 3700,
+   "viewsText": "조회수 3.7천회",
    "published": "",
    "kind": "short",
-   "gain": 200
+   "gain": 300
   },
   {
    "id": "mmChYuV8uLA",
    "title": "결혼식에서 사진 찍지 말라는 신혼부부",
-   "views": 11000,
-   "viewsText": "조회수 1.1만회",
+   "views": 12000,
+   "viewsText": "조회수 1.2만회",
    "published": "",
    "kind": "short",
-   "gain": 1600
+   "gain": 1000
   },
   {
    "id": "0EGz1y1LXFQ",
@@ -124,29 +148,29 @@
   {
    "id": "d_V3w3jWVpQ",
    "title": "출근도 잘하고, 친구도 잘 만나는데... 우울증이래요 #우울증 #shorts #스브스뉴스",
-   "views": 14000,
-   "viewsText": "조회수 1.4만회",
+   "views": 15000,
+   "viewsText": "조회수 1.5만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 1000
   },
   {
    "id": "gwowgI6Hdt0",
    "title": "AI 이용해서 세무사 시험 수석 합격한 세무냥이의 컨닝 방법 #세무냥이 #shorts #스브스뉴스",
-   "views": 96000,
-   "viewsText": "조회수 9.6만회",
+   "views": 97000,
+   "viewsText": "조회수 9.7만회",
    "published": "",
    "kind": "short",
-   "gain": 2000
+   "gain": 1000
   },
   {
    "id": "zPaJv7lADWY",
    "title": "이제 겨울인데 모기는 왜 안 사라짐? #가을 #shorts #스브스뉴스",
-   "views": 8100,
-   "viewsText": "조회수 8.1천회",
+   "views": 8200,
+   "viewsText": "조회수 8.2천회",
    "published": "",
    "kind": "short",
-   "gain": -100
+   "gain": 100
   },
   {
    "id": "0LtMpN02Csc",
@@ -223,11 +247,11 @@
   {
    "id": "7UWF0GGYftg",
    "title": "[선공개] 신혼여행 따라갔던 부부에게 연락이 안 온다",
-   "views": 11000,
-   "viewsText": "조회수 1.1만회",
+   "views": 12000,
+   "viewsText": "조회수 1.2만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 1000
   },
   {
    "id": "vS6l_n2uJzs",
@@ -313,11 +337,11 @@
   {
    "id": "STWniX3sH0g",
    "title": "상반기에만 2배 폭증한 초등학생 자살률 #자살 #shorts #스브스뉴스",
-   "views": 6800,
-   "viewsText": "조회수 6.8천회",
+   "views": 6900,
+   "viewsText": "조회수 6.9천회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 100
   },
   {
    "id": "qZaeu4PJUps",
@@ -333,33 +357,6 @@
    "title": "이제 소풍 안 간다는 요즘 초등학교 근황 #초등학교 #shorts #스브스뉴스",
    "views": 23000,
    "viewsText": "조회수 2.3만회",
-   "published": "",
-   "kind": "short",
-   "gain": 1000
-  },
-  {
-   "id": "6LRM6cDTkWU",
-   "title": "여름에도 수능 치던 94학번들 #수능 #shorts #스브스뉴스",
-   "views": 12000,
-   "viewsText": "조회수 1.2만회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "bRGPA0qxe-w",
-   "title": "햇반이 해외에서 인기인 의외의 이유 #shorts / 스브스뉴스",
-   "views": 15000,
-   "viewsText": "조회수 1.5만회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "Hi8hop0wrf0",
-   "title": "북한이 해킹 주범으로 지목되자 신속하게 대응한 이유 #북한 #shorts #스브스뉴스",
-   "views": 6400,
-   "viewsText": "조회수 6.4천회",
    "published": "",
    "kind": "short",
    "gain": 0

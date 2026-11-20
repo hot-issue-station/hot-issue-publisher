@@ -1,14 +1,14 @@
 {
  "name": "안원잘부",
  "channel": "https://www.youtube.com/@helloiamwoninicetomeetyou",
- "checkedAt": "2026-11-20T14:58+09:00",
+ "checkedAt": "2026-11-20T19:34+09:00",
  "subscribers": "244만",
  "videos": [
   {
    "id": "N3MX2W5_Zfs",
    "title": "디즈니 영화 OST가 된 이유",
-   "views": 1240000,
-   "viewsText": "조회수 124만회",
+   "views": 1250000,
+   "viewsText": "조회수 125만회",
    "published": "",
    "kind": "short",
    "gain": 10000
@@ -16,11 +16,11 @@
   {
    "id": "kfK-LENbEUo",
    "title": "정작가의 컴백을 축하합니다",
-   "views": 1830000,
-   "viewsText": "조회수 183만회",
+   "views": 1840000,
+   "viewsText": "조회수 184만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "DKDmFgXzxs8",
@@ -34,11 +34,11 @@
   {
    "id": "zxNoW_LtVLE",
    "title": "치명적인 실수",
-   "views": 2820000,
-   "viewsText": "조회수 282만회",
+   "views": 2830000,
+   "viewsText": "조회수 283만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "mFM2hP5LEhM",
@@ -47,7 +47,7 @@
    "viewsText": "조회수 325만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "xCvbDeMKm3E",
@@ -160,11 +160,11 @@
   {
    "id": "FxbR-V8GOjE",
    "title": "새로운 등교 친구",
-   "views": 5780000,
-   "viewsText": "조회수 578만회",
+   "views": 5790000,
+   "viewsText": "조회수 579만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "tDs3mcabrFM",
