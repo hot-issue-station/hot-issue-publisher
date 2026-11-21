@@ -3,20 +3,33 @@
  "name": "14F 일사에프 (MBC)",
  "channel": "https://www.youtube.com/@14FMBC",
  "channelId": "UCLKuglhGlMmDteQKoniENIQ",
- "checkedAt": "2026-11-21T08:39+09:00",
+ "checkedAt": "2026-11-21T14:51+09:00",
  "videos": [
+  {
+   "id": "NyxPbpN3Uyo",
+   "title": "한국인 드립에 감동한 영국 소시지 아저씨#shorts",
+   "published": "2026-11-21T04:00:03+00:00",
+   "url": "https://www.youtube.com/shorts/NyxPbpN3Uyo",
+   "shorts": true,
+   "views": 1049,
+   "likes": 28,
+   "viewsGain": null,
+   "isNew": true,
+   "median": 4012,
+   "multiple": 0.3
+  },
   {
    "id": "VKzh4gQvEIU",
    "title": "일본이 천황 무덤 발굴을 막는 이유 #shorts",
    "published": "2026-11-20T23:00:30+00:00",
    "url": "https://www.youtube.com/shorts/VKzh4gQvEIU",
    "shorts": true,
-   "views": 912,
-   "likes": 17,
-   "viewsGain": null,
-   "isNew": true,
-   "median": 3559.0,
-   "multiple": 0.3
+   "views": 6571,
+   "likes": 95,
+   "viewsGain": 5659,
+   "isNew": false,
+   "median": 4012,
+   "multiple": 1.6
   },
   {
    "id": "_pBAM8GDWo8",
@@ -24,12 +37,12 @@
    "published": "2026-11-20T08:30:37+00:00",
    "url": "https://www.youtube.com/watch?v=_pBAM8GDWo8",
    "shorts": false,
-   "views": 29156,
-   "likes": 162,
-   "viewsGain": 12483,
+   "views": 34241,
+   "likes": 198,
+   "viewsGain": 5085,
    "isNew": false,
-   "median": 228267,
-   "multiple": 0.1
+   "median": 182542.5,
+   "multiple": 0.2
   },
   {
    "id": "1SOf5BtCrok",
@@ -37,11 +50,11 @@
    "published": "2026-11-20T08:30:15+00:00",
    "url": "https://www.youtube.com/shorts/1SOf5BtCrok",
    "shorts": true,
-   "views": 2778,
-   "likes": 27,
-   "viewsGain": 833,
+   "views": 3040,
+   "likes": 29,
+   "viewsGain": 262,
    "isNew": false,
-   "median": 3559.0,
+   "median": 4012,
    "multiple": 0.8
   },
   {
@@ -50,11 +63,11 @@
    "published": "2026-11-20T04:00:30+00:00",
    "url": "https://www.youtube.com/shorts/wlN76TIzAEM",
    "shorts": true,
-   "views": 3142,
-   "likes": 13,
-   "viewsGain": 730,
+   "views": 3629,
+   "likes": 14,
+   "viewsGain": 487,
    "isNew": false,
-   "median": 3559.0,
+   "median": 4012,
    "multiple": 0.9
   },
   {
@@ -63,11 +76,11 @@
    "published": "2026-11-20T03:00:19+00:00",
    "url": "https://www.youtube.com/shorts/n13XS1CuP3Q",
    "shorts": true,
-   "views": 3985,
-   "likes": 27,
-   "viewsGain": 922,
+   "views": 4517,
+   "likes": 30,
+   "viewsGain": 532,
    "isNew": false,
-   "median": 3559.0,
+   "median": 4012,
    "multiple": 1.1
   },
   {
@@ -76,12 +89,12 @@
    "published": "2026-11-19T23:00:03+00:00",
    "url": "https://www.youtube.com/shorts/Tr0LbpRFtFk",
    "shorts": true,
-   "views": 11165,
-   "likes": 102,
-   "viewsGain": 2121,
+   "views": 12180,
+   "likes": 108,
+   "viewsGain": 1015,
    "isNew": false,
-   "median": 3559.0,
-   "multiple": 3.1
+   "median": 4012,
+   "multiple": 3.0
   },
   {
    "id": "XtDXa41EHTw",
@@ -89,12 +102,12 @@
    "published": "2026-11-19T10:16:53+00:00",
    "url": "https://www.youtube.com/watch?v=XtDXa41EHTw",
    "shorts": false,
-   "views": 249990,
-   "likes": 827,
-   "viewsGain": 35695,
+   "views": 270938,
+   "likes": 877,
+   "viewsGain": 20948,
    "isNew": false,
-   "median": 228267,
-   "multiple": 1.1
+   "median": 182542.5,
+   "multiple": 1.5
   },
   {
    "id": "UVXV3vZmzsQ",
@@ -102,12 +115,12 @@
    "published": "2026-11-19T09:00:28+00:00",
    "url": "https://www.youtube.com/watch?v=UVXV3vZmzsQ",
    "shorts": false,
-   "views": 74267,
-   "likes": 653,
-   "viewsGain": 7359,
+   "views": 77997,
+   "likes": 689,
+   "viewsGain": 3730,
    "isNew": false,
-   "median": 228267,
-   "multiple": 0.3
+   "median": 182542.5,
+   "multiple": 0.4
   },
   {
    "id": "WbzEeAb50UY",
@@ -115,12 +128,12 @@
    "published": "2026-11-18T09:59:07+00:00",
    "url": "https://www.youtube.com/watch?v=WbzEeAb50UY",
    "shorts": false,
-   "views": 259663,
-   "likes": 1110,
-   "viewsGain": 4628,
+   "views": 264111,
+   "likes": 1117,
+   "viewsGain": 4448,
    "isNew": false,
-   "median": 228267,
-   "multiple": 1.1
+   "median": 182542.5,
+   "multiple": 1.4
   },
   {
    "id": "Mv1Y2_lA-pQ",
@@ -128,12 +141,12 @@
    "published": "2026-11-18T08:30:29+00:00",
    "url": "https://www.youtube.com/watch?v=Mv1Y2_lA-pQ",
    "shorts": false,
-   "views": 104576,
-   "likes": 783,
-   "viewsGain": 4415,
+   "views": 111200,
+   "likes": 843,
+   "viewsGain": 6624,
    "isNew": false,
-   "median": 228267,
-   "multiple": 0.5
+   "median": 182542.5,
+   "multiple": 0.6
   },
   {
    "id": "abobZ7JfTek",
@@ -141,12 +154,12 @@
    "published": "2026-11-18T03:00:40+00:00",
    "url": "https://www.youtube.com/shorts/abobZ7JfTek",
    "shorts": true,
-   "views": 3976,
+   "views": 4012,
    "likes": 33,
-   "viewsGain": 62,
+   "viewsGain": 36,
    "isNew": false,
-   "median": 3559.0,
-   "multiple": 1.1
+   "median": 4012,
+   "multiple": 1.0
   },
   {
    "id": "lEpjsxSLfB8",
@@ -154,12 +167,12 @@
    "published": "2026-11-17T09:48:41+00:00",
    "url": "https://www.youtube.com/watch?v=lEpjsxSLfB8",
    "shorts": false,
-   "views": 134104,
-   "likes": 488,
-   "viewsGain": 1727,
+   "views": 135686,
+   "likes": 489,
+   "viewsGain": 1582,
    "isNew": false,
-   "median": 228267,
-   "multiple": 0.6
+   "median": 182542.5,
+   "multiple": 0.7
   },
   {
    "id": "hvRGI76Jd8E",
@@ -167,12 +180,12 @@
    "published": "2026-11-17T08:30:04+00:00",
    "url": "https://www.youtube.com/watch?v=hvRGI76Jd8E",
    "shorts": false,
-   "views": 476532,
-   "likes": 2278,
-   "viewsGain": 19313,
+   "views": 484140,
+   "likes": 2320,
+   "viewsGain": 7608,
    "isNew": false,
-   "median": 228267,
-   "multiple": 2.1
+   "median": 182542.5,
+   "multiple": 2.7
   },
   {
    "id": "qY9ByfK70cw",
@@ -180,47 +193,27 @@
    "published": "2026-11-16T09:30:04+00:00",
    "url": "https://www.youtube.com/watch?v=qY9ByfK70cw",
    "shorts": false,
-   "views": 228267,
-   "likes": 966,
-   "viewsGain": 218,
+   "views": 229399,
+   "likes": 971,
+   "viewsGain": 1132,
    "isNew": false,
-   "median": 228267,
-   "multiple": 1.0
-  },
-  {
-   "id": "fkyakwxfN0g",
-   "title": "의료보험 있는 것처럼 먹더니…🥄ㅣ돈슐랭 / 14F",
-   "published": "2026-11-16T09:00:29+00:00",
-   "url": "https://www.youtube.com/watch?v=fkyakwxfN0g",
-   "shorts": false,
-   "views": 605920,
-   "likes": 2478,
-   "viewsGain": 6876,
-   "isNew": false,
-   "median": 228267,
-   "multiple": 2.7
+   "median": 182542.5,
+   "multiple": 1.3
   }
  ],
  "viral": [
   {
    "title": "백제는 삼국 통일을 할 필요가 없었다? #shorts",
    "url": "https://www.youtube.com/shorts/Tr0LbpRFtFk",
-   "views": 11165,
-   "multiple": 3.1,
+   "views": 12180,
+   "multiple": 3.0,
    "shorts": true
-  },
-  {
-   "title": "의료보험 있는 것처럼 먹더니…🥄ㅣ돈슐랭 / 14F",
-   "url": "https://www.youtube.com/watch?v=fkyakwxfN0g",
-   "views": 605920,
-   "multiple": 2.7,
-   "shorts": false
   },
   {
    "title": "중국 정사에 기록된 거대 백제 대륙? 백제 요서경략설 미스터리 (강인욱X조법종) ㅣ10분 토론 / 14F",
    "url": "https://www.youtube.com/watch?v=hvRGI76Jd8E",
-   "views": 476532,
-   "multiple": 2.1,
+   "views": 484140,
+   "multiple": 2.7,
    "shorts": false
   }
  ]
