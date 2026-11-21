@@ -3,20 +3,46 @@
  "name": "슈카월드",
  "channel": "https://www.youtube.com/@syukaworld",
  "channelId": "UCJo6G1u0e_-wS-JQn3T-zEw",
- "checkedAt": "2026-11-21T14:51+09:00",
+ "checkedAt": "2026-11-21T19:26+09:00",
  "videos": [
+  {
+   "id": "YhH8Wtlfqro",
+   "title": "유죄인간 94년생 듀오",
+   "published": "2026-11-21T09:00:03+00:00",
+   "url": "https://www.youtube.com/watch?v=YhH8Wtlfqro",
+   "shorts": false,
+   "views": 11929,
+   "likes": 485,
+   "viewsGain": null,
+   "isNew": true,
+   "median": 157373.0,
+   "multiple": 0.1
+  },
+  {
+   "id": "EreQuom0P2g",
+   "title": "님들 탓이에요",
+   "published": "2026-11-21T08:02:38+00:00",
+   "url": "https://www.youtube.com/shorts/EreQuom0P2g",
+   "shorts": true,
+   "views": 16750,
+   "likes": 306,
+   "viewsGain": null,
+   "isNew": true,
+   "median": 114264,
+   "multiple": 0.1
+  },
   {
    "id": "E5x7qILvIa4",
    "title": "쇼츠 찍자",
    "published": "2026-11-20T08:00:00+00:00",
    "url": "https://www.youtube.com/shorts/E5x7qILvIa4",
    "shorts": true,
-   "views": 289314,
-   "likes": 4000,
-   "viewsGain": 30478,
+   "views": 303357,
+   "likes": 4116,
+   "viewsGain": 14043,
    "isNew": false,
-   "median": 155678,
-   "multiple": 1.9
+   "median": 114264,
+   "multiple": 2.7
   },
   {
    "id": "oiS9MY0zpFI",
@@ -24,12 +50,12 @@
    "published": "2026-11-20T03:14:13+00:00",
    "url": "https://www.youtube.com/shorts/oiS9MY0zpFI",
    "shorts": true,
-   "views": 103822,
-   "likes": 835,
-   "viewsGain": 9542,
+   "views": 109151,
+   "likes": 861,
+   "viewsGain": 5329,
    "isNew": false,
-   "median": 155678,
-   "multiple": 0.7
+   "median": 114264,
+   "multiple": 1.0
   },
   {
    "id": "JiKUxWsF5Ww",
@@ -37,12 +63,12 @@
    "published": "2026-11-19T09:52:15+00:00",
    "url": "https://www.youtube.com/shorts/JiKUxWsF5Ww",
    "shorts": true,
-   "views": 276809,
-   "likes": 1702,
-   "viewsGain": 6065,
+   "views": 281992,
+   "likes": 1755,
+   "viewsGain": 5183,
    "isNew": false,
-   "median": 155678,
-   "multiple": 1.8
+   "median": 114264,
+   "multiple": 2.5
   },
   {
    "id": "vai2XXhUsCk",
@@ -50,11 +76,11 @@
    "published": "2026-11-19T06:42:35+00:00",
    "url": "https://www.youtube.com/watch?v=vai2XXhUsCk",
    "shorts": false,
-   "views": 158428,
+   "views": 159589,
    "likes": 932,
-   "viewsGain": 1321,
+   "viewsGain": 1161,
    "isNew": false,
-   "median": 158763.5,
+   "median": 157373.0,
    "multiple": 1.0
   },
   {
@@ -63,12 +89,12 @@
    "published": "2026-11-18T08:45:11+00:00",
    "url": "https://www.youtube.com/shorts/s4u1HCrqMJE",
    "shorts": true,
-   "views": 213509,
-   "likes": 1871,
-   "viewsGain": 11733,
+   "views": 223662,
+   "likes": 1925,
+   "viewsGain": 10153,
    "isNew": false,
-   "median": 155678,
-   "multiple": 1.4
+   "median": 114264,
+   "multiple": 2.0
   },
   {
    "id": "Sva8MRMYh-4",
@@ -76,12 +102,12 @@
    "published": "2026-11-18T08:33:24+00:00",
    "url": "https://www.youtube.com/shorts/Sva8MRMYh-4",
    "shorts": true,
-   "views": 103683,
-   "likes": 734,
-   "viewsGain": 5025,
+   "views": 107243,
+   "likes": 754,
+   "viewsGain": 3560,
    "isNew": false,
-   "median": 155678,
-   "multiple": 0.7
+   "median": 114264,
+   "multiple": 0.9
   },
   {
    "id": "2mh-i_Cf_Gg",
@@ -89,12 +115,12 @@
    "published": "2026-11-18T08:15:41+00:00",
    "url": "https://www.youtube.com/shorts/2mh-i_Cf_Gg",
    "shorts": true,
-   "views": 40235,
-   "likes": 228,
-   "viewsGain": 960,
+   "views": 40907,
+   "likes": 232,
+   "viewsGain": 672,
    "isNew": false,
-   "median": 155678,
-   "multiple": 0.3
+   "median": 114264,
+   "multiple": 0.4
   },
   {
    "id": "tZdVu8G-104",
@@ -102,11 +128,11 @@
    "published": "2026-11-18T06:40:05+00:00",
    "url": "https://www.youtube.com/watch?v=tZdVu8G-104",
    "shorts": false,
-   "views": 154960,
+   "views": 155267,
    "likes": 896,
-   "viewsGain": 73,
+   "viewsGain": 307,
    "isNew": false,
-   "median": 158763.5,
+   "median": 157373.0,
    "multiple": 1.0
   },
   {
@@ -115,12 +141,12 @@
    "published": "2026-11-18T02:18:09+00:00",
    "url": "https://www.youtube.com/shorts/jsV0Gp3PyZM",
    "shorts": true,
-   "views": 155678,
-   "likes": 1231,
-   "viewsGain": 5082,
+   "views": 159291,
+   "likes": 1257,
+   "viewsGain": 3613,
    "isNew": false,
-   "median": 155678,
-   "multiple": 1.0
+   "median": 114264,
+   "multiple": 1.4
   },
   {
    "id": "kJeO9iXUse4",
@@ -128,12 +154,12 @@
    "published": "2026-11-17T11:16:19+00:00",
    "url": "https://www.youtube.com/shorts/kJeO9iXUse4",
    "shorts": true,
-   "views": 113437,
-   "likes": 655,
-   "viewsGain": 1544,
+   "views": 114264,
+   "likes": 660,
+   "viewsGain": 827,
    "isNew": false,
-   "median": 155678,
-   "multiple": 0.7
+   "median": 114264,
+   "multiple": 1.0
   },
   {
    "id": "XKmD-M7rWO0",
@@ -141,11 +167,11 @@
    "published": "2026-11-17T09:29:46+00:00",
    "url": "https://www.youtube.com/watch?v=XKmD-M7rWO0",
    "shorts": false,
-   "views": 344903,
-   "likes": 1870,
-   "viewsGain": 8086,
+   "views": 351595,
+   "likes": 1900,
+   "viewsGain": 6692,
    "isNew": false,
-   "median": 158763.5,
+   "median": 157373.0,
    "multiple": 2.2
   },
   {
@@ -154,11 +180,11 @@
    "published": "2026-11-16T12:11:16+00:00",
    "url": "https://www.youtube.com/watch?v=yT1Rei0xDVc",
    "shorts": false,
-   "views": 154010,
-   "likes": 970,
-   "viewsGain": 179,
+   "views": 154291,
+   "likes": 969,
+   "viewsGain": 281,
    "isNew": false,
-   "median": 158763.5,
+   "median": 157373.0,
    "multiple": 1.0
   },
   {
@@ -167,47 +193,42 @@
    "published": "2026-11-16T06:36:19+00:00",
    "url": "https://www.youtube.com/watch?v=lGfmyzMMof0",
    "shorts": false,
-   "views": 159099,
+   "views": 159479,
    "likes": 1140,
-   "viewsGain": 233,
+   "viewsGain": 380,
    "isNew": false,
-   "median": 158763.5,
+   "median": 157373.0,
    "multiple": 1.0
-  },
-  {
-   "id": "BcH1D15dzsw",
-   "title": "너 내 동료가 되지 마라",
-   "published": "2026-11-16T02:54:18+00:00",
-   "url": "https://www.youtube.com/shorts/BcH1D15dzsw",
-   "shorts": true,
-   "views": 165189,
-   "likes": 1273,
-   "viewsGain": 1533,
-   "isNew": false,
-   "median": 155678,
-   "multiple": 1.1
-  },
-  {
-   "id": "S_S0dX87aPY",
-   "title": "회사 내 빌런? 혹시 나야? | 무두절 EP.0",
-   "published": "2026-11-14T09:00:24+00:00",
-   "url": "https://www.youtube.com/watch?v=S_S0dX87aPY",
-   "shorts": false,
-   "views": 242361,
-   "likes": 1637,
-   "viewsGain": 2811,
-   "isNew": false,
-   "median": 158763.5,
-   "multiple": 1.5
   }
  ],
  "viral": [
   {
+   "title": "쇼츠 찍자",
+   "url": "https://www.youtube.com/shorts/E5x7qILvIa4",
+   "views": 303357,
+   "multiple": 2.7,
+   "shorts": true
+  },
+  {
+   "title": "번호 4로 서울대의대 간 사람",
+   "url": "https://www.youtube.com/shorts/JiKUxWsF5Ww",
+   "views": 281992,
+   "multiple": 2.5,
+   "shorts": true
+  },
+  {
    "title": "엔비디아는 왜 갑자기 위기를 맞이했을까(음모론)",
    "url": "https://www.youtube.com/watch?v=XKmD-M7rWO0",
-   "views": 344903,
+   "views": 351595,
    "multiple": 2.2,
    "shorts": false
+  },
+  {
+   "title": "니황이 조롱당하면 저점이다. 나는 이 이야기를 참 좋아한다.",
+   "url": "https://www.youtube.com/shorts/s4u1HCrqMJE",
+   "views": 223662,
+   "multiple": 2.0,
+   "shorts": true
   }
  ]
 }

@@ -1,14 +1,14 @@
 {
  "name": "안원잘부",
  "channel": "https://www.youtube.com/@helloiamwoninicetomeetyou",
- "checkedAt": "2026-11-21T14:51+09:00",
- "subscribers": "244만",
+ "checkedAt": "2026-11-21T19:26+09:00",
+ "subscribers": "245만",
  "videos": [
   {
    "id": "N3MX2W5_Zfs",
    "title": "디즈니 영화 OST가 된 이유",
-   "views": 1290000,
-   "viewsText": "조회수 129만회",
+   "views": 1300000,
+   "viewsText": "조회수 130만회",
    "published": "",
    "kind": "short",
    "gain": 10000
@@ -20,7 +20,7 @@
    "viewsText": "조회수 186만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "DKDmFgXzxs8",
@@ -52,11 +52,11 @@
   {
    "id": "xCvbDeMKm3E",
    "title": "두 번째 급습",
-   "views": 6260000,
-   "viewsText": "조회수 626만회",
+   "views": 6270000,
+   "viewsText": "조회수 627만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "GsYq_ouLAMQ",
@@ -101,7 +101,7 @@
    "viewsText": "조회수 335만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "o-B0F16GwL0",
@@ -110,7 +110,7 @@
    "viewsText": "조회수 1364만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "gNJrbCSN2TM",
@@ -272,7 +272,7 @@
    "viewsText": "조회수 756만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "6cPEEeEAKiM",
