@@ -1,7 +1,7 @@
 {
  "name": "안원잘부",
  "channel": "https://www.youtube.com/@helloiamwoninicetomeetyou",
- "checkedAt": "2026-11-21T19:26+09:00",
+ "checkedAt": "2026-11-21T22:38+09:00",
  "subscribers": "245만",
  "videos": [
   {
@@ -11,7 +11,7 @@
    "viewsText": "조회수 130만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "kfK-LENbEUo",
@@ -56,7 +56,7 @@
    "viewsText": "조회수 627만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "GsYq_ouLAMQ",
