@@ -3,7 +3,7 @@
  "name": "14F 일사에프 (MBC)",
  "channel": "https://www.youtube.com/@14FMBC",
  "channelId": "UCLKuglhGlMmDteQKoniENIQ",
- "checkedAt": "2026-11-22T22:37+09:00",
+ "checkedAt": "2026-11-23T08:33+09:00",
  "videos": [
   {
    "id": "NyxPbpN3Uyo",
@@ -11,11 +11,11 @@
    "published": "2026-11-21T04:00:03+00:00",
    "url": "https://www.youtube.com/shorts/NyxPbpN3Uyo",
    "shorts": true,
-   "views": 5507,
-   "likes": 59,
-   "viewsGain": 300,
+   "views": 6103,
+   "likes": 61,
+   "viewsGain": 596,
    "isNew": false,
-   "median": 5507,
+   "median": 6103,
    "multiple": 1.0
   },
   {
@@ -24,12 +24,12 @@
    "published": "2026-11-20T23:00:30+00:00",
    "url": "https://www.youtube.com/shorts/VKzh4gQvEIU",
    "shorts": true,
-   "views": 13983,
-   "likes": 162,
-   "viewsGain": 308,
+   "views": 14815,
+   "likes": 166,
+   "viewsGain": 832,
    "isNew": false,
-   "median": 5507,
-   "multiple": 2.5
+   "median": 6103,
+   "multiple": 2.4
   },
   {
    "id": "_pBAM8GDWo8",
@@ -37,11 +37,11 @@
    "published": "2026-11-20T08:30:37+00:00",
    "url": "https://www.youtube.com/watch?v=_pBAM8GDWo8",
    "shorts": false,
-   "views": 54325,
-   "likes": 330,
-   "viewsGain": 2784,
+   "views": 56483,
+   "likes": 350,
+   "viewsGain": 2158,
    "isNew": false,
-   "median": 187574.5,
+   "median": 188369.5,
    "multiple": 0.3
   },
   {
@@ -50,11 +50,11 @@
    "published": "2026-11-20T08:30:15+00:00",
    "url": "https://www.youtube.com/shorts/1SOf5BtCrok",
    "shorts": true,
-   "views": 3998,
+   "views": 4183,
    "likes": 39,
-   "viewsGain": 96,
+   "viewsGain": 185,
    "isNew": false,
-   "median": 5507,
+   "median": 6103,
    "multiple": 0.7
   },
   {
@@ -63,12 +63,12 @@
    "published": "2026-11-20T04:00:30+00:00",
    "url": "https://www.youtube.com/shorts/wlN76TIzAEM",
    "shorts": true,
-   "views": 4785,
+   "views": 5034,
    "likes": 20,
-   "viewsGain": 102,
+   "viewsGain": 249,
    "isNew": false,
-   "median": 5507,
-   "multiple": 0.9
+   "median": 6103,
+   "multiple": 0.8
   },
   {
    "id": "n13XS1CuP3Q",
@@ -76,12 +76,12 @@
    "published": "2026-11-20T03:00:19+00:00",
    "url": "https://www.youtube.com/shorts/n13XS1CuP3Q",
    "shorts": true,
-   "views": 6467,
-   "likes": 36,
-   "viewsGain": 99,
+   "views": 6570,
+   "likes": 38,
+   "viewsGain": 103,
    "isNew": false,
-   "median": 5507,
-   "multiple": 1.2
+   "median": 6103,
+   "multiple": 1.1
   },
   {
    "id": "Tr0LbpRFtFk",
@@ -89,11 +89,11 @@
    "published": "2026-11-19T23:00:03+00:00",
    "url": "https://www.youtube.com/shorts/Tr0LbpRFtFk",
    "shorts": true,
-   "views": 17754,
-   "likes": 145,
-   "viewsGain": 674,
+   "views": 19650,
+   "likes": 165,
+   "viewsGain": 1896,
    "isNew": false,
-   "median": 5507,
+   "median": 6103,
    "multiple": 3.2
   },
   {
@@ -102,11 +102,11 @@
    "published": "2026-11-19T10:16:53+00:00",
    "url": "https://www.youtube.com/watch?v=XtDXa41EHTw",
    "shorts": false,
-   "views": 356950,
-   "likes": 1061,
-   "viewsGain": 8629,
+   "views": 360151,
+   "likes": 1073,
+   "viewsGain": 3201,
    "isNew": false,
-   "median": 187574.5,
+   "median": 188369.5,
    "multiple": 1.9
   },
   {
@@ -115,11 +115,11 @@
    "published": "2026-11-19T09:00:28+00:00",
    "url": "https://www.youtube.com/watch?v=UVXV3vZmzsQ",
    "shorts": false,
-   "views": 103391,
-   "likes": 863,
-   "viewsGain": 4035,
+   "views": 106101,
+   "likes": 881,
+   "viewsGain": 2710,
    "isNew": false,
-   "median": 187574.5,
+   "median": 188369.5,
    "multiple": 0.6
   },
   {
@@ -128,11 +128,11 @@
    "published": "2026-11-18T09:59:07+00:00",
    "url": "https://www.youtube.com/watch?v=WbzEeAb50UY",
    "shorts": false,
-   "views": 274742,
-   "likes": 1156,
-   "viewsGain": 1214,
+   "views": 274331,
+   "likes": 1158,
+   "viewsGain": -411,
    "isNew": false,
-   "median": 187574.5,
+   "median": 188369.5,
    "multiple": 1.5
   },
   {
@@ -141,11 +141,11 @@
    "published": "2026-11-18T08:30:29+00:00",
    "url": "https://www.youtube.com/watch?v=Mv1Y2_lA-pQ",
    "shorts": false,
-   "views": 128901,
-   "likes": 991,
-   "viewsGain": 1665,
+   "views": 130181,
+   "likes": 1002,
+   "viewsGain": 1280,
    "isNew": false,
-   "median": 187574.5,
+   "median": 188369.5,
    "multiple": 0.7
   },
   {
@@ -154,12 +154,12 @@
    "published": "2026-11-18T03:00:40+00:00",
    "url": "https://www.youtube.com/shorts/abobZ7JfTek",
    "shorts": true,
-   "views": 4254,
+   "views": 4289,
    "likes": 37,
-   "viewsGain": 11,
+   "viewsGain": 35,
    "isNew": false,
-   "median": 5507,
-   "multiple": 0.8
+   "median": 6103,
+   "multiple": 0.7
   },
   {
    "id": "lEpjsxSLfB8",
@@ -167,11 +167,11 @@
    "published": "2026-11-17T09:48:41+00:00",
    "url": "https://www.youtube.com/watch?v=lEpjsxSLfB8",
    "shorts": false,
-   "views": 143144,
-   "likes": 507,
-   "viewsGain": 812,
+   "views": 144144,
+   "likes": 508,
+   "viewsGain": 1000,
    "isNew": false,
-   "median": 187574.5,
+   "median": 188369.5,
    "multiple": 0.8
   },
   {
@@ -180,11 +180,11 @@
    "published": "2026-11-17T08:30:04+00:00",
    "url": "https://www.youtube.com/watch?v=hvRGI76Jd8E",
    "shorts": false,
-   "views": 516938,
-   "likes": 2432,
-   "viewsGain": 3393,
+   "views": 523270,
+   "likes": 2456,
+   "viewsGain": 6332,
    "isNew": false,
-   "median": 187574.5,
+   "median": 188369.5,
    "multiple": 2.8
   },
   {
@@ -193,11 +193,11 @@
    "published": "2026-11-16T09:30:04+00:00",
    "url": "https://www.youtube.com/watch?v=qY9ByfK70cw",
    "shorts": false,
-   "views": 232005,
+   "views": 232595,
    "likes": 980,
-   "viewsGain": 341,
+   "viewsGain": 590,
    "isNew": false,
-   "median": 187574.5,
+   "median": 188369.5,
    "multiple": 1.2
   }
  ],
@@ -205,22 +205,22 @@
   {
    "title": "백제는 삼국 통일을 할 필요가 없었다? #shorts",
    "url": "https://www.youtube.com/shorts/Tr0LbpRFtFk",
-   "views": 17754,
+   "views": 19650,
    "multiple": 3.2,
    "shorts": true
   },
   {
    "title": "중국 정사에 기록된 거대 백제 대륙? 백제 요서경략설 미스터리 (강인욱X조법종) ㅣ10분 토론 / 14F",
    "url": "https://www.youtube.com/watch?v=hvRGI76Jd8E",
-   "views": 516938,
+   "views": 523270,
    "multiple": 2.8,
    "shorts": false
   },
   {
    "title": "일본이 천황 무덤 발굴을 막는 이유 #shorts",
    "url": "https://www.youtube.com/shorts/VKzh4gQvEIU",
-   "views": 13983,
-   "multiple": 2.5,
+   "views": 14815,
+   "multiple": 2.4,
    "shorts": true
   }
  ]
