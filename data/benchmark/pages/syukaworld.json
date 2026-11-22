@@ -1,17 +1,17 @@
 {
  "name": "슈카월드",
  "channel": "https://www.youtube.com/@syukaworld",
- "checkedAt": "2026-11-22T08:29+09:00",
+ "checkedAt": "2026-11-22T14:52+09:00",
  "subscribers": "374만",
  "videos": [
   {
    "id": "xhzS_pawX9Y",
    "title": "슈카 서울대 입학 해명",
-   "views": 660000,
-   "viewsText": "조회수 66만회",
+   "views": 680000,
+   "viewsText": "조회수 68만회",
    "published": "",
    "kind": "short",
-   "gain": 70000
+   "gain": 20000
   },
   {
    "id": "NINJ94H2s04",
@@ -52,20 +52,20 @@
   {
    "id": "xmLFwy-UdNU",
    "title": "노안의 라식",
-   "views": 280000,
-   "viewsText": "조회수 28만회",
+   "views": 290000,
+   "viewsText": "조회수 29만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "xVKY3CWUoSE",
    "title": "딸깍으로 떠먹여주는 서비스",
-   "views": 64000,
-   "viewsText": "조회수 6.4만회",
+   "views": 65000,
+   "viewsText": "조회수 6.5만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 1000
   },
   {
    "id": "lioIrGMoIbs",

@@ -1,52 +1,53 @@
 {
  "name": "YTN",
  "channel": "https://www.youtube.com/@ytnnews24",
- "checkedAt": "2026-11-22T08:29+09:00",
+ "checkedAt": "2026-11-22T14:52+09:00",
  "subscribers": "543만",
  "videos": [
   {
    "id": "8cnWygTSDNU",
    "title": "AI 잘 쓰는 학생들 반응 ㄷㄷ.. #shorts/ YTN",
-   "views": 1600,
-   "viewsText": "조회수 1.6천회",
+   "views": 8500,
+   "viewsText": "조회수 8.5천회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 6900
   },
   {
    "id": "VOpWgcfQYh0",
    "title": "배종옥의 쓴(소리)? / YTN",
-   "views": 4300,
-   "viewsText": "조회수 4.3천회",
+   "views": 5300,
+   "viewsText": "조회수 5.3천회",
+   "published": "",
+   "kind": "short",
+   "gain": 1000
+  },
+  {
+   "id": "VNC_Wri3hQU",
+   "title": "신고하면 최소 '1억' #shorts / YTN",
+   "views": 200000,
+   "viewsText": "조회수 20만회",
+   "published": "",
+   "kind": "short",
+   "gain": 10000
+  },
+  {
+   "id": "qsF9X1w41U0",
+   "title": "했어, 무응답으로 #shorts / YTN",
+   "views": 28000,
+   "viewsText": "조회수 2.8만회",
    "published": "",
    "kind": "short",
    "gain": 2000
   },
   {
-   "id": "VNC_Wri3hQU",
-   "title": "신고하면 최소 '1억' #shorts / YTN",
-   "views": 190000,
-   "viewsText": "조회수 19만회",
-   "published": "",
-   "kind": "short",
-   "gain": 104000
-  },
-  {
-   "id": "qsF9X1w41U0",
-   "title": "했어, 무응답으로 #shorts / YTN",
-   "views": 26000,
-   "viewsText": "조회수 2.6만회",
-   "published": "",
-   "kind": "short",
-   "gain": 8000
-  },
-  {
    "id": "q9qvTc5uPqY",
    "title": "\"탈출하게 도와달라\" #shorts / YTN",
-   "views": 170000,
-   "viewsText": "조회수 17만회",
+   "views": 180000,
+   "viewsText": "조회수 18만회",
    "published": "",
    "kind": "short",
-   "gain": 81000
+   "gain": 10000
   },
   {
    "id": "_BOmzT9tzvg",
@@ -55,31 +56,31 @@
    "viewsText": "조회수 3.4만회",
    "published": "",
    "kind": "short",
-   "gain": 3000
+   "gain": 0
   },
   {
    "id": "galuz_tB7to",
    "title": "계산기와 AI 머가 다를까? #shorts/ YTN",
-   "views": 6000,
-   "viewsText": "조회수 6천회",
+   "views": 6300,
+   "viewsText": "조회수 6.3천회",
    "published": "",
    "kind": "short",
-   "gain": -100
+   "gain": 300
   },
   {
    "id": "zgWVG-Dxs7s",
    "title": "일론 머스크의 '우월주의'? #shorts / 이슈의 서재",
-   "views": 6400,
-   "viewsText": "조회수 6.4천회",
+   "views": 6500,
+   "viewsText": "조회수 6.5천회",
    "published": "",
    "kind": "short",
-   "gain": 200
+   "gain": 100
   },
   {
    "id": "SE5HHt3G248",
    "title": "이유가 뭘까? #shorts / 이슈의 서재",
-   "views": 3600,
-   "viewsText": "조회수 3.6천회",
+   "views": 3700,
+   "viewsText": "조회수 3.7천회",
    "published": "",
    "kind": "short",
    "gain": 100
@@ -87,11 +88,11 @@
   {
    "id": "wRzPfQ64gME",
    "title": "'그런 목소리로 어떻게 배우를 해?' / YTN",
-   "views": 7300,
-   "viewsText": "조회수 7.3천회",
+   "views": 7500,
+   "viewsText": "조회수 7.5천회",
    "published": "",
    "kind": "short",
-   "gain": -100
+   "gain": 200
   },
   {
    "id": "9z8tJCAFDro",
@@ -100,34 +101,34 @@
    "viewsText": "조회수 29만회",
    "published": "",
    "kind": "short",
-   "gain": 20000
+   "gain": 0
   },
   {
    "id": "9GmKVCy4f6U",
    "title": "예비 1번 탈락 후 서울대까지 #shorts / YTN",
-   "views": 130000,
-   "viewsText": "조회수 13만회",
+   "views": 140000,
+   "viewsText": "조회수 14만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "JGorXzotaYA",
    "title": "아이돌 '과잉 경호' 논란 #shorts / YTN",
-   "views": 7500,
-   "viewsText": "조회수 7.5천회",
+   "views": 7600,
+   "viewsText": "조회수 7.6천회",
    "published": "",
    "kind": "short",
-   "gain": 300
+   "gain": 100
   },
   {
    "id": "hOiVt31bTy8",
    "title": "전용기 대신 '이코노미' #shorts / YTN",
-   "views": 590000,
-   "viewsText": "조회수 59만회",
+   "views": 600000,
+   "viewsText": "조회수 60만회",
    "published": "",
    "kind": "short",
-   "gain": 20000
+   "gain": 10000
   },
   {
    "id": "UT_BwOBhf5E",
@@ -136,25 +137,25 @@
    "viewsText": "조회수 12만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "4glwoHohdJs",
    "title": "수식 없이 정답만? #shorts / YTN",
-   "views": 8200,
-   "viewsText": "조회수 8.2천회",
+   "views": 8400,
+   "viewsText": "조회수 8.4천회",
    "published": "",
    "kind": "short",
-   "gain": 400
+   "gain": 200
   },
   {
    "id": "-lx99xErjDw",
    "title": "암산 천재인 줄 알았더니 #shorts / YTN",
-   "views": 9000,
-   "viewsText": "조회수 9천회",
+   "views": 9100,
+   "viewsText": "조회수 9.1천회",
    "published": "",
    "kind": "short",
-   "gain": 300
+   "gain": 100
   },
   {
    "id": "-0ibeJECFx8",
@@ -168,11 +169,11 @@
   {
    "id": "R4LPsvTyyBw",
    "title": "길 걷다 '봉변' #shorts / YTN",
-   "views": 470000,
-   "viewsText": "조회수 47만회",
+   "views": 510000,
+   "viewsText": "조회수 51만회",
    "published": "",
    "kind": "short",
-   "gain": 80000
+   "gain": 40000
   },
   {
    "id": "oAnx0xA_s1I",
@@ -181,7 +182,7 @@
    "viewsText": "조회수 3.4만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "RY3yEbibutw",
@@ -190,7 +191,7 @@
    "viewsText": "조회수 2.3만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "ofZUqOuXHKY",
@@ -204,8 +205,8 @@
   {
    "id": "nLk5HeiqKfg",
    "title": "호랑이 밖으로 꺼내다가... #shorts / YTN",
-   "views": 63000,
-   "viewsText": "조회수 6.3만회",
+   "views": 65000,
+   "viewsText": "조회수 6.5만회",
    "published": "",
    "kind": "short",
    "gain": 2000
@@ -226,7 +227,7 @@
    "viewsText": "조회수 6.9만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "lM77z4pZaQI",
@@ -258,20 +259,20 @@
   {
    "id": "UI3EWRgjFoE",
    "title": "AI 없이 혼자 해보니 '반전' 결과 #shorts/ YTN",
-   "views": 7600,
-   "viewsText": "조회수 7.6천회",
+   "views": 7700,
+   "viewsText": "조회수 7.7천회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 100
   },
   {
    "id": "ftN7KMmm-G4",
    "title": "그들이 숲 밖으로 나온 이유 #shorts / YTN",
-   "views": 64000,
-   "viewsText": "조회수 6.4만회",
+   "views": 66000,
+   "viewsText": "조회수 6.6만회",
    "published": "",
    "kind": "short",
-   "gain": 3000
+   "gain": 2000
   },
   {
    "id": "nMePeknVmVc",
@@ -280,16 +281,16 @@
    "viewsText": "조회수 2.2만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "Jt2S8-QCFjw",
    "title": "'외톨이야' #shorts / YTN",
-   "views": 12000,
-   "viewsText": "조회수 1.2만회",
+   "views": 13000,
+   "viewsText": "조회수 1.3만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 1000
   },
   {
    "id": "2MedoHNXD8Q",
@@ -330,20 +331,20 @@
   {
    "id": "6L6iz6sQ73o",
    "title": "폐기 카운트다운 멈췄다 #shorts / YTN",
-   "views": 9600,
-   "viewsText": "조회수 9.6천회",
+   "views": 9700,
+   "viewsText": "조회수 9.7천회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 100
   },
   {
    "id": "YtOp0iEjuqs",
    "title": "\"이건 폭행 아닌가요?\" #shorts / YTN",
-   "views": 6500,
-   "viewsText": "조회수 6.5천회",
+   "views": 6400,
+   "viewsText": "조회수 6.4천회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": -100
   },
   {
    "id": "uJmxmLEyB5w",

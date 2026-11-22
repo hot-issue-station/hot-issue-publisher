@@ -1,17 +1,17 @@
 {
  "name": "안원잘부",
  "channel": "https://www.youtube.com/@helloiamwoninicetomeetyou",
- "checkedAt": "2026-11-22T08:29+09:00",
+ "checkedAt": "2026-11-22T14:52+09:00",
  "subscribers": "245만",
  "videos": [
   {
    "id": "N3MX2W5_Zfs",
    "title": "디즈니 영화 OST가 된 이유",
-   "views": 1320000,
-   "viewsText": "조회수 132만회",
+   "views": 1330000,
+   "viewsText": "조회수 133만회",
    "published": "",
    "kind": "short",
-   "gain": 20000
+   "gain": 10000
   },
   {
    "id": "kfK-LENbEUo",
@@ -20,7 +20,7 @@
    "viewsText": "조회수 187만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "DKDmFgXzxs8",
@@ -29,7 +29,7 @@
    "viewsText": "조회수 277만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "zxNoW_LtVLE",
@@ -38,7 +38,7 @@
    "viewsText": "조회수 284만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "mFM2hP5LEhM",
@@ -52,11 +52,11 @@
   {
    "id": "xCvbDeMKm3E",
    "title": "두 번째 급습",
-   "views": 6270000,
-   "viewsText": "조회수 627만회",
+   "views": 6280000,
+   "viewsText": "조회수 628만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "GsYq_ouLAMQ",
@@ -106,8 +106,8 @@
   {
    "id": "o-B0F16GwL0",
    "title": "[B컷] 의자 안 돌아가요",
-   "views": 13650000,
-   "viewsText": "조회수 1365만회",
+   "views": 13660000,
+   "viewsText": "조회수 1366만회",
    "published": "",
    "kind": "short",
    "gain": 10000
@@ -308,7 +308,7 @@
    "viewsText": "조회수 249만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "nHY4EK0kVH0",
@@ -317,7 +317,7 @@
    "viewsText": "조회수 697만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "hrFWuCyHXpY",
