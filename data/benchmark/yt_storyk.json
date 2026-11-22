@@ -3,20 +3,33 @@
  "name": "스토리K (손흥민 레전드 비교 특집 벤치마킹, 10/31)",
  "channel": "https://www.youtube.com/@story_k",
  "channelId": "UCqzNZeBt0546jG-vDlAQlZg",
- "checkedAt": "2026-11-22T14:52+09:00",
+ "checkedAt": "2026-11-22T19:25+09:00",
  "videos": [
+  {
+   "id": "t71dh5FPkIo",
+   "title": "김민수 어시스트에 영국이 더 흥분한 이유 - BBC가 변호하는 레인저스의 경이로운 10번",
+   "published": "2026-11-22T10:00:13+00:00",
+   "url": "https://www.youtube.com/watch?v=t71dh5FPkIo",
+   "shorts": false,
+   "views": 598,
+   "likes": 76,
+   "viewsGain": null,
+   "isNew": true,
+   "median": 24277,
+   "multiple": 0.0
+  },
   {
    "id": "bR1lQgP02Dw",
    "title": "김예건 역대급 한국 드리블러 포텐셜? - 레알, 바르샤, 맨시티 이적설로 유럽 투어마친 18세",
    "published": "2026-11-21T09:50:02+00:00",
    "url": "https://www.youtube.com/watch?v=bR1lQgP02Dw",
    "shorts": false,
-   "views": 13743,
-   "likes": 326,
-   "viewsGain": 2673,
+   "views": 15833,
+   "likes": 344,
+   "viewsGain": 2090,
    "isNew": false,
-   "median": 25849,
-   "multiple": 0.5
+   "median": 24277,
+   "multiple": 0.7
   },
   {
    "id": "mIAp9ZHOSuc",
@@ -24,12 +37,12 @@
    "published": "2026-11-20T09:49:56+00:00",
    "url": "https://www.youtube.com/watch?v=mIAp9ZHOSuc",
    "shorts": false,
-   "views": 13331,
-   "likes": 390,
-   "viewsGain": 142,
+   "views": 13408,
+   "likes": 391,
+   "viewsGain": 77,
    "isNew": false,
-   "median": 25849,
-   "multiple": 0.5
+   "median": 24277,
+   "multiple": 0.6
   },
   {
    "id": "ZfN5LxatO10",
@@ -37,12 +50,12 @@
    "published": "2026-11-19T10:03:32+00:00",
    "url": "https://www.youtube.com/watch?v=ZfN5LxatO10",
    "shorts": false,
-   "views": 20763,
-   "likes": 699,
-   "viewsGain": 131,
+   "views": 20867,
+   "likes": 703,
+   "viewsGain": 104,
    "isNew": false,
-   "median": 25849,
-   "multiple": 0.8
+   "median": 24277,
+   "multiple": 0.9
   },
   {
    "id": "-UhT8up9Kg4",
@@ -50,12 +63,12 @@
    "published": "2026-11-18T08:50:04+00:00",
    "url": "https://www.youtube.com/watch?v=-UhT8up9Kg4",
    "shorts": false,
-   "views": 23661,
+   "views": 23695,
    "likes": 867,
    "viewsGain": 34,
    "isNew": false,
-   "median": 25849,
-   "multiple": 0.9
+   "median": 24277,
+   "multiple": 1.0
   },
   {
    "id": "91hhEPdL0LM",
@@ -63,12 +76,12 @@
    "published": "2026-11-17T17:34:57+00:00",
    "url": "https://www.youtube.com/watch?v=91hhEPdL0LM",
    "shorts": false,
-   "views": 36798,
-   "likes": 837,
-   "viewsGain": 39,
+   "views": 36829,
+   "likes": 838,
+   "viewsGain": 31,
    "isNew": false,
-   "median": 25849,
-   "multiple": 1.4
+   "median": 24277,
+   "multiple": 1.5
   },
   {
    "id": "EgWaw2Fcd_c",
@@ -76,12 +89,12 @@
    "published": "2026-11-17T08:09:58+00:00",
    "url": "https://www.youtube.com/watch?v=EgWaw2Fcd_c",
    "shorts": false,
-   "views": 77505,
-   "likes": 642,
-   "viewsGain": 3283,
+   "views": 79192,
+   "likes": 648,
+   "viewsGain": 1687,
    "isNew": false,
-   "median": 25849,
-   "multiple": 3.0
+   "median": 24277,
+   "multiple": 3.3
   },
   {
    "id": "vRbR5Ik_z6E",
@@ -89,12 +102,12 @@
    "published": "2026-11-16T10:02:16+00:00",
    "url": "https://www.youtube.com/watch?v=vRbR5Ik_z6E",
    "shorts": false,
-   "views": 24270,
+   "views": 24277,
    "likes": 771,
-   "viewsGain": 24,
+   "viewsGain": 7,
    "isNew": false,
-   "median": 25849,
-   "multiple": 0.9
+   "median": 24277,
+   "multiple": 1.0
   },
   {
    "id": "vVJGieEysjE",
@@ -102,12 +115,12 @@
    "published": "2026-11-15T10:22:10+00:00",
    "url": "https://www.youtube.com/watch?v=vVJGieEysjE",
    "shorts": false,
-   "views": 16390,
-   "likes": 442,
-   "viewsGain": 8,
+   "views": 16409,
+   "likes": 443,
+   "viewsGain": 19,
    "isNew": false,
-   "median": 25849,
-   "multiple": 0.6
+   "median": 24277,
+   "multiple": 0.7
   },
   {
    "id": "m8-01TBggvQ",
@@ -115,12 +128,12 @@
    "published": "2026-11-14T10:04:54+00:00",
    "url": "https://www.youtube.com/watch?v=m8-01TBggvQ",
    "shorts": false,
-   "views": 19200,
-   "likes": 350,
-   "viewsGain": 4,
+   "views": 19202,
+   "likes": 351,
+   "viewsGain": 2,
    "isNew": false,
-   "median": 25849,
-   "multiple": 0.7
+   "median": 24277,
+   "multiple": 0.8
   },
   {
    "id": "GBpaslkBI_c",
@@ -128,12 +141,12 @@
    "published": "2026-11-13T09:27:06+00:00",
    "url": "https://www.youtube.com/watch?v=GBpaslkBI_c",
    "shorts": false,
-   "views": 25849,
-   "likes": 909,
+   "views": 25856,
+   "likes": 910,
    "viewsGain": 7,
    "isNew": false,
-   "median": 25849,
-   "multiple": 1.0
+   "median": 24277,
+   "multiple": 1.1
   },
   {
    "id": "s5USat3YPTk",
@@ -141,11 +154,11 @@
    "published": "2026-11-12T10:12:35+00:00",
    "url": "https://www.youtube.com/watch?v=s5USat3YPTk",
    "shorts": false,
-   "views": 32686,
+   "views": 32746,
    "likes": 1162,
-   "viewsGain": 43,
+   "viewsGain": 60,
    "isNew": false,
-   "median": 25849,
+   "median": 24277,
    "multiple": 1.3
   },
   {
@@ -154,12 +167,12 @@
    "published": "2026-11-11T10:19:02+00:00",
    "url": "https://www.youtube.com/watch?v=Q5muilZ33Xc",
    "shorts": false,
-   "views": 42720,
+   "views": 42723,
    "likes": 974,
-   "viewsGain": 1,
+   "viewsGain": 3,
    "isNew": false,
-   "median": 25849,
-   "multiple": 1.7
+   "median": 24277,
+   "multiple": 1.8
   },
   {
    "id": "EvW6ldmE06o",
@@ -167,12 +180,12 @@
    "published": "2026-11-10T09:49:05+00:00",
    "url": "https://www.youtube.com/watch?v=EvW6ldmE06o",
    "shorts": false,
-   "views": 210888,
-   "likes": 2132,
-   "viewsGain": 41,
+   "views": 210905,
+   "likes": 2133,
+   "viewsGain": 17,
    "isNew": false,
-   "median": 25849,
-   "multiple": 8.2
+   "median": 24277,
+   "multiple": 8.7
   },
   {
    "id": "Jo4q1DY_adM",
@@ -180,40 +193,27 @@
    "published": "2026-11-09T10:29:55+00:00",
    "url": "https://www.youtube.com/watch?v=Jo4q1DY_adM",
    "shorts": false,
-   "views": 38833,
+   "views": 38837,
    "likes": 1002,
-   "viewsGain": 5,
+   "viewsGain": 4,
    "isNew": false,
-   "median": 25849,
-   "multiple": 1.5
-  },
-  {
-   "id": "pzqdpN2RPCc",
-   "title": "김민수 또 맹활약 레인저스 무패 행진 - 주전 경쟁조차 필요없는 20세 괴물의 질주",
-   "published": "2026-11-08T10:15:12+00:00",
-   "url": "https://www.youtube.com/watch?v=pzqdpN2RPCc",
-   "shorts": false,
-   "views": 28408,
-   "likes": 658,
-   "viewsGain": 33,
-   "isNew": false,
-   "median": 25849,
-   "multiple": 1.1
+   "median": 24277,
+   "multiple": 1.6
   }
  ],
  "viral": [
   {
    "title": "손흥민 보고 자란 축구 소년 기적의 FA컵 - 영국이 놀란 148년 새 역사의 주인공 양승우",
    "url": "https://www.youtube.com/watch?v=EvW6ldmE06o",
-   "views": 210888,
-   "multiple": 8.2,
+   "views": 210905,
+   "multiple": 8.7,
    "shorts": false
   },
   {
    "title": "손정범 한국 미드필더로 역대급 엘리트코스 - 10대 데뷔 국가대표 발탁 리버풀 이적설",
    "url": "https://www.youtube.com/watch?v=EgWaw2Fcd_c",
-   "views": 77505,
-   "multiple": 3.0,
+   "views": 79192,
+   "multiple": 3.3,
    "shorts": false
   }
  ]

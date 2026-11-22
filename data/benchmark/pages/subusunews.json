@@ -1,35 +1,59 @@
 {
  "name": "스브스뉴스 (SBS)",
  "channel": "https://www.youtube.com/@subusunews",
- "checkedAt": "2026-11-22T14:52+09:00",
+ "checkedAt": "2026-11-22T19:25+09:00",
  "subscribers": "145만",
  "videos": [
   {
+   "id": "gmcxeCXntLo",
+   "title": "강한 자만 결혼할 수 있음",
+   "views": 310,
+   "viewsText": "조회수 310회",
+   "published": "",
+   "kind": "short"
+  },
+  {
+   "id": "ThgVuf9l2Ms",
+   "title": "결혼식 평론계의 이동진",
+   "views": 531,
+   "viewsText": "조회수 531회",
+   "published": "",
+   "kind": "short"
+  },
+  {
+   "id": "KiHKqusUC3g",
+   "title": "미대생까지 섭외한다는 요즘 드레스 투어 근황",
+   "views": 1100,
+   "viewsText": "조회수 1.1천회",
+   "published": "",
+   "kind": "short"
+  },
+  {
    "id": "X2up1p7K8R4",
    "title": "ZR",
-   "views": 3900,
-   "viewsText": "조회수 3.9천회",
+   "views": 4200,
+   "viewsText": "조회수 4.2천회",
    "published": "",
    "kind": "short",
-   "gain": 400
+   "gain": 300
   },
   {
    "id": "K0tv4NW95bA",
    "title": "부케 준 신부의 뻔뻔한 부탁?",
-   "views": 2000,
-   "viewsText": "조회수 2천회",
+   "views": 2100,
+   "viewsText": "조회수 2.1천회",
    "published": "",
    "kind": "short",
-   "gain": 200
+   "gain": 100
   },
   {
    "id": "c3eXZAlf5pY",
    "title": "축가에도 세대가 있다",
-   "views": 8600,
-   "viewsText": "조회수 8.6천회",
+   "views": 9000,
+   "viewsText": "조회수 9천회",
    "published": "",
    "kind": "short",
-   "gain": 500
+   "gain": 400
   },
   {
    "id": "RBwdP8IKkeU",
@@ -38,13 +62,13 @@
    "viewsText": "조회수 2.6천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "0Q8V13eqAkU",
    "title": "돈까스클럽 정도는 가줘야 되나?",
-   "views": 9200,
-   "viewsText": "조회수 9.2천회",
+   "views": 9300,
+   "viewsText": "조회수 9.3천회",
    "published": "",
    "kind": "short",
    "gain": 100
@@ -56,16 +80,16 @@
    "viewsText": "조회수 4.6천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "W263pE8GnA4",
    "title": "한 버스 정류장에서 말 두 마리가 버스를 탄 이유 #말 #shorts #스브스뉴스",
-   "views": 37000,
-   "viewsText": "조회수 3.7만회",
+   "views": 38000,
+   "viewsText": "조회수 3.8만회",
    "published": "",
    "kind": "short",
-   "gain": 4000
+   "gain": 1000
   },
   {
    "id": "5lzXatXvULg",
@@ -101,7 +125,7 @@
    "viewsText": "조회수 2.9천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "mLULNEXcwAk",
@@ -110,7 +134,7 @@
    "viewsText": "조회수 2만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "DFiDu4HS9I4",
@@ -124,11 +148,11 @@
   {
    "id": "SIFB9hhhj-8",
    "title": "입사 한 달 차 결혼식, 간다 vs 안 간다",
-   "views": 5500,
-   "viewsText": "조회수 5.5천회",
+   "views": 5900,
+   "viewsText": "조회수 5.9천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 400
   },
   {
    "id": "USTfN6dsPZA",
@@ -209,16 +233,16 @@
    "viewsText": "조회수 5.5천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "2qGKxq8pdII",
    "title": "부정행위 인정한 세무사 수석 합격자 #AI #shorts #스브스뉴스",
-   "views": 17000,
-   "viewsText": "조회수 1.7만회",
+   "views": 18000,
+   "viewsText": "조회수 1.8만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 1000
   },
   {
    "id": "a1XAX1FAHu0",
@@ -333,33 +357,6 @@
    "title": "서울시가 남산에 곤돌라를 만들려는 이유 #shorts / 스브스뉴스",
    "views": 4600,
    "viewsText": "조회수 4.6천회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "DqL_SWFWkD8",
-   "title": "침착맨 방송 중 사교육 문제 직격타 날린 정승제 #입시 #shorts #스브스뉴스",
-   "views": 740000,
-   "viewsText": "조회수 74만회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "lnryKqOozWk",
-   "title": "갑작스러운 사고로 세상 떠난 여행 유튜버 #추모 #shorts #스브스뉴스",
-   "views": 21000,
-   "viewsText": "조회수 2.1만회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "pmpb5ZMw3Sw",
-   "title": "매번 달라지는 게 없다는 자살예방계획의 민낯 #청소년자살 #shorts #스브스뉴스",
-   "views": 3100,
-   "viewsText": "조회수 3.1천회",
    "published": "",
    "kind": "short",
    "gain": 0

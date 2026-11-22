@@ -1,14 +1,14 @@
 {
  "name": "안원잘부",
  "channel": "https://www.youtube.com/@helloiamwoninicetomeetyou",
- "checkedAt": "2026-11-22T14:52+09:00",
+ "checkedAt": "2026-11-22T19:25+09:00",
  "subscribers": "245만",
  "videos": [
   {
    "id": "N3MX2W5_Zfs",
    "title": "디즈니 영화 OST가 된 이유",
-   "views": 1330000,
-   "viewsText": "조회수 133만회",
+   "views": 1340000,
+   "viewsText": "조회수 134만회",
    "published": "",
    "kind": "short",
    "gain": 10000
@@ -16,11 +16,11 @@
   {
    "id": "kfK-LENbEUo",
    "title": "정작가의 컴백을 축하합니다",
-   "views": 1870000,
-   "viewsText": "조회수 187만회",
+   "views": 1880000,
+   "viewsText": "조회수 188만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "DKDmFgXzxs8",
@@ -43,11 +43,11 @@
   {
    "id": "mFM2hP5LEhM",
    "title": "스팸 원이 에디션(?)",
-   "views": 3250000,
-   "viewsText": "조회수 325만회",
+   "views": 3260000,
+   "viewsText": "조회수 326만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "xCvbDeMKm3E",
@@ -56,7 +56,7 @@
    "viewsText": "조회수 628만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "GsYq_ouLAMQ",
@@ -106,20 +106,20 @@
   {
    "id": "o-B0F16GwL0",
    "title": "[B컷] 의자 안 돌아가요",
-   "views": 13660000,
-   "viewsText": "조회수 1366만회",
+   "views": 13680000,
+   "viewsText": "조회수 1368만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 20000
   },
   {
    "id": "gNJrbCSN2TM",
    "title": "백제자객과 프리티걸",
-   "views": 4700000,
-   "viewsText": "조회수 470만회",
+   "views": 4710000,
+   "viewsText": "조회수 471만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "F5CbMShscuk",
@@ -169,11 +169,11 @@
   {
    "id": "tDs3mcabrFM",
    "title": "좋지 않아?",
-   "views": 1390000,
-   "viewsText": "조회수 139만회",
+   "views": 1400000,
+   "viewsText": "조회수 140만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "5qmyo1nR3no",
@@ -214,11 +214,11 @@
   {
    "id": "Gnf3QzdopbM",
    "title": "첫TVCF입니다잘부탁드립니다",
-   "views": 2300000,
-   "viewsText": "조회수 230만회",
+   "views": 2310000,
+   "viewsText": "조회수 231만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "YDCgJIvro-4",
@@ -259,11 +259,11 @@
   {
    "id": "P5GHz5HW9Uk",
    "title": "우리도 리센느야",
-   "views": 6430000,
-   "viewsText": "조회수 643만회",
+   "views": 6440000,
+   "viewsText": "조회수 644만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "ORksT1QDf3k",
