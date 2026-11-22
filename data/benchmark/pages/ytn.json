@@ -1,7 +1,7 @@
 {
  "name": "YTN",
  "channel": "https://www.youtube.com/@ytnnews24",
- "checkedAt": "2026-11-22T19:25+09:00",
+ "checkedAt": "2026-11-22T22:37+09:00",
  "subscribers": "543만",
  "videos": [
   {
@@ -11,22 +11,22 @@
    "viewsText": "조회수 1만회",
    "published": "",
    "kind": "short",
-   "gain": 1500
+   "gain": 0
   },
   {
    "id": "VOpWgcfQYh0",
    "title": "배종옥의 쓴(소리)? / YTN",
-   "views": 5900,
-   "viewsText": "조회수 5.9천회",
+   "views": 6000,
+   "viewsText": "조회수 6천회",
    "published": "",
    "kind": "short",
-   "gain": 600
+   "gain": 100
   },
   {
    "id": "VNC_Wri3hQU",
    "title": "신고하면 최소 '1억' #shorts / YTN",
-   "views": 210000,
-   "viewsText": "조회수 21만회",
+   "views": 220000,
+   "viewsText": "조회수 22만회",
    "published": "",
    "kind": "short",
    "gain": 10000
@@ -38,13 +38,13 @@
    "viewsText": "조회수 2.9만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "q9qvTc5uPqY",
    "title": "\"탈출하게 도와달라\" #shorts / YTN",
-   "views": 190000,
-   "viewsText": "조회수 19만회",
+   "views": 200000,
+   "viewsText": "조회수 20만회",
    "published": "",
    "kind": "short",
    "gain": 10000
@@ -52,11 +52,11 @@
   {
    "id": "_BOmzT9tzvg",
    "title": "앞치마까지 등장 #shorts / YTN",
-   "views": 34000,
-   "viewsText": "조회수 3.4만회",
+   "views": 35000,
+   "viewsText": "조회수 3.5만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 1000
   },
   {
    "id": "galuz_tB7to",
@@ -65,7 +65,7 @@
    "viewsText": "조회수 6.4천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "zgWVG-Dxs7s",
@@ -74,7 +74,7 @@
    "viewsText": "조회수 6.6천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "SE5HHt3G248",
@@ -88,8 +88,8 @@
   {
    "id": "wRzPfQ64gME",
    "title": "'그런 목소리로 어떻게 배우를 해?' / YTN",
-   "views": 7600,
-   "viewsText": "조회수 7.6천회",
+   "views": 7700,
+   "viewsText": "조회수 7.7천회",
    "published": "",
    "kind": "short",
    "gain": 100
@@ -115,11 +115,11 @@
   {
    "id": "JGorXzotaYA",
    "title": "아이돌 '과잉 경호' 논란 #shorts / YTN",
-   "views": 7800,
-   "viewsText": "조회수 7.8천회",
+   "views": 7900,
+   "viewsText": "조회수 7.9천회",
    "published": "",
    "kind": "short",
-   "gain": 200
+   "gain": 100
   },
   {
    "id": "hOiVt31bTy8",
@@ -142,17 +142,17 @@
   {
    "id": "4glwoHohdJs",
    "title": "수식 없이 정답만? #shorts / YTN",
-   "views": 8400,
-   "viewsText": "조회수 8.4천회",
+   "views": 8600,
+   "viewsText": "조회수 8.6천회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 200
   },
   {
    "id": "-lx99xErjDw",
    "title": "암산 천재인 줄 알았더니 #shorts / YTN",
-   "views": 9200,
-   "viewsText": "조회수 9.2천회",
+   "views": 9300,
+   "viewsText": "조회수 9.3천회",
    "published": "",
    "kind": "short",
    "gain": 100
@@ -164,16 +164,16 @@
    "viewsText": "조회수 1.4만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "R4LPsvTyyBw",
    "title": "길 걷다 '봉변' #shorts / YTN",
-   "views": 530000,
-   "viewsText": "조회수 53만회",
+   "views": 540000,
+   "viewsText": "조회수 54만회",
    "published": "",
    "kind": "short",
-   "gain": 20000
+   "gain": 10000
   },
   {
    "id": "oAnx0xA_s1I",
@@ -187,8 +187,8 @@
   {
    "id": "RY3yEbibutw",
    "title": "거위의 꿈 #shorts / YTN",
-   "views": 24000,
-   "viewsText": "조회수 2.4만회",
+   "views": 25000,
+   "viewsText": "조회수 2.5만회",
    "published": "",
    "kind": "short",
    "gain": 1000
@@ -205,8 +205,8 @@
   {
    "id": "nLk5HeiqKfg",
    "title": "호랑이 밖으로 꺼내다가... #shorts / YTN",
-   "views": 66000,
-   "viewsText": "조회수 6.6만회",
+   "views": 67000,
+   "viewsText": "조회수 6.7만회",
    "published": "",
    "kind": "short",
    "gain": 1000
@@ -218,7 +218,7 @@
    "viewsText": "조회수 3.3만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "hTng2I3FGWE",
@@ -268,8 +268,8 @@
   {
    "id": "ftN7KMmm-G4",
    "title": "그들이 숲 밖으로 나온 이유 #shorts / YTN",
-   "views": 67000,
-   "viewsText": "조회수 6.7만회",
+   "views": 68000,
+   "viewsText": "조회수 6.8만회",
    "published": "",
    "kind": "short",
    "gain": 1000
@@ -281,7 +281,7 @@
    "viewsText": "조회수 2.3만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "Jt2S8-QCFjw",
@@ -304,11 +304,11 @@
   {
    "id": "0TpwChWBow0",
    "title": "돈키호테만 씨익... #shorts / YTN",
-   "views": 9900,
-   "viewsText": "조회수 9.9천회",
+   "views": 10000,
+   "viewsText": "조회수 1만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 100
   },
   {
    "id": "Cd_WqtZyIcw",
@@ -317,7 +317,7 @@
    "viewsText": "조회수 4.3천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "VPDjWiil7MQ",
@@ -353,7 +353,7 @@
    "viewsText": "조회수 28만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "Xvdb4hIKZbs",
@@ -362,7 +362,7 @@
    "viewsText": "조회수 2.1만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   }
  ]
 }

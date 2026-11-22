@@ -1,17 +1,17 @@
 {
  "name": "14F 일사에프 (MBC)",
  "channel": "https://www.youtube.com/@14FMBC",
- "checkedAt": "2026-11-22T19:25+09:00",
+ "checkedAt": "2026-11-22T22:37+09:00",
  "subscribers": "239만",
  "videos": [
   {
    "id": "NyxPbpN3Uyo",
    "title": "한국인 드립에 감동한 영국 소시지 아저씨#shorts",
-   "views": 5200,
-   "viewsText": "조회수 5.2천회",
+   "views": 5500,
+   "viewsText": "조회수 5.5천회",
    "published": "",
    "kind": "short",
-   "gain": 400
+   "gain": 300
   },
   {
    "id": "VKzh4gQvEIU",
@@ -29,13 +29,13 @@
    "viewsText": "조회수 3.9천회",
    "published": "",
    "kind": "short",
-   "gain": 200
+   "gain": 0
   },
   {
    "id": "wlN76TIzAEM",
    "title": "천만 조회수의 남자, 소시지 아저씨의 포포몬쓰★ #shorts",
-   "views": 4600,
-   "viewsText": "조회수 4.6천회",
+   "views": 4700,
+   "viewsText": "조회수 4.7천회",
    "published": "",
    "kind": "short",
    "gain": 100
@@ -43,8 +43,8 @@
   {
    "id": "n13XS1CuP3Q",
    "title": "미국에서 불거지는 초가공식품 소송전 #shorts",
-   "views": 6300,
-   "viewsText": "조회수 6.3천회",
+   "views": 6400,
+   "viewsText": "조회수 6.4천회",
    "published": "",
    "kind": "short",
    "gain": 100
@@ -56,7 +56,7 @@
    "viewsText": "조회수 1.7만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "abobZ7JfTek",
@@ -173,7 +173,7 @@
    "viewsText": "조회수 31만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "G63QFaqloJQ",

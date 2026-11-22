@@ -3,7 +3,7 @@
  "name": "스토리K (손흥민 레전드 비교 특집 벤치마킹, 10/31)",
  "channel": "https://www.youtube.com/@story_k",
  "channelId": "UCqzNZeBt0546jG-vDlAQlZg",
- "checkedAt": "2026-11-22T19:25+09:00",
+ "checkedAt": "2026-11-22T22:37+09:00",
  "videos": [
   {
    "id": "t71dh5FPkIo",
@@ -11,12 +11,12 @@
    "published": "2026-11-22T10:00:13+00:00",
    "url": "https://www.youtube.com/watch?v=t71dh5FPkIo",
    "shorts": false,
-   "views": 598,
-   "likes": 76,
-   "viewsGain": null,
-   "isNew": true,
-   "median": 24277,
-   "multiple": 0.0
+   "views": 13952,
+   "likes": 527,
+   "viewsGain": 13354,
+   "isNew": false,
+   "median": 24295,
+   "multiple": 0.6
   },
   {
    "id": "bR1lQgP02Dw",
@@ -24,11 +24,11 @@
    "published": "2026-11-21T09:50:02+00:00",
    "url": "https://www.youtube.com/watch?v=bR1lQgP02Dw",
    "shorts": false,
-   "views": 15833,
-   "likes": 344,
-   "viewsGain": 2090,
+   "views": 18134,
+   "likes": 363,
+   "viewsGain": 2301,
    "isNew": false,
-   "median": 24277,
+   "median": 24295,
    "multiple": 0.7
   },
   {
@@ -37,11 +37,11 @@
    "published": "2026-11-20T09:49:56+00:00",
    "url": "https://www.youtube.com/watch?v=mIAp9ZHOSuc",
    "shorts": false,
-   "views": 13408,
-   "likes": 391,
-   "viewsGain": 77,
+   "views": 13455,
+   "likes": 393,
+   "viewsGain": 47,
    "isNew": false,
-   "median": 24277,
+   "median": 24295,
    "multiple": 0.6
   },
   {
@@ -50,11 +50,11 @@
    "published": "2026-11-19T10:03:32+00:00",
    "url": "https://www.youtube.com/watch?v=ZfN5LxatO10",
    "shorts": false,
-   "views": 20867,
-   "likes": 703,
-   "viewsGain": 104,
+   "views": 20940,
+   "likes": 707,
+   "viewsGain": 73,
    "isNew": false,
-   "median": 24277,
+   "median": 24295,
    "multiple": 0.9
   },
   {
@@ -63,11 +63,11 @@
    "published": "2026-11-18T08:50:04+00:00",
    "url": "https://www.youtube.com/watch?v=-UhT8up9Kg4",
    "shorts": false,
-   "views": 23695,
+   "views": 23719,
    "likes": 867,
-   "viewsGain": 34,
+   "viewsGain": 24,
    "isNew": false,
-   "median": 24277,
+   "median": 24295,
    "multiple": 1.0
   },
   {
@@ -76,11 +76,11 @@
    "published": "2026-11-17T17:34:57+00:00",
    "url": "https://www.youtube.com/watch?v=91hhEPdL0LM",
    "shorts": false,
-   "views": 36829,
-   "likes": 838,
-   "viewsGain": 31,
+   "views": 36839,
+   "likes": 839,
+   "viewsGain": 10,
    "isNew": false,
-   "median": 24277,
+   "median": 24295,
    "multiple": 1.5
   },
   {
@@ -89,11 +89,11 @@
    "published": "2026-11-17T08:09:58+00:00",
    "url": "https://www.youtube.com/watch?v=EgWaw2Fcd_c",
    "shorts": false,
-   "views": 79192,
-   "likes": 648,
-   "viewsGain": 1687,
+   "views": 80193,
+   "likes": 659,
+   "viewsGain": 1001,
    "isNew": false,
-   "median": 24277,
+   "median": 24295,
    "multiple": 3.3
   },
   {
@@ -102,11 +102,11 @@
    "published": "2026-11-16T10:02:16+00:00",
    "url": "https://www.youtube.com/watch?v=vRbR5Ik_z6E",
    "shorts": false,
-   "views": 24277,
+   "views": 24295,
    "likes": 771,
-   "viewsGain": 7,
+   "viewsGain": 18,
    "isNew": false,
-   "median": 24277,
+   "median": 24295,
    "multiple": 1.0
   },
   {
@@ -115,11 +115,11 @@
    "published": "2026-11-15T10:22:10+00:00",
    "url": "https://www.youtube.com/watch?v=vVJGieEysjE",
    "shorts": false,
-   "views": 16409,
-   "likes": 443,
-   "viewsGain": 19,
+   "views": 16436,
+   "likes": 444,
+   "viewsGain": 27,
    "isNew": false,
-   "median": 24277,
+   "median": 24295,
    "multiple": 0.7
   },
   {
@@ -128,11 +128,11 @@
    "published": "2026-11-14T10:04:54+00:00",
    "url": "https://www.youtube.com/watch?v=m8-01TBggvQ",
    "shorts": false,
-   "views": 19202,
-   "likes": 351,
-   "viewsGain": 2,
+   "views": 19205,
+   "likes": 352,
+   "viewsGain": 3,
    "isNew": false,
-   "median": 24277,
+   "median": 24295,
    "multiple": 0.8
   },
   {
@@ -141,11 +141,11 @@
    "published": "2026-11-13T09:27:06+00:00",
    "url": "https://www.youtube.com/watch?v=GBpaslkBI_c",
    "shorts": false,
-   "views": 25856,
+   "views": 25866,
    "likes": 910,
-   "viewsGain": 7,
+   "viewsGain": 10,
    "isNew": false,
-   "median": 24277,
+   "median": 24295,
    "multiple": 1.1
   },
   {
@@ -154,11 +154,11 @@
    "published": "2026-11-12T10:12:35+00:00",
    "url": "https://www.youtube.com/watch?v=s5USat3YPTk",
    "shorts": false,
-   "views": 32746,
+   "views": 32778,
    "likes": 1162,
-   "viewsGain": 60,
+   "viewsGain": 32,
    "isNew": false,
-   "median": 24277,
+   "median": 24295,
    "multiple": 1.3
   },
   {
@@ -167,11 +167,11 @@
    "published": "2026-11-11T10:19:02+00:00",
    "url": "https://www.youtube.com/watch?v=Q5muilZ33Xc",
    "shorts": false,
-   "views": 42723,
-   "likes": 974,
-   "viewsGain": 3,
+   "views": 42724,
+   "likes": 975,
+   "viewsGain": 1,
    "isNew": false,
-   "median": 24277,
+   "median": 24295,
    "multiple": 1.8
   },
   {
@@ -180,11 +180,11 @@
    "published": "2026-11-10T09:49:05+00:00",
    "url": "https://www.youtube.com/watch?v=EvW6ldmE06o",
    "shorts": false,
-   "views": 210905,
+   "views": 210919,
    "likes": 2133,
-   "viewsGain": 17,
+   "viewsGain": 14,
    "isNew": false,
-   "median": 24277,
+   "median": 24295,
    "multiple": 8.7
   },
   {
@@ -193,11 +193,11 @@
    "published": "2026-11-09T10:29:55+00:00",
    "url": "https://www.youtube.com/watch?v=Jo4q1DY_adM",
    "shorts": false,
-   "views": 38837,
+   "views": 38839,
    "likes": 1002,
-   "viewsGain": 4,
+   "viewsGain": 2,
    "isNew": false,
-   "median": 24277,
+   "median": 24295,
    "multiple": 1.6
   }
  ],
@@ -205,14 +205,14 @@
   {
    "title": "손흥민 보고 자란 축구 소년 기적의 FA컵 - 영국이 놀란 148년 새 역사의 주인공 양승우",
    "url": "https://www.youtube.com/watch?v=EvW6ldmE06o",
-   "views": 210905,
+   "views": 210919,
    "multiple": 8.7,
    "shorts": false
   },
   {
    "title": "손정범 한국 미드필더로 역대급 엘리트코스 - 10대 데뷔 국가대표 발탁 리버풀 이적설",
    "url": "https://www.youtube.com/watch?v=EgWaw2Fcd_c",
-   "views": 79192,
+   "views": 80193,
    "multiple": 3.3,
    "shorts": false
   }
