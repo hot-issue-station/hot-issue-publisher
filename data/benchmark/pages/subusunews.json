@@ -1,70 +1,71 @@
 {
  "name": "스브스뉴스 (SBS)",
  "channel": "https://www.youtube.com/@subusunews",
- "checkedAt": "2026-11-23T14:59+09:00",
+ "checkedAt": "2026-11-23T19:41+09:00",
  "subscribers": "145만",
  "videos": [
   {
    "id": "vDHKpDygPZY",
    "title": "당신이 몰랐던 농심 너구리의 정체 #너구리 #shorts #스브스뉴스",
-   "views": 894,
-   "viewsText": "조회수 894회",
+   "views": 1600,
+   "viewsText": "조회수 1.6천회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 706
   },
   {
    "id": "olaKZkE3I-s",
    "title": "무서워요 #너구리 #shorts #스브스뉴스",
-   "views": 13000,
-   "viewsText": "조회수 1.3만회",
+   "views": 14000,
+   "viewsText": "조회수 1.4만회",
    "published": "",
    "kind": "short",
-   "gain": 2000
+   "gain": 1000
   },
   {
    "id": "gmcxeCXntLo",
    "title": "강한 자만 결혼할 수 있음",
-   "views": 9000,
-   "viewsText": "조회수 9천회",
+   "views": 10000,
+   "viewsText": "조회수 1만회",
    "published": "",
    "kind": "short",
-   "gain": 2400
+   "gain": 1000
   },
   {
    "id": "ThgVuf9l2Ms",
    "title": "결혼식 평론계의 이동진",
-   "views": 6100,
-   "viewsText": "조회수 6.1천회",
+   "views": 6900,
+   "viewsText": "조회수 6.9천회",
    "published": "",
    "kind": "short",
-   "gain": 2300
+   "gain": 800
   },
   {
    "id": "KiHKqusUC3g",
    "title": "미대생까지 섭외한다는 요즘 드레스 투어 근황",
-   "views": 9100,
-   "viewsText": "조회수 9.1천회",
+   "views": 10000,
+   "viewsText": "조회수 1만회",
    "published": "",
    "kind": "short",
-   "gain": 2200
+   "gain": 900
   },
   {
    "id": "X2up1p7K8R4",
    "title": "ZR",
-   "views": 8600,
-   "viewsText": "조회수 8.6천회",
+   "views": 9200,
+   "viewsText": "조회수 9.2천회",
    "published": "",
    "kind": "short",
-   "gain": 1200
+   "gain": 600
   },
   {
    "id": "K0tv4NW95bA",
    "title": "부케 준 신부의 뻔뻔한 부탁?",
-   "views": 3700,
-   "viewsText": "조회수 3.7천회",
+   "views": 4400,
+   "viewsText": "조회수 4.4천회",
    "published": "",
    "kind": "short",
-   "gain": 600
+   "gain": 700
   },
   {
    "id": "c3eXZAlf5pY",
@@ -73,7 +74,7 @@
    "viewsText": "조회수 1만회",
    "published": "",
    "kind": "short",
-   "gain": 700
+   "gain": 0
   },
   {
    "id": "RBwdP8IKkeU",
@@ -82,7 +83,7 @@
    "viewsText": "조회수 3천회",
    "published": "",
    "kind": "short",
-   "gain": 200
+   "gain": 0
   },
   {
    "id": "0Q8V13eqAkU",
@@ -96,11 +97,11 @@
   {
    "id": "EMLjBnedDMw",
    "title": "요즘 모바일 청첩장 특",
-   "views": 6300,
-   "viewsText": "조회수 6.3천회",
+   "views": 6500,
+   "viewsText": "조회수 6.5천회",
    "published": "",
    "kind": "short",
-   "gain": 600
+   "gain": 200
   },
   {
    "id": "W263pE8GnA4",
@@ -145,7 +146,7 @@
    "viewsText": "조회수 3.2천회",
    "published": "",
    "kind": "short",
-   "gain": 200
+   "gain": 0
   },
   {
    "id": "mLULNEXcwAk",

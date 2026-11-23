@@ -1,17 +1,17 @@
 {
  "name": "14F 일사에프 (MBC)",
  "channel": "https://www.youtube.com/@14FMBC",
- "checkedAt": "2026-11-23T14:59+09:00",
+ "checkedAt": "2026-11-23T19:41+09:00",
  "subscribers": "239만",
  "videos": [
   {
    "id": "NyxPbpN3Uyo",
    "title": "한국인 드립에 감동한 영국 소시지 아저씨#shorts",
-   "views": 6300,
-   "viewsText": "조회수 6.3천회",
+   "views": 6400,
+   "viewsText": "조회수 6.4천회",
    "published": "",
    "kind": "short",
-   "gain": 200
+   "gain": 100
   },
   {
    "id": "VKzh4gQvEIU",
@@ -20,7 +20,7 @@
    "viewsText": "조회수 1.5만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "1SOf5BtCrok",
@@ -29,34 +29,34 @@
    "viewsText": "조회수 4.3천회",
    "published": "",
    "kind": "short",
-   "gain": 200
+   "gain": 0
   },
   {
    "id": "wlN76TIzAEM",
    "title": "천만 조회수의 남자, 소시지 아저씨의 포포몬쓰★ #shorts",
-   "views": 5000,
-   "viewsText": "조회수 5천회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "n13XS1CuP3Q",
-   "title": "미국에서 불거지는 초가공식품 소송전 #shorts",
-   "views": 6600,
-   "viewsText": "조회수 6.6천회",
+   "views": 5100,
+   "viewsText": "조회수 5.1천회",
    "published": "",
    "kind": "short",
    "gain": 100
   },
   {
-   "id": "Tr0LbpRFtFk",
-   "title": "백제는 삼국 통일을 할 필요가 없었다? #shorts",
-   "views": 23000,
-   "viewsText": "조회수 2.3만회",
+   "id": "n13XS1CuP3Q",
+   "title": "미국에서 불거지는 초가공식품 소송전 #shorts",
+   "views": 6800,
+   "viewsText": "조회수 6.8천회",
    "published": "",
    "kind": "short",
-   "gain": 4000
+   "gain": 200
+  },
+  {
+   "id": "Tr0LbpRFtFk",
+   "title": "백제는 삼국 통일을 할 필요가 없었다? #shorts",
+   "views": 24000,
+   "viewsText": "조회수 2.4만회",
+   "published": "",
+   "kind": "short",
+   "gain": 1000
   },
   {
    "id": "abobZ7JfTek",
@@ -65,7 +65,7 @@
    "viewsText": "조회수 4.3천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "gRThiyajPxQ",
@@ -79,11 +79,11 @@
   {
    "id": "t0Zs4V5j-uA",
    "title": "한국 프랜차이즈가 매력적인 이유 #shorts",
-   "views": 8300,
-   "viewsText": "조회수 8.3천회",
+   "views": 8400,
+   "viewsText": "조회수 8.4천회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 100
   },
   {
    "id": "CTJ-rsjJdyU",
