@@ -1,23 +1,23 @@
 {
  "name": "14F 일사에프 (MBC)",
  "channel": "https://www.youtube.com/@14FMBC",
- "checkedAt": "2026-11-23T08:33+09:00",
+ "checkedAt": "2026-11-23T14:59+09:00",
  "subscribers": "239만",
  "videos": [
   {
    "id": "NyxPbpN3Uyo",
    "title": "한국인 드립에 감동한 영국 소시지 아저씨#shorts",
-   "views": 6100,
-   "viewsText": "조회수 6.1천회",
+   "views": 6300,
+   "viewsText": "조회수 6.3천회",
    "published": "",
    "kind": "short",
-   "gain": 600
+   "gain": 200
   },
   {
    "id": "VKzh4gQvEIU",
    "title": "일본이 천황 무덤 발굴을 막는 이유 #shorts",
-   "views": 14000,
-   "viewsText": "조회수 1.4만회",
+   "views": 15000,
+   "viewsText": "조회수 1.5만회",
    "published": "",
    "kind": "short",
    "gain": 1000
@@ -25,8 +25,8 @@
   {
    "id": "1SOf5BtCrok",
    "title": "한국은 왜 구호 현장에 일자리를 만들까? #shorts",
-   "views": 4100,
-   "viewsText": "조회수 4.1천회",
+   "views": 4300,
+   "viewsText": "조회수 4.3천회",
    "published": "",
    "kind": "short",
    "gain": 200
@@ -38,13 +38,13 @@
    "viewsText": "조회수 5천회",
    "published": "",
    "kind": "short",
-   "gain": 300
+   "gain": 0
   },
   {
    "id": "n13XS1CuP3Q",
    "title": "미국에서 불거지는 초가공식품 소송전 #shorts",
-   "views": 6500,
-   "viewsText": "조회수 6.5천회",
+   "views": 6600,
+   "viewsText": "조회수 6.6천회",
    "published": "",
    "kind": "short",
    "gain": 100
@@ -52,20 +52,20 @@
   {
    "id": "Tr0LbpRFtFk",
    "title": "백제는 삼국 통일을 할 필요가 없었다? #shorts",
-   "views": 19000,
-   "viewsText": "조회수 1.9만회",
+   "views": 23000,
+   "viewsText": "조회수 2.3만회",
    "published": "",
    "kind": "short",
-   "gain": 2000
+   "gain": 4000
   },
   {
    "id": "abobZ7JfTek",
    "title": "초가공식품 정확히 아는 사람? #shorts",
-   "views": 4200,
-   "viewsText": "조회수 4.2천회",
+   "views": 4300,
+   "viewsText": "조회수 4.3천회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 100
   },
   {
    "id": "gRThiyajPxQ",
@@ -74,7 +74,7 @@
    "viewsText": "조회수 9.8천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "t0Zs4V5j-uA",
@@ -101,7 +101,7 @@
    "viewsText": "조회수 9.4만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "WgWmSXeb_YA",
@@ -155,7 +155,7 @@
    "viewsText": "조회수 7.7천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "UjJznEbPKrw",
@@ -272,7 +272,7 @@
    "viewsText": "조회수 7.1천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "hESTS8rGEQs",

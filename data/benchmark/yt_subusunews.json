@@ -3,7 +3,7 @@
  "name": "스브스뉴스 (SBS)",
  "channel": "https://www.youtube.com/@subusunews",
  "channelId": "UCxPClUl0bh7BgJajD5k483g",
- "checkedAt": "2026-11-23T08:33+09:00",
+ "checkedAt": "2026-11-23T15:00+09:00",
  "videos": [
   {
    "id": "yjBIZCfeUHo",
@@ -11,12 +11,12 @@
    "published": "2026-11-20T09:00:22+00:00",
    "url": "https://www.youtube.com/shorts/yjBIZCfeUHo",
    "shorts": true,
-   "views": 19109,
-   "likes": 220,
-   "viewsGain": 2446,
+   "views": 21912,
+   "likes": 264,
+   "viewsGain": 2803,
    "isNew": false,
-   "median": 19617.5,
-   "multiple": 1.0
+   "median": 20461.5,
+   "multiple": 1.1
   },
   {
    "id": "XePaN4Pjpmw",
@@ -24,12 +24,12 @@
    "published": "2026-11-20T09:00:10+00:00",
    "url": "https://www.youtube.com/shorts/XePaN4Pjpmw",
    "shorts": true,
-   "views": 11018,
+   "views": 11179,
    "likes": 77,
-   "viewsGain": 716,
+   "viewsGain": 161,
    "isNew": false,
-   "median": 19617.5,
-   "multiple": 0.6
+   "median": 20461.5,
+   "multiple": 0.5
   },
   {
    "id": "0ZiRmpIs0Eo",
@@ -37,12 +37,12 @@
    "published": "2026-11-19T09:00:18+00:00",
    "url": "https://www.youtube.com/shorts/0ZiRmpIs0Eo",
    "shorts": true,
-   "views": 36423,
-   "likes": 556,
-   "viewsGain": 526,
+   "views": 36570,
+   "likes": 559,
+   "viewsGain": 147,
    "isNew": false,
-   "median": 19617.5,
-   "multiple": 1.9
+   "median": 20461.5,
+   "multiple": 1.8
   },
   {
    "id": "2EHFXAZ5tqY",
@@ -50,12 +50,12 @@
    "published": "2026-11-19T09:00:15+00:00",
    "url": "https://www.youtube.com/shorts/2EHFXAZ5tqY",
    "shorts": true,
-   "views": 40615,
-   "likes": 348,
-   "viewsGain": 1500,
+   "views": 40979,
+   "likes": 350,
+   "viewsGain": 364,
    "isNew": false,
-   "median": 19617.5,
-   "multiple": 2.1
+   "median": 20461.5,
+   "multiple": 2.0
   },
   {
    "id": "3YsU2ZxLA0Y",
@@ -63,11 +63,11 @@
    "published": "2026-11-18T09:19:20+00:00",
    "url": "https://www.youtube.com/shorts/3YsU2ZxLA0Y",
    "shorts": true,
-   "views": 7955,
+   "views": 7977,
    "likes": 174,
-   "viewsGain": 84,
+   "viewsGain": 22,
    "isNew": false,
-   "median": 19617.5,
+   "median": 20461.5,
    "multiple": 0.4
   },
   {
@@ -76,11 +76,11 @@
    "published": "2026-11-18T09:00:37+00:00",
    "url": "https://www.youtube.com/shorts/UvvmykR4X1Y",
    "shorts": true,
-   "views": 20126,
-   "likes": 508,
-   "viewsGain": 737,
+   "views": 20214,
+   "likes": 509,
+   "viewsGain": 88,
    "isNew": false,
-   "median": 19617.5,
+   "median": 20461.5,
    "multiple": 1.0
   },
   {
@@ -89,11 +89,11 @@
    "published": "2026-11-18T09:00:19+00:00",
    "url": "https://www.youtube.com/shorts/p2vgoVpjigI",
    "shorts": true,
-   "views": 25892,
-   "likes": 258,
-   "viewsGain": 709,
+   "views": 26497,
+   "likes": 273,
+   "viewsGain": 605,
    "isNew": false,
-   "median": 19617.5,
+   "median": 20461.5,
    "multiple": 1.3
   },
   {
@@ -102,11 +102,11 @@
    "published": "2026-11-18T09:00:15+00:00",
    "url": "https://www.youtube.com/shorts/pkpBqfEFmV0",
    "shorts": true,
-   "views": 8707,
+   "views": 8749,
    "likes": 96,
-   "viewsGain": 246,
+   "viewsGain": 42,
    "isNew": false,
-   "median": 19617.5,
+   "median": 20461.5,
    "multiple": 0.4
   },
   {
@@ -115,12 +115,12 @@
    "published": "2026-11-17T10:52:23+00:00",
    "url": "https://www.youtube.com/shorts/h_1QEshJHt0",
    "shorts": true,
-   "views": 46312,
-   "likes": 1360,
-   "viewsGain": 2082,
+   "views": 47491,
+   "likes": 1416,
+   "viewsGain": 1179,
    "isNew": false,
-   "median": 19617.5,
-   "multiple": 2.4
+   "median": 20461.5,
+   "multiple": 2.3
   },
   {
    "id": "jpVc9sPoKvs",
@@ -128,12 +128,12 @@
    "published": "2026-11-17T09:54:49+00:00",
    "url": "https://www.youtube.com/shorts/jpVc9sPoKvs",
    "shorts": true,
-   "views": 20676,
+   "views": 20709,
    "likes": 213,
-   "viewsGain": 168,
+   "viewsGain": 33,
    "isNew": false,
-   "median": 19617.5,
-   "multiple": 1.1
+   "median": 20461.5,
+   "multiple": 1.0
   },
   {
    "id": "QebaUlVRMH4",
@@ -141,11 +141,11 @@
    "published": "2026-11-17T09:48:09+00:00",
    "url": "https://www.youtube.com/shorts/QebaUlVRMH4",
    "shorts": true,
-   "views": 41912,
-   "likes": 733,
-   "viewsGain": 434,
+   "views": 42040,
+   "likes": 734,
+   "viewsGain": 128,
    "isNew": false,
-   "median": 19617.5,
+   "median": 20461.5,
    "multiple": 2.1
   },
   {
@@ -154,11 +154,11 @@
    "published": "2026-11-17T09:46:50+00:00",
    "url": "https://www.youtube.com/shorts/uJp05ZMpBes",
    "shorts": true,
-   "views": 13483,
-   "likes": 145,
-   "viewsGain": 274,
+   "views": 13562,
+   "likes": 147,
+   "viewsGain": 79,
    "isNew": false,
-   "median": 19617.5,
+   "median": 20461.5,
    "multiple": 0.7
   },
   {
@@ -167,9 +167,9 @@
    "published": "2026-11-17T09:00:24+00:00",
    "url": "https://www.youtube.com/watch?v=TWLm9dFAQAg",
    "shorts": false,
-   "views": 586675,
-   "likes": 8480,
-   "viewsGain": 9014,
+   "views": 590143,
+   "likes": 8513,
+   "viewsGain": 3468,
    "isNew": false,
    "median": null,
    "multiple": null
@@ -180,11 +180,11 @@
    "published": "2026-11-14T09:00:14+00:00",
    "url": "https://www.youtube.com/shorts/lnlJ2G8CryU",
    "shorts": true,
-   "views": 7618,
+   "views": 7621,
    "likes": 115,
-   "viewsGain": 23,
+   "viewsGain": 3,
    "isNew": false,
-   "median": 19617.5,
+   "median": 20461.5,
    "multiple": 0.4
   },
   {
@@ -193,34 +193,34 @@
    "published": "2026-11-14T09:00:09+00:00",
    "url": "https://www.youtube.com/shorts/vxPnYMZwBxM",
    "shorts": true,
-   "views": 5035,
+   "views": 5040,
    "likes": 31,
-   "viewsGain": 21,
+   "viewsGain": 5,
    "isNew": false,
-   "median": 19617.5,
-   "multiple": 0.3
+   "median": 20461.5,
+   "multiple": 0.2
   }
  ],
  "viral": [
   {
    "title": "8년 만에 처음 전하는 편지",
    "url": "https://www.youtube.com/shorts/h_1QEshJHt0",
-   "views": 46312,
-   "multiple": 2.4,
-   "shorts": true
-  },
-  {
-   "title": "여단오 커플이 사귀게 된 썰",
-   "url": "https://www.youtube.com/shorts/2EHFXAZ5tqY",
-   "views": 40615,
-   "multiple": 2.1,
+   "views": 47491,
+   "multiple": 2.3,
    "shorts": true
   },
   {
    "title": "꽃다발 선물도 차원이 다른 중국 스케일",
    "url": "https://www.youtube.com/shorts/QebaUlVRMH4",
-   "views": 41912,
+   "views": 42040,
    "multiple": 2.1,
+   "shorts": true
+  },
+  {
+   "title": "여단오 커플이 사귀게 된 썰",
+   "url": "https://www.youtube.com/shorts/2EHFXAZ5tqY",
+   "views": 40979,
+   "multiple": 2.0,
    "shorts": true
   }
  ]

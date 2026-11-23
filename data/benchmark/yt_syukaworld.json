@@ -3,20 +3,46 @@
  "name": "슈카월드",
  "channel": "https://www.youtube.com/@syukaworld",
  "channelId": "UCJo6G1u0e_-wS-JQn3T-zEw",
- "checkedAt": "2026-11-23T08:33+09:00",
+ "checkedAt": "2026-11-23T15:00+09:00",
  "videos": [
+  {
+   "id": "WfUG7RabSZE",
+   "title": "지금이니",
+   "published": "2026-11-23T03:24:56+00:00",
+   "url": "https://www.youtube.com/shorts/WfUG7RabSZE",
+   "shorts": true,
+   "views": 14946,
+   "likes": 189,
+   "viewsGain": null,
+   "isNew": true,
+   "median": 123948,
+   "multiple": 0.1
+  },
+  {
+   "id": "CQSEHgbkdRU",
+   "title": "넌 왜 버티냐",
+   "published": "2026-11-23T02:49:15+00:00",
+   "url": "https://www.youtube.com/shorts/CQSEHgbkdRU",
+   "shorts": true,
+   "views": 24172,
+   "likes": 257,
+   "viewsGain": null,
+   "isNew": true,
+   "median": 123948,
+   "multiple": 0.2
+  },
   {
    "id": "YhH8Wtlfqro",
    "title": "유죄인간 94년생 듀오 [여의도엿듣기]",
    "published": "2026-11-21T09:00:03+00:00",
    "url": "https://www.youtube.com/watch?v=YhH8Wtlfqro",
    "shorts": false,
-   "views": 220277,
-   "likes": 1393,
-   "viewsGain": 12024,
+   "views": 233135,
+   "likes": 1438,
+   "viewsGain": 12858,
    "isNew": false,
-   "median": 161792.5,
-   "multiple": 1.4
+   "median": 198110.0,
+   "multiple": 1.2
   },
   {
    "id": "EreQuom0P2g",
@@ -24,11 +50,11 @@
    "published": "2026-11-21T08:02:38+00:00",
    "url": "https://www.youtube.com/shorts/EreQuom0P2g",
    "shorts": true,
-   "views": 66290,
-   "likes": 597,
-   "viewsGain": 2311,
+   "views": 68116,
+   "likes": 614,
+   "viewsGain": 1826,
    "isNew": false,
-   "median": 126750,
+   "median": 123948,
    "multiple": 0.5
   },
   {
@@ -37,12 +63,12 @@
    "published": "2026-11-20T08:00:00+00:00",
    "url": "https://www.youtube.com/shorts/E5x7qILvIa4",
    "shorts": true,
-   "views": 338394,
-   "likes": 4421,
-   "viewsGain": 5426,
+   "views": 345684,
+   "likes": 4558,
+   "viewsGain": 7290,
    "isNew": false,
-   "median": 126750,
-   "multiple": 2.7
+   "median": 123948,
+   "multiple": 2.8
   },
   {
    "id": "oiS9MY0zpFI",
@@ -50,11 +76,11 @@
    "published": "2026-11-20T03:14:13+00:00",
    "url": "https://www.youtube.com/shorts/oiS9MY0zpFI",
    "shorts": true,
-   "views": 121952,
-   "likes": 935,
-   "viewsGain": 1812,
+   "views": 123948,
+   "likes": 950,
+   "viewsGain": 1996,
    "isNew": false,
-   "median": 126750,
+   "median": 123948,
    "multiple": 1.0
   },
   {
@@ -63,12 +89,12 @@
    "published": "2026-11-19T09:52:15+00:00",
    "url": "https://www.youtube.com/shorts/JiKUxWsF5Ww",
    "shorts": true,
-   "views": 321247,
-   "likes": 2001,
-   "viewsGain": 5586,
+   "views": 326013,
+   "likes": 2038,
+   "viewsGain": 4766,
    "isNew": false,
-   "median": 126750,
-   "multiple": 2.5
+   "median": 123948,
+   "multiple": 2.6
   },
   {
    "id": "vai2XXhUsCk",
@@ -76,12 +102,12 @@
    "published": "2026-11-19T06:42:35+00:00",
    "url": "https://www.youtube.com/watch?v=vai2XXhUsCk",
    "shorts": false,
-   "views": 162849,
-   "likes": 941,
-   "viewsGain": 536,
+   "views": 163085,
+   "likes": 944,
+   "viewsGain": 236,
    "isNew": false,
-   "median": 161792.5,
-   "multiple": 1.0
+   "median": 198110.0,
+   "multiple": 0.8
   },
   {
    "id": "s4u1HCrqMJE",
@@ -89,12 +115,12 @@
    "published": "2026-11-18T08:45:11+00:00",
    "url": "https://www.youtube.com/shorts/s4u1HCrqMJE",
    "shorts": true,
-   "views": 257601,
-   "likes": 2152,
-   "viewsGain": 5530,
+   "views": 261700,
+   "likes": 2181,
+   "viewsGain": 4099,
    "isNew": false,
-   "median": 126750,
-   "multiple": 2.0
+   "median": 123948,
+   "multiple": 2.1
   },
   {
    "id": "Sva8MRMYh-4",
@@ -102,11 +128,11 @@
    "published": "2026-11-18T08:33:24+00:00",
    "url": "https://www.youtube.com/shorts/Sva8MRMYh-4",
    "shorts": true,
-   "views": 126750,
-   "likes": 885,
-   "viewsGain": 4106,
+   "views": 129327,
+   "likes": 903,
+   "viewsGain": 2577,
    "isNew": false,
-   "median": 126750,
+   "median": 123948,
    "multiple": 1.0
   },
   {
@@ -115,12 +141,12 @@
    "published": "2026-11-18T08:15:41+00:00",
    "url": "https://www.youtube.com/shorts/2mh-i_Cf_Gg",
    "shorts": true,
-   "views": 43686,
+   "views": 43894,
    "likes": 247,
-   "viewsGain": 523,
+   "viewsGain": 208,
    "isNew": false,
-   "median": 126750,
-   "multiple": 0.3
+   "median": 123948,
+   "multiple": 0.4
   },
   {
    "id": "tZdVu8G-104",
@@ -128,12 +154,12 @@
    "published": "2026-11-18T06:40:05+00:00",
    "url": "https://www.youtube.com/watch?v=tZdVu8G-104",
    "shorts": false,
-   "views": 156568,
+   "views": 156711,
    "likes": 897,
-   "viewsGain": 216,
+   "viewsGain": 143,
    "isNew": false,
-   "median": 161792.5,
-   "multiple": 1.0
+   "median": 198110.0,
+   "multiple": 0.8
   },
   {
    "id": "jsV0Gp3PyZM",
@@ -141,12 +167,12 @@
    "published": "2026-11-18T02:18:09+00:00",
    "url": "https://www.youtube.com/shorts/jsV0Gp3PyZM",
    "shorts": true,
-   "views": 181516,
-   "likes": 1446,
-   "viewsGain": 5381,
+   "views": 185556,
+   "likes": 1466,
+   "viewsGain": 4040,
    "isNew": false,
-   "median": 126750,
-   "multiple": 1.4
+   "median": 123948,
+   "multiple": 1.5
   },
   {
    "id": "kJeO9iXUse4",
@@ -154,11 +180,11 @@
    "published": "2026-11-17T11:16:19+00:00",
    "url": "https://www.youtube.com/shorts/kJeO9iXUse4",
    "shorts": true,
-   "views": 117348,
-   "likes": 677,
-   "viewsGain": 450,
+   "views": 117546,
+   "likes": 678,
+   "viewsGain": 198,
    "isNew": false,
-   "median": 126750,
+   "median": 123948,
    "multiple": 0.9
   },
   {
@@ -167,68 +193,42 @@
    "published": "2026-11-17T09:29:46+00:00",
    "url": "https://www.youtube.com/watch?v=XKmD-M7rWO0",
    "shorts": false,
-   "views": 402721,
-   "likes": 2072,
-   "viewsGain": 9163,
+   "views": 409466,
+   "likes": 2084,
+   "viewsGain": 6745,
    "isNew": false,
-   "median": 161792.5,
-   "multiple": 2.5
-  },
-  {
-   "id": "yT1Rei0xDVc",
-   "title": "황동현 '외국인들과 기관은 오늘도 떠난다'ㅣ니니 'AI가 주식과 시험판을 모두 흔들고 있다'ㅣ김열매 'AI&데이터센터, 사모펀드들은 어떻게 볼까'",
-   "published": "2026-11-16T12:11:16+00:00",
-   "url": "https://www.youtube.com/watch?v=yT1Rei0xDVc",
-   "shorts": false,
-   "views": 155572,
-   "likes": 973,
-   "viewsGain": 242,
-   "isNew": false,
-   "median": 161792.5,
-   "multiple": 1.0
-  },
-  {
-   "id": "lGfmyzMMof0",
-   "title": "[슈카의 시황방송] 11월16일ㅣ외국인은 왜 오늘도 반도체를 던졌을까, AI 안경으로 분석하기",
-   "published": "2026-11-16T06:36:19+00:00",
-   "url": "https://www.youtube.com/watch?v=lGfmyzMMof0",
-   "shorts": false,
-   "views": 160736,
-   "likes": 1146,
-   "viewsGain": 359,
-   "isNew": false,
-   "median": 161792.5,
-   "multiple": 1.0
+   "median": 198110.0,
+   "multiple": 2.1
   }
  ],
  "viral": [
   {
    "title": "쇼츠 찍자",
    "url": "https://www.youtube.com/shorts/E5x7qILvIa4",
-   "views": 338394,
-   "multiple": 2.7,
+   "views": 345684,
+   "multiple": 2.8,
    "shorts": true
   },
   {
    "title": "번호 4로 서울대의대 간 사람",
    "url": "https://www.youtube.com/shorts/JiKUxWsF5Ww",
-   "views": 321247,
-   "multiple": 2.5,
+   "views": 326013,
+   "multiple": 2.6,
+   "shorts": true
+  },
+  {
+   "title": "니황이 조롱당하면 저점이다. 나는 이 이야기를 참 좋아한다.",
+   "url": "https://www.youtube.com/shorts/s4u1HCrqMJE",
+   "views": 261700,
+   "multiple": 2.1,
    "shorts": true
   },
   {
    "title": "엔비디아는 왜 갑자기 위기를 맞이했을까(음모론)",
    "url": "https://www.youtube.com/watch?v=XKmD-M7rWO0",
-   "views": 402721,
-   "multiple": 2.5,
+   "views": 409466,
+   "multiple": 2.1,
    "shorts": false
-  },
-  {
-   "title": "니황이 조롱당하면 저점이다. 나는 이 이야기를 참 좋아한다.",
-   "url": "https://www.youtube.com/shorts/s4u1HCrqMJE",
-   "views": 257601,
-   "multiple": 2.0,
-   "shorts": true
   }
  ]
 }

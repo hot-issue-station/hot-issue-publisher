@@ -1,14 +1,14 @@
 {
  "name": "안원잘부",
  "channel": "https://www.youtube.com/@helloiamwoninicetomeetyou",
- "checkedAt": "2026-11-23T08:33+09:00",
+ "checkedAt": "2026-11-23T14:59+09:00",
  "subscribers": "245만",
  "videos": [
   {
    "id": "N3MX2W5_Zfs",
    "title": "디즈니 영화 OST가 된 이유",
-   "views": 1360000,
-   "viewsText": "조회수 136만회",
+   "views": 1370000,
+   "viewsText": "조회수 137만회",
    "published": "",
    "kind": "short",
    "gain": 10000
@@ -20,7 +20,7 @@
    "viewsText": "조회수 189만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "DKDmFgXzxs8",
@@ -29,7 +29,7 @@
    "viewsText": "조회수 278만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "zxNoW_LtVLE",
@@ -56,7 +56,7 @@
    "viewsText": "조회수 629만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "GsYq_ouLAMQ",
@@ -106,11 +106,11 @@
   {
    "id": "o-B0F16GwL0",
    "title": "[B컷] 의자 안 돌아가요",
-   "views": 13700000,
-   "viewsText": "조회수 1370만회",
+   "views": 13710000,
+   "viewsText": "조회수 1371만회",
    "published": "",
    "kind": "short",
-   "gain": 20000
+   "gain": 10000
   },
   {
    "id": "gNJrbCSN2TM",
@@ -191,7 +191,7 @@
    "viewsText": "조회수 258만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "y2TOOxHF35E",
@@ -227,7 +227,7 @@
    "viewsText": "조회수 491만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "LVr2R5_TFME",
@@ -281,7 +281,7 @@
    "viewsText": "조회수 109만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "OmjUI2EQiPw",
@@ -335,7 +335,7 @@
    "viewsText": "조회수 550만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "xsNWeKpL5IQ",

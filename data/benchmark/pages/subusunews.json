@@ -1,80 +1,88 @@
 {
  "name": "스브스뉴스 (SBS)",
  "channel": "https://www.youtube.com/@subusunews",
- "checkedAt": "2026-11-23T08:33+09:00",
+ "checkedAt": "2026-11-23T14:59+09:00",
  "subscribers": "145만",
  "videos": [
   {
+   "id": "vDHKpDygPZY",
+   "title": "당신이 몰랐던 농심 너구리의 정체 #너구리 #shorts #스브스뉴스",
+   "views": 894,
+   "viewsText": "조회수 894회",
+   "published": "",
+   "kind": "short"
+  },
+  {
    "id": "olaKZkE3I-s",
    "title": "무서워요 #너구리 #shorts #스브스뉴스",
-   "views": 11000,
-   "viewsText": "조회수 1.1만회",
+   "views": 13000,
+   "viewsText": "조회수 1.3만회",
    "published": "",
    "kind": "short",
-   "gain": 8200
+   "gain": 2000
   },
   {
    "id": "gmcxeCXntLo",
    "title": "강한 자만 결혼할 수 있음",
-   "views": 6600,
-   "viewsText": "조회수 6.6천회",
+   "views": 9000,
+   "viewsText": "조회수 9천회",
    "published": "",
    "kind": "short",
-   "gain": 4200
+   "gain": 2400
   },
   {
    "id": "ThgVuf9l2Ms",
    "title": "결혼식 평론계의 이동진",
-   "views": 3800,
-   "viewsText": "조회수 3.8천회",
+   "views": 6100,
+   "viewsText": "조회수 6.1천회",
    "published": "",
    "kind": "short",
-   "gain": 2100
+   "gain": 2300
   },
   {
    "id": "KiHKqusUC3g",
    "title": "미대생까지 섭외한다는 요즘 드레스 투어 근황",
-   "views": 6900,
-   "viewsText": "조회수 6.9천회",
+   "views": 9100,
+   "viewsText": "조회수 9.1천회",
    "published": "",
    "kind": "short",
-   "gain": 4200
+   "gain": 2200
   },
   {
    "id": "X2up1p7K8R4",
    "title": "ZR",
-   "views": 7400,
-   "viewsText": "조회수 7.4천회",
+   "views": 8600,
+   "viewsText": "조회수 8.6천회",
    "published": "",
    "kind": "short",
-   "gain": 2500
+   "gain": 1200
   },
   {
    "id": "K0tv4NW95bA",
    "title": "부케 준 신부의 뻔뻔한 부탁?",
-   "views": 3100,
-   "viewsText": "조회수 3.1천회",
+   "views": 3700,
+   "viewsText": "조회수 3.7천회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 600
   },
   {
    "id": "c3eXZAlf5pY",
    "title": "축가에도 세대가 있다",
-   "views": 9300,
-   "viewsText": "조회수 9.3천회",
+   "views": 10000,
+   "viewsText": "조회수 1만회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 700
   },
   {
    "id": "RBwdP8IKkeU",
    "title": "역대급 빌런에 빡친 통천이 내린 벌",
-   "views": 2800,
-   "viewsText": "조회수 2.8천회",
+   "views": 3000,
+   "viewsText": "조회수 3천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 200
   },
   {
    "id": "0Q8V13eqAkU",
@@ -83,16 +91,16 @@
    "viewsText": "조회수 1만회",
    "published": "",
    "kind": "short",
-   "gain": 200
+   "gain": 0
   },
   {
    "id": "EMLjBnedDMw",
    "title": "요즘 모바일 청첩장 특",
-   "views": 5700,
-   "viewsText": "조회수 5.7천회",
+   "views": 6300,
+   "viewsText": "조회수 6.3천회",
    "published": "",
    "kind": "short",
-   "gain": 900
+   "gain": 600
   },
   {
    "id": "W263pE8GnA4",
@@ -110,7 +118,7 @@
    "viewsText": "조회수 1.1만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "-QNTMLDSi9I",
@@ -133,11 +141,11 @@
   {
    "id": "ARw4xkmuhAE",
    "title": "빌런 퇴치법 알려드립니다",
-   "views": 3000,
-   "viewsText": "조회수 3천회",
+   "views": 3200,
+   "viewsText": "조회수 3.2천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 200
   },
   {
    "id": "mLULNEXcwAk",
@@ -344,22 +352,13 @@
    "viewsText": "조회수 1만회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "h8iBMhQ3b-Q",
    "title": "추워질수록 위험하다는 굴운자로 #굴 #shorts #스브스뉴스",
    "views": 7600,
    "viewsText": "조회수 7.6천회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "uO5xviR9-aM",
-   "title": "유독 정치판에서 사이비 종교 논란이 자주 터지는 이유 #사이비 #shorts #스브스뉴스",
-   "views": 4800,
-   "viewsText": "조회수 4.8천회",
    "published": "",
    "kind": "short",
    "gain": 0
