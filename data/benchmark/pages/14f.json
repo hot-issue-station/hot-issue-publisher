@@ -1,14 +1,14 @@
 {
  "name": "14F 일사에프 (MBC)",
  "channel": "https://www.youtube.com/@14FMBC",
- "checkedAt": "2026-11-23T19:41+09:00",
+ "checkedAt": "2026-11-23T22:58+09:00",
  "subscribers": "239만",
  "videos": [
   {
    "id": "NyxPbpN3Uyo",
    "title": "한국인 드립에 감동한 영국 소시지 아저씨#shorts",
-   "views": 6400,
-   "viewsText": "조회수 6.4천회",
+   "views": 6500,
+   "viewsText": "조회수 6.5천회",
    "published": "",
    "kind": "short",
    "gain": 100
@@ -25,17 +25,17 @@
   {
    "id": "1SOf5BtCrok",
    "title": "한국은 왜 구호 현장에 일자리를 만들까? #shorts",
-   "views": 4300,
-   "viewsText": "조회수 4.3천회",
+   "views": 4400,
+   "viewsText": "조회수 4.4천회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 100
   },
   {
    "id": "wlN76TIzAEM",
    "title": "천만 조회수의 남자, 소시지 아저씨의 포포몬쓰★ #shorts",
-   "views": 5100,
-   "viewsText": "조회수 5.1천회",
+   "views": 5200,
+   "viewsText": "조회수 5.2천회",
    "published": "",
    "kind": "short",
    "gain": 100
@@ -47,13 +47,13 @@
    "viewsText": "조회수 6.8천회",
    "published": "",
    "kind": "short",
-   "gain": 200
+   "gain": 0
   },
   {
    "id": "Tr0LbpRFtFk",
    "title": "백제는 삼국 통일을 할 필요가 없었다? #shorts",
-   "views": 24000,
-   "viewsText": "조회수 2.4만회",
+   "views": 25000,
+   "viewsText": "조회수 2.5만회",
    "published": "",
    "kind": "short",
    "gain": 1000
@@ -83,7 +83,7 @@
    "viewsText": "조회수 8.4천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "CTJ-rsjJdyU",
