@@ -3,7 +3,7 @@
  "name": "14F 일사에프 (MBC)",
  "channel": "https://www.youtube.com/@14FMBC",
  "channelId": "UCLKuglhGlMmDteQKoniENIQ",
- "checkedAt": "2026-11-23T22:58+09:00",
+ "checkedAt": "2026-11-24T08:42+09:00",
  "videos": [
   {
    "id": "FzyMQzDL5bw",
@@ -11,12 +11,12 @@
    "published": "2026-11-23T10:11:13+00:00",
    "url": "https://www.youtube.com/watch?v=FzyMQzDL5bw",
    "shorts": false,
-   "views": 33169,
-   "likes": 357,
-   "viewsGain": 30660,
+   "views": 68061,
+   "likes": 473,
+   "viewsGain": 34892,
    "isNew": false,
-   "median": 124432.0,
-   "multiple": 0.3
+   "median": 138248.0,
+   "multiple": 0.5
   },
   {
    "id": "Mjs8_P7FstM",
@@ -24,12 +24,12 @@
    "published": "2026-11-23T09:00:32+00:00",
    "url": "https://www.youtube.com/watch?v=Mjs8_P7FstM",
    "shorts": false,
-   "views": 81138,
-   "likes": 545,
-   "viewsGain": 72346,
+   "views": 140133,
+   "likes": 711,
+   "viewsGain": 58995,
    "isNew": false,
-   "median": 124432.0,
-   "multiple": 0.7
+   "median": 138248.0,
+   "multiple": 1.0
   },
   {
    "id": "NyxPbpN3Uyo",
@@ -37,11 +37,11 @@
    "published": "2026-11-21T04:00:03+00:00",
    "url": "https://www.youtube.com/shorts/NyxPbpN3Uyo",
    "shorts": true,
-   "views": 6529,
+   "views": 6606,
    "likes": 63,
-   "viewsGain": 45,
+   "viewsGain": 77,
    "isNew": false,
-   "median": 6529,
+   "median": 6606,
    "multiple": 1.0
   },
   {
@@ -50,12 +50,12 @@
    "published": "2026-11-20T23:00:30+00:00",
    "url": "https://www.youtube.com/shorts/VKzh4gQvEIU",
    "shorts": true,
-   "views": 15615,
-   "likes": 177,
-   "viewsGain": 187,
+   "views": 16360,
+   "likes": 180,
+   "viewsGain": 745,
    "isNew": false,
-   "median": 6529,
-   "multiple": 2.4
+   "median": 6606,
+   "multiple": 2.5
   },
   {
    "id": "_pBAM8GDWo8",
@@ -63,11 +63,11 @@
    "published": "2026-11-20T08:30:37+00:00",
    "url": "https://www.youtube.com/watch?v=_pBAM8GDWo8",
    "shorts": false,
-   "views": 62399,
-   "likes": 382,
-   "viewsGain": 1294,
+   "views": 63346,
+   "likes": 387,
+   "viewsGain": 947,
    "isNew": false,
-   "median": 124432.0,
+   "median": 138248.0,
    "multiple": 0.5
   },
   {
@@ -76,11 +76,11 @@
    "published": "2026-11-20T08:30:15+00:00",
    "url": "https://www.youtube.com/shorts/1SOf5BtCrok",
    "shorts": true,
-   "views": 4454,
-   "likes": 42,
-   "viewsGain": 75,
+   "views": 4567,
+   "likes": 43,
+   "viewsGain": 113,
    "isNew": false,
-   "median": 6529,
+   "median": 6606,
    "multiple": 0.7
   },
   {
@@ -89,11 +89,11 @@
    "published": "2026-11-20T04:00:30+00:00",
    "url": "https://www.youtube.com/shorts/wlN76TIzAEM",
    "shorts": true,
-   "views": 5212,
+   "views": 5326,
    "likes": 20,
-   "viewsGain": 38,
+   "viewsGain": 114,
    "isNew": false,
-   "median": 6529,
+   "median": 6606,
    "multiple": 0.8
   },
   {
@@ -102,12 +102,12 @@
    "published": "2026-11-20T03:00:19+00:00",
    "url": "https://www.youtube.com/shorts/n13XS1CuP3Q",
    "shorts": true,
-   "views": 6841,
-   "likes": 40,
-   "viewsGain": 37,
+   "views": 6987,
+   "likes": 41,
+   "viewsGain": 146,
    "isNew": false,
-   "median": 6529,
-   "multiple": 1.0
+   "median": 6606,
+   "multiple": 1.1
   },
   {
    "id": "Tr0LbpRFtFk",
@@ -115,12 +115,12 @@
    "published": "2026-11-19T23:00:03+00:00",
    "url": "https://www.youtube.com/shorts/Tr0LbpRFtFk",
    "shorts": true,
-   "views": 25687,
-   "likes": 208,
-   "viewsGain": 1046,
+   "views": 27814,
+   "likes": 215,
+   "viewsGain": 2127,
    "isNew": false,
-   "median": 6529,
-   "multiple": 3.9
+   "median": 6606,
+   "multiple": 4.2
   },
   {
    "id": "XtDXa41EHTw",
@@ -128,12 +128,12 @@
    "published": "2026-11-19T10:16:53+00:00",
    "url": "https://www.youtube.com/watch?v=XtDXa41EHTw",
    "shorts": false,
-   "views": 383479,
-   "likes": 1129,
-   "viewsGain": 6693,
+   "views": 389044,
+   "likes": 1147,
+   "viewsGain": 5565,
    "isNew": false,
-   "median": 124432.0,
-   "multiple": 3.1
+   "median": 138248.0,
+   "multiple": 2.8
   },
   {
    "id": "UVXV3vZmzsQ",
@@ -141,12 +141,12 @@
    "published": "2026-11-19T09:00:28+00:00",
    "url": "https://www.youtube.com/watch?v=UVXV3vZmzsQ",
    "shorts": false,
-   "views": 113444,
-   "likes": 933,
-   "viewsGain": 2133,
+   "views": 115090,
+   "likes": 941,
+   "viewsGain": 1646,
    "isNew": false,
-   "median": 124432.0,
-   "multiple": 0.9
+   "median": 138248.0,
+   "multiple": 0.8
   },
   {
    "id": "WbzEeAb50UY",
@@ -154,12 +154,12 @@
    "published": "2026-11-18T09:59:07+00:00",
    "url": "https://www.youtube.com/watch?v=WbzEeAb50UY",
    "shorts": false,
-   "views": 276231,
-   "likes": 1168,
-   "viewsGain": 748,
+   "views": 276869,
+   "likes": 1173,
+   "viewsGain": 638,
    "isNew": false,
-   "median": 124432.0,
-   "multiple": 2.2
+   "median": 138248.0,
+   "multiple": 2.0
   },
   {
    "id": "Mv1Y2_lA-pQ",
@@ -167,12 +167,12 @@
    "published": "2026-11-18T08:30:29+00:00",
    "url": "https://www.youtube.com/watch?v=Mv1Y2_lA-pQ",
    "shorts": false,
-   "views": 135420,
-   "likes": 1043,
-   "viewsGain": 899,
+   "views": 136363,
+   "likes": 1047,
+   "viewsGain": 943,
    "isNew": false,
-   "median": 124432.0,
-   "multiple": 1.1
+   "median": 138248.0,
+   "multiple": 1.0
   },
   {
    "id": "abobZ7JfTek",
@@ -180,11 +180,11 @@
    "published": "2026-11-18T03:00:40+00:00",
    "url": "https://www.youtube.com/shorts/abobZ7JfTek",
    "shorts": true,
-   "views": 4322,
-   "likes": 37,
-   "viewsGain": 7,
+   "views": 4351,
+   "likes": 38,
+   "viewsGain": 29,
    "isNew": false,
-   "median": 6529,
+   "median": 6606,
    "multiple": 0.7
   },
   {
@@ -193,41 +193,41 @@
    "published": "2026-11-17T09:48:41+00:00",
    "url": "https://www.youtube.com/watch?v=lEpjsxSLfB8",
    "shorts": false,
-   "views": 145706,
-   "likes": 513,
-   "viewsGain": 790,
+   "views": 146475,
+   "likes": 514,
+   "viewsGain": 769,
    "isNew": false,
-   "median": 124432.0,
-   "multiple": 1.2
+   "median": 138248.0,
+   "multiple": 1.1
   }
  ],
  "viral": [
   {
    "title": "백제는 삼국 통일을 할 필요가 없었다? #shorts",
    "url": "https://www.youtube.com/shorts/Tr0LbpRFtFk",
-   "views": 25687,
-   "multiple": 3.9,
+   "views": 27814,
+   "multiple": 4.2,
    "shorts": true
   },
   {
    "title": "써브웨이 vs 버거킹… 가성비 한 끼 경쟁에 ‘토스트집’은 못 끼는 이유 / 14F",
    "url": "https://www.youtube.com/watch?v=XtDXa41EHTw",
-   "views": 383479,
-   "multiple": 3.1,
+   "views": 389044,
+   "multiple": 2.8,
    "shorts": false
   },
   {
    "title": "일본이 천황 무덤 발굴을 막는 이유 #shorts",
    "url": "https://www.youtube.com/shorts/VKzh4gQvEIU",
-   "views": 15615,
-   "multiple": 2.4,
+   "views": 16360,
+   "multiple": 2.5,
    "shorts": true
   },
   {
    "title": "몽골에 이어 카자흐스탄에도… 현지에서 핫플된 ‘CU 편의점’ / 14F",
    "url": "https://www.youtube.com/watch?v=WbzEeAb50UY",
-   "views": 276231,
-   "multiple": 2.2,
+   "views": 276869,
+   "multiple": 2.0,
    "shorts": false
   }
  ]

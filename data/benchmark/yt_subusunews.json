@@ -3,7 +3,7 @@
  "name": "스브스뉴스 (SBS)",
  "channel": "https://www.youtube.com/@subusunews",
  "channelId": "UCxPClUl0bh7BgJajD5k483g",
- "checkedAt": "2026-11-23T22:58+09:00",
+ "checkedAt": "2026-11-24T08:42+09:00",
  "videos": [
   {
    "id": "yjBIZCfeUHo",
@@ -11,12 +11,12 @@
    "published": "2026-11-20T09:00:22+00:00",
    "url": "https://www.youtube.com/shorts/yjBIZCfeUHo",
    "shorts": true,
-   "views": 24801,
-   "likes": 312,
-   "viewsGain": 1255,
+   "views": 27459,
+   "likes": 364,
+   "viewsGain": 2658,
    "isNew": false,
-   "median": 20645.0,
-   "multiple": 1.2
+   "median": 20927.5,
+   "multiple": 1.3
   },
   {
    "id": "XePaN4Pjpmw",
@@ -24,11 +24,11 @@
    "published": "2026-11-20T09:00:10+00:00",
    "url": "https://www.youtube.com/shorts/XePaN4Pjpmw",
    "shorts": true,
-   "views": 11596,
+   "views": 11909,
    "likes": 77,
-   "viewsGain": 142,
+   "viewsGain": 313,
    "isNew": false,
-   "median": 20645.0,
+   "median": 20927.5,
    "multiple": 0.6
   },
   {
@@ -37,11 +37,11 @@
    "published": "2026-11-19T09:00:18+00:00",
    "url": "https://www.youtube.com/shorts/0ZiRmpIs0Eo",
    "shorts": true,
-   "views": 36912,
-   "likes": 562,
-   "viewsGain": 133,
+   "views": 37211,
+   "likes": 566,
+   "viewsGain": 299,
    "isNew": false,
-   "median": 20645.0,
+   "median": 20927.5,
    "multiple": 1.8
   },
   {
@@ -50,11 +50,11 @@
    "published": "2026-11-19T09:00:15+00:00",
    "url": "https://www.youtube.com/shorts/2EHFXAZ5tqY",
    "shorts": true,
-   "views": 41576,
-   "likes": 354,
-   "viewsGain": 349,
+   "views": 42162,
+   "likes": 353,
+   "viewsGain": 586,
    "isNew": false,
-   "median": 20645.0,
+   "median": 20927.5,
    "multiple": 2.0
   },
   {
@@ -63,11 +63,11 @@
    "published": "2026-11-18T09:19:20+00:00",
    "url": "https://www.youtube.com/shorts/3YsU2ZxLA0Y",
    "shorts": true,
-   "views": 8041,
+   "views": 8119,
    "likes": 174,
-   "viewsGain": 27,
+   "viewsGain": 78,
    "isNew": false,
-   "median": 20645.0,
+   "median": 20927.5,
    "multiple": 0.4
   },
   {
@@ -76,11 +76,11 @@
    "published": "2026-11-18T09:00:37+00:00",
    "url": "https://www.youtube.com/shorts/UvvmykR4X1Y",
    "shorts": true,
-   "views": 20513,
-   "likes": 510,
-   "viewsGain": 106,
+   "views": 21007,
+   "likes": 516,
+   "viewsGain": 494,
    "isNew": false,
-   "median": 20645.0,
+   "median": 20927.5,
    "multiple": 1.0
   },
   {
@@ -89,11 +89,11 @@
    "published": "2026-11-18T09:00:19+00:00",
    "url": "https://www.youtube.com/shorts/p2vgoVpjigI",
    "shorts": true,
-   "views": 28444,
-   "likes": 289,
-   "viewsGain": 1147,
+   "views": 29774,
+   "likes": 296,
+   "viewsGain": 1330,
    "isNew": false,
-   "median": 20645.0,
+   "median": 20927.5,
    "multiple": 1.4
   },
   {
@@ -102,11 +102,11 @@
    "published": "2026-11-18T09:00:15+00:00",
    "url": "https://www.youtube.com/shorts/pkpBqfEFmV0",
    "shorts": true,
-   "views": 8791,
+   "views": 8877,
    "likes": 96,
-   "viewsGain": 18,
+   "viewsGain": 86,
    "isNew": false,
-   "median": 20645.0,
+   "median": 20927.5,
    "multiple": 0.4
   },
   {
@@ -115,12 +115,12 @@
    "published": "2026-11-17T10:52:23+00:00",
    "url": "https://www.youtube.com/shorts/h_1QEshJHt0",
    "shorts": true,
-   "views": 49564,
-   "likes": 1506,
-   "viewsGain": 1076,
+   "views": 51842,
+   "likes": 1584,
+   "viewsGain": 2278,
    "isNew": false,
-   "median": 20645.0,
-   "multiple": 2.4
+   "median": 20927.5,
+   "multiple": 2.5
   },
   {
    "id": "jpVc9sPoKvs",
@@ -128,11 +128,11 @@
    "published": "2026-11-17T09:54:49+00:00",
    "url": "https://www.youtube.com/shorts/jpVc9sPoKvs",
    "shorts": true,
-   "views": 20777,
-   "likes": 213,
-   "viewsGain": 21,
+   "views": 20848,
+   "likes": 214,
+   "viewsGain": 71,
    "isNew": false,
-   "median": 20645.0,
+   "median": 20927.5,
    "multiple": 1.0
   },
   {
@@ -141,11 +141,11 @@
    "published": "2026-11-17T09:48:09+00:00",
    "url": "https://www.youtube.com/shorts/QebaUlVRMH4",
    "shorts": true,
-   "views": 42203,
-   "likes": 736,
-   "viewsGain": 65,
+   "views": 42510,
+   "likes": 737,
+   "viewsGain": 307,
    "isNew": false,
-   "median": 20645.0,
+   "median": 20927.5,
    "multiple": 2.0
   },
   {
@@ -154,11 +154,11 @@
    "published": "2026-11-17T09:46:50+00:00",
    "url": "https://www.youtube.com/shorts/uJp05ZMpBes",
    "shorts": true,
-   "views": 13669,
+   "views": 13747,
    "likes": 148,
-   "viewsGain": 56,
+   "viewsGain": 78,
    "isNew": false,
-   "median": 20645.0,
+   "median": 20927.5,
    "multiple": 0.7
   },
   {
@@ -167,9 +167,9 @@
    "published": "2026-11-17T09:00:24+00:00",
    "url": "https://www.youtube.com/watch?v=TWLm9dFAQAg",
    "shorts": false,
-   "views": 596983,
-   "likes": 8574,
-   "viewsGain": 3540,
+   "views": 603077,
+   "likes": 8602,
+   "viewsGain": 6094,
    "isNew": false,
    "median": null,
    "multiple": null
@@ -180,11 +180,11 @@
    "published": "2026-11-14T09:00:14+00:00",
    "url": "https://www.youtube.com/shorts/lnlJ2G8CryU",
    "shorts": true,
-   "views": 7645,
+   "views": 7664,
    "likes": 115,
-   "viewsGain": 7,
+   "viewsGain": 19,
    "isNew": false,
-   "median": 20645.0,
+   "median": 20927.5,
    "multiple": 0.4
   },
   {
@@ -193,11 +193,11 @@
    "published": "2026-11-14T09:00:09+00:00",
    "url": "https://www.youtube.com/shorts/vxPnYMZwBxM",
    "shorts": true,
-   "views": 5054,
+   "views": 5063,
    "likes": 32,
    "viewsGain": 9,
    "isNew": false,
-   "median": 20645.0,
+   "median": 20927.5,
    "multiple": 0.2
   }
  ],
@@ -205,21 +205,21 @@
   {
    "title": "8년 만에 처음 전하는 편지",
    "url": "https://www.youtube.com/shorts/h_1QEshJHt0",
-   "views": 49564,
-   "multiple": 2.4,
+   "views": 51842,
+   "multiple": 2.5,
    "shorts": true
   },
   {
    "title": "여단오 커플이 사귀게 된 썰",
    "url": "https://www.youtube.com/shorts/2EHFXAZ5tqY",
-   "views": 41576,
+   "views": 42162,
    "multiple": 2.0,
    "shorts": true
   },
   {
    "title": "꽃다발 선물도 차원이 다른 중국 스케일",
    "url": "https://www.youtube.com/shorts/QebaUlVRMH4",
-   "views": 42203,
+   "views": 42510,
    "multiple": 2.0,
    "shorts": true
   }

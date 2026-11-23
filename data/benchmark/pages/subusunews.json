@@ -1,41 +1,44 @@
 {
  "name": "스브스뉴스 (SBS)",
  "channel": "https://www.youtube.com/@subusunews",
- "checkedAt": "2026-11-23T22:58+09:00",
+ "checkedAt": "2026-11-24T08:42+09:00",
  "subscribers": "145만",
  "videos": [
   {
    "id": "KDehtM0Jz0Y",
    "title": "이미 작년에 AI 의혹으로 재시험 치렀다는 ‘이 나라’ #아르헨티나 #shorts #스브스뉴스",
-   "views": 581,
-   "viewsText": "조회수 581회",
+   "views": 2400,
+   "viewsText": "조회수 2.4천회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 1819
   },
   {
    "id": "PQeUrlmMlGE",
    "title": "합의라는 이름하에 가해지는 무차별 학교 폭력 #야차룰 #shorts #스브스뉴스",
-   "views": 353,
-   "viewsText": "조회수 353회",
+   "views": 1800,
+   "viewsText": "조회수 1.8천회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 1447
   },
   {
    "id": "y6vCxLpdqds",
    "title": "한전에서 또다시 개인정보 유출 사고 #한전 #shorts #스브스뉴스",
-   "views": 1000,
-   "viewsText": "조회수 1천회",
+   "views": 2900,
+   "viewsText": "조회수 2.9천회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 1900
   },
   {
    "id": "vDHKpDygPZY",
    "title": "당신이 몰랐던 농심 너구리의 정체 #너구리 #shorts #스브스뉴스",
-   "views": 2200,
-   "viewsText": "조회수 2.2천회",
+   "views": 5300,
+   "viewsText": "조회수 5.3천회",
    "published": "",
    "kind": "short",
-   "gain": 600
+   "gain": 3100
   },
   {
    "id": "olaKZkE3I-s",
@@ -44,29 +47,11 @@
    "viewsText": "조회수 1.5만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "gmcxeCXntLo",
    "title": "강한 자만 결혼할 수 있음",
-   "views": 10000,
-   "viewsText": "조회수 1만회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "ThgVuf9l2Ms",
-   "title": "결혼식 평론계의 이동진",
-   "views": 7500,
-   "viewsText": "조회수 7.5천회",
-   "published": "",
-   "kind": "short",
-   "gain": 600
-  },
-  {
-   "id": "KiHKqusUC3g",
-   "title": "미대생까지 섭외한다는 요즘 드레스 투어 근황",
    "views": 11000,
    "viewsText": "조회수 1.1만회",
    "published": "",
@@ -74,22 +59,40 @@
    "gain": 1000
   },
   {
-   "id": "X2up1p7K8R4",
-   "title": "ZR",
-   "views": 9700,
-   "viewsText": "조회수 9.7천회",
+   "id": "ThgVuf9l2Ms",
+   "title": "결혼식 평론계의 이동진",
+   "views": 8200,
+   "viewsText": "조회수 8.2천회",
    "published": "",
    "kind": "short",
-   "gain": 500
+   "gain": 700
+  },
+  {
+   "id": "KiHKqusUC3g",
+   "title": "미대생까지 섭외한다는 요즘 드레스 투어 근황",
+   "views": 13000,
+   "viewsText": "조회수 1.3만회",
+   "published": "",
+   "kind": "short",
+   "gain": 2000
+  },
+  {
+   "id": "X2up1p7K8R4",
+   "title": "ZR",
+   "views": 10000,
+   "viewsText": "조회수 1만회",
+   "published": "",
+   "kind": "short",
+   "gain": 300
   },
   {
    "id": "K0tv4NW95bA",
    "title": "부케 준 신부의 뻔뻔한 부탁?",
-   "views": 5000,
-   "viewsText": "조회수 5천회",
+   "views": 5400,
+   "viewsText": "조회수 5.4천회",
    "published": "",
    "kind": "short",
-   "gain": 600
+   "gain": 400
   },
   {
    "id": "c3eXZAlf5pY",
@@ -103,26 +106,26 @@
   {
    "id": "RBwdP8IKkeU",
    "title": "역대급 빌런에 빡친 통천이 내린 벌",
-   "views": 3000,
-   "viewsText": "조회수 3천회",
+   "views": 3100,
+   "viewsText": "조회수 3.1천회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 100
   },
   {
    "id": "0Q8V13eqAkU",
    "title": "돈까스클럽 정도는 가줘야 되나?",
-   "views": 10000,
-   "viewsText": "조회수 1만회",
+   "views": 11000,
+   "viewsText": "조회수 1.1만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 1000
   },
   {
    "id": "EMLjBnedDMw",
    "title": "요즘 모바일 청첩장 특",
-   "views": 6600,
-   "viewsText": "조회수 6.6천회",
+   "views": 6700,
+   "viewsText": "조회수 6.7천회",
    "published": "",
    "kind": "short",
    "gain": 100

@@ -1,104 +1,112 @@
 {
  "name": "YTN",
  "channel": "https://www.youtube.com/@ytnnews24",
- "checkedAt": "2026-11-23T22:58+09:00",
+ "checkedAt": "2026-11-24T08:42+09:00",
  "subscribers": "543만",
  "videos": [
   {
+   "id": "y-AYv-plObo",
+   "title": "성인 되자마자 법원 찾았다 #shorts / YTN",
+   "views": 300,
+   "viewsText": "조회수 300회",
+   "published": "",
+   "kind": "short"
+  },
+  {
    "id": "b55xoPlUHEA",
    "title": "최태원 이혼 마침표? #shorts / YTN",
-   "views": 14000,
-   "viewsText": "조회수 1.4만회",
+   "views": 24000,
+   "viewsText": "조회수 2.4만회",
    "published": "",
    "kind": "short",
-   "gain": 13860
+   "gain": 10000
   },
   {
    "id": "_rjILrCZaPA",
    "title": "\"얼마나 마셨냐\" 기자 질문에… #shorts / YTN",
-   "views": 34000,
-   "viewsText": "조회수 3.4만회",
+   "views": 100000,
+   "viewsText": "조회수 10만회",
    "published": "",
    "kind": "short",
-   "gain": 33947
+   "gain": 66000
   },
   {
    "id": "Eyn6s4mh2LM",
    "title": "관람객 실수로 '꿀꺽' #shorts / YTN",
-   "views": 21000,
-   "viewsText": "조회수 2.1만회",
+   "views": 38000,
+   "viewsText": "조회수 3.8만회",
    "published": "",
    "kind": "short",
-   "gain": 19900
+   "gain": 17000
   },
   {
    "id": "qe0lp4O-5VA",
    "title": "귀신이 타고 있어요 #shorts / YTN",
-   "views": 270000,
-   "viewsText": "조회수 27만회",
+   "views": 630000,
+   "viewsText": "조회수 63만회",
    "published": "",
    "kind": "short",
-   "gain": 232000
+   "gain": 360000
   },
   {
    "id": "m91Zov5DO4E",
    "title": "일본 '여기'까지 왔다 #shorts / YTN",
-   "views": 7200,
-   "viewsText": "조회수 7.2천회",
+   "views": 9600,
+   "viewsText": "조회수 9.6천회",
    "published": "",
    "kind": "short",
-   "gain": 4300
+   "gain": 2400
   },
   {
    "id": "I50HqU4as90",
    "title": "엔저면 뭐해... #shorts / YTN",
-   "views": 5300,
-   "viewsText": "조회수 5.3천회",
+   "views": 6500,
+   "viewsText": "조회수 6.5천회",
    "published": "",
    "kind": "short",
-   "gain": 2500
+   "gain": 1200
   },
   {
    "id": "vszpaU9A6BM",
    "title": "올해 수능 국어 풀게 했더니 #shorts / YTN",
-   "views": 170000,
-   "viewsText": "조회수 17만회",
+   "views": 440000,
+   "viewsText": "조회수 44만회",
    "published": "",
    "kind": "short",
-   "gain": 130000
+   "gain": 270000
   },
   {
    "id": "8J3UHTqwZ9Q",
    "title": "에이~ 이거 게임 화면이죠? #shorts / YTN",
-   "views": 8100,
-   "viewsText": "조회수 8.1천회",
-   "published": "",
-   "kind": "short",
-   "gain": 3300
-  },
-  {
-   "id": "sirNbv40kvo",
-   "title": "음료까지 맞았다 #shorts / YTN",
-   "views": 3400,
-   "viewsText": "조회수 3.4천회",
+   "views": 9500,
+   "viewsText": "조회수 9.5천회",
    "published": "",
    "kind": "short",
    "gain": 1400
   },
   {
-   "id": "f0nz7ofipXs",
-   "title": "이진우 사인본 가격 폭등 #shorts / YTN",
-   "views": 2300,
-   "viewsText": "조회수 2.3천회",
+   "id": "sirNbv40kvo",
+   "title": "음료까지 맞았다 #shorts / YTN",
+   "views": 4500,
+   "viewsText": "조회수 4.5천회",
    "published": "",
    "kind": "short",
-   "gain": 600
+   "gain": 1100
+  },
+  {
+   "id": "f0nz7ofipXs",
+   "title": "이진우 사인본 가격 폭등 #shorts / YTN",
+   "views": 2600,
+   "viewsText": "조회수 2.6천회",
+   "published": "",
+   "kind": "short",
+   "gain": 300
   },
   {
    "id": "mFBX7jsPEN0",
    "title": "\"기억 안 나\" 발뺌 #shorts / YTN",
-   "views": 7300,
-   "viewsText": "조회수 7.3천회",
+   "views": 8800,
+   "viewsText": "조회수 8.8천회",
    "published": "",
    "kind": "short",
    "gain": 1500
@@ -106,20 +114,20 @@
   {
    "id": "eXFL5gUowt0",
    "title": "성인 되자 '변경 완료' #shorts / YTN",
-   "views": 13000,
-   "viewsText": "조회수 1.3만회",
+   "views": 15000,
+   "viewsText": "조회수 1.5만회",
    "published": "",
    "kind": "short",
-   "gain": 3000
+   "gain": 2000
   },
   {
    "id": "YUoVli2wHCY",
    "title": "'천원빵'의 비결... #shorts / YTN",
-   "views": 5400,
-   "viewsText": "조회수 5.4천회",
+   "views": 11000,
+   "viewsText": "조회수 1.1만회",
    "published": "",
    "kind": "short",
-   "gain": 1700
+   "gain": 5600
   },
   {
    "id": "iW7aiF_YMkI",
@@ -128,40 +136,40 @@
    "viewsText": "조회수 1.5만회",
    "published": "",
    "kind": "short",
-   "gain": 2000
+   "gain": 0
   },
   {
    "id": "dbFkRMB4u5Q",
    "title": "랜드로버 디자인 '복붙' 논란 #shorts / YTN",
-   "views": 27000,
-   "viewsText": "조회수 2.7만회",
+   "views": 36000,
+   "viewsText": "조회수 3.6만회",
+   "published": "",
+   "kind": "short",
+   "gain": 9000
+  },
+  {
+   "id": "X0XsfGnydLQ",
+   "title": "시험만 봤다 하면...  #shorts / YTN",
+   "views": 4900,
+   "viewsText": "조회수 4.9천회",
+   "published": "",
+   "kind": "short",
+   "gain": 400
+  },
+  {
+   "id": "Nq6acqXdxN0",
+   "title": "아빠가 미안해... #shorts / YTN",
+   "views": 110000,
+   "viewsText": "조회수 11만회",
    "published": "",
    "kind": "short",
    "gain": 10000
   },
   {
-   "id": "X0XsfGnydLQ",
-   "title": "시험만 봤다 하면...  #shorts / YTN",
-   "views": 4500,
-   "viewsText": "조회수 4.5천회",
-   "published": "",
-   "kind": "short",
-   "gain": 600
-  },
-  {
-   "id": "Nq6acqXdxN0",
-   "title": "아빠가 미안해... #shorts / YTN",
-   "views": 100000,
-   "viewsText": "조회수 10만회",
-   "published": "",
-   "kind": "short",
-   "gain": 2000
-  },
-  {
    "id": "tXWfsadA22w",
    "title": "수능과 함께 사라지다 #shorts / YTN",
-   "views": 6200,
-   "viewsText": "조회수 6.2천회",
+   "views": 6500,
+   "viewsText": "조회수 6.5천회",
    "published": "",
    "kind": "short",
    "gain": 300
@@ -169,8 +177,8 @@
   {
    "id": "8faHsYpdoSc",
    "title": "설마 3차세계대전?  #shorts / YTN",
-   "views": 26000,
-   "viewsText": "조회수 2.6만회",
+   "views": 27000,
+   "viewsText": "조회수 2.7만회",
    "published": "",
    "kind": "short",
    "gain": 1000
@@ -182,7 +190,7 @@
    "viewsText": "조회수 1.6천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "f9YAX0lSH6g",
@@ -200,16 +208,16 @@
    "viewsText": "조회수 1.9천회",
    "published": "",
    "kind": "short",
-   "gain": 200
+   "gain": 0
   },
   {
    "id": "Zs1VOw6g5wY",
    "title": "AI시대 수험생 필수템  #shorts / YTN",
-   "views": 21000,
-   "viewsText": "조회수 2.1만회",
+   "views": 22000,
+   "viewsText": "조회수 2.2만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 1000
   },
   {
    "id": "BSBs8akD5vw",
@@ -232,20 +240,20 @@
   {
    "id": "8cnWygTSDNU",
    "title": "AI 잘 쓰는 학생들 반응 ㄷㄷ.. #shorts/ YTN",
-   "views": 12000,
-   "viewsText": "조회수 1.2만회",
+   "views": 13000,
+   "viewsText": "조회수 1.3만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 1000
   },
   {
    "id": "VOpWgcfQYh0",
    "title": "배종옥의 쓴(소리)? / YTN",
-   "views": 6700,
-   "viewsText": "조회수 6.7천회",
+   "views": 6800,
+   "viewsText": "조회수 6.8천회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 100
   },
   {
    "id": "VNC_Wri3hQU",
@@ -295,11 +303,11 @@
   {
    "id": "zgWVG-Dxs7s",
    "title": "일론 머스크의 '우월주의'? #shorts / 이슈의 서재",
-   "views": 6800,
-   "viewsText": "조회수 6.8천회",
+   "views": 6900,
+   "viewsText": "조회수 6.9천회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 100
   },
   {
    "id": "SE5HHt3G248",
@@ -317,7 +325,7 @@
    "viewsText": "조회수 8.2천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "9z8tJCAFDro",
@@ -344,22 +352,13 @@
    "viewsText": "조회수 8.1천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "hOiVt31bTy8",
    "title": "전용기 대신 '이코노미' #shorts / YTN",
    "views": 600000,
    "viewsText": "조회수 60만회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "UT_BwOBhf5E",
-   "title": "컴포즈커피 본사 사과한 영상 #shorts / YTN",
-   "views": 120000,
-   "viewsText": "조회수 12만회",
    "published": "",
    "kind": "short",
    "gain": 0
