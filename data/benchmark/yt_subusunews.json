@@ -3,20 +3,33 @@
  "name": "스브스뉴스 (SBS)",
  "channel": "https://www.youtube.com/@subusunews",
  "channelId": "UCxPClUl0bh7BgJajD5k483g",
- "checkedAt": "2026-11-24T19:32+09:00",
+ "checkedAt": "2026-11-24T22:54+09:00",
  "videos": [
   {
+   "id": "hBwgRgFJLoo",
+   "title": "꿈을 포기하지 않아 준 나에게 보내는 편지",
+   "published": "2026-11-24T10:46:19+00:00",
+   "url": "https://www.youtube.com/shorts/hBwgRgFJLoo",
+   "shorts": true,
+   "views": 2288,
+   "likes": 31,
+   "viewsGain": null,
+   "isNew": true,
+   "median": 21143.0,
+   "multiple": 0.1
+  },
+  {
    "id": "9tcTOay3lzA",
-   "title": "김향기가 흑역사를극복하는 방법",
+   "title": "김향기가 흑역사를 극복하는 방법",
    "published": "2026-11-24T09:32:32+00:00",
    "url": "https://www.youtube.com/shorts/9tcTOay3lzA",
    "shorts": true,
-   "views": 614,
-   "likes": 13,
-   "viewsGain": null,
-   "isNew": true,
-   "median": 21084.0,
-   "multiple": 0.0
+   "views": 1567,
+   "likes": 30,
+   "viewsGain": 953,
+   "isNew": false,
+   "median": 21143.0,
+   "multiple": 0.1
   },
   {
    "id": "uy1NI4tsPiU",
@@ -24,12 +37,12 @@
    "published": "2026-11-24T09:31:18+00:00",
    "url": "https://www.youtube.com/shorts/uy1NI4tsPiU",
    "shorts": true,
-   "views": 398,
-   "likes": 4,
-   "viewsGain": null,
-   "isNew": true,
-   "median": 21084.0,
-   "multiple": 0.0
+   "views": 1092,
+   "likes": 18,
+   "viewsGain": 694,
+   "isNew": false,
+   "median": 21143.0,
+   "multiple": 0.1
   },
   {
    "id": "unZzsissHE4",
@@ -37,10 +50,10 @@
    "published": "2026-11-24T09:00:01+00:00",
    "url": "https://www.youtube.com/watch?v=unZzsissHE4",
    "shorts": false,
-   "views": 1434,
-   "likes": 91,
-   "viewsGain": null,
-   "isNew": true,
+   "views": 10395,
+   "likes": 277,
+   "viewsGain": 8961,
+   "isNew": false,
    "median": null,
    "multiple": null
   },
@@ -50,11 +63,11 @@
    "published": "2026-11-20T09:00:22+00:00",
    "url": "https://www.youtube.com/shorts/yjBIZCfeUHo",
    "shorts": true,
-   "views": 28958,
-   "likes": 373,
-   "viewsGain": 461,
+   "views": 29254,
+   "likes": 374,
+   "viewsGain": 296,
    "isNew": false,
-   "median": 21084.0,
+   "median": 21143.0,
    "multiple": 1.4
   },
   {
@@ -63,11 +76,11 @@
    "published": "2026-11-20T09:00:10+00:00",
    "url": "https://www.youtube.com/shorts/XePaN4Pjpmw",
    "shorts": true,
-   "views": 12221,
-   "likes": 78,
-   "viewsGain": 139,
+   "views": 12286,
+   "likes": 79,
+   "viewsGain": 65,
    "isNew": false,
-   "median": 21084.0,
+   "median": 21143.0,
    "multiple": 0.6
   },
   {
@@ -76,11 +89,11 @@
    "published": "2026-11-19T09:00:18+00:00",
    "url": "https://www.youtube.com/shorts/0ZiRmpIs0Eo",
    "shorts": true,
-   "views": 37705,
-   "likes": 568,
-   "viewsGain": 62,
+   "views": 37836,
+   "likes": 572,
+   "viewsGain": 131,
    "isNew": false,
-   "median": 21084.0,
+   "median": 21143.0,
    "multiple": 1.8
   },
   {
@@ -89,11 +102,11 @@
    "published": "2026-11-19T09:00:15+00:00",
    "url": "https://www.youtube.com/shorts/2EHFXAZ5tqY",
    "shorts": true,
-   "views": 43231,
-   "likes": 363,
-   "viewsGain": 398,
+   "views": 43572,
+   "likes": 367,
+   "viewsGain": 341,
    "isNew": false,
-   "median": 21084.0,
+   "median": 21143.0,
    "multiple": 2.1
   },
   {
@@ -102,11 +115,11 @@
    "published": "2026-11-18T09:19:20+00:00",
    "url": "https://www.youtube.com/shorts/3YsU2ZxLA0Y",
    "shorts": true,
-   "views": 8155,
+   "views": 8169,
    "likes": 174,
-   "viewsGain": 25,
+   "viewsGain": 14,
    "isNew": false,
-   "median": 21084.0,
+   "median": 21143.0,
    "multiple": 0.4
   },
   {
@@ -115,11 +128,11 @@
    "published": "2026-11-18T09:00:37+00:00",
    "url": "https://www.youtube.com/shorts/UvvmykR4X1Y",
    "shorts": true,
-   "views": 21269,
-   "likes": 518,
-   "viewsGain": 82,
+   "views": 21368,
+   "likes": 519,
+   "viewsGain": 99,
    "isNew": false,
-   "median": 21084.0,
+   "median": 21143.0,
    "multiple": 1.0
   },
   {
@@ -128,11 +141,11 @@
    "published": "2026-11-18T09:00:19+00:00",
    "url": "https://www.youtube.com/shorts/p2vgoVpjigI",
    "shorts": true,
-   "views": 30363,
+   "views": 30569,
    "likes": 304,
-   "viewsGain": 230,
+   "viewsGain": 206,
    "isNew": false,
-   "median": 21084.0,
+   "median": 21143.0,
    "multiple": 1.4
   },
   {
@@ -141,11 +154,11 @@
    "published": "2026-11-18T09:00:15+00:00",
    "url": "https://www.youtube.com/shorts/pkpBqfEFmV0",
    "shorts": true,
-   "views": 8932,
+   "views": 8958,
    "likes": 96,
-   "viewsGain": 5,
+   "viewsGain": 26,
    "isNew": false,
-   "median": 21084.0,
+   "median": 21143.0,
    "multiple": 0.4
   },
   {
@@ -154,11 +167,11 @@
    "published": "2026-11-17T10:52:23+00:00",
    "url": "https://www.youtube.com/shorts/h_1QEshJHt0",
    "shorts": true,
-   "views": 53505,
-   "likes": 1632,
-   "viewsGain": 577,
+   "views": 53839,
+   "likes": 1645,
+   "viewsGain": 334,
    "isNew": false,
-   "median": 21084.0,
+   "median": 21143.0,
    "multiple": 2.5
   },
   {
@@ -167,11 +180,11 @@
    "published": "2026-11-17T09:54:49+00:00",
    "url": "https://www.youtube.com/shorts/jpVc9sPoKvs",
    "shorts": true,
-   "views": 20899,
+   "views": 20918,
    "likes": 215,
-   "viewsGain": 12,
+   "viewsGain": 19,
    "isNew": false,
-   "median": 21084.0,
+   "median": 21143.0,
    "multiple": 1.0
   },
   {
@@ -180,46 +193,33 @@
    "published": "2026-11-17T09:48:09+00:00",
    "url": "https://www.youtube.com/shorts/QebaUlVRMH4",
    "shorts": true,
-   "views": 42789,
+   "views": 42807,
    "likes": 741,
-   "viewsGain": 148,
+   "viewsGain": 18,
    "isNew": false,
-   "median": 21084.0,
+   "median": 21143.0,
    "multiple": 2.0
-  },
-  {
-   "id": "uJp05ZMpBes",
-   "title": "엄마가 유튜브에서 욕 그만하래요",
-   "published": "2026-11-17T09:46:50+00:00",
-   "url": "https://www.youtube.com/shorts/uJp05ZMpBes",
-   "shorts": true,
-   "views": 13830,
-   "likes": 148,
-   "viewsGain": 39,
-   "isNew": false,
-   "median": 21084.0,
-   "multiple": 0.7
   }
  ],
  "viral": [
   {
    "title": "8년 만에 처음 전하는 편지",
    "url": "https://www.youtube.com/shorts/h_1QEshJHt0",
-   "views": 53505,
+   "views": 53839,
    "multiple": 2.5,
    "shorts": true
   },
   {
    "title": "여단오 커플이 사귀게 된 썰",
    "url": "https://www.youtube.com/shorts/2EHFXAZ5tqY",
-   "views": 43231,
+   "views": 43572,
    "multiple": 2.1,
    "shorts": true
   },
   {
    "title": "꽃다발 선물도 차원이 다른 중국 스케일",
    "url": "https://www.youtube.com/shorts/QebaUlVRMH4",
-   "views": 42789,
+   "views": 42807,
    "multiple": 2.0,
    "shorts": true
   }

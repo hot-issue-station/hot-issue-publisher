@@ -3,7 +3,7 @@
  "name": "슈카월드",
  "channel": "https://www.youtube.com/@syukaworld",
  "channelId": "UCJo6G1u0e_-wS-JQn3T-zEw",
- "checkedAt": "2026-11-24T19:32+09:00",
+ "checkedAt": "2026-11-24T22:54+09:00",
  "videos": [
   {
    "id": "PvCJ0_gw-rk",
@@ -11,12 +11,12 @@
    "published": "2026-11-24T09:00:09+00:00",
    "url": "https://www.youtube.com/watch?v=PvCJ0_gw-rk",
    "shorts": false,
-   "views": 7383,
-   "likes": 362,
-   "viewsGain": null,
-   "isNew": true,
-   "median": 137056,
-   "multiple": 0.1
+   "views": 67322,
+   "likes": 943,
+   "viewsGain": 59939,
+   "isNew": false,
+   "median": 153248,
+   "multiple": 0.4
   },
   {
    "id": "r9yJSHm8rWE",
@@ -24,11 +24,11 @@
    "published": "2026-11-24T06:38:13+00:00",
    "url": "https://www.youtube.com/watch?v=r9yJSHm8rWE",
    "shorts": false,
-   "views": 137056,
-   "likes": 916,
-   "viewsGain": 124801,
+   "views": 153248,
+   "likes": 962,
+   "viewsGain": 16192,
    "isNew": false,
-   "median": 137056,
+   "median": 153248,
    "multiple": 1.0
   },
   {
@@ -37,12 +37,12 @@
    "published": "2026-11-24T03:29:45+00:00",
    "url": "https://www.youtube.com/shorts/ry-LnIFQhWg",
    "shorts": true,
-   "views": 80963,
-   "likes": 946,
-   "viewsGain": 55921,
+   "views": 105134,
+   "likes": 1137,
+   "viewsGain": 24171,
    "isNew": false,
-   "median": 111519.0,
-   "multiple": 0.7
+   "median": 116332.0,
+   "multiple": 0.9
   },
   {
    "id": "k6PnK01OeE8",
@@ -50,12 +50,12 @@
    "published": "2026-11-23T12:33:38+00:00",
    "url": "https://www.youtube.com/watch?v=k6PnK01OeE8",
    "shorts": false,
-   "views": 131940,
-   "likes": 824,
-   "viewsGain": 4209,
+   "views": 134141,
+   "likes": 825,
+   "viewsGain": 2201,
    "isNew": false,
-   "median": 137056,
-   "multiple": 1.0
+   "median": 153248,
+   "multiple": 0.9
   },
   {
    "id": "BPMyMGpwbM8",
@@ -63,11 +63,11 @@
    "published": "2026-11-23T07:14:46+00:00",
    "url": "https://www.youtube.com/shorts/BPMyMGpwbM8",
    "shorts": true,
-   "views": 36863,
-   "likes": 331,
-   "viewsGain": 1418,
+   "views": 37553,
+   "likes": 340,
+   "viewsGain": 690,
    "isNew": false,
-   "median": 111519.0,
+   "median": 116332.0,
    "multiple": 0.3
   },
   {
@@ -76,11 +76,11 @@
    "published": "2026-11-23T03:24:56+00:00",
    "url": "https://www.youtube.com/shorts/WfUG7RabSZE",
    "shorts": true,
-   "views": 93717,
-   "likes": 591,
-   "viewsGain": 1576,
+   "views": 95163,
+   "likes": 604,
+   "viewsGain": 1446,
    "isNew": false,
-   "median": 111519.0,
+   "median": 116332.0,
    "multiple": 0.8
   },
   {
@@ -89,12 +89,12 @@
    "published": "2026-11-23T02:49:15+00:00",
    "url": "https://www.youtube.com/shorts/CQSEHgbkdRU",
    "shorts": true,
-   "views": 95842,
-   "likes": 562,
-   "viewsGain": 2806,
+   "views": 98180,
+   "likes": 577,
+   "viewsGain": 2338,
    "isNew": false,
-   "median": 111519.0,
-   "multiple": 0.9
+   "median": 116332.0,
+   "multiple": 0.8
   },
   {
    "id": "YhH8Wtlfqro",
@@ -102,12 +102,12 @@
    "published": "2026-11-21T09:00:03+00:00",
    "url": "https://www.youtube.com/watch?v=YhH8Wtlfqro",
    "shorts": false,
-   "views": 265241,
-   "likes": 1519,
-   "viewsGain": 4641,
+   "views": 268281,
+   "likes": 1538,
+   "viewsGain": 3040,
    "isNew": false,
-   "median": 137056,
-   "multiple": 1.9
+   "median": 153248,
+   "multiple": 1.8
   },
   {
    "id": "EreQuom0P2g",
@@ -115,12 +115,12 @@
    "published": "2026-11-21T08:02:38+00:00",
    "url": "https://www.youtube.com/shorts/EreQuom0P2g",
    "shorts": true,
-   "views": 72649,
-   "likes": 638,
-   "viewsGain": 540,
+   "views": 73121,
+   "likes": 642,
+   "viewsGain": 472,
    "isNew": false,
-   "median": 111519.0,
-   "multiple": 0.7
+   "median": 116332.0,
+   "multiple": 0.6
   },
   {
    "id": "E5x7qILvIa4",
@@ -128,12 +128,12 @@
    "published": "2026-11-20T08:00:00+00:00",
    "url": "https://www.youtube.com/shorts/E5x7qILvIa4",
    "shorts": true,
-   "views": 375381,
-   "likes": 4902,
-   "viewsGain": 5061,
+   "views": 380090,
+   "likes": 4951,
+   "viewsGain": 4709,
    "isNew": false,
-   "median": 111519.0,
-   "multiple": 3.4
+   "median": 116332.0,
+   "multiple": 3.3
   },
   {
    "id": "oiS9MY0zpFI",
@@ -141,11 +141,11 @@
    "published": "2026-11-20T03:14:13+00:00",
    "url": "https://www.youtube.com/shorts/oiS9MY0zpFI",
    "shorts": true,
-   "views": 127196,
-   "likes": 962,
-   "viewsGain": 293,
+   "views": 127530,
+   "likes": 963,
+   "viewsGain": 334,
    "isNew": false,
-   "median": 111519.0,
+   "median": 116332.0,
    "multiple": 1.1
   },
   {
@@ -154,12 +154,12 @@
    "published": "2026-11-19T09:52:15+00:00",
    "url": "https://www.youtube.com/shorts/JiKUxWsF5Ww",
    "shorts": true,
-   "views": 338701,
-   "likes": 2126,
-   "viewsGain": 1263,
+   "views": 339745,
+   "likes": 2131,
+   "viewsGain": 1044,
    "isNew": false,
-   "median": 111519.0,
-   "multiple": 3.0
+   "median": 116332.0,
+   "multiple": 2.9
   },
   {
    "id": "vai2XXhUsCk",
@@ -167,12 +167,12 @@
    "published": "2026-11-19T06:42:35+00:00",
    "url": "https://www.youtube.com/watch?v=vai2XXhUsCk",
    "shorts": false,
-   "views": 165523,
-   "likes": 948,
-   "viewsGain": 251,
+   "views": 165590,
+   "likes": 947,
+   "viewsGain": 67,
    "isNew": false,
-   "median": 137056,
-   "multiple": 1.2
+   "median": 153248,
+   "multiple": 1.1
   },
   {
    "id": "s4u1HCrqMJE",
@@ -180,12 +180,12 @@
    "published": "2026-11-18T08:45:11+00:00",
    "url": "https://www.youtube.com/shorts/s4u1HCrqMJE",
    "shorts": true,
-   "views": 273904,
-   "likes": 2268,
-   "viewsGain": 1678,
+   "views": 275158,
+   "likes": 2288,
+   "viewsGain": 1254,
    "isNew": false,
-   "median": 111519.0,
-   "multiple": 2.5
+   "median": 116332.0,
+   "multiple": 2.4
   },
   {
    "id": "Sva8MRMYh-4",
@@ -193,11 +193,11 @@
    "published": "2026-11-18T08:33:24+00:00",
    "url": "https://www.youtube.com/shorts/Sva8MRMYh-4",
    "shorts": true,
-   "views": 136022,
-   "likes": 941,
-   "viewsGain": 583,
+   "views": 136581,
+   "likes": 946,
+   "viewsGain": 559,
    "isNew": false,
-   "median": 111519.0,
+   "median": 116332.0,
    "multiple": 1.2
   }
  ],
@@ -205,22 +205,22 @@
   {
    "title": "쇼츠 찍자",
    "url": "https://www.youtube.com/shorts/E5x7qILvIa4",
-   "views": 375381,
-   "multiple": 3.4,
+   "views": 380090,
+   "multiple": 3.3,
    "shorts": true
   },
   {
    "title": "번호 4로 서울대의대 간 사람",
    "url": "https://www.youtube.com/shorts/JiKUxWsF5Ww",
-   "views": 338701,
-   "multiple": 3.0,
+   "views": 339745,
+   "multiple": 2.9,
    "shorts": true
   },
   {
    "title": "니황이 조롱당하면 저점이다. 나는 이 이야기를 참 좋아한다.",
    "url": "https://www.youtube.com/shorts/s4u1HCrqMJE",
-   "views": 273904,
-   "multiple": 2.5,
+   "views": 275158,
+   "multiple": 2.4,
    "shorts": true
   }
  ]

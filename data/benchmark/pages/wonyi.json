@@ -1,7 +1,7 @@
 {
  "name": "안원잘부",
  "channel": "https://www.youtube.com/@helloiamwoninicetomeetyou",
- "checkedAt": "2026-11-24T19:32+09:00",
+ "checkedAt": "2026-11-24T22:54+09:00",
  "subscribers": "245만",
  "videos": [
   {
@@ -11,7 +11,7 @@
    "viewsText": "조회수 140만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "kfK-LENbEUo",
@@ -25,11 +25,11 @@
   {
    "id": "DKDmFgXzxs8",
    "title": "안원잘부 명장면 이모티콘2 출시!",
-   "views": 2780000,
-   "viewsText": "조회수 278만회",
+   "views": 2790000,
+   "viewsText": "조회수 279만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "zxNoW_LtVLE",
@@ -101,13 +101,13 @@
    "viewsText": "조회수 336만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "o-B0F16GwL0",
    "title": "[B컷] 의자 안 돌아가요",
-   "views": 13790000,
-   "viewsText": "조회수 1379만회",
+   "views": 13800000,
+   "viewsText": "조회수 1380만회",
    "published": "",
    "kind": "short",
    "gain": 10000

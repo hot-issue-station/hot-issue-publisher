@@ -468,5 +468,159 @@
     "gain": 486
    }
   ]
+ },
+ {
+  "at": "2026-11-24T22:54+09:00",
+  "key": "14f",
+  "ok": true,
+  "new": [],
+  "top": [
+   {
+    "id": "ur4wbtV0nt4",
+    "title": "외국인들 마음 훔쳐간 K-과자… 초코파이, 카스타드, 고래밥 렛츠고? / 14F",
+    "views": 47835,
+    "gain": 44782
+   },
+   {
+    "id": "fRlinSufVFQ",
+    "title": "가장 쉽게 엔트로피 이해하는 방법 (김범준X곽재식) ㅣ10분 토론 / 14F",
+    "views": 27979,
+    "gain": 23786
+   },
+   {
+    "id": "gfCdOrEqM0E",
+    "title": "영국의 자존심, 제임스 본드 ‘로버트 패틴슨’…수트, 시계, 차 모두가 그를 노린다! / 14F",
+    "views": 24649,
+    "gain": 22256
+   }
+  ]
+ },
+ {
+  "at": "2026-11-24T22:54+09:00",
+  "key": "subusunews",
+  "ok": true,
+  "new": [
+   "hBwgRgFJLoo"
+  ],
+  "top": [
+   {
+    "id": "unZzsissHE4",
+    "title": "향기의 편지에 역대급 눈물바다 된 우사편 촬영장ㅣ우리 사이엔 편지가 있다2 EP.13 김향기",
+    "views": 10395,
+    "gain": 8961
+   },
+   {
+    "id": "9tcTOay3lzA",
+    "title": "김향기가 흑역사를 극복하는 방법",
+    "views": 1567,
+    "gain": 953
+   },
+   {
+    "id": "uy1NI4tsPiU",
+    "title": "향기 죽었어요?",
+    "views": 1092,
+    "gain": 694
+   }
+  ]
+ },
+ {
+  "at": "2026-11-24T22:54+09:00",
+  "key": "vstudio",
+  "ok": true,
+  "new": [],
+  "top": []
+ },
+ {
+  "at": "2026-11-24T22:54+09:00",
+  "key": "syukaworld",
+  "ok": true,
+  "new": [],
+  "top": [
+   {
+    "id": "PvCJ0_gw-rk",
+    "title": "슈카의 다음 사업",
+    "views": 67322,
+    "gain": 59939
+   },
+   {
+    "id": "ry-LnIFQhWg",
+    "title": "젠슨황 이즈 백",
+    "views": 105134,
+    "gain": 24171
+   },
+   {
+    "id": "r9yJSHm8rWE",
+    "title": "🔴 LIVE [슈카의 시황방송] 11월24일ㅣ1200조 가치의 사나이 젠슨황 복귀",
+    "views": 153248,
+    "gain": 16192
+   }
+  ]
+ },
+ {
+  "at": "2026-11-24T22:54+09:00",
+  "key": "ytn",
+  "ok": true,
+  "new": [
+   "BHn72Xd6YNI",
+   "SGNjkG2cEko",
+   "cK-1q5tVbRg",
+   "ZBDWeLH6LKQ",
+   "1Gk_XZjLnKk",
+   "bgZP5zzJ4Js",
+   "8NGOy1OM4VQ",
+   "nmFdsGskzfw",
+   "EY9QVsMDY68",
+   "ErAqy7-znPc",
+   "Y4s-QuRLAFU",
+   "PsFRMV5_OxY",
+   "NNOVkyv7JCU",
+   "yD_q1TuLyN4"
+  ],
+  "top": [
+   {
+    "id": "vj0yRNkVWA0",
+    "title": "중국서 굴욕당하더니 분위기 '반전'…기어코 '금기' 꺼내든 일본 [이슈픽] / YTN",
+    "views": 6553,
+    "gain": 6553
+   },
+   {
+    "id": "BHn72Xd6YNI",
+    "title": "엔비디아 회의 개입하더니 '젠슨 황 복귀'…물밑에서 움직인 트럼프의 '초강수' [이슈픽] / YTN",
+    "views": 2116,
+    "gain": null
+   },
+   {
+    "id": "nmFdsGskzfw",
+    "title": "러 군용기, 동해 영공 초근접...군, 이례적 경계경보 / YTN",
+    "views": 928,
+    "gain": null
+   }
+  ]
+ },
+ {
+  "at": "2026-11-24T22:54+09:00",
+  "key": "storyk",
+  "ok": true,
+  "new": [],
+  "top": [
+   {
+    "id": "t71dh5FPkIo",
+    "title": "김민수 어시스트에 영국이 더 흥분한 이유 - BBC가 변호하는 레인저스의 경이로운 10번",
+    "views": 95047,
+    "gain": 1735
+   },
+   {
+    "id": "EgWaw2Fcd_c",
+    "title": "손정범 한국 미드필더로 역대급 엘리트코스 - 10대 데뷔 국가대표 발탁 리버풀 이적설",
+    "views": 95506,
+    "gain": 1227
+   },
+   {
+    "id": "B0S10mfCUhI",
+    "title": "엄지성 공격포인트 유럽 이적 후 커리어 하이 달성 - 한국 대표팀 레프트 윙어 춘추전국시대",
+    "views": 14336,
+    "gain": 490
+   }
+  ]
  }
 ]

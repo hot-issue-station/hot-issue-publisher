@@ -1,61 +1,78 @@
 {
  "name": "스브스뉴스 (SBS)",
  "channel": "https://www.youtube.com/@subusunews",
- "checkedAt": "2026-11-24T19:32+09:00",
+ "checkedAt": "2026-11-24T22:54+09:00",
  "subscribers": "145만",
  "videos": [
   {
-   "id": "ZhLZHImIb1E",
-   "title": "추억의 드라마 속 ‘그곳’으로 직접 떠날 수 있는 핫플 여행지  #shorts / 스브스뉴스",
-   "views": 244,
-   "viewsText": "조회수 244회",
+   "id": "z4Iick_S-fY",
+   "title": "이럴 거면 피부과라고 적어 놓으면 안 되는 거 아님? #피부과 #shorts #스브스뉴스",
+   "views": 916,
+   "viewsText": "조회수 916회",
    "published": "",
    "kind": "short"
   },
   {
-   "id": "JOYjvxU9AMs",
-   "title": "돈벌이 수단까지 된 요즘 학교 폭력 근황 #신종학폭 #shorts #스브스뉴스",
-   "views": 1200,
-   "viewsText": "조회수 1.2천회",
+   "id": "zd3gPVFAyXk",
+   "title": "블프라고 방심하지 말자... #블프 #shorts #스브스뉴스",
+   "views": 1100,
+   "viewsText": "조회수 1.1천회",
+   "published": "",
+   "kind": "short"
+  },
+  {
+   "id": "ZhLZHImIb1E",
+   "title": "추억의 드라마 속 ‘그곳’으로 직접 떠날 수 있는 핫플 여행지  #shorts / 스브스뉴스",
+   "views": 2200,
+   "viewsText": "조회수 2.2천회",
    "published": "",
    "kind": "short",
-   "gain": 362
+   "gain": 1956
+  },
+  {
+   "id": "JOYjvxU9AMs",
+   "title": "돈벌이 수단까지 된 요즘 학교 폭력 근황 #신종학폭 #shorts #스브스뉴스",
+   "views": 1400,
+   "viewsText": "조회수 1.4천회",
+   "published": "",
+   "kind": "short",
+   "gain": 200
   },
   {
    "id": "KDehtM0Jz0Y",
    "title": "이미 작년에 AI 의혹으로 재시험 치렀다는 ‘이 나라’ #아르헨티나 #shorts #스브스뉴스",
-   "views": 4400,
-   "viewsText": "조회수 4.4천회",
+   "views": 4900,
+   "viewsText": "조회수 4.9천회",
    "published": "",
    "kind": "short",
-   "gain": 900
+   "gain": 500
   },
   {
    "id": "PQeUrlmMlGE",
    "title": "합의라는 이름하에 가해지는 무차별 학교 폭력 #야차룰 #shorts #스브스뉴스",
-   "views": 2900,
-   "viewsText": "조회수 2.9천회",
+   "views": 3000,
+   "viewsText": "조회수 3천회",
    "published": "",
    "kind": "short",
-   "gain": 400
+   "gain": 100
   },
   {
    "id": "y6vCxLpdqds",
    "title": "한전에서 또다시 개인정보 유출 사고 #한전 #shorts #스브스뉴스",
-   "views": 4400,
-   "viewsText": "조회수 4.4천회",
+   "views": 4700,
+   "viewsText": "조회수 4.7천회",
    "published": "",
    "kind": "short",
-   "gain": 600
+   "gain": 300
   },
   {
    "id": "vDHKpDygPZY",
    "title": "당신이 몰랐던 농심 너구리의 정체 #너구리 #shorts #스브스뉴스",
-   "views": 8900,
-   "viewsText": "조회수 8.9천회",
+   "views": 9600,
+   "viewsText": "조회수 9.6천회",
    "published": "",
    "kind": "short",
-   "gain": 1500
+   "gain": 700
   },
   {
    "id": "olaKZkE3I-s",
@@ -64,7 +81,7 @@
    "viewsText": "조회수 1.7만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "gmcxeCXntLo",
@@ -73,16 +90,16 @@
    "viewsText": "조회수 1.4만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "ThgVuf9l2Ms",
    "title": "결혼식 평론계의 이동진",
-   "views": 9200,
-   "viewsText": "조회수 9.2천회",
+   "views": 9400,
+   "viewsText": "조회수 9.4천회",
    "published": "",
    "kind": "short",
-   "gain": 300
+   "gain": 200
   },
   {
    "id": "KiHKqusUC3g",
@@ -96,17 +113,17 @@
   {
    "id": "X2up1p7K8R4",
    "title": "ZR",
-   "views": 11000,
-   "viewsText": "조회수 1.1만회",
+   "views": 12000,
+   "viewsText": "조회수 1.2만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 1000
   },
   {
    "id": "K0tv4NW95bA",
    "title": "부케 준 신부의 뻔뻔한 부탁?",
-   "views": 5600,
-   "viewsText": "조회수 5.6천회",
+   "views": 5700,
+   "viewsText": "조회수 5.7천회",
    "published": "",
    "kind": "short",
    "gain": 100
@@ -217,7 +234,7 @@
    "viewsText": "조회수 6.1천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "USTfN6dsPZA",
@@ -341,24 +358,6 @@
    "title": "의무 사항 아니면 안 해도 되는 거냐고..ㅠ #딸기우유 #shorts #스브스뉴스",
    "views": 2600,
    "viewsText": "조회수 2.6천회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "LEWIMLiirq0",
-   "title": "성분 따졌다가 고소당한 사람? 그게 나예요. #딸기우유 #shorts #스브스뉴스",
-   "views": 9400,
-   "viewsText": "조회수 9.4천회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "QSXv2yiIveI",
-   "title": "귀신 훈육 놀이에 터져버린 아동 학대 논란 #한국민속촌 #shorts #스브스뉴스",
-   "views": 15000,
-   "viewsText": "조회수 1.5만회",
    "published": "",
    "kind": "short",
    "gain": 0

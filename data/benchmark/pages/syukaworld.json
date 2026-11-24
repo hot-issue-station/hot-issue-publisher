@@ -1,9 +1,25 @@
 {
  "name": "슈카월드",
  "channel": "https://www.youtube.com/@syukaworld",
- "checkedAt": "2026-11-24T19:32+09:00",
+ "checkedAt": "2026-11-24T22:54+09:00",
  "subscribers": "374만",
  "videos": [
+  {
+   "id": "F67XTSCwwQE",
+   "title": "감히 황제 자리를 탐한 자",
+   "views": 1400,
+   "viewsText": "조회수 1.4천회",
+   "published": "",
+   "kind": "short"
+  },
+  {
+   "id": "7RK0-KngzOo",
+   "title": "주식이 장난이야?",
+   "views": 7500,
+   "viewsText": "조회수 7.5천회",
+   "published": "",
+   "kind": "short"
+  },
   {
    "id": "xhzS_pawX9Y",
    "title": "슈카 서울대 입학 해명",
@@ -11,7 +27,7 @@
    "viewsText": "조회수 81만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "NINJ94H2s04",
@@ -304,11 +320,11 @@
   {
    "id": "7EuhhqsuuRg",
    "title": "하락장에서 깨진다고 자책하지 말자",
-   "views": 660000,
-   "viewsText": "조회수 66만회",
+   "views": 670000,
+   "viewsText": "조회수 67만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "CXRchmrrXj0",
@@ -342,24 +358,6 @@
    "title": "주식 할때 EPS 알아야 하는 이유",
    "views": 270000,
    "viewsText": "조회수 27만회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "DbDZi0k5mj0",
-   "title": "금리 쫌 오른게 주식이랑 무슨 상관?",
-   "views": 240000,
-   "viewsText": "조회수 24만회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "PZIvdtDO0Cs",
-   "title": "속보) 트황상 휴휴전 (휴전을 멈춤) 선언",
-   "views": 200000,
-   "viewsText": "조회수 20만회",
    "published": "",
    "kind": "short",
    "gain": 0
