@@ -3,20 +3,59 @@
  "name": "14F 일사에프 (MBC)",
  "channel": "https://www.youtube.com/@14FMBC",
  "channelId": "UCLKuglhGlMmDteQKoniENIQ",
- "checkedAt": "2026-11-24T14:56+09:00",
+ "checkedAt": "2026-11-24T19:32+09:00",
  "videos": [
+  {
+   "id": "ur4wbtV0nt4",
+   "title": "외국인들 마음 훔쳐간 K-과자… 초코파이, 카스타드, 고래밥 렛츠고? / 14F",
+   "published": "2026-11-24T09:54:19+00:00",
+   "url": "https://www.youtube.com/watch?v=ur4wbtV0nt4",
+   "shorts": false,
+   "views": 3053,
+   "likes": 128,
+   "viewsGain": null,
+   "isNew": true,
+   "median": 97971,
+   "multiple": 0.0
+  },
+  {
+   "id": "gfCdOrEqM0E",
+   "title": "영국의 자존심, 제임스 본드 ‘로버트 패틴슨’…수트, 시계, 차 모두가 그를 노린다! / 14F",
+   "published": "2026-11-24T09:00:03+00:00",
+   "url": "https://www.youtube.com/watch?v=gfCdOrEqM0E",
+   "shorts": false,
+   "views": 2393,
+   "likes": 108,
+   "viewsGain": null,
+   "isNew": true,
+   "median": 97971,
+   "multiple": 0.0
+  },
+  {
+   "id": "fRlinSufVFQ",
+   "title": "가장 쉽게 엔트로피 이해하는 방법 (김범준X곽재식) ㅣ10분 토론 / 14F",
+   "published": "2026-11-24T08:30:37+00:00",
+   "url": "https://www.youtube.com/watch?v=fRlinSufVFQ",
+   "shorts": false,
+   "views": 4193,
+   "likes": 148,
+   "viewsGain": null,
+   "isNew": true,
+   "median": 97971,
+   "multiple": 0.0
+  },
   {
    "id": "FzyMQzDL5bw",
    "title": "한국인은 이미 먹고 있었다… 해외에서 떠오른 ‘슈퍼 푸드’ 정체 / 14F",
    "published": "2026-11-23T10:11:13+00:00",
    "url": "https://www.youtube.com/watch?v=FzyMQzDL5bw",
    "shorts": false,
-   "views": 87112,
-   "likes": 579,
-   "viewsGain": 19051,
+   "views": 97971,
+   "likes": 661,
+   "viewsGain": 10859,
    "isNew": false,
-   "median": 142192.5,
-   "multiple": 0.6
+   "median": 97971,
+   "multiple": 1.0
   },
   {
    "id": "Mjs8_P7FstM",
@@ -24,12 +63,12 @@
    "published": "2026-11-23T09:00:32+00:00",
    "url": "https://www.youtube.com/watch?v=Mjs8_P7FstM",
    "shorts": false,
-   "views": 170829,
-   "likes": 827,
-   "viewsGain": 30696,
+   "views": 185301,
+   "likes": 921,
+   "viewsGain": 14472,
    "isNew": false,
-   "median": 142192.5,
-   "multiple": 1.2
+   "median": 97971,
+   "multiple": 1.9
   },
   {
    "id": "NyxPbpN3Uyo",
@@ -37,11 +76,11 @@
    "published": "2026-11-21T04:00:03+00:00",
    "url": "https://www.youtube.com/shorts/NyxPbpN3Uyo",
    "shorts": true,
-   "views": 6670,
+   "views": 6754,
    "likes": 63,
-   "viewsGain": 64,
+   "viewsGain": 84,
    "isNew": false,
-   "median": 6670,
+   "median": 6942.5,
    "multiple": 1.0
   },
   {
@@ -50,11 +89,11 @@
    "published": "2026-11-20T23:00:30+00:00",
    "url": "https://www.youtube.com/shorts/VKzh4gQvEIU",
    "shorts": true,
-   "views": 17084,
-   "likes": 180,
-   "viewsGain": 724,
+   "views": 17716,
+   "likes": 182,
+   "viewsGain": 632,
    "isNew": false,
-   "median": 6670,
+   "median": 6942.5,
    "multiple": 2.6
   },
   {
@@ -63,12 +102,12 @@
    "published": "2026-11-20T08:30:37+00:00",
    "url": "https://www.youtube.com/watch?v=_pBAM8GDWo8",
    "shorts": false,
-   "views": 64159,
-   "likes": 397,
-   "viewsGain": 813,
+   "views": 64790,
+   "likes": 402,
+   "viewsGain": 631,
    "isNew": false,
-   "median": 142192.5,
-   "multiple": 0.5
+   "median": 97971,
+   "multiple": 0.7
   },
   {
    "id": "1SOf5BtCrok",
@@ -76,11 +115,11 @@
    "published": "2026-11-20T08:30:15+00:00",
    "url": "https://www.youtube.com/shorts/1SOf5BtCrok",
    "shorts": true,
-   "views": 4653,
+   "views": 4680,
    "likes": 43,
-   "viewsGain": 86,
+   "viewsGain": 27,
    "isNew": false,
-   "median": 6670,
+   "median": 6942.5,
    "multiple": 0.7
   },
   {
@@ -89,11 +128,11 @@
    "published": "2026-11-20T04:00:30+00:00",
    "url": "https://www.youtube.com/shorts/wlN76TIzAEM",
    "shorts": true,
-   "views": 5362,
+   "views": 5417,
    "likes": 20,
-   "viewsGain": 36,
+   "viewsGain": 55,
    "isNew": false,
-   "median": 6670,
+   "median": 6942.5,
    "multiple": 0.8
   },
   {
@@ -102,12 +141,12 @@
    "published": "2026-11-20T03:00:19+00:00",
    "url": "https://www.youtube.com/shorts/n13XS1CuP3Q",
    "shorts": true,
-   "views": 7092,
+   "views": 7131,
    "likes": 41,
-   "viewsGain": 105,
+   "viewsGain": 39,
    "isNew": false,
-   "median": 6670,
-   "multiple": 1.1
+   "median": 6942.5,
+   "multiple": 1.0
   },
   {
    "id": "Tr0LbpRFtFk",
@@ -115,12 +154,12 @@
    "published": "2026-11-19T23:00:03+00:00",
    "url": "https://www.youtube.com/shorts/Tr0LbpRFtFk",
    "shorts": true,
-   "views": 29054,
-   "likes": 223,
-   "viewsGain": 1240,
+   "views": 29991,
+   "likes": 228,
+   "viewsGain": 937,
    "isNew": false,
-   "median": 6670,
-   "multiple": 4.4
+   "median": 6942.5,
+   "multiple": 4.3
   },
   {
    "id": "XtDXa41EHTw",
@@ -128,12 +167,12 @@
    "published": "2026-11-19T10:16:53+00:00",
    "url": "https://www.youtube.com/watch?v=XtDXa41EHTw",
    "shorts": false,
-   "views": 401191,
-   "likes": 1163,
-   "viewsGain": 12147,
+   "views": 405892,
+   "likes": 1182,
+   "viewsGain": 4701,
    "isNew": false,
-   "median": 142192.5,
-   "multiple": 2.8
+   "median": 97971,
+   "multiple": 4.1
   },
   {
    "id": "UVXV3vZmzsQ",
@@ -141,12 +180,12 @@
    "published": "2026-11-19T09:00:28+00:00",
    "url": "https://www.youtube.com/watch?v=UVXV3vZmzsQ",
    "shorts": false,
-   "views": 116984,
-   "likes": 951,
-   "viewsGain": 1894,
+   "views": 118596,
+   "likes": 962,
+   "viewsGain": 1612,
    "isNew": false,
-   "median": 142192.5,
-   "multiple": 0.8
+   "median": 97971,
+   "multiple": 1.2
   },
   {
    "id": "WbzEeAb50UY",
@@ -154,81 +193,42 @@
    "published": "2026-11-18T09:59:07+00:00",
    "url": "https://www.youtube.com/watch?v=WbzEeAb50UY",
    "shorts": false,
-   "views": 277543,
-   "likes": 1177,
-   "viewsGain": 674,
+   "views": 278068,
+   "likes": 1180,
+   "viewsGain": 525,
    "isNew": false,
-   "median": 142192.5,
-   "multiple": 2.0
-  },
-  {
-   "id": "Mv1Y2_lA-pQ",
-   "title": "세계가 원조를 줄이는 지금, 한국은 왜 위기의 현장에 돈을 쓸까? / 14F",
-   "published": "2026-11-18T08:30:29+00:00",
-   "url": "https://www.youtube.com/watch?v=Mv1Y2_lA-pQ",
-   "shorts": false,
-   "views": 137721,
-   "likes": 1059,
-   "viewsGain": 1358,
-   "isNew": false,
-   "median": 142192.5,
-   "multiple": 1.0
-  },
-  {
-   "id": "abobZ7JfTek",
-   "title": "초가공식품 정확히 아는 사람? #shorts",
-   "published": "2026-11-18T03:00:40+00:00",
-   "url": "https://www.youtube.com/shorts/abobZ7JfTek",
-   "shorts": true,
-   "views": 4377,
-   "likes": 38,
-   "viewsGain": 26,
-   "isNew": false,
-   "median": 6670,
-   "multiple": 0.7
-  },
-  {
-   "id": "lEpjsxSLfB8",
-   "title": "샤인머스캣 이을 존재의 등장… 한 송이 4만 원 ‘로얄바인’ 뭐길래? / 14F",
-   "published": "2026-11-17T09:48:41+00:00",
-   "url": "https://www.youtube.com/watch?v=lEpjsxSLfB8",
-   "shorts": false,
-   "views": 146664,
-   "likes": 515,
-   "viewsGain": 189,
-   "isNew": false,
-   "median": 142192.5,
-   "multiple": 1.0
+   "median": 97971,
+   "multiple": 2.8
   }
  ],
  "viral": [
   {
    "title": "백제는 삼국 통일을 할 필요가 없었다? #shorts",
    "url": "https://www.youtube.com/shorts/Tr0LbpRFtFk",
-   "views": 29054,
-   "multiple": 4.4,
+   "views": 29991,
+   "multiple": 4.3,
    "shorts": true
   },
   {
    "title": "써브웨이 vs 버거킹… 가성비 한 끼 경쟁에 ‘토스트집’은 못 끼는 이유 / 14F",
    "url": "https://www.youtube.com/watch?v=XtDXa41EHTw",
-   "views": 401191,
+   "views": 405892,
+   "multiple": 4.1,
+   "shorts": false
+  },
+  {
+   "title": "몽골에 이어 카자흐스탄에도… 현지에서 핫플된 ‘CU 편의점’ / 14F",
+   "url": "https://www.youtube.com/watch?v=WbzEeAb50UY",
+   "views": 278068,
    "multiple": 2.8,
    "shorts": false
   },
   {
    "title": "일본이 천황 무덤 발굴을 막는 이유 #shorts",
    "url": "https://www.youtube.com/shorts/VKzh4gQvEIU",
-   "views": 17084,
+   "views": 17716,
    "multiple": 2.6,
    "shorts": true
-  },
-  {
-   "title": "몽골에 이어 카자흐스탄에도… 현지에서 핫플된 ‘CU 편의점’ / 14F",
-   "url": "https://www.youtube.com/watch?v=WbzEeAb50UY",
-   "views": 277543,
-   "multiple": 2.0,
-   "shorts": false
   }
  ]
 }

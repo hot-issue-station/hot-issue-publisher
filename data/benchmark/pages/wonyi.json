@@ -1,17 +1,17 @@
 {
  "name": "안원잘부",
  "channel": "https://www.youtube.com/@helloiamwoninicetomeetyou",
- "checkedAt": "2026-11-24T14:56+09:00",
+ "checkedAt": "2026-11-24T19:32+09:00",
  "subscribers": "245만",
  "videos": [
   {
    "id": "N3MX2W5_Zfs",
    "title": "디즈니 영화 OST가 된 이유",
-   "views": 1390000,
-   "viewsText": "조회수 139만회",
+   "views": 1400000,
+   "viewsText": "조회수 140만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "kfK-LENbEUo",
@@ -97,20 +97,20 @@
   {
    "id": "8aZYgM9GeL0",
    "title": "드라켄의 진실",
-   "views": 3350000,
-   "viewsText": "조회수 335만회",
+   "views": 3360000,
+   "viewsText": "조회수 336만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "o-B0F16GwL0",
    "title": "[B컷] 의자 안 돌아가요",
-   "views": 13780000,
-   "viewsText": "조회수 1378만회",
+   "views": 13790000,
+   "viewsText": "조회수 1379만회",
    "published": "",
    "kind": "short",
-   "gain": 20000
+   "gain": 10000
   },
   {
    "id": "gNJrbCSN2TM",
