@@ -1,42 +1,44 @@
 {
  "name": "슈카월드",
  "channel": "https://www.youtube.com/@syukaworld",
- "checkedAt": "2026-11-24T22:54+09:00",
+ "checkedAt": "2026-11-25T08:41+09:00",
  "subscribers": "374만",
  "videos": [
   {
    "id": "F67XTSCwwQE",
    "title": "감히 황제 자리를 탐한 자",
-   "views": 1400,
-   "viewsText": "조회수 1.4천회",
-   "published": "",
-   "kind": "short"
-  },
-  {
-   "id": "7RK0-KngzOo",
-   "title": "주식이 장난이야?",
-   "views": 7500,
-   "viewsText": "조회수 7.5천회",
-   "published": "",
-   "kind": "short"
-  },
-  {
-   "id": "xhzS_pawX9Y",
-   "title": "슈카 서울대 입학 해명",
-   "views": 810000,
-   "viewsText": "조회수 81만회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "NINJ94H2s04",
-   "title": "수능 비상! AI 부정행위를 막아라!",
    "views": 110000,
    "viewsText": "조회수 11만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 108600
+  },
+  {
+   "id": "7RK0-KngzOo",
+   "title": "주식이 장난이야?",
+   "views": 130000,
+   "viewsText": "조회수 13만회",
+   "published": "",
+   "kind": "short",
+   "gain": 122500
+  },
+  {
+   "id": "xhzS_pawX9Y",
+   "title": "슈카 서울대 입학 해명",
+   "views": 820000,
+   "viewsText": "조회수 82만회",
+   "published": "",
+   "kind": "short",
+   "gain": 10000
+  },
+  {
+   "id": "NINJ94H2s04",
+   "title": "수능 비상! AI 부정행위를 막아라!",
+   "views": 120000,
+   "viewsText": "조회수 12만회",
+   "published": "",
+   "kind": "short",
+   "gain": 10000
   },
   {
    "id": "PPIMOKvuSDY",
@@ -324,7 +326,7 @@
    "viewsText": "조회수 67만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "CXRchmrrXj0",

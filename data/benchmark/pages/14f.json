@@ -1,17 +1,17 @@
 {
  "name": "14F 일사에프 (MBC)",
  "channel": "https://www.youtube.com/@14FMBC",
- "checkedAt": "2026-11-24T22:54+09:00",
+ "checkedAt": "2026-11-25T08:41+09:00",
  "subscribers": "239만",
  "videos": [
   {
    "id": "NyxPbpN3Uyo",
    "title": "한국인 드립에 감동한 영국 소시지 아저씨#shorts",
-   "views": 6700,
-   "viewsText": "조회수 6.7천회",
+   "views": 6900,
+   "viewsText": "조회수 6.9천회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 200
   },
   {
    "id": "VKzh4gQvEIU",
@@ -29,7 +29,7 @@
    "viewsText": "조회수 4.7천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "wlN76TIzAEM",
@@ -38,7 +38,7 @@
    "viewsText": "조회수 5.4천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "n13XS1CuP3Q",
@@ -52,8 +52,8 @@
   {
    "id": "Tr0LbpRFtFk",
    "title": "백제는 삼국 통일을 할 필요가 없었다? #shorts",
-   "views": 31000,
-   "viewsText": "조회수 3.1만회",
+   "views": 33000,
+   "viewsText": "조회수 3.3만회",
    "published": "",
    "kind": "short",
    "gain": 2000
@@ -65,7 +65,7 @@
    "viewsText": "조회수 4.4천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "gRThiyajPxQ",
@@ -92,7 +92,7 @@
    "viewsText": "조회수 3.5만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "Aj_trkh0zaM",
