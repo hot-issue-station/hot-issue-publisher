@@ -1,7 +1,7 @@
 {
  "name": "안원잘부",
  "channel": "https://www.youtube.com/@helloiamwoninicetomeetyou",
- "checkedAt": "2026-11-25T08:41+09:00",
+ "checkedAt": "2026-11-25T14:57+09:00",
  "subscribers": "245만",
  "videos": [
   {
@@ -11,7 +11,7 @@
    "viewsText": "조회수 141만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "kfK-LENbEUo",
@@ -20,7 +20,7 @@
    "viewsText": "조회수 191만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "DKDmFgXzxs8",
@@ -56,7 +56,7 @@
    "viewsText": "조회수 631만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "GsYq_ouLAMQ",
@@ -83,16 +83,16 @@
    "viewsText": "조회수 182만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "COnZ3rYrAXc",
    "title": "리마인이 된 리센느",
-   "views": 1670000,
-   "viewsText": "조회수 167만회",
+   "views": 1680000,
+   "viewsText": "조회수 168만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "8aZYgM9GeL0",
@@ -106,8 +106,8 @@
   {
    "id": "o-B0F16GwL0",
    "title": "[B컷] 의자 안 돌아가요",
-   "views": 13810000,
-   "viewsText": "조회수 1381만회",
+   "views": 13820000,
+   "viewsText": "조회수 1382만회",
    "published": "",
    "kind": "short",
    "gain": 10000
@@ -272,7 +272,7 @@
    "viewsText": "조회수 757만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "6cPEEeEAKiM",
@@ -313,11 +313,11 @@
   {
    "id": "nHY4EK0kVH0",
    "title": "저한테 왜 그러시는 거예요",
-   "views": 6970000,
-   "viewsText": "조회수 697만회",
+   "views": 6980000,
+   "viewsText": "조회수 698만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "hrFWuCyHXpY",

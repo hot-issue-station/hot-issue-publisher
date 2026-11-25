@@ -1,32 +1,32 @@
 {
  "name": "슈카월드",
  "channel": "https://www.youtube.com/@syukaworld",
- "checkedAt": "2026-11-25T08:41+09:00",
+ "checkedAt": "2026-11-25T14:57+09:00",
  "subscribers": "374만",
  "videos": [
   {
    "id": "F67XTSCwwQE",
    "title": "감히 황제 자리를 탐한 자",
-   "views": 110000,
-   "viewsText": "조회수 11만회",
+   "views": 250000,
+   "viewsText": "조회수 25만회",
    "published": "",
    "kind": "short",
-   "gain": 108600
+   "gain": 140000
   },
   {
    "id": "7RK0-KngzOo",
    "title": "주식이 장난이야?",
-   "views": 130000,
-   "viewsText": "조회수 13만회",
+   "views": 160000,
+   "viewsText": "조회수 16만회",
    "published": "",
    "kind": "short",
-   "gain": 122500
+   "gain": 30000
   },
   {
    "id": "xhzS_pawX9Y",
    "title": "슈카 서울대 입학 해명",
-   "views": 820000,
-   "viewsText": "조회수 82만회",
+   "views": 830000,
+   "viewsText": "조회수 83만회",
    "published": "",
    "kind": "short",
    "gain": 10000
@@ -38,7 +38,7 @@
    "viewsText": "조회수 12만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "PPIMOKvuSDY",

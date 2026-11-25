@@ -151,5 +151,162 @@
     "gain": 417
    }
   ]
+ },
+ {
+  "at": "2026-11-25T14:57+09:00",
+  "key": "14f",
+  "ok": true,
+  "new": [
+   "CnZGi2F1T3M"
+  ],
+  "top": [
+   {
+    "id": "gfCdOrEqM0E",
+    "title": "영국의 자존심, 제임스 본드 ‘로버트 패틴슨’…수트, 시계, 차 모두가 그를 노린다! / 14F",
+    "views": 93894,
+    "gain": 27378
+   },
+   {
+    "id": "XtDXa41EHTw",
+    "title": "써브웨이 vs 버거킹… 가성비 한 끼 경쟁에 ‘토스트집’은 못 끼는 이유 / 14F",
+    "views": 430791,
+    "gain": 16052
+   },
+   {
+    "id": "ur4wbtV0nt4",
+    "title": "외국인들 마음 훔쳐간 K-과자… 초코파이, 카스타드, 고래밥 렛츠고? / 14F",
+    "views": 101582,
+    "gain": 15116
+   }
+  ]
+ },
+ {
+  "at": "2026-11-25T14:57+09:00",
+  "key": "subusunews",
+  "ok": true,
+  "new": [],
+  "top": [
+   {
+    "id": "unZzsissHE4",
+    "title": "향기의 편지에 역대급 눈물바다 된 우사편 촬영장ㅣ우리 사이엔 편지가 있다2 EP.13 김향기",
+    "views": 37349,
+    "gain": 8412
+   },
+   {
+    "id": "9tcTOay3lzA",
+    "title": "김향기가 흑역사를 극복하는 방법",
+    "views": 3900,
+    "gain": 752
+   },
+   {
+    "id": "h_1QEshJHt0",
+    "title": "8년 만에 처음 전하는 편지",
+    "views": 55017,
+    "gain": 643
+   }
+  ]
+ },
+ {
+  "at": "2026-11-25T14:57+09:00",
+  "key": "vstudio",
+  "ok": true,
+  "new": [],
+  "top": []
+ },
+ {
+  "at": "2026-11-25T14:57+09:00",
+  "key": "syukaworld",
+  "ok": true,
+  "new": [
+   "yYgkfxB7nhY"
+  ],
+  "top": [
+   {
+    "id": "PvCJ0_gw-rk",
+    "title": "슈카의 다음 사업",
+    "views": 175782,
+    "gain": 38172
+   },
+   {
+    "id": "ry-LnIFQhWg",
+    "title": "젠슨황 이즈 백",
+    "views": 138187,
+    "gain": 9847
+   },
+   {
+    "id": "YhH8Wtlfqro",
+    "title": "유죄인간 94년생 듀오 [여의도엿듣기]",
+    "views": 275976,
+    "gain": 4558
+   }
+  ]
+ },
+ {
+  "at": "2026-11-25T14:57+09:00",
+  "key": "ytn",
+  "ok": true,
+  "new": [
+   "jL1pNqSp-C8",
+   "wwpf5nI9jmA",
+   "_qrFf2-9xps",
+   "FYSRk1-z-9c",
+   "h5a2KzYjCUA",
+   "uyglN7BVJTs",
+   "BjfwwNWkRio",
+   "cIOuORDVpuI",
+   "YpZd72p6hwY",
+   "c180MsOhrH8",
+   "1P5d_OON-I0",
+   "DwocLRvgAfU",
+   "JBHmIYipIx0",
+   "8nOhe7nGeDU",
+   "2zgnpEj680Q"
+  ],
+  "top": [
+   {
+    "id": "uyglN7BVJTs",
+    "title": "후티, 빈 살만 '심장부' 연쇄 공습…중동 전역으로 전쟁 번지나 '일촉즉발' [에디터픽] / YTN",
+    "views": 14878,
+    "gain": null
+   },
+   {
+    "id": "8nOhe7nGeDU",
+    "title": "'닷컴 버블' 넘어서는 세계 재앙 우려…AI에 쌓이는 불신 [지금이뉴스] / YTN",
+    "views": 3025,
+    "gain": null
+   },
+   {
+    "id": "1P5d_OON-I0",
+    "title": "경찰, '이진우 과외교사' 조사...\"진실 묻히면 안돼\" / YTN",
+    "views": 2168,
+    "gain": null
+   }
+  ]
+ },
+ {
+  "at": "2026-11-25T14:57+09:00",
+  "key": "storyk",
+  "ok": true,
+  "new": [],
+  "top": [
+   {
+    "id": "EgWaw2Fcd_c",
+    "title": "손정범 한국 미드필더로 역대급 엘리트코스 - 10대 데뷔 국가대표 발탁 리버풀 이적설",
+    "views": 100725,
+    "gain": 2684
+   },
+   {
+    "id": "t71dh5FPkIo",
+    "title": "김민수 어시스트에 영국이 더 흥분한 이유 - BBC가 변호하는 레인저스의 경이로운 10번",
+    "views": 97316,
+    "gain": 736
+   },
+   {
+    "id": "B0S10mfCUhI",
+    "title": "엄지성 공격포인트 유럽 이적 후 커리어 하이 달성 - 한국 대표팀 레프트 윙어 춘추전국시대",
+    "views": 15092,
+    "gain": 339
+   }
+  ]
  }
 ]

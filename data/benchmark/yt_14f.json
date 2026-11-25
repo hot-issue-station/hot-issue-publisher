@@ -3,20 +3,33 @@
  "name": "14F 일사에프 (MBC)",
  "channel": "https://www.youtube.com/@14FMBC",
  "channelId": "UCLKuglhGlMmDteQKoniENIQ",
- "checkedAt": "2026-11-25T08:41+09:00",
+ "checkedAt": "2026-11-25T14:57+09:00",
  "videos": [
+  {
+   "id": "CnZGi2F1T3M",
+   "title": "가성비 된 3대 진미 근황 #shorts",
+   "published": "2026-11-25T03:00:29+00:00",
+   "url": "https://www.youtube.com/shorts/CnZGi2F1T3M",
+   "shorts": true,
+   "views": 3006,
+   "likes": 31,
+   "viewsGain": null,
+   "isNew": true,
+   "median": 7013,
+   "multiple": 0.4
+  },
   {
    "id": "ur4wbtV0nt4",
    "title": "외국인들 마음 훔쳐간 K-과자… 초코파이, 카스타드, 고래밥 렛츠고? / 14F",
    "published": "2026-11-24T09:54:19+00:00",
    "url": "https://www.youtube.com/watch?v=ur4wbtV0nt4",
    "shorts": false,
-   "views": 86466,
-   "likes": 581,
-   "viewsGain": 38631,
+   "views": 101582,
+   "likes": 645,
+   "viewsGain": 15116,
    "isNew": false,
-   "median": 116850,
-   "multiple": 0.7
+   "median": 111747.5,
+   "multiple": 0.9
   },
   {
    "id": "gfCdOrEqM0E",
@@ -24,25 +37,25 @@
    "published": "2026-11-24T09:00:03+00:00",
    "url": "https://www.youtube.com/watch?v=gfCdOrEqM0E",
    "shorts": false,
-   "views": 66516,
-   "likes": 376,
-   "viewsGain": 41867,
+   "views": 93894,
+   "likes": 476,
+   "viewsGain": 27378,
    "isNew": false,
-   "median": 116850,
-   "multiple": 0.6
+   "median": 111747.5,
+   "multiple": 0.8
   },
   {
    "id": "fRlinSufVFQ",
-   "title": "가장 쉽게 엔트로피 이해하는 방법 (김범준X곽재식) ㅣ10분 토론 / 14F",
+   "title": "문과생도 이해 가능. 세상에서 가장 친절한 엔트로피 수업 (김범준X곽재식) ㅣ10분 토론 / 14F",
    "published": "2026-11-24T08:30:37+00:00",
    "url": "https://www.youtube.com/watch?v=fRlinSufVFQ",
    "shorts": false,
-   "views": 59448,
-   "likes": 421,
-   "viewsGain": 31469,
+   "views": 73924,
+   "likes": 494,
+   "viewsGain": 14476,
    "isNew": false,
-   "median": 116850,
-   "multiple": 0.5
+   "median": 111747.5,
+   "multiple": 0.7
   },
   {
    "id": "FzyMQzDL5bw",
@@ -50,12 +63,12 @@
    "published": "2026-11-23T10:11:13+00:00",
    "url": "https://www.youtube.com/watch?v=FzyMQzDL5bw",
    "shorts": false,
-   "views": 116850,
-   "likes": 746,
-   "viewsGain": 6074,
+   "views": 121913,
+   "likes": 780,
+   "viewsGain": 5063,
    "isNew": false,
-   "median": 116850,
-   "multiple": 1.0
+   "median": 111747.5,
+   "multiple": 1.1
   },
   {
    "id": "Mjs8_P7FstM",
@@ -63,12 +76,12 @@
    "published": "2026-11-23T09:00:32+00:00",
    "url": "https://www.youtube.com/watch?v=Mjs8_P7FstM",
    "shorts": false,
-   "views": 215810,
-   "likes": 1002,
-   "viewsGain": 13326,
+   "views": 228996,
+   "likes": 1045,
+   "viewsGain": 13186,
    "isNew": false,
-   "median": 116850,
-   "multiple": 1.8
+   "median": 111747.5,
+   "multiple": 2.0
   },
   {
    "id": "NyxPbpN3Uyo",
@@ -76,11 +89,11 @@
    "published": "2026-11-21T04:00:03+00:00",
    "url": "https://www.youtube.com/shorts/NyxPbpN3Uyo",
    "shorts": true,
-   "views": 6953,
+   "views": 7013,
    "likes": 65,
-   "viewsGain": 149,
+   "viewsGain": 60,
    "isNew": false,
-   "median": 7068.5,
+   "median": 7013,
    "multiple": 1.0
   },
   {
@@ -89,12 +102,12 @@
    "published": "2026-11-20T23:00:30+00:00",
    "url": "https://www.youtube.com/shorts/VKzh4gQvEIU",
    "shorts": true,
-   "views": 17851,
-   "likes": 184,
-   "viewsGain": -7,
+   "views": 17953,
+   "likes": 185,
+   "viewsGain": 102,
    "isNew": false,
-   "median": 7068.5,
-   "multiple": 2.5
+   "median": 7013,
+   "multiple": 2.6
   },
   {
    "id": "_pBAM8GDWo8",
@@ -102,11 +115,11 @@
    "published": "2026-11-20T08:30:37+00:00",
    "url": "https://www.youtube.com/watch?v=_pBAM8GDWo8",
    "shorts": false,
-   "views": 65608,
+   "views": 66044,
    "likes": 414,
-   "viewsGain": 499,
+   "viewsGain": 436,
    "isNew": false,
-   "median": 116850,
+   "median": 111747.5,
    "multiple": 0.6
   },
   {
@@ -115,11 +128,11 @@
    "published": "2026-11-20T08:30:15+00:00",
    "url": "https://www.youtube.com/shorts/1SOf5BtCrok",
    "shorts": true,
-   "views": 4764,
+   "views": 4782,
    "likes": 44,
-   "viewsGain": 53,
+   "viewsGain": 18,
    "isNew": false,
-   "median": 7068.5,
+   "median": 7013,
    "multiple": 0.7
   },
   {
@@ -128,11 +141,11 @@
    "published": "2026-11-20T04:00:30+00:00",
    "url": "https://www.youtube.com/shorts/wlN76TIzAEM",
    "shorts": true,
-   "views": 5492,
+   "views": 5525,
    "likes": 21,
-   "viewsGain": 50,
+   "viewsGain": 33,
    "isNew": false,
-   "median": 7068.5,
+   "median": 7013,
    "multiple": 0.8
   },
   {
@@ -141,11 +154,11 @@
    "published": "2026-11-20T03:00:19+00:00",
    "url": "https://www.youtube.com/shorts/n13XS1CuP3Q",
    "shorts": true,
-   "views": 7184,
+   "views": 7193,
    "likes": 41,
-   "viewsGain": 33,
+   "viewsGain": 9,
    "isNew": false,
-   "median": 7068.5,
+   "median": 7013,
    "multiple": 1.0
   },
   {
@@ -154,12 +167,12 @@
    "published": "2026-11-19T23:00:03+00:00",
    "url": "https://www.youtube.com/shorts/Tr0LbpRFtFk",
    "shorts": true,
-   "views": 33348,
-   "likes": 244,
-   "viewsGain": 2250,
+   "views": 34512,
+   "likes": 251,
+   "viewsGain": 1164,
    "isNew": false,
-   "median": 7068.5,
-   "multiple": 4.7
+   "median": 7013,
+   "multiple": 4.9
   },
   {
    "id": "XtDXa41EHTw",
@@ -167,12 +180,12 @@
    "published": "2026-11-19T10:16:53+00:00",
    "url": "https://www.youtube.com/watch?v=XtDXa41EHTw",
    "shorts": false,
-   "views": 414739,
-   "likes": 1200,
-   "viewsGain": 4104,
+   "views": 430791,
+   "likes": 1225,
+   "viewsGain": 16052,
    "isNew": false,
-   "median": 116850,
-   "multiple": 3.5
+   "median": 111747.5,
+   "multiple": 3.9
   },
   {
    "id": "UVXV3vZmzsQ",
@@ -180,54 +193,41 @@
    "published": "2026-11-19T09:00:28+00:00",
    "url": "https://www.youtube.com/watch?v=UVXV3vZmzsQ",
    "shorts": false,
-   "views": 120904,
-   "likes": 976,
-   "viewsGain": 937,
+   "views": 122645,
+   "likes": 994,
+   "viewsGain": 1741,
    "isNew": false,
-   "median": 116850,
-   "multiple": 1.0
-  },
-  {
-   "id": "WbzEeAb50UY",
-   "title": "몽골에 이어 카자흐스탄에도… 현지에서 핫플된 ‘CU 편의점’ / 14F",
-   "published": "2026-11-18T09:59:07+00:00",
-   "url": "https://www.youtube.com/watch?v=WbzEeAb50UY",
-   "shorts": false,
-   "views": 279090,
-   "likes": 1187,
-   "viewsGain": 522,
-   "isNew": false,
-   "median": 116850,
-   "multiple": 2.4
+   "median": 111747.5,
+   "multiple": 1.1
   }
  ],
  "viral": [
   {
    "title": "백제는 삼국 통일을 할 필요가 없었다? #shorts",
    "url": "https://www.youtube.com/shorts/Tr0LbpRFtFk",
-   "views": 33348,
-   "multiple": 4.7,
+   "views": 34512,
+   "multiple": 4.9,
    "shorts": true
   },
   {
    "title": "써브웨이 vs 버거킹… 가성비 한 끼 경쟁에 ‘토스트집’은 못 끼는 이유 / 14F",
    "url": "https://www.youtube.com/watch?v=XtDXa41EHTw",
-   "views": 414739,
-   "multiple": 3.5,
+   "views": 430791,
+   "multiple": 3.9,
    "shorts": false
   },
   {
    "title": "일본이 천황 무덤 발굴을 막는 이유 #shorts",
    "url": "https://www.youtube.com/shorts/VKzh4gQvEIU",
-   "views": 17851,
-   "multiple": 2.5,
+   "views": 17953,
+   "multiple": 2.6,
    "shorts": true
   },
   {
-   "title": "몽골에 이어 카자흐스탄에도… 현지에서 핫플된 ‘CU 편의점’ / 14F",
-   "url": "https://www.youtube.com/watch?v=WbzEeAb50UY",
-   "views": 279090,
-   "multiple": 2.4,
+   "title": "중국산 VS 유럽산🔥 3대 진미 대결🥄ㅣ돈슐랭 / 14F",
+   "url": "https://www.youtube.com/watch?v=Mjs8_P7FstM",
+   "views": 228996,
+   "multiple": 2.0,
    "shorts": false
   }
  ]

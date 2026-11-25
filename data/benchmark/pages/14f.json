@@ -1,9 +1,17 @@
 {
  "name": "14F 일사에프 (MBC)",
  "channel": "https://www.youtube.com/@14FMBC",
- "checkedAt": "2026-11-25T08:41+09:00",
+ "checkedAt": "2026-11-25T14:57+09:00",
  "subscribers": "239만",
  "videos": [
+  {
+   "id": "CnZGi2F1T3M",
+   "title": "가성비 된 3대 진미 근황 #shorts",
+   "views": 3000,
+   "viewsText": "조회수 3천회",
+   "published": "",
+   "kind": "short"
+  },
   {
    "id": "NyxPbpN3Uyo",
    "title": "한국인 드립에 감동한 영국 소시지 아저씨#shorts",
@@ -11,7 +19,7 @@
    "viewsText": "조회수 6.9천회",
    "published": "",
    "kind": "short",
-   "gain": 200
+   "gain": 0
   },
   {
    "id": "VKzh4gQvEIU",
@@ -34,11 +42,11 @@
   {
    "id": "wlN76TIzAEM",
    "title": "천만 조회수의 남자, 소시지 아저씨의 포포몬쓰★ #shorts",
-   "views": 5400,
-   "viewsText": "조회수 5.4천회",
+   "views": 5500,
+   "viewsText": "조회수 5.5천회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 100
   },
   {
    "id": "n13XS1CuP3Q",
@@ -52,11 +60,11 @@
   {
    "id": "Tr0LbpRFtFk",
    "title": "백제는 삼국 통일을 할 필요가 없었다? #shorts",
-   "views": 33000,
-   "viewsText": "조회수 3.3만회",
+   "views": 34000,
+   "viewsText": "조회수 3.4만회",
    "published": "",
    "kind": "short",
-   "gain": 2000
+   "gain": 1000
   },
   {
    "id": "abobZ7JfTek",
@@ -351,15 +359,6 @@
    "title": "우주선급 공학 기술이 필요한 벙커링",
    "views": 14000,
    "viewsText": "조회수 1.4만회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "waU1A-D-g8Q",
-   "title": "어리바리 신입 어디까지 이해 가능? #shorts",
-   "views": 20000,
-   "viewsText": "조회수 2만회",
    "published": "",
    "kind": "short",
    "gain": 0
