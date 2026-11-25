@@ -1,71 +1,103 @@
 {
  "name": "스브스뉴스 (SBS)",
  "channel": "https://www.youtube.com/@subusunews",
- "checkedAt": "2026-11-25T14:57+09:00",
+ "checkedAt": "2026-11-25T19:37+09:00",
  "subscribers": "145만",
  "videos": [
   {
+   "id": "8yMt7MH2C6o",
+   "title": "술자리에서 나르시시스트가 위험한 이유",
+   "views": 20,
+   "viewsText": "조회수 20회",
+   "published": "",
+   "kind": "short"
+  },
+  {
+   "id": "27P_Z6WStxE",
+   "title": "사고뭉치 유병권과 예상치 못한 공범",
+   "views": 327,
+   "viewsText": "조회수 327회",
+   "published": "",
+   "kind": "short"
+  },
+  {
+   "id": "mxTL8Sss32U",
+   "title": "비음주자를 영원히 이해하지 못하는 유병권",
+   "views": 289,
+   "viewsText": "조회수 289회",
+   "published": "",
+   "kind": "short"
+  },
+  {
+   "id": "PcOWHA81IJY",
+   "title": "글로벌 인재와 기업이 만났다? 외국인취업채용박람회 후기 #취업 #shorts #스브스뉴스",
+   "views": 443,
+   "viewsText": "조회수 443회",
+   "published": "",
+   "kind": "short"
+  },
+  {
    "id": "z4Iick_S-fY",
    "title": "이럴 거면 피부과라고 적어 놓으면 안 되는 거 아님? #피부과 #shorts #스브스뉴스",
-   "views": 4700,
-   "viewsText": "조회수 4.7천회",
+   "views": 6000,
+   "viewsText": "조회수 6천회",
    "published": "",
    "kind": "short",
-   "gain": 1200
+   "gain": 1300
   },
   {
    "id": "zd3gPVFAyXk",
    "title": "블프라고 방심하지 말자... #블프 #shorts #스브스뉴스",
-   "views": 3900,
-   "viewsText": "조회수 3.9천회",
+   "views": 4400,
+   "viewsText": "조회수 4.4천회",
    "published": "",
    "kind": "short",
-   "gain": 700
+   "gain": 500
   },
   {
    "id": "ZhLZHImIb1E",
    "title": "추억의 드라마 속 ‘그곳’으로 직접 떠날 수 있는 핫플 여행지  #shorts / 스브스뉴스",
-   "views": 2800,
-   "viewsText": "조회수 2.8천회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "JOYjvxU9AMs",
-   "title": "돈벌이 수단까지 된 요즘 학교 폭력 근황 #신종학폭 #shorts #스브스뉴스",
-   "views": 1700,
-   "viewsText": "조회수 1.7천회",
+   "views": 2900,
+   "viewsText": "조회수 2.9천회",
    "published": "",
    "kind": "short",
    "gain": 100
   },
   {
-   "id": "KDehtM0Jz0Y",
-   "title": "이미 작년에 AI 의혹으로 재시험 치렀다는 ‘이 나라’ #아르헨티나 #shorts #스브스뉴스",
-   "views": 6400,
-   "viewsText": "조회수 6.4천회",
+   "id": "JOYjvxU9AMs",
+   "title": "돈벌이 수단까지 된 요즘 학교 폭력 근황 #신종학폭 #shorts #스브스뉴스",
+   "views": 1900,
+   "viewsText": "조회수 1.9천회",
    "published": "",
    "kind": "short",
-   "gain": 600
+   "gain": 200
+  },
+  {
+   "id": "KDehtM0Jz0Y",
+   "title": "이미 작년에 AI 의혹으로 재시험 치렀다는 ‘이 나라’ #아르헨티나 #shorts #스브스뉴스",
+   "views": 6700,
+   "viewsText": "조회수 6.7천회",
+   "published": "",
+   "kind": "short",
+   "gain": 300
   },
   {
    "id": "PQeUrlmMlGE",
    "title": "합의라는 이름하에 가해지는 무차별 학교 폭력 #야차룰 #shorts #스브스뉴스",
-   "views": 3100,
-   "viewsText": "조회수 3.1천회",
+   "views": 3200,
+   "viewsText": "조회수 3.2천회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 100
   },
   {
    "id": "y6vCxLpdqds",
    "title": "한전에서 또다시 개인정보 유출 사고 #한전 #shorts #스브스뉴스",
-   "views": 5900,
-   "viewsText": "조회수 5.9천회",
+   "views": 6100,
+   "viewsText": "조회수 6.1천회",
    "published": "",
    "kind": "short",
-   "gain": 600
+   "gain": 200
   },
   {
    "id": "vDHKpDygPZY",
@@ -74,7 +106,7 @@
    "viewsText": "조회수 1.1만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "olaKZkE3I-s",
@@ -97,11 +129,11 @@
   {
    "id": "ThgVuf9l2Ms",
    "title": "결혼식 평론계의 이동진",
-   "views": 10000,
-   "viewsText": "조회수 1만회",
+   "views": 11000,
+   "viewsText": "조회수 1.1만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 1000
   },
   {
    "id": "KiHKqusUC3g",
@@ -223,11 +255,11 @@
   {
    "id": "DFiDu4HS9I4",
    "title": "실제 JMS 2세가 말하는 사이비 종교의 충격적인 실체 #사이비 #shorts #스브스뉴스",
-   "views": 15000,
-   "viewsText": "조회수 1.5만회",
+   "views": 16000,
+   "viewsText": "조회수 1.6만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 1000
   },
   {
    "id": "SIFB9hhhj-8",
@@ -324,42 +356,6 @@
    "title": "부정행위 인정한 세무사 수석 합격자 #AI #shorts #스브스뉴스",
    "views": 18000,
    "viewsText": "조회수 1.8만회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "a1XAX1FAHu0",
-   "title": "공연 볼 곳 없는 파주 시민 구원하러 국립극장 등판? #shorts / 스브스뉴스",
-   "views": 5400,
-   "viewsText": "조회수 5.4천회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "omd178ailwI",
-   "title": "블프 전에 꼭 확인하세요 #블랙프라이데이 #shorts #스브스뉴스",
-   "views": 7500,
-   "viewsText": "조회수 7.5천회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "T3rXxLcDD-g",
-   "title": "홈플러스가 이겨냈으면 좋겠어 #홈플러스 #shorts #스브스뉴스",
-   "views": 6300,
-   "viewsText": "조회수 6.3천회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "wHp_zWCqzxw",
-   "title": "의무 사항 아니면 안 해도 되는 거냐고..ㅠ #딸기우유 #shorts #스브스뉴스",
-   "views": 2600,
-   "viewsText": "조회수 2.6천회",
    "published": "",
    "kind": "short",
    "gain": 0

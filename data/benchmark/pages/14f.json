@@ -1,43 +1,44 @@
 {
  "name": "14F 일사에프 (MBC)",
  "channel": "https://www.youtube.com/@14FMBC",
- "checkedAt": "2026-11-25T14:57+09:00",
+ "checkedAt": "2026-11-25T19:37+09:00",
  "subscribers": "239만",
  "videos": [
   {
    "id": "CnZGi2F1T3M",
    "title": "가성비 된 3대 진미 근황 #shorts",
-   "views": 3000,
-   "viewsText": "조회수 3천회",
+   "views": 8100,
+   "viewsText": "조회수 8.1천회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 5100
   },
   {
    "id": "NyxPbpN3Uyo",
    "title": "한국인 드립에 감동한 영국 소시지 아저씨#shorts",
-   "views": 6900,
-   "viewsText": "조회수 6.9천회",
+   "views": 7000,
+   "viewsText": "조회수 7천회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 100
   },
   {
    "id": "VKzh4gQvEIU",
    "title": "일본이 천황 무덤 발굴을 막는 이유 #shorts",
-   "views": 17000,
-   "viewsText": "조회수 1.7만회",
+   "views": 18000,
+   "viewsText": "조회수 1.8만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 1000
   },
   {
    "id": "1SOf5BtCrok",
    "title": "한국은 왜 구호 현장에 일자리를 만들까? #shorts",
-   "views": 4700,
-   "viewsText": "조회수 4.7천회",
+   "views": 4800,
+   "viewsText": "조회수 4.8천회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 100
   },
   {
    "id": "wlN76TIzAEM",
@@ -46,22 +47,22 @@
    "viewsText": "조회수 5.5천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "n13XS1CuP3Q",
    "title": "미국에서 불거지는 초가공식품 소송전 #shorts",
-   "views": 7100,
-   "viewsText": "조회수 7.1천회",
+   "views": 7200,
+   "viewsText": "조회수 7.2천회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 100
   },
   {
    "id": "Tr0LbpRFtFk",
    "title": "백제는 삼국 통일을 할 필요가 없었다? #shorts",
-   "views": 34000,
-   "viewsText": "조회수 3.4만회",
+   "views": 35000,
+   "viewsText": "조회수 3.5만회",
    "published": "",
    "kind": "short",
    "gain": 1000
@@ -204,11 +205,11 @@
   {
    "id": "yoyqnf-PE30",
    "title": "우리 집 강아지의 전생을 알 수 있다? #shorts",
-   "views": 6000,
-   "viewsText": "조회수 6천회",
+   "views": 6100,
+   "viewsText": "조회수 6.1천회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 100
   },
   {
    "id": "FV2VNAPmk-o",
