@@ -1,55 +1,83 @@
 {
  "name": "스브스뉴스 (SBS)",
  "channel": "https://www.youtube.com/@subusunews",
- "checkedAt": "2026-11-25T19:37+09:00",
+ "checkedAt": "2026-11-25T22:55+09:00",
  "subscribers": "145만",
  "videos": [
   {
-   "id": "8yMt7MH2C6o",
-   "title": "술자리에서 나르시시스트가 위험한 이유",
-   "views": 20,
-   "viewsText": "조회수 20회",
+   "id": "NjXfRwPyMdw",
+   "title": "꽉 묶인 봉지에 버려진 눈도 못 뜬 새끼 고양이들 #고양이 #shorts #스브스뉴스",
+   "views": 206,
+   "viewsText": "조회수 206회",
    "published": "",
    "kind": "short"
+  },
+  {
+   "id": "8t6NG9_Tjt4",
+   "title": "수능 날 화장실 휴지통에서 발견된 ‘휴지 뭉치’의 정체 #수능 #shorts #스브스뉴스",
+   "views": 1200,
+   "viewsText": "조회수 1.2천회",
+   "published": "",
+   "kind": "short"
+  },
+  {
+   "id": "JQgsnxMvNZo",
+   "title": "직장인이 가장 피하고 싶은 회식 = 유병권이 참석하는 회식",
+   "views": 1000,
+   "viewsText": "조회수 1천회",
+   "published": "",
+   "kind": "short"
+  },
+  {
+   "id": "8yMt7MH2C6o",
+   "title": "술자리에서 나르시시스트가 위험한 이유",
+   "views": 962,
+   "viewsText": "조회수 962회",
+   "published": "",
+   "kind": "short",
+   "gain": 942
   },
   {
    "id": "27P_Z6WStxE",
    "title": "사고뭉치 유병권과 예상치 못한 공범",
-   "views": 327,
-   "viewsText": "조회수 327회",
+   "views": 2000,
+   "viewsText": "조회수 2천회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 1673
   },
   {
    "id": "mxTL8Sss32U",
    "title": "비음주자를 영원히 이해하지 못하는 유병권",
-   "views": 289,
-   "viewsText": "조회수 289회",
+   "views": 1300,
+   "viewsText": "조회수 1.3천회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 1011
   },
   {
    "id": "PcOWHA81IJY",
    "title": "글로벌 인재와 기업이 만났다? 외국인취업채용박람회 후기 #취업 #shorts #스브스뉴스",
-   "views": 443,
-   "viewsText": "조회수 443회",
+   "views": 711,
+   "viewsText": "조회수 711회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 268
   },
   {
    "id": "z4Iick_S-fY",
    "title": "이럴 거면 피부과라고 적어 놓으면 안 되는 거 아님? #피부과 #shorts #스브스뉴스",
-   "views": 6000,
-   "viewsText": "조회수 6천회",
+   "views": 6900,
+   "viewsText": "조회수 6.9천회",
    "published": "",
    "kind": "short",
-   "gain": 1300
+   "gain": 900
   },
   {
    "id": "zd3gPVFAyXk",
    "title": "블프라고 방심하지 말자... #블프 #shorts #스브스뉴스",
-   "views": 4400,
-   "viewsText": "조회수 4.4천회",
+   "views": 4900,
+   "viewsText": "조회수 4.9천회",
    "published": "",
    "kind": "short",
    "gain": 500
@@ -61,25 +89,25 @@
    "viewsText": "조회수 2.9천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "JOYjvxU9AMs",
    "title": "돈벌이 수단까지 된 요즘 학교 폭력 근황 #신종학폭 #shorts #스브스뉴스",
-   "views": 1900,
-   "viewsText": "조회수 1.9천회",
+   "views": 2400,
+   "viewsText": "조회수 2.4천회",
    "published": "",
    "kind": "short",
-   "gain": 200
+   "gain": 500
   },
   {
    "id": "KDehtM0Jz0Y",
    "title": "이미 작년에 AI 의혹으로 재시험 치렀다는 ‘이 나라’ #아르헨티나 #shorts #스브스뉴스",
-   "views": 6700,
-   "viewsText": "조회수 6.7천회",
+   "views": 6800,
+   "viewsText": "조회수 6.8천회",
    "published": "",
    "kind": "short",
-   "gain": 300
+   "gain": 100
   },
   {
    "id": "PQeUrlmMlGE",
@@ -88,16 +116,16 @@
    "viewsText": "조회수 3.2천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "y6vCxLpdqds",
    "title": "한전에서 또다시 개인정보 유출 사고 #한전 #shorts #스브스뉴스",
-   "views": 6100,
-   "viewsText": "조회수 6.1천회",
+   "views": 6200,
+   "viewsText": "조회수 6.2천회",
    "published": "",
    "kind": "short",
-   "gain": 200
+   "gain": 100
   },
   {
    "id": "vDHKpDygPZY",
@@ -120,11 +148,11 @@
   {
    "id": "gmcxeCXntLo",
    "title": "강한 자만 결혼할 수 있음",
-   "views": 14000,
-   "viewsText": "조회수 1.4만회",
+   "views": 15000,
+   "viewsText": "조회수 1.5만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 1000
   },
   {
    "id": "ThgVuf9l2Ms",
@@ -133,7 +161,7 @@
    "viewsText": "조회수 1.1만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "KiHKqusUC3g",
@@ -259,7 +287,7 @@
    "viewsText": "조회수 1.6만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "SIFB9hhhj-8",
@@ -329,33 +357,6 @@
    "title": "AI 이용해서 세무사 시험 수석 합격한 세무냥이의 컨닝 방법 #세무냥이 #shorts #스브스뉴스",
    "views": 100000,
    "viewsText": "조회수 10만회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "zPaJv7lADWY",
-   "title": "이제 겨울인데 모기는 왜 안 사라짐? #가을 #shorts #스브스뉴스",
-   "views": 8400,
-   "viewsText": "조회수 8.4천회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "0LtMpN02Csc",
-   "title": "관세사도 합격 10배 폭증? 결국 전수조사 나선다 #국가자격시험 #shorts #스브스뉴스",
-   "views": 5500,
-   "viewsText": "조회수 5.5천회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "2qGKxq8pdII",
-   "title": "부정행위 인정한 세무사 수석 합격자 #AI #shorts #스브스뉴스",
-   "views": 18000,
-   "viewsText": "조회수 1.8만회",
    "published": "",
    "kind": "short",
    "gain": 0

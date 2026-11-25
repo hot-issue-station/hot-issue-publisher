@@ -475,5 +475,157 @@
     "gain": 270
    }
   ]
+ },
+ {
+  "at": "2026-11-25T22:55+09:00",
+  "key": "14f",
+  "ok": true,
+  "new": [],
+  "top": [
+   {
+    "id": "Nn_kaMW9nkY",
+    "title": "우크라이나 전쟁 끝낼 수 있을까…미·중·러 정상회담 뒤 러시아의 계산 / 14F",
+    "views": 52927,
+    "gain": 43898
+   },
+   {
+    "id": "YMBbQzpjexg",
+    "title": "멕시코 킹핀 제거 작전…‘기관총, 유탄 발사기, 장갑차’로 무장한 조직의 극렬 저항 / 14F",
+    "views": 38197,
+    "gain": 34820
+   },
+   {
+    "id": "gfCdOrEqM0E",
+    "title": "영국의 자존심, 제임스 본드 ‘로버트 패틴슨’…수트, 시계, 차 모두가 그를 노린다! / 14F",
+    "views": 130720,
+    "gain": 21073
+   }
+  ]
+ },
+ {
+  "at": "2026-11-25T22:55+09:00",
+  "key": "subusunews",
+  "ok": true,
+  "new": [],
+  "top": [
+   {
+    "id": "unZzsissHE4",
+    "title": "향기의 편지에 역대급 눈물바다 된 우사편 촬영장ㅣ우리 사이엔 편지가 있다2 EP.13 김향기",
+    "views": 50009,
+    "gain": 5517
+   },
+   {
+    "id": "eYmS_0_NvCM",
+    "title": "아 못 쉴 것 같은데 해야 될 것 같은데",
+    "views": 1178,
+    "gain": 742
+   },
+   {
+    "id": "VYC_AREIZ-Y",
+    "title": "천지 생각하며 현장에서 울어버린 향기",
+    "views": 1276,
+    "gain": 678
+   }
+  ]
+ },
+ {
+  "at": "2026-11-25T22:55+09:00",
+  "key": "vstudio",
+  "ok": true,
+  "new": [],
+  "top": []
+ },
+ {
+  "at": "2026-11-25T22:55+09:00",
+  "key": "syukaworld",
+  "ok": true,
+  "new": [],
+  "top": [
+   {
+    "id": "da6VbUcLKjY",
+    "title": "🔴 LIVE [미장은지금] 월가가 버블을 말하지 않는 이유",
+    "views": 97578,
+    "gain": 84934
+   },
+   {
+    "id": "g_IDje5CpGQ",
+    "title": "주식은 팔자다. 그러니까 다 팔자(?)",
+    "views": 62015,
+    "gain": 53167
+   },
+   {
+    "id": "CiQuUgrJOvY",
+    "title": "아 걍 너 가져",
+    "views": 62432,
+    "gain": 44229
+   }
+  ]
+ },
+ {
+  "at": "2026-11-25T22:55+09:00",
+  "key": "ytn",
+  "ok": true,
+  "new": [
+   "9Xz04KGysdY",
+   "xyKq_p2aPGM",
+   "U1shKb5iklM",
+   "bA9J9YwLXGQ",
+   "OfiyaCEHXcc",
+   "EOf7ccEa728",
+   "tOXrNDp5TAc",
+   "2W7qmAcdVro",
+   "bIF1yI57t3k",
+   "Xm0VFHUWs70",
+   "AHP0yUfMMK8",
+   "XMWTH_D68ek",
+   "fK3P2FsMwfM",
+   "CcXbPD7GNqg"
+  ],
+  "top": [
+   {
+    "id": "xQmZUskTwE4",
+    "title": "젠슨 황 복귀 자처하더니, 트럼프 덮친 '변수'…'후폭풍' 예고한 머스크 [이슈픽] / YTN",
+    "views": 1729,
+    "gain": 1729
+   },
+   {
+    "id": "9Xz04KGysdY",
+    "title": "세계 최강 미국 덮친 의문의 공격…전국 공항까지 마비되며 '대혼돈' [이슈픽] / YTN",
+    "views": 14333,
+    "gain": null
+   },
+   {
+    "id": "AHP0yUfMMK8",
+    "title": "노소영, 최태원 '9,440억 지급 카드' 거부...\"상고 취하해야\" / YTN",
+    "views": 4380,
+    "gain": null
+   }
+  ]
+ },
+ {
+  "at": "2026-11-25T22:55+09:00",
+  "key": "storyk",
+  "ok": true,
+  "new": [],
+  "top": [
+   {
+    "id": "-Z4rN_Otbwg",
+    "title": "한국 전체 1위 직행 U17 월드컵 과연 어떤 대회? - 역사적인 축구스타들의 등용문",
+    "views": 19695,
+    "gain": 16789
+   },
+   {
+    "id": "EgWaw2Fcd_c",
+    "title": "손정범 한국 미드필더로 역대급 엘리트코스 - 10대 데뷔 국가대표 발탁 리버풀 이적설",
+    "views": 102315,
+    "gain": 483
+   },
+   {
+    "id": "t71dh5FPkIo",
+    "title": "김민수 어시스트에 영국이 더 흥분한 이유 - BBC가 변호하는 레인저스의 경이로운 10번",
+    "views": 97856,
+    "gain": 190
+   }
+  ]
  }
 ]

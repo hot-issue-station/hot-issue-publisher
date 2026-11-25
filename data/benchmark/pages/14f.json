@@ -1,17 +1,17 @@
 {
  "name": "14F 일사에프 (MBC)",
  "channel": "https://www.youtube.com/@14FMBC",
- "checkedAt": "2026-11-25T19:37+09:00",
+ "checkedAt": "2026-11-25T22:55+09:00",
  "subscribers": "239만",
  "videos": [
   {
    "id": "CnZGi2F1T3M",
    "title": "가성비 된 3대 진미 근황 #shorts",
-   "views": 8100,
-   "viewsText": "조회수 8.1천회",
+   "views": 10000,
+   "viewsText": "조회수 1만회",
    "published": "",
    "kind": "short",
-   "gain": 5100
+   "gain": 1900
   },
   {
    "id": "NyxPbpN3Uyo",
@@ -20,7 +20,7 @@
    "viewsText": "조회수 7천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "VKzh4gQvEIU",
@@ -29,7 +29,7 @@
    "viewsText": "조회수 1.8만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "1SOf5BtCrok",
@@ -38,7 +38,7 @@
    "viewsText": "조회수 4.8천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "wlN76TIzAEM",
@@ -56,7 +56,7 @@
    "viewsText": "조회수 7.2천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "Tr0LbpRFtFk",
@@ -65,7 +65,7 @@
    "viewsText": "조회수 3.5만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "abobZ7JfTek",
@@ -115,11 +115,11 @@
   {
    "id": "WgWmSXeb_YA",
    "title": "후티 VS 사우디 공항 보복전 #shorts",
-   "views": 8000,
-   "viewsText": "조회수 8천회",
+   "views": 8100,
+   "viewsText": "조회수 8.1천회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 100
   },
   {
    "id": "yzQjanfzMkg",
@@ -209,7 +209,7 @@
    "viewsText": "조회수 6.1천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "FV2VNAPmk-o",
