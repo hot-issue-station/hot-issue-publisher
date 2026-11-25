@@ -1,86 +1,89 @@
 {
  "name": "스브스뉴스 (SBS)",
  "channel": "https://www.youtube.com/@subusunews",
- "checkedAt": "2026-11-25T22:55+09:00",
+ "checkedAt": "2026-11-26T08:41+09:00",
  "subscribers": "145만",
  "videos": [
   {
    "id": "NjXfRwPyMdw",
    "title": "꽉 묶인 봉지에 버려진 눈도 못 뜬 새끼 고양이들 #고양이 #shorts #스브스뉴스",
-   "views": 206,
-   "viewsText": "조회수 206회",
+   "views": 1800,
+   "viewsText": "조회수 1.8천회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 1594
   },
   {
    "id": "8t6NG9_Tjt4",
    "title": "수능 날 화장실 휴지통에서 발견된 ‘휴지 뭉치’의 정체 #수능 #shorts #스브스뉴스",
-   "views": 1200,
-   "viewsText": "조회수 1.2천회",
+   "views": 3900,
+   "viewsText": "조회수 3.9천회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 2700
   },
   {
    "id": "JQgsnxMvNZo",
    "title": "직장인이 가장 피하고 싶은 회식 = 유병권이 참석하는 회식",
-   "views": 1000,
-   "viewsText": "조회수 1천회",
+   "views": 2700,
+   "viewsText": "조회수 2.7천회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 1700
   },
   {
    "id": "8yMt7MH2C6o",
    "title": "술자리에서 나르시시스트가 위험한 이유",
-   "views": 962,
-   "viewsText": "조회수 962회",
+   "views": 2100,
+   "viewsText": "조회수 2.1천회",
    "published": "",
    "kind": "short",
-   "gain": 942
+   "gain": 1138
   },
   {
    "id": "27P_Z6WStxE",
    "title": "사고뭉치 유병권과 예상치 못한 공범",
-   "views": 2000,
-   "viewsText": "조회수 2천회",
-   "published": "",
-   "kind": "short",
-   "gain": 1673
-  },
-  {
-   "id": "mxTL8Sss32U",
-   "title": "비음주자를 영원히 이해하지 못하는 유병권",
-   "views": 1300,
-   "viewsText": "조회수 1.3천회",
-   "published": "",
-   "kind": "short",
-   "gain": 1011
-  },
-  {
-   "id": "PcOWHA81IJY",
-   "title": "글로벌 인재와 기업이 만났다? 외국인취업채용박람회 후기 #취업 #shorts #스브스뉴스",
-   "views": 711,
-   "viewsText": "조회수 711회",
-   "published": "",
-   "kind": "short",
-   "gain": 268
-  },
-  {
-   "id": "z4Iick_S-fY",
-   "title": "이럴 거면 피부과라고 적어 놓으면 안 되는 거 아님? #피부과 #shorts #스브스뉴스",
-   "views": 6900,
-   "viewsText": "조회수 6.9천회",
-   "published": "",
-   "kind": "short",
-   "gain": 900
-  },
-  {
-   "id": "zd3gPVFAyXk",
-   "title": "블프라고 방심하지 말자... #블프 #shorts #스브스뉴스",
    "views": 4900,
    "viewsText": "조회수 4.9천회",
    "published": "",
    "kind": "short",
-   "gain": 500
+   "gain": 2900
+  },
+  {
+   "id": "mxTL8Sss32U",
+   "title": "비음주자를 영원히 이해하지 못하는 유병권",
+   "views": 2100,
+   "viewsText": "조회수 2.1천회",
+   "published": "",
+   "kind": "short",
+   "gain": 800
+  },
+  {
+   "id": "PcOWHA81IJY",
+   "title": "글로벌 인재와 기업이 만났다? 외국인취업채용박람회 후기 #취업 #shorts #스브스뉴스",
+   "views": 2400,
+   "viewsText": "조회수 2.4천회",
+   "published": "",
+   "kind": "short",
+   "gain": 1689
+  },
+  {
+   "id": "z4Iick_S-fY",
+   "title": "이럴 거면 피부과라고 적어 놓으면 안 되는 거 아님? #피부과 #shorts #스브스뉴스",
+   "views": 9500,
+   "viewsText": "조회수 9.5천회",
+   "published": "",
+   "kind": "short",
+   "gain": 2600
+  },
+  {
+   "id": "zd3gPVFAyXk",
+   "title": "블프라고 방심하지 말자... #블프 #shorts #스브스뉴스",
+   "views": 5800,
+   "viewsText": "조회수 5.8천회",
+   "published": "",
+   "kind": "short",
+   "gain": 900
   },
   {
    "id": "ZhLZHImIb1E",
@@ -94,20 +97,20 @@
   {
    "id": "JOYjvxU9AMs",
    "title": "돈벌이 수단까지 된 요즘 학교 폭력 근황 #신종학폭 #shorts #스브스뉴스",
-   "views": 2400,
-   "viewsText": "조회수 2.4천회",
+   "views": 4200,
+   "viewsText": "조회수 4.2천회",
    "published": "",
    "kind": "short",
-   "gain": 500
+   "gain": 1800
   },
   {
    "id": "KDehtM0Jz0Y",
    "title": "이미 작년에 AI 의혹으로 재시험 치렀다는 ‘이 나라’ #아르헨티나 #shorts #스브스뉴스",
-   "views": 6800,
-   "viewsText": "조회수 6.8천회",
+   "views": 7000,
+   "viewsText": "조회수 7천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 200
   },
   {
    "id": "PQeUrlmMlGE",
@@ -121,8 +124,8 @@
   {
    "id": "y6vCxLpdqds",
    "title": "한전에서 또다시 개인정보 유출 사고 #한전 #shorts #스브스뉴스",
-   "views": 6200,
-   "viewsText": "조회수 6.2천회",
+   "views": 6300,
+   "viewsText": "조회수 6.3천회",
    "published": "",
    "kind": "short",
    "gain": 100
@@ -152,7 +155,7 @@
    "viewsText": "조회수 1.5만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "ThgVuf9l2Ms",

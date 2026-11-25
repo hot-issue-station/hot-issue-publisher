@@ -1,7 +1,7 @@
 {
  "name": "안원잘부",
  "channel": "https://www.youtube.com/@helloiamwoninicetomeetyou",
- "checkedAt": "2026-11-25T22:55+09:00",
+ "checkedAt": "2026-11-26T08:41+09:00",
  "subscribers": "245만",
  "videos": [
   {
@@ -11,16 +11,16 @@
    "viewsText": "조회수 142만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "kfK-LENbEUo",
    "title": "정작가의 컴백을 축하합니다",
-   "views": 1910000,
-   "viewsText": "조회수 191만회",
+   "views": 1920000,
+   "viewsText": "조회수 192만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "DKDmFgXzxs8",
@@ -43,11 +43,11 @@
   {
    "id": "mFM2hP5LEhM",
    "title": "스팸 원이 에디션(?)",
-   "views": 3260000,
-   "viewsText": "조회수 326만회",
+   "views": 3270000,
+   "viewsText": "조회수 327만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "xCvbDeMKm3E",
@@ -110,7 +110,7 @@
    "viewsText": "조회수 1383만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "gNJrbCSN2TM",

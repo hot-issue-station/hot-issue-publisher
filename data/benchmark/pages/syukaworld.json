@@ -1,23 +1,23 @@
 {
  "name": "슈카월드",
  "channel": "https://www.youtube.com/@syukaworld",
- "checkedAt": "2026-11-25T22:55+09:00",
+ "checkedAt": "2026-11-26T08:41+09:00",
  "subscribers": "374만",
  "videos": [
   {
    "id": "F67XTSCwwQE",
    "title": "감히 황제 자리를 탐한 자",
-   "views": 370000,
-   "viewsText": "조회수 37만회",
+   "views": 420000,
+   "viewsText": "조회수 42만회",
    "published": "",
    "kind": "short",
-   "gain": 60000
+   "gain": 50000
   },
   {
    "id": "7RK0-KngzOo",
    "title": "주식이 장난이야?",
-   "views": 190000,
-   "viewsText": "조회수 19만회",
+   "views": 200000,
+   "viewsText": "조회수 20만회",
    "published": "",
    "kind": "short",
    "gain": 10000
@@ -25,11 +25,11 @@
   {
    "id": "xhzS_pawX9Y",
    "title": "슈카 서울대 입학 해명",
-   "views": 830000,
-   "viewsText": "조회수 83만회",
+   "views": 840000,
+   "viewsText": "조회수 84만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "NINJ94H2s04",
@@ -61,11 +61,11 @@
   {
    "id": "5LEMniVcweU",
    "title": "걱정 노노",
-   "views": 74000,
-   "viewsText": "조회수 7.4만회",
+   "views": 75000,
+   "viewsText": "조회수 7.5만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 1000
   },
   {
    "id": "xmLFwy-UdNU",
@@ -88,11 +88,11 @@
   {
    "id": "lioIrGMoIbs",
    "title": "좋은 사람 있으면 소개시켜줘",
-   "views": 98000,
-   "viewsText": "조회수 9.8만회",
+   "views": 99000,
+   "viewsText": "조회수 9.9만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 1000
   },
   {
    "id": "D32h_sPWp0g",
@@ -317,7 +317,7 @@
    "viewsText": "조회수 84만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "7EuhhqsuuRg",
