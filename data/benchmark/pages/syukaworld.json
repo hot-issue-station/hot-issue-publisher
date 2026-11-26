@@ -1,17 +1,17 @@
 {
  "name": "슈카월드",
  "channel": "https://www.youtube.com/@syukaworld",
- "checkedAt": "2026-11-26T22:54+09:00",
+ "checkedAt": "2026-11-27T08:46+09:00",
  "subscribers": "374만",
  "videos": [
   {
    "id": "F67XTSCwwQE",
    "title": "감히 황제 자리를 탐한 자",
-   "views": 480000,
-   "viewsText": "조회수 48만회",
+   "views": 500000,
+   "viewsText": "조회수 50만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 20000
   },
   {
    "id": "7RK0-KngzOo",
@@ -70,11 +70,11 @@
   {
    "id": "xmLFwy-UdNU",
    "title": "노안의 라식",
-   "views": 290000,
-   "viewsText": "조회수 29만회",
+   "views": 300000,
+   "viewsText": "조회수 30만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "xVKY3CWUoSE",
@@ -200,7 +200,7 @@
    "viewsText": "조회수 83만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "Gy9zZfrYwUo",
@@ -209,7 +209,7 @@
    "viewsText": "조회수 194만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "TqwwF2cJJgA",

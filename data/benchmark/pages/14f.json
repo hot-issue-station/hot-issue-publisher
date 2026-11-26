@@ -1,35 +1,43 @@
 {
  "name": "14F 일사에프 (MBC)",
  "channel": "https://www.youtube.com/@14FMBC",
- "checkedAt": "2026-11-26T22:54+09:00",
+ "checkedAt": "2026-11-27T08:46+09:00",
  "subscribers": "239만",
  "videos": [
   {
+   "id": "pC8PrVAycNI",
+   "title": "크리스토퍼 놀란 감독이 틀렸다? #shorts",
+   "views": 692,
+   "viewsText": "조회수 692회",
+   "published": "",
+   "kind": "short"
+  },
+  {
    "id": "7lymCCg10U4",
    "title": "솔로는 엔트로피가 높다? #shorts",
-   "views": 4000,
-   "viewsText": "조회수 4천회",
+   "views": 5300,
+   "viewsText": "조회수 5.3천회",
    "published": "",
    "kind": "short",
-   "gain": 500
+   "gain": 1300
   },
   {
    "id": "CnZGi2F1T3M",
    "title": "가성비 된 3대 진미 근황 #shorts",
-   "views": 16000,
-   "viewsText": "조회수 1.6만회",
+   "views": 17000,
+   "viewsText": "조회수 1.7만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 1000
   },
   {
    "id": "NyxPbpN3Uyo",
    "title": "한국인 드립에 감동한 영국 소시지 아저씨#shorts",
-   "views": 7100,
-   "viewsText": "조회수 7.1천회",
+   "views": 7200,
+   "viewsText": "조회수 7.2천회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 100
   },
   {
    "id": "VKzh4gQvEIU",
@@ -52,11 +60,11 @@
   {
    "id": "wlN76TIzAEM",
    "title": "천만 조회수의 남자, 소시지 아저씨의 포포몬쓰★ #shorts",
-   "views": 5600,
-   "viewsText": "조회수 5.6천회",
+   "views": 5700,
+   "viewsText": "조회수 5.7천회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 100
   },
   {
    "id": "n13XS1CuP3Q",
@@ -65,7 +73,7 @@
    "viewsText": "조회수 7.3천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "Tr0LbpRFtFk",
@@ -74,7 +82,7 @@
    "viewsText": "조회수 3.8만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "abobZ7JfTek",
@@ -119,7 +127,7 @@
    "viewsText": "조회수 9.5만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "WgWmSXeb_YA",
@@ -351,15 +359,6 @@
    "title": "수메르 vs 이집트, 인류 최초의 문명은? #shorts",
    "views": 12000,
    "viewsText": "조회수 1.2만회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "5tFpiO-6aII",
-   "title": "버드와이저 진짜 많이 마셨는데... #shorts",
-   "views": 7700,
-   "viewsText": "조회수 7.7천회",
    "published": "",
    "kind": "short",
    "gain": 0
