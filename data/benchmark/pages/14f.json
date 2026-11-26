@@ -1,25 +1,26 @@
 {
  "name": "14F 일사에프 (MBC)",
  "channel": "https://www.youtube.com/@14FMBC",
- "checkedAt": "2026-11-26T08:41+09:00",
+ "checkedAt": "2026-11-26T14:57+09:00",
  "subscribers": "239만",
  "videos": [
   {
    "id": "7lymCCg10U4",
    "title": "솔로는 엔트로피가 높다? #shorts",
-   "views": 587,
-   "viewsText": "조회수 587회",
+   "views": 2700,
+   "viewsText": "조회수 2.7천회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 2113
   },
   {
    "id": "CnZGi2F1T3M",
    "title": "가성비 된 3대 진미 근황 #shorts",
-   "views": 14000,
-   "viewsText": "조회수 1.4만회",
+   "views": 15000,
+   "viewsText": "조회수 1.5만회",
    "published": "",
    "kind": "short",
-   "gain": 4000
+   "gain": 1000
   },
   {
    "id": "NyxPbpN3Uyo",
@@ -28,7 +29,7 @@
    "viewsText": "조회수 7.1천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "VKzh4gQvEIU",
@@ -55,7 +56,7 @@
    "viewsText": "조회수 5.6천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "n13XS1CuP3Q",
@@ -69,8 +70,8 @@
   {
    "id": "Tr0LbpRFtFk",
    "title": "백제는 삼국 통일을 할 필요가 없었다? #shorts",
-   "views": 36000,
-   "viewsText": "조회수 3.6만회",
+   "views": 37000,
+   "viewsText": "조회수 3.7만회",
    "published": "",
    "kind": "short",
    "gain": 1000
@@ -87,11 +88,11 @@
   {
    "id": "gRThiyajPxQ",
    "title": "남대문 사장님들 입담이 왜 이리 좋아 #shorts",
-   "views": 9800,
-   "viewsText": "조회수 9.8천회",
+   "views": 9900,
+   "viewsText": "조회수 9.9천회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 100
   },
   {
    "id": "t0Zs4V5j-uA",
@@ -204,11 +205,11 @@
   {
    "id": "peSpC5kd2t0",
    "title": "홍채로도 운세를 볼 수 있다? #shorts",
-   "views": 9900,
-   "viewsText": "조회수 9.9천회",
+   "views": 10000,
+   "viewsText": "조회수 1만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 100
   },
   {
    "id": "yoyqnf-PE30",

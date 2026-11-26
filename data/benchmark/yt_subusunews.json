@@ -3,7 +3,7 @@
  "name": "스브스뉴스 (SBS)",
  "channel": "https://www.youtube.com/@subusunews",
  "channelId": "UCxPClUl0bh7BgJajD5k483g",
- "checkedAt": "2026-11-26T08:41+09:00",
+ "checkedAt": "2026-11-26T14:57+09:00",
  "videos": [
   {
    "id": "VYC_AREIZ-Y",
@@ -11,11 +11,11 @@
    "published": "2026-11-25T09:00:34+00:00",
    "url": "https://www.youtube.com/shorts/VYC_AREIZ-Y",
    "shorts": true,
-   "views": 2612,
-   "likes": 36,
-   "viewsGain": 1336,
+   "views": 3073,
+   "likes": 39,
+   "viewsGain": 461,
    "isNew": false,
-   "median": 8923.0,
+   "median": 8939.0,
    "multiple": 0.3
   },
   {
@@ -24,12 +24,12 @@
    "published": "2026-11-25T09:00:33+00:00",
    "url": "https://www.youtube.com/shorts/jCq8RP8S-Kk",
    "shorts": true,
-   "views": 1670,
-   "likes": 8,
-   "viewsGain": 525,
+   "views": 2482,
+   "likes": 17,
+   "viewsGain": 812,
    "isNew": false,
-   "median": 8923.0,
-   "multiple": 0.2
+   "median": 8939.0,
+   "multiple": 0.3
   },
   {
    "id": "eYmS_0_NvCM",
@@ -37,12 +37,12 @@
    "published": "2026-11-25T09:00:14+00:00",
    "url": "https://www.youtube.com/shorts/eYmS_0_NvCM",
    "shorts": true,
-   "views": 2629,
-   "likes": 45,
-   "viewsGain": 1451,
+   "views": 3272,
+   "likes": 62,
+   "viewsGain": 643,
    "isNew": false,
-   "median": 8923.0,
-   "multiple": 0.3
+   "median": 8939.0,
+   "multiple": 0.4
   },
   {
    "id": "hBwgRgFJLoo",
@@ -50,11 +50,11 @@
    "published": "2026-11-24T10:46:19+00:00",
    "url": "https://www.youtube.com/shorts/hBwgRgFJLoo",
    "shorts": true,
-   "views": 8789,
+   "views": 8811,
    "likes": 92,
-   "viewsGain": 79,
+   "viewsGain": 22,
    "isNew": false,
-   "median": 8923.0,
+   "median": 8939.0,
    "multiple": 1.0
   },
   {
@@ -63,12 +63,12 @@
    "published": "2026-11-24T09:32:32+00:00",
    "url": "https://www.youtube.com/shorts/9tcTOay3lzA",
    "shorts": true,
-   "views": 5793,
-   "likes": 157,
-   "viewsGain": 915,
+   "views": 6243,
+   "likes": 177,
+   "viewsGain": 450,
    "isNew": false,
-   "median": 8923.0,
-   "multiple": 0.6
+   "median": 8939.0,
+   "multiple": 0.7
   },
   {
    "id": "uy1NI4tsPiU",
@@ -76,11 +76,11 @@
    "published": "2026-11-24T09:31:18+00:00",
    "url": "https://www.youtube.com/shorts/uy1NI4tsPiU",
    "shorts": true,
-   "views": 3597,
-   "likes": 89,
-   "viewsGain": 370,
+   "views": 3875,
+   "likes": 97,
+   "viewsGain": 278,
    "isNew": false,
-   "median": 8923.0,
+   "median": 8939.0,
    "multiple": 0.4
   },
   {
@@ -89,9 +89,9 @@
    "published": "2026-11-24T09:00:01+00:00",
    "url": "https://www.youtube.com/watch?v=unZzsissHE4",
    "shorts": false,
-   "views": 56120,
-   "likes": 689,
-   "viewsGain": 6111,
+   "views": 58433,
+   "likes": 715,
+   "viewsGain": 2313,
    "isNew": false,
    "median": null,
    "multiple": null
@@ -102,11 +102,11 @@
    "published": "2026-11-20T09:00:22+00:00",
    "url": "https://www.youtube.com/shorts/yjBIZCfeUHo",
    "shorts": true,
-   "views": 29845,
-   "likes": 381,
-   "viewsGain": 91,
+   "views": 29922,
+   "likes": 383,
+   "viewsGain": 77,
    "isNew": false,
-   "median": 8923.0,
+   "median": 8939.0,
    "multiple": 3.3
   },
   {
@@ -115,11 +115,11 @@
    "published": "2026-11-20T09:00:10+00:00",
    "url": "https://www.youtube.com/shorts/XePaN4Pjpmw",
    "shorts": true,
-   "views": 12591,
+   "views": 12606,
    "likes": 81,
-   "viewsGain": 46,
+   "viewsGain": 15,
    "isNew": false,
-   "median": 8923.0,
+   "median": 8939.0,
    "multiple": 1.4
   },
   {
@@ -128,11 +128,11 @@
    "published": "2026-11-19T09:00:18+00:00",
    "url": "https://www.youtube.com/shorts/0ZiRmpIs0Eo",
    "shorts": true,
-   "views": 38333,
+   "views": 38385,
    "likes": 578,
-   "viewsGain": 86,
+   "viewsGain": 52,
    "isNew": false,
-   "median": 8923.0,
+   "median": 8939.0,
    "multiple": 4.3
   },
   {
@@ -141,11 +141,11 @@
    "published": "2026-11-19T09:00:15+00:00",
    "url": "https://www.youtube.com/shorts/2EHFXAZ5tqY",
    "shorts": true,
-   "views": 44630,
-   "likes": 380,
-   "viewsGain": 196,
+   "views": 44682,
+   "likes": 381,
+   "viewsGain": 52,
    "isNew": false,
-   "median": 8923.0,
+   "median": 8939.0,
    "multiple": 5.0
   },
   {
@@ -156,9 +156,9 @@
    "shorts": true,
    "views": 8233,
    "likes": 175,
-   "viewsGain": 18,
+   "viewsGain": 0,
    "isNew": false,
-   "median": 8923.0,
+   "median": 8939.0,
    "multiple": 0.9
   },
   {
@@ -167,11 +167,11 @@
    "published": "2026-11-18T09:00:37+00:00",
    "url": "https://www.youtube.com/shorts/UvvmykR4X1Y",
    "shorts": true,
-   "views": 21849,
+   "views": 21869,
    "likes": 523,
-   "viewsGain": 134,
+   "viewsGain": 20,
    "isNew": false,
-   "median": 8923.0,
+   "median": 8939.0,
    "multiple": 2.4
   },
   {
@@ -180,11 +180,11 @@
    "published": "2026-11-18T09:00:19+00:00",
    "url": "https://www.youtube.com/shorts/p2vgoVpjigI",
    "shorts": true,
-   "views": 30953,
-   "likes": 308,
-   "viewsGain": 54,
+   "views": 31049,
+   "likes": 309,
+   "viewsGain": 96,
    "isNew": false,
-   "median": 8923.0,
+   "median": 8939.0,
    "multiple": 3.5
   },
   {
@@ -193,11 +193,11 @@
    "published": "2026-11-18T09:00:15+00:00",
    "url": "https://www.youtube.com/shorts/pkpBqfEFmV0",
    "shorts": true,
-   "views": 9057,
+   "views": 9067,
    "likes": 97,
-   "viewsGain": 17,
+   "viewsGain": 10,
    "isNew": false,
-   "median": 8923.0,
+   "median": 8939.0,
    "multiple": 1.0
   }
  ],
@@ -205,35 +205,35 @@
   {
    "title": "여단오 커플이 사귀게 된 썰",
    "url": "https://www.youtube.com/shorts/2EHFXAZ5tqY",
-   "views": 44630,
+   "views": 44682,
    "multiple": 5.0,
    "shorts": true
   },
   {
    "title": "제가 할 거를 알려주세요",
    "url": "https://www.youtube.com/shorts/0ZiRmpIs0Eo",
-   "views": 38333,
+   "views": 38385,
    "multiple": 4.3,
    "shorts": true
   },
   {
    "title": "사실 저도 알아듣기 힘들었어요",
    "url": "https://www.youtube.com/shorts/p2vgoVpjigI",
-   "views": 30953,
+   "views": 31049,
    "multiple": 3.5,
    "shorts": true
   },
   {
    "title": "그래서 도대체 언제 가?",
    "url": "https://www.youtube.com/shorts/yjBIZCfeUHo",
-   "views": 29845,
+   "views": 29922,
    "multiple": 3.3,
    "shorts": true
   },
   {
    "title": "단오가 평생 잊지 못하는 여루의 손편지",
    "url": "https://www.youtube.com/shorts/UvvmykR4X1Y",
-   "views": 21849,
+   "views": 21869,
    "multiple": 2.4,
    "shorts": true
   }

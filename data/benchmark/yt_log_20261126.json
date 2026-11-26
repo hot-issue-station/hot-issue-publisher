@@ -152,5 +152,161 @@
     "gain": 288
    }
   ]
+ },
+ {
+  "at": "2026-11-26T14:57+09:00",
+  "key": "14f",
+  "ok": true,
+  "new": [],
+  "top": [
+   {
+    "id": "YMBbQzpjexg",
+    "title": "멕시코 킹핀 제거 작전…‘기관총, 유탄 발사기, 장갑차’로 무장한 조직의 극렬 저항 / 14F",
+    "views": 134423,
+    "gain": 43359
+   },
+   {
+    "id": "gfCdOrEqM0E",
+    "title": "영국의 자존심, 제임스 본드 ‘로버트 패틴슨’…수트, 시계, 차 모두가 그를 노린다! / 14F",
+    "views": 171862,
+    "gain": 16133
+   },
+   {
+    "id": "Nn_kaMW9nkY",
+    "title": "우크라이나 전쟁 끝낼 수 있을까…미·중·러 정상회담 뒤 러시아의 계산 / 14F",
+    "views": 116286,
+    "gain": 15007
+   }
+  ]
+ },
+ {
+  "at": "2026-11-26T14:57+09:00",
+  "key": "subusunews",
+  "ok": true,
+  "new": [],
+  "top": [
+   {
+    "id": "unZzsissHE4",
+    "title": "향기의 편지에 역대급 눈물바다 된 우사편 촬영장ㅣ우리 사이엔 편지가 있다2 EP.13 김향기",
+    "views": 58433,
+    "gain": 2313
+   },
+   {
+    "id": "jCq8RP8S-Kk",
+    "title": "그렇게 김향기는 산책 중독이 되었다",
+    "views": 2482,
+    "gain": 812
+   },
+   {
+    "id": "eYmS_0_NvCM",
+    "title": "아 못 쉴 것 같은데 해야 될 것 같은데",
+    "views": 3272,
+    "gain": 643
+   }
+  ]
+ },
+ {
+  "at": "2026-11-26T14:57+09:00",
+  "key": "vstudio",
+  "ok": true,
+  "new": [],
+  "top": []
+ },
+ {
+  "at": "2026-11-26T14:57+09:00",
+  "key": "syukaworld",
+  "ok": true,
+  "new": [
+   "LPDBEZVXd8k",
+   "m448Hr6RbpE"
+  ],
+  "top": [
+   {
+    "id": "g_IDje5CpGQ",
+    "title": "주식은 팔자다. 그러니까 다 팔자(?)",
+    "views": 143260,
+    "gain": 30635
+   },
+   {
+    "id": "CiQuUgrJOvY",
+    "title": "아 걍 너 가져",
+    "views": 123354,
+    "gain": 14855
+   },
+   {
+    "id": "PvCJ0_gw-rk",
+    "title": "슈카의 다음 사업",
+    "views": 215919,
+    "gain": 8778
+   }
+  ]
+ },
+ {
+  "at": "2026-11-26T14:57+09:00",
+  "key": "ytn",
+  "ok": true,
+  "new": [
+   "GOQlrAhqfQo",
+   "jGJlebRsjX4",
+   "Jhij1f0wuIQ",
+   "kH_r2zMFKSE",
+   "iUsOrBHSgF0",
+   "sHA5zB1O71k",
+   "fR_55OdMV40",
+   "64nwzvMIIQU",
+   "HWXIa7moqZY",
+   "CD44YMr5lLc",
+   "tEI2we2ecqQ",
+   "QpqzDT98DHg",
+   "N98cwaJ0lwQ",
+   "MFuv6m6x9b0",
+   "B5Mey_kfeGM"
+  ],
+  "top": [
+   {
+    "id": "64nwzvMIIQU",
+    "title": "\"한국이 미국 경제 피해 준다\"...관세 폭탄 카드 꺼내 든 트럼프 '초비상' [에디터픽] / YTN",
+    "views": 60481,
+    "gain": null
+   },
+   {
+    "id": "Jhij1f0wuIQ",
+    "title": "[속보] 인천 남동공단에 큰불…소방당국 진화 작업 / YTN",
+    "views": 3537,
+    "gain": null
+   },
+   {
+    "id": "jGJlebRsjX4",
+    "title": "\"반경 8km 주민 대피\"...독성물질 4.5t 터뜨린 미군 [에디터픽] / YTN",
+    "views": 1893,
+    "gain": null
+   }
+  ]
+ },
+ {
+  "at": "2026-11-26T14:57+09:00",
+  "key": "storyk",
+  "ok": true,
+  "new": [],
+  "top": [
+   {
+    "id": "-Z4rN_Otbwg",
+    "title": "한국 전체 1위 직행 U17 월드컵 과연 어떤 대회? - 역사적인 축구스타들의 등용문",
+    "views": 41684,
+    "gain": 3634
+   },
+   {
+    "id": "EgWaw2Fcd_c",
+    "title": "손정범 한국 미드필더로 역대급 엘리트코스 - 10대 데뷔 국가대표 발탁 리버풀 이적설",
+    "views": 104656,
+    "gain": 1116
+   },
+   {
+    "id": "bR1lQgP02Dw",
+    "title": "김예건 역대급 한국 드리블러 포텐셜? - 레알, 바르샤, 맨시티 이적설로 유럽 투어마친 18세",
+    "views": 23708,
+    "gain": 144
+   }
+  ]
  }
 ]
