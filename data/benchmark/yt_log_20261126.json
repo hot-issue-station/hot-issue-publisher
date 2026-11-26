@@ -470,5 +470,155 @@
     "gain": 381
    }
   ]
+ },
+ {
+  "at": "2026-11-26T22:54+09:00",
+  "key": "14f",
+  "ok": true,
+  "new": [],
+  "top": [
+   {
+    "id": "J1S0EHHCCHY",
+    "title": "대전 안 가고 성심당 빵 먹는 법? 전국 100여개 빵집이 광화문에 모인 이유 | 선발대 / 14F",
+    "views": 42596,
+    "gain": 34418
+   },
+   {
+    "id": "YMBbQzpjexg",
+    "title": "멕시코 킹핀 제거 작전…‘기관총, 유탄 발사기, 장갑차’로 무장한 조직의 극렬 저항 / 14F",
+    "views": 169340,
+    "gain": 16268
+   },
+   {
+    "id": "bR1nz9XoLx0",
+    "title": "가로수에 ‘옷’ 입혔더니… 슈퍼스타된 서촌 뜨개 나무 / 14F",
+    "views": 16058,
+    "gain": 14854
+   }
+  ]
+ },
+ {
+  "at": "2026-11-26T22:54+09:00",
+  "key": "subusunews",
+  "ok": true,
+  "new": [],
+  "top": [
+   {
+    "id": "unZzsissHE4",
+    "title": "향기의 편지에 역대급 눈물바다 된 우사편 촬영장ㅣ우리 사이엔 편지가 있다2 EP.13 김향기",
+    "views": 62765,
+    "gain": 1882
+   },
+   {
+    "id": "6doFeNVVOtw",
+    "title": "엄마 연기를 위해 과학책까지 펼친 김향기",
+    "views": 788,
+    "gain": 611
+   },
+   {
+    "id": "7DFYb61iXC8",
+    "title": "훔쳐보는 사람도 좋은 편지에 대하여",
+    "views": 764,
+    "gain": 531
+   }
+  ]
+ },
+ {
+  "at": "2026-11-26T22:54+09:00",
+  "key": "vstudio",
+  "ok": true,
+  "new": [],
+  "top": []
+ },
+ {
+  "at": "2026-11-26T22:54+09:00",
+  "key": "syukaworld",
+  "ok": true,
+  "new": [],
+  "top": [
+   {
+    "id": "m448Hr6RbpE",
+    "title": "시장이 맞고 내가 틀렸다",
+    "views": 135449,
+    "gain": 40905
+   },
+   {
+    "id": "LPDBEZVXd8k",
+    "title": "🔴 LIVE [슈카의 시황방송] 11월26일ㅣ트럼프는 관심이 고프다",
+    "views": 129219,
+    "gain": 15246
+   },
+   {
+    "id": "g_IDje5CpGQ",
+    "title": "주식은 팔자다. 그러니까 다 팔자(?)",
+    "views": 172679,
+    "gain": 10269
+   }
+  ]
+ },
+ {
+  "at": "2026-11-26T22:54+09:00",
+  "key": "ytn",
+  "ok": true,
+  "new": [
+   "5q2YEiCy-HA",
+   "78t1Gep_k1c",
+   "zWqfo4XjLLw",
+   "y6VglaqTTyI",
+   "pcQ_IWg-WJk",
+   "tlfUldZzhFY",
+   "PjKsp8lu8eo",
+   "NenfeYET7Ho",
+   "KtSzVv9Koo0",
+   "DnSJbRYWf9g",
+   "X2kDkLZKTSI",
+   "OYUNukirxgE"
+  ],
+  "top": [
+   {
+    "id": "pprTRwP5OGk",
+    "title": "해변으로 밀려온 사체 '1만여 구'…기현상이 부른 '대재앙' [이슈픽] / YTN",
+    "views": 26715,
+    "gain": 26715
+   },
+   {
+    "id": "gcPHCe6YUqA",
+    "title": "트럼프 앞 푸틴의 다급한 '호소'…기어코 러시아 심장부에 떨어진 '날벼락' [이슈픽] / YTN",
+    "views": 4035,
+    "gain": 4035
+   },
+   {
+    "id": "8BbQmnHcy2Y",
+    "title": "\"행적 확인된 앨리스 황\"…트럼프까지 향하는 젠슨 황 사태 '후폭풍' [이슈픽] / YTN",
+    "views": 628,
+    "gain": 628
+   }
+  ]
+ },
+ {
+  "at": "2026-11-26T22:54+09:00",
+  "key": "storyk",
+  "ok": true,
+  "new": [],
+  "top": [
+   {
+    "id": "wLMdJBOHlVs",
+    "title": "손흥민 발굴한 U17 월드컵 다시 폭발 - 피파 주관 대회에서 한국 사상 첫 기록 싹쓸이",
+    "views": 5790,
+    "gain": 5429
+   },
+   {
+    "id": "-Z4rN_Otbwg",
+    "title": "한국 전체 1위 직행 U17 월드컵 과연 어떤 대회? - 역사적인 축구스타들의 등용문",
+    "views": 46219,
+    "gain": 2610
+   },
+   {
+    "id": "EgWaw2Fcd_c",
+    "title": "손정범 한국 미드필더로 역대급 엘리트코스 - 10대 데뷔 국가대표 발탁 리버풀 이적설",
+    "views": 105614,
+    "gain": 304
+   }
+  ]
  }
 ]

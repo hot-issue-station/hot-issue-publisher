@@ -3,7 +3,7 @@
  "name": "14F 일사에프 (MBC)",
  "channel": "https://www.youtube.com/@14FMBC",
  "channelId": "UCLKuglhGlMmDteQKoniENIQ",
- "checkedAt": "2026-11-26T19:36+09:00",
+ "checkedAt": "2026-11-26T22:54+09:00",
  "videos": [
   {
    "id": "bR1nz9XoLx0",
@@ -11,12 +11,12 @@
    "published": "2026-11-26T09:02:24+00:00",
    "url": "https://www.youtube.com/watch?v=bR1nz9XoLx0",
    "shorts": false,
-   "views": 1204,
-   "likes": 86,
-   "viewsGain": null,
-   "isNew": true,
-   "median": 131742,
-   "multiple": 0.0
+   "views": 16058,
+   "likes": 162,
+   "viewsGain": 14854,
+   "isNew": false,
+   "median": 136837,
+   "multiple": 0.1
   },
   {
    "id": "J1S0EHHCCHY",
@@ -24,12 +24,12 @@
    "published": "2026-11-26T08:30:29+00:00",
    "url": "https://www.youtube.com/watch?v=J1S0EHHCCHY",
    "shorts": false,
-   "views": 8178,
-   "likes": 154,
-   "viewsGain": null,
-   "isNew": true,
-   "median": 131742,
-   "multiple": 0.1
+   "views": 42596,
+   "likes": 242,
+   "viewsGain": 34418,
+   "isNew": false,
+   "median": 136837,
+   "multiple": 0.3
   },
   {
    "id": "7lymCCg10U4",
@@ -37,11 +37,11 @@
    "published": "2026-11-25T23:00:31+00:00",
    "url": "https://www.youtube.com/shorts/7lymCCg10U4",
    "shorts": true,
-   "views": 3587,
-   "likes": 65,
-   "viewsGain": 823,
+   "views": 4095,
+   "likes": 71,
+   "viewsGain": 508,
    "isNew": false,
-   "median": 11837.0,
+   "median": 12029.0,
    "multiple": 0.3
   },
   {
@@ -50,11 +50,11 @@
    "published": "2026-11-25T09:53:44+00:00",
    "url": "https://www.youtube.com/watch?v=X9sD3AwspQ4",
    "shorts": false,
-   "views": 52046,
-   "likes": 278,
-   "viewsGain": 4363,
+   "views": 55949,
+   "likes": 291,
+   "viewsGain": 3903,
    "isNew": false,
-   "median": 131742,
+   "median": 136837,
    "multiple": 0.4
   },
   {
@@ -63,11 +63,11 @@
    "published": "2026-11-25T09:00:14+00:00",
    "url": "https://www.youtube.com/watch?v=YMBbQzpjexg",
    "shorts": false,
-   "views": 153072,
-   "likes": 502,
-   "viewsGain": 18649,
+   "views": 169340,
+   "likes": 555,
+   "viewsGain": 16268,
    "isNew": false,
-   "median": 131742,
+   "median": 136837,
    "multiple": 1.2
   },
   {
@@ -76,11 +76,11 @@
    "published": "2026-11-25T08:30:14+00:00",
    "url": "https://www.youtube.com/watch?v=Nn_kaMW9nkY",
    "shorts": false,
-   "views": 125295,
-   "likes": 607,
-   "viewsGain": 9009,
+   "views": 132445,
+   "likes": 640,
+   "viewsGain": 7150,
    "isNew": false,
-   "median": 131742,
+   "median": 136837,
    "multiple": 1.0
   },
   {
@@ -89,11 +89,11 @@
    "published": "2026-11-25T03:00:29+00:00",
    "url": "https://www.youtube.com/shorts/CnZGi2F1T3M",
    "shorts": true,
-   "views": 16496,
-   "likes": 106,
-   "viewsGain": 550,
+   "views": 16869,
+   "likes": 105,
+   "viewsGain": 373,
    "isNew": false,
-   "median": 11837.0,
+   "median": 12029.0,
    "multiple": 1.4
   },
   {
@@ -102,11 +102,11 @@
    "published": "2026-11-24T09:54:19+00:00",
    "url": "https://www.youtube.com/watch?v=ur4wbtV0nt4",
    "shorts": false,
-   "views": 150219,
-   "likes": 832,
-   "viewsGain": 7835,
+   "views": 154581,
+   "likes": 853,
+   "viewsGain": 4362,
    "isNew": false,
-   "median": 131742,
+   "median": 136837,
    "multiple": 1.1
   },
   {
@@ -115,12 +115,12 @@
    "published": "2026-11-24T09:00:03+00:00",
    "url": "https://www.youtube.com/watch?v=gfCdOrEqM0E",
    "shorts": false,
-   "views": 177965,
-   "likes": 662,
-   "viewsGain": 6103,
+   "views": 183795,
+   "likes": 677,
+   "viewsGain": 5830,
    "isNew": false,
-   "median": 131742,
-   "multiple": 1.4
+   "median": 136837,
+   "multiple": 1.3
   },
   {
    "id": "fRlinSufVFQ",
@@ -128,11 +128,11 @@
    "published": "2026-11-24T08:30:37+00:00",
    "url": "https://www.youtube.com/watch?v=fRlinSufVFQ",
    "shorts": false,
-   "views": 131742,
-   "likes": 701,
-   "viewsGain": 7883,
+   "views": 136837,
+   "likes": 725,
+   "viewsGain": 5095,
    "isNew": false,
-   "median": 131742,
+   "median": 136837,
    "multiple": 1.0
   },
   {
@@ -141,11 +141,11 @@
    "published": "2026-11-23T10:11:13+00:00",
    "url": "https://www.youtube.com/watch?v=FzyMQzDL5bw",
    "shorts": false,
-   "views": 137012,
-   "likes": 836,
-   "viewsGain": 1701,
+   "views": 138190,
+   "likes": 838,
+   "viewsGain": 1178,
    "isNew": false,
-   "median": 131742,
+   "median": 136837,
    "multiple": 1.0
   },
   {
@@ -154,12 +154,12 @@
    "published": "2026-11-23T09:00:32+00:00",
    "url": "https://www.youtube.com/watch?v=Mjs8_P7FstM",
    "shorts": false,
-   "views": 261423,
-   "likes": 1136,
-   "viewsGain": 3711,
+   "views": 264735,
+   "likes": 1143,
+   "viewsGain": 3312,
    "isNew": false,
-   "median": 131742,
-   "multiple": 2.0
+   "median": 136837,
+   "multiple": 1.9
   },
   {
    "id": "NyxPbpN3Uyo",
@@ -167,11 +167,11 @@
    "published": "2026-11-21T04:00:03+00:00",
    "url": "https://www.youtube.com/shorts/NyxPbpN3Uyo",
    "shorts": true,
-   "views": 7178,
+   "views": 7189,
    "likes": 65,
-   "viewsGain": 17,
+   "viewsGain": 11,
    "isNew": false,
-   "median": 11837.0,
+   "median": 12029.0,
    "multiple": 0.6
   },
   {
@@ -180,11 +180,11 @@
    "published": "2026-11-20T23:00:30+00:00",
    "url": "https://www.youtube.com/shorts/VKzh4gQvEIU",
    "shorts": true,
-   "views": 18705,
+   "views": 18781,
    "likes": 187,
-   "viewsGain": 45,
+   "viewsGain": 76,
    "isNew": false,
-   "median": 11837.0,
+   "median": 12029.0,
    "multiple": 1.6
   },
   {
@@ -193,21 +193,13 @@
    "published": "2026-11-20T08:30:37+00:00",
    "url": "https://www.youtube.com/watch?v=_pBAM8GDWo8",
    "shorts": false,
-   "views": 67154,
+   "views": 67204,
    "likes": 418,
-   "viewsGain": 245,
+   "viewsGain": 50,
    "isNew": false,
-   "median": 131742,
+   "median": 136837,
    "multiple": 0.5
   }
  ],
- "viral": [
-  {
-   "title": "중국산 VS 유럽산🔥 3대 진미 대결🥄ㅣ돈슐랭 / 14F",
-   "url": "https://www.youtube.com/watch?v=Mjs8_P7FstM",
-   "views": 261423,
-   "multiple": 2.0,
-   "shorts": false
-  }
- ]
+ "viral": []
 }

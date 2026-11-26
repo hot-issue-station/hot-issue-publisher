@@ -1,17 +1,17 @@
 {
  "name": "14F 일사에프 (MBC)",
  "channel": "https://www.youtube.com/@14FMBC",
- "checkedAt": "2026-11-26T19:36+09:00",
+ "checkedAt": "2026-11-26T22:54+09:00",
  "subscribers": "239만",
  "videos": [
   {
    "id": "7lymCCg10U4",
    "title": "솔로는 엔트로피가 높다? #shorts",
-   "views": 3500,
-   "viewsText": "조회수 3.5천회",
+   "views": 4000,
+   "viewsText": "조회수 4천회",
    "published": "",
    "kind": "short",
-   "gain": 800
+   "gain": 500
   },
   {
    "id": "CnZGi2F1T3M",
@@ -20,7 +20,7 @@
    "viewsText": "조회수 1.6만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "NyxPbpN3Uyo",
@@ -61,20 +61,20 @@
   {
    "id": "n13XS1CuP3Q",
    "title": "미국에서 불거지는 초가공식품 소송전 #shorts",
-   "views": 7200,
-   "viewsText": "조회수 7.2천회",
+   "views": 7300,
+   "viewsText": "조회수 7.3천회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 100
   },
   {
    "id": "Tr0LbpRFtFk",
    "title": "백제는 삼국 통일을 할 필요가 없었다? #shorts",
-   "views": 37000,
-   "viewsText": "조회수 3.7만회",
+   "views": 38000,
+   "viewsText": "조회수 3.8만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 1000
   },
   {
    "id": "abobZ7JfTek",
@@ -83,7 +83,7 @@
    "viewsText": "조회수 4.5천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "gRThiyajPxQ",
@@ -115,11 +115,11 @@
   {
    "id": "Aj_trkh0zaM",
    "title": "남대문 스카프 아저씨 입담 모음zip. #shorts",
-   "views": 94000,
-   "viewsText": "조회수 9.4만회",
+   "views": 95000,
+   "viewsText": "조회수 9.5만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 1000
   },
   {
    "id": "WgWmSXeb_YA",
@@ -245,7 +245,7 @@
    "viewsText": "조회수 7.5천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "zHzHgad2t6c",

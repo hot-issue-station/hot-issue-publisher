@@ -1,160 +1,170 @@
 {
  "name": "YTN",
  "channel": "https://www.youtube.com/@ytnnews24",
- "checkedAt": "2026-11-26T19:36+09:00",
+ "checkedAt": "2026-11-26T22:54+09:00",
  "subscribers": "543만",
  "videos": [
   {
    "id": "B8vxwiCbSqg",
    "title": "주지훈의 터닝 포인트를 만든 사람은? / YTN",
-   "views": 1500,
-   "viewsText": "조회수 1.5천회",
+   "views": 2700,
+   "viewsText": "조회수 2.7천회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 1200
   },
   {
    "id": "aJRSINw_j0c",
    "title": "여보 주식해서 미안해 #shorts / YTN",
-   "views": 2900,
-   "viewsText": "조회수 2.9천회",
+   "views": 5500,
+   "viewsText": "조회수 5.5천회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 2600
   },
   {
    "id": "pLBmWHbWyu8",
    "title": "안경 쓴 기자 '깜짝' #shorts / YTN",
-   "views": 16000,
-   "viewsText": "조회수 1.6만회",
+   "views": 34000,
+   "viewsText": "조회수 3.4만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 18000
   },
   {
    "id": "Rt3lhvXArtE",
    "title": "성형 후기 믿어도 될까? #shorts / YTN",
-   "views": 2500,
-   "viewsText": "조회수 2.5천회",
+   "views": 4500,
+   "viewsText": "조회수 4.5천회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 2000
   },
   {
    "id": "H1eCOT6kGrw",
    "title": "광고판에서 나가세요~ #shorts / YTN",
-   "views": 2800,
-   "viewsText": "조회수 2.8천회",
+   "views": 3700,
+   "viewsText": "조회수 3.7천회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 900
   },
   {
    "id": "57Tb-IwEYXg",
    "title": "구급차 막은 마라톤 러너들 #shorts / YTN",
-   "views": 99000,
-   "viewsText": "조회수 9.9만회",
+   "views": 220000,
+   "viewsText": "조회수 22만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 121000
   },
   {
    "id": "xJQqJqbgYb8",
    "title": "눈물 보인 이광수 #shorts / YTN",
-   "views": 6200,
-   "viewsText": "조회수 6.2천회",
+   "views": 10000,
+   "viewsText": "조회수 1만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 3800
   },
   {
    "id": "PWhTXvFs46E",
    "title": "야옹~ 런던 갑니다! #shorts / YTN",
-   "views": 5600,
-   "viewsText": "조회수 5.6천회",
+   "views": 10000,
+   "viewsText": "조회수 1만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 4400
   },
   {
    "id": "JHZ4SFVKgGU",
    "title": "미국은 '차별'이라는데... #shorts / YTN",
-   "views": 1700,
-   "viewsText": "조회수 1.7천회",
+   "views": 2200,
+   "viewsText": "조회수 2.2천회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 500
   },
   {
    "id": "6rDoMevFl_w",
    "title": "진기명기 #shorts / YTN",
-   "views": 2500,
-   "viewsText": "조회수 2.5천회",
+   "views": 2700,
+   "viewsText": "조회수 2.7천회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 200
   },
   {
    "id": "nb4fTxTkltc",
    "title": "토벌하지 마세요 #shorts / YTN",
-   "views": 4400,
-   "viewsText": "조회수 4.4천회",
-   "published": "",
-   "kind": "short",
-   "gain": 4294
-  },
-  {
-   "id": "4mkg12Z6ls0",
-   "title": "\"공부하라고 준 기간 아닌데\" #shorts / YTN",
-   "views": 2900,
-   "viewsText": "조회수 2.9천회",
-   "published": "",
-   "kind": "short",
-   "gain": 2148
-  },
-  {
-   "id": "NlsFjtXrShI",
-   "title": "망설임 없이 '풍덩' #shorts / YTN",
-   "views": 78000,
-   "viewsText": "조회수 7.8만회",
-   "published": "",
-   "kind": "short",
-   "gain": 58000
-  },
-  {
-   "id": "HU3dBFWlMJ0",
-   "title": "27억 벌어들인 '수상한 장사' #shorts / YTN",
    "views": 5100,
    "viewsText": "조회수 5.1천회",
    "published": "",
    "kind": "short",
-   "gain": 2800
+   "gain": 700
+  },
+  {
+   "id": "4mkg12Z6ls0",
+   "title": "\"공부하라고 준 기간 아닌데\" #shorts / YTN",
+   "views": 3300,
+   "viewsText": "조회수 3.3천회",
+   "published": "",
+   "kind": "short",
+   "gain": 400
+  },
+  {
+   "id": "NlsFjtXrShI",
+   "title": "망설임 없이 '풍덩' #shorts / YTN",
+   "views": 110000,
+   "viewsText": "조회수 11만회",
+   "published": "",
+   "kind": "short",
+   "gain": 32000
+  },
+  {
+   "id": "HU3dBFWlMJ0",
+   "title": "27억 벌어들인 '수상한 장사' #shorts / YTN",
+   "views": 5500,
+   "viewsText": "조회수 5.5천회",
+   "published": "",
+   "kind": "short",
+   "gain": 400
   },
   {
    "id": "IU-OBvElaFY",
    "title": "FBI가 보고한 '충격 내용' #shorts / YTN",
-   "views": 6800,
-   "viewsText": "조회수 6.8천회",
+   "views": 7400,
+   "viewsText": "조회수 7.4천회",
    "published": "",
    "kind": "short",
-   "gain": 4500
+   "gain": 600
   },
   {
    "id": "frmKxmI21Xg",
    "title": "'의심받을까 봐...' #shorts / YTN",
-   "views": 4600,
-   "viewsText": "조회수 4.6천회",
+   "views": 5100,
+   "viewsText": "조회수 5.1천회",
    "published": "",
    "kind": "short",
-   "gain": 2400
+   "gain": 500
   },
   {
    "id": "duRjDL2tNks",
    "title": "선의가 '악평'으로 #shorts / YTN",
-   "views": 51000,
-   "viewsText": "조회수 5.1만회",
+   "views": 60000,
+   "viewsText": "조회수 6만회",
    "published": "",
    "kind": "short",
-   "gain": 22000
+   "gain": 9000
   },
   {
    "id": "17ByTQo5RFE",
    "title": "사상 최대 규모 합병 #shorts / YTN",
-   "views": 21000,
-   "viewsText": "조회수 2.1만회",
+   "views": 23000,
+   "viewsText": "조회수 2.3만회",
    "published": "",
    "kind": "short",
-   "gain": 8000
+   "gain": 2000
   },
   {
    "id": "nrCigbUBwOg",
@@ -163,25 +173,25 @@
    "viewsText": "조회수 6.7천회",
    "published": "",
    "kind": "short",
-   "gain": 700
+   "gain": 0
   },
   {
    "id": "pr0eA0omWs4",
    "title": "수출국이 수입국 될 판 #shorts / YTN",
-   "views": 11000,
-   "viewsText": "조회수 1.1만회",
+   "views": 12000,
+   "viewsText": "조회수 1.2만회",
    "published": "",
    "kind": "short",
-   "gain": 3400
+   "gain": 1000
   },
   {
    "id": "6FukSTJ0ybw",
    "title": "'수익 300% 보장합니다' #shorts / YTN",
-   "views": 31000,
-   "viewsText": "조회수 3.1만회",
+   "views": 34000,
+   "viewsText": "조회수 3.4만회",
    "published": "",
    "kind": "short",
-   "gain": 12000
+   "gain": 3000
   },
   {
    "id": "vD1vjCjNuQA",
@@ -190,7 +200,7 @@
    "viewsText": "조회수 1.2만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "IenBcOUNAJg",
@@ -208,7 +218,7 @@
    "viewsText": "조회수 1.4만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "gJsXlmx2HN0",
@@ -235,13 +245,13 @@
    "viewsText": "조회수 3.4만회",
    "published": "",
    "kind": "short",
-   "gain": 2000
+   "gain": 0
   },
   {
    "id": "XY1YM8lmFoM",
    "title": "쟤는 되고 난 안 돼? #shorts / YTN",
-   "views": 110000,
-   "viewsText": "조회수 11만회",
+   "views": 120000,
+   "viewsText": "조회수 12만회",
    "published": "",
    "kind": "short",
    "gain": 10000
@@ -249,11 +259,11 @@
   {
    "id": "Fn0yvDz3bxY",
    "title": "14년째 찾아온 '익명의 천사' #shorts / YTN",
-   "views": 3400,
-   "viewsText": "조회수 3.4천회",
+   "views": 3500,
+   "viewsText": "조회수 3.5천회",
    "published": "",
    "kind": "short",
-   "gain": 300
+   "gain": 100
   },
   {
    "id": "VFzJJ8HuQeA",
@@ -271,7 +281,7 @@
    "viewsText": "조회수 13만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "rAIq48pA9p8",
@@ -280,7 +290,7 @@
    "viewsText": "조회수 2.4천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "TUglOJ10O1U",
@@ -294,11 +304,11 @@
   {
    "id": "rCOmtqp1Drw",
    "title": "중국에선 이미 일상? #shorts / YTN",
-   "views": 59000,
-   "viewsText": "조회수 5.9만회",
+   "views": 62000,
+   "viewsText": "조회수 6.2만회",
    "published": "",
    "kind": "short",
-   "gain": 7000
+   "gain": 3000
   },
   {
    "id": "Gx6yucN2UFE",
@@ -307,7 +317,7 @@
    "viewsText": "조회수 3.5천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "3b_G_wNU6vE",
@@ -316,7 +326,7 @@
    "viewsText": "조회수 3.1천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "cYAsdnJeASA",
@@ -334,16 +344,16 @@
    "viewsText": "조회수 1.6만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "JBHmIYipIx0",
    "title": "연기 퍼지더니 '아수라장' #shorts / YTN",
-   "views": 4900,
-   "viewsText": "조회수 4.9천회",
+   "views": 5000,
+   "viewsText": "조회수 5천회",
    "published": "",
    "kind": "short",
-   "gain": 400
+   "gain": 100
   },
   {
    "id": "qErRuJPn_nY",

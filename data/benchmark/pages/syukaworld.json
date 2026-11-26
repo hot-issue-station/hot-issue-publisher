@@ -1,17 +1,17 @@
 {
  "name": "슈카월드",
  "channel": "https://www.youtube.com/@syukaworld",
- "checkedAt": "2026-11-26T19:36+09:00",
+ "checkedAt": "2026-11-26T22:54+09:00",
  "subscribers": "374만",
  "videos": [
   {
    "id": "F67XTSCwwQE",
    "title": "감히 황제 자리를 탐한 자",
-   "views": 470000,
-   "viewsText": "조회수 47만회",
+   "views": 480000,
+   "viewsText": "조회수 48만회",
    "published": "",
    "kind": "short",
-   "gain": 20000
+   "gain": 10000
   },
   {
    "id": "7RK0-KngzOo",
@@ -20,7 +20,7 @@
    "viewsText": "조회수 21만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "xhzS_pawX9Y",
@@ -196,20 +196,20 @@
   {
    "id": "5H1kX7kp2tc",
    "title": "매수는 기술, 매도는 예술",
-   "views": 820000,
-   "viewsText": "조회수 82만회",
+   "views": 830000,
+   "viewsText": "조회수 83만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "Gy9zZfrYwUo",
    "title": "그들이 사는 세상 (주식 버전)",
-   "views": 1930000,
-   "viewsText": "조회수 193만회",
+   "views": 1940000,
+   "viewsText": "조회수 194만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "TqwwF2cJJgA",

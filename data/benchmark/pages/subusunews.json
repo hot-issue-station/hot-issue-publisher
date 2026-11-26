@@ -1,102 +1,123 @@
 {
  "name": "스브스뉴스 (SBS)",
  "channel": "https://www.youtube.com/@subusunews",
- "checkedAt": "2026-11-26T19:36+09:00",
+ "checkedAt": "2026-11-26T22:54+09:00",
  "subscribers": "145만",
  "videos": [
   {
-   "id": "HimIuWwzJnE",
-   "title": "저는 핸드폰 중독자를 경멸해요",
-   "views": 51,
-   "viewsText": "조회수 51회",
+   "id": "Idxf2CIVpa4",
+   "title": "13살 김주애, 사실 후계자 아닐 것? #북한 #shorts #스브스뉴스",
+   "views": 796,
+   "viewsText": "조회수 796회",
    "published": "",
    "kind": "short"
+  },
+  {
+   "id": "QrEi5mDqnkY",
+   "title": "이번 겨울에 스키장 가실 건가요? #스키장 #shorts #스브스뉴스",
+   "views": 1100,
+   "viewsText": "조회수 1.1천회",
+   "published": "",
+   "kind": "short"
+  },
+  {
+   "id": "HimIuWwzJnE",
+   "title": "저는 핸드폰 중독자를 경멸해요",
+   "views": 710,
+   "viewsText": "조회수 710회",
+   "published": "",
+   "kind": "short",
+   "gain": 659
   },
   {
    "id": "RhPkw9_bvEo",
    "title": "유병권이 집에서 술 마시면 생기는 일",
-   "views": 454,
-   "viewsText": "조회수 454회",
+   "views": 4200,
+   "viewsText": "조회수 4.2천회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 3746
   },
   {
    "id": "BM6xiPxwNxo",
    "title": "남자친구 있는 애들 특",
-   "views": 548,
-   "viewsText": "조회수 548회",
+   "views": 1100,
+   "viewsText": "조회수 1.1천회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 552
   },
   {
    "id": "yb3X_ux-TRM",
    "title": "※술자리 특※ 나 빼고 다 담배 피러 감",
-   "views": 1000,
-   "viewsText": "조회수 1천회",
+   "views": 2000,
+   "viewsText": "조회수 2천회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 1000
   },
   {
    "id": "SlRpe8XKd1Q",
    "title": "단돈 3천 원에 이 뷰라고??;; 떠오르는 순천 핫플 알아봄 #shorts /스브스뉴스",
-   "views": 477,
-   "viewsText": "조회수 477회",
+   "views": 699,
+   "viewsText": "조회수 699회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 222
   },
   {
    "id": "NjXfRwPyMdw",
    "title": "꽉 묶인 봉지에 버려진 눈도 못 뜬 새끼 고양이들 #고양이 #shorts #스브스뉴스",
-   "views": 4100,
-   "viewsText": "조회수 4.1천회",
+   "views": 5700,
+   "viewsText": "조회수 5.7천회",
    "published": "",
    "kind": "short",
-   "gain": 1500
+   "gain": 1600
   },
   {
    "id": "8t6NG9_Tjt4",
    "title": "수능 날 화장실 휴지통에서 발견된 ‘휴지 뭉치’의 정체 #수능 #shorts #스브스뉴스",
-   "views": 7700,
-   "viewsText": "조회수 7.7천회",
+   "views": 8600,
+   "viewsText": "조회수 8.6천회",
    "published": "",
    "kind": "short",
-   "gain": 1400
+   "gain": 900
   },
   {
    "id": "JQgsnxMvNZo",
    "title": "직장인이 가장 피하고 싶은 회식 = 유병권이 참석하는 회식",
-   "views": 4800,
-   "viewsText": "조회수 4.8천회",
+   "views": 5300,
+   "viewsText": "조회수 5.3천회",
    "published": "",
    "kind": "short",
-   "gain": 800
+   "gain": 500
   },
   {
    "id": "8yMt7MH2C6o",
    "title": "술자리에서 나르시시스트가 위험한 이유",
-   "views": 3300,
-   "viewsText": "조회수 3.3천회",
+   "views": 3500,
+   "viewsText": "조회수 3.5천회",
    "published": "",
    "kind": "short",
-   "gain": 600
+   "gain": 200
   },
   {
    "id": "27P_Z6WStxE",
    "title": "사고뭉치 유병권과 예상치 못한 공범",
-   "views": 8500,
-   "viewsText": "조회수 8.5천회",
+   "views": 8800,
+   "viewsText": "조회수 8.8천회",
    "published": "",
    "kind": "short",
-   "gain": 1300
+   "gain": 300
   },
   {
    "id": "mxTL8Sss32U",
    "title": "비음주자를 영원히 이해하지 못하는 유병권",
-   "views": 4000,
-   "viewsText": "조회수 4천회",
+   "views": 4600,
+   "viewsText": "조회수 4.6천회",
    "published": "",
    "kind": "short",
-   "gain": 700
+   "gain": 600
   },
   {
    "id": "PcOWHA81IJY",
@@ -110,8 +131,8 @@
   {
    "id": "z4Iick_S-fY",
    "title": "이럴 거면 피부과라고 적어 놓으면 안 되는 거 아님? #피부과 #shorts #스브스뉴스",
-   "views": 12000,
-   "viewsText": "조회수 1.2만회",
+   "views": 13000,
+   "viewsText": "조회수 1.3만회",
    "published": "",
    "kind": "short",
    "gain": 1000
@@ -119,11 +140,11 @@
   {
    "id": "zd3gPVFAyXk",
    "title": "블프라고 방심하지 말자... #블프 #shorts #스브스뉴스",
-   "views": 6700,
-   "viewsText": "조회수 6.7천회",
+   "views": 7000,
+   "viewsText": "조회수 7천회",
    "published": "",
    "kind": "short",
-   "gain": 400
+   "gain": 300
   },
   {
    "id": "ZhLZHImIb1E",
@@ -132,22 +153,22 @@
    "viewsText": "조회수 3천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "JOYjvxU9AMs",
    "title": "돈벌이 수단까지 된 요즘 학교 폭력 근황 #신종학폭 #shorts #스브스뉴스",
-   "views": 8600,
-   "viewsText": "조회수 8.6천회",
+   "views": 8800,
+   "viewsText": "조회수 8.8천회",
    "published": "",
    "kind": "short",
-   "gain": 1700
+   "gain": 200
   },
   {
    "id": "KDehtM0Jz0Y",
    "title": "이미 작년에 AI 의혹으로 재시험 치렀다는 ‘이 나라’ #아르헨티나 #shorts #스브스뉴스",
-   "views": 7400,
-   "viewsText": "조회수 7.4천회",
+   "views": 7500,
+   "viewsText": "조회수 7.5천회",
    "published": "",
    "kind": "short",
    "gain": 100
@@ -337,24 +358,6 @@
    "title": "입사 한 달 차 결혼식, 간다 vs 안 간다",
    "views": 6100,
    "viewsText": "조회수 6.1천회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "USTfN6dsPZA",
-   "title": "“그렇게 살지 마라” 역대급 빡친 위원들",
-   "views": 10000,
-   "viewsText": "조회수 1만회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "n4IuqG0n5Eg",
-   "title": "뉴진스 vs 어도어에서 어도어가 승소한 진짜 이유 #뉴진스 #shorts #스브스뉴스",
-   "views": 13000,
-   "viewsText": "조회수 1.3만회",
    "published": "",
    "kind": "short",
    "gain": 0

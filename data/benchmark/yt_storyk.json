@@ -3,7 +3,7 @@
  "name": "스토리K (손흥민 레전드 비교 특집 벤치마킹, 10/31)",
  "channel": "https://www.youtube.com/@story_k",
  "channelId": "UCqzNZeBt0546jG-vDlAQlZg",
- "checkedAt": "2026-11-26T19:36+09:00",
+ "checkedAt": "2026-11-26T22:54+09:00",
  "videos": [
   {
    "id": "wLMdJBOHlVs",
@@ -11,12 +11,12 @@
    "published": "2026-11-26T10:03:30+00:00",
    "url": "https://www.youtube.com/watch?v=wLMdJBOHlVs",
    "shorts": false,
-   "views": 361,
-   "likes": 82,
-   "viewsGain": null,
-   "isNew": true,
-   "median": 23951,
-   "multiple": 0.0
+   "views": 5790,
+   "likes": 377,
+   "viewsGain": 5429,
+   "isNew": false,
+   "median": 23963,
+   "multiple": 0.2
   },
   {
    "id": "-Z4rN_Otbwg",
@@ -24,12 +24,12 @@
    "published": "2026-11-25T08:17:32+00:00",
    "url": "https://www.youtube.com/watch?v=-Z4rN_Otbwg",
    "shorts": false,
-   "views": 43609,
-   "likes": 574,
-   "viewsGain": 1925,
+   "views": 46219,
+   "likes": 588,
+   "viewsGain": 2610,
    "isNew": false,
-   "median": 23951,
-   "multiple": 1.8
+   "median": 23963,
+   "multiple": 1.9
   },
   {
    "id": "B0S10mfCUhI",
@@ -37,11 +37,11 @@
    "published": "2026-11-23T10:10:40+00:00",
    "url": "https://www.youtube.com/watch?v=B0S10mfCUhI",
    "shorts": false,
-   "views": 15817,
+   "views": 15845,
    "likes": 485,
-   "viewsGain": 65,
+   "viewsGain": 28,
    "isNew": false,
-   "median": 23951,
+   "median": 23963,
    "multiple": 0.7
   },
   {
@@ -50,11 +50,11 @@
    "published": "2026-11-22T10:00:13+00:00",
    "url": "https://www.youtube.com/watch?v=t71dh5FPkIo",
    "shorts": false,
-   "views": 98633,
-   "likes": 1130,
-   "viewsGain": 381,
+   "views": 98826,
+   "likes": 1132,
+   "viewsGain": 193,
    "isNew": false,
-   "median": 23951,
+   "median": 23963,
    "multiple": 4.1
   },
   {
@@ -63,11 +63,11 @@
    "published": "2026-11-21T09:50:02+00:00",
    "url": "https://www.youtube.com/watch?v=bR1lQgP02Dw",
    "shorts": false,
-   "views": 23811,
-   "likes": 406,
-   "viewsGain": 103,
+   "views": 23886,
+   "likes": 407,
+   "viewsGain": 75,
    "isNew": false,
-   "median": 23951,
+   "median": 23963,
    "multiple": 1.0
   },
   {
@@ -76,11 +76,11 @@
    "published": "2026-11-20T09:49:56+00:00",
    "url": "https://www.youtube.com/watch?v=mIAp9ZHOSuc",
    "shorts": false,
-   "views": 14097,
-   "likes": 399,
-   "viewsGain": 14,
+   "views": 14104,
+   "likes": 400,
+   "viewsGain": 7,
    "isNew": false,
-   "median": 23951,
+   "median": 23963,
    "multiple": 0.6
   },
   {
@@ -89,11 +89,11 @@
    "published": "2026-11-19T10:03:32+00:00",
    "url": "https://www.youtube.com/watch?v=ZfN5LxatO10",
    "shorts": false,
-   "views": 21359,
-   "likes": 713,
-   "viewsGain": 52,
+   "views": 21366,
+   "likes": 714,
+   "viewsGain": 7,
    "isNew": false,
-   "median": 23951,
+   "median": 23963,
    "multiple": 0.9
   },
   {
@@ -102,11 +102,11 @@
    "published": "2026-11-18T08:50:04+00:00",
    "url": "https://www.youtube.com/watch?v=-UhT8up9Kg4",
    "shorts": false,
-   "views": 23951,
+   "views": 23963,
    "likes": 869,
-   "viewsGain": 16,
+   "viewsGain": 12,
    "isNew": false,
-   "median": 23951,
+   "median": 23963,
    "multiple": 1.0
   },
   {
@@ -115,11 +115,11 @@
    "published": "2026-11-17T17:34:57+00:00",
    "url": "https://www.youtube.com/watch?v=91hhEPdL0LM",
    "shorts": false,
-   "views": 36979,
+   "views": 36981,
    "likes": 840,
-   "viewsGain": 6,
+   "viewsGain": 2,
    "isNew": false,
-   "median": 23951,
+   "median": 23963,
    "multiple": 1.5
   },
   {
@@ -128,11 +128,11 @@
    "published": "2026-11-17T08:09:58+00:00",
    "url": "https://www.youtube.com/watch?v=EgWaw2Fcd_c",
    "shorts": false,
-   "views": 105310,
-   "likes": 740,
-   "viewsGain": 654,
+   "views": 105614,
+   "likes": 739,
+   "viewsGain": 304,
    "isNew": false,
-   "median": 23951,
+   "median": 23963,
    "multiple": 4.4
   },
   {
@@ -141,11 +141,11 @@
    "published": "2026-11-16T10:02:16+00:00",
    "url": "https://www.youtube.com/watch?v=vRbR5Ik_z6E",
    "shorts": false,
-   "views": 24385,
+   "views": 24393,
    "likes": 771,
-   "viewsGain": 5,
+   "viewsGain": 8,
    "isNew": false,
-   "median": 23951,
+   "median": 23963,
    "multiple": 1.0
   },
   {
@@ -154,11 +154,11 @@
    "published": "2026-11-15T10:22:10+00:00",
    "url": "https://www.youtube.com/watch?v=vVJGieEysjE",
    "shorts": false,
-   "views": 16613,
-   "likes": 447,
-   "viewsGain": 3,
+   "views": 16614,
+   "likes": 448,
+   "viewsGain": 1,
    "isNew": false,
-   "median": 23951,
+   "median": 23963,
    "multiple": 0.7
   },
   {
@@ -167,11 +167,11 @@
    "published": "2026-11-14T10:04:54+00:00",
    "url": "https://www.youtube.com/watch?v=m8-01TBggvQ",
    "shorts": false,
-   "views": 19242,
+   "views": 19245,
    "likes": 352,
-   "viewsGain": 0,
+   "viewsGain": 3,
    "isNew": false,
-   "median": 23951,
+   "median": 23963,
    "multiple": 0.8
   },
   {
@@ -180,11 +180,11 @@
    "published": "2026-11-13T09:27:06+00:00",
    "url": "https://www.youtube.com/watch?v=GBpaslkBI_c",
    "shorts": false,
-   "views": 25944,
+   "views": 25948,
    "likes": 908,
-   "viewsGain": 0,
+   "viewsGain": 4,
    "isNew": false,
-   "median": 23951,
+   "median": 23963,
    "multiple": 1.1
   },
   {
@@ -193,11 +193,11 @@
    "published": "2026-11-12T10:12:35+00:00",
    "url": "https://www.youtube.com/watch?v=s5USat3YPTk",
    "shorts": false,
-   "views": 33249,
+   "views": 33262,
    "likes": 1166,
    "viewsGain": 13,
    "isNew": false,
-   "median": 23951,
+   "median": 23963,
    "multiple": 1.4
   }
  ],
@@ -205,14 +205,14 @@
   {
    "title": "손정범 한국 미드필더로 역대급 엘리트코스 - 10대 데뷔 국가대표 발탁 리버풀 이적설",
    "url": "https://www.youtube.com/watch?v=EgWaw2Fcd_c",
-   "views": 105310,
+   "views": 105614,
    "multiple": 4.4,
    "shorts": false
   },
   {
    "title": "김민수 어시스트에 영국이 더 흥분한 이유 - BBC가 변호하는 레인저스의 경이로운 10번",
    "url": "https://www.youtube.com/watch?v=t71dh5FPkIo",
-   "views": 98633,
+   "views": 98826,
    "multiple": 4.1,
    "shorts": false
   }
