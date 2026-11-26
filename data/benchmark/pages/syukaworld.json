@@ -1,26 +1,26 @@
 {
  "name": "슈카월드",
  "channel": "https://www.youtube.com/@syukaworld",
- "checkedAt": "2026-11-26T14:57+09:00",
+ "checkedAt": "2026-11-26T19:36+09:00",
  "subscribers": "374만",
  "videos": [
   {
    "id": "F67XTSCwwQE",
    "title": "감히 황제 자리를 탐한 자",
-   "views": 450000,
-   "viewsText": "조회수 45만회",
+   "views": 470000,
+   "viewsText": "조회수 47만회",
    "published": "",
    "kind": "short",
-   "gain": 30000
+   "gain": 20000
   },
   {
    "id": "7RK0-KngzOo",
    "title": "주식이 장난이야?",
-   "views": 200000,
-   "viewsText": "조회수 20만회",
+   "views": 210000,
+   "viewsText": "조회수 21만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "xhzS_pawX9Y",
@@ -119,7 +119,7 @@
    "viewsText": "조회수 13만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "JYKRXrbA5x4",
@@ -146,7 +146,7 @@
    "viewsText": "조회수 52만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "UfwnDQNYiLI",
@@ -299,7 +299,7 @@
    "viewsText": "조회수 64만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "KW_b_oO43E8",

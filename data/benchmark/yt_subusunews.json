@@ -3,20 +3,59 @@
  "name": "스브스뉴스 (SBS)",
  "channel": "https://www.youtube.com/@subusunews",
  "channelId": "UCxPClUl0bh7BgJajD5k483g",
- "checkedAt": "2026-11-26T14:57+09:00",
+ "checkedAt": "2026-11-26T19:36+09:00",
  "videos": [
+  {
+   "id": "6doFeNVVOtw",
+   "title": "엄마 연기를 위해 과학책까지 펼친 김향기",
+   "published": "2026-11-26T09:00:16+00:00",
+   "url": "https://www.youtube.com/shorts/6doFeNVVOtw",
+   "shorts": true,
+   "views": 177,
+   "likes": 0,
+   "viewsGain": null,
+   "isNew": true,
+   "median": 5363.0,
+   "multiple": 0.0
+  },
+  {
+   "id": "nFs1uGiMD2c",
+   "title": "배우가 본인과 캐릭터를 구분하려는 이유",
+   "published": "2026-11-26T09:00:08+00:00",
+   "url": "https://www.youtube.com/shorts/nFs1uGiMD2c",
+   "shorts": true,
+   "views": 257,
+   "likes": 1,
+   "viewsGain": null,
+   "isNew": true,
+   "median": 5363.0,
+   "multiple": 0.0
+  },
+  {
+   "id": "7DFYb61iXC8",
+   "title": "훔쳐보는 사람도 좋은 편지에 대하여",
+   "published": "2026-11-26T09:00:05+00:00",
+   "url": "https://www.youtube.com/shorts/7DFYb61iXC8",
+   "shorts": true,
+   "views": 233,
+   "likes": 1,
+   "viewsGain": null,
+   "isNew": true,
+   "median": 5363.0,
+   "multiple": 0.0
+  },
   {
    "id": "VYC_AREIZ-Y",
    "title": "천지 생각하며 현장에서 울어버린 향기",
    "published": "2026-11-25T09:00:34+00:00",
    "url": "https://www.youtube.com/shorts/VYC_AREIZ-Y",
    "shorts": true,
-   "views": 3073,
-   "likes": 39,
-   "viewsGain": 461,
+   "views": 3347,
+   "likes": 45,
+   "viewsGain": 274,
    "isNew": false,
-   "median": 8939.0,
-   "multiple": 0.3
+   "median": 5363.0,
+   "multiple": 0.6
   },
   {
    "id": "jCq8RP8S-Kk",
@@ -24,12 +63,12 @@
    "published": "2026-11-25T09:00:33+00:00",
    "url": "https://www.youtube.com/shorts/jCq8RP8S-Kk",
    "shorts": true,
-   "views": 2482,
-   "likes": 17,
-   "viewsGain": 812,
+   "views": 3033,
+   "likes": 24,
+   "viewsGain": 551,
    "isNew": false,
-   "median": 8939.0,
-   "multiple": 0.3
+   "median": 5363.0,
+   "multiple": 0.6
   },
   {
    "id": "eYmS_0_NvCM",
@@ -37,12 +76,12 @@
    "published": "2026-11-25T09:00:14+00:00",
    "url": "https://www.youtube.com/shorts/eYmS_0_NvCM",
    "shorts": true,
-   "views": 3272,
-   "likes": 62,
-   "viewsGain": 643,
+   "views": 3707,
+   "likes": 70,
+   "viewsGain": 435,
    "isNew": false,
-   "median": 8939.0,
-   "multiple": 0.4
+   "median": 5363.0,
+   "multiple": 0.7
   },
   {
    "id": "hBwgRgFJLoo",
@@ -50,12 +89,12 @@
    "published": "2026-11-24T10:46:19+00:00",
    "url": "https://www.youtube.com/shorts/hBwgRgFJLoo",
    "shorts": true,
-   "views": 8811,
-   "likes": 92,
-   "viewsGain": 22,
+   "views": 8839,
+   "likes": 93,
+   "viewsGain": 28,
    "isNew": false,
-   "median": 8939.0,
-   "multiple": 1.0
+   "median": 5363.0,
+   "multiple": 1.6
   },
   {
    "id": "9tcTOay3lzA",
@@ -63,12 +102,12 @@
    "published": "2026-11-24T09:32:32+00:00",
    "url": "https://www.youtube.com/shorts/9tcTOay3lzA",
    "shorts": true,
-   "views": 6243,
-   "likes": 177,
-   "viewsGain": 450,
+   "views": 6617,
+   "likes": 188,
+   "viewsGain": 374,
    "isNew": false,
-   "median": 8939.0,
-   "multiple": 0.7
+   "median": 5363.0,
+   "multiple": 1.2
   },
   {
    "id": "uy1NI4tsPiU",
@@ -76,12 +115,12 @@
    "published": "2026-11-24T09:31:18+00:00",
    "url": "https://www.youtube.com/shorts/uy1NI4tsPiU",
    "shorts": true,
-   "views": 3875,
-   "likes": 97,
-   "viewsGain": 278,
+   "views": 4109,
+   "likes": 104,
+   "viewsGain": 234,
    "isNew": false,
-   "median": 8939.0,
-   "multiple": 0.4
+   "median": 5363.0,
+   "multiple": 0.8
   },
   {
    "id": "unZzsissHE4",
@@ -89,9 +128,9 @@
    "published": "2026-11-24T09:00:01+00:00",
    "url": "https://www.youtube.com/watch?v=unZzsissHE4",
    "shorts": false,
-   "views": 58433,
-   "likes": 715,
-   "viewsGain": 2313,
+   "views": 60883,
+   "likes": 743,
+   "viewsGain": 2450,
    "isNew": false,
    "median": null,
    "multiple": null
@@ -102,12 +141,12 @@
    "published": "2026-11-20T09:00:22+00:00",
    "url": "https://www.youtube.com/shorts/yjBIZCfeUHo",
    "shorts": true,
-   "views": 29922,
-   "likes": 383,
-   "viewsGain": 77,
+   "views": 29968,
+   "likes": 384,
+   "viewsGain": 46,
    "isNew": false,
-   "median": 8939.0,
-   "multiple": 3.3
+   "median": 5363.0,
+   "multiple": 5.6
   },
   {
    "id": "XePaN4Pjpmw",
@@ -115,12 +154,12 @@
    "published": "2026-11-20T09:00:10+00:00",
    "url": "https://www.youtube.com/shorts/XePaN4Pjpmw",
    "shorts": true,
-   "views": 12606,
+   "views": 12610,
    "likes": 81,
-   "viewsGain": 15,
+   "viewsGain": 4,
    "isNew": false,
-   "median": 8939.0,
-   "multiple": 1.4
+   "median": 5363.0,
+   "multiple": 2.4
   },
   {
    "id": "0ZiRmpIs0Eo",
@@ -128,12 +167,12 @@
    "published": "2026-11-19T09:00:18+00:00",
    "url": "https://www.youtube.com/shorts/0ZiRmpIs0Eo",
    "shorts": true,
-   "views": 38385,
+   "views": 38415,
    "likes": 578,
-   "viewsGain": 52,
+   "viewsGain": 30,
    "isNew": false,
-   "median": 8939.0,
-   "multiple": 4.3
+   "median": 5363.0,
+   "multiple": 7.2
   },
   {
    "id": "2EHFXAZ5tqY",
@@ -141,12 +180,12 @@
    "published": "2026-11-19T09:00:15+00:00",
    "url": "https://www.youtube.com/shorts/2EHFXAZ5tqY",
    "shorts": true,
-   "views": 44682,
+   "views": 44767,
    "likes": 381,
-   "viewsGain": 52,
+   "viewsGain": 85,
    "isNew": false,
-   "median": 8939.0,
-   "multiple": 5.0
+   "median": 5363.0,
+   "multiple": 8.3
   },
   {
    "id": "3YsU2ZxLA0Y",
@@ -154,86 +193,40 @@
    "published": "2026-11-18T09:19:20+00:00",
    "url": "https://www.youtube.com/shorts/3YsU2ZxLA0Y",
    "shorts": true,
-   "views": 8233,
+   "views": 8236,
    "likes": 175,
-   "viewsGain": 0,
+   "viewsGain": 3,
    "isNew": false,
-   "median": 8939.0,
-   "multiple": 0.9
-  },
-  {
-   "id": "UvvmykR4X1Y",
-   "title": "단오가 평생 잊지 못하는 여루의 손편지",
-   "published": "2026-11-18T09:00:37+00:00",
-   "url": "https://www.youtube.com/shorts/UvvmykR4X1Y",
-   "shorts": true,
-   "views": 21869,
-   "likes": 523,
-   "viewsGain": 20,
-   "isNew": false,
-   "median": 8939.0,
-   "multiple": 2.4
-  },
-  {
-   "id": "p2vgoVpjigI",
-   "title": "사실 저도 알아듣기 힘들었어요",
-   "published": "2026-11-18T09:00:19+00:00",
-   "url": "https://www.youtube.com/shorts/p2vgoVpjigI",
-   "shorts": true,
-   "views": 31049,
-   "likes": 309,
-   "viewsGain": 96,
-   "isNew": false,
-   "median": 8939.0,
-   "multiple": 3.5
-  },
-  {
-   "id": "pkpBqfEFmV0",
-   "title": "나도 모르게 내 버릇이 된 여루",
-   "published": "2026-11-18T09:00:15+00:00",
-   "url": "https://www.youtube.com/shorts/pkpBqfEFmV0",
-   "shorts": true,
-   "views": 9067,
-   "likes": 97,
-   "viewsGain": 10,
-   "isNew": false,
-   "median": 8939.0,
-   "multiple": 1.0
+   "median": 5363.0,
+   "multiple": 1.5
   }
  ],
  "viral": [
   {
    "title": "여단오 커플이 사귀게 된 썰",
    "url": "https://www.youtube.com/shorts/2EHFXAZ5tqY",
-   "views": 44682,
-   "multiple": 5.0,
+   "views": 44767,
+   "multiple": 8.3,
    "shorts": true
   },
   {
    "title": "제가 할 거를 알려주세요",
    "url": "https://www.youtube.com/shorts/0ZiRmpIs0Eo",
-   "views": 38385,
-   "multiple": 4.3,
-   "shorts": true
-  },
-  {
-   "title": "사실 저도 알아듣기 힘들었어요",
-   "url": "https://www.youtube.com/shorts/p2vgoVpjigI",
-   "views": 31049,
-   "multiple": 3.5,
+   "views": 38415,
+   "multiple": 7.2,
    "shorts": true
   },
   {
    "title": "그래서 도대체 언제 가?",
    "url": "https://www.youtube.com/shorts/yjBIZCfeUHo",
-   "views": 29922,
-   "multiple": 3.3,
+   "views": 29968,
+   "multiple": 5.6,
    "shorts": true
   },
   {
-   "title": "단오가 평생 잊지 못하는 여루의 손편지",
-   "url": "https://www.youtube.com/shorts/UvvmykR4X1Y",
-   "views": 21869,
+   "title": "앞치마 한 류승룡 같은 느낌",
+   "url": "https://www.youtube.com/shorts/XePaN4Pjpmw",
+   "views": 12610,
    "multiple": 2.4,
    "shorts": true
   }

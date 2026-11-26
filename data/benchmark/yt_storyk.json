@@ -3,20 +3,33 @@
  "name": "스토리K (손흥민 레전드 비교 특집 벤치마킹, 10/31)",
  "channel": "https://www.youtube.com/@story_k",
  "channelId": "UCqzNZeBt0546jG-vDlAQlZg",
- "checkedAt": "2026-11-26T14:57+09:00",
+ "checkedAt": "2026-11-26T19:36+09:00",
  "videos": [
+  {
+   "id": "wLMdJBOHlVs",
+   "title": "손흥민 발굴한 U17 월드컵 다시 폭발 - 피파 주관 대회에서 한국 사상 첫 기록 싹쓸이",
+   "published": "2026-11-26T10:03:30+00:00",
+   "url": "https://www.youtube.com/watch?v=wLMdJBOHlVs",
+   "shorts": false,
+   "views": 361,
+   "likes": 82,
+   "viewsGain": null,
+   "isNew": true,
+   "median": 23951,
+   "multiple": 0.0
+  },
   {
    "id": "-Z4rN_Otbwg",
    "title": "한국 전체 1위 직행 U17 월드컵 과연 어떤 대회? - 역사적인 축구스타들의 등용문",
    "published": "2026-11-25T08:17:32+00:00",
    "url": "https://www.youtube.com/watch?v=-Z4rN_Otbwg",
    "shorts": false,
-   "views": 41684,
-   "likes": 556,
-   "viewsGain": 3634,
+   "views": 43609,
+   "likes": 574,
+   "viewsGain": 1925,
    "isNew": false,
-   "median": 24380,
-   "multiple": 1.7
+   "median": 23951,
+   "multiple": 1.8
   },
   {
    "id": "B0S10mfCUhI",
@@ -24,12 +37,12 @@
    "published": "2026-11-23T10:10:40+00:00",
    "url": "https://www.youtube.com/watch?v=B0S10mfCUhI",
    "shorts": false,
-   "views": 15752,
-   "likes": 484,
-   "viewsGain": 56,
+   "views": 15817,
+   "likes": 485,
+   "viewsGain": 65,
    "isNew": false,
-   "median": 24380,
-   "multiple": 0.6
+   "median": 23951,
+   "multiple": 0.7
   },
   {
    "id": "t71dh5FPkIo",
@@ -37,12 +50,12 @@
    "published": "2026-11-22T10:00:13+00:00",
    "url": "https://www.youtube.com/watch?v=t71dh5FPkIo",
    "shorts": false,
-   "views": 98252,
-   "likes": 1127,
-   "viewsGain": 133,
+   "views": 98633,
+   "likes": 1130,
+   "viewsGain": 381,
    "isNew": false,
-   "median": 24380,
-   "multiple": 4.0
+   "median": 23951,
+   "multiple": 4.1
   },
   {
    "id": "bR1lQgP02Dw",
@@ -50,11 +63,11 @@
    "published": "2026-11-21T09:50:02+00:00",
    "url": "https://www.youtube.com/watch?v=bR1lQgP02Dw",
    "shorts": false,
-   "views": 23708,
-   "likes": 405,
-   "viewsGain": 144,
+   "views": 23811,
+   "likes": 406,
+   "viewsGain": 103,
    "isNew": false,
-   "median": 24380,
+   "median": 23951,
    "multiple": 1.0
   },
   {
@@ -63,11 +76,11 @@
    "published": "2026-11-20T09:49:56+00:00",
    "url": "https://www.youtube.com/watch?v=mIAp9ZHOSuc",
    "shorts": false,
-   "views": 14083,
+   "views": 14097,
    "likes": 399,
-   "viewsGain": 4,
+   "viewsGain": 14,
    "isNew": false,
-   "median": 24380,
+   "median": 23951,
    "multiple": 0.6
   },
   {
@@ -76,11 +89,11 @@
    "published": "2026-11-19T10:03:32+00:00",
    "url": "https://www.youtube.com/watch?v=ZfN5LxatO10",
    "shorts": false,
-   "views": 21307,
+   "views": 21359,
    "likes": 713,
-   "viewsGain": 21,
+   "viewsGain": 52,
    "isNew": false,
-   "median": 24380,
+   "median": 23951,
    "multiple": 0.9
   },
   {
@@ -89,11 +102,11 @@
    "published": "2026-11-18T08:50:04+00:00",
    "url": "https://www.youtube.com/watch?v=-UhT8up9Kg4",
    "shorts": false,
-   "views": 23935,
+   "views": 23951,
    "likes": 869,
-   "viewsGain": 4,
+   "viewsGain": 16,
    "isNew": false,
-   "median": 24380,
+   "median": 23951,
    "multiple": 1.0
   },
   {
@@ -102,11 +115,11 @@
    "published": "2026-11-17T17:34:57+00:00",
    "url": "https://www.youtube.com/watch?v=91hhEPdL0LM",
    "shorts": false,
-   "views": 36973,
+   "views": 36979,
    "likes": 840,
-   "viewsGain": 2,
+   "viewsGain": 6,
    "isNew": false,
-   "median": 24380,
+   "median": 23951,
    "multiple": 1.5
   },
   {
@@ -115,12 +128,12 @@
    "published": "2026-11-17T08:09:58+00:00",
    "url": "https://www.youtube.com/watch?v=EgWaw2Fcd_c",
    "shorts": false,
-   "views": 104656,
-   "likes": 739,
-   "viewsGain": 1116,
+   "views": 105310,
+   "likes": 740,
+   "viewsGain": 654,
    "isNew": false,
-   "median": 24380,
-   "multiple": 4.3
+   "median": 23951,
+   "multiple": 4.4
   },
   {
    "id": "vRbR5Ik_z6E",
@@ -128,11 +141,11 @@
    "published": "2026-11-16T10:02:16+00:00",
    "url": "https://www.youtube.com/watch?v=vRbR5Ik_z6E",
    "shorts": false,
-   "views": 24380,
+   "views": 24385,
    "likes": 771,
-   "viewsGain": 3,
+   "viewsGain": 5,
    "isNew": false,
-   "median": 24380,
+   "median": 23951,
    "multiple": 1.0
   },
   {
@@ -141,11 +154,11 @@
    "published": "2026-11-15T10:22:10+00:00",
    "url": "https://www.youtube.com/watch?v=vVJGieEysjE",
    "shorts": false,
-   "views": 16610,
+   "views": 16613,
    "likes": 447,
-   "viewsGain": 4,
+   "viewsGain": 3,
    "isNew": false,
-   "median": 24380,
+   "median": 23951,
    "multiple": 0.7
   },
   {
@@ -156,9 +169,9 @@
    "shorts": false,
    "views": 19242,
    "likes": 352,
-   "viewsGain": 2,
+   "viewsGain": 0,
    "isNew": false,
-   "median": 24380,
+   "median": 23951,
    "multiple": 0.8
   },
   {
@@ -169,9 +182,9 @@
    "shorts": false,
    "views": 25944,
    "likes": 908,
-   "viewsGain": 4,
+   "viewsGain": 0,
    "isNew": false,
-   "median": 24380,
+   "median": 23951,
    "multiple": 1.1
   },
   {
@@ -180,40 +193,27 @@
    "published": "2026-11-12T10:12:35+00:00",
    "url": "https://www.youtube.com/watch?v=s5USat3YPTk",
    "shorts": false,
-   "views": 33236,
+   "views": 33249,
    "likes": 1166,
-   "viewsGain": 19,
+   "viewsGain": 13,
    "isNew": false,
-   "median": 24380,
+   "median": 23951,
    "multiple": 1.4
-  },
-  {
-   "id": "Q5muilZ33Xc",
-   "title": "손흥민 시대에 대표팀 중계권이 계륵이라니? - 한국 축구 A매치 관련 근황이 황당한 이유",
-   "published": "2026-11-11T10:19:02+00:00",
-   "url": "https://www.youtube.com/watch?v=Q5muilZ33Xc",
-   "shorts": false,
-   "views": 42780,
-   "likes": 975,
-   "viewsGain": 1,
-   "isNew": false,
-   "median": 24380,
-   "multiple": 1.8
   }
  ],
  "viral": [
   {
    "title": "손정범 한국 미드필더로 역대급 엘리트코스 - 10대 데뷔 국가대표 발탁 리버풀 이적설",
    "url": "https://www.youtube.com/watch?v=EgWaw2Fcd_c",
-   "views": 104656,
-   "multiple": 4.3,
+   "views": 105310,
+   "multiple": 4.4,
    "shorts": false
   },
   {
    "title": "김민수 어시스트에 영국이 더 흥분한 이유 - BBC가 변호하는 레인저스의 경이로운 10번",
    "url": "https://www.youtube.com/watch?v=t71dh5FPkIo",
-   "views": 98252,
-   "multiple": 4.0,
+   "views": 98633,
+   "multiple": 4.1,
    "shorts": false
   }
  ]

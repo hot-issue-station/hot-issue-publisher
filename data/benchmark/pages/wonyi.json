@@ -1,7 +1,7 @@
 {
  "name": "안원잘부",
  "channel": "https://www.youtube.com/@helloiamwoninicetomeetyou",
- "checkedAt": "2026-11-26T14:57+09:00",
+ "checkedAt": "2026-11-26T19:36+09:00",
  "subscribers": "246만",
  "videos": [
   {
@@ -11,7 +11,7 @@
    "viewsText": "조회수 143만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "kfK-LENbEUo",
@@ -34,11 +34,11 @@
   {
    "id": "zxNoW_LtVLE",
    "title": "치명적인 실수",
-   "views": 2850000,
-   "viewsText": "조회수 285만회",
+   "views": 2860000,
+   "viewsText": "조회수 286만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "mFM2hP5LEhM",
@@ -56,7 +56,7 @@
    "viewsText": "조회수 632만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "GsYq_ouLAMQ",
@@ -74,7 +74,7 @@
    "viewsText": "조회수 297만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "7Q_myxhlcwE",
@@ -110,7 +110,7 @@
    "viewsText": "조회수 1384만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "gNJrbCSN2TM",
