@@ -1,180 +1,188 @@
 {
  "name": "YTN",
  "channel": "https://www.youtube.com/@ytnnews24",
- "checkedAt": "2026-11-27T19:34+09:00",
+ "checkedAt": "2026-11-27T22:55+09:00",
  "subscribers": "544만",
  "videos": [
   {
    "id": "AY4Ch6LM194",
    "title": "지금의 주지훈을 만든 어린 시절의 기억 / YTN",
-   "views": 530,
-   "viewsText": "조회수 530회",
+   "views": 1400,
+   "viewsText": "조회수 1.4천회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 870
   },
   {
    "id": "yebrsY-yRoc",
    "title": "출근길 포르쉐 SUV 돌진 #shorts / YTN",
-   "views": 21000,
-   "viewsText": "조회수 2.1만회",
+   "views": 43000,
+   "viewsText": "조회수 4.3만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 22000
   },
   {
    "id": "v2acgo_yPpk",
    "title": "미국 어린이 전원 주주 된다 #shorts / YTN",
-   "views": 5700,
-   "viewsText": "조회수 5.7천회",
+   "views": 11000,
+   "viewsText": "조회수 1.1만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 5300
   },
   {
    "id": "WbH2WGIQ3Bg",
    "title": "항공사에 닥친 '연료비 폭탄' #shorts / YTN",
-   "views": 4100,
-   "viewsText": "조회수 4.1천회",
+   "views": 7500,
+   "viewsText": "조회수 7.5천회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 3400
   },
   {
    "id": "qEBsj_50WjM",
    "title": "중국이 체포한 우리 국민의 정체 #shorts / YTN",
-   "views": 4400,
-   "viewsText": "조회수 4.4천회",
+   "views": 8600,
+   "viewsText": "조회수 8.6천회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 4200
   },
   {
    "id": "j-qsKx9plWs",
    "title": "폭설, 정전, 침수…혼돈의 미국 #shorts / YTN",
-   "views": 2200,
-   "viewsText": "조회수 2.2천회",
+   "views": 2900,
+   "viewsText": "조회수 2.9천회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 700
   },
   {
    "id": "qKgNj2_bmGE",
    "title": "저게 대체 뭐야? #shorts / YTN",
-   "views": 8800,
-   "viewsText": "조회수 8.8천회",
+   "views": 10000,
+   "viewsText": "조회수 1만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 1200
   },
   {
    "id": "0JitSa_7yKU",
    "title": "험난한 산도 무섭지 않아! #shorts / YTN",
-   "views": 7800,
-   "viewsText": "조회수 7.8천회",
+   "views": 11000,
+   "viewsText": "조회수 1.1만회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 3200
   },
   {
    "id": "gwhcTohrMJQ",
    "title": "무한으로 즐기라며 #shorts / YTN",
-   "views": 79000,
-   "viewsText": "조회수 7.9만회",
+   "views": 150000,
+   "viewsText": "조회수 15만회",
    "published": "",
    "kind": "short",
-   "gain": 78968
+   "gain": 71000
   },
   {
    "id": "uRnbwHz3QZI",
    "title": "주유가 '독' 됐다 #shorts / YTN",
-   "views": 14000,
-   "viewsText": "조회수 1.4만회",
+   "views": 19000,
+   "viewsText": "조회수 1.9만회",
    "published": "",
    "kind": "short",
-   "gain": 9200
+   "gain": 5000
   },
   {
    "id": "WnIc9ACqiHU",
    "title": "꼬리에 꼬리를 무는 의혹 #shorts / YTN",
-   "views": 13000,
-   "viewsText": "조회수 1.3만회",
+   "views": 16000,
+   "viewsText": "조회수 1.6만회",
    "published": "",
    "kind": "short",
-   "gain": 7500
+   "gain": 3000
   },
   {
    "id": "dxOxEkJ7tNQ",
    "title": "너 기름 샌다 #shorts / YTN",
-   "views": 25000,
-   "viewsText": "조회수 2.5만회",
+   "views": 30000,
+   "viewsText": "조회수 3만회",
    "published": "",
    "kind": "short",
-   "gain": 12000
+   "gain": 5000
   },
   {
    "id": "VrUFpAzXs5A",
    "title": "가해자 보호, 피해자 방치 #shorts / YTN",
-   "views": 29000,
-   "viewsText": "조회수 2.9만회",
+   "views": 33000,
+   "viewsText": "조회수 3.3만회",
    "published": "",
    "kind": "short",
-   "gain": 11000
+   "gain": 4000
   },
   {
    "id": "BTT_uO9SF5U",
    "title": "행운의 여신 왔다 감 #shorts / YTN",
-   "views": 13000,
-   "viewsText": "조회수 1.3만회",
+   "views": 14000,
+   "viewsText": "조회수 1.4만회",
    "published": "",
    "kind": "short",
-   "gain": 4800
+   "gain": 1000
   },
   {
    "id": "b64feNW0H9s",
    "title": "미국 명절엔 스팸 대신 이것 #shorts / YTN",
-   "views": 12000,
-   "viewsText": "조회수 1.2만회",
+   "views": 14000,
+   "viewsText": "조회수 1.4만회",
    "published": "",
    "kind": "short",
-   "gain": 2100
+   "gain": 2000
   },
   {
    "id": "aHP64hD0m3Y",
    "title": "올겨울 기상청이 바빠진 이유 #shorts / YTN",
-   "views": 18000,
-   "viewsText": "조회수 1.8만회",
+   "views": 23000,
+   "viewsText": "조회수 2.3만회",
    "published": "",
    "kind": "short",
-   "gain": 6000
+   "gain": 5000
   },
   {
    "id": "eVY-2TJ7QQY",
    "title": "최악 전염병 창궐 #shorts / YTN",
-   "views": 9000,
-   "viewsText": "조회수 9천회",
+   "views": 9500,
+   "viewsText": "조회수 9.5천회",
    "published": "",
    "kind": "short",
-   "gain": 2500
+   "gain": 500
   },
   {
    "id": "pjWp6DUKdVo",
    "title": "이란의 마지막 버티기? #shorts / YTN",
-   "views": 24000,
-   "viewsText": "조회수 2.4만회",
+   "views": 28000,
+   "viewsText": "조회수 2.8만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 4000
   },
   {
    "id": "3o-DQop_frk",
    "title": "거대 파도의 습격 #shorts / YTN",
-   "views": 86000,
-   "viewsText": "조회수 8.6만회",
+   "views": 100000,
+   "viewsText": "조회수 10만회",
    "published": "",
    "kind": "short",
-   "gain": 38000
+   "gain": 14000
   },
   {
    "id": "l3mjxrNQbP4",
    "title": "불법 금광 덮친 '물벼락' #shorts / YTN",
-   "views": 2500,
-   "viewsText": "조회수 2.5천회",
+   "views": 2600,
+   "viewsText": "조회수 2.6천회",
    "published": "",
    "kind": "short",
-   "gain": 200
+   "gain": 100
   },
   {
    "id": "B8vxwiCbSqg",
@@ -183,7 +191,7 @@
    "viewsText": "조회수 4.3천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "aJRSINw_j0c",
@@ -192,22 +200,22 @@
    "viewsText": "조회수 9.4천회",
    "published": "",
    "kind": "short",
-   "gain": 200
+   "gain": 0
   },
   {
    "id": "pLBmWHbWyu8",
    "title": "안경 쓴 기자 '깜짝' #shorts / YTN",
-   "views": 63000,
-   "viewsText": "조회수 6.3만회",
+   "views": 64000,
+   "viewsText": "조회수 6.4만회",
    "published": "",
    "kind": "short",
-   "gain": 2000
+   "gain": 1000
   },
   {
    "id": "Rt3lhvXArtE",
    "title": "성형 후기 믿어도 될까? #shorts / YTN",
-   "views": 6700,
-   "viewsText": "조회수 6.7천회",
+   "views": 6800,
+   "viewsText": "조회수 6.8천회",
    "published": "",
    "kind": "short",
    "gain": 100
@@ -219,22 +227,22 @@
    "viewsText": "조회수 4.8천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "57Tb-IwEYXg",
    "title": "구급차 막은 마라톤 러너들 #shorts / YTN",
-   "views": 870000,
-   "viewsText": "조회수 87만회",
+   "views": 890000,
+   "viewsText": "조회수 89만회",
    "published": "",
    "kind": "short",
-   "gain": 70000
+   "gain": 20000
   },
   {
    "id": "xJQqJqbgYb8",
    "title": "눈물 보인 이광수 #shorts / YTN",
-   "views": 20000,
-   "viewsText": "조회수 2만회",
+   "views": 21000,
+   "viewsText": "조회수 2.1만회",
    "published": "",
    "kind": "short",
    "gain": 1000
@@ -242,35 +250,35 @@
   {
    "id": "PWhTXvFs46E",
    "title": "야옹~ 런던 갑니다! #shorts / YTN",
-   "views": 55000,
-   "viewsText": "조회수 5.5만회",
+   "views": 61000,
+   "viewsText": "조회수 6.1만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 6000
   },
   {
    "id": "JHZ4SFVKgGU",
    "title": "미국은 '차별'이라는데... #shorts / YTN",
-   "views": 3000,
-   "viewsText": "조회수 3천회",
+   "views": 3100,
+   "viewsText": "조회수 3.1천회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 100
   },
   {
    "id": "6rDoMevFl_w",
    "title": "진기명기 #shorts / YTN",
-   "views": 3000,
-   "viewsText": "조회수 3천회",
+   "views": 3100,
+   "viewsText": "조회수 3.1천회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 100
   },
   {
    "id": "nb4fTxTkltc",
    "title": "토벌하지 마세요 #shorts / YTN",
-   "views": 6100,
-   "viewsText": "조회수 6.1천회",
+   "views": 6200,
+   "viewsText": "조회수 6.2천회",
    "published": "",
    "kind": "short",
    "gain": 100
@@ -278,8 +286,8 @@
   {
    "id": "4mkg12Z6ls0",
    "title": "\"공부하라고 준 기간 아닌데\" #shorts / YTN",
-   "views": 4200,
-   "viewsText": "조회수 4.2천회",
+   "views": 4300,
+   "viewsText": "조회수 4.3천회",
    "published": "",
    "kind": "short",
    "gain": 100
@@ -291,7 +299,7 @@
    "viewsText": "조회수 18만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "HU3dBFWlMJ0",
@@ -300,34 +308,34 @@
    "viewsText": "조회수 6.1천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "IU-OBvElaFY",
    "title": "FBI가 보고한 '충격 내용' #shorts / YTN",
-   "views": 8300,
-   "viewsText": "조회수 8.3천회",
+   "views": 8400,
+   "viewsText": "조회수 8.4천회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 100
   },
   {
    "id": "frmKxmI21Xg",
    "title": "'의심받을까 봐...' #shorts / YTN",
-   "views": 8100,
-   "viewsText": "조회수 8.1천회",
+   "views": 8200,
+   "viewsText": "조회수 8.2천회",
    "published": "",
    "kind": "short",
-   "gain": 600
+   "gain": 100
   },
   {
    "id": "duRjDL2tNks",
    "title": "선의가 '악평'으로 #shorts / YTN",
-   "views": 73000,
-   "viewsText": "조회수 7.3만회",
+   "views": 75000,
+   "viewsText": "조회수 7.5만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 2000
   },
   {
    "id": "17ByTQo5RFE",
@@ -336,16 +344,16 @@
    "viewsText": "조회수 2.6만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "nrCigbUBwOg",
    "title": "마라톤 피하려다 '꽈당' #shorts / YTN",
-   "views": 6900,
-   "viewsText": "조회수 6.9천회",
+   "views": 7000,
+   "viewsText": "조회수 7천회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 100
   },
   {
    "id": "pr0eA0omWs4",

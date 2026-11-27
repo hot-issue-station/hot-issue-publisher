@@ -412,5 +412,156 @@
     "gain": 680
    }
   ]
+ },
+ {
+  "at": "2026-11-27T22:55+09:00",
+  "key": "14f",
+  "ok": true,
+  "new": [],
+  "top": [
+   {
+    "id": "cULsTY9GBuo",
+    "title": "엔진·연비만 따지면 안된다고?... 세계가 주목하는 자동차 경쟁력 ‘데이터’ / 14F",
+    "views": 21574,
+    "gain": 18624
+   },
+   {
+    "id": "LHqM_I-eIRw",
+    "title": "“경비 포함해도 더 싸다”… ‘스시자로’ 사러 대마도로 간다는 한국인들 / 14F",
+    "views": 14823,
+    "gain": 13545
+   },
+   {
+    "id": "YMBbQzpjexg",
+    "title": "멕시코 킹핀 제거 작전…‘기관총, 유탄 발사기, 장갑차’로 무장한 조직의 극렬 저항 / 14F",
+    "views": 223417,
+    "gain": 11525
+   }
+  ]
+ },
+ {
+  "at": "2026-11-27T22:55+09:00",
+  "key": "subusunews",
+  "ok": true,
+  "new": [],
+  "top": [
+   {
+    "id": "unZzsissHE4",
+    "title": "향기의 편지에 역대급 눈물바다 된 우사편 촬영장ㅣ우리 사이엔 편지가 있다2 EP.13 김향기",
+    "views": 80132,
+    "gain": 3457
+   },
+   {
+    "id": "ERL9tqzCHhs",
+    "title": "언니 우리 이런 사이 아니잖아",
+    "views": 883,
+    "gain": 677
+   },
+   {
+    "id": "2dCYqt4FoJ8",
+    "title": "오빠 미워 오빠 똥방구야",
+    "views": 1365,
+    "gain": 588
+   }
+  ]
+ },
+ {
+  "at": "2026-11-27T22:55+09:00",
+  "key": "vstudio",
+  "ok": true,
+  "new": [],
+  "top": []
+ },
+ {
+  "at": "2026-11-27T22:55+09:00",
+  "key": "syukaworld",
+  "ok": true,
+  "new": [],
+  "top": [
+   {
+    "id": "13Xil66kz_c",
+    "title": "옷을 왜 그렇게 입니?",
+    "views": 78351,
+    "gain": 53182
+   },
+   {
+    "id": "7LtVUPQK5cQ",
+    "title": "주식 하지 마세요 그냥",
+    "views": 101522,
+    "gain": 15688
+   },
+   {
+    "id": "UL0jvyJ8oQw",
+    "title": "🔴 LIVE [니황의 시황방송] 11월27일ㅣ배당금 과일찹쌀떡 먹방 & 국장 사주팔자 분석",
+    "views": 103473,
+    "gain": 12230
+   }
+  ]
+ },
+ {
+  "at": "2026-11-27T22:55+09:00",
+  "key": "ytn",
+  "ok": true,
+  "new": [
+   "b0SbC_kZcRQ",
+   "-Sm0bIM5oWw",
+   "2OjTeXP5GGU",
+   "R6U_XHUiBbQ",
+   "7_0ku137M1w",
+   "BcidsfixfSs",
+   "BzVeXRD1VVE",
+   "SfbkumHWejM",
+   "H51Aqwcl3ME",
+   "8Z84PTyoB-M",
+   "cksJs429N0o",
+   "B4aRySXpM18",
+   "l1Ud6oozroU"
+  ],
+  "top": [
+   {
+    "id": "0WIjK-X9oXo",
+    "title": "미 해상 봉쇄에 걸려든 이란의 최후…이란 대통령 '중대 발언' [이슈픽] / YTN",
+    "views": 9792,
+    "gain": 9792
+   },
+   {
+    "id": "ZBEJdmJyt90",
+    "title": "중국서 체포된 국정원 '휴민트'…북한서 포착된 '특이점' [이슈픽] / YTN",
+    "views": 812,
+    "gain": 812
+   },
+   {
+    "id": "8Z84PTyoB-M",
+    "title": "트럼프가 노린 게 바로 이거였나...벼랑 끝 이란 대통령의 '충격 발언' [에디터픽] / YTN",
+    "views": 207395,
+    "gain": null
+   }
+  ]
+ },
+ {
+  "at": "2026-11-27T22:55+09:00",
+  "key": "storyk",
+  "ok": true,
+  "new": [],
+  "top": [
+   {
+    "id": "3-MLdv2g0NY",
+    "title": "손흥민 반더벤 브로맨스 감동인 이유 - 어린 시절 관중석에서 지켜봤던 토트넘의 슈퍼 스타",
+    "views": 6997,
+    "gain": 6336
+   },
+   {
+    "id": "-Z4rN_Otbwg",
+    "title": "한국 전체 1위 직행 U17 월드컵 과연 어떤 대회? - 역사적인 축구스타들의 등용문",
+    "views": 56539,
+    "gain": 2156
+   },
+   {
+    "id": "wLMdJBOHlVs",
+    "title": "손흥민 발굴한 U17 월드컵 다시 폭발 - 피파 주관 대회에서 한국 사상 첫 기록 싹쓸이",
+    "views": 23166,
+    "gain": 743
+   }
+  ]
  }
 ]

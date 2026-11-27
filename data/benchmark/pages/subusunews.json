@@ -1,80 +1,86 @@
 {
  "name": "스브스뉴스 (SBS)",
  "channel": "https://www.youtube.com/@subusunews",
- "checkedAt": "2026-11-27T19:34+09:00",
+ "checkedAt": "2026-11-27T22:55+09:00",
  "subscribers": "145만",
  "videos": [
   {
    "id": "4_31Lr1PZEQ",
    "title": "빨리빨리의 나라 한국, 최근 이거로 세계 최정상 찍었다고? #shorts /스브스뉴스",
-   "views": 159,
-   "viewsText": "조회수 159회",
+   "views": 686,
+   "viewsText": "조회수 686회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 527
   },
   {
    "id": "kRlR1YYaf58",
    "title": "나도 말 좀 하자",
-   "views": 82,
-   "viewsText": "조회수 82회",
+   "views": 796,
+   "viewsText": "조회수 796회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 714
   },
   {
    "id": "wEyblYB8_5k",
    "title": "술자리 시비 걸리는 상황 특",
-   "views": 639,
-   "viewsText": "조회수 639회",
+   "views": 946,
+   "viewsText": "조회수 946회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 307
   },
   {
    "id": "ClbUf7jM_iM",
    "title": "훠궈에 지 국물 내 국물이 어딨어",
-   "views": 574,
-   "viewsText": "조회수 574회",
+   "views": 1100,
+   "viewsText": "조회수 1.1천회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 526
   },
   {
    "id": "CyLfcNbzsgM",
    "title": "\"의사 양성에 드는 돈이 얼만데;;\" 칼 빼든 일본 #의사 #shorts #스브스뉴스",
-   "views": 625,
-   "viewsText": "조회수 625회",
+   "views": 1600,
+   "viewsText": "조회수 1.6천회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 975
   },
   {
    "id": "uwZKTkvHgWo",
    "title": "일본 의료계도 한국화 되고 있다고? #일본 #shorts #스브스뉴스",
-   "views": 1800,
-   "viewsText": "조회수 1.8천회",
+   "views": 3100,
+   "viewsText": "조회수 3.1천회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 1300
   },
   {
    "id": "Idxf2CIVpa4",
    "title": "13살 김주애, 사실 후계자 아닐 것? #북한 #shorts #스브스뉴스",
-   "views": 2800,
-   "viewsText": "조회수 2.8천회",
+   "views": 2900,
+   "viewsText": "조회수 2.9천회",
    "published": "",
    "kind": "short",
-   "gain": 200
+   "gain": 100
   },
   {
    "id": "QrEi5mDqnkY",
    "title": "이번 겨울에 스키장 가실 건가요? #스키장 #shorts #스브스뉴스",
-   "views": 4000,
-   "viewsText": "조회수 4천회",
+   "views": 4100,
+   "viewsText": "조회수 4.1천회",
    "published": "",
    "kind": "short",
-   "gain": 300
+   "gain": 100
   },
   {
    "id": "HimIuWwzJnE",
    "title": "저는 핸드폰 중독자를 경멸해요",
-   "views": 1600,
-   "viewsText": "조회수 1.6천회",
+   "views": 1700,
+   "viewsText": "조회수 1.7천회",
    "published": "",
    "kind": "short",
    "gain": 100
@@ -82,11 +88,11 @@
   {
    "id": "RhPkw9_bvEo",
    "title": "유병권이 집에서 술 마시면 생기는 일",
-   "views": 9300,
-   "viewsText": "조회수 9.3천회",
+   "views": 9600,
+   "viewsText": "조회수 9.6천회",
    "published": "",
    "kind": "short",
-   "gain": 600
+   "gain": 300
   },
   {
    "id": "BM6xiPxwNxo",
@@ -95,25 +101,25 @@
    "viewsText": "조회수 1.8천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "yb3X_ux-TRM",
    "title": "※술자리 특※ 나 빼고 다 담배 피러 감",
-   "views": 4600,
-   "viewsText": "조회수 4.6천회",
+   "views": 5200,
+   "viewsText": "조회수 5.2천회",
    "published": "",
    "kind": "short",
-   "gain": 700
+   "gain": 600
   },
   {
    "id": "SlRpe8XKd1Q",
    "title": "단돈 3천 원에 이 뷰라고??;; 떠오르는 순천 핫플 알아봄 #shorts /스브스뉴스",
-   "views": 1800,
-   "viewsText": "조회수 1.8천회",
+   "views": 1900,
+   "viewsText": "조회수 1.9천회",
    "published": "",
    "kind": "short",
-   "gain": 300
+   "gain": 100
   },
   {
    "id": "NjXfRwPyMdw",
@@ -122,7 +128,7 @@
    "viewsText": "조회수 8.7천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "8t6NG9_Tjt4",
@@ -136,17 +142,17 @@
   {
    "id": "JQgsnxMvNZo",
    "title": "직장인이 가장 피하고 싶은 회식 = 유병권이 참석하는 회식",
-   "views": 9200,
-   "viewsText": "조회수 9.2천회",
+   "views": 9900,
+   "viewsText": "조회수 9.9천회",
    "published": "",
    "kind": "short",
-   "gain": 900
+   "gain": 700
   },
   {
    "id": "8yMt7MH2C6o",
    "title": "술자리에서 나르시시스트가 위험한 이유",
-   "views": 4800,
-   "viewsText": "조회수 4.8천회",
+   "views": 5000,
+   "viewsText": "조회수 5천회",
    "published": "",
    "kind": "short",
    "gain": 200
@@ -154,56 +160,56 @@
   {
    "id": "27P_Z6WStxE",
    "title": "사고뭉치 유병권과 예상치 못한 공범",
-   "views": 9800,
-   "viewsText": "조회수 9.8천회",
+   "views": 10000,
+   "viewsText": "조회수 1만회",
    "published": "",
    "kind": "short",
-   "gain": 400
+   "gain": 200
   },
   {
    "id": "mxTL8Sss32U",
    "title": "비음주자를 영원히 이해하지 못하는 유병권",
-   "views": 6900,
-   "viewsText": "조회수 6.9천회",
+   "views": 7200,
+   "viewsText": "조회수 7.2천회",
    "published": "",
    "kind": "short",
-   "gain": 400
+   "gain": 300
   },
   {
    "id": "PcOWHA81IJY",
    "title": "글로벌 인재와 기업이 만났다? 외국인취업채용박람회 후기 #취업 #shorts #스브스뉴스",
-   "views": 2500,
-   "viewsText": "조회수 2.5천회",
+   "views": 2700,
+   "viewsText": "조회수 2.7천회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 200
   },
   {
    "id": "z4Iick_S-fY",
    "title": "이럴 거면 피부과라고 적어 놓으면 안 되는 거 아님? #피부과 #shorts #스브스뉴스",
-   "views": 13000,
-   "viewsText": "조회수 1.3만회",
+   "views": 14000,
+   "viewsText": "조회수 1.4만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 1000
   },
   {
    "id": "zd3gPVFAyXk",
    "title": "블프라고 방심하지 말자... #블프 #shorts #스브스뉴스",
-   "views": 9100,
-   "viewsText": "조회수 9.1천회",
+   "views": 9400,
+   "viewsText": "조회수 9.4천회",
    "published": "",
    "kind": "short",
-   "gain": 500
+   "gain": 300
   },
   {
    "id": "ZhLZHImIb1E",
    "title": "추억의 드라마 속 ‘그곳’으로 직접 떠날 수 있는 핫플 여행지  #shorts / 스브스뉴스",
-   "views": 3000,
-   "viewsText": "조회수 3천회",
+   "views": 3400,
+   "viewsText": "조회수 3.4천회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 400
   },
   {
    "id": "JOYjvxU9AMs",
