@@ -1,43 +1,44 @@
 {
  "name": "14F 일사에프 (MBC)",
  "channel": "https://www.youtube.com/@14FMBC",
- "checkedAt": "2026-11-27T14:58+09:00",
+ "checkedAt": "2026-11-27T19:34+09:00",
  "subscribers": "239만",
  "videos": [
   {
    "id": "UzczY-i4a8g",
    "title": "Korea is living 2050 #shorts",
-   "views": 1000,
-   "viewsText": "조회수 1천회",
+   "views": 2300,
+   "viewsText": "조회수 2.3천회",
    "published": "",
-   "kind": "short"
+   "kind": "short",
+   "gain": 1300
   },
   {
    "id": "pC8PrVAycNI",
    "title": "크리스토퍼 놀란 감독이 틀렸다? #shorts",
-   "views": 2800,
-   "viewsText": "조회수 2.8천회",
+   "views": 3500,
+   "viewsText": "조회수 3.5천회",
    "published": "",
    "kind": "short",
-   "gain": 2108
+   "gain": 700
   },
   {
    "id": "7lymCCg10U4",
    "title": "솔로는 엔트로피가 높다? #shorts",
-   "views": 5900,
-   "viewsText": "조회수 5.9천회",
+   "views": 6200,
+   "viewsText": "조회수 6.2천회",
    "published": "",
    "kind": "short",
-   "gain": 600
+   "gain": 300
   },
   {
    "id": "CnZGi2F1T3M",
    "title": "가성비 된 3대 진미 근황 #shorts",
-   "views": 17000,
-   "viewsText": "조회수 1.7만회",
+   "views": 18000,
+   "viewsText": "조회수 1.8만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 1000
   },
   {
    "id": "NyxPbpN3Uyo",
@@ -51,11 +52,11 @@
   {
    "id": "VKzh4gQvEIU",
    "title": "일본이 천황 무덤 발굴을 막는 이유 #shorts",
-   "views": 18000,
-   "viewsText": "조회수 1.8만회",
+   "views": 19000,
+   "viewsText": "조회수 1.9만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 1000
   },
   {
    "id": "1SOf5BtCrok",

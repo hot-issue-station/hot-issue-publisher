@@ -1,7 +1,7 @@
 {
  "name": "안원잘부",
  "channel": "https://www.youtube.com/@helloiamwoninicetomeetyou",
- "checkedAt": "2026-11-27T14:58+09:00",
+ "checkedAt": "2026-11-27T19:34+09:00",
  "subscribers": "246만",
  "videos": [
   {
@@ -20,7 +20,7 @@
    "viewsText": "조회수 193만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "DKDmFgXzxs8",
@@ -52,11 +52,11 @@
   {
    "id": "xCvbDeMKm3E",
    "title": "두 번째 급습",
-   "views": 6320000,
-   "viewsText": "조회수 632만회",
+   "views": 6330000,
+   "viewsText": "조회수 633만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "GsYq_ouLAMQ",
@@ -65,7 +65,7 @@
    "viewsText": "조회수 557만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "BUeZskDCMpU",
@@ -110,7 +110,7 @@
    "viewsText": "조회수 1385만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "gNJrbCSN2TM",
@@ -151,11 +151,11 @@
   {
    "id": "jilQNKreZBM",
    "title": "원이의 꿈",
-   "views": 930000,
-   "viewsText": "조회수 93만회",
+   "views": 940000,
+   "viewsText": "조회수 94만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "FxbR-V8GOjE",
@@ -263,7 +263,7 @@
    "viewsText": "조회수 645만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "ORksT1QDf3k",
