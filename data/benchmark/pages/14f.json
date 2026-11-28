@@ -1,35 +1,59 @@
 {
  "name": "14F 일사에프 (MBC)",
  "channel": "https://www.youtube.com/@14FMBC",
- "checkedAt": "2026-11-27T22:55+09:00",
+ "checkedAt": "2026-11-28T13:30+09:00",
  "subscribers": "239만",
  "videos": [
   {
-   "id": "UzczY-i4a8g",
-   "title": "Korea is living 2050 #shorts",
-   "views": 2700,
-   "viewsText": "조회수 2.7천회",
+   "id": "hXzmW7QJ6O8",
+   "title": "광화문에서 전국 빵집 털어왔습니다🥖 #shorts",
+   "views": 327,
+   "viewsText": "조회수 327회",
    "published": "",
-   "kind": "short",
-   "gain": 400
+   "kind": "short"
   },
   {
-   "id": "pC8PrVAycNI",
-   "title": "크리스토퍼 놀란 감독이 틀렸다? #shorts",
+   "id": "hpYeFzB7Weg",
+   "title": "최근에 캐비어 먹어본 사람? #shorts",
+   "views": 908,
+   "viewsText": "조회수 908회",
+   "published": "",
+   "kind": "short"
+  },
+  {
+   "id": "qCt7ThVG1N0",
+   "title": "우주 종말을 피할 수 없는 이유 #shorts",
+   "views": 5200,
+   "viewsText": "조회수 5.2천회",
+   "published": "",
+   "kind": "short"
+  },
+  {
+   "id": "UzczY-i4a8g",
+   "title": "Korea is living 2050 #shorts",
    "views": 3800,
    "viewsText": "조회수 3.8천회",
    "published": "",
    "kind": "short",
-   "gain": 300
+   "gain": 1100
+  },
+  {
+   "id": "pC8PrVAycNI",
+   "title": "크리스토퍼 놀란 감독이 틀렸다? #shorts",
+   "views": 4900,
+   "viewsText": "조회수 4.9천회",
+   "published": "",
+   "kind": "short",
+   "gain": 1100
   },
   {
    "id": "7lymCCg10U4",
    "title": "솔로는 엔트로피가 높다? #shorts",
-   "views": 6400,
-   "viewsText": "조회수 6.4천회",
+   "views": 7200,
+   "viewsText": "조회수 7.2천회",
    "published": "",
    "kind": "short",
-   "gain": 200
+   "gain": 800
   },
   {
    "id": "CnZGi2F1T3M",
@@ -43,11 +67,11 @@
   {
    "id": "NyxPbpN3Uyo",
    "title": "한국인 드립에 감동한 영국 소시지 아저씨#shorts",
-   "views": 7200,
-   "viewsText": "조회수 7.2천회",
+   "views": 7300,
+   "viewsText": "조회수 7.3천회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 100
   },
   {
    "id": "VKzh4gQvEIU",
@@ -65,7 +89,7 @@
    "viewsText": "조회수 4.9천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "wlN76TIzAEM",
@@ -92,7 +116,7 @@
    "viewsText": "조회수 3.9만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "abobZ7JfTek",
@@ -218,7 +242,7 @@
    "viewsText": "조회수 9.2천회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "peSpC5kd2t0",
@@ -333,33 +357,6 @@
    "title": "앞으로 바뀐다는 디카페인 기준 #shorts",
    "views": 13000,
    "viewsText": "조회수 1.3만회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "9npYu0vyEcc",
-   "title": "미국 맥주 1황이었던 버드와이저 탄생 비화 #shorts",
-   "views": 11000,
-   "viewsText": "조회수 1.1만회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "vwZEdkGziEc",
-   "title": "고대 중국 인신공양의 흔적 #shorts",
-   "views": 17000,
-   "viewsText": "조회수 1.7만회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "xqsECv5kI9M",
-   "title": "AI도 해독 못 하는 고대 문자 #shorts",
-   "views": 31000,
-   "viewsText": "조회수 3.1만회",
    "published": "",
    "kind": "short",
    "gain": 0

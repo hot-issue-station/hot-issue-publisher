@@ -3,20 +3,59 @@
  "name": "14F 일사에프 (MBC)",
  "channel": "https://www.youtube.com/@14FMBC",
  "channelId": "UCLKuglhGlMmDteQKoniENIQ",
- "checkedAt": "2026-11-27T22:55+09:00",
+ "checkedAt": "2026-11-28T13:30+09:00",
  "videos": [
+  {
+   "id": "hXzmW7QJ6O8",
+   "title": "광화문에서 전국 빵집 털어왔습니다🥖 #shorts",
+   "published": "2026-11-28T04:00:09+00:00",
+   "url": "https://www.youtube.com/shorts/hXzmW7QJ6O8",
+   "shorts": true,
+   "views": 331,
+   "likes": 3,
+   "viewsGain": null,
+   "isNew": true,
+   "median": 4973,
+   "multiple": 0.1
+  },
+  {
+   "id": "hpYeFzB7Weg",
+   "title": "최근에 캐비어 먹어본 사람? #shorts",
+   "published": "2026-11-28T03:00:31+00:00",
+   "url": "https://www.youtube.com/shorts/hpYeFzB7Weg",
+   "shorts": true,
+   "views": 908,
+   "likes": 7,
+   "viewsGain": null,
+   "isNew": true,
+   "median": 4973,
+   "multiple": 0.2
+  },
+  {
+   "id": "qCt7ThVG1N0",
+   "title": "우주 종말을 피할 수 없는 이유 #shorts",
+   "published": "2026-11-27T23:00:04+00:00",
+   "url": "https://www.youtube.com/shorts/qCt7ThVG1N0",
+   "shorts": true,
+   "views": 5213,
+   "likes": 65,
+   "viewsGain": null,
+   "isNew": true,
+   "median": 4973,
+   "multiple": 1.0
+  },
   {
    "id": "LHqM_I-eIRw",
    "title": "“경비 포함해도 더 싸다”… ‘스시자로’ 사러 대마도로 간다는 한국인들 / 14F",
    "published": "2026-11-27T09:58:23+00:00",
    "url": "https://www.youtube.com/watch?v=LHqM_I-eIRw",
    "shorts": false,
-   "views": 14823,
-   "likes": 130,
-   "viewsGain": 13545,
+   "views": 35743,
+   "likes": 170,
+   "viewsGain": 20920,
    "isNew": false,
-   "median": 140397,
-   "multiple": 0.1
+   "median": 74563.0,
+   "multiple": 0.5
   },
   {
    "id": "cULsTY9GBuo",
@@ -24,12 +63,12 @@
    "published": "2026-11-27T08:30:16+00:00",
    "url": "https://www.youtube.com/watch?v=cULsTY9GBuo",
    "shorts": false,
-   "views": 21574,
-   "likes": 152,
-   "viewsGain": 18624,
+   "views": 42695,
+   "likes": 197,
+   "viewsGain": 21121,
    "isNew": false,
-   "median": 140397,
-   "multiple": 0.2
+   "median": 74563.0,
+   "multiple": 0.6
   },
   {
    "id": "UzczY-i4a8g",
@@ -37,12 +76,12 @@
    "published": "2026-11-27T04:00:25+00:00",
    "url": "https://www.youtube.com/shorts/UzczY-i4a8g",
    "shorts": true,
-   "views": 2767,
-   "likes": 16,
-   "viewsGain": 438,
+   "views": 3819,
+   "likes": 20,
+   "viewsGain": 1052,
    "isNew": false,
-   "median": 5162.0,
-   "multiple": 0.5
+   "median": 4973,
+   "multiple": 0.8
   },
   {
    "id": "pC8PrVAycNI",
@@ -50,12 +89,12 @@
    "published": "2026-11-26T23:00:05+00:00",
    "url": "https://www.youtube.com/shorts/pC8PrVAycNI",
    "shorts": true,
-   "views": 3879,
-   "likes": 60,
-   "viewsGain": 339,
+   "views": 4973,
+   "likes": 74,
+   "viewsGain": 1094,
    "isNew": false,
-   "median": 5162.0,
-   "multiple": 0.8
+   "median": 4973,
+   "multiple": 1.0
   },
   {
    "id": "bR1nz9XoLx0",
@@ -63,12 +102,12 @@
    "published": "2026-11-26T09:02:24+00:00",
    "url": "https://www.youtube.com/watch?v=bR1nz9XoLx0",
    "shorts": false,
-   "views": 49107,
-   "likes": 286,
-   "viewsGain": 7106,
+   "views": 53624,
+   "likes": 309,
+   "viewsGain": 4517,
    "isNew": false,
-   "median": 140397,
-   "multiple": 0.3
+   "median": 74563.0,
+   "multiple": 0.7
   },
   {
    "id": "J1S0EHHCCHY",
@@ -76,12 +115,12 @@
    "published": "2026-11-26T08:30:29+00:00",
    "url": "https://www.youtube.com/watch?v=J1S0EHHCCHY",
    "shorts": false,
-   "views": 81572,
-   "likes": 337,
-   "viewsGain": 4757,
+   "views": 87237,
+   "likes": 348,
+   "viewsGain": 5665,
    "isNew": false,
-   "median": 140397,
-   "multiple": 0.6
+   "median": 74563.0,
+   "multiple": 1.2
   },
   {
    "id": "7lymCCg10U4",
@@ -89,12 +128,12 @@
    "published": "2026-11-25T23:00:31+00:00",
    "url": "https://www.youtube.com/shorts/7lymCCg10U4",
    "shorts": true,
-   "views": 6445,
-   "likes": 99,
-   "viewsGain": 173,
+   "views": 7200,
+   "likes": 117,
+   "viewsGain": 755,
    "isNew": false,
-   "median": 5162.0,
-   "multiple": 1.2
+   "median": 4973,
+   "multiple": 1.4
   },
   {
    "id": "X9sD3AwspQ4",
@@ -102,12 +141,12 @@
    "published": "2026-11-25T09:53:44+00:00",
    "url": "https://www.youtube.com/watch?v=X9sD3AwspQ4",
    "shorts": false,
-   "views": 60767,
-   "likes": 307,
-   "viewsGain": 710,
+   "views": 61889,
+   "likes": 304,
+   "viewsGain": 1122,
    "isNew": false,
-   "median": 140397,
-   "multiple": 0.4
+   "median": 74563.0,
+   "multiple": 0.8
   },
   {
    "id": "YMBbQzpjexg",
@@ -115,12 +154,12 @@
    "published": "2026-11-25T09:00:14+00:00",
    "url": "https://www.youtube.com/watch?v=YMBbQzpjexg",
    "shorts": false,
-   "views": 223417,
-   "likes": 732,
-   "viewsGain": 11525,
+   "views": 242534,
+   "likes": 763,
+   "viewsGain": 19117,
    "isNew": false,
-   "median": 140397,
-   "multiple": 1.6
+   "median": 74563.0,
+   "multiple": 3.3
   },
   {
    "id": "Nn_kaMW9nkY",
@@ -128,12 +167,12 @@
    "published": "2026-11-25T08:30:14+00:00",
    "url": "https://www.youtube.com/watch?v=Nn_kaMW9nkY",
    "shorts": false,
-   "views": 163115,
-   "likes": 779,
-   "viewsGain": 3852,
+   "views": 175358,
+   "likes": 841,
+   "viewsGain": 12243,
    "isNew": false,
-   "median": 140397,
-   "multiple": 1.2
+   "median": 74563.0,
+   "multiple": 2.4
   },
   {
    "id": "CnZGi2F1T3M",
@@ -141,12 +180,12 @@
    "published": "2026-11-25T03:00:29+00:00",
    "url": "https://www.youtube.com/shorts/CnZGi2F1T3M",
    "shorts": true,
-   "views": 18184,
-   "likes": 113,
-   "viewsGain": 76,
+   "views": 18448,
+   "likes": 115,
+   "viewsGain": 264,
    "isNew": false,
-   "median": 5162.0,
-   "multiple": 3.5
+   "median": 4973,
+   "multiple": 3.7
   },
   {
    "id": "ur4wbtV0nt4",
@@ -154,60 +193,42 @@
    "published": "2026-11-24T09:54:19+00:00",
    "url": "https://www.youtube.com/watch?v=ur4wbtV0nt4",
    "shorts": false,
-   "views": 170214,
-   "likes": 901,
-   "viewsGain": 2280,
+   "views": 173850,
+   "likes": 911,
+   "viewsGain": 3636,
    "isNew": false,
-   "median": 140397,
-   "multiple": 1.2
-  },
-  {
-   "id": "gfCdOrEqM0E",
-   "title": "영국의 자존심, 제임스 본드 ‘로버트 패틴슨’…수트, 시계, 차 모두가 그를 노린다! / 14F",
-   "published": "2026-11-24T09:00:03+00:00",
-   "url": "https://www.youtube.com/watch?v=gfCdOrEqM0E",
-   "shorts": false,
-   "views": 202206,
-   "likes": 707,
-   "viewsGain": 2408,
-   "isNew": false,
-   "median": 140397,
-   "multiple": 1.4
-  },
-  {
-   "id": "fRlinSufVFQ",
-   "title": "문과생도 이해 가능. 세상에서 가장 친절한 엔트로피 수업 (김범준X곽재식) ㅣ10분 토론 / 14F",
-   "published": "2026-11-24T08:30:37+00:00",
-   "url": "https://www.youtube.com/watch?v=fRlinSufVFQ",
-   "shorts": false,
-   "views": 158927,
-   "likes": 797,
-   "viewsGain": 2443,
-   "isNew": false,
-   "median": 140397,
-   "multiple": 1.1
-  },
-  {
-   "id": "FzyMQzDL5bw",
-   "title": "한국인은 이미 먹고 있었다… 해외에서 떠오른 ‘슈퍼 푸드’ 정체 / 14F",
-   "published": "2026-11-23T10:11:13+00:00",
-   "url": "https://www.youtube.com/watch?v=FzyMQzDL5bw",
-   "shorts": false,
-   "views": 140397,
-   "likes": 847,
-   "viewsGain": 362,
-   "isNew": false,
-   "median": 140397,
-   "multiple": 1.0
+   "median": 74563.0,
+   "multiple": 2.3
   }
  ],
  "viral": [
   {
    "title": "가성비 된 3대 진미 근황 #shorts",
    "url": "https://www.youtube.com/shorts/CnZGi2F1T3M",
-   "views": 18184,
-   "multiple": 3.5,
+   "views": 18448,
+   "multiple": 3.7,
    "shorts": true
+  },
+  {
+   "title": "멕시코 킹핀 제거 작전…‘기관총, 유탄 발사기, 장갑차’로 무장한 조직의 극렬 저항 / 14F",
+   "url": "https://www.youtube.com/watch?v=YMBbQzpjexg",
+   "views": 242534,
+   "multiple": 3.3,
+   "shorts": false
+  },
+  {
+   "title": "우크라이나 전쟁 끝낼 수 있을까…미·중·러 정상회담 뒤 러시아의 계산 / 14F",
+   "url": "https://www.youtube.com/watch?v=Nn_kaMW9nkY",
+   "views": 175358,
+   "multiple": 2.4,
+   "shorts": false
+  },
+  {
+   "title": "외국인들 마음 훔쳐간 K-과자… 초코파이, 카스타드, 고래밥 렛츠고? / 14F",
+   "url": "https://www.youtube.com/watch?v=ur4wbtV0nt4",
+   "views": 173850,
+   "multiple": 2.3,
+   "shorts": false
   }
  ]
 }
