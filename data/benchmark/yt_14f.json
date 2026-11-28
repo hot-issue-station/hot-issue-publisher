@@ -3,7 +3,7 @@
  "name": "14F 일사에프 (MBC)",
  "channel": "https://www.youtube.com/@14FMBC",
  "channelId": "UCLKuglhGlMmDteQKoniENIQ",
- "checkedAt": "2026-11-28T13:30+09:00",
+ "checkedAt": "2026-11-28T22:58+09:00",
  "videos": [
   {
    "id": "hXzmW7QJ6O8",
@@ -11,12 +11,12 @@
    "published": "2026-11-28T04:00:09+00:00",
    "url": "https://www.youtube.com/shorts/hXzmW7QJ6O8",
    "shorts": true,
-   "views": 331,
-   "likes": 3,
-   "viewsGain": null,
-   "isNew": true,
-   "median": 4973,
-   "multiple": 0.1
+   "views": 2157,
+   "likes": 8,
+   "viewsGain": 1826,
+   "isNew": false,
+   "median": 5308,
+   "multiple": 0.4
   },
   {
    "id": "hpYeFzB7Weg",
@@ -24,12 +24,12 @@
    "published": "2026-11-28T03:00:31+00:00",
    "url": "https://www.youtube.com/shorts/hpYeFzB7Weg",
    "shorts": true,
-   "views": 908,
-   "likes": 7,
-   "viewsGain": null,
-   "isNew": true,
-   "median": 4973,
-   "multiple": 0.2
+   "views": 3080,
+   "likes": 23,
+   "viewsGain": 2172,
+   "isNew": false,
+   "median": 5308,
+   "multiple": 0.6
   },
   {
    "id": "qCt7ThVG1N0",
@@ -37,12 +37,12 @@
    "published": "2026-11-27T23:00:04+00:00",
    "url": "https://www.youtube.com/shorts/qCt7ThVG1N0",
    "shorts": true,
-   "views": 5213,
-   "likes": 65,
-   "viewsGain": null,
-   "isNew": true,
-   "median": 4973,
-   "multiple": 1.0
+   "views": 13442,
+   "likes": 121,
+   "viewsGain": 8229,
+   "isNew": false,
+   "median": 5308,
+   "multiple": 2.5
   },
   {
    "id": "LHqM_I-eIRw",
@@ -50,12 +50,12 @@
    "published": "2026-11-27T09:58:23+00:00",
    "url": "https://www.youtube.com/watch?v=LHqM_I-eIRw",
    "shorts": false,
-   "views": 35743,
-   "likes": 170,
-   "viewsGain": 20920,
+   "views": 42719,
+   "likes": 194,
+   "viewsGain": 6976,
    "isNew": false,
-   "median": 74563.0,
-   "multiple": 0.5
+   "median": 77362.5,
+   "multiple": 0.6
   },
   {
    "id": "cULsTY9GBuo",
@@ -63,11 +63,11 @@
    "published": "2026-11-27T08:30:16+00:00",
    "url": "https://www.youtube.com/watch?v=cULsTY9GBuo",
    "shorts": false,
-   "views": 42695,
-   "likes": 197,
-   "viewsGain": 21121,
+   "views": 50008,
+   "likes": 194,
+   "viewsGain": 7313,
    "isNew": false,
-   "median": 74563.0,
+   "median": 77362.5,
    "multiple": 0.6
   },
   {
@@ -76,11 +76,11 @@
    "published": "2026-11-27T04:00:25+00:00",
    "url": "https://www.youtube.com/shorts/UzczY-i4a8g",
    "shorts": true,
-   "views": 3819,
+   "views": 4240,
    "likes": 20,
-   "viewsGain": 1052,
+   "viewsGain": 421,
    "isNew": false,
-   "median": 4973,
+   "median": 5308,
    "multiple": 0.8
   },
   {
@@ -89,11 +89,11 @@
    "published": "2026-11-26T23:00:05+00:00",
    "url": "https://www.youtube.com/shorts/pC8PrVAycNI",
    "shorts": true,
-   "views": 4973,
-   "likes": 74,
-   "viewsGain": 1094,
+   "views": 5308,
+   "likes": 76,
+   "viewsGain": 335,
    "isNew": false,
-   "median": 4973,
+   "median": 5308,
    "multiple": 1.0
   },
   {
@@ -102,12 +102,12 @@
    "published": "2026-11-26T09:02:24+00:00",
    "url": "https://www.youtube.com/watch?v=bR1nz9XoLx0",
    "shorts": false,
-   "views": 53624,
-   "likes": 309,
-   "viewsGain": 4517,
+   "views": 59231,
+   "likes": 337,
+   "viewsGain": 5607,
    "isNew": false,
-   "median": 74563.0,
-   "multiple": 0.7
+   "median": 77362.5,
+   "multiple": 0.8
   },
   {
    "id": "J1S0EHHCCHY",
@@ -115,11 +115,11 @@
    "published": "2026-11-26T08:30:29+00:00",
    "url": "https://www.youtube.com/watch?v=J1S0EHHCCHY",
    "shorts": false,
-   "views": 87237,
-   "likes": 348,
-   "viewsGain": 5665,
+   "views": 91893,
+   "likes": 362,
+   "viewsGain": 4656,
    "isNew": false,
-   "median": 74563.0,
+   "median": 77362.5,
    "multiple": 1.2
   },
   {
@@ -128,12 +128,12 @@
    "published": "2026-11-25T23:00:31+00:00",
    "url": "https://www.youtube.com/shorts/7lymCCg10U4",
    "shorts": true,
-   "views": 7200,
-   "likes": 117,
-   "viewsGain": 755,
+   "views": 7890,
+   "likes": 130,
+   "viewsGain": 690,
    "isNew": false,
-   "median": 4973,
-   "multiple": 1.4
+   "median": 5308,
+   "multiple": 1.5
   },
   {
    "id": "X9sD3AwspQ4",
@@ -141,11 +141,11 @@
    "published": "2026-11-25T09:53:44+00:00",
    "url": "https://www.youtube.com/watch?v=X9sD3AwspQ4",
    "shorts": false,
-   "views": 61889,
-   "likes": 304,
-   "viewsGain": 1122,
+   "views": 62832,
+   "likes": 307,
+   "viewsGain": 943,
    "isNew": false,
-   "median": 74563.0,
+   "median": 77362.5,
    "multiple": 0.8
   },
   {
@@ -154,12 +154,12 @@
    "published": "2026-11-25T09:00:14+00:00",
    "url": "https://www.youtube.com/watch?v=YMBbQzpjexg",
    "shorts": false,
-   "views": 242534,
-   "likes": 763,
-   "viewsGain": 19117,
+   "views": 250084,
+   "likes": 798,
+   "viewsGain": 7550,
    "isNew": false,
-   "median": 74563.0,
-   "multiple": 3.3
+   "median": 77362.5,
+   "multiple": 3.2
   },
   {
    "id": "Nn_kaMW9nkY",
@@ -167,12 +167,12 @@
    "published": "2026-11-25T08:30:14+00:00",
    "url": "https://www.youtube.com/watch?v=Nn_kaMW9nkY",
    "shorts": false,
-   "views": 175358,
-   "likes": 841,
-   "viewsGain": 12243,
+   "views": 181797,
+   "likes": 860,
+   "viewsGain": 6439,
    "isNew": false,
-   "median": 74563.0,
-   "multiple": 2.4
+   "median": 77362.5,
+   "multiple": 2.3
   },
   {
    "id": "CnZGi2F1T3M",
@@ -180,12 +180,12 @@
    "published": "2026-11-25T03:00:29+00:00",
    "url": "https://www.youtube.com/shorts/CnZGi2F1T3M",
    "shorts": true,
-   "views": 18448,
+   "views": 18522,
    "likes": 115,
-   "viewsGain": 264,
+   "viewsGain": 74,
    "isNew": false,
-   "median": 4973,
-   "multiple": 3.7
+   "median": 5308,
+   "multiple": 3.5
   },
   {
    "id": "ur4wbtV0nt4",
@@ -193,11 +193,11 @@
    "published": "2026-11-24T09:54:19+00:00",
    "url": "https://www.youtube.com/watch?v=ur4wbtV0nt4",
    "shorts": false,
-   "views": 173850,
-   "likes": 911,
-   "viewsGain": 3636,
+   "views": 175547,
+   "likes": 918,
+   "viewsGain": 1697,
    "isNew": false,
-   "median": 74563.0,
+   "median": 77362.5,
    "multiple": 2.3
   }
  ],
@@ -205,28 +205,35 @@
   {
    "title": "가성비 된 3대 진미 근황 #shorts",
    "url": "https://www.youtube.com/shorts/CnZGi2F1T3M",
-   "views": 18448,
-   "multiple": 3.7,
+   "views": 18522,
+   "multiple": 3.5,
    "shorts": true
   },
   {
    "title": "멕시코 킹핀 제거 작전…‘기관총, 유탄 발사기, 장갑차’로 무장한 조직의 극렬 저항 / 14F",
    "url": "https://www.youtube.com/watch?v=YMBbQzpjexg",
-   "views": 242534,
-   "multiple": 3.3,
+   "views": 250084,
+   "multiple": 3.2,
    "shorts": false
+  },
+  {
+   "title": "우주 종말을 피할 수 없는 이유 #shorts",
+   "url": "https://www.youtube.com/shorts/qCt7ThVG1N0",
+   "views": 13442,
+   "multiple": 2.5,
+   "shorts": true
   },
   {
    "title": "우크라이나 전쟁 끝낼 수 있을까…미·중·러 정상회담 뒤 러시아의 계산 / 14F",
    "url": "https://www.youtube.com/watch?v=Nn_kaMW9nkY",
-   "views": 175358,
-   "multiple": 2.4,
+   "views": 181797,
+   "multiple": 2.3,
    "shorts": false
   },
   {
    "title": "외국인들 마음 훔쳐간 K-과자… 초코파이, 카스타드, 고래밥 렛츠고? / 14F",
    "url": "https://www.youtube.com/watch?v=ur4wbtV0nt4",
-   "views": 173850,
+   "views": 175547,
    "multiple": 2.3,
    "shorts": false
   }

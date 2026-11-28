@@ -1,14 +1,14 @@
 {
  "name": "안원잘부",
  "channel": "https://www.youtube.com/@helloiamwoninicetomeetyou",
- "checkedAt": "2026-11-28T13:30+09:00",
+ "checkedAt": "2026-11-28T22:58+09:00",
  "subscribers": "246만",
  "videos": [
   {
    "id": "N3MX2W5_Zfs",
    "title": "디즈니 영화 OST가 된 이유",
-   "views": 1450000,
-   "viewsText": "조회수 145만회",
+   "views": 1460000,
+   "viewsText": "조회수 146만회",
    "published": "",
    "kind": "short",
    "gain": 10000
@@ -16,11 +16,11 @@
   {
    "id": "kfK-LENbEUo",
    "title": "정작가의 컴백을 축하합니다",
-   "views": 1930000,
-   "viewsText": "조회수 193만회",
+   "views": 1940000,
+   "viewsText": "조회수 194만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "DKDmFgXzxs8",
@@ -52,11 +52,11 @@
   {
    "id": "xCvbDeMKm3E",
    "title": "두 번째 급습",
-   "views": 6330000,
-   "viewsText": "조회수 633만회",
+   "views": 6340000,
+   "viewsText": "조회수 634만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "GsYq_ouLAMQ",
@@ -106,8 +106,8 @@
   {
    "id": "o-B0F16GwL0",
    "title": "[B컷] 의자 안 돌아가요",
-   "views": 13860000,
-   "viewsText": "조회수 1386만회",
+   "views": 13870000,
+   "viewsText": "조회수 1387만회",
    "published": "",
    "kind": "short",
    "gain": 10000
@@ -115,11 +115,11 @@
   {
    "id": "gNJrbCSN2TM",
    "title": "백제자객과 프리티걸",
-   "views": 4710000,
-   "viewsText": "조회수 471만회",
+   "views": 4720000,
+   "viewsText": "조회수 472만회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 10000
   },
   {
    "id": "F5CbMShscuk",
@@ -128,7 +128,7 @@
    "viewsText": "조회수 164만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "VUufd3Hd_2Q",
@@ -254,7 +254,7 @@
    "viewsText": "조회수 435만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "P5GHz5HW9Uk",
@@ -299,7 +299,7 @@
    "viewsText": "조회수 239만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "510hBsWhh0A",
@@ -344,7 +344,7 @@
    "viewsText": "조회수 173만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "yFyk6KPsGuA",

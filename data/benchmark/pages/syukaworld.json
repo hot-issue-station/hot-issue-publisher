@@ -1,14 +1,14 @@
 {
  "name": "슈카월드",
  "channel": "https://www.youtube.com/@syukaworld",
- "checkedAt": "2026-11-28T13:30+09:00",
+ "checkedAt": "2026-11-28T22:58+09:00",
  "subscribers": "374만",
  "videos": [
   {
    "id": "F67XTSCwwQE",
    "title": "감히 황제 자리를 탐한 자",
-   "views": 530000,
-   "viewsText": "조회수 53만회",
+   "views": 540000,
+   "viewsText": "조회수 54만회",
    "published": "",
    "kind": "short",
    "gain": 10000
@@ -29,7 +29,7 @@
    "viewsText": "조회수 85만회",
    "published": "",
    "kind": "short",
-   "gain": 10000
+   "gain": 0
   },
   {
    "id": "NINJ94H2s04",
@@ -83,7 +83,7 @@
    "viewsText": "조회수 6.6만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "lioIrGMoIbs",

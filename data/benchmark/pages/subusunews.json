@@ -1,104 +1,128 @@
 {
  "name": "스브스뉴스 (SBS)",
  "channel": "https://www.youtube.com/@subusunews",
- "checkedAt": "2026-11-28T13:30+09:00",
+ "checkedAt": "2026-11-28T22:58+09:00",
  "subscribers": "145만",
  "videos": [
   {
+   "id": "j3LgR6hsgPk",
+   "title": "병권 씨 7만 원 보내셨죠",
+   "views": 1300,
+   "viewsText": "조회수 1.3천회",
+   "published": "",
+   "kind": "short"
+  },
+  {
+   "id": "H0oMRvG24ME",
+   "title": "꼰대 vs 조언",
+   "views": 785,
+   "viewsText": "조회수 785회",
+   "published": "",
+   "kind": "short"
+  },
+  {
+   "id": "PCy26LeGIOw",
+   "title": "전 세계에서 불러주는 아주 최고의 사람이 됐다가 간경화 걸려서 가라",
+   "views": 1900,
+   "viewsText": "조회수 1.9천회",
+   "published": "",
+   "kind": "short"
+  },
+  {
    "id": "4_31Lr1PZEQ",
    "title": "빨리빨리의 나라 한국, 최근 이거로 세계 최정상 찍었다고? #shorts /스브스뉴스",
-   "views": 2200,
-   "viewsText": "조회수 2.2천회",
+   "views": 3800,
+   "viewsText": "조회수 3.8천회",
    "published": "",
    "kind": "short",
-   "gain": 1514
+   "gain": 1600
   },
   {
    "id": "kRlR1YYaf58",
    "title": "나도 말 좀 하자",
-   "views": 1800,
-   "viewsText": "조회수 1.8천회",
+   "views": 2100,
+   "viewsText": "조회수 2.1천회",
    "published": "",
    "kind": "short",
-   "gain": 1004
+   "gain": 300
   },
   {
    "id": "wEyblYB8_5k",
    "title": "술자리 시비 걸리는 상황 특",
-   "views": 1200,
-   "viewsText": "조회수 1.2천회",
+   "views": 1300,
+   "viewsText": "조회수 1.3천회",
    "published": "",
    "kind": "short",
-   "gain": 254
+   "gain": 100
   },
   {
    "id": "ClbUf7jM_iM",
    "title": "훠궈에 지 국물 내 국물이 어딨어",
-   "views": 1800,
-   "viewsText": "조회수 1.8천회",
-   "published": "",
-   "kind": "short",
-   "gain": 700
-  },
-  {
-   "id": "CyLfcNbzsgM",
-   "title": "\"의사 양성에 드는 돈이 얼만데;;\" 칼 빼든 일본 #의사 #shorts #스브스뉴스",
-   "views": 2700,
-   "viewsText": "조회수 2.7천회",
-   "published": "",
-   "kind": "short",
-   "gain": 1100
-  },
-  {
-   "id": "uwZKTkvHgWo",
-   "title": "일본 의료계도 한국화 되고 있다고? #일본 #shorts #스브스뉴스",
-   "views": 4500,
-   "viewsText": "조회수 4.5천회",
-   "published": "",
-   "kind": "short",
-   "gain": 1400
-  },
-  {
-   "id": "Idxf2CIVpa4",
-   "title": "13살 김주애, 사실 후계자 아닐 것? #북한 #shorts #스브스뉴스",
-   "views": 3100,
-   "viewsText": "조회수 3.1천회",
-   "published": "",
-   "kind": "short",
-   "gain": 200
-  },
-  {
-   "id": "QrEi5mDqnkY",
-   "title": "이번 겨울에 스키장 가실 건가요? #스키장 #shorts #스브스뉴스",
-   "views": 4300,
-   "viewsText": "조회수 4.3천회",
-   "published": "",
-   "kind": "short",
-   "gain": 200
-  },
-  {
-   "id": "HimIuWwzJnE",
-   "title": "저는 핸드폰 중독자를 경멸해요",
-   "views": 1700,
-   "viewsText": "조회수 1.7천회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "RhPkw9_bvEo",
-   "title": "유병권이 집에서 술 마시면 생기는 일",
-   "views": 10000,
-   "viewsText": "조회수 1만회",
+   "views": 2200,
+   "viewsText": "조회수 2.2천회",
    "published": "",
    "kind": "short",
    "gain": 400
   },
   {
+   "id": "CyLfcNbzsgM",
+   "title": "\"의사 양성에 드는 돈이 얼만데;;\" 칼 빼든 일본 #의사 #shorts #스브스뉴스",
+   "views": 3100,
+   "viewsText": "조회수 3.1천회",
+   "published": "",
+   "kind": "short",
+   "gain": 400
+  },
+  {
+   "id": "uwZKTkvHgWo",
+   "title": "일본 의료계도 한국화 되고 있다고? #일본 #shorts #스브스뉴스",
+   "views": 5000,
+   "viewsText": "조회수 5천회",
+   "published": "",
+   "kind": "short",
+   "gain": 500
+  },
+  {
+   "id": "Idxf2CIVpa4",
+   "title": "13살 김주애, 사실 후계자 아닐 것? #북한 #shorts #스브스뉴스",
+   "views": 3200,
+   "viewsText": "조회수 3.2천회",
+   "published": "",
+   "kind": "short",
+   "gain": 100
+  },
+  {
+   "id": "QrEi5mDqnkY",
+   "title": "이번 겨울에 스키장 가실 건가요? #스키장 #shorts #스브스뉴스",
+   "views": 4400,
+   "viewsText": "조회수 4.4천회",
+   "published": "",
+   "kind": "short",
+   "gain": 100
+  },
+  {
+   "id": "HimIuWwzJnE",
+   "title": "저는 핸드폰 중독자를 경멸해요",
+   "views": 1800,
+   "viewsText": "조회수 1.8천회",
+   "published": "",
+   "kind": "short",
+   "gain": 100
+  },
+  {
+   "id": "RhPkw9_bvEo",
+   "title": "유병권이 집에서 술 마시면 생기는 일",
+   "views": 11000,
+   "viewsText": "조회수 1.1만회",
+   "published": "",
+   "kind": "short",
+   "gain": 1000
+  },
+  {
    "id": "BM6xiPxwNxo",
    "title": "남자친구 있는 애들 특",
-   "views": 1900,
-   "viewsText": "조회수 1.9천회",
+   "views": 2000,
+   "viewsText": "조회수 2천회",
    "published": "",
    "kind": "short",
    "gain": 100
@@ -106,20 +130,20 @@
   {
    "id": "yb3X_ux-TRM",
    "title": "※술자리 특※ 나 빼고 다 담배 피러 감",
-   "views": 8800,
-   "viewsText": "조회수 8.8천회",
+   "views": 13000,
+   "viewsText": "조회수 1.3만회",
    "published": "",
    "kind": "short",
-   "gain": 3600
+   "gain": 4200
   },
   {
    "id": "SlRpe8XKd1Q",
    "title": "단돈 3천 원에 이 뷰라고??;; 떠오르는 순천 핫플 알아봄 #shorts /스브스뉴스",
-   "views": 2500,
-   "viewsText": "조회수 2.5천회",
+   "views": 2900,
+   "viewsText": "조회수 2.9천회",
    "published": "",
    "kind": "short",
-   "gain": 600
+   "gain": 400
   },
   {
    "id": "NjXfRwPyMdw",
@@ -146,16 +170,16 @@
    "viewsText": "조회수 1만회",
    "published": "",
    "kind": "short",
-   "gain": 100
+   "gain": 0
   },
   {
    "id": "8yMt7MH2C6o",
    "title": "술자리에서 나르시시스트가 위험한 이유",
-   "views": 5800,
-   "viewsText": "조회수 5.8천회",
+   "views": 6400,
+   "viewsText": "조회수 6.4천회",
    "published": "",
    "kind": "short",
-   "gain": 800
+   "gain": 600
   },
   {
    "id": "27P_Z6WStxE",
@@ -169,11 +193,11 @@
   {
    "id": "mxTL8Sss32U",
    "title": "비음주자를 영원히 이해하지 못하는 유병권",
-   "views": 8700,
-   "viewsText": "조회수 8.7천회",
+   "views": 9000,
+   "viewsText": "조회수 9천회",
    "published": "",
    "kind": "short",
-   "gain": 1500
+   "gain": 300
   },
   {
    "id": "PcOWHA81IJY",
@@ -182,7 +206,7 @@
    "viewsText": "조회수 6천회",
    "published": "",
    "kind": "short",
-   "gain": 3300
+   "gain": 0
   },
   {
    "id": "z4Iick_S-fY",
@@ -200,7 +224,7 @@
    "viewsText": "조회수 1만회",
    "published": "",
    "kind": "short",
-   "gain": 600
+   "gain": 0
   },
   {
    "id": "ZhLZHImIb1E",
@@ -209,7 +233,7 @@
    "viewsText": "조회수 1.2만회",
    "published": "",
    "kind": "short",
-   "gain": 8600
+   "gain": 0
   },
   {
    "id": "JOYjvxU9AMs",
@@ -218,7 +242,7 @@
    "viewsText": "조회수 1.1만회",
    "published": "",
    "kind": "short",
-   "gain": 1000
+   "gain": 0
   },
   {
    "id": "KDehtM0Jz0Y",
@@ -241,11 +265,11 @@
   {
    "id": "y6vCxLpdqds",
    "title": "한전에서 또다시 개인정보 유출 사고 #한전 #shorts #스브스뉴스",
-   "views": 6400,
-   "viewsText": "조회수 6.4천회",
+   "views": 6500,
+   "viewsText": "조회수 6.5천회",
    "published": "",
    "kind": "short",
-   "gain": 0
+   "gain": 100
   },
   {
    "id": "vDHKpDygPZY",
@@ -333,33 +357,6 @@
    "title": "돈까스클럽 정도는 가줘야 되나?",
    "views": 11000,
    "viewsText": "조회수 1.1만회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "EMLjBnedDMw",
-   "title": "요즘 모바일 청첩장 특",
-   "views": 6800,
-   "viewsText": "조회수 6.8천회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "W263pE8GnA4",
-   "title": "한 버스 정류장에서 말 두 마리가 버스를 탄 이유 #말 #shorts #스브스뉴스",
-   "views": 39000,
-   "viewsText": "조회수 3.9만회",
-   "published": "",
-   "kind": "short",
-   "gain": 0
-  },
-  {
-   "id": "5lzXatXvULg",
-   "title": "살아남기 위한 요즘 편의점의 생존 전략 #맛피아감자스틱 #shorts #스브스뉴스",
-   "views": 12000,
-   "viewsText": "조회수 1.2만회",
    "published": "",
    "kind": "short",
    "gain": 0

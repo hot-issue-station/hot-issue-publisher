@@ -3,7 +3,7 @@
  "name": "스브스뉴스 (SBS)",
  "channel": "https://www.youtube.com/@subusunews",
  "channelId": "UCxPClUl0bh7BgJajD5k483g",
- "checkedAt": "2026-11-28T13:30+09:00",
+ "checkedAt": "2026-11-28T22:58+09:00",
  "videos": [
   {
    "id": "xvzda-LGhQQ",
@@ -11,11 +11,11 @@
    "published": "2026-11-27T09:00:18+00:00",
    "url": "https://www.youtube.com/shorts/xvzda-LGhQQ",
    "shorts": true,
-   "views": 1149,
-   "likes": 5,
-   "viewsGain": 790,
+   "views": 1341,
+   "likes": 6,
+   "viewsGain": 192,
    "isNew": false,
-   "median": 5280.0,
+   "median": 5569.5,
    "multiple": 0.2
   },
   {
@@ -24,11 +24,11 @@
    "published": "2026-11-27T09:00:06+00:00",
    "url": "https://www.youtube.com/shorts/2dCYqt4FoJ8",
    "shorts": true,
-   "views": 2554,
+   "views": 2692,
    "likes": 29,
-   "viewsGain": 1189,
+   "viewsGain": 138,
    "isNew": false,
-   "median": 5280.0,
+   "median": 5569.5,
    "multiple": 0.5
   },
   {
@@ -37,11 +37,11 @@
    "published": "2026-11-27T09:00:03+00:00",
    "url": "https://www.youtube.com/shorts/ERL9tqzCHhs",
    "shorts": true,
-   "views": 1398,
-   "likes": 4,
-   "viewsGain": 515,
+   "views": 1508,
+   "likes": 5,
+   "viewsGain": 110,
    "isNew": false,
-   "median": 5280.0,
+   "median": 5569.5,
    "multiple": 0.3
   },
   {
@@ -50,11 +50,11 @@
    "published": "2026-11-26T09:00:16+00:00",
    "url": "https://www.youtube.com/shorts/6doFeNVVOtw",
    "shorts": true,
-   "views": 1468,
+   "views": 1506,
    "likes": 5,
-   "viewsGain": 36,
+   "viewsGain": 38,
    "isNew": false,
-   "median": 5280.0,
+   "median": 5569.5,
    "multiple": 0.3
   },
   {
@@ -63,12 +63,12 @@
    "published": "2026-11-26T09:00:08+00:00",
    "url": "https://www.youtube.com/shorts/nFs1uGiMD2c",
    "shorts": true,
-   "views": 1847,
-   "likes": 37,
-   "viewsGain": 246,
+   "views": 1999,
+   "likes": 47,
+   "viewsGain": 152,
    "isNew": false,
-   "median": 5280.0,
-   "multiple": 0.3
+   "median": 5569.5,
+   "multiple": 0.4
   },
   {
    "id": "7DFYb61iXC8",
@@ -76,11 +76,11 @@
    "published": "2026-11-26T09:00:05+00:00",
    "url": "https://www.youtube.com/shorts/7DFYb61iXC8",
    "shorts": true,
-   "views": 2677,
-   "likes": 78,
-   "viewsGain": 442,
+   "views": 2914,
+   "likes": 89,
+   "viewsGain": 237,
    "isNew": false,
-   "median": 5280.0,
+   "median": 5569.5,
    "multiple": 0.5
   },
   {
@@ -89,11 +89,11 @@
    "published": "2026-11-25T09:00:34+00:00",
    "url": "https://www.youtube.com/shorts/VYC_AREIZ-Y",
    "shorts": true,
-   "views": 4915,
-   "likes": 75,
-   "viewsGain": 535,
+   "views": 5223,
+   "likes": 80,
+   "viewsGain": 308,
    "isNew": false,
-   "median": 5280.0,
+   "median": 5569.5,
    "multiple": 0.9
   },
   {
@@ -102,12 +102,12 @@
    "published": "2026-11-25T09:00:33+00:00",
    "url": "https://www.youtube.com/shorts/jCq8RP8S-Kk",
    "shorts": true,
-   "views": 6577,
-   "likes": 54,
-   "viewsGain": 1168,
+   "views": 7160,
+   "likes": 58,
+   "viewsGain": 583,
    "isNew": false,
-   "median": 5280.0,
-   "multiple": 1.2
+   "median": 5569.5,
+   "multiple": 1.3
   },
   {
    "id": "eYmS_0_NvCM",
@@ -115,11 +115,11 @@
    "published": "2026-11-25T09:00:14+00:00",
    "url": "https://www.youtube.com/shorts/eYmS_0_NvCM",
    "shorts": true,
-   "views": 5704,
-   "likes": 110,
-   "viewsGain": 547,
+   "views": 6013,
+   "likes": 113,
+   "viewsGain": 309,
    "isNew": false,
-   "median": 5280.0,
+   "median": 5569.5,
    "multiple": 1.1
   },
   {
@@ -128,12 +128,12 @@
    "published": "2026-11-24T10:46:19+00:00",
    "url": "https://www.youtube.com/shorts/hBwgRgFJLoo",
    "shorts": true,
-   "views": 8987,
+   "views": 9004,
    "likes": 95,
-   "viewsGain": 42,
+   "viewsGain": 17,
    "isNew": false,
-   "median": 5280.0,
-   "multiple": 1.7
+   "median": 5569.5,
+   "multiple": 1.6
   },
   {
    "id": "9tcTOay3lzA",
@@ -141,12 +141,12 @@
    "published": "2026-11-24T09:32:32+00:00",
    "url": "https://www.youtube.com/shorts/9tcTOay3lzA",
    "shorts": true,
-   "views": 8321,
-   "likes": 254,
-   "viewsGain": 426,
+   "views": 8508,
+   "likes": 255,
+   "viewsGain": 187,
    "isNew": false,
-   "median": 5280.0,
-   "multiple": 1.6
+   "median": 5569.5,
+   "multiple": 1.5
   },
   {
    "id": "uy1NI4tsPiU",
@@ -154,11 +154,11 @@
    "published": "2026-11-24T09:31:18+00:00",
    "url": "https://www.youtube.com/shorts/uy1NI4tsPiU",
    "shorts": true,
-   "views": 5645,
-   "likes": 130,
-   "viewsGain": 419,
+   "views": 5916,
+   "likes": 134,
+   "viewsGain": 271,
    "isNew": false,
-   "median": 5280.0,
+   "median": 5569.5,
    "multiple": 1.1
   },
   {
@@ -167,9 +167,9 @@
    "published": "2026-11-24T09:00:01+00:00",
    "url": "https://www.youtube.com/watch?v=unZzsissHE4",
    "shorts": false,
-   "views": 88843,
-   "likes": 840,
-   "viewsGain": 8711,
+   "views": 96103,
+   "likes": 856,
+   "viewsGain": 7260,
    "isNew": false,
    "median": null,
    "multiple": null
@@ -180,12 +180,12 @@
    "published": "2026-11-20T09:00:22+00:00",
    "url": "https://www.youtube.com/shorts/yjBIZCfeUHo",
    "shorts": true,
-   "views": 30760,
+   "views": 30831,
    "likes": 393,
-   "viewsGain": 182,
+   "viewsGain": 71,
    "isNew": false,
-   "median": 5280.0,
-   "multiple": 5.8
+   "median": 5569.5,
+   "multiple": 5.5
   },
   {
    "id": "XePaN4Pjpmw",
@@ -193,27 +193,27 @@
    "published": "2026-11-20T09:00:10+00:00",
    "url": "https://www.youtube.com/shorts/XePaN4Pjpmw",
    "shorts": true,
-   "views": 12774,
+   "views": 12794,
    "likes": 81,
-   "viewsGain": 31,
+   "viewsGain": 20,
    "isNew": false,
-   "median": 5280.0,
-   "multiple": 2.4
+   "median": 5569.5,
+   "multiple": 2.3
   }
  ],
  "viral": [
   {
    "title": "그래서 도대체 언제 가?",
    "url": "https://www.youtube.com/shorts/yjBIZCfeUHo",
-   "views": 30760,
-   "multiple": 5.8,
+   "views": 30831,
+   "multiple": 5.5,
    "shorts": true
   },
   {
    "title": "앞치마 한 류승룡 같은 느낌",
    "url": "https://www.youtube.com/shorts/XePaN4Pjpmw",
-   "views": 12774,
-   "multiple": 2.4,
+   "views": 12794,
+   "multiple": 2.3,
    "shorts": true
   }
  ]
